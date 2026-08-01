@@ -122,7 +122,7 @@ function Index() {
         </section>
 
         {/* Stats */}
-        <div className="mx-auto -mt-20 max-w-6xl px-4 sm:px-6">
+        <div className="relative z-10 mx-auto -mt-20 max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-2 divide-border rounded-2xl bg-card px-6 py-7 shadow-panel sm:grid-cols-4 sm:divide-x sm:divide-x-reverse">
             {[
               { value: "8", label: "قطاعات", Icon: PieChart, tone: "text-tone-orange" },

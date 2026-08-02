@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CompaniesIndexRouteImport } from './routes/companies.index'
 import { Route as CompaniesSlugRouteImport } from './routes/companies.$slug'
 import { Route as KnowledgeIndexRouteImport } from './routes/knowledge.index'
+import { Route as KnowledgeSlugRouteImport } from './routes/knowledge.$slug'
 import { Route as ResearchIndexRouteImport } from './routes/research.index'
 import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
@@ -36,6 +37,11 @@ const CompaniesSlugRoute = CompaniesSlugRouteImport.update({
 const KnowledgeIndexRoute = KnowledgeIndexRouteImport.update({
   id: '/knowledge/',
   path: '/knowledge/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeSlugRoute = KnowledgeSlugRouteImport.update({
+  id: '/knowledge/$slug',
+  path: '/knowledge/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchIndexRoute = ResearchIndexRouteImport.update({
@@ -62,6 +68,7 @@ const SectorsSlugRoute = SectorsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/companies/$slug': typeof CompaniesSlugRoute
+  '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/companies/': typeof CompaniesIndexRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/companies/$slug': typeof CompaniesSlugRoute
+  '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/companies': typeof CompaniesIndexRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/companies/$slug': typeof CompaniesSlugRoute
+  '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/companies/': typeof CompaniesIndexRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/companies/$slug'
+    | '/knowledge/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/companies/'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/companies/$slug'
+    | '/knowledge/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/companies'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/companies/$slug'
+    | '/knowledge/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/companies/'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CompaniesSlugRoute: typeof CompaniesSlugRoute
+  KnowledgeSlugRoute: typeof KnowledgeSlugRoute
   ResearchSlugRoute: typeof ResearchSlugRoute
   SectorsSlugRoute: typeof SectorsSlugRoute
   CompaniesIndexRoute: typeof CompaniesIndexRoute
@@ -164,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KnowledgeIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/knowledge/$slug': {
+      id: '/knowledge/$slug'
+      path: '/knowledge/$slug'
+      fullPath: '/knowledge/$slug'
+      preLoaderRoute: typeof KnowledgeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/research/': {
       id: '/research/'
       path: '/research'
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CompaniesSlugRoute: CompaniesSlugRoute,
+  KnowledgeSlugRoute: KnowledgeSlugRoute,
   ResearchSlugRoute: ResearchSlugRoute,
   SectorsSlugRoute: SectorsSlugRoute,
   CompaniesIndexRoute: CompaniesIndexRoute,

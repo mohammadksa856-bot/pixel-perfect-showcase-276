@@ -1,3 +1,4 @@
+import { MarketTicker } from "@/components/MarketTicker";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import heroSpace from "@/assets/hero-space.jpg";
@@ -95,6 +96,8 @@ function HomePage() {
           </label>
         </div>
       </section>
+
+      <MarketTicker />
 
       {/* Floating stats */}
       <div className="relative z-10 mx-auto -mt-24 max-w-5xl px-4 sm:px-6">

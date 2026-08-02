@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CommunityIndexRouteImport } from './routes/community.index'
+import { Route as CompaniesIndexRouteImport } from './routes/companies.index'
+import { Route as CompaniesSlugRouteImport } from './routes/companies.$slug'
+import { Route as KnowledgeIndexRouteImport } from './routes/knowledge.index'
+import { Route as KnowledgeSlugRouteImport } from './routes/knowledge.$slug'
+import { Route as ResearchIndexRouteImport } from './routes/research.index'
+import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
+import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
+import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityIndexRoute = CommunityIndexRouteImport.update({
+  id: '/community/',
+  path: '/community/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompaniesIndexRoute = CompaniesIndexRouteImport.update({
+  id: '/companies/',
+  path: '/companies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompaniesSlugRoute = CompaniesSlugRouteImport.update({
+  id: '/companies/$slug',
+  path: '/companies/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeIndexRoute = KnowledgeIndexRouteImport.update({
+  id: '/knowledge/',
+  path: '/knowledge/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeSlugRoute = KnowledgeSlugRouteImport.update({
+  id: '/knowledge/$slug',
+  path: '/knowledge/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchIndexRoute = ResearchIndexRouteImport.update({
+  id: '/research/',
+  path: '/research/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchSlugRoute = ResearchSlugRouteImport.update({
+  id: '/research/$slug',
+  path: '/research/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorsIndexRoute = SectorsIndexRouteImport.update({
+  id: '/sectors/',
+  path: '/sectors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorsSlugRoute = SectorsSlugRouteImport.update({
+  id: '/sectors/$slug',
+  path: '/sectors/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/companies/$slug': typeof CompaniesSlugRoute
+  '/knowledge/$slug': typeof KnowledgeSlugRoute
+  '/research/$slug': typeof ResearchSlugRoute
+  '/sectors/$slug': typeof SectorsSlugRoute
+  '/community/': typeof CommunityIndexRoute
+  '/companies/': typeof CompaniesIndexRoute
+  '/knowledge/': typeof KnowledgeIndexRoute
+  '/research/': typeof ResearchIndexRoute
+  '/sectors/': typeof SectorsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/companies/$slug': typeof CompaniesSlugRoute
+  '/knowledge/$slug': typeof KnowledgeSlugRoute
+  '/research/$slug': typeof ResearchSlugRoute
+  '/sectors/$slug': typeof SectorsSlugRoute
+  '/community': typeof CommunityIndexRoute
+  '/companies': typeof CompaniesIndexRoute
+  '/knowledge': typeof KnowledgeIndexRoute
+  '/research': typeof ResearchIndexRoute
+  '/sectors': typeof SectorsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/companies/$slug': typeof CompaniesSlugRoute
+  '/knowledge/$slug': typeof KnowledgeSlugRoute
+  '/research/$slug': typeof ResearchSlugRoute
+  '/sectors/$slug': typeof SectorsSlugRoute
+  '/community/': typeof CommunityIndexRoute
+  '/companies/': typeof CompaniesIndexRoute
+  '/knowledge/': typeof KnowledgeIndexRoute
+  '/research/': typeof ResearchIndexRoute
+  '/sectors/': typeof SectorsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/companies/$slug'
+    | '/knowledge/$slug'
+    | '/research/$slug'
+    | '/sectors/$slug'
+    | '/community/'
+    | '/companies/'
+    | '/knowledge/'
+    | '/research/'
+    | '/sectors/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/companies/$slug'
+    | '/knowledge/$slug'
+    | '/research/$slug'
+    | '/sectors/$slug'
+    | '/community'
+    | '/companies'
+    | '/knowledge'
+    | '/research'
+    | '/sectors'
+  id:
+    | '__root__'
+    | '/'
+    | '/companies/$slug'
+    | '/knowledge/$slug'
+    | '/research/$slug'
+    | '/sectors/$slug'
+    | '/community/'
+    | '/companies/'
+    | '/knowledge/'
+    | '/research/'
+    | '/sectors/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CompaniesSlugRoute: typeof CompaniesSlugRoute
+  KnowledgeSlugRoute: typeof KnowledgeSlugRoute
+  ResearchSlugRoute: typeof ResearchSlugRoute
+  SectorsSlugRoute: typeof SectorsSlugRoute
+  CommunityIndexRoute: typeof CommunityIndexRoute
+  CompaniesIndexRoute: typeof CompaniesIndexRoute
+  KnowledgeIndexRoute: typeof KnowledgeIndexRoute
+  ResearchIndexRoute: typeof ResearchIndexRoute
+  SectorsIndexRoute: typeof SectorsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community/': {
+      id: '/community/'
+      path: '/community'
+      fullPath: '/community/'
+      preLoaderRoute: typeof CommunityIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/companies/': {
+      id: '/companies/'
+      path: '/companies'
+      fullPath: '/companies/'
+      preLoaderRoute: typeof CompaniesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/companies/$slug': {
+      id: '/companies/$slug'
+      path: '/companies/$slug'
+      fullPath: '/companies/$slug'
+      preLoaderRoute: typeof CompaniesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge/': {
+      id: '/knowledge/'
+      path: '/knowledge'
+      fullPath: '/knowledge/'
+      preLoaderRoute: typeof KnowledgeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge/$slug': {
+      id: '/knowledge/$slug'
+      path: '/knowledge/$slug'
+      fullPath: '/knowledge/$slug'
+      preLoaderRoute: typeof KnowledgeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research/': {
+      id: '/research/'
+      path: '/research'
+      fullPath: '/research/'
+      preLoaderRoute: typeof ResearchIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research/$slug': {
+      id: '/research/$slug'
+      path: '/research/$slug'
+      fullPath: '/research/$slug'
+      preLoaderRoute: typeof ResearchSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sectors/': {
+      id: '/sectors/'
+      path: '/sectors'
+      fullPath: '/sectors/'
+      preLoaderRoute: typeof SectorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sectors/$slug': {
+      id: '/sectors/$slug'
+      path: '/sectors/$slug'
+      fullPath: '/sectors/$slug'
+      preLoaderRoute: typeof SectorsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CompaniesSlugRoute: CompaniesSlugRoute,
+  KnowledgeSlugRoute: KnowledgeSlugRoute,
+  ResearchSlugRoute: ResearchSlugRoute,
+  SectorsSlugRoute: SectorsSlugRoute,
+  CommunityIndexRoute: CommunityIndexRoute,
+  CompaniesIndexRoute: CompaniesIndexRoute,
+  KnowledgeIndexRoute: KnowledgeIndexRoute,
+  ResearchIndexRoute: ResearchIndexRoute,
+  SectorsIndexRoute: SectorsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

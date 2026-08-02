@@ -21,6 +21,7 @@ import { Route as ResearchIndexRouteImport } from './routes/research.index'
 import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminCompaniesRouteImport } from './routes/_authenticated/admin.companies'
 import { Route as AuthenticatedAdminFaqsRouteImport } from './routes/_authenticated/admin.faqs'
 import { Route as AuthenticatedAdminKnowledgeRouteImport } from './routes/_authenticated/admin.knowledge'
@@ -86,6 +87,11 @@ const SectorsSlugRoute = SectorsSlugRouteImport.update({
   path: '/sectors/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
 const AuthenticatedAdminCompaniesRoute =
   AuthenticatedAdminCompaniesRouteImport.update({
     id: '/companies',
@@ -133,10 +139,10 @@ export interface FileRoutesByFullPath {
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/admin/research': typeof AuthenticatedAdminResearchRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
@@ -151,6 +157,7 @@ export interface FileRoutesByTo {
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/admin/research': typeof AuthenticatedAdminResearchRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -171,6 +178,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/_authenticated/admin/research': typeof AuthenticatedAdminResearchRoute
   '/_authenticated/admin/sectors': typeof AuthenticatedAdminSectorsRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,10 +199,10 @@ export interface FileRouteTypes {
     | '/admin/knowledge'
     | '/admin/research'
     | '/admin/sectors'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/admin'
     | '/companies/$slug'
     | '/knowledge/$slug'
     | '/research/$slug'
@@ -209,6 +217,7 @@ export interface FileRouteTypes {
     | '/admin/knowledge'
     | '/admin/research'
     | '/admin/sectors'
+    | '/admin'
   id:
     | '__root__'
     | '/'
@@ -228,6 +237,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/knowledge'
     | '/_authenticated/admin/research'
     | '/_authenticated/admin/sectors'
+    | '/_authenticated/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -330,6 +340,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SectorsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/companies': {
       id: '/_authenticated/admin/companies'
       path: '/companies'
@@ -374,6 +391,7 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminKnowledgeRoute: typeof AuthenticatedAdminKnowledgeRoute
   AuthenticatedAdminResearchRoute: typeof AuthenticatedAdminResearchRoute
   AuthenticatedAdminSectorsRoute: typeof AuthenticatedAdminSectorsRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
@@ -382,6 +400,7 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminKnowledgeRoute: AuthenticatedAdminKnowledgeRoute,
   AuthenticatedAdminResearchRoute: AuthenticatedAdminResearchRoute,
   AuthenticatedAdminSectorsRoute: AuthenticatedAdminSectorsRoute,
+  AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
 }
 
 const AuthenticatedAdminRouteWithChildren =

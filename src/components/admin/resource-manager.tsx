@@ -185,7 +185,7 @@ export function ResourceManager({
       );
     if (col.kind === "localized") {
       const v = (raw ?? emptyLocalized) as Record<string, string>;
-      return v[locale] || v.en || v.ar || "—";
+      return v[locale] || v["en"] || v["ar"] || "—";
     }
     if (col.kind === "lookup" && col.optionsKey) {
       const opt = (options[col.optionsKey] ?? []).find((o) => o.value === raw);

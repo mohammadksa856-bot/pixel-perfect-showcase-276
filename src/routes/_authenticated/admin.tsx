@@ -16,14 +16,14 @@ export const Route = createFileRoute("/_authenticated/admin")({
   component: AdminLayout,
 });
 
-const links = [
+const links: { to: string; label: { ar: string; en: string }; icon: typeof LayoutGrid; exact?: boolean }[] = [
   { to: "/admin", label: { ar: "نظرة عامة", en: "Overview" }, icon: LayoutGrid, exact: true },
   { to: "/admin/sectors", label: { ar: "القطاعات", en: "Sectors" }, icon: Layers },
   { to: "/admin/companies", label: { ar: "الشركات", en: "Companies" }, icon: Building2 },
   { to: "/admin/research", label: { ar: "الأبحاث", en: "Research" }, icon: FileText },
   { to: "/admin/knowledge", label: { ar: "المعرفة", en: "Knowledge" }, icon: BookOpen },
   { to: "/admin/faqs", label: { ar: "الأسئلة الشائعة", en: "FAQs" }, icon: HelpCircle },
-] as const;
+];
 
 function AdminLayout() {
   const { t } = useI18n();

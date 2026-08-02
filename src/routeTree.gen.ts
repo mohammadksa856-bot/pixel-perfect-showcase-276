@@ -21,6 +21,7 @@ import { Route as ResearchIndexRouteImport } from './routes/research.index'
 import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
+import { Route as AuthenticatedAdminCompaniesRouteImport } from './routes/_authenticated/admin.companies'
 import { Route as AuthenticatedAdminSectorsRouteImport } from './routes/_authenticated/admin.sectors'
 
 const IndexRoute = IndexRouteImport.update({
@@ -82,6 +83,12 @@ const SectorsSlugRoute = SectorsSlugRouteImport.update({
   path: '/sectors/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminCompaniesRoute =
+  AuthenticatedAdminCompaniesRouteImport.update({
+    id: '/companies',
+    path: '/companies',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminSectorsRoute =
   AuthenticatedAdminSectorsRouteImport.update({
     id: '/sectors',
@@ -101,6 +108,7 @@ export interface FileRoutesByFullPath {
   '/knowledge/': typeof KnowledgeIndexRoute
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
+  '/admin/companies': typeof AuthenticatedAdminCompaniesRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
 }
 export interface FileRoutesByTo {
@@ -115,6 +123,7 @@ export interface FileRoutesByTo {
   '/knowledge': typeof KnowledgeIndexRoute
   '/research': typeof ResearchIndexRoute
   '/sectors': typeof SectorsIndexRoute
+  '/admin/companies': typeof AuthenticatedAdminCompaniesRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
 }
 export interface FileRoutesById {
@@ -131,6 +140,7 @@ export interface FileRoutesById {
   '/knowledge/': typeof KnowledgeIndexRoute
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
+  '/_authenticated/admin/companies': typeof AuthenticatedAdminCompaniesRoute
   '/_authenticated/admin/sectors': typeof AuthenticatedAdminSectorsRoute
 }
 export interface FileRouteTypes {
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/knowledge/'
     | '/research/'
     | '/sectors/'
+    | '/admin/companies'
     | '/admin/sectors'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/knowledge'
     | '/research'
     | '/sectors'
+    | '/admin/companies'
     | '/admin/sectors'
   id:
     | '__root__'
@@ -176,6 +188,7 @@ export interface FileRouteTypes {
     | '/knowledge/'
     | '/research/'
     | '/sectors/'
+    | '/_authenticated/admin/companies'
     | '/_authenticated/admin/sectors'
   fileRoutesById: FileRoutesById
 }
@@ -279,6 +292,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SectorsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/companies': {
+      id: '/_authenticated/admin/companies'
+      path: '/companies'
+      fullPath: '/admin/companies'
+      preLoaderRoute: typeof AuthenticatedAdminCompaniesRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/sectors': {
       id: '/_authenticated/admin/sectors'
       path: '/sectors'
@@ -290,10 +310,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminCompaniesRoute: typeof AuthenticatedAdminCompaniesRoute
   AuthenticatedAdminSectorsRoute: typeof AuthenticatedAdminSectorsRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminCompaniesRoute: AuthenticatedAdminCompaniesRoute,
   AuthenticatedAdminSectorsRoute: AuthenticatedAdminSectorsRoute,
 }
 

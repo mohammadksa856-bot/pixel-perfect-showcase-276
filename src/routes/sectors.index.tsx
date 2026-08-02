@@ -4,7 +4,7 @@ import { SectorCard } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
 import { getSectors } from "@/lib/content";
 
-export const Route = createFileRoute("/sectors")({
+export const Route = createFileRoute("/sectors/")({
   head: () => ({
     meta: [
       { title: "القطاعات | معرفة استثمار" },

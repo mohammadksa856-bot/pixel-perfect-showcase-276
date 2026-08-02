@@ -22,6 +22,7 @@ import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
 import { Route as AuthenticatedAdminCompaniesRouteImport } from './routes/_authenticated/admin.companies'
+import { Route as AuthenticatedAdminFaqsRouteImport } from './routes/_authenticated/admin.faqs'
 import { Route as AuthenticatedAdminKnowledgeRouteImport } from './routes/_authenticated/admin.knowledge'
 import { Route as AuthenticatedAdminResearchRouteImport } from './routes/_authenticated/admin.research'
 import { Route as AuthenticatedAdminSectorsRouteImport } from './routes/_authenticated/admin.sectors'
@@ -91,6 +92,11 @@ const AuthenticatedAdminCompaniesRoute =
     path: '/companies',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedAdminFaqsRoute = AuthenticatedAdminFaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
 const AuthenticatedAdminKnowledgeRoute =
   AuthenticatedAdminKnowledgeRouteImport.update({
     id: '/knowledge',
@@ -123,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
   '/admin/companies': typeof AuthenticatedAdminCompaniesRoute
+  '/admin/faqs': typeof AuthenticatedAdminFaqsRoute
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/admin/research': typeof AuthenticatedAdminResearchRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
@@ -140,6 +147,7 @@ export interface FileRoutesByTo {
   '/research': typeof ResearchIndexRoute
   '/sectors': typeof SectorsIndexRoute
   '/admin/companies': typeof AuthenticatedAdminCompaniesRoute
+  '/admin/faqs': typeof AuthenticatedAdminFaqsRoute
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/admin/research': typeof AuthenticatedAdminResearchRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
   '/_authenticated/admin/companies': typeof AuthenticatedAdminCompaniesRoute
+  '/_authenticated/admin/faqs': typeof AuthenticatedAdminFaqsRoute
   '/_authenticated/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/_authenticated/admin/research': typeof AuthenticatedAdminResearchRoute
   '/_authenticated/admin/sectors': typeof AuthenticatedAdminSectorsRoute
@@ -178,6 +187,7 @@ export interface FileRouteTypes {
     | '/research/'
     | '/sectors/'
     | '/admin/companies'
+    | '/admin/faqs'
     | '/admin/knowledge'
     | '/admin/research'
     | '/admin/sectors'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/research'
     | '/sectors'
     | '/admin/companies'
+    | '/admin/faqs'
     | '/admin/knowledge'
     | '/admin/research'
     | '/admin/sectors'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
     | '/research/'
     | '/sectors/'
     | '/_authenticated/admin/companies'
+    | '/_authenticated/admin/faqs'
     | '/_authenticated/admin/knowledge'
     | '/_authenticated/admin/research'
     | '/_authenticated/admin/sectors'
@@ -325,6 +337,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminCompaniesRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/faqs': {
+      id: '/_authenticated/admin/faqs'
+      path: '/faqs'
+      fullPath: '/admin/faqs'
+      preLoaderRoute: typeof AuthenticatedAdminFaqsRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/knowledge': {
       id: '/_authenticated/admin/knowledge'
       path: '/knowledge'
@@ -351,6 +370,7 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminCompaniesRoute: typeof AuthenticatedAdminCompaniesRoute
+  AuthenticatedAdminFaqsRoute: typeof AuthenticatedAdminFaqsRoute
   AuthenticatedAdminKnowledgeRoute: typeof AuthenticatedAdminKnowledgeRoute
   AuthenticatedAdminResearchRoute: typeof AuthenticatedAdminResearchRoute
   AuthenticatedAdminSectorsRoute: typeof AuthenticatedAdminSectorsRoute
@@ -358,6 +378,7 @@ interface AuthenticatedAdminRouteChildren {
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminCompaniesRoute: AuthenticatedAdminCompaniesRoute,
+  AuthenticatedAdminFaqsRoute: AuthenticatedAdminFaqsRoute,
   AuthenticatedAdminKnowledgeRoute: AuthenticatedAdminKnowledgeRoute,
   AuthenticatedAdminResearchRoute: AuthenticatedAdminResearchRoute,
   AuthenticatedAdminSectorsRoute: AuthenticatedAdminSectorsRoute,

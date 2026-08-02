@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CommunityIndexRouteImport } from './routes/community.index'
 import { Route as CompaniesIndexRouteImport } from './routes/companies.index'
 import { Route as CompaniesSlugRouteImport } from './routes/companies.$slug'
 import { Route as KnowledgeIndexRouteImport } from './routes/knowledge.index'
@@ -22,6 +23,11 @@ import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityIndexRoute = CommunityIndexRouteImport.update({
+  id: '/community/',
+  path: '/community/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompaniesIndexRoute = CompaniesIndexRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
+  '/community/': typeof CommunityIndexRoute
   '/companies/': typeof CompaniesIndexRoute
   '/knowledge/': typeof KnowledgeIndexRoute
   '/research/': typeof ResearchIndexRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
+  '/community': typeof CommunityIndexRoute
   '/companies': typeof CompaniesIndexRoute
   '/knowledge': typeof KnowledgeIndexRoute
   '/research': typeof ResearchIndexRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
+  '/community/': typeof CommunityIndexRoute
   '/companies/': typeof CompaniesIndexRoute
   '/knowledge/': typeof KnowledgeIndexRoute
   '/research/': typeof ResearchIndexRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/knowledge/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
+    | '/community/'
     | '/companies/'
     | '/knowledge/'
     | '/research/'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/knowledge/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
+    | '/community'
     | '/companies'
     | '/knowledge'
     | '/research'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/knowledge/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
+    | '/community/'
     | '/companies/'
     | '/knowledge/'
     | '/research/'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   KnowledgeSlugRoute: typeof KnowledgeSlugRoute
   ResearchSlugRoute: typeof ResearchSlugRoute
   SectorsSlugRoute: typeof SectorsSlugRoute
+  CommunityIndexRoute: typeof CommunityIndexRoute
   CompaniesIndexRoute: typeof CompaniesIndexRoute
   KnowledgeIndexRoute: typeof KnowledgeIndexRoute
   ResearchIndexRoute: typeof ResearchIndexRoute
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community/': {
+      id: '/community/'
+      path: '/community'
+      fullPath: '/community/'
+      preLoaderRoute: typeof CommunityIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/companies/': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   KnowledgeSlugRoute: KnowledgeSlugRoute,
   ResearchSlugRoute: ResearchSlugRoute,
   SectorsSlugRoute: SectorsSlugRoute,
+  CommunityIndexRoute: CommunityIndexRoute,
   CompaniesIndexRoute: CompaniesIndexRoute,
   KnowledgeIndexRoute: KnowledgeIndexRoute,
   ResearchIndexRoute: ResearchIndexRoute,

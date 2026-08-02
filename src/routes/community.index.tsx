@@ -30,8 +30,8 @@ export const Route = createFileRoute("/community/")({
 function CommunityPage() {
   const { t } = useI18n();
   const boards = getBoards();
-  const [active, setActive] = useState(boards[0].slug);
-  const board = boards.find((b) => b.slug === active)!;
+  const [active, setActive] = useState(boards[0]!.slug);
+  const board = boards.find((b) => b.slug === active) ?? boards[0]!;
   const [liked, setLiked] = useState<string[]>([]);
   const [saved, setSaved] = useState<string[]>([]);
 

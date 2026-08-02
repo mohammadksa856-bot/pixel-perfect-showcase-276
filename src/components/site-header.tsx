@@ -62,7 +62,7 @@ export function SiteHeader() {
                     : "text-muted-foreground hover:bg-muted",
                 )}
               >
-                {l === "ar" ? "عربي" : "EN"}
+                {l === "ar" ? "عربي او اردو" : "EN"}
               </button>
             ))}
           </div>

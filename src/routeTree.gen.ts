@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CompaniesIndexRouteImport } from './routes/companies.index'
+import { Route as CompaniesSlugRouteImport } from './routes/companies.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
 
@@ -22,6 +23,11 @@ const IndexRoute = IndexRouteImport.update({
 const CompaniesIndexRoute = CompaniesIndexRouteImport.update({
   id: '/companies/',
   path: '/companies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompaniesSlugRoute = CompaniesSlugRouteImport.update({
+  id: '/companies/$slug',
+  path: '/companies/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SectorsIndexRoute = SectorsIndexRouteImport.update({
@@ -37,12 +43,14 @@ const SectorsSlugRoute = SectorsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/companies/$slug': typeof CompaniesSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/companies/': typeof CompaniesIndexRoute
   '/sectors/': typeof SectorsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/companies/$slug': typeof CompaniesSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/companies': typeof CompaniesIndexRoute
   '/sectors': typeof SectorsIndexRoute
@@ -50,20 +58,29 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/companies/$slug': typeof CompaniesSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/companies/': typeof CompaniesIndexRoute
   '/sectors/': typeof SectorsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sectors/$slug' | '/companies/' | '/sectors/'
+  fullPaths:
+    '/' | '/companies/$slug' | '/sectors/$slug' | '/companies/' | '/sectors/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sectors/$slug' | '/companies' | '/sectors'
-  id: '__root__' | '/' | '/sectors/$slug' | '/companies/' | '/sectors/'
+  to: '/' | '/companies/$slug' | '/sectors/$slug' | '/companies' | '/sectors'
+  id:
+    | '__root__'
+    | '/'
+    | '/companies/$slug'
+    | '/sectors/$slug'
+    | '/companies/'
+    | '/sectors/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CompaniesSlugRoute: typeof CompaniesSlugRoute
   SectorsSlugRoute: typeof SectorsSlugRoute
   CompaniesIndexRoute: typeof CompaniesIndexRoute
   SectorsIndexRoute: typeof SectorsIndexRoute
@@ -85,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompaniesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/companies/$slug': {
+      id: '/companies/$slug'
+      path: '/companies/$slug'
+      fullPath: '/companies/$slug'
+      preLoaderRoute: typeof CompaniesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sectors/': {
       id: '/sectors/'
       path: '/sectors'
@@ -104,6 +128,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CompaniesSlugRoute: CompaniesSlugRoute,
   SectorsSlugRoute: SectorsSlugRoute,
   CompaniesIndexRoute: CompaniesIndexRoute,
   SectorsIndexRoute: SectorsIndexRoute,

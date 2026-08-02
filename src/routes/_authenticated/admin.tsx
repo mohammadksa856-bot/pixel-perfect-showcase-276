@@ -63,7 +63,7 @@ function AdminLayout() {
                 return (
                   <Link
                     key={l.to}
-                    to={l.to}
+                    to={l.to as never}
                     className={cn(
                       "flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted",
                       active && "bg-muted font-semibold text-foreground",

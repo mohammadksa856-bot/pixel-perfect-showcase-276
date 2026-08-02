@@ -3,6 +3,7 @@ import { PageShell, Container } from "@/components/page-shell";
 import { CompanyCard, Panel, ResearchCard, SectionHeading } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
 import { getCompany, getRelatedCompanies, getResearch, getSector } from "@/lib/content";
+import type { Company } from "@/data/types";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/companies/$slug")({
@@ -32,7 +33,7 @@ export const Route = createFileRoute("/companies/$slug")({
 });
 
 function CompanyPage() {
-  const { company } = Route.useLoaderData();
+  const { company } = Route.useLoaderData() as { company: Company };
   const { t } = useI18n();
   const sector = getSector(company.sectorSlug);
   const related = getRelatedCompanies(company);

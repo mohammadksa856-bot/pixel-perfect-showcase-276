@@ -14,16 +14,346 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      companies: {
+        Row: {
+          change: string
+          country: Json
+          created_at: string
+          description: Json
+          exchange: string
+          financials: Json
+          how_to_buy: Json
+          id: string
+          market_cap: string
+          name: Json
+          news: Json
+          price: string
+          published: boolean
+          sections: Json
+          sector_id: string | null
+          short: Json
+          slug: string
+          sort_order: number
+          ticker: string
+          updated_at: string
+          valuation: Json
+        }
+        Insert: {
+          change?: string
+          country?: Json
+          created_at?: string
+          description?: Json
+          exchange?: string
+          financials?: Json
+          how_to_buy?: Json
+          id?: string
+          market_cap?: string
+          name?: Json
+          news?: Json
+          price?: string
+          published?: boolean
+          sections?: Json
+          sector_id?: string | null
+          short?: Json
+          slug: string
+          sort_order?: number
+          ticker?: string
+          updated_at?: string
+          valuation?: Json
+        }
+        Update: {
+          change?: string
+          country?: Json
+          created_at?: string
+          description?: Json
+          exchange?: string
+          financials?: Json
+          how_to_buy?: Json
+          id?: string
+          market_cap?: string
+          name?: Json
+          news?: Json
+          price?: string
+          published?: boolean
+          sections?: Json
+          sector_id?: string | null
+          short?: Json
+          slug?: string
+          sort_order?: number
+          ticker?: string
+          updated_at?: string
+          valuation?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "companies_sector_id_fkey"
+            columns: ["sector_id"]
+            isOneToOne: false
+            referencedRelation: "sectors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      faqs: {
+        Row: {
+          answer: Json
+          company_id: string | null
+          created_at: string
+          id: string
+          published: boolean
+          question: Json
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          answer?: Json
+          company_id?: string | null
+          created_at?: string
+          id?: string
+          published?: boolean
+          question?: Json
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          answer?: Json
+          company_id?: string | null
+          created_at?: string
+          id?: string
+          published?: boolean
+          question?: Json
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "faqs_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      knowledge_articles: {
+        Row: {
+          category: Json
+          created_at: string
+          icon: string
+          id: string
+          level: Json
+          published: boolean
+          reading_time: number
+          sections: Json
+          slug: string
+          sort_order: number
+          summary: Json
+          title: Json
+          updated_at: string
+          videos: Json
+        }
+        Insert: {
+          category?: Json
+          created_at?: string
+          icon?: string
+          id?: string
+          level?: Json
+          published?: boolean
+          reading_time?: number
+          sections?: Json
+          slug: string
+          sort_order?: number
+          summary?: Json
+          title?: Json
+          updated_at?: string
+          videos?: Json
+        }
+        Update: {
+          category?: Json
+          created_at?: string
+          icon?: string
+          id?: string
+          level?: Json
+          published?: boolean
+          reading_time?: number
+          sections?: Json
+          slug?: string
+          sort_order?: number
+          summary?: Json
+          title?: Json
+          updated_at?: string
+          videos?: Json
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      research: {
+        Row: {
+          author: Json
+          author_role: Json
+          created_at: string
+          id: string
+          image: string
+          published: boolean
+          published_at: string
+          reading_time: number
+          refs: Json
+          sections: Json
+          sector_id: string | null
+          slug: string
+          summary: Json
+          tags: Json
+          title: Json
+          updated_at: string
+        }
+        Insert: {
+          author?: Json
+          author_role?: Json
+          created_at?: string
+          id?: string
+          image?: string
+          published?: boolean
+          published_at?: string
+          reading_time?: number
+          refs?: Json
+          sections?: Json
+          sector_id?: string | null
+          slug: string
+          summary?: Json
+          tags?: Json
+          title?: Json
+          updated_at?: string
+        }
+        Update: {
+          author?: Json
+          author_role?: Json
+          created_at?: string
+          id?: string
+          image?: string
+          published?: boolean
+          published_at?: string
+          reading_time?: number
+          refs?: Json
+          sections?: Json
+          sector_id?: string | null
+          slug?: string
+          summary?: Json
+          tags?: Json
+          title?: Json
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "research_sector_id_fkey"
+            columns: ["sector_id"]
+            isOneToOne: false
+            referencedRelation: "sectors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sectors: {
+        Row: {
+          created_at: string
+          description: Json
+          icon: string
+          id: string
+          name: Json
+          published: boolean
+          slug: string
+          sort_order: number
+          tagline: Json
+          tone: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: Json
+          icon?: string
+          id?: string
+          name?: Json
+          published?: boolean
+          slug: string
+          sort_order?: number
+          tagline?: Json
+          tone?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: Json
+          icon?: string
+          id?: string
+          name?: Json
+          published?: boolean
+          slug?: string
+          sort_order?: number
+          tagline?: Json
+          tone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      is_content_manager: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "editor" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +480,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "editor", "user"],
+    },
   },
 } as const

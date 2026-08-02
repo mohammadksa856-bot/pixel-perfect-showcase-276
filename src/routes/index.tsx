@@ -100,7 +100,7 @@ function HomePage() {
       <MarketTicker />
 
       {/* Floating stats */}
-      <div className="relative z-10 mx-auto -mt-24 max-w-5xl px-4 sm:px-6">
+      <div className="mx-auto mt-10 max-w-5xl px-4 sm:px-6">
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border/70 bg-border/60 shadow-panel sm:grid-cols-4">
           {[
             { value: stats.companies, label: ui.statCompanies },

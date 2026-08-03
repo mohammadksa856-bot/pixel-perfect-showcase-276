@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, Moon, Search, Sun, User, X } from "lucide-react";
+import {
+  Bell,
+  ChevronDown,
+  Menu,
+  Moon,
+  Search,
+  Sun,
+  User,
+  X,
+} from "lucide-react";
+
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/", label: ui.home },
-  { to: "/sectors", label: ui.sectors },
+  { to: "/markets", text: "الأسواق" },
   { to: "/companies", label: ui.companies },
+  { to: "/sectors", label: ui.sectors },
   { to: "/knowledge", label: ui.knowledge },
   { to: "/research", label: ui.research },
   { to: "/community", label: ui.community },
@@ -17,97 +28,209 @@ const nav = [
 export function SiteHeader() {
   const { t, locale, setLocale } = useI18n();
   const { theme, toggleTheme } = useTheme();
+
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6">
-        <Link to="/" className="shrink-0 text-lg font-bold tracking-tight sm:text-xl">
-          {t(ui.heroTitle)}
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-2xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center gap-5 px-6">
+
+        {/* Logo */}
+
+        <Link
+          to="/"
+          className="flex items-center gap-3 shrink-0"
+        >
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-lg font-bold text-white shadow-lg">
+            M
+          </div>
+
+          <div className="leading-tight">
+            <div className="font-bold text-lg">
+              معرفة استثمار
+            </div>
+
+            <div className="text-xs text-muted-foreground">
+              Investment Intelligence
+            </div>
+          </div>
         </Link>
 
-        <nav className="hidden flex-1 items-center gap-1 lg:flex">
+        {/* Navigation */}
+
+        <nav className="hidden lg:flex items-center gap-1">
+
           {nav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              activeProps={{ className: "!text-foreground font-semibold bg-muted" }}
+              activeProps={{
+                className:
+                  "!bg-brand !text-white shadow-md",
+              }}
+              className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-muted hover:text-foreground"
             >
-              {t(item.label)}
+              {"label" in item ? t(item.label) : item.text}
             </Link>
           ))}
+
         </nav>
 
-        <div className="ms-auto flex items-center gap-2">
-          <label className="hidden items-center gap-2 rounded-full border border-border bg-muted/50 px-3.5 py-2 md:flex">
-            <Search className="size-4 text-muted-foreground" />
+        {/* Search */}
+
+        <div className="hidden xl:flex flex-1 justify-center">
+
+          <label className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-brand">
+
+            <Search className="h-4 w-4 text-muted-foreground" />
+
             <input
               type="search"
-              placeholder={t(ui.search)}
-              className="w-24 bg-transparent text-sm outline-none placeholder:text-muted-foreground lg:w-36"
+              placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
+              className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
             />
+
           </label>
 
-          <div className="flex items-center overflow-hidden rounded-full border border-border text-xs font-medium">
-            {(["ar", "en"] as const).map((l) => (
-              <button
-                key={l}
-                onClick={() => setLocale(l)}
-                className={cn(
-                  "px-3 py-1.5 transition-colors",
-                  locale === l
-                    ? "bg-foreground text-background"
-                    : "text-muted-foreground hover:bg-muted",
-                )}
-              >
-                {l === "ar" ? "العربية" : "English"}
-              </button>
-            ))}
-          </div>
+        </div>
+
+        {/* Right */}
+
+        <div className="ml-auto flex items-center gap-2">
+
+          <button
+            className="hidden md:flex items-center gap-2 rounded-full border border-border px-3 py-2 text-sm hover:bg-muted transition"
+            onClick={() =>
+              setLocale(locale === "ar" ? "en" : "ar")
+            }
+          >
+            {locale === "ar" ? "English" : "العربية"}
+
+            <ChevronDown className="h-4 w-4" />
+          </button>
 
           <button
             onClick={toggleTheme}
-            aria-label={t(ui.theme)}
-            className="flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border hover:bg-muted transition"
           >
-            {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            {theme === "dark" ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
+          </button>
+
+          <button className="hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-border hover:bg-muted transition">
+            <Bell className="h-4 w-4" />
+          </button>
+
+          <button className="hidden md:flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:scale-105">
+            <User className="h-4 w-4" />
+            حسابي
           </button>
 
           <button
-            aria-label={t(ui.profile)}
-            className="hidden size-9 items-center justify-center rounded-full bg-brand text-brand-foreground transition-transform hover:scale-105 sm:flex"
+            onClick={() => setOpen(!open)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border lg:hidden"
           >
-            <User className="size-4" />
+            {open ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            aria-label="menu"
-            className="flex size-9 items-center justify-center rounded-full border border-border lg:hidden"
-          >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
-          </button>
         </div>
+
       </div>
+            {/* Mobile Menu */}
 
       {open && (
-        <nav className="animate-in slide-in-from-top-2 border-t border-border bg-background px-4 pb-4 pt-2 lg:hidden">
-          {nav.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-muted"
-              activeProps={{ className: "!text-foreground font-semibold" }}
-              activeOptions={{ exact: item.to === "/" }}
+        <div className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5">
+
+            {/* Mobile Search */}
+
+            <label className="mb-3 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3">
+              <Search className="h-4 w-4 text-muted-foreground" />
+
+              <input
+                type="search"
+                placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
+                className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+              />
+            </label>
+
+            {/* Mobile Navigation */}
+
+            {nav.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                activeOptions={{ exact: item.to === "/" }}
+                activeProps={{
+                  className:
+                    "!bg-brand !text-white",
+                }}
+                className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition hover:bg-muted"
+              >
+                {"label" in item ? t(item.label) : item.text}
+              </Link>
+            ))}
+
+            <div className="my-2 border-t border-border" />
+
+            {/* Mobile Actions */}
+
+            <button
+              onClick={() =>
+                setLocale(locale === "ar" ? "en" : "ar")
+              }
+              className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
             >
-              {t(item.label)}
-            </Link>
-          ))}
-        </nav>
+              <span>
+                {locale === "ar"
+                  ? "English"
+                  : "العربية"}
+              </span>
+
+              <ChevronDown className="h-4 w-4" />
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
+            >
+              <span>
+                {theme === "dark"
+                  ? "الوضع الفاتح"
+                  : "الوضع الداكن"}
+              </span>
+
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </button>
+
+            <button className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition">
+              <span>الإشعارات</span>
+
+              <Bell className="h-4 w-4" />
+            </button>
+
+            <button className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 font-semibold text-white shadow-lg transition hover:opacity-90">
+              <User className="h-4 w-4" />
+              حسابي
+            </button>
+
+          </div>
+        </div>
       )}
+
     </header>
   );
 }

@@ -1,13 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { markets } from "@/data/markets";
+import { ui, useI18n } from "@/lib/i18n";
 
 export function MarketTicker() {
+  const { t } = useI18n();
   return (
-    <section className="bg-background border-b border-border">
+    <section className="relative bg-background border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-4 py-2.5 sm:px-6">
         <span className="shrink-0 whitespace-nowrap ps-1 text-[11px] text-muted-foreground">
-          آخر تحديث قبل دقيقتين
+          {t(ui.marketsLastUpdated)}
         </span>
         <span className="mx-1 h-4 w-px shrink-0 bg-border" aria-hidden />
         {markets.map((market) => (
@@ -34,6 +36,14 @@ export function MarketTicker() {
           </Link>
         ))}
       </div>
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent"
+        aria-hidden
+      />
     </section>
   );
 }

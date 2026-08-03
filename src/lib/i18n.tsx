@@ -74,6 +74,10 @@ export const ui = {
   research: { ar: "الأبحاث", en: "Research" },
   community: { ar: "المجتمع", en: "Community" },
   search: { ar: "بحث", en: "Search" },
+  marketsLastUpdated: {
+    ar: "آخر تحديث قبل دقيقتين",
+    en: "Last updated 2 minutes ago",
+  },
   searchPlaceholder: {
     ar: "ابحث عن شركة، قطاع، مقال، أو مفهوم...",
     en: "Search companies, sectors, articles and knowledge...",

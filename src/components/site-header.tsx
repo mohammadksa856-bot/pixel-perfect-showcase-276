@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
-import { ChevronDown, Menu, Moon, Search, Sun, X } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { ChevronDown, LineChart, Menu, Moon, Search, Sun, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
@@ -18,6 +18,8 @@ const nav = [
 export function SiteHeader() {
   const { t, locale, setLocale } = useI18n();
   const { theme, toggleTheme } = useTheme();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
 
   const [open, setOpen] = useState(false);
 
@@ -27,8 +29,8 @@ export function SiteHeader() {
         {/* Logo */}
 
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-lg font-bold text-white shadow-lg">
-            M
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-white shadow-lg">
+            <LineChart className="h-5 w-5" />
           </div>
 
           <div className="leading-tight">
@@ -58,17 +60,19 @@ export function SiteHeader() {
 
         {/* Search */}
 
-        <div className="hidden xl:flex flex-1 justify-center">
-          <label className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-brand">
-            <Search className="h-4 w-4 text-muted-foreground" />
+        {!isHome && (
+          <div className="hidden xl:flex flex-1 justify-center">
+            <label className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-brand">
+              <Search className="h-4 w-4 text-muted-foreground" />
 
-            <input
-              type="search"
-              placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
-              className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-            />
-          </label>
-        </div>
+              <input
+                type="search"
+                placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
+                className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+              />
+            </label>
+          </div>
+        )}
 
         {/* Right */}
 
@@ -104,15 +108,17 @@ export function SiteHeader() {
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5">
             {/* Mobile Search */}
 
-            <label className="mb-3 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3">
-              <Search className="h-4 w-4 text-muted-foreground" />
+            {!isHome && (
+              <label className="mb-3 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3">
+                <Search className="h-4 w-4 text-muted-foreground" />
 
-              <input
-                type="search"
-                placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
-                className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-              />
-            </label>
+                <input
+                  type="search"
+                  placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
+                  className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+                />
+              </label>
+            )}
 
             {/* Mobile Navigation */}
 

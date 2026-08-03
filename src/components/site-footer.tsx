@@ -16,10 +16,10 @@ const columns = [
   {
     title: { ar: "عن المنصة", en: "Company" },
     links: [
-      { to: "/", label: { ar: "من نحن", en: "About" } },
-      { to: "/", label: { ar: "تواصل معنا", en: "Contact" } },
-      { to: "/", label: { ar: "سياسة الخصوصية", en: "Privacy" } },
-      { to: "/", label: { ar: "الشروط والأحكام", en: "Terms" } },
+      { to: "/about", label: { ar: "من نحن", en: "About" } },
+      { to: "/contact", label: { ar: "تواصل معنا", en: "Contact" } },
+      { to: "/privacy", label: { ar: "سياسة الخصوصية", en: "Privacy" } },
+      { to: "/terms", label: { ar: "الشروط والأحكام", en: "Terms" } },
     ],
   },
 ] as const;

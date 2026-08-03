@@ -1,15 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import {
-  Bell,
-  ChevronDown,
-  Menu,
-  Moon,
-  Search,
-  Sun,
-  User,
-  X,
-} from "lucide-react";
+import { ChevronDown, Menu, Moon, Search, Sun, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
@@ -17,7 +8,6 @@ import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/", label: ui.home },
-  { to: "/markets", text: "الأسواق" },
   { to: "/companies", label: ui.companies },
   { to: "/sectors", label: ui.sectors },
   { to: "/knowledge", label: ui.knowledge },
@@ -34,55 +24,42 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-2xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center gap-5 px-6">
-
         {/* Logo */}
 
-        <Link
-          to="/"
-          className="flex items-center gap-3 shrink-0"
-        >
+        <Link to="/" className="flex items-center gap-3 shrink-0">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-lg font-bold text-white shadow-lg">
             M
           </div>
 
           <div className="leading-tight">
-            <div className="font-bold text-lg">
-              معرفة استثمار
-            </div>
+            <div className="font-bold text-lg">معرفة استثمار</div>
 
-            <div className="text-xs text-muted-foreground">
-              Investment Intelligence
-            </div>
+            <div className="text-xs text-muted-foreground">Investment Intelligence</div>
           </div>
         </Link>
 
         {/* Navigation */}
 
         <nav className="hidden lg:flex items-center gap-1">
-
           {nav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{
-                className:
-                  "!bg-brand !text-white shadow-md",
+                className: "!bg-brand !text-white shadow-md",
               }}
               className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-muted hover:text-foreground"
             >
-              {"label" in item ? t(item.label) : item.text}
+              {t(item.label)}
             </Link>
           ))}
-
         </nav>
 
         {/* Search */}
 
         <div className="hidden xl:flex flex-1 justify-center">
-
           <label className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-brand">
-
             <Search className="h-4 w-4 text-muted-foreground" />
 
             <input
@@ -90,20 +67,15 @@ export function SiteHeader() {
               placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
               className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
             />
-
           </label>
-
         </div>
 
         {/* Right */}
 
         <div className="ml-auto flex items-center gap-2">
-
           <button
             className="hidden md:flex items-center gap-2 rounded-full border border-border px-3 py-2 text-sm hover:bg-muted transition"
-            onClick={() =>
-              setLocale(locale === "ar" ? "en" : "ar")
-            }
+            onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
           >
             {locale === "ar" ? "English" : "العربية"}
 
@@ -114,42 +86,22 @@ export function SiteHeader() {
             onClick={toggleTheme}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border hover:bg-muted transition"
           >
-            {theme === "dark" ? (
-              <Sun className="h-4 w-4" />
-            ) : (
-              <Moon className="h-4 w-4" />
-            )}
-          </button>
-
-          <button className="hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-border hover:bg-muted transition">
-            <Bell className="h-4 w-4" />
-          </button>
-
-          <button className="hidden md:flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:scale-105">
-            <User className="h-4 w-4" />
-            حسابي
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
 
           <button
             onClick={() => setOpen(!open)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border lg:hidden"
           >
-            {open ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-
         </div>
-
       </div>
-            {/* Mobile Menu */}
+      {/* Mobile Menu */}
 
       {open && (
         <div className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5">
-
             {/* Mobile Search */}
 
             <label className="mb-3 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3">
@@ -171,12 +123,11 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 activeOptions={{ exact: item.to === "/" }}
                 activeProps={{
-                  className:
-                    "!bg-brand !text-white",
+                  className: "!bg-brand !text-white",
                 }}
                 className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition hover:bg-muted"
               >
-                {"label" in item ? t(item.label) : item.text}
+                {t(item.label)}
               </Link>
             ))}
 
@@ -185,16 +136,10 @@ export function SiteHeader() {
             {/* Mobile Actions */}
 
             <button
-              onClick={() =>
-                setLocale(locale === "ar" ? "en" : "ar")
-              }
+              onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
               className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
             >
-              <span>
-                {locale === "ar"
-                  ? "English"
-                  : "العربية"}
-              </span>
+              <span>{locale === "ar" ? "English" : "العربية"}</span>
 
               <ChevronDown className="h-4 w-4" />
             </button>
@@ -203,34 +148,13 @@ export function SiteHeader() {
               onClick={toggleTheme}
               className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
             >
-              <span>
-                {theme === "dark"
-                  ? "الوضع الفاتح"
-                  : "الوضع الداكن"}
-              </span>
+              <span>{theme === "dark" ? "الوضع الفاتح" : "الوضع الداكن"}</span>
 
-              {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
-
-            <button className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition">
-              <span>الإشعارات</span>
-
-              <Bell className="h-4 w-4" />
-            </button>
-
-            <button className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 font-semibold text-white shadow-lg transition hover:opacity-90">
-              <User className="h-4 w-4" />
-              حسابي
-            </button>
-
           </div>
         </div>
       )}
-
     </header>
   );
 }

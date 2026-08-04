@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Compass, Menu, Moon, Search, Sun, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Search, Sun, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
+import { LogoMark } from "@/components/logo-mark";
 
 const nav = [
   { to: "/", label: ui.home },
@@ -29,8 +30,8 @@ export function SiteHeader() {
         {/* Logo */}
 
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-white shadow-lg">
-            <Compass className="h-5 w-5" />
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B1220] shadow-lg">
+            <LogoMark className="h-6 w-6" />
           </div>
 
           <div className="leading-tight">

@@ -38,6 +38,7 @@ export type Company = {
   short: LocalizedText;
   description: LocalizedText;
   sections: CompanySection[];
+  goals: LocalizedText;
   financials: FinancialRow[];
   valuation: CompanyMetric[];
   news: { title: LocalizedText; source: string; date: string }[];

@@ -504,6 +504,10 @@ export const companies: Company[] = companySeeds.map((s) => ({
     en: `${s.name.en} is a leader in its sector. ${s.short.en} This profile covers its business model, competitive position, financial performance and valuation.`,
   },
   sections: genericSections(s.name.en, s.name.ar),
+  goals: {
+    ar: `الأهداف والخطط المستقبلية الفعلية لشركة ${s.name.ar} قيد الإعداد — سيتم إضافة تفاصيل محددة (أرقام مستهدفة، مشاريع قادمة، أسواق جديدة) قريباً.`,
+    en: `${s.name.en}'s actual future goals and plans are being prepared — specific targets, upcoming projects, and new markets will be added soon.`,
+  },
   financials: genericFinancials(s.base),
   valuation: genericValuation,
   news: [

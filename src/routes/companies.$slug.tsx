@@ -1,4 +1,5 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+import { ChevronLeft, Info, MessagesSquare } from "lucide-react";
 import { PageShell, Container } from "@/components/page-shell";
 import { CompanyCard, Panel, ResearchCard, SectionHeading } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
@@ -42,17 +43,47 @@ function CompanyPage() {
   const related = getRelatedCompanies(company);
   const research = getResearch({ sectorSlug: company.sectorSlug, limit: 2 });
 
-  const facts = [
-    { label: ui.price, value: company.price },
-    { label: ui.marketCap, value: company.marketCap },
-    { label: ui.exchange, value: company.exchange },
-    { label: ui.sector, value: sector ? t(sector.name) : "—" },
-    { label: ui.country, value: t(company.country) },
+  const facts: { label: (typeof ui)["price"]; value: string; sectorLink: string | undefined }[] = [
+    { label: ui.price, value: company.price, sectorLink: undefined },
+    { label: ui.marketCap, value: company.marketCap, sectorLink: undefined },
+    { label: ui.exchange, value: company.exchange, sectorLink: undefined },
+    {
+      label: ui.sector,
+      value: sector ? t(sector.name) : "—",
+      sectorLink: sector?.slug,
+    },
+    { label: ui.country, value: t(company.country), sectorLink: undefined },
   ];
 
   return (
     <PageShell>
-      <section className="night-panel relative isolate overflow-hidden border-b border-border/40">
+      <Container>
+        <nav className="flex items-center gap-1.5 pt-6 text-xs text-muted-foreground">
+          <Link to="/" className="hover:text-foreground">
+            {t(ui.home)}
+          </Link>
+          <ChevronLeft className="size-3.5 rtl:rotate-180" />
+          <Link to="/companies" className="hover:text-foreground">
+            {t(ui.companies)}
+          </Link>
+          <ChevronLeft className="size-3.5 rtl:rotate-180" />
+          <span className="text-foreground">{t(company.name)}</span>
+        </nav>
+      </Container>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="mt-4 flex items-start gap-2 rounded-xl border border-tone-amber/30 bg-tone-amber/10 px-4 py-3 text-xs leading-6">
+          <Info className="mt-0.5 size-3.5 shrink-0 text-tone-amber" />
+          <span>
+            {t({
+              ar: "الأرقام والبيانات بهذه الصفحة تجريبية حالياً لأغراض العرض، وستُربط بمصدر بيانات مباشر لاحقاً.",
+              en: "The figures on this page are currently placeholder data for demonstration, and will be connected to a live data source later.",
+            })}
+          </span>
+        </div>
+      </div>
+
+      <section className="night-panel relative isolate mt-6 overflow-hidden border-b border-border/40">
         <div className="chart-grid absolute inset-0 -z-10 opacity-30" />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="flex flex-wrap items-center gap-5">
@@ -82,12 +113,24 @@ function CompanyPage() {
           </p>
 
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-night-foreground/10 sm:grid-cols-5">
-            {facts.map((f) => (
-              <div key={f.label.en} className="bg-night px-4 py-5">
-                <div className="text-[11px] text-night-foreground/50">{t(f.label)}</div>
-                <div className="mt-1.5 text-sm font-semibold">{f.value}</div>
-              </div>
-            ))}
+            {facts.map((f) =>
+              f.sectorLink ? (
+                <Link
+                  key={f.label.en}
+                  to="/sectors/$slug"
+                  params={{ slug: f.sectorLink }}
+                  className="bg-night px-4 py-5 transition-colors hover:bg-night-foreground/5"
+                >
+                  <div className="text-[11px] text-night-foreground/50">{t(f.label)}</div>
+                  <div className="mt-1.5 text-sm font-semibold text-brand">{f.value}</div>
+                </Link>
+              ) : (
+                <div key={f.label.en} className="bg-night px-4 py-5">
+                  <div className="text-[11px] text-night-foreground/50">{t(f.label)}</div>
+                  <div className="mt-1.5 text-sm font-semibold">{f.value}</div>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -101,40 +144,55 @@ function CompanyPage() {
           ))}
         </div>
 
+        <div className="mt-5">
+          <Panel
+            title={t({ ar: "الأهداف والخطط المستقبلية", en: "Goals & Future Plans" })}
+            className="border-brand/25 bg-brand/5"
+          >
+            <p className="text-sm leading-8 text-muted-foreground">{t(company.goals)}</p>
+          </Panel>
+        </div>
+
         <div className="mt-14">
           <SectionHeading title={t({ ar: "القوائم المالية", en: "Financial statements" })} />
-          <Panel className="overflow-x-auto p-0">
-            <table className="w-full min-w-3xl text-start text-sm">
-              <thead className="bg-muted/60 text-xs text-muted-foreground">
-                <tr>
-                  {[
-                    { ar: "السنة", en: "Year" },
-                    { ar: "الإيرادات", en: "Revenue" },
-                    { ar: "صافي الدخل", en: "Net income" },
-                    { ar: "التدفق النقدي", en: "Cash flow" },
-                    { ar: "الهامش", en: "Margin" },
-                    { ar: "العائد على رأس المال", en: "ROIC" },
-                  ].map((h) => (
-                    <th key={h.en} className="px-5 py-3.5 text-start font-medium">
-                      {t(h)}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {company.financials.map((row) => (
-                  <tr key={row.year} className="border-t border-border/60">
-                    <td className="px-5 py-3.5 font-semibold">{row.year}</td>
-                    <td className="px-5 py-3.5">{row.revenue}</td>
-                    <td className="px-5 py-3.5">{row.netIncome}</td>
-                    <td className="px-5 py-3.5">{row.cashFlow}</td>
-                    <td className="px-5 py-3.5 text-brand">{row.margin}</td>
-                    <td className="px-5 py-3.5 text-brand">{row.roic}</td>
+          <div className="relative">
+            <Panel className="overflow-x-auto p-0">
+              <table className="w-full min-w-3xl text-start text-sm">
+                <thead className="bg-muted/60 text-xs text-muted-foreground">
+                  <tr>
+                    {[
+                      { ar: "السنة", en: "Year" },
+                      { ar: "الإيرادات", en: "Revenue" },
+                      { ar: "صافي الدخل", en: "Net income" },
+                      { ar: "التدفق النقدي", en: "Cash flow" },
+                      { ar: "الهامش", en: "Margin" },
+                      { ar: "العائد على رأس المال", en: "ROIC" },
+                    ].map((h) => (
+                      <th key={h.en} className="px-5 py-3.5 text-start font-medium">
+                        {t(h)}
+                      </th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </Panel>
+                </thead>
+                <tbody>
+                  {company.financials.map((row) => (
+                    <tr key={row.year} className="border-t border-border/60">
+                      <td className="px-5 py-3.5 font-semibold">{row.year}</td>
+                      <td className="px-5 py-3.5">{row.revenue}</td>
+                      <td className="px-5 py-3.5">{row.netIncome}</td>
+                      <td className="px-5 py-3.5">{row.cashFlow}</td>
+                      <td className="px-5 py-3.5 text-brand">{row.margin}</td>
+                      <td className="px-5 py-3.5 text-brand">{row.roic}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </Panel>
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-e-2xl bg-gradient-to-l from-card to-transparent"
+              aria-hidden
+            />
+          </div>
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -238,6 +296,29 @@ function CompanyPage() {
             </div>
           </div>
         )}
+
+        <section className="mt-16 flex flex-col items-center gap-3 rounded-2xl border border-border/70 bg-card p-8 text-center sm:flex-row sm:justify-between sm:text-start">
+          <div>
+            <h3 className="text-sm font-bold">
+              {t({ ar: "ناقش ", en: "Discuss " }) +
+                t(company.name) +
+                t({ ar: " مع مستثمرين آخرين", en: " with other investors" })}
+            </h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t({
+                ar: "انضم للوحة النقاش المخصصة لقطاعها بمجتمعنا.",
+                en: "Join the discussion board dedicated to its sector.",
+              })}
+            </p>
+          </div>
+          <Link
+            to="/community"
+            className="flex shrink-0 items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-transform hover:scale-[1.03]"
+          >
+            <MessagesSquare className="size-4" />
+            {t({ ar: "افتح لوحة المجتمع", en: "Open community board" })}
+          </Link>
+        </section>
       </Container>
     </PageShell>
   );

@@ -18,6 +18,10 @@ export const sectors: Sector[] = [
       ar: "قطاع يقود الاقتصاد العالمي، ويجمع بين شركات الاستخراج والتكرير والطاقة النظيفة، ويتأثر بدورات الأسعار والسياسات.",
       en: "The backbone of the global economy — upstream, refining and clean energy names driven by price cycles and policy.",
     },
+    about: {
+      ar: "قطاع الطاقة يشمل الشركات اللي تستخرج أو تنتج أو توزّع مصادر الطاقة، زي النفط والغاز والكهرباء والطاقة الشمسية والرياح. ببساطة، أي شركة تساعد العالم يشغّل بيوته ومصانعه وسياراته تقع تحت هذا القطاع.",
+      en: "The energy sector covers companies that extract, produce, or distribute energy sources — oil, gas, electricity, solar, and wind. Simply put, any company that helps power homes, factories, and cars belongs here.",
+    },
     icon: "zap",
     tone: "tone-amber",
     companies: 9,
@@ -26,10 +30,17 @@ export const sectors: Sector[] = [
   {
     slug: "space",
     name: { ar: "الفضاء", en: "Space" },
-    tagline: { ar: "الإطلاق والأقمار والبنية المدارية", en: "Launch, satellites and orbital infrastructure" },
+    tagline: {
+      ar: "الإطلاق والأقمار والبنية المدارية",
+      en: "Launch, satellites and orbital infrastructure",
+    },
     description: {
       ar: "اقتصاد ناشئ سريع النمو يشمل خدمات الإطلاق والأقمار الصناعية والاتصالات المدارية.",
       en: "A fast-growing frontier economy spanning launch services, satellites and orbital connectivity.",
+    },
+    about: {
+      ar: "قطاع الفضاء يضم الشركات اللي تصنع الصواريخ وتطلق الأقمار الصناعية وتبني بنية تحتية تدور حول الأرض، زي أقمار الاتصالات والملاحة. قطاع جديد نسبياً ومرتبط بمستقبل الاستكشاف والاتصالات.",
+      en: "The space sector includes companies that build rockets, launch satellites, and create infrastructure orbiting Earth — like communication and navigation satellites. It's a relatively new sector tied to the future of exploration and connectivity.",
     },
     icon: "rocket",
     tone: "tone-violet",
@@ -39,10 +50,17 @@ export const sectors: Sector[] = [
   {
     slug: "defense",
     name: { ar: "الدفاع", en: "Defense" },
-    tagline: { ar: "الأنظمة الدفاعية والأمن السيادي", en: "Defense systems and sovereign security" },
+    tagline: {
+      ar: "الأنظمة الدفاعية والأمن السيادي",
+      en: "Defense systems and sovereign security",
+    },
     description: {
       ar: "شركات ترتبط بميزانيات حكومية طويلة الأجل وعقود متعددة السنوات مع تدفقات نقدية مستقرة.",
       en: "Companies tied to long-dated government budgets and multi-year contracts with steady cash flows.",
+    },
+    about: {
+      ar: "قطاع الدفاع يشمل الشركات اللي تصنع المعدات والأنظمة العسكرية والأمنية للحكومات، زي الطائرات المقاتلة والصواريخ وأنظمة المراقبة. عادة تعتمد على عقود طويلة الأمد مع الحكومات.",
+      en: "The defense sector includes companies that manufacture military and security equipment for governments — like fighter jets, missiles, and surveillance systems. It typically relies on long-term government contracts.",
     },
     icon: "shield",
     tone: "tone-emerald",
@@ -57,6 +75,10 @@ export const sectors: Sector[] = [
       ar: "القطاع الأكثر تأثيراً في الأسواق الحديثة، تقوده هوامش عالية ونماذج أعمال قابلة للتوسع.",
       en: "The most influential sector in modern markets, powered by high margins and scalable business models.",
     },
+    about: {
+      ar: "قطاع التقنية يضم شركات البرمجيات والأجهزة والخدمات السحابية والشركات اللي تبني الأدوات الرقمية اللي نستخدمها يومياً، من الهواتف إلى تطبيقات الأعمال.",
+      en: "The technology sector includes software, hardware, and cloud companies — the businesses building the digital tools we use daily, from phones to workplace apps.",
+    },
     icon: "laptop",
     tone: "tone-sky",
     companies: 12,
@@ -69,6 +91,10 @@ export const sectors: Sector[] = [
     description: {
       ar: "طبقة تقنية عابرة للقطاعات تعيد تشكيل الإنتاجية وسلاسل القيمة من الرقائق حتى التطبيقات.",
       en: "A cross-sector technology layer reshaping productivity and value chains from silicon to applications.",
+    },
+    about: {
+      ar: "قطاع الذكاء الاصطناعي يشمل الشركات اللي تبني نماذج الذكاء الاصطناعي والرقائق اللي تشغّلها والتطبيقات اللي تستخدمه، من المساعدات الذكية إلى أدوات تحليل البيانات.",
+      en: "The AI sector includes companies building AI models, the chips that power them, and the applications that use them — from smart assistants to data-analysis tools.",
     },
     icon: "brain",
     tone: "tone-indigo",
@@ -83,6 +109,10 @@ export const sectors: Sector[] = [
       ar: "قطاع دفاعي يجمع بين الابتكار الدوائي والطلب غير الدوري على الخدمات الصحية.",
       en: "A defensive sector combining pharmaceutical innovation with non-cyclical demand for care.",
     },
+    about: {
+      ar: "قطاع الرعاية الصحية يضم شركات الأدوية والمستلزمات الطبية والمستشفيات والتأمين الصحي — أي شركة تساعد الناس يعيشون حياة أصح وأطول.",
+      en: "The healthcare sector includes pharmaceutical companies, medical device makers, hospitals, and health insurers — any business helping people live healthier, longer lives.",
+    },
     icon: "heart",
     tone: "tone-rose",
     companies: 8,
@@ -96,6 +126,10 @@ export const sectors: Sector[] = [
       ar: "قطاع حساس لأسعار الفائدة ودورة الائتمان، ويضم نماذج ربحية متنوعة من البنوك إلى المدفوعات.",
       en: "Rate- and credit-cycle sensitive, spanning traditional banking through modern payment networks.",
     },
+    about: {
+      ar: "قطاع الخدمات المالية يشمل البنوك وشركات التأمين ومنصات الدفع والاستثمار — الشركات اللي تدير الأموال وتسهّل حركتها بين الأفراد والشركات.",
+      en: "Financial services covers banks, insurers, and payment or investment platforms — the companies that manage money and move it between people and businesses.",
+    },
     icon: "landmark",
     tone: "tone-teal",
     companies: 10,
@@ -104,10 +138,17 @@ export const sectors: Sector[] = [
   {
     slug: "industrials",
     name: { ar: "الصناعة", en: "Industrials" },
-    tagline: { ar: "التصنيع واللوجستيات والبنية التحتية", en: "Manufacturing, logistics and infrastructure" },
+    tagline: {
+      ar: "التصنيع واللوجستيات والبنية التحتية",
+      en: "Manufacturing, logistics and infrastructure",
+    },
     description: {
       ar: "قطاع دوري يعكس صحة الاقتصاد الحقيقي عبر الإنتاج الصناعي وسلاسل الإمداد.",
       en: "A cyclical sector reflecting real-economy health through industrial output and supply chains.",
+    },
+    about: {
+      ar: "قطاع الصناعة يضم شركات التصنيع والمعدات الثقيلة والنقل واللوجستيات وبناء البنية التحتية — العمود الفقري اللي يشغّل الاقتصاد الحقيقي.",
+      en: "The industrials sector includes manufacturing, heavy equipment, transportation, logistics, and infrastructure companies — the backbone that keeps the real economy running.",
     },
     icon: "factory",
     tone: "tone-orange",
@@ -122,6 +163,10 @@ export const sectors: Sector[] = [
       ar: "قطاع يعتمد على قوة العلامة التجارية وسلوك الإنفاق ومرونة الطلب.",
       en: "Driven by brand strength, spending behaviour and demand elasticity.",
     },
+    about: {
+      ar: "القطاع الاستهلاكي يشمل شركات التجزئة والعلامات التجارية والمنتجات اللي نشتريها يومياً، من الملابس للأطعمة للسلع المنزلية.",
+      en: "The consumer sector includes retail companies, brands, and everyday products — from clothing to food to household goods.",
+    },
     icon: "shopping",
     tone: "tone-emerald",
     companies: 11,
@@ -134,6 +179,10 @@ export const sectors: Sector[] = [
     description: {
       ar: "أصول حقيقية مدرة للدخل تتأثر بتكلفة التمويل ومعدلات الإشغال.",
       en: "Income-producing real assets sensitive to financing costs and occupancy rates.",
+    },
+    about: {
+      ar: "قطاع العقار يضم شركات تطوير وإدارة العقارات السكنية والتجارية، وصناديق الاستثمار العقاري اللي تتيح للمستثمر يملك جزء من عقار بدون ما يشتريه كامل.",
+      en: "Real estate includes companies that develop and manage residential and commercial properties, plus REITs — funds that let investors own a share of property without buying it outright.",
     },
     icon: "building",
     tone: "tone-sky",
@@ -243,10 +292,22 @@ const genericFaqs = (nameAr: string, name: string) => [
 ];
 
 const howToBuy = [
-  { ar: "افتح حساب استثماري لدى وسيط مرخص يتيح التداول في السوق المدرجة.", en: "Open an account with a licensed broker that offers access to the listing exchange." },
-  { ar: "ادرس الشركة وقيّم السعر مقابل القيمة قبل الشراء.", en: "Study the company and assess price versus value before buying." },
-  { ar: "حدد حجم المركز بما يتناسب مع محفظتك ودرجة تحملك للمخاطر.", en: "Size the position according to your portfolio and risk tolerance." },
-  { ar: "نفّذ الأمر ثم تابع النتائج الفصلية والتطورات الجوهرية.", en: "Place the order, then track quarterly results and material developments." },
+  {
+    ar: "افتح حساب استثماري لدى وسيط مرخص يتيح التداول في السوق المدرجة.",
+    en: "Open an account with a licensed broker that offers access to the listing exchange.",
+  },
+  {
+    ar: "ادرس الشركة وقيّم السعر مقابل القيمة قبل الشراء.",
+    en: "Study the company and assess price versus value before buying.",
+  },
+  {
+    ar: "حدد حجم المركز بما يتناسب مع محفظتك ودرجة تحملك للمخاطر.",
+    en: "Size the position according to your portfolio and risk tolerance.",
+  },
+  {
+    ar: "نفّذ الأمر ثم تابع النتائج الفصلية والتطورات الجوهرية.",
+    en: "Place the order, then track quarterly results and material developments.",
+  },
 ];
 
 type Seed = {
@@ -275,7 +336,10 @@ const companySeeds: Seed[] = [
     price: "27.85 SAR",
     change: "+0.9%",
     marketCap: "1.7T$",
-    short: { ar: "أكبر منتج للنفط في العالم بتكلفة إنتاج من الأدنى عالمياً.", en: "The world's largest oil producer with among the lowest production costs." },
+    short: {
+      ar: "أكبر منتج للنفط في العالم بتكلفة إنتاج من الأدنى عالمياً.",
+      en: "The world's largest oil producer with among the lowest production costs.",
+    },
     base: 400,
   },
   {
@@ -288,7 +352,10 @@ const companySeeds: Seed[] = [
     price: "$24.10",
     change: "+2.4%",
     marketCap: "11.2B$",
-    short: { ar: "مزود خدمات إطلاق وأنظمة فضائية متكاملة.", en: "End-to-end launch provider and space systems manufacturer." },
+    short: {
+      ar: "مزود خدمات إطلاق وأنظمة فضائية متكاملة.",
+      en: "End-to-end launch provider and space systems manufacturer.",
+    },
     base: 0.4,
   },
   {
@@ -301,7 +368,10 @@ const companySeeds: Seed[] = [
     price: "$16.40",
     change: "-1.1%",
     marketCap: "1.1B$",
-    short: { ar: "بنية تحتية فضائية وتصنيع في المدار.", en: "Space infrastructure and in-orbit manufacturing." },
+    short: {
+      ar: "بنية تحتية فضائية وتصنيع في المدار.",
+      en: "Space infrastructure and in-orbit manufacturing.",
+    },
     base: 0.3,
   },
   {
@@ -314,7 +384,10 @@ const companySeeds: Seed[] = [
     price: "$31.75",
     change: "+4.2%",
     marketCap: "9.8B$",
-    short: { ar: "شبكة اتصالات خلوية مباشرة عبر الأقمار الصناعية.", en: "Direct-to-cell satellite broadband network." },
+    short: {
+      ar: "شبكة اتصالات خلوية مباشرة عبر الأقمار الصناعية.",
+      en: "Direct-to-cell satellite broadband network.",
+    },
     base: 0.1,
   },
   {
@@ -327,7 +400,10 @@ const companySeeds: Seed[] = [
     price: "$219.30",
     change: "+1.2%",
     marketCap: "2.3T$",
-    short: { ar: "تجارة إلكترونية وحوسبة سحابية وإعلانات رقمية.", en: "E-commerce, cloud computing and digital advertising." },
+    short: {
+      ar: "تجارة إلكترونية وحوسبة سحابية وإعلانات رقمية.",
+      en: "E-commerce, cloud computing and digital advertising.",
+    },
     base: 574,
   },
   {
@@ -340,7 +416,10 @@ const companySeeds: Seed[] = [
     price: "$438.60",
     change: "+0.6%",
     marketCap: "3.3T$",
-    short: { ar: "برمجيات مؤسسية وسحابة Azure ومنتجات إنتاجية.", en: "Enterprise software, Azure cloud and productivity suites." },
+    short: {
+      ar: "برمجيات مؤسسية وسحابة Azure ومنتجات إنتاجية.",
+      en: "Enterprise software, Azure cloud and productivity suites.",
+    },
     base: 245,
   },
   {
@@ -353,7 +432,10 @@ const companySeeds: Seed[] = [
     price: "$126.40",
     change: "+3.1%",
     marketCap: "3.1T$",
-    short: { ar: "معالجات رسومية ومنصات حوسبة للذكاء الاصطناعي.", en: "GPUs and accelerated computing platforms for AI." },
+    short: {
+      ar: "معالجات رسومية ومنصات حوسبة للذكاء الاصطناعي.",
+      en: "GPUs and accelerated computing platforms for AI.",
+    },
     base: 61,
   },
   {
@@ -366,7 +448,10 @@ const companySeeds: Seed[] = [
     price: "$248.90",
     change: "-0.8%",
     marketCap: "790B$",
-    short: { ar: "سيارات كهربائية وتخزين طاقة وقيادة ذاتية.", en: "Electric vehicles, energy storage and autonomy." },
+    short: {
+      ar: "سيارات كهربائية وتخزين طاقة وقيادة ذاتية.",
+      en: "Electric vehicles, energy storage and autonomy.",
+    },
     base: 96,
   },
   {
@@ -379,7 +464,10 @@ const companySeeds: Seed[] = [
     price: "$229.15",
     change: "+0.4%",
     marketCap: "3.5T$",
-    short: { ar: "أجهزة متكاملة مع منظومة خدمات عالية الهامش.", en: "Integrated hardware with a high-margin services ecosystem." },
+    short: {
+      ar: "أجهزة متكاملة مع منظومة خدمات عالية الهامش.",
+      en: "Integrated hardware with a high-margin services ecosystem.",
+    },
     base: 383,
   },
   {
@@ -392,7 +480,10 @@ const companySeeds: Seed[] = [
     price: "$41.80",
     change: "+2.0%",
     marketCap: "95B$",
-    short: { ar: "منصات تحليل بيانات للحكومات والمؤسسات.", en: "Data analytics platforms for governments and enterprises." },
+    short: {
+      ar: "منصات تحليل بيانات للحكومات والمؤسسات.",
+      en: "Data analytics platforms for governments and enterprises.",
+    },
     base: 2.2,
   },
 ];
@@ -416,9 +507,21 @@ export const companies: Company[] = companySeeds.map((s) => ({
   financials: genericFinancials(s.base),
   valuation: genericValuation,
   news: [
-    { title: { ar: "نتائج الربع الأخير تتجاوز التوقعات", en: "Latest quarter beats expectations" }, source: "Reuters", date: "2026-07-28" },
-    { title: { ar: "توسع في أسواق جديدة", en: "Expansion into new markets" }, source: "Bloomberg", date: "2026-07-12" },
-    { title: { ar: "استثمارات رأسمالية جديدة", en: "New capital investment plan" }, source: "FT", date: "2026-06-30" },
+    {
+      title: { ar: "نتائج الربع الأخير تتجاوز التوقعات", en: "Latest quarter beats expectations" },
+      source: "Reuters",
+      date: "2026-07-28",
+    },
+    {
+      title: { ar: "توسع في أسواق جديدة", en: "Expansion into new markets" },
+      source: "Bloomberg",
+      date: "2026-07-12",
+    },
+    {
+      title: { ar: "استثمارات رأسمالية جديدة", en: "New capital investment plan" },
+      source: "FT",
+      date: "2026-06-30",
+    },
   ],
   faqs: genericFaqs(s.name.ar, s.name.en),
   howToBuy,
@@ -570,42 +673,82 @@ export const knowledge: KnowledgeArticle[] = [
   {
     slug: "investing",
     title: { ar: "الاستثمار", en: "Investing" },
-    summary: { ar: "أساسيات بناء المحفظة والتفكير طويل الأجل.", en: "Portfolio building and long-term thinking fundamentals." },
+    summary: {
+      ar: "أساسيات بناء المحفظة والتفكير طويل الأجل.",
+      en: "Portfolio building and long-term thinking fundamentals.",
+    },
     category: { ar: "أساسيات", en: "Foundations" },
     icon: "chart",
     level: { ar: "مبتدئ", en: "Beginner" },
     readingTime: 7,
     sections: [
-      { heading: { ar: "ما هو الاستثمار؟", en: "What is investing?" }, body: { ar: "الاستثمار هو تخصيص رأس المال اليوم بهدف الحصول على تدفقات مستقبلية أعلى من قيمته الحالية.", en: "Investing is allocating capital today to obtain future cash flows worth more than that capital." } },
-      { heading: { ar: "الأفق الزمني", en: "Time horizon" }, body: { ar: "كلما طال الأفق الزمني، انخفض أثر التقلبات قصيرة الأجل على النتيجة النهائية.", en: "The longer the horizon, the smaller the effect of short-term volatility on the final outcome." } },
+      {
+        heading: { ar: "ما هو الاستثمار؟", en: "What is investing?" },
+        body: {
+          ar: "الاستثمار هو تخصيص رأس المال اليوم بهدف الحصول على تدفقات مستقبلية أعلى من قيمته الحالية.",
+          en: "Investing is allocating capital today to obtain future cash flows worth more than that capital.",
+        },
+      },
+      {
+        heading: { ar: "الأفق الزمني", en: "Time horizon" },
+        body: {
+          ar: "كلما طال الأفق الزمني، انخفض أثر التقلبات قصيرة الأجل على النتيجة النهائية.",
+          en: "The longer the horizon, the smaller the effect of short-term volatility on the final outcome.",
+        },
+      },
     ],
     videos: [{ title: { ar: "مقدمة في الاستثمار", en: "Intro to investing" }, duration: "12:40" }],
   },
   {
     slug: "economics",
     title: { ar: "الاقتصاد", en: "Economics" },
-    summary: { ar: "كيف تؤثر السياسات والدورات على الأسواق.", en: "How policy and cycles shape markets." },
+    summary: {
+      ar: "كيف تؤثر السياسات والدورات على الأسواق.",
+      en: "How policy and cycles shape markets.",
+    },
     category: { ar: "اقتصاد", en: "Economics" },
     icon: "globe",
     level: { ar: "متوسط", en: "Intermediate" },
     readingTime: 9,
     sections: [
-      { heading: { ar: "الدورة الاقتصادية", en: "The business cycle" }, body: { ar: "تمر الاقتصادات بمراحل توسع وذروة وانكماش وتعافٍ، ولكل مرحلة قطاعات مفضلة.", en: "Economies cycle through expansion, peak, contraction and recovery — each phase favours different sectors." } },
+      {
+        heading: { ar: "الدورة الاقتصادية", en: "The business cycle" },
+        body: {
+          ar: "تمر الاقتصادات بمراحل توسع وذروة وانكماش وتعافٍ، ولكل مرحلة قطاعات مفضلة.",
+          en: "Economies cycle through expansion, peak, contraction and recovery — each phase favours different sectors.",
+        },
+      },
     ],
-    videos: [{ title: { ar: "شرح الدورة الاقتصادية", en: "The business cycle explained" }, duration: "15:02" }],
+    videos: [
+      {
+        title: { ar: "شرح الدورة الاقتصادية", en: "The business cycle explained" },
+        duration: "15:02",
+      },
+    ],
   },
   {
     slug: "financial-statements",
     title: { ar: "القوائم المالية", en: "Financial Statements" },
-    summary: { ar: "قراءة الميزانية وقائمة الدخل والتدفقات النقدية.", en: "Reading the balance sheet, income statement and cash flows." },
+    summary: {
+      ar: "قراءة الميزانية وقائمة الدخل والتدفقات النقدية.",
+      en: "Reading the balance sheet, income statement and cash flows.",
+    },
     category: { ar: "تحليل", en: "Analysis" },
     icon: "file",
     level: { ar: "متوسط", en: "Intermediate" },
     readingTime: 11,
     sections: [
-      { heading: { ar: "القوائم الثلاث", en: "The three statements" }, body: { ar: "قائمة الدخل تقيس الأداء، والميزانية تقيس المركز المالي، والتدفقات النقدية تكشف جودة الأرباح.", en: "The income statement measures performance, the balance sheet position, and cash flows reveal earnings quality." } },
+      {
+        heading: { ar: "القوائم الثلاث", en: "The three statements" },
+        body: {
+          ar: "قائمة الدخل تقيس الأداء، والميزانية تقيس المركز المالي، والتدفقات النقدية تكشف جودة الأرباح.",
+          en: "The income statement measures performance, the balance sheet position, and cash flows reveal earnings quality.",
+        },
+      },
     ],
-    videos: [{ title: { ar: "تحليل قائمة الدخل", en: "Income statement walkthrough" }, duration: "18:20" }],
+    videos: [
+      { title: { ar: "تحليل قائمة الدخل", en: "Income statement walkthrough" }, duration: "18:20" },
+    ],
   },
   {
     slug: "valuation",
@@ -616,87 +759,156 @@ export const knowledge: KnowledgeArticle[] = [
     level: { ar: "متقدم", en: "Advanced" },
     readingTime: 13,
     sections: [
-      { heading: { ar: "التدفقات النقدية المخصومة", en: "Discounted cash flow" }, body: { ar: "قيمة الشركة هي القيمة الحالية لتدفقاتها النقدية المستقبلية مخصومة بمعدل يعكس المخاطر.", en: "A company's value is the present value of its future cash flows discounted at a risk-adjusted rate." } },
+      {
+        heading: { ar: "التدفقات النقدية المخصومة", en: "Discounted cash flow" },
+        body: {
+          ar: "قيمة الشركة هي القيمة الحالية لتدفقاتها النقدية المستقبلية مخصومة بمعدل يعكس المخاطر.",
+          en: "A company's value is the present value of its future cash flows discounted at a risk-adjusted rate.",
+        },
+      },
     ],
     videos: [{ title: { ar: "بناء نموذج DCF", en: "Building a DCF model" }, duration: "24:11" }],
   },
   {
     slug: "accounting",
     title: { ar: "المحاسبة", en: "Accounting" },
-    summary: { ar: "لغة الأعمال ومبادئ الاعتراف بالإيراد.", en: "The language of business and revenue recognition." },
+    summary: {
+      ar: "لغة الأعمال ومبادئ الاعتراف بالإيراد.",
+      en: "The language of business and revenue recognition.",
+    },
     category: { ar: "أساسيات", en: "Foundations" },
     icon: "book",
     level: { ar: "مبتدئ", en: "Beginner" },
     readingTime: 8,
     sections: [
-      { heading: { ar: "مبدأ الاستحقاق", en: "Accrual principle" }, body: { ar: "تُسجل الإيرادات والمصروفات عند حدوثها لا عند حركة النقد.", en: "Revenue and expenses are recorded when incurred, not when cash moves." } },
+      {
+        heading: { ar: "مبدأ الاستحقاق", en: "Accrual principle" },
+        body: {
+          ar: "تُسجل الإيرادات والمصروفات عند حدوثها لا عند حركة النقد.",
+          en: "Revenue and expenses are recorded when incurred, not when cash moves.",
+        },
+      },
     ],
     videos: [{ title: { ar: "أساسيات المحاسبة", en: "Accounting basics" }, duration: "10:05" }],
   },
   {
     slug: "financial-ratios",
     title: { ar: "المؤشرات المالية", en: "Financial Ratios" },
-    summary: { ar: "أدوات مقارنة سريعة لقياس الأداء والملاءة.", en: "Quick comparison tools for performance and solvency." },
+    summary: {
+      ar: "أدوات مقارنة سريعة لقياس الأداء والملاءة.",
+      en: "Quick comparison tools for performance and solvency.",
+    },
     category: { ar: "تحليل", en: "Analysis" },
     icon: "pie",
     level: { ar: "متوسط", en: "Intermediate" },
     readingTime: 6,
     sections: [
-      { heading: { ar: "نسب الربحية", en: "Profitability ratios" }, body: { ar: "هامش الربح والعائد على رأس المال المستثمر من أهم مقاييس جودة الأعمال.", en: "Margins and return on invested capital are the key measures of business quality." } },
+      {
+        heading: { ar: "نسب الربحية", en: "Profitability ratios" },
+        body: {
+          ar: "هامش الربح والعائد على رأس المال المستثمر من أهم مقاييس جودة الأعمال.",
+          en: "Margins and return on invested capital are the key measures of business quality.",
+        },
+      },
     ],
-    videos: [{ title: { ar: "أهم عشر نسب مالية", en: "Top ten financial ratios" }, duration: "14:33" }],
+    videos: [
+      { title: { ar: "أهم عشر نسب مالية", en: "Top ten financial ratios" }, duration: "14:33" },
+    ],
   },
   {
     slug: "macroeconomics",
     title: { ar: "الاقتصاد الكلي", en: "Macroeconomics" },
-    summary: { ar: "الفائدة والتضخم والنمو وأثرها على الأصول.", en: "Rates, inflation, growth and their effect on assets." },
+    summary: {
+      ar: "الفائدة والتضخم والنمو وأثرها على الأصول.",
+      en: "Rates, inflation, growth and their effect on assets.",
+    },
     category: { ar: "اقتصاد", en: "Economics" },
     icon: "trending",
     level: { ar: "متقدم", en: "Advanced" },
     readingTime: 12,
     sections: [
-      { heading: { ar: "أدوات السياسة النقدية", en: "Monetary policy tools" }, body: { ar: "تستخدم البنوك المركزية سعر الفائدة والميزانية العمومية لإدارة التضخم والنمو.", en: "Central banks use policy rates and their balance sheet to manage inflation and growth." } },
+      {
+        heading: { ar: "أدوات السياسة النقدية", en: "Monetary policy tools" },
+        body: {
+          ar: "تستخدم البنوك المركزية سعر الفائدة والميزانية العمومية لإدارة التضخم والنمو.",
+          en: "Central banks use policy rates and their balance sheet to manage inflation and growth.",
+        },
+      },
     ],
-    videos: [{ title: { ar: "كيف تعمل البنوك المركزية", en: "How central banks work" }, duration: "20:48" }],
+    videos: [
+      {
+        title: { ar: "كيف تعمل البنوك المركزية", en: "How central banks work" },
+        duration: "20:48",
+      },
+    ],
   },
   {
     slug: "technical-analysis",
     title: { ar: "التحليل الفني", en: "Technical Analysis" },
-    summary: { ar: "قراءة السعر والحجم وسلوك السوق.", en: "Reading price, volume and market behaviour." },
+    summary: {
+      ar: "قراءة السعر والحجم وسلوك السوق.",
+      en: "Reading price, volume and market behaviour.",
+    },
     category: { ar: "تحليل", en: "Analysis" },
     icon: "activity",
     level: { ar: "مبتدئ", en: "Beginner" },
     readingTime: 7,
     sections: [
-      { heading: { ar: "الاتجاه والدعم والمقاومة", en: "Trend, support and resistance" }, body: { ar: "يساعد تحديد الاتجاه ومستويات السعر المهمة في إدارة التوقيت وليس في تقدير القيمة.", en: "Identifying trend and key levels helps with timing, not with estimating value." } },
+      {
+        heading: { ar: "الاتجاه والدعم والمقاومة", en: "Trend, support and resistance" },
+        body: {
+          ar: "يساعد تحديد الاتجاه ومستويات السعر المهمة في إدارة التوقيت وليس في تقدير القيمة.",
+          en: "Identifying trend and key levels helps with timing, not with estimating value.",
+        },
+      },
     ],
     videos: [{ title: { ar: "أساسيات الرسوم البيانية", en: "Chart basics" }, duration: "11:12" }],
   },
   {
     slug: "fundamental-analysis",
     title: { ar: "التحليل الأساسي", en: "Fundamental Analysis" },
-    summary: { ar: "تقييم جودة الأعمال من الداخل.", en: "Assessing business quality from the inside out." },
+    summary: {
+      ar: "تقييم جودة الأعمال من الداخل.",
+      en: "Assessing business quality from the inside out.",
+    },
     category: { ar: "تحليل", en: "Analysis" },
     icon: "search",
     level: { ar: "متوسط", en: "Intermediate" },
     readingTime: 10,
     sections: [
-      { heading: { ar: "من الأعلى للأسفل ومن الأسفل للأعلى", en: "Top-down and bottom-up" }, body: { ar: "يبدأ الأول من الاقتصاد والقطاع، بينما يبدأ الثاني من الشركة نفسها.", en: "The first starts from the economy and sector, the second from the company itself." } },
+      {
+        heading: { ar: "من الأعلى للأسفل ومن الأسفل للأعلى", en: "Top-down and bottom-up" },
+        body: {
+          ar: "يبدأ الأول من الاقتصاد والقطاع، بينما يبدأ الثاني من الشركة نفسها.",
+          en: "The first starts from the economy and sector, the second from the company itself.",
+        },
+      },
     ],
     videos: [{ title: { ar: "كيف تحلل شركة", en: "How to analyse a company" }, duration: "22:30" }],
   },
   {
     slug: "risk-management",
     title: { ar: "إدارة المخاطر", en: "Risk Management" },
-    summary: { ar: "حجم المركز والتنويع وحماية رأس المال.", en: "Position sizing, diversification and capital preservation." },
+    summary: {
+      ar: "حجم المركز والتنويع وحماية رأس المال.",
+      en: "Position sizing, diversification and capital preservation.",
+    },
     category: { ar: "أساسيات", en: "Foundations" },
     icon: "shield",
     level: { ar: "متوسط", en: "Intermediate" },
     readingTime: 8,
     sections: [
-      { heading: { ar: "التنويع الفعّال", en: "Effective diversification" }, body: { ar: "التنويع الحقيقي يقوم على اختلاف مصادر المخاطر لا على كثرة الأسماء.", en: "Real diversification comes from different risk drivers, not from owning many names." } },
+      {
+        heading: { ar: "التنويع الفعّال", en: "Effective diversification" },
+        body: {
+          ar: "التنويع الحقيقي يقوم على اختلاف مصادر المخاطر لا على كثرة الأسماء.",
+          en: "Real diversification comes from different risk drivers, not from owning many names.",
+        },
+      },
     ],
-    videos: [{ title: { ar: "إدارة مخاطر المحفظة", en: "Portfolio risk management" }, duration: "16:44" }],
+    videos: [
+      { title: { ar: "إدارة مخاطر المحفظة", en: "Portfolio risk management" }, duration: "16:44" },
+    ],
   },
 ];
 

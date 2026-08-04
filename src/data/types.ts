@@ -5,6 +5,7 @@ export type Sector = {
   name: LocalizedText;
   tagline: LocalizedText;
   description: LocalizedText;
+  about: LocalizedText;
   icon: string;
   tone: string;
   companies: number;

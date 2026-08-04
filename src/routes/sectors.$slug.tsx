@@ -53,6 +53,16 @@ function SectorPage() {
       </PageHero>
 
       <Container>
+        <section className="mb-14 rounded-2xl border border-border/70 bg-card p-6 sm:p-8">
+          <h2 className="mb-3 text-sm font-bold text-muted-foreground">
+            {t({
+              ar: "ما هو قطاع " + t(sector.name) + "؟",
+              en: `What is the ${t(sector.name)} sector?`,
+            })}
+          </h2>
+          <p className="text-sm leading-8">{t(sector.about)}</p>
+        </section>
+
         <section className="mb-16">
           <SectionHeading title={t(ui.companies)} />
           {companies.length ? (

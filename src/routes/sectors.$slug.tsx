@@ -13,7 +13,10 @@ export const Route = createFileRoute("/sectors/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "القطاع غير موجود | معرفة استثمار" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "القطاع غير موجود | معرفة استثمار" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { sector } = loaderData;
@@ -38,17 +41,13 @@ function SectorPage() {
 
   return (
     <PageShell>
-      <PageHero
-        eyebrow={t(ui.sectors)}
-        title={t(sector.name)}
-        description={t(sector.description)}
-      >
+      <PageHero eyebrow={t(ui.sectors)} title={t(sector.name)} description={t(sector.description)}>
         <div className="mt-8 flex flex-wrap gap-3 text-xs">
           <span className="rounded-full border border-night-foreground/15 px-4 py-2">
-            {sector.companies} {t(ui.statCompanies)}
+            {companies.length} {t(ui.statCompanies)}
           </span>
           <span className="rounded-full border border-night-foreground/15 px-4 py-2">
-            {sector.research} {t(ui.statResearch)}
+            {research.length} {t(ui.statResearch)}
           </span>
         </div>
       </PageHero>

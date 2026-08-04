@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import { ui, useI18n } from "@/lib/i18n";
 
 const columns = [
@@ -26,6 +28,30 @@ const columns = [
 
 export function SiteFooter() {
   const { t } = useI18n();
+  const [email, setEmail] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  const subscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setBusy(true);
+    try {
+      const { error } = await supabase.from("newsletter_subscribers").insert({ email });
+      if (error) {
+        if (error.code === "23505") {
+          toast.info(t({ ar: "أنت مشترك بالفعل.", en: "You're already subscribed." }));
+        } else {
+          throw error;
+        }
+      } else {
+        toast.success(t({ ar: "تم الاشتراك بنجاح.", en: "Subscribed successfully." }));
+        setEmail("");
+      }
+    } catch (err) {
+      toast.error((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
 
   return (
     <footer className="night-panel mt-20">
@@ -36,18 +62,6 @@ export function SiteFooter() {
             <p className="mt-3 max-w-xs text-sm leading-7 text-night-foreground/60">
               {t(ui.heroSubtitle)}
             </p>
-            <div className="mt-6 flex gap-4 text-night-foreground/55">
-              {[Youtube, Linkedin, Twitter, Github].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="social link"
-                  className="transition-colors hover:text-night-foreground"
-                >
-                  <Icon className="size-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {columns.map((col) => (
@@ -71,16 +85,22 @@ export function SiteFooter() {
               {t(ui.newsletterCopy)}
             </p>
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={subscribe}
               className="mt-4 flex overflow-hidden rounded-xl border border-night-foreground/15 bg-night-foreground/5"
             >
               <input
                 type="email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder={t(ui.emailPlaceholder)}
                 className="w-full bg-transparent px-4 py-3 text-sm outline-none placeholder:text-night-foreground/40"
               />
-              <button className="shrink-0 bg-brand px-4 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90">
+              <button
+                type="submit"
+                disabled={busy}
+                className="shrink-0 bg-brand px-4 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+              >
                 {t(ui.subscribe)}
               </button>
             </form>

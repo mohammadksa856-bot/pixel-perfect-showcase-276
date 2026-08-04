@@ -172,6 +172,14 @@
   --color-gold: var(--gold);
 }
 
+@utility scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @utility chart-grid {
   background-image: linear-gradient(
       to right,

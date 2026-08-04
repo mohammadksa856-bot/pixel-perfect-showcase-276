@@ -15,7 +15,10 @@ export const Route = createFileRoute("/companies/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "الشركة غير موجودة | معرفة استثمار" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "الشركة غير موجودة | معرفة استثمار" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { company } = loaderData;
@@ -148,16 +151,28 @@ function CompanyPage() {
 
           <Panel title={t({ ar: "الأداء التاريخي", en: "Historical performance" })}>
             <div className="flex h-40 items-end gap-2">
-              {company.financials.map((f, i) => (
-                <div key={f.year} className="flex flex-1 flex-col items-center gap-2">
-                  <div
-                    className="w-full rounded-t-md bg-brand/70 transition-all"
-                    style={{ height: `${40 + i * 22}%` }}
-                  />
-                  <span className="text-[11px] text-muted-foreground">{f.year}</span>
-                </div>
-              ))}
+              {(() => {
+                const parseValue = (v: string) => parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
+                const values = company.financials.map((f) => parseValue(f.revenue));
+                const max = Math.max(...values, 1);
+                return company.financials.map((f, i) => (
+                  <div key={f.year} className="flex flex-1 flex-col items-center gap-2">
+                    <div
+                      className="w-full rounded-t-md bg-brand/70 transition-all"
+                      style={{ height: `${Math.max((values[i]! / max) * 100, 6)}%` }}
+                      title={f.revenue}
+                    />
+                    <span className="text-[11px] text-muted-foreground">{f.year}</span>
+                  </div>
+                ));
+              })()}
             </div>
+            <p className="mt-3 text-[11px] text-muted-foreground">
+              {t({
+                ar: "مقياس نسبي للإيرادات عبر السنوات.",
+                en: "Relative scale of revenue across years.",
+              })}
+            </p>
           </Panel>
 
           <Panel title={t({ ar: "الأخبار", en: "News" })}>

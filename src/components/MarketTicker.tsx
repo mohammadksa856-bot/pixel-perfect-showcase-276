@@ -7,7 +7,7 @@ export function MarketTicker() {
   const { t } = useI18n();
   return (
     <section className="relative bg-background border-b border-border">
-      <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-4 py-2.5 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto scrollbar-none px-4 py-2.5 sm:px-6">
         <span className="shrink-0 whitespace-nowrap ps-1 text-[11px] text-muted-foreground">
           {t(ui.marketsLastUpdated)}
         </span>

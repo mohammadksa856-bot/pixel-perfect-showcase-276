@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, LineChart, Menu, Moon, Search, Sun, X } from "lucide-react";
+import { ChevronDown, Compass, Menu, Moon, Search, Sun, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
@@ -30,7 +30,7 @@ export function SiteHeader() {
 
         <Link to="/" className="flex items-center gap-3 shrink-0">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-white shadow-lg">
-            <LineChart className="h-5 w-5" />
+            <Compass className="h-5 w-5" />
           </div>
 
           <div className="leading-tight">

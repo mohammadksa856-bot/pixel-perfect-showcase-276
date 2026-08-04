@@ -8,7 +8,7 @@ function MarketItem({ market }: { market: (typeof markets)[number] }) {
     <Link
       to="/markets/$slug"
       params={{ slug: market.slug }}
-      className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1 text-xs transition-colors hover:bg-muted"
+      className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-sm transition-colors hover:bg-muted"
     >
       <span className="font-medium">{market.name}</span>
       <span className="text-muted-foreground">{market.value}</span>
@@ -32,7 +32,7 @@ export function MarketTicker() {
   const { t } = useI18n();
   return (
     <section className="group relative overflow-hidden bg-background border-b border-border">
-      <div className="mx-auto flex max-w-7xl items-center px-4 py-2.5 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center px-4 py-4 sm:px-6">
         <span className="shrink-0 whitespace-nowrap pe-3 text-[11px] text-muted-foreground">
           {t(ui.marketsLastUpdated)}
         </span>

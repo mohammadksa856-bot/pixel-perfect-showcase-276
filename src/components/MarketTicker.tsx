@@ -31,7 +31,7 @@ function MarketItem({ market }: { market: (typeof markets)[number] }) {
 export function MarketTicker() {
   const { t } = useI18n();
   return (
-    <section className="group relative overflow-hidden bg-background border-b border-border">
+    <section className="relative overflow-hidden bg-background border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center px-4 py-4 sm:px-6">
         <span className="shrink-0 whitespace-nowrap pe-3 text-[11px] text-muted-foreground">
           {t(ui.marketsLastUpdated)}
@@ -39,7 +39,7 @@ export function MarketTicker() {
         <span className="me-1 h-4 w-px shrink-0 bg-border" aria-hidden />
 
         <div className="min-w-0 flex-1 overflow-hidden">
-          <div className="flex w-max animate-ticker gap-1 group-hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-ticker gap-1">
             {markets.map((market) => (
               <MarketItem key={`a-${market.symbol}`} market={market} />
             ))}

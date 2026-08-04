@@ -46,6 +46,9 @@ export function MarketTicker() {
             {markets.map((market) => (
               <MarketItem key={`b-${market.symbol}`} market={market} />
             ))}
+            {markets.map((market) => (
+              <MarketItem key={`c-${market.symbol}`} market={market} />
+            ))}
           </div>
         </div>
       </div>

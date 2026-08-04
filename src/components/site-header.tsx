@@ -61,7 +61,7 @@ export function SiteHeader() {
 
         {/* Search */}
 
-        {!isHome && (
+        {!isHome ? (
           <div className="hidden xl:flex flex-1 justify-center">
             <label className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-brand">
               <Search className="h-4 w-4 text-muted-foreground" />
@@ -73,6 +73,8 @@ export function SiteHeader() {
               />
             </label>
           </div>
+        ) : (
+          <div className="hidden flex-1 xl:block" aria-hidden />
         )}
 
         {/* Right */}

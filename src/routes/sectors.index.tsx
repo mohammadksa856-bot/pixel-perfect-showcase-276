@@ -38,7 +38,7 @@ function SectorsPage() {
       <Container>
         <section className="mb-10 rounded-2xl border border-border/70 bg-card p-6 sm:p-8">
           <h2 className="mb-3 text-sm font-bold text-muted-foreground">
-            {t({ ar: 'وش يعني "قطاع استثماري"؟', en: 'What does "sector" mean?' })}
+            {t({ ar: 'وش يعني "قطاع "؟', en: 'What does "sector" mean?' })}
           </h2>
           <p className="text-sm leading-8">
             {t({

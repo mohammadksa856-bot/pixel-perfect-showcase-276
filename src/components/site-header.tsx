@@ -9,8 +9,8 @@ import { LogoMark } from "@/components/logo-mark";
 
 const nav = [
   { to: "/", label: ui.home },
-  { to: "/companies", label: ui.companies },
   { to: "/sectors", label: ui.sectors },
+  { to: "/companies", label: ui.companies },
   { to: "/knowledge", label: ui.knowledge },
   { to: "/research", label: ui.research },
   { to: "/community", label: ui.community },

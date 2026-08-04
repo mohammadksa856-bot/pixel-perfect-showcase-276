@@ -12,23 +12,74 @@ export type Database = {
         Row: {
           author_id: string;
           board_slug: string;
+          comment_count: number;
           created_at: string;
           id: string;
+          score: number;
           title: string;
         };
         Insert: {
           author_id: string;
           board_slug: string;
+          comment_count?: number;
           created_at?: string;
           id?: string;
+          score?: number;
           title: string;
         };
         Update: {
           author_id?: string;
           board_slug?: string;
+          comment_count?: number;
           created_at?: string;
           id?: string;
+          score?: number;
           title?: string;
+        };
+        Relationships: [];
+      };
+      community_post_votes: {
+        Row: {
+          created_at: string;
+          post_id: string;
+          user_id: string;
+          value: number;
+        };
+        Insert: {
+          created_at?: string;
+          post_id: string;
+          user_id: string;
+          value: number;
+        };
+        Update: {
+          created_at?: string;
+          post_id?: string;
+          user_id?: string;
+          value?: number;
+        };
+        Relationships: [];
+      };
+      community_comments: {
+        Row: {
+          author_id: string;
+          body: string;
+          created_at: string;
+          id: string;
+          post_id: string;
+        };
+        Insert: {
+          author_id: string;
+          body: string;
+          created_at?: string;
+          id?: string;
+          post_id: string;
+        };
+        Update: {
+          author_id?: string;
+          body?: string;
+          created_at?: string;
+          id?: string;
+          post_id?: string;
         };
         Relationships: [];
       };

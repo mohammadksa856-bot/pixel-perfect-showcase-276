@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useMemo, useState } from "react";
+import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Bookmark, Heart, MessageCircle, Plus } from "lucide-react";
+import { ArrowBigDown, ArrowBigUp, Flame, MessageCircle, Plus } from "lucide-react";
 import { toast } from "sonner";
 import { PageHero, PageShell, Container } from "@/components/page-shell";
 import { Panel } from "@/components/cards";
@@ -23,12 +23,27 @@ export const Route = createFileRoute("/community/")({
       { property: "og:title", content: "المجتمع — معرفة استثمار" },
       {
         property: "og:description",
-        content: "نقاشات استثمارية منظمة حسب القطاع مع إعجابات وتعليقات وحفظ للمنشورات.",
+        content: "نقاشات استثمارية منظمة حسب القطاع مع تصويت وتعليقات حقيقية.",
       },
     ],
   }),
   component: CommunityPage,
 });
+
+type PostRow = {
+  id: string;
+  title: string;
+  created_at: string;
+  author_id: string;
+  score: number;
+  comment_count: number;
+};
+
+type SortKey = "hot" | "new" | "top";
+
+function authorLabel(authorId: string, t: (v: { ar: string; en: string }) => string) {
+  return `${t({ ar: "مستثمر", en: "Investor" })} #${authorId.slice(0, 4)}`;
+}
 
 function CommunityPage() {
   const { t, locale } = useI18n();
@@ -37,27 +52,83 @@ function CommunityPage() {
   const boards = getBoards();
   const [active, setActive] = useState(boards[0]!.slug);
   const board = boards.find((b) => b.slug === active) ?? boards[0]!;
-  const [liked, setLiked] = useState<string[]>([]);
-  const [saved, setSaved] = useState<string[]>([]);
+  const [sort, setSort] = useState<SortKey>("hot");
   const [showForm, setShowForm] = useState(false);
   const [newTitle, setNewTitle] = useState("");
   const [posting, setPosting] = useState(false);
-
-  const toggle = (list: string[], set: (v: string[]) => void, key: string) =>
-    set(list.includes(key) ? list.filter((k) => k !== key) : [...list, key]);
 
   const postsQuery = useQuery({
     queryKey: ["community_posts", active],
     queryFn: async () => {
       const { data, error } = await supabase
         .from("community_posts")
-        .select("id, title, created_at")
+        .select("id, title, created_at, author_id, score, comment_count")
         .eq("board_slug", active)
         .order("created_at", { ascending: false });
       if (error) throw error;
-      return data;
+      return data as PostRow[];
     },
   });
+
+  const myVotesQuery = useQuery({
+    queryKey: ["my_post_votes", active],
+    queryFn: async () => {
+      const { data: auth } = await supabase.auth.getUser();
+      if (!auth.user) return {} as Record<string, number>;
+      const { data, error } = await supabase
+        .from("community_post_votes")
+        .select("post_id, value")
+        .eq("user_id", auth.user.id);
+      if (error) throw error;
+      return Object.fromEntries(data.map((v) => [v.post_id, v.value])) as Record<string, number>;
+    },
+  });
+
+  const posts = useMemo(() => {
+    const list = [...(postsQuery.data ?? [])];
+    if (sort === "new") list.sort((a, b) => +new Date(b.created_at) - +new Date(a.created_at));
+    if (sort === "top") list.sort((a, b) => b.score - a.score);
+    if (sort === "hot")
+      list.sort((a, b) => {
+        const hotScore = (p: PostRow) => {
+          const hours = (Date.now() - +new Date(p.created_at)) / 3_600_000;
+          return p.score / Math.pow(hours + 2, 1.5);
+        };
+        return hotScore(b) - hotScore(a);
+      });
+    return list;
+  }, [postsQuery.data, sort]);
+
+  const vote = async (postId: string, value: 1 | -1) => {
+    const { data: auth } = await supabase.auth.getUser();
+    if (!auth.user) {
+      navigate({ to: "/auth", search: { denied: false } });
+      return;
+    }
+    const current = myVotesQuery.data?.[postId];
+    try {
+      if (current === value) {
+        const { error } = await supabase
+          .from("community_post_votes")
+          .delete()
+          .eq("post_id", postId)
+          .eq("user_id", auth.user.id);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase
+          .from("community_post_votes")
+          .upsert(
+            { post_id: postId, user_id: auth.user.id, value },
+            { onConflict: "post_id,user_id" },
+          );
+        if (error) throw error;
+      }
+      queryClient.invalidateQueries({ queryKey: ["community_posts", active] });
+      queryClient.invalidateQueries({ queryKey: ["my_post_votes", active] });
+    } catch (err) {
+      toast.error((err as Error).message);
+    }
+  };
 
   const handleNewPostClick = async () => {
     const { data } = await supabase.auth.getUser();
@@ -99,8 +170,8 @@ function CommunityPage() {
         eyebrow={t(ui.community)}
         title={t(ui.communityBoards)}
         description={t({
-          ar: "لكل قطاع لوحة نقاش مستقلة. اطرح فكرتك، ناقش التحليلات، واحفظ أفضل المنشورات.",
-          en: "Every sector has its own board. Share ideas, debate analysis and bookmark the best posts.",
+          ar: "لكل قطاع لوحة نقاش مستقلة. اطرح فكرتك، صوّت للمنشورات، وناقش التحليلات.",
+          en: "Every sector has its own board. Post ideas, vote, and debate analysis.",
         })}
       />
 
@@ -123,7 +194,6 @@ function CommunityPage() {
                   >
                     <Icon className="size-4 shrink-0" />
                     <span className="truncate">{t(b.name)}</span>
-                    <span className="ms-auto text-[11px] text-muted-foreground">{b.posts}</span>
                   </button>
                 );
               })}
@@ -135,7 +205,7 @@ function CommunityPage() {
               <div>
                 <h2 className="text-xl font-bold">{t(board.name)}</h2>
                 <p className="mt-1.5 text-sm text-muted-foreground">
-                  {board.posts} {t(ui.posts)} · {board.members} {t(ui.members)}
+                  {postsQuery.data?.length ?? 0} {t(ui.posts)}
                 </p>
               </div>
               <button
@@ -167,63 +237,96 @@ function CommunityPage() {
               </form>
             )}
 
-            {postsQuery.data && postsQuery.data.length > 0 && (
-              <div className="mb-4 space-y-3">
-                {postsQuery.data.map((p) => (
-                  <Panel key={p.id} className="border-brand/30">
-                    <h3 className="text-sm font-bold leading-7">{p.title}</h3>
-                    <div className="mt-1 text-[11px] text-muted-foreground">
-                      {new Date(p.created_at).toLocaleDateString(
-                        locale === "ar" ? "ar-SA" : "en-US",
-                      )}
-                    </div>
-                  </Panel>
-                ))}
-              </div>
+            <div className="mb-4 flex gap-1.5">
+              {(
+                [
+                  { key: "hot", label: { ar: "الأكثر تفاعلاً", en: "Hot" }, icon: Flame },
+                  { key: "new", label: { ar: "الأحدث", en: "New" } },
+                  { key: "top", label: { ar: "الأعلى تقييماً", en: "Top" } },
+                ] as const
+              ).map((opt) => (
+                <button
+                  key={opt.key}
+                  onClick={() => setSort(opt.key)}
+                  className={cn(
+                    "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
+                    sort === opt.key
+                      ? "border-brand bg-brand text-brand-foreground"
+                      : "border-border/70 bg-card hover:bg-muted",
+                  )}
+                >
+                  {"icon" in opt && opt.icon && <opt.icon className="size-3.5" />}
+                  {t(opt.label)}
+                </button>
+              ))}
+            </div>
+
+            {postsQuery.isLoading && (
+              <p className="text-sm text-muted-foreground">
+                {t({ ar: "يحمّل...", en: "Loading..." })}
+              </p>
             )}
 
-            <div className="space-y-4">
-              {board.latest.map((post) => {
-                const key = `${board.slug}-${post.title.en}`;
-                const isLiked = liked.includes(key);
-                const isSaved = saved.includes(key);
+            {postsQuery.data && postsQuery.data.length === 0 && (
+              <Panel className="text-center">
+                <p className="text-sm text-muted-foreground">
+                  {t({
+                    ar: "لا يوجد منشورات بعد بهذه اللوحة — كن أول من ينشر.",
+                    en: "No posts yet on this board — be the first to post.",
+                  })}
+                </p>
+              </Panel>
+            )}
+
+            <div className="space-y-3">
+              {posts.map((post) => {
+                const myVote = myVotesQuery.data?.[post.id];
                 return (
-                  <Panel key={key} className="transition-colors hover:border-foreground/15">
-                    <div className="flex items-center gap-3">
-                      <span className="flex size-9 items-center justify-center rounded-full bg-muted text-xs font-bold">
-                        {t(post.author).slice(0, 1)}
-                      </span>
+                  <Panel
+                    key={post.id}
+                    className="flex gap-4 transition-colors hover:border-foreground/15"
+                  >
+                    <div className="flex shrink-0 flex-col items-center gap-1 pt-0.5">
+                      <button
+                        onClick={() => vote(post.id, 1)}
+                        aria-label={t({ ar: "تصويت إيجابي", en: "Upvote" })}
+                        className={cn(
+                          "rounded-md p-1 transition-colors hover:bg-muted",
+                          myVote === 1 && "text-brand",
+                        )}
+                      >
+                        <ArrowBigUp className={cn("size-5", myVote === 1 && "fill-current")} />
+                      </button>
+                      <span className="text-sm font-bold">{post.score}</span>
+                      <button
+                        onClick={() => vote(post.id, -1)}
+                        aria-label={t({ ar: "تصويت سلبي", en: "Downvote" })}
+                        className={cn(
+                          "rounded-md p-1 transition-colors hover:bg-muted",
+                          myVote === -1 && "text-tone-rose",
+                        )}
+                      >
+                        <ArrowBigDown className={cn("size-5", myVote === -1 && "fill-current")} />
+                      </button>
+                    </div>
+
+                    <Link
+                      to="/community/$postId"
+                      params={{ postId: post.id }}
+                      className="min-w-0 flex-1"
+                    >
                       <div className="text-xs text-muted-foreground">
-                        {t(post.author)} · {t(post.time)}
+                        {authorLabel(post.author_id, t)} ·{" "}
+                        {new Date(post.created_at).toLocaleDateString(
+                          locale === "ar" ? "ar-SA" : "en-US",
+                        )}
                       </div>
-                    </div>
-                    <h3 className="mt-4 text-sm font-bold leading-7">{t(post.title)}</h3>
-                    <div className="mt-5 flex items-center gap-5 text-xs text-muted-foreground">
-                      <button
-                        onClick={() => toggle(liked, setLiked, key)}
-                        className={cn(
-                          "inline-flex items-center gap-1.5 transition-colors hover:text-foreground",
-                          isLiked && "text-tone-rose",
-                        )}
-                      >
-                        <Heart className={cn("size-4", isLiked && "fill-current")} />
-                        {post.likes + (isLiked ? 1 : 0)}
-                      </button>
-                      <span className="inline-flex items-center gap-1.5">
+                      <h3 className="mt-2 text-sm font-bold leading-7">{post.title}</h3>
+                      <div className="mt-4 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                         <MessageCircle className="size-4" />
-                        {post.comments}
-                      </span>
-                      <button
-                        onClick={() => toggle(saved, setSaved, key)}
-                        className={cn(
-                          "ms-auto inline-flex items-center gap-1.5 transition-colors hover:text-foreground",
-                          isSaved && "text-brand",
-                        )}
-                      >
-                        <Bookmark className={cn("size-4", isSaved && "fill-current")} />
-                        {t(ui.bookmark)}
-                      </button>
-                    </div>
+                        {post.comment_count} {t({ ar: "تعليق", en: "comments" })}
+                      </div>
+                    </Link>
                   </Panel>
                 );
               })}

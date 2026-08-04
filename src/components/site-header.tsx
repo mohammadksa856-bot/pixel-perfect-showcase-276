@@ -30,7 +30,7 @@ export function SiteHeader() {
         {/* Logo */}
 
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B1220] shadow-lg">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand text-brand-foreground shadow-lg">
             <LogoMark className="h-6 w-6" />
           </div>
 

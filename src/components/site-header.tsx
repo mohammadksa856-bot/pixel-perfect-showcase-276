@@ -68,7 +68,7 @@ export function SiteHeader() {
 
               <input
                 type="search"
-                placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
+                placeholder={t(ui.searchPlaceholder)}
                 className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
               />
             </label>
@@ -117,7 +117,7 @@ export function SiteHeader() {
 
                 <input
                   type="search"
-                  placeholder="ابحث عن شركة، مؤشر، قطاع أو مقال..."
+                  placeholder={t(ui.searchPlaceholder)}
                   className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
                 />
               </label>

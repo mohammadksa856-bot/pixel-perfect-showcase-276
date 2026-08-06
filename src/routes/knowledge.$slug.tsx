@@ -7,15 +7,19 @@ import { getKnowledgeItem, getRelatedKnowledge } from "@/lib/content";
 import type { KnowledgeArticle } from "@/data/types";
 
 export const Route = createFileRoute("/knowledge/$slug")({
-  loader: ({ params }) => {
-    const item = getKnowledgeItem(params.slug);
+  loader: async ({ params }) => {
+    const item = await getKnowledgeItem(params.slug);
     if (!item) throw notFound();
-    return { item };
+    const related = await getRelatedKnowledge(item);
+    return { item, related };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "المقال غير موجود | معرفة استثمار" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "المقال غير موجود | معرفة استثمار" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { item } = loaderData;
@@ -34,9 +38,11 @@ export const Route = createFileRoute("/knowledge/$slug")({
 });
 
 function KnowledgeArticlePage() {
-  const { item } = Route.useLoaderData() as { item: KnowledgeArticle };
+  const { item, related } = Route.useLoaderData() as {
+    item: KnowledgeArticle;
+    related: KnowledgeArticle[];
+  };
   const { t } = useI18n();
-  const related = getRelatedKnowledge(item);
 
   return (
     <PageShell>

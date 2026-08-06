@@ -8,10 +8,15 @@ import type { Company } from "@/data/types";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/companies/$slug")({
-  loader: ({ params }) => {
-    const company = getCompany(params.slug);
+  loader: async ({ params }) => {
+    const company = await getCompany(params.slug);
     if (!company) throw notFound();
-    return { company };
+    const [sector, related, research] = await Promise.all([
+      getSector(company.sectorSlug),
+      getRelatedCompanies(company),
+      getResearch({ sectorSlug: company.sectorSlug, limit: 2 }),
+    ]);
+    return { company, sector, related, research };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -37,11 +42,13 @@ export const Route = createFileRoute("/companies/$slug")({
 });
 
 function CompanyPage() {
-  const { company } = Route.useLoaderData() as { company: Company };
+  const { company, sector, related, research } = Route.useLoaderData() as {
+    company: Company;
+    sector: Awaited<ReturnType<typeof getSector>>;
+    related: Awaited<ReturnType<typeof getRelatedCompanies>>;
+    research: Awaited<ReturnType<typeof getResearch>>;
+  };
   const { t } = useI18n();
-  const sector = getSector(company.sectorSlug);
-  const related = getRelatedCompanies(company);
-  const research = getResearch({ sectorSlug: company.sectorSlug, limit: 2 });
 
   const facts: { label: (typeof ui)["price"]; value: string; sectorLink: string | undefined }[] = [
     { label: ui.price, value: company.price, sectorLink: undefined },

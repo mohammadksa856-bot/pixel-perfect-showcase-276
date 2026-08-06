@@ -5,6 +5,7 @@ import { ui, useI18n } from "@/lib/i18n";
 import { getResearch } from "@/lib/content";
 
 export const Route = createFileRoute("/research/")({
+  loader: async () => ({ research: await getResearch() }),
   head: () => ({
     meta: [
       { title: "الأبحاث | معرفة استثمار" },
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/research/")({
 
 function ResearchPage() {
   const { t } = useI18n();
+  const { research } = Route.useLoaderData();
   return (
     <PageShell>
       <PageHero
@@ -37,7 +39,7 @@ function ResearchPage() {
       />
       <Container>
         <div className="grid gap-5 md:grid-cols-3">
-          {getResearch().map((r) => (
+          {research.map((r) => (
             <ResearchCard key={r.slug} item={r} />
           ))}
         </div>

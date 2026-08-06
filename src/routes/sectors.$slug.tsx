@@ -7,10 +7,18 @@ import { getCompanies, getKnowledge, getResearch, getSector } from "@/lib/conten
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/sectors/$slug")({
-  loader: ({ params }) => {
-    const sector = getSector(params.slug);
+  loader: async ({ params }) => {
+    const sector = await getSector(params.slug);
     if (!sector) throw notFound();
-    return { sector };
+    const [companies, research, allKnowledge] = await Promise.all([
+      getCompanies({ sectorSlug: sector.slug }),
+      getResearch({ sectorSlug: sector.slug }),
+      getKnowledge(),
+    ]);
+    const relatedKnowledge = ["valuation", "financial-statements"]
+      .map((slug) => allKnowledge.find((k) => k.slug === slug))
+      .filter((k): k is NonNullable<typeof k> => Boolean(k));
+    return { sector, companies, research, relatedKnowledge };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -36,13 +44,8 @@ export const Route = createFileRoute("/sectors/$slug")({
 });
 
 function SectorPage() {
-  const { sector } = Route.useLoaderData();
+  const { sector, companies, research, relatedKnowledge } = Route.useLoaderData();
   const { t } = useI18n();
-  const companies = getCompanies({ sectorSlug: sector.slug });
-  const research = getResearch({ sectorSlug: sector.slug });
-  const relatedKnowledge = ["valuation", "financial-statements"]
-    .map((slug) => getKnowledge().find((k) => k.slug === slug))
-    .filter((k): k is NonNullable<typeof k> => Boolean(k));
 
   const changes = companies
     .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))

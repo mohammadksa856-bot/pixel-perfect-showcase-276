@@ -44,6 +44,8 @@ export type Company = {
   news: { title: LocalizedText; source: string; date: string }[];
   faqs: { q: LocalizedText; a: LocalizedText }[];
   howToBuy: LocalizedText[];
+  sectorName: LocalizedText;
+  sectorTone: string;
 };
 
 export type Research = {

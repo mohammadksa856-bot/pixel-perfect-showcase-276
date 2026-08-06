@@ -8,6 +8,10 @@ import { getCompanies, getSectors } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/companies/")({
+  loader: async () => {
+    const [companies, sectors] = await Promise.all([getCompanies(), getSectors()]);
+    return { companies, sectors };
+  },
   head: () => ({
     meta: [
       { title: "الشركات | معرفة استثمار" },
@@ -36,11 +40,12 @@ function parseMarketCap(v: string): number {
 
 function CompaniesPage() {
   const { t } = useI18n();
+  const { companies: allCompanies, sectors } = Route.useLoaderData();
   const [active, setActive] = useState<string>("all");
   const [sort, setSort] = useState<SortKey>("default");
-  const sectors = getSectors();
   const companies = useMemo(() => {
-    const list = getCompanies(active === "all" ? undefined : { sectorSlug: active });
+    const list =
+      active === "all" ? allCompanies : allCompanies.filter((c) => c.sectorSlug === active);
     const sorted = [...list];
     if (sort === "marketCap")
       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
@@ -52,7 +57,7 @@ function CompaniesPage() {
       );
     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
     return sorted;
-  }, [active, sort, t]);
+  }, [allCompanies, active, sort, t]);
 
   return (
     <PageShell>

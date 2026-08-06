@@ -5,6 +5,7 @@ import { ui, useI18n } from "@/lib/i18n";
 import { getKnowledge } from "@/lib/content";
 
 export const Route = createFileRoute("/knowledge/")({
+  loader: async () => ({ items: await getKnowledge() }),
   head: () => ({
     meta: [
       { title: "المعرفة | معرفة استثمار" },
@@ -25,7 +26,7 @@ export const Route = createFileRoute("/knowledge/")({
 
 function KnowledgePage() {
   const { t } = useI18n();
-  const items = getKnowledge();
+  const { items } = Route.useLoaderData();
   const categories = Array.from(new Set(items.map((i) => i.category.en)));
 
   return (

@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import type { Sector } from "@/data/types";
 
 export const Route = createFileRoute("/sectors/")({
+  loader: async () => ({ stats: await computeSectorStats() }),
   head: () => ({
     meta: [
       { title: "القطاعات | معرفة استثمار" },
@@ -34,18 +35,28 @@ type SectorStats = {
   avgChange: number | null;
 };
 
-function computeSectorStats(): SectorStats[] {
-  return getSectors().map((sector) => {
-    const companies = getCompanies({ sectorSlug: sector.slug });
-    const research = getResearch({ sectorSlug: sector.slug });
-    const changes = companies
-      .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))
-      .filter((n) => !Number.isNaN(n));
-    const avgChange = changes.length
-      ? changes.reduce((sum, n) => sum + n, 0) / changes.length
-      : null;
-    return { sector, companiesCount: companies.length, researchCount: research.length, avgChange };
-  });
+async function computeSectorStats(): Promise<SectorStats[]> {
+  const sectors = await getSectors();
+  return Promise.all(
+    sectors.map(async (sector) => {
+      const [companies, research] = await Promise.all([
+        getCompanies({ sectorSlug: sector.slug }),
+        getResearch({ sectorSlug: sector.slug }),
+      ]);
+      const changes = companies
+        .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))
+        .filter((n) => !Number.isNaN(n));
+      const avgChange = changes.length
+        ? changes.reduce((sum, n) => sum + n, 0) / changes.length
+        : null;
+      return {
+        sector,
+        companiesCount: companies.length,
+        researchCount: research.length,
+        avgChange,
+      };
+    }),
+  );
 }
 
 type SortKey = "default" | "mostCompanies" | "alpha";
@@ -53,7 +64,7 @@ type SortKey = "default" | "mostCompanies" | "alpha";
 function SectorsPage() {
   const { t } = useI18n();
   const [sort, setSort] = useState<SortKey>("default");
-  const stats = useMemo(computeSectorStats, []);
+  const { stats } = Route.useLoaderData();
 
   const sorted = useMemo(() => {
     const list = [...stats];

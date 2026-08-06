@@ -91,6 +91,7 @@ export type Database = {
           description: Json;
           exchange: string;
           financials: Json;
+          goals: Json;
           how_to_buy: Json;
           id: string;
           market_cap: string;
@@ -114,6 +115,7 @@ export type Database = {
           description?: Json;
           exchange?: string;
           financials?: Json;
+          goals?: Json;
           how_to_buy?: Json;
           id?: string;
           market_cap?: string;
@@ -137,6 +139,7 @@ export type Database = {
           description?: Json;
           exchange?: string;
           financials?: Json;
+          goals?: Json;
           how_to_buy?: Json;
           id?: string;
           market_cap?: string;
@@ -364,6 +367,7 @@ export type Database = {
       };
       sectors: {
         Row: {
+          about: Json;
           created_at: string;
           description: Json;
           icon: string;
@@ -377,6 +381,7 @@ export type Database = {
           updated_at: string;
         };
         Insert: {
+          about?: Json;
           created_at?: string;
           description?: Json;
           icon?: string;
@@ -390,6 +395,7 @@ export type Database = {
           updated_at?: string;
         };
         Update: {
+          about?: Json;
           created_at?: string;
           description?: Json;
           icon?: string;

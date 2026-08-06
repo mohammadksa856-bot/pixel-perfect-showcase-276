@@ -7,15 +7,19 @@ import { getRelatedResearch, getResearchItem } from "@/lib/content";
 import type { Research } from "@/data/types";
 
 export const Route = createFileRoute("/research/$slug")({
-  loader: ({ params }) => {
-    const item = getResearchItem(params.slug);
+  loader: async ({ params }) => {
+    const item = await getResearchItem(params.slug);
     if (!item) throw notFound();
-    return { item };
+    const related = await getRelatedResearch(item);
+    return { item, related };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "البحث غير موجود | معرفة استثمار" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "البحث غير موجود | معرفة استثمار" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { item } = loaderData;
@@ -34,9 +38,8 @@ export const Route = createFileRoute("/research/$slug")({
 });
 
 function ResearchArticle() {
-  const { item } = Route.useLoaderData() as { item: Research };
+  const { item, related } = Route.useLoaderData() as { item: Research; related: Research[] };
   const { t } = useI18n();
-  const related = getRelatedResearch(item);
 
   return (
     <PageShell>

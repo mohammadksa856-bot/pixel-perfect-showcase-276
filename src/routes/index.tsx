@@ -22,6 +22,17 @@ import {
 } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    const [stats, sectors, companies, research, knowledge, boards] = await Promise.all([
+      getPlatformStats(),
+      getSectors(),
+      getCompanies({ limit: 8 }),
+      getResearch(),
+      getKnowledge(5),
+      getBoards(),
+    ]);
+    return { stats, sectors, companies, research, knowledge, boards };
+  },
   head: () => ({
     meta: [
       { title: "معرفة استثمار | منصة تحليل الشركات والأسواق والاستثمار" },
@@ -42,7 +53,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   const { t } = useI18n();
-  const stats = getPlatformStats();
+  const { stats, sectors, companies, research, knowledge, boards } = Route.useLoaderData();
 
   return (
     <PageShell>
@@ -120,7 +131,7 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.exploreSectors)} to="/sectors" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {getSectors().map((s) => (
+            {sectors.map((s) => (
               <SectorCard key={s.slug} sector={s} />
             ))}
           </div>
@@ -129,7 +140,7 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.discoverCompanies)} to="/companies" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {getCompanies({ limit: 8 }).map((c) => (
+            {companies.map((c) => (
               <CompanyCard key={c.slug} company={c} />
             ))}
           </div>
@@ -138,7 +149,7 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.latestResearch)} to="/research" />
           <div className="grid gap-5 md:grid-cols-3">
-            {getResearch().map((r) => (
+            {research.map((r) => (
               <ResearchCard key={r.slug} item={r} />
             ))}
           </div>
@@ -147,7 +158,7 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.knowledgeLibrary)} to="/knowledge" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {getKnowledge(5).map((k) => (
+            {knowledge.map((k) => (
               <KnowledgeCard key={k.slug} item={k} />
             ))}
           </div>
@@ -156,21 +167,19 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.communityBoards)} to="/community" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {getBoards()
-              .slice(0, 4)
-              .map((b) => (
-                <Link
-                  key={b.slug}
-                  to="/community"
-                  className="rounded-2xl border border-border/70 bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lift"
-                >
-                  <div className="text-sm font-bold">{t(b.name)}</div>
-                  <p className="mt-1.5 text-xs text-muted-foreground">{t(b.description)}</p>
-                  <div className="mt-4 text-[11px] text-muted-foreground">
-                    {b.posts} {t(ui.posts)} · {b.members} {t(ui.members)}
-                  </div>
-                </Link>
-              ))}
+            {boards.slice(0, 4).map((b) => (
+              <Link
+                key={b.slug}
+                to="/community"
+                className="rounded-2xl border border-border/70 bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lift"
+              >
+                <div className="text-sm font-bold">{t(b.name)}</div>
+                <p className="mt-1.5 text-xs text-muted-foreground">{t(b.description)}</p>
+                <div className="mt-4 text-[11px] text-muted-foreground">
+                  {b.posts} {t(ui.posts)} · {b.members} {t(ui.members)}
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 

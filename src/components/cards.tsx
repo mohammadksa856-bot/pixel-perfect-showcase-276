@@ -4,7 +4,6 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { getIcon } from "@/lib/icons";
 import { ui, useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { getSector } from "@/lib/content";
 import type { Company, KnowledgeArticle, Research, Sector } from "@/data/types";
 
 export function Arrow({ className }: { className?: string }) {
@@ -73,7 +72,6 @@ export function SectorCard({ sector }: { sector: Sector }) {
 
 export function CompanyCard({ company }: { company: Company }) {
   const { t } = useI18n();
-  const sector = getSector(company.sectorSlug);
   return (
     <Link
       to="/companies/$slug"
@@ -97,15 +95,15 @@ export function CompanyCard({ company }: { company: Company }) {
           {company.change}
         </span>
       </div>
-      {sector && (
+      {company.sectorSlug && (
         <span
           className="inline-flex w-fit items-center rounded-md px-2 py-0.5 text-[11px] font-medium"
           style={{
-            backgroundColor: `color-mix(in oklch, var(--${sector.tone}) 14%, transparent)`,
-            color: `var(--${sector.tone})`,
+            backgroundColor: `color-mix(in oklch, var(--${company.sectorTone}) 14%, transparent)`,
+            color: `var(--${company.sectorTone})`,
           }}
         >
-          {t(sector.name)}
+          {t(company.sectorName)}
         </span>
       )}
       <p className="line-clamp-2 text-xs leading-6 text-muted-foreground">{t(company.short)}</p>

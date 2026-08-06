@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowBigDown, ArrowBigUp, Flame, MessageCircle, Plus } from "lucide-react";
 import { toast } from "sonner";
@@ -10,8 +10,10 @@ import { getBoards } from "@/lib/content";
 import { getIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import { ensureCommunityUser } from "@/lib/community-auth";
 
 export const Route = createFileRoute("/community/")({
+  loader: async () => ({ boards: await getBoards() }),
   head: () => ({
     meta: [
       { title: "المجتمع | معرفة استثمار" },
@@ -47,9 +49,8 @@ function authorLabel(authorId: string, t: (v: { ar: string; en: string }) => str
 
 function CommunityPage() {
   const { t, locale } = useI18n();
-  const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const boards = getBoards();
+  const { boards } = Route.useLoaderData();
   const [active, setActive] = useState(boards[0]!.slug);
   const board = boards.find((b) => b.slug === active) ?? boards[0]!;
   const [sort, setSort] = useState<SortKey>("hot");
@@ -100,9 +101,11 @@ function CommunityPage() {
   }, [postsQuery.data, sort]);
 
   const vote = async (postId: string, value: 1 | -1) => {
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) {
-      navigate({ to: "/auth", search: { denied: false } });
+    let user;
+    try {
+      user = await ensureCommunityUser();
+    } catch (err) {
+      toast.error((err as Error).message);
       return;
     }
     const current = myVotesQuery.data?.[postId];
@@ -112,15 +115,12 @@ function CommunityPage() {
           .from("community_post_votes")
           .delete()
           .eq("post_id", postId)
-          .eq("user_id", auth.user.id);
+          .eq("user_id", user.id);
         if (error) throw error;
       } else {
         const { error } = await supabase
           .from("community_post_votes")
-          .upsert(
-            { post_id: postId, user_id: auth.user.id, value },
-            { onConflict: "post_id,user_id" },
-          );
+          .upsert({ post_id: postId, user_id: user.id, value }, { onConflict: "post_id,user_id" });
         if (error) throw error;
       }
       queryClient.invalidateQueries({ queryKey: ["community_posts", active] });
@@ -131,9 +131,10 @@ function CommunityPage() {
   };
 
   const handleNewPostClick = async () => {
-    const { data } = await supabase.auth.getUser();
-    if (!data.user) {
-      navigate({ to: "/auth", search: { denied: false } });
+    try {
+      await ensureCommunityUser();
+    } catch (err) {
+      toast.error((err as Error).message);
       return;
     }
     setShowForm((v) => !v);
@@ -144,14 +145,10 @@ function CommunityPage() {
     if (!newTitle.trim()) return;
     setPosting(true);
     try {
-      const { data } = await supabase.auth.getUser();
-      if (!data.user) {
-        navigate({ to: "/auth", search: { denied: false } });
-        return;
-      }
+      const user = await ensureCommunityUser();
       const { error } = await supabase
         .from("community_posts")
-        .insert({ board_slug: active, author_id: data.user.id, title: newTitle.trim() });
+        .insert({ board_slug: active, author_id: user.id, title: newTitle.trim() });
       if (error) throw error;
       setNewTitle("");
       setShowForm(false);

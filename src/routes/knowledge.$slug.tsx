@@ -72,15 +72,37 @@ function KnowledgeArticlePage() {
           <aside className="lg:sticky lg:top-24 lg:h-fit">
             <Panel title={t(ui.recommendedVideos)}>
               <ul className="space-y-4">
-                {item.videos.map((v) => (
-                  <li key={v.title.en} className="flex items-center gap-3">
-                    <PlayCircle className="size-8 shrink-0 text-brand" strokeWidth={1.4} />
-                    <div>
-                      <div className="text-sm font-medium leading-6">{t(v.title)}</div>
-                      <div className="text-[11px] text-muted-foreground">{v.duration}</div>
-                    </div>
-                  </li>
-                ))}
+                {item.videos.map((v) =>
+                  v.url ? (
+                    <li key={v.title.en}>
+                      <a
+                        href={v.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-3 transition-opacity hover:opacity-80"
+                      >
+                        <PlayCircle className="size-8 shrink-0 text-brand" strokeWidth={1.4} />
+                        <div>
+                          <div className="text-sm font-medium leading-6">{t(v.title)}</div>
+                          <div className="text-[11px] text-muted-foreground">{v.duration}</div>
+                        </div>
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={v.title.en} className="flex items-center gap-3 opacity-60">
+                      <PlayCircle
+                        className="size-8 shrink-0 text-muted-foreground"
+                        strokeWidth={1.4}
+                      />
+                      <div>
+                        <div className="text-sm font-medium leading-6">{t(v.title)}</div>
+                        <div className="text-[11px] text-muted-foreground">
+                          {v.duration} · {t({ ar: "الرابط قيد الإضافة", en: "Link coming soon" })}
+                        </div>
+                      </div>
+                    </li>
+                  ),
+                )}
               </ul>
             </Panel>
           </aside>

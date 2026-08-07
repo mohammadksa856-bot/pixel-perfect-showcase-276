@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { MarketTicker } from "@/components/MarketTicker";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import heroSpace from "@/assets/hero-space.jpg";
 import { PageShell } from "@/components/page-shell";
@@ -54,6 +55,8 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const { t } = useI18n();
   const { stats, sectors, companies, research, knowledge, boards } = Route.useLoaderData();
+  const navigate = useNavigate();
+  const [heroQuery, setHeroQuery] = useState("");
 
   return (
     <PageShell>
@@ -94,17 +97,28 @@ function HomePage() {
             {t(ui.heroDescription)}
           </p>
 
-          <label className="animate-rise mt-10 flex items-center gap-3 rounded-2xl bg-card px-5 py-4 shadow-panel">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (heroQuery.trim()) navigate({ to: "/search", search: { q: heroQuery.trim() } });
+            }}
+            className="animate-rise mt-10 flex items-center gap-3 rounded-2xl bg-card px-5 py-4 shadow-panel"
+          >
             <Search className="size-5 shrink-0 text-muted-foreground" />
             <input
               type="search"
+              value={heroQuery}
+              onChange={(e) => setHeroQuery(e.target.value)}
               placeholder={t(ui.searchPlaceholder)}
               className="w-full bg-transparent text-sm text-card-foreground outline-none placeholder:text-muted-foreground"
             />
-            <span className="hidden shrink-0 rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-brand-foreground sm:block">
+            <button
+              type="submit"
+              className="hidden shrink-0 rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-brand-foreground sm:block"
+            >
               {t(ui.search)}
-            </span>
-          </label>
+            </button>
+          </form>
         </div>
       </section>
 

@@ -85,7 +85,10 @@ export const companyResource: ResourceConfig = {
       key: "valuation",
       label: L("مؤشرات التقييم", "Valuation metrics"),
       type: "json",
-      help: L('[{"label":{"ar":"","en":""},"value":""}]', '[{"label":{"ar":"","en":""},"value":""}]'),
+      help: L(
+        '[{"label":{"ar":"","en":""},"value":""}]',
+        '[{"label":{"ar":"","en":""},"value":""}]',
+      ),
     },
     {
       key: "news",
@@ -214,8 +217,8 @@ export const knowledgeResource: ResourceConfig = {
       label: L("الفيديوهات", "Videos"),
       type: "json",
       help: L(
-        '[{"title":{"ar":"","en":""},"duration":"12:00"}]',
-        '[{"title":{"ar":"","en":""},"duration":"12:00"}]',
+        '[{"title":{"ar":"","en":""},"duration":"12:00","url":"https://youtube.com/watch?v=..."}]',
+        '[{"title":{"ar":"","en":""},"duration":"12:00","url":"https://youtube.com/watch?v=..."}]',
       ),
     },
     { key: "sort_order", label: L("الترتيب", "Order"), type: "number" },

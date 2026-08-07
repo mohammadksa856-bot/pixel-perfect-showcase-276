@@ -200,6 +200,12 @@ function CompanyPage() {
               aria-hidden
             />
           </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            {t({
+              ar: "المصدر: بيانات تجريبية للعرض حالياً — سيتم ربطها بمصدر بيانات مباشر.",
+              en: "Source: demo data for now — will be connected to a live data feed.",
+            })}
+          </p>
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">

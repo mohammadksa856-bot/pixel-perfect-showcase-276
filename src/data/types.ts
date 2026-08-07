@@ -72,7 +72,7 @@ export type KnowledgeArticle = {
   level: LocalizedText;
   readingTime: number;
   sections: { heading: LocalizedText; body: LocalizedText }[];
-  videos: { title: LocalizedText; duration: string }[];
+  videos: { title: LocalizedText; duration: string; url?: string }[];
 };
 
 export type Board = {

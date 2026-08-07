@@ -324,7 +324,84 @@ export async function getBoard(slug: string): Promise<Board | undefined> {
   return boards.find((b) => b.slug === slug);
 }
 
-// ---------- Platform stats ----------
+// ---------- Search ----------
+
+export type SearchResult = {
+  type: "company" | "sector" | "research" | "knowledge";
+  slug: string;
+  title: LocalizedText;
+  subtitle: LocalizedText;
+};
+
+export async function search(query: string): Promise<SearchResult[]> {
+  const q = query.trim();
+  if (!q) return [];
+  const like = `%${q}%`;
+  const orFilter = `name->>ar.ilike.${like},name->>en.ilike.${like}`;
+  const titleOrFilter = `title->>ar.ilike.${like},title->>en.ilike.${like}`;
+
+  const [companiesRes, sectorsRes, researchRes, knowledgeRes] = await Promise.all([
+    supabase
+      .from("companies")
+      .select("slug, name, short")
+      .eq("published", true)
+      .or(orFilter)
+      .limit(6),
+    supabase
+      .from("sectors")
+      .select("slug, name, tagline")
+      .eq("published", true)
+      .or(orFilter)
+      .limit(6),
+    supabase
+      .from("research")
+      .select("slug, title, summary")
+      .eq("published", true)
+      .or(titleOrFilter)
+      .limit(6),
+    supabase
+      .from("knowledge_articles")
+      .select("slug, title, summary")
+      .eq("published", true)
+      .or(titleOrFilter)
+      .limit(6),
+  ]);
+
+  const results: SearchResult[] = [];
+  (companiesRes.data ?? []).forEach((c) =>
+    results.push({
+      type: "company",
+      slug: c.slug,
+      title: c.name as unknown as LocalizedText,
+      subtitle: c.short as unknown as LocalizedText,
+    }),
+  );
+  (sectorsRes.data ?? []).forEach((s) =>
+    results.push({
+      type: "sector",
+      slug: s.slug,
+      title: s.name as unknown as LocalizedText,
+      subtitle: s.tagline as unknown as LocalizedText,
+    }),
+  );
+  (researchRes.data ?? []).forEach((r) =>
+    results.push({
+      type: "research",
+      slug: r.slug,
+      title: r.title as unknown as LocalizedText,
+      subtitle: r.summary as unknown as LocalizedText,
+    }),
+  );
+  (knowledgeRes.data ?? []).forEach((k) =>
+    results.push({
+      type: "knowledge",
+      slug: k.slug,
+      title: k.title as unknown as LocalizedText,
+      subtitle: k.summary as unknown as LocalizedText,
+    }),
+  );
+  return results;
+}
 
 export async function getPlatformStats() {
   const [{ count: companies }, { count: research }, { count: articles }, { count: sectors }] =

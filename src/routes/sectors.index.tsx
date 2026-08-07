@@ -64,14 +64,16 @@ type SortKey = "default" | "mostCompanies" | "alpha";
 function SectorsPage() {
   const { t } = useI18n();
   const [sort, setSort] = useState<SortKey>("default");
+  const [hideEmpty, setHideEmpty] = useState(false);
   const { stats } = Route.useLoaderData();
 
   const sorted = useMemo(() => {
-    const list = [...stats];
+    let list = [...stats];
+    if (hideEmpty) list = list.filter((s) => s.companiesCount > 0 || s.researchCount > 0);
     if (sort === "mostCompanies") list.sort((a, b) => b.companiesCount - a.companiesCount);
     if (sort === "alpha") list.sort((a, b) => t(a.sector.name).localeCompare(t(b.sector.name)));
     return list;
-  }, [stats, sort, t]);
+  }, [stats, sort, hideEmpty, t]);
   return (
     <PageShell>
       <Container>
@@ -105,10 +107,16 @@ function SectorsPage() {
           </p>
         </section>
 
-        <div className="mb-4 flex items-center justify-between gap-3">
-          <span className="text-xs text-muted-foreground">
-            {t({ ar: "ترتيب حسب", en: "Sort by" })}
-          </span>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <label className="flex items-center gap-2 text-xs text-muted-foreground">
+            <input
+              type="checkbox"
+              checked={hideEmpty}
+              onChange={(e) => setHideEmpty(e.target.checked)}
+              className="size-3.5 accent-brand"
+            />
+            {t({ ar: "أظهر القطاعات النشطة فقط", en: "Show active sectors only" })}
+          </label>
           <div className="flex gap-1.5">
             {(
               [

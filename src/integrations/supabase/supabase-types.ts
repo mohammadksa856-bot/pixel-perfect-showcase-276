@@ -38,6 +38,36 @@ export type Database = {
         };
         Relationships: [];
       };
+      community_reports: {
+        Row: {
+          created_at: string;
+          id: string;
+          reason: string | null;
+          reporter_id: string;
+          status: string;
+          target_id: string;
+          target_type: string;
+        };
+        Insert: {
+          created_at?: string;
+          id?: string;
+          reason?: string | null;
+          reporter_id: string;
+          status?: string;
+          target_id: string;
+          target_type: string;
+        };
+        Update: {
+          created_at?: string;
+          id?: string;
+          reason?: string | null;
+          reporter_id?: string;
+          status?: string;
+          target_id?: string;
+          target_type?: string;
+        };
+        Relationships: [];
+      };
       community_post_votes: {
         Row: {
           created_at: string;
@@ -364,6 +394,24 @@ export type Database = {
             referencedColumns: ["id"];
           },
         ];
+      };
+      watchlist: {
+        Row: {
+          company_id: string;
+          created_at: string;
+          user_id: string;
+        };
+        Insert: {
+          company_id: string;
+          created_at?: string;
+          user_id: string;
+        };
+        Update: {
+          company_id?: string;
+          created_at?: string;
+          user_id?: string;
+        };
+        Relationships: [];
       };
       sectors: {
         Row: {

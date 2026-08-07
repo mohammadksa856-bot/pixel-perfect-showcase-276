@@ -1,5 +1,13 @@
 import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
-import { BookOpen, Building2, FileText, HelpCircle, LayoutGrid, Layers } from "lucide-react";
+import {
+  BookOpen,
+  Building2,
+  FileText,
+  HelpCircle,
+  LayoutGrid,
+  Layers,
+  ShieldAlert,
+} from "lucide-react";
 import { PageShell, Container } from "@/components/page-shell";
 import { useAuth, useIsContentManager } from "@/hooks/use-auth";
 import { useI18n } from "@/lib/i18n";
@@ -9,20 +17,33 @@ export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
       { title: "لوحة التحكم | معرفة استثمار" },
-      { name: "description", content: "إدارة القطاعات والشركات والأبحاث والمقالات والأسئلة الشائعة." },
+      {
+        name: "description",
+        content: "إدارة القطاعات والشركات والأبحاث والمقالات والأسئلة الشائعة.",
+      },
       { name: "robots", content: "noindex" },
     ],
   }),
   component: AdminLayout,
 });
 
-const links: { to: string; label: { ar: string; en: string }; icon: typeof LayoutGrid; exact?: boolean }[] = [
+const links: {
+  to: string;
+  label: { ar: string; en: string };
+  icon: typeof LayoutGrid;
+  exact?: boolean;
+}[] = [
   { to: "/admin", label: { ar: "نظرة عامة", en: "Overview" }, icon: LayoutGrid, exact: true },
   { to: "/admin/sectors", label: { ar: "القطاعات", en: "Sectors" }, icon: Layers },
   { to: "/admin/companies", label: { ar: "الشركات", en: "Companies" }, icon: Building2 },
   { to: "/admin/research", label: { ar: "الأبحاث", en: "Research" }, icon: FileText },
   { to: "/admin/knowledge", label: { ar: "المعرفة", en: "Knowledge" }, icon: BookOpen },
   { to: "/admin/faqs", label: { ar: "الأسئلة الشائعة", en: "FAQs" }, icon: HelpCircle },
+  {
+    to: "/admin/community",
+    label: { ar: "إشراف المجتمع", en: "Community moderation" },
+    icon: ShieldAlert,
+  },
 ];
 
 function AdminLayout() {

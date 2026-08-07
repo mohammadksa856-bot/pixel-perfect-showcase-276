@@ -6,6 +6,7 @@ import { ui, useI18n } from "@/lib/i18n";
 import { getCompany, getRelatedCompanies, getResearch, getSector } from "@/lib/content";
 import type { Company } from "@/data/types";
 import { cn } from "@/lib/utils";
+import { WatchlistButton } from "@/components/watchlist-button";
 
 export const Route = createFileRoute("/companies/$slug")({
   loader: async ({ params }) => {
@@ -118,6 +119,10 @@ function CompanyPage() {
           <p className="mt-6 max-w-3xl text-sm leading-8 text-night-foreground/70">
             {t(company.description)}
           </p>
+
+          <div className="mt-6">
+            <WatchlistButton companyId={company.id} />
+          </div>
 
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-night-foreground/10 sm:grid-cols-5">
             {facts.map((f) =>

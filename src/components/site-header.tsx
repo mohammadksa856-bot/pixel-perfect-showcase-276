@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Menu, Moon, Search, Sun, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Search, Star, Sun, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
@@ -93,6 +93,13 @@ export function SiteHeader() {
         {/* Right */}
 
         <div className="ml-auto flex items-center gap-2">
+          <Link
+            to="/watchlist"
+            className="hidden md:flex items-center justify-center rounded-full border border-border p-2 hover:bg-muted transition"
+            title={t({ ar: "متابعتي", en: "My watchlist" })}
+          >
+            <Star className="h-4 w-4" />
+          </Link>
           <button
             className="hidden md:flex items-center gap-2 rounded-full border border-border px-3 py-2 text-sm hover:bg-muted transition"
             onClick={() => setLocale(locale === "ar" ? "en" : "ar")}

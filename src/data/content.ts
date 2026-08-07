@@ -489,9 +489,12 @@ const companySeeds: Seed[] = [
 ];
 
 export const companies: Company[] = companySeeds.map((s) => ({
+  id: s.slug,
   ticker: s.ticker,
   slug: s.slug,
   name: s.name,
+  sectorName: sectors.find((sec) => sec.slug === s.sectorSlug)?.name ?? { ar: "", en: "" },
+  sectorTone: sectors.find((sec) => sec.slug === s.sectorSlug)?.tone ?? "tone-emerald",
   exchange: s.exchange,
   sectorSlug: s.sectorSlug,
   country: s.country,

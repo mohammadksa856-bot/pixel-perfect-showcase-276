@@ -26,6 +26,7 @@ export type FinancialRow = {
 };
 
 export type Company = {
+  id: string;
   ticker: string;
   slug: string;
   name: LocalizedText;

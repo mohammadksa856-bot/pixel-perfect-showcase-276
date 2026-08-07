@@ -69,6 +69,7 @@ export async function getSector(slug: string): Promise<Sector | undefined> {
 // ---------- Companies ----------
 
 type CompanyRow = {
+  id: string;
   slug: string;
   ticker: string;
   exchange: string;
@@ -89,10 +90,11 @@ type CompanyRow = {
 };
 
 const companyColumns =
-  "slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, sectors(slug, name, tone)";
+  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, sectors(slug, name, tone)";
 
 function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText }[] = []): Company {
   return {
+    id: row.id,
     ticker: row.ticker,
     slug: row.slug,
     name: row.name,

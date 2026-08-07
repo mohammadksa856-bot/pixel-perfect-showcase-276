@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute, notFound, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowBigDown, ArrowBigUp, ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
@@ -8,6 +8,8 @@ import { Panel } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import { ensureCommunityUser } from "@/lib/community-auth";
+import { ReportButton } from "@/components/report-button";
 
 export const Route = createFileRoute("/community/$postId")({
   loader: async ({ params }) => {
@@ -35,7 +37,6 @@ function authorLabel(authorId: string, t: (v: { ar: string; en: string }) => str
 function PostPage() {
   const { post } = Route.useLoaderData();
   const { t, locale } = useI18n();
-  const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [comment, setComment] = useState("");
   const [posting, setPosting] = useState(false);
@@ -83,9 +84,11 @@ function PostPage() {
   });
 
   const vote = async (value: 1 | -1) => {
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) {
-      navigate({ to: "/auth", search: { denied: false } });
+    let user;
+    try {
+      user = await ensureCommunityUser();
+    } catch (err) {
+      toast.error((err as Error).message);
       return;
     }
     try {
@@ -94,15 +97,12 @@ function PostPage() {
           .from("community_post_votes")
           .delete()
           .eq("post_id", post.id)
-          .eq("user_id", auth.user.id);
+          .eq("user_id", user.id);
         if (error) throw error;
       } else {
         const { error } = await supabase
           .from("community_post_votes")
-          .upsert(
-            { post_id: post.id, user_id: auth.user.id, value },
-            { onConflict: "post_id,user_id" },
-          );
+          .upsert({ post_id: post.id, user_id: user.id, value }, { onConflict: "post_id,user_id" });
         if (error) throw error;
       }
       queryClient.invalidateQueries({ queryKey: ["community_post", post.id] });
@@ -117,14 +117,10 @@ function PostPage() {
     if (!comment.trim()) return;
     setPosting(true);
     try {
-      const { data: auth } = await supabase.auth.getUser();
-      if (!auth.user) {
-        navigate({ to: "/auth", search: { denied: false } });
-        return;
-      }
+      const user = await ensureCommunityUser();
       const { error } = await supabase
         .from("community_comments")
-        .insert({ post_id: post.id, author_id: auth.user.id, body: comment.trim() });
+        .insert({ post_id: post.id, author_id: user.id, body: comment.trim() });
       if (error) throw error;
       setComment("");
       queryClient.invalidateQueries({ queryKey: ["community_comments", post.id] });
@@ -179,9 +175,12 @@ function PostPage() {
           </div>
 
           <div className="min-w-0 flex-1">
-            <div className="text-xs text-muted-foreground">
-              {authorLabel(p.author_id, t)} ·{" "}
-              {new Date(p.created_at).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-US")}
+            <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
+              <span>
+                {authorLabel(p.author_id, t)} ·{" "}
+                {new Date(p.created_at).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-US")}
+              </span>
+              <ReportButton targetType="post" targetId={p.id} />
             </div>
             <h1 className="mt-2 text-lg font-bold leading-8">{p.title}</h1>
           </div>
@@ -221,9 +220,12 @@ function PostPage() {
           <div className="space-y-3">
             {commentsQuery.data?.map((c) => (
               <Panel key={c.id}>
-                <div className="text-xs text-muted-foreground">
-                  {authorLabel(c.author_id, t)} ·{" "}
-                  {new Date(c.created_at).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-US")}
+                <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
+                  <span>
+                    {authorLabel(c.author_id, t)} ·{" "}
+                    {new Date(c.created_at).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-US")}
+                  </span>
+                  <ReportButton targetType="comment" targetId={c.id} />
                 </div>
                 <p className="mt-2 text-sm leading-7">{c.body}</p>
               </Panel>

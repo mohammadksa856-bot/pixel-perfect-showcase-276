@@ -13,7 +13,6 @@ import {
 } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
 import {
-  getBoards,
   getCompanies,
   getKnowledge,
   getPlatformStats,
@@ -23,15 +22,14 @@ import {
 
 export const Route = createFileRoute("/")({
   loader: async () => {
-    const [stats, sectors, companies, research, knowledge, boards] = await Promise.all([
+    const [stats, sectors, companies, research, knowledge] = await Promise.all([
       getPlatformStats(),
       getSectors(),
       getCompanies({ limit: 5 }),
       getResearch(),
       getKnowledge(5),
-      getBoards(),
     ]);
-    return { stats, sectors, companies, research, knowledge, boards };
+    return { stats, sectors, companies, research, knowledge };
   },
   head: () => ({
     meta: [
@@ -53,7 +51,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   const { t } = useI18n();
-  const { stats, sectors, companies, research, knowledge, boards } = Route.useLoaderData();
+  const { stats, sectors, companies, research, knowledge } = Route.useLoaderData();
 
   return (
     <PageShell>
@@ -124,7 +122,7 @@ function HomePage() {
 
       <div className="mx-auto max-w-7xl space-y-20 px-4 py-20 sm:px-6">
         <section>
-          <SectionHeading title={t(ui.exploreSectors)} to="/sectors" />
+          <SectionHeading title={t(ui.exploreSectors)} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sectors.slice(0, 5).map((s) => (
               <SectorCard key={s.slug} sector={s} />
@@ -134,7 +132,7 @@ function HomePage() {
         </section>
 
         <section>
-          <SectionHeading title={t(ui.discoverCompanies)} to="/companies" />
+          <SectionHeading title={t(ui.discoverCompanies)} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {companies.slice(0, 5).map((c) => (
               <CompanyCard key={c.slug} company={c} />
@@ -144,7 +142,7 @@ function HomePage() {
         </section>
 
         <section>
-          <SectionHeading title={t(ui.latestResearch)} to="/research" />
+          <SectionHeading title={t(ui.latestResearch)} />
           <div className="grid gap-5 md:grid-cols-3">
             {research.slice(0, 3).map((r) => (
               <ResearchCard key={r.slug} item={r} />
@@ -154,32 +152,12 @@ function HomePage() {
         </section>
 
         <section>
-          <SectionHeading title={t(ui.knowledgeLibrary)} to="/knowledge" />
+          <SectionHeading title={t(ui.knowledgeLibrary)} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {knowledge.slice(0, 5).map((k) => (
               <KnowledgeCard key={k.slug} item={k} />
             ))}
             <MoreCard to="/knowledge" />
-          </div>
-        </section>
-
-        <section>
-          <SectionHeading title={t(ui.communityBoards)} to="/community" />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {boards.slice(0, 4).map((b) => (
-              <Link
-                key={b.slug}
-                to="/community"
-                className="rounded-2xl border border-border/70 bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lift"
-              >
-                <div className="text-sm font-bold">{t(b.name)}</div>
-                <p className="mt-1.5 text-xs text-muted-foreground">{t(b.description)}</p>
-                <div className="mt-4 text-[11px] text-muted-foreground">
-                  {b.posts} {t(ui.posts)}
-                </div>
-              </Link>
-            ))}
-            <MoreCard to="/community" />
           </div>
         </section>
 
@@ -213,10 +191,10 @@ function MoreCard({ to }: { to: string }) {
   return (
     <Link
       to={to}
-      className="flex min-h-[140px] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border/70 p-5 text-center text-muted-foreground transition-all hover:-translate-y-1 hover:border-foreground/30 hover:text-foreground"
+      className="group flex h-full min-h-[110px] flex-col items-center justify-center gap-2 rounded-2xl border border-border/70 bg-card p-5 text-center text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-foreground/15 hover:text-foreground hover:shadow-lift"
     >
-      <Arrow className="size-5 rotate-180 rtl:rotate-0" />
-      <span className="text-xs font-medium">{t(ui.viewAll)}</span>
+      <Arrow className="size-5 rotate-180 transition-transform group-hover:-translate-x-1 rtl:rotate-0 rtl:group-hover:translate-x-1" />
+      <span className="text-xs font-semibold">{t(ui.viewAll)}</span>
     </Link>
   );
 }

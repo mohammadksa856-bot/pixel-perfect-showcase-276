@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { MarketTicker } from "@/components/MarketTicker";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { Search } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroSpace from "@/assets/hero-space.jpg";
 import { PageShell } from "@/components/page-shell";
+import { SearchBox } from "@/components/search-box";
 import {
   Arrow,
   CompanyCard,
@@ -27,7 +26,7 @@ export const Route = createFileRoute("/")({
     const [stats, sectors, companies, research, knowledge, boards] = await Promise.all([
       getPlatformStats(),
       getSectors(),
-      getCompanies({ limit: 8 }),
+      getCompanies({ limit: 5 }),
       getResearch(),
       getKnowledge(5),
       getBoards(),
@@ -40,9 +39,9 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "منصة عربية متخصصة في تحليل الشركات والقطاعات والأسواق والاقتصاد، مع أبحاث ومحتوى معرفي يساعدك على الاستثمار بفهم لا بتوقع.",
+          "منصة متخصصة في تحليل الشركات والقطاعات والأسواق والاقتصاد، مع أبحاث ومحتوى معرفي يساعدك على الاستثمار بمعرفة لا بتوقع.",
       },
-      { property: "og:title", content: "معرفة استثمار — استثمر بفهم، لا بتوقع" },
+      { property: "og:title", content: "معرفة استثمار — استثمر بمعرفة، لا بتوقع" },
       {
         property: "og:description",
         content: "تحليلات وأبحاث ومحتوى معرفي عن الشركات والقطاعات العالمية بالعربية والإنجليزية.",
@@ -55,8 +54,6 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const { t } = useI18n();
   const { stats, sectors, companies, research, knowledge, boards } = Route.useLoaderData();
-  const navigate = useNavigate();
-  const [heroQuery, setHeroQuery] = useState("");
 
   return (
     <PageShell>
@@ -97,28 +94,12 @@ function HomePage() {
             {t(ui.heroDescription)}
           </p>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (heroQuery.trim()) navigate({ to: "/search", search: { q: heroQuery.trim() } });
-            }}
-            className="animate-rise mt-10 flex items-center gap-3 rounded-2xl bg-card px-5 py-4 shadow-panel"
-          >
-            <Search className="size-5 shrink-0 text-muted-foreground" />
-            <input
-              type="search"
-              value={heroQuery}
-              onChange={(e) => setHeroQuery(e.target.value)}
+          <div className="animate-rise mt-10">
+            <SearchBox
               placeholder={t(ui.searchPlaceholder)}
-              className="w-full bg-transparent text-sm text-card-foreground outline-none placeholder:text-muted-foreground"
+              inputClassName="text-card-foreground"
             />
-            <button
-              type="submit"
-              className="hidden shrink-0 rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-brand-foreground sm:block"
-            >
-              {t(ui.search)}
-            </button>
-          </form>
+          </div>
         </div>
       </section>
 
@@ -145,36 +126,40 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.exploreSectors)} to="/sectors" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sectors.map((s) => (
+            {sectors.slice(0, 5).map((s) => (
               <SectorCard key={s.slug} sector={s} />
             ))}
+            <MoreCard to="/sectors" />
           </div>
         </section>
 
         <section>
           <SectionHeading title={t(ui.discoverCompanies)} to="/companies" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {companies.map((c) => (
+            {companies.slice(0, 5).map((c) => (
               <CompanyCard key={c.slug} company={c} />
             ))}
+            <MoreCard to="/companies" />
           </div>
         </section>
 
         <section>
           <SectionHeading title={t(ui.latestResearch)} to="/research" />
           <div className="grid gap-5 md:grid-cols-3">
-            {research.map((r) => (
+            {research.slice(0, 3).map((r) => (
               <ResearchCard key={r.slug} item={r} />
             ))}
+            <MoreCard to="/research" />
           </div>
         </section>
 
         <section>
           <SectionHeading title={t(ui.knowledgeLibrary)} to="/knowledge" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {knowledge.map((k) => (
+            {knowledge.slice(0, 5).map((k) => (
               <KnowledgeCard key={k.slug} item={k} />
             ))}
+            <MoreCard to="/knowledge" />
           </div>
         </section>
 
@@ -190,10 +175,11 @@ function HomePage() {
                 <div className="text-sm font-bold">{t(b.name)}</div>
                 <p className="mt-1.5 text-xs text-muted-foreground">{t(b.description)}</p>
                 <div className="mt-4 text-[11px] text-muted-foreground">
-                  {b.posts} {t(ui.posts)} · {b.members} {t(ui.members)}
+                  {b.posts} {t(ui.posts)}
                 </div>
               </Link>
             ))}
+            <MoreCard to="/community" />
           </div>
         </section>
 
@@ -204,16 +190,33 @@ function HomePage() {
               <h2 className="text-2xl font-bold sm:text-3xl">{t(ui.ctaTitle)}</h2>
               <p className="mt-3 text-sm text-night-foreground/65">{t(ui.ctaCopy)}</p>
             </div>
-            <Link
-              to="/companies"
+            <a
+              href="#top"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               className="inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-sm font-semibold text-brand-foreground transition-transform hover:scale-[1.03]"
             >
               {t(ui.ctaButton)}
               <Arrow />
-            </Link>
+            </a>
           </div>
         </section>
       </div>
     </PageShell>
+  );
+}
+
+function MoreCard({ to }: { to: string }) {
+  const { t } = useI18n();
+  return (
+    <Link
+      to={to}
+      className="flex min-h-[140px] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border/70 p-5 text-center text-muted-foreground transition-all hover:-translate-y-1 hover:border-foreground/30 hover:text-foreground"
+    >
+      <Arrow className="size-5 rotate-180 rtl:rotate-0" />
+      <span className="text-xs font-medium">{t(ui.viewAll)}</span>
+    </Link>
   );
 }

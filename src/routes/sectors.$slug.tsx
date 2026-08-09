@@ -1,5 +1,5 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ChevronLeft, MessagesSquare } from "lucide-react";
+import { ChevronLeft, MessagesSquare, Sparkles } from "lucide-react";
 import { PageHero, PageShell, Container } from "@/components/page-shell";
 import { CompanyCard, ResearchCard, KnowledgeCard, SectionHeading } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/sectors/$slug")({
 
 function SectorPage() {
   const { sector, companies, research, relatedKnowledge } = Route.useLoaderData();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const changes = companies
     .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))
@@ -102,6 +102,44 @@ function SectorPage() {
             })}
           </h2>
           <p className="text-sm leading-8">{t(sector.about)}</p>
+        </section>
+
+        <section className="mb-14 rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="flex items-center gap-2 text-sm font-bold">
+              <Sparkles className="size-4 text-brand" />
+              {t({ ar: "ملخص أداء القطاع", en: "Sector performance summary" })}
+              <span className="rounded-full bg-brand/15 px-2 py-0.5 text-[10px] font-medium text-brand">
+                {t({ ar: "بالذكاء الاصطناعي", en: "AI-generated" })}
+              </span>
+            </h2>
+            {sector.performanceUpdatedAt && (
+              <span className="text-[11px] text-muted-foreground">
+                {t({ ar: "آخر تحديث", en: "Last updated" })}:{" "}
+                {new Date(sector.performanceUpdatedAt).toLocaleDateString(
+                  locale === "ar" ? "ar-SA" : "en-US",
+                )}
+              </span>
+            )}
+          </div>
+
+          {sector.performanceSummary && t(sector.performanceSummary) ? (
+            <p className="text-sm leading-8">{t(sector.performanceSummary)}</p>
+          ) : (
+            <p className="text-sm leading-8 text-muted-foreground">
+              {t({
+                ar: "الملخص قيد الإعداد — سيظهر هنا تحليل دوري لأداء القطاع.",
+                en: "Summary coming soon — a periodic performance analysis will appear here.",
+              })}
+            </p>
+          )}
+
+          <p className="mt-4 text-[11px] text-muted-foreground">
+            {t({
+              ar: "يُحدَّث هذا الملخص حالياً بشكل أسبوعي، وسيصبح يومياً قريباً.",
+              en: "This summary currently updates weekly, moving to daily soon.",
+            })}
+          </p>
         </section>
 
         <section className="mb-16">

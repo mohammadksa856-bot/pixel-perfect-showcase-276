@@ -6,6 +6,8 @@ export type Sector = {
   tagline: LocalizedText;
   description: LocalizedText;
   about: LocalizedText;
+  performanceSummary?: LocalizedText | undefined;
+  performanceUpdatedAt?: string | undefined;
   icon: string;
   tone: string;
   companies: number;

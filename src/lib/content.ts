@@ -27,6 +27,8 @@ type SectorRow = {
   tagline: LocalizedText;
   description: LocalizedText;
   about: LocalizedText | null;
+  performance_summary: LocalizedText | null;
+  performance_updated_at: string | null;
   icon: string;
   tone: string;
 };
@@ -38,6 +40,8 @@ function mapSector(row: SectorRow): Sector {
     tagline: row.tagline,
     description: row.description,
     about: row.about ?? empty,
+    performanceSummary: row.performance_summary ?? undefined,
+    performanceUpdatedAt: row.performance_updated_at ?? undefined,
     icon: row.icon,
     tone: row.tone,
     companies: 0,
@@ -45,10 +49,13 @@ function mapSector(row: SectorRow): Sector {
   };
 }
 
+const sectorColumns =
+  "slug, name, tagline, description, about, performance_summary, performance_updated_at, icon, tone";
+
 export async function getSectors(): Promise<Sector[]> {
   const { data, error } = await supabase
     .from("sectors")
-    .select("slug, name, tagline, description, about, icon, tone")
+    .select(sectorColumns)
     .eq("published", true)
     .order("sort_order");
   if (error) throw error;
@@ -58,7 +65,7 @@ export async function getSectors(): Promise<Sector[]> {
 export async function getSector(slug: string): Promise<Sector | undefined> {
   const { data, error } = await supabase
     .from("sectors")
-    .select("slug, name, tagline, description, about, icon, tone")
+    .select(sectorColumns)
     .eq("slug", slug)
     .eq("published", true)
     .maybeSingle();

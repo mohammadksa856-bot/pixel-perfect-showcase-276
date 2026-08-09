@@ -21,6 +21,15 @@ export const sectorResource: ResourceConfig = {
     { key: "description", label: L("الوصف", "Description"), type: "localizedLong" },
     { key: "image", label: L("صورة الغلاف", "Cover image"), type: "image" },
     {
+      key: "performance_summary",
+      label: L("ملخص الأداء (ذكاء اصطناعي)", "Performance summary (AI)"),
+      type: "localizedLong",
+      help: L(
+        "نص يلخّص أداء القطاع مؤخراً. يُملأ يدوياً حالياً، وسيُربط بتحديث تلقائي لاحقاً.",
+        "A short recent-performance summary. Filled manually for now, will be automated later.",
+      ),
+    },
+    {
       key: "icon",
       label: L("الأيقونة", "Icon"),
       type: "text",
@@ -36,6 +45,7 @@ export const sectorResource: ResourceConfig = {
     tagline: emptyL,
     description: emptyL,
     image: "",
+    performance_summary: emptyL,
     icon: "Sparkles",
     tone: "emerald",
     sort_order: 0,

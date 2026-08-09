@@ -464,6 +464,8 @@ export type Database = {
           id: string;
           image: string | null;
           name: Json;
+          performance_summary: Json;
+          performance_updated_at: string | null;
           published: boolean;
           slug: string;
           sort_order: number;
@@ -479,6 +481,8 @@ export type Database = {
           id?: string;
           image?: string | null;
           name?: Json;
+          performance_summary?: Json;
+          performance_updated_at?: string | null;
           published?: boolean;
           slug: string;
           sort_order?: number;
@@ -494,6 +498,8 @@ export type Database = {
           id?: string;
           image?: string | null;
           name?: Json;
+          performance_summary?: Json;
+          performance_updated_at?: string | null;
           published?: boolean;
           slug?: string;
           sort_order?: number;

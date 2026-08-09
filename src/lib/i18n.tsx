@@ -84,7 +84,7 @@ export const ui = {
   },
   viewAll: { ar: "عرض الكل", en: "View all" },
   heroTitle: { ar: "معرفة استثمار", en: "معرفة استثمار" },
-  heroSubtitle: { ar: "استثمر بمعرفة، لا بتوقع.", en: "Invest with knowledge, not guesswork." },
+  heroSubtitle: { ar: "استثمر بمعرفة.", en: "Invest with knowledge." },
   heroDescription: {
     ar: "منصة متخصصة في تحليل الشركات والأسواق والاقتصاد والاستثمار لمساعدة المستثمرين على اتخاذ قرارات مبنية على المعرفة.",
     en: "A platform for company, market and economic analysis — helping investors make knowledge-driven decisions.",

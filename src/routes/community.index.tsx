@@ -37,6 +37,7 @@ type PostRow = {
   title: string;
   created_at: string;
   author_id: string;
+  board_slug: string;
   score: number;
   comment_count: number;
 };
@@ -51,8 +52,8 @@ function CommunityPage() {
   const { t, locale } = useI18n();
   const queryClient = useQueryClient();
   const { boards } = Route.useLoaderData();
-  const [active, setActive] = useState(boards[0]!.slug);
-  const board = boards.find((b) => b.slug === active) ?? boards[0]!;
+  const [active, setActive] = useState<string>("all");
+  const board = boards.find((b) => b.slug === active);
   const [sort, setSort] = useState<SortKey>("hot");
   const [showForm, setShowForm] = useState(false);
   const [newTitle, setNewTitle] = useState("");
@@ -61,11 +62,12 @@ function CommunityPage() {
   const postsQuery = useQuery({
     queryKey: ["community_posts", active],
     queryFn: async () => {
-      const { data, error } = await supabase
+      let query = supabase
         .from("community_posts")
-        .select("id, title, created_at, author_id, score, comment_count")
-        .eq("board_slug", active)
+        .select("id, title, created_at, author_id, board_slug, score, comment_count")
         .order("created_at", { ascending: false });
+      if (active !== "all") query = query.eq("board_slug", active);
+      const { data, error } = await query;
       if (error) throw error;
       return data as PostRow[];
     },
@@ -131,6 +133,10 @@ function CommunityPage() {
   };
 
   const handleNewPostClick = async () => {
+    if (active === "all") {
+      toast.info(t({ ar: "اختر لوحة أول عشان تنشر فيها.", en: "Pick a board first to post in." }));
+      return;
+    }
     try {
       await ensureCommunityUser();
     } catch (err) {
@@ -176,6 +182,18 @@ function CommunityPage() {
         <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
           <aside className="lg:sticky lg:top-24 lg:h-fit">
             <div className="space-y-1.5">
+              <button
+                onClick={() => setActive("all")}
+                className={cn(
+                  "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-start text-sm transition-colors",
+                  active === "all"
+                    ? "bg-card font-semibold shadow-card"
+                    : "text-muted-foreground hover:bg-muted",
+                )}
+              >
+                <Flame className="size-4 shrink-0" />
+                <span className="truncate">{t({ ar: "كل المنشورات", en: "All posts" })}</span>
+              </button>
               {boards.map((b) => {
                 const Icon = getIcon(b.slug === "ai" ? "brain" : "chart");
                 return (
@@ -200,7 +218,9 @@ function CommunityPage() {
           <div className="min-w-0">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
               <div>
-                <h2 className="text-xl font-bold">{t(board.name)}</h2>
+                <h2 className="text-xl font-bold">
+                  {board ? t(board.name) : t({ ar: "كل المنشورات", en: "All posts" })}
+                </h2>
                 <p className="mt-1.5 text-sm text-muted-foreground">
                   {postsQuery.data?.length ?? 0} {t(ui.posts)}
                 </p>
@@ -312,11 +332,23 @@ function CommunityPage() {
                       params={{ postId: post.id }}
                       className="min-w-0 flex-1"
                     >
-                      <div className="text-xs text-muted-foreground">
-                        {authorLabel(post.author_id, t)} ·{" "}
-                        {new Date(post.created_at).toLocaleDateString(
-                          locale === "ar" ? "ar-SA" : "en-US",
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        {active === "all" && (
+                          <span className="rounded-md bg-muted px-2 py-0.5 font-medium text-foreground">
+                            {t(
+                              boards.find((b) => b.slug === post.board_slug)?.name ?? {
+                                ar: post.board_slug,
+                                en: post.board_slug,
+                              },
+                            )}
+                          </span>
                         )}
+                        <span>
+                          {authorLabel(post.author_id, t)} ·{" "}
+                          {new Date(post.created_at).toLocaleDateString(
+                            locale === "ar" ? "ar-SA" : "en-US",
+                          )}
+                        </span>
                       </div>
                       <h3 className="mt-2 text-sm font-bold leading-7">{post.title}</h3>
                       <div className="mt-4 inline-flex items-center gap-1.5 text-xs text-muted-foreground">

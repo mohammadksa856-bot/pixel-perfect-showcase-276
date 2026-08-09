@@ -306,17 +306,42 @@ export async function getRelatedKnowledge(
   return all.filter((k) => k.slug !== item.slug).slice(0, limit);
 }
 
-// ---------- Boards (derived from sectors) ----------
+// ---------- Boards (independent, admin-managed) ----------
+
+type BoardRow = {
+  slug: string;
+  name: LocalizedText;
+  description: LocalizedText;
+  image: string | null;
+  tone: string;
+};
 
 export async function getBoards(): Promise<Board[]> {
-  const sectors = await getSectors();
-  return sectors.slice(0, 8).map((s) => ({
-    slug: s.slug,
-    name: s.name,
-    description: s.tagline,
-    posts: 0,
+  const { data, error } = await supabase
+    .from("community_boards")
+    .select("slug, name, description, image, tone")
+    .eq("published", true)
+    .order("sort_order");
+  if (error) throw error;
+  const rows = (data ?? []) as unknown as BoardRow[];
+
+  const counts = await Promise.all(
+    rows.map((r) =>
+      supabase
+        .from("community_posts")
+        .select("id", { count: "exact", head: true })
+        .eq("board_slug", r.slug),
+    ),
+  );
+
+  return rows.map((r, i) => ({
+    slug: r.slug,
+    name: r.name,
+    description: r.description,
+    image: r.image ?? undefined,
+    posts: counts[i]?.count ?? 0,
     members: 0,
-    tone: s.tone,
+    tone: r.tone,
     latest: [],
   }));
 }

@@ -6,6 +6,7 @@ import {
   HelpCircle,
   LayoutGrid,
   Layers,
+  MessagesSquare,
   ShieldAlert,
 } from "lucide-react";
 import { PageShell, Container } from "@/components/page-shell";
@@ -39,6 +40,11 @@ const links: {
   { to: "/admin/research", label: { ar: "الأبحاث", en: "Research" }, icon: FileText },
   { to: "/admin/knowledge", label: { ar: "المعرفة", en: "Knowledge" }, icon: BookOpen },
   { to: "/admin/faqs", label: { ar: "الأسئلة الشائعة", en: "FAQs" }, icon: HelpCircle },
+  {
+    to: "/admin/boards",
+    label: { ar: "لوحات المجتمع", en: "Community boards" },
+    icon: MessagesSquare,
+  },
   {
     to: "/admin/community",
     label: { ar: "إشراف المجتمع", en: "Community moderation" },

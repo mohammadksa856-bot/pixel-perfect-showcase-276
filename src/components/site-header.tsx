@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Menu, Moon, Search, Star, Sun, X } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { Menu, Moon, Star, Sun, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "@/components/logo-mark";
+import { SearchBox } from "@/components/search-box";
 
 const nav = [
   { to: "/", label: ui.home },
@@ -21,8 +22,6 @@ export function SiteHeader() {
   const { theme, toggleTheme } = useTheme();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
-  const navigate = useNavigate();
-  const [headerQuery, setHeaderQuery] = useState("");
 
   const [open, setOpen] = useState(false);
 
@@ -38,8 +37,6 @@ export function SiteHeader() {
 
           <div className="leading-tight">
             <div className="font-bold text-lg">معرفة استثمار</div>
-
-            <div className="text-xs text-muted-foreground">Investment Intelligence</div>
           </div>
         </Link>
 
@@ -65,26 +62,7 @@ export function SiteHeader() {
 
         {!isHome ? (
           <div className="hidden xl:flex flex-1 justify-center">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                if (headerQuery.trim())
-                  navigate({ to: "/search", search: { q: headerQuery.trim() } });
-              }}
-              className="w-full max-w-md"
-            >
-              <label className="flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 transition-all focus-within:ring-2 focus-within:ring-brand">
-                <Search className="h-4 w-4 text-muted-foreground" />
-
-                <input
-                  type="search"
-                  value={headerQuery}
-                  onChange={(e) => setHeaderQuery(e.target.value)}
-                  placeholder={t(ui.searchPlaceholder)}
-                  className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-                />
-              </label>
-            </form>
+            <SearchBox placeholder={t(ui.searchPlaceholder)} className="w-full max-w-md" />
           </div>
         ) : (
           <div className="hidden flex-1 xl:block" aria-hidden />
@@ -105,8 +83,6 @@ export function SiteHeader() {
             onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
           >
             {locale === "ar" ? "English" : "العربية"}
-
-            <ChevronDown className="h-4 w-4" />
           </button>
 
           <button
@@ -132,28 +108,12 @@ export function SiteHeader() {
             {/* Mobile Search */}
 
             {!isHome && (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  if (headerQuery.trim()) {
-                    setOpen(false);
-                    navigate({ to: "/search", search: { q: headerQuery.trim() } });
-                  }
-                }}
-                className="mb-3"
-              >
-                <label className="flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3">
-                  <Search className="h-4 w-4 text-muted-foreground" />
-
-                  <input
-                    type="search"
-                    value={headerQuery}
-                    onChange={(e) => setHeaderQuery(e.target.value)}
-                    placeholder={t(ui.searchPlaceholder)}
-                    className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-                  />
-                </label>
-              </form>
+              <div className="mb-3">
+                <SearchBox
+                  placeholder={t(ui.searchPlaceholder)}
+                  onNavigate={() => setOpen(false)}
+                />
+              </div>
             )}
 
             {/* Mobile Navigation */}
@@ -182,8 +142,6 @@ export function SiteHeader() {
               className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
             >
               <span>{locale === "ar" ? "English" : "العربية"}</span>
-
-              <ChevronDown className="h-4 w-4" />
             </button>
 
             <button

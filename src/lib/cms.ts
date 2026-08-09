@@ -4,7 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
  * Thin CRUD layer over the CMS tables. Every admin screen goes through here so
  * the storage backend can change without touching UI code.
  */
-export type CmsTable = "sectors" | "companies" | "research" | "knowledge_articles" | "faqs";
+export type CmsTable =
+  "sectors" | "companies" | "research" | "knowledge_articles" | "faqs" | "community_boards";
 
 export type CmsRow = Record<string, unknown> & { id: string };
 
@@ -47,4 +48,26 @@ export async function updateRow(table: CmsTable, id: string, row: Record<string,
 export async function deleteRow(table: CmsTable, id: string) {
   const { error } = await db.from(table).delete().eq("id", id);
   if (error) throw new Error(error.message);
+}
+
+/** Swaps sort_order between two rows — used for the up/down reorder controls. */
+export async function swapSortOrder(
+  table: CmsTable,
+  a: { id: string; sort_order: number },
+  b: { id: string; sort_order: number },
+) {
+  await Promise.all([
+    updateRow(table, a.id, { sort_order: b.sort_order }),
+    updateRow(table, b.id, { sort_order: a.sort_order }),
+  ]);
+}
+
+/** Uploads a file to the shared content-images bucket and returns its public URL. */
+export async function uploadContentImage(file: File): Promise<string> {
+  const ext = file.name.split(".").pop() ?? "jpg";
+  const path = `${crypto.randomUUID()}.${ext}`;
+  const { error } = await supabase.storage.from("content-images").upload(path, file);
+  if (error) throw new Error(error.message);
+  const { data } = supabase.storage.from("content-images").getPublicUrl(path);
+  return data.publicUrl;
 }

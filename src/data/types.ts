@@ -80,6 +80,7 @@ export type Board = {
   slug: string;
   name: LocalizedText;
   description: LocalizedText;
+  image?: string | undefined;
   posts: number;
   members: number;
   tone: string;

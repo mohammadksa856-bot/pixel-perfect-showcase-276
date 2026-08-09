@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Loader2, Pencil, Plus, Trash2 } from "lucide-react";
+import { ArrowDown, ArrowUp, ImagePlus, Loader2, Pencil, Plus, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,16 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { createRow, deleteRow, listRows, updateRow, type CmsRow, type CmsTable } from "@/lib/cms";
+import {
+  createRow,
+  deleteRow,
+  listRows,
+  swapSortOrder,
+  updateRow,
+  uploadContentImage,
+  type CmsRow,
+  type CmsTable,
+} from "@/lib/cms";
 import { useI18n, type LocalizedText } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +47,8 @@ export type FieldType =
   | "boolean"
   | "date"
   | "select"
-  | "json";
+  | "json"
+  | "image";
 
 export type Field = {
   key: string;
@@ -62,6 +72,7 @@ export type ResourceConfig = {
   fields: Field[];
   listColumns: ListColumn[];
   defaults: () => Record<string, unknown>;
+  reorderable?: boolean;
 };
 
 export type OptionSet = Record<string, { value: string; label: string }[]>;
@@ -91,6 +102,7 @@ export function ResourceManager({
   const [form, setForm] = useState<Record<string, unknown>>({});
   const [deleteTarget, setDeleteTarget] = useState<CmsRow | null>(null);
   const [search, setSearch] = useState("");
+  const [uploadingKey, setUploadingKey] = useState<string | null>(null);
 
   const listQuery = useQuery({
     queryKey: ["cms", config.table],
@@ -98,6 +110,17 @@ export function ResourceManager({
   });
 
   const invalidate = () => qc.invalidateQueries({ queryKey: ["cms", config.table] });
+
+  const reorderMutation = useMutation({
+    mutationFn: ({ a, b }: { a: CmsRow; b: CmsRow }) =>
+      swapSortOrder(
+        config.table,
+        { id: a.id, sort_order: Number(a["sort_order"] ?? 0) },
+        { id: b.id, sort_order: Number(b["sort_order"] ?? 0) },
+      ),
+    onSuccess: invalidate,
+    onError: (e: Error) => toast.error(e.message),
+  });
 
   const saveMutation = useMutation({
     mutationFn: async (payload: Record<string, unknown>) => {
@@ -178,9 +201,7 @@ export function ResourceManager({
             raw ? "bg-brand/15 text-brand" : "bg-muted text-muted-foreground",
           )}
         >
-          {raw
-            ? t({ ar: "منشور", en: "Published" })
-            : t({ ar: "مسودة", en: "Draft" })}
+          {raw ? t({ ar: "منشور", en: "Published" }) : t({ ar: "مسودة", en: "Draft" })}
         </span>
       );
     if (col.kind === "localized") {
@@ -225,6 +246,7 @@ export function ResourceManager({
           <table className="w-full text-start text-sm">
             <thead className="bg-muted/50 text-xs text-muted-foreground">
               <tr>
+                {config.reorderable && <th className="w-16 px-4 py-3" />}
                 {config.listColumns.map((c) => (
                   <th key={c.key} className="px-4 py-3 text-start font-medium">
                     {t(c.label)}
@@ -234,8 +256,30 @@ export function ResourceManager({
               </tr>
             </thead>
             <tbody>
-              {rows.map((row) => (
+              {rows.map((row, i) => (
                 <tr key={row.id} className="border-t border-border/70 hover:bg-muted/30">
+                  {config.reorderable && (
+                    <td className="px-4 py-3">
+                      {search.trim() ? null : (
+                        <div className="flex flex-col gap-0.5">
+                          <button
+                            disabled={i === 0 || reorderMutation.isPending}
+                            onClick={() => reorderMutation.mutate({ a: row, b: rows[i - 1]! })}
+                            className="rounded p-0.5 hover:bg-muted disabled:opacity-30"
+                          >
+                            <ArrowUp className="size-3.5" />
+                          </button>
+                          <button
+                            disabled={i === rows.length - 1 || reorderMutation.isPending}
+                            onClick={() => reorderMutation.mutate({ a: row, b: rows[i + 1]! })}
+                            className="rounded p-0.5 hover:bg-muted disabled:opacity-30"
+                          >
+                            <ArrowDown className="size-3.5" />
+                          </button>
+                        </div>
+                      )}
+                    </td>
+                  )}
                   {config.listColumns.map((c) => (
                     <td key={c.key} className="px-4 py-3 align-middle">
                       {renderCell(row, c)}
@@ -284,7 +328,56 @@ export function ResourceManager({
                     {t(f.label)}
                   </label>
 
-                  {f.type === "localized" || f.type === "localizedLong" ? (
+                  {f.type === "image" ? (
+                    <div className="flex items-center gap-3">
+                      {value ? (
+                        <div className="relative">
+                          <img
+                            src={String(value)}
+                            alt=""
+                            className="size-20 rounded-lg border border-border object-cover"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => set("")}
+                            className="absolute -end-1.5 -top-1.5 rounded-full bg-destructive p-0.5 text-white"
+                          >
+                            <X className="size-3" />
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex size-20 items-center justify-center rounded-lg border border-dashed border-border text-muted-foreground">
+                          <ImagePlus className="size-5" />
+                        </div>
+                      )}
+                      <label className="cursor-pointer rounded-lg border border-border px-3 py-2 text-xs font-medium hover:bg-muted">
+                        {uploadingKey === f.key ? (
+                          <Loader2 className="size-4 animate-spin" />
+                        ) : (
+                          t({ ar: "اختر صورة", en: "Choose image" })
+                        )}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          disabled={uploadingKey === f.key}
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            setUploadingKey(f.key);
+                            try {
+                              const url = await uploadContentImage(file);
+                              set(url);
+                            } catch (err) {
+                              toast.error((err as Error).message);
+                            } finally {
+                              setUploadingKey(null);
+                            }
+                          }}
+                        />
+                      </label>
+                    </div>
+                  ) : f.type === "localized" || f.type === "localizedLong" ? (
                     <div className="grid gap-2 sm:grid-cols-2">
                       {(["ar", "en"] as const).map((l) => {
                         const lv = (value ?? emptyLocalized) as Record<string, string>;
@@ -358,10 +451,7 @@ export function ResourceManager({
         </DialogContent>
       </Dialog>
 
-      <AlertDialog
-        open={Boolean(deleteTarget)}
-        onOpenChange={(v) => !v && setDeleteTarget(null)}
-      >
+      <AlertDialog open={Boolean(deleteTarget)} onOpenChange={(v) => !v && setDeleteTarget(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>{t({ ar: "تأكيد الحذف", en: "Confirm delete" })}</AlertDialogTitle>
@@ -371,9 +461,7 @@ export function ResourceManager({
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>{t({ ar: "إلغاء", en: "Cancel" })}</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={() => deleteTarget && deleteMutation.mutate(deleteTarget)}
-            >
+            <AlertDialogAction onClick={() => deleteTarget && deleteMutation.mutate(deleteTarget)}>
               {t({ ar: "حذف", en: "Delete" })}
             </AlertDialogAction>
           </AlertDialogFooter>

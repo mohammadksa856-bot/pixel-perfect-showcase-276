@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       { title: "من نحن | معرفة استثمار" },
       {
         name: "description",
-        content: "تعرّف على معرفة استثمار: منصة عربية للتحليل المالي والمحتوى المعرفي الاستثماري.",
+        content: "تعرّف على معرفة استثمار: منصة للتحليل المالي والمحتوى المعرفي الاستثماري.",
       },
     ],
   }),
@@ -24,7 +24,7 @@ function AboutPage() {
         eyebrow={t({ ar: "عن المنصة", en: "About" })}
         title={t({ ar: "من نحن", en: "About us" })}
         description={t({
-          ar: "معرفة استثمار منصة عربية متخصصة في تحليل الشركات والقطاعات والأسواق، تهدف لمساعدتك على اتخاذ قرارات استثمارية مبنية على الفهم لا التوقع.",
+          ar: "معرفة استثمار منصة متخصصة في تحليل الشركات والقطاعات والأسواق، تهدف لمساعدتك على اتخاذ قرارات استثمارية مبنية على المعرفة لا التوقع.",
           en: "Ma'rifat Istithmar is an Arabic platform for company, sector and market analysis, built to help you invest with understanding rather than prediction.",
         })}
       />

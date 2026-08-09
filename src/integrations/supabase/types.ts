@@ -113,6 +113,45 @@ export type Database = {
         };
         Relationships: [];
       };
+      community_boards: {
+        Row: {
+          created_at: string;
+          description: Json;
+          id: string;
+          image: string | null;
+          name: Json;
+          published: boolean;
+          slug: string;
+          sort_order: number;
+          tone: string;
+          updated_at: string;
+        };
+        Insert: {
+          created_at?: string;
+          description?: Json;
+          id?: string;
+          image?: string | null;
+          name?: Json;
+          published?: boolean;
+          slug: string;
+          sort_order?: number;
+          tone?: string;
+          updated_at?: string;
+        };
+        Update: {
+          created_at?: string;
+          description?: Json;
+          id?: string;
+          image?: string | null;
+          name?: Json;
+          published?: boolean;
+          slug?: string;
+          sort_order?: number;
+          tone?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       companies: {
         Row: {
           change: string;
@@ -124,6 +163,7 @@ export type Database = {
           goals: Json;
           how_to_buy: Json;
           id: string;
+          logo: string | null;
           market_cap: string;
           name: Json;
           news: Json;
@@ -148,6 +188,7 @@ export type Database = {
           goals?: Json;
           how_to_buy?: Json;
           id?: string;
+          logo?: string | null;
           market_cap?: string;
           name?: Json;
           news?: Json;
@@ -172,6 +213,7 @@ export type Database = {
           goals?: Json;
           how_to_buy?: Json;
           id?: string;
+          logo?: string | null;
           market_cap?: string;
           name?: Json;
           news?: Json;
@@ -420,6 +462,7 @@ export type Database = {
           description: Json;
           icon: string;
           id: string;
+          image: string | null;
           name: Json;
           published: boolean;
           slug: string;
@@ -434,6 +477,7 @@ export type Database = {
           description?: Json;
           icon?: string;
           id?: string;
+          image?: string | null;
           name?: Json;
           published?: boolean;
           slug: string;
@@ -448,6 +492,7 @@ export type Database = {
           description?: Json;
           icon?: string;
           id?: string;
+          image?: string | null;
           name?: Json;
           published?: boolean;
           slug?: string;

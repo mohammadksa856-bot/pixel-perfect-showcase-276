@@ -86,7 +86,7 @@ export const ui = {
   heroTitle: { ar: "معرفة استثمار", en: "معرفة استثمار" },
   heroSubtitle: { ar: "استثمر بمعرفة", en: "Invest with knowledge." },
   heroDescription: {
-    ar: "منصة متخصصة في تحليل الشركات والأسواق والاقتصاد والاستثمار لمساعدة المستثمرين على اتخاذ قرارات مبنية على المعرفة.",
+    ar: "منصة متخصصة في تحليل الشركات والأسواق والاقتصاد والاستثمار لمساعدة المستثمرين على اتخاذ قرارات مبنية على المعرفة",
     en: "A platform for company, market and economic analysis — helping investors make knowledge-driven decisions.",
   },
   statCompanies: { ar: "شركة", en: "Companies" },

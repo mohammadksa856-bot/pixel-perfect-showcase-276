@@ -178,15 +178,23 @@ export type Database = {
         Row: {
           analyst_consensus: Json
           balance_sheet: Json
+          ceo: Json | null
           change: string
+          competitors: Json | null
           country: Json
           created_at: string
           data_sources: Json
           description: Json
+          dividends: Json | null
           exchange: string
+          executive_summary: Json | null
+          financial_health: Json | null
           financial_ratios: Json
           financials: Json
+          founded_year: number | null
           goals: Json
+          growth_outlook: Json | null
+          headquarters: Json | null
           how_to_buy: Json
           id: string
           logo: string | null
@@ -204,24 +212,34 @@ export type Database = {
           short_interest: Json
           slug: string
           sort_order: number
+          stock_performance: Json | null
           ticker: string
           trading_stats: Json
           upcoming_events: Json
           updated_at: string
           valuation: Json
+          website: string | null
         }
         Insert: {
           analyst_consensus?: Json
           balance_sheet?: Json
+          ceo?: Json | null
           change?: string
+          competitors?: Json | null
           country?: Json
           created_at?: string
           data_sources?: Json
           description?: Json
+          dividends?: Json | null
           exchange?: string
+          executive_summary?: Json | null
+          financial_health?: Json | null
           financial_ratios?: Json
           financials?: Json
+          founded_year?: number | null
           goals?: Json
+          growth_outlook?: Json | null
+          headquarters?: Json | null
           how_to_buy?: Json
           id?: string
           logo?: string | null
@@ -239,24 +257,34 @@ export type Database = {
           short_interest?: Json
           slug: string
           sort_order?: number
+          stock_performance?: Json | null
           ticker?: string
           trading_stats?: Json
           upcoming_events?: Json
           updated_at?: string
           valuation?: Json
+          website?: string | null
         }
         Update: {
           analyst_consensus?: Json
           balance_sheet?: Json
+          ceo?: Json | null
           change?: string
+          competitors?: Json | null
           country?: Json
           created_at?: string
           data_sources?: Json
           description?: Json
+          dividends?: Json | null
           exchange?: string
+          executive_summary?: Json | null
+          financial_health?: Json | null
           financial_ratios?: Json
           financials?: Json
+          founded_year?: number | null
           goals?: Json
+          growth_outlook?: Json | null
+          headquarters?: Json | null
           how_to_buy?: Json
           id?: string
           logo?: string | null
@@ -274,11 +302,13 @@ export type Database = {
           short_interest?: Json
           slug?: string
           sort_order?: number
+          stock_performance?: Json | null
           ticker?: string
           trading_stats?: Json
           upcoming_events?: Json
           updated_at?: string
           valuation?: Json
+          website?: string | null
         }
         Relationships: [
           {

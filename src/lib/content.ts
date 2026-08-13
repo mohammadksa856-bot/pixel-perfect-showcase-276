@@ -2,12 +2,28 @@ import { supabase } from "@/integrations/supabase/client";
 import type {
   Board,
   Company,
+  Competitor,
+  DividendInfo,
+  ExecutiveSummary,
+  FinancialHealthItem,
   CompanySection,
   FinancialRow,
-  CompanyMetric,
+  GrowthOutlookRow,
   KnowledgeArticle,
   Research,
   Sector,
+  StockPerformance,
+  ValuationRow,
+  RatioGroup,
+  BalanceSheetRow,
+  ShortInterest,
+  TradingStats,
+  Ownership,
+  RevenueBreakdownRow,
+  AnalystConsensus,
+  UpcomingEvent,
+  OfficialDoc,
+  DataSource,
 } from "@/data/types";
 import type { LocalizedText } from "@/lib/i18n";
 
@@ -90,14 +106,57 @@ type CompanyRow = {
   sections: CompanySection[];
   goals: LocalizedText | null;
   financials: FinancialRow[];
-  valuation: CompanyMetric[];
+  valuation: ValuationRow[];
   news: { title: LocalizedText; source: string; date: string }[];
   how_to_buy: LocalizedText[];
+  ceo: LocalizedText | null;
+  founded_year: number | null;
+  headquarters: LocalizedText | null;
+  website: string | null;
+  executive_summary: ExecutiveSummary | null;
+  stock_performance: StockPerformance | null;
+  competitors: Competitor[] | null;
+  financial_health: FinancialHealthItem[] | null;
+  growth_outlook: GrowthOutlookRow[] | null;
+  dividends: DividendInfo | null;
+  financial_ratios: RatioGroup[] | null;
+  balance_sheet: BalanceSheetRow[] | null;
+  short_interest: ShortInterest | null;
+  trading_stats: TradingStats | null;
+  ownership: Ownership | null;
+  revenue_breakdown: RevenueBreakdownRow[] | null;
+  analyst_consensus: AnalystConsensus | null;
+  upcoming_events: UpcomingEvent[] | null;
+  official_docs: OfficialDoc[] | null;
+  data_sources: DataSource[] | null;
   sectors: { slug: string; name: LocalizedText; tone: string } | null;
 };
 
 const companyColumns =
-  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, sectors(slug, name, tone)";
+  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, sectors(slug, name, tone)";
+
+const emptyExecutiveSummary: ExecutiveSummary = {
+  strengths: [],
+  risks: [],
+  catalysts: [],
+  watchPoints: [],
+};
+
+const emptyStockPerformance: StockPerformance = {
+  period: empty,
+  companyReturn: null,
+  benchmarkName: empty,
+  benchmarkReturn: null,
+};
+
+const emptyDividends: DividendInfo = {
+  payer: false,
+  yield: "",
+  lastPayout: "",
+  growth3y: "",
+  sustainabilityScore: null,
+  sustainabilityLabel: empty,
+};
 
 function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText }[] = []): Company {
   return {
@@ -122,6 +181,37 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText 
     news: row.news,
     faqs,
     howToBuy: row.how_to_buy,
+    ceo: row.ceo ?? empty,
+    foundedYear: row.founded_year,
+    headquarters: row.headquarters ?? empty,
+    website: row.website,
+    executiveSummary: row.executive_summary ?? emptyExecutiveSummary,
+    stockPerformance: row.stock_performance ?? emptyStockPerformance,
+    competitors: row.competitors ?? [],
+    financialHealth: row.financial_health ?? [],
+    growthOutlook: row.growth_outlook ?? [],
+    dividends: row.dividends ?? emptyDividends,
+    financialRatios: row.financial_ratios ?? [],
+    balanceSheet: row.balance_sheet ?? [],
+    shortInterest: row.short_interest ?? { percent: "", daysToCover: "", note: empty },
+    tradingStats: row.trading_stats ?? {
+      weekLow52: "",
+      weekHigh52: "",
+      volume: "",
+      beta: "",
+      creditRating: "",
+    },
+    ownership: row.ownership ?? { government: "", freeFloat: "", holders: [] },
+    revenueBreakdown: row.revenue_breakdown ?? [],
+    analystConsensus: row.analyst_consensus ?? {
+      rating: empty,
+      analystCount: null,
+      targetPrice: "",
+      upside: "",
+    },
+    upcomingEvents: row.upcoming_events ?? [],
+    officialDocs: row.official_docs ?? [],
+    dataSources: row.data_sources ?? [],
   };
 }
 

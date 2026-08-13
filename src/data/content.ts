@@ -261,10 +261,10 @@ const genericFinancials = (base: number) =>
   }));
 
 const genericValuation = [
-  { label: { ar: "مكرر الربحية", en: "P/E" }, value: "28.4x" },
-  { label: { ar: "قيمة المنشأة / EBITDA", en: "EV/EBITDA" }, value: "17.1x" },
-  { label: { ar: "السعر / المبيعات", en: "P/S" }, value: "6.3x" },
-  { label: { ar: "عائد التدفق الحر", en: "FCF yield" }, value: "3.1%" },
+  { label: { ar: "مكرر الربحية", en: "P/E" }, companyValue: "28.4x" },
+  { label: { ar: "قيمة المنشأة / EBITDA", en: "EV/EBITDA" }, companyValue: "17.1x" },
+  { label: { ar: "السعر / المبيعات", en: "P/S" }, companyValue: "6.3x" },
+  { label: { ar: "عائد التدفق الحر", en: "FCF yield" }, companyValue: "3.1%" },
 ];
 
 const genericFaqs = (nameAr: string, name: string) => [
@@ -498,6 +498,38 @@ export const companies: Company[] = companySeeds.map((s) => ({
   exchange: s.exchange,
   sectorSlug: s.sectorSlug,
   country: s.country,
+  ceo: { ar: "", en: "" },
+  foundedYear: null,
+  headquarters: { ar: "", en: "" },
+  website: null,
+  executiveSummary: { strengths: [], risks: [], catalysts: [], watchPoints: [] },
+  stockPerformance: {
+    period: { ar: "", en: "" },
+    companyReturn: null,
+    benchmarkName: { ar: "", en: "" },
+    benchmarkReturn: null,
+  },
+  competitors: [],
+  financialHealth: [],
+  growthOutlook: [],
+  dividends: {
+    payer: false,
+    yield: "",
+    lastPayout: "",
+    growth3y: "",
+    sustainabilityScore: null,
+    sustainabilityLabel: { ar: "", en: "" },
+  },
+  financialRatios: [],
+  balanceSheet: [],
+  shortInterest: { percent: "", daysToCover: "", note: { ar: "", en: "" } },
+  tradingStats: { weekLow52: "", weekHigh52: "", volume: "", beta: "", creditRating: "" },
+  ownership: { government: "", freeFloat: "", holders: [] },
+  revenueBreakdown: [],
+  analystConsensus: { rating: { ar: "", en: "" }, analystCount: null, targetPrice: "", upside: "" },
+  upcomingEvents: [],
+  officialDocs: [],
+  dataSources: [],
   price: s.price,
   change: s.change,
   marketCap: s.marketCap,

@@ -80,7 +80,12 @@ export type OptionSet = Record<string, { value: string; label: string }[]>;
 const emptyLocalized = { ar: "", en: "" };
 
 function toFormValue(field: Field, raw: unknown) {
-  if (field.type === "json") return JSON.stringify(raw ?? [], null, 2);
+  if (field.type === "json") {
+    // Preserve the original shape: an object field must stay {} when empty,
+    // otherwise saving would silently turn it into [] and break the page.
+    const fallback = raw === null || raw === undefined ? [] : raw;
+    return JSON.stringify(fallback, null, 2);
+  }
   if (field.type === "localized" || field.type === "localizedLong") {
     const v = (raw ?? emptyLocalized) as { ar?: string; en?: string };
     return { ar: v.ar ?? "", en: v.en ?? "" };
@@ -164,11 +169,19 @@ export function ResourceManager({
 
   const submit = () => {
     const payload: Record<string, unknown> = {};
+    const defaults = config.defaults();
     for (const f of config.fields) {
       const value = form[f.key];
       if (f.type === "json") {
+        const text = String(value ?? "").trim();
+        if (!text) {
+          // Empty input: fall back to this field's own default shape
+          // ({} stays {}, [] stays []) instead of forcing an array.
+          payload[f.key] = defaults[f.key] ?? [];
+          continue;
+        }
         try {
-          payload[f.key] = JSON.parse(String(value || "[]"));
+          payload[f.key] = JSON.parse(text);
         } catch {
           toast.error(`${t(f.label)}: ${t({ ar: "صيغة JSON غير صحيحة", en: "Invalid JSON" })}`);
           return;

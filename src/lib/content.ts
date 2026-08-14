@@ -35,6 +35,21 @@ import type { LocalizedText } from "@/lib/i18n";
 
 const empty: LocalizedText = { ar: "", en: "" };
 
+/**
+ * Guards against object-shaped columns arriving as arrays or nulls
+ * (older rows, or data saved before the admin shape fix). Falls back to
+ * the given default so the page renders instead of crashing.
+ */
+function asObject<T>(value: unknown, fallback: T): T {
+  if (!value || Array.isArray(value) || typeof value !== "object") return fallback;
+  return { ...fallback, ...(value as object) } as T;
+}
+
+/** Guards against array-shaped columns arriving as objects or nulls. */
+function asArray<T>(value: unknown): T[] {
+  return Array.isArray(value) ? (value as T[]) : [];
+}
+
 // ---------- Sectors ----------
 
 type SectorRow = {
@@ -174,41 +189,45 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText 
     marketCap: row.market_cap,
     short: row.short,
     description: row.description,
-    sections: row.sections,
-    goals: row.goals ?? empty,
-    financials: row.financials,
-    valuation: row.valuation,
-    news: row.news,
+    sections: asArray(row.sections),
+    goals: asObject(row.goals, empty),
+    financials: asArray(row.financials),
+    valuation: asArray(row.valuation),
+    news: asArray(row.news),
     faqs,
-    howToBuy: row.how_to_buy,
-    ceo: row.ceo ?? empty,
+    howToBuy: asArray(row.how_to_buy),
+    ceo: asObject(row.ceo, empty),
     foundedYear: row.founded_year,
-    headquarters: row.headquarters ?? empty,
+    headquarters: asObject(row.headquarters, empty),
     website: row.website,
-    executiveSummary: row.executive_summary ?? emptyExecutiveSummary,
-    stockPerformance: row.stock_performance ?? emptyStockPerformance,
-    competitors: row.competitors ?? [],
-    financialHealth: row.financial_health ?? [],
-    growthOutlook: row.growth_outlook ?? [],
-    dividends: row.dividends ?? emptyDividends,
-    financialRatios: row.financial_ratios ?? [],
-    balanceSheet: row.balance_sheet ?? [],
-    shortInterest: row.short_interest ?? { percent: "", daysToCover: "", note: empty },
-    tradingStats: row.trading_stats ?? {
+    executiveSummary: asObject(row.executive_summary, emptyExecutiveSummary),
+    stockPerformance: asObject(row.stock_performance, emptyStockPerformance),
+    competitors: asArray(row.competitors),
+    financialHealth: asArray(row.financial_health),
+    growthOutlook: asArray(row.growth_outlook),
+    dividends: asObject(row.dividends, emptyDividends),
+    financialRatios: asArray(row.financial_ratios),
+    balanceSheet: asArray(row.balance_sheet),
+    shortInterest: asObject(row.short_interest, {
+      percent: "",
+      daysToCover: "",
+      note: empty,
+    }),
+    tradingStats: asObject(row.trading_stats, {
       weekLow52: "",
       weekHigh52: "",
       volume: "",
       beta: "",
       creditRating: "",
-    },
-    ownership: row.ownership ?? { government: "", freeFloat: "", holders: [] },
-    revenueBreakdown: row.revenue_breakdown ?? [],
-    analystConsensus: row.analyst_consensus ?? {
+    }),
+    ownership: asObject(row.ownership, { government: "", freeFloat: "", holders: [] }),
+    revenueBreakdown: asArray(row.revenue_breakdown),
+    analystConsensus: asObject(row.analyst_consensus, {
       rating: empty,
       analystCount: null,
       targetPrice: "",
       upside: "",
-    },
+    }),
     upcomingEvents: row.upcoming_events ?? [],
     officialDocs: row.official_docs ?? [],
     dataSources: row.data_sources ?? [],

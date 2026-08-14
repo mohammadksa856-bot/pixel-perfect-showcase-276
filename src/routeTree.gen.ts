@@ -11,18 +11,28 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WatchlistRouteImport } from './routes/watchlist'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as CommunityIndexRouteImport } from './routes/community.index'
+import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
 import { Route as CompaniesIndexRouteImport } from './routes/companies.index'
 import { Route as CompaniesSlugRouteImport } from './routes/companies.$slug'
 import { Route as KnowledgeIndexRouteImport } from './routes/knowledge.index'
 import { Route as KnowledgeSlugRouteImport } from './routes/knowledge.$slug'
+import { Route as MarketsSlugRouteImport } from './routes/markets.$slug'
 import { Route as ResearchIndexRouteImport } from './routes/research.index'
 import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSlugRouteImport } from './routes/sectors.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminBoardsRouteImport } from './routes/_authenticated/admin.boards'
+import { Route as AuthenticatedAdminCommunityRouteImport } from './routes/_authenticated/admin.community'
 import { Route as AuthenticatedAdminCompaniesRouteImport } from './routes/_authenticated/admin.companies'
 import { Route as AuthenticatedAdminFaqsRouteImport } from './routes/_authenticated/admin.faqs'
 import { Route as AuthenticatedAdminKnowledgeRouteImport } from './routes/_authenticated/admin.knowledge'
@@ -38,9 +48,39 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WatchlistRoute = WatchlistRouteImport.update({
+  id: '/watchlist',
+  path: '/watchlist',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -51,6 +91,11 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
 const CommunityIndexRoute = CommunityIndexRouteImport.update({
   id: '/community/',
   path: '/community/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityPostIdRoute = CommunityPostIdRouteImport.update({
+  id: '/community/$postId',
+  path: '/community/$postId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompaniesIndexRoute = CompaniesIndexRouteImport.update({
@@ -71,6 +116,11 @@ const KnowledgeIndexRoute = KnowledgeIndexRouteImport.update({
 const KnowledgeSlugRoute = KnowledgeSlugRouteImport.update({
   id: '/knowledge/$slug',
   path: '/knowledge/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketsSlugRoute = MarketsSlugRouteImport.update({
+  id: '/markets/$slug',
+  path: '/markets/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchIndexRoute = ResearchIndexRouteImport.update({
@@ -98,6 +148,18 @@ const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
+const AuthenticatedAdminBoardsRoute =
+  AuthenticatedAdminBoardsRouteImport.update({
+    id: '/boards',
+    path: '/boards',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminCommunityRoute =
+  AuthenticatedAdminCommunityRouteImport.update({
+    id: '/community',
+    path: '/community',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminCompaniesRoute =
   AuthenticatedAdminCompaniesRouteImport.update({
     id: '/companies',
@@ -130,10 +192,18 @@ const AuthenticatedAdminSectorsRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
+  '/terms': typeof TermsRoute
+  '/watchlist': typeof WatchlistRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/community/$postId': typeof CommunityPostIdRoute
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
+  '/markets/$slug': typeof MarketsSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/community/': typeof CommunityIndexRoute
@@ -141,6 +211,8 @@ export interface FileRoutesByFullPath {
   '/knowledge/': typeof KnowledgeIndexRoute
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
+  '/admin/boards': typeof AuthenticatedAdminBoardsRoute
+  '/admin/community': typeof AuthenticatedAdminCommunityRoute
   '/admin/companies': typeof AuthenticatedAdminCompaniesRoute
   '/admin/faqs': typeof AuthenticatedAdminFaqsRoute
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
@@ -150,9 +222,17 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
+  '/terms': typeof TermsRoute
+  '/watchlist': typeof WatchlistRoute
+  '/community/$postId': typeof CommunityPostIdRoute
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
+  '/markets/$slug': typeof MarketsSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/community': typeof CommunityIndexRoute
@@ -160,6 +240,8 @@ export interface FileRoutesByTo {
   '/knowledge': typeof KnowledgeIndexRoute
   '/research': typeof ResearchIndexRoute
   '/sectors': typeof SectorsIndexRoute
+  '/admin/boards': typeof AuthenticatedAdminBoardsRoute
+  '/admin/community': typeof AuthenticatedAdminCommunityRoute
   '/admin/companies': typeof AuthenticatedAdminCompaniesRoute
   '/admin/faqs': typeof AuthenticatedAdminFaqsRoute
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
@@ -171,10 +253,18 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
+  '/terms': typeof TermsRoute
+  '/watchlist': typeof WatchlistRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/community/$postId': typeof CommunityPostIdRoute
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
+  '/markets/$slug': typeof MarketsSlugRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/community/': typeof CommunityIndexRoute
@@ -182,6 +272,8 @@ export interface FileRoutesById {
   '/knowledge/': typeof KnowledgeIndexRoute
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
+  '/_authenticated/admin/boards': typeof AuthenticatedAdminBoardsRoute
+  '/_authenticated/admin/community': typeof AuthenticatedAdminCommunityRoute
   '/_authenticated/admin/companies': typeof AuthenticatedAdminCompaniesRoute
   '/_authenticated/admin/faqs': typeof AuthenticatedAdminFaqsRoute
   '/_authenticated/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
@@ -193,10 +285,18 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/auth'
+    | '/contact'
+    | '/privacy'
+    | '/search'
+    | '/terms'
+    | '/watchlist'
     | '/admin'
+    | '/community/$postId'
     | '/companies/$slug'
     | '/knowledge/$slug'
+    | '/markets/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/community/'
@@ -204,6 +304,8 @@ export interface FileRouteTypes {
     | '/knowledge/'
     | '/research/'
     | '/sectors/'
+    | '/admin/boards'
+    | '/admin/community'
     | '/admin/companies'
     | '/admin/faqs'
     | '/admin/knowledge'
@@ -213,9 +315,17 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/auth'
+    | '/contact'
+    | '/privacy'
+    | '/search'
+    | '/terms'
+    | '/watchlist'
+    | '/community/$postId'
     | '/companies/$slug'
     | '/knowledge/$slug'
+    | '/markets/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/community'
@@ -223,6 +333,8 @@ export interface FileRouteTypes {
     | '/knowledge'
     | '/research'
     | '/sectors'
+    | '/admin/boards'
+    | '/admin/community'
     | '/admin/companies'
     | '/admin/faqs'
     | '/admin/knowledge'
@@ -233,10 +345,18 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/about'
     | '/auth'
+    | '/contact'
+    | '/privacy'
+    | '/search'
+    | '/terms'
+    | '/watchlist'
     | '/_authenticated/admin'
+    | '/community/$postId'
     | '/companies/$slug'
     | '/knowledge/$slug'
+    | '/markets/$slug'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/community/'
@@ -244,6 +364,8 @@ export interface FileRouteTypes {
     | '/knowledge/'
     | '/research/'
     | '/sectors/'
+    | '/_authenticated/admin/boards'
+    | '/_authenticated/admin/community'
     | '/_authenticated/admin/companies'
     | '/_authenticated/admin/faqs'
     | '/_authenticated/admin/knowledge'
@@ -255,9 +377,17 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
+  ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SearchRoute: typeof SearchRoute
+  TermsRoute: typeof TermsRoute
+  WatchlistRoute: typeof WatchlistRoute
+  CommunityPostIdRoute: typeof CommunityPostIdRoute
   CompaniesSlugRoute: typeof CompaniesSlugRoute
   KnowledgeSlugRoute: typeof KnowledgeSlugRoute
+  MarketsSlugRoute: typeof MarketsSlugRoute
   ResearchSlugRoute: typeof ResearchSlugRoute
   SectorsSlugRoute: typeof SectorsSlugRoute
   CommunityIndexRoute: typeof CommunityIndexRoute
@@ -283,11 +413,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/watchlist': {
+      id: '/watchlist'
+      path: '/watchlist'
+      fullPath: '/watchlist'
+      preLoaderRoute: typeof WatchlistRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -302,6 +474,13 @@ declare module '@tanstack/react-router' {
       path: '/community'
       fullPath: '/community/'
       preLoaderRoute: typeof CommunityIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community/$postId': {
+      id: '/community/$postId'
+      path: '/community/$postId'
+      fullPath: '/community/$postId'
+      preLoaderRoute: typeof CommunityPostIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/companies/': {
@@ -330,6 +509,13 @@ declare module '@tanstack/react-router' {
       path: '/knowledge/$slug'
       fullPath: '/knowledge/$slug'
       preLoaderRoute: typeof KnowledgeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/markets/$slug': {
+      id: '/markets/$slug'
+      path: '/markets/$slug'
+      fullPath: '/markets/$slug'
+      preLoaderRoute: typeof MarketsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/research/': {
@@ -365,6 +551,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/admin/'
       preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/boards': {
+      id: '/_authenticated/admin/boards'
+      path: '/boards'
+      fullPath: '/admin/boards'
+      preLoaderRoute: typeof AuthenticatedAdminBoardsRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/community': {
+      id: '/_authenticated/admin/community'
+      path: '/community'
+      fullPath: '/admin/community'
+      preLoaderRoute: typeof AuthenticatedAdminCommunityRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
     '/_authenticated/admin/companies': {
@@ -406,6 +606,8 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminBoardsRoute: typeof AuthenticatedAdminBoardsRoute
+  AuthenticatedAdminCommunityRoute: typeof AuthenticatedAdminCommunityRoute
   AuthenticatedAdminCompaniesRoute: typeof AuthenticatedAdminCompaniesRoute
   AuthenticatedAdminFaqsRoute: typeof AuthenticatedAdminFaqsRoute
   AuthenticatedAdminKnowledgeRoute: typeof AuthenticatedAdminKnowledgeRoute
@@ -415,6 +617,8 @@ interface AuthenticatedAdminRouteChildren {
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminBoardsRoute: AuthenticatedAdminBoardsRoute,
+  AuthenticatedAdminCommunityRoute: AuthenticatedAdminCommunityRoute,
   AuthenticatedAdminCompaniesRoute: AuthenticatedAdminCompaniesRoute,
   AuthenticatedAdminFaqsRoute: AuthenticatedAdminFaqsRoute,
   AuthenticatedAdminKnowledgeRoute: AuthenticatedAdminKnowledgeRoute,
@@ -440,9 +644,17 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
+  ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
+  SearchRoute: SearchRoute,
+  TermsRoute: TermsRoute,
+  WatchlistRoute: WatchlistRoute,
+  CommunityPostIdRoute: CommunityPostIdRoute,
   CompaniesSlugRoute: CompaniesSlugRoute,
   KnowledgeSlugRoute: KnowledgeSlugRoute,
+  MarketsSlugRoute: MarketsSlugRoute,
   ResearchSlugRoute: ResearchSlugRoute,
   SectorsSlugRoute: SectorsSlugRoute,
   CommunityIndexRoute: CommunityIndexRoute,
@@ -454,3 +666,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

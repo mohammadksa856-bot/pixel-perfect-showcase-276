@@ -102,56 +102,85 @@ export const companyResource: ResourceConfig = {
     {
       key: "sections",
       label: L("أقسام التحليل", "Business sections"),
-      type: "json",
-      help: L(
-        '[{"key":"model","title":{"ar":"","en":""},"body":{"ar":"","en":""}}]',
-        '[{"key":"model","title":{"ar":"","en":""},"body":{"ar":"","en":""}}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "key", label: L("المعرّف", "Key"), placeholder: "model" },
+        { key: "title", label: L("العنوان", "Title"), kind: "localized" },
+        { key: "body", label: L("المحتوى", "Body"), kind: "localized" },
+      ],
     },
     {
       key: "financials",
       label: L("القوائم المالية", "Financials"),
-      type: "json",
-      help: L(
-        '[{"year":"2024","revenue":"","netIncome":"","cashFlow":"","margin":"","roic":""}]',
-        '[{"year":"2024","revenue":"","netIncome":"","cashFlow":"","margin":"","roic":""}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "year", label: L("السنة", "Year"), placeholder: "2024" },
+        { key: "revenue", label: L("الإيرادات", "Revenue"), placeholder: "616.0B" },
+        { key: "netIncome", label: L("صافي الدخل", "Net income"), placeholder: "126.2B" },
+        { key: "cashFlow", label: L("التدفق النقدي", "Cash flow"), placeholder: "153.6B" },
+        { key: "margin", label: L("الهامش", "Margin"), placeholder: "23.7%" },
+        { key: "roic", label: L("العائد على رأس المال", "ROIC"), placeholder: "16.2%" },
+      ],
     },
     {
       key: "valuation",
       label: L("التقييم (شركة/قطاع/سوق)", "Valuation (company/sector/market)"),
-      type: "json",
-      help: L(
-        '[{"label":{"ar":"P/E","en":"P/E"},"companyValue":"15.2x","sectorAvg":"17.8x","marketAvg":"21.4x","reading":"good","readingText":{"ar":"أقل من المتوسط","en":"Below average"}}]',
-        '[{"label":{"ar":"P/E","en":"P/E"},"companyValue":"15.2x","sectorAvg":"17.8x","marketAvg":"21.4x","reading":"good","readingText":{"ar":"أقل من المتوسط","en":"Below average"}}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("المؤشر", "Metric"), kind: "localized" },
+        { key: "companyValue", label: L("قيمة الشركة", "Company"), placeholder: "15.2x" },
+        { key: "sectorAvg", label: L("متوسط القطاع", "Sector avg"), placeholder: "17.8x" },
+        { key: "marketAvg", label: L("متوسط السوق", "Market avg"), placeholder: "21.4x" },
+        {
+          key: "reading",
+          label: L("القراءة", "Reading"),
+          kind: "select",
+          options: [
+            { value: "good", label: L("إيجابي", "Good") },
+            { value: "warning", label: L("تحذير", "Warning") },
+            { value: "bad", label: L("سلبي", "Bad") },
+          ],
+        },
+        { key: "readingText", label: L("تفسير القراءة", "Reading text"), kind: "localized" },
+      ],
     },
     {
       key: "competitors",
       label: L("المنافسون", "Competitors"),
-      type: "json",
-      help: L(
-        '[{"name":"Exxon Mobil","marketCap":"$470B","pe":"14.6x","dividend":"3.4%"}]',
-        '[{"name":"Exxon Mobil","marketCap":"$470B","pe":"14.6x","dividend":"3.4%"}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "name", label: L("اسم الشركة", "Company name"), placeholder: "Exxon Mobil" },
+        { key: "marketCap", label: L("القيمة السوقية", "Market cap"), placeholder: "$470B" },
+        { key: "pe", label: L("مكرر الربحية", "P/E"), placeholder: "14.6x" },
+        { key: "dividend", label: L("العائد", "Dividend"), placeholder: "3.4%" },
+      ],
     },
     {
       key: "financial_health",
       label: L("الصحة المالية", "Financial health"),
-      type: "json",
-      help: L(
-        '[{"status":"good","text":{"ar":"سيولة قوية","en":"Strong liquidity"}}]',
-        '[{"status":"good","text":{"ar":"سيولة قوية","en":"Strong liquidity"}}]',
-      ),
+      type: "list",
+      itemColumns: [
+        {
+          key: "status",
+          label: L("الحالة", "Status"),
+          kind: "select",
+          options: [
+            { value: "good", label: L("جيد ✓", "Good ✓") },
+            { value: "warning", label: L("تحذير !", "Warning !") },
+            { value: "bad", label: L("سلبي ✕", "Bad ✕") },
+          ],
+        },
+        { key: "text", label: L("الملاحظة", "Note"), kind: "localized" },
+      ],
     },
     {
       key: "growth_outlook",
       label: L("النمو المتوقع", "Growth outlook"),
-      type: "json",
-      help: L(
-        '[{"label":{"ar":"نمو الإيرادات المتوقع","en":"Expected revenue growth"},"value":"+4.2%"}]',
-        '[{"label":{"ar":"نمو الإيرادات المتوقع","en":"Expected revenue growth"},"value":"+4.2%"}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("البند", "Item"), kind: "localized" },
+        { key: "value", label: L("القيمة", "Value"), placeholder: "+4.2%" },
+      ],
     },
     {
       key: "dividends",
@@ -189,11 +218,11 @@ export const companyResource: ResourceConfig = {
     {
       key: "balance_sheet",
       label: L("الميزانية العمومية", "Balance sheet"),
-      type: "json",
-      help: L(
-        '[{"label":{"ar":"إجمالي الأصول","en":"Total assets"},"value":"660B$"}]',
-        '[{"label":{"ar":"إجمالي الأصول","en":"Total assets"},"value":"660B$"}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("البند", "Item"), kind: "localized" },
+        { key: "value", label: L("القيمة", "Value"), placeholder: "660B$" },
+      ],
     },
     {
       key: "short_interest",
@@ -225,11 +254,11 @@ export const companyResource: ResourceConfig = {
     {
       key: "revenue_breakdown",
       label: L("تفصيل الإيرادات", "Revenue breakdown"),
-      type: "json",
-      help: L(
-        '[{"label":{"ar":"الاستخراج","en":"Upstream"},"percent":58}]',
-        '[{"label":{"ar":"الاستخراج","en":"Upstream"},"percent":58}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("النشاط", "Segment"), kind: "localized" },
+        { key: "percent", label: L("النسبة %", "Percent %"), kind: "number", placeholder: "58" },
+      ],
     },
     {
       key: "analyst_consensus",
@@ -243,29 +272,49 @@ export const companyResource: ResourceConfig = {
     {
       key: "upcoming_events",
       label: L("أحداث قادمة", "Upcoming events"),
-      type: "json",
-      help: L(
-        '[{"title":{"ar":"إعلان النتائج","en":"Earnings"},"date":"2026-11-15","type":"earnings"}]',
-        '[{"title":{"ar":"إعلان النتائج","en":"Earnings"},"date":"2026-11-15","type":"earnings"}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "title", label: L("الحدث", "Event"), kind: "localized" },
+        { key: "date", label: L("التاريخ", "Date"), placeholder: "2026-11-15" },
+        {
+          key: "type",
+          label: L("النوع", "Type"),
+          kind: "select",
+          options: [
+            { value: "earnings", label: L("نتائج مالية", "Earnings") },
+            { value: "dividend", label: L("توزيعات", "Dividend") },
+            { value: "other", label: L("أخرى", "Other") },
+          ],
+        },
+      ],
     },
     {
       key: "official_docs",
       label: L("مستندات رسمية", "Official documents"),
-      type: "json",
-      help: L(
-        '[{"label":{"ar":"التقرير السنوي","en":"Annual report"},"url":"https://..."}]',
-        '[{"label":{"ar":"التقرير السنوي","en":"Annual report"},"url":"https://..."}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("اسم المستند", "Document name"), kind: "localized" },
+        { key: "url", label: L("الرابط", "URL"), placeholder: "https://..." },
+      ],
     },
     {
       key: "data_sources",
       label: L("المصادر وحداثة البيانات", "Data sources"),
-      type: "json",
-      help: L(
-        '[{"label":{"ar":"السعر","en":"Price"},"note":{"ar":"بيانات تجريبية","en":"Demo data"},"kind":"live"}]',
-        '[{"label":{"ar":"السعر","en":"Price"},"note":{"ar":"","en":""},"kind":"live"}]',
-      ),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("نوع البيانات", "Data type"), kind: "localized" },
+        { key: "note", label: L("الملاحظة", "Note"), kind: "localized" },
+        {
+          key: "kind",
+          label: L("المصدر", "Source kind"),
+          kind: "select",
+          options: [
+            { value: "live", label: L("مباشر", "Live") },
+            { value: "official", label: L("رسمي", "Official") },
+            { value: "ai", label: L("ذكاء اصطناعي", "AI") },
+          ],
+        },
+      ],
     },
     { key: "sort_order", label: L("الترتيب", "Order"), type: "number" },
     { key: "published", label: L("منشور", "Published"), type: "boolean" },

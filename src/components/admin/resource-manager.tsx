@@ -48,7 +48,18 @@ export type FieldType =
   | "date"
   | "select"
   | "json"
-  | "image";
+  | "image"
+  | "list";
+
+/** A single editable column inside a `list` field's row editor. */
+export type ListItemColumn = {
+  key: string;
+  label: LocalizedText;
+  /** "localized" renders a paired ar/en input; the rest are single inputs. */
+  kind?: "text" | "number" | "localized" | "select";
+  options?: { value: string; label: LocalizedText }[];
+  placeholder?: string;
+};
 
 export type Field = {
   key: string;
@@ -56,6 +67,8 @@ export type Field = {
   type: FieldType;
   optionsKey?: string;
   help?: LocalizedText;
+  /** Required for `list` fields: describes the shape of each row. */
+  itemColumns?: ListItemColumn[];
 };
 
 export type ListColumn = {
@@ -80,6 +93,7 @@ export type OptionSet = Record<string, { value: string; label: string }[]>;
 const emptyLocalized = { ar: "", en: "" };
 
 function toFormValue(field: Field, raw: unknown) {
+  if (field.type === "list") return Array.isArray(raw) ? raw : [];
   if (field.type === "json") {
     // Preserve the original shape: an object field must stay {} when empty,
     // otherwise saving would silently turn it into [] and break the page.
@@ -172,7 +186,9 @@ export function ResourceManager({
     const defaults = config.defaults();
     for (const f of config.fields) {
       const value = form[f.key];
-      if (f.type === "json") {
+      if (f.type === "list") {
+        payload[f.key] = Array.isArray(value) ? value : [];
+      } else if (f.type === "json") {
         const text = String(value ?? "").trim();
         if (!text) {
           // Empty input: fall back to this field's own default shape
@@ -341,7 +357,13 @@ export function ResourceManager({
                     {t(f.label)}
                   </label>
 
-                  {f.type === "image" ? (
+                  {f.type === "list" ? (
+                    <ListEditor
+                      columns={f.itemColumns ?? []}
+                      rows={(Array.isArray(value) ? value : []) as Record<string, unknown>[]}
+                      onChange={set}
+                    />
+                  ) : f.type === "image" ? (
                     <div className="flex items-center gap-3">
                       {value ? (
                         <div className="relative">
@@ -480,6 +502,176 @@ export function ResourceManager({
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+    </div>
+  );
+}
+
+/**
+ * Row-based editor for array fields — replaces hand-editing raw JSON.
+ * Each row renders one input per configured column; bilingual columns
+ * render a paired ar/en input.
+ */
+function ListEditor({
+  columns,
+  rows,
+  onChange,
+}: {
+  columns: ListItemColumn[];
+  rows: Record<string, unknown>[];
+  onChange: (rows: Record<string, unknown>[]) => void;
+}) {
+  const { t } = useI18n();
+
+  const blankRow = () => {
+    const r: Record<string, unknown> = {};
+    for (const c of columns) r[c.key] = c.kind === "localized" ? { ar: "", en: "" } : "";
+    return r;
+  };
+
+  const updateCell = (rowIndex: number, key: string, val: unknown) => {
+    const next = rows.map((r, i) => (i === rowIndex ? { ...r, [key]: val } : r));
+    onChange(next);
+  };
+
+  const removeRow = (rowIndex: number) => onChange(rows.filter((_, i) => i !== rowIndex));
+
+  const moveRow = (rowIndex: number, dir: -1 | 1) => {
+    const target = rowIndex + dir;
+    if (target < 0 || target >= rows.length) return;
+    const next = [...rows];
+    const [moved] = next.splice(rowIndex, 1);
+    next.splice(target, 0, moved!);
+    onChange(next);
+  };
+
+  return (
+    <div className="grid gap-3">
+      {rows.length === 0 && (
+        <p className="rounded-lg border border-dashed border-border/70 px-3 py-4 text-center text-xs text-muted-foreground">
+          {t({ ar: "لا توجد عناصر بعد.", en: "No items yet." })}
+        </p>
+      )}
+
+      {rows.map((row, rowIndex) => (
+        <div key={rowIndex} className="rounded-xl border border-border/70 bg-muted/20 p-3">
+          <div className="mb-2 flex items-center justify-between">
+            <span className="text-[11px] font-semibold text-muted-foreground">
+              {t({ ar: "عنصر", en: "Item" })} {rowIndex + 1}
+            </span>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => moveRow(rowIndex, -1)}
+                disabled={rowIndex === 0}
+                className="rounded p-1 hover:bg-muted disabled:opacity-30"
+                title={t({ ar: "لأعلى", en: "Move up" })}
+              >
+                <ArrowUp className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => moveRow(rowIndex, 1)}
+                disabled={rowIndex === rows.length - 1}
+                className="rounded p-1 hover:bg-muted disabled:opacity-30"
+                title={t({ ar: "لأسفل", en: "Move down" })}
+              >
+                <ArrowDown className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => removeRow(rowIndex)}
+                className="rounded p-1 text-destructive hover:bg-destructive/10"
+                title={t({ ar: "حذف", en: "Remove" })}
+              >
+                <Trash2 className="size-3.5" />
+              </button>
+            </div>
+          </div>
+
+          <div className="grid gap-2.5">
+            {columns.map((col) => {
+              const cell = row[col.key];
+              if (col.kind === "localized") {
+                const v = (cell ?? { ar: "", en: "" }) as { ar?: string; en?: string };
+                return (
+                  <div key={col.key} className="grid gap-1.5">
+                    <span className="text-[11px] text-muted-foreground">{t(col.label)}</span>
+                    <div className="grid gap-1.5 sm:grid-cols-2">
+                      <Input
+                        value={v.ar ?? ""}
+                        onChange={(e) =>
+                          updateCell(rowIndex, col.key, { ...v, ar: e.target.value })
+                        }
+                        placeholder="عربي"
+                        className="h-8 text-xs"
+                      />
+                      <Input
+                        value={v.en ?? ""}
+                        onChange={(e) =>
+                          updateCell(rowIndex, col.key, { ...v, en: e.target.value })
+                        }
+                        placeholder="English"
+                        dir="ltr"
+                        className="h-8 text-xs"
+                      />
+                    </div>
+                  </div>
+                );
+              }
+
+              if (col.kind === "select") {
+                return (
+                  <div key={col.key} className="grid gap-1.5">
+                    <span className="text-[11px] text-muted-foreground">{t(col.label)}</span>
+                    <select
+                      value={String(cell ?? "")}
+                      onChange={(e) => updateCell(rowIndex, col.key, e.target.value)}
+                      className="h-8 rounded-md border border-input bg-background px-2 text-xs"
+                    >
+                      <option value="">—</option>
+                      {(col.options ?? []).map((o) => (
+                        <option key={o.value} value={o.value}>
+                          {t(o.label)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              }
+
+              return (
+                <div key={col.key} className="grid gap-1.5">
+                  <span className="text-[11px] text-muted-foreground">{t(col.label)}</span>
+                  <Input
+                    type={col.kind === "number" ? "number" : "text"}
+                    value={String(cell ?? "")}
+                    onChange={(e) =>
+                      updateCell(
+                        rowIndex,
+                        col.key,
+                        col.kind === "number" ? Number(e.target.value) : e.target.value,
+                      )
+                    }
+                    placeholder={col.placeholder ?? ""}
+                    className="h-8 text-xs"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={() => onChange([...rows, blankRow()])}
+        className="justify-self-start"
+      >
+        <Plus className="size-3.5" />
+        {t({ ar: "إضافة عنصر", en: "Add item" })}
+      </Button>
     </div>
   );
 }

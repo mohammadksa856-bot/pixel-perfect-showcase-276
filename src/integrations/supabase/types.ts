@@ -177,6 +177,28 @@ export type Database = {
       companies: {
         Row: {
           analyst_consensus: Json
+          capital_allocation: Json
+          cash_flow: Json
+          company_timeline: Json
+          current_projects: Json
+          customer_concentration: Json
+          debt_maturity: Json
+          decision_card: Json
+          employee_count: string | null
+          forward_estimates: Json
+          geographic_revenue: Json
+          historical_valuation: Json
+          insider_ownership: string | null
+          insider_trades: Json
+          management_team: Json
+          margin_trend: Json
+          operational_kpis: Json
+          quarterly_results: Json
+          regulatory_env: Json
+          risk_items: Json
+          segment_profit: Json
+          share_count: Json
+          valuation_scenarios: Json
           balance_sheet: Json
           ceo: Json | null
           change: string
@@ -222,6 +244,28 @@ export type Database = {
         }
         Insert: {
           analyst_consensus?: Json
+          capital_allocation?: Json
+          cash_flow?: Json
+          company_timeline?: Json
+          current_projects?: Json
+          customer_concentration?: Json
+          debt_maturity?: Json
+          decision_card?: Json
+          employee_count?: string | null
+          forward_estimates?: Json
+          geographic_revenue?: Json
+          historical_valuation?: Json
+          insider_ownership?: string | null
+          insider_trades?: Json
+          management_team?: Json
+          margin_trend?: Json
+          operational_kpis?: Json
+          quarterly_results?: Json
+          regulatory_env?: Json
+          risk_items?: Json
+          segment_profit?: Json
+          share_count?: Json
+          valuation_scenarios?: Json
           balance_sheet?: Json
           ceo?: Json | null
           change?: string
@@ -267,6 +311,28 @@ export type Database = {
         }
         Update: {
           analyst_consensus?: Json
+          capital_allocation?: Json
+          cash_flow?: Json
+          company_timeline?: Json
+          current_projects?: Json
+          customer_concentration?: Json
+          debt_maturity?: Json
+          decision_card?: Json
+          employee_count?: string | null
+          forward_estimates?: Json
+          geographic_revenue?: Json
+          historical_valuation?: Json
+          insider_ownership?: string | null
+          insider_trades?: Json
+          management_team?: Json
+          margin_trend?: Json
+          operational_kpis?: Json
+          quarterly_results?: Json
+          regulatory_env?: Json
+          risk_items?: Json
+          segment_profit?: Json
+          share_count?: Json
+          valuation_scenarios?: Json
           balance_sheet?: Json
           ceo?: Json | null
           change?: string

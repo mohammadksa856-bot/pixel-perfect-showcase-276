@@ -126,6 +126,59 @@ export type DataSource = {
   kind: "live" | "official" | "ai";
 };
 
+export type DecisionCardItem = {
+  label: LocalizedText;
+  value: LocalizedText;
+  reading?: "good" | "warning" | "bad" | undefined;
+};
+export type SegmentProfitRow = {
+  label: LocalizedText;
+  revenueShare: string;
+  profitShare: string;
+};
+export type GeoRevenueRow = { label: LocalizedText; percent: number };
+export type ConcentrationItem = {
+  status: "good" | "warning" | "bad";
+  text: LocalizedText;
+};
+export type KpiRow = { label: LocalizedText; value: string };
+export type ManagementRow = { role: LocalizedText; name: LocalizedText; tenure: LocalizedText };
+export type ProjectRow = { title: LocalizedText; status: LocalizedText };
+export type TimelineRow = { year: string; event: LocalizedText };
+export type QuarterRow = {
+  quarter: string;
+  revenue: string;
+  profit: string;
+  vsEstimate: LocalizedText;
+  reading?: "good" | "warning" | "bad" | undefined;
+};
+export type CashFlowRow = {
+  label: LocalizedText;
+  value: string;
+  reading?: "good" | "warning" | "bad" | undefined;
+};
+export type ShareCount = { count: string; yearChange: string; buyback: LocalizedText };
+export type MarginTrend = { note: LocalizedText; values: number[] };
+export type DebtMaturityRow = { year: string; amount: string };
+export type CapitalAllocationRow = { label: LocalizedText; percent: number };
+export type HistoricalValuationRow = {
+  label: LocalizedText;
+  current: string;
+  avg5y: string;
+  reading?: "good" | "warning" | "bad" | undefined;
+  readingText: LocalizedText;
+};
+export type Scenario = { price: string; change: string };
+export type ValuationScenarios = { bear: Scenario; base: Scenario; bull: Scenario };
+export type ForwardEstimateRow = { year: string; revenue: string; forwardPe: string };
+export type InsiderTrade = { text: LocalizedText; direction: "buy" | "sell" | "neutral" };
+export type RiskItem = {
+  category: LocalizedText;
+  kind: "operational" | "market" | "regulatory" | "financial";
+  text: LocalizedText;
+};
+export type RegulatoryItem = { title: LocalizedText; note: LocalizedText };
+
 export type Company = {
   id: string;
   ticker: string;
@@ -168,6 +221,28 @@ export type Company = {
   upcomingEvents: UpcomingEvent[];
   officialDocs: OfficialDoc[];
   dataSources: DataSource[];
+  employeeCount: string | null;
+  decisionCard: DecisionCardItem[];
+  segmentProfit: SegmentProfitRow[];
+  geographicRevenue: GeoRevenueRow[];
+  customerConcentration: ConcentrationItem[];
+  operationalKpis: KpiRow[];
+  managementTeam: ManagementRow[];
+  insiderOwnership: string | null;
+  currentProjects: ProjectRow[];
+  companyTimeline: TimelineRow[];
+  quarterlyResults: QuarterRow[];
+  cashFlow: CashFlowRow[];
+  shareCount: ShareCount;
+  marginTrend: MarginTrend;
+  debtMaturity: DebtMaturityRow[];
+  capitalAllocation: CapitalAllocationRow[];
+  historicalValuation: HistoricalValuationRow[];
+  valuationScenarios: ValuationScenarios;
+  forwardEstimates: ForwardEstimateRow[];
+  insiderTrades: InsiderTrade[];
+  riskItems: RiskItem[];
+  regulatoryEnv: RegulatoryItem[];
 };
 
 export type Research = {

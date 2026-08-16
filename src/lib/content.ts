@@ -144,11 +144,33 @@ type CompanyRow = {
   upcoming_events: UpcomingEvent[] | null;
   official_docs: OfficialDoc[] | null;
   data_sources: DataSource[] | null;
+  employee_count: string | null;
+  decision_card: unknown;
+  segment_profit: unknown;
+  geographic_revenue: unknown;
+  customer_concentration: unknown;
+  operational_kpis: unknown;
+  management_team: unknown;
+  insider_ownership: string | null;
+  current_projects: unknown;
+  company_timeline: unknown;
+  quarterly_results: unknown;
+  cash_flow: unknown;
+  share_count: unknown;
+  margin_trend: unknown;
+  debt_maturity: unknown;
+  capital_allocation: unknown;
+  historical_valuation: unknown;
+  valuation_scenarios: unknown;
+  forward_estimates: unknown;
+  insider_trades: unknown;
+  risk_items: unknown;
+  regulatory_env: unknown;
   sectors: { slug: string; name: LocalizedText; tone: string } | null;
 };
 
 const companyColumns =
-  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, sectors(slug, name, tone)";
+  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, employee_count, decision_card, segment_profit, geographic_revenue, customer_concentration, operational_kpis, management_team, insider_ownership, current_projects, company_timeline, quarterly_results, cash_flow, share_count, margin_trend, debt_maturity, capital_allocation, historical_valuation, valuation_scenarios, forward_estimates, insider_trades, risk_items, regulatory_env, sectors(slug, name, tone)";
 
 const emptyExecutiveSummary: ExecutiveSummary = {
   strengths: [],
@@ -231,6 +253,32 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText 
     upcomingEvents: row.upcoming_events ?? [],
     officialDocs: row.official_docs ?? [],
     dataSources: row.data_sources ?? [],
+    employeeCount: row.employee_count,
+    decisionCard: asArray(row.decision_card),
+    segmentProfit: asArray(row.segment_profit),
+    geographicRevenue: asArray(row.geographic_revenue),
+    customerConcentration: asArray(row.customer_concentration),
+    operationalKpis: asArray(row.operational_kpis),
+    managementTeam: asArray(row.management_team),
+    insiderOwnership: row.insider_ownership,
+    currentProjects: asArray(row.current_projects),
+    companyTimeline: asArray(row.company_timeline),
+    quarterlyResults: asArray(row.quarterly_results),
+    cashFlow: asArray(row.cash_flow),
+    shareCount: asObject(row.share_count, { count: "", yearChange: "", buyback: empty }),
+    marginTrend: asObject(row.margin_trend, { note: empty, values: [] as number[] }),
+    debtMaturity: asArray(row.debt_maturity),
+    capitalAllocation: asArray(row.capital_allocation),
+    historicalValuation: asArray(row.historical_valuation),
+    valuationScenarios: asObject(row.valuation_scenarios, {
+      bear: { price: "", change: "" },
+      base: { price: "", change: "" },
+      bull: { price: "", change: "" },
+    }),
+    forwardEstimates: asArray(row.forward_estimates),
+    insiderTrades: asArray(row.insider_trades),
+    riskItems: asArray(row.risk_items),
+    regulatoryEnv: asArray(row.regulatory_env),
   };
 }
 

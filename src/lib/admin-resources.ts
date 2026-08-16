@@ -3,6 +3,18 @@ import type { ResourceConfig } from "@/components/admin/resource-manager";
 const L = (ar: string, en: string) => ({ ar, en });
 const emptyL = { ar: "", en: "" };
 
+const readingOptions = [
+  { value: "good", label: L("إيجابي", "Good") },
+  { value: "warning", label: L("تحذير", "Warning") },
+  { value: "bad", label: L("سلبي", "Bad") },
+];
+
+const statusOptions = [
+  { value: "good", label: L("جيد ✓", "Good ✓") },
+  { value: "warning", label: L("تحذير !", "Warning !") },
+  { value: "bad", label: L("سلبي ✕", "Bad ✕") },
+];
+
 export const sectorResource: ResourceConfig = {
   table: "sectors",
   singular: L("قطاع", "sector"),
@@ -316,6 +328,223 @@ export const companyResource: ResourceConfig = {
         },
       ],
     },
+    { key: "employee_count", label: L("عدد الموظفين", "Employees"), type: "text" },
+    {
+      key: "insider_ownership",
+      label: L("ملكية الإدارة بالأسهم", "Insider ownership"),
+      type: "text",
+    },
+    {
+      key: "decision_card",
+      label: L("بطاقة القرار السريع", "Quick decision card"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("البند", "Label"), kind: "localized" },
+        { key: "value", label: L("القيمة", "Value"), kind: "localized" },
+        { key: "reading", label: L("القراءة", "Reading"), kind: "select", options: readingOptions },
+      ],
+    },
+    {
+      key: "segment_profit",
+      label: L("ربحية كل قطاع", "Profit by segment"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("القطاع", "Segment"), kind: "localized" },
+        { key: "revenueShare", label: L("من الإيراد", "of revenue"), placeholder: "58%" },
+        { key: "profitShare", label: L("من الربح", "of profit"), placeholder: "74%" },
+      ],
+    },
+    {
+      key: "geographic_revenue",
+      label: L("التوزيع الجغرافي للإيرادات", "Revenue by geography"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("المنطقة", "Region"), kind: "localized" },
+        { key: "percent", label: L("النسبة %", "Percent %"), kind: "number", placeholder: "62" },
+      ],
+    },
+    {
+      key: "customer_concentration",
+      label: L("تركّز العملاء والموردين", "Customer concentration"),
+      type: "list",
+      itemColumns: [
+        { key: "status", label: L("الحالة", "Status"), kind: "select", options: statusOptions },
+        { key: "text", label: L("الملاحظة", "Note"), kind: "localized" },
+      ],
+    },
+    {
+      key: "operational_kpis",
+      label: L("مؤشرات تشغيلية", "Operational KPIs"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("المؤشر", "Metric"), kind: "localized" },
+        { key: "value", label: L("القيمة", "Value"), placeholder: "~9M برميل" },
+      ],
+    },
+    {
+      key: "management_team",
+      label: L("فريق الإدارة", "Management team"),
+      type: "list",
+      itemColumns: [
+        { key: "role", label: L("المنصب", "Role"), kind: "localized" },
+        { key: "name", label: L("الاسم", "Name"), kind: "localized" },
+        { key: "tenure", label: L("المدة", "Tenure"), kind: "localized" },
+      ],
+    },
+    {
+      key: "current_projects",
+      label: L("المشاريع الحالية", "Current projects"),
+      type: "list",
+      itemColumns: [
+        { key: "title", label: L("المشروع", "Project"), kind: "localized" },
+        { key: "status", label: L("الحالة", "Status"), kind: "localized" },
+      ],
+    },
+    {
+      key: "company_timeline",
+      label: L("الجدول الزمني", "Timeline"),
+      type: "list",
+      itemColumns: [
+        { key: "year", label: L("السنة", "Year"), placeholder: "1933" },
+        { key: "event", label: L("الحدث", "Event"), kind: "localized" },
+      ],
+    },
+    {
+      key: "quarterly_results",
+      label: L("الأداء الربعي", "Quarterly results"),
+      type: "list",
+      itemColumns: [
+        { key: "quarter", label: L("الربع", "Quarter"), placeholder: "Q3 2026" },
+        { key: "revenue", label: L("الإيراد", "Revenue"), placeholder: "158.2B" },
+        { key: "profit", label: L("الربح", "Profit"), placeholder: "32.4B" },
+        { key: "vsEstimate", label: L("مقابل التوقعات", "vs estimate"), kind: "localized" },
+        { key: "reading", label: L("القراءة", "Reading"), kind: "select", options: readingOptions },
+      ],
+    },
+    {
+      key: "cash_flow",
+      label: L("التدفقات النقدية", "Cash flow"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("البند", "Item"), kind: "localized" },
+        { key: "value", label: L("القيمة", "Value"), placeholder: "+198B$" },
+        { key: "reading", label: L("القراءة", "Reading"), kind: "select", options: readingOptions },
+      ],
+    },
+    {
+      key: "share_count",
+      label: L("عدد الأسهم والتخفيف", "Share count & dilution"),
+      type: "json",
+      help: L(
+        '{"count":"242.0B","yearChange":"0.0%","buyback":{"ar":"","en":""}}',
+        '{"count":"242.0B","yearChange":"0.0%","buyback":{"ar":"","en":""}}',
+      ),
+    },
+    {
+      key: "margin_trend",
+      label: L("اتجاه الهوامش", "Margin trend"),
+      type: "json",
+      help: L(
+        '{"note":{"ar":"","en":""},"values":[13.1,18.0,19.9,21.8,23.7]}',
+        '{"note":{"ar":"","en":""},"values":[13.1,18.0,19.9,21.8,23.7]}',
+      ),
+    },
+    {
+      key: "debt_maturity",
+      label: L("جدول استحقاق الديون", "Debt maturity"),
+      type: "list",
+      itemColumns: [
+        { key: "year", label: L("السنة", "Year"), placeholder: "2027" },
+        { key: "amount", label: L("المبلغ", "Amount"), placeholder: "4.2B$" },
+      ],
+    },
+    {
+      key: "capital_allocation",
+      label: L("تخصيص رأس المال", "Capital allocation"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("البند", "Item"), kind: "localized" },
+        { key: "percent", label: L("النسبة %", "Percent %"), kind: "number", placeholder: "68" },
+      ],
+    },
+    {
+      key: "historical_valuation",
+      label: L("التقييم التاريخي", "Historical valuation"),
+      type: "list",
+      itemColumns: [
+        { key: "label", label: L("المؤشر", "Metric"), kind: "localized" },
+        { key: "current", label: L("الحالي", "Current"), placeholder: "15.2x" },
+        { key: "avg5y", label: L("متوسط 5 سنوات", "5y average"), placeholder: "18.4x" },
+        { key: "reading", label: L("القراءة", "Reading"), kind: "select", options: readingOptions },
+        { key: "readingText", label: L("تفسير القراءة", "Reading text"), kind: "localized" },
+      ],
+    },
+    {
+      key: "valuation_scenarios",
+      label: L("سيناريوهات التقييم", "Valuation scenarios"),
+      type: "json",
+      help: L(
+        '{"bear":{"price":"22.00","change":"-21%"},"base":{"price":"31.50","change":"+13%"},"bull":{"price":"38.00","change":"+36%"}}',
+        '{"bear":{"price":"22.00","change":"-21%"},"base":{"price":"31.50","change":"+13%"},"bull":{"price":"38.00","change":"+36%"}}',
+      ),
+    },
+    {
+      key: "forward_estimates",
+      label: L("التقديرات المستقبلية", "Forward estimates"),
+      type: "list",
+      itemColumns: [
+        { key: "year", label: L("السنة", "Year"), placeholder: "2026e" },
+        { key: "revenue", label: L("الإيراد المتوقع", "Revenue"), placeholder: "642B$" },
+        { key: "forwardPe", label: L("P/E متوقع", "Forward P/E"), placeholder: "14.6x" },
+      ],
+    },
+    {
+      key: "insider_trades",
+      label: L("تداولات الداخليين", "Insider trades"),
+      type: "list",
+      itemColumns: [
+        { key: "text", label: L("الملاحظة", "Note"), kind: "localized" },
+        {
+          key: "direction",
+          label: L("الاتجاه", "Direction"),
+          kind: "select",
+          options: [
+            { value: "buy", label: L("شراء", "Buy") },
+            { value: "sell", label: L("بيع", "Sell") },
+            { value: "neutral", label: L("محايد", "Neutral") },
+          ],
+        },
+      ],
+    },
+    {
+      key: "risk_items",
+      label: L("المخاطر المصنّفة", "Categorized risks"),
+      type: "list",
+      itemColumns: [
+        { key: "category", label: L("التصنيف", "Category"), kind: "localized" },
+        {
+          key: "kind",
+          label: L("النوع", "Kind"),
+          kind: "select",
+          options: [
+            { value: "operational", label: L("تشغيلية", "Operational") },
+            { value: "market", label: L("سوقية", "Market") },
+            { value: "regulatory", label: L("تنظيمية", "Regulatory") },
+            { value: "financial", label: L("مالية", "Financial") },
+          ],
+        },
+        { key: "text", label: L("الوصف", "Description"), kind: "localized" },
+      ],
+    },
+    {
+      key: "regulatory_env",
+      label: L("البيئة التنظيمية والكليات", "Regulatory & macro"),
+      type: "list",
+      itemColumns: [
+        { key: "title", label: L("العامل", "Factor"), kind: "localized" },
+        { key: "note", label: L("التأثير", "Impact"), kind: "localized" },
+      ],
+    },
     { key: "sort_order", label: L("الترتيب", "Order"), type: "number" },
     { key: "published", label: L("منشور", "Published"), type: "boolean" },
   ],
@@ -359,6 +588,32 @@ export const companyResource: ResourceConfig = {
     },
     news: [],
     how_to_buy: [],
+    employee_count: "",
+    insider_ownership: "",
+    decision_card: [],
+    segment_profit: [],
+    geographic_revenue: [],
+    customer_concentration: [],
+    operational_kpis: [],
+    management_team: [],
+    current_projects: [],
+    company_timeline: [],
+    quarterly_results: [],
+    cash_flow: [],
+    share_count: { count: "", yearChange: "", buyback: emptyL },
+    margin_trend: { note: emptyL, values: [] },
+    debt_maturity: [],
+    capital_allocation: [],
+    historical_valuation: [],
+    valuation_scenarios: {
+      bear: { price: "", change: "" },
+      base: { price: "", change: "" },
+      bull: { price: "", change: "" },
+    },
+    forward_estimates: [],
+    insider_trades: [],
+    risk_items: [],
+    regulatory_env: [],
     financial_ratios: [],
     balance_sheet: [],
     short_interest: { percent: "", daysToCover: "", note: emptyL },

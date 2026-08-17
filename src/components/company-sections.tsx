@@ -53,11 +53,11 @@ export function Metric({
 }) {
   return (
     <div className="rounded-xl bg-muted/50 p-3">
-      <div className="text-[10.5px] text-muted-foreground">{label}</div>
-      <div className={cn("mt-1 text-base font-bold", readingClass(reading))} dir="auto">
+      <div className="text-[11px] text-muted-foreground">{label}</div>
+      <div className={cn("mt-1 text-lg font-semibold", readingClass(reading))} dir="auto">
         {value}
       </div>
-      {hint && <div className="mt-0.5 text-[10px] text-muted-foreground">{hint}</div>}
+      {hint && <div className="mt-0.5 text-[11px] text-muted-foreground">{hint}</div>}
     </div>
   );
 }
@@ -100,7 +100,7 @@ export function DataTable({ headers, children }: { headers: string[]; children: 
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-start text-sm">
-        <thead className="text-[10.5px] text-muted-foreground">
+        <thead className="text-[11px] text-muted-foreground">
           <tr>
             {headers.map((h) => (
               <th key={h} className="border-b border-border pb-2.5 text-start font-medium">

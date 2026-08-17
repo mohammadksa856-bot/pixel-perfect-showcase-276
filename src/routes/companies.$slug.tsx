@@ -108,7 +108,7 @@ function CompanyPage() {
         </div>
       </div>
 
-      <section className="night-panel relative isolate mt-6 overflow-hidden border-b border-border/40">
+      <section className="night-panel relative isolate mt-6 overflow-hidden border-b border-border/50">
         <div className="chart-grid absolute inset-0 -z-10 opacity-30" />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="flex flex-wrap items-center gap-5">
@@ -176,7 +176,7 @@ function CompanyPage() {
           company.executiveSummary.risks.length > 0 ||
           company.executiveSummary.catalysts.length > 0 ||
           company.executiveSummary.watchPoints.length > 0) && (
-          <div className="mt-10">
+          <div className="mt-5">
             <Panel
               title={t({ ar: "الملخص التنفيذي", en: "Executive summary" })}
               className="border-brand/25 bg-brand/5"
@@ -212,7 +212,7 @@ function CompanyPage() {
                 ).map(
                   (group) =>
                     group.items.length > 0 && (
-                      <div key={group.key} className="rounded-xl bg-card/60 p-4">
+                      <div key={group.key} className="rounded-xl bg-muted/50 p-3">
                         <div className="mb-2 flex items-center gap-2 text-xs font-bold">
                           <span className={cn("size-2 rounded-full", group.dot)} />
                           {t(group.label)}
@@ -288,7 +288,7 @@ function CompanyPage() {
         {company.employeeCount && (
           <div className="mt-5">
             <Panel title={t({ ar: "عدد الموظفين", en: "Employees" })}>
-              <div className="text-2xl font-bold">{company.employeeCount}</div>
+              <div className="text-lg font-semibold">{company.employeeCount}</div>
             </Panel>
           </div>
         )}
@@ -412,7 +412,7 @@ function CompanyPage() {
                       { ar: "مكرر الربحية", en: "P/E" },
                       { ar: "العائد", en: "Dividend" },
                     ].map((h) => (
-                      <th key={h.en} className="px-5 py-3.5 text-start font-medium">
+                      <th key={h.en} className="px-5 py-2.5 text-start font-medium">
                         {t(h)}
                       </th>
                     ))}
@@ -420,11 +420,11 @@ function CompanyPage() {
                 </thead>
                 <tbody>
                   {company.competitors.map((c) => (
-                    <tr key={c.name} className="border-t border-border/60">
-                      <td className="px-5 py-3.5 font-semibold">{c.name}</td>
-                      <td className="px-5 py-3.5">{c.marketCap}</td>
-                      <td className="px-5 py-3.5">{c.pe}</td>
-                      <td className="px-5 py-3.5">{c.dividend}</td>
+                    <tr key={c.name} className="border-b border-border/50">
+                      <td className="px-5 py-2.5 font-semibold">{c.name}</td>
+                      <td className="px-5 py-2.5">{c.marketCap}</td>
+                      <td className="px-5 py-2.5">{c.pe}</td>
+                      <td className="px-5 py-2.5">{c.dividend}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -440,7 +440,7 @@ function CompanyPage() {
           subtitle={{ ar: "هل وضعها المالي سليم؟", en: "Is it financially sound?" }}
         />
 
-        <div className="mt-14">
+        <div className="mt-5">
           <SectionHeading title={t({ ar: "القوائم المالية", en: "Financial statements" })} />
           <div className="relative">
             <Panel className="overflow-x-auto p-0">
@@ -455,7 +455,7 @@ function CompanyPage() {
                       { ar: "الهامش", en: "Margin" },
                       { ar: "العائد على رأس المال", en: "ROIC" },
                     ].map((h) => (
-                      <th key={h.en} className="px-5 py-3.5 text-start font-medium">
+                      <th key={h.en} className="px-5 py-2.5 text-start font-medium">
                         {t(h)}
                       </th>
                     ))}
@@ -463,13 +463,13 @@ function CompanyPage() {
                 </thead>
                 <tbody>
                   {company.financials.map((row) => (
-                    <tr key={row.year} className="border-t border-border/60">
-                      <td className="px-5 py-3.5 font-semibold">{row.year}</td>
-                      <td className="px-5 py-3.5">{row.revenue}</td>
-                      <td className="px-5 py-3.5">{row.netIncome}</td>
-                      <td className="px-5 py-3.5">{row.cashFlow}</td>
-                      <td className="px-5 py-3.5 text-brand">{row.margin}</td>
-                      <td className="px-5 py-3.5 text-brand">{row.roic}</td>
+                    <tr key={row.year} className="border-b border-border/50">
+                      <td className="px-5 py-2.5 font-semibold">{row.year}</td>
+                      <td className="px-5 py-2.5">{row.revenue}</td>
+                      <td className="px-5 py-2.5">{row.netIncome}</td>
+                      <td className="px-5 py-2.5">{row.cashFlow}</td>
+                      <td className="px-5 py-2.5 text-brand">{row.margin}</td>
+                      <td className="px-5 py-2.5 text-brand">{row.roic}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -766,7 +766,7 @@ function CompanyPage() {
           </div>
         )}
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+        <div className="mt-5 grid gap-5 lg:grid-cols-3">
           <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-1">
             <div className="space-y-4 text-sm">
               {company.valuation.map((v) => (
@@ -899,7 +899,7 @@ function CompanyPage() {
             <div className="mt-5">
               <Panel title={t({ ar: "إجماع المحللين", en: "Analyst consensus" })}>
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="text-xl font-bold text-brand">
+                  <span className="text-lg font-semibold text-brand">
                     {t(company.analystConsensus.rating)}
                   </span>
                   {company.analystConsensus.analystCount && (
@@ -1060,7 +1060,7 @@ function CompanyPage() {
             </Panel>
           )}
           {(company.upcomingEvents.length > 0 || company.officialDocs.length > 0) && (
-            <div className="mt-14 grid gap-5 lg:grid-cols-2">
+            <div className="mt-5 grid gap-5 lg:grid-cols-2">
               {company.upcomingEvents.length > 0 && (
                 <Panel title={t({ ar: "أحداث قادمة", en: "Upcoming events" })}>
                   <ul className="space-y-3.5">
@@ -1117,7 +1117,7 @@ function CompanyPage() {
         />
 
         {research.length > 0 && (
-          <div className="mt-14">
+          <div className="mt-5">
             <SectionHeading title={t(ui.research)} />
             <div className="grid gap-5 md:grid-cols-3">
               {research.map((r) => (
@@ -1128,7 +1128,7 @@ function CompanyPage() {
         )}
 
         {related.length > 0 && (
-          <div className="mt-14">
+          <div className="mt-5">
             <SectionHeading title={t(ui.relatedCompanies)} />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((c) => (
@@ -1138,7 +1138,7 @@ function CompanyPage() {
           </div>
         )}
 
-        <section className="mt-16 flex flex-col items-center gap-3 rounded-2xl border border-border/70 bg-card p-8 text-center sm:flex-row sm:justify-between sm:text-start">
+        <section className="mt-5 flex flex-col items-center gap-3 rounded-2xl border border-border/70 bg-card p-8 text-center sm:flex-row sm:justify-between sm:text-start">
           <div>
             <h3 className="text-sm font-bold">
               {t({ ar: "ناقش ", en: "Discuss " }) +
@@ -1168,11 +1168,11 @@ function CompanyPage() {
           subtitle={{ ar: "وش أسوي؟", en: "What do I do?" }}
         />
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
           <Panel title={t({ ar: "الأسئلة الشائعة", en: "FAQs" })}>
             <div className="space-y-4">
               {company.faqs.map((f) => (
-                <details key={f.q.en} className="group rounded-xl bg-muted/50 p-4">
+                <details key={f.q.en} className="group rounded-xl bg-muted/50 p-3">
                   <summary className="cursor-pointer list-none text-sm font-semibold">
                     {t(f.q)}
                   </summary>
@@ -1221,7 +1221,7 @@ function CompanyPage() {
           </div>
         )}
 
-        <p className="mt-6 rounded-xl border border-border/70 bg-muted/30 p-4 text-[11px] leading-6 text-muted-foreground">
+        <p className="mt-5 rounded-xl border border-border/70 bg-muted/30 p-4 text-[11px] leading-6 text-muted-foreground">
           {t({
             ar: "إخلاء مسؤولية: هذا المحتوى لأغراض تعليمية ومعلوماتية فقط، ولا يمثل توصية بشراء أو بيع أو الاحتفاظ بأي ورقة مالية. راجع المصادر الرسمية واستشر مختصاً مؤهلاً قبل اتخاذ أي قرار استثماري.",
             en: "Disclaimer: this content is for educational and informational purposes only and does not constitute investment advice to buy, sell, or hold any security. Verify with official sources and consult a qualified advisor before making any investment decision.",

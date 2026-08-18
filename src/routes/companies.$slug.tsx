@@ -111,53 +111,70 @@ function CompanyPage() {
 
       <section className="night-panel relative isolate mt-6 overflow-hidden border-b border-border/50">
         <div className="chart-grid absolute inset-0 -z-10 opacity-30" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <div className="flex flex-wrap items-center gap-5">
-            <span className="flex size-16 items-center justify-center rounded-2xl bg-night-foreground/10 text-sm font-bold">
-              {company.ticker}
-            </span>
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{t(company.name)}</h1>
-              <p className="mt-2 text-sm text-night-foreground/60">
-                {company.exchange} · {company.ticker} · {t(company.country)}
-              </p>
-            </div>
-            <span
-              className={cn(
-                "ms-auto rounded-full px-4 py-2 text-sm font-semibold",
-                company.change.startsWith("-")
-                  ? "bg-tone-rose/15 text-tone-rose"
-                  : "bg-brand/15 text-brand",
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          {/* الهوية + السعر */}
+          <div className="flex flex-wrap items-start justify-between gap-6">
+            <div className="flex items-center gap-4">
+              {company.logo ? (
+                <img
+                  src={company.logo}
+                  alt={t(company.name)}
+                  className="size-14 shrink-0 rounded-2xl bg-night-foreground/10 object-contain p-2"
+                />
+              ) : (
+                <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-night-foreground/10 text-sm font-bold">
+                  {company.ticker}
+                </span>
               )}
-            >
-              {company.price} · {company.change}
-            </span>
+              <div>
+                <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{t(company.name)}</h1>
+                <p className="mt-1 text-xs text-night-foreground/60">
+                  {company.exchange} · {company.ticker} · {t(company.country)}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="text-end">
+                <div className="text-2xl font-bold tracking-tight" dir="ltr">
+                  {company.price}
+                </div>
+                <div
+                  className={cn(
+                    "mt-0.5 text-sm font-semibold",
+                    company.change.startsWith("-") ? "text-tone-rose" : "text-brand",
+                  )}
+                  dir="ltr"
+                >
+                  {company.change}
+                </div>
+              </div>
+              <WatchlistButton companyId={company.id} />
+            </div>
           </div>
 
-          <p className="mt-6 max-w-3xl text-sm leading-8 text-night-foreground/70">
+          {/* الوصف */}
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-night-foreground/70">
             {t(company.description)}
           </p>
 
-          <div className="mt-6">
-            <WatchlistButton companyId={company.id} />
-          </div>
-
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-night-foreground/10 sm:grid-cols-5">
+          {/* شريط الحقائق — مضغوط ومتناسق */}
+          <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-night-foreground/10 sm:grid-cols-5">
             {facts.map((f) =>
               f.sectorLink ? (
                 <Link
                   key={f.label.en}
                   to="/sectors/$slug"
                   params={{ slug: f.sectorLink }}
-                  className="bg-night px-4 py-5 transition-colors hover:bg-night-foreground/5"
+                  className="bg-night px-3.5 py-3 transition-colors hover:bg-night-foreground/5"
                 >
-                  <div className="text-[11px] text-night-foreground/50">{t(f.label)}</div>
-                  <div className="mt-1.5 text-sm font-semibold text-brand">{f.value}</div>
+                  <div className="text-[10px] text-night-foreground/50">{t(f.label)}</div>
+                  <div className="mt-1 text-[13px] font-semibold text-brand">{f.value}</div>
                 </Link>
               ) : (
-                <div key={f.label.en} className="bg-night px-4 py-5">
-                  <div className="text-[11px] text-night-foreground/50">{t(f.label)}</div>
-                  <div className="mt-1.5 text-sm font-semibold">{f.value}</div>
+                <div key={f.label.en} className="bg-night px-3.5 py-3">
+                  <div className="text-[10px] text-night-foreground/50">{t(f.label)}</div>
+                  <div className="mt-1 text-[13px] font-semibold">{f.value}</div>
                 </div>
               ),
             )}
@@ -172,6 +189,10 @@ function CompanyPage() {
           title={{ ar: "نظرة عامة", en: "Overview" }}
           subtitle={{ ar: "الزبدة بدقيقتين", en: "The 2-minute read" }}
         />
+
+        <div className="mt-5">
+          <PriceChart data={company.priceHistory} />
+        </div>
 
         {(company.executiveSummary.strengths.length > 0 ||
           company.executiveSummary.risks.length > 0 ||
@@ -667,10 +688,6 @@ function CompanyPage() {
           title={{ ar: "السهم والتقييم", en: "Stock & valuation" }}
           subtitle={{ ar: "هل السعر عادل؟", en: "Is the price fair?" }}
         />
-
-        <div className="mt-5">
-          <PriceChart data={company.priceHistory} />
-        </div>
 
         {company.stockPerformance.companyReturn !== null &&
           company.stockPerformance.benchmarkReturn !== null && (

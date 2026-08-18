@@ -223,6 +223,7 @@ export type Company = {
   upcomingEvents: UpcomingEvent[];
   officialDocs: OfficialDoc[];
   dataSources: DataSource[];
+  logo: string | null;
   employeeCount: string | null;
   decisionCard: DecisionCardItem[];
   segmentProfit: SegmentProfitRow[];

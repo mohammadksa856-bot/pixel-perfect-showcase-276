@@ -144,6 +144,7 @@ type CompanyRow = {
   upcoming_events: UpcomingEvent[] | null;
   official_docs: OfficialDoc[] | null;
   data_sources: DataSource[] | null;
+  logo: string | null;
   employee_count: string | null;
   decision_card: unknown;
   segment_profit: unknown;
@@ -171,7 +172,7 @@ type CompanyRow = {
 };
 
 const companyColumns =
-  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, employee_count, decision_card, segment_profit, geographic_revenue, customer_concentration, operational_kpis, management_team, insider_ownership, current_projects, company_timeline, quarterly_results, cash_flow, share_count, margin_trend, debt_maturity, capital_allocation, historical_valuation, valuation_scenarios, forward_estimates, insider_trades, risk_items, regulatory_env, price_history, sectors(slug, name, tone)";
+  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, logo, employee_count, decision_card, segment_profit, geographic_revenue, customer_concentration, operational_kpis, management_team, insider_ownership, current_projects, company_timeline, quarterly_results, cash_flow, share_count, margin_trend, debt_maturity, capital_allocation, historical_valuation, valuation_scenarios, forward_estimates, insider_trades, risk_items, regulatory_env, price_history, sectors(slug, name, tone)";
 
 const emptyExecutiveSummary: ExecutiveSummary = {
   strengths: [],
@@ -254,6 +255,7 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText 
     upcomingEvents: row.upcoming_events ?? [],
     officialDocs: row.official_docs ?? [],
     dataSources: row.data_sources ?? [],
+    logo: row.logo,
     employeeCount: row.employee_count,
     decisionCard: asArray(row.decision_card),
     segmentProfit: asArray(row.segment_profit),

@@ -530,6 +530,7 @@ export const companies: Company[] = companySeeds.map((s) => ({
   upcomingEvents: [],
   officialDocs: [],
   dataSources: [],
+  logo: null,
   employeeCount: null,
   decisionCard: [],
   segmentProfit: [],

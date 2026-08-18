@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, Moon, Star, Sun, X } from "lucide-react";
+import { Menu, Star, X } from "lucide-react";
 
 import { ui, useI18n } from "@/lib/i18n";
-import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "@/components/logo-mark";
 import { SearchBox } from "@/components/search-box";
@@ -19,7 +18,6 @@ const nav = [
 
 export function SiteHeader() {
   const { t, locale, setLocale } = useI18n();
-  const { theme, toggleTheme } = useTheme();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
 
@@ -86,13 +84,6 @@ export function SiteHeader() {
           </button>
 
           <button
-            onClick={toggleTheme}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border hover:bg-muted transition"
-          >
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
-
-          <button
             onClick={() => setOpen(!open)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border lg:hidden"
           >
@@ -142,15 +133,6 @@ export function SiteHeader() {
               className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
             >
               <span>{locale === "ar" ? "English" : "العربية"}</span>
-            </button>
-
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-between rounded-xl px-4 py-3 hover:bg-muted transition"
-            >
-              <span>{theme === "dark" ? "الوضع الفاتح" : "الوضع الداكن"}</span>
-
-              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
           </div>
         </div>

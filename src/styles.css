@@ -58,73 +58,50 @@
   --color-tone-indigo: var(--tone-indigo);
   --color-tone-orange: var(--tone-orange);
 
-  --shadow-card: 0 1px 2px oklch(0.2 0.05 265 / 0.06), 0 8px 24px oklch(0.2 0.05 265 / 0.06);
-  --shadow-lift: 0 8px 30px oklch(0.2 0.05 265 / 0.12);
-  --shadow-panel: 0 18px 50px oklch(0.2 0.05 265 / 0.14);
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.25);
+  --shadow-lift: 0 4px 16px oklch(0 0 0 / 0.35);
+  --shadow-panel: 0 8px 28px oklch(0 0 0 / 0.4);
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.985 0.002 250);
-  --foreground: oklch(0.18 0.035 265);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.035 265);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.035 265);
-  --primary: oklch(0.23 0.06 265);
-  --primary-foreground: oklch(0.985 0.003 250);
-  --secondary: oklch(0.96 0.008 250);
-  --secondary-foreground: oklch(0.23 0.06 265);
-  --muted: oklch(0.965 0.006 250);
-  --muted-foreground: oklch(0.55 0.03 258);
-  --accent: oklch(0.955 0.012 250);
-  --accent-foreground: oklch(0.23 0.06 265);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0.003 250);
-  --border: oklch(0.925 0.01 255);
-  --input: oklch(0.925 0.01 255);
-  --ring: oklch(0.55 0.12 250);
+  --radius: 0.5rem;
 
-  --night: oklch(0.19 0.05 265);
-  --night-foreground: oklch(0.98 0.004 250);
-  --brand: oklch(0.62 0.15 158);
-  --brand-foreground: oklch(0.99 0.005 160);
-  --surface: oklch(0.975 0.004 250);
-
-  --tone-rose: oklch(0.63 0.19 20);
-  --tone-amber: oklch(0.72 0.16 65);
-  --tone-teal: oklch(0.6 0.1 210);
-  --tone-violet: oklch(0.55 0.19 295);
-  --tone-sky: oklch(0.6 0.14 240);
-  --tone-emerald: oklch(0.6 0.14 160);
-  --tone-indigo: oklch(0.52 0.2 275);
-  --tone-orange: oklch(0.7 0.19 55);
-}
-
-.dark {
-  --background: oklch(0.16 0.04 265);
-  --foreground: oklch(0.97 0.004 250);
-  --card: oklch(0.21 0.045 265);
-  --card-foreground: oklch(0.97 0.004 250);
-  --popover: oklch(0.21 0.045 265);
-  --popover-foreground: oklch(0.97 0.004 250);
-  --primary: oklch(0.93 0.01 255);
-  --primary-foreground: oklch(0.21 0.045 265);
-  --secondary: oklch(0.27 0.04 262);
-  --secondary-foreground: oklch(0.97 0.004 250);
-  --muted: oklch(0.27 0.04 262);
-  --muted-foreground: oklch(0.72 0.03 258);
-  --accent: oklch(0.27 0.04 262);
-  --accent-foreground: oklch(0.97 0.004 250);
-  --destructive: oklch(0.7 0.19 22);
+  /* ═══ ثيم داكن موحّد بنمط TradingView ═══ */
+  --background: oklch(0.19 0.018 265);        /* #131722 خلفية أساسية */
+  --foreground: oklch(0.93 0.008 250);        /* نص فاتح */
+  --card: oklch(0.225 0.02 265);              /* #1e222d سطح البطاقات */
+  --card-foreground: oklch(0.93 0.008 250);
+  --popover: oklch(0.245 0.02 265);
+  --popover-foreground: oklch(0.93 0.008 250);
+  --primary: oklch(0.62 0.16 250);            /* أزرق TradingView */
+  --primary-foreground: oklch(0.98 0.004 250);
+  --secondary: oklch(0.27 0.02 265);
+  --secondary-foreground: oklch(0.93 0.008 250);
+  --muted: oklch(0.27 0.02 265);              /* #2a2e39 أسطح ثانوية */
+  --muted-foreground: oklch(0.66 0.015 258);  /* #787b86 نص باهت */
+  --accent: oklch(0.29 0.022 265);
+  --accent-foreground: oklch(0.93 0.008 250);
+  --destructive: oklch(0.62 0.2 22);
   --destructive-foreground: oklch(0.98 0.003 250);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.6 0.1 255);
+  --border: oklch(1 0 0 / 9%);                /* حدود رفيعة جداً */
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.62 0.16 250);
 
-  --night: oklch(0.14 0.04 265);
-  --night-foreground: oklch(0.98 0.004 250);
-  --surface: oklch(0.19 0.042 265);
+  --night: oklch(0.165 0.018 265);            /* أغمق من الخلفية للأقسام البارزة */
+  --night-foreground: oklch(0.93 0.008 250);
+  --brand: oklch(0.62 0.16 250);              /* الأزرق هو لون العلامة الآن */
+  --brand-foreground: oklch(0.98 0.004 250);
+  --surface: oklch(0.225 0.02 265);
+
+  /* ألوان الأرقام — أخضر/أحمر TradingView */
+  --tone-rose: oklch(0.63 0.2 22);            /* #f23645 هبوط */
+  --tone-emerald: oklch(0.68 0.16 162);       /* #089981 صعود */
+  --tone-amber: oklch(0.75 0.15 70);
+  --tone-teal: oklch(0.65 0.11 200);
+  --tone-violet: oklch(0.62 0.17 295);
+  --tone-sky: oklch(0.66 0.13 240);
+  --tone-indigo: oklch(0.6 0.18 275);
+  --tone-orange: oklch(0.72 0.17 55);
 }
 
 @layer base {

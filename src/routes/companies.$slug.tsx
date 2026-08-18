@@ -179,6 +179,8 @@ function CompanyPage() {
               ),
             )}
           </div>
+
+          <DecisionCard company={company} />
         </div>
       </section>
 
@@ -251,10 +253,6 @@ function CompanyPage() {
             </Panel>
           </div>
         )}
-
-        <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          <DecisionCard company={company} />
-        </div>
 
         {(company.ceo.ar || company.foundedYear || company.headquarters.ar || company.website) && (
           <div className="mt-5">

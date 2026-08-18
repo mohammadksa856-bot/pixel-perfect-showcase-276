@@ -163,17 +163,32 @@ export function StatusList({ items }: { items: { status: string; text: Localized
 
 /* ─────────── أقسام الفصول ─────────── */
 
+/** بطاقة القرار السريع — شريط مضغوط يظهر أعلى صفحة الشركة فور فتحها */
 export function DecisionCard({ company }: { company: Company }) {
   const { t } = useI18n();
   if (!company.decisionCard.length) return null;
   return (
-    <Panel title={t({ ar: "بطاقة القرار السريع", en: "Quick decision card" })}>
-      <div className="grid grid-cols-2 gap-3">
+    <div className="mt-6 border-t border-night-foreground/10 pt-4">
+      <div className="mb-2 text-[10px] font-medium text-night-foreground/50">
+        {t({ ar: "القرار السريع", en: "Quick decision" })}
+      </div>
+      <div className="flex flex-wrap gap-2">
         {company.decisionCard.map((d, i) => (
-          <Metric key={i} label={t(d.label)} value={t(d.value)} reading={d.reading} />
+          <div
+            key={i}
+            className="flex items-center gap-1.5 rounded-lg border border-night-foreground/10 bg-night-foreground/5 px-2.5 py-1.5"
+          >
+            <span className="text-[10px] text-night-foreground/50">{t(d.label)}</span>
+            <span
+              className={cn("text-[12px] font-semibold", readingClass(d.reading))}
+              dir="auto"
+            >
+              {t(d.value)}
+            </span>
+          </div>
         ))}
       </div>
-    </Panel>
+    </div>
   );
 }
 

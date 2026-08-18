@@ -7,6 +7,7 @@ import { getCompany, getRelatedCompanies, getResearch, getSector } from "@/lib/c
 import type { Company } from "@/data/types";
 import { cn } from "@/lib/utils";
 import { WatchlistButton } from "@/components/watchlist-button";
+import { PriceChart } from "@/components/price-chart";
 import {
   ChapterHead,
   Metric,
@@ -642,6 +643,10 @@ function CompanyPage() {
           subtitle={{ ar: "هل السعر عادل؟", en: "Is the price fair?" }}
         />
 
+        <div className="mt-5">
+          <PriceChart data={company.priceHistory} />
+        </div>
+
         {company.stockPerformance.companyReturn !== null &&
           company.stockPerformance.benchmarkReturn !== null && (
             <div className="mt-5">
@@ -1223,7 +1228,7 @@ function CompanyPage() {
 
         <p className="mt-5 rounded-xl border border-border/70 bg-muted/30 p-4 text-[11px] leading-6 text-muted-foreground">
           {t({
-            ar: "إخلاء مسؤولية: هذا المحتوى لأغراض تعليمية ومعلوماتية فقط، ولا يمثل توصية بشراء أو بيع أو الاحتفاظ بأي ورقة مالية. راجع المصادر الرسمية واستشر مختصاً مؤهلاً قبل اتخاذ أي قرار استثماري.",
+            ar: "إخلاء مسؤولية: هذا المحتوى لأغراض تعليمية ومعلوماتية فقط، ولا يمثل توصية بشراء أو بيع أو الاحتفاظ بأي ورقة مالية. راجع المصادر الرسمية واستشر مختصاً مؤهلاً قبل اتخاذ أي قرار استثماري",
             en: "Disclaimer: this content is for educational and informational purposes only and does not constitute investment advice to buy, sell, or hold any security. Verify with official sources and consult a qualified advisor before making any investment decision.",
           })}
         </p>

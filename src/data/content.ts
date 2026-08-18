@@ -556,6 +556,7 @@ export const companies: Company[] = companySeeds.map((s) => ({
   insiderTrades: [],
   riskItems: [],
   regulatoryEnv: [],
+  priceHistory: [],
   price: s.price,
   change: s.change,
   marketCap: s.marketCap,

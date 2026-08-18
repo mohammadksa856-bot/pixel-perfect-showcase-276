@@ -179,6 +179,8 @@ export type RiskItem = {
 };
 export type RegulatoryItem = { title: LocalizedText; note: LocalizedText };
 
+export type PricePoint = { date: string; price: number };
+
 export type Company = {
   id: string;
   ticker: string;
@@ -243,6 +245,7 @@ export type Company = {
   insiderTrades: InsiderTrade[];
   riskItems: RiskItem[];
   regulatoryEnv: RegulatoryItem[];
+  priceHistory: PricePoint[];
 };
 
 export type Research = {

@@ -166,11 +166,12 @@ type CompanyRow = {
   insider_trades: unknown;
   risk_items: unknown;
   regulatory_env: unknown;
+  price_history: unknown;
   sectors: { slug: string; name: LocalizedText; tone: string } | null;
 };
 
 const companyColumns =
-  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, employee_count, decision_card, segment_profit, geographic_revenue, customer_concentration, operational_kpis, management_team, insider_ownership, current_projects, company_timeline, quarterly_results, cash_flow, share_count, margin_trend, debt_maturity, capital_allocation, historical_valuation, valuation_scenarios, forward_estimates, insider_trades, risk_items, regulatory_env, sectors(slug, name, tone)";
+  "id, slug, ticker, exchange, name, country, price, change, market_cap, short, description, sections, goals, financials, valuation, news, how_to_buy, ceo, founded_year, headquarters, website, executive_summary, stock_performance, competitors, financial_health, growth_outlook, dividends, financial_ratios, balance_sheet, short_interest, trading_stats, ownership, revenue_breakdown, analyst_consensus, upcoming_events, official_docs, data_sources, employee_count, decision_card, segment_profit, geographic_revenue, customer_concentration, operational_kpis, management_team, insider_ownership, current_projects, company_timeline, quarterly_results, cash_flow, share_count, margin_trend, debt_maturity, capital_allocation, historical_valuation, valuation_scenarios, forward_estimates, insider_trades, risk_items, regulatory_env, price_history, sectors(slug, name, tone)";
 
 const emptyExecutiveSummary: ExecutiveSummary = {
   strengths: [],
@@ -279,6 +280,7 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText 
     insiderTrades: asArray(row.insider_trades),
     riskItems: asArray(row.risk_items),
     regulatoryEnv: asArray(row.regulatory_env),
+    priceHistory: asArray(row.price_history),
   };
 }
 

@@ -195,6 +195,7 @@ export type Database = {
           operational_kpis: Json
           quarterly_results: Json
           regulatory_env: Json
+          price_history: Json
           risk_items: Json
           segment_profit: Json
           share_count: Json
@@ -262,6 +263,7 @@ export type Database = {
           operational_kpis?: Json
           quarterly_results?: Json
           regulatory_env?: Json
+          price_history?: Json
           risk_items?: Json
           segment_profit?: Json
           share_count?: Json
@@ -329,6 +331,7 @@ export type Database = {
           operational_kpis?: Json
           quarterly_results?: Json
           regulatory_env?: Json
+          price_history?: Json
           risk_items?: Json
           segment_profit?: Json
           share_count?: Json

@@ -545,6 +545,15 @@ export const companyResource: ResourceConfig = {
         { key: "note", label: L("التأثير", "Impact"), kind: "localized" },
       ],
     },
+    {
+      key: "price_history",
+      label: L("تاريخ سعر السهم (للشارت)", "Price history (chart)"),
+      type: "list",
+      itemColumns: [
+        { key: "date", label: L("التاريخ", "Date"), placeholder: "2026-01" },
+        { key: "price", label: L("السعر", "Price"), kind: "number", placeholder: "27.85" },
+      ],
+    },
     { key: "sort_order", label: L("الترتيب", "Order"), type: "number" },
     { key: "published", label: L("منشور", "Published"), type: "boolean" },
   ],
@@ -614,6 +623,7 @@ export const companyResource: ResourceConfig = {
     insider_trades: [],
     risk_items: [],
     regulatory_env: [],
+    price_history: [],
     financial_ratios: [],
     balance_sheet: [],
     short_interest: { percent: "", daysToCover: "", note: emptyL },

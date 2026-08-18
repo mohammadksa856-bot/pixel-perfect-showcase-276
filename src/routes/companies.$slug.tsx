@@ -489,7 +489,32 @@ function CompanyPage() {
           </p>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
+          <Panel title={t({ ar: "الأداء التاريخي", en: "Historical performance" })}>
+            <div className="flex h-40 items-end gap-2">
+              {(() => {
+                const parseValue = (v: string) => parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
+                const values = company.financials.map((f) => parseValue(f.revenue));
+                const max = Math.max(...values, 1);
+                return company.financials.map((f, i) => (
+                  <div key={f.year} className="flex flex-1 flex-col items-center gap-2">
+                    <div
+                      className="w-full rounded-t-md bg-brand/70 transition-all"
+                      style={{ height: `${Math.max((values[i]! / max) * 100, 6)}%` }}
+                      title={f.revenue}
+                    />
+                    <span className="text-[11px] text-muted-foreground">{f.year}</span>
+                  </div>
+                ));
+              })()}
+            </div>
+            <p className="mt-3 text-[11px] text-muted-foreground">
+              {t({
+                ar: "مقياس نسبي للإيرادات عبر السنوات.",
+                en: "Relative scale of revenue across years.",
+              })}
+            </p>
+          </Panel>
           <QuarterlyResults company={company} />
         </div>
 
@@ -743,7 +768,7 @@ function CompanyPage() {
 
             {company.shortInterest.percent && (
               <Panel title={t({ ar: "البيع على المكشوف", en: "Short interest" })}>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3">
                   <div>
                     <div className="text-[11px] text-muted-foreground">
                       {t({ ar: "نسبة البيع على المكشوف", en: "Short interest" })}
@@ -771,7 +796,7 @@ function CompanyPage() {
           </div>
         )}
 
-        <div className="mt-5 grid gap-5 lg:grid-cols-3">
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
           <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-1">
             <div className="space-y-4 text-sm">
               {company.valuation.map((v) => (
@@ -804,45 +829,6 @@ function CompanyPage() {
                 </div>
               ))}
             </div>
-          </Panel>
-
-          <Panel title={t({ ar: "الأداء التاريخي", en: "Historical performance" })}>
-            <div className="flex h-40 items-end gap-2">
-              {(() => {
-                const parseValue = (v: string) => parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
-                const values = company.financials.map((f) => parseValue(f.revenue));
-                const max = Math.max(...values, 1);
-                return company.financials.map((f, i) => (
-                  <div key={f.year} className="flex flex-1 flex-col items-center gap-2">
-                    <div
-                      className="w-full rounded-t-md bg-brand/70 transition-all"
-                      style={{ height: `${Math.max((values[i]! / max) * 100, 6)}%` }}
-                      title={f.revenue}
-                    />
-                    <span className="text-[11px] text-muted-foreground">{f.year}</span>
-                  </div>
-                ));
-              })()}
-            </div>
-            <p className="mt-3 text-[11px] text-muted-foreground">
-              {t({
-                ar: "مقياس نسبي للإيرادات عبر السنوات.",
-                en: "Relative scale of revenue across years.",
-              })}
-            </p>
-          </Panel>
-
-          <Panel title={t({ ar: "الأخبار", en: "News" })}>
-            <ul className="space-y-4 text-sm">
-              {company.news.map((n) => (
-                <li key={n.title.en}>
-                  <div className="font-medium leading-6">{t(n.title)}</div>
-                  <div className="mt-1 text-[11px] text-muted-foreground">
-                    {n.source} · {n.date}
-                  </div>
-                </li>
-              ))}
-            </ul>
           </Panel>
         </div>
 
@@ -914,7 +900,7 @@ function CompanyPage() {
                     </span>
                   )}
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3">
                   <div>
                     <div className="text-[11px] text-muted-foreground">
                       {t({ ar: "متوسط السعر المستهدف", en: "Avg. target price" })}
@@ -974,7 +960,7 @@ function CompanyPage() {
             <div className="mt-5">
               <Panel title={t({ ar: "الملكية والمساهمون", en: "Ownership" })}>
                 {(company.ownership.government || company.ownership.freeFloat) && (
-                  <div className="mb-5 grid grid-cols-2 gap-4">
+                  <div className="mb-5 grid grid-cols-2 gap-3">
                     {company.ownership.government && (
                       <div>
                         <div className="text-[11px] text-muted-foreground">
@@ -1124,7 +1110,7 @@ function CompanyPage() {
         {research.length > 0 && (
           <div className="mt-5">
             <SectionHeading title={t(ui.research)} />
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 lg:grid-cols-2">
               {research.map((r) => (
                 <ResearchCard key={r.slug} item={r} />
               ))}
@@ -1143,7 +1129,22 @@ function CompanyPage() {
           </div>
         )}
 
-        <section className="mt-5 flex flex-col items-center gap-3 rounded-2xl border border-border/70 bg-card p-8 text-center sm:flex-row sm:justify-between sm:text-start">
+        <div className="mt-5">
+          <Panel title={t({ ar: "الأخبار", en: "News" })}>
+            <ul className="space-y-4 text-sm">
+              {company.news.map((n) => (
+                <li key={n.title.en}>
+                  <div className="font-medium leading-6">{t(n.title)}</div>
+                  <div className="mt-1 text-[11px] text-muted-foreground">
+                    {n.source} · {n.date}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Panel>
+        </div>
+
+        <section className="mt-5 flex flex-col items-start gap-4 rounded-xl border border-border/70 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-sm font-bold">
               {t({ ar: "ناقش ", en: "Discuss " }) +
@@ -1228,7 +1229,7 @@ function CompanyPage() {
 
         <p className="mt-5 rounded-xl border border-border/70 bg-muted/30 p-4 text-[11px] leading-6 text-muted-foreground">
           {t({
-            ar: "إخلاء مسؤولية: هذا المحتوى لأغراض تعليمية ومعلوماتية فقط، ولا يمثل توصية بشراء أو بيع أو الاحتفاظ بأي ورقة مالية. راجع المصادر الرسمية واستشر مختصاً مؤهلاً قبل اتخاذ أي قرار استثماري",
+            ar: "إخلاء مسؤولية: هذا المحتوى لأغراض تعليمية ومعلوماتية فقط، ولا يمثل توصية بشراء أو بيع أو الاحتفاظ بأي ورقة مالية. راجع المصادر الرسمية واستشر مختصاً مؤهلاً قبل اتخاذ أي قرار استثماري.",
             en: "Disclaimer: this content is for educational and informational purposes only and does not constitute investment advice to buy, sell, or hold any security. Verify with official sources and consult a qualified advisor before making any investment decision.",
           })}
         </p>

@@ -7,6 +7,7 @@ import {
   Arrow,
   CompanyCard,
   KnowledgeCard,
+  MarketCard,
   ResearchCard,
   SectionHeading,
   SectorCard,
@@ -15,6 +16,7 @@ import { ui, useI18n } from "@/lib/i18n";
 import {
   getCompanies,
   getKnowledge,
+  getMarketCounts,
   getPlatformStats,
   getResearch,
   getSectors,
@@ -22,14 +24,15 @@ import {
 
 export const Route = createFileRoute("/")({
   loader: async () => {
-    const [stats, sectors, companies, research, knowledge] = await Promise.all([
+    const [stats, markets, sectors, companies, research, knowledge] = await Promise.all([
       getPlatformStats(),
+      getMarketCounts(),
       getSectors(),
       getCompanies({ limit: 5 }),
       getResearch(),
       getKnowledge(5),
     ]);
-    return { stats, sectors, companies, research, knowledge };
+    return { stats, markets, sectors, companies, research, knowledge };
   },
   head: () => ({
     meta: [
@@ -51,7 +54,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   const { t } = useI18n();
-  const { stats, sectors, companies, research, knowledge } = Route.useLoaderData();
+  const { stats, markets, sectors, companies, research, knowledge } = Route.useLoaderData();
 
   return (
     <PageShell>
@@ -121,6 +124,26 @@ function HomePage() {
       </div>
 
       <div className="mx-auto max-w-7xl space-y-20 px-4 py-20 sm:px-6">
+        <section>
+          <SectionHeading title={t(ui.exploreMarkets)} to="/markets" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <MarketCard
+              to="/markets/saudi"
+              tone="tone-emerald"
+              title={t({ ar: "السوق السعودي", en: "Saudi Market" })}
+              tagline={t({ ar: "تاسي ونمو", en: "TASI & Nomu" })}
+              count={markets.saudi}
+            />
+            <MarketCard
+              to="/markets/us"
+              tone="tone-sky"
+              title={t({ ar: "السوق الأمريكي", en: "US Market" })}
+              tagline={t({ ar: "ناسداك ونيويورك", en: "NASDAQ & NYSE" })}
+              count={markets.us}
+            />
+          </div>
+        </section>
+
         <section>
           <SectionHeading title={t(ui.exploreSectors)} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

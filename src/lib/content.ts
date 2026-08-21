@@ -598,6 +598,22 @@ export async function search(query: string): Promise<SearchResult[]> {
   return results;
 }
 
+// ---------- Markets ----------
+
+const SAUDI_EXCHANGES = ["تداول", "نمو"];
+
+export async function getMarketCounts(): Promise<{ saudi: number; us: number }> {
+  const [{ count: saudi }, { count: total }] = await Promise.all([
+    supabase
+      .from("companies")
+      .select("*", { count: "exact", head: true })
+      .eq("published", true)
+      .in("exchange", SAUDI_EXCHANGES),
+    supabase.from("companies").select("*", { count: "exact", head: true }).eq("published", true),
+  ]);
+  return { saudi: saudi ?? 0, us: (total ?? 0) - (saudi ?? 0) };
+}
+
 export async function getPlatformStats() {
   const [{ count: companies }, { count: research }, { count: articles }, { count: sectors }] =
     await Promise.all([

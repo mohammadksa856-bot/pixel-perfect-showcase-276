@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Landmark } from "lucide-react";
 import { getIcon } from "@/lib/icons";
 import { ui, useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -66,6 +66,39 @@ export function SectorCard({ sector }: { sector: Sector }) {
         </span>
       </span>
       <Arrow className="ms-auto size-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+    </Link>
+  );
+}
+
+export function MarketCard({
+  to,
+  tone,
+  title,
+  tagline,
+  count,
+}: {
+  to: "/markets/saudi" | "/markets/us";
+  tone: string;
+  title: string;
+  tagline: string;
+  count: number;
+}) {
+  const { t } = useI18n();
+  return (
+    <Link to={to} className={cn(cardBase, "flex items-center gap-4 p-5")}>
+      <span
+        className="flex size-12 shrink-0 items-center justify-center rounded-xl"
+        style={{ backgroundColor: `color-mix(in oklch, var(--${tone}) 14%, transparent)` }}
+      >
+        <Landmark className="size-6" style={{ color: `var(--${tone})` }} strokeWidth={1.8} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm font-bold">{title}</span>
+        <span className="mt-1 block truncate text-xs text-muted-foreground">{tagline}</span>
+      </span>
+      <span className="shrink-0 text-xs font-semibold text-muted-foreground">
+        {count} {t(ui.statCompanies)}
+      </span>
     </Link>
   );
 }

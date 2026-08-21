@@ -94,6 +94,7 @@ export const ui = {
   statResearch: { ar: "بحث", en: "Research papers" },
   statArticles: { ar: "مقال معرفي", en: "Knowledge articles" },
   statSectors: { ar: "قطاع", en: "Sectors" },
+  exploreMarkets: { ar: "استكشف الأسواق", en: "Explore markets" },
   exploreSectors: { ar: "استكشف القطاعات", en: "Explore sectors" },
   discoverCompanies: { ar: "اكتشف الشركات", en: "Discover companies" },
   latestResearch: { ar: "أحدث الأبحاث", en: "Latest research" },

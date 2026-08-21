@@ -8,10 +8,9 @@ import { getCompanies } from "@/lib/content";
 export const Route = createFileRoute("/markets/saudi")({
   loader: async () => {
     const companies = await getCompanies();
-    // كل الشركات المُدرجة بتداول تُعتبر تاسي (السوق الرئيسي) حالياً — لسا ما
-    // أُضيفت شركات نمو (السوق الموازي)، فقسمها يظهر فاضياً لين تُضاف لاحقاً.
     const tasi = companies.filter((c) => c.exchange === "تداول");
-    return { tasi };
+    const nomu = companies.filter((c) => c.exchange === "نمو");
+    return { tasi, nomu };
   },
   head: () => ({
     meta: [
@@ -24,7 +23,7 @@ export const Route = createFileRoute("/markets/saudi")({
 
 function SaudiMarketPage() {
   const { t } = useI18n();
-  const { tasi } = Route.useLoaderData();
+  const { tasi, nomu } = Route.useLoaderData();
 
   return (
     <PageShell>
@@ -69,9 +68,17 @@ function SaudiMarketPage() {
 
         <section>
           <SectionHeading title={t({ ar: "نمو — السوق الموازي", en: "Nomu — Parallel Market" })} />
-          <p className="text-sm text-muted-foreground">
-            {t({ ar: "قريباً.", en: "Coming soon." })}
-          </p>
+          {nomu.length ? (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {nomu.map((c) => (
+                <CompanyCard key={c.slug} company={c} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              {t({ ar: "لا توجد شركات مضافة بعد.", en: "No companies added yet." })}
+            </p>
+          )}
         </section>
       </Container>
     </PageShell>

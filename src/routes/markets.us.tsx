@@ -9,7 +9,7 @@ import type { Company } from "@/data/types";
 export const Route = createFileRoute("/markets/us")({
   loader: async () => {
     const companies = await getCompanies();
-    const us = companies.filter((c) => c.exchange !== "تداول");
+    const us = companies.filter((c) => c.exchange !== "تداول" && c.exchange !== "نمو");
     // نجمّع حسب قيمة exchange الفعلية (NASDAQ/NYSE...) بدل تثبيتها يدوياً —
     // أي بورصة جديدة تُضاف مستقبلاً تظهر قسماً خاصاً بها تلقائياً.
     const byExchange = new Map<string, Company[]>();

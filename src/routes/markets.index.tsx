@@ -7,7 +7,9 @@ import { getCompanies } from "@/lib/content";
 export const Route = createFileRoute("/markets/")({
   loader: async () => {
     const companies = await getCompanies();
-    const saudiCount = companies.filter((c) => c.exchange === "تداول").length;
+    const saudiCount = companies.filter(
+      (c) => c.exchange === "تداول" || c.exchange === "نمو",
+    ).length;
     const usCount = companies.length - saudiCount;
     return { saudiCount, usCount };
   },

@@ -9,9 +9,9 @@ import { SearchBox } from "@/components/search-box";
 
 const nav = [
   { to: "/", label: ui.home },
+  { to: "/markets", label: ui.markets },
   { to: "/sectors", label: ui.sectors },
   { to: "/companies", label: ui.companies },
-  { to: "/markets", label: ui.markets },
   { to: "/knowledge", label: ui.knowledge },
   { to: "/research", label: ui.research },
   { to: "/community", label: ui.community },

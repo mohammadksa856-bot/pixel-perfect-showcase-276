@@ -70,6 +70,7 @@ export const ui = {
   home: { ar: "الرئيسية", en: "Home" },
   sectors: { ar: "القطاعات", en: "Sectors" },
   companies: { ar: "الشركات", en: "Companies" },
+  markets: { ar: "الأسواق", en: "Markets" },
   knowledge: { ar: "المعرفة", en: "Knowledge" },
   research: { ar: "الأبحاث", en: "Research" },
   community: { ar: "المجتمع", en: "Community" },

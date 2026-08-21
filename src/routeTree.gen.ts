@@ -25,7 +25,10 @@ import { Route as CompaniesIndexRouteImport } from './routes/companies.index'
 import { Route as CompaniesSlugRouteImport } from './routes/companies.$slug'
 import { Route as KnowledgeIndexRouteImport } from './routes/knowledge.index'
 import { Route as KnowledgeSlugRouteImport } from './routes/knowledge.$slug'
+import { Route as MarketsIndexRouteImport } from './routes/markets.index'
 import { Route as MarketsSlugRouteImport } from './routes/markets.$slug'
+import { Route as MarketsSaudiRouteImport } from './routes/markets.saudi'
+import { Route as MarketsUsRouteImport } from './routes/markets.us'
 import { Route as ResearchIndexRouteImport } from './routes/research.index'
 import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
@@ -118,9 +121,24 @@ const KnowledgeSlugRoute = KnowledgeSlugRouteImport.update({
   path: '/knowledge/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarketsIndexRoute = MarketsIndexRouteImport.update({
+  id: '/markets/',
+  path: '/markets/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MarketsSlugRoute = MarketsSlugRouteImport.update({
   id: '/markets/$slug',
   path: '/markets/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketsSaudiRoute = MarketsSaudiRouteImport.update({
+  id: '/markets/saudi',
+  path: '/markets/saudi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketsUsRoute = MarketsUsRouteImport.update({
+  id: '/markets/us',
+  path: '/markets/us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchIndexRoute = ResearchIndexRouteImport.update({
@@ -204,11 +222,14 @@ export interface FileRoutesByFullPath {
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/markets/$slug': typeof MarketsSlugRoute
+  '/markets/saudi': typeof MarketsSaudiRoute
+  '/markets/us': typeof MarketsUsRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/community/': typeof CommunityIndexRoute
   '/companies/': typeof CompaniesIndexRoute
   '/knowledge/': typeof KnowledgeIndexRoute
+  '/markets/': typeof MarketsIndexRoute
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
   '/admin/boards': typeof AuthenticatedAdminBoardsRoute
@@ -233,11 +254,14 @@ export interface FileRoutesByTo {
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/markets/$slug': typeof MarketsSlugRoute
+  '/markets/saudi': typeof MarketsSaudiRoute
+  '/markets/us': typeof MarketsUsRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/community': typeof CommunityIndexRoute
   '/companies': typeof CompaniesIndexRoute
   '/knowledge': typeof KnowledgeIndexRoute
+  '/markets': typeof MarketsIndexRoute
   '/research': typeof ResearchIndexRoute
   '/sectors': typeof SectorsIndexRoute
   '/admin/boards': typeof AuthenticatedAdminBoardsRoute
@@ -265,11 +289,14 @@ export interface FileRoutesById {
   '/companies/$slug': typeof CompaniesSlugRoute
   '/knowledge/$slug': typeof KnowledgeSlugRoute
   '/markets/$slug': typeof MarketsSlugRoute
+  '/markets/saudi': typeof MarketsSaudiRoute
+  '/markets/us': typeof MarketsUsRoute
   '/research/$slug': typeof ResearchSlugRoute
   '/sectors/$slug': typeof SectorsSlugRoute
   '/community/': typeof CommunityIndexRoute
   '/companies/': typeof CompaniesIndexRoute
   '/knowledge/': typeof KnowledgeIndexRoute
+  '/markets/': typeof MarketsIndexRoute
   '/research/': typeof ResearchIndexRoute
   '/sectors/': typeof SectorsIndexRoute
   '/_authenticated/admin/boards': typeof AuthenticatedAdminBoardsRoute
@@ -297,11 +324,14 @@ export interface FileRouteTypes {
     | '/companies/$slug'
     | '/knowledge/$slug'
     | '/markets/$slug'
+    | '/markets/saudi'
+    | '/markets/us'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/community/'
     | '/companies/'
     | '/knowledge/'
+    | '/markets/'
     | '/research/'
     | '/sectors/'
     | '/admin/boards'
@@ -326,11 +356,14 @@ export interface FileRouteTypes {
     | '/companies/$slug'
     | '/knowledge/$slug'
     | '/markets/$slug'
+    | '/markets/saudi'
+    | '/markets/us'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/community'
     | '/companies'
     | '/knowledge'
+    | '/markets'
     | '/research'
     | '/sectors'
     | '/admin/boards'
@@ -357,11 +390,14 @@ export interface FileRouteTypes {
     | '/companies/$slug'
     | '/knowledge/$slug'
     | '/markets/$slug'
+    | '/markets/saudi'
+    | '/markets/us'
     | '/research/$slug'
     | '/sectors/$slug'
     | '/community/'
     | '/companies/'
     | '/knowledge/'
+    | '/markets/'
     | '/research/'
     | '/sectors/'
     | '/_authenticated/admin/boards'
@@ -388,11 +424,14 @@ export interface RootRouteChildren {
   CompaniesSlugRoute: typeof CompaniesSlugRoute
   KnowledgeSlugRoute: typeof KnowledgeSlugRoute
   MarketsSlugRoute: typeof MarketsSlugRoute
+  MarketsSaudiRoute: typeof MarketsSaudiRoute
+  MarketsUsRoute: typeof MarketsUsRoute
   ResearchSlugRoute: typeof ResearchSlugRoute
   SectorsSlugRoute: typeof SectorsSlugRoute
   CommunityIndexRoute: typeof CommunityIndexRoute
   CompaniesIndexRoute: typeof CompaniesIndexRoute
   KnowledgeIndexRoute: typeof KnowledgeIndexRoute
+  MarketsIndexRoute: typeof MarketsIndexRoute
   ResearchIndexRoute: typeof ResearchIndexRoute
   SectorsIndexRoute: typeof SectorsIndexRoute
 }
@@ -511,11 +550,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KnowledgeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/markets/': {
+      id: '/markets/'
+      path: '/markets'
+      fullPath: '/markets/'
+      preLoaderRoute: typeof MarketsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/markets/$slug': {
       id: '/markets/$slug'
       path: '/markets/$slug'
       fullPath: '/markets/$slug'
       preLoaderRoute: typeof MarketsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/markets/saudi': {
+      id: '/markets/saudi'
+      path: '/markets/saudi'
+      fullPath: '/markets/saudi'
+      preLoaderRoute: typeof MarketsSaudiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/markets/us': {
+      id: '/markets/us'
+      path: '/markets/us'
+      fullPath: '/markets/us'
+      preLoaderRoute: typeof MarketsUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/research/': {
@@ -655,11 +715,14 @@ const rootRouteChildren: RootRouteChildren = {
   CompaniesSlugRoute: CompaniesSlugRoute,
   KnowledgeSlugRoute: KnowledgeSlugRoute,
   MarketsSlugRoute: MarketsSlugRoute,
+  MarketsSaudiRoute: MarketsSaudiRoute,
+  MarketsUsRoute: MarketsUsRoute,
   ResearchSlugRoute: ResearchSlugRoute,
   SectorsSlugRoute: SectorsSlugRoute,
   CommunityIndexRoute: CommunityIndexRoute,
   CompaniesIndexRoute: CompaniesIndexRoute,
   KnowledgeIndexRoute: KnowledgeIndexRoute,
+  MarketsIndexRoute: MarketsIndexRoute,
   ResearchIndexRoute: ResearchIndexRoute,
   SectorsIndexRoute: SectorsIndexRoute,
 }

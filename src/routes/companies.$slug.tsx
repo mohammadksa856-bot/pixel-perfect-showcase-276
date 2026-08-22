@@ -328,6 +328,42 @@ function CompanyPage() {
           ))}
         </div>
 
+        {company.competitors.length > 0 && (
+          <div className="mt-5">
+            <Panel
+              title={t({ ar: "المنافسون", en: "Competitors" })}
+              className="overflow-x-auto p-0"
+            >
+              <table className="w-full min-w-xl text-start text-sm">
+                <thead className="bg-muted/60 text-xs text-muted-foreground">
+                  <tr>
+                    {[
+                      { ar: "الشركة", en: "Company" },
+                      { ar: "القيمة السوقية", en: "Market cap" },
+                      { ar: "مكرر الربحية", en: "P/E" },
+                      { ar: "العائد", en: "Dividend" },
+                    ].map((h) => (
+                      <th key={h.en} className="px-5 py-2.5 text-start font-medium">
+                        {t(h)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {company.competitors.map((c) => (
+                    <tr key={c.name} className="border-b border-border/50">
+                      <td className="px-5 py-2.5 font-semibold">{c.name}</td>
+                      <td className="px-5 py-2.5">{c.marketCap}</td>
+                      <td className="px-5 py-2.5">{c.pe}</td>
+                      <td className="px-5 py-2.5">{c.dividend}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </Panel>
+          </div>
+        )}
+
         {company.revenueBreakdown.length > 0 && (
           <div className="mt-5">
             <Panel title={t({ ar: "تفصيل الإيرادات", en: "Revenue breakdown" })}>
@@ -417,42 +453,6 @@ function CompanyPage() {
           )}
         </div>
 
-        {company.competitors.length > 0 && (
-          <div className="mt-5">
-            <Panel
-              title={t({ ar: "المنافسون", en: "Competitors" })}
-              className="overflow-x-auto p-0"
-            >
-              <table className="w-full min-w-xl text-start text-sm">
-                <thead className="bg-muted/60 text-xs text-muted-foreground">
-                  <tr>
-                    {[
-                      { ar: "الشركة", en: "Company" },
-                      { ar: "القيمة السوقية", en: "Market cap" },
-                      { ar: "مكرر الربحية", en: "P/E" },
-                      { ar: "العائد", en: "Dividend" },
-                    ].map((h) => (
-                      <th key={h.en} className="px-5 py-2.5 text-start font-medium">
-                        {t(h)}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {company.competitors.map((c) => (
-                    <tr key={c.name} className="border-b border-border/50">
-                      <td className="px-5 py-2.5 font-semibold">{c.name}</td>
-                      <td className="px-5 py-2.5">{c.marketCap}</td>
-                      <td className="px-5 py-2.5">{c.pe}</td>
-                      <td className="px-5 py-2.5">{c.dividend}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </Panel>
-          </div>
-        )}
-
         <ChapterHead
           num={3}
           id="c3"
@@ -507,6 +507,33 @@ function CompanyPage() {
             })}
           </p>
         </div>
+
+        {company.financialHealth.length > 0 && (
+          <div className="mt-5">
+            <Panel
+              title={t({ ar: "الصحة المالية", en: "Financial health" })}
+              className="border-brand/25 bg-brand/5"
+            >
+              <ul className="space-y-3">
+                {company.financialHealth.map((item) => (
+                  <li key={item.text.en} className="flex items-start gap-2.5 text-sm">
+                    <span
+                      className={cn(
+                        "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold",
+                        item.status === "good" && "bg-tone-emerald/15 text-tone-emerald",
+                        item.status === "warning" && "bg-tone-amber/15 text-tone-amber",
+                        item.status === "bad" && "bg-tone-rose/15 text-tone-rose",
+                      )}
+                    >
+                      {item.status === "good" ? "✓" : item.status === "warning" ? "!" : "✕"}
+                    </span>
+                    <span className="text-muted-foreground">{t(item.text)}</span>
+                  </li>
+                ))}
+              </ul>
+            </Panel>
+          </div>
+        )}
 
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
           <Panel title={t({ ar: "الأداء التاريخي", en: "Historical performance" })}>
@@ -633,50 +660,24 @@ function CompanyPage() {
               ))}
             </Panel>
           )}
-          {(company.financialHealth.length > 0 || company.growthOutlook.length > 0) && (
-            <div className="mt-5 grid gap-5 lg:grid-cols-2">
-              {company.financialHealth.length > 0 && (
-                <Panel title={t({ ar: "الصحة المالية", en: "Financial health" })}>
-                  <ul className="space-y-3">
-                    {company.financialHealth.map((item) => (
-                      <li key={item.text.en} className="flex items-start gap-2.5 text-sm">
-                        <span
-                          className={cn(
-                            "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold",
-                            item.status === "good" && "bg-tone-emerald/15 text-tone-emerald",
-                            item.status === "warning" && "bg-tone-amber/15 text-tone-amber",
-                            item.status === "bad" && "bg-tone-rose/15 text-tone-rose",
-                          )}
-                        >
-                          {item.status === "good" ? "✓" : item.status === "warning" ? "!" : "✕"}
-                        </span>
-                        <span className="text-muted-foreground">{t(item.text)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Panel>
-              )}
-
-              {company.growthOutlook.length > 0 && (
-                <Panel title={t({ ar: "النمو المتوقع", en: "Growth outlook" })}>
-                  <dl className="space-y-3.5 text-sm">
-                    {company.growthOutlook.map((g) => (
-                      <div key={g.label.en} className="flex items-center justify-between">
-                        <dt className="text-muted-foreground">{t(g.label)}</dt>
-                        <dd
-                          className={cn(
-                            "font-semibold",
-                            g.value.startsWith("-") ? "text-tone-rose" : "text-tone-emerald",
-                          )}
-                        >
-                          {g.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </Panel>
-              )}
-            </div>
+          {company.growthOutlook.length > 0 && (
+            <Panel title={t({ ar: "النمو المتوقع", en: "Growth outlook" })}>
+              <dl className="space-y-3.5 text-sm">
+                {company.growthOutlook.map((g) => (
+                  <div key={g.label.en} className="flex items-center justify-between">
+                    <dt className="text-muted-foreground">{t(g.label)}</dt>
+                    <dd
+                      className={cn(
+                        "font-semibold",
+                        g.value.startsWith("-") ? "text-tone-rose" : "text-tone-emerald",
+                      )}
+                    >
+                      {g.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Panel>
           )}
         </div>
 
@@ -686,6 +687,165 @@ function CompanyPage() {
           title={{ ar: "السهم والتقييم", en: "Stock & valuation" }}
           subtitle={{ ar: "هل السعر عادل؟", en: "Is the price fair?" }}
         />
+
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
+          <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-1">
+            <div className="space-y-4 text-sm">
+              {company.valuation.map((v) => (
+                <div key={v.label.en}>
+                  <div className="mb-1 flex items-center justify-between">
+                    <dt className="text-muted-foreground">{t(v.label)}</dt>
+                    <dd className="font-semibold">{v.companyValue}</dd>
+                  </div>
+                  {(v.sectorAvg || v.marketAvg) && (
+                    <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                      <span>
+                        {v.sectorAvg && `${t({ ar: "القطاع", en: "Sector" })}: ${v.sectorAvg}`}
+                        {v.sectorAvg && v.marketAvg && " · "}
+                        {v.marketAvg && `${t({ ar: "السوق", en: "Market" })}: ${v.marketAvg}`}
+                      </span>
+                      {v.reading && v.readingText && (
+                        <span
+                          className={cn(
+                            "rounded-full px-2 py-0.5 font-medium",
+                            v.reading === "good" && "bg-tone-emerald/10 text-tone-emerald",
+                            v.reading === "warning" && "bg-tone-amber/10 text-tone-amber",
+                            v.reading === "bad" && "bg-tone-rose/10 text-tone-rose",
+                          )}
+                        >
+                          {t(v.readingText)}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Panel>
+        </div>
+
+        <div className="mt-5">
+          <ValuationScenariosPanel company={company} />
+        </div>
+
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
+          {company.analystConsensus.rating.ar && (
+            <div className="mt-5">
+              <Panel title={t({ ar: "إجماع المحللين", en: "Analyst consensus" })}>
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-lg font-semibold text-brand">
+                    {t(company.analystConsensus.rating)}
+                  </span>
+                  {company.analystConsensus.analystCount && (
+                    <span className="text-xs text-muted-foreground">
+                      {t({ ar: "بناءً على", en: "Based on" })}{" "}
+                      {company.analystConsensus.analystCount} {t({ ar: "محلل", en: "analysts" })}
+                    </span>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <div className="text-[11px] text-muted-foreground">
+                      {t({ ar: "متوسط السعر المستهدف", en: "Avg. target price" })}
+                    </div>
+                    <div className="mt-1 text-lg font-semibold">
+                      {company.analystConsensus.targetPrice}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-muted-foreground">
+                      {t({ ar: "مقارنة بالسعر الحالي", en: "vs current price" })}
+                    </div>
+                    <div
+                      className={cn(
+                        "mt-1 text-lg font-semibold",
+                        company.analystConsensus.upside.startsWith("-")
+                          ? "text-tone-rose"
+                          : "text-tone-emerald",
+                      )}
+                    >
+                      {company.analystConsensus.upside}
+                    </div>
+                  </div>
+                </div>
+              </Panel>
+            </div>
+          )}
+          {company.forwardEstimates.length > 0 && (
+            <Panel title={t({ ar: "تقديرات مستقبلية", en: "Forward estimates" })}>
+              <DataTable
+                headers={[
+                  t({ ar: "السنة", en: "Year" }),
+                  t({ ar: "الإيراد", en: "Revenue" }),
+                  t({ ar: "P/E متوقع", en: "Forward P/E" }),
+                ]}
+              >
+                {company.forwardEstimates.map((fe, i) => (
+                  <tr key={i} className="border-b border-border/50 last:border-0">
+                    <td className="py-2.5" dir="ltr">
+                      {fe.year}
+                    </td>
+                    <td className="py-2.5" dir="ltr">
+                      {fe.revenue}
+                    </td>
+                    <td className="py-2.5 font-semibold" dir="ltr">
+                      {fe.forwardPe}
+                    </td>
+                  </tr>
+                ))}
+              </DataTable>
+            </Panel>
+          )}
+        </div>
+
+        <div className="mt-5">
+          <HistoricalValuation company={company} />
+        </div>
+
+        {company.dividends.payer && (
+          <div className="mt-5">
+            <Panel title={t({ ar: "التوزيعات", en: "Dividends" })}>
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div>
+                  <div className="text-[11px] text-muted-foreground">
+                    {t({ ar: "العائد", en: "Yield" })}
+                  </div>
+                  <div className="mt-1 text-lg font-semibold">{company.dividends.yield}</div>
+                </div>
+                <div>
+                  <div className="text-[11px] text-muted-foreground">
+                    {t({ ar: "آخر توزيع", en: "Last payout" })}
+                  </div>
+                  <div className="mt-1 text-lg font-semibold">{company.dividends.lastPayout}</div>
+                </div>
+                <div>
+                  <div className="text-[11px] text-muted-foreground">
+                    {t({ ar: "النمو (3 سنوات)", en: "3-year growth" })}
+                  </div>
+                  <div className="mt-1 text-lg font-semibold">{company.dividends.growth3y}</div>
+                </div>
+              </div>
+              {company.dividends.sustainabilityScore !== null && (
+                <div className="mt-5">
+                  <div className="mb-1.5 flex items-center justify-between text-xs">
+                    <span className="text-muted-foreground">
+                      {t({ ar: "استدامة التوزيع", en: "Payout sustainability" })}
+                    </span>
+                    <span className="font-semibold text-brand">
+                      {t(company.dividends.sustainabilityLabel)}
+                    </span>
+                  </div>
+                  <div className="h-2 overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full rounded-full bg-brand"
+                      style={{ width: `${company.dividends.sustainabilityScore}%` }}
+                    />
+                  </div>
+                </div>
+              )}
+            </Panel>
+          </div>
+        )}
 
         {company.stockPerformance.companyReturn !== null &&
           company.stockPerformance.benchmarkReturn !== null && (
@@ -812,165 +972,6 @@ function CompanyPage() {
         )}
 
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-1">
-            <div className="space-y-4 text-sm">
-              {company.valuation.map((v) => (
-                <div key={v.label.en}>
-                  <div className="mb-1 flex items-center justify-between">
-                    <dt className="text-muted-foreground">{t(v.label)}</dt>
-                    <dd className="font-semibold">{v.companyValue}</dd>
-                  </div>
-                  {(v.sectorAvg || v.marketAvg) && (
-                    <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                      <span>
-                        {v.sectorAvg && `${t({ ar: "القطاع", en: "Sector" })}: ${v.sectorAvg}`}
-                        {v.sectorAvg && v.marketAvg && " · "}
-                        {v.marketAvg && `${t({ ar: "السوق", en: "Market" })}: ${v.marketAvg}`}
-                      </span>
-                      {v.reading && v.readingText && (
-                        <span
-                          className={cn(
-                            "rounded-full px-2 py-0.5 font-medium",
-                            v.reading === "good" && "bg-tone-emerald/10 text-tone-emerald",
-                            v.reading === "warning" && "bg-tone-amber/10 text-tone-amber",
-                            v.reading === "bad" && "bg-tone-rose/10 text-tone-rose",
-                          )}
-                        >
-                          {t(v.readingText)}
-                        </span>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Panel>
-        </div>
-
-        <div className="mt-5">
-          <HistoricalValuation company={company} />
-        </div>
-
-        <div className="mt-5">
-          <ValuationScenariosPanel company={company} />
-        </div>
-
-        {company.dividends.payer && (
-          <div className="mt-5">
-            <Panel title={t({ ar: "التوزيعات", en: "Dividends" })}>
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div>
-                  <div className="text-[11px] text-muted-foreground">
-                    {t({ ar: "العائد", en: "Yield" })}
-                  </div>
-                  <div className="mt-1 text-lg font-semibold">{company.dividends.yield}</div>
-                </div>
-                <div>
-                  <div className="text-[11px] text-muted-foreground">
-                    {t({ ar: "آخر توزيع", en: "Last payout" })}
-                  </div>
-                  <div className="mt-1 text-lg font-semibold">{company.dividends.lastPayout}</div>
-                </div>
-                <div>
-                  <div className="text-[11px] text-muted-foreground">
-                    {t({ ar: "النمو (3 سنوات)", en: "3-year growth" })}
-                  </div>
-                  <div className="mt-1 text-lg font-semibold">{company.dividends.growth3y}</div>
-                </div>
-              </div>
-              {company.dividends.sustainabilityScore !== null && (
-                <div className="mt-5">
-                  <div className="mb-1.5 flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground">
-                      {t({ ar: "استدامة التوزيع", en: "Payout sustainability" })}
-                    </span>
-                    <span className="font-semibold text-brand">
-                      {t(company.dividends.sustainabilityLabel)}
-                    </span>
-                  </div>
-                  <div className="h-2 overflow-hidden rounded-full bg-muted">
-                    <div
-                      className="h-full rounded-full bg-brand"
-                      style={{ width: `${company.dividends.sustainabilityScore}%` }}
-                    />
-                  </div>
-                </div>
-              )}
-            </Panel>
-          </div>
-        )}
-
-        <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          {company.analystConsensus.rating.ar && (
-            <div className="mt-5">
-              <Panel title={t({ ar: "إجماع المحللين", en: "Analyst consensus" })}>
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="text-lg font-semibold text-brand">
-                    {t(company.analystConsensus.rating)}
-                  </span>
-                  {company.analystConsensus.analystCount && (
-                    <span className="text-xs text-muted-foreground">
-                      {t({ ar: "بناءً على", en: "Based on" })}{" "}
-                      {company.analystConsensus.analystCount} {t({ ar: "محلل", en: "analysts" })}
-                    </span>
-                  )}
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <div className="text-[11px] text-muted-foreground">
-                      {t({ ar: "متوسط السعر المستهدف", en: "Avg. target price" })}
-                    </div>
-                    <div className="mt-1 text-lg font-semibold">
-                      {company.analystConsensus.targetPrice}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-[11px] text-muted-foreground">
-                      {t({ ar: "مقارنة بالسعر الحالي", en: "vs current price" })}
-                    </div>
-                    <div
-                      className={cn(
-                        "mt-1 text-lg font-semibold",
-                        company.analystConsensus.upside.startsWith("-")
-                          ? "text-tone-rose"
-                          : "text-tone-emerald",
-                      )}
-                    >
-                      {company.analystConsensus.upside}
-                    </div>
-                  </div>
-                </div>
-              </Panel>
-            </div>
-          )}
-          {company.forwardEstimates.length > 0 && (
-            <Panel title={t({ ar: "تقديرات مستقبلية", en: "Forward estimates" })}>
-              <DataTable
-                headers={[
-                  t({ ar: "السنة", en: "Year" }),
-                  t({ ar: "الإيراد", en: "Revenue" }),
-                  t({ ar: "P/E متوقع", en: "Forward P/E" }),
-                ]}
-              >
-                {company.forwardEstimates.map((fe, i) => (
-                  <tr key={i} className="border-b border-border/50 last:border-0">
-                    <td className="py-2.5" dir="ltr">
-                      {fe.year}
-                    </td>
-                    <td className="py-2.5" dir="ltr">
-                      {fe.revenue}
-                    </td>
-                    <td className="py-2.5 font-semibold" dir="ltr">
-                      {fe.forwardPe}
-                    </td>
-                  </tr>
-                ))}
-              </DataTable>
-            </Panel>
-          )}
-        </div>
-
-        <div className="mt-5 grid gap-5 lg:grid-cols-2">
           {(company.ownership.government || company.ownership.holders.length > 0) && (
             <div className="mt-5">
               <Panel title={t({ ar: "الملكية والمساهمون", en: "Ownership" })}>
@@ -1035,16 +1036,16 @@ function CompanyPage() {
         />
 
         <div className="mt-5">
+          <RiskItems company={company} />
+        </div>
+
+        <div className="mt-5">
           <Panel
             title={t({ ar: "الأهداف والخطط المستقبلية", en: "Goals & Future Plans" })}
             className="border-brand/25 bg-brand/5"
           >
             <p className="text-sm leading-8 text-muted-foreground">{t(company.goals)}</p>
           </Panel>
-        </div>
-
-        <div className="mt-5">
-          <RiskItems company={company} />
         </div>
 
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
@@ -1159,29 +1160,6 @@ function CompanyPage() {
           </Panel>
         </div>
 
-        <section className="mt-5 flex flex-col items-start gap-4 rounded-xl border border-border/70 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h3 className="text-sm font-bold">
-              {t({ ar: "ناقش ", en: "Discuss " }) +
-                t(company.name) +
-                t({ ar: " مع مستثمرين آخرين", en: " with other investors" })}
-            </h3>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {t({
-                ar: "انضم للوحة النقاش المخصصة لقطاعها بمجتمعنا.",
-                en: "Join the discussion board dedicated to its sector.",
-              })}
-            </p>
-          </div>
-          <Link
-            to="/community"
-            className="flex shrink-0 items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-transform hover:scale-[1.03]"
-          >
-            <MessagesSquare className="size-4" />
-            {t({ ar: "افتح لوحة المجتمع", en: "Open community board" })}
-          </Link>
-        </section>
-
         <ChapterHead
           num={7}
           id="c7"
@@ -1241,6 +1219,29 @@ function CompanyPage() {
             </Panel>
           </div>
         )}
+
+        <section className="mt-5 flex flex-col items-start gap-4 rounded-xl border border-border/70 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3 className="text-sm font-bold">
+              {t({ ar: "ناقش ", en: "Discuss " }) +
+                t(company.name) +
+                t({ ar: " مع مستثمرين آخرين", en: " with other investors" })}
+            </h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t({
+                ar: "انضم للوحة النقاش المخصصة لقطاعها بمجتمعنا.",
+                en: "Join the discussion board dedicated to its sector.",
+              })}
+            </p>
+          </div>
+          <Link
+            to="/community"
+            className="flex shrink-0 items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-transform hover:scale-[1.03]"
+          >
+            <MessagesSquare className="size-4" />
+            {t({ ar: "افتح لوحة المجتمع", en: "Open community board" })}
+          </Link>
+        </section>
 
         <p className="mt-5 rounded-xl border border-border/70 bg-muted/30 p-4 text-[11px] leading-6 text-muted-foreground">
           {t({

@@ -1,0 +1,49 @@
+total companies scanned: 405, total findings: 36
+
+=== REVENUE_JUMP (13) ===
+  1020: revenue_y0/y1=2.78x net_income ratio=1.22x  ->  covered by CONFIRMED_REVENUE override
+  1030: revenue_y0/y1=2.71x net_income ratio=1.24x  ->  covered by CONFIRMED_REVENUE override
+  1050: revenue_y0/y1=2.09x net_income ratio=1.18x  ->  covered by CONFIRMED_REVENUE override
+  1060: revenue_y0/y1=2.01x net_income ratio=1.05x  ->  covered by CONFIRMED_REVENUE override
+  1120: revenue_y0/y1=2.25x net_income ratio=1.26x  ->  covered by CONFIRMED_REVENUE override
+  1140: revenue_y0/y1=1.97x net_income ratio=1.09x  ->  covered by CONFIRMED_REVENUE override
+  1182: revenue_y0/y1=2.29x net_income ratio=1.41x  ->  NEEDS REVIEW - no override yet
+  4220: revenue_y0/y1=2.69x net_income ratio=N/A  ->  NEEDS REVIEW - no override yet
+  4310: revenue_y0/y1=2.01x net_income ratio=N/A  ->  NEEDS REVIEW - no override yet
+  6060: revenue_y0/y1=2.75x net_income ratio=N/A  ->  NEEDS REVIEW - no override yet
+  8100: revenue_y0/y1=1.69x net_income ratio=0.45x  ->  NEEDS REVIEW - no override yet
+  9595: revenue_y0/y1=1.74x net_income ratio=0.77x  ->  NEEDS REVIEW - no override yet
+  ASTS: revenue_y0/y1=16.05x net_income ratio=N/A  ->  NEEDS REVIEW - no override yet
+
+=== EXACT_LIAB_EQ_ASSETS (3) ===
+  1820: assets=1621539000 liabilities=1618748000 equity=2791000  ->  covered by CONFIRMED_LIABILITIES override
+  9558: assets=112708504 liabilities=112708504 equity=84267407  ->  covered by CONFIRMED_LIABILITIES override
+  9577: assets=70126752 liabilities=70126752 equity=33379145  ->  covered by CONFIRMED_LIABILITIES override
+
+=== BALANCE_SHEET_MISMATCH (7) ===
+  1320: assets=1736466270 liab+equity=1424669174 diff=18%  ->  informational - verify if non-controlling interests before trusting blindly
+  2170: assets=3952948000 liab+equity=2931300000 diff=26%  ->  informational - verify if non-controlling interests before trusting blindly
+  2190: assets=6461797461 liab+equity=5455643598 diff=16%  ->  informational - verify if non-controlling interests before trusting blindly
+  4230: assets=3046342000 liab+equity=2544260000 diff=16%  ->  informational - verify if non-controlling interests before trusting blindly
+  4324: assets=868430552 liab+equity=643761710 diff=26%  ->  informational - verify if non-controlling interests before trusting blindly
+  9558: assets=112708504 liab+equity=196975911 diff=75%  ->  informational - verify if non-controlling interests before trusting blindly
+  9577: assets=70126752 liab+equity=103505897 diff=48%  ->  informational - verify if non-controlling interests before trusting blindly
+
+=== MARGIN_FALSE_POSITIVE (2) ===
+  2030: revenue_y0=-47236876 net_income_y0=-60182955  ->  importer must blank margin for this year, not show netIncome/revenue directly
+  9586: revenue_y0=-46944227 net_income_y0=-95067609  ->  importer must blank margin for this year, not show netIncome/revenue directly
+
+=== PE_NEGATIVE_BUT_PROFITABLE (11) ===
+  2140: source pe=-8.6x net_income_y0=359733625  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  4072: source pe=-201.3x net_income_y0=382527000  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  4082: source pe=-29.1x net_income_y0=1010641  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  4180: source pe=-1250.0x net_income_y0=4045639  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  4193: source pe=-44.7x net_income_y0=2980430  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  4346: source pe=-27.3x net_income_y0=356829  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  6017: source pe=-195.7x net_income_y0=73000000  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  6090: source pe=-16.0x net_income_y0=2899572  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  8040: source pe=-27.7x net_income_y0=7406040  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  9571: source pe=-259.5x net_income_y0=3366319  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+  9592: source pe=-233.3x net_income_y0=8391649  ->  importer should compute P/E = market_cap / net_income_y0 instead of trusting source pe
+
+TOTAL NEEDING HUMAN REVIEW (no existing override): 7

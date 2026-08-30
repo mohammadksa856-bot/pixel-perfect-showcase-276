@@ -20,6 +20,16 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Claude Code local state (worktrees can contain .env secrets)
+.claude/
+
+# Supabase CLI local state
+supabase/.temp/
+
+# Python
+__pycache__/
+*.pyc
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

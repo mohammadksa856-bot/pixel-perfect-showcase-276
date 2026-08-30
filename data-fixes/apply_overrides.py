@@ -59,6 +59,7 @@ def _with_retries(fn, attempts=8, base_delay=1.5):
 from overrides import (
     CONFIRMED_SHARES, CONFIRMED_REVENUE, CONFIRMED_LIABILITIES, CONFIRMED_QUARTERLY,
     CONFIRMED_CURRENCY_FIX, CONFIRMED_EQUITY, CONFIRMED_REMOVE_YEAR, CONFIRMED_ASSETS,
+    CONFIRMED_STRIP_BAD_QUARTER,
 )
 
 FALLBACK_ENV_PATH = r"C:\Users\Mohammed856\OneDrive\Documents\GitHub\marefa-telegram-bot\.env"
@@ -330,6 +331,33 @@ def apply_assets(url, key, dry_run, log):
         log.append(f"[assets] {ticker}: Total Assets {action} -> {fmt_big(correct_value, 'SAR')} -> {status}")
 
 
+def apply_strip_bad_quarter(url, key, dry_run, log):
+    bad_label = CONFIRMED_STRIP_BAD_QUARTER["quarter_label"]
+    for ticker in CONFIRMED_STRIP_BAD_QUARTER["tickers"]:
+        c = get_company(url, key, ticker, "ticker,quarterly_results")
+        if not c or not c.get("quarterly_results"):
+            log.append(f"[strip_quarter] {ticker}: not found or no quarterly_results, skipped")
+            continue
+        qr = c["quarterly_results"]
+        idx = next((i for i, r in enumerate(qr) if r.get("quarter") == bad_label), None)
+        if idx is None:
+            log.append(f"[strip_quarter] {ticker}: {bad_label} row not found (already fixed?), skipped")
+            continue
+        removed = qr.pop(idx)
+        # Array is newest-first, so the entry one index BEFORE the removed
+        # one (chronologically newer) is the one whose "vs previous
+        # quarter" comparison referenced the now-removed bad baseline -
+        # blank it rather than leave a comparison against garbage data,
+        # same convention already used in CONFIRMED_QUARTERLY above for a
+        # quarter that has no verified prior quarter to compare against.
+        if idx - 1 >= 0:
+            qr[idx - 1]["reading"] = None
+            qr[idx - 1]["vsEstimate"] = {"ar": "", "en": ""}
+        status = patch_company(url, key, ticker, {"quarterly_results": qr}, dry_run)
+        log.append(f"[strip_quarter] {ticker}: removed broken {bad_label} (was revenue={removed.get('revenue')!r}), "
+                   f"blanked comparison on new oldest shown quarter -> {status}")
+
+
 def apply_currency_fix(url, key, dry_run, log):
     money_fields_financials = ("revenue", "netIncome", "cashFlow")
     for ticker, multiplier in CONFIRMED_CURRENCY_FIX.items():
@@ -369,6 +397,7 @@ def main():
     apply_equity(url, key, dry_run, log)
     apply_assets(url, key, dry_run, log)
     apply_quarterly(url, key, dry_run, log)
+    apply_strip_bad_quarter(url, key, dry_run, log)
     apply_currency_fix(url, key, dry_run, log)
     apply_remove_unaudited_year(url, key, dry_run, log)
 

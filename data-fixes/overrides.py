@@ -424,3 +424,67 @@ CONFIRMED_QUARTERLY = {
     "1140": {"q1_2026": (1_529_210_000, 735_750_000), "q2_2026": (1_613_160_000, 791_620_000)},       # Bank Albilad
     "1150": {"q1_2026": (3_009_710_000, 1_678_530_000), "q2_2026": (3_128_370_000, 1_595_180_000)},   # Alinma
 }
+
+# ---------------------------------------------------------------------
+# Company-wide "quarterly_results" pipeline bug found 2026-08-30: the
+# same panel behind CONFIRMED_QUARTERLY above (10 banks, discovered by
+# a live visual scan) turns out to be broken far more broadly - a
+# programmatic sweep of every Saudi company's stored Q3 2025 revenue
+# against the average magnitude of its other 3 shown quarters found 323
+# of 361 companies with a stored value (a full 89%) implausibly low or
+# outright negative for that one specific quarter (e.g. ticker 2010:
+# -75.8M SAR for a company whose other quarters run in the tens of
+# billions; ticker 2340: -2.1M SAR, a mathematically impossible negative
+# revenue). The consistency across every sector and company size checked
+# (banks, petrochemicals, healthcare, retail, tiny Nomu companies) rules
+# out per-company noise - this is a WiseSheets import-pipeline defect
+# specific to Q3 2025, most likely a bad cumulative-quarter subtraction
+# (9-month minus 6-month) that went wrong for nearly every ticker at once.
+#
+# This list is the conservative subset actually applied: negative OR
+# under 15% of the average of the other 3 quarters shown (245 of the 323
+# flagged). A further ~78 tickers were between 15-30% of that average and
+# were deliberately left untouched - that range is ambiguous enough to
+# include genuine high-growth companies with a real weak early quarter
+# (e.g. ticker 9557/Edarat's quarters step up smoothly 19.8M -> 37.6M ->
+# 46.8M -> 117.2M, consistent with real acceleration, not corruption) and
+# guessing wrong there would delete real data instead of fixing fake data.
+#
+# No replacement value is fabricated for the removed quarter - true Q3
+# 2025 figures would need an individual Argaam lookup per company (a
+# separate, much larger project than this session's scope). Removing the
+# broken row is strictly better than showing it: it drops one data point
+# instead of showing a mathematically-impossible number (negative
+# revenue) or a "vs previous quarter" swing in the thousands of percent
+# on the following quarter, which is what actually reached real users on
+# both the website and the Telegram bot before this fix (same table).
+CONFIRMED_STRIP_BAD_QUARTER = {
+    "quarter_label": "Q3 2025",
+    "tickers": [
+    "1201", "1202", "1210", "1213", "1214", "1301", "1302", "1304", "1320", "1322",
+    "1323", "1810", "1820", "1831", "1832", "1833", "1834", "1835", "2001", "2010",
+    "2020", "2030", "2040", "2050", "2060", "2080", "2081", "2083", "2084", "2090",
+    "2100", "2110", "2130", "2140", "2160", "2180", "2190", "2200", "2210", "2220",
+    "2230", "2240", "2250", "2270", "2280", "2281", "2287", "2288", "2310", "2330",
+    "2340", "2350", "2360", "2370", "2381", "2382", "3002", "3003", "3004", "3008",
+    "3010", "3050", "3060", "3090", "3091", "4001", "4003", "4004", "4006", "4008",
+    "4009", "4011", "4012", "4014", "4017", "4018", "4019", "4021", "4031", "4050",
+    "4051", "4061", "4070", "4071", "4072", "4080", "4082", "4110", "4140", "4141",
+    "4142", "4143", "4144", "4146", "4148", "4160", "4161", "4162", "4163", "4164",
+    "4165", "4170", "4190", "4191", "4192", "4193", "4194", "4200", "4210", "4220",
+    "4230", "4240", "4260", "4261", "4262", "4265", "4270", "4290", "4310", "4322",
+    "4330", "4335", "4337", "4339", "4345", "4346", "6001", "6002", "6004", "6010",
+    "6012", "6013", "6014", "6015", "6016", "6017", "6040", "6050", "6060", "6070",
+    "6090", "7030", "7040", "7200", "7201", "7202", "7204", "7205", "8010", "8012",
+    "8020", "8030", "8040", "8050", "8060", "8070", "8100", "8120", "8150", "8160",
+    "8170", "8180", "8190", "8210", "8230", "8240", "8250", "8260", "8280", "8300",
+    "8310", "8311", "9510", "9513", "9515", "9516", "9522", "9523", "9524", "9527",
+    "9530", "9532", "9533", "9535", "9536", "9537", "9538", "9539", "9540", "9542",
+    "9543", "9545", "9549", "9550", "9551", "9552", "9553", "9555", "9559", "9560",
+    "9562", "9563", "9564", "9565", "9566", "9567", "9568", "9569", "9571", "9572",
+    "9574", "9575", "9577", "9578", "9581", "9584", "9586", "9587", "9588", "9592",
+    "9593", "9595", "9597", "9598", "9599", "9600", "9602", "9605", "9606", "9608",
+    "9613", "9614", "9615", "9617", "9619", "9620", "9621", "9622", "9627", "9630",
+    "9631", "9635", "9637", "9649", "9650",
+    ],
+}

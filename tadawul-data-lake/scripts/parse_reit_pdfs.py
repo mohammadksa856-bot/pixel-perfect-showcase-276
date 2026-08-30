@@ -74,12 +74,30 @@ def to_ascii_number(s: str):
 # "الالتزامات" vs "المطلوبات". A pure exact-phrase match kept missing
 # these gender/synonym variants, so this checks for co-occurring stems
 # instead of one fixed phrase.
+# A few REIT PDFs (4346, 4347) have font-metrics quirks: 4346 drops a
+# word's final letter onto its own separate output line ("...لامجإ" for
+# "إجمالي"); 4347 both space-separates a word's final letter on the same
+# line ("املوجودا ت" for "الموجودات") AND, in "الموجودات"/"المطلوبات"
+# specifically, transposes the lam and meem right after the initial alef
+# ("املوجودات" - alef-MEEM-LAM-waw... - instead of "الموجودات" -
+# alef-LAM-meem-waw...; confirmed identically on both words via their
+# raw codepoints, so a real per-glyph quirk in that PDF's font, not a
+# transcription error here). Rather than reconstruct the original text
+# (which would need word-level x-position data pdfplumber's plain
+# extract_text() doesn't give us), the alternatives below spell out
+# exactly what these two files actually produce - "إجمال"/"صاف" are
+# legitimate substrings of "إجمالي"/"صافي" regardless, so those two only
+# ever widen what already matches on every other REIT, never narrow it.
+_ALEF_MEEM_LAM_MOJODAT = "املوجودا"  # املوجودا (transposed, truncated)
+_ALEF_MEEM_LAM_MATLOBAT = "املطلوبا"  # املطلوبا (transposed, truncated)
 LABEL_RULES = [
-    ("total_assets", [("مجموع", "الأصول"), ("إجمالي", "الأصول"),
-                       ("مجموع", "الموجودات"), ("إجمالي", "الموجودات")]),
-    ("total_liabilities", [("مجموع", "الالتزامات"), ("إجمالي", "الالتزامات"),
-                            ("مجموع", "المطلوبات"), ("إجمالي", "المطلوبات")]),
-    ("total_equity", [("صافي", "الوحدات"), ("صافي", "المساهمين")]),
+    ("total_assets", [("مجموع", "الأصول"), ("إجمالي", "الأصول"), ("إجمال", "الأصول"),
+                       ("مجموع", "الموجودات"), ("إجمالي", "الموجودات"), ("إجمال", "الموجودات"),
+                       ("إجمالي", "الموجودا"), ("إجمالي", _ALEF_MEEM_LAM_MOJODAT)]),
+    ("total_liabilities", [("مجموع", "الالتزامات"), ("إجمالي", "الالتزامات"), ("إجمال", "الالتزامات"),
+                            ("مجموع", "المطلوبات"), ("إجمالي", "المطلوبات"), ("إجمال", "المطلوبات"),
+                            ("إجمالي", "المطلوبا"), ("إجمالي", _ALEF_MEEM_LAM_MATLOBAT)]),
+    ("total_equity", [("صافي", "الوحدات"), ("صافي", "المساهمين"), ("صاف", "الوحدات"), ("صاف", "المساهمين")]),
     ("revenue", [("إيرادات", "إيجار"), ("إجمالي", "الإيرادات"), ("مجموع", "الإيرادات")]),
     ("net_income", [("الربح", "للفترة"), ("الخسارة", "للفترة"),
                      ("ربح", "الفترة"), ("خسارة", "الفترة")]),

@@ -1,0 +1,20 @@
+{
+  "task": "P01-15",
+  "author": "Codex review",
+  "code_commit": "6a20260715a22e6b804faa3e1689d306c6fd7223",
+  "reviewed_delivery_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+  "state": "REVIEW_NOT_ACCEPTED",
+  "run": "node --experimental-strip-types --test product-tracking/inbox/P01-15-quality-review.test.mjs",
+  "observed": {"passed": 0, "failed": 2, "skipped": 0},
+  "classification": "Consumer trust-gate challenges, not confirmed wrong financial source numbers; no exploit assertion",
+  "findings": [
+    {"id": "P01-15-QUARANTINE-FLAG", "file": "src/lib/engine/peer-comparison.ts", "function": "checkMetric", "issue": "A numeric ratio flagged quarantined remains eligible; reject explicit quality flags before ranking/median/display", "request": "Add quality_status/quality_reasons contract handling and regression; preserve zero where eligible"},
+    {"id": "P01-15-SOURCE-URL", "file": "src/lib/engine/peer-comparison.ts", "function": "checkMetric", "issue": "Any truthy source URL is accepted, including javascript scheme; source existence does not prove an official issuer source or numeric accuracy", "request": "Validate source-link protocol and keep official-source/independent-verification distinctions; do not award accuracy for URL existence alone"}
+  ],
+  "sender_tests": "BR00419unit/5API are separate sender-reported runs, not invalidated or combined with these new challenges",
+  "requested_next": "Claude fixes/reviews on its own branch, tests actual company wiring and server-only secrets, then delivers commit/test receipts. Do not enable feature or change production.",
+  "P01_15_source_modified_by_Codex": false,
+  "company_wiring_applied": false,
+  "feature_flags_changed": false,
+  "production_changes": 0
+}

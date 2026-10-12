@@ -1,0 +1,9 @@
+{"ts":"2026-10-12T21:40:00Z","task":"R02","event":"blocked","detail":"Codex site quality patch not found: searched pixel-perfect-showcase-276 (all 4 remote branches) and engine repo (all branches, text files)."}
+{"ts":"2026-10-12T21:47:00Z","task":"P01-14","event":"test_run","run":"RUN-2026-10-12-01","repo":"engine","branch":"main","commit":"b70254e","result":"12/12 probed"}
+{"ts":"2026-10-12T21:55:00Z","task":"P01-14","event":"report","path":"product-tracking/reports/P01-14_investor_topics_assessment.md","site_code_changed":false}
+{"ts":"2026-10-12T21:55:00Z","task":"P01-13","event":"blocked","detail":"bot repo needs attaching; PCR-001 not in engine main"}
+{"ts":"2026-10-12T22:05:00Z","task":"P01-13","event":"unblocked","detail":"engine has src/finengine/telegram.py; legacy repo attached read-only"}
+{"ts":"2026-10-12T22:06:00Z","task":"P01-13","event":"test_run","run":"RUN-2026-10-12-02","repo":"engine","branch":"main","commit":"b70254e","result":"22/22 answered; 4 defects"}
+{"ts":"2026-10-12T22:06:00Z","task":"P01-13","event":"test_run","run":"RUN-2026-10-12-03","repo":"marefa-telegram-bot","branch":"main","commit":"5c6d221","result":"static read only"}
+{"ts":"2026-10-12T22:10:00Z","task":"P01-13","event":"report","path":"product-tracking/reports/P01-13_bot_parity.md","live_bot_touched":false}
+{"ts":"2026-10-12T22:12:00Z","task":"BR-003","event":"batch_report","path":"product-tracking/reports/BR-003.md"}

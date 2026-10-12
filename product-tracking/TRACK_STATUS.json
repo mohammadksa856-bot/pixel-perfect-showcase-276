@@ -1,0 +1,33 @@
+{
+  "track": "claude-product",
+  "updated_at": "2026-10-12T21:55:00Z",
+  "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
+  "repos": {
+    "site": {"repo": "mohammadksa856-bot/pixel-perfect-showcase-276", "branch": "main-fz2efq", "base": "main@c4882ea"},
+    "engine_read_only": {"repo": "mohammadksa856-bot/-Market-Agnostic-Financial-Data-Engine-1", "branch": "main", "commit": "b70254e"}
+  },
+  "feature_flags": {"engine_on_live_pages": "off (no engine code on main; nothing to enable)"},
+  "tasks": {
+    "P01-08": {"status": "approved_dev", "by": "BR-002 review", "merge": "separate", "final_acceptance": "separate"},
+    "P01-11": {"status": "approved_dev", "by": "BR-002 review", "merge": "separate", "final_acceptance": "separate"},
+    "P01-12": {"status": "approved_dev", "by": "BR-002 review", "merge": "separate", "final_acceptance": "separate"},
+    "R02": {"status": "blocked", "reason": "Codex quality patch not found in either repo (all branches searched); need its location (branch, commit or patch file)"},
+    "P01-13": {"status": "done_pending_review", "verdict": "engine bot NOT ready to replace legacy bot: 0/10 full parity, 3 partial, 7 missing; leaks DCR-001 values; unlabeled periods", "report": "product-tracking/reports/P01-13_bot_parity.md", "evidence": "product-tracking/evidence/P01-13_engine_bot_b70254e.json", "live_bot_touched": false},
+    "P01-14": {"status": "done_pending_review", "report": "product-tracking/reports/P01-14_investor_topics_assessment.md", "evidence": "product-tracking/evidence/P01-14_probe_engine-b70254e.json", "limits": "Supabase contents not read (connector not authorized); engine bundled DB, not production"},
+    "P01-15": {"status": "not_started", "ready_inputs": "engine peer_comparison returns 9 bank peers, same period 2025-12-31, ROA/ROE only; no non-bank peers", "blocked_by": "site engine client from claude/engine-company-page is lost; rebuild decision pending"}
+  },
+  "open_dependencies_on_codex": {
+    "DCR-001": "still open at source in b70254e: 1120 dividends_per_share=2500000.0 SAR",
+    "ACR-001": "confirmed needed: no valuation multiple in company_page for any company",
+    "ACR-004": "confirmed needed: company_page 809 KB (2222), 322 KB (1120)",
+    "ACR-005": "proposed: company-type ratio set in contract; bank FCF/capex ratios returned today",
+    "PCR-001": "engine main has src/finengine/telegram.py (/company /profile /metric /snapshot /coverage) but no withholding",
+    "ACR-006": "proposed: peer_comparison excludes instant metrics, so loans_to_deposits / NPL ratio never compare; income metrics via ?metrics= work (3/3 for 10 banks)",
+    "PCR-002": "proposed: engine bot reads company_page, applies capabilities + withholding, labels period and source"
+  },
+  "test_runs": [
+    {"id": "RUN-2026-10-12-01", "suite": "P01-14 probe (read-only)", "repo": "engine", "branch": "main", "commit": "b70254e", "db": "fresh copy of data/financial.sqlite3, migrated", "result": "12/12 companies probed, no errors", "artifact": "product-tracking/evidence/P01-14_probe_engine-b70254e.json"},
+    {"id": "RUN-2026-10-12-02", "suite": "P01-13 engine bot offline probe (22 commands)", "repo": "engine", "branch": "main", "commit": "b70254e", "db": "separate fresh copy of data/financial.sqlite3, migrated", "result": "22/22 commands answered without exception; 4 defects found in replies", "artifact": "product-tracking/evidence/P01-13_engine_bot_b70254e.json"},
+    {"id": "RUN-2026-10-12-03", "suite": "legacy bot static read", "repo": "marefa-telegram-bot", "branch": "main", "commit": "5c6d221", "result": "code inventory only; not executed (needs Supabase + live token)"}
+  ]
+}

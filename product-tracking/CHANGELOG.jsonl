@@ -7,3 +7,11 @@
 {"ts":"2026-10-12T22:06:00Z","task":"P01-13","event":"test_run","run":"RUN-2026-10-12-03","repo":"marefa-telegram-bot","branch":"main","commit":"5c6d221","result":"static read only"}
 {"ts":"2026-10-12T22:10:00Z","task":"P01-13","event":"report","path":"product-tracking/reports/P01-13_bot_parity.md","live_bot_touched":false}
 {"ts":"2026-10-12T22:12:00Z","task":"BR-003","event":"batch_report","path":"product-tracking/reports/BR-003.md"}
+{"ts":"2026-10-12T22:05:00Z","task":"R02","event":"blocked","detail":"Codex reports patch delivered to 'Claude folder'; not reachable: no new branch/commit in any account repo, /home/claude is system home only."}
+{"ts":"2026-10-12T22:08:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-04","repo":"site","branch":"main-fz2efq","commit":"3001d24","result":"baseline tsc 0, build ok, eslint 774 pre-existing"}
+{"ts":"2026-10-12T22:25:00Z","task":"P01-15","event":"commit","branch":"claude/p01-15-peer-comparison","commit":"6a20260","shared_files_changed":false}
+{"ts":"2026-10-12T22:26:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-05","commit":"6a20260","result":"19/19"}
+{"ts":"2026-10-12T22:26:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-06","commit":"6a20260+engine b70254e","result":"5/5"}
+{"ts":"2026-10-12T22:27:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-07","commit":"6a20260","result":"tsc 0, eslint no new, build ok"}
+{"ts":"2026-10-12T22:28:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-08","commit":"6a20260+wiring (scratch)","result":"no client leak; SSR off none; SSR on 55 values"}
+{"ts":"2026-10-12T22:35:00Z","task":"BR-004","event":"batch_report","path":"product-tracking/reports/BR-004.md"}

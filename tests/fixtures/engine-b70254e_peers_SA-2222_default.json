@@ -1,0 +1,217 @@
+{
+ "status": "partial",
+ "reason": "no_other_peer_with_comparable_facts",
+ "methodology": "internal_calculation",
+ "classification_basis": "inferred_peer_not_issuer_declared_competitor",
+ "scope": {
+  "field": "sector",
+  "value": "Energy",
+  "classification_source": "reviewed_company_registry",
+  "fallback_from": {
+   "field": "industry",
+   "value": "Integrated Oil & Gas",
+   "reason": "no_other_peer_with_comparable_facts"
+  }
+ },
+ "peer_count": 0,
+ "metric_count": 4,
+ "companies": [
+  {
+   "company_id": "sa:2222",
+   "market": "SA",
+   "symbol": "2222",
+   "name": "Saudi Arabian Oil Company (Aramco)",
+   "is_target": true,
+   "metrics": {
+    "net_margin": {
+     "value": "0.2245883199452076581019429990",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+       "filing_type": "Annual financial report comparative",
+       "filed_at": "2026-03-10",
+       "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "manifest_path": "data\\imports\\aramco-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / revenue",
+       "definition": {
+        "metric_key": "net_margin",
+        "formula_version": 1,
+        "expression": "net_income / revenue",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "revenue",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 1,
+     "percentile_from_low": "1"
+    },
+    "return_on_assets": {
+     "value": "0.1407711320497612948323355965",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+       "filing_type": "Annual financial report comparative",
+       "filed_at": "2026-03-10",
+       "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "manifest_path": "data\\imports\\aramco-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 1,
+     "percentile_from_low": "1"
+    },
+    "return_on_equity": {
+     "value": "0.2076488119678669377922201513",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+       "filing_type": "Annual financial report comparative",
+       "filed_at": "2026-03-10",
+       "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "manifest_path": "data\\imports\\aramco-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 1,
+     "percentile_from_low": "1"
+    },
+    "revenue_growth": {
+     "value": "-0.0476131726703552619283344093",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+       "filing_type": "Annual financial report comparative",
+       "filed_at": "2026-03-10",
+       "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+       "manifest_path": "data\\imports\\aramco-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "revenue / prior_fy(revenue) - 1",
+       "definition": {
+        "metric_key": "revenue_growth",
+        "formula_version": 1,
+        "expression": "revenue / prior_fy(revenue) - 1",
+        "output_unit": null,
+        "period_rule": "prior_fiscal_year",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "revenue",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 1,
+     "percentile_from_low": "1"
+    }
+   }
+  }
+ ]
+}

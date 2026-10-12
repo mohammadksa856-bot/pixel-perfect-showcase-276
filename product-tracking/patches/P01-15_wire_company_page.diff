@@ -1,0 +1,52 @@
+diff --git a/src/routes/companies.$slug.tsx b/src/routes/companies.$slug.tsx
+index 7ef8713..ac78e6c 100644
+--- a/src/routes/companies.$slug.tsx
++++ b/src/routes/companies.$slug.tsx
+@@ -8,6 +8,9 @@ import type { Company } from "@/data/types";
+ import { cn } from "@/lib/utils";
+ import { WatchlistButton } from "@/components/watchlist-button";
+ import { PriceChart } from "@/components/price-chart";
++import { PeerComparisonPanel } from "@/components/peer-comparison-panel";
++import { getPeerTable } from "@/lib/engine/peer-comparison.functions";
++import { engineMarketForExchange } from "@/lib/engine/peer-comparison";
+ import {
+   ChapterHead,
+   Metric,
+@@ -30,12 +33,16 @@ export const Route = createFileRoute("/companies/$slug")({
+   loader: async ({ params }) => {
+     const company = await getCompany(params.slug);
+     if (!company) throw notFound();
+-    const [sector, related, research] = await Promise.all([
++    const market = engineMarketForExchange(company.exchange);
++    const [sector, related, research, peers] = await Promise.all([
+       getSector(company.sectorSlug),
+       getRelatedCompanies(company),
+       getResearch({ sectorSlug: company.sectorSlug, limit: 2 }),
++      market
++        ? getPeerTable({ data: { market, symbol: company.ticker } }).catch(() => null)
++        : Promise.resolve(null),
+     ]);
+-    return { company, sector, related, research };
++    return { company, sector, related, research, peers };
+   },
+   head: ({ loaderData }) => {
+     if (!loaderData) {
+@@ -61,8 +68,9 @@ export const Route = createFileRoute("/companies/$slug")({
+ });
+ 
+ function CompanyPage() {
+-  const { company, sector, related, research } = Route.useLoaderData() as {
++  const { company, sector, related, research, peers } = Route.useLoaderData() as {
+     company: Company;
++    peers: Awaited<ReturnType<typeof getPeerTable>>;
+     sector: Awaited<ReturnType<typeof getSector>>;
+     related: Awaited<ReturnType<typeof getRelatedCompanies>>;
+     research: Awaited<ReturnType<typeof getResearch>>;
+@@ -328,6 +336,7 @@ function CompanyPage() {
+           ))}
+         </div>
+ 
++        <PeerComparisonPanel table={peers} />
+         {company.competitors.length > 0 && (
+           <div className="mt-5">
+             <Panel

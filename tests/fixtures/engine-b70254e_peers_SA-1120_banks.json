@@ -1,0 +1,2585 @@
+{
+ "status": "available",
+ "reason": null,
+ "methodology": "internal_calculation",
+ "classification_basis": "inferred_peer_not_issuer_declared_competitor",
+ "scope": {
+  "field": "industry",
+  "value": "Banks",
+  "classification_source": "reviewed_company_registry"
+ },
+ "peer_count": 9,
+ "metric_count": 5,
+ "companies": [
+  {
+   "company_id": "sa:1120",
+   "market": "SA",
+   "symbol": "1120",
+   "name": "Al Rajhi Bank",
+   "is_target": true,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.003209140949607614964246232994",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-04",
+       "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+       "manifest_path": "data\\imports\\alrajhi-supplement.json",
+       "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+       "archived_path": "data/raw/SA/1120/documents/87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611.xlsx",
+       "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 243751,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.2334628375505017206619998765",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-04",
+       "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+       "manifest_path": "data\\imports\\alrajhi-supplement.json",
+       "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+       "archived_path": "data/raw/SA/1120/documents/87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611.xlsx",
+       "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 243751,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    },
+    "net_interest_margin": {
+     "value": "0.03236759934902667576106532854",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-04",
+       "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+       "manifest_path": "data\\imports\\alrajhi-supplement.json",
+       "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+       "archived_path": "data/raw/SA/1120/documents/87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611.xlsx",
+       "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 243751,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    },
+    "return_on_assets": {
+     "value": "0.02463100084001010717474531542",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "manifest_path": "data\\imports\\alrajhi-2025-fy.json",
+       "artifact_key": "artifact:sa:1120:67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "archived_path": "data/raw/SA/1120/documents/67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52.pdf",
+       "artifact_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "content_type": "application/pdf",
+       "byte_size": 4459942,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    },
+    "return_on_equity": {
+     "value": "0.1866142676035115837840404298",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "manifest_path": "data\\imports\\alrajhi-2025-fy.json",
+       "artifact_key": "artifact:sa:1120:67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "archived_path": "data/raw/SA/1120/documents/67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52.pdf",
+       "artifact_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "content_type": "application/pdf",
+       "byte_size": 4459942,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1150",
+   "market": "SA",
+   "symbol": "1150",
+   "name": "Alinma Bank",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.004907112135454109112814750350",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.3120110908307455820208259662",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    },
+    "net_interest_margin": {
+     "value": "0.03450282845046838898877725601",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    },
+    "return_on_assets": {
+     "value": "0.02176291016940044199655377358",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    },
+    "return_on_equity": {
+     "value": "0.1426615154949778216910187457",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1080",
+   "market": "SA",
+   "symbol": "1080",
+   "name": "Arab National Bank (ANB)",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.003249286201186781691449359116",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.3376698816741135322629098538",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    },
+    "net_interest_margin": {
+     "value": "0.03346284288854261353128473415",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    },
+    "return_on_assets": {
+     "value": "0.01930124357335559666004458179",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    },
+    "return_on_equity": {
+     "value": "0.1160383455206858896794578650",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1020",
+   "market": "SA",
+   "symbol": "1020",
+   "name": "Bank AlJazira",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.003405073472263810412111601768",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.5236230084935401338699120630",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    },
+    "net_interest_margin": {
+     "value": "0.02027670167634670975677238359",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    },
+    "return_on_assets": {
+     "value": "0.009557714681034878846175363385",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    },
+    "return_on_equity": {
+     "value": "0.07683471849957280277435910273",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1140",
+   "market": "SA",
+   "symbol": "1140",
+   "name": "Bank Albilad",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.001566901160138671396321398372",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 2,
+     "universe_size": 10,
+     "percentile_from_low": "0.1111"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.4216853090418009214300560878",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    },
+    "net_interest_margin": {
+     "value": "0.03182212821726713897021794396",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    },
+    "return_on_assets": {
+     "value": "0.01859720159824230499955116346",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    },
+    "return_on_equity": {
+     "value": "0.1602849472327239898920212409",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1050",
+   "market": "SA",
+   "symbol": "1050",
+   "name": "Banque Saudi Fransi (BSF)",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.004718327160471407764497654746",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.3377812201165367279745470241",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    },
+    "net_interest_margin": {
+     "value": "0.03118767190243385240874420769",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    },
+    "return_on_assets": {
+     "value": "0.01777622209914396175815383920",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 3,
+     "universe_size": 10,
+     "percentile_from_low": "0.2222"
+    },
+    "return_on_equity": {
+     "value": "0.1094798533162498414067229807",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 2,
+     "universe_size": 10,
+     "percentile_from_low": "0.1111"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1010",
+   "market": "SA",
+   "symbol": "1010",
+   "name": "Riyad Bank",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.003964240819555738403579009503",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.2955656228925381897377721788",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 3,
+     "universe_size": 10,
+     "percentile_from_low": "0.2222"
+    },
+    "net_interest_margin": {
+     "value": "0.02955352331606364048697442030",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    },
+    "return_on_assets": {
+     "value": "0.02144632964518037276232370178",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    },
+    "return_on_equity": {
+     "value": "0.1447221293194575606683241281",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1060",
+   "market": "SA",
+   "symbol": "1060",
+   "name": "Saudi Awwal Bank (SAB)",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.002521681996667714634386658610",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 3,
+     "universe_size": 10,
+     "percentile_from_low": "0.2222"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.3030641954207573056248511355",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    },
+    "net_interest_margin": {
+     "value": "0.03014030948595048355136651068",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    },
+    "return_on_assets": {
+     "value": "0.01976964218619202382564371553",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    },
+    "return_on_equity": {
+     "value": "0.1136146441141507454916981982",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1180",
+   "market": "SA",
+   "symbol": "1180",
+   "name": "Saudi National Bank (SNB)",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.001494898044603456987451123774",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.2518814978707509739231735416",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 2,
+     "universe_size": 10,
+     "percentile_from_low": "0.1111"
+    },
+    "net_interest_margin": {
+     "value": "0.02858193130639751468769137400",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 3,
+     "universe_size": 10,
+     "percentile_from_low": "0.2222"
+    },
+    "return_on_assets": {
+     "value": "0.02159857411265784005997653967",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    },
+    "return_on_equity": {
+     "value": "0.1258695698646416761874450912",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1030",
+   "market": "SA",
+   "symbol": "1030",
+   "name": "The Saudi Investment Bank (SAIB)",
+   "is_target": false,
+   "metrics": {
+    "cost_of_risk": {
+     "value": "0.003355053121296235095038612780",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "source_url": "https://www.saib.com.sa/sites/default/files/2026-02/SAIB_FS-q42025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-08",
+       "content_hash": "16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "manifest_path": "data\\imports\\saib-2025-fy.json",
+       "artifact_key": "artifact:sa:1030:b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "archived_path": "data/raw/SA/1030/documents/b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945.pdf",
+       "artifact_sha256": "b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "content_type": "application/pdf",
+       "byte_size": 6263240,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(provision_expense) / average(net_loans)",
+       "definition": {
+        "metric_key": "cost_of_risk",
+        "formula_version": 1,
+        "expression": "abs(provision_expense) / average(net_loans)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "provision_expense",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    },
+    "cost_to_income_ratio": {
+     "value": "0.3594955302072386905628530581",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "source_url": "https://www.saib.com.sa/sites/default/files/2026-02/SAIB_FS-q42025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-08",
+       "content_hash": "16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "manifest_path": "data\\imports\\saib-2025-fy.json",
+       "artifact_key": "artifact:sa:1030:b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "archived_path": "data/raw/SA/1030/documents/b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945.pdf",
+       "artifact_sha256": "b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "content_type": "application/pdf",
+       "byte_size": 6263240,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "abs(operating_expense_banking) / total_operating_income",
+       "definition": {
+        "metric_key": "cost_to_income_ratio",
+        "formula_version": 1,
+        "expression": "abs(operating_expense_banking) / total_operating_income",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "operating_expense_banking",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_operating_income",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    },
+    "net_interest_margin": {
+     "value": "0.02332389527275038177952350161",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "source_url": "https://www.saib.com.sa/sites/default/files/2026-02/SAIB_FS-q42025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-08",
+       "content_hash": "16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "manifest_path": "data\\imports\\saib-2025-fy.json",
+       "artifact_key": "artifact:sa:1030:b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "archived_path": "data/raw/SA/1030/documents/b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945.pdf",
+       "artifact_sha256": "b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "content_type": "application/pdf",
+       "byte_size": 6263240,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+       "definition": {
+        "metric_key": "net_interest_margin",
+        "formula_version": 1,
+        "expression": "net_financing_income / average(net_loans + bank_investments + due_from_banks)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "bank_investments",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "due_from_banks",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_financing_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "net_loans",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 2,
+     "universe_size": 10,
+     "percentile_from_low": "0.1111"
+    },
+    "return_on_assets": {
+     "value": "0.01474566942745729781069243620",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "source_url": "https://www.saib.com.sa/sites/default/files/2026-02/SAIB_FS-q42025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-08",
+       "content_hash": "16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "manifest_path": "data\\imports\\saib-2025-fy.json",
+       "artifact_key": "artifact:sa:1030:b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "archived_path": "data/raw/SA/1030/documents/b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945.pdf",
+       "artifact_sha256": "b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "content_type": "application/pdf",
+       "byte_size": 6263240,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 2,
+     "universe_size": 10,
+     "percentile_from_low": "0.1111"
+    },
+    "return_on_equity": {
+     "value": "0.1116260550454588034765383792",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "source_url": "https://www.saib.com.sa/sites/default/files/2026-02/SAIB_FS-q42025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-08",
+       "content_hash": "16367c4d1504562447b1c319dd71f4dae27f4d54fb0e36c42ce9db9a6c6d53d7",
+       "manifest_path": "data\\imports\\saib-2025-fy.json",
+       "artifact_key": "artifact:sa:1030:b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "archived_path": "data/raw/SA/1030/documents/b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945.pdf",
+       "artifact_sha256": "b6b7f03abffd5c046486e680546f98237f7a688ba9b82d7dccd3d2714ba8d945",
+       "content_type": "application/pdf",
+       "byte_size": 6263240,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 3,
+     "universe_size": 10,
+     "percentile_from_low": "0.2222"
+    }
+   }
+  }
+ ]
+}

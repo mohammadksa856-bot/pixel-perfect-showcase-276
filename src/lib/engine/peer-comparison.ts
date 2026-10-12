@@ -15,6 +15,10 @@ export type EnginePeerMetric = {
   period_end: string | null;
   period_kind: string | null;
   quality_score?: string | null;
+  /** ليست في عقد v4 بعد (المحرك يرفض المحجور قبل النشر). تُقرأ احتياطًا إن ظهرت. */
+  quality_status?: string | null;
+  quality_reasons?: string[] | null;
+  is_calculated?: number | boolean | null;
   provenance?: {
     source?: {
       source_url?: string | null;
@@ -112,10 +116,28 @@ export type WithheldReason =
   | "unit_not_dimensionless"
   | "period_kind_not_annual"
   | "period_mismatch_with_target"
+  | "quality_flagged"
   | "no_source"
+  | "unsafe_source_url"
+  | "calculated_without_formula"
   | "too_few_companies";
 
-export type PeerCell = { value: number; display: string; sourceUrl: string; derived: boolean };
+/**
+ * ما يثبته الدليل فعلًا، ولا شيء أكثر:
+ * - `reported`: رقم منشور في المستند المرتبط.
+ * - `calculated_formula_recorded`: محسوب بمعادلة مسجّلة من مدخلات ذلك المستند.
+ *   قيم المدخلات نفسها لا تصل في رد المقارنة.
+ * وجود رابط المصدر لا يعني أن الرقم صحيح ولا أنه تحقق منه طرف مستقل.
+ * لذلك `independentlyVerified` ثابتة على false حتى يوفّر المحرك تحققًا مستقلًا.
+ */
+export type PeerEvidence = {
+  basis: "reported" | "calculated_formula_recorded";
+  sourceUrl: string;
+  filingType: string | null;
+  independentlyVerified: false;
+};
+
+export type PeerCell = { value: number; display: string; evidence: PeerEvidence };
 
 export type PeerRow = {
   symbol: string;
@@ -182,8 +204,15 @@ function checkMetric(metric: string, raw: EnginePeerMetric | undefined): Checked
   if (!raw.period_kind || !ACCEPTED_PERIOD_KINDS.has(raw.period_kind) || !raw.period_end) {
     return { ok: false, reason: "period_kind_not_annual" };
   }
-  const sourceUrl = raw.provenance?.source?.source_url;
-  if (!sourceUrl) return { ok: false, reason: "no_source" };
+  if (isQualityFlagged(raw)) return { ok: false, reason: "quality_flagged" };
+  const rawUrl = raw.provenance?.source?.source_url;
+  if (!rawUrl) return { ok: false, reason: "no_source" };
+  const sourceUrl = safeSourceUrl(rawUrl);
+  if (!sourceUrl) return { ok: false, reason: "unsafe_source_url" };
+  const derivation = raw.provenance?.derivation;
+  const calculated = Boolean(raw.is_calculated) || Boolean(derivation);
+  if (calculated && !derivation?.calculation)
+    return { ok: false, reason: "calculated_without_formula" };
   const normalized = raw.unit === "percent" ? value / 100 : value;
   return {
     ok: true,
@@ -192,10 +221,39 @@ function checkMetric(metric: string, raw: EnginePeerMetric | undefined): Checked
     cell: {
       value: normalized,
       display: formatMetric(metric, normalized),
-      sourceUrl,
-      derived: raw.provenance?.derivation?.type === "deterministic_calculation",
+      evidence: {
+        basis: calculated ? "calculated_formula_recorded" : "reported",
+        sourceUrl,
+        filingType: raw.provenance?.source?.filing_type ?? null,
+        independentlyVerified: false,
+      },
     },
   };
+}
+
+/** حالات جودة مقبولة صراحةً. غيابها مقبول لأن عقد v4 لا يحملها. أي قيمة أخرى تُحجب (فشل مغلق). */
+const ACCEPTED_QUALITY_STATUSES = new Set(["ok", "published"]);
+
+function isQualityFlagged(raw: EnginePeerMetric): boolean {
+  const status = raw.quality_status?.trim().toLowerCase();
+  if (status && !ACCEPTED_QUALITY_STATUSES.has(status)) return true;
+  return Array.isArray(raw.quality_reasons) && raw.quality_reasons.length > 0;
+}
+
+/**
+ * يقبل http و https فقط، بلا بيانات دخول في الرابط. أي شيء آخر (javascript: أو data:
+ * أو رابط نسبي أو غير صالح) يُحجب. يحمي من تنفيذ كود عبر href ولا يثبت صحة الرقم.
+ */
+export function safeSourceUrl(raw: string): string | null {
+  let url: URL;
+  try {
+    url = new URL(raw.trim());
+  } catch {
+    return null;
+  }
+  if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+  if (url.username || url.password) return null;
+  return url.href;
 }
 
 const unavailable = (kind: CompanyKind, reason: string | null): PeerTable => ({
@@ -212,7 +270,8 @@ const unavailable = (kind: CompanyKind, reason: string | null): PeerTable => ({
 /**
  * يبني جدول المقارنة من رد المحرك بعد تطبيق قواعد الثقة:
  * 1. المقياس ضمن مجموعة نوع الشركة فقط.
- * 2. قيمة رقمية، بوحدة بلا عملة، لفترة سنوية (fy/ttm)، ولها رابط مصدر.
+ * 2. قيمة رقمية، بوحدة بلا عملة، لفترة سنوية (fy/ttm)، بلا علامة جودة سلبية، برابط مصدر
+ *    http(s) آمن، والقيمة المحسوبة معادلتها مسجّلة.
  * 3. فترة النظير مطابقة لفترة الشركة الهدف للمقياس نفسه، وإلا تُحجب الخلية.
  * 4. يُحذف العمود إذا قلّت شركاته عن MIN_COMPANIES_PER_METRIC أو لم يكن للهدف قيمة.
  * لا تُستخدم رتب المحرك لأنها محسوبة على كامل العيّنة قبل حجب الفترات المختلفة.

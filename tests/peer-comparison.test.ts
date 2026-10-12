@@ -10,6 +10,7 @@ import {
   companyKindFromIndustry,
   engineMarketForExchange,
   formatMetric,
+  safeSourceUrl,
   type EnginePeerResponse,
 } from "../src/lib/engine/peer-comparison";
 import { enginePeersEnabled, fetchPeerTable } from "../src/lib/engine/peer-comparison.server";
@@ -34,7 +35,7 @@ describe("buildPeerTable — real engine data", () => {
       for (const col of table.columns) {
         const cell = row.cells[col.metric];
         expect(cell).not.toBeNull();
-        expect(cell!.sourceUrl).toMatch(/^https:\/\//);
+        expect(cell!.evidence.sourceUrl).toMatch(/^https:\/\//);
       }
     }
     expect(new Set(table.columns.map((c) => c.periodEnd))).toEqual(new Set(["2025-12-31"]));
@@ -136,6 +137,144 @@ describe("buildPeerTable — withholding rules", () => {
     expect(
       buildPeerTable({ ...clone(banks), status: "unavailable", reason: "x" }, "bank").reason,
     ).toBe("x");
+  });
+});
+
+// انحدار لملاحظتي Codex في P01-15-quality-review.json.
+describe("regression — quality flags (P01-15-QUARANTINE-FLAG)", () => {
+  const target = (r: EnginePeerResponse) => r.companies.find((c) => c.is_target)!;
+  const peer = (r: EnginePeerResponse, s: string) => r.companies.find((c) => c.symbol === s)!;
+
+  test("quarantined target value removes the column (no median, no ranking input)", () => {
+    const r = clone(banks);
+    target(r).metrics["return_on_equity"]!.quality_status = "quarantined";
+    const t = buildPeerTable(r, "bank");
+    expect(t.columns.map((c) => c.metric)).not.toContain("return_on_equity");
+    expect(t.withheld).toContainEqual({
+      symbol: "1120",
+      metric: "return_on_equity",
+      reason: "quality_flagged",
+    });
+  });
+
+  test("quarantined peer value is excluded from the cell and from the median", () => {
+    const r = clone(banks);
+    peer(r, "1150").metrics["return_on_equity"]!.quality_status = "quarantined";
+    const t = buildPeerTable(r, "bank");
+    const col = t.columns.find((c) => c.metric === "return_on_equity")!;
+    expect(col.companies).toBe(9);
+    expect(t.rows.find((x) => x.symbol === "1150")!.cells["return_on_equity"]).toBeNull();
+    const kept = t.rows
+      .map((x) => x.cells["return_on_equity"]?.value)
+      .filter((v) => v !== undefined);
+    expect(kept).toHaveLength(9);
+  });
+
+  test("unknown or negative statuses fail closed; ok/published/absent are accepted", () => {
+    for (const status of ["rejected", "blocked", "review_required", "QUARANTINED", "anything"]) {
+      const r = clone(banks);
+      target(r).metrics["return_on_assets"]!.quality_status = status;
+      expect(buildPeerTable(r, "bank").columns.map((c) => c.metric)).not.toContain(
+        "return_on_assets",
+      );
+    }
+    for (const status of ["ok", "published", null, undefined]) {
+      const r = clone(banks);
+      target(r).metrics["return_on_assets"]!.quality_status = status;
+      expect(buildPeerTable(r, "bank").columns.map((c) => c.metric)).toContain("return_on_assets");
+    }
+  });
+
+  test("non-empty quality_reasons withholds; empty list does not", () => {
+    const r = clone(banks);
+    target(r).metrics["cost_of_risk"]!.quality_reasons = ["reconciliation_gap"];
+    expect(buildPeerTable(r, "bank").columns.map((c) => c.metric)).not.toContain("cost_of_risk");
+    const ok = clone(banks);
+    target(ok).metrics["cost_of_risk"]!.quality_reasons = [];
+    expect(buildPeerTable(ok, "bank").columns.map((c) => c.metric)).toContain("cost_of_risk");
+  });
+
+  test("an eligible zero is kept (not treated as missing)", () => {
+    const r = clone(banks);
+    peer(r, "1150").metrics["cost_of_risk"]!.value = "0";
+    const cell = buildPeerTable(r, "bank").rows.find((x) => x.symbol === "1150")!.cells[
+      "cost_of_risk"
+    ];
+    expect(cell?.value).toBe(0);
+    expect(cell?.display).toBe("0.00%");
+  });
+});
+
+describe("regression — source URL safety (P01-15-SOURCE-URL)", () => {
+  const target = (r: EnginePeerResponse) => r.companies.find((c) => c.is_target)!;
+
+  test("javascript:, data:, relative, credentials and malformed URLs are withheld", () => {
+    for (const bad of [
+      "javascript:alert(1)",
+      " JavaScript:alert(1)",
+      "data:text/html,<script>alert(1)</script>",
+      "vbscript:msgbox(1)",
+      "/relative/path.pdf",
+      "//evil.example/x",
+      "https://user:pass@example.com/x",
+      "not a url",
+      "file:///etc/passwd",
+    ]) {
+      const r = clone(banks);
+      target(r).metrics["return_on_equity"]!.provenance!.source!.source_url = bad;
+      const t = buildPeerTable(r, "bank");
+      expect(t.columns.map((c) => c.metric)).not.toContain("return_on_equity");
+      expect(t.withheld).toContainEqual({
+        symbol: "1120",
+        metric: "return_on_equity",
+        reason: "unsafe_source_url",
+      });
+    }
+  });
+
+  test("no rendered href anywhere in the table uses a non-http(s) scheme", () => {
+    const r = clone(banks);
+    r.companies[3]!.metrics["net_interest_margin"]!.provenance!.source!.source_url =
+      "javascript:void(0)";
+    for (const row of buildPeerTable(r, "bank").rows)
+      for (const cell of Object.values(row.cells))
+        if (cell) expect(new URL(cell.evidence.sourceUrl).protocol).toMatch(/^https?:$/);
+  });
+
+  test("safeSourceUrl normalizes valid http(s)", () => {
+    expect(safeSourceUrl(" https://example.com/a b.pdf ")).toBe("https://example.com/a%20b.pdf");
+    expect(safeSourceUrl("http://example.com/x")).toBe("http://example.com/x");
+  });
+});
+
+describe("evidence: a source link is not verification", () => {
+  test("every cell says independentlyVerified=false and records its basis", () => {
+    const t = buildPeerTable(clone(banks), "bank");
+    for (const row of t.rows)
+      for (const cell of Object.values(row.cells)) {
+        expect(cell!.evidence.independentlyVerified).toBe(false);
+        // كل نسب البنوك في المحرك محسوبة بمعادلة مسجّلة من مستند الشركة.
+        expect(cell!.evidence.basis).toBe("calculated_formula_recorded");
+      }
+  });
+
+  test("calculated value without a recorded formula is withheld", () => {
+    const r = clone(banks);
+    const m = r.companies.find((c) => c.is_target)!.metrics["return_on_assets"]!;
+    m.provenance!.derivation = null;
+    m.is_calculated = 1;
+    expect(buildPeerTable(r, "bank").withheld).toContainEqual({
+      symbol: "1120",
+      metric: "return_on_assets",
+      reason: "calculated_without_formula",
+    });
+  });
+
+  test("reported (non-calculated) value is labelled reported, not calculated", () => {
+    const r = clone(banks);
+    for (const c of r.companies) c.metrics["return_on_assets"]!.provenance!.derivation = null;
+    const t = buildPeerTable(r, "bank");
+    expect(t.rows[0]!.cells["return_on_assets"]!.evidence.basis).toBe("reported");
   });
 });
 

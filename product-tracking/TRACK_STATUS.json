@@ -1,12 +1,13 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-12T22:35:00Z",
+  "updated_at": "2026-10-12T23:10:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
       "repo": "mohammadksa856-bot/pixel-perfect-showcase-276",
       "branch": "main-fz2efq",
-      "base": "main@c4882ea"
+      "base": "main@c4882ea",
+      "dev_branch": "claude/br005-r02-p01-15-dev"
     },
     "engine_read_only": {
       "repo": "mohammadksa856-bot/-Market-Agnostic-Financial-Data-Engine-1",
@@ -15,7 +16,7 @@
     }
   },
   "feature_flags": {
-    "ENGINE_PEERS_ENABLED": "off by default; only the exact string 'true' enables; company page not wired yet (patch pending R02)"
+    "ENGINE_PEERS_ENABLED": "off by default (exact 'true' only); company page wired on dev branch claude/br005-r02-p01-15-dev only; not set in any environment"
   },
   "tasks": {
     "P01-08": {
@@ -37,13 +38,28 @@
       "final_acceptance": "separate"
     },
     "R02": {
-      "status": "blocked",
-      "checked_at": "2026-10-12T22:05:00Z",
-      "reason": "Patch not reachable. Checked: all branches of pixel-perfect-showcase-276, -Market-Agnostic-Financial-Data-Engine-1, marefa-telegram-bot (fetched 22:05Z); list of all 7 account repos (only push today = 3001d24 by Claude); container filesystem incl. /home/claude (system home: settings/hooks only, no patch).",
-      "fingerprint": "not verifiable (no file)",
-      "base": "not verifiable",
-      "target_branch": "not verifiable",
-      "needed": "push the patch to pixel-perfect-showcase-276 as a branch (e.g. codex/r02-site-quality) or commit it as a file under product-tracking/inbox/ with its SHA-256, base commit and target branch"
+      "status": "reviewed_verified_not_merged",
+      "delivery": {
+        "branch": "codex/r02-site-quality-br004",
+        "commit": "bc62c11",
+        "patch_sha256": "e8b85c36…ad93e9 (match)",
+        "review_range_sha256": "40dab85a…d84d439 (match)",
+        "base_commit": "63f0b7e (ancestor of bc62c11)",
+        "site_base": "dce716a (ancestor)",
+        "original_base": "b49776f (not on GitHub, as stated)"
+      },
+      "isolated_tests": {
+        "baseline": "0/3",
+        "candidate": "3/3",
+        "apply_check": "ok"
+      },
+      "real_data_check": "unitConflict on 149 current engine per-share rows: 82 SAR/share accepted; 40 SAR + 2 USD/shares rejected (old and new agree)",
+      "active_site": "view-model.ts absent; R02 rules adapted into P01-15 gates (quality flag, unit, calculated classification); helpers themselves not merged",
+      "open_notes_for_codex": [
+        "consolidatedRow returns first row; 1120 eps_diluted 2025 has two current rows (5853702 SAR and 5.85 SAR/share)",
+        "quarantine is a single-value denylist, not fail-closed",
+        "DCR-001 also affects 1150 (dividends_per_share, eps_diluted)"
+      ]
     },
     "P01-13": {
       "status": "done_pending_review",
@@ -59,15 +75,19 @@
       "limits": "Supabase contents not read (connector not authorized); engine bundled DB, not production"
     },
     "P01-15": {
-      "status": "done_pending_review",
+      "status": "fixes_done_pending_review",
       "commit": "6a20260",
       "report": "product-tracking/reports/P01-15_peer_comparison.md",
-      "wiring": "product-tracking/patches/P01-15_wire_company_page.diff (not applied; apply after R02)",
-      "flag": "ENGINE_PEERS_ENABLED off"
+      "wiring": "applied on dev branch only (1a6fe17); main-fz2efq unchanged",
+      "flag": "ENGINE_PEERS_ENABLED off",
+      "review_findings": {
+        "P01-15-QUARANTINE-FLAG": "fixed in 59e179d",
+        "P01-15-SOURCE-URL": "fixed in 59e179d"
+      }
     }
   },
   "open_dependencies_on_codex": {
-    "DCR-001": "still open at source in b70254e: 1120 dividends_per_share=2500000.0 SAR",
+    "DCR-001": "still open in b70254e: 1120 dividends_per_share & eps_diluted, and 1150 dividends_per_share & eps_diluted stored in SAR at x1e6 scale",
     "ACR-001": "confirmed needed: no valuation multiple in company_page for any company",
     "ACR-004": "confirmed needed: company_page 809 KB (2222), 322 KB (1120)",
     "ACR-005": "proposed: company-type ratio set in contract; bank FCF/capex ratios returned today",
@@ -143,6 +163,54 @@
       "branch": "-",
       "commit": "6a20260 + wiring patch",
       "result": "build ok; 0/59 client JS files contain engine env/key/endpoint; SSR off: no panel; SSR on: panel with 55 values; key absent from HTML"
+    },
+    {
+      "id": "RUN-2026-10-12-09",
+      "suite": "R02 verification: sha256, ancestry, apply-check, baseline/candidate tests",
+      "repo": "site",
+      "branch": "codex/r02-site-quality-br004",
+      "commit": "bc62c11",
+      "result": "hashes match; apply ok; baseline 0/3, candidate 3/3"
+    },
+    {
+      "id": "RUN-2026-10-12-10",
+      "suite": "Codex P01-15 challenges vs unchanged code",
+      "repo": "site",
+      "branch": "codex/r02-site-quality-br004",
+      "commit": "bc62c11 (P01-15 code = 6a20260)",
+      "result": "0/2 (defects reproduced)"
+    },
+    {
+      "id": "RUN-2026-10-12-11",
+      "suite": "R02 unitConflict on real engine rows",
+      "repo": "engine",
+      "branch": "main",
+      "commit": "b70254e",
+      "result": "149 rows; old/new agree; 42 rejected"
+    },
+    {
+      "id": "RUN-2026-10-12-12",
+      "suite": "new regression tests vs old code",
+      "repo": "site",
+      "branch": "-",
+      "commit": "6a20260 (adapted copy)",
+      "result": "20 pass / 10 fail (expected)"
+    },
+    {
+      "id": "RUN-2026-10-12-13",
+      "suite": "SSR scratch: flag off / on / tampered engine via proxy",
+      "repo": "site (scratch, test route not committed)",
+      "branch": "claude/br005-r02-p01-15-dev",
+      "commit": "working tree = 1a6fe17",
+      "result": "off: no panel; on: 55 values; tampered: ROE column dropped, javascript: and 2500000 absent, 42 values; key absent"
+    },
+    {
+      "id": "RUN-2026-10-12-14",
+      "suite": "full: tsc, eslint changed, unit, Codex challenges, integration, build, leak scan",
+      "repo": "site",
+      "branch": "claude/br005-r02-p01-15-dev",
+      "commit": "1a6fe17",
+      "result": "tsc 0; eslint 0; unit 30/30; Codex 2/2; integration 5/5; build ok; 0 leak files"
     }
   ]
 }

@@ -16,7 +16,7 @@ describe.skipIf(!url || !key)("engine API integration", () => {
     expect(t!.rows.length).toBe(10);
     expect(new Set(t!.columns.map((c) => c.periodEnd)).size).toBe(1);
     for (const r of t!.rows)
-      for (const c of Object.values(r.cells)) expect(c?.sourceUrl).toMatch(/^https:\/\//);
+      for (const c of Object.values(r.cells)) expect(c?.evidence.sourceUrl).toMatch(/^https:\/\//);
   });
 
   test("every enabled bank resolves to the same 10-bank universe", async () => {

@@ -6,6 +6,9 @@ set -euo pipefail
 ENGINE="$1"; SCRATCH="$2"
 SITE="$(cd "$(dirname "$0")/../.." && pwd)"
 DB="$SCRATCH/p01_15_engine.sqlite3"
+# Remove WAL/SHM left by a previous run: SQLite would replay them into the fresh copy
+# and report "database disk image is malformed".
+rm -f "$DB" "$DB-wal" "$DB-shm"
 cp "$ENGINE/data/financial.sqlite3" "$DB"
 KEY="$(python3 -c 'import secrets;print(secrets.token_hex(16))')"
 PORT=18765

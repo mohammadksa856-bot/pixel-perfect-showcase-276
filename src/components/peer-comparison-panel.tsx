@@ -39,10 +39,18 @@ export function PeerComparisonPanel({ table }: { table: PeerTable | null }) {
                 <td key={col.metric} className="py-2.5 pe-3 tabular-nums" dir="ltr">
                   {cell ? (
                     <a
-                      href={cell.sourceUrl}
+                      href={cell.evidence.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
+                      title={t(
+                        cell.evidence.basis === "calculated_formula_recorded"
+                          ? {
+                              ar: "محسوب من مدخلات هذا المستند",
+                              en: "Calculated from this document's inputs",
+                            }
+                          : { ar: "منشور في هذا المستند", en: "Reported in this document" },
+                      )}
                     >
                       {cell.display}
                     </a>
@@ -66,8 +74,8 @@ export function PeerComparisonPanel({ table }: { table: PeerTable | null }) {
       </DataTable>
       <p className="mt-3 text-[11px] text-muted-foreground">
         {t({
-          ar: "كل رقم مرتبط بمصدره الرسمي. «—» تعني أن القيمة غير متاحة أو حُجبت لاختلاف الفترة أو غياب المصدر.",
-          en: "Each figure links to its official source. “—” means unavailable or withheld (different period or no source).",
+          ar: "كل رقم مرتبط بالمستند الذي أُخذ منه أو حُسب من مدخلاته. الرابط يبيّن المصدر ولا يعني تحققًا مستقلًا من صحة الرقم. «—» تعني أن القيمة غير متاحة أو حُجبت لاختلاف الفترة أو غياب مصدر صالح أو علامة جودة.",
+          en: "Each figure links to the document it was reported in or calculated from. A link shows the source; it is not independent verification of the figure. “—” means unavailable or withheld (different period, no valid source, or a quality flag).",
         })}
       </p>
     </Panel>

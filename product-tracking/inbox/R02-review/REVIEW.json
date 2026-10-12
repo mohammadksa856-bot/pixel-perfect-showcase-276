@@ -1,0 +1,29 @@
+{
+  "task": "R02",
+  "author": "Codex",
+  "branch": "codex/r02-site-quality-br004",
+  "site_base_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+  "site_base_branch": "main-fz2efq",
+  "preserved_peer_code_commit": "6a20260715a22e6b804faa3e1689d306c6fd7223",
+  "patch_source_base_commit": "b49776fb0e9780f96de1a8afbf07af3ddaed9245",
+  "patch_source_base_location": "Prior local engine-company-page snapshot; not assumed to exist as a GitHub ref",
+  "scope": "Review artifacts only; no active site source, company route, P01-15 wiring or flags changed",
+  "baseline": "product-tracking/inbox/R02-review/baseline/src/lib/engine",
+  "candidate": "product-tracking/inbox/R02-review/candidate/src/lib/engine",
+  "patch_path": "product-tracking/inbox/R02.patch",
+  "apply_check": "git apply --check --directory=product-tracking/inbox/R02-review/baseline product-tracking/inbox/R02.patch",
+  "before_tests": "node --experimental-strip-types --test product-tracking/inbox/R02-review/baseline/src/lib/engine/codex-financial-review.test.ts",
+  "after_tests": "node --experimental-strip-types --test product-tracking/inbox/R02-review/candidate/src/lib/engine/codex-financial-review.test.ts",
+  "expected_before": {"passed": 0, "failed": 3},
+  "expected_after": {"passed": 3, "failed": 0},
+  "review_gates": [
+    "Verify GitHub branch base, patch SHA and all review source hashes",
+    "Do not apply the patch to current active site root: view-model.ts from the prior local engine preview is not present there",
+    "Review the corrected helpers before adapting the actual company page; do not replace P01-15 files or its pending wiring patch",
+    "Run actual site typing/build/parity and quality tests after adaptation; these isolated helper tests do not prove site integration",
+    "Do not enable ENGINE_PEERS_ENABLED or change production/Supabase; activation and product acceptance require separate user approval"
+  ],
+  "merged_to_site": false,
+  "product_accepted": false,
+  "production_changes": 0
+}

@@ -1,0 +1,31 @@
+diff --git a/src/lib/engine/view-model.ts b/src/lib/engine/view-model.ts
+--- a/src/lib/engine/view-model.ts
++++ b/src/lib/engine/view-model.ts
+@@ -324,6 +324,7 @@
+ export function verificationOf(row: MetricRow): string {
+   const derivation = row.provenance?.derivation;
+   if (derivation) return `calculated_${derivation.lineage?.status ?? "not_recorded"}`;
++  if (row.is_calculated) return "calculated_not_recorded";
+   if (row.provenance?.extraction) return "reported_extracted";
+   return "reported_manifest";
+ }
+@@ -333,8 +334,8 @@
+ export function consolidatedRow(rows: MetricRow[] | undefined): MetricRow | null {
+   if (!rows) return null;
+   return (
+     rows.find(
+-      (row) => row.scope === "consolidated" && Object.keys(row.dimensions ?? {}).length === 0,
++      (row) => row.value !== null && (row as MetricRow & { quality_status?: string }).quality_status !== "quarantined" && row.scope === "consolidated" && Object.keys(row.dimensions ?? {}).length === 0,
+     ) ?? null
+   );
+ }
+@@ -359,7 +360,7 @@
+-export function unitConflict(key: string, row: Pick<MetricRow, "unit" | "statement">): boolean {
++export function unitConflict(key: string, row: Pick<MetricRow, "unit" | "statement" | "currency">): boolean {
+   if (PER_SHARE_KEY.test(key) || (row.statement === "per_share" && !key.endsWith("_growth"))) {
+-    return !row.unit.endsWith("/share");
++    return !row.currency || !["currency/share", `${row.currency}/share`].includes(row.unit);
+   }
+   if (SHARE_COUNT_KEY.test(key)) return row.unit !== "shares";
+   return false;
+ }

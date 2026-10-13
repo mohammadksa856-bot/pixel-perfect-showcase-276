@@ -1,0 +1,64 @@
+{
+  "company_id": "sa:3020",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+  "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "cwip_production_line_project",
+      "value": 1.196,
+      "unit": "SAR million (as printed)",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "25",
+        "evidence": [
+          {
+            "pdf_page": 25,
+            "quote": "Capital work in progress as of 31 December 2025 includes an amount of SAR 1.196 million representing expenditures related to the production line"
+          },
+          {
+            "pdf_page": 4,
+            "quote": "CWIP amounting to SAR 1.2 billion as of December 31,"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Printed as 'SAR 1.196 million'; auditor KAM states CWIP of SAR 1.2 billion, so the unit is likely a misprint for billion",
+        "as_of": "2025-12-31",
+        "unit": "SAR million (as printed)",
+        "review_note": "UNIT CONFLICT inside the source: note prints 'SAR 1.196 million' while the auditor's key audit matter states CWIP of SAR 1.2 billion. Value kept exactly as printed; must not be accepted by DATA-01 until resolved."
+      }
+    },
+    {
+      "metric": "clinker_inventory_value",
+      "value": 421400000,
+      "unit": "SAR",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "inventory balance included non-finished goods (clinker) with an amount of SAR 421.4 million"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Auditor KAM, stated as SAR 421.4 million (2024: SAR 408.3 million)",
+        "as_of": "2025-12-31",
+        "unit": "SAR"
+      }
+    }
+  ]
+}

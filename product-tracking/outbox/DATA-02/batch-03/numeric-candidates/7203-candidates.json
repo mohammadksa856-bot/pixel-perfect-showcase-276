@@ -1,0 +1,169 @@
+{
+  "company_id": "sa:7203",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+  "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "revenue_by_segment",
+      "value": {
+        "digital_business": 6724579826,
+        "business_process_outsourcing": 2557943322,
+        "professional_services": 182361840
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "52",
+        "evidence": [
+          {
+            "pdf_page": 52,
+            "quote": "6,724,579,826"
+          },
+          {
+            "pdf_page": 52,
+            "quote": "2,557,943,322"
+          },
+          {
+            "pdf_page": 52,
+            "quote": "182,361,840"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Note 35 segment revenue",
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "revenue_by_customer_type",
+      "value": {
+        "private_parties": 5430151562,
+        "government_agencies": 4034733426
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "Revenue from private parties 5,430,151,562"
+          },
+          {
+            "pdf_page": 33,
+            "quote": "Revenue from government agencies 4,034,733,426"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "revenue_by_recognition_timing",
+      "value": {
+        "at_a_point_in_time": 6484617192,
+        "over_a_period_of_time": 2980267796
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "At a point in time 6,484,617,192"
+          },
+          {
+            "pdf_page": 33,
+            "quote": "Over a period of time 2,980,267,796"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "receivables_by_customer_type",
+      "value": {
+        "government": 2363370268,
+        "private": 1991467082
+      },
+      "unit": "SAR",
+      "period": "as of 2025-12-31",
+      "as_of": null,
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 54,
+            "quote": "Government 2,363,370,268"
+          },
+          {
+            "pdf_page": 54,
+            "quote": "Private 1,991,467,082"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Accounts receivable exposure by customer type, Note 37",
+        "unit": "SAR",
+        "period": "as of 2025-12-31"
+      }
+    },
+    {
+      "metric": "off_balance_sheet_agent_cash",
+      "value": 12500000000,
+      "unit": "SAR",
+      "period": "as of 2025-12-31",
+      "as_of": null,
+      "metadata": {
+        "source_page": "46",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "As the Group acts in the capacity of an agent, these balances have not been recognized as assets of the Group"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "As at December 31, 2025, these cash balances amounted"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "SAR 12.5 billion held on behalf of contracting parties",
+        "unit": "SAR",
+        "period": "as of 2025-12-31"
+      }
+    }
+  ]
+}

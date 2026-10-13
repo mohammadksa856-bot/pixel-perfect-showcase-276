@@ -1,0 +1,51 @@
+{
+  "company_id": "sa:3020",
+  "symbol": "3020",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+  "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:3020",
+      "symbol": "3020",
+      "codex_matrix": {
+        "sector": "Materials",
+        "industry": "Construction Materials",
+        "issuer_sector_gate": "CLASSIFICATION_PRESENT_NOT_REVERIFIED"
+      },
+      "engine_main_registry": {
+        "sector": "Materials",
+        "industry": "Construction Materials"
+      },
+      "proposed": {
+        "sector": "Materials",
+        "industry": "Construction Materials",
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "engine main config/companies.json"
+      },
+      "status": "already_on_engine_main_reconfirmed_by_activity_statement",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "The nature of the company's activity is the production of ordinary Portland cement, salt-resistant cement, clinker cement and finishing cement",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; Codex must confirm the labels against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

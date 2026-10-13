@@ -1,0 +1,68 @@
+{
+  "company_id": "sa:1211",
+  "symbol": "1211",
+  "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+  "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:1211",
+      "symbol": "1211",
+      "codex_matrix": {
+        "sector": null,
+        "industry": null,
+        "issuer_sector_gate": "NEEDS_REVIEW"
+      },
+      "engine_main_registry": null,
+      "proposed": {
+        "sector": "Materials",
+        "industry": "Mining",
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "engine branch claude/data-materials-1 config/companies.json (unmerged); not an official exchange classification"
+      },
+      "status": "consistent_with_quoted_activity_statement",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "Currently, the Group mainly mines gold, phosphate rock, bauxite, low-grade bauxite, kaolin and magnesite.",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "These facilities support the Group’s integrated value chain from extraction through processing, refining and",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "downstream manufacturing.",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "We are a diversified producer of phosphate, aluminum, gold and industrial and base minerals.",
+            "printed_page": "3"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "The largest mining and metals company in the Middle East",
+            "printed_page": "17"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; Codex must confirm the labels against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

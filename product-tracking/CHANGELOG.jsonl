@@ -71,3 +71,15 @@
 {"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-22", "result": "145 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"}
 {"ts": "2026-10-13T07:45:00Z", "task": "DATA-02-B02", "event": "commit", "branch": "claude/data-02-batch-02", "commit": "3d4a02b", "detail": "manifests, classification, candidates, gaps, tools, tests"}
 {"ts": "2026-10-13T08:00:00Z", "task": "BR-009", "event": "batch_report", "path": "product-tracking/reports/BR-009_DATA-02_batch-02.md"}
+{"ts": "2026-10-13T09:00:00Z", "task": "DATA-02-B03", "event": "started", "branch": "claude/data-02-batch-03", "base": "6a4e96b"}
+{"ts": "2026-10-13T09:05:00Z", "task": "DATA-02-B03", "event": "inventory", "detail": "engine main: 3020/7203 doc+import; branches: 4030 (data-transport-1), 1211 (data-materials-1); 1214 nothing in 69 branches; Codex matrix: no qualitative data for any"}
+{"ts": "2026-10-13T09:06:00Z", "task": "DATA-02-B03", "event": "blocked_partial", "detail": "1214 Shaker: no archived filing; gaps only. Engine 2391513 still unpublished; comparison limits documented in sources.json"}
+{"ts": "2026-10-13T10:10:00Z", "task": "DATA-02-B03", "event": "corrected", "detail": "undated/approximate/no-% holdings delivered as attributes not ownership rows; Elm Thiqah evidence strengthened with numeric table rows; 2 source-internal conflicts flagged do-not-accept"}
+{"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-23", "result": "2/2 branch PDFs sha256 match; 2 docs on engine main"}
+{"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-24", "result": "495/495 quotes on page; 0 OCR"}
+{"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-25", "result": "4/4 manifests, 193 keys, 0 collisions"}
+{"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-26", "result": "integrity ok; +99/+0/+9/+85 as expected; 0 pre-existing rows changed; resync 0 inserted 0 restated; engine tree clean"}
+{"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-27", "result": "29/29; tamper check 2 fail as expected"}
+{"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-28", "result": "174 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"}
+{"ts": "2026-10-13T10:45:00Z", "task": "DATA-02-B03", "event": "commit", "branch": "claude/data-02-batch-03", "commit": "191f341", "detail": "manifests, classification, candidates, gaps, sources, tests"}
+{"ts": "2026-10-13T11:00:00Z", "task": "BR-010", "event": "batch_report", "path": "product-tracking/reports/BR-010_DATA-02_batch-03.md"}

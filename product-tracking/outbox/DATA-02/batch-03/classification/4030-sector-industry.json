@@ -1,0 +1,51 @@
+{
+  "company_id": "sa:4030",
+  "symbol": "4030",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+  "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:4030",
+      "symbol": "4030",
+      "codex_matrix": {
+        "sector": null,
+        "industry": null,
+        "issuer_sector_gate": "NEEDS_REVIEW"
+      },
+      "engine_main_registry": null,
+      "proposed": {
+        "sector": "Industrials",
+        "industry": "Marine Transportation",
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "engine branch claude/data-transport-1 config/companies.json (unmerged); not an official exchange classification"
+      },
+      "status": "consistent_with_quoted_activity_statement",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "primarily engaged in purchasing, selling and operating vessels for the coordination of transport & storage on board vessels, transportation of cargo, cargo clearance, agencies for maritime shipping companies and all marine transport activities."
+          },
+          {
+            "pdf_page": 13,
+            "quote": "The Group is also engaged in the ownership of land, properties inside or outside the Kingdom, ownership of shares in other existing companies or merging with them"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; Codex must confirm the labels against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

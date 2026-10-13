@@ -1,0 +1,978 @@
+{
+  "company_id": "sa:3020",
+  "market": "SA",
+  "symbol": "3020",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-02-25",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+  "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+  "source_archive": {
+    "engine_ref": "main",
+    "engine_commit": "b70254e",
+    "engine_archive_path": "data/raw/SA/3020/documents/5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0.pdf",
+    "on_engine_main": true,
+    "text_layer": "digital"
+  },
+  "reader": "manual.review/data-02-batch-03-yamama-cement",
+  "notes": "DATA-02 batch-03. Qualitative profile from Yamama Cement audited financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Yamama Cement Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "To the Shareholders of Yamama Cement Company"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company; public joint stock company listed on the Saudi stock market",
+      "category": "identity",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "YAMAMA Cement Company is a Saudi Joint Stock Company",
+            "printed_page": "9"
+          },
+          {
+            "pdf_page": 11,
+            "quote": "YAMAMA Cement Company is a public joint stock company listed on the Saudi stock market",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "establishment",
+      "value": {
+        "royal_decree": "No. 15",
+        "royal_decree_date_hijri": "13/3/1381H"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "formed by Royal Decree No. 15 dated 13/3/1381H",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "cr_number": "1010001578",
+        "city": "Riyadh",
+        "cr_date_as_printed": "184-1379H"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "registered in Riyadh city under Commercial Registration No. 1010001578 dated 184-1379H",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Date printed as '184-1379H' in the document; no unified number disclosed"
+      }
+    },
+    {
+      "attribute_key": "headquarters_city",
+      "value": "Riyadh, Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "1",
+        "evidence": [
+          {
+            "pdf_page": 1,
+            "quote": "RIYADH - SAUDI ARABIA"
+          },
+          {
+            "pdf_page": 11,
+            "quote": "registered in Riyadh city",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Only city stated (cover page and CR registration); no street/postal address disclosed"
+      }
+    },
+    {
+      "attribute_key": "industrial_license",
+      "value": {
+        "number": "2370",
+        "date_hijri": "22/09/1439 H"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "industrial license No. (2370) dated 22/09/1439 H",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": {
+        "firm": "Professional Consultants Company",
+        "partner": "Abdullah S. Al Msned",
+        "licence_no": "456",
+        "report_date": "2026-02-23",
+        "report_date_hijri": "06 Ramadan 1447H",
+        "city": "Riyadh",
+        "opinion": "unmodified"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 6,
+            "quote": "Professional Consultants Company"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "Abdullah S. Al Msned License No. (456)"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "06 Ramadan 1447H 23 February 2026"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "In our opinion, the accompanying financial statements present fairly, in all material respects"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "key_audit_matters",
+      "value": [
+        "Revenue recognition",
+        "Property, plant and equipment and capital work in progress",
+        "Inventory (clinker stockpile quantity estimation)"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "of revenue has been identified as a key audit matter."
+          },
+          {
+            "pdf_page": 4,
+            "quote": "Accordingly, we have identified PPE and CWIP as key audit matters."
+          },
+          {
+            "pdf_page": 5,
+            "quote": "this matter was considered a key audit matter."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "International Financial Reporting Standards (IFRSs) as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by the Saudi Organization for Charted and Professional Accountants (SOCPA)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "The financial statements are prepared in Saudi Riyals, which is the functional and presentation currency for the Company",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fiscal_year",
+      "value": "1 January to 31 December",
+      "category": "identity",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "The Company's financial year is twelve months starts from first January to end of December every year.",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": {
+        "date": "2026-02-16",
+        "date_hijri": "28 Shaaban, 1447H",
+        "approved_by": "Board of Directors"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 36,
+            "quote": "These financial statements were approved by the Company's Board of Directors on 16 February 2026, 28 Shaaban, 1447H.",
+            "printed_page": "34"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activities",
+      "value": "The production of ordinary Portland cement, salt-resistant cement, clinker cement and finishing cement",
+      "category": "sector",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "The nature of the company's activity is the production of ordinary Portland cement, salt-resistant cement, clinker cement and finishing cement",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "investment_in_associate_cement_product_industry",
+      "value": {
+        "holder_name": "Yamama Cement Company",
+        "holder_type": "investor_in_associate",
+        "investee": "Cement Product Industry Co. Ltd.",
+        "ownership_pct": 0.3333,
+        "as_of_date": "2025-12-31"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Cement Product Industry Co. Ltd.",
+            "printed_page": "26"
+          },
+          {
+            "pdf_page": 28,
+            "quote": "33.33%",
+            "printed_page": "26"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "Purchasing Packing",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Equity-accounted associate; also supplier of packing paper bags (SAR 25.2m purchases in 2025)",
+        "review_note": "Yamama's holding in an associate, not a shareholder of Yamama; delivered as an attribute, not an ownership row."
+      }
+    },
+    {
+      "attribute_key": "investment_in_associate_saudi_yamani_cement",
+      "value": {
+        "holder_name": "Yamama Cement Company",
+        "holder_type": "investor_in_associate",
+        "investee": "Saudi Yamani Cement Co. (closed joint stock), Yemen",
+        "ownership_pct": 0.2,
+        "as_of_date": "2025-12-31"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Saudi Yamani Cement Co. (closed joint Stock)",
+            "printed_page": "26"
+          },
+          {
+            "pdf_page": 28,
+            "quote": "Less: Provision for Investments",
+            "printed_page": "26"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Cost SAR 75,060,000 fully provided for (net nil)",
+        "review_note": "Yamama's holding in an associate, not a shareholder of Yamama; delivered as an attribute, not an ownership row."
+      }
+    },
+    {
+      "attribute_key": "financial_risk_management",
+      "value": [
+        "Credit risk (credit limits per customer)",
+        "Special commission (interest) rate risk",
+        "Liquidity risk",
+        "Currency risk (SAR, USD, EUR)",
+        "Capital management"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "The Company is committed to managing customer-related credit risk by setting credit limits for each customer and monitoring existing debits.",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "Special commission price risk",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "Liquidity risk",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 35,
+            "quote": "The Company did not conduct any significant transactions in currencies other than the Saudi riyal, US dollar and euro during the year.",
+            "printed_page": "33"
+          },
+          {
+            "pdf_page": 35,
+            "quote": "Capital management",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commitments_and_contingencies",
+      "value": {
+        "capital_commitments_cwip_2025": "SAR 207 million (2024: SAR 408 million)",
+        "letters_of_guarantee_2025": "SAR 88 million (2024: 76 million)"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 35,
+            "quote": "Amounted to SAR 207 million (as at December 31, 2024: SAR 408 million).",
+            "printed_page": "33"
+          },
+          {
+            "pdf_page": 35,
+            "quote": "which amounted to SAR 88 million as of December 31, 2025, for third-party services",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "No legal claims or lawsuits disclosed"
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:3020:cash_dividend:2026-02-16",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2025 proposed",
+      "announcement_date": "2026-02-16",
+      "cash_amount": 202500000,
+      "currency": "SAR",
+      "status": "recommended_by_board_pending_general_assembly",
+      "details": {
+        "dividend_per_share": 1.0,
+        "metadata": {
+          "source_page": "34",
+          "evidence": [
+            {
+              "pdf_page": 36,
+              "quote": "the distribution of cash dividends for the year ended December 31, 2025, amounted to SAR 202,500,000 for number of shares amounted to 202,500,000 share (SAR 1 per share).",
+              "printed_page": "34"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          },
+          "period": "FY2025"
+        }
+      }
+    },
+    {
+      "action_key": "sa:3020:cash_dividend:2025-04-14",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2024",
+      "announcement_date": "2025-04-14",
+      "payment_date": "2025-05-04",
+      "cash_amount": 202500000,
+      "currency": "SAR",
+      "status": "approved_paid",
+      "details": {
+        "dividend_per_share": 1.0,
+        "metadata": {
+          "source_page": "33",
+          "evidence": [
+            {
+              "pdf_page": 35,
+              "quote": "On April 14, 2025, the Board of Directors’ recommendation to distribute cash dividends in the amount of 202,500,000 Saudi riyals to shareholders for the year ending December 31, 2024, was approved, at a rate of 1.00 riyals per share",
+              "printed_page": "33"
+            },
+            {
+              "pdf_page": 35,
+              "quote": "dividend distribution had began on May 04, 2025.",
+              "printed_page": "33"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          },
+          "basis": "Approval of Board recommendation dated April 14, 2025; distribution began May 04, 2025; 10% of nominal value",
+          "period": "FY2024"
+        }
+      }
+    },
+    {
+      "action_key": "sa:3020:cash_dividend:2024-03-25",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2023",
+      "announcement_date": "2024-03-25",
+      "payment_date": "2024-04-21",
+      "cash_amount": 202500000,
+      "currency": "SAR",
+      "status": "approved_paid",
+      "details": {
+        "dividend_per_share": 1.0,
+        "metadata": {
+          "source_page": "33",
+          "evidence": [
+            {
+              "pdf_page": 35,
+              "quote": "On March 25, 2024, the Board of Directors’ recommendation has been approved to distribute cash dividends in the amount of 202,500,000 Saudi riyals to shareholders for the year ended December 31,",
+              "printed_page": "33"
+            },
+            {
+              "pdf_page": 35,
+              "quote": "the dividend distribution had began on April 21, 2024.",
+              "printed_page": "33"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          },
+          "period": "FY2023"
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Products and sales channels",
+      "body_text": "Sells cement products and derivatives, packed and non-packed (bulk) cement, via selling invoices and/or specific contracts; revenue recognised at a point in time",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "The company sells cement products and derivatives, and there is no significant difference between the selling prices or production costs for bulk or packaged cement.",
+            "printed_page": "31"
+          },
+          {
+            "pdf_page": 21,
+            "quote": "The Company sells packed and non-packed cement, where selling process is either through selling invoices and/or specific contracts with customers."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Segment statement",
+      "body_text": "Single activity (cement, derivatives, by-products and components) sold to local customers; no operating segments reported by product or geography",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 35,
+            "quote": "therefore, the company does not report on operating segments in terms of multiple products or different geographical areas.",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Geographic market",
+      "body_text": "All products sold to local customers; all assets and liabilities located in Saudi Arabia except the investment in Saudi Yamani Cement Company (Yemen). No export sales disclosed.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 35,
+            "quote": "All of these are sold to local customers",
+            "printed_page": "33"
+          },
+          {
+            "pdf_page": 35,
+            "quote": "All of the Company's assets and liabilities are located in Saudi Arabia except for investments in the Saudi Yamani Cement Company, which is headquartered in Yemen (note 9).",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Plant location new factory",
+      "body_text": "New Yamama Cement Factory in the northern Al-Halal region of Al-Kharj Governorate, Riyadh Region, financed by a SAR 900 million SIDF loan (Dec 20, 2016) secured by pledge of the new factory's assets",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 30,
+            "quote": "the construction of the new Yamama Cement Factory in the northern Al-Halal region of Al-Kharj Governorate affiliated of Riyadh Region",
+            "printed_page": "28"
+          },
+          {
+            "pdf_page": 30,
+            "quote": "the financing is secured by a pledge of the new factory's assets in addition to promissory notes",
+            "printed_page": "28"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Quarry franchise licences rehabilitation",
+      "body_text": "Provision for rehabilitation of areas subject to franchise licenses (land restoration), measured at present value of expected site restoration cost over the license term; no licence numbers or quarry locations disclosed",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "3.8 Provision for rehabilitation obligations of areas subject to franchise licenses:",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "using a discount rate at the commencement date of the franchise license over the term of the license",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Fvoci equity investments",
+      "body_text": "Investment in Industrialization & Energy Service Co. (Saudi Joint Stock Co.) and in real estate funds and sukuk, held at FVOCI (no % disclosed)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Industrialization & Energy Service Co. (Saudi Joint Stock Co.)",
+            "printed_page": "26"
+          },
+          {
+            "pdf_page": 28,
+            "quote": "Investments in real estate funds and sukuk",
+            "printed_page": "26"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "ownership_disclosure",
+      "title": "Related parties",
+      "body_text": "Related parties: Arabian Shield Co-operative Insurance Co (insurance; common Chairman and Vice Chairman links), Mobile Telecommunication Company Saudi Arabia Zain (communication services; common Chairman), Sahl Al-Madar Trading Co. Ltd. (logistics services; Vice Chairman is board member), Cement Product Industry Co. Ltd. and Saudi Yamani Cement (affiliates). No major shareholders disclosed.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "The Chairman of the Board of Directors of the Arabian Shield Cooperative Insurance Company is the Chairman of the Board of Directors of the company.",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "The Chairman of the Board of Directors of Zain is the Chairman of the Board of Directors of the company.",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Board member of Sahl Al-Madar Trading Company He is Vice Chairman of the Company's Board of",
+            "printed_page": "30"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Dividend policy",
+      "body_text": "Dividend distribution policy is approved by the General Assembly; dividends recognised as liabilities when approved",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "22",
+        "evidence": [
+          {
+            "pdf_page": 22,
+            "quote": "The dividend distribution policy is approved by the company's general assembly."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Key management and board compensation",
+      "body_text": "Related-party transactions with key management are mainly salaries, allowances and remuneration of senior executives; board remuneration disclosed separately (2025: SAR 3,301,000; senior executive salaries and benefits SAR 18,487,200)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "Related party transactions are mainly the salaries, allowances and remunerations of senior executives.",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Board Remuneration",
+            "printed_page": "30"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Borrowing covenants and security",
+      "body_text": "Islamic Murabaha facilities from local banks totalling SAR 2,810,610,970 (SAR 390 million unused), SIBOR plus margin, secured by promissory notes, with pledges/covenants monitored; SIDF loan secured by pledge of new factory assets",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 30,
+            "quote": "The Islamic banking facilities (Islamic Murabaha) that are not used and available for use amounted to 390 million riyals as of December 31, 2025",
+            "printed_page": "28"
+          },
+          {
+            "pdf_page": 30,
+            "quote": "The loan agreement includes certain pledges with the banks.",
+            "printed_page": "28"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Zakat status",
+      "body_text": "Zakat declarations submitted for all years up to 2024; final assessments issued up to 2023; due zakat fully paid. 2025 zakat charge SAR 13,000,000",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "The company has submitted its zakat declarations for all years up to 2024, and the final zakat assessment has been issued up to 2023. The due zakat has been fully paid.",
+            "printed_page": "30"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Going concern",
+      "body_text": "Financial statements prepared under the going concern assumption; no material uncertainty reported",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 11,
+            "quote": "Accordingly, the preparation of the financial statements continues under the going concern assumption.",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Subsequent events",
+      "body_text": "Board recommended FY2025 cash dividend of SAR 1 per share (SAR 202.5 million) on February 16, 2026",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 36,
+            "quote": "The Company’s Board of Directors recommended to the General Assembly, in its meeting on February 16,",
+            "printed_page": "34"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Restricted cash dividends",
+      "body_text": "Cash at banks includes restricted cash of SAR 30 million for dividends payable (2024: SAR 41 million)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 30,
+            "quote": "the cash at banks including a restricted cash amounted to SAR 30 million for dividends payable",
+            "printed_page": "28"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Asset disposals old lines",
+      "body_text": "2025 gains from sale of accessories of old production lines and old gas turbines (fully depreciated)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "certain accessories of old production lines and old gas turbines during the year 2025, which had been fully depreciated.",
+            "printed_page": "31"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    }
+  ]
+}

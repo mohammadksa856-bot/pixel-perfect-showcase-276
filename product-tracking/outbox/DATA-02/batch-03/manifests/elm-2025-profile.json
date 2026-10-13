@@ -1,0 +1,1102 @@
+{
+  "company_id": "sa:7203",
+  "market": "SA",
+  "symbol": "7203",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-05",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+  "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+  "source_archive": {
+    "engine_ref": "main",
+    "engine_commit": "b70254e",
+    "engine_archive_path": "data/raw/SA/7203/documents/363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600.pdf",
+    "on_engine_main": true,
+    "text_layer": "digital; auditor report pages scanned (not used)"
+  },
+  "reader": "manual.review/data-02-batch-03-elm",
+  "notes": "DATA-02 batch-03. Qualitative profile from Elm audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Elm Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Elm Company, formerly known as (Al Elm Information Security Company) (“the Company”)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "former_name",
+      "value": "Al Elm Information Security Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "formerly known as (Al Elm Information Security Company)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "is a Saudi Joint Stock Company, incorporated in the city of"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration_number",
+      "value": "1010069210",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "is registered with commercial registration no. 1010069210"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "incorporation_date",
+      "value": {
+        "gregorian": "1988-06-08",
+        "hijri": "Shawwal 24, 1408 H",
+        "city": "Riyadh"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Riyadh, Kingdom of Saudi Arabia on Shawwal 24, 1408 H (corresponding to June 8, 1988)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "branch_jeddah",
+      "value": {
+        "cr_number": "4030446307",
+        "date": "2021-12-16",
+        "city": "Jeddah"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company owns a branch under commercial registration no. 4030446307 dated Jumada Al-Thani 12, 1443 H (corresponding to December 16,"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements endorsed by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "prepared in accordance with International Financial Reporting Standards (IFRS) that are endorsed in"
+          },
+          {
+            "pdf_page": 15,
+            "quote": "other standards and pronouncements endorsed by the Saudi Organization for Chartered and Professional Accountants"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 16,
+            "quote": "These consolidated financial statements are presented in Saudi Riyals"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "All amounts in Saudi Riyals"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Functional and presentation currency is Saudi Riyals"
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": "2026-02-26",
+      "category": "governance",
+      "metadata": {
+        "source_page": "61",
+        "evidence": [
+          {
+            "pdf_page": 61,
+            "quote": "These consolidated financial statements were approved by the Board of Directors on Ramadan 9, 1447 H (corresponding to February 26, 2026)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activities",
+      "value": "providing information security services, working in the field of electronic business, consulting services, exchanging credit information, managing and operating data and information centers, importing, developing, selling and maintaining hardware, software, information systems and communication networks, providing sites for buying and selling via the Internet, and working in the field of training and workforce development",
+      "category": "sector",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company’s activities are represented in providing information security services, working in the field of electronic business, consulting services,"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "exchanging credit information, managing and operating data and information centers, importing, developing, selling and maintaining hardware, software,"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "operating_segments",
+      "value": [
+        {
+          "name": "Digital business",
+          "description": "ready-to-use solutions in the form of technical services, portals, electronic applications, and related support work"
+        },
+        {
+          "name": "Business process outsourcing",
+          "description": "management and the total operation of services, or partial support for them in specific areas"
+        },
+        {
+          "name": "Professional services",
+          "description": "advisory services and professional services in data analysis and artificial intelligence"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "52",
+        "evidence": [
+          {
+            "pdf_page": 52,
+            "quote": "1- Digital business: These are ready-to-use solutions in the form of technical services, portals, electronic applications, and related support work"
+          },
+          {
+            "pdf_page": 52,
+            "quote": "2- Business process outsourcing: The Group seeks through business attribution solutions to enhance its competitive advantage in the field of"
+          },
+          {
+            "pdf_page": 52,
+            "quote": "3- Professional services: These include advisory services and professional services in data analysis and artificial intelligence"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "subsidiaries",
+      "value": [
+        {
+          "name": "Saudi Information Exchange Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Emdad Al Khebrat Company Limited",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Elm Technical Investment Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Future Resources Company Limited",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Asdam Digital Company",
+          "country": "United Arab Emirates",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Elm Arkan Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 0.6
+        },
+        {
+          "name": "Elm Europe Limited",
+          "country": "United Kingdom",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Umrah Company for Specialized Services",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Elm Investment Ltd",
+          "country": "Cayman Islands",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Digital Elm SPC",
+          "country": "Oman",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Elm Technology Investment Company/Jordan",
+          "country": "The Hashemite Kingdom of Jordan",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Thiqah Business Services Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Asel Business Services Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Thiqah Investment Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Ahad Business Services Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Digital Real Estate Solutions Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Matching Solutions IT Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Aamaly Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Health Recruitment Expert Company",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 1.0
+        },
+        {
+          "name": "Managed Solutions for Business Services",
+          "country": "Kingdom of Saudi Arabia",
+          "effective_pct": 0.82
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Saudi Information Exchange Company (1) Kingdom of Saudi Arabia 100% 100%"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Elm Arkan Company (6) Kingdom of Saudi Arabia 60% 60%"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Thiqah Business Services Company (12) Kingdom of Saudi Arabia 100% -"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Managed Solutions for Business Services (20) Kingdom of Saudi Arabia 82% -"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "new_subsidiaries_established_2025",
+      "value": [
+        {
+          "name": "Elm Investment",
+          "hq": "George Town",
+          "date": "2025-01-06"
+        },
+        {
+          "name": "Digital Elm SPC",
+          "hq": "Muscat",
+          "date": "2025-02-19"
+        },
+        {
+          "name": "Elm Technology Investment Company/Jordan",
+          "hq": "Amman",
+          "date": "2025-11-19"
+        },
+        {
+          "name": "Managed Solutions for Business Services Company",
+          "status": "no share capital contributed as at 2025-12-31; not commenced operations"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "was established on Rajab 6, 1446H (corresponding to January 6, 2025)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "was established on Sha’ban 20, 1446H (corresponding to February 19, 2025)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "was established on Jumada al-Awwal 28, 1447H (corresponding to November 19, 2025)"
+          },
+          {
+            "pdf_page": 15,
+            "quote": "As at December 31, 2025, no share capital had been contributed by the"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "associates_joint_ventures",
+      "value": [
+        {
+          "name": "Sahel Al Madar Trading Company",
+          "relationship": "Associate",
+          "pct": 0.3
+        },
+        {
+          "name": "Smart National Solution for Information Technology",
+          "relationship": "Joint Venture",
+          "pct": 0.4
+        },
+        {
+          "name": "Omran Tech Business Solutions Company",
+          "relationship": "Joint venture",
+          "pct": 0.6
+        },
+        {
+          "name": "Bayan Credit Information Company",
+          "relationship": "Associate",
+          "pct": 0.4
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 40,
+            "quote": "Sahel Al Madar Trading Company (A) Associate Kingdom of Saudi Arabia 30% 30%"
+          },
+          {
+            "pdf_page": 40,
+            "quote": "Smart National Solution for Information Technology (B) Joint Venture Kingdom of Saudi Arabia 40% 24%"
+          },
+          {
+            "pdf_page": 40,
+            "quote": "Omran Tech Business Solutions Company (C) Joint venture Kingdom of Saudi Arabia 60% 60%"
+          },
+          {
+            "pdf_page": 40,
+            "quote": "Bayan Credit Information Company (D) Associate Kingdom of Saudi Arabia 40% -"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "acquisition_thiqah_2025",
+      "value": {
+        "target": "Thiqah Business Services Company",
+        "seller": "Public Investment Fund",
+        "stake_pct": 1.0,
+        "spa_date": "2025-01-21",
+        "completion_date": "2025-04-21",
+        "headline_consideration_sar": 3400000000,
+        "adjusted_consideration_sar": 3385900000,
+        "accounting": "business combination under common control, pooling of interest",
+        "financing": "own resources and credit facilities"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "59",
+        "evidence": [
+          {
+            "pdf_page": 59,
+            "quote": "the Company entered into a Share Purchase Agreement (the “SPA”) with Public Investment"
+          },
+          {
+            "pdf_page": 59,
+            "quote": "capital of Thiqah, for a consideration of"
+          },
+          {
+            "pdf_page": 59,
+            "quote": "The acquisition was completed on Shawwal 23, 1446H (corresponding to April 21, 2025)"
+          },
+          {
+            "pdf_page": 59,
+            "quote": "3,385.9 million determined as per the SPA was paid to"
+          },
+          {
+            "pdf_page": 59,
+            "quote": "The transaction is classified as a business combination under common-controlled entities."
+          },
+          {
+            "pdf_page": 59,
+            "quote": "3,400 million subject to certain adjustments as agreed in the SPA."
+          },
+          {
+            "pdf_page": 60,
+            "quote": "Purchase consideration (3,385,912,787)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "thiqah_net_assets_revision",
+      "value": {
+        "net_assets_acquired_sar": 264100000,
+        "previously_reported_sar": 575000000,
+        "retained_earnings_reduction_sar": 3121800000
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "60",
+        "evidence": [
+          {
+            "pdf_page": 60,
+            "quote": "reducing the net assets acquired to"
+          },
+          {
+            "pdf_page": 60,
+            "quote": "Consequently, the total reduction in retained earnings after the adjustments amounted to"
+          },
+          {
+            "pdf_page": 60,
+            "quote": "311.4 million, reducing the net assets acquired to"
+          },
+          {
+            "pdf_page": 60,
+            "quote": "Net assets acquired (Note 40-A) 264,105,092"
+          },
+          {
+            "pdf_page": 60,
+            "quote": "Excess of purchase consideration charged to retained earnings (Note 40-A) (3,121,807,695)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "snsjv_stake_increase_2025",
+      "value": {
+        "target": "Smart National Solutions for Information Technology",
+        "from_pct": 0.24,
+        "to_pct": 0.4,
+        "additional_investment_sar": 15000000,
+        "reclassified": "associate to joint venture"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "which resulted in an increase in"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "the Group’s ownership from 24% to 40%."
+          },
+          {
+            "pdf_page": 41,
+            "quote": "from an associate to a joint venture"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "sahel_al_madar_pending_acquisition",
+      "value": {
+        "agreement_date": "2025-12-22",
+        "target_pct": 0.6,
+        "status": "conditions precedent not satisfied as at reporting date"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 40,
+            "quote": "On December 22, 2025, the Group entered into a Share Purchase and Subscription Agreement to acquire additional stake in Sahel Al Madar Trading"
+          },
+          {
+            "pdf_page": 40,
+            "quote": "Company to increase the Group’s ownership in the company to 60%."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "main_shareholder_pif",
+      "value": {
+        "holder_name": "Public Investment Fund",
+        "holder_type": "sovereign_wealth_fund",
+        "ownership_pct": null,
+        "as_of_date": "2025-12-31"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "51",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "(including the Public"
+          },
+          {
+            "pdf_page": 51,
+            "quote": "Investment Fund “the main shareholder”)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Described as main shareholder; percentage not stated"
+      }
+    },
+    {
+      "attribute_key": "contingencies_commitments",
+      "value": {
+        "bank_facility_limit_sar": 700000000,
+        "letters_of_guarantee_sar": 247000000,
+        "operating_and_capital_commitments_sar": 2400000000,
+        "legal_cases_provision_sar": 1000000,
+        "associates_jv_contingent_liabilities_sar": 600000
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "53",
+        "evidence": [
+          {
+            "pdf_page": 53,
+            "quote": "The outstanding bank letters of guarantee amounted to"
+          },
+          {
+            "pdf_page": 53,
+            "quote": "The Group has operating and capital commitments amounting to"
+          },
+          {
+            "pdf_page": 53,
+            "quote": "In the normal course of business, the Group is a party to legal cases either as a plaintiff or defendant."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "long_term_borrowing",
+      "value": {
+        "facility_limit_sar": 1900000000,
+        "purpose": "acquisition of Thiqah",
+        "repayment": "5 annual installments starting April 20, 2026",
+        "pricing": "SAIBOR plus margin",
+        "shariah_compliant": true
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "the Group entered into a Shariah-compliant banking facilities agreement with a local bank"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "utilized to fund the Group's acquisition of Thiqah Business Services Company."
+          },
+          {
+            "pdf_page": 49,
+            "quote": "repayable in 5"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "The facility carries a commission based on SAIBOR plus an agreed margin."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:7203:cash_dividend:2025-02-27",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim 2025 h1",
+      "announcement_date": "2025-02-27",
+      "payment_date": "2025-03-17",
+      "cash_amount": 310840232,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 4,
+        "metadata": {
+          "source_page": "61",
+          "evidence": [
+            {
+              "pdf_page": 61,
+              "quote": "February 27, 2025 March 17, 2025 4 310,840,232 Interim Paid"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:7203:cash_dividend:2025-07-31",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim 2025 h2",
+      "announcement_date": "2025-07-31",
+      "payment_date": "2025-08-19",
+      "cash_amount": 350372205,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 4.5,
+        "metadata": {
+          "source_page": "61",
+          "evidence": [
+            {
+              "pdf_page": 61,
+              "quote": "July 31, 2025 August 19, 2025 4.5 350,372,205 Interim Paid"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          }
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Customer types",
+      "body_text": "Customers are government entities and private parties; revenue disaggregated into revenue from government agencies and private parties; digital business serves clients from the public and private sectors",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "Revenue from government agencies"
+          },
+          {
+            "pdf_page": 52,
+            "quote": "The Group provides integrated technology business solutions to clients from the public and private"
+          },
+          {
+            "pdf_page": 54,
+            "quote": "by type of customer (governmental or non-governmental)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Revenue recognition by segment",
+      "body_text": "Digital business revenue consists of products (subscriptions over time, transactions at a point in time) and projects; BPO and professional services revenue consists of projects",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "22",
+        "evidence": [
+          {
+            "pdf_page": 22,
+            "quote": "1- Digital Business: Digital business revenue consists of two types: products and projects"
+          },
+          {
+            "pdf_page": 22,
+            "quote": "Revenue from the business process outsourcing segment consists of projects."
+          },
+          {
+            "pdf_page": 22,
+            "quote": "Professional services segment revenue consists of projects."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "ownership_disclosure",
+      "title": "Related party relationships",
+      "body_text": "Related parties: governmental entities (incl. PIF, main shareholder), government-related entities (subsidiaries of main shareholder), associates, board members and senior management; government service revenue includes transactions with main shareholder",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "51",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "The related parties consist of governmental entities, including ministries, authorities, and other government-affiliated entities"
+          },
+          {
+            "pdf_page": 51,
+            "quote": "government-related entities are subsidiaries of the main shareholder, associate companies, and members of"
+          },
+          {
+            "pdf_page": 51,
+            "quote": "Service revenues from government entities include transactions with the main shareholder amounting to"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Treasury shares purpose",
+      "body_text": "Treasury shares bought from the major shareholder in Feb 2022 are held to support future long-term incentive plans for employees; no voting or dividend rights while held",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "47",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "The Group holds these shares as treasury shares to support future long-term incentive plans for employees"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Employee share programme",
+      "body_text": "Long Term Incentive Plan: equity-settled share-based payment granting shares to eligible employees on service and performance conditions; four stages/tranches",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "47",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "Share-Based payment is one of the employee incentive programs which aims to attract, motivate and retain the Group's employees."
+          },
+          {
+            "pdf_page": 47,
+            "quote": "The Group announced the Long Term Incentive Plan Program for its employees"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Key management compensation",
+      "body_text": "Transactions with board of directors and senior executive managers comprise salaries and benefits, remunerations and allowances, share based payment expense and end of service benefits expense",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "51",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "Transaction with board of directors and senior executive managers"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Risk management framework",
+      "body_text": "Exposed to market (currency, fair value, cash flow interest rate, price), credit and liquidity risk; Board has overall responsibility; executive management develops policies; Audit Committee oversees with internal audit support",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "53",
+        "evidence": [
+          {
+            "pdf_page": 53,
+            "quote": "The Group's activities are exposed to a number of financial risks: market risk (including currency risk, fair value, cash flow interest rate risk and price"
+          },
+          {
+            "pdf_page": 53,
+            "quote": "The Board of Directors has overall responsibility for establishing and monitoring the Group's risk management framework."
+          },
+          {
+            "pdf_page": 53,
+            "quote": "The internal audit department assists The Group Audit"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Zakat status",
+      "body_text": "Zakat returns filed up to FY2024 with certificates; final assessments for 2021-2023 received in 2025 with no additional liabilities (SAR 69m provision reversal); ZATCA requested information on 2024, no assessment issued",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "50",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "The Group has submitted all zakat returns up to the year ended December 31, 2024"
+          },
+          {
+            "pdf_page": 50,
+            "quote": "Tax, and Customs Authority (ZATCA) for the years 2021, 2022 & 2023 with no additional zakat liabilities or adjustments"
+          },
+          {
+            "pdf_page": 50,
+            "quote": "However, no assessment has been issued as of December 31, 2025."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Capital management going concern",
+      "body_text": "Capital management objective is to protect ability to continue as a going concern; capital (total equity + net cash) SAR 5.5bn at 2025-12-31",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "57",
+        "evidence": [
+          {
+            "pdf_page": 57,
+            "quote": "The Group's objective when managing capital is to protect the Group's ability to continue as a going concern"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Subsequent events",
+      "body_text": "No significant subsequent events",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "61",
+        "evidence": [
+          {
+            "pdf_page": 61,
+            "quote": "There are no subsequent significant events since the year ended December 31, 2025 that could have a material impact on the financial position of the"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    }
+  ]
+}

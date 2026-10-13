@@ -1,0 +1,103 @@
+{
+  "schema_version": "official-page-review/1",
+  "event_kind": "append_only_new_document_vintage_review",
+  "observed_at": "2026-10-12T23:54:45Z",
+  "reviewer": "Codex independent visual inspection of complete native PDF page renders",
+  "prior_reviews_preserved": "docs/audits/D01_OFFICIAL_PAGE_REVIEWS_20261013.json",
+  "old_error_manifest": "output/D01-correction-review-20261013.json",
+  "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+  "issuer_index_url": "https://www.alinma.com/en/about-the-bank/financial-reports/financial-statements",
+  "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf",
+  "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+  "document_pages": 90,
+  "download_bytes": 3280304,
+  "official_known_at": null,
+  "known_at_caution": "Filename, PDF creation/modification dates, audit/report dates and retrieval timestamp do not establish first official disclosure availability.",
+  "rendering": {"renderer": "bundled Poppler pdftoppm", "dpi": 120, "complete_pages_visually_inspected": [11, 16, 49, 58], "warnings": "Poppler font substitution warnings occurred; the rendered headings, numbers and units used below are readable and were visually inspected"},
+  "counts": {
+    "new_review_records": 6,
+    "new_unique_old_error_point_ids_from_previous_remaining_56": 5,
+    "new_exact_reported_EPS_points_from_remaining": 1,
+    "new_rounded_share_count_points_not_exact_precision": 2,
+    "new_DPS_semantics_blocked_points": 2,
+    "additional_new_vintage_for_already_reviewed_point": 1,
+    "old_candidates_eligible_for_numeric_apply": 0,
+    "prior_five_vintage_reviews_repeated": 0
+  },
+  "reviews": [
+    {
+      "old_error_point_id": 415, "company_id": "sa:1150", "metric": "eps_diluted", "period_end": "2020-12-31", "period_kind": "fy", "fiscal_quarter": 0,
+      "value": "0.99", "unit": "SAR/share", "currency": "SAR", "scale": "1",
+      "source_label": "Basic and diluted earnings per share (SAR)", "visual_reviewed": true, "interpretation": "reported_numeric_cell", "exact_precision_verified": true,
+      "document_vintage": "FY2020 audited financial statements, 2020 current column", "report_period_end": "2020-12-31", "official_known_at": null,
+      "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+      "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf", "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+      "pdf_page": 11, "printed_page": "10", "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-income-page11.png", "page_image_sha256": "37562739eb574e4b0c3206983151fc756d03aeea853a51d1667b68096927cfee",
+      "notes": "The EPS row explicitly states SAR and is not subject to the monetary SAR-thousands column heading. Original point415 is inflated monetary EPS; no factor reversal was used to obtain the reported value."
+    },
+    {
+      "old_error_point_id": 381, "company_id": "sa:1150", "metric": "eps_diluted", "period_end": "2019-12-31", "period_kind": "fy", "fiscal_quarter": 0,
+      "value": "1.28", "unit": "SAR/share", "currency": "SAR", "scale": "1",
+      "source_label": "Basic and diluted earnings per share (SAR), Restated", "visual_reviewed": true, "interpretation": "reported_numeric_cell", "exact_precision_verified": true,
+      "document_vintage": "FY2020 audited statements, 2019 comparative adjusted for 2020 bonus shares", "report_period_end": "2020-12-31", "official_known_at": null,
+      "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+      "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf", "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+      "pdf_page": 11, "printed_page": "10", "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-income-page11.png", "page_image_sha256": "37562739eb574e4b0c3206983151fc756d03aeea853a51d1667b68096927cfee",
+      "notes": "New document vintage, not a repeat of the prior FY2019 original1.70 review. Retain both. Notes21 and14.1 explicitly explain bonus-share adjustment; neither vintage may be chosen for historical as-of use without confirmed disclosure availability."
+    },
+    {
+      "old_error_point_id": 442, "company_id": "sa:1150", "metric": "weighted_average_shares_diluted", "period_end": "2020-12-31", "period_kind": "fy", "fiscal_quarter": 0,
+      "value": "1987", "unit": "shares", "currency": "", "scale": "1000000",
+      "source_label": "Weighted average number of outstanding shares: 1,987 million shares", "visual_reviewed": true, "interpretation": "reported_rounded_magnitude", "exact_precision_verified": false,
+      "document_vintage": "FY2020 note21, 2020 weighted denominator after treasury/bonus adjustment", "report_period_end": "2020-12-31", "official_known_at": null,
+      "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+      "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf", "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+      "pdf_page": 58, "printed_page": "57", "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-shares-page58.png", "page_image_sha256": "9591d68b8ed736daa344a16fa64224e620159f4261ed877aadddfd6e23f8a6da",
+      "notes": "Declared million-share unit is visually verified. Rounded 1,987 million cannot independently certify the exact original 1,987,072,962 shares; no exact replacement manufactured."
+    },
+    {
+      "old_error_point_id": 408, "company_id": "sa:1150", "metric": "weighted_average_shares_diluted", "period_end": "2019-12-31", "period_kind": "fy", "fiscal_quarter": 0,
+      "value": "1987", "unit": "shares", "currency": "", "scale": "1000000",
+      "source_label": "2019: 1,987 million shares", "visual_reviewed": true, "interpretation": "reported_rounded_magnitude", "exact_precision_verified": false,
+      "document_vintage": "FY2020 note21, 2019 comparative after bonus-share adjustment", "report_period_end": "2020-12-31", "official_known_at": null,
+      "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+      "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf", "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+      "pdf_page": 58, "printed_page": "57", "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-shares-page58.png", "page_image_sha256": "9591d68b8ed736daa344a16fa64224e620159f4261ed877aadddfd6e23f8a6da",
+      "notes": "This is a post-bonus comparative denominator; do not replace the earlier pre-bonus original 1,489,652,500 merely by comparing magnitudes. Exact precision and selection remain blocked."
+    },
+    {
+      "old_error_point_id": 412, "company_id": "sa:1150", "metric": "dividends_per_share", "period_end": "2020-12-31", "period_kind": "fy", "fiscal_quarter": 0,
+      "value": null, "unit": "SAR/share", "currency": "SAR", "scale": "1",
+      "source_label": "Dividend paid (cash-flow financing activities)", "visual_reviewed": true, "interpretation": "cash_paid_total_not_cash_DPS", "exact_precision_verified": false,
+      "document_vintage": "FY2020 consolidated cash-flow statement, 2020 column", "report_period_end": "2020-12-31", "official_known_at": null,
+      "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+      "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf", "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+      "pdf_page": 16, "printed_page": "15", "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-cashflow-page16.png", "page_image_sha256": "5d0179f1087186ceddd4f02bfde4a1df0670d94d6c2c1929bb80cc5012b967c8",
+      "observed_cashflow_cell": "dash", "notes": "No direct cash-DPS numeric cell on the reviewed pages. Cash-flow dash does not establish attributed/proposed FY2020 DPS=0 or repair original0.3000000002013011. Future approval/payment disclosure requires separate evidence."
+    },
+    {
+      "old_error_point_id": 378, "company_id": "sa:1150", "metric": "dividends_per_share", "period_end": "2019-12-31", "period_kind": "fy", "fiscal_quarter": 0,
+      "value": null, "unit": "SAR/share", "currency": "SAR", "scale": "1",
+      "source_label": "Proposed issue of bonus shares", "visual_reviewed": true, "interpretation": "bonus_issue_not_cash_DPS", "exact_precision_verified": false,
+      "document_vintage": "FY2020 note22, 2019 proposed bonus-share comparative", "report_period_end": "2020-12-31", "official_known_at": null,
+      "source_url": "https://www.alinma.com/-/media/Project/Alinma/PDF-Files/Financial-Statements--EN/2020/20210218_FS-English_2020_Final.pdf",
+      "document_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-official.pdf", "document_sha256": "116d48bf0a7fb01542195649ca41e7f76afb46667ee4bc74fa24018777a53e1f",
+      "pdf_page": 58, "printed_page": "57", "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-shares-page58.png", "page_image_sha256": "9591d68b8ed736daa344a16fa64224e620159f4261ed877aadddfd6e23f8a6da",
+      "observed_bonus_amount_per_share": "3.33", "notes": "Explicit bonus/share capital item, not cash dividend; do not map3.33 to dividends_per_share. Cash paid in2019 is separately identified as related to2018 in the equity statement; original2019cashDPS0 remains unverified."
+    }
+  ],
+  "action_context": {
+    "source_note": "14.1 Issuance of bonus shares",
+    "pdf_page": 49, "printed_page": "48",
+    "page_image_path": "output/pdf/D01-continuation-20261013/alinma-FY2020-actions-page49.png",
+    "page_image_sha256": "1c9dc7cf28d4cee3f82472f7c71df6984478cfd52053614d4c1d17019593e166",
+    "shareholder_approval_date": "2020-04-08", "bonus_ratio": "1:3", "new_shares_millions": "500",
+    "issued_share_count_2020_millions": "2000", "issued_share_count_2019_millions": "1500",
+    "not_weighted_average_shares": true,
+    "not_official_disclosure_known_at": true
+  },
+  "publication_authorized": false,
+  "numeric_corrections_applied": 0,
+  "production_changes": 0,
+  "blockers": ["Official disclosure known_at unproven", "Rounded share counts do not prove original exact precision", "DPS cash paid/proposed/attributed semantics remain unresolved", "Explicit vintage selection and retained history needed", "Legacy descendant inventory, verified rollback and local TEST gates remain"]
+}

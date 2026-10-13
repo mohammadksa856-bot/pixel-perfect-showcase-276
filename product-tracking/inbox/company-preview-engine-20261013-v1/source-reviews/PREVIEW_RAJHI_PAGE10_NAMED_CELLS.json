@@ -1,0 +1,24 @@
+{
+  "schema": "numeric-source-review/1",
+  "company_id": "sa:1120",
+  "document_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+  "document_path": "output/alrajhi-2025-official.pdf",
+  "document_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+  "pdf_page": 10,
+  "printed_page": "2",
+  "page_image_path": "output/preview-b07-evidence/alrajhi-income-page10.png",
+  "page_image_sha256": "5e054cab86491f7dbdf4f6d3d3bec0e800a41bbd09d68b79ff1d3f5d36c7ca42",
+  "visual_reviewed": true,
+  "cells": [
+    {"metric": "eps_diluted", "period_end": "2025-12-31", "raw_value": "5.85", "scale": "1", "normalized_value": "5.85", "unit": "SAR/share", "source_label": "Basic and diluted earnings per share", "scope": "Existing reviewed numeric EPS reused; extraction page10 locator newly corroborated against note72"},
+    {"metric": "eps_diluted", "period_end": "2024-12-31", "raw_value": "4.67", "scale": "1", "normalized_value": "4.67", "unit": "SAR/share", "scope": "FY2025 comparative vintage only; existing EPS numeric review reused"},
+    {"metric": "net_financing_income", "period_end": "2025-12-31", "raw_value": "29845671", "scale": "1000", "normalized_value": "29845671000", "unit": "SAR", "source_label": "Net financing and investment income"},
+    {"metric": "net_financing_income", "period_end": "2024-12-31", "raw_value": "24843046", "scale": "1000", "normalized_value": "24843046000", "unit": "SAR", "source_label": "Net financing and investment income"},
+    {"metric": "total_operating_income", "period_end": "2025-12-31", "raw_value": "39093965", "scale": "1000", "normalized_value": "39093965000", "unit": "SAR", "source_label": "Total operating income"},
+    {"metric": "total_operating_income", "period_end": "2024-12-31", "raw_value": "32055303", "scale": "1000", "normalized_value": "32055303000", "unit": "SAR", "source_label": "Total operating income"}
+  ],
+  "currency_note": "Saudi riyal glyph visually inspected; monetary rows in thousands; per-share rows are not multiplied by1000",
+  "official_known_at": null,
+  "verification_scope": "Named numeric cells/units/periods only. Require exact PDF artifact SHA for sample match; not company/document completeness, new numeric DB publication, or historical knowledge certificate.",
+  "production_changes": 0
+}

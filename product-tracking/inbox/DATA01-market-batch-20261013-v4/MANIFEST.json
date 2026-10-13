@@ -1,0 +1,55 @@
+{
+  "revision": 4,
+  "purpose": "Complete immutable inventory including historical manifests and batch result addendum",
+  "latest_queue": "../DATA01-market-batch-20261013-v3/BATCH20_GAP_MATRIX.json",
+  "results": "../DATA01-market-batch-20261013-v3/BATCH_RESULT_NOTICE.json",
+  "files": {
+    "product-tracking/inbox/DATA01-market-batch-20261013-v1/BATCH20_GAP_MATRIX.json": {
+      "sha256": "23612963bc6883ba33cdeb3c25b7d486bd17dbac3c43fa62f8416c2e6329aee5",
+      "bytes": 242627
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v1/FIELD_PERIOD_SOURCE_MATRIX.json.gz": {
+      "sha256": "3dd95a540e2ab95d6456dcc8c612be8a75dd4948f888b80b7f83d7ffc37f880f",
+      "bytes": 672835
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v1/MANIFEST.json": {
+      "sha256": "a64c06c24e8d997beaa7035811299a41372da0e2b1131eaced29fc9da41534f0",
+      "bytes": 685
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v1/MARKET420_SUMMARY.json": {
+      "sha256": "bac365db6af59cd089f90de74e733985c5e77fc6cc90d38fc64b6c6915540578",
+      "bytes": 133
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v2/BATCH20_GAP_MATRIX.json": {
+      "sha256": "d5ca7b44a687bcce95f534bda5ccde60bb16f0b60aaadbdaaecd4d4f93676ef3",
+      "bytes": 275258
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v2/MANIFEST.json": {
+      "sha256": "02368a5a89214ab7df9c56a4c03842fa2f1fff61d94c44c8f8cba69b81b28081",
+      "bytes": 612
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v2/NONFINANCIAL_FIELD_PERIOD_SOURCE.jsonl.gz": {
+      "sha256": "5bbb1d5389b2db7af1050cb0a96cec453062b096966902d7f4c1b4751016d417",
+      "bytes": 624308
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v3/BATCH20_GAP_MATRIX.json": {
+      "sha256": "0823b6eb66d1c1ecd765deaa424ac4928e0fb62251952e57ae0c2eee4bc344e9",
+      "bytes": 276400
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v3/BATCH_RESULT_NOTICE.json": {
+      "sha256": "a187bf439ae8e99bde1ede4972dd75a93217e5c6ee3da0a8813d90c01dcc962e",
+      "bytes": 2869
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v3/MANIFEST.json": {
+      "sha256": "7527ccab2154827cdd5ceac0e163a32629a813874b6b9deaaf0bb6493c275bd7",
+      "bytes": 665
+    },
+    "product-tracking/inbox/DATA01-market-batch-20261013-v3/NONFINANCIAL_FIELD_PERIOD_SOURCE.jsonl.gz": {
+      "sha256": "03b218562aa73d30eab148a51cdfacdac96885fa309ac85d1ea2c1dce7c4ea60",
+      "bytes": 624573
+    }
+  },
+  "self_excluded_bound_by_git_commit": true,
+  "historical_files_rewritten": false,
+  "production_changes": 0
+}

@@ -1,0 +1,326 @@
+{
+  "purpose": "Documents that would close open REVIEW records (by company) and start companies without archived filings.",
+  "access": "All issuer, Saudi Exchange and CMA hosts are blocked from this session; Codex archives or the user allows domains.",
+  "companies_with_open_reviews": [
+    {
+      "company_id": "sa:1120",
+      "open_review_records": 14,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 3,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 2,
+        "IDENTITY_OR_DATE_CONTEXT": 3,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 3,
+        "OWNERSHIP_CONTROL_AND_ASOF": 1,
+        "SOURCE_DIAGNOSTIC_MISMATCH": 2
+      },
+      "documents_to_request": [
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Replacement quotes in quote-repairs.json matching MuPDF and pdftotext; visual confirmation where flagged",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:1211",
+      "open_review_records": 71,
+      "by_group": {
+        "IDENTITY_OR_DATE_CONTEXT": 5,
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 20,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 24,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 14,
+        "OWNERSHIP_CONTROL_AND_ASOF": 3,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 5
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:2010",
+      "open_review_records": 7,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 2,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 3,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 1,
+        "SOURCE_DIAGNOSTIC_MISMATCH": 1
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Replacement quotes in quote-repairs.json matching MuPDF and pdftotext; visual confirmation where flagged",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:2082",
+      "open_review_records": 34,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 7,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 2,
+        "IDENTITY_OR_DATE_CONTEXT": 4,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 18,
+        "OWNERSHIP_CONTROL_AND_ASOF": 3
+      },
+      "documents_to_request": [
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:2222",
+      "open_review_records": 3,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 1,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 2
+      },
+      "documents_to_request": [
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:2280",
+      "open_review_records": 45,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 9,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 2,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 9,
+        "IDENTITY_OR_DATE_CONTEXT": 4,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 13,
+        "OWNERSHIP_CONTROL_AND_ASOF": 5,
+        "SOURCE_DIAGNOSTIC_MISMATCH": 3
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Replacement quotes in quote-repairs.json matching MuPDF and pdftotext; visual confirmation where flagged",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:3020",
+      "open_review_records": 27,
+      "by_group": {
+        "IDENTITY_OR_DATE_CONTEXT": 5,
+        "SOURCE_DIAGNOSTIC_MISMATCH": 1,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 8,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 5,
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 7,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 1
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Replacement quotes in quote-repairs.json matching MuPDF and pdftotext; visual confirmation where flagged",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:4004",
+      "open_review_records": 40,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 7,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 10,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 1,
+        "IDENTITY_OR_DATE_CONTEXT": 6,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 13,
+        "OWNERSHIP_CONTROL_AND_ASOF": 3
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:4030",
+      "open_review_records": 41,
+      "by_group": {
+        "IDENTITY_OR_DATE_CONTEXT": 7,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 13,
+        "OWNERSHIP_CONTROL_AND_ASOF": 3,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 8,
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 5,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 4,
+        "SOURCE_DIAGNOSTIC_MISMATCH": 1
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Replacement quotes in quote-repairs.json matching MuPDF and pdftotext; visual confirmation where flagged",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:4190",
+      "open_review_records": 30,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 10,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 8,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 1,
+        "IDENTITY_OR_DATE_CONTEXT": 1,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 9,
+        "OWNERSHIP_CONTROL_AND_ASOF": 1
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:4300",
+      "open_review_records": 33,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 11,
+        "IDENTITY_OR_DATE_CONTEXT": 6,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 12,
+        "OWNERSHIP_CONTROL_AND_ASOF": 4
+      },
+      "documents_to_request": [
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:7010",
+      "open_review_records": 9,
+      "by_group": {
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 3,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 2,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 3,
+        "OWNERSHIP_CONTROL_AND_ASOF": 1
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    },
+    {
+      "company_id": "sa:7203",
+      "open_review_records": 26,
+      "by_group": {
+        "IDENTITY_OR_DATE_CONTEXT": 4,
+        "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 7,
+        "EVENT_AMOUNT_AND_OFFICIAL_DATES": 6,
+        "OWNERSHIP_CONTROL_AND_ASOF": 2,
+        "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 4,
+        "GOVERNANCE_AUTHORITY_AND_TENURE": 3
+      },
+      "documents_to_request": [
+        "Board of Directors report / corporate governance section with appointment and term dates",
+        "Cover / note 1 of the filing + Ministry of Commerce or Saudi Exchange registry page",
+        "Dated major-shareholders disclosure (annual report or Saudi Exchange) and the investee note for control/associate classification",
+        "Full-page context review of the pinned page (scanned pages: visual review) + approved display mapping",
+        "Saudi Exchange announcement (announcement/eligibility/payment or completion dates) + the filing note",
+        "The filing table holding the number (scope/unit/period from document-scope-unit-period.json) + DATA-01 cell acceptance"
+      ]
+    }
+  ],
+  "companies_without_documents": [
+    {
+      "company_id": "sa:1214",
+      "status": "Codex recovered 2 issuer filings locally (hash-verified), not redistributed; DATA-02 can start once they are archived in the engine or rights-authorized access is given",
+      "codex_recovered": [
+        {
+          "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/373_0_2026-03-01_13-15-59_En.pdf",
+          "sha256": "aad6ca527df02ffb036c61092935861f60f4512729799ed32749a89f0b1a14e4",
+          "pages": 53,
+          "actual_cover_period": "FY2025 ended2025-12-31",
+          "scope": "consolidated",
+          "retrieval": "VERIFIED_ARCHIVE_BYTES"
+        },
+        {
+          "source_url": "https://shaker.com.sa/wp-content/uploads/2025/04/FY-2024-Financial-Statement.pdf",
+          "sha256": "c9da92e420cc71381330dd748eca686e4af9a3f5cb7f71b2284da59767d5c9a7",
+          "pages": 53,
+          "actual_cover_period": "FY2024 ended2024-12-31",
+          "scope": "consolidated",
+          "retrieval": "VERIFIED_ARCHIVE_BYTES"
+        },
+        {
+          "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/373_0_2026-08-09_15-35-56_En.pdf",
+          "sha256": "25fc8fd450bf6459c51e6495522a341b3ba6b6ac2dfb589a8d2fabbee080e9e2",
+          "pages": null,
+          "actual_cover_period": null,
+          "scope": null,
+          "retrieval": "BLOCKED_FIRST_ATTEMPT_CONNECTION_RESET"
+        }
+      ],
+      "also_needed": [
+        "Board of Directors report 2025"
+      ]
+    },
+    {
+      "company_id": "sa:4340",
+      "status": "no archived filing in any published engine branch; official sites blocked from this session",
+      "needed": [
+        "Fund terms and conditions (current)",
+        "Fund annual report 2025 + audited fund FS",
+        "Valuation reports",
+        "NAV disclosures"
+      ]
+    },
+    {
+      "company_id": "sa:4140",
+      "status": "no archived filing in any published engine branch; official sites blocked from this session",
+      "needed": [
+        "Audited FS 2025",
+        "Board of Directors report 2025"
+      ]
+    },
+    {
+      "company_id": "sa:4260",
+      "status": "no archived filing in any published engine branch; official sites blocked from this session",
+      "needed": [
+        "Audited FS 2025 (legal name, entity type)",
+        "Board of Directors report / annual report 2025"
+      ]
+    },
+    {
+      "company_id": "sa:9510",
+      "status": "no archived filing in any published engine branch; official sites blocked from this session",
+      "needed": [
+        "Latest audited FS and interim FS",
+        "CMA continuing-obligation rules applicable to Nomu (article, version)",
+        "Board report"
+      ]
+    },
+    {
+      "company_id": "sa:4164",
+      "status": "no archived filing in any published engine branch; official sites blocked from this session",
+      "needed": [
+        "Audited FS 2025",
+        "Annual report / Board of Directors report 2025"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,906 @@
+{
+  "purpose": "Canonical semantics proposals for Codex's NUMERIC39 checkpoint v2; no admission, no value change.",
+  "input": "product-tracking/inbox/DATA03-current-engine-review-20261013-v1/DATA03_NUMERIC39_REVIEW_CHECKPOINT_20261013_v2.json @5179346",
+  "rules": [
+    "Breakdown members map to dimensions; totals equal to an existing Codex fact are control totals only.",
+    "Ratios are stored as fractions with unit 'ratio'; never multiplied by 100 silently.",
+    "Yamama production-line subset stays held (unit unresolved); the total CWIP cell is a separate canonical field per Codex.",
+    "Ma'aden sukuk: two disclosed vintages (2025-09-30: USD 1.25bn; 2025-12-31: USD 1.5bn); no derived October event."
+  ],
+  "items": [
+    {
+      "candidate_id": "1211:1",
+      "company_id": "sa:1211",
+      "proposed_metric": "segment_sales_share_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "All other segments",
+          "Aluminum BU",
+          "Base metals and new minerals BU",
+          "Phosphate BU"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "fraction of total sales",
+        "is_ratio": true,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:2",
+      "company_id": "sa:1211",
+      "proposed_metric": "board_meetings_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "count",
+          "dates"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "meetings",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:3",
+      "company_id": "sa:1211",
+      "proposed_metric": "board_committee_remuneration_total_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:4",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_dap_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "kmt",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:5",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_ammonia_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "kmt",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:6",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_alumina_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "kmt",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:7",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_aluminum_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "kmt",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:8",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_flat_rolled_products_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "kmt",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:9",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_gold_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "koz",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:10",
+      "company_id": "sa:1211",
+      "proposed_metric": "gold_aisc_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "USD/oz",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:11",
+      "company_id": "sa:1211",
+      "proposed_metric": "phosphate_fertilizer_sales_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "million tonnes",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:12",
+      "company_id": "sa:1211",
+      "proposed_metric": "ultra_low_carbon_ammonia_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "thousand tonnes",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:13",
+      "company_id": "sa:1211",
+      "proposed_metric": "employees_fte_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "people",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:14",
+      "company_id": "sa:1211",
+      "proposed_metric": "saudization_rate_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "fraction",
+        "is_ratio": true,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:15",
+      "company_id": "sa:1211",
+      "proposed_metric": "female_representation_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "fraction",
+        "is_ratio": true,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:16",
+      "company_id": "sa:1211",
+      "proposed_metric": "fatalities_contractors_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "count",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:17",
+      "company_id": "sa:1211",
+      "proposed_metric": "lost_time_injuries_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "contractors",
+          "employees"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "count",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:18",
+      "company_id": "sa:1211",
+      "proposed_metric": "ghg_scope1_2_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "tCO2e",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:19",
+      "company_id": "sa:1211",
+      "proposed_metric": "ghg_intensity_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "tCO2e per ton production",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:20",
+      "company_id": "sa:1211",
+      "proposed_metric": "social_investment_2025",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:21",
+      "company_id": "sa:1211",
+      "proposed_metric": "gold_resource_addition_jan2026",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "million ounces",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "1211:22",
+      "company_id": "sa:1211",
+      "proposed_metric": "wadi_al_jaww_inferred_resource",
+      "codex_independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "contained_moz",
+          "grade_g_t_au",
+          "tonnes_mt"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "Mt / g/t / Moz",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "3020:1",
+      "company_id": "sa:3020",
+      "proposed_metric": "cwip_production_line_project",
+      "codex_independent_verdict": "BLOCKED_SUBSET_UNIT_UNRESOLVED",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "SAR million (as printed)",
+        "is_ratio": false,
+        "period": null,
+        "as_of": "2025-12-31",
+        "period_kind": "instant",
+        "scope": "standalone",
+        "known_at": null,
+        "review_note": "UNIT CONFLICT inside the source: note prints 'SAR 1.196 million' while the auditor's key audit matter states CWIP of SAR 1.2 billion. Value kept exactly as printed; must not be accepted by DATA-01 until resolved."
+      },
+      "held_reason_kept": true
+    },
+    {
+      "candidate_id": "3020:2",
+      "company_id": "sa:3020",
+      "proposed_metric": "clinker_inventory_value",
+      "codex_independent_verdict": "VERIFY_ROUNDED_SOURCE_VALUE",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": null,
+        "as_of": "2025-12-31",
+        "period_kind": "instant",
+        "scope": "standalone",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:1",
+      "company_id": "sa:4030",
+      "proposed_metric": "segment_revenue",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "logistics",
+          "others",
+          "transportation_of_chemicals",
+          "transportation_of_dry_bulk",
+          "transportation_of_oil"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR thousands",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:2",
+      "company_id": "sa:4030",
+      "proposed_metric": "fleet_size",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "leased_vessels",
+          "owned_vessels",
+          "prior_year_leased",
+          "prior_year_owned"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "vessels",
+        "is_ratio": false,
+        "period": null,
+        "as_of": "2025-12-31",
+        "period_kind": "instant",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:3",
+      "company_id": "sa:4030",
+      "proposed_metric": "fleet_by_segment",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "chemicals_leased",
+          "chemicals_owned",
+          "dry_bulk_owned",
+          "logistics_mpp",
+          "logistics_rocon",
+          "oil_vlccs"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "vessels",
+        "is_ratio": false,
+        "period": null,
+        "as_of": "2025-12-31",
+        "period_kind": "instant",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:4",
+      "company_id": "sa:4030",
+      "proposed_metric": "revenue_disaggregation",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "charter_hire",
+          "freight_forwarding",
+          "others",
+          "spot",
+          "time_charter",
+          "water_desalination"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR thousands",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:5",
+      "company_id": "sa:4030",
+      "proposed_metric": "major_customer_concentration",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "prior_year",
+          "related_party_major_customers_share_of_revenue"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "fraction",
+        "is_ratio": true,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:6",
+      "company_id": "sa:4030",
+      "proposed_metric": "aramco_related_party_revenue",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "prior_year",
+          "value"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR thousands",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:7",
+      "company_id": "sa:4030",
+      "proposed_metric": "share_of_results_equity_investees",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "imi",
+          "ngc",
+          "petredec",
+          "total"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR thousands",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": "Per-investee components are new; the total equals Codex's existing share_of_profit_associates fact and is not a new value."
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:8",
+      "company_id": "sa:4030",
+      "proposed_metric": "key_management_compensation",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "board_remuneration_sar_millions",
+          "post_employment",
+          "short_term",
+          "total"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR thousands",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:9",
+      "company_id": "sa:4030",
+      "proposed_metric": "unutilized_credit_facilities",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "prior_year",
+          "value"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR millions",
+        "is_ratio": false,
+        "period": null,
+        "as_of": "2025-12-31",
+        "period_kind": "instant",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "4030:10",
+      "company_id": "sa:4030",
+      "proposed_metric": "gearing_ratio",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "prior_year",
+          "value"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "fraction",
+        "is_ratio": true,
+        "period": null,
+        "as_of": "2025-12-31",
+        "period_kind": "instant",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "7203:1",
+      "company_id": "sa:7203",
+      "proposed_metric": "revenue_by_segment",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "business_process_outsourcing",
+          "digital_business",
+          "professional_services"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "7203:2",
+      "company_id": "sa:7203",
+      "proposed_metric": "revenue_by_customer_type",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "government_agencies",
+          "private_parties"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "7203:3",
+      "company_id": "sa:7203",
+      "proposed_metric": "revenue_by_recognition_timing",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "at_a_point_in_time",
+          "over_a_period_of_time"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "FY2025",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "7203:4",
+      "company_id": "sa:7203",
+      "proposed_metric": "receivables_by_customer_type",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "breakdown",
+        "dimensions": [
+          "government",
+          "private"
+        ],
+        "dimension_rule": "each key becomes one dimension member; a member named total/consolidated is a control total, not a new value",
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "as of 2025-12-31",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    },
+    {
+      "candidate_id": "7203:5",
+      "company_id": "sa:7203",
+      "proposed_metric": "off_balance_sheet_agent_cash",
+      "codex_independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "codex_mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "proposal": {
+        "value_shape": "scalar",
+        "dimensions": [],
+        "dimension_rule": null,
+        "unit": "SAR",
+        "is_ratio": false,
+        "period": "as of 2025-12-31",
+        "as_of": null,
+        "period_kind": "fy",
+        "scope": "consolidated",
+        "known_at": null,
+        "review_note": null
+      },
+      "held_reason_kept": false
+    }
+  ]
+}

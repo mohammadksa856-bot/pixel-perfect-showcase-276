@@ -1,0 +1,4236 @@
+{
+  "version": 2,
+  "supersedes": "batch-04/review-support/display-map.json (kept unchanged)",
+  "changes_from_v1": [
+    {
+      "delivered_key": "registered_office_address",
+      "from": "headquarters",
+      "to": "registered_office"
+    },
+    {
+      "delivered_key": "company_objects_fs_note1",
+      "from": "principal_activities",
+      "to": "company_objects"
+    },
+    {
+      "delivered_key": "treasury_share_programme",
+      "from": "employee_share_plan",
+      "to": "treasury_shares_programme"
+    },
+    {
+      "delivered_key": "shareholder_alcoa",
+      "from": "shareholder_statement",
+      "to": "stake_at_transaction"
+    },
+    {
+      "delivered_key": "shareholder_mosaic",
+      "from": "shareholder_statement",
+      "to": "stake_at_transaction"
+    },
+    {
+      "delivered_key": "new_subsidiaries_established_2025",
+      "from": "subsidiaries",
+      "to": "subsidiary_change_event"
+    },
+    {
+      "delivered_key": "acquired_hospitals",
+      "from": "subsidiaries",
+      "to": "subsidiary_change_event"
+    }
+  ],
+  "canonical_keys": 74,
+  "delivered_keys": 169,
+  "invariants": {
+    "one_period_rule_per_canonical_key": true,
+    "groups_with_qualified_concepts": [
+      "business_segments"
+    ],
+    "qualified_concept_rule": "Members of these groups keep a legal_concept qualifier that the UI must show (e.g. IFRS 8 operating segments vs management business units)."
+  },
+  "scope_rule": "If scope_sensitive, the UI must state the document scope (consolidated/standalone) from document-scope-unit-period.json; Yamama (3020) is standalone and must not be shown as group data.",
+  "keys": [
+    {
+      "delivered_key": "acquired_hospitals",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiary_change_event",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": true,
+      "label_ar": "تغيّر في الشركات التابعة (حدث مؤرخ)",
+      "label_en": "Subsidiary change (dated event)",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "subsidiary_change_event",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "acquisition_compass_project_investments_spv",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "acquisition_thiqah_2025",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "aluminum_business",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_unit_detail",
+      "canonical_key_v1": "business_unit_detail",
+      "changed_from_v1": false,
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "business_unit_detail",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "aluminum_products",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "products_brands",
+      "canonical_key_v1": "products_brands",
+      "changed_from_v1": false,
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "products_brands",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "associate_imi",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "associates_and_joint_ventures",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "associates_joint_ventures",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "audit_committee",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_committees",
+      "canonical_key_v1": "board_committees",
+      "changed_from_v1": false,
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_committees",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "audit_opinion",
+      "delivered_in": [
+        "batch-02:4190",
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "audit_opinion",
+      "canonical_key_v1": "audit_opinion",
+      "changed_from_v1": false,
+      "label_ar": "رأي المراجع",
+      "label_en": "Audit opinion",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "legal_concept": "audit_opinion",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "auditor",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:3020",
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "auditor",
+      "canonical_key_v1": "auditor",
+      "changed_from_v1": false,
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "auditor",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "base_metals_new_minerals_business",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_unit_detail",
+      "canonical_key_v1": "business_unit_detail",
+      "changed_from_v1": false,
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "business_unit_detail",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_committees",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-02:2280",
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_committees",
+      "canonical_key_v1": "board_committees",
+      "changed_from_v1": false,
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_committees",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_composition",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_composition",
+      "canonical_key_v1": "board_composition",
+      "changed_from_v1": false,
+      "label_ar": "تكوين المجلس",
+      "label_en": "Board composition",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_composition",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_composition_note",
+      "delivered_in": [
+        "batch-01:2010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_composition",
+      "canonical_key_v1": "board_composition",
+      "changed_from_v1": false,
+      "label_ar": "تكوين المجلس",
+      "label_en": "Board composition",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_composition",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_meetings_2025",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_meetings",
+      "canonical_key_v1": "board_meetings",
+      "changed_from_v1": false,
+      "label_ar": "اجتماعات المجلس",
+      "label_en": "Board meetings",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "legal_concept": "board_meetings",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_members",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_members",
+      "canonical_key_v1": "board_members",
+      "changed_from_v1": false,
+      "label_ar": "أعضاء مجلس الإدارة وتصنيفهم",
+      "label_en": "Board members and classification",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_members",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_members_classification",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_members",
+      "canonical_key_v1": "board_members",
+      "changed_from_v1": false,
+      "label_ar": "أعضاء مجلس الإدارة وتصنيفهم",
+      "label_en": "Board members and classification",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_members",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "board_term",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-01:7010",
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_term",
+      "canonical_key_v1": "board_term",
+      "changed_from_v1": false,
+      "label_ar": "دورة المجلس",
+      "label_en": "Board term",
+      "investor_topic": "management_governance",
+      "period_rule": "policy_effective_range",
+      "legal_concept": "board_term",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "branch_jeddah",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "branches",
+      "canonical_key_v1": "branches",
+      "changed_from_v1": false,
+      "label_ar": "الفروع المسجلة",
+      "label_en": "Registered branches",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "branches",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "branches",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:4004",
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "branches",
+      "canonical_key_v1": "branches",
+      "changed_from_v1": false,
+      "label_ar": "الفروع المسجلة",
+      "label_en": "Registered branches",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "branches",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "brands",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "products_brands",
+      "canonical_key_v1": "products_brands",
+      "changed_from_v1": false,
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "products_brands",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "business_activity",
+      "delivered_in": [
+        "batch-01:1120"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_activities",
+      "canonical_key_v1": "principal_activities",
+      "changed_from_v1": false,
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "activities_as_described",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "business_segments",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-01:7010",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_segments",
+      "canonical_key_v1": "business_segments",
+      "changed_from_v1": false,
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "ifrs8_operating_segments",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "business_units",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_segments",
+      "canonical_key_v1": "business_segments",
+      "changed_from_v1": false,
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "management_business_units",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "capital_management",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "capital_management",
+      "canonical_key_v1": "capital_management",
+      "changed_from_v1": false,
+      "label_ar": "إدارة رأس المال",
+      "label_en": "Capital management",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "capital_management",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "care_shield_subsidiaries",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "ceo",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "ceo",
+      "canonical_key_v1": "ceo",
+      "changed_from_v1": false,
+      "label_ar": "الرئيس التنفيذي",
+      "label_en": "Chief executive officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "ceo",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "cfo",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "cfo",
+      "canonical_key_v1": "cfo",
+      "changed_from_v1": false,
+      "label_ar": "المدير المالي",
+      "label_en": "Chief financial officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "cfo",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "chairman",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "chairman",
+      "canonical_key_v1": "chairman",
+      "changed_from_v1": false,
+      "label_ar": "رئيس مجلس الإدارة",
+      "label_en": "Chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "chairman",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "chief_executive_officer",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "ceo",
+      "canonical_key_v1": "ceo",
+      "changed_from_v1": false,
+      "label_ar": "الرئيس التنفيذي",
+      "label_en": "Chief executive officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "ceo",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "chief_financial_officer",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "cfo",
+      "canonical_key_v1": "cfo",
+      "changed_from_v1": false,
+      "label_ar": "المدير المالي",
+      "label_en": "Chief financial officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "cfo",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "chief_operating_decision_maker",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "chief_operating_decision_maker",
+      "canonical_key_v1": "chief_operating_decision_maker",
+      "changed_from_v1": false,
+      "label_ar": "صانع القرار التشغيلي",
+      "label_en": "Chief operating decision maker",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "legal_concept": "chief_operating_decision_maker",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "climate_change_assessment",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "climate",
+      "canonical_key_v1": "climate",
+      "changed_from_v1": false,
+      "label_ar": "المناخ",
+      "label_en": "Climate",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "legal_concept": "climate",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "commercial_registration",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "commercial_registration",
+      "canonical_key_v1": "commercial_registration",
+      "changed_from_v1": false,
+      "label_ar": "السجل التجاري",
+      "label_en": "Commercial registration",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "commercial_registration",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "commercial_registration_number",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "commercial_registration",
+      "canonical_key_v1": "commercial_registration",
+      "changed_from_v1": false,
+      "label_ar": "السجل التجاري",
+      "label_en": "Commercial registration",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "commercial_registration",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "commitments",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "commitments_contingencies",
+      "canonical_key_v1": "commitments_contingencies",
+      "changed_from_v1": false,
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "commitments_contingencies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "commitments_and_contingencies",
+      "delivered_in": [
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "commitments_contingencies",
+      "canonical_key_v1": "commitments_contingencies",
+      "changed_from_v1": false,
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "commitments_contingencies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "company_objects_fs_note1",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "company_objects",
+      "canonical_key_v1": "principal_activities",
+      "changed_from_v1": true,
+      "label_ar": "أغراض الشركة النظامية",
+      "label_en": "Company objects (by-laws)",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "company_objects",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "competitive_environment",
+      "delivered_in": [
+        "batch-01:2010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "competitive_environment",
+      "canonical_key_v1": "competitive_environment",
+      "changed_from_v1": false,
+      "label_ar": "البيئة التنافسية",
+      "label_en": "Competitive environment",
+      "investor_topic": "competitors",
+      "period_rule": "as_of_filing",
+      "legal_concept": "competitive_environment",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "concession_terms",
+      "delivered_in": [
+        "batch-01:2222"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "concession",
+      "canonical_key_v1": "concession",
+      "changed_from_v1": false,
+      "label_ar": "شروط الامتياز",
+      "label_en": "Concession terms",
+      "investor_topic": "sector_industry",
+      "period_rule": "policy_effective_range",
+      "legal_concept": "concession",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "contingencies_and_commitments",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "commitments_contingencies",
+      "canonical_key_v1": "commitments_contingencies",
+      "changed_from_v1": false,
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "commitments_contingencies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "contingencies_commitments",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "commitments_contingencies",
+      "canonical_key_v1": "commitments_contingencies",
+      "changed_from_v1": false,
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "commitments_contingencies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "contract_model",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_model_note",
+      "canonical_key_v1": "business_model_note",
+      "changed_from_v1": false,
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "business_model_note",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "conversion_to_joint_stock_date",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "conversion_to_joint_stock_date",
+      "canonical_key_v1": "conversion_to_joint_stock_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ التحول إلى مساهمة",
+      "label_en": "Conversion to joint stock company",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "conversion_to_joint_stock_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "currency",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "currency",
+      "canonical_key_v1": "currency",
+      "changed_from_v1": false,
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "presentation_currency",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "customer_concentration",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "customer_concentration",
+      "canonical_key_v1": "customer_concentration",
+      "changed_from_v1": false,
+      "label_ar": "تركّز العملاء",
+      "label_en": "Customer concentration",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "customer_concentration",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "customer_markets",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "markets_geographies",
+      "canonical_key_v1": "markets_geographies",
+      "changed_from_v1": false,
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "markets_geographies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "deputy_chairman",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "vice_chairman",
+      "canonical_key_v1": "vice_chairman",
+      "changed_from_v1": false,
+      "label_ar": "نائب رئيس مجلس الإدارة",
+      "label_en": "Vice/Deputy chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "vice_chairman",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "disposal_qatar_subsidiary",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "distribution_model",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_model_note",
+      "canonical_key_v1": "business_model_note",
+      "changed_from_v1": false,
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "business_model_note",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "dividend_policy",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-01:2222",
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "dividend_policy",
+      "canonical_key_v1": "dividend_policy",
+      "changed_from_v1": false,
+      "label_ar": "سياسة التوزيع",
+      "label_en": "Dividend policy",
+      "investor_topic": "dividends",
+      "period_rule": "policy_effective_range",
+      "legal_concept": "dividend_policy",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "dividend_recognition_policy",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "dividend_recognition_policy",
+      "canonical_key_v1": "dividend_recognition_policy",
+      "changed_from_v1": false,
+      "label_ar": "سياسة الاعتراف بالتوزيعات",
+      "label_en": "Dividend recognition (accounting)",
+      "investor_topic": "dividends",
+      "period_rule": "fiscal_year",
+      "legal_concept": "dividend_recognition_policy",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "employee_stock_incentive_program",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "employee_share_plan",
+      "canonical_key_v1": "employee_share_plan",
+      "changed_from_v1": false,
+      "label_ar": "برنامج أسهم الموظفين",
+      "label_en": "Employee share plan",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "employee_share_plan",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "employees",
+      "delivered_in": [
+        "batch-01:1120"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "employees",
+      "canonical_key_v1": "employees",
+      "changed_from_v1": false,
+      "label_ar": "عدد الموظفين",
+      "label_en": "Employees",
+      "investor_topic": "operating_kpis",
+      "period_rule": "fiscal_year",
+      "legal_concept": "employees",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "enterprise_risk_families",
+      "delivered_in": [
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_risks",
+      "canonical_key_v1": "principal_risks",
+      "changed_from_v1": false,
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "principal_risks",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "equity_accounted_investees",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "establishment",
+      "delivered_in": [
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "founding_date",
+      "canonical_key_v1": "founding_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ التأسيس",
+      "label_en": "Founding date",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "founding_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "executive_committee",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_committees",
+      "canonical_key_v1": "board_committees",
+      "changed_from_v1": false,
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_committees",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "executive_management",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "executive_management",
+      "canonical_key_v1": "executive_management",
+      "changed_from_v1": false,
+      "label_ar": "الإدارة التنفيذية",
+      "label_en": "Executive management",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "executive_management",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "external_auditor",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "auditor",
+      "canonical_key_v1": "auditor",
+      "changed_from_v1": false,
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "auditor",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "fertilizer_distribution_meridian",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_model_note",
+      "canonical_key_v1": "business_model_note",
+      "changed_from_v1": false,
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "business_model_note",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "financial_risk_categories",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "financial_risk_categories",
+      "canonical_key_v1": "financial_risk_categories",
+      "changed_from_v1": false,
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "financial_risk_categories",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "financial_risk_management",
+      "delivered_in": [
+        "batch-02:4190",
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "financial_risk_categories",
+      "canonical_key_v1": "financial_risk_categories",
+      "changed_from_v1": false,
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "financial_risk_categories",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "financial_year_end",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "fiscal_year_end",
+      "canonical_key_v1": "fiscal_year_end",
+      "changed_from_v1": false,
+      "label_ar": "نهاية السنة المالية",
+      "label_en": "Fiscal year end",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "fiscal_year_end",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "fiscal_year",
+      "delivered_in": [
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "fiscal_year_end",
+      "canonical_key_v1": "fiscal_year_end",
+      "changed_from_v1": false,
+      "label_ar": "نهاية السنة المالية",
+      "label_en": "Fiscal year end",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "fiscal_year_end",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "fiscal_year_end",
+      "delivered_in": [
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "fiscal_year_end",
+      "canonical_key_v1": "fiscal_year_end",
+      "changed_from_v1": false,
+      "label_ar": "نهاية السنة المالية",
+      "label_en": "Fiscal year end",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "fiscal_year_end",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "former_name",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "former_name",
+      "canonical_key_v1": "former_name",
+      "changed_from_v1": false,
+      "label_ar": "الاسم السابق",
+      "label_en": "Former name",
+      "investor_topic": "identity",
+      "period_rule": "event_dated",
+      "legal_concept": "former_name",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "founder",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "founder",
+      "canonical_key_v1": "founder",
+      "changed_from_v1": false,
+      "label_ar": "المؤسس",
+      "label_en": "Founder",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "founder",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "founding_date",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "founding_date",
+      "canonical_key_v1": "founding_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ التأسيس",
+      "label_en": "Founding date",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "founding_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "fs_approval_date",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4004",
+        "batch-02:4300",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "fs_approval_date",
+      "canonical_key_v1": "fs_approval_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ اعتماد القوائم",
+      "label_en": "Financial statements approval date",
+      "investor_topic": "news_ir",
+      "period_rule": "fiscal_year",
+      "legal_concept": "fs_approval_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "fs_board_approval_date",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "fs_approval_date",
+      "canonical_key_v1": "fs_approval_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ اعتماد القوائم",
+      "label_en": "Financial statements approval date",
+      "investor_topic": "news_ir",
+      "period_rule": "fiscal_year",
+      "legal_concept": "fs_approval_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "fs_financial_risk_categories",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "financial_risk_categories",
+      "canonical_key_v1": "financial_risk_categories",
+      "changed_from_v1": false,
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "financial_risk_categories",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "functional_presentation_currency",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "currency",
+      "canonical_key_v1": "currency",
+      "changed_from_v1": false,
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "presentation_currency",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "geographic_presence",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "markets_geographies",
+      "canonical_key_v1": "markets_geographies",
+      "changed_from_v1": false,
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "markets_geographies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "geographic_segments",
+      "delivered_in": [
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "markets_geographies",
+      "canonical_key_v1": "markets_geographies",
+      "changed_from_v1": false,
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "markets_geographies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "going_concern",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "going_concern",
+      "canonical_key_v1": "going_concern",
+      "changed_from_v1": false,
+      "label_ar": "أساس الاستمرارية",
+      "label_en": "Going-concern basis",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "legal_concept": "going_concern",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "going_concern_basis",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "going_concern",
+      "canonical_key_v1": "going_concern",
+      "changed_from_v1": false,
+      "label_ar": "أساس الاستمرارية",
+      "label_en": "Going-concern basis",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "legal_concept": "going_concern",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "headquarters",
+      "delivered_in": [
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "headquarters",
+      "canonical_key_v1": "headquarters",
+      "changed_from_v1": false,
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "head_office",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "headquarters_address",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-03:1211",
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "headquarters",
+      "canonical_key_v1": "headquarters",
+      "changed_from_v1": false,
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "head_office",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "headquarters_city",
+      "delivered_in": [
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "headquarters",
+      "canonical_key_v1": "headquarters",
+      "changed_from_v1": false,
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "head_office",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "history_predecessor",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "history",
+      "canonical_key_v1": "history",
+      "changed_from_v1": false,
+      "label_ar": "نبذة تاريخية",
+      "label_en": "History",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "history",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "incorporation_date",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4004",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "incorporation_date",
+      "canonical_key_v1": "incorporation_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ القيد/التأسيس النظامي",
+      "label_en": "Incorporation date",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "incorporation_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "industrial_license",
+      "delivered_in": [
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "industrial_license",
+      "canonical_key_v1": "industrial_license",
+      "changed_from_v1": false,
+      "label_ar": "الترخيص الصناعي",
+      "label_en": "Industrial licence",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "industrial_license",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "industry_self_description",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "industry_self_description",
+      "canonical_key_v1": "industry_self_description",
+      "changed_from_v1": false,
+      "label_ar": "وصف الشركة لقطاعها",
+      "label_en": "Issuer's industry self-description",
+      "investor_topic": "sector_industry",
+      "period_rule": "as_of_filing",
+      "legal_concept": "industry_self_description",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "investment_in_associate_cement_product_industry",
+      "delivered_in": [
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "investment_in_associate_saudi_yamani_cement",
+      "delivered_in": [
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "joint_stock_formation",
+      "delivered_in": [
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "conversion_to_joint_stock_date",
+      "canonical_key_v1": "conversion_to_joint_stock_date",
+      "changed_from_v1": false,
+      "label_ar": "تاريخ التحول إلى مساهمة",
+      "label_en": "Conversion to joint stock company",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "conversion_to_joint_stock_date",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "joint_venture_ngc",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "joint_venture_petredec",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "joint_ventures_and_associate",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "associates_joint_ventures",
+      "canonical_key_v1": "associates_joint_ventures",
+      "changed_from_v1": false,
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "associates_joint_ventures",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "key_audit_matter",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "key_audit_matters",
+      "canonical_key_v1": "key_audit_matters",
+      "changed_from_v1": false,
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "legal_concept": "key_audit_matters",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "key_audit_matters",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:3020"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "key_audit_matters",
+      "canonical_key_v1": "key_audit_matters",
+      "changed_from_v1": false,
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "legal_concept": "key_audit_matters",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "key_direct_subsidiaries",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "legal_form",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "legal_form",
+      "canonical_key_v1": "legal_form",
+      "changed_from_v1": false,
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "legal_form",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "legal_name",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "legal_name",
+      "canonical_key_v1": "legal_name",
+      "changed_from_v1": false,
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "legal_name",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "liquidity_risk_management",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "capital_management",
+      "canonical_key_v1": "capital_management",
+      "changed_from_v1": false,
+      "label_ar": "إدارة رأس المال",
+      "label_en": "Capital management",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "capital_management",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "listing_date",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "listing",
+      "canonical_key_v1": "listing",
+      "changed_from_v1": false,
+      "label_ar": "الإدراج",
+      "label_en": "Listing",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "listing",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "listing_info",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "listing",
+      "canonical_key_v1": "listing",
+      "changed_from_v1": false,
+      "label_ar": "الإدراج",
+      "label_en": "Listing",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "listing",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "listing_statement",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "listing",
+      "canonical_key_v1": "listing",
+      "changed_from_v1": false,
+      "label_ar": "الإدراج",
+      "label_en": "Listing",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "listing",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "loan_to_related_party",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "related_parties",
+      "canonical_key_v1": "related_parties",
+      "changed_from_v1": false,
+      "label_ar": "الأطراف ذات العلاقة",
+      "label_en": "Related parties",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "legal_concept": "related_parties",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "long_term_borrowing",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "financing",
+      "canonical_key_v1": "financing",
+      "changed_from_v1": false,
+      "label_ar": "التمويل والصكوك",
+      "label_en": "Financing and sukuk",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "debt_instrument",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "main_activities",
+      "delivered_in": [
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_activities",
+      "canonical_key_v1": "principal_activities",
+      "changed_from_v1": false,
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "activities_as_described",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "main_shareholder_pif",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shareholder_statement",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": false,
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shareholder_statement",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "main_subsidiaries",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "major_shareholder_pif",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shareholder_statement",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": false,
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shareholder_statement",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "market_share_by_revenue_ksa",
+      "delivered_in": [
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "market_share",
+      "canonical_key_v1": "market_share",
+      "changed_from_v1": false,
+      "label_ar": "الحصة السوقية (تصريح الشركة)",
+      "label_en": "Market share (issuer statement)",
+      "investor_topic": "competitors",
+      "period_rule": "fiscal_year",
+      "legal_concept": "market_share",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "markets_geographies",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "markets_geographies",
+      "canonical_key_v1": "markets_geographies",
+      "changed_from_v1": false,
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "markets_geographies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "murabaha_facilities",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "financing",
+      "canonical_key_v1": "financing",
+      "changed_from_v1": false,
+      "label_ar": "التمويل والصكوك",
+      "label_en": "Financing and sukuk",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "debt_instrument",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "national_number",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "national_number",
+      "canonical_key_v1": "national_number",
+      "changed_from_v1": false,
+      "label_ar": "الرقم الوطني الموحد",
+      "label_en": "Unified national number",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "legal_concept": "national_number",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "new_subsidiaries_established_2025",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiary_change_event",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": true,
+      "label_ar": "تغيّر في الشركات التابعة (حدث مؤرخ)",
+      "label_en": "Subsidiary change (dated event)",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "subsidiary_change_event",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "nomination_remuneration_committee",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_committees",
+      "canonical_key_v1": "board_committees",
+      "changed_from_v1": false,
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_committees",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "non_controlling_interests",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "non_controlling_interests",
+      "canonical_key_v1": "non_controlling_interests",
+      "changed_from_v1": false,
+      "label_ar": "الحصص غير المسيطرة",
+      "label_en": "Non-controlling interests",
+      "investor_topic": "ownership",
+      "period_rule": "fiscal_year",
+      "legal_concept": "non_controlling_interests",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "om_subsidiary_nomac",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "operating_footprint",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "markets_geographies",
+      "canonical_key_v1": "markets_geographies",
+      "changed_from_v1": false,
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "markets_geographies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "operating_segments",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_segments",
+      "canonical_key_v1": "business_segments",
+      "changed_from_v1": false,
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "ifrs8_operating_segments",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "phosphate_business",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_unit_detail",
+      "canonical_key_v1": "business_unit_detail",
+      "changed_from_v1": false,
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "business_unit_detail",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "presentation_currency",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "currency",
+      "canonical_key_v1": "currency",
+      "changed_from_v1": false,
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "presentation_currency",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "presentation_functional_currency",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "currency",
+      "canonical_key_v1": "currency",
+      "changed_from_v1": false,
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "presentation_currency",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "principal_activities",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4190",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_activities",
+      "canonical_key_v1": "principal_activities",
+      "changed_from_v1": false,
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "activities_as_described",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "principal_activities_fs_note1",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_activities",
+      "canonical_key_v1": "principal_activities",
+      "changed_from_v1": false,
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "activities_as_described",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "principal_activity",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_activities",
+      "canonical_key_v1": "principal_activities",
+      "changed_from_v1": false,
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "activities_as_described",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "principal_mine_sites",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_unit_detail",
+      "canonical_key_v1": "business_unit_detail",
+      "changed_from_v1": false,
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "business_unit_detail",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "principal_risks_2025",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_risks",
+      "canonical_key_v1": "principal_risks",
+      "changed_from_v1": false,
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "principal_risks",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "product_categories",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "products_brands",
+      "canonical_key_v1": "products_brands",
+      "changed_from_v1": false,
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "products_brands",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "projects_named",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "projects",
+      "canonical_key_v1": "projects",
+      "changed_from_v1": false,
+      "label_ar": "المشاريع",
+      "label_en": "Projects",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "projects",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "projects_under_construction",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "projects",
+      "canonical_key_v1": "projects",
+      "changed_from_v1": false,
+      "label_ar": "المشاريع",
+      "label_en": "Projects",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "projects",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "registered_office_address",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "registered_office",
+      "canonical_key_v1": "headquarters",
+      "changed_from_v1": true,
+      "label_ar": "المكتب المسجل",
+      "label_en": "Registered office",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "legal_concept": "registered_office",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "related_parties",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "related_parties",
+      "canonical_key_v1": "related_parties",
+      "changed_from_v1": false,
+      "label_ar": "الأطراف ذات العلاقة",
+      "label_en": "Related parties",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "legal_concept": "related_parties",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "related_party_policy",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "related_parties",
+      "canonical_key_v1": "related_parties",
+      "changed_from_v1": false,
+      "label_ar": "الأطراف ذات العلاقة",
+      "label_en": "Related parties",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "legal_concept": "related_parties",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "reporting_currency",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "currency",
+      "canonical_key_v1": "currency",
+      "changed_from_v1": false,
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "presentation_currency",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "reporting_segments",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "business_segments",
+      "canonical_key_v1": "business_segments",
+      "changed_from_v1": false,
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "ifrs8_operating_segments",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "reporting_standard",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "reporting_standard",
+      "canonical_key_v1": "reporting_standard",
+      "changed_from_v1": false,
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "legal_concept": "reporting_standard",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text",
+        "standalone"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "revenue_disaggregation_categories",
+      "delivered_in": [
+        "batch-02:4190"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "products_brands",
+      "canonical_key_v1": "products_brands",
+      "changed_from_v1": false,
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "products_brands",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "revenue_geographic_breakdown_basis",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "markets_geographies",
+      "canonical_key_v1": "markets_geographies",
+      "changed_from_v1": false,
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "legal_concept": "markets_geographies",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "risk_appetite",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "risk_appetite",
+      "canonical_key_v1": "risk_appetite",
+      "changed_from_v1": false,
+      "label_ar": "شهية المخاطر",
+      "label_en": "Risk appetite",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "risk_appetite",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "risk_factor_headings",
+      "delivered_in": [
+        "batch-01:2222"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_risks",
+      "canonical_key_v1": "principal_risks",
+      "changed_from_v1": false,
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "principal_risks",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "risk_factors",
+      "delivered_in": [
+        "batch-01:2010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_risks",
+      "canonical_key_v1": "principal_risks",
+      "changed_from_v1": false,
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "principal_risks",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "risk_governance",
+      "delivered_in": [
+        "batch-01:2222",
+        "batch-02:2082",
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "risk_governance",
+      "canonical_key_v1": "risk_governance",
+      "changed_from_v1": false,
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "investor_topic": "risks",
+      "period_rule": "as_of_filing",
+      "legal_concept": "risk_governance",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "risk_management",
+      "delivered_in": [
+        "batch-01:1120"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "risk_governance",
+      "canonical_key_v1": "risk_governance",
+      "changed_from_v1": false,
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "investor_topic": "risks",
+      "period_rule": "as_of_filing",
+      "legal_concept": "risk_governance",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "safety_sustainability_committee",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "board_committees",
+      "canonical_key_v1": "board_committees",
+      "changed_from_v1": false,
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "board_committees",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "sahel_al_madar_pending_acquisition",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "share_structure",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "share_structure",
+      "canonical_key_v1": "share_structure",
+      "changed_from_v1": false,
+      "label_ar": "هيكل الأسهم",
+      "label_en": "Share structure",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "share_structure",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shareholder_alcoa",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "stake_at_transaction",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": true,
+      "label_ar": "حصة مساهم عند صفقة سابقة (ليست ملكية حالية)",
+      "label_en": "Holder stake at a past transaction (not current ownership)",
+      "investor_topic": "ownership",
+      "period_rule": "event_dated",
+      "legal_concept": "stake_at_transaction",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shareholder_aramco",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shareholder_statement",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": false,
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shareholder_statement",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shareholder_base",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shareholder_base",
+      "canonical_key_v1": "shareholder_base",
+      "changed_from_v1": false,
+      "label_ar": "قاعدة المساهمين",
+      "label_en": "Shareholder base",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shareholder_base",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shareholder_mosaic",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "stake_at_transaction",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": true,
+      "label_ar": "حصة مساهم عند صفقة سابقة (ليست ملكية حالية)",
+      "label_en": "Holder stake at a past transaction (not current ownership)",
+      "investor_topic": "ownership",
+      "period_rule": "event_dated",
+      "legal_concept": "stake_at_transaction",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shareholder_pif",
+      "delivered_in": [
+        "batch-03:4030"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shareholder_statement",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": false,
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shareholder_statement",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shareholder_public_investment_fund",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shareholder_statement",
+      "canonical_key_v1": "shareholder_statement",
+      "changed_from_v1": false,
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shareholder_statement",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "shariah_compliance",
+      "delivered_in": [
+        "batch-01:1120"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "shariah_compliance",
+      "canonical_key_v1": "shariah_compliance",
+      "changed_from_v1": false,
+      "label_ar": "التوافق الشرعي",
+      "label_en": "Shariah compliance",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "shariah_compliance",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "significant_judgements",
+      "delivered_in": [
+        "batch-02:2082"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "significant_judgements",
+      "canonical_key_v1": "significant_judgements",
+      "changed_from_v1": false,
+      "label_ar": "التقديرات المحاسبية الجوهرية",
+      "label_en": "Significant judgements",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "legal_concept": "significant_judgements",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "snsjv_stake_increase_2025",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "strategic_and_principal_risks",
+      "delivered_in": [
+        "batch-03:1211"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "principal_risks",
+      "canonical_key_v1": "principal_risks",
+      "changed_from_v1": false,
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "principal_risks",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "strategy_enablers",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "strategy",
+      "canonical_key_v1": "strategy",
+      "changed_from_v1": false,
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "strategy",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "strategy_growth_pillars",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "strategy",
+      "canonical_key_v1": "strategy",
+      "changed_from_v1": false,
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "strategy",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "strategy_themes",
+      "delivered_in": [
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "strategy",
+      "canonical_key_v1": "strategy",
+      "changed_from_v1": false,
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "strategy",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "subsequent_event_white_land_tax",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "subsidiaries",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:4030",
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated",
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "subsidiaries_and_foreign_branches",
+      "delivered_in": [
+        "batch-01:1120"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "subsidiary_compass_project_investments_spv",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "subsidiary_highlight_stc_bank",
+      "delivered_in": [
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "subsidiaries",
+      "canonical_key_v1": "subsidiaries",
+      "changed_from_v1": false,
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "legal_concept": "subsidiaries",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "sukuk_outstanding",
+      "delivered_in": [
+        "batch-02:4300"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "financing",
+      "canonical_key_v1": "financing",
+      "changed_from_v1": false,
+      "label_ar": "التمويل والصكوك",
+      "label_en": "Financing and sukuk",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "legal_concept": "debt_instrument",
+      "scope_sensitive": true,
+      "document_scopes_seen": [
+        "not_established_by_text"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "sustainability_strategy",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "sustainability",
+      "canonical_key_v1": "sustainability",
+      "changed_from_v1": false,
+      "label_ar": "الاستدامة",
+      "label_en": "Sustainability",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "legal_concept": "sustainability",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "sustainability_target_progress_energy_fleet",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "sustainability",
+      "canonical_key_v1": "sustainability",
+      "changed_from_v1": false,
+      "label_ar": "الاستدامة",
+      "label_en": "Sustainability",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "legal_concept": "sustainability",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "sustainability_target_progress_water_packaging",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "sustainability",
+      "canonical_key_v1": "sustainability",
+      "changed_from_v1": false,
+      "label_ar": "الاستدامة",
+      "label_en": "Sustainability",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "legal_concept": "sustainability",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "thiqah_net_assets_revision",
+      "delivered_in": [
+        "batch-03:7203"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "corporate_event",
+      "canonical_key_v1": "corporate_event",
+      "changed_from_v1": false,
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "legal_concept": "corporate_event",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "treasury_share_programme",
+      "delivered_in": [
+        "batch-02:4004"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "treasury_shares_programme",
+      "canonical_key_v1": "employee_share_plan",
+      "changed_from_v1": true,
+      "label_ar": "أسهم الخزينة وغرضها",
+      "label_en": "Treasury shares and stated purpose",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "legal_concept": "treasury_shares_programme",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "vice_chairman",
+      "delivered_in": [
+        "batch-02:2280"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "vice_chairman",
+      "canonical_key_v1": "vice_chairman",
+      "changed_from_v1": false,
+      "label_ar": "نائب رئيس مجلس الإدارة",
+      "label_en": "Vice/Deputy chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "vice_chairman",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    },
+    {
+      "delivered_key": "vice_chairman_name",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-01:7010"
+      ],
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "canonical_key": "vice_chairman",
+      "canonical_key_v1": "vice_chairman",
+      "changed_from_v1": false,
+      "label_ar": "نائب رئيس مجلس الإدارة",
+      "label_en": "Vice/Deputy chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "legal_concept": "vice_chairman",
+      "scope_sensitive": false,
+      "document_scopes_seen": [
+        "consolidated"
+      ],
+      "entity_types": [
+        "company"
+      ],
+      "entity_note": "Not valid for REITs or other funds: see entity-display-specs.json for the fund equivalents."
+    }
+  ]
+}

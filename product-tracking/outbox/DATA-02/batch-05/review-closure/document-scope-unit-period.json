@@ -1,0 +1,375 @@
+{
+  "purpose": "Official scope/unit/period evidence per filing (Codex DATA03 request: 'official scope/unit/date evidence').",
+  "rule": "Every quote matches MuPDF native text and pdftotext on its page. 'standalone' is only asserted from explicit text; Yamama is standalone per Codex's own review.",
+  "documents": [
+    {
+      "company_id": "sa:1120",
+      "source_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+      "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+      "pdf_pages": 109,
+      "used_in": [
+        "batch-01"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 1,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 72,
+          "quote": "for the year ended December 31, 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 20,
+          "quote": "presented in Saudi Arabian Riyals"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:1211",
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "pdf_pages": 216,
+      "used_in": [
+        "batch-03"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 124,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 120,
+          "quote": "for the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 132,
+          "quote": "in Saudi Riyals"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "indirect_mention_not_a_presentation_statement"
+    },
+    {
+      "company_id": "sa:2010",
+      "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+      "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+      "pdf_pages": 262,
+      "used_in": [
+        "batch-01"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 125,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 118,
+          "quote": "for the year ended December 31, 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 139,
+          "quote": "presented in Saudi Riyals (“SAR” and/or “x”), which is the functional currency of the Parent, and all amo"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:2082",
+      "source_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+      "source_url": "https://www.acwapower.com/media/5ulnuxhn/api_consolidated_fs_year-end_2025-_3-03_compressed.pdf",
+      "pdf_pages": 82,
+      "used_in": [
+        "batch-02"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 14,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 9,
+          "quote": "For the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 17,
+          "quote": "presented in Saudi Riyals (“⃁”) which is the functional and presentation currency of the Company"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:2222",
+      "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "pdf_pages": 246,
+      "used_in": [
+        "batch-01"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 167,
+          "quote": "consolidated financial statements of"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 35,
+          "quote": "For the year ended December 31, 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 190,
+          "quote": "presented in Saudi Riyals"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:2280",
+      "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+      "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+      "pdf_pages": 275,
+      "used_in": [
+        "batch-02"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 151,
+          "quote": "consolidated financial statements of"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 13,
+          "quote": "for the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 248,
+          "quote": "SAR million"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "indirect_mention_not_a_presentation_statement"
+    },
+    {
+      "company_id": "sa:3020",
+      "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+      "pdf_pages": 36,
+      "used_in": [
+        "batch-03"
+      ],
+      "findings": {
+        "scope_consolidated": null,
+        "scope_standalone": {
+          "pdf_page": 1,
+          "quote": "FINANCIAL STATEMENTS AND INDEPENDENT AUDITOR"
+        },
+        "period": {
+          "pdf_page": 5,
+          "quote": "for the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 11,
+          "quote": "in Saudi Riyals"
+        }
+      },
+      "scope": "standalone",
+      "notes": null,
+      "currency_unit_strength": "indirect_mention_not_a_presentation_statement"
+    },
+    {
+      "company_id": "sa:4004",
+      "source_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/435_0_2026-03-12_15-01-34_En.pdf",
+      "pdf_pages": 59,
+      "used_in": [
+        "batch-02"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 1,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 39,
+          "quote": "For the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 14,
+          "quote": "presented in Saudi Arabian Riyals (SR) which is also the Group’s functional currency"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:4030",
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "pdf_pages": 51,
+      "used_in": [
+        "batch-03"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 51,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 1,
+          "quote": "For the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 15,
+          "quote": "presented in Saudi Riyal (“SAR”), which is the Group’s functional and presentation currency"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:4190",
+      "source_sha256": "7c1e35764a96d4d66cc748468d4608d9e4d2b13ff159e990596948c6e9ce2f36",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/454_0_2026-03-31_11-52-35_En.pdf",
+      "pdf_pages": 58,
+      "used_in": [
+        "batch-02"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 1,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 1,
+          "quote": "For the year ended December 31, 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 14,
+          "quote": "presented in Saudi Riyals with all values rounded to the nearest thousand except where stated otherwise"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:4300",
+      "source_sha256": "545ed36b5ec79d12297a8e7a80a9e03bde8f23ffed1ef5856e480e2face238d5",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/465_0_2026-03-11_12-11-51_En.pdf",
+      "pdf_pages": 49,
+      "used_in": [
+        "batch-02"
+      ],
+      "findings": {
+        "scope_consolidated": null,
+        "scope_standalone": null,
+        "period": null,
+        "currency_unit": null
+      },
+      "scope": "not_established_by_text",
+      "notes": "Scanned filing (no native text). Batch-02 holds OCR evidence on PDF p14 ('presented in Saudi Riyals (SR)'); OCR alone is not native proof — visual confirmation required.",
+      "currency_unit_strength": "not_found_in_native_text"
+    },
+    {
+      "company_id": "sa:7010",
+      "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "pdf_pages": 154,
+      "used_in": [
+        "batch-01"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 151,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 83,
+          "quote": "for the year ended December 31, 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 109,
+          "quote": "presented in Saudi Riyals (SR or %), which is the functional currency of the Company, and all values are"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:7010",
+      "source_sha256": "aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc_Annual-2025-en.pdf",
+      "pdf_pages": 106,
+      "used_in": [
+        "batch-01"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 1,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 4,
+          "quote": "for the year ended 31 December 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 14,
+          "quote": "presented in Saudi Riyals (SR or ), which is the functional currency of the Company, and all values are r"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    },
+    {
+      "company_id": "sa:7203",
+      "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "pdf_pages": 61,
+      "used_in": [
+        "batch-03"
+      ],
+      "findings": {
+        "scope_consolidated": {
+          "pdf_page": 1,
+          "quote": "CONSOLIDATED FINANCIAL STATEMENTS"
+        },
+        "scope_standalone": null,
+        "period": {
+          "pdf_page": 34,
+          "quote": "for the year ended December 31, 2025"
+        },
+        "currency_unit": {
+          "pdf_page": 16,
+          "quote": "presented in Saudi Riyals"
+        }
+      },
+      "scope": "consolidated",
+      "notes": null,
+      "currency_unit_strength": "explicit_presentation_statement"
+    }
+  ]
+}

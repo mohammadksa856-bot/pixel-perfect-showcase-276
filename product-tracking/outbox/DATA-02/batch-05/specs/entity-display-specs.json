@@ -1,0 +1,365 @@
+{
+  "status": "proposal_for_review",
+  "no_contract_change": true,
+  "states": {
+    "available": "value delivered with page evidence",
+    "unavailable": "not found in archived sources; reason required",
+    "not_required_by_cited_rule": "only when a cited rule (document + article) exempts this entity/period; never inferred",
+    "withheld": "value exists but is held by a quality gate (e.g. lineage, display acceptance)",
+    "comparison_excluded": "value may be shown for the entity but excluded from peer comparison (e.g. bank FCF)"
+  },
+  "global_rules": [
+    "Never convert a missing field to not_applicable without a cited rule (document, article, version).",
+    "Entity type is taken from an official document (fund terms and conditions / commercial registration / Saudi Exchange profile), not from the name.",
+    "Company keys are not reused for funds; fund keys are not reused for companies.",
+    "Every value states its period and scope; source presence is not independent verification."
+  ],
+  "profiles": {
+    "reit": {
+      "entity_type": "reit",
+      "applies_to": "Listed real-estate investment traded funds (e.g. candidate 4340 Al Rajhi REIT — entity type still unverified)",
+      "unit_of_ownership": "units (not shares); per-unit figures use 'per unit' labels",
+      "sections": [
+        {
+          "section": "fund_identity",
+          "topic": "identity",
+          "fields": [
+            {
+              "field": "fund_name",
+              "source_document": "Fund terms and conditions"
+            },
+            {
+              "field": "fund_type_and_term",
+              "source_document": "Fund terms and conditions"
+            },
+            {
+              "field": "listing_date",
+              "source_document": "Saudi Exchange listing announcement"
+            },
+            {
+              "field": "units_outstanding",
+              "source_document": "Annual report / Saudi Exchange"
+            },
+            {
+              "field": "fund_manager",
+              "source_document": "Fund terms and conditions"
+            },
+            {
+              "field": "custodian",
+              "source_document": "Fund terms and conditions"
+            },
+            {
+              "field": "auditor",
+              "source_document": "Audited fund financial statements"
+            }
+          ]
+        },
+        {
+          "section": "fund_governance",
+          "topic": "management_governance",
+          "fields": [
+            {
+              "field": "fund_board_members_and_independence",
+              "source_document": "Annual report / fund board report"
+            },
+            {
+              "field": "fund_manager_role_and_obligations",
+              "source_document": "Fund terms and conditions"
+            },
+            {
+              "field": "conflicts_of_interest_and_related_party_dealings",
+              "source_document": "Annual report / audited FS related-party note"
+            }
+          ],
+          "company_keys_not_reused": [
+            "chairman",
+            "ceo",
+            "cfo",
+            "board_members",
+            "board_committees"
+          ],
+          "rule": "Company governance keys must not be filled for a fund; fund board and manager fields replace them."
+        },
+        {
+          "section": "unitholders",
+          "topic": "ownership",
+          "fields": [
+            {
+              "field": "major_unitholders_pct_and_as_of",
+              "source_document": "Annual report / Saudi Exchange"
+            },
+            {
+              "field": "fund_manager_holding",
+              "source_document": "Annual report"
+            }
+          ]
+        },
+        {
+          "section": "nav",
+          "topic": "valuation",
+          "fields": [
+            {
+              "field": "nav_total",
+              "source_document": "Periodic NAV disclosure / annual report"
+            },
+            {
+              "field": "nav_per_unit",
+              "source_document": "Periodic NAV disclosure"
+            },
+            {
+              "field": "nav_valuation_date",
+              "source_document": "Periodic NAV disclosure"
+            },
+            {
+              "field": "nav_frequency",
+              "source_document": "Fund terms and conditions"
+            },
+            {
+              "field": "market_price_to_nav",
+              "source_document": "Calculated only from accepted NAV per unit + same-date market price; never mixed dates"
+            }
+          ]
+        },
+        {
+          "section": "property_portfolio",
+          "topic": "operating_kpis",
+          "fields": [
+            {
+              "field": "properties: name, city, type, ownership form",
+              "source_document": "Annual report / terms and conditions"
+            },
+            {
+              "field": "acquisition_cost_per_property",
+              "source_document": "Annual report / FS notes"
+            },
+            {
+              "field": "latest_valuation_per_property_and_valuers",
+              "source_document": "Valuation reports"
+            },
+            {
+              "field": "occupancy",
+              "source_document": "Annual report / quarterly statement"
+            },
+            {
+              "field": "lease_profile (tenants, expiries) if disclosed",
+              "source_document": "Annual report"
+            },
+            {
+              "field": "rental_income_by_property if disclosed",
+              "source_document": "FS notes / annual report"
+            }
+          ]
+        },
+        {
+          "section": "distributions",
+          "topic": "dividends",
+          "fields": [
+            {
+              "field": "distribution_per_unit, announcement/eligibility/payment dates",
+              "source_document": "Saudi Exchange announcements"
+            },
+            {
+              "field": "distribution_policy",
+              "source_document": "Fund terms and conditions"
+            }
+          ],
+          "rule_source_required": "Any statutory minimum distribution must be cited from the CMA instructions for real-estate investment traded funds (article and version) before it is displayed or used for a gap verdict."
+        },
+        {
+          "section": "fees_and_financing",
+          "topic": "risks",
+          "fields": [
+            {
+              "field": "management_custody_and_other_fees",
+              "source_document": "Fund terms and conditions / annual report"
+            },
+            {
+              "field": "borrowing_and_financing_terms",
+              "source_document": "FS notes / annual report"
+            },
+            {
+              "field": "leverage_ratio_as_disclosed",
+              "source_document": "Annual report"
+            }
+          ],
+          "rule_source_required": "Any regulatory leverage limit must be cited (CMA instructions) before display."
+        },
+        {
+          "section": "fund_financials",
+          "topic": "financial_statements",
+          "fields": [
+            {
+              "field": "fund financial statements (IFRS as endorsed in KSA)",
+              "source_document": "Audited fund FS"
+            },
+            {
+              "field": "funds_from_operations only if the fund discloses it",
+              "source_document": "Annual report"
+            }
+          ],
+          "rule": "Corporate ratios (e.g. EPS, capex/CFO, FCF) are not computed for funds unless an approved fund formula exists; until then: withheld, not 'not applicable'."
+        }
+      ],
+      "topic_map": {
+        "competitors": "peer REITs only as inferred peers, never 'competitors' unless the fund names them",
+        "guidance": "fund manager statements in the annual report only",
+        "analyst_coverage": "licensed feed required",
+        "sustainability": "only if the fund reports it"
+      }
+    },
+    "nomu_company": {
+      "entity_type": "nomu_company",
+      "applies_to": "Companies listed on the Saudi Exchange parallel market (Nomu) (e.g. candidate 9510 — unverified)",
+      "inherits": "ordinary company profile for the company's sector",
+      "rules": [
+        {
+          "rule": "listing_market_badge",
+          "text": "Show 'Parallel Market (Nomu)' on every page section that compares with main-market companies."
+        },
+        {
+          "rule": "reporting_frequency",
+          "rule_source_required": "Periodic reporting obligations (annual / interim frequency and deadlines) must be cited from the CMA Rules on the Offer of Securities and Continuing Obligations (article, version, effective date) applicable to Nomu issuers.",
+          "until_cited": "A missing quarter is 'unavailable' (reason: rule not yet cited), never 'not applicable' and never a quality defect."
+        },
+        {
+          "rule": "period_labels",
+          "text": "Every figure states its period type (annual / semi-annual / quarterly) from the filing itself; no annualisation of a half-year."
+        },
+        {
+          "rule": "comparability",
+          "text": "Peer comparison with main-market companies only for same-period, same-scope figures; otherwise comparison_excluded."
+        },
+        {
+          "rule": "investor_eligibility",
+          "rule_source_required": "Any statement about who may trade Nomu shares must be cited from current CMA rules; do not state from memory."
+        }
+      ]
+    },
+    "company": {
+      "entity_type": "company",
+      "scope_rule": "Every figure carries the document scope (consolidated / standalone); standalone statements (e.g. 3020 Yamama) never shown as group data.",
+      "sectors": {
+        "banks": {
+          "kpis_if_disclosed": [
+            "net financing/special commission income",
+            "cost-to-income",
+            "NPL ratio",
+            "coverage",
+            "loans-to-deposits",
+            "capital adequacy (Pillar III)",
+            "branches/ATMs/customers"
+          ],
+          "corporate_metrics_policy": "FCF and capex/CFO are comparison_excluded for banks (deposit/loan flows sit in operating cash flow); shown only with an explanatory note, never 'not applicable'.",
+          "sources": [
+            "Audited FS",
+            "Pillar III disclosures",
+            "Annual report"
+          ]
+        },
+        "insurance": {
+          "kpis_if_disclosed": [
+            "insurance revenue (IFRS 17)",
+            "insurance service result",
+            "reinsurance result",
+            "investment income",
+            "solvency margin"
+          ],
+          "corporate_metrics_policy": "Corporate margins based on 'revenue' must use the IFRS 17 line names; no mapping to legacy GWP without a cited note.",
+          "sources": [
+            "Audited FS",
+            "Annual report",
+            "Insurance Authority disclosures"
+          ]
+        },
+        "real_estate_development": {
+          "kpis_if_disclosed": [
+            "development properties (short/long term)",
+            "land bank area",
+            "units sold/handed over",
+            "projects and phases"
+          ],
+          "corporate_metrics_policy": "Operating cash outflow from development spend is shown with that context; no 'cash burn' label without a cited basis.",
+          "sources": [
+            "Audited FS",
+            "Annual report",
+            "Project announcements"
+          ]
+        },
+        "utilities_power_water": {
+          "kpis_if_disclosed": [
+            "gross/net capacity (MW, m3/day)",
+            "contracted offtake (PPA/WPA) share",
+            "projects by stage"
+          ],
+          "corporate_metrics_policy": "Equity-accounted project companies kept separate from consolidated figures.",
+          "sources": [
+            "Audited FS",
+            "Annual report",
+            "Project financial-close announcements"
+          ]
+        },
+        "mining_metals": {
+          "kpis_if_disclosed": [
+            "production by product",
+            "reserves/resources with reporting code and date",
+            "AISC (gold)",
+            "safety (TRIFR/fatalities)"
+          ],
+          "corporate_metrics_policy": "Reserves/resources only with the reporting code and effective date stated.",
+          "sources": [
+            "Integrated/annual report",
+            "Reserve statements"
+          ]
+        },
+        "telecom": {
+          "kpis_if_disclosed": [
+            "subscribers",
+            "ARPU",
+            "network coverage (5G)",
+            "market share as issuer statement"
+          ],
+          "corporate_metrics_policy": "Issuer market-share statements labelled as issuer statements.",
+          "sources": [
+            "Annual report",
+            "CST indicators"
+          ]
+        },
+        "retail": {
+          "kpis_if_disclosed": [
+            "stores/showrooms",
+            "like-for-like growth",
+            "e-commerce share"
+          ],
+          "corporate_metrics_policy": "Seasonality noted when quarters are compared.",
+          "sources": [
+            "Audited FS",
+            "Annual report"
+          ]
+        },
+        "healthcare": {
+          "kpis_if_disclosed": [
+            "hospitals and beds",
+            "occupancy",
+            "outpatient visits"
+          ],
+          "corporate_metrics_policy": "Beds/patients only as disclosed per period.",
+          "sources": [
+            "Annual report",
+            "Audited FS"
+          ]
+        },
+        "industrials_materials_default": {
+          "kpis_if_disclosed": [
+            "production capacity and volumes",
+            "utilisation"
+          ],
+          "corporate_metrics_policy": "Standard corporate metrics.",
+          "sources": [
+            "Audited FS",
+            "Annual report"
+          ]
+        }
+      }
+    }
+  }
+}

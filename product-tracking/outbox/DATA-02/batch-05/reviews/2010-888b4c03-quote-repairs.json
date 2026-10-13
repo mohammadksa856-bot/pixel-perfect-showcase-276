@@ -1,0 +1,76 @@
+{
+  "company_id": "sa:2010",
+  "market": "SA",
+  "symbol": "2010",
+  "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+  "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+  "purpose": "Replacement evidence for quotes failing Codex's MuPDF native check; originals unchanged in their batches. Status of the underlying records stays REVIEW.",
+  "codex_key_reviews": [
+    {
+      "codex_file": "MuPDF native diagnostic (Codex DATA02 @239d107 / DATA03 @5179346; data02_mupdf_check.py)",
+      "domain": "quote_repair",
+      "key": "batch-01:manifests/sabic-2025-integrated-annual-report-profile.json:company_attributes:0",
+      "codex_value": null,
+      "finding": "partially_supported",
+      "original_quote": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director Board Vice Chairman, Non-Executive Director",
+      "metadata": {
+        "evidence": [
+          {
+            "pdf_page": 91,
+            "quote": "KHALID AL-DABBAGH"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "DR. MOHAMMED AL-QAHTANI"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "Board Chairman, Non-Executive Director"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "Board Vice Chairman, Non-Executive Director"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-05 review closure)"
+        },
+        "pairing_caveat": true,
+        "label_or_unit_not_proven_by_fragments": false
+      }
+    },
+    {
+      "codex_file": "MuPDF native diagnostic (Codex DATA02 @239d107 / DATA03 @5179346; data02_mupdf_check.py)",
+      "domain": "quote_repair",
+      "key": "batch-01:reviews/2010-integrated-annual-report-codex-keys.json:codex_key_reviews:1",
+      "codex_value": null,
+      "finding": "partially_supported",
+      "original_quote": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director",
+      "metadata": {
+        "evidence": [
+          {
+            "pdf_page": 91,
+            "quote": "KHALID AL-DABBAGH"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "DR. MOHAMMED AL-QAHTANI"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "Board Chairman, Non-Executive Director"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-05 review closure)"
+        },
+        "pairing_caveat": true,
+        "label_or_unit_not_proven_by_fragments": false
+      }
+    }
+  ]
+}

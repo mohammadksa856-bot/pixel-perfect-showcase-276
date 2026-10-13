@@ -1,0 +1,253 @@
+{
+  "method": "MuPDF native page.get_text(); whitespace-normalised (and NFKC variant)",
+  "pymupdf": "1.28.2",
+  "batches": {
+    "batch-01": {
+      "non_matching": [
+        {
+          "file": "manifests/alrajhi-2025-financial-statements-profile.json",
+          "domain": "company_attributes",
+          "index": 13,
+          "label": "business_segments",
+          "pdf_page": 74,
+          "status": "fail",
+          "quote": "Retail segment: Corporate segment: Treasury segment: Investment services, brokerage and other segments:"
+        },
+        {
+          "file": "manifests/alrajhi-2025-financial-statements-profile.json",
+          "domain": "corporate_actions",
+          "index": 1,
+          "label": "sa:1120:dividend:2024:h2",
+          "pdf_page": 98,
+          "status": "fail",
+          "quote": "On 28 January 2025, the Bank’s Board of Directors recommended a distribution of cash dividends to the shareholders for the second half of 2024, amounting to $ 5,840 million ( $ 1.46 per share) after deduction of Zakat."
+        },
+        {
+          "file": "manifests/sabic-2025-integrated-annual-report-profile.json",
+          "domain": "company_attributes",
+          "index": 0,
+          "label": "vice_chairman_name",
+          "pdf_page": 91,
+          "status": "fail",
+          "quote": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director Board Vice Chairman, Non-Executive Director"
+        },
+        {
+          "file": "reviews/2010-integrated-annual-report-codex-keys.json",
+          "domain": "codex_key_reviews",
+          "index": 1,
+          "label": "chairman_name",
+          "pdf_page": 91,
+          "status": "fail",
+          "quote": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director"
+        },
+        {
+          "file": "reviews/7010-annual-report-codex-keys.json",
+          "domain": "codex_key_reviews",
+          "index": 10,
+          "label": "listing_date",
+          "pdf_page": 14,
+          "status": "fail",
+          "quote": "2003 Tadawul 7010"
+        }
+      ]
+    },
+    "batch-02": {
+      "non_matching": [
+        {
+          "file": "manifests/almarai-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 6,
+          "label": "auditor",
+          "pdf_page": 14,
+          "status": "fail",
+          "quote": "audited by the Group’s independent auditors, KPMG Professional Services (KPMG)."
+        },
+        {
+          "file": "manifests/almarai-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 24,
+          "label": "board_members",
+          "pdf_page": 118,
+          "status": "fail",
+          "quote": "Engr. Sulaiman Alrumaih\n\nBoard\nMember\n\nNonExecutive"
+        },
+        {
+          "file": "manifests/almarai-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 24,
+          "label": "board_members",
+          "pdf_page": 117,
+          "status": "fail",
+          "quote": "HE Engr. Abdulrahman\nAbdulmohsen Al Fadley\n\nBoard\nMember\n\nNonExecutive"
+        },
+        {
+          "file": "manifests/almarai-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 32,
+          "label": "risk_appetite",
+          "pdf_page": 148,
+          "status": "fail",
+          "quote": "Almarai maintains a higher appetite for investmentrelated risks"
+        },
+        {
+          "file": "numeric-candidates/2280-candidates.json",
+          "domain": "candidates",
+          "index": 11,
+          "label": "ghg_emissions_scope1_2",
+          "pdf_page": 92,
+          "status": "fail",
+          "quote": "2,677,941 tCO2e"
+        },
+        {
+          "file": "numeric-candidates/2280-candidates.json",
+          "domain": "candidates",
+          "index": 11,
+          "label": "ghg_emissions_scope1_2",
+          "pdf_page": 92,
+          "status": "fail",
+          "quote": "1,128,707 tCO2e"
+        },
+        {
+          "file": "numeric-candidates/2280-candidates.json",
+          "domain": "candidates",
+          "index": 11,
+          "label": "ghg_emissions_scope1_2",
+          "pdf_page": 92,
+          "status": "fail",
+          "quote": "1,549,234 tCO2e"
+        },
+        {
+          "file": "numeric-candidates/4190-candidates.json",
+          "domain": "candidates",
+          "index": 1,
+          "label": "revenue_by_category",
+          "pdf_page": 43,
+          "status": "fail",
+          "quote": "1,073 11,365"
+        },
+        {
+          "file": "numeric-candidates/4190-candidates.json",
+          "domain": "candidates",
+          "index": 3,
+          "label": "sales_by_geography",
+          "pdf_page": 47,
+          "status": "fail",
+          "quote": "10,291 1,695 1,074 198 11,365 1,893"
+        }
+      ]
+    },
+    "batch-03": {
+      "non_matching": [
+        {
+          "file": "manifests/bahri-2025-profile.json",
+          "domain": "disclosures",
+          "index": 24,
+          "label": "Ngc investment written down",
+          "pdf_page": 35,
+          "status": "fail",
+          "quote": "36,941 (36,941) -"
+        },
+        {
+          "file": "manifests/maaden-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 28,
+          "label": "board_members_classification",
+          "pdf_page": 94,
+          "status": "fail",
+          "quote": "H.E. Yasir O. Al-Rumayyan Non-Executive Nabilah Mohammed AlTunisi Independent"
+        },
+        {
+          "file": "manifests/maaden-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 28,
+          "label": "board_members_classification",
+          "pdf_page": 94,
+          "status": "fail",
+          "quote": "HE. Khalid Saleh AlMudaifer Non-Executive Richard O'Brien Independent"
+        },
+        {
+          "file": "manifests/maaden-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 28,
+          "label": "board_members_classification",
+          "pdf_page": 94,
+          "status": "fail",
+          "quote": "H.E. Ahmed Abdulaziz AlHakbani Independent Sofia Bianchi Non-Executive"
+        },
+        {
+          "file": "manifests/maaden-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 28,
+          "label": "board_members_classification",
+          "pdf_page": 94,
+          "status": "fail",
+          "quote": "Mohammed Yahya AlQahtani Non-Executive Abdullah Saleh Jum’ah Independent"
+        },
+        {
+          "file": "manifests/maaden-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 28,
+          "label": "board_members_classification",
+          "pdf_page": 94,
+          "status": "fail",
+          "quote": "Manar Moneef AlMoneef Non-Executive Robert Wilt Executive"
+        },
+        {
+          "file": "manifests/yamama-cement-2025-profile.json",
+          "domain": "company_attributes",
+          "index": 3,
+          "label": "commercial_registration",
+          "pdf_page": 11,
+          "status": "fail",
+          "quote": "registered in Riyadh city under Commercial Registration No. 1010001578 dated 184-1379H"
+        },
+        {
+          "file": "manifests/yamama-cement-2025-profile.json",
+          "domain": "disclosures",
+          "index": 13,
+          "label": "Restricted cash dividends",
+          "pdf_page": 30,
+          "status": "fail",
+          "quote": "the cash at banks including a restricted cash amounted to SAR 30 million for dividends payable"
+        },
+        {
+          "file": "numeric-candidates/1211-candidates.json",
+          "domain": "candidates",
+          "index": 18,
+          "label": "ghg_intensity_2025",
+          "pdf_page": 56,
+          "status": "fail",
+          "quote": "Overall Scope 1 and 2 GHG emissions intensity tCO 2 e/ton 1.023 1.010 0.974"
+        },
+        {
+          "file": "numeric-candidates/4030-candidates.json",
+          "domain": "candidates",
+          "index": 3,
+          "label": "revenue_disaggregation",
+          "pdf_page": 42,
+          "status": "fail",
+          "quote": "Spot Charter hire Freight forwarding Time charter (note 29) Water desalination Others 7,762,572 1,567,061 559,585 341,830 94,721 20,952 10,346,721"
+        },
+        {
+          "file": "numeric-candidates/4030-candidates.json",
+          "domain": "candidates",
+          "index": 6,
+          "label": "share_of_results_equity_investees",
+          "pdf_page": 34,
+          "status": "fail",
+          "quote": "Share of profit in Petredec group limited Share of loss in IMI Share of loss in NGC 9.1 9.2 9.3 2025 2024 607,014 (3,648) (36,941)"
+        }
+      ]
+    },
+    "batch-04": {
+      "non_matching": []
+    }
+  },
+  "totals": {
+    "evidence": 1244,
+    "mupdf_ws_match": 1097,
+    "nfkc_only": 0,
+    "fail": 25,
+    "ocr_no_native_text": 122
+  }
+}

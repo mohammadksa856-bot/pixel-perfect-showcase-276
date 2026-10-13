@@ -1,0 +1,28 @@
+{
+  "records": 380,
+  "never_proposes_accept": true,
+  "counts": {
+    "DATA02 review @239d107": {
+      "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 53,
+      "EVENT_AMOUNT_AND_OFFICIAL_DATES": 24,
+      "GOVERNANCE_AUTHORITY_AND_TENURE": 16,
+      "IDENTITY_OR_DATE_CONTEXT": 24,
+      "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 74,
+      "OWNERSHIP_CONTROL_AND_ASOF": 18,
+      "SOURCE_DIAGNOSTIC_MISMATCH": 6
+    },
+    "DATA03 review @5179346": {
+      "IDENTITY_OR_DATE_CONTEXT": 21,
+      "NUMERIC_SCOPE_UNIT_PERIOD_AND_PRECISION": 52,
+      "OWNERSHIP_CONTROL_AND_ASOF": 8,
+      "EVENT_AMOUNT_AND_OFFICIAL_DATES": 24,
+      "DESCRIPTIVE_CONTEXT_SCHEMA_OR_OCR_REVIEW": 36,
+      "GOVERNANCE_AUTHORITY_AND_TENURE": 22,
+      "SOURCE_DIAGNOSTIC_MISMATCH": 2
+    }
+  },
+  "inputs": {
+    "previous215_groups": "product-tracking/inbox/DATA03-current-engine-review-20261013-v1/previous215-groups.json @5179346",
+    "data03_review": "product-tracking/inbox/DATA03-current-engine-review-20261013-v1/review-and-merge.json @5179346"
+  }
+}

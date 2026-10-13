@@ -1,0 +1,716 @@
+{
+  "purpose": "Codex DATA03 request: map eligible (ACCEPTED) descriptive attributes without numeric fallback.",
+  "records": 71,
+  "accepted": [
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:0",
+      "company_id": "sa:1120",
+      "delivered_key": "legal_name",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:1",
+      "company_id": "sa:1120",
+      "delivered_key": "legal_form",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:6",
+      "company_id": "sa:1120",
+      "delivered_key": "auditor",
+      "review": "DATA02 @239d107",
+      "canonical_key": "auditor",
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:7",
+      "company_id": "sa:1120",
+      "delivered_key": "reporting_standard",
+      "review": "DATA02 @239d107",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:8",
+      "company_id": "sa:1120",
+      "delivered_key": "currency",
+      "review": "DATA02 @239d107",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-01:aramco-2025-annual-report-profile.json:sa:2222:company_attributes:0",
+      "company_id": "sa:2222",
+      "delivered_key": "risk_governance",
+      "review": "DATA02 @239d107",
+      "canonical_key": "risk_governance",
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:0",
+      "company_id": "sa:2082",
+      "delivered_key": "legal_name",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:1",
+      "company_id": "sa:2082",
+      "delivered_key": "legal_form",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:7",
+      "company_id": "sa:2082",
+      "delivered_key": "reporting_standard",
+      "review": "DATA02 @239d107",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:9",
+      "company_id": "sa:2082",
+      "delivered_key": "principal_activities",
+      "review": "DATA02 @239d107",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:11",
+      "company_id": "sa:2082",
+      "delivered_key": "business_segments",
+      "review": "DATA02 @239d107",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:13",
+      "company_id": "sa:2082",
+      "delivered_key": "geographic_presence",
+      "review": "DATA02 @239d107",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:23",
+      "company_id": "sa:2082",
+      "delivered_key": "risk_governance",
+      "review": "DATA02 @239d107",
+      "canonical_key": "risk_governance",
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:24",
+      "company_id": "sa:2082",
+      "delivered_key": "financial_risk_categories",
+      "review": "DATA02 @239d107",
+      "canonical_key": "financial_risk_categories",
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:28",
+      "company_id": "sa:2082",
+      "delivered_key": "going_concern",
+      "review": "DATA02 @239d107",
+      "canonical_key": "going_concern",
+      "label_ar": "أساس الاستمرارية",
+      "label_en": "Going-concern basis",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:0",
+      "company_id": "sa:2280",
+      "delivered_key": "legal_name",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:1",
+      "company_id": "sa:2280",
+      "delivered_key": "legal_form",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:7",
+      "company_id": "sa:2280",
+      "delivered_key": "reporting_standard",
+      "review": "DATA02 @239d107",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:13",
+      "company_id": "sa:2280",
+      "delivered_key": "product_categories",
+      "review": "DATA02 @239d107",
+      "canonical_key": "products_brands",
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:14",
+      "company_id": "sa:2280",
+      "delivered_key": "business_segments",
+      "review": "DATA02 @239d107",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:15",
+      "company_id": "sa:2280",
+      "delivered_key": "markets_geographies",
+      "review": "DATA02 @239d107",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:16",
+      "company_id": "sa:2280",
+      "delivered_key": "revenue_geographic_breakdown_basis",
+      "review": "DATA02 @239d107",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:18",
+      "company_id": "sa:2280",
+      "delivered_key": "distribution_model",
+      "review": "DATA02 @239d107",
+      "canonical_key": "business_model_note",
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:31",
+      "company_id": "sa:2280",
+      "delivered_key": "risk_governance",
+      "review": "DATA02 @239d107",
+      "canonical_key": "risk_governance",
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:33",
+      "company_id": "sa:2280",
+      "delivered_key": "financial_risk_categories",
+      "review": "DATA02 @239d107",
+      "canonical_key": "financial_risk_categories",
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:37",
+      "company_id": "sa:2280",
+      "delivered_key": "strategy_growth_pillars",
+      "review": "DATA02 @239d107",
+      "canonical_key": "strategy",
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:38",
+      "company_id": "sa:2280",
+      "delivered_key": "strategy_enablers",
+      "review": "DATA02 @239d107",
+      "canonical_key": "strategy",
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:0",
+      "company_id": "sa:4004",
+      "delivered_key": "legal_name",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:1",
+      "company_id": "sa:4004",
+      "delivered_key": "legal_form",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:7",
+      "company_id": "sa:4004",
+      "delivered_key": "headquarters_address",
+      "review": "DATA02 @239d107",
+      "canonical_key": "headquarters",
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:9",
+      "company_id": "sa:4004",
+      "delivered_key": "reporting_standard",
+      "review": "DATA02 @239d107",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:10",
+      "company_id": "sa:4004",
+      "delivered_key": "presentation_currency",
+      "review": "DATA02 @239d107",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:11",
+      "company_id": "sa:4004",
+      "delivered_key": "operating_segments",
+      "review": "DATA02 @239d107",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:24",
+      "company_id": "sa:4004",
+      "delivered_key": "key_audit_matters",
+      "review": "DATA02 @239d107",
+      "canonical_key": "key_audit_matters",
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:0",
+      "company_id": "sa:4190",
+      "delivered_key": "legal_name",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:1",
+      "company_id": "sa:4190",
+      "delivered_key": "legal_form",
+      "review": "DATA02 @239d107",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:5",
+      "company_id": "sa:4190",
+      "delivered_key": "auditor",
+      "review": "DATA02 @239d107",
+      "canonical_key": "auditor",
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:6",
+      "company_id": "sa:4190",
+      "delivered_key": "audit_opinion",
+      "review": "DATA02 @239d107",
+      "canonical_key": "audit_opinion",
+      "label_ar": "رأي المراجع",
+      "label_en": "Audit opinion",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:7",
+      "company_id": "sa:4190",
+      "delivered_key": "key_audit_matters",
+      "review": "DATA02 @239d107",
+      "canonical_key": "key_audit_matters",
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:8",
+      "company_id": "sa:4190",
+      "delivered_key": "reporting_standard",
+      "review": "DATA02 @239d107",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:9",
+      "company_id": "sa:4190",
+      "delivered_key": "presentation_currency",
+      "review": "DATA02 @239d107",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:11",
+      "company_id": "sa:4190",
+      "delivered_key": "principal_activities",
+      "review": "DATA02 @239d107",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-02:jarir-2025-profile.json:sa:4190:company_attributes:13",
+      "company_id": "sa:4190",
+      "delivered_key": "business_segments",
+      "review": "DATA02 @239d107",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:0",
+      "company_id": "sa:4030",
+      "delivered_key": "legal_name",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:1",
+      "company_id": "sa:4030",
+      "delivered_key": "legal_form",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:6",
+      "company_id": "sa:4030",
+      "delivered_key": "auditor",
+      "review": "DATA03 @5179346",
+      "canonical_key": "auditor",
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:7",
+      "company_id": "sa:4030",
+      "delivered_key": "audit_opinion",
+      "review": "DATA03 @5179346",
+      "canonical_key": "audit_opinion",
+      "label_ar": "رأي المراجع",
+      "label_en": "Audit opinion",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:8",
+      "company_id": "sa:4030",
+      "delivered_key": "key_audit_matter",
+      "review": "DATA03 @5179346",
+      "canonical_key": "key_audit_matters",
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:9",
+      "company_id": "sa:4030",
+      "delivered_key": "reporting_standard",
+      "review": "DATA03 @5179346",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:10",
+      "company_id": "sa:4030",
+      "delivered_key": "presentation_currency",
+      "review": "DATA03 @5179346",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:12",
+      "company_id": "sa:4030",
+      "delivered_key": "principal_activities",
+      "review": "DATA03 @5179346",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:bahri-2025-profile.json:company_attributes:13",
+      "company_id": "sa:4030",
+      "delivered_key": "operating_segments",
+      "review": "DATA03 @5179346",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:0",
+      "company_id": "sa:7203",
+      "delivered_key": "legal_name",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:1",
+      "company_id": "sa:7203",
+      "delivered_key": "former_name",
+      "review": "DATA03 @5179346",
+      "canonical_key": "former_name",
+      "label_ar": "الاسم السابق",
+      "label_en": "Former name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:2",
+      "company_id": "sa:7203",
+      "delivered_key": "legal_form",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:6",
+      "company_id": "sa:7203",
+      "delivered_key": "reporting_standard",
+      "review": "DATA03 @5179346",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:7",
+      "company_id": "sa:7203",
+      "delivered_key": "presentation_currency",
+      "review": "DATA03 @5179346",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:9",
+      "company_id": "sa:7203",
+      "delivered_key": "principal_activities",
+      "review": "DATA03 @5179346",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:elm-2025-profile.json:company_attributes:10",
+      "company_id": "sa:7203",
+      "delivered_key": "operating_segments",
+      "review": "DATA03 @5179346",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:maaden-2025-profile.json:company_attributes:0",
+      "company_id": "sa:1211",
+      "delivered_key": "legal_name",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:maaden-2025-profile.json:company_attributes:1",
+      "company_id": "sa:1211",
+      "delivered_key": "legal_form",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:maaden-2025-profile.json:company_attributes:6",
+      "company_id": "sa:1211",
+      "delivered_key": "reporting_standard",
+      "review": "DATA03 @5179346",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:maaden-2025-profile.json:company_attributes:7",
+      "company_id": "sa:1211",
+      "delivered_key": "reporting_currency",
+      "review": "DATA03 @5179346",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:0",
+      "company_id": "sa:3020",
+      "delivered_key": "legal_name",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:1",
+      "company_id": "sa:3020",
+      "delivered_key": "legal_form",
+      "review": "DATA03 @5179346",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:4",
+      "company_id": "sa:3020",
+      "delivered_key": "headquarters_city",
+      "review": "DATA03 @5179346",
+      "canonical_key": "headquarters",
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:7",
+      "company_id": "sa:3020",
+      "delivered_key": "key_audit_matters",
+      "review": "DATA03 @5179346",
+      "canonical_key": "key_audit_matters",
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:8",
+      "company_id": "sa:3020",
+      "delivered_key": "reporting_standard",
+      "review": "DATA03 @5179346",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:9",
+      "company_id": "sa:3020",
+      "delivered_key": "presentation_currency",
+      "review": "DATA03 @5179346",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:12",
+      "company_id": "sa:3020",
+      "delivered_key": "principal_activities",
+      "review": "DATA03 @5179346",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    },
+    {
+      "item_id": "batch-03:yamama-cement-2025-profile.json:company_attributes:15",
+      "company_id": "sa:3020",
+      "delivered_key": "financial_risk_management",
+      "review": "DATA03 @5179346",
+      "canonical_key": "financial_risk_categories",
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "eligible": "local descriptive preview only (Codex ACCEPT); no numeric fallback, no readiness score"
+    }
+  ]
+}

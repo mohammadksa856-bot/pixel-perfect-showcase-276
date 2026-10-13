@@ -1,0 +1,16 @@
+{
+  "revision": 3,
+  "files": {
+    "BATCH20_GAP_MATRIX.json": {
+      "sha256": "0823b6eb66d1c1ecd765deaa424ac4928e0fb62251952e57ae0c2eee4bc344e9",
+      "bytes": 276400
+    },
+    "NONFINANCIAL_FIELD_PERIOD_SOURCE.jsonl.gz": {
+      "sha256": "03b218562aa73d30eab148a51cdfacdac96885fa309ac85d1ea2c1dce7c4ea60",
+      "bytes": 624573
+    }
+  },
+  "numeric_matrix_reference": "../DATA01-market-batch-20261013-v1/FIELD_PERIOD_SOURCE_MATRIX.json.gz",
+  "note": "Numeric and domain snapshots have separate timestamps; all presence inventories, not accuracy/95%acceptance; v3 explicitly covers corporate action native fields",
+  "production_changes": 0
+}

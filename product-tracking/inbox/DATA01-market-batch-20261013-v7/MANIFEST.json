@@ -1,0 +1,34 @@
+{
+  "revision": 7,
+  "files": {
+    ".gitattributes": {
+      "sha256": "a1ac5560cb66c2b2e680519a563f940585e4734b2e0e8b69fb1c2a647909690b",
+      "bytes": 46
+    },
+    "BATCH20_GAP_MATRIX.json": {
+      "sha256": "0823b6eb66d1c1ecd765deaa424ac4928e0fb62251952e57ae0c2eee4bc344e9",
+      "bytes": 276400
+    },
+    "BATCH_RESULT_NOTICE.json": {
+      "sha256": "a187bf439ae8e99bde1ede4972dd75a93217e5c6ee3da0a8813d90c01dcc962e",
+      "bytes": 2869
+    },
+    "FIELD_PERIOD_SOURCE_MATRIX.json.gz": {
+      "sha256": "3dd95a540e2ab95d6456dcc8c612be8a75dd4948f888b80b7f83d7ffc37f880f",
+      "bytes": 672835
+    },
+    "MARKET420_SUMMARY.json": {
+      "sha256": "bac365db6af59cd089f90de74e733985c5e77fc6cc90d38fc64b6c6915540578",
+      "bytes": 133
+    },
+    "NONFINANCIAL_FIELD_PERIOD_SOURCE.jsonl.gz": {
+      "sha256": "03b218562aa73d30eab148a51cdfacdac96885fa309ac85d1ea2c1dce7c4ea60",
+      "bytes": 624573
+    }
+  },
+  "self_excluded_bound_by_commit": true,
+  "same20companies_and_same_numbers": true,
+  "previous_versions_preserved_but_deprecated_for_hash_validation": "v1-v4: JSON newline pins; v5 control pin; v6 exact Git blobs but Windows control checkout conversion possible. Not numeric source errors. Use v7 byte-preserving files including control.",
+  "financial_acceptance": false,
+  "production_changes": 0
+}

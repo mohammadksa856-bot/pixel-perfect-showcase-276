@@ -4,6 +4,7 @@ import { TopicOverview, TopicSection } from "@/components/engine-preview";
 import { getCompanyPreview } from "@/lib/engine/company-preview.functions";
 import { getPeerTable } from "@/lib/engine/peer-comparison.functions";
 import { useI18n } from "@/lib/i18n";
+import { iso } from "@/lib/bidi";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02). معطّلة افتراضيًا: دون
@@ -91,7 +92,10 @@ function PreviewPage() {
                 label: { ar: "جاهزية البيانات", en: "Data readiness" },
                 value:
                   p.readiness.score !== null
-                    ? `${p.readiness.score.toFixed(1)} / ${p.readiness.target ?? 95}`
+                    ? t({
+                        ar: `${iso(p.readiness.score.toFixed(1))} من ${iso(p.readiness.target ?? 95)}`,
+                        en: `${p.readiness.score.toFixed(1)} of ${p.readiness.target ?? 95}`,
+                      })
                     : t({ ar: "غير مقاسة", en: "Not measured" }),
               },
               { label: { ar: "قيم معروضة", en: "Values shown" }, value: String(p.counts.shown) },

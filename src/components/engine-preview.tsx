@@ -15,6 +15,7 @@ import type {
   WithheldReason,
 } from "@/lib/engine/company-preview";
 import type { PeerTable } from "@/lib/engine/peer-comparison";
+import { iso } from "@/lib/bidi";
 
 /**
  * مكونات معاينة صفحة الشركة من المحرك (P02). تعرض نموذج العرض كما بُني على الخادم:
@@ -121,7 +122,7 @@ function ProofBadge({ cell }: { cell: ValueCell }) {
       ? { ar: "محسوب", en: "Calculated" }
       : p.kind === "reported_extracted"
         ? p.page
-          ? { ar: `منشور · ص ${p.page}`, en: `Reported · p. ${p.page}` }
+          ? { ar: `منشور · ص ${iso(p.page)}`, en: `Reported · p. ${p.page}` }
           : { ar: "منشور · مستخرج", en: "Reported · extracted" }
         : { ar: "منشور · من بيان مراجَع", en: "Reported · reviewed manifest" };
   return (
@@ -145,40 +146,70 @@ function MetricTable({ group, kind }: { group: MetricGroup; kind: CompanyPreview
   return (
     <Panel title={t(group.title)}>
       {group.cells.length > 0 && (
-        <DataTable
-          headers={[
-            t({ ar: "البند", en: "Item" }),
-            t({ ar: "القيمة", en: "Value" }),
-            t({ ar: "الفترة", en: "Period" }),
-            t({ ar: "الإثبات", en: "Proof" }),
-          ]}
-        >
+        // الهاتف: بطاقات متراصة بدل جدول من أربعة أعمدة.
+        <ul className="divide-y divide-border/60 sm:hidden" data-mobile-list>
           {group.cells.map((c) => (
-            <tr
-              key={c.key}
-              className="border-b border-border/60 align-top"
-              data-metric={c.key}
-              data-period-kind={c.period.kind}
-            >
-              <td className="py-2.5 pe-3">{t(c.label)}</td>
-              <td className="py-2.5 pe-3 font-semibold tabular-nums" dir="ltr">
-                {t(c.display)}
-              </td>
-              <td className="py-2.5 pe-3 text-[12px] text-muted-foreground">{t(c.period.label)}</td>
-              <td className="py-2.5 pe-3 text-[12px]">
-                <div className="flex flex-wrap items-center gap-2">
-                  <ProofBadge cell={c} />
-                  <SourceLink href={c.proof.sourceUrl} />
+            <li key={c.key} className="py-3">
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="text-[13px]">{t(c.label)}</span>
+                <span className="shrink-0 text-[14px] font-semibold tabular-nums">
+                  {t(c.display)}
+                </span>
+              </div>
+              <div className="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-muted-foreground">
+                <span>{t(c.period.label)}</span>
+                <ProofBadge cell={c} />
+                <SourceLink href={c.proof.sourceUrl} />
+              </div>
+              {c.proof.formula && (
+                <div
+                  className="mt-1 break-all font-mono text-[10px] text-muted-foreground"
+                  dir="ltr"
+                >
+                  {c.proof.formula}
                 </div>
-                {c.proof.formula && (
-                  <div className="mt-1 font-mono text-[10px] text-muted-foreground" dir="ltr">
-                    {c.proof.formula}
-                  </div>
-                )}
-              </td>
-            </tr>
+              )}
+            </li>
           ))}
-        </DataTable>
+        </ul>
+      )}
+      {group.cells.length > 0 && (
+        <div className="hidden sm:block">
+          <DataTable
+            headers={[
+              t({ ar: "البند", en: "Item" }),
+              t({ ar: "القيمة", en: "Value" }),
+              t({ ar: "الفترة", en: "Period" }),
+              t({ ar: "الإثبات", en: "Proof" }),
+            ]}
+          >
+            {group.cells.map((c) => (
+              <tr
+                key={c.key}
+                className="border-b border-border/60 align-top"
+                data-metric={c.key}
+                data-period-kind={c.period.kind}
+              >
+                <td className="py-2.5 pe-3">{t(c.label)}</td>
+                <td className="py-2.5 pe-3 font-semibold tabular-nums">{t(c.display)}</td>
+                <td className="py-2.5 pe-3 text-[12px] text-muted-foreground">
+                  {t(c.period.label)}
+                </td>
+                <td className="py-2.5 pe-3 text-[12px]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <ProofBadge cell={c} />
+                    <SourceLink href={c.proof.sourceUrl} />
+                  </div>
+                  {c.proof.formula && (
+                    <div className="mt-1 font-mono text-[10px] text-muted-foreground" dir="ltr">
+                      {c.proof.formula}
+                    </div>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </DataTable>
+        </div>
       )}
       {group.withheld.length > 0 && (
         <div
@@ -212,7 +243,7 @@ function MetricTable({ group, kind }: { group: MetricGroup; kind: CompanyPreview
 
 /** عمود واحد لكل مقياس، خط أساس عند الصفر، وتسمية أول قيمة وآخرها فقط. */
 function HistoryChart({ series }: { series: HistorySeries }) {
-  const { t } = useI18n();
+  const { t, dir } = useI18n();
   const values = series.points.map((p) => p.value);
   const max = Math.max(0, ...values);
   const min = Math.min(0, ...values);
@@ -248,13 +279,17 @@ function HistoryChart({ series }: { series: HistorySeries }) {
               />
               {(i === 0 || i === last) && (
                 <div
+                  dir={dir}
                   className="absolute inset-x-0 text-center text-[10px] font-semibold tabular-nums"
                   style={{ top: p.value >= 0 ? Math.max(top - 16, 0) : top + h + 2 }}
                 >
                   {t(p.display)}
                 </div>
               )}
-              <div className="pointer-events-none absolute -top-8 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-md bg-popover px-2 py-1 text-[11px] shadow group-hover:block">
+              <div
+                dir={dir}
+                className="pointer-events-none absolute -top-8 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-md bg-popover px-2 py-1 text-[11px] shadow group-hover:block"
+              >
                 {t(p.label)}: {t(p.display)}
               </div>
             </div>
@@ -278,9 +313,7 @@ function HistoryChart({ series }: { series: HistorySeries }) {
             {series.points.map((p) => (
               <tr key={p.periodEnd} className="border-b border-border/50">
                 <td className="py-1">{t(p.label)}</td>
-                <td className="py-1 tabular-nums" dir="ltr">
-                  {t(p.display)}
-                </td>
+                <td className="py-1 tabular-nums">{t(p.display)}</td>
               </tr>
             ))}
           </tbody>
@@ -314,7 +347,7 @@ function BlockView({
                   {f.text}
                 </dd>
                 <dd className="text-[10px] text-muted-foreground">
-                  {f.asOf && t({ ar: `كما في ${f.asOf} · `, en: `As of ${f.asOf} · ` })}
+                  {f.asOf && t({ ar: `كما في ${iso(f.asOf)} · `, en: `As of ${f.asOf} · ` })}
                   <SourceLink href={f.sourceUrl} />
                 </dd>
               </div>
@@ -331,9 +364,7 @@ function BlockView({
               <li key={r.segment} data-segment>
                 <div className="flex justify-between gap-3 text-sm">
                   <span dir="auto">{r.segment}</span>
-                  <span className="font-semibold tabular-nums" dir="ltr">
-                    {t(r.display)}
-                  </span>
+                  <span className="font-semibold tabular-nums">{t(r.display)}</span>
                 </div>
                 <div className="mt-1 h-1.5 rounded-full bg-muted">
                   <div
@@ -354,7 +385,7 @@ function BlockView({
       return (
         <Panel title={t({ ar: "التاريخ السنوي", en: "Annual history" })}>
           {block.series.length ? (
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className={cn("grid gap-4", block.series.length > 1 && "md:grid-cols-2")}>
               {block.series.map((s) => (
                 <HistoryChart key={s.key} series={s} />
               ))}
@@ -413,9 +444,7 @@ function BlockView({
                 <td className="py-2.5 pe-3" dir="auto">
                   {r.title}
                 </td>
-                <td className="py-2.5 pe-3 tabular-nums" dir="ltr">
-                  {r.amount ? t(r.amount) : "—"}
-                </td>
+                <td className="py-2.5 pe-3 tabular-nums">{r.amount ? t(r.amount) : "—"}</td>
                 <td className="py-2.5 pe-3 text-[12px] text-muted-foreground">{r.date ?? "—"}</td>
                 <td className="py-2.5 text-[12px]">
                   <SourceLink href={r.sourceUrl} />
@@ -446,7 +475,7 @@ function BlockView({
           {block.rows.length > 15 && (
             <p className="mt-2 text-[11px] text-muted-foreground">
               {t({
-                ar: `يُعرض 15 من ${block.rows.length}`,
+                ar: `يُعرض ${iso(15)} من ${iso(block.rows.length)}`,
                 en: `Showing 15 of ${block.rows.length}`,
               })}
             </p>
@@ -458,19 +487,17 @@ function BlockView({
         <Panel title={t({ ar: "آخر سعر إغلاق مسجّل", en: "Latest recorded close" })}>
           {block.latest ? (
             <div data-market>
-              <div className="text-2xl font-bold tabular-nums" dir="ltr">
-                {t(block.latest.close)}
-              </div>
+              <div className="text-2xl font-bold tabular-nums">{t(block.latest.close)}</div>
               <div className="mt-1 text-[12px] text-muted-foreground">
                 {t({
-                  ar: `جلسة ${block.latest.observedAt} · `,
+                  ar: `جلسة ${iso(block.latest.observedAt)} · `,
                   en: `Session ${block.latest.observedAt} · `,
                 })}
                 <SourceLink href={block.latest.sourceUrl} />
               </div>
               <p className="mt-2 text-[11px] text-muted-foreground">
                 {t({
-                  ar: `سعر تاريخي وليس سعرًا حيًا. سجل الأسعار لدى المحرك جزئي (${block.historyCount} جلسة).`,
+                  ar: `سعر تاريخي وليس سعرًا حيًا. سجل الأسعار لدى المحرك جزئي (${iso(block.historyCount)} جلسة).`,
                   en: `Historical close, not a live price. The engine's price history is partial (${block.historyCount} sessions).`,
                 })}
               </p>
@@ -534,7 +561,7 @@ export function TopicSection({
         {topic.score !== null && (
           <span className="text-[11px] text-muted-foreground">
             {t({
-              ar: `تغطية ${(topic.score * 100).toFixed(0)}%`,
+              ar: `تغطية ${iso((topic.score * 100).toFixed(0) + "%")}`,
               en: `${(topic.score * 100).toFixed(0)}% coverage`,
             })}
           </span>
@@ -560,6 +587,7 @@ export function TopicSection({
             <div
               key={i}
               className={cn(
+                "min-w-0",
                 (b.type === "metrics" || b.type === "history" || b.type === "peers") &&
                   "lg:col-span-2",
               )}

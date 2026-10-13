@@ -1,5 +1,6 @@
 import type { LocalizedText } from "@/lib/i18n";
 import { safeSourceUrl } from "./peer-comparison";
+import { iso } from "@/lib/bidi";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02).
@@ -368,34 +369,37 @@ export function formatAmount(value: number, currency: string): LocalizedText {
   const sign = value < 0 ? "−" : "";
   if (abs >= 1e9)
     return {
-      ar: `${sign}${group(abs / 1e9, 2)} مليار ${cur.ar}`,
+      ar: `${iso(sign + group(abs / 1e9, 2))} مليار ${cur.ar}`,
       en: `${cur.en} ${sign}${group(abs / 1e9, 2)}bn`,
     };
   if (abs >= 1e6)
     return {
-      ar: `${sign}${group(abs / 1e6, 2)} مليون ${cur.ar}`,
+      ar: `${iso(sign + group(abs / 1e6, 2))} مليون ${cur.ar}`,
       en: `${cur.en} ${sign}${group(abs / 1e6, 2)}m`,
     };
-  return { ar: `${sign}${group(abs, 0)} ${cur.ar}`, en: `${cur.en} ${sign}${group(abs, 0)}` };
+  return { ar: `${iso(sign + group(abs, 0))} ${cur.ar}`, en: `${cur.en} ${sign}${group(abs, 0)}` };
 }
 
 export function formatValue(value: number, unit: string, currency: string | null): LocalizedText {
   if (unit === "ratio") {
     const s = `${group(value * 100, 2)}%`;
-    return { ar: s, en: s };
+    return { ar: iso(s), en: s };
   }
   if (unit === "percent") {
     const s = `${group(value, 2)}%`;
-    return { ar: s, en: s };
+    return { ar: iso(s), en: s };
   }
   if (AMOUNT_UNITS.has(unit) && currency) return formatAmount(value, currency);
   if (unit.endsWith("/share") && currency) {
     const cur = CURRENCY_LABEL[currency] ?? { ar: currency, en: currency };
-    return { ar: `${group(value, 2)} ${cur.ar}/سهم`, en: `${cur.en} ${group(value, 2)}/share` };
+    return {
+      ar: `${iso(group(value, 2))} ${cur.ar}/سهم`,
+      en: `${cur.en} ${group(value, 2)}/share`,
+    };
   }
   const u = UNIT_LABELS[unit] ?? { ar: unit, en: unit };
   const digits = Number.isInteger(value) ? 0 : Math.abs(value) >= 100 ? 1 : 2;
-  return { ar: `${group(value, digits)} ${u.ar}`, en: `${group(value, digits)} ${u.en}` };
+  return { ar: `${iso(group(value, digits))} ${u.ar}`, en: `${group(value, digits)} ${u.en}` };
 }
 
 export function periodOf(
@@ -404,30 +408,39 @@ export function periodOf(
   const kind = row.period_kind ?? "";
   const end = row.period_end ?? "";
   const fy = row.fiscal_year ?? (end ? Number(end.slice(0, 4)) : null);
-  if (kind === "fy") return { kind, end, label: { ar: `السنة المالية ${fy}`, en: `FY ${fy}` } };
+  if (kind === "fy")
+    return { kind, end, label: { ar: `السنة المالية ${iso(fy ?? "")}`, en: `FY ${fy}` } };
   if (kind === "quarter") {
     const q = row.fiscal_quarter;
     return q
       ? {
           kind,
           end,
-          label: { ar: `الربع ${q} من ${fy} (ربع منفرد)`, en: `Q${q} ${fy} (single quarter)` },
+          label: {
+            ar: `الربع ${iso(q)} من ${iso(fy ?? "")} (ربع منفرد)`,
+            en: `Q${q} ${fy} (single quarter)`,
+          },
         }
       : {
           kind,
           end,
-          label: { ar: `ربع منفرد منتهٍ في ${end}`, en: `Single quarter ended ${end}` },
+          label: { ar: `ربع منفرد منتهٍ في ${iso(end)}`, en: `Single quarter ended ${end}` },
         };
   }
   if (kind === "ytd")
-    return { kind, end, label: { ar: `منذ بداية ${fy} حتى ${end}`, en: `Year to date to ${end}` } };
+    return {
+      kind,
+      end,
+      label: { ar: `منذ بداية ${iso(fy ?? "")} حتى ${iso(end)}`, en: `Year to date to ${end}` },
+    };
   if (kind === "ttm")
     return {
       kind,
       end,
-      label: { ar: `آخر 12 شهرًا حتى ${end}`, en: `Trailing 12 months to ${end}` },
+      label: { ar: `آخر 12 شهرًا حتى ${iso(end)}`, en: `Trailing 12 months to ${end}` },
     };
-  if (kind === "instant") return { kind, end, label: { ar: `كما في ${end}`, en: `As of ${end}` } };
+  if (kind === "instant")
+    return { kind, end, label: { ar: `كما في ${iso(end)}`, en: `As of ${end}` } };
   return { kind, end, label: { ar: end, en: end } };
 }
 

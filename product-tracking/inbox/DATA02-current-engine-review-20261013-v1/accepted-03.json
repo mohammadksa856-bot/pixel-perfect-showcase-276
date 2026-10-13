@@ -1,0 +1,552 @@
+{
+  "company_id": "sa:2280",
+  "market": "SA",
+  "symbol": "2280",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-28",
+  "filed_at_basis": "pdf_creation_metadata",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+  "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+  "source_archive": {
+    "engine_ref": "claude/data-food-1",
+    "engine_commit": "2b17c0e",
+    "engine_archive_path": "data/raw/SA/2280/documents/08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297.pdf",
+    "on_engine_main": false,
+    "text_layer": "digital"
+  },
+  "reader": "manual.review/data-02-batch-02-almarai",
+  "notes": "DATA-02 batch-02. Qualitative profile from Almarai Integrated Annual Report 2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Almarai Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "Almarai Company (the",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:0",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "is a Saudi Joint Stock Company, which was converted from a limited liability company to a joint stock company on 2 Rajab 1426 A.H. (8 August 2005)",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:1",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS Accounting Standards as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "170",
+        "evidence": [
+          {
+            "pdf_page": 171,
+            "quote": "prepared in accordance with International Financial Reporting Standards (“IFRS”) Accounting Standards as endorsed in the Kingdom of Saudi Arabia",
+            "printed_page": "170"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:7",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "product_categories",
+      "value": {
+        "core": [
+          "Dairy",
+          "Juice",
+          "Bakery",
+          "Poultry"
+        ],
+        "adjacent": [
+          "seafood",
+          "beverages",
+          "ice cream",
+          "frozen foods"
+        ]
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "Almarai operates across core categories of Dairy, Juice, Bakery, and Poultry, complemented by a growing presence in adjacent segments such as seafood, beverages, ice cream, and frozen foods.",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:13",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "business_segments",
+      "value": [
+        {
+          "name": "Dairy and Juice",
+          "comprises": "Milk production, dairy, fruits juice, ice cream product processing and distribution"
+        },
+        {
+          "name": "Bakery",
+          "comprises": "Bakery products manufacturing and distribution"
+        },
+        {
+          "name": "Poultry",
+          "comprises": "Poultry products manufacturing and distribution"
+        },
+        {
+          "name": "Other Activities",
+          "comprises": "Arable, horticulture, infant nutrition, seafood, value added meat products and water"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "203",
+        "evidence": [
+          {
+            "pdf_page": 204,
+            "quote": "Milk production, dairy, fruits juice, ice cream product processing and distribution",
+            "printed_page": "203"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "Bakery products manufacturing and distribution",
+            "printed_page": "203"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "Poultry products manufacturing and distribution",
+            "printed_page": "203"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "Arable, horticulture, infant nutrition, seafood, value added meat products and water.",
+            "printed_page": "203"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:14",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "markets_geographies",
+      "value": {
+        "operations": [
+          "Saudi Arabia",
+          "Egypt",
+          "Jordan",
+          "other GCC countries"
+        ],
+        "gcc_distribution": [
+          "UAE",
+          "Oman",
+          "Bahrain (subsidiaries)",
+          "Kuwait",
+          "Qatar (agency agreements)"
+        ],
+        "arable_farms": [
+          "Argentina",
+          "USA"
+        ]
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "It also operates in Egypt, Jordan and other Gulf Cooperation Council",
+            "printed_page": "166"
+          },
+          {
+            "pdf_page": 167,
+            "quote": "The distribution centres in GCC countries are managed through subsidiaries in UAE, Sultanate of Oman (“Oman”) and Kingdom of Bahrain (“Bahrain”) and an agency agreements in Kuwait and Qatar",
+            "printed_page": "166"
+          },
+          {
+            "pdf_page": 168,
+            "quote": "The Group owns and operates arable farms in Argentina and United States of America",
+            "printed_page": "167"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:15",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "revenue_geographic_breakdown_basis",
+      "value": "Segment note presents revenue by geographical region (Saudi Arabia, Other GCC Countries, other) for each business segment",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "205",
+        "evidence": [
+          {
+            "pdf_page": 206,
+            "quote": "The revenue from business segments categorised by geographical region is as follows:",
+            "printed_page": "205"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Figures belong to numbers team",
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:16",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "distribution_model",
+      "value": "Long-haul distribution fleet from manufacturing facilities to local distribution centres",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "final consumer packed products are distributed from manufacturing facilities to local distribution centres by the Group’s long haul distribution fleet",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:18",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_governance",
+      "value": "Board approves risk management framework; Board Risk Committee oversees ERM; quarterly risk register review by risk champions and EVPs as risk owners",
+      "category": "risk",
+      "metadata": {
+        "source_page": "115",
+        "evidence": [
+          {
+            "pdf_page": 116,
+            "quote": "Approving the risk management framework and overseeing the Company’s principal risks and risk mitigation measures",
+            "printed_page": "115"
+          },
+          {
+            "pdf_page": 148,
+            "quote": "Residual critical and significant risks, along with their mitigation plans, are escalated to executive management and form the basis for reporting to the Board Risk Committee.",
+            "printed_page": "147"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:31",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "financial_risk_categories",
+      "value": [
+        "credit risk",
+        "liquidity risk",
+        "market price risk",
+        "capital management risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "211",
+        "evidence": [
+          {
+            "pdf_page": 212,
+            "quote": "The Group’s activities expose it to a variety of financial risks; credit risk, liquidity risk, market price risk and capital management risk.",
+            "printed_page": "211"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:33",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "strategy_growth_pillars",
+      "value": [
+        "Core Acceleration",
+        "Category Expansion",
+        "Channel Expansion",
+        "Geographic Expansion"
+      ],
+      "category": "strategy",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "1. Core Acceleration",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "2. Category Expansion",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "3. Channel Expansion",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "4. Geographic Expansion",
+            "printed_page": "40"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:37",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "strategy_enablers",
+      "value": [
+        "Operating Model",
+        "People",
+        "Manufacturing and Supply Chain",
+        "Marketing and Branding",
+        "Innovation",
+        "Digitalization"
+      ],
+      "category": "strategy",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "Manufacturing and\nSupply Chain",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "Marketing and\nBranding",
+            "printed_page": "40"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:38",
+          "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+          "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "pdf_creation_metadata",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    }
+  ],
+  "ownership_positions": [],
+  "corporate_actions": [],
+  "disclosures": []
+}

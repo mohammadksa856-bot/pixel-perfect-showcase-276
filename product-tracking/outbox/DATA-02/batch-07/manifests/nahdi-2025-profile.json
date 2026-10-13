@@ -1,0 +1,2441 @@
+{
+  "company_id": "sa:4164",
+  "market": "SA",
+  "symbol": "4164",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-18",
+  "filed_at_basis": "pdf_creation_metadata",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+  "source_sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+  "source_archive": {
+    "engine_ref": null,
+    "engine_commit": null,
+    "archived_in_engine": false,
+    "proposed_engine_archive_path": "data/raw/SA/4164/documents/b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790.pdf",
+    "downloaded": {
+      "by": "Claude Code session (user-allowed host investors.nahdi.sa)",
+      "at": "2026-10-13",
+      "http_status": 200,
+      "content_type": "application/pdf"
+    },
+    "text_layer": "digital",
+    "codex_action": "re-download from source_url, confirm SHA-256, archive in the engine before any merge"
+  },
+  "reader": "manual.review/data-02-batch-07-nahdi",
+  "notes": "DATA-02 batch-07. Qualitative profile from Nahdi Annual Report 2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Nahdi Medical Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "84",
+        "evidence": [
+          {
+            "pdf_page": 84,
+            "quote": "To the Shareholders of Nahdi Medical Company (A Saudi Joint Stock Company)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "is a Saudi Joint Stock Company"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "formed under Companies Law in the Kingdom of Saudi Arabia"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "number": "4030053868",
+        "date": "2003-10-01",
+        "hijri_date": "5 Sha'ban 1424H"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "under Commercial Registration No. 4030053868 dated 1 October 2003"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "FS note 1 corporate information"
+      }
+    },
+    {
+      "attribute_key": "registration_number_as_labelled_in_governance_report",
+      "value": "7018056114",
+      "category": "identity",
+      "metadata": {
+        "source_page": "80",
+        "evidence": [
+          {
+            "pdf_page": 80,
+            "quote": "Nahdi Medical Company (listed company)"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "7018056114"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Governance report 'Subsidiaries and Main Activities' table lists this as the commercial registration number for Nahdi Medical Company (listed company); likely the 10-digit unified number but the document does not label it so",
+        "review_note": "Labelled 'commercial registration number' in the governance report's subsidiaries table, but the format (prefix 70, 10 digits) matches a unified national number; the CR in FS note 1 is 4030053868. Not to be used as the CR until confirmed."
+      }
+    },
+    {
+      "attribute_key": "date_established",
+      "value": "1986-06-18",
+      "category": "identity",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Date established"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "18 June 1986"
+          },
+          {
+            "pdf_page": 12,
+            "quote": "Since 1986, Nahdi has grown from two pharmacies in Jeddah"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Share information table"
+      }
+    },
+    {
+      "attribute_key": "listing",
+      "value": {
+        "listing_date": "2022-03-22",
+        "exchange": "Saudi Exchange - Main Market - Tadawul",
+        "tadawul_code": "4164",
+        "isin": "SA15HG521213",
+        "trading_name": "NAHDI"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Listing date"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "22 March 2022"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Main Market"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "SA15HG521213"
+          },
+          {
+            "pdf_page": 12,
+            "quote": "Nahdi transitions into a public company, joining the Saudi Exchange (Tadawul)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Share information table on IR page"
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": "Nahdi Medical Company, P.O. Box 17129, King Abdulaziz Road, Murjan District, Jeddah 23715, Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "its Head Office is located at the following address:"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "P.O. Box 17129,"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "King Abdulaziz Road, Murjan District, Jeddah"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "external_auditor",
+      "value": {
+        "firm": "KPMG Professional Services Company",
+        "partner": "Dr. Abdullah Hamad Al Fozan",
+        "licence_no": "348",
+        "report_place": "Jeddah",
+        "report_date": "2026-03-16",
+        "report_date_hijri": "27 Ramadan 1447H"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "85",
+        "evidence": [
+          {
+            "pdf_page": 85,
+            "quote": "KPMG Professional Services Company"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Dr. Abdullah Hamad Al Fozan"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "License No. 348"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Jeddah, 16 March 2026"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Corresponding to 27 Ramadan 1447H"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor_change_fy2025",
+      "value": {
+        "description": "Audit Committee recommended changing the Company's auditors and appointing KPMG Professional Services for FY2025",
+        "total_fees": 1686000,
+        "currency": "SAR"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "80",
+        "evidence": [
+          {
+            "pdf_page": 80,
+            "quote": "made a recommendation to the Board of Directors to change the Company’s auditors"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "The Committee recommended the appointment of KPMG Professional Services with total fees"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "1,686,000"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Fee currency taken from riyal sign context in the FS currency note; glyph not quoted"
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia, and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "have been prepared in accordance with the International Financial Reporting Standards (IFRS) and other standards and pronouncements that are endorsed in the Kingdom of Saudi Arabia issued by the Saudi Organization for Chartered and Professional Accountants"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "functional_presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "presented in Saudi Riyals"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "which is also the functional and presentation currency of the Company."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": {
+        "date": "2026-03-08",
+        "hijri": "19 Ramadan 1447H",
+        "approved_by": "Board of Directors"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "106",
+        "evidence": [
+          {
+            "pdf_page": 106,
+            "quote": "These consolidated financial statements were approved and authorized to issue by the Board of Directors on 8 March 2026 (corresponding 19 Ramadan 1447H)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fiscal_year_end",
+      "value": "31 December",
+      "category": "identity",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "The main shareholders as of 31 December 2025 are"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Consolidated FS presented at 31 December 2025"
+      }
+    },
+    {
+      "attribute_key": "principal_activity_fs_note1",
+      "value": "The principal activity of the Group is the wholesale and retail trading of cosmetics, pharmaceutical products, special and healthy foods, and medical equipment.",
+      "category": "sector",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "The principal activity of the Group is the wholesale and retail trading of cosmetics, pharmaceutical products, special and healthy foods, and medical equipment."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "industry_self_description",
+      "value": "Saudi Arabia's leading integrated pharmacy and Omnihealth platform",
+      "category": "sector",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Nahdi is Saudi Arabia’s leading integrated pharmacy and Omnihealth platform, combining nationwide retail access, polyclinics, digital health services, supply chain capabilities and Private Label products"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "sector_as_stated_in_report",
+      "value": "Consumer Staples Distribution and Retail",
+      "category": "sector",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Consumer Staples Distribution and Retail"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Sector label in the report's own share information table (not supplied from memory)"
+      }
+    },
+    {
+      "attribute_key": "operating_segments_ifrs8",
+      "value": {
+        "segments": 1,
+        "segment": "retailing",
+        "note": "UAE operations and specialized medical clinics considered relatively insignificant / below 10% thresholds"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "105",
+        "evidence": [
+          {
+            "pdf_page": 105,
+            "quote": "The Directors’ conclusion is that the Group has one operating segment, that of retailing."
+          },
+          {
+            "pdf_page": 105,
+            "quote": "It also operates specialized medical clinics through one of its subsidiaries."
+          },
+          {
+            "pdf_page": 105,
+            "quote": "more than 90% of the Group’s operations are conducted within"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_pillars",
+      "value": "Pharmacy Retail; Omnichannel and polyclinics; Digital and Data Platforms; Supply Chain and Global Sourcing (IMDAD, Nahdi Global); Private Label",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "forming an integrated asset stack that brings together Pharmacy Retail, Omnichannel and polyclinics, Digital and Data Platforms, Supply Chain and Global Sourcing through IMDAD and Nahdi Global and our evolving Private Label portfolio."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_review_divisions",
+      "value": [
+        "Pharmacy Retail",
+        "Omnichannel",
+        "Omnihealth"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "50",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "Pharmacy Retail"
+          },
+          {
+            "pdf_page": 50,
+            "quote": "Omnichannel"
+          },
+          {
+            "pdf_page": 50,
+            "quote": "Omnihealth"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "geographies",
+      "value": [
+        "Kingdom of Saudi Arabia",
+        "United Arab Emirates"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "The Group operates mainly in the Kingdom of Saudi Arabia"
+          },
+          {
+            "pdf_page": 15,
+            "quote": "reaching 45 pharmacies in the UAE"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "subsidiary_nahdi_care",
+      "value": {
+        "name": "Nahdi Care Limited Company",
+        "country": "KSA",
+        "activity": "Clinics",
+        "ownership_pct": 1.0
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "Nahdi Care Limited Company"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "KSA Clinics 100% 100%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsidiary_al_sakhaa_golden",
+      "value": {
+        "name": "Al Sakhaa Golden Trading and Contracting Company",
+        "country": "KSA",
+        "activity": "Labor Services",
+        "ownership_pct": 1.0
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "Contracting Company*"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Labor Services"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsidiary_nahdi_investment_uae",
+      "value": {
+        "name": "Nahdi Investment CO. L.L.C",
+        "country": "UAE",
+        "activity": "Holding Company",
+        "ownership_pct": 1.0
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "Nahdi Investment CO. L.L.C**"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "Investing in, establishing and managing health and commercial projects"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsidiary_al_sakhaa_integrated_solutions",
+      "value": {
+        "name": "Al Sakhaa integrated solutions",
+        "country": "KSA (FS note) / Egypt (governance report)",
+        "activity": "IT consulting",
+        "ownership_pct": 0.99,
+        "note": "remaining 1% held by Nahdi Investment CO. L.L.C for the beneficial interest of the company"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "Al Sakhaa integrated solutions"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "IT consulting"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "The remaining 1% is held by Nahdi Investment CO. L.L.C, who holds the share for the beneficial interest"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "Sakhaa Integrated Solutions (Egypt)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Country inconsistent between FS note 1 (KSA) and governance report (Egypt)",
+        "as_of": "2025-12-31",
+        "review_note": "SOURCE-INTERNAL CONFLICT: country is KSA in FS note 1 and Egypt in the governance report. Must not be accepted until resolved."
+      }
+    },
+    {
+      "attribute_key": "subsidiary_nahdi_drug_store_uae",
+      "value": {
+        "name": "Nahdi Drug Store L.L.C",
+        "country": "UAE",
+        "activity": "Drug store",
+        "ownership_pct": 0.99
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "Nahdi Drug Store L.L.C"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Drug store"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsidiary_nahdi_pharmacy_uae",
+      "value": {
+        "name": "Nahdi Pharmacy L.L.C",
+        "country": "UAE",
+        "activity": "Pharmacy",
+        "ownership_pct": 0.99,
+        "note": "remaining 1% held by Mr. Saleh Mohamed Amer Salmeen Al Hajeri for the beneficial interest of the company"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "Nahdi Pharmacy L.L.C"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "who holds the share for the beneficial interest of the company."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "strategy_2030_heart_beats",
+      "value": {
+        "name": "2030 Heart BEATS",
+        "launch": "2026",
+        "pillars": [
+          "Best-in-class retail offering",
+          "Elevated Omnichannel experience",
+          "Accelerate Omnihealth",
+          "Tech-enabled tomorrow",
+          "Seeding for the future"
+        ],
+        "centre": "Guests at the Heart of all we do"
+      },
+      "category": "strategy",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "Our new 2030 Heart BEATS strategy, launching in 2026, marks the next major phase in Nahdi’s evolution"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "sets a clear direction built on five strategic pillars: delivering a best-in-class retail offering, elevating our Omnichannel experience, accelerating the growth of Omnihealth, building a technology-enabled future and seeding new opportunities for long-term expansion."
+          },
+          {
+            "pdf_page": 22,
+            "quote": "During the year, the Board approved Nahdi’s new five-year strategy, concluding the 2020-2025 strategic cycle"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "private_label",
+      "value": {
+        "revenue_share_pct": 0.174,
+        "sales_sar_bn": 1.7,
+        "first_private_label_medicine": "2025"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "High-quality and competitively priced Private Label contributed around 17.4% of revenue"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "First Private Label medicine by Nahdi"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "digital_channels",
+      "value": [
+        "Nahdi Online",
+        "Nahdi Global",
+        "e-pharmacist consultations",
+        "Store-to-Home delivery",
+        "Click & Collect",
+        "Nahdi Now (30-minute delivery)",
+        "Nahdi App"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 55,
+            "quote": "This fully connected platform includes Nahdi Online, Nahdi Global, e-pharmacist consultations, Store-to-Home delivery, Click & Collect and a rapidly growing portfolio of digital health and wellness services."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "chairman",
+      "value": {
+        "name": "Saleh Salem Ahmed Bin Mahfouz",
+        "classification": "Non-Executive",
+        "appointed": "2021"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "Saleh Salem Ahmed Bin Mahfouz Chairman Non-Executive"
+          },
+          {
+            "pdf_page": 71,
+            "quote": "Eng. Bin Mahfouz was appointed Chairman of Nahdi’s Board of Directors in 2021."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "vice_chairman",
+      "value": {
+        "name": "Abdullah Amer Abdullah Al-Nahdi",
+        "classification": "Non-Executive",
+        "appointed": "2021"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "Abdullah Amer Abdullah Al-Nahdi Vice Chairman Non-Executive"
+          },
+          {
+            "pdf_page": 71,
+            "quote": "Mr. Al-Nahdi was appointed to the position of Vice Chairman of Nahdi’s Board of Directors in 2021."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "ceo",
+      "value": {
+        "name": "Yasser Ghulam Abdulaziz Joharji",
+        "since": "2014",
+        "board_member_since": "2021",
+        "classification": "Executive"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "Yasser Ghulam Abdulaziz Joharji Board Member and CEO Executive"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Eng. Joharji was appointed Nahdi’s CEO in 2014"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "cfo",
+      "value": {
+        "name": "Mohammed Al-Khubani",
+        "joined": "2013"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 75,
+            "quote": "Mr. Mohammed Al-Khubani"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Chief Financial Officer"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Mr. Al-Khubani joined Nahdi in 2013 as Senior Director of Planning and Financial Analysis."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Name/title pairing from page layout"
+      }
+    },
+    {
+      "attribute_key": "board_composition",
+      "value": [
+        {
+          "name": "Saleh Salem Ahmed Bin Mahfouz",
+          "role": "Chairman",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Abdullah Amer Abdullah Al-Nahdi",
+          "role": "Vice Chairman",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Abdelelah Salem Ahmed Bin Mahfouz",
+          "role": "Board Member",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Yasser Ghulam Abdulaziz Joharji",
+          "role": "Board Member and CEO",
+          "classification": "Executive"
+        },
+        {
+          "name": "Junaid Ezmat Bajwa",
+          "role": "Board Member",
+          "classification": "Independent"
+        },
+        {
+          "name": "Romain Voog",
+          "role": "Board Member",
+          "classification": "Independent"
+        },
+        {
+          "name": "Abdulatif Ali Abdulatif Al-Seif",
+          "role": "Board Member",
+          "classification": "Independent"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "Saleh Salem Ahmed Bin Mahfouz Chairman Non-Executive"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Abdullah Amer Abdullah Al-Nahdi Vice Chairman Non-Executive"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Abdelelah Salem Ahmed Bin Mahfouz Board Member Non-Executive"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Yasser Ghulam Abdulaziz Joharji Board Member and CEO Executive"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Junaid Ezmat Bajwa Board Member Independent"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Romain Voog Board Member Independent"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Abdulatif Ali Abdulatif Al-Seif Board Member Independent"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "7 members: 3 non-executive, 1 executive, 3 independent"
+      }
+    },
+    {
+      "attribute_key": "board_committees",
+      "value": [
+        "Audit Committee",
+        "Remuneration and Nomination Committee",
+        "Digital Transformation and Cyber Security Committee"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "70",
+        "evidence": [
+          {
+            "pdf_page": 70,
+            "quote": "The Board formed three committees to support its responsibilities: the Audit Committee, the Remuneration and Nomination Committee"
+          },
+          {
+            "pdf_page": 70,
+            "quote": "and the Digital Transformation and Cyber Security Committee."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "audit_committee",
+      "value": {
+        "chair": "Abdulatif Ali Abdulatif Al-Seif",
+        "members": [
+          "Wael Kamal Eid",
+          "Walid Abdullah Temairik"
+        ],
+        "meetings_2025": 7
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "Abdulatif Ali Abdulatif Al-Seif Chairman MBA from Boston University"
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Wael Kamal Eid"
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Walid Abdullah Temairik"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "Audit Committee meetings and attendance"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "25/02/2025"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "06/05/2025"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "17/06/2025"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "29/07/2025"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "02/09/2025"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "28/10/2025"
+          },
+          {
+            "pdf_page": 78,
+            "quote": "25/11/2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "remuneration_nomination_committee",
+      "value": {
+        "chair": "Junaid Ezmat Bajwa",
+        "members": [
+          "Walid Ahmed Bahamdan",
+          "Assaf Abdulkareem Alquraishi"
+        ],
+        "meetings_2025": 4
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "Junaid Ezmat Bajwa Chairman MBA from Imperial College Business School"
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Walid Ahmed Bahamdan"
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Assaf Abdulkareem Alquraishi"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "Remuneration and Nomination Committee meetings and attendance"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "22/06/2025"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "31/08/2025"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "30/11/2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "digital_transformation_cyber_security_committee",
+      "value": {
+        "chair": "Romain Voog",
+        "members_named_in_remuneration_table": [
+          "Junaid Ezmat Bajwa",
+          "Juan Carlos Sacristan"
+        ],
+        "meetings_2025": 4
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "Digital Transformation and Cyber Security Committee"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "Romain Voog Chairman"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "Juan Carlos Sacristan"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "Digital Transformation and Cyber Security Committee meetings and attendance"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "21/02/2025"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "21/06/2025"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "06/09/2025"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "23/11/2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "executive_management",
+      "value": [
+        {
+          "name": "Yasser Joharji",
+          "title": "Chief Executive Officer"
+        },
+        {
+          "name": "Zuhair Aytah",
+          "title": "Chief Network Development Officer"
+        },
+        {
+          "name": "Mohammed Al-Khubani",
+          "title": "Chief Financial Officer"
+        },
+        {
+          "name": "Hossam Khattab",
+          "title": "Chief Commercial and Marketing Officer"
+        },
+        {
+          "name": "Khalid Tadlaoui",
+          "title": "Chief Information Technology Officer"
+        },
+        {
+          "name": "Samer Bokharee",
+          "title": "Chief Human Resources Officer"
+        },
+        {
+          "name": "Raed Monagel",
+          "title": "Chief Corporate Governance and Business Support Officer"
+        },
+        {
+          "name": "Yasir Jamal",
+          "title": "Chief Supply Chain Officer"
+        },
+        {
+          "name": "Mohamed Abdellatif",
+          "title": "Chief Operations Officer"
+        },
+        {
+          "name": "Mohamed Mustafa",
+          "title": "Chief Omnihealth Officer"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 75,
+            "quote": "Eng. Yasser Joharji"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Chief Executive Officer"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Mr. Zuhair Aytah"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Chief Network Development Officer"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Dr. Hossam Khattab"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Chief Commercial and Marketing Officer"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Dr. Khalid Tadlaoui"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Chief Information Technology Officer"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Mr. Samer Bokharee"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Chief Human Resources Officer"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Eng. Raed Monagel"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Chief Corporate Governance and Business Support Officer"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Eng. Yasir Jamal"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "Chief Supply Chain Officer"
+          },
+          {
+            "pdf_page": 77,
+            "quote": "Dr. Mohamed Abdellatif Chief Operations Officer"
+          },
+          {
+            "pdf_page": 77,
+            "quote": "Dr. Mohamed Mustafa"
+          },
+          {
+            "pdf_page": 77,
+            "quote": "Chief Omnihealth Officer"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Name/title pairings resolved from pdftotext -layout positions"
+      }
+    },
+    {
+      "attribute_key": "governance_structure",
+      "value": "Board of Directors, three Board committees and an Executive Management team",
+      "category": "governance",
+      "metadata": {
+        "source_page": "70",
+        "evidence": [
+          {
+            "pdf_page": 70,
+            "quote": "The administrative structure of Nahdi consists of the Board of Directors, three Board committees and an Executive Management team."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "general_assembly_2025",
+      "value": {
+        "type": "Extraordinary General Assembly",
+        "date": "2025-04-29",
+        "held_count": 1
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "80",
+        "evidence": [
+          {
+            "pdf_page": 80,
+            "quote": "The Company held one General Assembly"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "Extraordinary General Assembly"
+          },
+          {
+            "pdf_page": 80,
+            "quote": "29 April 2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "IR page (p20) separately states 'Annual General Meeting (AGM) conducted on 30 April 2025'; dates differ in the document",
+        "review_note": "SOURCE-INTERNAL CONFLICT: governance report says Extraordinary GA on 29 Apr 2025; IR page says AGM on 30 Apr 2025. Must not be accepted until resolved."
+      }
+    },
+    {
+      "attribute_key": "shareholder_ibrahim_al_masbahi",
+      "value": {
+        "holder_name": "Ibrahim Ahmed Ibrahim Al-Masbahi",
+        "holder_type": "individual",
+        "ownership_pct": 0.0692,
+        "as_of_date": null
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "6.92%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Ibrahim Ahmed"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Ibrahim Al-Masbahi"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "IR shareholder graphic; no as-of date stated",
+        "review_note": "Stake shown in the IR shareholder graphic without an as-of date; delivered as an attribute, not an ownership row."
+      }
+    },
+    {
+      "attribute_key": "shareholding_by_type",
+      "value": {
+        "Individual": 0.21,
+        "Institutional": 0.74,
+        "Government": 0.05,
+        "Local": 0.9243,
+        "Foreign": 0.0757
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Shareholding by type"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Individual 21%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Institutional 74%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Government 5%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Local 92.43%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Foreign 7.57%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "No as-of date stated for the breakdown"
+      }
+    },
+    {
+      "attribute_key": "dividend_policy",
+      "value": "Dividends distributed per Article 48 of bylaws; General Assembly determines percentage of net profits distributed after reserves; Company may distribute semi-annual or quarterly interim dividends and may authorize the Board to do so",
+      "category": "dividends",
+      "metadata": {
+        "source_page": "81",
+        "evidence": [
+          {
+            "pdf_page": 81,
+            "quote": "accordance with Article 48 of the Company’s"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "percentage of net profits to be distributed to"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "The Company may distribute semi or quarterly interim dividends to its shareholders and it may"
+          },
+          {
+            "pdf_page": 93,
+            "quote": "Interim Dividends are recorded as liability in the period in which they are approved by the Board of Directors."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_risks",
+      "value": [
+        "Market volatility exposure",
+        "Cybersecurity threats",
+        "Single source dependency",
+        "Organizational growth and financial stability challenges",
+        "Margin erosion exposure",
+        "Healthcare delivery failures"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "47",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "Principal risks"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "Healthcare"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "delivery failures"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "Market volatility exposure"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "Cybersecurity threats"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "Single source dependency"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "Organizational growth and financial stability challenges"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "Margin erosion exposure"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_governance",
+      "value": "Enterprise risk management with Four Lines of Defense Model and risk appetite framework; Audit Committee oversight",
+      "category": "risk",
+      "metadata": {
+        "source_page": "47",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "At the heart of this system is the Four"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "Enterprise risk management is a central pillar of our"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "Nahdi has established a well-defined risk appetite"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_financial_risk_categories",
+      "value": [
+        "market risk (interest rate, currency, price)",
+        "credit risk",
+        "liquidity risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "103",
+        "evidence": [
+          {
+            "pdf_page": 103,
+            "quote": "The Group’s activities expose it to a variety of financial risks: market risk (including interest rate risks, currency risk and price risk), credit risk and liquidity risk."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "attribute_key": "esg_framework",
+      "value": "ESG strategy with measurable objectives: Environmental (energy efficiency, waste, carbon reduction), Social, Governance; working towards alignment with international ESG standards",
+      "category": "sustainability",
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 62,
+            "quote": "ESG strategy integrates measurable objectives"
+          },
+          {
+            "pdf_page": 62,
+            "quote": "Note: Nahdi is working towards alignment with international ESG standards."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    }
+  ],
+  "ownership_positions": [
+    {
+      "holder_key": "alnahdi_holding_company",
+      "holder_name": "AlNahdi Holding Company",
+      "holder_type": "corporate",
+      "ownership_type": "direct_or_indirect_as_stated",
+      "as_of_date": "2025-12-31",
+      "ownership_pct": 0.38,
+      "country": "SA",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "The main shareholders as of 31 December 2025 are AlNahdi Holding Company and Saudi Economic and Development Holding Company with ownership percentage of 38% and 25%, respectively."
+          },
+          {
+            "pdf_page": 19,
+            "quote": "38.08%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Al Nahdi Holding"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "IR page gives 38.08% without an explicit as-of date"
+      }
+    },
+    {
+      "holder_key": "saudi_economic_and_development_holding_company_sedco_holding",
+      "holder_name": "Saudi Economic and Development Holding Company (SEDCO Holding)",
+      "holder_type": "corporate",
+      "ownership_type": "direct_or_indirect_as_stated",
+      "as_of_date": "2025-12-31",
+      "ownership_pct": 0.25,
+      "country": "SA",
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "The main shareholders as of 31 December 2025 are AlNahdi Holding Company and Saudi Economic and Development Holding Company with ownership percentage of 38% and 25%, respectively."
+          },
+          {
+            "pdf_page": 19,
+            "quote": "25.00%"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "SEDCO Holding"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:4164:cash_dividend:2025-03-10",
+      "action_type": "cash_dividend",
+      "title": "Dividend h2 2024",
+      "announcement_date": "2025-03-10",
+      "cash_amount": 390000000,
+      "currency": "SAR",
+      "status": "paid in 2025",
+      "details": {
+        "dividend_per_share": 3.0,
+        "metadata": {
+          "source_page": "99",
+          "evidence": [
+            {
+              "pdf_page": 99,
+              "quote": "On 10 March 2025 (corresponding 10 Ramadan 1446H) the Board of Directors announced the"
+            },
+            {
+              "pdf_page": 99,
+              "quote": "390 million as cash dividends"
+            },
+            {
+              "pdf_page": 99,
+              "quote": "3 per share) for the second half of the year 2024"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-07)"
+          },
+          "period": "H2 2024"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4164:cash_dividend:2025-07-29",
+      "action_type": "cash_dividend",
+      "title": "Dividend h1 2025 interim",
+      "announcement_date": "2025-07-29",
+      "record_date": "2025-08-12",
+      "payment_date": "2025-08-26",
+      "cash_amount": 338000000,
+      "currency": "SAR",
+      "status": "approved and distributed in August 2025",
+      "details": {
+        "dividend_per_share": 2.6,
+        "metadata": {
+          "source_page": "99",
+          "evidence": [
+            {
+              "pdf_page": 99,
+              "quote": "On 29 July 2025 (corresponding 4 Safar 1447H) the Board of Directors announced the distribution of"
+            },
+            {
+              "pdf_page": 99,
+              "quote": "338 million as interim cash dividends"
+            },
+            {
+              "pdf_page": 99,
+              "quote": "2.60 per share) which represents 26% of the nominal value"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "30 July 2025"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "12 August 2025"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "26 August 2025"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "Approved and distributed in August 2025"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-07)"
+          },
+          "basis": "FS note says announced 29 July 2025; IR dividend table shows 30 July 2025",
+          "period": "H1 2025",
+          "review_note": "SOURCE-INTERNAL CONFLICT on announcement date: FS note 29 Jul 2025 vs IR table 30 Jul 2025. Payment and eligibility dates agree. Announcement date must not be accepted until resolved."
+        }
+      }
+    },
+    {
+      "action_key": "sa:4164:cash_dividend:2026-03-08",
+      "action_type": "cash_dividend",
+      "title": "Dividend h2 2025 final",
+      "announcement_date": "2026-03-08",
+      "record_date": "2026-03-29",
+      "payment_date": "2026-04-09",
+      "cash_amount": 390000000,
+      "currency": "SAR",
+      "status": "approved, to be distributed in April 2026",
+      "details": {
+        "dividend_per_share": 3.0,
+        "metadata": {
+          "source_page": "106",
+          "evidence": [
+            {
+              "pdf_page": 106,
+              "quote": "On 8 March 2026 (corresponding 19 Ramadan 1447H) the Board of Directors announced the"
+            },
+            {
+              "pdf_page": 106,
+              "quote": "390 million as cash dividends"
+            },
+            {
+              "pdf_page": 106,
+              "quote": "3 per share) for the second half of the year 2025"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "29 March 2026"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "09 April 2026"
+            },
+            {
+              "pdf_page": 20,
+              "quote": "Approved and will be distributed in April 2026"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-07)"
+          },
+          "basis": "IR table prints announcement date as '09 March 2025' (apparent typo); FS note 34 gives 8 March 2026",
+          "period": "H2 2025",
+          "review_note": "FS note 34 date (8 Mar 2026) used; the IR table prints '09 March 2025', an apparent typo. Subsequent event: recommended/declared after year-end."
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Market share pharmacy retail",
+      "body_text": "~30% market share (Pharmacy Retail, five-year strategic progress)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "~30% market share"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Stated under 'Pharmacy Retail' in five-year progress page; no source or market definition given"
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Brand equity vs competitor",
+      "body_text": "Brand equity score 6.9, highest in sector and double nearest industry competitor (Nielsen)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "achieving an outstanding brand equity score of 6.9, the highest in the sector and double the"
+          },
+          {
+            "pdf_page": 15,
+            "quote": "* Source: Company disclosure, Nielsen"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Omnichannel leadership claim",
+      "body_text": "Saudi Arabia's undisputed leader in Omnichannel retail; largest digital Omnihealth retailer in the GCC",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 55,
+            "quote": "Nahdi strengthened its position as Saudi"
+          },
+          {
+            "pdf_page": 55,
+            "quote": "positioning Nahdi as the largest digital Omnihealth retailer in the GCC."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Market capitalization sector position",
+      "body_text": "Highest market capitalization in the sector January-December 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "20",
+        "evidence": [
+          {
+            "pdf_page": 20,
+            "quote": "We continue to lead the sector with the highest market capitalization from"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Dividend h2 2023",
+      "body_text": "{\"action_type\": \"cash_dividend\", \"dividend_per_share\": 3.0, \"ratio\": null, \"announcement_date\": null, \"eligibility_date\": null, \"payment_date\": null, \"cash_amount_total\": 390000000, \"currency\": \"SAR\", \"status\": \"paid (comparative 2024)\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "99",
+        "evidence": [
+          {
+            "pdf_page": 99,
+            "quote": "second half of the year 2023:"
+          },
+          {
+            "pdf_page": 99,
+            "quote": "3.00 per share)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Comparative in FS note; dates not stated",
+        "period": "H2 2023"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Dividend h1 2024",
+      "body_text": "{\"action_type\": \"cash_dividend\", \"dividend_per_share\": 2.5, \"ratio\": null, \"announcement_date\": null, \"eligibility_date\": null, \"payment_date\": null, \"cash_amount_total\": 325000000, \"currency\": \"SAR\", \"status\": \"paid\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "99",
+        "evidence": [
+          {
+            "pdf_page": 99,
+            "quote": "(first half of the year 2024:"
+          },
+          {
+            "pdf_page": 99,
+            "quote": "2.50 per share)"
+          },
+          {
+            "pdf_page": 99,
+            "quote": "325,000,000"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "H1 2024"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Trade receivable concentration",
+      "body_text": "Three customers accounted for approximately 72% of trade receivables at 31 Dec 2025 (2024: 73%)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "103",
+        "evidence": [
+          {
+            "pdf_page": 103,
+            "quote": "the Group had three customers (31 December 2024:"
+          },
+          {
+            "pdf_page": 103,
+            "quote": "which accounted for approximately 72% (31 December 2024: 73%) of all trade receivable"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Currency exposure",
+      "body_text": "Transactions principally in Saudi Riyals; also AED, which is pegged",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "103",
+        "evidence": [
+          {
+            "pdf_page": 103,
+            "quote": "The Group’s transactions are principally in Saudi Riyals."
+          },
+          {
+            "pdf_page": 103,
+            "quote": "AED to Saudi Riyals is pegged"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Subsequent event geopolitical",
+      "body_text": "Post year-end Middle East geopolitical and security developments assessed as non-adjusting events",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "106",
+        "evidence": [
+          {
+            "pdf_page": 106,
+            "quote": "East region witnessed rapid geopolitical and security developments that led to an increased level of"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "non-modifying subsequent events"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Rooftop solar imdad",
+      "body_text": "Partnership with Emerge to develop a 3 MWp rooftop solar installation at IMDAD Distribution Center",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "63",
+        "evidence": [
+          {
+            "pdf_page": 63,
+            "quote": "Partnership with Emerge to develop a three MWp rooftop solar installation to power the IMDAD Distribution Center"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Forklift electrification",
+      "body_text": "100% of IMDAD forklifts electric, saving 2.65 tons CO2 annually; full electrification on track for next year",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "64",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "electric, eliminating diesel emissions"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "and saving 2.65 tons of CO2 annually."
+          },
+          {
+            "pdf_page": 64,
+            "quote": "Full 100% electrification is on track"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "for completion by next year."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Imdad certifications",
+      "body_text": "IMDAD certified to ISO 14001 and LEED accredited",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "64",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "ISO 14001 Environmental Management System"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "The center’s LEED accreditation"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Hrsd award 2025",
+      "body_text": "Best Practices Track Award (Gold Category) from Ministry of HRSD, October 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 62,
+            "quote": "In October"
+          },
+          {
+            "pdf_page": 62,
+            "quote": "2025, Nahdi received the Best Practices Track"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Store openings 2025",
+      "body_text": "Opened 100 new stores and 4 polyclinics in 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "46",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "opening of 100 new stores and 4 polyclinics"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "First riyadh polyclinic",
+      "body_text": "Opened first NahdiCare Polyclinic in Riyadh (2025)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "We opened our first NahdiCare"
+          },
+          {
+            "pdf_page": 58,
+            "quote": "This year four new outlets were added in Riyadh and the southern region."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Uae distribution center",
+      "body_text": "Inaugurated new UAE (Dubai) Distribution Center of over 2,000 sqm",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "We inaugurated our new UAE Distribution Center"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "of the new UAE Distribution Center, which"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Nahdi now launch",
+      "body_text": "Launched Nahdi Now 30-minute delivery service (Q3 2025)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "a 30-minute delivery service across the Kingdom"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "Q3 2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Wasfaty rollout",
+      "body_text": "Nationwide Wasfaty e-prescription access across all pharmacies (Q4 2025)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "We enabled nationwide access to Wasfaty"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "Q4 2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Global pharmacy partnership",
+      "body_text": "Global pharmacy partnership with Raia Drogasil (Brazil) and Clicks (South Africa)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "37",
+        "evidence": [
+          {
+            "pdf_page": 37,
+            "quote": "In 2025, we launched a first-of-its-kind global"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "pharmacy partnership with Raia Drogasil (Brazil)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Saudi manufacturer agreements",
+      "body_text": "Signed eight new agreements with Saudi medicine manufacturers adding nearly 80 SKUs",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "We signed eight new agreements with"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Saudi medicine manufacturers"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Zero debt financing position",
+      "body_text": "Zero-debt balance sheet at year-end 2025; CAPEX funded internally",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "46",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "Nahdi ended the year with a zero-debt balance"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "fully funded through internal cash"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Statutory reserve transfer",
+      "body_text": "General Assembly on 29 April 2025 approved transfer of statutory reserve balance to retained earnings",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "99",
+        "evidence": [
+          {
+            "pdf_page": 99,
+            "quote": "On 29 April 2025, the General Assembly Meeting of the shareholders approved the transfer of the"
+          },
+          {
+            "pdf_page": 99,
+            "quote": "statutory reserve balance amounting to"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "period": "FY2025"
+      }
+    }
+  ]
+}

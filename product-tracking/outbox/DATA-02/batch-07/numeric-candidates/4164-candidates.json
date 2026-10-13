@@ -1,0 +1,567 @@
+{
+  "company_id": "sa:4164",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+  "source_sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "pharmacies_total",
+      "value": 1222,
+      "unit": "pharmacies",
+      "period": "FY2025",
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "through 1,222 pharmacies"
+          },
+          {
+            "pdf_page": 15,
+            "quote": "with 1,222 pharmacies, representing around 10% of the total number of pharmacies in the Kingdom"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "pharmacies",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "pharmacies_ksa",
+      "value": 1177,
+      "unit": "pharmacies",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "80 new pharmacies bringing total to 1,177 pharmacies in KSA"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "pharmacies",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "pharmacies_uae",
+      "value": 45,
+      "unit": "pharmacies",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "20 new pharmacies in the UAE bringing total to 45 pharmacies"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "pharmacies",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "polyclinics",
+      "value": 14,
+      "unit": "polyclinics (NahdiCare)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "58",
+        "evidence": [
+          {
+            "pdf_page": 58,
+            "quote": "Nahdi expanded our polyclinic network to 14 facilities across 9 cities in the Kingdom"
+          },
+          {
+            "pdf_page": 4,
+            "quote": "through 14 polyclinics in 9 major cities"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "polyclinics (NahdiCare)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "population_coverage_pct",
+      "value": 0.97,
+      "unit": "fraction of Saudi population",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Today, we serve 97% of the population across nearly 150 cities and villages"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "fraction of Saudi population",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "distribution_centers",
+      "value": 5,
+      "unit": "distribution centers",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "The network spans five strategic distribution centers across Riyadh, Jeddah, Abha and Dubai, covering 140,000 square meters"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "distribution centers",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "online_revenue_contribution",
+      "value": 0.258,
+      "unit": "fraction of Pharmacy Retail revenue",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 55,
+            "quote": "Online revenue contribution increased to 25.8% of Pharmacy Retail revenue"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "fraction of Pharmacy Retail revenue",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "online_orders",
+      "value": 14300000,
+      "unit": "orders (more than)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 55,
+            "quote": "more than 14.3 million online orders were placed this year"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "orders (more than)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "nuhdeek_revenue_share",
+      "value": 0.672,
+      "unit": "fraction of revenue",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Nuhdeek membership base, generating approximately 67.2% of revenue."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "fraction of revenue",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "nuhdeek_members",
+      "value": 6500000,
+      "unit": "members (6.5M+; 2M+ new in 2025)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "8",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "6.5M+"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "Nuhdeek members"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "2M+ new Nuhdeek members"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "At-a-glance figure; quoted cells are adjacent labels",
+        "unit": "members (6.5M+; 2M+ new in 2025)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "employees_full_time",
+      "value": 10000,
+      "unit": "full-time colleagues (10,000+)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "575,000 hours of training conducted in 2025 for our 10,000+ full-time colleagues."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "full-time colleagues (10,000+)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "nationalization_rate",
+      "value": 0.375,
+      "unit": "fraction of workforce",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "66",
+        "evidence": [
+          {
+            "pdf_page": 66,
+            "quote": "This year, Nahdi achieved a 37.5% nationalization rate"
+          },
+          {
+            "pdf_page": 33,
+            "quote": "Increased overall nationalization from 33%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "fraction of workforce",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "national_pharmacists",
+      "value": 1360,
+      "unit": "national pharmacists (1,360+)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "reaching a total of 1,360+ national pharmacists, of which 40% are females."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "national pharmacists (1,360+)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "female_workforce_pct",
+      "value": 0.215,
+      "unit": "fraction of colleagues",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "21.5% female colleagues"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "fraction of colleagues",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "guest_nps",
+      "value": 90,
+      "unit": "NPS",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "90 Guest NPS"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "NPS",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "omnihealth_workforce",
+      "value": 1000,
+      "unit": "colleagues (1,000+)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "58",
+        "evidence": [
+          {
+            "pdf_page": 58,
+            "quote": "Building a strong and diverse Omnihealth workforce"
+          },
+          {
+            "pdf_page": 58,
+            "quote": "1,000+"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "colleagues (1,000+)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "board_meetings_2025",
+      "value": 4,
+      "unit": "meetings",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "81",
+        "evidence": [
+          {
+            "pdf_page": 81,
+            "quote": "The Board of Directors held four scheduled meetings for the fiscal year 2025"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "09/03/2025"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "29/06/2025"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "14/09/2025"
+          },
+          {
+            "pdf_page": 81,
+            "quote": "07/12/2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "meetings",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "free_float",
+      "value": 0.3,
+      "unit": "fraction of shares",
+      "period": null,
+      "as_of": null,
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Free float"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "30%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Share information table; no as-of date beyond report context",
+        "unit": "fraction of shares"
+      }
+    },
+    {
+      "metric": "foreign_ownership",
+      "value": 0.0757,
+      "unit": "fraction of shares",
+      "period": null,
+      "as_of": "2025-12",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Foreign ownership as at December 2025"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "7.57%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "as_of": "2025-12",
+        "unit": "fraction of shares"
+      }
+    },
+    {
+      "metric": "dividend_payout_ratio_2025",
+      "value": 0.88,
+      "unit": "fraction of net profit",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "46",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "payout ratio of 88%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "fraction of net profit",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "cartons_recycled",
+      "value": 1085,
+      "unit": "tons",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "64",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "1,085 tons"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "of cartons"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "unit": "tons",
+        "period": "FY2025"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "batch": "batch-07",
+  "manifests": [
+    {
+      "manifest": "classification/4164-sector-industry.json",
+      "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+      "source_sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "manifests/nahdi-2025-profile.json",
+      "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+      "source_sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "numeric-candidates/4164-candidates.json",
+      "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+      "source_sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    }
+  ],
+  "evidence_checked": 254,
+  "evidence_failed": 0,
+  "items_without_evidence": 0,
+  "documents_failed": [],
+  "passed": true
+}

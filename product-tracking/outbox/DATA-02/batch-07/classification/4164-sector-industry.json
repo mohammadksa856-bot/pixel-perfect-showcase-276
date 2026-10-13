@@ -1,0 +1,55 @@
+{
+  "company_id": "sa:4164",
+  "symbol": "4164",
+  "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+  "source_sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:4164",
+      "symbol": "4164",
+      "codex_matrix": {
+        "sector": null,
+        "industry": null,
+        "issuer_sector_gate": "NEEDS_REVIEW"
+      },
+      "engine_main_registry": null,
+      "proposed": {
+        "sector": null,
+        "industry": null,
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "none: no sector/industry label for this company in engine main or any engine branch registry"
+      },
+      "status": "activity_evidence_only_no_label_proposed",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "88",
+        "evidence": [
+          {
+            "pdf_page": 88,
+            "quote": "The principal activity of the Group is the wholesale and retail trading of cosmetics, pharmaceutical products, special and healthy foods, and medical equipment."
+          },
+          {
+            "pdf_page": 4,
+            "quote": "Nahdi is Saudi Arabia’s leading integrated pharmacy and Omnihealth platform, combining nationwide retail access, polyclinics, digital health services, supply chain capabilities and Private Label products"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "Consumer Staples Distribution and Retail"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-07)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; Codex must confirm the labels against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

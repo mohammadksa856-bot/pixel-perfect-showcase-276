@@ -1,0 +1,76 @@
+{
+  "batch": "DATA-02/batch-07",
+  "engine_main_commit": "b70254e",
+  "company_list_reference": {
+    "file": "product-tracking/inbox/DATA01-market-batch-20261013-v7/BATCH20_GAP_MATRIX.json",
+    "commit": "ab98885",
+    "order": "4164 (matrix order 20)"
+  },
+  "source_links_reference": "product-tracking/outbox/DATA-02/source-links/companies-16-20-links.json (user-supplied, 2026-10-13)",
+  "access": {
+    "investors.nahdi.sa": "HTTP 200 application/pdf (annual report downloaded)",
+    "www.saudiexchange.sa": "HTTP 403 'Access Denied' from the site's CDN for every URL incl. the home page; not bypassed"
+  },
+  "documents_used": [
+    {
+      "company": "4164",
+      "title": "Nahdi Annual Report 2025",
+      "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+      "sha256": "b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790",
+      "bytes": 13374560,
+      "pdf_pages": 107,
+      "engine_ref": null,
+      "archived_in_engine": false,
+      "proposed_engine_archive_path": "data/raw/SA/4164/documents/b053f0aa23a51b9cb03ed19737d95fa8cebccba9e3dddcb8921f10af3d2b8790.pdf",
+      "downloaded": {
+        "by": "Claude Code session (user-allowed host investors.nahdi.sa)",
+        "at": "2026-10-13",
+        "http_status": 200,
+        "content_type": "application/pdf"
+      },
+      "text_layer": "digital",
+      "ocr_used": false,
+      "used_by": [
+        "classification/4164-sector-industry.json",
+        "manifests/nahdi-2025-profile.json",
+        "numeric-candidates/4164-candidates.json"
+      ]
+    }
+  ],
+  "documents_needed_not_available": [
+    {
+      "company": "4164",
+      "document": "Audited FS 2025 PDF (saudiexchange.sa/Resources/fsPdf/17555_2964_2026-04-21_18-42-44_en.pdf)",
+      "status": "HTTP 403 from Saudi Exchange; the annual report contains the audited consolidated FS"
+    },
+    {
+      "company": "4340",
+      "document": "Al Rajhi REIT annual report and FS 2025",
+      "status": "Saudi Exchange announcement page: HTTP 403 from this session; nothing extracted"
+    },
+    {
+      "company": "4140",
+      "document": "SIECO annual results 2025",
+      "status": "Saudi Exchange announcement page: HTTP 403 from this session; nothing extracted"
+    },
+    {
+      "company": "4260",
+      "document": "Budget Saudi annual results 2025",
+      "status": "Saudi Exchange announcement page: HTTP 403 from this session; nothing extracted"
+    },
+    {
+      "company": "9510",
+      "document": "NBM annual results 2025 (Nomu)",
+      "status": "Saudi Exchange announcement page: HTTP 403 from this session; nothing extracted"
+    }
+  ],
+  "comparison_limits": {
+    "codex_engine_commit_available_on_github": false,
+    "compared_against": [
+      "engine main b70254e data/imports",
+      "all earlier DATA-02 batches 01-06",
+      "BATCH20_GAP_MATRIX fields_present"
+    ],
+    "not_compared": "Codex's local database (347 original values for 4164 per the matrix; sources not published)"
+  }
+}

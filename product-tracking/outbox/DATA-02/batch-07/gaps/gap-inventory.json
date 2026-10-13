@@ -1,0 +1,426 @@
+{
+  "batch": "DATA-02/batch-07",
+  "engine_main_commit": "b70254e",
+  "company_list": "BATCH20_GAP_MATRIX.json (codex/data01-market-batch-20261013 @ ab98885), company 20 (4164); companies 16-19 remain blocked by Saudi Exchange (HTTP 403)",
+  "rules": [
+    "A topic is never marked not_applicable automatically; missing disclosure is recorded with its reason.",
+    "Numeric topics are DATA-01 (Codex); their state is taken from the Codex matrix, not re-measured.",
+    "batch_07_added lists exactly the keys delivered in this batch for that topic."
+  ],
+  "reasons": {
+    "covered": "covered_by_batch_or_engine",
+    "not_in_doc": "not_disclosed_in_archived_document",
+    "doc_missing": "official_document_not_archived",
+    "net": "official_site_blocked_by_session_network_policy",
+    "licensed": "licensed_feed_required",
+    "market": "market_data_feed_required",
+    "numeric": "numeric_scope_DATA-01"
+  },
+  "topics": [
+    {
+      "key": "identity",
+      "ar": "هوية الشركة"
+    },
+    {
+      "key": "business_model",
+      "ar": "نموذج العمل والمنتجات ومصادر الإيراد"
+    },
+    {
+      "key": "management_governance",
+      "ar": "الإدارة والحوكمة"
+    },
+    {
+      "key": "ownership",
+      "ar": "الملكية"
+    },
+    {
+      "key": "financial_statements",
+      "ar": "القوائم المالية"
+    },
+    {
+      "key": "earnings_quality",
+      "ar": "جودة الأرباح"
+    },
+    {
+      "key": "ratios",
+      "ar": "النسب المالية"
+    },
+    {
+      "key": "operating_kpis",
+      "ar": "المؤشرات التشغيلية"
+    },
+    {
+      "key": "dividends",
+      "ar": "التوزيعات"
+    },
+    {
+      "key": "sector_industry",
+      "ar": "القطاع والصناعة"
+    },
+    {
+      "key": "competitors",
+      "ar": "المنافسون"
+    },
+    {
+      "key": "trading_liquidity",
+      "ar": "التداول والسيولة"
+    },
+    {
+      "key": "guidance",
+      "ar": "التوجيهات والتوقعات"
+    },
+    {
+      "key": "analyst_coverage",
+      "ar": "تغطية المحللين"
+    },
+    {
+      "key": "valuation",
+      "ar": "التقييم"
+    },
+    {
+      "key": "risks",
+      "ar": "المخاطر والإفصاحات"
+    },
+    {
+      "key": "sustainability",
+      "ar": "الاستدامة"
+    },
+    {
+      "key": "news_ir",
+      "ar": "الأخبار ومواد المستثمرين"
+    }
+  ],
+  "companies": {
+    "4164": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "conversion_to_joint_stock_date",
+        "batch_07_added": [
+          "commercial_registration",
+          "date_established",
+          "external_auditor",
+          "fiscal_year_end",
+          "fs_approval_date",
+          "functional_presentation_currency",
+          "headquarters_address",
+          "legal_form",
+          "legal_name",
+          "listing",
+          "registration_number_as_labelled_in_governance_report",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [
+          "conversion_to_joint_stock_date"
+        ],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "acquisitions_2025; borrowings_financing_facilities",
+        "batch_07_added": [
+          "business_pillars",
+          "business_review_divisions",
+          "digital_channels",
+          "geographies",
+          "operating_segments_ifrs8",
+          "private_label",
+          "profile_note|Brand equity vs competitor",
+          "profile_note|Market capitalization sector position",
+          "profile_note|Market share pharmacy retail",
+          "profile_note|Omnichannel leadership claim",
+          "strategy_2030_heart_beats",
+          "subsidiary_al_sakhaa_golden",
+          "subsidiary_al_sakhaa_integrated_solutions",
+          "subsidiary_nahdi_care",
+          "subsidiary_nahdi_drug_store_uae",
+          "subsidiary_nahdi_investment_uae",
+          "subsidiary_nahdi_pharmacy_uae"
+        ],
+        "recorded_gaps": [
+          "acquisitions_2025",
+          "borrowings_financing_facilities"
+        ],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "board_term",
+        "batch_07_added": [
+          "audit_committee",
+          "auditor_change_fy2025",
+          "board_committees",
+          "board_composition",
+          "ceo",
+          "cfo",
+          "chairman",
+          "digital_transformation_cyber_security_committee",
+          "executive_management",
+          "general_assembly_2025",
+          "governance_disclosure|Statutory reserve transfer",
+          "governance_structure",
+          "remuneration_nomination_committee",
+          "vice_chairman"
+        ],
+        "recorded_gaps": [
+          "board_term"
+        ],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_07_added": [
+          "alnahdi_holding_company",
+          "saudi_economic_and_development_holding_company_sedco_holding",
+          "shareholder_ibrahim_al_masbahi",
+          "shareholding_by_type"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 347 original values, 34 periods (not acceptance)",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 347 original values, 34 periods (not acceptance)",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 347 original values, 34 periods (not acceptance)",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_07_added": [
+          "numeric:board_meetings_2025",
+          "numeric:cartons_recycled",
+          "numeric:distribution_centers",
+          "numeric:dividend_payout_ratio_2025",
+          "numeric:employees_full_time",
+          "numeric:female_workforce_pct",
+          "numeric:foreign_ownership",
+          "numeric:free_float",
+          "numeric:guest_nps",
+          "numeric:national_pharmacists",
+          "numeric:nationalization_rate",
+          "numeric:nuhdeek_members",
+          "numeric:nuhdeek_revenue_share",
+          "numeric:omnihealth_workforce",
+          "numeric:online_orders",
+          "numeric:online_revenue_contribution",
+          "numeric:pharmacies_ksa",
+          "numeric:pharmacies_total",
+          "numeric:pharmacies_uae",
+          "numeric:polyclinics",
+          "numeric:population_coverage_pct"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_07_added": [
+          "dividend_policy",
+          "sa:4164:cash_dividend:2025-03-10",
+          "sa:4164:cash_dividend:2025-07-29",
+          "sa:4164:cash_dividend:2026-03-08"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_07_added": [
+          "classification:None/None",
+          "industry_self_description",
+          "principal_activity_fs_note1",
+          "sector_as_stated_in_report"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "named_competitors",
+        "batch_07_added": [],
+        "recorded_gaps": [
+          "named_competitors"
+        ],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1114 daily price records; liquidity metrics not measured",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_07_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_07_added": [
+          "fs_financial_risk_categories",
+          "principal_risks",
+          "risk_disclosure|Currency exposure",
+          "risk_disclosure|Subsequent event geopolitical",
+          "risk_disclosure|Trade receivable concentration",
+          "risk_governance"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "ghg_emissions_and_targets",
+        "batch_07_added": [
+          "esg_framework",
+          "sustainability_disclosure|Forklift electrification",
+          "sustainability_disclosure|Hrsd award 2025",
+          "sustainability_disclosure|Imdad certifications",
+          "sustainability_disclosure|Rooftop solar imdad"
+        ],
+        "recorded_gaps": [
+          "ghg_emissions_and_targets"
+        ],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025",
+          "Saudi Exchange profile (official sector, foreign ownership); audited FS PDF on saudiexchange.sa (403 from this session)"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_07_added": [
+          "material_event|Dividend h1 2024",
+          "material_event|Dividend h2 2023",
+          "material_event|First riyadh polyclinic",
+          "material_event|Global pharmacy partnership",
+          "material_event|Nahdi now launch",
+          "material_event|Saudi manufacturer agreements",
+          "material_event|Store openings 2025",
+          "material_event|Uae distribution center",
+          "material_event|Wasfaty rollout",
+          "material_event|Zero debt financing position"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Nahdi Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    }
+  }
+}

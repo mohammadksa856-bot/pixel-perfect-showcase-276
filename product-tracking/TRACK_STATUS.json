@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-13T21:30:00Z",
+  "updated_at": "2026-10-13T23:00:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -143,7 +143,7 @@
       ]
     },
     "DATA-02": {
-      "status": "batches_01_to_06_delivered_pending_codex_review",
+      "status": "batches_01_to_07_delivered_pending_codex_review",
       "branch": "claude/data-02-batch-01",
       "base": "bc6b450",
       "outbox": "product-tracking/outbox/DATA-02/batch-01",
@@ -300,6 +300,23 @@
       "decisions_needed": [
         "Codex: use dossiers to close REVIEW groups; prioritise governance, ownership, dividends"
       ]
+    },
+    "DATA-02-B07": {
+      "status": "delivered_pending_codex_review",
+      "branch": "claude/data-02-batch-07",
+      "base": "f32dadb",
+      "outbox": "product-tracking/outbox/DATA-02/batch-07",
+      "report": "product-tracking/reports/BR-014_DATA-02_batch-07.md",
+      "companies": [
+        "4164"
+      ],
+      "result": "Nahdi AR2025 downloaded (user-allowed host; sha256 b053f0aa...); 48 attributes + 2 ownership + 3 dividends + 22 disclosures + 21 DATA-01 candidates; 254/254 quotes pass pdftotext and MuPDF; 0 collisions; cumulative merge 0 rows changed, idempotent; 3 source-internal conflicts flagged",
+      "blocked": "saudiexchange.sa returns HTTP 403 (CDN Access Denied) for all URLs: 4340/4140/4260/9510 still without documents",
+      "decisions_needed": [
+        "Codex: re-download, verify sha256 and archive Nahdi AR2025",
+        "PDFs for 4340/4140/4260/9510 via Codex or issuer-site links",
+        "resolve 3 Nahdi source-internal conflicts"
+      ]
     }
   },
   "open_dependencies_on_codex": {
@@ -320,7 +337,7 @@
     "ENGINE-2391513": "Engine commit cited in BATCH_RESULT_NOTICE.json is not on GitHub",
     "REGISTRY-SECTOR": "2280/4190/4004/4300 (batch-02) and 4030/1211 (batch-03) missing from engine main registry; evidence-backed candidates delivered",
     "DATA-02-B03-1214": "Shaker: Codex recovered 2 hash-verified filings locally (not published); archive them to start DATA-02",
-    "DATA-02-B04-DOCS": "User supplied official 2025 links for 4340/4140/4260/9510/4164 (product-tracking/outbox/DATA-02/source-links/companies-16-20-links.json); blocked from this session; Codex to archive PDFs with SHA-256",
+    "DATA-02-B04-DOCS": "4164 done from issuer site (batch-07); 4340/4140/4260/9510 blocked: saudiexchange.sa CDN returns 403 to this session",
     "DATA-02-REVIEW-215": "Codex review 239d107: 215 REVIEW + 1 REJECT; evidence dossiers delivered in DATA-02 batch-04 review-support",
     "DATA-02-REVIEW-380": "380 REVIEW records (215 DATA02 + 165 DATA03) indexed with evidence groups and closing documents in DATA-02 batch-05",
     "ENTITY-SPECS": "REIT/Nomu/sector display specs awaiting review; regulatory rules need citations"
@@ -777,6 +794,62 @@
       "branch": "claude/data-02-batch-06",
       "commit": "working tree on d72c03e",
       "result": "202 pass, 14 skip (integration), 0 fail; tsc 0; eslint clean"
+    },
+    {
+      "id": "RUN-2026-10-13-43",
+      "suite": "download companies 16-20 sources",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "investors.nahdi.sa 200 (AR2025); saudiexchange.sa 403 for all URLs"
+    },
+    {
+      "id": "RUN-2026-10-13-44",
+      "suite": "data02_verify.py batch-07",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "254/254"
+    },
+    {
+      "id": "RUN-2026-10-13-45",
+      "suite": "data02_mupdf_check.py batch-07",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "254/254, 0 fail, 0 OCR"
+    },
+    {
+      "id": "RUN-2026-10-13-46",
+      "suite": "data02_collisions.py batch-07 (main + branch imports + batches 01-03)",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "75 keys, 0 collisions"
+    },
+    {
+      "id": "RUN-2026-10-13-47",
+      "suite": "data02_merge_test.sh cumulative (18 baselines)",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "integrity ok; +48/+2/+3/+22 exact; 0 rows changed; resync 0/0"
+    },
+    {
+      "id": "RUN-2026-10-13-48",
+      "suite": "bun test tests/data02-batch-07.test.ts",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "9/9"
+    },
+    {
+      "id": "RUN-2026-10-13-49",
+      "suite": "bun test tests/ + tsc + eslint",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-07",
+      "commit": "working tree on f32dadb + engine b70254e",
+      "result": "211 pass, 14 skip, 0 fail; tsc 0; eslint clean"
     }
   ]
 }

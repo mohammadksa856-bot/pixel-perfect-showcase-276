@@ -112,3 +112,7 @@
 {"ts": "2026-10-13T20:42:00Z", "task": "DATA-02-B06", "event": "test_run", "run": "RUN-2026-10-13-42", "result": "202 pass, 14 skip, 0 fail"}
 {"ts": "2026-10-13T21:00:00Z", "task": "BR-013", "event": "batch_report", "path": "product-tracking/reports/BR-013_DATA-02_batch-06.md"}
 {"ts": "2026-10-13T21:30:00Z", "task": "DATA-02-LINKS", "event": "received", "detail": "user supplied 6 official links for companies 16-20 (4 Saudi Exchange announcement pages, 2 Nahdi PDFs); fetch blocked (saudiexchange.sa, investors.nahdi.sa); recorded for Codex archiving; nothing extracted"}
+{"ts": "2026-10-13T21:40:00Z", "task": "DATA-02-B07", "event": "started", "branch": "claude/data-02-batch-07", "base": "f32dadb"}
+{"ts": "2026-10-13T21:41:00Z", "task": "DATA-02-B07", "event": "blocked_partial", "detail": "user allowed saudiexchange.sa and investors.nahdi.sa; Nahdi AR downloaded (200); saudiexchange.sa CDN returns 403 Access Denied for all URLs; not bypassed"}
+{"ts": "2026-10-13T22:40:00Z", "task": "DATA-02-B07", "event": "test_run", "result": "254/254 pdftotext and MuPDF; 0 collisions; merge 0 rows changed; 9/9 + 211 pass"}
+{"ts": "2026-10-13T23:00:00Z", "task": "BR-014", "event": "batch_report", "path": "product-tracking/reports/BR-014_DATA-02_batch-07.md"}

@@ -64,6 +64,10 @@ const WITHHELD: Record<WithheldReason, LocalizedText> = {
     ar: "محسوبة دون معادلة مسجّلة",
     en: "Calculated without a recorded formula",
   },
+  calculated_inputs_not_reproduced: {
+    ar: "محسوبة، ولم يُعِد المحرك إنتاج مدخلاتها",
+    en: "Calculated; the engine has not reproduced its inputs",
+  },
 };
 
 const PEER_REASONS: Record<string, LocalizedText> = {
@@ -79,12 +83,6 @@ const PEER_REASONS: Record<string, LocalizedText> = {
     ar: "عدد الشركات ذات البيانات المتطابقة الفترة أقل من الحد الأدنى.",
     en: "Too few companies with same-period data.",
   },
-};
-
-const KIND_LABEL: Record<CompanyPreview["kind"], LocalizedText> = {
-  bank: { ar: "البنوك", en: "banks" },
-  insurer: { ar: "شركات التأمين", en: "insurers" },
-  ordinary: { ar: "الشركات", en: "companies" },
 };
 
 export function StatusChip({ status }: { status: TopicStatus }) {
@@ -117,9 +115,17 @@ function SourceLink({ href, children }: { href: string; children?: ReactNode }) 
 function ProofBadge({ cell }: { cell: ValueCell }) {
   const { t } = useI18n();
   const p = cell.proof;
-  const text =
-    p.kind === "calculated_formula_recorded"
-      ? { ar: "محسوب", en: "Calculated" }
+  const calculated = p.kind === "calculated_inputs_reproduced";
+  const importOnly = p.document === "import_file_only";
+  const text = importOnly
+    ? p.page
+      ? {
+          ar: `ملف إدخال · ص ${iso(p.page)} · الأصل غير مؤرشف`,
+          en: `Import file · p. ${p.page} · original not archived`,
+        }
+      : { ar: "ملف إدخال · الأصل غير مؤرشف", en: "Import file · original not archived" }
+    : calculated
+      ? { ar: "محسوب · مدخلاته مُعاد إنتاجها", en: "Calculated · inputs reproduced" }
       : p.kind === "reported_extracted"
         ? p.page
           ? { ar: `منشور · ص ${iso(p.page)}`, en: `Reported · p. ${p.page}` }
@@ -129,19 +135,22 @@ function ProofBadge({ cell }: { cell: ValueCell }) {
     <span
       className={cn(
         "rounded px-1.5 py-0.5 text-[10px]",
-        p.kind === "calculated_formula_recorded"
-          ? "bg-tone-indigo/10 text-tone-indigo"
-          : "bg-muted text-muted-foreground",
+        importOnly
+          ? "bg-tone-amber/10 text-tone-amber"
+          : calculated
+            ? "bg-tone-indigo/10 text-tone-indigo"
+            : "bg-muted text-muted-foreground",
       )}
       title={p.formula ?? undefined}
       data-proof={p.kind}
+      data-document={p.document}
     >
       {t(text)}
     </span>
   );
 }
 
-function MetricTable({ group, kind }: { group: MetricGroup; kind: CompanyPreview["kind"] }) {
+function MetricTable({ group }: { group: MetricGroup }) {
   const { t } = useI18n();
   return (
     <Panel title={t(group.title)}>
@@ -227,15 +236,6 @@ function MetricTable({ group, kind }: { group: MetricGroup; kind: CompanyPreview
             ))}
           </ul>
         </div>
-      )}
-      {group.notApplicable.length > 0 && (
-        <p className="mt-3 text-[12px] text-muted-foreground" data-not-applicable>
-          {t({
-            ar: `غير منطبق على ${KIND_LABEL[kind].ar}: `,
-            en: `Not applicable to ${KIND_LABEL[kind].en}: `,
-          })}
-          {group.notApplicable.map((n) => t(n.label)).join("، ")}
-        </p>
       )}
     </Panel>
   );
@@ -335,7 +335,7 @@ function BlockView({
   const { t } = useI18n();
   switch (block.type) {
     case "metrics":
-      return <MetricTable group={block.group} kind={preview.kind} />;
+      return <MetricTable group={block.group} />;
     case "facts":
       return (
         <Panel>

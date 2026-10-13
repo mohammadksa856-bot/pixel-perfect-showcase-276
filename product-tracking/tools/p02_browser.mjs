@@ -135,13 +135,31 @@ if (EXPECT === "off") {
     });
   }
 
-  await check("1120: withheld/not-applicable/proof UI on bank page", async () => {
-    const { context, page } = await openPage("/preview/companies/1120");
-    assert.ok((await page.locator("[data-withheld]").count()) >= 1);
-    assert.ok((await page.locator("[data-not-applicable]").count()) >= 1);
-    assert.ok((await page.locator('[data-proof="calculated_formula_recorded"]').count()) > 0);
-    await page.locator("#topic-5").scrollIntoViewIfNeeded();
-    await page.screenshot({ path: `${SHOTS}/p02-1120-topic5.png` });
+  await check(
+    "1120: unproven derivatives withheld with reason; no 'not applicable' hiding",
+    async () => {
+      const { context, page } = await openPage("/preview/companies/1120");
+      assert.ok((await page.locator("[data-withheld]").count()) >= 1);
+      assert.equal(await page.locator("[data-not-applicable]").count(), 0);
+      // v4 engine has no input lineage → no calculated value may be shown
+      assert.equal(await page.locator('[data-proof="calculated_inputs_reproduced"]').count(), 0);
+      const withheldText = (await page.locator("[data-withheld]").allInnerTexts()).join("\n");
+      assert.match(withheldText, /لم يُعِد المحرك إنتاج مدخلاتها/);
+      assert.match(withheldText, /الوحدة لا تتسق مع معنى المقياس/);
+      assert.equal((await page.locator('[data-document="original_document"]').count()) > 0, true);
+      assert.equal(await page.locator("[data-data-notice]").count(), 0);
+      await page.locator("#topic-5").scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `${SHOTS}/p02-1120-topic5.png` });
+      await context.close();
+    },
+  );
+
+  await check("8010: import-file source labelled and company notice shown", async () => {
+    const { context, page } = await openPage("/preview/companies/8010");
+    assert.equal(await page.locator("[data-data-notice]").count(), 1);
+    assert.match(await page.locator("[data-data-notice]").innerText(), /المستند الأصلي غير مؤرشف/);
+    assert.ok((await page.locator('[data-document="import_file_only"]').count()) > 0);
+    assert.equal(await page.locator('[data-document="original_document"]').count(), 0);
     await context.close();
   });
 

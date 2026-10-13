@@ -18,7 +18,8 @@ import { iso } from "@/lib/bidi";
  * - حالة كل موضوع من 18 تأتي من تقييم المحرك (`understanding`) ولا تُستنتج هنا.
  */
 
-export const PAGE_CONTRACT_VERSION = 4;
+/** إصدارات عقد الصفحة المدعومة. v5 (المحرك 1d27419) يضيف derivation.lineage؛ بقية الحقول المستخدمة لم تتغير. */
+export const PAGE_CONTRACT_VERSIONS: readonly number[] = [4, 5];
 
 // ───────────────────────── عقد المحرك (الحقول المستخدمة فقط)
 
@@ -45,9 +46,16 @@ export type EngineMetricRow = {
       source_url?: string | null;
       filing_type?: string | null;
       filed_at?: string | null;
+      /** نوع المستند المؤرشف فعليًا. application/json يعني ملف إدخال لا المستند الأصلي. */
+      content_type?: string | null;
     } | null;
     extraction?: { page?: number | string | null } | null;
-    derivation?: { type?: string | null; calculation?: string | null } | null;
+    derivation?: {
+      type?: string | null;
+      calculation?: string | null;
+      /** v5: هل أُعيد إنتاج المدخلات الحالية للمعادلة؟ غيابه يعني لا (فشل مغلق). */
+      lineage?: { status?: string | null; current_inputs_reproduced?: boolean | null } | null;
+    } | null;
   } | null;
 };
 
@@ -132,7 +140,8 @@ export function contractProblems(page: unknown): string[] {
   const problems: string[] = [];
   const p = page as Partial<EnginePage> | null;
   if (!p || typeof p !== "object") return ["not_an_object"];
-  if (p.contract_version !== PAGE_CONTRACT_VERSION) problems.push("contract_version");
+  if (!PAGE_CONTRACT_VERSIONS.includes(p.contract_version as number))
+    problems.push("contract_version");
   if (p.placeholder_policy !== "never_substitute_demo_values") problems.push("placeholder_policy");
   if (!p.company?.symbol || !p.company?.market) problems.push("company");
   const f = p.sections?.financials;
@@ -150,7 +159,10 @@ export function contractProblems(page: unknown): string[] {
 export type CompanyKind = "bank" | "insurer" | "ordinary";
 export type TopicStatus =
   "available" | "partial" | "unavailable" | "not_measured" | "not_applicable";
-export type ProofKind = "reported_extracted" | "reported_manifest" | "calculated_formula_recorded";
+export type ProofKind = "reported_extracted" | "reported_manifest" | "calculated_inputs_reproduced";
+/** هل المستند المؤرشف هو الأصلي (PDF/Excel) أم ملف إدخال JSON فقط؟ */
+/** المستند المؤرشف: أصلي مؤكد، أو ملف إدخال مؤكد، أو غير مذكور في الرد (لا نفترض أيًا منهما). */
+export type DocumentKind = "original_document" | "import_file_only" | "not_stated";
 
 export type Period = { kind: string; end: string; label: LocalizedText };
 
@@ -167,6 +179,7 @@ export type ValueCell = {
     formula: string | null;
     sourceUrl: string;
     filingType: string | null;
+    document: DocumentKind;
     /** وجود المصدر ليس تحققًا مستقلًا من صحة الرقم. */
     independentlyVerified: false;
   };
@@ -179,7 +192,9 @@ export type WithheldReason =
   | "period_kind_mismatch"
   | "no_source"
   | "unsafe_source_url"
-  | "calculated_without_formula";
+  | "calculated_without_formula"
+  /** محسوبة دون إعادة إنتاج مدخلاتها (lineage غير مسجّل). قاعدة Codex للمشتقات القديمة. */
+  | "calculated_inputs_not_reproduced";
 
 export type MetricGroup = {
   id: string;
@@ -187,7 +202,6 @@ export type MetricGroup = {
   expectedPeriod: string;
   cells: ValueCell[];
   withheld: { key: string; label: LocalizedText; reason: WithheldReason }[];
-  notApplicable: { key: string; label: LocalizedText }[];
   missing: { key: string; label: LocalizedText }[];
 };
 
@@ -260,7 +274,9 @@ export type CompanyPreview = {
   kind: CompanyKind;
   readiness: { state: string | null; score: number | null; target: number | null };
   topics: Topic[];
-  counts: { shown: number; withheld: number; notApplicable: number };
+  counts: { shown: number; withheld: number };
+  /** تنبيهات على مستوى الشركة عن طبيعة المصدر (مثلًا: ملف إدخال دون المستند الأصلي). */
+  dataNotices: LocalizedText[];
 };
 
 // ───────────────────────── قواعد
@@ -270,38 +286,6 @@ export function companyKind(industry: string | null | undefined): CompanyKind {
   if (v === "banks") return "bank";
   if (v === "insurance") return "insurer";
   return "ordinary";
-}
-
-/**
- * مقاييس لا تنطبق على المؤسسات المالية (بنوك وتأمين). القاعدة من DATA_MODEL_18_CATEGORIES.md
- * (الفئة 7): مجموعة نسب واحدة تنكسر صامتة على البنوك وشركات التأمين. التدفق التشغيلي فيها
- * يشمل حركة الودائع أو الاحتياطيات، فمؤشرات التدفق الحر وتحويل النقد بلا معنى.
- * قائمة المقاييس تطبيق مني للقاعدة؛ مقترحة على Codex كـ ACR-005.
- */
-const NOT_APPLICABLE_FOR_FINANCIALS = new Set([
-  "free_cash_flow",
-  "free_cash_flow_per_share",
-  "operating_cash_flow_per_share",
-  "capex_per_share",
-  "capex_to_cfo",
-  "fcf_margin",
-  "fcf_payout_ratio",
-  "fcf_dividend_coverage_ratio",
-  "fcf_conversion",
-  "fcf_to_debt",
-  "cash_conversion_of_earnings",
-  "income_quality",
-  "accrual_ratio",
-  "cfo_margin",
-  "cash_return_on_assets",
-  "cash_return_on_equity",
-  "debt_to_ebitda",
-  "net_debt_to_ebitda",
-  "current_ratio",
-]);
-
-function notApplicable(kind: CompanyKind, key: string): boolean {
-  return kind !== "ordinary" && NOT_APPLICABLE_FOR_FINANCIALS.has(key);
 }
 
 const PER_SHARE_KEY = /(_per_share$|^basic_eps$|^eps_diluted$|^earnings_per_share)/;
@@ -610,6 +594,10 @@ function checkRow(
   const calculated = Boolean(row.is_calculated) || Boolean(derivation);
   const formula = derivation?.calculation ?? row.calculation ?? null;
   if (calculated && !formula) return "calculated_without_formula";
+  // المعادلة وحدها لا تثبت الرقم: يلزم أن يكون المحرك قد أعاد إنتاج مدخلاتها الحالية.
+  if (calculated && derivation?.lineage?.current_inputs_reproduced !== true)
+    return "calculated_inputs_not_reproduced";
+  const contentType = row.provenance?.source?.content_type?.toLowerCase() ?? "";
   const pageRaw = row.provenance?.extraction?.page;
   const page = pageRaw === null || pageRaw === undefined || pageRaw === "" ? null : Number(pageRaw);
   return {
@@ -621,7 +609,7 @@ function checkRow(
     period: periodOf(row),
     proof: {
       kind: calculated
-        ? "calculated_formula_recorded"
+        ? "calculated_inputs_reproduced"
         : row.provenance?.extraction
           ? "reported_extracted"
           : "reported_manifest",
@@ -629,6 +617,11 @@ function checkRow(
       formula: calculated ? formula : null,
       sourceUrl,
       filingType: row.provenance?.source?.filing_type ?? null,
+      document: !contentType
+        ? "not_stated"
+        : contentType.includes("json")
+          ? "import_file_only"
+          : "original_document",
       independentlyVerified: false,
     },
   };
@@ -660,7 +653,6 @@ function buildGroup(
   keys: readonly string[],
   snapshot: Snapshot | undefined,
   expectedPeriod: string,
-  kind: CompanyKind,
 ): MetricGroup {
   const g: MetricGroup = {
     id,
@@ -668,15 +660,10 @@ function buildGroup(
     expectedPeriod,
     cells: [],
     withheld: [],
-    notApplicable: [],
     missing: [],
   };
   for (const key of keys) {
     const rows = snapshot?.metrics?.[key];
-    if (notApplicable(kind, key)) {
-      if (rows?.length) g.notApplicable.push({ key, label: labelOf(key, rows[0]) });
-      continue;
-    }
     const picked = pickValue(key, rows, expectedPeriod);
     if (picked.ok === true) g.cells.push(picked.cell);
     else if (picked.ok === false)
@@ -1096,7 +1083,7 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     period: string,
   ): Block => ({
     type: "metrics",
-    group: buildGroup(id, title, keys, snap, period, kind),
+    group: buildGroup(id, title, keys, snap, period),
   });
 
   const interim: Block[] = [];
@@ -1354,8 +1341,15 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     counts: {
       shown: groups.reduce((n, g) => n + g.cells.length, 0),
       withheld: groups.reduce((n, g) => n + g.withheld.length, 0),
-      notApplicable: groups.reduce((n, g) => n + g.notApplicable.length, 0),
     },
+    dataNotices: groups.some((g) => g.cells.some((c) => c.proof.document === "import_file_only"))
+      ? [
+          L(
+            "بعض أرقام هذه الشركة مأخوذة من ملف إدخال مراجَع، والمستند الأصلي غير مؤرشف لدى المحرك؛ لم يُتحقق منها مقابل المستند نفسه.",
+            "Some figures for this company come from a reviewed import file; the original document is not archived by the engine, so they have not been checked against the document itself.",
+          ),
+        ]
+      : [],
   };
 }
 
@@ -1380,8 +1374,7 @@ function blockCount(b: Block): number {
 }
 
 function blockHasContent(b: Block): boolean {
-  if (b.type === "metrics")
-    return b.group.cells.length + b.group.withheld.length + b.group.notApplicable.length > 0;
+  if (b.type === "metrics") return b.group.cells.length + b.group.withheld.length > 0;
   // التاريخ يبقى ظاهرًا حتى دون سلاسل، ليشرح للمستخدم أن السنوات غير كافية.
   if (b.type === "peers" || b.type === "market" || b.type === "history") return true;
   return blockCount(b) > 0;

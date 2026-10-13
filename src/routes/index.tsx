@@ -1,6 +1,7 @@
 import { MarketTicker } from "@/components/MarketTicker";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ResearchHero } from "@/components/research-hero";
+import { VisitorPathways } from "@/components/visitor-pathways";
 import { usableEditorialTitle } from "@/lib/editorial-display";
 import { PageShell } from "@/components/page-shell";
 import { SearchBox } from "@/components/search-box";
@@ -62,6 +63,8 @@ function HomePage() {
   return (
     <PageShell>
       <ResearchHero />
+
+      <VisitorPathways />
 
       <MarketTicker />
 

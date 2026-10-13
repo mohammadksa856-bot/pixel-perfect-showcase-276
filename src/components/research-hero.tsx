@@ -17,16 +17,16 @@ export function ResearchHero() {
             {t({ ar: "منصة البحث المالي والاستثماري", en: "FINANCIAL & INVESTMENT RESEARCH" })}
           </p>
           <h1 className="mt-5 text-4xl font-bold leading-[1.5] tracking-tight sm:text-5xl">
-            {t({ ar: "افهم الشركة.", en: "Understand the business." })}
+            {t({ ar: "تعلّم. ابحث. استكشف.", en: "Learn. Research. Explore." })}
             <br />
             <span className="text-brand">
-              {t({ ar: "ثم اتخذ قرارك.", en: "Then make your decision." })}
+              {t({ ar: "واستثمر بمعرفة.", en: "Invest with knowledge." })}
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-sm leading-8 text-muted-foreground sm:text-base">
             {t({
-              ar: "من نموذج الأعمال إلى الأداء المالي والتقييم. ابحث عن الشركة، وافهم فتراتها ومصادرها، واعرف ما توفر وما يحتاج إلى تحقق.",
-              en: "From business models to financial performance and valuation. Find a company, understand its periods and sources, and distinguish available information from verified evidence.",
+              ar: "سواء جئت تتعلّم الاستثمار، تبحث عن بيانات شركة، أو تقرأ بحثًا: اختر بدايتك، ووصل للمعلومة مع سياقها ومصدرها وحدودها.",
+              en: "Whether you want to learn investing, find company data or read research: choose your starting point and explore information with its context, sources and limitations.",
             })}
           </p>
           <div className="mt-7">

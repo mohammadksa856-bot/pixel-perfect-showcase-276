@@ -49,6 +49,24 @@ export function CompanyResearchGuide() {
           en: "All eighteen research topics remain visible. Links lead to existing sections; a demonstration section does not prove completeness or numerical accuracy. Coverage is not measured.",
         })}
       </p>
+      <nav
+        className="mt-4 flex flex-wrap gap-2 border-b border-border pb-4"
+        aria-label={t({ ar: "اختصارات قراءة الشركة", en: "Company reading shortcuts" })}
+      >
+        {[
+          { href: "#c1", ar: "ابدأ بفهم الشركة", en: "Understand the company" },
+          { href: "#c3", ar: "انتقل للقوائم والأرقام", en: "Go to statements & numbers" },
+          { href: "#c6", ar: "راجع المصادر والمواد", en: "Review sources & materials" },
+        ].map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="rounded-full border border-border px-4 py-2 text-xs font-medium hover:border-brand hover:text-brand"
+          >
+            {t(item)}
+          </a>
+        ))}
+      </nav>
       <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         {GROUPS.map((g) => (
           <div key={g.id} data-investor-group={g.id}>

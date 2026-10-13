@@ -1,7 +1,13 @@
 import type { LocalizedText } from "@/lib/i18n";
 import { safeSourceUrl } from "./peer-comparison";
 import { iso } from "@/lib/bidi";
-import { normalizeReadiness, type RawReadiness, type Readiness } from "./readiness";
+import {
+  normalizeFactoryCoverage,
+  normalizeInvestorReadiness,
+  type FactoryCoverage,
+  type RawFactoryReadiness,
+  type Readiness,
+} from "./readiness";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02).
@@ -120,7 +126,7 @@ export type EnginePage = {
   capabilities: Record<string, Capability>;
   data_quality: {
     /** الفئات التشغيلية الـ18 (عقد v5). غيابها في v4 يعني «لم تُقيَّم». */
-    factory_readiness?: RawReadiness;
+    factory_readiness?: RawFactoryReadiness;
     understanding: {
       readiness_state: string | null;
       total_score: string | null;
@@ -279,6 +285,8 @@ export type CompanyPreview = {
   kind: CompanyKind;
   /** نموذجان منفصلان: موضوعات المستثمر، والفئات التشغيلية. */
   readiness: { investorTopics: Readiness; operationalCategories: Readiness };
+  /** لوحة الفئات التشغيلية الـ18 (عقد المصنع). لا تُقرأ من نموذج المستثمر. */
+  factory: FactoryCoverage;
   topics: Topic[];
   counts: { shown: number; withheld: number };
   /** تنبيهات على مستوى الشركة عن طبيعة المصدر (مثلًا: ملف إدخال دون المستند الأصلي). */
@@ -1334,6 +1342,7 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     .filter((b): b is Extract<Block, { type: "metrics" }> => b.type === "metrics")
     .map((b) => b.group);
   const u = page.data_quality.understanding;
+  const factory = normalizeFactoryCoverage(page.data_quality.factory_readiness);
   const nameAr = attributeText(profile["company_name_ar"]?.value);
   return {
     company: {
@@ -1349,12 +1358,10 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     },
     kind,
     readiness: {
-      investorTopics: normalizeReadiness(u, "investor_topics"),
-      operationalCategories: normalizeReadiness(
-        page.data_quality.factory_readiness,
-        "operational_categories",
-      ),
+      investorTopics: normalizeInvestorReadiness(u),
+      operationalCategories: factory.readiness,
     },
+    factory,
     topics,
     counts: {
       shown: groups.reduce((n, g) => n + g.cells.length, 0),

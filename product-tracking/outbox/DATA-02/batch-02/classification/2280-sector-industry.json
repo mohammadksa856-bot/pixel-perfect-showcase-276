@@ -1,0 +1,53 @@
+{
+  "company_id": "sa:2280",
+  "symbol": "2280",
+  "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+  "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:2280",
+      "symbol": "2280",
+      "codex_matrix": {
+        "sector": null,
+        "industry": null,
+        "issuer_sector_gate": "NEEDS_REVIEW"
+      },
+      "engine_main_registry": null,
+      "proposed": {
+        "sector": "Consumer Staples",
+        "industry": "Food & Agriculture",
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "engine branch claude/data-food-1 config/companies.json (unmerged); not an official exchange classification"
+      },
+      "status": "consistent_with_quoted_activity_statement",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "are a major integrated consumer food and beverage Group in the Middle East with leading market share in Saudi Arabia",
+            "printed_page": "166"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "The Group’s principal business activities involve manufacturing and trading of dairy and juice products under Almarai, Beyti and Teeba brands, bakery products under L’usine and 7 Days brands and poultry products under Alyoum and AlBashayer brands.",
+            "printed_page": "203"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; the proposed labels must be confirmed by Codex against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1417 @@
+{
+  "company_id": "sa:4300",
+  "market": "SA",
+  "symbol": "4300",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-11",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/465_0_2026-03-11_12-11-51_En.pdf",
+  "source_sha256": "545ed36b5ec79d12297a8e7a80a9e03bde8f23ffed1ef5856e480e2face238d5",
+  "source_archive": {
+    "engine_ref": "claude/data-realestate-1",
+    "engine_commit": "d1cd5c9",
+    "engine_archive_path": "data/raw/SA/4300/documents/545ed36b5ec79d12297a8e7a80a9e03bde8f23ffed1ef5856e480e2face238d5.pdf",
+    "on_engine_main": false,
+    "text_layer": "fully scanned (OCR)"
+  },
+  "reader": "manual.review/data-02-batch-02-dar-al-arkan",
+  "notes": "DATA-02 batch-02. Qualitative profile from Dar Al Arkan audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Dar Al Arkan Real Estate Development Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "DAR AL ARKAN REAL ESTATE DEVELOPMENT COMPANY - (the “Company”), is a Saudi Joint Stock",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "is a Saudi Joint Stock Company established under the Companies’ Laws of the Kingdom of Saudi Arabia",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "number": "1010160195",
+        "date_hijri": "16/04/1421H",
+        "date_gregorian": "2000-07-18",
+        "city": "Riyadh"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Commercial Registration No. 1010160195 dated 16/04/1421H, corresponding to 18/07/2000 G",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "registered_office_address",
+      "value": "P.O. Box No: 105633, Riyadh-11656, K.S.A.",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "its registered office address is P.O. Box No: 105633, Riyadh-11656, K.S.A.",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "listing_statement",
+      "value": "Equity shares listed with the security exchange of the Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The equity shares of the Company are listed with the security exchange of the Kingdom of Saudi Arabia.",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": {
+        "firm": "Alluhaid & Alyahya Chartered Accountants",
+        "partner": "Saleh A. Al-Yahya",
+        "license_no": "473",
+        "report_date": "2026-03-03",
+        "report_date_hijri": "14 Ramadan 1447H",
+        "opinion": "unmodified"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "8",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "For Alluhaid & Alyahya Chartered Accountants",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "Saleh A. Al-Yahya",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "License No. 473",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "Riyadh: 14 Ramadan 1447H",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "(3 March 2026G)",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "In our opinion, the accompanying consolidated financial statements present fairly, in all material",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS Accounting Standards endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements endorsed by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The consolidated financial statements have been prepared in accordance with the IFRS Accounting Standards that are endorsed in the Kingdom of Saudi Arabia",
+            "text_layer": "ocr",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_functional_currency",
+      "value": "Saudi Riyals (SR)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "These consolidated financial statements are presented in Saudi Riyals (SR), which is the Group’s functional currency.",
+            "text_layer": "ocr",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "going_concern_basis",
+      "value": "Prepared on a going-concern basis",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Group has prepared the consolidated financial statements on the basis that it will continue to operate as a going",
+            "text_layer": "ocr",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": "2026-03-03",
+      "category": "identity",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "The consolidated financial statements were approved by the board of directors and authorized for issue on 3 March 2026.",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activity",
+      "value": "Predominantly engaged in the business of development, sale and leasing of real estate projects and associated activities",
+      "category": "sector",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "is predominantly engaged in the business of development, sale and leasing of real estate projects and associated activities",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_segments",
+      "value": {
+        "segments": [
+          {
+            "name": "Development of Properties",
+            "description": "real estate properties under development which are acquired, developed and sold; Residential and Commercial Projects and Land Projects"
+          },
+          {
+            "name": "Project management, consulting and contracting (PMCC)",
+            "description": "revenue from construction management, consulting, and contracting services"
+          },
+          {
+            "name": "Leasing of Properties",
+            "description": "leasing and management of retained rental properties including commercial and residential units on its Master-Planned Communities"
+          },
+          {
+            "name": "Other",
+            "description": "sale of luxury furniture items (not a reportable segment)"
+          }
+        ],
+        "note": "Substantially all segment operating activity for 2025 and 2024 was generated from the development properties segment"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "23",
+        "evidence": [
+          {
+            "pdf_page": 25,
+            "quote": "For management purpose, the Group is organised into three segments.",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "Development of Properties — Under this segment, the Group categorises all its real estate properties under",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "Project management, consulting and contracting (PMCC) — This segment comprises revenue from construction",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "Leasing of Properties — leasing and management of properties that the Group has retained as rental properties",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "including commercial and residential units on its Master-Planned Communities for generating recurring",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "The sale of luxury furniture items is not a reportable segment",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "Substantially all of segment operating activity (including revenue and costs) for the year ended 31 December 2025",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "was generated from the development properties segment.",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsidiaries",
+      "value": [
+        {
+          "name": "Dar Al Arkan Properties (Real Estate) Company",
+          "holding_pct": 1.0,
+          "activity": "development and acquisition of commercial and residential real estate; management, operation and maintenance",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Dar Al-Arkan Commercial Investment Company",
+          "holding_pct": 1.0,
+          "activity": "purchase and acquisition, lease of real estate investments",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Dar Al-Arkan Sukuk Company",
+          "holding_pct": 1.0,
+          "activity": "real estate investments and development",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Sukuk Al-Arkan Company",
+          "holding_pct": 1.0,
+          "activity": "development, maintenance and management of real estates, purchase of land and general contracting",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Dar Sukuk International Company",
+          "holding_pct": 1.0,
+          "activity": "real estate investments and development",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Compass Project Contracting Company",
+          "holding_pct": 1.0,
+          "activity": "real estate investments and developments, leasing and property management",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Maaqel Real Estate Company",
+          "holding_pct": 1.0,
+          "activity": "real estate, leasing and property management",
+          "country": "Saudi Arabia"
+        },
+        {
+          "name": "Masaie Al Enjaz Operation & Maintenance Company",
+          "holding_pct": 0.8,
+          "activity": "renovation, retail of appliances, systems analysis, residential development; not yet commenced operations as of 31 Dec 2025",
+          "country": "Saudi Arabia"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company manages its activities through subsidiaries established for each line of business.",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "owned subsidiary, registered in Riyadh under the Commercial Registration No. 1010254063",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "It operates in purchase and acquisition, lease of real estate investments.",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "DAR AL-ARKAN SUKUK COMPANY - is a limited liability company, a wholly owned subsidiary",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "SUKUK AL-ARKAN COMPANY - is a limited liability company, a wholly owned subsidiary",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "DAR SUKUK INTERNATIONAL COMPANY - is a limited liability company, a wholly owned subsidiary,",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "COMPASS PROJECT CONTRACTING COMPANY - is a limited liability company, a wholly owned",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "MAAQEL REAL ESTATE COMPANY - is a limited liability company, a wholly owned subsidiary",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "MASAIE AL ENJAZ OPERATION & MAINTENANCE COMPANY- is a limited liability company, 80%",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "has not commenced its operations.",
+            "text_layer": "ocr",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsidiary_compass_project_investments_spv",
+      "value": {
+        "name": "Compass Project Investments SPV Limited",
+        "holding_pct": 0.9,
+        "country": "United Arab Emirates",
+        "activity": "technical support for project management, cost control, construction management and risk management"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "the Group has acquired additional shares to increase its shareholding to 90%",
+            "text_layer": "ocr",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "incorporated in United Arab",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "rendering technical support for project management,",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "associates_and_joint_ventures",
+      "value": [
+        {
+          "name": "Alkhair Capital Saudi Arabia (ACS)",
+          "holding_pct": 0.422,
+          "type": "associate"
+        },
+        {
+          "name": "Khozam Real Estate Development Company (KDC)",
+          "holding_pct": 0.665,
+          "type": "joint venture",
+          "partner": "Jeddah Development and Urban Regeneration Company (JDURC)",
+          "why": "power to govern jointly bestowed with the shareholders"
+        },
+        {
+          "name": "Dar Global PLC (DG PLC)",
+          "holding_pct": 0.88,
+          "type": "associate",
+          "why": "listed on London Stock Exchange 28 Feb 2023; equity diluted from 100% to 88%; due to listing requirements Group lost control but exercises significant influence"
+        },
+        {
+          "name": "Eastern Juman Company (Juman)",
+          "holding_pct": 0.1829,
+          "type": "associate",
+          "activity": "development of Juman project between Dammam and Ras Tanura"
+        },
+        {
+          "name": "Compass Arabia Project Holding Limited for Professional Consultation",
+          "holding_pct": 0.3,
+          "type": "associate"
+        },
+        {
+          "name": "Ibdaa Real Estate Company",
+          "holding_pct": 0.25,
+          "type": "associate"
+        },
+        {
+          "name": "Dar Global Real Estate Development Company",
+          "holding_pct": 0.58,
+          "type": "associate",
+          "note": "invested SR 174 thousand during 2025"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "Alkhair Capital Saudi Arabia (ACS) (i) 422,000 42.2% 422,000 42.2%",
+            "text_layer": "ocr",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Khozam Real Estate Development Company (KDC) (ii) 525,547 66.5% 525,547 66.5%",
+            "text_layer": "ocr",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Dar Global PLC (DG PLC) (iii) 1,255,123 88% 1,255,123 88%",
+            "text_layer": "ocr",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "The Group investment in KDC is 66.5% with Jeddah",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "the Group’s investment in KDC is accounted for as investment in joint venture under equity",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "the Group’s equity interest diluted from 100% to 88%. Furthermore, due to listing requirements, the Group has lost control of",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "the entity but exercise significant influence, hence the investment has been classified as associate",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "The Group has paid SR 1.5 million towards the 18.29% of",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "the Group also obtained 30% shares in the entity conferring with significant",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "representing 25% ownership of Ibdaa",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "During 2025, the Group had invested SR 174 thousand representing",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "58% ownership of Dar Global Real Estate Development Company",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "projects_named",
+      "value": [
+        "Khozam project",
+        "Juman project (between Dammam and Ras Tanura)",
+        "Shams Al Riyadh project",
+        "Master-Planned Communities (unnamed)"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "exclusive right to participate in the Khozam project development",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "development of Juman project located between Dammam and Ras Tanura",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "three land zones within the Shams Al Riyadh project",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "related_parties",
+      "value": [
+        {
+          "name": "Dar Global PLC",
+          "relationship": "Associate"
+        },
+        {
+          "name": "Dar DG Global Properties L.L.C",
+          "relationship": "Affiliate"
+        },
+        {
+          "name": "Dar Al Arkan Global Holdings Real Estate Company",
+          "relationship": "Affiliate"
+        },
+        {
+          "name": "Wasalt Real Estate Services Company",
+          "relationship": "Affiliate"
+        },
+        {
+          "name": "Khozam Real Estate Development Company",
+          "relationship": "Associate"
+        },
+        {
+          "name": "SHL Finance Company",
+          "relationship": "Affiliate"
+        },
+        {
+          "name": "Directors and key management personnel",
+          "relationship": "key management"
+        }
+      ],
+      "category": "ownership",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "Dar Global PLC Associate Finance income 92,513 9,660",
+            "text_layer": "ocr",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Dar Al Arkan Global Holdings Real Estate Company 70,998 -",
+            "text_layer": "ocr",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Wasalt Real Estate Services Company Commission expense (1,194) -",
+            "text_layer": "ocr",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Khozam Real Estate Development Company 189,503 188,675",
+            "text_layer": "ocr",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "SHL Finance Company:",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "The remuneration of directors and other members of key management personnel during the year are as follows:",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "loan_to_related_party",
+      "value": {
+        "borrower": "Dar Global PLC",
+        "terms": "interest bearing at arm's length commercial terms, settled over three years",
+        "balance_sr_000": 1108030,
+        "as_of": "2025-12-31"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "42",
+        "evidence": [
+          {
+            "pdf_page": 44,
+            "quote": "The Group has extended a loan to Dar Global PLC, an associate company. The loan is interest bearing at arm’s length",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "commercial terms and will be settled over the period of three years.",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "Balance, end of the year 1,108,030 799,082",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SR 000",
+        "period": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "key_audit_matters",
+      "value": [
+        "Impairment of development properties",
+        "Impairment of investment properties"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Impairment of development properties",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "Impairment of investment properties",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "financial_risk_categories",
+      "value": [
+        "Credit Risk",
+        "Commission Rate Risk",
+        "Liquidity Risk",
+        "Foreign Currency Risk",
+        "Price Risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 45,
+            "quote": "The Group's financial operations are subject to the following risks:",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "1. Credit Risk",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "2. Commission Rate Risk",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "3. Liquidity Risk",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "4. Foreign Currency Risk",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "5. Price Risk",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "The Group's local borrowings are based on SAIBOR.",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "pegged against the US Dollar with a fixed exchange rate of 3.75 Saudi",
+            "text_layer": "ocr",
+            "printed_page": "44"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "capital_management",
+      "value": {
+        "governance": "Executive committee reviews capital structure semi-annually",
+        "net_debt_to_equity_2025": 0.38,
+        "net_debt_to_equity_2024": 0.22,
+        "external_capital_requirements": "none"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "42",
+        "evidence": [
+          {
+            "pdf_page": 44,
+            "quote": "The executive committee reviews the capital structure of the Group on a semi-annual basis.",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "Net debt to equity ratio 38% 22%",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "The Group is not subject to any externally imposed",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commitments",
+      "value": {
+        "uncompleted_contracts_sr_million": 93,
+        "bank_guarantee_sr_million": 99
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "The estimated uncompleted contracts outstanding as",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "at 31 December 2025 amounts to SR 93 million (31 December 2024: SR 91 million) and performance commitment through",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "a bank guarantee for SR 99 million against receivable collected",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "period": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "subsequent_event_white_land_tax",
+      "value": {
+        "announced": "2026-02-12",
+        "amount": "SAR 201.2 million",
+        "subject": "three land zones within the Shams Al Riyadh project",
+        "status": "Group requested exclusion and extension"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "Subsequent to the balance sheet date, as announced on 12 February 2026, the Group has received white land tax invoices",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "amounting to SAR 201.2 million, relating to three land zones within the Shams Al Riyadh project.",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "submitted a detailed explanation, together with supporting documentation, to the relevant authority requesting exclusion",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "sukuk_outstanding",
+      "value": [
+        {
+          "amount": "SR 1.50 billion (USD 400 million)",
+          "rate": "6.88%",
+          "maturity": "2027"
+        },
+        {
+          "amount": "SR 1.50 billion (USD 400 million)",
+          "rate": "7.75%",
+          "maturity": "2026"
+        },
+        {
+          "amount": "SR 2.25 billion (USD 600 million)",
+          "rate": "8.00%",
+          "maturity": "2029"
+        },
+        {
+          "amount": "SR 2.81 billion (USD 750 million)",
+          "rate": "7.25%",
+          "maturity": "2030"
+        }
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "35",
+        "evidence": [
+          {
+            "pdf_page": 37,
+            "quote": "This represents SR 8.06 billion of Islamic Sukuk comprising:",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "Company Ltd. at 6.88% and maturing in 2027.",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "Company Ltd. at 7.75% and maturing in 2026.",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "Company Ltd. at 8.00% and maturing in 2029.",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "4) SR 2.81 billion (USD 750 million) of Islamic Sukuk carried in the books of the Group, issued by Dar Al-Arkan Sukuk",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "Company Ltd. at 7.25% and maturing in 2030.",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          },
+          {
+            "pdf_page": 37,
+            "quote": "The Group has issued a corporate guarantee to the",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Outstanding sukuk as listed; the document does not explicitly describe 2025 issuances or redemptions",
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "acquisition_compass_project_investments_spv",
+      "value": {
+        "date": "2024-02-20",
+        "stake_acquired": 0.3265,
+        "holding_after": 0.8365,
+        "later_holding": 0.9,
+        "consideration_sr_000": 12750,
+        "gain_on_acquisition_sr_000": 1165,
+        "rationale": "diversification and new opportunities in MENA region",
+        "note": "prior-year (2024) event, disclosed comparatively"
+      },
+      "category": "strategy",
+      "metadata": {
+        "source_page": "46",
+        "evidence": [
+          {
+            "pdf_page": 48,
+            "quote": "On 20 February 2024 (the “Acquisition date”), the Group signed a share purchase agreement to acquire additional equity",
+            "text_layer": "ocr",
+            "printed_page": "46"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "interest of 32.65% in Compass Project Investments SPV (“Compass”)",
+            "text_layer": "ocr",
+            "printed_page": "46"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "increased from 51% to 83.65%.",
+            "text_layer": "ocr",
+            "printed_page": "46"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "Consideration transferred (12,750)",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "Gain on acquisition 1,165",
+            "text_layer": "ocr"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "This acquisition was in line with the",
+            "text_layer": "ocr",
+            "printed_page": "46"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "Group’s strategy of diversification and explore new opportunities in MENA region.",
+            "text_layer": "ocr",
+            "printed_page": "46"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "period": "FY2024"
+      }
+    },
+    {
+      "attribute_key": "disposal_qatar_subsidiary",
+      "value": {
+        "entity": "Dar Al Arkan for Real Estate Development LLC (Qatar)",
+        "date": "2024-10-14",
+        "gain_sr_000": 25320,
+        "note": "prior-year (2024) event, disclosed comparatively"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "During the prior year, on 14 October 2024, the Group has disposed of its all shares in Dar Al Arkan for Real Estate",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "Gain on disposal 25,320",
+            "text_layer": "ocr",
+            "printed_page": "46"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "period": "FY2024"
+      }
+    },
+    {
+      "attribute_key": "share_structure",
+      "value": {
+        "shares": 1080000000,
+        "nominal_value_sr": 10,
+        "classes": "one class of ordinary shares"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "37",
+        "evidence": [
+          {
+            "pdf_page": 39,
+            "quote": "1,080,000,000 ordinary shares of SR 10 each 10,800,000 10,800,000",
+            "text_layer": "ocr",
+            "printed_page": "37"
+          },
+          {
+            "pdf_page": 39,
+            "quote": "The Company has one class of ordinary shares.",
+            "text_layer": "ocr",
+            "printed_page": "37"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31",
+        "review_note": "share_capital amount is already a Codex numeric fact (BATCH20_GAP_MATRIX fields_present); only share count and par value are delivered."
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Geographic footprint",
+      "body_text": "Operates mainly in Saudi Arabia; all revenues derived from its portfolio of properties managed by the Group",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "23",
+        "evidence": [
+          {
+            "pdf_page": 25,
+            "quote": "The Group operates mainly in Saudi Arabia and all its revenues are derived from its portfolio of properties which the",
+            "text_layer": "ocr",
+            "printed_page": "23"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Litigation",
+      "body_text": "General litigations in normal course; no significant claims notified at 31 December 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "At 31 December 2025, there were no significant claims notified (31 December 2024: None).",
+            "text_layer": "ocr",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Zakat assessment status",
+      "body_text": "ZATCA assessments for 2003-2014 finalised; returns until 2024 filed; 2025 return under preparation",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "37",
+        "evidence": [
+          {
+            "pdf_page": 39,
+            "quote": "The Company has received the assessments from ZATCA for the years 2003 to 2014 which have been finalised.",
+            "text_layer": "ocr",
+            "printed_page": "37"
+          },
+          {
+            "pdf_page": 39,
+            "quote": "Consolidated zakat returns for all remaining years until 2024 have been filed with ZATCA.",
+            "text_layer": "ocr",
+            "printed_page": "37"
+          },
+          {
+            "pdf_page": 39,
+            "quote": "The consolidated return for the",
+            "text_layer": "ocr",
+            "printed_page": "37"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Financial covenant compliance",
+      "body_text": "Group in compliance with Sukuk and Murabaha facility financial covenants at 31 December 2025 and 2024",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "35",
+        "evidence": [
+          {
+            "pdf_page": 37,
+            "quote": "The Sukuk agreements include financial covenants, which the Group was in compliance with as at 31 December 2025 and",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Board oversight statement",
+      "body_text": "The Board of Directors are responsible for overseeing the Group's financial reporting process",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 6,
+            "quote": "The Board of Directors are responsible for overseeing the Group’s financial reporting process.",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Credit sales policy",
+      "body_text": "General sales policy is 'No Credit' terms; final delivery withheld until full payment",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 45,
+            "quote": "The general sales policy of the Group is \"No Credit\" terms",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "the Group holds back the final",
+            "text_layer": "ocr",
+            "printed_page": "43"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ]
+}

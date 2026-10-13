@@ -1,0 +1,1551 @@
+{
+  "company_id": "sa:4004",
+  "market": "SA",
+  "symbol": "4004",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-12",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/435_0_2026-03-12_15-01-34_En.pdf",
+  "source_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+  "source_archive": {
+    "engine_ref": "claude/data-healthcare-2",
+    "engine_commit": "d076577",
+    "engine_archive_path": "data/raw/SA/4004/documents/61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b.pdf",
+    "on_engine_main": false,
+    "text_layer": "notes digital; primary statements scanned"
+  },
+  "reader": "manual.review/data-02-batch-02-dallah-healthcare",
+  "notes": "DATA-02 batch-02. Qualitative profile from Dallah Healthcare audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Dallah Healthcare Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Dallah Healthcare Company (the “Company”) was established as a Limited Liability Company",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "1",
+        "evidence": [
+          {
+            "pdf_page": 1,
+            "quote": "(A Saudi Joint Stock Company)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": "Unified number 7001473425",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "registered in the Kingdom of Saudi Arabia under unified number 7001473425 dated 13 Rabi Al-Akhar 1415H (corresponding to 18 September 1994)",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "incorporation_date",
+      "value": "1994-09-18",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "dated 13 Rabi Al-Akhar 1415H (corresponding to 18 September 1994)",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Established as LLC; registration date"
+      }
+    },
+    {
+      "attribute_key": "conversion_to_joint_stock_date",
+      "value": "2008-05-20",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "On 14 Jumada Al-Awwal 1429H (corresponding to 20 May 2008), the Company’s Board of Directors converted Dallah Healthcare Company as a Saudi Closed Joint Stock Company.",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "listing_date",
+      "value": "2012-12-17",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company became a listed Company in the Saudi Capital Market on 04 Safar 1434H (corresponding to 17 December 2012).",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "former_name",
+      "value": {
+        "former_name": "Dallah Healthcare Holding Company",
+        "change_approved": "2016-11-16"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The name of the Company was changed from \"Dallah Healthcare Holding Company\" to \"Dallah Healthcare Company\" based on the approval of Extraordinary General Assembly held on 16 Safar 1438H (corresponding to 16 November 2016)",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": "King Fahad Road, Riyadh, Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company’s registered office is located at King Fahad Road, Riyadh, Kingdom of Saudi Arabia.",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": {
+        "firm": "KPMG Professional Services Company",
+        "partner": "Fahad Mubark Aldossari",
+        "license_no": "469",
+        "report_date": "2026-03-11"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "5",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "KPMG Professional Services Company",
+            "printed_page": "5"
+          },
+          {
+            "pdf_page": 7,
+            "quote": "Fahad Mubark Aldossari License No. 469 Riyadh on: 22 Ramadan 1447H Corresponding to: 11 March 2026",
+            "printed_page": "5"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other SOCPA standards and pronouncements",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "prepared in accordance with International Financial Reporting Standards (IFRS) as issued by International Accounting Standards Board (IASB) that are endorsed in the Kingdom of Saudi Arabia (KSA)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "These consolidated financial statements are presented in Saudi Arabian Riyals (SR) which is also the Group’s functional currency.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "operating_segments",
+      "value": [
+        {
+          "name": "Medical Facilities and Pharmacies",
+          "description": "operations of hospitals, clinics, and both inpatient and outpatient pharmacies"
+        },
+        {
+          "name": "Distribution of Pharmaceutical Products",
+          "description": "marketing and distributing medicines and pharmaceutical products"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "Medical Facilities and Pharmacies: include the operations of hospitals, clinics, and both inpatient and outpatient pharmacies.",
+            "printed_page": "54"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "Distribution of Pharmaceutical Products: include the activities of marketing and distributing medicines and pharmaceutical",
+            "printed_page": "54"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "The CODM has been determined to be the Chief Executive Officer",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "subsidiaries",
+      "value": [
+        {
+          "name": "Dallah Pharma Company LLC",
+          "pct_2025": 1.0,
+          "activity": "Pharmaceutical, herbal & cosmetic distribution & manufacturing"
+        },
+        {
+          "name": "Afyaa Al-Nakheel for Supporting Services Company LLC",
+          "pct_2025": 1.0
+        },
+        {
+          "name": "Dallah Namar Hospital Health Company LLC",
+          "pct_2025": 1.0
+        },
+        {
+          "name": "Dallah Medical Care Company LLC \"Dallah Clinics\"",
+          "pct_2025": 1.0
+        },
+        {
+          "name": "Dallah Medical Care Company LLC \"Dallah Pharmacies\"",
+          "pct_2025": 0.99
+        },
+        {
+          "name": "Makkah Medical Center Company",
+          "pct_2025": 0.9193,
+          "pct_2024": 0.9145
+        },
+        {
+          "name": "Care Shield Holding Company",
+          "pct_2025": 1.0,
+          "pct_2024": 0.5864
+        },
+        {
+          "name": "Dallah Al Khober hospital company (formerly Al-Salam Medical Services Company)",
+          "pct_2025": 1.0
+        },
+        {
+          "name": "Al-Ahsaa Medical Services company",
+          "pct_2025": 0.9741
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "Dallah Pharma",
+            "printed_page": "15"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "distribution & manufacturing.",
+            "printed_page": "15"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "91.93% 91.45%",
+            "printed_page": "15"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "100% 58.64%",
+            "printed_page": "15"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "97.41% --",
+            "printed_page": "15"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "All in Kingdom of Saudi Arabia per note 4(a)"
+      }
+    },
+    {
+      "attribute_key": "care_shield_subsidiaries",
+      "value": [
+        {
+          "name": "Medical Services Projects Company (MSPC)",
+          "pct": 1.0
+        },
+        {
+          "name": "Consulting Clinics Center Company Limited (CCC)",
+          "pct": 1.0
+        },
+        {
+          "name": "Modern Medical Initiative Company Limited (MMI)",
+          "pct": 1.0
+        },
+        {
+          "name": "Modern Clinics Pharmacy Company Limited (MCP)",
+          "pct": 0.9999
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "Care Shield Holding Company owns the following subsidiaries:",
+            "printed_page": "15"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "Modern Clinics Pharmacy Company Limited (“MCP”) 99.99%",
+            "printed_page": "15"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "branches",
+      "value": [
+        {
+          "name": "Dallah Hospital Al-Nakheel",
+          "city": "Riyadh"
+        },
+        {
+          "name": "Dallah Pharma Factory (Dallah Pharma Branch)",
+          "city": "Jeddah"
+        },
+        {
+          "name": "Medicine Warehouse (Dallah Pharma Branch)",
+          "cities": [
+            "Dammam",
+            "Riyadh",
+            "Jeddah",
+            "Jeddah"
+          ]
+        },
+        {
+          "name": "Afia Al Nakheel Catering Services Company",
+          "city": "Riyadh"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Dallah Hospital Al-Nakheel",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Dallah Pharma Factory (Dallah Pharma Branch)",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Afia Al Nakheel Catering Services Company",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "equity_accounted_investees",
+      "value": [
+        {
+          "name": "Dr. Mohammed Rashid Al-Faqih Company",
+          "pct": 0.3121
+        },
+        {
+          "name": "Meras Arabia Holding Company",
+          "pct": 0.17
+        },
+        {
+          "name": "MEFIC Private Equity Opportunities Fund 3",
+          "pct": 0.416
+        },
+        {
+          "name": "International Medical Center Company",
+          "pct": 0.2718
+        },
+        {
+          "name": "Wahet Al-Nakheel Real Estate Fund",
+          "pct": 0.3333
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "Company Associate 31.21% 31.21%",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "Holding Company Associate 17% 17%",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "Fund 3 Associate 41.6% 41.6%",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "Center Company Associate 27.18% 27.18%",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 34,
+            "quote": "Real Estate Fund Associate 33.33% --",
+            "printed_page": "32"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "acquired_hospitals",
+      "value": [
+        {
+          "name": "Al Salam hospital (Dallah Al Khober)",
+          "city": "Al-Khobar"
+        },
+        {
+          "name": "Al Ahsa hospital (Dallah Al Ahsa)",
+          "city": "Al Ahsa"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "52",
+        "evidence": [
+          {
+            "pdf_page": 54,
+            "quote": "the owner of Al Salam hospital in Al-Kobar",
+            "printed_page": "52"
+          },
+          {
+            "pdf_page": 54,
+            "quote": "the owner of Al Ahsa hospital in Al Ahsa “Currently named Dallah Al Ahsa”",
+            "printed_page": "52"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "projects_under_construction",
+      "value": [
+        {
+          "name": "New hospital, Al-Arid district, Riyadh",
+          "capacity_beds": 250,
+          "land_sqm": 45000,
+          "expected_opening": null
+        },
+        {
+          "name": "Dallah Namar Hospital",
+          "note": "MoF loan SR 357m to complete construction"
+        }
+      ],
+      "category": "strategy",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "The Group commenced a new project for a hospital on a land owned by the Group with an area of 45,000 square meters located in Al-Arid district in Riyadh. The hospital capacity of 250 beds",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "to support the Group’s strategy in completing the construction of Dallah Namar Hospital",
+            "printed_page": "41"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": "2026-03-04",
+      "category": "governance",
+      "metadata": {
+        "source_page": "57",
+        "evidence": [
+          {
+            "pdf_page": 59,
+            "quote": "These consolidated financial statements were authorized for issue by the Group’s Board of Directors on 15 Ramadan 1447H (Corresponding to 04 March 2026).",
+            "printed_page": "57"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "chairman",
+      "value": "Eng. Tarek Alkasabi",
+      "category": "governance",
+      "metadata": {
+        "source_page": "37",
+        "evidence": [
+          {
+            "pdf_page": 39,
+            "quote": "Eng. Tarek Alkasabi Chairman of Board",
+            "printed_page": "37"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Named as 'Chairman of Board' in related-party table",
+        "review_note": "Role taken from the related-party table label 'Chairman of Board' only; no governance section in the financial statements. Confirm with the board report."
+      }
+    },
+    {
+      "attribute_key": "share_structure",
+      "value": {
+        "shares_outstanding_issued": 101574769,
+        "par_value_sar": 10
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The authorized, issued and paid-up share capital of the Company is SR 1,015,747,690 (31 December 2024: SR 976,811,660) consisting of 101,574,769 shares (31 December 2024: 97,681,166) of SR 10 each.",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "SAR",
+        "review_note": "share_capital amount is already a Codex numeric fact (BATCH20_GAP_MATRIX fields_present); only share count and par value are delivered."
+      }
+    },
+    {
+      "attribute_key": "treasury_share_programme",
+      "value": {
+        "shares": 471821,
+        "purpose": "Employee Incentive Program"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "the total number of treasury shares held by the Company as of 31 December 2025 is 471,821 shares, with a total cost of SR 74,021,614.",
+            "printed_page": "11"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "approved changing the purpose of the share purchase to be for the Employee Incentive Program",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "shares",
+        "review_note": "treasury_shares (cost) is already a Codex numeric fact; only share count and stated purpose are delivered."
+      }
+    },
+    {
+      "attribute_key": "contingencies_and_commitments",
+      "value": {
+        "capital_commitments_sar": 490000000,
+        "bank_guarantees_sar": 60000000,
+        "letters_of_credit_sar": 26000000
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "47",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "capital commitments relate construction contracts and expansion of healthcare facilities amounting to SR 490 million (31 December 2024: SR 758 million).",
+            "printed_page": "47"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "potential liabilities in the form of bank guarantees amounting to SR 60 million",
+            "printed_page": "47"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "There are Letter of credits issued by the Group amounting to SR 26 million as on 31 December 2025",
+            "printed_page": "47"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "murabaha_facilities",
+      "value": {
+        "facilities_sar_m": 6235,
+        "utilized_sar_m": 3321,
+        "covenants": "fully compliant"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "As at 31 December 2025, the Group has bank Murabaha facilities of SR 6,235 million (31 December 2024: SR 3,536 million),",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "The Group is subject to certain bank covenants which are fully compliant at reporting date.",
+            "printed_page": "41"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "key_audit_matters",
+      "value": [
+        "Revenue Recognition – Estimate of variable consideration",
+        "Expected Credit Losses on trade receivables"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "2",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Revenue Recognition – Estimate of variable consideration",
+            "printed_page": "2"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "Expected Credit Losses on trade receivables",
+            "printed_page": "3"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ],
+  "ownership_positions": [
+    {
+      "holder_key": "dallah_al_baraka_holding_company",
+      "holder_name": "Dallah Al Baraka Holding Company",
+      "holder_type": "ultimate_parent_company",
+      "ownership_type": "direct_or_indirect_as_stated",
+      "as_of_date": "2026-03-04",
+      "ownership_pct": 0.474,
+      "country": "SA",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Dallah Al Baraka Holding Company (the ultimate parent company), a closed Saudi joint stock company, owns 47.4% of the Company's share capital, as of the date of these financial statements.",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "'as of the date of these financial statements'",
+        "review_note": "as_of_date is the statements' authorisation date (4 Mar 2026), per the source wording 'as of the date of these financial statements'."
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:4004:cash_dividend:2025-03-17",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim 2025 q1",
+      "announcement_date": "2025-03-17",
+      "payment_date": "2025-04-20",
+      "cash_amount": 50598609.5,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 17 Ramadan 1446 H (corresponding to 17 March 2025), the Company’s Board of Directors decided to distribute interim dividends to shareholders of SR 0.5 per share, amounting to SR 50,598,609.50.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "H (corresponding to 20 April 2025).",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2025-05-29",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim 2025 q2",
+      "announcement_date": "2025-05-29",
+      "payment_date": "2025-06-29",
+      "cash_amount": 50598609.5,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 02 Dhu al-Hijjah 1446 H (corresponding to 29 May 2025), the Company’s Board of Directors decided to distribute interim",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "1447 H (corresponding to 29 June 2025).",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2025-08-03",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim 2025 q3",
+      "announcement_date": "2025-08-03",
+      "payment_date": "2025-09-04",
+      "cash_amount": 50598609.5,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 09 Safar 1447 H (corresponding to 03 August 2025), the Company’s Board of Directors decided to distribute interim",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "Awwal 1447 H (corresponding to 04 September 2025).",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2025-11-02",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim 2025 q4",
+      "announcement_date": "2025-11-02",
+      "payment_date": "2025-11-30",
+      "cash_amount": 50581707.5,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "On 11 Jumada al-Ula 1447 H (corresponding to 02 November 2025), the Company’s Board of Directors decided to distribute",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "interim dividends to shareholders of SR 0.5 per share, amounting to SR 50,581,707.50.",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "al-Akhirah 1447 H (corresponding to 30 November 2025).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2023-12-26",
+      "action_type": "cash_dividend",
+      "title": "Dividends interim 2024 1",
+      "announcement_date": "2023-12-26",
+      "payment_date": "2024-01-30",
+      "cash_amount": 48840583,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 05 Jumada I 1446 H (corresponding to 07 November 2024), the Company’s Board of Directors decided to distribute interim",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,673,443.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,698,439.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,794,783.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,840,583.",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2024-06-11",
+      "action_type": "cash_dividend",
+      "title": "Dividends interim 2024 2",
+      "announcement_date": "2024-06-11",
+      "payment_date": "2024-08-14",
+      "cash_amount": 48794783,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 05 Jumada I 1446 H (corresponding to 07 November 2024), the Company’s Board of Directors decided to distribute interim",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,673,443.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,698,439.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,794,783.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,840,583.",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2024-08-04",
+      "action_type": "cash_dividend",
+      "title": "Dividends interim 2024 3",
+      "announcement_date": "2024-08-04",
+      "payment_date": "2024-09-08",
+      "cash_amount": 48698439,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 05 Jumada I 1446 H (corresponding to 07 November 2024), the Company’s Board of Directors decided to distribute interim",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,673,443.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,698,439.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,794,783.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,840,583.",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2024-11-07",
+      "action_type": "cash_dividend",
+      "title": "Dividends interim 2024 4",
+      "announcement_date": "2024-11-07",
+      "payment_date": "2024-12-01",
+      "cash_amount": 48673443,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "44",
+          "evidence": [
+            {
+              "pdf_page": 46,
+              "quote": "On 05 Jumada I 1446 H (corresponding to 07 November 2024), the Company’s Board of Directors decided to distribute interim",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,673,443.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,698,439.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,794,783.",
+              "printed_page": "44"
+            },
+            {
+              "pdf_page": 46,
+              "quote": "dividends to shareholders of SR 0.5 per share, amounting to SR 48,840,583.",
+              "printed_page": "44"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:cash_dividend:2026-03-04",
+      "action_type": "cash_dividend",
+      "title": "Dividend interim announced 2026 03",
+      "announcement_date": "2026-03-04",
+      "payment_date": "2026-03-24",
+      "cash_amount": 50551474,
+      "currency": "SAR",
+      "status": "declared_subsequent_event",
+      "details": {
+        "issuer_action_label": "cash_dividend_interim",
+        "dividend_per_share": 0.5,
+        "metadata": {
+          "source_page": "57",
+          "evidence": [
+            {
+              "pdf_page": 59,
+              "quote": "distribute interim dividends to shareholders at SR 0.5 per share, amounting to SR 50,551,474, and it will be payable on 05 Shawwal 1447H (corresponding to 24 March 2026).",
+              "printed_page": "57"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4004:bonus_issue:2026-03-04",
+      "action_type": "bonus_issue",
+      "title": "Bonus share recommendation 2026",
+      "announcement_date": "2026-03-04",
+      "currency": "SAR",
+      "status": "pending_EGA_and_regulatory_approval",
+      "details": {
+        "issuer_action_label": "bonus_shares_recommended",
+        "ratio": "20% of share capital",
+        "shares_after": 121889723,
+        "share_capital_after_sar": 1218897230,
+        "metadata": {
+          "source_page": "57",
+          "evidence": [
+            {
+              "pdf_page": 59,
+              "quote": "recommended to the Extraordinary General Assembly to increase the Company’s share capital through the issuance of bonus shares at a rate of 20% of the Company’s share capital before the increase.",
+              "printed_page": "57"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Principal activities",
+      "body_text": "Operate, manage and maintain healthcare entities; wholesale medicines and retail of medical and surgical equipment, prosthetics and devices for the disabled, hospital equipment; manufacturing medicines, pharmaceuticals, herbals, health, cosmetics, detergents, disinfectants and packaging in KSA",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The objectives of the Company include operate, manage and maintain the healthcare entities, wholesale medicines and retail of medical and surgical equipment, prosthetics and devices for the disabled, hospital equipment and manufacturing medicines, pharmaceuticals, herbals, health, cosmetics, detergents, disinfectants and packaging in the Kingdom of Saudi Arabia.",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Geographic scope",
+      "body_text": "All revenue and operating assets in the Kingdom of Saudi Arabia",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "All revenue earned by the Group are within Kingdom of Saudi Arabia region.",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 57,
+            "quote": "All the Group's operating assets and principal markets of activity are located in the Kingdom of Saudi Arabia.",
+            "printed_page": "55"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Associate al faqih sale offer",
+      "body_text": "On 10 Nov 2025 the Company signed acceptance of a non-binding offer from Fakeeh Hospital Company to buy its entire 31.21% stake in Dr. Mohammad Bin Rashed Al Fagih & Partners Company; final value subject to due diligence",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "the company has signed in acceptance of a non-binding offer presented by Fakeeh Hospital Company (Joint stock company) to purchase its entire shareholding of (31.21%)",
+            "printed_page": "32"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-11-10"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition al salam and al ahsa 2025",
+      "body_text": "{\"action_type\": \"acquisition\", \"acquired\": [\"Al-Salam Medical Services Company (now Dallah Al Khober hospital company) 100%\", \"Al-Ahsa Medical Services Company 97.41%\"], \"seller\": \"Ayyan Investment Company\", \"shares_issued\": 3893603, \"acquisition_date\": \"2025-03-23\", \"share_swap_consideration_sar\": 487479096, \"cash_consideration_sar\": 328861601, \"total_consideration_sar\": 816340697, \"goodwill_sar\": 437808119, \"dividend_per_share\": null, \"announcement_date\": \"2024-08-19\", \"eligibility_date\": null, \"payment_date\": null, \"cash_amount_total\": 328861601, \"currency\": \"SAR\", \"status\": \"completed\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "52",
+        "evidence": [
+          {
+            "pdf_page": 54,
+            "quote": "the Company signed a binding share purchase and subscription agreement with Ayyan Investment Company",
+            "printed_page": "52"
+          },
+          {
+            "pdf_page": 54,
+            "quote": "new shares were issued on 23 March 2025 (being the acquisition date)",
+            "printed_page": "52"
+          },
+          {
+            "pdf_page": 55,
+            "quote": "Total consideration paid 514,161,357 302,179,340 816,340,697",
+            "printed_page": "53"
+          },
+          {
+            "pdf_page": 55,
+            "quote": "Cash consideration 328,861,601 -- 328,861,601",
+            "printed_page": "53"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition nci care shield 2025",
+      "body_text": "{\"action_type\": \"acquisition_of_non_controlling_interest\", \"target\": \"Care Shield Holding Company\", \"stake_acquired_pct\": 0.4136, \"seller\": \"Growth Avenue Investments Company (wholly-owned by Maharah Human Resources Company)\", \"agreement_date\": \"2025-12-18\", \"completion_date\": \"2025-12-24\", \"dividend_per_share\": null, \"announcement_date\": \"2025-12-18\", \"eligibility_date\": null, \"payment_date\": null, \"cash_amount_total\": 434311080, \"currency\": \"SAR\", \"status\": \"completed\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 42,
+            "quote": "representing 41.36% of the share capital of Care Shield Holding Company, resulting in Dallah Healthcare’s ownership of the full share capital of Care Shield Holding Company. and the value of the deal amounted to SAR 434,311,080.",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 42,
+            "quote": "On 04 Rajab 1447H (corresponding to 24 December 2025), the Company hereby announces that the Transaction has been completed",
+            "printed_page": "40"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition nci makkah medical center 2025",
+      "body_text": "{\"action_type\": \"acquisition_of_non_controlling_interest\", \"target\": \"Makkah Medical Center Company\", \"stake_acquired_pct\": 0.0048, \"dividend_per_share\": null, \"announcement_date\": null, \"eligibility_date\": null, \"payment_date\": null, \"cash_amount_total\": 1024000, \"currency\": \"SAR\", \"status\": \"completed\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 42,
+            "quote": "During the first quarter 2025, the Company purchased an additional 0.48% equity stake in Makkah Medical Center Company for a total value of SAR 1,024,000.",
+            "printed_page": "40"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "period": "Q1 2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Wahet al nakheel land contribution",
+      "body_text": "Undeveloped Al-Nakheel District (Riyadh) lands valued at SAR 196m contributed in kind to Wahet Al-Nakheel Real Estate Fund; title transferred 19 Mar 2025, capital gain SAR 51.4m; 33.33% interest",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 36,
+            "quote": "On 19 Ramadan 1446H (corresponding to 19 March 2025), the ownership of the lands was transferred from the Company to the fund, resulting in the recognition of capital gains amounting to SAR 51.4 million.",
+            "printed_page": "34"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Related parties",
+      "body_text": "Key management personnel and associates; named parties include Dallah Al-Barakah Holding (ultimate parent), Eng. Tarek Alkasabi (Chairman of Board, management consulting), Dallah Trading Company and Dareen Travel Agency (owned partially by shareholder), associates (Wahet Al-Nakheel, IMC, Al-Faqih, Meraas), Growth Path Investment Company (Mahara), and 'other' parties with common key management",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "37",
+        "evidence": [
+          {
+            "pdf_page": 39,
+            "quote": "Related parties of the Group comprise of key management personnel and associates where shareholders or the Group have control or significant influence.",
+            "printed_page": "37"
+          },
+          {
+            "pdf_page": 39,
+            "quote": "Eng. Tarek Alkasabi Chairman of Board Management consulting",
+            "printed_page": "37"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Dividend policy",
+      "body_text": "Only accounting policy stated: dividends recognised as liability when approved by shareholders; no payout policy disclosed",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 29,
+            "quote": "Dividend distribution to the Company’s shareholders is recognised as a liability in the Group’s financial"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Financial risk management",
+      "body_text": "Board of Directors has overall responsibility for risk management framework; Audit Committee oversees compliance; risks covered: credit risk, liquidity risk, market risk (foreign currency risk, interest rate risk)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "51",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "The Board of Directors has an overall responsibility for the establishment and oversight of the Group’s risk"
+          },
+          {
+            "pdf_page": 51,
+            "quote": "The Group’s Audit Committee oversees how management monitors compliance with the Group’s risk management"
+          },
+          {
+            "pdf_page": 51,
+            "quote": "Credit risk is the risk of financial loss to the Group if a customer or counter party to a financial instrument fails to"
+          },
+          {
+            "pdf_page": 52,
+            "quote": "Liquidity risk is the risk that the Group will encounter difficulty in meeting the obligations associate with financial"
+          },
+          {
+            "pdf_page": 53,
+            "quote": "Market risk is the changes in market prices, such as foreign exchange rates and interest rates which will affects the"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Zakat status",
+      "body_text": "Zakat certificates obtained to FY2024; 2019-2020 revised assessments (SAR 12.5m) resolved with no additional liability and provision reversed; 2024 under ZATCA review",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "The year 2024 remains under review by ZATCA",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "previously recorded additional provisions related to those years, amounting to SAR 12.5 million, were reversed.",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ]
+}

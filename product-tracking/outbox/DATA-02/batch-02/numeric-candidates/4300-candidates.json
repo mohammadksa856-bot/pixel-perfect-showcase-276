@@ -1,0 +1,86 @@
+{
+  "company_id": "sa:4300",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/465_0_2026-03-11_12-11-51_En.pdf",
+  "source_sha256": "545ed36b5ec79d12297a8e7a80a9e03bde8f23ffed1ef5856e480e2face238d5",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "dg_plc_investment_fair_value",
+      "value": 4287,
+      "unit": "SR million",
+      "period": "2025-12-31",
+      "as_of": null,
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "The fair value of the Group’s investment in DG PLC based on its trading price at 31 December 2025 is SR 4,287 million",
+            "text_layer": "ocr"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SR million",
+        "period": "2025-12-31"
+      }
+    },
+    {
+      "metric": "key_management_compensation_total",
+      "value": 15954,
+      "unit": "SR 000",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "42",
+        "evidence": [
+          {
+            "pdf_page": 44,
+            "quote": "Total 15,954 13,002",
+            "text_layer": "ocr",
+            "printed_page": "42"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SR 000",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "murabaha_weighted_average_rate",
+      "value": 0.076,
+      "unit": "ratio",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "35",
+        "evidence": [
+          {
+            "pdf_page": 37,
+            "quote": "The weighted average effective annual commission rate for the year ended 31 December 2025 is 7.6%",
+            "text_layer": "ocr",
+            "printed_page": "35"
+          }
+        ],
+        "verification": {
+          "status": "ocr_quote_on_page",
+          "method": "tesseract OCR of the page rendered at 300 dpi (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "ratio",
+        "period": "FY2025"
+      }
+    }
+  ]
+}

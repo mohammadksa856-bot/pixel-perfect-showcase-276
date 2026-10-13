@@ -4,7 +4,10 @@
 Compares every manifest in <batch>/manifests with every JSON manifest in <engine>/data/imports for the same
 company: attribute_key, holder_key, action_key and (disclosure_type, title). Any overlap would make
 `sync-manifests` restate Codex's row, so it is a failure. Writes <batch>/collision-report.json.
-Usage: data02_collisions.py <engine_repo> <batch_dir>
+Optional: `--extra-imports DIR` (repeatable) adds manifests Codex owns outside engine main (e.g. sector branches
+extracted to a folder); `--prior-batch DIR` (repeatable) adds earlier DATA-02 batches, so a later batch can never
+republish a key an earlier batch already delivered.
+Usage: data02_collisions.py <engine_repo> <batch_dir> [--extra-imports DIR ...] [--prior-batch DIR ...]
 """
 import glob
 import json
@@ -12,6 +15,16 @@ import os
 import sys
 
 engine, batch = sys.argv[1], sys.argv[2]
+sources = [os.path.join(engine, "data", "imports", "*.json")]
+args = sys.argv[3:]
+while args:
+    flag, value, *args = args
+    if flag == "--extra-imports":
+        sources.append(os.path.join(value, "*.json"))
+    elif flag == "--prior-batch":
+        sources.append(os.path.join(value, "manifests", "*.json"))
+    else:
+        raise SystemExit(f"unknown option {flag}")
 
 
 def keys(m: dict) -> set[tuple[str, str]]:
@@ -23,7 +36,7 @@ def keys(m: dict) -> set[tuple[str, str]]:
 
 
 codex: dict[str, dict[tuple[str, str], list[str]]] = {}
-for path in sorted(glob.glob(os.path.join(engine, "data", "imports", "*.json"))):
+for path in sorted(p for pattern in sources for p in glob.glob(pattern)):
     try:
         m = json.load(open(path, encoding="utf-8"))
     except (json.JSONDecodeError, UnicodeDecodeError):
@@ -31,9 +44,13 @@ for path in sorted(glob.glob(os.path.join(engine, "data", "imports", "*.json")))
     if not isinstance(m, dict) or "company_id" not in m:
         continue
     for k in keys(m):
-        codex.setdefault(m["company_id"], {}).setdefault(k, []).append(os.path.basename(path))
+        label = os.path.basename(path) if path.startswith(os.path.join(engine, "data", "imports")) else f"{os.path.basename(os.path.dirname(path))}/{os.path.basename(path)}"
+        codex.setdefault(m["company_id"], {}).setdefault(k, []).append(label)
 
-report = {"engine_imports_scanned": len(glob.glob(os.path.join(engine, "data", "imports", "*.json"))), "manifests": []}
+report = {"engine_imports_scanned": len(glob.glob(sources[0])), "manifests": []}
+if len(sources) > 1:  # only present when options are used, so earlier batch reports stay byte-identical
+    report["extra_sources_scanned"] = {os.path.relpath(pattern, os.path.dirname(os.path.dirname(os.path.dirname(pattern)))) if "manifests" in pattern
+                                       else os.path.basename(os.path.dirname(pattern)) + "/*.json": len(glob.glob(pattern)) for pattern in sources[1:]}
 mine: dict[tuple[str, str, str], str] = {}
 failed = False
 for mpath in sorted(glob.glob(os.path.join(batch, "manifests", "*.json"))):

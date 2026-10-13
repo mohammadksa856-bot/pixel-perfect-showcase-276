@@ -2,12 +2,13 @@
 # DATA-02 merge test: ingest the batch manifests with the engine's own `sync-manifests` into a scratch copy of a
 # database, after Codex's baseline manifests, and prove no pre-existing row changes. Never touches the engine repo's DB.
 # Usage: data02_merge_test.sh <engine_repo> <batch_dir> <source_db> <scratch_dir> [baseline_manifest ...]
+# Optional: DATA02_REGISTRY=<companies.json> when the batch's companies are not in the engine main registry.
 set -euo pipefail
 E=$1; B=$(cd "$2" && pwd); SRC=$3; S=$4; shift 4
 rm -rf "$S"; mkdir -p "$S/raw"; echo '{"artifacts": []}' > "$S/archive-index.json"
 cp "$SRC" "$S/db.sqlite3"
 run() { (cd "$E" && PYTHONPATH=src python3 -m finengine.cli --db "$S/db.sqlite3" sync-manifests \
-  --raw-dir "$S/raw" --archive-index "$S/archive-index.json" --project-root "$E" "$@"); }
+  ${DATA02_REGISTRY:+--registry "$DATA02_REGISTRY"} --raw-dir "$S/raw" --archive-index "$S/archive-index.json" --project-root "$E" "$@"); }
 for m in "$@"; do run --manifest "$m" > "$S/baseline-$(basename "$m")"; done
 snap() { python3 - "$S/db.sqlite3" <<'PY'
 import json, sqlite3, sys

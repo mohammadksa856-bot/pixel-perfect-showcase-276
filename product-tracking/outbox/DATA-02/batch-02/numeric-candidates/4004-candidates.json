@@ -1,0 +1,167 @@
+{
+  "company_id": "sa:4004",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/435_0_2026-03-12_15-01-34_En.pdf",
+  "source_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "revenue_by_category_2025",
+      "value": {
+        "revenues_from_service_in_medical_facilities": 3035883827,
+        "revenues_from_sale_of_pharmaceutical_products_in_medical_facilities_and_pharmacies": 879421008,
+        "revenues_from_pharmaceutical_product_distribution": 151584058,
+        "total": 4066888893
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 57,
+            "quote": "Revenues from service in Medical Facilities 3,035,883,827",
+            "printed_page": "55"
+          },
+          {
+            "pdf_page": 57,
+            "quote": "Revenues from Pharmaceutical Product Distribution -- 151,584,058 151,584,058",
+            "printed_page": "55"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR",
+        "period": "FY2025",
+        "review_note": "Breakdown components are new; the total equals Codex's existing `revenue` fact and is not a new value."
+      }
+    },
+    {
+      "metric": "revenue_by_geographic_region_2025",
+      "value": {
+        "central_region": 3180946861,
+        "west_region": 294096234,
+        "east_region": 591845798,
+        "total": 4066888893
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 57,
+            "quote": "For the year ended 31 December 2025 3,180,946,861 294,096,234 591,845,798 4,066,888,893",
+            "printed_page": "55"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR",
+        "period": "FY2025",
+        "review_note": "Breakdown components are new; the total equals Codex's existing `revenue` fact and is not a new value."
+      }
+    },
+    {
+      "metric": "revenue_by_timing_2025",
+      "value": {
+        "services_transferred_over_time": 1407822675,
+        "products_and_services_transferred_at_a_point_in_time": 2659066218
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "Services transferred over time 1,407,822,675 1,072,212,943",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "Products and services transferred at a point in time 2,659,066,218 2,133,521,051",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "key_management_and_board_remuneration_2025",
+      "value": {
+        "executive_directors_salaries_bonuses": 14780427,
+        "long_term_benefits": 7295712,
+        "board_and_committees_remuneration": 5057575
+      },
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "37",
+        "evidence": [
+          {
+            "pdf_page": 39,
+            "quote": "Salaries and bonuses for Group's Executive Directors 14,780,427 9,911,242",
+            "printed_page": "37"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "gearing_ratio",
+      "value": {
+        "2025": 0.86,
+        "2024": 0.46
+      },
+      "unit": "ratio",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "56",
+        "evidence": [
+          {
+            "pdf_page": 58,
+            "quote": "Gearing 86% 46%",
+            "printed_page": "56"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "net debt / equity",
+        "unit": "ratio",
+        "period": "FY2025"
+      }
+    }
+  ]
+}

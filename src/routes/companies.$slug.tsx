@@ -106,12 +106,15 @@ function CompanyPage() {
       </Container>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mt-4 flex items-start gap-2 rounded-xl border border-tone-amber/30 bg-tone-amber/10 px-4 py-3 text-xs leading-6">
+        <div
+          data-data-origin="site-demo"
+          className="mt-4 flex items-start gap-2 rounded-xl border border-tone-amber/30 bg-tone-amber/10 px-4 py-3 text-xs leading-6"
+        >
           <Info className="mt-0.5 size-3.5 shrink-0 text-tone-amber" />
           <span>
             {t({
-              ar: "الأرقام والبيانات بهذه الصفحة تجريبية حالياً لأغراض العرض، وستُربط بمصدر بيانات مباشر لاحقاً.",
-              en: "The figures on this page are currently placeholder data for demonstration, and will be connected to a live data source later.",
+              ar: "بيانات الموقع العامة بهذه الصفحة تجريبية وغير معتمدة من محرك البيانات. لوحة مقارنة المحرك، إن ظهرت، لها مصدر وفترة مستقلان ولا تستبدل بيانات الموقع أو تصادق عليها. وجود المصدر لا يعني تحققاً مستقلاً من صحة الأرقام.",
+              en: "General site data on this page is demonstration data, not certified by the data engine. The engine comparison panel, when available, has its own source and period; it neither replaces nor certifies site data. A source link is not independent numerical verification.",
             })}
           </span>
         </div>

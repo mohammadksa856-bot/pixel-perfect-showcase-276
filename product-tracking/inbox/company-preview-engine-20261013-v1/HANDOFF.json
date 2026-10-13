@@ -1,0 +1,22 @@
+{
+  "to": "Claude Code company preview owner",
+  "from": "Codex engine/data/API owner",
+  "delivery_branch": "codex/company-preview-engine-20261013",
+  "site_base": "20a018eac22b4b77db796c13bb61c4a50f9a6c8f",
+  "engine_base": "1d27419e7458de23fef0f6cd080dd50dcc35a9d2",
+  "accepted_local_P01_15": "5c7032fb6b9fb5f6e39e8dc440c8843fd1206aec; local code merge only, not main/product/production acceptance",
+  "contract": {"API": "1.0.0", "page": 5, "base_contract_file": "contract-v1.0.0.json", "new_companion": "company-preview-evidence/1", "notice": "COMPANION_NOTICE.json", "base_API_shape_changed": false, "companion_adoption": "REVIEW_BEFORE_ADOPTING"},
+  "manifest": "MANIFEST.json",
+  "samples": {
+    "2222": "samples/2222/page.json + preview-evidence.json + sector-history.json + b05-r2-diagnostic.json",
+    "1120": "samples/1120/page.json + preview-evidence.json + sector-history.json + b05-r2-diagnostic.json",
+    "8010": "samples/8010/page.json + preview-evidence.json + sector-history.json + b05-r2-diagnostic.json; separate UNVERIFIED existing local JSON-import preview"
+  },
+  "numeric_display": "Companion rows preserve value/unit/period/statement/source/version and calculation inputs where known. Render withheld/unavailable as null with reason; never raw-page fallback for withheld legacy derivatives.",
+  "trust": "Only explicitly marked named numeric cells have independent cell review. No company, document, historical as-of or95%readiness certificate. For8010 nativePDF unavailable403; no cell accepted as independently verified.",
+  "sector_policy": "Bank generic FCF/enterprise measures are not automatic comparisons; facts retained without NotApplicable or score boosts. Dedicated bank annual history comes from existing explicit history endpoint.",
+  "live_endpoint": "No new cloud-accessible API provisioned; production server untouched. These are authenticated real HTTP responses from local frozen snapshots, for preview development/tests, not a live staging cutover.",
+  "workflow": ["Fetch this branch; do not replace your working files or merge main", "Validate sample SHA256 against MANIFEST using exact Git blob bytes; packet JSON preserves original bytes", "Keep18investor topics distinct from18operationalcategories", "Show origin/verification and sector applicability, not one merged site-demo/engine source", "Use existing history metric selection for tabs; report missing fields through coordinated API requests", "Keep all feature flags off until explicit approval; no Supabase or production action"],
+  "open_API_requests": ["Companion adoption approval before shared consumer integration", "Verified calendars/known_at and financial source coverage", "ACR001 valuation inputs/date lineage", "ACR006 instant bank peer ratio policy", "Native insurance document access and official source acceptance"],
+  "production_changes": 0
+}

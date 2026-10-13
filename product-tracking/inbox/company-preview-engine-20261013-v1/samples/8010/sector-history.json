@@ -1,0 +1,276 @@
+{
+  "status": "available",
+  "reason": null,
+  "period_kind": "fy",
+  "periods": [
+    {
+      "period_end": "2025-12-31",
+      "metrics": {
+        "insurance_revenue": [
+          {
+            "display_name": "Insurance Revenue",
+            "category": "financial",
+            "statement": "insurance_income",
+            "value": "21403177000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+            "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+            "filed_at": "2026-04-08",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+                "filing_type": "annual-report",
+                "filed_at": "2026-04-08",
+                "content_hash": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_key": "artifact:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "content_type": "application/json",
+                "byte_size": 10658,
+                "metadata": {
+                  "filed_at_basis": "pdf_creation_metadata",
+                  "independent_review": "NOT_VERIFIED",
+                  "known_at_verified": null,
+                  "local_preview_only": true,
+                  "normalized_import_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                  "not_original_pdf": true,
+                  "original_document_pdf_sha256": null,
+                  "source_hash_content_type": "application/json"
+                }
+              },
+              "extraction": {
+                "raw_label": "insurance_revenue",
+                "raw_value": "21403177",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000",
+                "page": 89,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "insurance_service_result": [
+          {
+            "display_name": "Insurance Service Result",
+            "category": "financial",
+            "statement": "insurance_income",
+            "value": "1116251000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+            "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+            "filed_at": "2026-04-08",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+                "filing_type": "annual-report",
+                "filed_at": "2026-04-08",
+                "content_hash": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_key": "artifact:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "content_type": "application/json",
+                "byte_size": 10658,
+                "metadata": {
+                  "filed_at_basis": "pdf_creation_metadata",
+                  "independent_review": "NOT_VERIFIED",
+                  "known_at_verified": null,
+                  "local_preview_only": true,
+                  "normalized_import_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                  "not_original_pdf": true,
+                  "original_document_pdf_sha256": null,
+                  "source_hash_content_type": "application/json"
+                }
+              },
+              "extraction": {
+                "raw_label": "insurance_service_result",
+                "raw_value": "1116251",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000",
+                "page": 89,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "net_income": [
+          {
+            "display_name": "Net income",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "1103114000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+            "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+            "filed_at": "2026-04-08",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+                "filing_type": "annual-report",
+                "filed_at": "2026-04-08",
+                "content_hash": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_key": "artifact:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "content_type": "application/json",
+                "byte_size": 10658,
+                "metadata": {
+                  "filed_at_basis": "pdf_creation_metadata",
+                  "independent_review": "NOT_VERIFIED",
+                  "known_at_verified": null,
+                  "local_preview_only": true,
+                  "normalized_import_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                  "not_original_pdf": true,
+                  "original_document_pdf_sha256": null,
+                  "source_hash_content_type": "application/json"
+                }
+              },
+              "extraction": {
+                "raw_label": "net_income",
+                "raw_value": "1103114",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000",
+                "page": 89,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_cash_flow": [
+          {
+            "display_name": "Operating cash flow",
+            "category": "financial",
+            "statement": "cash_flow",
+            "value": "136547000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+            "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+            "filed_at": "2026-04-08",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "local-preview:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+                "filing_type": "annual-report",
+                "filed_at": "2026-04-08",
+                "content_hash": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_key": "artifact:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "artifact_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                "content_type": "application/json",
+                "byte_size": 10658,
+                "metadata": {
+                  "filed_at_basis": "pdf_creation_metadata",
+                  "independent_review": "NOT_VERIFIED",
+                  "known_at_verified": null,
+                  "local_preview_only": true,
+                  "normalized_import_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+                  "not_original_pdf": true,
+                  "original_document_pdf_sha256": null,
+                  "source_hash_content_type": "application/json"
+                }
+              },
+              "extraction": {
+                "raw_label": "operating_cash_flow",
+                "raw_value": "136547",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000",
+                "page": 91,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

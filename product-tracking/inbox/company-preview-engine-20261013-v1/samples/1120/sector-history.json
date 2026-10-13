@@ -1,0 +1,1666 @@
+{
+  "status": "available",
+  "reason": null,
+  "period_kind": "fy",
+  "periods": [
+    {
+      "period_end": "2025-12-31",
+      "metrics": {
+        "dividends_per_share": [
+          {
+            "display_name": "Dividends paid per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "dividends_per_share",
+                "raw_value": "2.5",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "eps_diluted": [
+          {
+            "display_name": "Diluted earnings per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": "5.85",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR/share",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+                "filing_type": "financial-statements",
+                "filed_at": "2026-02-04",
+                "content_hash": "c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+                "artifact_key": "artifact:sa:1120:67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+                "artifact_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+                "content_type": "application/pdf",
+                "byte_size": 4459942,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "eps_diluted",
+                "raw_value": "5.85",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR/share",
+                "scale": "1",
+                "page": 10,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            },
+            "selection": {
+              "policy": "eps-source-unit-period-vintage/1",
+              "state": "selected",
+              "reasons": [],
+              "candidate_id": 952,
+              "official_known_at": null,
+              "document_report_period_end": null,
+              "independent_numeric_verification": "not_asserted_by_source_preference"
+            }
+          },
+          {
+            "display_name": "Diluted earnings per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "eps_unit_currency_mismatch",
+              "existing_quality_flag",
+              "existing_quality_reasons",
+              "missing_or_nonfinite_value",
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "eps_diluted",
+                "raw_value": "5.853702",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            },
+            "selection": {
+              "policy": "eps-source-unit-period-vintage/1",
+              "state": "blocked",
+              "reasons": [
+                "eps_unit_currency_mismatch",
+                "existing_quality_flag",
+                "existing_quality_reasons",
+                "missing_or_nonfinite_value",
+                "per_share_unit_currency_mismatch"
+              ],
+              "candidate_id": 1394,
+              "official_known_at": null,
+              "document_report_period_end": null,
+              "independent_numeric_verification": "not_asserted_by_source_preference"
+            }
+          }
+        ],
+        "net_financing_income": [
+          {
+            "display_name": "Net Financing Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "29845671000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 2,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_financing_income",
+                "raw_value": "29845.671",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "24791754000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 2,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_income_parent",
+                "raw_value": "24791.754",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "total_operating_income": [
+          {
+            "display_name": "Total Operating Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "39093965000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 2,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "total_operating_income",
+                "raw_value": "39093.965",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2024-12-31",
+      "metrics": {
+        "dividends_per_share": [
+          {
+            "display_name": "Dividends paid per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "dividends_per_share",
+                "raw_value": "2.71",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "eps_diluted": [
+          {
+            "display_name": "Diluted earnings per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "eps_unit_currency_mismatch",
+              "existing_quality_flag",
+              "existing_quality_reasons",
+              "missing_or_nonfinite_value",
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "eps_diluted",
+                "raw_value": "4.67158475",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            },
+            "selection": {
+              "policy": "eps-source-unit-period-vintage/1",
+              "state": "blocked",
+              "reasons": [
+                "eps_unit_currency_mismatch",
+                "existing_quality_flag",
+                "existing_quality_reasons",
+                "missing_or_nonfinite_value",
+                "per_share_unit_currency_mismatch"
+              ],
+              "candidate_id": 1357,
+              "official_known_at": null,
+              "document_report_period_end": null,
+              "independent_numeric_verification": "not_asserted_by_source_preference"
+            }
+          }
+        ],
+        "net_financing_income": [
+          {
+            "display_name": "Net Financing Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "24843046000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_financing_income",
+                "raw_value": "24843.046",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "19722206000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_income_parent",
+                "raw_value": "19722.206",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "total_operating_income": [
+          {
+            "display_name": "Total Operating Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "32055303000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "total_operating_income",
+                "raw_value": "32055.303",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2023-12-31",
+      "metrics": {
+        "dividends_per_share": [
+          {
+            "display_name": "Dividends paid per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "dividends_per_share",
+                "raw_value": "2.3",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "eps_diluted": [
+          {
+            "display_name": "Diluted earnings per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "eps_unit_currency_mismatch",
+              "existing_quality_flag",
+              "existing_quality_reasons",
+              "missing_or_nonfinite_value",
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "eps_diluted",
+                "raw_value": "3.95012025",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            },
+            "selection": {
+              "policy": "eps-source-unit-period-vintage/1",
+              "state": "blocked",
+              "reasons": [
+                "eps_unit_currency_mismatch",
+                "existing_quality_flag",
+                "existing_quality_reasons",
+                "missing_or_nonfinite_value",
+                "per_share_unit_currency_mismatch"
+              ],
+              "candidate_id": 1320,
+              "official_known_at": null,
+              "document_report_period_end": null,
+              "independent_numeric_verification": "not_asserted_by_source_preference"
+            }
+          }
+        ],
+        "net_financing_income": [
+          {
+            "display_name": "Net Financing Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "21269119000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_financing_income",
+                "raw_value": "21269.119",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "16621159000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_income_parent",
+                "raw_value": "16621.159",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "total_operating_income": [
+          {
+            "display_name": "Total Operating Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "27531409000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "total_operating_income",
+                "raw_value": "27531.409",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2022-12-31",
+      "metrics": {
+        "dividends_per_share": [
+          {
+            "display_name": "Dividends paid per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "dividends_per_share",
+                "raw_value": "1.25",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "eps_diluted": [
+          {
+            "display_name": "Diluted earnings per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "eps_unit_currency_mismatch",
+              "existing_quality_flag",
+              "existing_quality_reasons",
+              "missing_or_nonfinite_value",
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "eps_diluted",
+                "raw_value": "4.23856525",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            },
+            "selection": {
+              "policy": "eps-source-unit-period-vintage/1",
+              "state": "blocked",
+              "reasons": [
+                "eps_unit_currency_mismatch",
+                "existing_quality_flag",
+                "existing_quality_reasons",
+                "missing_or_nonfinite_value",
+                "per_share_unit_currency_mismatch"
+              ],
+              "candidate_id": 1283,
+              "official_known_at": null,
+              "document_report_period_end": null,
+              "independent_numeric_verification": "not_asserted_by_source_preference"
+            }
+          }
+        ],
+        "net_financing_income": [
+          {
+            "display_name": "Net Financing Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "22172687000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_financing_income",
+                "raw_value": "22172.687",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "17150825000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_income_parent",
+                "raw_value": "17150.825",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "total_operating_income": [
+          {
+            "display_name": "Total Operating Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "28575019000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "total_operating_income",
+                "raw_value": "28575.019",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2021-12-31",
+      "metrics": {
+        "dividends_per_share": [
+          {
+            "display_name": "Dividends paid per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "dividends_per_share",
+                "raw_value": "1.4",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "eps_diluted": [
+          {
+            "display_name": "Diluted earnings per share",
+            "category": "financial",
+            "statement": "per_share",
+            "value": null,
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "quality_status": "quarantined",
+            "quality_reasons": [
+              "eps_unit_currency_mismatch",
+              "existing_quality_flag",
+              "existing_quality_reasons",
+              "missing_or_nonfinite_value",
+              "per_share_scale_requires_review",
+              "per_share_unit_currency_mismatch"
+            ],
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "eps_diluted",
+                "raw_value": "3.68655275",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            },
+            "selection": {
+              "policy": "eps-source-unit-period-vintage/1",
+              "state": "blocked",
+              "reasons": [
+                "eps_unit_currency_mismatch",
+                "existing_quality_flag",
+                "existing_quality_reasons",
+                "missing_or_nonfinite_value",
+                "per_share_unit_currency_mismatch"
+              ],
+              "candidate_id": 1246,
+              "official_known_at": null,
+              "document_report_period_end": null,
+              "independent_numeric_verification": "not_asserted_by_source_preference"
+            }
+          }
+        ],
+        "net_financing_income": [
+          {
+            "display_name": "Net Financing Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "20391936000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_financing_income",
+                "raw_value": "20391.936",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "14746211000.000001000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net_income_parent",
+                "raw_value": "14746.211000000001",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "total_operating_income": [
+          {
+            "display_name": "Total Operating Income",
+            "category": "financial",
+            "statement": "banking_income",
+            "value": "25716398000.000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+            "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+            "filed_at": "2026-02-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/ARB%20External%20Data%20Supplement%20-%204Q2025.xlsx",
+                "filing_type": "data-supplement",
+                "filed_at": "2026-02-04",
+                "content_hash": "d902aee0e3f92bcd73ee8ba3e1e756ca6fa664025d101389b072b7155678b4a1",
+                "artifact_key": "artifact:sa:1120:87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "artifact_sha256": "87d53f4a502e531b71f1b670865db063cb88211441ed35bd5e46fee143f9a611",
+                "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "byte_size": 243751,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "total_operating_income",
+                "raw_value": "25716.398",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

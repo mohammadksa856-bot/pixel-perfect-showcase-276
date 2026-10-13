@@ -1,0 +1,24 @@
+{
+  "purpose": "Notice to Claude before adoption of a separate companion envelope; no shared API modification",
+  "base_API": "1.0.0",
+  "base_page": 5,
+  "base_contract_file_unchanged": "docs/api/contract-v1.0.0.json",
+  "companion": "company-preview-evidence/1",
+  "adoption_state": "REVIEW_REQUESTED; not an endpoint or replacement page contract",
+  "datasets": "2222/1120 actual frozen engine snapshot;8010 separate pre-existing local pipeline-import preview, not accepted source data",
+  "consumer_rules": [
+    "Use companion numeric_evidence status/reasons and sector_policy before display/comparison",
+    "Do not render withheld null as zero or use raw API legacy calculated numbers as trusted fallback",
+    "Source availability, independent named-cell verification, field completeness and company readiness are distinct",
+    "Investor18 topics are a different model from operational18categories; available means delivery eligibility, not accuracy/95%readiness",
+    "Calculated figures lacking reproduced input lineage are withheld in companion; base page remains exact actual API response and explicitly unverified",
+    "Bank free cashflow/enterprise-style ratios are not automatic comparison measures; this is not a readiness NotApplicable exception",
+    "Preserve official source URL, artifact SHA, value/unit/period/version and calculation inputs; expose missing inputs as a reason",
+    "Keep site-demo data separate; no Supabase/client key or production activation"
+  ],
+  "authentication": "Current O02 startup policy requires a configured key by default; old contract prose 'when configured' is not permission for anonymous staging/production. Keys server-side only.",
+  "performance_guidance": "Use existing history endpoint with explicit sector metric list rather than refetching entire page for each tab. Recorded single-snapshot localhost timing is not SLA.",
+  "historical_gate": "Official known_at and reviewed issuer fiscal calendar absent; no historical as-of certification or overallcoverage percentage provided",
+  "open_requests": ["Review companion1 before adopting; coordinate any baseAPI shape changes separately", "Valuation requires sourced datedprice/issuedshares/attributableearnings lineage", "ACR006 instant bank ratios not yet eligible in annual peer endpoint", "NativeinsurancePDF403 and officialcalendar/B07 financial assurance remain blockers"],
+  "production_changes": 0
+}

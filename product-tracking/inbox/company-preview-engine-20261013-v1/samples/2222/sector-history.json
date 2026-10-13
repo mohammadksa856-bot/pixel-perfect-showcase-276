@@ -1,0 +1,1172 @@
+{
+  "status": "available",
+  "reason": null,
+  "period_kind": "fy",
+  "periods": [
+    {
+      "period_end": "2025-12-31",
+      "metrics": {
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "348042000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+            "filed_at": "2026-03-09",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+                "filing_type": "Annual report supplementary metrics and comparative restatement",
+                "filed_at": "2026-03-09",
+                "content_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net income attributable to owners",
+                "raw_value": "348042",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 244,
+                "table_ref": "earnings per share",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_cash_flow": [
+          {
+            "display_name": "Operating cash flow",
+            "category": "financial",
+            "statement": "cash_flow",
+            "value": "510798000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 2,
+            "quality_score": "1",
+            "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+            "filed_at": "2026-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+                "filing_type": "Annual financial report comparative",
+                "filed_at": "2026-03-10",
+                "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net cash from operating activities",
+                "raw_value": "510798",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_income": [
+          {
+            "display_name": "Operating income",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "706822000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+            "filed_at": "2026-03-09",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+                "filing_type": "Annual report supplementary metrics and comparative restatement",
+                "filed_at": "2026-03-09",
+                "content_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "operating income",
+                "raw_value": "706822",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 39,
+                "table_ref": "summarized consolidated statement of income",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "revenue": [
+          {
+            "display_name": "Revenue",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "1559342000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2025,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 2,
+            "quality_score": "1",
+            "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+            "filed_at": "2026-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+                "filing_type": "Annual financial report comparative",
+                "filed_at": "2026-03-10",
+                "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "revenue",
+                "raw_value": "1559342",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2024-12-31",
+      "metrics": {
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "393891000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:7d174a46cdf64631b8e2d0b2d89f0d160ec7838722fcc929eeaf543931aafaaa",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
+            "filed_at": "2025-03-04",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:7d174a46cdf64631b8e2d0b2d89f0d160ec7838722fcc929eeaf543931aafaaa",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2025-03-04",
+                "content_hash": "7d174a46cdf64631b8e2d0b2d89f0d160ec7838722fcc929eeaf543931aafaaa",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net income attributable to owners",
+                "raw_value": "393891",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 222,
+                "table_ref": "earnings per share",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_cash_flow": [
+          {
+            "display_name": "Operating cash flow",
+            "category": "financial",
+            "statement": "cash_flow",
+            "value": "508888000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+            "filed_at": "2026-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+                "filing_type": "Annual financial report comparative",
+                "filed_at": "2026-03-10",
+                "content_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net cash from operating activities",
+                "raw_value": "508888",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_income": [
+          {
+            "display_name": "Operating income",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "774625000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 2,
+            "quality_score": "1",
+            "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+            "filed_at": "2026-03-09",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+                "filing_type": "Annual report supplementary metrics and comparative restatement",
+                "filed_at": "2026-03-09",
+                "content_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "operating_income",
+                "raw_value": "774625",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 177,
+                "table_ref": "2025 annual report comparative",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "revenue": [
+          {
+            "display_name": "Revenue",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "1637299000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2024,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+            "filed_at": "2026-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+                "filing_type": "Annual financial report comparative",
+                "filed_at": "2026-03-10",
+                "content_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "revenue",
+                "raw_value": "1637299",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2023-12-31",
+      "metrics": {
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "452753000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+            "filed_at": "2024-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2024-03-10",
+                "content_hash": "b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net income attributable to owners",
+                "raw_value": "452753",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 224,
+                "table_ref": "earnings per share",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_cash_flow": [
+          {
+            "display_name": "Operating cash flow",
+            "category": "financial",
+            "statement": "cash_flow",
+            "value": "537814000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+            "filed_at": "2024-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+                "filing_type": "Annual report",
+                "filed_at": "2024-03-10",
+                "content_hash": "030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net cash from operating activities",
+                "raw_value": "537814",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_income": [
+          {
+            "display_name": "Operating income",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "868287000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+            "filed_at": "2024-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2024-03-10",
+                "content_hash": "b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "operating income",
+                "raw_value": "868287",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 35,
+                "table_ref": "summarized consolidated statement of income",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "revenue": [
+          {
+            "display_name": "Revenue",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "1653281000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2023,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+            "filed_at": "2024-03-10",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+                "filing_type": "Annual report",
+                "filed_at": "2024-03-10",
+                "content_hash": "030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "revenue",
+                "raw_value": "1653281",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2022-12-31",
+      "metrics": {
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "597215000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2023-03-12",
+                "content_hash": "3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net income attributable to owners",
+                "raw_value": "597215",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 215,
+                "table_ref": "earnings per share",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_cash_flow": [
+          {
+            "display_name": "Operating cash flow",
+            "category": "financial",
+            "statement": "cash_flow",
+            "value": "698152000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report historical highlights",
+                "filed_at": "2023-03-12",
+                "content_hash": "d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net cash from operating activities",
+                "raw_value": "698152",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_income": [
+          {
+            "display_name": "Operating income",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "1144077000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2023-03-12",
+                "content_hash": "3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "operating income",
+                "raw_value": "1144077",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 35,
+                "table_ref": "summarized consolidated statement of income",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "revenue": [
+          {
+            "display_name": "Revenue",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "2006955000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2022-01-01",
+            "period_end": "2022-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2022,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report historical highlights",
+                "filed_at": "2023-03-12",
+                "content_hash": "d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "revenue",
+                "raw_value": "2006955",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "period_end": "2021-12-31",
+      "metrics": {
+        "net_income_parent": [
+          {
+            "display_name": "Net income attributable to parent",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "395203000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2023-03-12",
+                "content_hash": "ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net income attributable to owners",
+                "raw_value": "395203",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 215,
+                "table_ref": "earnings per share",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_cash_flow": [
+          {
+            "display_name": "Operating cash flow",
+            "category": "financial",
+            "statement": "cash_flow",
+            "value": "522601000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report historical highlights",
+                "filed_at": "2023-03-12",
+                "content_hash": "8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "net cash from operating activities",
+                "raw_value": "522601",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "operating_income": [
+          {
+            "display_name": "Operating income",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "771918000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report supplementary metrics",
+                "filed_at": "2023-03-12",
+                "content_hash": "ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "operating income",
+                "raw_value": "771918",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": 35,
+                "table_ref": "summarized consolidated statement of income",
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ],
+        "revenue": [
+          {
+            "display_name": "Revenue",
+            "category": "financial",
+            "statement": "income_statement",
+            "value": "1346930000000",
+            "value_text": null,
+            "value_json": null,
+            "value_type": "decimal",
+            "currency": "SAR",
+            "unit": "SAR",
+            "period_start": "2021-01-01",
+            "period_end": "2021-12-31",
+            "period_kind": "fy",
+            "fiscal_year": 2021,
+            "fiscal_quarter": null,
+            "scope": "consolidated",
+            "version": 1,
+            "quality_score": "1",
+            "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+            "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+            "filed_at": "2023-03-12",
+            "is_calculated": 0,
+            "calculation": null,
+            "dimensions": {},
+            "provenance": {
+              "source": {
+                "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+                "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+                "filing_type": "Annual report historical highlights",
+                "filed_at": "2023-03-12",
+                "content_hash": "8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+                "artifact_key": null,
+                "artifact_sha256": null,
+                "content_type": null,
+                "byte_size": null,
+                "metadata": {}
+              },
+              "extraction": {
+                "raw_label": "revenue",
+                "raw_value": "1346930",
+                "raw_currency": "SAR",
+                "raw_unit": "SAR",
+                "scale": "1000000",
+                "page": null,
+                "table_ref": null,
+                "confidence": "1.0",
+                "mapping_method": "exact_dictionary",
+                "reason": null,
+                "location": {
+                  "cell": null,
+                  "row": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

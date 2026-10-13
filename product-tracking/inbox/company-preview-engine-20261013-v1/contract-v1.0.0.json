@@ -1,0 +1,555 @@
+{
+  "api_contract_version": "1.0.0",
+  "page_payload_contract_version": 5,
+  "version_header": {
+    "name": "X-Marefa-API-Contract",
+    "value": "1.0.0"
+  },
+  "compatibility": "Additive fields permitted; existing field removal, type changes, enum removal or null-to-zero changes require a new consumer contract revision.",
+  "authentication": {
+    "json_routes": "X-API-Key or Authorization: Bearer when configured",
+    "html_view": "public existing viewer"
+  },
+  "semantics": {
+    "missing": "Null or empty collections with status/reason; never fabricated values or 100 percent.",
+    "page_version": "Existing numeric page contract_version 5 is independent from API semantic version 1.0.0.",
+    "readiness": "Canonical factory_18_category_contract only; not_assessed has null total_score and no legacy fallback.",
+    "source": "Source URL and content hash are provenance, not independent accuracy certification; computed facts require consumed lineage.",
+    "paths": "manifest_path, archived_path and local_path are recursively removed from public JSON.",
+    "sample_use": "All samples use synthetic SA:TST local SQLite fixtures for UI integration only; never company data, evidence or production imports."
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/v1/companies/{market}/{symbol}/page",
+      "status": 200,
+      "schema": "page"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/companies/{market}/{symbol}/facts",
+      "status": 200,
+      "schema": "facts",
+      "query": {
+        "limit": "integer",
+        "offset": "integer",
+        "category": "string",
+        "period_kind": "string"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/v1/companies/{market}/{symbol}/factory-readiness",
+      "status": 200,
+      "schema": "readiness"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/companies/{market}/{symbol}/field-availability",
+      "status": 200,
+      "schema": "availability"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/companies/{market}/{symbol}/history",
+      "status": 200,
+      "schema": "history",
+      "query": {
+        "metrics": "comma-delimited string",
+        "period_kind": "string",
+        "periods": "integer"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/view/{market}/{symbol}",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "errors": [
+    {
+      "status": 400,
+      "meaning": "Invalid query parameter",
+      "schema": "error"
+    },
+    {
+      "status": 401,
+      "meaning": "Configured API key absent or incorrect",
+      "schema": "error"
+    },
+    {
+      "status": 404,
+      "meaning": "Unknown company or endpoint",
+      "schema": "error"
+    },
+    {
+      "status": 405,
+      "meaning": "POST read_only_service",
+      "schema": "error"
+    },
+    {
+      "status": 500,
+      "meaning": "Internal failure, sanitized internal_error",
+      "schema": "error"
+    }
+  ],
+  "schemas": {
+    "error": {
+      "type": "object",
+      "required": [
+        "error"
+      ],
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "capability": {
+      "type": "object",
+      "required": [
+        "status",
+        "count",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "available",
+            "partial",
+            "unavailable"
+          ]
+        },
+        "count": {
+          "type": "integer"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "period_kind",
+        "period_end",
+        "status",
+        "reason",
+        "metrics"
+      ],
+      "properties": {
+        "period_kind": {
+          "type": "string"
+        },
+        "period_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "available",
+            "partial",
+            "unavailable"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/schemas/fact"
+            }
+          }
+        }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "required": [
+        "value",
+        "unit",
+        "currency",
+        "period_start",
+        "period_end",
+        "period_kind",
+        "fiscal_year",
+        "fiscal_quarter",
+        "version",
+        "source_url",
+        "source_key",
+        "is_calculated",
+        "dimensions",
+        "provenance"
+      ],
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "period_end": {
+          "type": "string"
+        },
+        "period_kind": {
+          "type": "string"
+        },
+        "fiscal_year": {
+          "type": "integer"
+        },
+        "fiscal_quarter": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "version": {
+          "type": "integer"
+        },
+        "source_key": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "is_calculated": {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "dimensions": {
+          "type": "object"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "extraction": {
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "derivation": {
+              "type": [
+                "object",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/schemas/fact"
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "required": [
+        "company_id",
+        "scoring_model",
+        "readiness_state",
+        "total_score",
+        "target_score",
+        "blocking_reasons",
+        "categories"
+      ],
+      "properties": {
+        "company_id": {
+          "type": "string"
+        },
+        "scoring_model": {
+          "type": "string",
+          "enum": [
+            "factory_18_category_contract"
+          ]
+        },
+        "readiness_state": {
+          "type": "string",
+          "enum": [
+            "ready",
+            "not_ready",
+            "not_assessed"
+          ]
+        },
+        "total_score": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_score": {
+          "type": "string",
+          "pattern": "^95(?:\\.0+)?$"
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "category_key",
+              "weight",
+              "threshold",
+              "score",
+              "status",
+              "threshold_passed",
+              "hard_gates",
+              "evidence",
+              "checked_at"
+            ],
+            "properties": {
+              "category_key": {
+                "type": "string"
+              },
+              "threshold_passed": {
+                "type": "boolean"
+              },
+              "hard_gates": {
+                "type": "array"
+              },
+              "evidence": {
+                "type": "object"
+              },
+              "checked_at": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "availability": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field_key",
+          "status",
+          "reason_code",
+          "reason",
+          "evidence_url",
+          "evidence_current"
+        ],
+        "properties": {
+          "field_key": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "reason_code": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "evidence_url": {
+            "type": "string"
+          },
+          "evidence_current": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "required": [
+        "period_kind",
+        "periods",
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "company_id": {
+          "type": "string"
+        },
+        "period_kind": {
+          "type": "string"
+        },
+        "periods": {
+          "type": "array"
+        },
+        "status": {
+          "type": "string"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "generated_at",
+        "placeholder_policy",
+        "company",
+        "sections",
+        "capabilities",
+        "data_quality"
+      ],
+      "properties": {
+        "contract_version": {
+          "type": "integer",
+          "enum": [
+            5
+          ]
+        },
+        "generated_at": {
+          "type": "string"
+        },
+        "placeholder_policy": {
+          "type": "string",
+          "enum": [
+            "never_substitute_demo_values"
+          ]
+        },
+        "company": {
+          "type": "object"
+        },
+        "sections": {
+          "type": "object",
+          "required": [
+            "profile",
+            "financials",
+            "market",
+            "ownership",
+            "corporate_actions",
+            "disclosures",
+            "consensus",
+            "peer_comparison",
+            "official_sources"
+          ],
+          "properties": {
+            "profile": {
+              "type": "object"
+            },
+            "financials": {
+              "type": "object",
+              "required": [
+                "annual",
+                "quarter",
+                "ytd",
+                "ttm",
+                "instant",
+                "history"
+              ],
+              "properties": {
+                "annual": {
+                  "$ref": "#/schemas/period"
+                },
+                "quarter": {
+                  "$ref": "#/schemas/period"
+                },
+                "ytd": {
+                  "$ref": "#/schemas/period"
+                },
+                "ttm": {
+                  "$ref": "#/schemas/period"
+                },
+                "instant": {
+                  "$ref": "#/schemas/period"
+                },
+                "history": {
+                  "type": "object"
+                }
+              }
+            },
+            "market": {
+              "type": "object"
+            }
+          }
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/schemas/capability"
+          }
+        },
+        "data_quality": {
+          "type": "object",
+          "required": [
+            "completeness",
+            "understanding",
+            "factory_readiness",
+            "field_availability",
+            "open_backlog"
+          ],
+          "properties": {
+            "completeness": {
+              "type": "object"
+            },
+            "understanding": {
+              "type": "object"
+            },
+            "factory_readiness": {
+              "$ref": "#/schemas/readiness"
+            },
+            "field_availability": {
+              "$ref": "#/schemas/availability"
+            },
+            "open_backlog": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

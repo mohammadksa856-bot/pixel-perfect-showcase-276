@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-13T01:30:00Z",
+  "updated_at": "2026-10-13T03:00:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -124,7 +124,23 @@
         }
       },
       "data_source": "engine main b70254e, scratch copy built by product-tracking/tools/p02_build_preview_db.sh",
-      "supabase_reads": "none for page data; site header search and footer newsletter still use Supabase on user action only"
+      "supabase_reads": "none for page data; site header search and footer newsletter still use Supabase on user action only",
+      "merge_review": "approved for local merge review only (not activation/publication)"
+    },
+    "P02-ALIGN": {
+      "status": "done_pending_codex_review",
+      "branch": "claude/p02-evidence-alignment",
+      "base": "cbcce2a",
+      "commit": "debaf22",
+      "package": "codex/company-preview-engine-20261013@07f3038 (15/15 manifest sha256 ok; zip receipt ok; 9 files outside manifest)",
+      "report": "product-tracking/reports/BR-007_codex_evidence_review.md",
+      "result": "0 disagreements vs companion oracle for 2222/1120/8010 after fix (was 31/16/0 calculated derivatives)",
+      "companion_adopted": false,
+      "decisions_needed": [
+        "P01-15 lineage policy for /peers",
+        "companion adoption",
+        "bank history via /history endpoint"
+      ]
     }
   },
   "open_dependencies_on_codex": {
@@ -312,6 +328,30 @@
       "branch": "claude/p02-engine-company-preview + engine main",
       "commit": "7caf2ca + b70254e",
       "result": "13/13 built without error; withheld only 1120 (2) and 1150 (3), all unit_conflict (DCR-001 family)"
+    },
+    {
+      "id": "RUN-2026-10-13-08",
+      "suite": "Codex package integrity (manifest sha256, zip receipt, ancestry)",
+      "repo": "site",
+      "branch": "codex/company-preview-engine-20261013",
+      "commit": "07f3038",
+      "result": "15/15 manifest files ok; zip ok; base 20a018e"
+    },
+    {
+      "id": "RUN-2026-10-13-09",
+      "suite": "P02 (cbcce2a) vs companion oracle on v5 samples",
+      "repo": "site",
+      "branch": "claude/p02-engine-company-preview",
+      "commit": "cbcce2a",
+      "result": "shown-but-withheld: 2222=31, 1120=16, 8010=0 (all calculated_input_lineage_not_reproduced); reported values: 0 disagreements"
+    },
+    {
+      "id": "RUN-2026-10-13-10",
+      "suite": "full: unit, P02+P01-15 integration, tsc, build, leak scan, browser off/on",
+      "repo": "site+engine",
+      "branch": "claude/p02-evidence-alignment",
+      "commit": "debaf22 + engine b70254e",
+      "result": "unit 87/87; integration 9/9 + 5/5; tsc 0; eslint 816 (baseline); build ok; 0/60 leak; browser 2/2 + 12/12"
     }
   ]
 }

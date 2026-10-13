@@ -57,3 +57,17 @@
 {"ts": "2026-10-13T04:50:00Z", "task": "DATA-02", "event": "test_run", "run": "RUN-2026-10-13-15", "result": "115 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"}
 {"ts": "2026-10-13T05:00:00Z", "task": "BR-008", "event": "batch_report", "path": "product-tracking/reports/BR-008_DATA-02_batch-01.md"}
 {"ts": "2026-10-13T05:05:00Z", "task": "DATA-02", "event": "commit", "branch": "claude/data-02-batch-01", "commit": "3bbd420", "detail": "batch-01 manifests, reviews, candidates, gaps, tools, tests; engine DB not modified"}
+{"ts": "2026-10-13T06:00:00Z", "task": "DATA-02-B02", "event": "started", "branch": "claude/data-02-batch-02", "base": "8c485b3"}
+{"ts": "2026-10-13T06:01:00Z", "task": "DATA-02-B02", "event": "received", "detail": "BATCH20_GAP_MATRIX.json @ codex/data01-market-batch-20261013 ab98885; 5/5 v7 file hashes match MANIFEST.json"}
+{"ts": "2026-10-13T06:05:00Z", "task": "DATA-02-B02", "event": "inventory", "detail": "Codex matrix: no attributes/ownership/disclosures for 2082/2280/4190/4004/4300; sector empty for 4; engine main has no docs; one archived PDF per company on unmerged sector branches"}
+{"ts": "2026-10-13T06:06:00Z", "task": "DATA-02-B02", "event": "blocked_partial", "detail": "engine commit 2391513 (BATCH_RESULT_NOTICE) not on GitHub; issuer sites and saudiexchange.sa still blocked"}
+{"ts": "2026-10-13T06:40:00Z", "task": "DATA-02-B02", "event": "corrected", "detail": "acquisitions moved from corporate_actions to disclosures; share_capital/treasury_shares amounts dropped as Codex-owned facts"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-16", "result": "5/5 PDFs extracted from engine branch blobs, sha256 match"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-17", "result": "584/584 quotes on page; 111 via OCR (tesseract 5.3.4)"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-18", "result": "5/5 manifests, 219 keys, 0 collisions"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-19", "result": "integrity ok; +139/+4/+22/+54 as expected; 0 pre-existing rows changed; resync 0 inserted 0 restated"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-20", "result": "30/30; tamper check 4 fail as expected"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-21", "result": "141/141; batch-01 reports byte-identical"}
+{"ts": "2026-10-13T07:40:00Z", "task": "DATA-02-B02", "event": "test_run", "run": "RUN-2026-10-13-22", "result": "145 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"}
+{"ts": "2026-10-13T07:45:00Z", "task": "DATA-02-B02", "event": "commit", "branch": "claude/data-02-batch-02", "commit": "3d4a02b", "detail": "manifests, classification, candidates, gaps, tools, tests"}
+{"ts": "2026-10-13T08:00:00Z", "task": "BR-009", "event": "batch_report", "path": "product-tracking/reports/BR-009_DATA-02_batch-02.md"}

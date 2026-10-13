@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-13T05:00:00Z",
+  "updated_at": "2026-10-13T08:00:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -143,7 +143,7 @@
       ]
     },
     "DATA-02": {
-      "status": "batch_01_delivered_pending_codex_review",
+      "status": "batch_01_and_02_delivered_pending_codex_review",
       "branch": "claude/data-02-batch-01",
       "base": "bc6b450",
       "outbox": "product-tracking/outbox/DATA-02/batch-01",
@@ -165,6 +165,32 @@
         "confirm Al Rajhi FS host is official"
       ],
       "commit": "3bbd420"
+    },
+    "DATA-02-B02": {
+      "status": "delivered_pending_codex_review",
+      "branch": "claude/data-02-batch-02",
+      "base": "8c485b3",
+      "commit": "3d4a02b",
+      "company_list": "BATCH20_GAP_MATRIX.json @ codex/data01-market-batch-20261013 ab98885 (v7 hashes verified), companies 6-10",
+      "companies": [
+        "2082",
+        "2280",
+        "4190",
+        "4004",
+        "4300"
+      ],
+      "outbox": "product-tracking/outbox/DATA-02/batch-02",
+      "report": "product-tracking/reports/BR-009_DATA-02_batch-02.md",
+      "result": "139 attributes + 4 ownership + 22 dividend/bonus actions + 54 disclosures (new keys only); 584/584 quotes verified (111 OCR); 0 collisions vs engine main, 5 sector-branch imports and batch-01; merge test 0 pre-existing rows changed, idempotent; 5 evidence-backed sector/industry candidates (exchange classification unverified); 29 DATA-01 candidates; 90-cell gap inventory, no not-applicable",
+      "engine_db_modified": false,
+      "batch_01_files_modified": false,
+      "decisions_needed": [
+        "approve 4 sector/industry candidates and add 2280/4190/4004/4300 to registry",
+        "merge or re-archive the 5 engine sector branches holding the source PDFs",
+        "publish engine commit 2391513 or confirm b70254e",
+        "board reports 2025 for 2082/4190/4004/4300 and Saudi Exchange profiles",
+        "confirm Dallah chairman (inferred from related-party table)"
+      ]
     }
   },
   "open_dependencies_on_codex": {
@@ -179,8 +205,11 @@
     "ENGINE-ARCHIVE-INDEX": "data/raw/archive-index.json references companies absent from bundled DB → sync-manifests FOREIGN KEY failure",
     "ENGINE-HISTORY-1120": "annual history for 1120 has net_income for 2025 only; net_income_parent covers 5 years",
     "ENGINE-PROFILE": "1120 now has a 16-attribute candidate profile in DATA-02 batch-01 (pending Codex merge); 8010 still has none",
-    "DATA-02-LIST": "Central 20-company list for DATA-01/DATA-02 not found on any branch",
-    "DATA-02-DOCS": "No archived original for Tawuniya (8010) and no Al Rajhi annual/board report; qualitative governance/ownership gaps remain"
+    "DATA-02-LIST": "Resolved: BATCH20_GAP_MATRIX.json (ab98885) adopted as the shared company list",
+    "DATA-02-DOCS": "No archived original for Tawuniya (8010) and no Al Rajhi annual/board report; qualitative governance/ownership gaps remain",
+    "DATA-02-B02-SOURCES": "Batch-02 source PDFs exist only on unmerged engine sector branches (claude/data-*-1/2)",
+    "ENGINE-2391513": "Engine commit cited in BATCH_RESULT_NOTICE.json is not on GitHub",
+    "REGISTRY-SECTOR": "2280/4190/4004/4300 missing from engine main registry; sector/industry candidates delivered in DATA-02 batch-02"
   },
   "test_runs": [
     {
@@ -418,6 +447,62 @@
       "branch": "claude/data-02-batch-01",
       "commit": "working tree on bc6b450 + engine b70254e",
       "result": "115 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"
+    },
+    {
+      "id": "RUN-2026-10-13-16",
+      "suite": "data02_fetch_branch_docs.py",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "5/5 PDFs extracted from engine branch blobs, sha256 match"
+    },
+    {
+      "id": "RUN-2026-10-13-17",
+      "suite": "data02_verify.py --docs-root (batch-02)",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "584/584 quotes on page; 111 via OCR (tesseract 5.3.4)"
+    },
+    {
+      "id": "RUN-2026-10-13-18",
+      "suite": "data02_collisions.py --extra-imports (5 branch imports) --prior-batch batch-01",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "5/5 manifests, 219 keys, 0 collisions"
+    },
+    {
+      "id": "RUN-2026-10-13-19",
+      "suite": "data02_merge_test.sh (DATA02_REGISTRY scratch; baselines = 5 branch fy imports)",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "integrity ok; +139/+4/+22/+54 as expected; 0 pre-existing rows changed; resync 0 inserted 0 restated"
+    },
+    {
+      "id": "RUN-2026-10-13-20",
+      "suite": "bun test tests/data02-batch-02.test.ts",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "30/30; tamper check 4 fail as expected"
+    },
+    {
+      "id": "RUN-2026-10-13-21",
+      "suite": "batch-01 verify + collisions with modified tools",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "141/141; batch-01 reports byte-identical"
+    },
+    {
+      "id": "RUN-2026-10-13-22",
+      "suite": "bun test tests/ + tsc + eslint (new file)",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-02",
+      "commit": "3d4a02b + engine b70254e + sector branches",
+      "result": "145 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"
     }
   ]
 }

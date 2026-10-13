@@ -5,6 +5,7 @@ import { describe, expect, test } from "bun:test";
 import { createHash } from "node:crypto";
 import { gunzipSync } from "node:zlib";
 import { readFileSync, readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import {
   buildCompanyPreview,
   contractProblems,
@@ -50,7 +51,7 @@ describe("Codex evidence package: integrity", () => {
   test("site code never imports the companion (not adopted before Codex approval)", () => {
     const walk = (dir: URL): string[] =>
       readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
-        e.isDirectory() ? walk(new URL(`${e.name}/`, dir)) : [new URL(e.name, dir).pathname],
+        e.isDirectory() ? walk(new URL(`${e.name}/`, dir)) : [fileURLToPath(new URL(e.name, dir))],
       );
     for (const f of walk(new URL("../src/", import.meta.url)))
       expect(readFileSync(f, "utf8")).not.toMatch(

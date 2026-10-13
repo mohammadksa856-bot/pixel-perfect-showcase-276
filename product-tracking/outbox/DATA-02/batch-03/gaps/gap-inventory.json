@@ -1,0 +1,1496 @@
+{
+  "batch": "DATA-02/batch-03",
+  "engine_main_commit": "b70254e",
+  "company_list": "BATCH20_GAP_MATRIX.json (codex/data01-market-batch-20261013 @ ab98885), companies 11-15",
+  "rules": [
+    "A topic is never marked not_applicable automatically; missing disclosure is recorded with its reason.",
+    "Numeric topics are DATA-01 (Codex); their state is taken from the Codex matrix, not re-measured.",
+    "batch_03_added lists exactly the keys delivered in this batch for that topic."
+  ],
+  "reasons": {
+    "covered": "covered_by_batch_or_engine",
+    "not_in_doc": "not_disclosed_in_archived_document",
+    "doc_missing": "official_document_not_archived",
+    "net": "official_site_blocked_by_session_network_policy",
+    "licensed": "licensed_feed_required",
+    "market": "market_data_feed_required",
+    "numeric": "numeric_scope_DATA-01"
+  },
+  "topics": [
+    {
+      "key": "identity",
+      "ar": "هوية الشركة"
+    },
+    {
+      "key": "business_model",
+      "ar": "نموذج العمل والمنتجات ومصادر الإيراد"
+    },
+    {
+      "key": "management_governance",
+      "ar": "الإدارة والحوكمة"
+    },
+    {
+      "key": "ownership",
+      "ar": "الملكية"
+    },
+    {
+      "key": "financial_statements",
+      "ar": "القوائم المالية"
+    },
+    {
+      "key": "earnings_quality",
+      "ar": "جودة الأرباح"
+    },
+    {
+      "key": "ratios",
+      "ar": "النسب المالية"
+    },
+    {
+      "key": "operating_kpis",
+      "ar": "المؤشرات التشغيلية"
+    },
+    {
+      "key": "dividends",
+      "ar": "التوزيعات"
+    },
+    {
+      "key": "sector_industry",
+      "ar": "القطاع والصناعة"
+    },
+    {
+      "key": "competitors",
+      "ar": "المنافسون"
+    },
+    {
+      "key": "trading_liquidity",
+      "ar": "التداول والسيولة"
+    },
+    {
+      "key": "guidance",
+      "ar": "التوجيهات والتوقعات"
+    },
+    {
+      "key": "analyst_coverage",
+      "ar": "تغطية المحللين"
+    },
+    {
+      "key": "valuation",
+      "ar": "التقييم"
+    },
+    {
+      "key": "risks",
+      "ar": "المخاطر والإفصاحات"
+    },
+    {
+      "key": "sustainability",
+      "ar": "الاستدامة"
+    },
+    {
+      "key": "news_ir",
+      "ar": "الأخبار ومواد المستثمرين"
+    }
+  ],
+  "companies": {
+    "4030": {
+      "identity": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "branches",
+          "commercial_registration",
+          "establishment",
+          "headquarters_address",
+          "legal_form",
+          "legal_name",
+          "presentation_currency",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "strategy",
+        "batch_03_added": [
+          "associate_imi",
+          "joint_venture_ngc",
+          "joint_venture_petredec",
+          "operating_segments",
+          "profile_note|Asset disposals 2025",
+          "profile_note|Dry bulk arasco charter",
+          "profile_note|Geographic information",
+          "profile_note|Logistics trade lanes",
+          "profile_note|Murabaha financing 2025",
+          "profile_note|New subsidiaries 2025",
+          "profile_note|Ngc investment written down",
+          "profile_note|Vela intangible contracts",
+          "profile_note|Vessels received 2025",
+          "profile_note|Vlcc acquisition capital maritime",
+          "subsidiaries"
+        ],
+        "recorded_gaps": [
+          "strategy"
+        ],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "auditor_partner_licence_report_date; chairman_ceo_names",
+        "batch_03_added": [
+          "audit_opinion",
+          "auditor",
+          "fs_approval_date",
+          "governance_disclosure|Audit committee oversight",
+          "governance_disclosure|Chief operating decision maker",
+          "governance_disclosure|Long term incentive plan",
+          "key_audit_matter"
+        ],
+        "recorded_gaps": [
+          "auditor_partner_licence_report_date",
+          "chairman_ceo_names"
+        ],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "non_controlling_interests",
+          "shareholder_aramco",
+          "shareholder_pif"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 1621 original values, 151 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 1621 original values, 151 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 1621 original values, 151 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "employee_count",
+        "batch_03_added": [
+          "numeric:aramco_related_party_revenue",
+          "numeric:fleet_by_segment",
+          "numeric:fleet_size",
+          "numeric:gearing_ratio",
+          "numeric:key_management_compensation",
+          "numeric:major_customer_concentration",
+          "numeric:revenue_disaggregation",
+          "numeric:segment_revenue",
+          "numeric:share_of_results_equity_investees",
+          "numeric:unutilized_credit_facilities"
+        ],
+        "recorded_gaps": [
+          "employee_count"
+        ],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "dividend_disclosure|Dividend policy capital management",
+          "dividend_disclosure|Subsidiary dividend ncc 2025",
+          "sa:4030:bonus_issue:2025-06-29",
+          "sa:4030:cash_dividend:2024-03-18",
+          "sa:4030:cash_dividend:2025-03-18",
+          "sa:4030:cash_dividend:2026-03-10"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_03_added": [
+          "classification:Industrials/Marine Transportation",
+          "principal_activities"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors",
+        "batch_03_added": [],
+        "recorded_gaps": [
+          "competitors"
+        ],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1506 daily price records; liquidity metrics not measured",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Bahri Annual Report / Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "risk_disclosure|Capital commitments",
+          "risk_disclosure|Financial risk management",
+          "risk_disclosure|Going concern",
+          "risk_disclosure|Legal claims",
+          "risk_disclosure|Letters of guarantee",
+          "risk_disclosure|Loan covenants",
+          "risk_disclosure|Pledged vessels",
+          "risk_disclosure|Subsequent events",
+          "risk_disclosure|Sukuk",
+          "risk_disclosure|Zakat status"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "sustainability_esg",
+        "batch_03_added": [],
+        "recorded_gaps": [
+          "sustainability_esg"
+        ],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Bahri Annual Report / Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Bahri audited consolidated financial statements FY2025",
+          "Bahri Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "3020": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "unified_number",
+        "batch_03_added": [
+          "commercial_registration",
+          "establishment",
+          "fiscal_year",
+          "headquarters_city",
+          "industrial_license",
+          "legal_form",
+          "legal_name",
+          "presentation_currency",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [
+          "unified_number"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "customer_concentration; revenue_disaggregation; strategy",
+        "batch_03_added": [
+          "investment_in_associate_cement_product_industry",
+          "investment_in_associate_saudi_yamani_cement",
+          "profile_note|Asset disposals old lines",
+          "profile_note|Fvoci equity investments",
+          "profile_note|Geographic market",
+          "profile_note|Plant location new factory",
+          "profile_note|Products and sales channels",
+          "profile_note|Quarry franchise licences rehabilitation",
+          "profile_note|Segment statement"
+        ],
+        "recorded_gaps": [
+          "customer_concentration",
+          "revenue_disaggregation",
+          "strategy"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "chairman_ceo_names",
+        "batch_03_added": [
+          "auditor",
+          "fs_approval_date",
+          "governance_disclosure|Key management and board compensation",
+          "key_audit_matters"
+        ],
+        "recorded_gaps": [
+          "chairman_ceo_names"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "major_shareholders",
+        "batch_03_added": [
+          "ownership_disclosure|Related parties"
+        ],
+        "recorded_gaps": [
+          "major_shareholders"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 342 original values, 44 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 342 original values, 44 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 342 original values, 44 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "production_capacity; employee_count",
+        "batch_03_added": [
+          "numeric:clinker_inventory_value",
+          "numeric:cwip_production_line_project"
+        ],
+        "recorded_gaps": [
+          "production_capacity",
+          "employee_count"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "dividend_disclosure|Dividend policy",
+          "sa:3020:cash_dividend:2024-03-25",
+          "sa:3020:cash_dividend:2025-04-14",
+          "sa:3020:cash_dividend:2026-02-16"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_03_added": [
+          "classification:Materials/Construction Materials",
+          "principal_activities"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors; market_share",
+        "batch_03_added": [],
+        "recorded_gaps": [
+          "competitors",
+          "market_share"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1506 daily price records; liquidity metrics not measured",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Yamama Cement Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "regulatory_fuel_energy_royalty_matters; legal_claims",
+        "batch_03_added": [
+          "commitments_and_contingencies",
+          "financial_risk_management",
+          "risk_disclosure|Borrowing covenants and security",
+          "risk_disclosure|Going concern",
+          "risk_disclosure|Restricted cash dividends",
+          "risk_disclosure|Subsequent events",
+          "risk_disclosure|Zakat status"
+        ],
+        "recorded_gaps": [
+          "regulatory_fuel_energy_royalty_matters",
+          "legal_claims"
+        ],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Yamama Cement Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Yamama Cement Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Yamama Cement audited financial statements FY2025",
+          "Yamama Cement Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "1211": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "listing_date_and_isin",
+        "batch_03_added": [
+          "commercial_registration",
+          "establishment",
+          "external_auditor",
+          "financial_year_end",
+          "headquarters_address",
+          "legal_form",
+          "legal_name",
+          "reporting_currency",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [
+          "listing_date_and_isin"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "aluminum_business",
+          "aluminum_products",
+          "base_metals_new_minerals_business",
+          "business_units",
+          "customer_markets",
+          "fertilizer_distribution_meridian",
+          "joint_ventures_and_associate",
+          "main_subsidiaries",
+          "operating_footprint",
+          "phosphate_business",
+          "principal_mine_sites",
+          "profile_note|Market position phosphate",
+          "profile_note|Market position regional",
+          "profile_note|Prior year auditor change"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "board_term_dates",
+        "batch_03_added": [
+          "audit_committee",
+          "board_committees",
+          "board_composition",
+          "board_members_classification",
+          "chairman",
+          "chief_executive_officer",
+          "chief_financial_officer",
+          "deputy_chairman",
+          "executive_committee",
+          "executive_management",
+          "governance_disclosure|Board evaluation",
+          "governance_disclosure|Corporate governance compliance",
+          "governance_disclosure|Executive departures 2025",
+          "governance_disclosure|General assemblies 2025",
+          "nomination_remuneration_committee",
+          "safety_sustainability_committee"
+        ],
+        "recorded_gaps": [
+          "board_term_dates"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "free_float_and_foreign_ownership",
+        "batch_03_added": [
+          "major_shareholder_pif",
+          "ownership_disclosure|Director shareholdings",
+          "shareholder_alcoa",
+          "shareholder_mosaic"
+        ],
+        "recorded_gaps": [
+          "free_float_and_foreign_ownership"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 604 original values, 54 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 604 original values, 54 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 604 original values, 54 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "trifr_safety_rate; ore_reserves_statement",
+        "batch_03_added": [
+          "numeric:board_committee_remuneration_total_2025",
+          "numeric:board_meetings_2025",
+          "numeric:employees_fte_2025",
+          "numeric:fatalities_contractors_2025",
+          "numeric:female_representation_2025",
+          "numeric:ghg_intensity_2025",
+          "numeric:ghg_scope1_2_2025",
+          "numeric:gold_aisc_2025",
+          "numeric:gold_resource_addition_jan2026",
+          "numeric:lost_time_injuries_2025",
+          "numeric:phosphate_fertilizer_sales_2025",
+          "numeric:production_alumina_2025",
+          "numeric:production_aluminum_2025",
+          "numeric:production_ammonia_2025",
+          "numeric:production_dap_2025",
+          "numeric:production_flat_rolled_products_2025",
+          "numeric:production_gold_2025",
+          "numeric:saudization_rate_2025",
+          "numeric:segment_sales_share_2025",
+          "numeric:social_investment_2025",
+          "numeric:ultra_low_carbon_ammonia_2025",
+          "numeric:wadi_al_jaww_inferred_resource"
+        ],
+        "recorded_gaps": [
+          "trifr_safety_rate",
+          "ore_reserves_statement"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "parent_dividends_paid_2024_2025; bonus_or_rights_issues",
+        "batch_03_added": [
+          "dividend_disclosure|Capital increase mac mbac 2025",
+          "dividend_disclosure|Capital increase mwspc 2024",
+          "dividend_disclosure|Dividend policy",
+          "dividend_disclosure|Dividend waivers",
+          "dividend_disclosure|Fy2025 dividend recommendation",
+          "dividend_disclosure|Subsidiary dividends after year end"
+        ],
+        "recorded_gaps": [
+          "parent_dividends_paid_2024_2025",
+          "bonus_or_rights_issues"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_03_added": [
+          "classification:Materials/Mining",
+          "company_objects_fs_note1",
+          "industry_self_description",
+          "principal_activities_fs_note1"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "named_competitors",
+        "batch_03_added": [],
+        "recorded_gaps": [
+          "named_competitors"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1506 daily price records; liquidity metrics not measured",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Saudi Exchange issuer profile",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "fs_financial_risk_categories",
+          "risk_disclosure|Risk governance",
+          "strategic_and_principal_risks"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "scope3_emissions",
+        "batch_03_added": [
+          "sustainability_disclosure|Biodiversity mangroves target",
+          "sustainability_disclosure|Carbon neutrality target",
+          "sustainability_disclosure|Energy intensity target",
+          "sustainability_disclosure|Groundwater target progress",
+          "sustainability_disclosure|Icmm membership",
+          "sustainability_disclosure|Renewable energy ppa",
+          "sustainability_disclosure|Saudization gender targets"
+        ],
+        "recorded_gaps": [
+          "scope3_emissions"
+        ],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "material_event|Acquisition alba stake",
+          "material_event|Acquisition mac mbac alcoa",
+          "material_event|As suq closure",
+          "material_event|Exploration partnerships 2025",
+          "material_event|Gold growth target 2040",
+          "material_event|Project ar rjum fid",
+          "material_event|Project phosphate3",
+          "material_event|Rare earths mp materials",
+          "material_event|Strategy 2040",
+          "material_event|Sukuk international 2025",
+          "material_event|Sukuk issuance 2026 subsequent",
+          "material_event|Sukuk redemption 2025",
+          "material_event|Um wual infrastructure project"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Ma'aden Integrated Report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "7203": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "auditor_name; listing_date; conversion_to_joint_stock_date; unified_number; headquarters_address",
+        "batch_03_added": [
+          "branch_jeddah",
+          "commercial_registration_number",
+          "former_name",
+          "incorporation_date",
+          "legal_form",
+          "legal_name",
+          "presentation_currency",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [
+          "auditor_name",
+          "listing_date",
+          "conversion_to_joint_stock_date",
+          "unified_number",
+          "headquarters_address"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "corporate_strategy",
+        "batch_03_added": [
+          "acquisition_thiqah_2025",
+          "associates_joint_ventures",
+          "new_subsidiaries_established_2025",
+          "operating_segments",
+          "profile_note|Customer types",
+          "profile_note|Revenue recognition by segment",
+          "sahel_al_madar_pending_acquisition",
+          "snsjv_stake_increase_2025",
+          "subsidiaries",
+          "thiqah_net_assets_revision"
+        ],
+        "recorded_gaps": [
+          "corporate_strategy"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "chairman_name; ceo_name",
+        "batch_03_added": [
+          "fs_approval_date",
+          "governance_disclosure|Employee share programme",
+          "governance_disclosure|Key management compensation"
+        ],
+        "recorded_gaps": [
+          "chairman_name",
+          "ceo_name"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "pif_ownership_pct",
+        "batch_03_added": [
+          "main_shareholder_pif",
+          "ownership_disclosure|Related party relationships"
+        ],
+        "recorded_gaps": [
+          "pif_ownership_pct"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 409 original values, 46 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 409 original values, 46 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 409 original values, 46 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "employee_count",
+        "batch_03_added": [
+          "numeric:off_balance_sheet_agent_cash",
+          "numeric:receivables_by_customer_type",
+          "numeric:revenue_by_customer_type",
+          "numeric:revenue_by_recognition_timing",
+          "numeric:revenue_by_segment"
+        ],
+        "recorded_gaps": [
+          "employee_count"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "dividend_policy",
+        "batch_03_added": [
+          "dividend_disclosure|Treasury shares purpose",
+          "sa:7203:cash_dividend:2025-02-27",
+          "sa:7203:cash_dividend:2025-07-31"
+        ],
+        "recorded_gaps": [
+          "dividend_policy"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_03_added": [
+          "classification:Technology/IT Services",
+          "principal_activities"
+        ],
+        "recorded_gaps": [
+          "exchange_sector_classification"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors; market_share",
+        "batch_03_added": [],
+        "recorded_gaps": [
+          "competitors",
+          "market_share"
+        ],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1144 daily price records; liquidity metrics not measured",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Elm Annual Report / Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_03_added": [
+          "contingencies_commitments",
+          "long_term_borrowing",
+          "risk_disclosure|Capital management going concern",
+          "risk_disclosure|Risk management framework",
+          "risk_disclosure|Subsequent events",
+          "risk_disclosure|Zakat status"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Elm Annual Report / Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Elm Annual Report / Board of Directors report 2025",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Elm audited consolidated financial statements FY2025",
+          "Elm Annual Report / Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "1214": {
+      "identity": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 620 original values, 62 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 620 original values, 62 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 620 original values, 62 periods (not acceptance)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived Shaker document to evidence a classification; matrix sector empty",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1506 daily price records; liquidity metrics not measured",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)",
+        "batch_03_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Shaker FY2025 audited financial statements and Board of Directors report (no Shaker document is archived in any published engine branch)"
+        ],
+        "applicability": "applicable"
+      }
+    }
+  }
+}

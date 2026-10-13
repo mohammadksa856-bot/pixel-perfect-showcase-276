@@ -1,0 +1,60 @@
+{
+  "engine_commit": "b70254e",
+  "baseline_manifests": [
+    "bahri-2025-fy.json",
+    "maaden-2025-fy.json",
+    "yamama-cement-2025-fy.json",
+    "elm-2025-fy.json",
+    "alrajhi-2025-financial-statements-profile.json",
+    "aramco-2025-annual-report-profile.json",
+    "sabic-2025-integrated-annual-report-profile.json",
+    "stc-2025-annual-report-profile.json",
+    "stc-2025-financial-statements-profile.json",
+    "acwa-power-2025-profile.json",
+    "almarai-2025-profile.json",
+    "dallah-healthcare-2025-profile.json",
+    "dar-al-arkan-2025-profile.json",
+    "jarir-2025-profile.json"
+  ],
+  "preflight": {
+    "status": "ready",
+    "published_manifests": 4,
+    "integrity": "ok"
+  },
+  "resync_counts": {
+    "inserted": 0,
+    "restated": 0,
+    "duplicate": 386
+  },
+  "tables": {
+    "company_attributes": {
+      "before": 242,
+      "after": 341,
+      "added": 99,
+      "expected_added": 99,
+      "pre_existing_rows_changed": 0
+    },
+    "ownership_positions": {
+      "before": 11,
+      "after": 11,
+      "added": 0,
+      "expected_added": 0,
+      "pre_existing_rows_changed": 0
+    },
+    "corporate_actions": {
+      "before": 37,
+      "after": 46,
+      "added": 9,
+      "expected_added": 9,
+      "pre_existing_rows_changed": 0
+    },
+    "disclosures": {
+      "before": 82,
+      "after": 167,
+      "added": 85,
+      "expected_added": 85,
+      "pre_existing_rows_changed": 0
+    }
+  },
+  "passed": true
+}

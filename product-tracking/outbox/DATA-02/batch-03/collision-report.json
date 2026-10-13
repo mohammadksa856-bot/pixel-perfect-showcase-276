@@ -1,0 +1,35 @@
+{
+  "engine_imports_scanned": 497,
+  "manifests": [
+    {
+      "manifest": "bahri-2025-profile.json",
+      "company_id": "sa:4030",
+      "keys": 50,
+      "collisions": []
+    },
+    {
+      "manifest": "elm-2025-profile.json",
+      "company_id": "sa:7203",
+      "keys": 33,
+      "collisions": []
+    },
+    {
+      "manifest": "maaden-2025-profile.json",
+      "company_id": "sa:1211",
+      "keys": 75,
+      "collisions": []
+    },
+    {
+      "manifest": "yamama-cement-2025-profile.json",
+      "company_id": "sa:3020",
+      "keys": 35,
+      "collisions": []
+    }
+  ],
+  "extra_sources_scanned": {
+    "codex-branch-imports/*.json": 7,
+    "batch-01/manifests/*.json": 5,
+    "batch-02/manifests/*.json": 5
+  },
+  "passed": true
+}

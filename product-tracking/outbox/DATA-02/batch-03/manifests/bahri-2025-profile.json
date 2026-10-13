@@ -1,0 +1,1387 @@
+{
+  "company_id": "sa:4030",
+  "market": "SA",
+  "symbol": "4030",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-17",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+  "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+  "source_archive": {
+    "engine_ref": "claude/data-transport-1",
+    "engine_commit": "59e159d",
+    "engine_archive_path": "data/raw/SA/4030/documents/3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872.pdf",
+    "on_engine_main": false,
+    "text_layer": "notes digital; primary statements scanned (not used)"
+  },
+  "reader": "manual.review/data-02-batch-03-bahri",
+  "notes": "DATA-02 batch-03. Qualitative profile from Bahri audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "The National Shipping Company of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The National Shipping Company of Saudi Arabia (the “Company” or “Bahri” or “Parent Company”)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "a Saudi Joint Stock Company, was established under the Royal Decree No. M/5"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "cr_number": "1010026026",
+        "unified_number": "7000312574",
+        "cr_date": "1979-10-22",
+        "issued_in": "Riyadh"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "registered under Commercial Registration No. 1010026026 and Unified number 7000312574 dated 1 Dhul Hijjah 1399H (corresponding to 22 October 1979) issued in Riyadh"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "establishment",
+      "value": {
+        "royal_decree": "M/5",
+        "date_hijri": "12 Safar 1398H",
+        "date": "1978-01-21"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "established under the Royal Decree No. M/5 dated 12 Safar 1398H (corresponding to 21 January 1978)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": "Olaya district, Olaya Towers (Tower B), floors 12-15, P.O Box 5101, Riyadh, 1142, Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company’s head office is located in Olaya district, Olaya Towers (Tower B), floors 12-15, P.O Box 5101, Riyadh, 1142, Kingdom of Saudi Arabia."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "branches",
+      "value": [
+        {
+          "registration_no": "1010026026",
+          "city": "Riyadh"
+        },
+        {
+          "registration_no": "4030033402",
+          "city": "Jeddah"
+        },
+        {
+          "registration_no": "2050013881",
+          "city": "Dammam"
+        },
+        {
+          "registration_no": "2055001309",
+          "city": "Jubail"
+        },
+        {
+          "registration_no": "JLT-65807",
+          "city": "Dubai"
+        },
+        {
+          "registration_no": "F06135",
+          "city": "New Delhi"
+        }
+      ],
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Company operates through the following branches:"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "branch table on PDF p14; registration nos/cities from table"
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": {
+        "firm": "Ernst & Young Professional Services (Professional LLC)",
+        "partner": null,
+        "licence_no": null,
+        "report_date": null
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "ERNST & YOUNG PROFESSIONAL SERVICES (PROFESSIONAL LLC)"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "INDEPENDENT AUDITOR’S REPORT TO THE SHAREHOLDERS OF THE NATIONAL SHIPPING COMPANY OF SAUDI ARABIA"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Partner name, licence and report date not found in the document text layer"
+      }
+    },
+    {
+      "attribute_key": "audit_opinion",
+      "value": "unmodified (present fairly, in all material respects)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "In our opinion, the accompanying consolidated financial statements present fairly, in all material respects,"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "key_audit_matter",
+      "value": "Revenue recognition",
+      "category": "governance",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Revenue recognition"
+          },
+          {
+            "pdf_page": 4,
+            "quote": "We considered revenue recognition as"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS Accounting Standards as endorsed in KSA and other standards and pronouncements endorsed by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "These consolidated financial statements of the Group have been prepared in accordance with IFRS Accounting Standards (“IFRS”) and its interpretations as issued by the International Accounting Standards Board (“IASB”) as endorsed in KSA"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "These consolidated financial statements are presented in Saudi Riyal (“SAR”), which is the Group’s functional and presentation currency. All amounts have been rounded to the nearest thousand, unless otherwise indicated."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": {
+        "date": "2026-03-10",
+        "date_hijri": "21 Ramadan 1447H",
+        "approved_by": "Board of Directors"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "51",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "The Board of Directors has approved these consolidated financial statements for the year ended 31 December 2025 in their meeting held on 21 Ramadan 1447H (corresponding to 10 March 2026)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activities",
+      "value": "purchasing, selling and operating vessels for the coordination of transport & storage on board vessels, transportation of cargo, cargo clearance, agencies for maritime shipping companies and all marine transport activities; also ownership of land, properties, shares in other companies",
+      "category": "sector",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "primarily engaged in purchasing, selling and operating vessels for the coordination of transport & storage on board vessels, transportation of cargo, cargo clearance, agencies for maritime shipping companies and all marine transport activities."
+          },
+          {
+            "pdf_page": 13,
+            "quote": "The Group is also engaged in the ownership of land, properties inside or outside the Kingdom, ownership of shares in other existing companies or merging with them"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "operating_segments",
+      "value": [
+        {
+          "name": "Transportation of oil",
+          "description": "provider of crude oil transportation services"
+        },
+        {
+          "name": "Transportation of chemicals",
+          "description": "transport a wide range of chemicals, including liquids, clean petroleum products, and vegetable oils"
+        },
+        {
+          "name": "Logistics",
+          "description": "door-to-door freight forwarding and logistics services"
+        },
+        {
+          "name": "Transportation of dry bulk",
+          "description": "transportation of grains, coal, iron ore, barley and other dry bulk cargoes"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 26,
+            "quote": "Transportation of oil which is provider of crude oil transportation services."
+          },
+          {
+            "pdf_page": 26,
+            "quote": "Transportation of chemicals which transport a wide range of chemicals, including liquids, clean petroleum products, and vegetable oils."
+          },
+          {
+            "pdf_page": 26,
+            "quote": "Logistics which provides door-to-door freight forwarding and logistics services."
+          },
+          {
+            "pdf_page": 26,
+            "quote": "Transportation of dry bulk which is engaged in transportation of grains, coal, iron ore, barley and other dry bulk cargoes."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "subsidiaries",
+      "value": [
+        {
+          "name": "National Chemical Carriers Company limited (NCC)",
+          "country": "KSA",
+          "effective_ownership_pct": 0.8,
+          "principal_activity": "Petrochemical transportation"
+        },
+        {
+          "name": "NSCSA Inc.",
+          "country": "USA",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Company's ship agent"
+        },
+        {
+          "name": "Mideast Ship Management Limited (JLT)",
+          "country": "UAE",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Ships technical management"
+        },
+        {
+          "name": "Bahri Dry Bulk Company (BDB)",
+          "country": "KSA",
+          "effective_ownership_pct": 0.6,
+          "principal_activity": "Dry bulk transportation"
+        },
+        {
+          "name": "Bahri Logistics Company",
+          "country": "KSA",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Logistics services"
+        },
+        {
+          "name": "Bahri Logistics Company DWC-LLC",
+          "country": "UAE",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Logistics services"
+        },
+        {
+          "name": "Bahri Logistics Company (SILZ) LLC",
+          "country": "KSA",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Logistics services"
+        },
+        {
+          "name": "Bahri Shipping Pte. Ltd.",
+          "country": "Singapore",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Company's ship agent"
+        },
+        {
+          "name": "Bahri High Seas",
+          "country": "KSA",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Acquisition and operating of vessels"
+        },
+        {
+          "name": "Bahri Dry Ship Management FZCO",
+          "country": "UAE",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Ship Management and Operation"
+        },
+        {
+          "name": "Bahri Chemical Ship Management FZCO",
+          "country": "UAE",
+          "effective_ownership_pct": 1.0,
+          "principal_activity": "Ship Management and Operation"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "National Chemical Carriers"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Bahri Dry Bulk Company"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Bahri Chemical Ship Management FZCO (b)"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "The Group holds an effective equity ownership interest of 100% in Bahri Logistics Company DWC-LLC and Bahri Logistics Company (“SILZ”) LLC through its shareholding in Bahri Logistics Company."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Subsidiary table on PDF p13; column alignment read from table; NCC 80%, BDB 60% confirmed by NCI note p50 (20%/40%)",
+        "as_of": "2025-12-31",
+        "review_note": "Source table extracts poorly as text; only NCC (80%) and BDB (60%) were cross-checked against the non-controlling-interest note. Other rows need visual confirmation before use."
+      }
+    },
+    {
+      "attribute_key": "non_controlling_interests",
+      "value": [
+        {
+          "subsidiary": "National Chemical Carrier Company Limited",
+          "nci_pct": 0.2
+        },
+        {
+          "subsidiary": "Bahri Dry Bulk",
+          "nci_pct": 0.4
+        }
+      ],
+      "category": "ownership",
+      "metadata": {
+        "source_page": "50",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "Non-controlling interest percentage 20% 40%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "joint_venture_petredec",
+      "value": {
+        "name": "Petredec group limited",
+        "relationship": "Joint Venture",
+        "ownership_pct": 0.4008,
+        "location": "BVI",
+        "activity": "Liquefied petroleum gas transportation"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Liquefied petroleum gas transportation"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "40.08"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "The Group share of Petredec results for the financial period are recorded as per the latest financial information prepared by Petredec."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "associate_imi",
+      "value": {
+        "name": "International Maritime Industries Company (IMI)",
+        "relationship": "Associate",
+        "ownership_pct": 0.199,
+        "location": "KSA",
+        "activity": "Maritime industries",
+        "partners": [
+          "ARAMCO",
+          "Maritime Offshore Limited (Lamprell)",
+          "Korea Shipbuilding & Offshore Engineering Company Ltd."
+        ],
+        "capital": "SAR 1,107 million"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "International Maritime Industries Company (IMI) was established in KSA with capital of SAR 1,107 million between the Company, ARAMCO, Maritime Offshore Limited (Lamprell), and Korea Shipbuilding & Offshore Engineering Company Ltd."
+          },
+          {
+            "pdf_page": 14,
+            "quote": "19.9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "joint_venture_ngc",
+      "value": {
+        "name": "National Grain Company",
+        "relationship": "Joint Venture",
+        "ownership_pct": 0.5,
+        "location": "KSA",
+        "partner": "United Farmers Investment Company (UFIC)",
+        "activity": "Packing and storage of grain; grain terminal at Yanbu Commercial Port"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "the Company entered a joint venture (“JV”) agreement to establish the National Grain Company with United Farmers Investment Company (“UFIC”)."
+          },
+          {
+            "pdf_page": 14,
+            "quote": "The JV aims to build and establish a terminal for handling grains at Yanbu Commercial Port"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "shareholder_pif",
+      "value": {
+        "holder_name": "Public Investment Fund (PIF)",
+        "holder_type": "government",
+        "ownership_pct": null,
+        "as_of_date": "2025-12-31"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "The Group’s majority shareholder, PIF and Aramco, are fully/majorly owned by the Government of the Kingdom of Saudi Arabia. PIF and Aramco exercises significant influence over the Group."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "described as majority shareholder; percentage not stated",
+        "review_note": "Named in the related-party note as a shareholder with significant influence; no holding percentage stated, so delivered as an attribute, not an ownership row."
+      }
+    },
+    {
+      "attribute_key": "shareholder_aramco",
+      "value": {
+        "holder_name": "ARAMCO",
+        "holder_type": "government_related_entity",
+        "ownership_pct": null,
+        "as_of_date": "2025-12-31"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "ARAMCO and its subsidiaries – shareholder"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "PIF and Aramco exercises significant influence over the Group."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "percentage not stated",
+        "review_note": "Named in the related-party note as a shareholder with significant influence; no holding percentage stated, so delivered as an attribute, not an ownership row."
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:4030:cash_dividend:2025-03-18",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2024 paid 2025",
+      "announcement_date": "2025-03-18",
+      "payment_date": "2025-07-17",
+      "cash_amount": 738000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "dividend_per_share": 1.0,
+        "metadata": {
+          "source_page": "50",
+          "evidence": [
+            {
+              "pdf_page": 50,
+              "quote": "The Board of Directors in their meeting held on 18 March 2025, recommended to the General Assembly to distribute cash dividends of SAR 738 million amounting to SAR 1 per share."
+            },
+            {
+              "pdf_page": 50,
+              "quote": "These dividends were paid on 17 July 2025."
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          },
+          "basis": "General Assembly approval 29 June 2025"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4030:cash_dividend:2024-03-18",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2023 paid 2024",
+      "announcement_date": "2024-03-18",
+      "payment_date": "2024-07-01",
+      "cash_amount": 406000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "dividend_per_share": 0.55,
+        "metadata": {
+          "source_page": "50",
+          "evidence": [
+            {
+              "pdf_page": 50,
+              "quote": "the distribution of cash dividends of SAR 406 million to the shareholders for the financial year ended 31 December 2023 amounting to SAR 0.55 per share."
+            },
+            {
+              "pdf_page": 50,
+              "quote": "These dividends were paid on 1 July 2024."
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          },
+          "basis": "General Assembly approval 4 June 2024"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4030:cash_dividend:2026-03-10",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2025 recommended",
+      "announcement_date": "2026-03-10",
+      "cash_amount": 923000000,
+      "currency": "SAR",
+      "status": "recommended",
+      "details": {
+        "dividend_per_share": 1.0,
+        "metadata": {
+          "source_page": "51",
+          "evidence": [
+            {
+              "pdf_page": 51,
+              "quote": "recommended to the General Assembly to distribute cash dividends of SAR 923 million amounting to SAR 1 per share."
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:4030:bonus_issue:2025-06-29",
+      "action_type": "bonus_issue",
+      "title": "Bonus share issue 2025",
+      "announcement_date": "2025-06-29",
+      "currency": "SAR",
+      "status": "approved",
+      "details": {
+        "ratio": "1 for 4",
+        "metadata": {
+          "source_page": "37",
+          "evidence": [
+            {
+              "pdf_page": 37,
+              "quote": "On 4 Muharram 1447H (corresponding to 29 June 2025), the Company’s shareholders approved a resolution at the Extraordinary General Assembly to increase the share capital from SAR 7,382,812 thousand to SAR 9,228,515 thousand by granting one bonus share for every four shares owned."
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-03)"
+          },
+          "basis": "announcement_date = EGM approval date"
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Logistics trade lanes",
+      "body_text": "Logistics RoCon/MPP vessels operate on commercial lines between North America, Europe, Middle East, the Indian Subcontinent and Asia",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "operating on commercial lines between North America, Europe, Middle East, the Indian Subcontinent and Asia."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Dry bulk arasco charter",
+      "body_text": "5 of BDB's 13 dry bulk vessels chartered to Arabian Agricultural Services Company (ARASCO); 8 operate in the spot market",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "5 of them are chartered to the Arabian Agricultural Services Company (“ARASCO”) and 8 vessels are operating in the spot market."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Geographic information",
+      "body_text": "Vessels deployed throughout the world, not concentrated geographically; no geographical segment information disclosed",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "The Group’s vessels are deployed throughout the world and are not concentrated in certain geographical areas."
+          },
+          {
+            "pdf_page": 28,
+            "quote": "therefore no geographical segment information has been disclosed."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "New subsidiaries 2025",
+      "body_text": "Established Bahri Shipping Pte. Ltd (Singapore), Bahri High Seas (KSA), Bahri Dry Ship Management FZCO and Bahri Chemical Ship Management FZCO (UAE) during 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "During this year, the Group has established a new subsidiary (Bahri Shipping Pte. Ltd) in Singapore the primary activity of which is to engage in shipping operations, including the chartering of ships and boats with crew."
+          },
+          {
+            "pdf_page": 13,
+            "quote": "In addition, the Group incorporated two other subsidiaries in UAE, (Bahri Dry Ship Management FZCO) and (Bahri Chemical Ship Management FZCO), whose principal activities are ship management and operations."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Subsidiary dividend ncc 2025",
+      "body_text": "NCC dividends SAR 600 million (SAR 480m to parent, SAR 120m to NCI), approved 5 May 2025, paid 28 May 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "50",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "recommended to the General Assembly the distribution of cash dividends totaling SAR 600 million, comprising SAR 480 million"
+          },
+          {
+            "pdf_page": 50,
+            "quote": "the dividends were paid on 28 May 2025."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Dividend policy capital management",
+      "body_text": "No formal dividend policy stated; capital management notes the Group may adjust dividend payments to maintain or adjust the capital structure",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "To maintain or adjust the capital structure, the Group may adjust the dividend payment to shareholders, return capital to shareholders or issue new shares."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Long term incentive plan",
+      "body_text": "LTIP for eligible members of executive management, subject to service and performance conditions",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "25",
+        "evidence": [
+          {
+            "pdf_page": 25,
+            "quote": "The Group operates a Long-Term Incentive Plan (LTIP) for eligible members of executive management"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Chief operating decision maker",
+      "body_text": "Segment results reviewed regularly by the Chief Executive Officer as CODM",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 26,
+            "quote": "All operating segments’ results are reviewed regularly by the Chief Executive Officer, the Group’s chief operating decision maker"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Audit committee oversight",
+      "body_text": "Audit Committee oversees financial reporting",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "5",
+        "evidence": [
+          {
+            "pdf_page": 5,
+            "quote": "Those charged with governance i.e, the Audit Committee is responsible for overseeing the Group’s financial reporting process."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Financial risk management",
+      "body_text": "Exposed to market risk (currency, price, commission rate), credit risk and liquidity risk; senior management monitors the financial risk management department; Board reviews counterparty credit limits annually",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "46",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "The Group's activities expose it to a variety of financial risks, including market risk (comprised of currency risk, price risk and commission rate risk), credit risk and liquidity risk."
+          },
+          {
+            "pdf_page": 46,
+            "quote": "Senior management monitors the financial risk management department."
+          },
+          {
+            "pdf_page": 47,
+            "quote": "Counterparty credit limits are reviewed by the Group’s Board of Directors on an annual basis."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Loan covenants",
+      "body_text": "Covenants on leverage and debt-to-equity; Group in compliance at 31 Dec 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "38",
+        "evidence": [
+          {
+            "pdf_page": 38,
+            "quote": "As at 31 December 2025, the Group was in compliance with all applicable loan covenants."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Sukuk",
+      "body_text": "SAR 3,900 million local Sukuk issued 5 July 2022, SIBOR plus margin, semi-annual, maturing 5 July 2029",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "38",
+        "evidence": [
+          {
+            "pdf_page": 38,
+            "quote": "On 6 Thul-Hijjah 1443H (corresponding to 5 July 2022), the Company completed the issuance and offering of a local Sukuk denominated in Saudi Riyal for public offering with nominal value amounting to SAR 3,900 million"
+          },
+          {
+            "pdf_page": 38,
+            "quote": "(corresponding to 5 July 2029)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Murabaha financing 2025",
+      "body_text": "Obtained Murabaha long term loans of SAR 4,944 million in 2025; repaid SAR 2,002 million; secured by promissory notes and vessel mortgages",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "38",
+        "evidence": [
+          {
+            "pdf_page": 38,
+            "quote": "The Group obtained Murabaha long term loans during the year ended 31 December 2025 for a total of SAR 4,944 million (31 December 2024: SAR 2,527 million). Loans are secured by promissory notes and mortgages against vessels."
+          },
+          {
+            "pdf_page": 38,
+            "quote": "a repayment of SAR 2,002 million was made during the year ended 31 December 2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Capital commitments",
+      "body_text": "Capital commitments for ships under construction and property and equipment SAR 915 million at 31 Dec 2025 (2024: SAR 3 billion)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "The Group’s capital commitment related to ships under construction and the purchase of property and equipment was SAR 915 million as of 31 December 2025 (2024: SAR 3 billion)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Letters of guarantee",
+      "body_text": "Outstanding bank letters of guarantee SAR 363 million",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "The Group has outstanding bank letters of guarantee for SAR 363 million as at 31 December 2025 (2024: SAR 345 million)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Legal claims",
+      "body_text": "Involved in ordinary-course litigation; management does not expect material adverse effect",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "The Group’s management does not expect that these claims will have a material adverse effect on the Group’s consolidated financial statements."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Zakat status",
+      "body_text": "Company filed zakat returns up to 2024 with certificate; settled with ZATCA up to 2023 (2023 assessment SAR 14.8m settled); 2024 assessment not received",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "The Company has filed its zakat returns up to 2024 and obtained the zakat certificate for the year 2024."
+          },
+          {
+            "pdf_page": 41,
+            "quote": "ZATCA has issued a zakat assessment for the year 2023, claiming an additional zakat of SAR 14.8 million. The Company has settled the claimed amount and closed the case."
+          },
+          {
+            "pdf_page": 41,
+            "quote": "The Company did not receive the zakat assessments for the year 2024 from ZATCA."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Going concern",
+      "body_text": "Prepared on going concern basis",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "The Group has prepared these consolidated financial statements on the basis that it will continue to operate as a going concern."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Subsequent events",
+      "body_text": "Only subsequent event: Board on 10 March 2026 recommended SAR 923 million (SAR 1/share) dividend",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "51",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "Other than mentioned above, no events have occurred subsequent to the reporting date and before the issuance of these consolidated financial statements"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Vlcc acquisition capital maritime",
+      "body_text": "Agreement 19 Aug 2024 to acquire nine second-hand VLCCs from Capital Maritime & Trading Corporation for ~SAR 3.75bn (USD 1bn); all delivered and capitalized in 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "On 19 August 2024, the Company entered into an agreement to acquire nine second-hand Very Large Crude Carriers (VLCCs) from Capital Maritime & Trading Corporation for a total consideration of approximately SAR 3.75 billion (USD 1 billion). All nine VLCCs have been delivered and capitalized during the year."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Vessels received 2025",
+      "body_text": "12 vessels received in 2025 with SAR 5,354 million capitalized from projects under construction",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 31,
+            "quote": "During 2025, 12 vessels were received, and other projects were completed with total capitalized amount of SAR 5,354 million"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Asset disposals 2025",
+      "body_text": "Disposed assets NBV SAR 156 million, gain SAR 5.8 million",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 31,
+            "quote": "During the year ended 31 December 2025 the Group disposed of assets with a net book value of SAR 156 million (31 December 2024: SAR 308 million), resulting in a gain on disposal of SAR 5.8 million"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Pledged vessels",
+      "body_text": "Vessels with carrying value SAR 10.1 billion pledged against long-term loans",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 31,
+            "quote": "with a carrying value of SAR 10.1 billion at 31 December 2025, are pledged against certain long-term loans."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Vela intangible contracts",
+      "body_text": "Intangible assets mainly long-term transportation contracts from 2014 purchase of Vela Company (ARAMCO subsidiary) operations; carrying value SAR 222 million",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "Intangible assets significantly represent long-term transportation contracts, which resulted from purchasing the operations and assets of Vela Company (a subsidiary of ARAMCO) in 2014."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Ngc investment written down",
+      "body_text": "Investment in National Grain Company reduced to nil after share of loss of SAR 36.9 million in 2025",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "National Grain Company (“NGC”)"
+          },
+          {
+            "pdf_page": 35,
+            "quote": "36,941 (36,941) -"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "carrying amount 2025 nil per note 9.3; no explicit impairment wording",
+        "period": "FY2025"
+      }
+    }
+  ]
+}

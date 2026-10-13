@@ -1,0 +1,635 @@
+{
+  "company_id": "sa:1211",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+  "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "segment_sales_share_2025",
+      "value": {
+        "Phosphate BU": 0.54,
+        "Aluminum BU": 0.29,
+        "Base metals and new minerals BU": 0.16,
+        "All other segments": 0.01
+      },
+      "unit": "fraction of total sales",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "100",
+        "evidence": [
+          {
+            "pdf_page": 102,
+            "quote": "Phosphate BU 20,773 54%",
+            "printed_page": "100"
+          },
+          {
+            "pdf_page": 102,
+            "quote": "Aluminum BU 10,989 29%",
+            "printed_page": "100"
+          },
+          {
+            "pdf_page": 102,
+            "quote": "Base metals and new minerals BU 6,286 16%",
+            "printed_page": "100"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Segment sales in SAR million (layout table 'Maaden scope of business')",
+        "unit": "fraction of total sales",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "board_meetings_2025",
+      "value": {
+        "count": 5,
+        "dates": [
+          "2025-03-06",
+          "2025-05-06",
+          "2025-08-07",
+          "2025-11-05",
+          "2025-12-15"
+        ]
+      },
+      "unit": "meetings",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "116",
+        "evidence": [
+          {
+            "pdf_page": 118,
+            "quote": "THE NUMBER OF BOARD MEETINGS HELD DURING 2025, THEIR DATES",
+            "printed_page": "116"
+          },
+          {
+            "pdf_page": 118,
+            "quote": "06/03/2025 06/05/2025 07/08/2025 05/11/2025 15/12/2025 Total",
+            "printed_page": "116"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "meetings",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "board_committee_remuneration_total_2025",
+      "value": 13555000,
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "98",
+        "evidence": [
+          {
+            "pdf_page": 100,
+            "quote": "The total remuneration due to Board and Committee members totaled",
+            "printed_page": "98"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "production_dap_2025",
+      "value": 6723,
+      "unit": "kmt",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "DAP 1,754 1,671 +5% 6,723 6,191 +9%",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 6,191 kmt",
+        "unit": "kmt",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "production_ammonia_2025",
+      "value": 3008,
+      "unit": "kmt",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "Ammonia 608 859 -29% 3,008 3,102 -3%",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 3,102 kmt",
+        "unit": "kmt",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "production_alumina_2025",
+      "value": 1891,
+      "unit": "kmt",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "Alumina 466 450 +4% 1,891 1,871 +1%",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 1,871 kmt",
+        "unit": "kmt",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "production_aluminum_2025",
+      "value": 999,
+      "unit": "kmt",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "Aluminum 258 254 +2% 999 986 +1%",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 986 kmt",
+        "unit": "kmt",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "production_flat_rolled_products_2025",
+      "value": 311,
+      "unit": "kmt",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "FRP 81 83 -2% 311 275 +13%",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 275 kmt",
+        "unit": "kmt",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "production_gold_2025",
+      "value": 478,
+      "unit": "koz",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "Total 133 144 -7% 478 495 -4%",
+            "printed_page": "16"
+          },
+          {
+            "pdf_page": 18,
+            "quote": "Production volume (Gold koz)",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 495 koz",
+        "unit": "koz",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "gold_aisc_2025",
+      "value": 1291,
+      "unit": "USD/oz",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "Total Gold 1,345 1,173 +6% 1,291 1,240 +2%",
+            "printed_page": "16"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "All-in sustaining cost; FY2024: 1,240",
+        "unit": "USD/oz",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "phosphate_fertilizer_sales_2025",
+      "value": 6.7,
+      "unit": "million tonnes",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 35,
+            "quote": "reaching 6.7 million tonnes, the highest",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Up 8.6% year on year",
+        "unit": "million tonnes",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "ultra_low_carbon_ammonia_2025",
+      "value": 452,
+      "unit": "thousand tonnes",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 35,
+            "quote": "452 thousand tonnes of ultra-low carbon",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "thousand tonnes",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "employees_fte_2025",
+      "value": 7107,
+      "unit": "people",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "reached 7,107 employees, a slight increase",
+            "printed_page": "62"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "FY2024: 7,090",
+        "unit": "people",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "saudization_rate_2025",
+      "value": 0.787,
+      "unit": "fraction",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "representation and a 78.7% Saudization",
+            "printed_page": "62"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "fraction",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "female_representation_2025",
+      "value": 0.086,
+      "unit": "fraction",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "now exceeds 7,100, with 8.6% female",
+            "printed_page": "62"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "fraction",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "fatalities_contractors_2025",
+      "value": 2,
+      "unit": "count",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "66",
+        "evidence": [
+          {
+            "pdf_page": 68,
+            "quote": "Fatalities (FAT) – Contractors # 1 1 2",
+            "printed_page": "66"
+          },
+          {
+            "pdf_page": 67,
+            "quote": "during 2025, two fatalities at our mine",
+            "printed_page": "65"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "count",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "lost_time_injuries_2025",
+      "value": {
+        "employees": 1,
+        "contractors": 5
+      },
+      "unit": "count",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "66",
+        "evidence": [
+          {
+            "pdf_page": 68,
+            "quote": "Lost Time Injury (LTI) – Employees # 3 1 1",
+            "printed_page": "66"
+          },
+          {
+            "pdf_page": 68,
+            "quote": "Lost Time Injury (LTI) – Contractors # 8 4 5",
+            "printed_page": "66"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "count",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "ghg_scope1_2_2025",
+      "value": 14661724,
+      "unit": "tCO2e",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "Total Scope 1 & 2 GHG emissions Ton 14,236,275 14,554,602 14,661,724",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Scope 1: 10,497,816; Scope 2: 4,163,908",
+        "unit": "tCO2e",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "ghg_intensity_2025",
+      "value": 0.974,
+      "unit": "tCO2e per ton production",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "Overall Scope 1 and 2 GHG emissions intensity tCO 2 e/ton 1.023 1.010 0.974",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Lowered 3.6% vs 2024",
+        "unit": "tCO2e per ton production",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "social_investment_2025",
+      "value": 52488341,
+      "unit": "SAR",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "99",
+        "evidence": [
+          {
+            "pdf_page": 101,
+            "quote": "Total 86 52,488,341",
+            "printed_page": "99"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "86 initiatives",
+        "unit": "SAR",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "gold_resource_addition_jan2026",
+      "value": 7.8,
+      "unit": "million ounces",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "announced the addition of 7.8 million ounces of",
+            "printed_page": "13"
+          },
+          {
+            "pdf_page": 15,
+            "quote": "gold resources across four key areas",
+            "printed_page": "13"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Announced January 2026 (post period)",
+        "unit": "million ounces",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "wadi_al_jaww_inferred_resource",
+      "value": {
+        "tonnes_mt": 76.8,
+        "grade_g_t_au": 1.25,
+        "contained_moz": 3.08
+      },
+      "unit": "Mt / g/t / Moz",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "27",
+        "evidence": [
+          {
+            "pdf_page": 29,
+            "quote": "Resource Estimate of 76.8 Mt at 1.25 g/t Au",
+            "printed_page": "27"
+          },
+          {
+            "pdf_page": 29,
+            "quote": "for 3.08 Moz at a 0.3 g/t cut-off",
+            "printed_page": "27"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Inferred Mineral Resource; Wadi Al Jaww deposit",
+        "unit": "Mt / g/t / Moz",
+        "period": "FY2025"
+      }
+    }
+  ]
+}

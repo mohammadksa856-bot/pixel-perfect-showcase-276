@@ -1,0 +1,54 @@
+{
+  "company_id": "sa:7203",
+  "symbol": "7203",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+  "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:7203",
+      "symbol": "7203",
+      "codex_matrix": {
+        "sector": "Technology",
+        "industry": "IT Services",
+        "issuer_sector_gate": "CLASSIFICATION_PRESENT_NOT_REVERIFIED"
+      },
+      "engine_main_registry": {
+        "sector": "Technology",
+        "industry": "IT Services"
+      },
+      "proposed": {
+        "sector": "Technology",
+        "industry": "IT Services",
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "engine main config/companies.json"
+      },
+      "status": "already_on_engine_main_reconfirmed_by_activity_statement",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company’s activities are represented in providing information security services, working in the field of electronic business, consulting services,"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "exchanging credit information, managing and operating data and information centers, importing, developing, selling and maintaining hardware, software,"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; Codex must confirm the labels against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

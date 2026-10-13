@@ -1,0 +1,317 @@
+{
+  "company_id": "sa:4030",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+  "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "segment_revenue",
+      "value": {
+        "transportation_of_oil": 5860009,
+        "transportation_of_chemicals": 2856471,
+        "logistics": 1120486,
+        "transportation_of_dry_bulk": 402689,
+        "others": 107066
+      },
+      "unit": "SAR thousands",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Revenue 5,860,009 2,856,471 1,120,486 402,689 10,239,655 107,066 10,346,721"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR thousands",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "fleet_size",
+      "value": {
+        "owned_vessels": 104,
+        "leased_vessels": 9,
+        "prior_year_owned": 93,
+        "prior_year_leased": 16
+      },
+      "unit": "vessels",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "As at 31 December 2025, the Group operated 104 owned vessels and 9 under lease contract (31 December 2024: 93 owned vessels and 16 under lease contract)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "vessels"
+      }
+    },
+    {
+      "metric": "fleet_by_segment",
+      "value": {
+        "oil_vlccs": 50,
+        "chemicals_owned": 33,
+        "chemicals_leased": 9,
+        "logistics_rocon": 6,
+        "logistics_mpp": 2,
+        "dry_bulk_owned": 13
+      },
+      "unit": "vessels",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Oil transportation sector: Consists of 50 vessels (31 December 2024: 41 vessels) all of which are very large crude carriers (VLCCs) operating in the spot market."
+          },
+          {
+            "pdf_page": 14,
+            "quote": "It owns 33 vessels and 9 under lease contract"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Logistics sector: This sector consists of 6 RoCon vessels and 2 MPP vessels"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "it owns 13 vessels (31 December 2024: 12 vessels) specialized in transporting dry bulk cargo."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "vessels"
+      }
+    },
+    {
+      "metric": "revenue_disaggregation",
+      "value": {
+        "spot": 7762572,
+        "charter_hire": 1567061,
+        "freight_forwarding": 559585,
+        "time_charter": 341830,
+        "water_desalination": 94721,
+        "others": 20952
+      },
+      "unit": "SAR thousands",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "42",
+        "evidence": [
+          {
+            "pdf_page": 42,
+            "quote": "Spot Charter hire Freight forwarding Time charter (note 29) Water desalination Others 7,762,572 1,567,061 559,585 341,830 94,721 20,952 10,346,721"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR thousands",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "major_customer_concentration",
+      "value": {
+        "related_party_major_customers_share_of_revenue": 0.468,
+        "prior_year": 0.506
+      },
+      "unit": "fraction",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Revenue from the major customers (related parties) represented around 46.8% of the Group’s total revenue (31 December 2024: 50.6%)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "fraction",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "aramco_related_party_revenue",
+      "value": {
+        "value": 4727083,
+        "prior_year": 4238859
+      },
+      "unit": "SAR thousands",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "ARAMCO and its subsidiaries – shareholder"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "4,727,083"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR thousands",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "share_of_results_equity_investees",
+      "value": {
+        "petredec": 607014,
+        "imi": -3648,
+        "ngc": -36941,
+        "total": 566425
+      },
+      "unit": "SAR thousands",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 34,
+            "quote": "Share of profit in Petredec group limited Share of loss in IMI Share of loss in NGC 9.1 9.2 9.3 2025 2024 607,014 (3,648) (36,941)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR thousands",
+        "period": "FY2025",
+        "review_note": "Per-investee components are new; the total equals Codex's existing share_of_profit_associates fact and is not a new value."
+      }
+    },
+    {
+      "metric": "key_management_compensation",
+      "value": {
+        "total": 50986,
+        "short_term": 45375,
+        "post_employment": 5611,
+        "board_remuneration_sar_millions": 14.4
+      },
+      "unit": "SAR thousands",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "44",
+        "evidence": [
+          {
+            "pdf_page": 44,
+            "quote": "Total compensation 50,986 37,326"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "The Board of Directors remuneration for the year ended 31 December 2025 amounted to SAR 14.4 million (2024: SAR 9.5 million)."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "unit": "SAR thousands",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "unutilized_credit_facilities",
+      "value": {
+        "value": 3490,
+        "prior_year": 2732
+      },
+      "unit": "SAR millions",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "47",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "As at 31 December 2025, the Group had unutilized credit facilities of SAR 3,490 million (2024: SAR 2,732 million)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "SAR millions"
+      }
+    },
+    {
+      "metric": "gearing_ratio",
+      "value": {
+        "value": 0.37,
+        "prior_year": 0.35
+      },
+      "unit": "fraction",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "Gearing ratio 37% 35%"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "fraction"
+      }
+    }
+  ]
+}

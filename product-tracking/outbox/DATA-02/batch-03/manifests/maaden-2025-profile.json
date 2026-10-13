@@ -1,0 +1,2653 @@
+{
+  "company_id": "sa:1211",
+  "market": "SA",
+  "symbol": "1211",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-26",
+  "filed_at_basis": "pdf_creation_metadata",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+  "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+  "source_archive": {
+    "engine_ref": "claude/data-materials-1",
+    "engine_commit": "bcc0472",
+    "engine_archive_path": "data/raw/SA/1211/documents/dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6.pdf",
+    "on_engine_main": false,
+    "text_layer": "digital"
+  },
+  "reader": "manual.review/data-02-batch-03-maaden",
+  "notes": "DATA-02 batch-03. Qualitative profile from Ma'aden Integrated Report 2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Saudi Arabian Mining Company (Maaden)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "Saudi Arabian Mining Company (“Maaden”) (the “Company”) was formed as a Saudi Arabian joint stock company",
+            "printed_page": "130"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Arabian joint stock company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 76,
+            "quote": "was formed as a Saudi Arabian joint stock company",
+            "printed_page": "74"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "cr_number": "1010164391",
+        "cr_date": "2001-02-04",
+        "cr_date_hijri": "10 Dhu al-Qadah 1421H"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "with Commercial Registration No. 1010164391, dated 10 Dhu al-Qadah",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "(corresponding to 4 February 2001)",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 123,
+            "quote": "Commercial registration number",
+            "printed_page": "121"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "establishment",
+      "value": {
+        "council_of_ministers_resolution": "No. 179 dated 17 March 1997 (8 Dhu al-Qadah 1417H)",
+        "royal_decree": "No. M/17 dated 23 March 1997 (14 Dhu al-Qadah 1417H)"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "following the Council of Ministers Resolution No. 179 dated 8 Dhu al-Qadah 1417H (corresponding to 17 March 1997)",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "pursuant to the Royal Decree No. M/17 dated 14 Dhu",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "(corresponding to 23 March 1997)",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "Established by royal",
+            "printed_page": "1"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": {
+        "registered_address": "Building number 8100, Abi Bakr Al Siddiq Branch, 3996, Al Maseef District, Riyadh 12468, Kingdom of Saudi Arabia",
+        "postal_address": "P.O. Box 68861, Riyadh 12468, Kingdom of Saudi Arabia"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "121",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "Building number 8100",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 123,
+            "quote": "Abi Bakr Al Siddiq Branch",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 123,
+            "quote": "3996, Al Maseef District",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 123,
+            "quote": "P.O. Box 68861",
+            "printed_page": "121"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "external_auditor",
+      "value": {
+        "firm": "Deloitte and Touche & Co. – Chartered Accountants",
+        "signing_partner": "Mazen A. Al-Omari",
+        "licence_no": "480",
+        "report_date": "2026-03-05",
+        "report_date_hijri": "16 Ramadan 1447H",
+        "opinion": "unmodified (fair presentation)"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "121",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "Deloitte and Touche & Co. – Chartered Accountants",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 127,
+            "quote": "Mazen A. Al-Omari",
+            "printed_page": "125"
+          },
+          {
+            "pdf_page": 127,
+            "quote": "License No. 480",
+            "printed_page": "125"
+          },
+          {
+            "pdf_page": 127,
+            "quote": "16 Ramadan 1447H",
+            "printed_page": "125"
+          },
+          {
+            "pdf_page": 127,
+            "quote": "5 March 2026",
+            "printed_page": "125"
+          },
+          {
+            "pdf_page": 124,
+            "quote": "In our opinion, the accompanying consolidated financial statements present fairly, in all material respects,",
+            "printed_page": "122"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "122",
+        "evidence": [
+          {
+            "pdf_page": 124,
+            "quote": "in accordance with International Financial Reporting Standards (“IFRSs”), that are endorsed in the Kingdom of Saudi Arabia, and other",
+            "printed_page": "122"
+          },
+          {
+            "pdf_page": 124,
+            "quote": "standards and pronouncements that are issued by the Saudi Organization for Chartered and Professional",
+            "printed_page": "122"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_currency",
+      "value": "SAR (Saudi Riyals)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "(All amounts in Saudi Riyals unless otherwise stated)",
+            "printed_page": "130"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "financial_year_end",
+      "value": "31 December",
+      "category": "identity",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "for the year ended 31 December 2025",
+            "printed_page": "130"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "company_objects_fs_note1",
+      "value": "Engaged in various projects related to all stages of the mining industry, including development, advancement and improvement of the mineral industry, mineral products and by-products; excluding petroleum, natural gas and hydrocarbons.",
+      "category": "sector",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "are to be engaged in various projects related to all stages",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "of the mining industry, including development, advancement and improvement of the mineral industry, mineral products",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "petroleum and natural gas and materials derived there from,",
+            "printed_page": "130"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activities_fs_note1",
+      "value": "Group mainly mines gold, phosphate rock, bauxite, low-grade bauxite, kaolin and magnesite, and operates processing and industrial facilities at Wa'ad Al-Shamal and Ras Al-Khair supporting an integrated value chain from extraction through processing, refining and downstream manufacturing.",
+      "category": "sector",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "Currently, the Group mainly mines gold, phosphate rock, bauxite, low-grade bauxite, kaolin and magnesite.",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "These facilities support the Group’s integrated value chain from extraction through processing, refining and",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "downstream manufacturing.",
+            "printed_page": "130"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "industry_self_description",
+      "value": "Diversified mining and metals producer (phosphate, aluminum, gold, industrial and base minerals); described as the largest mining and metals company in the Middle East.",
+      "category": "sector",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 5,
+            "quote": "We are a diversified producer of phosphate, aluminum, gold and industrial and base minerals.",
+            "printed_page": "3"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "The largest mining and metals company in the Middle East",
+            "printed_page": "17"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_units",
+      "value": [
+        "Phosphate Business Unit",
+        "Aluminum Business Unit",
+        "Base Metals & New Minerals Business Unit"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 77,
+            "quote": "ALUMINUM BUSINESS UNIT",
+            "printed_page": "75"
+          },
+          {
+            "pdf_page": 77,
+            "quote": "PHOSPHATE BUSINESS UNIT",
+            "printed_page": "75"
+          },
+          {
+            "pdf_page": 77,
+            "quote": "BASE METALS & NEW MINERALS BUSINESS UNIT",
+            "printed_page": "75"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "phosphate_business",
+      "value": "Anchored at Wa'ad Al Shamal Industrial City and Ras Al Khair Industrial Complex; produces phosphate concentrate, ammonium phosphate fertilizers and downstream products; serves markets in more than 45 countries; also includes magnesite, kaolin and low-grade bauxite assets.",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 6,
+            "quote": "Our phosphate business is anchored at Wa’ad Al Shamal Industrial City and Ras Al Khair Industrial Complex.",
+            "printed_page": "4"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "We produce phosphate concentrate, ammonium phosphate fertilizers and downstream products",
+            "printed_page": "4"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "serve markets in more than 45 countries.",
+            "printed_page": "4"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "Our phosphate business includes magnesite, kaolin and low-grade bauxite assets",
+            "printed_page": "4"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "aluminum_business",
+      "value": "Full value chain from bauxite mining to alumina refining and aluminum smelting (plus flat rolled products), centered at Ras Al-Khair Industrial City; operates the region's only bauxite mine, connected by rail to the integrated refinery and smelter.",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 6,
+            "quote": "Our aluminum business spans the full value chain, from bauxite mining to alumina refining and aluminum smelting, centered at Ras Al-Khair Industrial City.",
+            "printed_page": "4"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "We operate the region’s only bauxite mine, connected by rail to our integrated refinery and smelter.",
+            "printed_page": "4"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "base_metals_new_minerals_business",
+      "value": "Gold and copper operations: open-pit and underground mines including Ad Duwayhi, Mansourah-Massarah, Mahd Ad Dhahab, Al Amar and Jabal Sayid, producing gold ore, gold concentrate and copper concentrate.",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 6,
+            "quote": "Our gold and copper operations comprise a diversified portfolio of",
+            "printed_page": "4"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "These assets produce gold ore, gold concentrate and copper concentrate.",
+            "printed_page": "4"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_mine_sites",
+      "value": [
+        "Mansourah-Massarah",
+        "Ar-Rjum",
+        "Mahd Ad-Dahab",
+        "Bulghah",
+        "Al-Amar",
+        "Sukhaybarat",
+        "As Suq",
+        "Ad Duwayhi",
+        "Al-Jalamid",
+        "Al-Khabra",
+        "Az Zabirah",
+        "Al-Ghazallah",
+        "Al-Ba'itha"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "The Group’s principal mining activities are at the Mansourah-Massarah, Ar-Rjum, Mahd Ad-Dahab, Bulghah, Al-Amar,",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "Sukhaybarat, As Suq, Ad Duwayhi, Al-Jalamid, Al-Khabra, Az Zabirah, Al-Ghazallah and Al-Ba’itha mines.",
+            "printed_page": "130"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "operating_footprint",
+      "value": {
+        "mines_and_sites": "13 and rising",
+        "direct_employees": "around 8,000",
+        "export_countries": "more than 55"
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 5,
+            "quote": "With 13 and rising mines and sites, around",
+            "printed_page": "3"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "8,000 direct employees and exports to more",
+            "printed_page": "3"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "than 55 countries",
+            "printed_page": "3"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "customer_markets",
+      "value": "Global customer footprint spanning Asia, Africa, Europe and the Americas.",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "A broad and growing global customer footprint spanning Asia, Africa, Europe, and the Americas.",
+            "printed_page": "17"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "main_subsidiaries",
+      "value": [
+        {
+          "name": "Maaden Wa'ad Al-Shamal Phosphate Company (MWSPC)",
+          "effective_ownership": 0.85,
+          "other_holder": "SABIC 15%"
+        },
+        {
+          "name": "Maaden Phosphate Company (MPC)",
+          "effective_ownership": 0.7,
+          "other_holder": "SABIC 30%"
+        },
+        {
+          "name": "Maaden Aluminum Company (MAC)",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Maaden Bauxite and Alumina Company (MBAC)",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Maaden Rolling Company (MRC)",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Maaden Gold and Base Metals Company (MGBM)",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Maaden Integrated Fertilizer Company (MIFC)",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Maaden Infrastructure Company (MIC)",
+          "effective_ownership": 1.0
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "131",
+        "evidence": [
+          {
+            "pdf_page": 133,
+            "quote": "85% by MIFC and ultimately by Maaden, and",
+            "printed_page": "131"
+          },
+          {
+            "pdf_page": 133,
+            "quote": "15% by Saudi Basic Industries Corporation (“SABIC”), which is accounted for as a non-controlling interest in these",
+            "printed_page": "131"
+          },
+          {
+            "pdf_page": 133,
+            "quote": "70% by MIFC and ultimately by Maaden, and",
+            "printed_page": "131"
+          },
+          {
+            "pdf_page": 133,
+            "quote": "30% by SABIC, which is accounted for as a non-controlling interest in these consolidated financial statements.",
+            "printed_page": "131"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "Consequently, MAC is owned 100% by Maaden (Note 30).",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "Consequently, MBAC is owned 100% by Maaden (Note 30).",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 113,
+            "quote": "Maaden Rolling Company",
+            "printed_page": "111"
+          },
+          {
+            "pdf_page": 113,
+            "quote": "aluminum sheets",
+            "printed_page": "111"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "joint_ventures_and_associate",
+      "value": [
+        {
+          "name": "Maaden Barrick Copper Company (MBCC)",
+          "maaden_pct": 0.5,
+          "partner": "Barrick Middle East (Pty) Limited",
+          "activity": "copper concentrate"
+        },
+        {
+          "name": "Maaden Barrick 2 Limited (MBC2)",
+          "maaden_pct": 0.5,
+          "partner": "Barrick Gold (T7) Limited",
+          "activity": "exploration in Umm Ad Damar"
+        },
+        {
+          "name": "Maaden Barrick 3 Limited (MBC3)",
+          "maaden_pct": 0.5,
+          "partner": "Barrick Gold (Singapore) Pte Limited",
+          "activity": "exploration in Jabal Sayid south"
+        },
+        {
+          "name": "Manara Minerals Investment Company",
+          "maaden_pct": 0.51,
+          "partner": "Public Investment Fund 49%",
+          "activity": "international mining investments (joint venture)"
+        },
+        {
+          "name": "Maaden Ivanhoe Electric Exploration and Development",
+          "maaden_pct": 0.5,
+          "partner": "Ivanhoe Electric Mena Holding Limited"
+        },
+        {
+          "name": "Sahara and Maaden Petrochemicals Company (SAMAPCO)",
+          "maaden_pct": 0.5,
+          "partner": "Sahara Petrochemical Company",
+          "activity": "caustic soda, chlorine, EDC"
+        },
+        {
+          "name": "Aluminium Bahrain B.S.C. (Alba) - associate",
+          "maaden_pct": 0.2062,
+          "other_holders": "Bahrain Mumtalakat 69.38%, public 10%"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "133",
+        "evidence": [
+          {
+            "pdf_page": 135,
+            "quote": "50% by Barrick Middle East (Pty) Limited (“Barrick”), a foreign shareholder.",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "50% by Barrick Gold (T7) Limited, a foreign shareholder, an affiliate of Barrick Gold (Holding) Limited.",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "50% by Barrick Gold (Singapore) Pte Limited, a foreign shareholder, an affiliate of Barrick Gold Corporation.",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "49% by Public Investment Fund (“PIF”).",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "50% by Ivanhoe Electric Mena Holding Limited, a foreign shareholder, an affiliate of Ivanhoe Electric Inc. (IE).",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "50% by Sahara Petrochemical Company.",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "69.38% Bahrain Mumtalakat Holding Company (B.S.C.),",
+            "printed_page": "133"
+          },
+          {
+            "pdf_page": 135,
+            "quote": "20.62% by Maaden (Note 21.3), and",
+            "printed_page": "133"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "fertilizer_distribution_meridian",
+      "value": "MMDC owns 100% of Meridian Group (MCIL), a fertilizer distribution company operating in East and Southern Africa (Malawi, Zimbabwe, Zambia, Mozambique).",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "132",
+        "evidence": [
+          {
+            "pdf_page": 134,
+            "quote": "a leading fertilizer",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "distribution company operating in East and Southern Africa.",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "remaining 3.75% from the non-controlling equity holder of Meridian which has resulted Maaden to be 100% equity",
+            "printed_page": "132"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "aluminum_products",
+      "value": "MAC: primary aluminum products (ingots, T-shape ingots, slabs, billets); MRC: can body sheets, can ends stock, automotive sheets; MBAC: bauxite and alumina.",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "132",
+        "evidence": [
+          {
+            "pdf_page": 134,
+            "quote": "The objectives of the company are the production of primary aluminum products:",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "can body sheets,",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "automotive heat treated and non-heat treated sheets.",
+            "printed_page": "132"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "exploit the Al-Ba’itha bauxite deposits,",
+            "printed_page": "132"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "chairman",
+      "value": "H.E. Yasir O. Al-Rumayyan (Non-Executive); Governor of the Public Investment Fund",
+      "category": "governance",
+      "metadata": {
+        "source_page": "121",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "Yasir O. Al-Rumayyan – Chairman",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "Governor of the Public Investment Fund (PIF), a role he",
+            "printed_page": "77"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "deputy_chairman",
+      "value": "H.E. Khalid Saleh AlMudaifer (Non-Executive)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "121",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "Khalid bin Saleh Al-Mudaifer – Deputy Chairman",
+            "printed_page": "121"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "chief_executive_officer",
+      "value": "Robert Wilt (CEO since February 2022; Executive board member)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "121",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "Robert Wilt – Chief Executive Officer",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Chief Executive Officer of Maaden as of February 2022.",
+            "printed_page": "83"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "chief_financial_officer",
+      "value": {
+        "FY2025_until_2025-08-07": "Louis Irvine (retired)",
+        "acting_2025-08-08_to_2026-02-28": "Saulat Sultan",
+        "from_2026-03-01": "Gilberto Antoniazzi"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "121",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "Saulat Sultan – Chief Financial Officer (A)*",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 123,
+            "quote": "appointment of Gilberto Antoniazzi as Chief Financial Officer of the Company.",
+            "printed_page": "121"
+          },
+          {
+            "pdf_page": 89,
+            "quote": "* Retired – 7 August 2025.",
+            "printed_page": "87"
+          },
+          {
+            "pdf_page": 89,
+            "quote": "* Appointed Acting EVP & CFO – 8 August 2025.",
+            "printed_page": "87"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_composition",
+      "value": {
+        "size": 11,
+        "executive": 1,
+        "independent": 4,
+        "non_executive": 6,
+        "term": "three-year term, appointed by the General Assembly"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "77",
+        "evidence": [
+          {
+            "pdf_page": 79,
+            "quote": "The Board is composed of",
+            "printed_page": "77"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "11 members, appointed by the General",
+            "printed_page": "77"
+          },
+          {
+            "pdf_page": 79,
+            "quote": "Assembly for a three-year term in",
+            "printed_page": "77"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "has determined that the following four members are Independent Directors:",
+            "printed_page": "92"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_members_classification",
+      "value": [
+        {
+          "name": "H.E. Yasir O. Al-Rumayyan",
+          "class": "Non-Executive",
+          "role": "Chairman"
+        },
+        {
+          "name": "H.E. Khalid Saleh AlMudaifer",
+          "class": "Non-Executive",
+          "role": "Deputy Chairman"
+        },
+        {
+          "name": "H.E. Ahmed Abdulaziz AlHakbani",
+          "class": "Independent"
+        },
+        {
+          "name": "Mohammed Yahya AlQahtani",
+          "class": "Non-Executive"
+        },
+        {
+          "name": "Manar Moneef AlMoneef",
+          "class": "Non-Executive"
+        },
+        {
+          "name": "Ganesh Kishore",
+          "class": "Non-Executive"
+        },
+        {
+          "name": "Nabilah Mohammed AlTunisi",
+          "class": "Independent"
+        },
+        {
+          "name": "Richard O'Brien",
+          "class": "Independent"
+        },
+        {
+          "name": "Sofia Bianchi",
+          "class": "Non-Executive"
+        },
+        {
+          "name": "Abdullah Saleh Jum'ah",
+          "class": "Independent"
+        },
+        {
+          "name": "Robert Wilt",
+          "class": "Executive"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "92",
+        "evidence": [
+          {
+            "pdf_page": 94,
+            "quote": "H.E. Yasir O. Al-Rumayyan Non-Executive Nabilah Mohammed AlTunisi Independent",
+            "printed_page": "92"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "HE. Khalid Saleh AlMudaifer Non-Executive Richard O'Brien Independent",
+            "printed_page": "92"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "H.E. Ahmed Abdulaziz AlHakbani Independent Sofia Bianchi Non-Executive",
+            "printed_page": "92"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "Mohammed Yahya AlQahtani Non-Executive Abdullah Saleh Jum’ah Independent",
+            "printed_page": "92"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "Manar Moneef AlMoneef Non-Executive Robert Wilt Executive",
+            "printed_page": "92"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "Ganesh Kishore Non-Executive",
+            "printed_page": "92"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "board_committees",
+      "value": "Four committees: Audit Committee, Nomination and Remuneration Committee, Executive Committee, Safety and Sustainability Committee.",
+      "category": "governance",
+      "metadata": {
+        "source_page": "93",
+        "evidence": [
+          {
+            "pdf_page": 95,
+            "quote": "The Board of Directors has established four Committees: Audit Committee, Nomination and",
+            "printed_page": "93"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "audit_committee",
+      "value": {
+        "chair": "Manar Moneef AlMoneef",
+        "members": [
+          "H.E. Khalid Saleh AlMudaifer",
+          "Mike Cheng (non-board)",
+          "Mohammed Ibrahim AlArifi (non-board)",
+          "Richard O'Brien"
+        ],
+        "meetings_2025": 4
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "93",
+        "evidence": [
+          {
+            "pdf_page": 95,
+            "quote": "Manar Maneef AlMoneef (Chairperson)",
+            "printed_page": "93"
+          },
+          {
+            "pdf_page": 95,
+            "quote": "The Audit Committee met four times in 2025.",
+            "printed_page": "93"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "nomination_remuneration_committee",
+      "value": {
+        "chair": "Abdullah Saleh Jum'ah",
+        "members": [
+          "H.E. Ahmed Abdulaziz Alhakbani",
+          "Richard O'Brien",
+          "Hamad Abdulaziz AlHumaidi (non-board)",
+          "Johan Brand (non-board)"
+        ],
+        "meetings_2025": 7
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "94",
+        "evidence": [
+          {
+            "pdf_page": 96,
+            "quote": "Jum’ah (Chairperson)",
+            "printed_page": "94"
+          },
+          {
+            "pdf_page": 96,
+            "quote": "The Nomination and Remuneration Committee met seven times in 2025.",
+            "printed_page": "94"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "executive_committee",
+      "value": {
+        "chair": "Mohammed Yahya AlQahtani",
+        "members": [
+          "Richard O'Brien",
+          "Nabilah Mohammed AlTunisi",
+          "Sofia Bianchi",
+          "Muhammad Nasser AlDawood (non-board)"
+        ],
+        "meetings_2025": 8
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "95",
+        "evidence": [
+          {
+            "pdf_page": 97,
+            "quote": "AlQahtani (Chairperson)",
+            "printed_page": "95"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "The Executive Committee met eight times in 2025.",
+            "printed_page": "95"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "safety_sustainability_committee",
+      "value": {
+        "chair": "Nabilah Mohammed AlTunisi",
+        "members": [
+          "Abdullah Saleh Jum'ah",
+          "Mohammed Yahya Al-Qahtani",
+          "Ganesh Kishore"
+        ],
+        "meetings_2025": 5
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "95",
+        "evidence": [
+          {
+            "pdf_page": 97,
+            "quote": "Nabilah Mohammed AlTunisi (Chairperson)",
+            "printed_page": "95"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "The Committee met five times in 2025.",
+            "printed_page": "95"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "attribute_key": "executive_management",
+      "value": [
+        {
+          "name": "Robert Wilt",
+          "title": "Chief Executive Officer"
+        },
+        {
+          "name": "Hassan Madani Al Ali",
+          "title": "EVP, Phosphate Business Unit (since Sept 2022)"
+        },
+        {
+          "name": "Ali Saeed Al-Qahtani",
+          "title": "EVP, Aluminum Business Unit (since Sept 2022)"
+        },
+        {
+          "name": "Saud Ayedh Al-Utaibi",
+          "title": "SVP Safety, Security and Sustainability"
+        },
+        {
+          "name": "Donovan Charles Waller",
+          "title": "Chief Technology Officer (appointed 13 July 2025)"
+        },
+        {
+          "name": "Abdulrahman Mohammed Al-Sadlan",
+          "title": "SVP Project Development and Engineering"
+        },
+        {
+          "name": "Mohammed Essa Marwahi",
+          "title": "Chief Strategy & Corporate Affairs Officer (appointed 7 May 2025)"
+        },
+        {
+          "name": "Ahmad Abdulaziz Al Alsheikh",
+          "title": "COO, Aluminum Business Unit (appointed 10 Aug 2025)"
+        },
+        {
+          "name": "Mashael Mazyad Al Shebaiky",
+          "title": "Chief Legal Officer"
+        },
+        {
+          "name": "Assaf Abdulkareem Al Quraishi",
+          "title": "Chief Human Resources Officer"
+        },
+        {
+          "name": "Tariq Amro",
+          "title": "Chief Audit Executive (appointed 17 Jan 2025)"
+        },
+        {
+          "name": "Saulat Sultan",
+          "title": "Acting EVP & CFO (appointed 8 Aug 2025)"
+        },
+        {
+          "name": "Abdullah Shabab Al Osaimi",
+          "title": "SVP Procurement & Business Support"
+        },
+        {
+          "name": "Darryl James Clark",
+          "title": "Exploration & Resource Development; Acting EVP Base Metals and New Minerals (Oct 2025)"
+        },
+        {
+          "name": "Effat Saeed Badeeb",
+          "title": "SVP Corporate Governance and General Board Secretariat"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "83",
+        "evidence": [
+          {
+            "pdf_page": 85,
+            "quote": "Executive Vice President of the Phosphate Business Unit at",
+            "printed_page": "83"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Executive Vice President of the Aluminum Business Unit",
+            "printed_page": "83"
+          },
+          {
+            "pdf_page": 86,
+            "quote": "Senior Vice President of Safety, Security and Sustainability,",
+            "printed_page": "84"
+          },
+          {
+            "pdf_page": 86,
+            "quote": "* Appointed Chief Technology Officer – 13 July 2025.",
+            "printed_page": "84"
+          },
+          {
+            "pdf_page": 87,
+            "quote": "Senior Vice President of Project Development and",
+            "printed_page": "85"
+          },
+          {
+            "pdf_page": 87,
+            "quote": "Chief Strategy and Corporate Affairs Officer, appointed in",
+            "printed_page": "85"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "* Appointed Chief Operating Officer – 10 August 2025.",
+            "printed_page": "86"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Chief Legal Officer of Maaden, a role she assumed in 2024,",
+            "printed_page": "86"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Chief Human Resources Officer, appointed in 2024.",
+            "printed_page": "86"
+          },
+          {
+            "pdf_page": 89,
+            "quote": "* Appointed Chief Audit Executive – 17 January 2025.",
+            "printed_page": "87"
+          },
+          {
+            "pdf_page": 90,
+            "quote": "Senior Vice President of Procurement & Business Support.",
+            "printed_page": "88"
+          },
+          {
+            "pdf_page": 90,
+            "quote": "* Appointed Acting EVP – Base Metals – October 2025.",
+            "printed_page": "88"
+          },
+          {
+            "pdf_page": 90,
+            "quote": "Senior Vice President of Corporate Governance and General",
+            "printed_page": "88"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "major_shareholder_pif",
+      "value": {
+        "holder_name": "Public Investment Fund (PIF)",
+        "holder_type": "sovereign_wealth_fund",
+        "ownership_pct": 0.6378,
+        "as_of_date": null
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 76,
+            "quote": "The Company is owned",
+            "printed_page": "74"
+          },
+          {
+            "pdf_page": 76,
+            "quote": "63.78% by Public Investment Fund (“PIF”).",
+            "printed_page": "74"
+          },
+          {
+            "pdf_page": 113,
+            "quote": "The Company is owned 63.78% by Public Investment Fund (“PIF”).",
+            "printed_page": "111"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Stated in the 2025 Board report section without an explicit date; the report covers the year to 31 December 2025",
+        "review_note": "Percentage stated without a date in the 2025 report; delivered as an attribute, not an ownership row (engine requires as_of_date)."
+      }
+    },
+    {
+      "attribute_key": "shareholder_mosaic",
+      "value": {
+        "holder_name": "Mosaic (Mosaic Netherlands Holding Company, affiliate of The Mosaic Company)",
+        "holder_type": "corporate",
+        "ownership_pct": 0.0292,
+        "as_of_date": "2024-12-24"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "173",
+        "evidence": [
+          {
+            "pdf_page": 175,
+            "quote": "and indirect ownership by Mosaic in Maaden is equal to approximately 2.92%.",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "On 24 December 2024, the MWSPC Acquisition was completed",
+            "printed_page": "173"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Approximate stake upon completion of MWSPC acquisition; current holding not separately disclosed",
+        "review_note": "Approximate stake at completion of the MWSPC deal (24 Dec 2024), not a current holding; delivered as an attribute, not an ownership row."
+      }
+    },
+    {
+      "attribute_key": "shareholder_alcoa",
+      "value": {
+        "holder_name": "Alcoa (Alcoa Corporation entities)",
+        "holder_type": "corporate",
+        "ownership_pct": 0.0221,
+        "as_of_date": null
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "173",
+        "evidence": [
+          {
+            "pdf_page": 175,
+            "quote": "approximatively 2.21% of the share capital of Maaden after completion of the MAC and MBAC Acquisition",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "85,977,547 new ordinary shares with a par value of SAR 10 per share in favor of Alcoa",
+            "printed_page": "173"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Approximate stake upon completion of MAC/MBAC acquisition in 2025 (exact completion date not stated); current holding not separately disclosed",
+        "review_note": "Approximate stake at completion of the MAC/MBAC deal; no date or current holding stated; delivered as an attribute."
+      }
+    },
+    {
+      "attribute_key": "strategic_and_principal_risks",
+      "value": {
+        "strategic": [
+          "Exploration and Resource Risk",
+          "Project Delivery Risk",
+          "Funding and Capital Allocation Risk",
+          "Market and Commodity Price Volatility Risk",
+          "Geopolitical and Supply Chain Concentration Risk",
+          "Talent and Capability Gaps",
+          "Infrastructure and Regulatory Bottlenecks"
+        ],
+        "principal": [
+          "Operational Performance",
+          "Supply Chain Disruption",
+          "Safety",
+          "Sustainability",
+          "Innovation & Technological Transformation",
+          "Cybersecurity",
+          "Data Risk",
+          "Cost Escalation Risk",
+          "Regulatory Compliance"
+        ]
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "104",
+        "evidence": [
+          {
+            "pdf_page": 106,
+            "quote": "Exploration and Resource Risk",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Project Delivery Risk",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Funding and Capital Allocation Risk",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Talent and Capability Gaps",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Supply Chain Disruption",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Cybersecurity",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Cost Escalation Risk",
+            "printed_page": "104"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "Regulatory Compliance",
+            "printed_page": "104"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-11"
+      }
+    },
+    {
+      "attribute_key": "fs_financial_risk_categories",
+      "value": [
+        "market risk (currency, interest rate, commodity price)",
+        "credit risk",
+        "liquidity risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "189",
+        "evidence": [
+          {
+            "pdf_page": 191,
+            "quote": "The Group’s activities expose it to a variety of financial risks such as:",
+            "printed_page": "189"
+          },
+          {
+            "pdf_page": 191,
+            "quote": "liquidity risk",
+            "printed_page": "189"
+          },
+          {
+            "pdf_page": 191,
+            "quote": "credit risk and",
+            "printed_page": "189"
+          },
+          {
+            "pdf_page": 191,
+            "quote": "commodity price risk.",
+            "printed_page": "189"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Prior year auditor change",
+      "body_text": "FY2024 consolidated financial statements were audited by another auditor (unmodified opinion dated 9 March 2025); Deloitte audited FY2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "124",
+        "evidence": [
+          {
+            "pdf_page": 126,
+            "quote": "The consolidated financial statements of the Group for the year ended 31 December 2024 were audited by",
+            "printed_page": "124"
+          },
+          {
+            "pdf_page": 126,
+            "quote": "another auditor who expressed an unmodified opinion on those statements on 9 Ramadan 1446H",
+            "printed_page": "124"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Prior auditor not named in the document"
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Corporate governance compliance",
+      "body_text": "Maaden states it has implemented all provisions of the CMA Corporate Governance Regulations; no material penalties imposed in FY2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "76",
+        "evidence": [
+          {
+            "pdf_page": 78,
+            "quote": "Maaden has implemented all the provisions",
+            "printed_page": "76"
+          },
+          {
+            "pdf_page": 101,
+            "quote": "Maaden is not aware of any",
+            "printed_page": "99"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Executive departures 2025",
+      "body_text": "Louis Irvine (EVP & CFO) retired 7 Aug 2025; Ayed Homoud Al Mutairi (SVP Corporate Affairs and Corporate Strategy) resigned 30 Jun 2025; Duncan Peter Bradford (EVP Base Metals and New Minerals) resigned 20 Oct 2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "87",
+        "evidence": [
+          {
+            "pdf_page": 89,
+            "quote": "* Retired – 7 August 2025.",
+            "printed_page": "87"
+          },
+          {
+            "pdf_page": 87,
+            "quote": "* Resigned from Maaden – 30 June 2025.",
+            "printed_page": "85"
+          },
+          {
+            "pdf_page": 86,
+            "quote": "* Resigned from Maaden – 20 October 2025.",
+            "printed_page": "84"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Board evaluation",
+      "body_text": "External evaluation by GCC Board Directors Institute in 2024; internal self-assessment in 2025; next external assessment in 2027.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "96",
+        "evidence": [
+          {
+            "pdf_page": 98,
+            "quote": "the GCC Board Directors Institute (GCC BDI) to evaluate its overall governance performance.",
+            "printed_page": "96"
+          },
+          {
+            "pdf_page": 98,
+            "quote": "The next external assessment will be in 2027.",
+            "printed_page": "96"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "General assemblies 2025",
+      "body_text": "12th EGM on 3 Feb 2025 (delegation to Board to issue debt instruments incl. sukuk); 13th EGM on 24 Jun 2025 (FY2024 accounts, related-party contracts, capital increase for MAC/MBAC acquisition); both held virtually via Tadawulaty.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "100",
+        "evidence": [
+          {
+            "pdf_page": 102,
+            "quote": "On February 3, 2025 and June 24, 2025, the Company held its extraordinary general assemblies by conducting two",
+            "printed_page": "100"
+          },
+          {
+            "pdf_page": 102,
+            "quote": "EGMs virtually through Tadawulaty.",
+            "printed_page": "100"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "ownership_disclosure",
+      "title": "Director shareholdings",
+      "body_text": "Directors' holdings at end-2025: Yasir Al-Rumayyan 150,000 shares; Khalid AlMudaifer 19,737; Manar AlMoneef 150; Abdullah Jum'ah 1; others nil. No director interest in debt instruments.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "113",
+        "evidence": [
+          {
+            "pdf_page": 115,
+            "quote": "H.E. Yasir O. Al-Rumayyan 150,000 150,000",
+            "printed_page": "113"
+          },
+          {
+            "pdf_page": 115,
+            "quote": "HE. Khalid Saleh AlMudaifer 19,737 19,737",
+            "printed_page": "113"
+          },
+          {
+            "pdf_page": 115,
+            "quote": "No Directors has any interest in debt instruments issued by the Company",
+            "printed_page": "113"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Dividend policy",
+      "body_text": "Dividend Distribution Policy approved by the Board in August 2025; Board determines form of distribution based on financial position, strategic goals and shareholder interest.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "112",
+        "evidence": [
+          {
+            "pdf_page": 114,
+            "quote": "Maaden’s Dividend Distribution Policy, approved by the Board of Directors in August 2025,",
+            "printed_page": "112"
+          },
+          {
+            "pdf_page": 114,
+            "quote": "determine the appropriate form of dividend distribution based on the Company’s financial",
+            "printed_page": "112"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Fy2025 dividend recommendation",
+      "body_text": "Board recommends no cash dividend for FY2025 to continue funding the strategic growth plan and partnership projects.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "112",
+        "evidence": [
+          {
+            "pdf_page": 114,
+            "quote": "The Board of Directors recommends to the General Assembly not to distribute cash",
+            "printed_page": "112"
+          },
+          {
+            "pdf_page": 114,
+            "quote": "dividends for the fiscal year ended 31 December, 2025, as a result of the Company’s need",
+            "printed_page": "112"
+          },
+          {
+            "pdf_page": 114,
+            "quote": "to continue funding its strategic growth plan and partnership projects.",
+            "printed_page": "112"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Dividend waivers",
+      "body_text": "No shareholder has waived any right to dividends.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "118",
+        "evidence": [
+          {
+            "pdf_page": 120,
+            "quote": "No shareholder of the Company has waived any right to dividends.",
+            "printed_page": "118"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Subsidiary dividends after year end",
+      "body_text": "After year-end, MPC declared SAR 800m (SAR 240m to NCI) and MWSPC declared SAR 212m (SAR 31.8m to NCI).",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "195",
+        "evidence": [
+          {
+            "pdf_page": 197,
+            "quote": "MPC declared a dividend amounting to SAR 800 million of which SAR 240 million is attributable to a non-controlling",
+            "printed_page": "195"
+          },
+          {
+            "pdf_page": 197,
+            "quote": "MWSPC declared a dividend amounting to SAR 212 million of which SAR 31.8 million is attributable to noncontrolling",
+            "printed_page": "195"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Capital increase mac mbac 2025",
+      "body_text": "Share capital increased from SAR 38,027,858,710 to SAR 38,887,634,180 (+2.26%) by issuing 85,977,547 new shares to Alcoa as consideration for the MAC/MBAC 25.1% stakes; approved by EGM on 24 June 2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "100",
+        "evidence": [
+          {
+            "pdf_page": 102,
+            "quote": "the approval of increasing the Company’s share capital from",
+            "printed_page": "100"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "On 24 June 2025, the shareholders of the Company approved the MAC and MBAC Acquisition against Cash and Shares",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "85,977,547 new ordinary shares with a par value of SAR 10 per share in favor of Alcoa, thus increasing the number of its",
+            "printed_page": "173"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Capital increase in kind for an acquisition (not a bonus or rights issue)"
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Capital increase mwspc 2024",
+      "body_text": "On 24 December 2024 share capital increased from SAR 36,917,734,380 to SAR 38,027,858,710 by issuing 111,012,433 new shares to Mosaic for its 25% stake in MWSPC.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "173",
+        "evidence": [
+          {
+            "pdf_page": 175,
+            "quote": "On 24 December 2024, the MWSPC Acquisition was completed and the share capital of Maaden was increased from SAR",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "36,917,734,380 to SAR 38,027,858,710 by issuance of 111,012,433 new shares with a par value of SAR 10 per share in favor",
+            "printed_page": "173"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Risk governance",
+      "body_text": "ERM framework aligned with ISO 31000; three-lines-of-defense model; Board, supported by the Executive Committee, holds ultimate responsibility; 7x6 risk matrix adopted in 2025 replacing 5x5.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "103",
+        "evidence": [
+          {
+            "pdf_page": 105,
+            "quote": "Maaden’s ERM governance structure follows a three-lines-of-defense model which",
+            "printed_page": "103"
+          },
+          {
+            "pdf_page": 105,
+            "quote": "Our Board of Directors, supported by our Executive Committee, holds ultimate",
+            "printed_page": "103"
+          },
+          {
+            "pdf_page": 105,
+            "quote": "to the best practices of ISO 31000 risk management guidelines",
+            "printed_page": "103"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "In 2025, Maaden adopted a more granular 7x6 risk",
+            "printed_page": "104"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Market position phosphate",
+      "body_text": "World's second-largest exporter of phosphate fertilizers; world's third-largest phosphate producer in 2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "25",
+        "evidence": [
+          {
+            "pdf_page": 27,
+            "quote": "We maintained our position as the world’s second-largest exporter of phosphate fertilizers",
+            "printed_page": "25"
+          },
+          {
+            "pdf_page": 16,
+            "quote": "the world’s third-largest phosphate producer",
+            "printed_page": "14"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Market position regional",
+      "body_text": "Largest mining and metals company in the Middle East; world's largest exploration program in a single jurisdiction.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "The largest mining and metals company in the Middle East",
+            "printed_page": "17"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "Maaden runs the largest",
+            "printed_page": "3"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "greenfield exploration program",
+            "printed_page": "3"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Strategy 2040",
+      "body_text": "Elevated ambition in 2025 to achieve 10x growth (EBITDA) by 2040; four pillars: Leverage KSA Resources, Value Focus, Productivity Drive, Innovation, Technology and R&D; foundation of exploration leadership.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 21,
+            "quote": "disciplined execution across our core commodities and expansion into new strategic opportunities.",
+            "printed_page": "19"
+          },
+          {
+            "pdf_page": 21,
+            "quote": "EBITDA GROWTH BY 2040",
+            "printed_page": "19"
+          },
+          {
+            "pdf_page": 104,
+            "quote": "Our vision is supported by four strategic pillars:",
+            "printed_page": "102"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Gold growth target 2040",
+      "body_text": "Ambition of a sixfold increase in gold production by 2040, targeting 3 million ounces through a cluster approach.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "42",
+        "evidence": [
+          {
+            "pdf_page": 44,
+            "quote": "ambition to deliver a sixfold increase in gold",
+            "printed_page": "42"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "production by 2040, targeting 3 million ounces",
+            "printed_page": "42"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Project phosphate3",
+      "body_text": "Phosphate 3 Phase 1 in active execution; reached 60% completion in 2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 16,
+            "quote": "Phosphate 3 Phase 1 reached 60%",
+            "printed_page": "14"
+          },
+          {
+            "pdf_page": 104,
+            "quote": "Phosphate 3 phase 1 in active execution stage",
+            "printed_page": "102"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Project ar rjum fid",
+      "body_text": "Ar Rjum gold mine reached FID in 2025: open pit, 8 Mtpa processing, ~321 koz gold per year.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "25",
+        "evidence": [
+          {
+            "pdf_page": 27,
+            "quote": "We also achieved FID for the Ar Rjum mine, which is designed as a large-scale open-pit",
+            "printed_page": "25"
+          },
+          {
+            "pdf_page": 27,
+            "quote": "operation with an 8 Mtpa processing facility and expected to produce approximately 321 koz of gold annually over its",
+            "printed_page": "25"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition mac mbac alcoa",
+      "body_text": "Acquired Alcoa's 25.1% stakes in MAC and MBAC (SPSA signed 15 Sep 2024; valuation SAR 4,125m: SAR 562.5m cash plus 85,977,547 new Maaden shares); MAC and MBAC now 100% owned.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "173",
+        "evidence": [
+          {
+            "pdf_page": 175,
+            "quote": "On 15 September 2024, Maaden signed a Share Purchase and Subscription Agreement (“SPSA”) with Alcoa Corporation (as",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "Based on a valuation of SAR 4,125 million, for the purposes of the SPSA, the MAC and MBAC Acquisition consideration",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 175,
+            "quote": "consisted of a cash payment by Maaden to Alcoa of SAR 562.5 million (the \"Cash consideration\"), with the remaining",
+            "printed_page": "173"
+          },
+          {
+            "pdf_page": 134,
+            "quote": "During the year, the Group acquired remaining non-controlling interest of 25.1% in MAC which was previously held",
+            "printed_page": "132"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition alba stake",
+      "body_text": "Completed acquisition of SABIC's 20.62% stake (292,804,000 shares) in Aluminium Bahrain (Alba) for cash consideration of SAR 3,617m (SPA signed 17 Sep 2024); accounted for as associate; one-off bargain purchase gain of SAR 768m.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "168",
+        "evidence": [
+          {
+            "pdf_page": 170,
+            "quote": "During 2024, on 17 September 2024, Maaden signed a Share Purchase Agreement (“SPA”) with SABIC Industrial",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 170,
+            "quote": "held by SABIC in Alba, totaling to 292,804,000 ordinary shares, representing 20.62% of the entire issued share capital of",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 170,
+            "quote": "During the year ended 31 December 2025, the Alba Acquisition was completed against a cash consideration of SAR 3,617",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 113,
+            "quote": "million related to Maaden’s investment in Aluminum Bahrain B.S.C.,",
+            "printed_page": "111"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Sukuk international 2025",
+      "body_text": "First international senior unsecured sukuk completed 9 Feb 2025: aggregate USD 1.5bn (SAR 5,664m) incl. additional funding raised 14 Oct 2025; USD 750m 5-yr at 5.25% (due 13 Feb 2030) and USD 750m 10-yr at 5.50% (due 13 Feb 2035); listed on LSE ISM. (Strategic pillars page separately cites US$1.25bn aggregate face amount.)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "181",
+        "evidence": [
+          {
+            "pdf_page": 183,
+            "quote": "During the year, on 9 February 2025, the Group completed its first international senior unsecured sukuk offering with an",
+            "printed_page": "181"
+          },
+          {
+            "pdf_page": 183,
+            "quote": "aggregate face value of USD 1.5 billion, equivalent to SAR 5,664 million (the \"Offering\").",
+            "printed_page": "181"
+          },
+          {
+            "pdf_page": 183,
+            "quote": "USD 750 million in 5-year sukuk priced at a fixed profit rate of 5.25% maturing on 13 February 2030.",
+            "printed_page": "181"
+          },
+          {
+            "pdf_page": 183,
+            "quote": "USD 750 million in 10-year sukuk priced at a fixed profit rate of 5.50% maturing on 13 February 2035.",
+            "printed_page": "181"
+          },
+          {
+            "pdf_page": 104,
+            "quote": "offering with an aggregate face amount of US$ 1.25 billion.",
+            "printed_page": "102"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "basis": "Document internally inconsistent on headline amount (USD 1.5bn in FS note 35.6 and Year in Review vs US$1.25bn on p104)",
+        "review_note": "Source is internally inconsistent on the headline size (USD 1.5bn in FS note 35.6 vs US$1.25bn on PDF p104); not for DATA-01 acceptance until resolved."
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Sukuk redemption 2025",
+      "body_text": "Full redemption of the SAR 3,500m local Sukuk on 19 Feb 2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "181",
+        "evidence": [
+          {
+            "pdf_page": 183,
+            "quote": "the Group completed",
+            "printed_page": "181"
+          },
+          {
+            "pdf_page": 183,
+            "quote": "the full redemption of its Sukuk amounting to SAR 3,500 million.",
+            "printed_page": "181"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Sukuk issuance 2026 subsequent",
+      "body_text": "After year-end: additional international senior unsecured sukuk of USD 1bn (SAR 3,750m), 10-year at 5.25% maturing 29 Jan 2036.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "195",
+        "evidence": [
+          {
+            "pdf_page": 197,
+            "quote": "and completed an additional international senior unsecured sukuk offering with an aggregate face value of USD 1 billion,",
+            "printed_page": "195"
+          },
+          {
+            "pdf_page": 197,
+            "quote": "5.25% and maturing on 29th January 2036.",
+            "printed_page": "195"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Rare earths mp materials",
+      "body_text": "Signed agreement with MP Materials for a JV to build a rare-earth refinery in the Kingdom; ExCom endorsed binding term sheet with MP Materials Corp and Mountain JV, LLC.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "25",
+        "evidence": [
+          {
+            "pdf_page": 27,
+            "quote": "Maaden signed an agreement with MP Materials for a joint venture to build a rare earth refinery in the Kingdom.",
+            "printed_page": "25"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "Signing a binding term sheet with MP Materials Corp and Mountain JV, LLC.",
+            "printed_page": "95"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Exploration partnerships 2025",
+      "body_text": "Heads of Terms with Aramco for a minerals exploration and mining JV; JV with Midana Exploration (Hancock Group); MIMR Auction Round 9 participation with Barrick, Ivanhoe Electric and Hancock Prospecting.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "102",
+        "evidence": [
+          {
+            "pdf_page": 104,
+            "quote": "Heads of Terms were signed with Aramco to establish",
+            "printed_page": "102"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "Establishment of a JV between Maaden & Midana Exploration (Hancock Group).",
+            "printed_page": "95"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "As suq closure",
+      "body_text": "Proceeding with closure of the non-operational As Suq gold mine, to be converted into an educational center.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "102",
+        "evidence": [
+          {
+            "pdf_page": 104,
+            "quote": "Proceeding with closure of As Suq gold mine which",
+            "printed_page": "102"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Icmm membership",
+      "body_text": "Became the first company from the Middle East to join the International Council on Mining and Metals (ICMM) in 2025.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "Maaden became the first company from the Middle East to join the International Council on Mining and Metals,",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Um wual infrastructure project",
+      "body_text": "Agreement with MIMR under Royal Decree to establish industrial infrastructure at Um Wu'al (Northern Borders), awarded value SAR 1,304m.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "195",
+        "evidence": [
+          {
+            "pdf_page": 197,
+            "quote": "Company entered into an agreement with MIMR to establish an industrial infrastructure located in Um Wu’al in the Northern",
+            "printed_page": "195"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Carbon neutrality target",
+      "body_text": "Committed to carbon neutrality / net zero GHG by 2050 across assets under operational control.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "130",
+        "evidence": [
+          {
+            "pdf_page": 132,
+            "quote": "Maaden is fully committed to achieving carbon neutrality by",
+            "printed_page": "130"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "Maaden’s long-term goal is to achieve net",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2050"
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Energy intensity target",
+      "body_text": "Reduce energy intensity by 12% by 2030.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "55",
+        "evidence": [
+          {
+            "pdf_page": 57,
+            "quote": "We aim to reduce our energy intensity by",
+            "printed_page": "55"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        },
+        "as_of": "2030"
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Groundwater target progress",
+      "body_text": "Target: reduce groundwater intensity 44% by 2030; 2025: groundwater intensity 17% lower than 2020 baseline.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "56",
+        "evidence": [
+          {
+            "pdf_page": 58,
+            "quote": "groundwater intensity by 44% by 2030.",
+            "printed_page": "56"
+          },
+          {
+            "pdf_page": 58,
+            "quote": "In 2025, our groundwater intensity reduced",
+            "printed_page": "56"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Saudization gender targets",
+      "body_text": "Targets of 85% Saudization and 15% female representation by 2030 (2025: 78.7% and 8.6%).",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "diversity targets of 85% and 15%",
+            "printed_page": "62"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "respectively by 2030.",
+            "printed_page": "62"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Biodiversity mangroves target",
+      "body_text": "Commitment to plant 10 million mangroves and 10 million native trees by 2040; 1.2 million mangroves planted in 2025, total 2.2 million.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "59",
+        "evidence": [
+          {
+            "pdf_page": 61,
+            "quote": "we have committed to planting 10 million",
+            "printed_page": "59"
+          },
+          {
+            "pdf_page": 61,
+            "quote": "mangroves and 10 million native trees by",
+            "printed_page": "59"
+          },
+          {
+            "pdf_page": 104,
+            "quote": "Planted an additional 1.2 million mangroves at the Jubail Sanctuary, reaching a total of 2.2 million",
+            "printed_page": "102"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Renewable energy ppa",
+      "body_text": "30-year renewable energy PPA with Emerge to power Al Ba'itha bauxite mine; first solar-powered mine in KSA at Mansourah & Massarah.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "102",
+        "evidence": [
+          {
+            "pdf_page": 104,
+            "quote": "Secured a 30-year renewable energy PPA (power-purchase agreement) with Emerge to power",
+            "printed_page": "102"
+          },
+          {
+            "pdf_page": 104,
+            "quote": "First solar-powered mine in KSA at Mansourah & Massarah mine operational generating",
+            "printed_page": "102"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-03)"
+        }
+      }
+    }
+  ]
+}

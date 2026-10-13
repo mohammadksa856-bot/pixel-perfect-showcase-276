@@ -1,0 +1,128 @@
+{
+  "batch": "DATA-02/batch-03",
+  "engine_main_commit": "b70254e",
+  "company_list_reference": {
+    "file": "product-tracking/inbox/DATA01-market-batch-20261013-v7/BATCH20_GAP_MATRIX.json",
+    "branch": "codex/data01-market-batch-20261013",
+    "commit": "ab98885",
+    "sha256": "0823b6eb66d1c1ecd765deaa424ac4928e0fb62251952e57ae0c2eee4bc344e9",
+    "order": "4030, 3020, 1211, 7203, 1214 (matrix order 11-15)"
+  },
+  "access_note": "Issuer sites, saudiexchange.sa and argaam.com remain blocked. One archived document per company: 3020 and 7203 on engine main; 4030 and 1211 only on unmerged sector branches. No OCR was used in this batch: every quote comes from a native text layer.",
+  "comparison_limits": {
+    "codex_engine_commit_cited": "2391513",
+    "codex_engine_commit_available_on_github": false,
+    "compared_against": [
+      "engine main b70254e data/imports (all manifests)",
+      "engine branches claude/data-transport-1 and claude/data-materials-1 (bahri/maaden imports)",
+      "DATA-02 batch-01 and batch-02 manifests",
+      "BATCH20_GAP_MATRIX.json fields_present and nonfinancial inventory"
+    ],
+    "not_compared": "Codex's local database at 2391513 (source records behind the matrix counts, e.g. 620 original values for 1214) is not published; any record there that is not in the files above could not be checked for collisions."
+  },
+  "documents_used": [
+    {
+      "company": "4030",
+      "title": "Bahri audited consolidated financial statements FY2025",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "bytes": 1847202,
+      "pdf_pages": 51,
+      "engine_ref": "origin/claude/data-transport-1",
+      "engine_commit": "59e159d",
+      "engine_archive_path": "data/raw/SA/4030/documents/3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872.pdf",
+      "on_engine_main": false,
+      "text_layer": "notes digital; primary statements scanned (not used)",
+      "ocr_used": false,
+      "used_by": [
+        "classification/4030-sector-industry.json",
+        "manifests/bahri-2025-profile.json",
+        "numeric-candidates/4030-candidates.json"
+      ]
+    },
+    {
+      "company": "3020",
+      "title": "Yamama Cement audited financial statements FY2025",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+      "sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+      "bytes": 1789892,
+      "pdf_pages": 36,
+      "engine_ref": null,
+      "engine_commit": "b70254e",
+      "engine_archive_path": "data/raw/SA/3020/documents/5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0.pdf",
+      "on_engine_main": true,
+      "text_layer": "digital",
+      "ocr_used": false,
+      "used_by": [
+        "classification/3020-sector-industry.json",
+        "manifests/yamama-cement-2025-profile.json",
+        "numeric-candidates/3020-candidates.json"
+      ]
+    },
+    {
+      "company": "1211",
+      "title": "Ma'aden Integrated Report 2025",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "bytes": 10216122,
+      "pdf_pages": 216,
+      "engine_ref": "origin/claude/data-materials-1",
+      "engine_commit": "bcc0472",
+      "engine_archive_path": "data/raw/SA/1211/documents/dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6.pdf",
+      "on_engine_main": false,
+      "text_layer": "digital",
+      "ocr_used": false,
+      "used_by": [
+        "classification/1211-sector-industry.json",
+        "manifests/maaden-2025-profile.json",
+        "numeric-candidates/1211-candidates.json"
+      ]
+    },
+    {
+      "company": "7203",
+      "title": "Elm audited consolidated financial statements FY2025",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "bytes": 1982951,
+      "pdf_pages": 61,
+      "engine_ref": null,
+      "engine_commit": "b70254e",
+      "engine_archive_path": "data/raw/SA/7203/documents/363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600.pdf",
+      "on_engine_main": true,
+      "text_layer": "digital; auditor report pages scanned (not used)",
+      "ocr_used": false,
+      "used_by": [
+        "classification/7203-sector-industry.json",
+        "manifests/elm-2025-profile.json",
+        "numeric-candidates/7203-candidates.json"
+      ]
+    }
+  ],
+  "documents_needed_not_available": [
+    {
+      "company": "1214",
+      "document": "Shaker FY2025 audited financial statements, Board of Directors report and any annual report (no Shaker document exists in any published engine branch, although the Codex matrix reports 620 original values)",
+      "status": "not archived in any published engine branch; site blocked here"
+    },
+    {
+      "company": "4030",
+      "document": "Bahri Annual Report / Board of Directors report 2025 (board, CEO, shareholder %, employees, strategy)",
+      "status": "not archived in any published engine branch; site blocked here"
+    },
+    {
+      "company": "3020",
+      "document": "Yamama Cement Board of Directors report 2025 (capacity, shareholders, board, market share)",
+      "status": "not archived in any published engine branch; site blocked here"
+    },
+    {
+      "company": "7203",
+      "document": "Elm Annual Report / Board of Directors report 2025 (board, CEO, PIF %, auditor text layer)",
+      "status": "not archived in any published engine branch; site blocked here"
+    },
+    {
+      "company": "all",
+      "document": "Saudi Exchange issuer profiles (official sector/industry, major shareholders, foreign ownership limits)",
+      "status": "not archived in any published engine branch; site blocked here"
+    }
+  ]
+}

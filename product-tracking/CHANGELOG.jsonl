@@ -39,3 +39,9 @@
 {"ts":"2026-10-13T01:22:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-06","commit":"7caf2ca","result":"browser flag on 11/11"}
 {"ts":"2026-10-13T01:26:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-07","commit":"7caf2ca+b70254e","result":"13/13 companies built; withheld only 1120, 1150"}
 {"ts":"2026-10-13T01:30:00Z","task":"BR-006","event":"batch_report","path":"product-tracking/reports/BR-006.md"}
+{"ts":"2026-10-13T02:00:00Z","task":"P02-ALIGN","event":"received","branch":"codex/company-preview-engine-20261013","commit":"07f3038","verification":"15/15 manifest sha256 ok, zip receipt ok"}
+{"ts":"2026-10-13T02:10:00Z","task":"P02-ALIGN","event":"test_run","run":"RUN-2026-10-13-08","commit":"07f3038","result":"package integrity ok"}
+{"ts":"2026-10-13T02:15:00Z","task":"P02-ALIGN","event":"test_run","run":"RUN-2026-10-13-09","commit":"cbcce2a","result":"31/16/0 calculated derivatives shown but companion-withheld"}
+{"ts":"2026-10-13T02:45:00Z","task":"P02-ALIGN","event":"commit","branch":"claude/p02-evidence-alignment","commit":"debaf22","detail":"lineage gate, v5 contract, no display n/a, document kind + notice"}
+{"ts":"2026-10-13T02:55:00Z","task":"P02-ALIGN","event":"test_run","run":"RUN-2026-10-13-10","commit":"debaf22","result":"all green; 0 disagreements vs companion"}
+{"ts":"2026-10-13T03:00:00Z","task":"BR-007","event":"batch_report","path":"product-tracking/reports/BR-007_codex_evidence_review.md"}

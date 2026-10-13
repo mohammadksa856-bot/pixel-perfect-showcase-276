@@ -124,6 +124,16 @@ function PreviewPage() {
         </div>
       </section>
       <Container>
+        {p.dataNotices.length > 0 && (
+          <div
+            className="mb-6 rounded-xl border border-tone-amber/40 bg-tone-amber/5 p-4 text-[13px] leading-6"
+            data-data-notice
+          >
+            {p.dataNotices.map((n) => (
+              <p key={n.en}>{t(n)}</p>
+            ))}
+          </div>
+        )}
         <TopicOverview topics={p.topics} />
         {p.topics.map((topic) => (
           <TopicSection key={topic.key} topic={topic} preview={p} peers={peers} />

@@ -52,7 +52,7 @@ describe("API contract (real engine responses)", () => {
 
   test("contract drift is detected, never guessed around", () => {
     const p = clone("2222") as unknown as Record<string, unknown>;
-    p["contract_version"] = 5;
+    p["contract_version"] = 6; // 4 و5 مدعومان
     expect(contractProblems(p)).toContain("contract_version");
     expect(() => buildCompanyPreview(p as unknown as EnginePage)).toThrow(/contract mismatch/);
     const q = clone("2222") as unknown as { placeholder_policy?: string };
@@ -130,7 +130,7 @@ describe("three companies, three business models", () => {
         expect(c.period.label.ar.length).toBeGreaterThan(0);
         expect(new URL(c.proof.sourceUrl).protocol).toBe("https:");
         expect(c.proof.independentlyVerified).toBe(false);
-        if (c.proof.kind === "calculated_formula_recorded") expect(c.proof.formula).toBeTruthy();
+        if (c.proof.kind === "calculated_inputs_reproduced") expect(c.proof.formula).toBeTruthy();
         else expect(c.proof.formula).toBeNull();
       }
   });
@@ -149,12 +149,16 @@ describe("three companies, three business models", () => {
         for (const c of g.cells) expect(c.period.kind).toBe(expected[g.id] ?? "fy");
   });
 
-  test("calculated values are distinguished from reported ones", () => {
-    expect(cell(rajhi, "ratios", "return_on_equity")!.proof).toMatchObject({
-      kind: "calculated_formula_recorded",
-      formula: "net_income / average(total_equity)",
-    });
-    expect(cell(rajhi, "income", "net_income")!.proof.kind).not.toBe("calculated_formula_recorded");
+  test("v4 has no input lineage → every calculated value is withheld (formula alone is not proof)", () => {
+    expect(group(rajhi, "ratios").withheld).toContainEqual(
+      expect.objectContaining({
+        key: "return_on_equity",
+        reason: "calculated_inputs_not_reproduced",
+      }),
+    );
+    for (const v of [aramco, rajhi, tawuniya])
+      expect(cells(v).some((c) => c.proof.kind === "calculated_inputs_reproduced")).toBe(false);
+    expect(cell(rajhi, "income", "net_income")!.proof.kind).toBe("reported_extracted");
   });
 
   test("Al Rajhi: DCR-001 values withheld, valid duplicate EPS row chosen", () => {
@@ -172,15 +176,15 @@ describe("three companies, three business models", () => {
     expect(all).not.toContain("5853702");
   });
 
-  test("Al Rajhi: cash-flow ratios not applicable to banks; bank ratio set shown", () => {
-    expect(group(rajhi, "cash_flow").notApplicable.map((n) => n.key)).toContain("free_cash_flow");
+  test("Al Rajhi: no metric is labelled not applicable; bank FCF is withheld by the lineage rule", () => {
+    expect(group(rajhi, "cash_flow").withheld).toContainEqual(
+      expect.objectContaining({
+        key: "free_cash_flow",
+        reason: "calculated_inputs_not_reproduced",
+      }),
+    );
     expect(cells(rajhi).some((c) => c.key === "free_cash_flow")).toBe(false);
-    expect(group(rajhi, "ratios").cells.map((c) => c.key)).toEqual(
-      expect.arrayContaining(["net_interest_margin", "cost_to_income_ratio", "cost_of_risk"]),
-    );
-    expect(group(rajhi, "position_ratios").cells.map((c) => c.key)).toContain(
-      "loans_to_deposits_ratio",
-    );
+    expect(JSON.stringify(rajhi)).not.toContain("notApplicable");
   });
 
   test("Al Rajhi history uses the 5-year shareholder net income series", () => {
@@ -200,8 +204,9 @@ describe("three companies, three business models", () => {
     expect(ins.proof.sourceUrl).toBe("https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf");
     expect(ins.proof.page).toBeGreaterThan(0);
     expect(blocksOf(tawuniya, "history")[0]!.series).toHaveLength(0);
-    expect(group(tawuniya, "earnings_quality")?.notApplicable.map((n) => n.key) ?? []).toEqual(
-      expect.arrayContaining(["income_quality", "accrual_ratio"]),
+    // v4 fixture: calculated ratios lack lineage → withheld, never hidden as "not applicable"
+    expect(group(tawuniya, "earnings_quality").withheld.map((w) => w.reason)).toEqual(
+      expect.arrayContaining(["calculated_inputs_not_reproduced"]),
     );
   });
 

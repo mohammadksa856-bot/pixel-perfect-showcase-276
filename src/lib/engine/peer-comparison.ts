@@ -42,7 +42,12 @@ export type EnginePeerResponse = {
   reason: string | null;
   methodology: string | null;
   classification_basis?: string | null;
-  scope: { field: string; value: string; classification_source?: string } | null;
+  scope: {
+    field: string;
+    value: string;
+    classification_source?: string;
+    fallback_from?: { field: string; value: string; reason?: string } | null;
+  } | null;
   peer_count: number;
   metric_count: number;
   companies: EnginePeerCompany[];
@@ -110,6 +115,7 @@ export const MIN_COMPANIES_PER_METRIC = 3;
 
 export type WithheldReason =
   | "engine_unavailable"
+  | "sector_fallback_not_comparable"
   | "metric_not_in_company_set"
   | "missing_value"
   | "non_numeric_value"
@@ -282,6 +288,9 @@ export function buildPeerTable(response: EnginePeerResponse | null, kind: Compan
   }
   const target = response.companies.find((c) => c.is_target);
   if (!target) return unavailable(kind, "engine_unavailable");
+  // المحرك يوسّع العيّنة من الصناعة إلى القطاع حين لا يجد نظيرًا (مثلًا التعاونية بين البنوك).
+  // نماذج أعمال مختلفة لا تُقارن، فتُحجب المقارنة كلها.
+  if (response.scope?.fallback_from) return unavailable(kind, "sector_fallback_not_comparable");
 
   const allowed = PEER_METRICS[kind];
   const withheld: PeerTable["withheld"] = [];

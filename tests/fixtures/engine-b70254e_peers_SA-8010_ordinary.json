@@ -1,0 +1,1030 @@
+{
+ "status": "available",
+ "reason": null,
+ "methodology": "internal_calculation",
+ "classification_basis": "inferred_peer_not_issuer_declared_competitor",
+ "scope": {
+  "field": "sector",
+  "value": "Financials",
+  "classification_source": "reviewed_company_registry",
+  "fallback_from": {
+   "field": "industry",
+   "value": "Insurance",
+   "reason": "no_other_peer_with_comparable_facts"
+  }
+ },
+ "peer_count": 9,
+ "metric_count": 3,
+ "companies": [
+  {
+   "company_id": "sa:8010",
+   "market": "SA",
+   "symbol": "8010",
+   "name": "The Company for Cooperative Insurance (Tawuniya)",
+   "is_target": true,
+   "metrics": {
+    "net_margin": {
+     "value": "0.05153973169497219968792483471",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+       "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+       "filing_type": "annual-report",
+       "filed_at": "2026-04-08",
+       "content_hash": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+       "manifest_path": "data/imports/tawuniya-2025-fy.json",
+       "artifact_key": "artifact:sa:8010:e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+       "archived_path": "/tmp/claude-0/-home-user/f6c8e9e6-4cc9-5437-a0b5-9dc9df4ba352/scratchpad/p02/raw/SA/8010/file_e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3_e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3.json",
+       "artifact_sha256": "e84316985b7a22251a035d3b050bef215a8ea2efb87ec519d755d94e57271ae3",
+       "content_type": "application/json",
+       "byte_size": 10658,
+       "metadata": {
+        "filed_at_basis": "pdf_creation_metadata",
+        "filed_at_confidence": "inferred",
+        "filed_at_note": "The issuer document did not expose a machine-readable publication timestamp; this date is retained from the PDF metadata and is not an exchange filing time.",
+        "profile": "insurance",
+        "reader": "finengine.reading/1",
+        "reviewed_manifest": true,
+        "reviewed_manifest_path": "data/imports/tawuniya-2025-fy.json"
+       }
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / revenue",
+       "definition": {
+        "metric_key": "net_margin",
+        "formula_version": 1,
+        "expression": "net_income / revenue",
+        "output_unit": null,
+        "period_rule": "same_period",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "revenue",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 1,
+     "percentile_from_low": "1"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1120",
+   "market": "SA",
+   "symbol": "1120",
+   "name": "Al Rajhi Bank",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.02463100084001010717474531542",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "manifest_path": "data\\imports\\alrajhi-2025-fy.json",
+       "artifact_key": "artifact:sa:1120:67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "archived_path": "data/raw/SA/1120/documents/67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52.pdf",
+       "artifact_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "content_type": "application/pdf",
+       "byte_size": 4459942,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    },
+    "return_on_equity": {
+     "value": "0.1866142676035115837840404298",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "c3de809cad5ddd7a7e61e268974af6ebe1bc8174643ffb2dce2ee4be516c99f8",
+       "manifest_path": "data\\imports\\alrajhi-2025-fy.json",
+       "artifact_key": "artifact:sa:1120:67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "archived_path": "data/raw/SA/1120/documents/67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52.pdf",
+       "artifact_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+       "content_type": "application/pdf",
+       "byte_size": 4459942,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 10,
+     "universe_size": 10,
+     "percentile_from_low": "1.0000"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1150",
+   "market": "SA",
+   "symbol": "1150",
+   "name": "Alinma Bank",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.02176291016940044199655377358",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    },
+    "return_on_equity": {
+     "value": "0.1426615154949778216910187457",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "source_url": "https://ir.alinma.com/media/k0wfq1td/alinma-data-supplement-4q-2025.xlsx",
+       "filing_type": "data-supplement",
+       "filed_at": "2026-02-10",
+       "content_hash": "1f5107b779322d3253a7bad57e19c033ce97cda3a5021fa569816f5bb46f3ad7",
+       "manifest_path": "data\\imports\\alinma-supplement.json",
+       "artifact_key": "artifact:sa:1150:451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "archived_path": "data/raw/SA/1150/documents/451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c.xlsx",
+       "artifact_sha256": "451026b7baa736146d0d3a2eed029c3880c83449aa9111487e6c6c8cffa9df1c",
+       "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+       "byte_size": 481393,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1080",
+   "market": "SA",
+   "symbol": "1080",
+   "name": "Arab National Bank (ANB)",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.01930124357335559666004458179",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    },
+    "return_on_equity": {
+     "value": "0.1160383455206858896794578650",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "source_url": "https://anb-financial.eurolandir.com/media/n5gahf1d/anb-fs-q4-2025-en.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-29",
+       "content_hash": "fb21f500fca8c9b421e8be9e718f22468c9828d249a4c5384c29df1b5df02b1f",
+       "manifest_path": "data\\imports\\anb-2025-fy.json",
+       "artifact_key": "artifact:sa:1080:d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "archived_path": "data/raw/SA/1080/documents/d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01.pdf",
+       "artifact_sha256": "d05a366caba368d1b45c6952834f4c66f2e4648e9dbbbf43786279ffa1685f01",
+       "content_type": "application/pdf",
+       "byte_size": 4074288,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 5,
+     "universe_size": 10,
+     "percentile_from_low": "0.4444"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1020",
+   "market": "SA",
+   "symbol": "1020",
+   "name": "Bank AlJazira",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.009557714681034878846175363385",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    },
+    "return_on_equity": {
+     "value": "0.07683471849957280277435910273",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "source_url": "https://ir.aljazirabank.com.sa/media/p3qlaib4/ajb-fs-fy-2025-english.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-28",
+       "content_hash": "f7c50152fb411a27a8ba7390f529e122e7ce990215ec1925403d98fbe636c5cb",
+       "manifest_path": "data\\imports\\aljazira-2025-fy.json",
+       "artifact_key": "artifact:sa:1020:2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "archived_path": "data/raw/SA/1020/documents/2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a.pdf",
+       "artifact_sha256": "2b5d332d2eb275f3a00e6695a9fcdc7c88712263ff4a76d95fc9c27102e5be4a",
+       "content_type": "application/pdf",
+       "byte_size": 3904901,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 1,
+     "universe_size": 10,
+     "percentile_from_low": "0.0000"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1140",
+   "market": "SA",
+   "symbol": "1140",
+   "name": "Bank Albilad",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.01859720159824230499955116346",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    },
+    "return_on_equity": {
+     "value": "0.1602849472327239898920212409",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "source_url": "https://www.bankalbilad.com.sa/downloads/about/financial-results/BAB%20YE%20-%202025%20English%20FS.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-10",
+       "content_hash": "f1e42b3af89ecd1b25fdb6dd193bf0b094d8f4cdd465c66104a9b4f8f77b3943",
+       "manifest_path": "data\\imports\\albilad-2025-fy.json",
+       "artifact_key": "artifact:sa:1140:45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "archived_path": "data/raw/SA/1140/documents/45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0.pdf",
+       "artifact_sha256": "45af3a2d8e3e1f3541b1975e1b930b2f25aa74a17ed6d6f65dfade6ef76325b0",
+       "content_type": "application/pdf",
+       "byte_size": 2078036,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 9,
+     "universe_size": 10,
+     "percentile_from_low": "0.8889"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1050",
+   "market": "SA",
+   "symbol": "1050",
+   "name": "Banque Saudi Fransi (BSF)",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.01777622209914396175815383920",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 3,
+     "universe_size": 10,
+     "percentile_from_low": "0.2222"
+    },
+    "return_on_equity": {
+     "value": "0.1094798533162498414067229807",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "source_url": "https://bsf.sa/Library/Assets/Gallery/Documents/Investor_Presentations/Financial_Statments_Q4_2025.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-01-26",
+       "content_hash": "8ac4f280b3266530b4f52748a3b52d108d12ddec93c1cc5606579110ced442bf",
+       "manifest_path": "data\\imports\\bsf-2025-fy.json",
+       "artifact_key": "artifact:sa:1050:8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "archived_path": "data/raw/SA/1050/documents/8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924.pdf",
+       "artifact_sha256": "8fcf18cde5250db09db8b22a7d2b08de5668bae65cc7aead8cc1afa724cbd924",
+       "content_type": "application/pdf",
+       "byte_size": 2955714,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 2,
+     "universe_size": 10,
+     "percentile_from_low": "0.1111"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1010",
+   "market": "SA",
+   "symbol": "1010",
+   "name": "Riyad Bank",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.02144632964518037276232370178",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 7,
+     "universe_size": 10,
+     "percentile_from_low": "0.6667"
+    },
+    "return_on_equity": {
+     "value": "0.1447221293194575606683241281",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "source_url": "https://www.riyadbank.com/documents/20121/0/Annual+Consolidated+Financial+Statements-+En+%281%29.pdf/6863f5a8-b9c9-a304-c29c-1f6774a876f4?t=1770821317961",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-02",
+       "content_hash": "b0b3f6e411f692333db0f2c047360286266157477ffba34f9337981ae354e9a4",
+       "manifest_path": "data\\imports\\riyad-2025-fy.json",
+       "artifact_key": null,
+       "archived_path": null,
+       "artifact_sha256": null,
+       "content_type": null,
+       "byte_size": null,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1060",
+   "market": "SA",
+   "symbol": "1060",
+   "name": "Saudi Awwal Bank (SAB)",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.01976964218619202382564371553",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    },
+    "return_on_equity": {
+     "value": "0.1136146441141507454916981982",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "source_url": "https://www.sab.com/content/dam/sabpws/files/reports-documents/en/category-reports/2025/SAB%20FS%20December%2031%202025%20-%20English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-05",
+       "content_hash": "203bd6594f6bb84c7aa0b14c9fcf547d710269123fa8a562448dfaa260e9da28",
+       "manifest_path": "data\\imports\\sab-2025-fy.json",
+       "artifact_key": "artifact:sa:1060:ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "archived_path": "data/raw/SA/1060/documents/ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757.pdf",
+       "artifact_sha256": "ecda5fc26c8c17ea847419522926c68e9a2e206fdd2ececab45b930abc062757",
+       "content_type": "application/pdf",
+       "byte_size": 5768106,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 4,
+     "universe_size": 10,
+     "percentile_from_low": "0.3333"
+    }
+   }
+  },
+  {
+   "company_id": "sa:1180",
+   "market": "SA",
+   "symbol": "1180",
+   "name": "Saudi National Bank (SNB)",
+   "is_target": false,
+   "metrics": {
+    "return_on_assets": {
+     "value": "0.02159857411265784005997653967",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_assets)",
+       "definition": {
+        "metric_key": "return_on_assets",
+        "formula_version": 1,
+        "expression": "net_income / average(total_assets)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_assets",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 8,
+     "universe_size": 10,
+     "percentile_from_low": "0.7778"
+    },
+    "return_on_equity": {
+     "value": "0.1258695698646416761874450912",
+     "unit": "ratio",
+     "period_end": "2025-12-31",
+     "period_kind": "fy",
+     "quality_score": "1",
+     "provenance": {
+      "source": {
+       "source_key": "file:811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "source_url": "https://www.alahli.com/-/media/project/snb/snb-web/about-us/02-1-Investor-Relations/Financial-Information/Financial-Statements/English/SNB-YE-2025-Financials-English.pdf",
+       "filing_type": "financial-statements",
+       "filed_at": "2026-02-04",
+       "content_hash": "811bcbfc8c7005fdfb869c53802b886dfb14f016961dd2e94d62397caa3fc70b",
+       "manifest_path": "data\\imports\\snb-2025-fy.json",
+       "artifact_key": "artifact:sa:1180:510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "archived_path": "data/raw/SA/1180/documents/510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd.pdf",
+       "artifact_sha256": "510a940da50b06fc05673319610cefa60013547f4ce69920a849da6bc85fccfd",
+       "content_type": "application/pdf",
+       "byte_size": 2543204,
+       "metadata": {}
+      },
+      "derivation": {
+       "type": "deterministic_calculation",
+       "calculation": "net_income / average(total_equity)",
+       "definition": {
+        "metric_key": "return_on_equity",
+        "formula_version": 1,
+        "expression": "net_income / average(total_equity)",
+        "output_unit": null,
+        "period_rule": "annual_average_balance",
+        "description": null,
+        "dependencies": [
+         {
+          "dependency_metric": "net_income",
+          "role": "input"
+         },
+         {
+          "dependency_metric": "total_equity",
+          "role": "input"
+         }
+        ]
+       }
+      }
+     },
+     "ascending_rank": 6,
+     "universe_size": 10,
+     "percentile_from_low": "0.5556"
+    }
+   }
+  }
+ ]
+}

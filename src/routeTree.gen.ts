@@ -41,6 +41,8 @@ import { Route as AuthenticatedAdminFaqsRouteImport } from './routes/_authentica
 import { Route as AuthenticatedAdminKnowledgeRouteImport } from './routes/_authenticated/admin.knowledge'
 import { Route as AuthenticatedAdminResearchRouteImport } from './routes/_authenticated/admin.research'
 import { Route as AuthenticatedAdminSectorsRouteImport } from './routes/_authenticated/admin.sectors'
+import { Route as PreviewCompaniesIndexRouteImport } from './routes/preview.companies.index'
+import { Route as PreviewCompaniesSymbolRouteImport } from './routes/preview.companies.$symbol'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -207,6 +209,16 @@ const AuthenticatedAdminSectorsRoute =
     path: '/sectors',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const PreviewCompaniesIndexRoute = PreviewCompaniesIndexRouteImport.update({
+  id: '/preview/companies/',
+  path: '/preview/companies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreviewCompaniesSymbolRoute = PreviewCompaniesSymbolRouteImport.update({
+  id: '/preview/companies/$symbol',
+  path: '/preview/companies/$symbol',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -239,7 +251,9 @@ export interface FileRoutesByFullPath {
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/admin/research': typeof AuthenticatedAdminResearchRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
+  '/preview/companies/$symbol': typeof PreviewCompaniesSymbolRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/preview/companies/': typeof PreviewCompaniesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -271,7 +285,9 @@ export interface FileRoutesByTo {
   '/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/admin/research': typeof AuthenticatedAdminResearchRoute
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
+  '/preview/companies/$symbol': typeof PreviewCompaniesSymbolRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
+  '/preview/companies': typeof PreviewCompaniesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -306,7 +322,9 @@ export interface FileRoutesById {
   '/_authenticated/admin/knowledge': typeof AuthenticatedAdminKnowledgeRoute
   '/_authenticated/admin/research': typeof AuthenticatedAdminResearchRoute
   '/_authenticated/admin/sectors': typeof AuthenticatedAdminSectorsRoute
+  '/preview/companies/$symbol': typeof PreviewCompaniesSymbolRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/preview/companies/': typeof PreviewCompaniesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -341,7 +359,9 @@ export interface FileRouteTypes {
     | '/admin/knowledge'
     | '/admin/research'
     | '/admin/sectors'
+    | '/preview/companies/$symbol'
     | '/admin/'
+    | '/preview/companies/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -373,7 +393,9 @@ export interface FileRouteTypes {
     | '/admin/knowledge'
     | '/admin/research'
     | '/admin/sectors'
+    | '/preview/companies/$symbol'
     | '/admin'
+    | '/preview/companies'
   id:
     | '__root__'
     | '/'
@@ -407,7 +429,9 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/knowledge'
     | '/_authenticated/admin/research'
     | '/_authenticated/admin/sectors'
+    | '/preview/companies/$symbol'
     | '/_authenticated/admin/'
+    | '/preview/companies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -434,6 +458,8 @@ export interface RootRouteChildren {
   MarketsIndexRoute: typeof MarketsIndexRoute
   ResearchIndexRoute: typeof ResearchIndexRoute
   SectorsIndexRoute: typeof SectorsIndexRoute
+  PreviewCompaniesSymbolRoute: typeof PreviewCompaniesSymbolRoute
+  PreviewCompaniesIndexRoute: typeof PreviewCompaniesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -662,6 +688,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminSectorsRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/preview/companies/': {
+      id: '/preview/companies/'
+      path: '/preview/companies'
+      fullPath: '/preview/companies/'
+      preLoaderRoute: typeof PreviewCompaniesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/companies/$symbol': {
+      id: '/preview/companies/$symbol'
+      path: '/preview/companies/$symbol'
+      fullPath: '/preview/companies/$symbol'
+      preLoaderRoute: typeof PreviewCompaniesSymbolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -725,6 +765,8 @@ const rootRouteChildren: RootRouteChildren = {
   MarketsIndexRoute: MarketsIndexRoute,
   ResearchIndexRoute: ResearchIndexRoute,
   SectorsIndexRoute: SectorsIndexRoute,
+  PreviewCompaniesSymbolRoute: PreviewCompaniesSymbolRoute,
+  PreviewCompaniesIndexRoute: PreviewCompaniesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,52 @@
+{
+  "batch": "batch-04",
+  "manifests": [
+    {
+      "manifest": "reviews/1211-alba-counterparty.json",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/2010-alba-disclosure-proposal.json",
+      "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+      "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/4004-chairman-evidence-status.json",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/435_0_2026-03-12_15-01-34_En.pdf",
+      "source_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/4300-associates-split.json",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/465_0_2026-03-11_12-11-51_En.pdf",
+      "source_sha256": "545ed36b5ec79d12297a8e7a80a9e03bde8f23ffed1ef5856e480e2face238d5",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/7010-dividend-policy-vs-actual.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    }
+  ],
+  "evidence_checked": 24,
+  "evidence_failed": 0,
+  "items_without_evidence": 0,
+  "documents_failed": [],
+  "ocr_evidence_checked": 11,
+  "ocr_engine": "tesseract 5.3.4",
+  "passed": true
+}

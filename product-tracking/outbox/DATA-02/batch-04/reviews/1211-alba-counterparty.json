@@ -1,0 +1,40 @@
+{
+  "company_id": "sa:1211",
+  "market": "SA",
+  "symbol": "1211",
+  "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+  "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+  "purpose": "Response to Codex review request (codex/data02-current-engine-review-20261013 @ 239d107). Proposal only; nothing here is ingested.",
+  "codex_key_reviews": [
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_4:counterparty:sa:1211:alba",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "corroborates": "request_4:sa:2010:divestment:alba-2024",
+        "counterparty_amount": "SAR 3,617 million cash consideration"
+      },
+      "metadata": {
+        "source_page": "170",
+        "evidence": [
+          {
+            "pdf_page": 170,
+            "quote": "During 2024, on 17 September 2024, Maaden signed a Share Purchase Agreement (“SPA”) with SABIC Industrial"
+          },
+          {
+            "pdf_page": 170,
+            "quote": "During the year ended 31 December 2025, the Alba Acquisition was completed against a cash consideration of SAR 3,617"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Independent counterparty filing (different issuer, different auditor). Amounts differ slightly from SABIC's SAR-equivalent (3,612m); neither filing reconciles the two, so neither figure is adopted for the other."
+      }
+    }
+  ]
+}

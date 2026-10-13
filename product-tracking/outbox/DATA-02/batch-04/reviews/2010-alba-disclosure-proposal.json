@@ -1,0 +1,50 @@
+{
+  "company_id": "sa:2010",
+  "market": "SA",
+  "symbol": "2010",
+  "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+  "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+  "purpose": "Response to Codex review request (codex/data02-current-engine-review-20261013 @ 239d107). Proposal only; nothing here is ingested.",
+  "codex_key_reviews": [
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_4:sa:2010:divestment:alba-2024",
+      "codex_value": null,
+      "finding": "differs",
+      "proposal": {
+        "replace_domain": "disclosures",
+        "disclosure_type": "material_event",
+        "title": "Sale of SABIC's 20.62% stake in ALBA to Ma'aden",
+        "body_text": "Agreement signed 17 September 2024 by SABIC Industrial Investment Company for the sale of 292,804,000 ALBA shares (20.62%) to Ma'aden; completion announced 19 February 2025 against proceeds of BHD 363 million; SABIC reports a gain of 13 million (Saudi riyals per the report) on disposal.",
+        "published_at": "2025-02-19",
+        "event_dates": {
+          "agreement_announced": "2024-09-17",
+          "completion_announced": "2025-02-19"
+        },
+        "withdraw": "the batch-01 corporate action sa:2010:divestment:alba-2024 (status 'announced' was incomplete)"
+      },
+      "metadata": {
+        "source_page": "206",
+        "evidence": [
+          {
+            "pdf_page": 206,
+            "quote": "(corresponding to 17 September 2024), the Group announced the signing by SABIC Industrial Investment Company, a wholly owned subsidiary of SABIC, of an agreement for the sale of its holding of 292,804,000 ordinary shares in ALBA (representing 20.62% of its issued share capital) to Saudi Arabian Mining Company (“Ma’aden”).",
+            "printed_page": "206"
+          },
+          {
+            "pdf_page": 206,
+            "quote": "On 20 Sha’ban 1446H (corresponding to 19 February 2025), SABIC announced the completion of sale of shares in ALBA against sales proceeds of BHD 363 million",
+            "printed_page": "206"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "My batch-01 action recorded only the 2024 announcement; the same page also states completion on 19 Feb 2025. Counterparty corroboration: reviews/1211-alba-counterparty.json (Ma'aden reports a cash consideration of SAR 3,617m vs SABIC's BHD 363m ≈ SAR 3,612m; difference not explained in either filing)."
+      }
+    }
+  ]
+}

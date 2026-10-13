@@ -1,0 +1,107 @@
+{
+  "batch": "DATA-02/batch-04",
+  "company_list": "BATCH20_GAP_MATRIX.json @ ab98885, companies 16-20",
+  "evidence_inputs": {
+    "codex_matrix_sha256": "0823b6eb66d1c1ecd765deaa424ac4928e0fb62251952e57ae0c2eee4bc344e9",
+    "engine_sa_market_registry": {
+      "commit": "b70254e",
+      "git_blob": "6a254925ca3f1256a66dc008dfb9a9b0c5b7f73b"
+    }
+  },
+  "rule": "Entity type and listing market are indications from names and exchange labels only. No company-level assumption is applied to the REIT or to the Nomu company; affected topics carry entity_rule instead of being marked not applicable.",
+  "entities": [
+    {
+      "company_id": "sa:4340",
+      "symbol": "4340",
+      "codex_matrix_name": "Al RAJHI REIT",
+      "engine_registry_name": "Al RAJHI REIT",
+      "codex_matrix_exchange": "Saudi Exchange",
+      "codex_matrix_sector": null,
+      "issuer_sector_gate": "NEEDS_REVIEW",
+      "indicated_type": "real-estate investment traded fund (REIT)",
+      "basis": "listed name 'Al RAJHI REIT' only",
+      "listing_market_label": "Saudi Exchange (segment not stated)",
+      "consequence": "Fund, not a company: governance = fund manager + fund board; ownership = unitholders; dividends = fund distributions under its terms and conditions; valuation = NAV/valuation reports. None of these may be filled with ordinary-company fields until the fund's terms and conditions and annual report are archived.",
+      "status": "unverified_indication_from_names_and_exchange_labels",
+      "documents_needed": [
+        "Fund terms and conditions (current version)",
+        "Annual report 2025 and audited FS 2025 of the fund",
+        "Latest valuation reports / NAV disclosures",
+        "Fund board and fund manager disclosures"
+      ]
+    },
+    {
+      "company_id": "sa:4140",
+      "symbol": "4140",
+      "codex_matrix_name": "Saudi Industrial Export Co.",
+      "engine_registry_name": "SIECO",
+      "codex_matrix_exchange": "Saudi Exchange Main Market",
+      "codex_matrix_sector": null,
+      "issuer_sector_gate": "NEEDS_REVIEW",
+      "indicated_type": "joint stock company (not verified)",
+      "basis": "name 'Saudi Industrial Export Co.' / registry 'SIECO'",
+      "listing_market_label": "Saudi Exchange Main Market",
+      "consequence": "Ordinary-company topics apply once a filing confirms the entity type.",
+      "status": "unverified_indication_from_names_and_exchange_labels",
+      "documents_needed": [
+        "Audited FS 2025",
+        "Board of Directors report 2025"
+      ]
+    },
+    {
+      "company_id": "sa:4260",
+      "symbol": "4260",
+      "codex_matrix_name": "BUDGET SAUDI",
+      "engine_registry_name": "BUDGET SAUDI",
+      "codex_matrix_exchange": "Saudi Exchange",
+      "codex_matrix_sector": null,
+      "issuer_sector_gate": "NEEDS_REVIEW",
+      "indicated_type": "joint stock company (not verified)",
+      "basis": "name 'BUDGET SAUDI'",
+      "listing_market_label": "Saudi Exchange (segment not stated)",
+      "consequence": "Trading name only; the legal name and entity type must come from a filing.",
+      "status": "unverified_indication_from_names_and_exchange_labels",
+      "documents_needed": [
+        "Audited FS 2025 (legal name, entity type)",
+        "Board of Directors report 2025 / annual report"
+      ]
+    },
+    {
+      "company_id": "sa:9510",
+      "symbol": "9510",
+      "codex_matrix_name": "National Building and Marketing Co.",
+      "engine_registry_name": "NBM",
+      "codex_matrix_exchange": "Saudi Exchange Nomu - Parallel Market",
+      "codex_matrix_sector": null,
+      "issuer_sector_gate": "NEEDS_REVIEW",
+      "indicated_type": "company listed on the parallel market (Nomu) (not verified)",
+      "basis": "matrix exchange label 'Saudi Exchange Nomu - Parallel Market'; registry name 'NBM'",
+      "listing_market_label": "Saudi Exchange Nomu - Parallel Market",
+      "consequence": "Parallel-market disclosure rules differ from the main market (reporting frequency and content). Missing quarterly data is not a defect until the applicable Nomu rule is sourced. Codex matrix shows 0 original values and 1 source.",
+      "status": "unverified_indication_from_names_and_exchange_labels",
+      "documents_needed": [
+        "Audited FS 2025 or latest semi-annual FS",
+        "Nomu disclosure obligations applicable to the company (CMA rules)",
+        "Board report"
+      ]
+    },
+    {
+      "company_id": "sa:4164",
+      "symbol": "4164",
+      "codex_matrix_name": "NAHDI",
+      "engine_registry_name": "NAHDI",
+      "codex_matrix_exchange": "Saudi Exchange",
+      "codex_matrix_sector": null,
+      "issuer_sector_gate": "NEEDS_REVIEW",
+      "indicated_type": "joint stock company (not verified)",
+      "basis": "registry name 'NAHDI'",
+      "listing_market_label": "Saudi Exchange (segment not stated)",
+      "consequence": "Ordinary-company topics apply once a filing confirms the entity type.",
+      "status": "unverified_indication_from_names_and_exchange_labels",
+      "documents_needed": [
+        "Audited FS 2025",
+        "Annual report / Board of Directors report 2025"
+      ]
+    }
+  ]
+}

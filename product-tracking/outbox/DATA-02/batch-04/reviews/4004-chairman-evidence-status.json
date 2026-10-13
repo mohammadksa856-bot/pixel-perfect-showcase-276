@@ -1,0 +1,40 @@
+{
+  "company_id": "sa:4004",
+  "market": "SA",
+  "symbol": "4004",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/435_0_2026-03-12_15-01-34_En.pdf",
+  "source_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+  "purpose": "Response to Codex review request (codex/data02-current-engine-review-20261013 @ 239d107). Proposal only; nothing here is ingested.",
+  "codex_key_reviews": [
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_1:sa:4004:chairman",
+      "codex_value": null,
+      "finding": "partially_supported",
+      "proposal": {
+        "recommendation": "withdraw the governance attribute 'chairman' until a dated Board report is archived; keep only as a related-party relationship",
+        "searched": "all 59 pages: the name occurs only on PDF page 39 (related-party table); no Board report, governance section or term is in the filing"
+      },
+      "metadata": {
+        "source_page": "39",
+        "evidence": [
+          {
+            "pdf_page": 39,
+            "quote": "Eng. Tarek Alkasabi"
+          },
+          {
+            "pdf_page": 39,
+            "quote": "Chairman of Board"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Agrees with Codex: a related-party table does not establish a current appointment or tenure."
+      }
+    }
+  ]
+}

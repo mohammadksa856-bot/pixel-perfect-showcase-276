@@ -1,0 +1,54 @@
+{
+  "codex_request": {
+    "file": "product-tracking/inbox/DATA02-current-engine-review-20261013-v1/CLAUDE_REVIEW_REQUEST_AR.md",
+    "branch": "codex/data02-current-engine-review-20261013",
+    "commit": "239d107"
+  },
+  "receipt_confirmed": true,
+  "responses": [
+    {
+      "request": 1,
+      "subject": "Dallah chairman",
+      "status": "agree_withdraw_until_board_report",
+      "file": "reviews/4004-chairman-evidence-status.json"
+    },
+    {
+      "request": 2,
+      "subject": "Dar Al Arkan associates composite field",
+      "status": "split_proposed_7_records",
+      "file": "reviews/4300-associates-split.json"
+    },
+    {
+      "request": 3,
+      "subject": "STC dividend policy vs actual",
+      "status": "separated: 1 policy (minimum) + 4 regular + 1 special, all official_known_at=null",
+      "file": "reviews/7010-dividend-policy-vs-actual.json"
+    },
+    {
+      "request": 4,
+      "subject": "ALBA",
+      "status": "reject accepted for corporate_actions; re-proposed as dated disclosure with completion date (correction to batch-01) + counterparty corroboration",
+      "file": [
+        "reviews/2010-alba-disclosure-proposal.json",
+        "reviews/1211-alba-counterparty.json"
+      ]
+    },
+    {
+      "request": 5,
+      "subject": "classifications",
+      "status": "acknowledged: activity-based proposals only, no registry change; batch-03 adds 2 more on the same terms"
+    },
+    {
+      "request": 6,
+      "subject": "display maps",
+      "status": "delivered",
+      "file": "review-support/display-map.json"
+    },
+    {
+      "request": 7,
+      "subject": "saved API responses / accepted manifests",
+      "status": "acknowledged: not used as import or production instructions"
+    }
+  ],
+  "open_review_records": "review-support/review-groups.json + evidence-dossiers.jsonl (216 records: 215 REVIEW + 1 REJECT)"
+}

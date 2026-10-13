@@ -1,0 +1,1237 @@
+{
+  "batch": "DATA-02/batch-04",
+  "engine_main_commit": "b70254e",
+  "company_list": "BATCH20_GAP_MATRIX.json (codex/data01-market-batch-20261013 @ ab98885), companies 16-20",
+  "rules": [
+    "A topic is never marked not_applicable automatically.",
+    "entity_rule marks topics whose meaning differs for a REIT (fund_specific_definition_required) or a Nomu company (parallel_market_rule_required).",
+    "No filing is archived for any company in this batch, so batch_04_added is empty everywhere."
+  ],
+  "reasons": {
+    "doc_missing": "official_document_not_archived",
+    "net": "official_site_blocked_by_session_network_policy",
+    "licensed": "licensed_feed_required",
+    "market": "market_data_feed_required",
+    "numeric": "numeric_scope_DATA-01"
+  },
+  "topics": [
+    {
+      "key": "identity",
+      "ar": "هوية الكيان"
+    },
+    {
+      "key": "business_model",
+      "ar": "نموذج العمل"
+    },
+    {
+      "key": "management_governance",
+      "ar": "الإدارة والحوكمة"
+    },
+    {
+      "key": "ownership",
+      "ar": "الملكية"
+    },
+    {
+      "key": "financial_statements",
+      "ar": "القوائم المالية"
+    },
+    {
+      "key": "earnings_quality",
+      "ar": "جودة الأرباح"
+    },
+    {
+      "key": "ratios",
+      "ar": "النسب المالية"
+    },
+    {
+      "key": "operating_kpis",
+      "ar": "المؤشرات التشغيلية"
+    },
+    {
+      "key": "dividends",
+      "ar": "التوزيعات"
+    },
+    {
+      "key": "sector_industry",
+      "ar": "القطاع والصناعة"
+    },
+    {
+      "key": "competitors",
+      "ar": "المنافسون"
+    },
+    {
+      "key": "trading_liquidity",
+      "ar": "التداول والسيولة"
+    },
+    {
+      "key": "guidance",
+      "ar": "التوجيهات والتوقعات"
+    },
+    {
+      "key": "analyst_coverage",
+      "ar": "تغطية المحللين"
+    },
+    {
+      "key": "valuation",
+      "ar": "التقييم"
+    },
+    {
+      "key": "risks",
+      "ar": "المخاطر والإفصاحات"
+    },
+    {
+      "key": "sustainability",
+      "ar": "الاستدامة"
+    },
+    {
+      "key": "news_ir",
+      "ar": "الأخبار ومواد المستثمرين"
+    }
+  ],
+  "companies": {
+    "4340": {
+      "identity": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "business_model": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 109 original values from 12 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 109 original values from 12 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 109 original values from 12 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1498 daily price records; liquidity metrics not measured",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01); for a REIT: NAV/valuation reports",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "fund_specific_definition_required",
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "risks": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Fund terms and conditions (current version)",
+          "Annual report 2025 and audited FS 2025 of the fund",
+          "Latest valuation reports / NAV disclosures",
+          "Fund board and fund manager disclosures"
+        ]
+      }
+    },
+    "4140": {
+      "identity": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "business_model": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 184 original values from 18 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 184 original values from 18 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 184 original values from 18 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1498 daily price records; liquidity metrics not measured",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "risks": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Board of Directors report 2025"
+        ]
+      }
+    },
+    "4260": {
+      "identity": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "business_model": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 457 original values from 19 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 457 original values from 19 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 457 original values from 19 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1505 daily price records; liquidity metrics not measured",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "risks": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 (legal name, entity type)",
+          "Board of Directors report 2025 / annual report"
+        ]
+      }
+    },
+    "9510": {
+      "identity": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "business_model": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "financial_statements": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 0 original values from 1 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "parallel_market_rule_required",
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "earnings_quality": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 0 original values from 1 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "ratios": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 0 original values from 1 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1498 daily price records; liquidity metrics not measured",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "parallel_market_rule_required",
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "risks": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": "parallel_market_rule_required",
+        "candidate_official_sources": [
+          "Audited FS 2025 or latest semi-annual FS",
+          "Nomu disclosure obligations applicable to the company (CMA rules)",
+          "Board report"
+        ]
+      }
+    },
+    "4164": {
+      "identity": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "business_model": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 347 original values from 20 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 347 original values from 20 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "Codex matrix: 347 original values from 20 sources; no filing published to GitHub",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1114 daily price records; liquidity metrics not measured",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "risks": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "no archived filing in any published engine branch; issuer and exchange sites blocked",
+        "batch_04_added": [],
+        "applicability": "applicable",
+        "entity_rule": null,
+        "candidate_official_sources": [
+          "Audited FS 2025",
+          "Annual report / Board of Directors report 2025"
+        ]
+      }
+    }
+  }
+}

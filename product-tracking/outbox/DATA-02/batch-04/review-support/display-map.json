@@ -1,0 +1,2652 @@
+{
+  "purpose": "Codex request 6: display mapping, period statement and verification wording for every attribute key delivered in DATA-02 batches 01-03. Proposal only; no UI or engine change.",
+  "rules": [
+    "Never label source presence as independent financial review.",
+    "Show the period/as-of from the record; never present an as_of_filing fact as current without a dated current source.",
+    "Synonym keys map to one canonical key; the delivered key is kept for traceability."
+  ],
+  "canonical_keys": 69,
+  "delivered_keys": 169,
+  "keys": [
+    {
+      "delivered_key": "acquired_hospitals",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "acquisition_compass_project_investments_spv",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "acquisition_thiqah_2025",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "aluminum_business",
+      "canonical_key": "business_unit_detail",
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "aluminum_products",
+      "canonical_key": "products_brands",
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "associate_imi",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "associates_and_joint_ventures",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "associates_joint_ventures",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "audit_committee",
+      "canonical_key": "board_committees",
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "audit_opinion",
+      "canonical_key": "audit_opinion",
+      "label_ar": "رأي المراجع",
+      "label_en": "Audit opinion",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190",
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "auditor",
+      "canonical_key": "auditor",
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:3020",
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "base_metals_new_minerals_business",
+      "canonical_key": "business_unit_detail",
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "board_committees",
+      "canonical_key": "board_committees",
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-02:2280",
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "board_composition",
+      "canonical_key": "board_composition",
+      "label_ar": "تكوين المجلس",
+      "label_en": "Board composition",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "board_composition_note",
+      "canonical_key": "board_composition",
+      "label_ar": "تكوين المجلس",
+      "label_en": "Board composition",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010"
+      ]
+    },
+    {
+      "delivered_key": "board_meetings_2025",
+      "canonical_key": "board_meetings",
+      "label_ar": "اجتماعات المجلس",
+      "label_en": "Board meetings",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "board_members",
+      "canonical_key": "board_members",
+      "label_ar": "أعضاء مجلس الإدارة وتصنيفهم",
+      "label_en": "Board members and classification",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "board_members_classification",
+      "canonical_key": "board_members",
+      "label_ar": "أعضاء مجلس الإدارة وتصنيفهم",
+      "label_en": "Board members and classification",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "board_term",
+      "canonical_key": "board_term",
+      "label_ar": "دورة المجلس",
+      "label_en": "Board term",
+      "investor_topic": "management_governance",
+      "period_rule": "policy_effective_range",
+      "period_text_ar": "ضمن مدة السريان المذكورة؛ خارجها لا يُعرض كسارٍ",
+      "period_text_en": "Within the stated effective range; not shown as in force outside it",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-01:7010",
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "branch_jeddah",
+      "canonical_key": "branches",
+      "label_ar": "الفروع المسجلة",
+      "label_en": "Registered branches",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "branches",
+      "canonical_key": "branches",
+      "label_ar": "الفروع المسجلة",
+      "label_en": "Registered branches",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:4004",
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "brands",
+      "canonical_key": "products_brands",
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "business_activity",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120"
+      ]
+    },
+    {
+      "delivered_key": "business_segments",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-01:7010",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "business_units",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "capital_management",
+      "canonical_key": "capital_management",
+      "label_ar": "إدارة رأس المال",
+      "label_en": "Capital management",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "care_shield_subsidiaries",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "ceo",
+      "canonical_key": "ceo",
+      "label_ar": "الرئيس التنفيذي",
+      "label_en": "Chief executive officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "cfo",
+      "canonical_key": "cfo",
+      "label_ar": "المدير المالي",
+      "label_en": "Chief financial officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "chairman",
+      "canonical_key": "chairman",
+      "label_ar": "رئيس مجلس الإدارة",
+      "label_en": "Chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "chief_executive_officer",
+      "canonical_key": "ceo",
+      "label_ar": "الرئيس التنفيذي",
+      "label_en": "Chief executive officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "chief_financial_officer",
+      "canonical_key": "cfo",
+      "label_ar": "المدير المالي",
+      "label_en": "Chief financial officer",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "chief_operating_decision_maker",
+      "canonical_key": "chief_operating_decision_maker",
+      "label_ar": "صانع القرار التشغيلي",
+      "label_en": "Chief operating decision maker",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "climate_change_assessment",
+      "canonical_key": "climate",
+      "label_ar": "المناخ",
+      "label_en": "Climate",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "commercial_registration",
+      "canonical_key": "commercial_registration",
+      "label_ar": "السجل التجاري",
+      "label_en": "Commercial registration",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "commercial_registration_number",
+      "canonical_key": "commercial_registration",
+      "label_ar": "السجل التجاري",
+      "label_en": "Commercial registration",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "commitments",
+      "canonical_key": "commitments_contingencies",
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "commitments_and_contingencies",
+      "canonical_key": "commitments_contingencies",
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "company_objects_fs_note1",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "competitive_environment",
+      "canonical_key": "competitive_environment",
+      "label_ar": "البيئة التنافسية",
+      "label_en": "Competitive environment",
+      "investor_topic": "competitors",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010"
+      ]
+    },
+    {
+      "delivered_key": "concession_terms",
+      "canonical_key": "concession",
+      "label_ar": "شروط الامتياز",
+      "label_en": "Concession terms",
+      "investor_topic": "sector_industry",
+      "period_rule": "policy_effective_range",
+      "period_text_ar": "ضمن مدة السريان المذكورة؛ خارجها لا يُعرض كسارٍ",
+      "period_text_en": "Within the stated effective range; not shown as in force outside it",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2222"
+      ]
+    },
+    {
+      "delivered_key": "contingencies_and_commitments",
+      "canonical_key": "commitments_contingencies",
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "contingencies_commitments",
+      "canonical_key": "commitments_contingencies",
+      "label_ar": "الالتزامات والارتباطات المحتملة",
+      "label_en": "Commitments and contingencies",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "contract_model",
+      "canonical_key": "business_model_note",
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "conversion_to_joint_stock_date",
+      "canonical_key": "conversion_to_joint_stock_date",
+      "label_ar": "تاريخ التحول إلى مساهمة",
+      "label_en": "Conversion to joint stock company",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "currency",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "customer_concentration",
+      "canonical_key": "customer_concentration",
+      "label_ar": "تركّز العملاء",
+      "label_en": "Customer concentration",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "customer_markets",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "deputy_chairman",
+      "canonical_key": "vice_chairman",
+      "label_ar": "نائب رئيس مجلس الإدارة",
+      "label_en": "Vice/Deputy chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "disposal_qatar_subsidiary",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "distribution_model",
+      "canonical_key": "business_model_note",
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "dividend_policy",
+      "canonical_key": "dividend_policy",
+      "label_ar": "سياسة التوزيع",
+      "label_en": "Dividend policy",
+      "investor_topic": "dividends",
+      "period_rule": "policy_effective_range",
+      "period_text_ar": "ضمن مدة السريان المذكورة؛ خارجها لا يُعرض كسارٍ",
+      "period_text_en": "Within the stated effective range; not shown as in force outside it",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-01:2222",
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "dividend_recognition_policy",
+      "canonical_key": "dividend_recognition_policy",
+      "label_ar": "سياسة الاعتراف بالتوزيعات",
+      "label_en": "Dividend recognition (accounting)",
+      "investor_topic": "dividends",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "employee_stock_incentive_program",
+      "canonical_key": "employee_share_plan",
+      "label_ar": "برنامج أسهم الموظفين",
+      "label_en": "Employee share plan",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "employees",
+      "canonical_key": "employees",
+      "label_ar": "عدد الموظفين",
+      "label_en": "Employees",
+      "investor_topic": "operating_kpis",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120"
+      ]
+    },
+    {
+      "delivered_key": "enterprise_risk_families",
+      "canonical_key": "principal_risks",
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:7010"
+      ]
+    },
+    {
+      "delivered_key": "equity_accounted_investees",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "establishment",
+      "canonical_key": "founding_date",
+      "label_ar": "تاريخ التأسيس",
+      "label_en": "Founding date",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "executive_committee",
+      "canonical_key": "board_committees",
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "executive_management",
+      "canonical_key": "executive_management",
+      "label_ar": "الإدارة التنفيذية",
+      "label_en": "Executive management",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "external_auditor",
+      "canonical_key": "auditor",
+      "label_ar": "مراجع الحسابات",
+      "label_en": "External auditor",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "fertilizer_distribution_meridian",
+      "canonical_key": "business_model_note",
+      "label_ar": "نموذج العمل",
+      "label_en": "Business model",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "financial_risk_categories",
+      "canonical_key": "financial_risk_categories",
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "financial_risk_management",
+      "canonical_key": "financial_risk_categories",
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190",
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "financial_year_end",
+      "canonical_key": "fiscal_year_end",
+      "label_ar": "نهاية السنة المالية",
+      "label_en": "Fiscal year end",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "fiscal_year",
+      "canonical_key": "fiscal_year_end",
+      "label_ar": "نهاية السنة المالية",
+      "label_en": "Fiscal year end",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "fiscal_year_end",
+      "canonical_key": "fiscal_year_end",
+      "label_ar": "نهاية السنة المالية",
+      "label_en": "Fiscal year end",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "former_name",
+      "canonical_key": "former_name",
+      "label_ar": "الاسم السابق",
+      "label_en": "Former name",
+      "investor_topic": "identity",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "founder",
+      "canonical_key": "founder",
+      "label_ar": "المؤسس",
+      "label_en": "Founder",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "founding_date",
+      "canonical_key": "founding_date",
+      "label_ar": "تاريخ التأسيس",
+      "label_en": "Founding date",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "fs_approval_date",
+      "canonical_key": "fs_approval_date",
+      "label_ar": "تاريخ اعتماد القوائم",
+      "label_en": "Financial statements approval date",
+      "investor_topic": "news_ir",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4004",
+        "batch-02:4300",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "fs_board_approval_date",
+      "canonical_key": "fs_approval_date",
+      "label_ar": "تاريخ اعتماد القوائم",
+      "label_en": "Financial statements approval date",
+      "investor_topic": "news_ir",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "fs_financial_risk_categories",
+      "canonical_key": "financial_risk_categories",
+      "label_ar": "فئات المخاطر المالية",
+      "label_en": "Financial risk categories",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "functional_presentation_currency",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "geographic_presence",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "geographic_segments",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "going_concern",
+      "canonical_key": "going_concern",
+      "label_ar": "أساس الاستمرارية",
+      "label_en": "Going-concern basis",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "going_concern_basis",
+      "canonical_key": "going_concern",
+      "label_ar": "أساس الاستمرارية",
+      "label_en": "Going-concern basis",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "headquarters",
+      "canonical_key": "headquarters",
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "headquarters_address",
+      "canonical_key": "headquarters",
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-03:1211",
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "headquarters_city",
+      "canonical_key": "headquarters",
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "history_predecessor",
+      "canonical_key": "history",
+      "label_ar": "نبذة تاريخية",
+      "label_en": "History",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "incorporation_date",
+      "canonical_key": "incorporation_date",
+      "label_ar": "تاريخ القيد/التأسيس النظامي",
+      "label_en": "Incorporation date",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4004",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "industrial_license",
+      "canonical_key": "industrial_license",
+      "label_ar": "الترخيص الصناعي",
+      "label_en": "Industrial licence",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "industry_self_description",
+      "canonical_key": "industry_self_description",
+      "label_ar": "وصف الشركة لقطاعها",
+      "label_en": "Issuer's industry self-description",
+      "investor_topic": "sector_industry",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "investment_in_associate_cement_product_industry",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "investment_in_associate_saudi_yamani_cement",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "joint_stock_formation",
+      "canonical_key": "conversion_to_joint_stock_date",
+      "label_ar": "تاريخ التحول إلى مساهمة",
+      "label_en": "Conversion to joint stock company",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "joint_venture_ngc",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "joint_venture_petredec",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "joint_ventures_and_associate",
+      "canonical_key": "associates_joint_ventures",
+      "label_ar": "الشركات الزميلة والمشاريع المشتركة",
+      "label_en": "Associates and joint ventures",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "key_audit_matter",
+      "canonical_key": "key_audit_matters",
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "key_audit_matters",
+      "canonical_key": "key_audit_matters",
+      "label_ar": "أمور المراجعة الرئيسية",
+      "label_en": "Key audit matters",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:3020"
+      ]
+    },
+    {
+      "delivered_key": "key_direct_subsidiaries",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "legal_form",
+      "canonical_key": "legal_form",
+      "label_ar": "الشكل القانوني",
+      "label_en": "Legal form",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "legal_name",
+      "canonical_key": "legal_name",
+      "label_ar": "الاسم القانوني",
+      "label_en": "Legal name",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "liquidity_risk_management",
+      "canonical_key": "capital_management",
+      "label_ar": "إدارة رأس المال",
+      "label_en": "Capital management",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "listing_date",
+      "canonical_key": "listing",
+      "label_ar": "الإدراج",
+      "label_en": "Listing",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "listing_info",
+      "canonical_key": "listing",
+      "label_ar": "الإدراج",
+      "label_en": "Listing",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "listing_statement",
+      "canonical_key": "listing",
+      "label_ar": "الإدراج",
+      "label_en": "Listing",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "loan_to_related_party",
+      "canonical_key": "related_parties",
+      "label_ar": "الأطراف ذات العلاقة",
+      "label_en": "Related parties",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "long_term_borrowing",
+      "canonical_key": "financing",
+      "label_ar": "التمويل والصكوك",
+      "label_en": "Financing and sukuk",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "main_activities",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:7010"
+      ]
+    },
+    {
+      "delivered_key": "main_shareholder_pif",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "main_subsidiaries",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "major_shareholder_pif",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "market_share_by_revenue_ksa",
+      "canonical_key": "market_share",
+      "label_ar": "الحصة السوقية (تصريح الشركة)",
+      "label_en": "Market share (issuer statement)",
+      "investor_topic": "competitors",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:7010"
+      ]
+    },
+    {
+      "delivered_key": "markets_geographies",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "murabaha_facilities",
+      "canonical_key": "financing",
+      "label_ar": "التمويل والصكوك",
+      "label_en": "Financing and sukuk",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "national_number",
+      "canonical_key": "national_number",
+      "label_ar": "الرقم الوطني الموحد",
+      "label_en": "Unified national number",
+      "investor_topic": "identity",
+      "period_rule": "identity_static",
+      "period_text_ar": "ثابت منذ تاريخه؛ يُذكر المصدر وتاريخ المستند",
+      "period_text_en": "Static fact; show source and document date",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-01:7010"
+      ]
+    },
+    {
+      "delivered_key": "new_subsidiaries_established_2025",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "nomination_remuneration_committee",
+      "canonical_key": "board_committees",
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "non_controlling_interests",
+      "canonical_key": "non_controlling_interests",
+      "label_ar": "الحصص غير المسيطرة",
+      "label_en": "Non-controlling interests",
+      "investor_topic": "ownership",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "om_subsidiary_nomac",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "operating_footprint",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "operating_segments",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "phosphate_business",
+      "canonical_key": "business_unit_detail",
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "presentation_currency",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "presentation_functional_currency",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "principal_activities",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082",
+        "batch-02:4190",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "principal_activities_fs_note1",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "principal_activity",
+      "canonical_key": "principal_activities",
+      "label_ar": "الأنشطة الرئيسية",
+      "label_en": "Principal activities",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "principal_mine_sites",
+      "canonical_key": "business_unit_detail",
+      "label_ar": "تفاصيل وحدة الأعمال",
+      "label_en": "Business unit detail",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "principal_risks_2025",
+      "canonical_key": "principal_risks",
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "product_categories",
+      "canonical_key": "products_brands",
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "projects_named",
+      "canonical_key": "projects",
+      "label_ar": "المشاريع",
+      "label_en": "Projects",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "projects_under_construction",
+      "canonical_key": "projects",
+      "label_ar": "المشاريع",
+      "label_en": "Projects",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "registered_office_address",
+      "canonical_key": "headquarters",
+      "label_ar": "المقر الرئيسي",
+      "label_en": "Headquarters",
+      "investor_topic": "identity",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "related_parties",
+      "canonical_key": "related_parties",
+      "label_ar": "الأطراف ذات العلاقة",
+      "label_en": "Related parties",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "related_party_policy",
+      "canonical_key": "related_parties",
+      "label_ar": "الأطراف ذات العلاقة",
+      "label_en": "Related parties",
+      "investor_topic": "management_governance",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "reporting_currency",
+      "canonical_key": "currency",
+      "label_ar": "عملة العرض",
+      "label_en": "Presentation currency",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "reporting_segments",
+      "canonical_key": "business_segments",
+      "label_ar": "القطاعات التشغيلية",
+      "label_en": "Operating segments",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "reporting_standard",
+      "canonical_key": "reporting_standard",
+      "label_ar": "إطار التقرير المالي",
+      "label_en": "Reporting framework",
+      "investor_topic": "identity",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120",
+        "batch-02:2082",
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:1211",
+        "batch-03:3020",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "revenue_disaggregation_categories",
+      "canonical_key": "products_brands",
+      "label_ar": "المنتجات والعلامات",
+      "label_en": "Products and brands",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4190"
+      ]
+    },
+    {
+      "delivered_key": "revenue_geographic_breakdown_basis",
+      "canonical_key": "markets_geographies",
+      "label_ar": "الأسواق والنطاق الجغرافي",
+      "label_en": "Markets and geographies",
+      "investor_topic": "business_model",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "risk_appetite",
+      "canonical_key": "risk_appetite",
+      "label_ar": "شهية المخاطر",
+      "label_en": "Risk appetite",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "risk_factor_headings",
+      "canonical_key": "principal_risks",
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2222"
+      ]
+    },
+    {
+      "delivered_key": "risk_factors",
+      "canonical_key": "principal_risks",
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010"
+      ]
+    },
+    {
+      "delivered_key": "risk_governance",
+      "canonical_key": "risk_governance",
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "investor_topic": "risks",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2222",
+        "batch-02:2082",
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "risk_management",
+      "canonical_key": "risk_governance",
+      "label_ar": "حوكمة المخاطر",
+      "label_en": "Risk governance",
+      "investor_topic": "risks",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120"
+      ]
+    },
+    {
+      "delivered_key": "safety_sustainability_committee",
+      "canonical_key": "board_committees",
+      "label_ar": "لجان المجلس",
+      "label_en": "Board committees",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "sahel_al_madar_pending_acquisition",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "share_structure",
+      "canonical_key": "share_structure",
+      "label_ar": "هيكل الأسهم",
+      "label_en": "Share structure",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280",
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "shareholder_alcoa",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "shareholder_aramco",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "shareholder_base",
+      "canonical_key": "shareholder_base",
+      "label_ar": "قاعدة المساهمين",
+      "label_en": "Shareholder base",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "shareholder_mosaic",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "shareholder_pif",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:4030"
+      ]
+    },
+    {
+      "delivered_key": "shareholder_public_investment_fund",
+      "canonical_key": "shareholder_statement",
+      "label_ar": "مساهم مذكور (بلا نسبة مؤرخة)",
+      "label_en": "Named shareholder (no dated %)",
+      "investor_topic": "ownership",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "shariah_compliance",
+      "canonical_key": "shariah_compliance",
+      "label_ar": "التوافق الشرعي",
+      "label_en": "Shariah compliance",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120"
+      ]
+    },
+    {
+      "delivered_key": "significant_judgements",
+      "canonical_key": "significant_judgements",
+      "label_ar": "التقديرات المحاسبية الجوهرية",
+      "label_en": "Significant judgements",
+      "investor_topic": "earnings_quality",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2082"
+      ]
+    },
+    {
+      "delivered_key": "snsjv_stake_increase_2025",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "strategic_and_principal_risks",
+      "canonical_key": "principal_risks",
+      "label_ar": "المخاطر الرئيسية",
+      "label_en": "Principal risks",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:1211"
+      ]
+    },
+    {
+      "delivered_key": "strategy_enablers",
+      "canonical_key": "strategy",
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "strategy_growth_pillars",
+      "canonical_key": "strategy",
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "strategy_themes",
+      "canonical_key": "strategy",
+      "label_ar": "الاستراتيجية",
+      "label_en": "Strategy",
+      "investor_topic": "guidance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:7010"
+      ]
+    },
+    {
+      "delivered_key": "subsequent_event_white_land_tax",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "subsidiaries",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004",
+        "batch-02:4190",
+        "batch-02:4300",
+        "batch-03:4030",
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "subsidiaries_and_foreign_branches",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:1120"
+      ]
+    },
+    {
+      "delivered_key": "subsidiary_compass_project_investments_spv",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "subsidiary_highlight_stc_bank",
+      "canonical_key": "subsidiaries",
+      "label_ar": "الشركات التابعة",
+      "label_en": "Subsidiaries",
+      "investor_topic": "business_model",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:7010"
+      ]
+    },
+    {
+      "delivered_key": "sukuk_outstanding",
+      "canonical_key": "financing",
+      "label_ar": "التمويل والصكوك",
+      "label_en": "Financing and sukuk",
+      "investor_topic": "risks",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4300"
+      ]
+    },
+    {
+      "delivered_key": "sustainability_strategy",
+      "canonical_key": "sustainability",
+      "label_ar": "الاستدامة",
+      "label_en": "Sustainability",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "sustainability_target_progress_energy_fleet",
+      "canonical_key": "sustainability",
+      "label_ar": "الاستدامة",
+      "label_en": "Sustainability",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "sustainability_target_progress_water_packaging",
+      "canonical_key": "sustainability",
+      "label_ar": "الاستدامة",
+      "label_en": "Sustainability",
+      "investor_topic": "sustainability",
+      "period_rule": "fiscal_year",
+      "period_text_ar": "للسنة المالية المذكورة في السجل",
+      "period_text_en": "For the fiscal year stated in the record",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "thiqah_net_assets_revision",
+      "canonical_key": "corporate_event",
+      "label_ar": "حدث جوهري",
+      "label_en": "Material event",
+      "investor_topic": "news_ir",
+      "period_rule": "event_dated",
+      "period_text_ar": "بتاريخ الحدث كما في المصدر؛ دون تاريخ = لا يُعرض",
+      "period_text_en": "At the event date stated in the source; no date = do not display",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-03:7203"
+      ]
+    },
+    {
+      "delivered_key": "treasury_share_programme",
+      "canonical_key": "employee_share_plan",
+      "label_ar": "برنامج أسهم الموظفين",
+      "label_en": "Employee share plan",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:4004"
+      ]
+    },
+    {
+      "delivered_key": "vice_chairman",
+      "canonical_key": "vice_chairman",
+      "label_ar": "نائب رئيس مجلس الإدارة",
+      "label_en": "Vice/Deputy chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-02:2280"
+      ]
+    },
+    {
+      "delivered_key": "vice_chairman_name",
+      "canonical_key": "vice_chairman",
+      "label_ar": "نائب رئيس مجلس الإدارة",
+      "label_en": "Vice/Deputy chairman",
+      "investor_topic": "management_governance",
+      "period_rule": "as_of_filing",
+      "period_text_ar": "كما في تاريخ المستند (period_end أو as_of)، لا «حالي» ما لم يُثبت",
+      "period_text_en": "As of the filing (period_end or as_of); never 'current' unless proven",
+      "verification_label_ar": "مقتبس من مستند الجهة المصدرة مع رقم الصفحة؛ ليس تحققًا ماليًا مستقلًا ولا قبولًا للعرض",
+      "verification_label_en": "Quoted from the issuer's filing with page reference; not independent financial verification and not display acceptance",
+      "delivered_in": [
+        "batch-01:2010",
+        "batch-01:7010"
+      ]
+    }
+  ]
+}

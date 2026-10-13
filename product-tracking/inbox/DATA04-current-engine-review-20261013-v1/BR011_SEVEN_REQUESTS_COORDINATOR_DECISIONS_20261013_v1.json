@@ -1,0 +1,189 @@
+{
+  "schema": "BR011-seven-requests-coordinator/1",
+  "source_delivery_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+  "review_scope": "Local evidence, identity and semantic policy; no production, financial or product approval",
+  "requests": [
+    {
+      "id": 1,
+      "subject": "Dallah chairman",
+      "decision": "ACCEPT",
+      "scope": "Withdraw unsupported current-governance claim",
+      "implementation": "Current isolated DB has zero current chairman attributes for sa:4004; pending original record remains REVIEW. No row deleted or source relationship rewritten.",
+      "blocker": "Dated official board report and tenure evidence still required"
+    },
+    {
+      "id": 2,
+      "subject": "Dar Al Arkan associates",
+      "decision": "ACCEPT",
+      "scope": "Seven separate evidence-review identities, not seven canonical ownership admissions",
+      "native_pages": [
+        32,
+        34
+      ],
+      "source_sha256": "545ed36b5ec79d12297a8e7a80a9e03bde8f23ffed1ef5856e480e2face238d5",
+      "full_page_visual_review": true,
+      "records": [
+        {
+          "investee": "Alkhair Capital Saudi Arabia",
+          "reported_relationship": "associate",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        },
+        {
+          "investee": "Khozam Real Estate Development Company",
+          "reported_relationship": "joint venture",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        },
+        {
+          "investee": "Dar Global PLC",
+          "reported_relationship": "associate; explicit loss of control on listing despite 88% economic interest",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        },
+        {
+          "investee": "Eastern Juman Company",
+          "reported_relationship": "other associate",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        },
+        {
+          "investee": "Compass Arabia Project Holding Limited for Professional Consultation",
+          "reported_relationship": "associate; distinct from controlled Compass Project Investments SPV",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        },
+        {
+          "investee": "Ibdaa Real Estate Company",
+          "reported_relationship": "other associate",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        },
+        {
+          "investee": "Dar Global Real Estate Development Company",
+          "reported_relationship": "listed in other-associates note; do not infer control from 58% alone",
+          "source_context": "ACCEPT",
+          "canonical": "REVIEW"
+        }
+      ],
+      "blocker": "Owner/investee identity, period-aware ownership schema, known-at and canonical admission not approved"
+    },
+    {
+      "id": 3,
+      "subject": "STC policy vs actual",
+      "decision": "ACCEPT",
+      "scope": "Separation policy already implemented locally; five individual distributions remain evidence-only",
+      "native_pages": [
+        15,
+        101
+      ],
+      "full_page_visual_review": true,
+      "implementation": "Existing minimum policy retained unchanged; no repeat restatement. Five dated calendar distributions kept separate from minimum, special vs regular and fiscal attribution preserved.",
+      "announcement_date": null,
+      "official_known_at": null,
+      "blocker": "Do not treat report calendar as original announcement timestamp; canonical paid-event and financial verification still pending"
+    },
+    {
+      "id": 4,
+      "subject": "ALBA disposal",
+      "decision": "REVIEW",
+      "accepted_semantics": "Reject old issuer-security corporate action; proposed material disclosure with distinct agreement-announcement and completion-announcement dates",
+      "native_pages": {
+        "SABIC": 206,
+        "Maaden": 170
+      },
+      "full_page_visual_review": true,
+      "correction": "Published_at must NOT be inferred from completion date. Preserve agreement_announced=2024-09-17 and completion_announced=2025-02-19 as source-reported event dates; official_known_at remains null.",
+      "amount_policy": "Preserve seller BHD and seller SAR-equivalent separately from buyer SAR cash consideration; discrepancy unresolved. No inferred FX reconciliation or adopted counterparty amount.",
+      "canonical_import": false
+    },
+    {
+      "id": 5,
+      "subject": "Sector classifications",
+      "decision": "REVIEW",
+      "implementation": "Proposals remain activity-based only; no Saudi Exchange official classification or registry mutation",
+      "evidence_needed": "Dated official classification and issuer identity for each company"
+    },
+    {
+      "id": 6,
+      "subject": "169 delivered keys / 69 proposed canonical keys",
+      "decision": "REVIEW",
+      "implementation": "169 per-key decisions: identity only may ACCEPT, unresolved aliases REVIEW, hospital acquisition to subsidiary REJECT. Original identities retained; no row coalescing applied.",
+      "code": "src/finengine/data02_mapping_guard.py",
+      "acceptance_gates": [
+        "same meaning",
+        "same unit/currency",
+        "same period start/end/kind",
+        "same entity scope/type",
+        "same relationship/event kind"
+      ],
+      "semantic_risks": [
+        "acquired hospital is not necessarily subsidiary",
+        "liquidity management is not capital management",
+        "functional and presentation currency may differ",
+        "paid dividend not minimum policy",
+        "association not control",
+        "weighted shares not issued shares"
+      ]
+    },
+    {
+      "id": 7,
+      "subject": "API samples and accepted imports",
+      "decision": "ACCEPT",
+      "scope": "Evidence-only handoff, never execution authorization",
+      "implementation": "Local scripts explicitly create isolated SQLite copies; GitHub handoff prohibits invoking production imports from samples/manifests. No credentials or executable production instructions distributed.",
+      "production_authorization": false
+    }
+  ],
+  "visual_cases": [
+    {
+      "company": "1120",
+      "pages": [
+        74
+      ],
+      "result": "Four segment-description row pairings visually confirmed; ACCEPT descriptive only"
+    },
+    {
+      "company": "1120",
+      "pages": [
+        98
+      ],
+      "result": "Riyal glyph, fiscal dividend period and recommendation/approval/payment dates confirmed; REVIEW event admission"
+    },
+    {
+      "company": "2010",
+      "pages": [
+        91
+      ],
+      "result": "Two separate name/title columns confirmed for FY2025 report; REVIEW current governance and tenure"
+    },
+    {
+      "company": "2280",
+      "pages": [
+        14,
+        155
+      ],
+      "result": "Auditor identity and signed audit-page licence confirmed; ACCEPT identity only"
+    },
+    {
+      "company": "2280",
+      "pages": [
+        117,
+        118,
+        120
+      ],
+      "result": "Name/role/status columns and tenure footnotes inspected; REVIEW composite current-board mapping"
+    },
+    {
+      "company": "2280",
+      "pages": [
+        148,
+        149
+      ],
+      "result": "Appetite qualifiers visually confirmed in full paragraphs; ACCEPT issuer-attributed description only"
+    }
+  ],
+  "financial_display_approved": 0,
+  "production_changes": 0,
+  "rights": "No native PDF/page image redistribution; portable hashes and page references only"
+}

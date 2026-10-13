@@ -1,0 +1,55 @@
+{
+  "schema": "br011-official-source-retrieval-blockers/1",
+  "company": "Nahdi Medical Company",
+  "user_supplied_sources": true,
+  "method": "One ordinary HTTPS GET per URL, standard certificate validation and no identity spoofing, credentials, bypass or retry",
+  "receipt": {
+    "path": "output/BR011-Nahdi-official-20261013-v1/retrieval-receipt.json",
+    "sha256": "06f62b65d2e3d0966e70a3d6d7ba62c4b1df5be8124a8a077c426468bce296ff"
+  },
+  "sources": [
+    {
+      "source_url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+      "attempted_at": "2026-10-13T16:14:03.814624+00:00",
+      "failed_at": "2026-10-13T16:14:04.740928+00:00",
+      "http_status": 502,
+      "decision": "BLOCKED_RETRIEVAL_HTTP502",
+      "error": "HTTP Error502",
+      "pdf_sha256": null,
+      "bytes": null,
+      "pages": null,
+      "cover_period": null,
+      "scope": null,
+      "known_at": null,
+      "headers": "Error headers were not retained by the bounded receipt; do not fabricate response metadata",
+      "no_bypass_attempted": true
+    },
+    {
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/17555_2964_2026-04-21_18-42-44_en.pdf",
+      "attempted_at": "2026-10-13T16:14:04.740928+00:00",
+      "failed_at": "2026-10-13T16:14:04.880908+00:00",
+      "http_status": 403,
+      "decision": "BLOCKED_HTTP403_STOPPED",
+      "error": "HTTP Error403Forbidden",
+      "pdf_sha256": null,
+      "bytes": null,
+      "pages": null,
+      "cover_period": null,
+      "scope": null,
+      "known_at": null,
+      "headers": "Error headers were not retained by the bounded receipt; do not fabricate response metadata",
+      "no_bypass_attempted": true
+    }
+  ],
+  "counts": {
+    "official_urls_attempted": 2,
+    "native_PDFs_archived": 0,
+    "covers_verified": 0,
+    "source_numeric_values_verified": 0,
+    "production_changes": 0,
+    "financial_display_approved": 0
+  },
+  "classification": "403 is an actual permission/access refusal for the second request;502 is the actual first retrieval error. Do not substitute earlier generic web InternalError as403 evidence or interpret either failure as absence of issuer financial data.",
+  "next_action": "Keep sources blocked; ask for user-provided native documents or an accessible authorized official copy. No guessed cover year from URL or date in filename.",
+  "rights": "If retrieved later, fullPDF and fullpagePNG must remain local unless redistribution rights are established; portable links/hash/page pointers only."
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "br011-cached-native-source-verification/1",
+  "company_id": "sa:4164",
+  "method": "Local read-only byte hashing, native PDF parsing and independent complete cover visual inspection. No download, original file edits, database access or extraction replay.",
+  "frozen_snapshot": {
+    "path": "output/DATA01-market-20261013-v2/readonly-market.jsonl.gz",
+    "sha256": "e5ece84fa6d02e51b7d065e3bbca74f53a0266a89fdd1558dc2775ff6d2cbade",
+    "observed_at": "2026-10-13T02:40:41.718152+00:00",
+    "live_read": false
+  },
+  "source": {
+    "source_key": "document:sa:4164:264f23593940e233c4ec61faac973518676ed0fb19eddaef0d89b408c22e0386",
+    "source_url": "https://investors.nahdi.sa/media/x30bmx43/annual-report-2023-ar.pdf",
+    "sha256": "264f23593940e233c4ec61faac973518676ed0fb19eddaef0d89b408c22e0386",
+    "bytes": 20269274,
+    "native_pdf_pages": 143,
+    "frozen_source_status": "review_required",
+    "frozen_filing_type": "annual-report",
+    "actual_cover_year": 2023,
+    "actual_document_type": "Arabic annual report",
+    "cover_issuer": "Nahdi",
+    "cover_pdf_page": 1,
+    "company_scope": "Issuer annual corporate report",
+    "financial_consolidation_scope": "Not independently established by cover; do not infer consolidated financial statement scope from annual corporate title",
+    "known_at": null
+  },
+  "cached_copies": [
+    {
+      "path": "output/DATA01-following15-primary-20261013-v1/4164/source.pdf",
+      "sha256": "264f23593940e233c4ec61faac973518676ed0fb19eddaef0d89b408c22e0386",
+      "bytes": 20269274,
+      "reader_manifest_source_url_matches_frozen_source": true
+    },
+    {
+      "path": "output/DATA01-following15-ocr-retry-20261013-v1/4164/source.pdf",
+      "sha256": "264f23593940e233c4ec61faac973518676ed0fb19eddaef0d89b408c22e0386",
+      "bytes": 20269274,
+      "reader_manifest_source_url_matches_frozen_source": true
+    }
+  ],
+  "cover_evidence": {
+    "path": "output/BR011-Nahdi-official-20261013-v1/DATA01-following15-primary-20261013-v1-cached-cover.png",
+    "sha256": "dcd40d22de81cf93b6b2aba2bbca2727502b0c08444b6f721861deacef536eeb",
+    "full_page_visually_viewed": true,
+    "ocr_retry_cover_same_png_sha256": true,
+    "visible_year": "2023"
+  },
+  "decision": "VERIFIED_CACHED_FY2023_NOT_FY2025",
+  "distinct_from_user_supplied_blocked_sources": {
+    "annual_FY2025_URL": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+    "financial_URL": "https://www.saudiexchange.sa/Resources/fsPdf/17555_2964_2026-04-21_18-42-44_en.pdf",
+    "neither_URL_matches_cached_source": true,
+    "blocked_direct_attempt_audit": "BR011_NAHDI_OFFICIAL_SOURCE_RETRIEVAL_20261013_v1.json",
+    "blocked_HTTP_codes": [
+      502,
+      403
+    ]
+  },
+  "counts": {
+    "cached_paths_checked": 2,
+    "distinct_native_documents": 1,
+    "verified_FY2023_annual_documents": 1,
+    "verified_FY2025_native_documents_in_these_two_paths": 0,
+    "numeric_accuracy_verified": 0,
+    "financial_display_approved": 0,
+    "production_changes": 0
+  },
+  "limits": "This conclusion applies only to the two specified cache paths. It is not a blanket claim that Nahdi FY2025 documents or financial data are absent from the archive or market. PDF parser page count is not certification of all statement/page/field completeness.",
+  "rights": "Full PDFs and cover PNG remain local; portable handoff uses official URLs, hashes and page pointers. Public access does not establish redistribution permission."
+}

@@ -1,0 +1,207 @@
+{
+  "purpose": "Close G8: replacement quotes that match both native text modes; originals kept for traceability.",
+  "rule": "Every replacement is verified on the same PDF page in reading-order AND -layout text (NFKC, whitespace-normalised).",
+  "records": [
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:13",
+      "company_id": "sa:1120",
+      "source_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+      "fixes": [
+        {
+          "pdf_page": 74,
+          "original": "For management purposes, the Group is organized into the following four main businesses segments:",
+          "status": "already_matches_both_modes"
+        },
+        {
+          "pdf_page": 74,
+          "original": "Retail segment: Corporate segment: Treasury segment: Investment services, brokerage and other segments:",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "no_fragment_matches_both_modes",
+          "replacement_quotes": []
+        },
+        {
+          "pdf_page": 74,
+          "original": "Includes individual customers’ deposits, credit facilities, customer debit current accounts (overdrafts), fees from banking services and remittance business, payment services.",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "Includes individual customers’ deposits, credit facilities, customer debit current",
+            "accounts (overdrafts), fees from banking services and remittance business, payment services."
+          ],
+          "pairing_caveat": "Fragments prove each string is on the page but not how table cells pair (e.g. name with role); confirm pairing visually on the pinned page image."
+        },
+        {
+          "pdf_page": 74,
+          "original": "Includes treasury services, Murabaha with SAMA and international Mutajara portfolio.",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "Includes treasury services, Murabaha with SAMA and international Mutajara"
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:corporate_actions:1",
+      "company_id": "sa:1120",
+      "source_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+      "fixes": [
+        {
+          "pdf_page": 98,
+          "original": "On 28 January 2025, the Bank’s Board of Directors recommended a distribution of cash dividends to the shareholders for the second half of 2024, amounting to $ 5,840 million ( $ 1.46 per share) after deduction of Zakat.",
+          "cause": "quote contains the riyal-sign glyph, extracted inconsistently ('$'/'&'/'%'); fragments avoid it",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "On 28 January 2025, the Bank’s Board of Directors recommended a distribution of cash dividends to the shareholders for the second half of 2024, amounting to",
+            "1.46 per share) after deduction of Zakat."
+          ],
+          "pairing_caveat": "Fragments prove each string is on the page but not how table cells pair (e.g. name with role); confirm pairing visually on the pinned page image."
+        },
+        {
+          "pdf_page": 98,
+          "original": "approved by the Annual General Assembly in its meeting held on 13 April 2025. These dividends were paid on 24 April 2025.",
+          "status": "already_matches_both_modes"
+        }
+      ]
+    },
+    {
+      "item_id": "batch-01:sabic-2025-integrated-annual-report-profile.json:sa:2010:company_attributes:0",
+      "company_id": "sa:2010",
+      "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+      "fixes": [
+        {
+          "pdf_page": 91,
+          "original": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director Board Vice Chairman, Non-Executive Director",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI",
+            "Board Chairman, Non-Executive Director Board Vice Chairman, Non-Executive Director"
+          ],
+          "pairing_caveat": "Fragments prove each string is on the page but not how table cells pair (e.g. name with role); confirm pairing visually on the pinned page image."
+        }
+      ]
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:6",
+      "company_id": "sa:2280",
+      "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+      "fixes": [
+        {
+          "pdf_page": 155,
+          "original": "KPMG Professional Services Company",
+          "status": "already_matches_both_modes"
+        },
+        {
+          "pdf_page": 155,
+          "original": "License No.: 469",
+          "status": "already_matches_both_modes"
+        },
+        {
+          "pdf_page": 14,
+          "original": "audited by the Group’s independent auditors, KPMG Professional Services (KPMG).",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "audited by the Group’s independent auditors, KPMG"
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:24",
+      "company_id": "sa:2280",
+      "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+      "fixes": [
+        {
+          "pdf_page": 117,
+          "original": "Mr. Georges Schorderet\n\nBoard\nMember\n\nIndependent",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "Mr. Georges Schorderet Board"
+          ],
+          "pairing_caveat": "Fragments prove each string is on the page but not how table cells pair (e.g. name with role); confirm pairing visually on the pinned page image."
+        },
+        {
+          "pdf_page": 118,
+          "original": "Engr. Ammar BIn\nAbdulwahid Alkhudairy\n\nBoard\nMember\n\nIndependent",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "no_fragment_matches_both_modes",
+          "replacement_quotes": []
+        },
+        {
+          "pdf_page": 118,
+          "original": "Mr. Salman Bin\nAbdelmuhsin Alsudeary\n\nBoard\nMember\n\nIndependent",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "no_fragment_matches_both_modes",
+          "replacement_quotes": []
+        },
+        {
+          "pdf_page": 118,
+          "original": "Engr. Sulaiman Alrumaih\n\nBoard\nMember\n\nNonExecutive",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "Engr. Sulaiman Alrumaih Board"
+          ],
+          "pairing_caveat": "Fragments prove each string is on the page but not how table cells pair (e.g. name with role); confirm pairing visually on the pinned page image."
+        },
+        {
+          "pdf_page": 117,
+          "original": "HE Engr. Abdulrahman\nAbdulmohsen Al Fadley\n\nBoard\nMember\n\nNonExecutive",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "no_fragment_matches_both_modes",
+          "replacement_quotes": []
+        },
+        {
+          "pdf_page": 120,
+          "original": "*Membership Ended on 6 August 2025",
+          "status": "already_matches_both_modes"
+        },
+        {
+          "pdf_page": 120,
+          "original": "**Membership Started on 7 August 2025",
+          "status": "already_matches_both_modes"
+        },
+        {
+          "pdf_page": 120,
+          "original": "***Membership Ended on 16 November 2025",
+          "status": "already_matches_both_modes"
+        },
+        {
+          "pdf_page": 120,
+          "original": "****Membership Started on 17 November 2025",
+          "status": "already_matches_both_modes"
+        }
+      ]
+    },
+    {
+      "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:32",
+      "company_id": "sa:2280",
+      "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+      "fixes": [
+        {
+          "pdf_page": 148,
+          "original": "Almarai maintains a higher appetite for investmentrelated risks",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "Almarai maintains a higher appetite for"
+          ]
+        },
+        {
+          "pdf_page": 149,
+          "original": "Almarai maintains zero appetite, including food safety risks, serious health and safety incidents",
+          "cause": "quote spans table cells / columns: present in reading-order text, interleaved in -layout text",
+          "status": "replacement_fragments",
+          "replacement_quotes": [
+            "Almarai maintains zero appetite, including food safety",
+            "risks, serious health and safety incidents"
+          ],
+          "pairing_caveat": "Fragments prove each string is on the page but not how table cells pair (e.g. name with role); confirm pairing visually on the pinned page image."
+        }
+      ]
+    }
+  ]
+}

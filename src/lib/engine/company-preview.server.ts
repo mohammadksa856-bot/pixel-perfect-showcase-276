@@ -1,6 +1,6 @@
 // خادم فقط: يقرأ صفحة الشركة من API المحرك ويبني نموذج العرض قبل أي إرسال للمتصفح.
 // المفتاح والعنوان لا يغادران الخادم، والقيم المحجوبة لا تُسلسل إلى العميل.
-import { buildCompanyPreview, contractProblems, type CompanyPreview } from "./company-preview";
+import { contractProblems, type CompanyPreview } from "./company-preview";
 
 type Env = Record<string, string | undefined>;
 
@@ -54,8 +54,8 @@ export async function fetchCompanyPreview(
   const problems = contractProblems(page);
   if (problems.length)
     return { state: "engine_unavailable", reason: `contract_mismatch:${problems.join(",")}` };
-  return {
-    state: "ok",
-    preview: buildCompanyPreview(page as Parameters<typeof buildCompanyPreview>[0]),
-  };
+  // Local acceptance hold: BR-006 consumes legacy page4 without companion1.
+  // A source URL/formula is not evidence of eligible values or reproduced inputs.
+  // Until a reviewed companion adapter exists, never serve the raw fallback.
+  return { state: "engine_unavailable", reason: "preview_evidence_adapter_pending" };
 }

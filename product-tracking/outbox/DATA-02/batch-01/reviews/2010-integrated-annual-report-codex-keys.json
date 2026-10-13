@@ -1,0 +1,175 @@
+{
+  "company_id": "sa:2010",
+  "market": "SA",
+  "symbol": "2010",
+  "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+  "purpose": "Page-verified evidence for keys Codex already publishes. Read-only; nothing here is ingested.",
+  "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+  "engine_commit_reviewed": "b70254e",
+  "codex_key_reviews": [
+    {
+      "codex_file": "sabic-2025-company-esg-market.json",
+      "domain": "company_attributes",
+      "key": "ceo_name",
+      "codex_value": "Abdulrahman Al-Fageeh",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "15",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "ABDULRAHMAN AL-FAGEEH SABIC Chief Executive Officer and Executive Member of the Board"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "sabic-2025-company-esg-market.json",
+      "domain": "company_attributes",
+      "key": "chairman_name",
+      "codex_value": "Khalid Al-Dabbagh",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "91",
+        "evidence": [
+          {
+            "pdf_page": 91,
+            "quote": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "sabic-2025-company-esg-market.json",
+      "domain": "company_attributes",
+      "key": "business_model.segments",
+      "codex_value": [
+        "Petrochemicals: Chemicals",
+        "Petrochemicals: Polymers",
+        "Agri-Nutrients"
+      ],
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "206",
+        "evidence": [
+          {
+            "pdf_page": 206,
+            "quote": "For management purposes, the Group is organised into two operating segments."
+          },
+          {
+            "pdf_page": 206,
+            "quote": "The Petrochemicals segment comprised two primary product categories: Chemicals and Polymers."
+          },
+          {
+            "pdf_page": 206,
+            "quote": "The Agri-Nutrients segment consists of a range of fertiliser products including Urea, Ammonia, Phosphate, as well as compound fertilisers."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "sabic-2025-company-esg-market.json",
+      "domain": "disclosures",
+      "key": "material_event|Planned European Petrochemicals and Engineering Thermoplastics divestments",
+      "codex_value": "announced divestments",
+      "finding": "agrees_with_detail",
+      "metadata": {
+        "source_page": "206",
+        "evidence": [
+          {
+            "pdf_page": 206,
+            "quote": "As at 31 December 2025, the European Petrochemicals (EP) and Engineering Thermoplastics in Americas and Europe business units are classified as discontinued operations"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "FS note 36 adds the accounting status at 31 Dec 2025: both are discontinued operations and excluded from segment information."
+      }
+    },
+    {
+      "codex_file": "sabic-2025-company-esg-market.json",
+      "domain": "corporate_actions",
+      "key": "sa:2010:dividend:2025:h1 + h2",
+      "codex_value": {
+        "cash_per_share": [
+          1.5,
+          1.5
+        ]
+      },
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "For 2025, a dividend of x 3 per share was declared."
+          },
+          {
+            "pdf_page": 14,
+            "quote": "In 2025, SABIC declared cash dividends totaling x 9 Bn."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "currency_note": "The riyal sign is rendered as the glyph 'x' in the PDF text layer; the currency is SAR (engine attribute `currency` from the same report).",
+        "note": "SAR 3 per share for FY2025 = Codex's two half-year rows of SAR 1.5."
+      }
+    },
+    {
+      "codex_file": "sabic-2025-company-esg-market.json",
+      "domain": "disclosures",
+      "key": "strategy_update|Carbon neutrality roadmap",
+      "codex_value": "20% Scope 1+2 by 2030 vs 2018; carbon neutrality 2050",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "69",
+        "evidence": [
+          {
+            "pdf_page": 69,
+            "quote": "2030: 20% GHG emissions reduction (Scopes 1 and 2; vs. 2018 baseline)"
+          },
+          {
+            "pdf_page": 69,
+            "quote": "2050: Carbon neutrality ambition (Scopes 1 and 2)"
+          },
+          {
+            "pdf_page": 68,
+            "quote": "reduction in its absolute GHG emissions by 16.9% compared to the baseline of 2018"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ]
+}

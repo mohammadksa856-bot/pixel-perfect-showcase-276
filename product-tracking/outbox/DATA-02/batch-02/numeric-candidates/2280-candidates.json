@@ -1,0 +1,409 @@
+{
+  "company_id": "sa:2280",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+  "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "employees",
+      "value": 50000,
+      "unit": "persons (lower bound, '50,000+')",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "7",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "50,000+ employees across all operations.",
+            "printed_page": "7"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "persons (lower bound, '50,000+')",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "dairy_farms_and_herd",
+      "value": {
+        "dairy_farms": 8,
+        "cows": 189000,
+        "milk_liters_per_year": 1500000000
+      },
+      "unit": "farms / cows (over) / liters",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "7",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "8 dairy farms with over 189,000 cows,",
+            "printed_page": "7"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "producing 1.5 billion liters annually.",
+            "printed_page": "7"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "farms / cows (over) / liters",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "poultry_operations",
+      "value": {
+        "poultry_farms": 7,
+        "poultry_houses": 1700,
+        "birds_processed": 300000000
+      },
+      "unit": "farms / houses (over) / birds per year (over)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "7",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "7 poultry farms (6 in Hail and 1 in Al-Jouf), with",
+            "printed_page": "7"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "million birds annually (2025).",
+            "printed_page": "7"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "farms / houses (over) / birds per year (over)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "arable_farms",
+      "value": {
+        "arable_farms": 27,
+        "feed_produced_t": 257784,
+        "total_feed_exports_t": 618798
+      },
+      "unit": "farms / metric tons",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "7",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "27 arable farms in the USA and Argentina,",
+            "printed_page": "7"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "producing over 257,784 metric tons of feed in",
+            "printed_page": "7"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "farms / metric tons",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "manufacturing_and_distribution",
+      "value": {
+        "production_facilities": 34,
+        "manufacturing_plants": 19,
+        "sales_depots": 129,
+        "vehicles": 12000
+      },
+      "unit": "count (vehicles: over)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "7",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "34 production facilities across 19",
+            "printed_page": "7"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "129 sales depots served by a fleet of over",
+            "printed_page": "7"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "count (vehicles: over)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "reach",
+      "value": {
+        "kg_products_sold": 3000000000,
+        "consumers": 150000000,
+        "retailers": 220000,
+        "countries": 7
+      },
+      "unit": "kg / consumers / retailers (all 'over')",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "7",
+        "evidence": [
+          {
+            "pdf_page": 8,
+            "quote": "Over 3.0 billion kilograms of products sold",
+            "printed_page": "7"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "Over 150 million consumers served across the",
+            "printed_page": "7"
+          },
+          {
+            "pdf_page": 8,
+            "quote": "Over 220,000 retailers reached across 7",
+            "printed_page": "7"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "kg / consumers / retailers (all 'over')",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "saudi_market_share_dairy",
+      "value": {
+        "fresh_milk": 67.5,
+        "fresh_laban": 68.2,
+        "zabadi": 62.0,
+        "culinary": 46.0
+      },
+      "unit": "% value share, Saudi market (position 1 each)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 44,
+            "quote": "Fresh Milk\n\n67.5\n\n1",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "Fresh Laban\n\n68.2",
+            "printed_page": "43"
+          },
+          {
+            "pdf_page": 44,
+            "quote": "Value Share of Saudi Market",
+            "printed_page": "43"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "% value share, Saudi market (position 1 each)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "saudi_market_share_bakery",
+      "value": {
+        "sliced_bread": 67.4,
+        "burger_buns": 61.3,
+        "puffs": 77.2
+      },
+      "unit": "% value share, Saudi market",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "50",
+        "evidence": [
+          {
+            "pdf_page": 51,
+            "quote": "Sliced Bread\n\n67.4\n\n1",
+            "printed_page": "50"
+          },
+          {
+            "pdf_page": 51,
+            "quote": "Burger Buns\n\n61.3",
+            "printed_page": "50"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "% value share, Saudi market",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "saudi_market_share_poultry",
+      "value": {
+        "fresh_poultry": 35,
+        "whole_chicken": 33.0,
+        "chicken_portions": 34.0,
+        "chicken_value_added": 26.7
+      },
+      "unit": "% value share, Saudi market",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 55,
+            "quote": "maintained a 35% market share in fresh poultry",
+            "printed_page": "54"
+          },
+          {
+            "pdf_page": 55,
+            "quote": "Whole Chicken\n\n33.0",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "% value share, Saudi market",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "fresh_juice_market_share",
+      "value": 45,
+      "unit": "% (Saudi fresh juice market)",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "maintaining a 45% market share in the fresh juice",
+            "printed_page": "49"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "% (Saudi fresh juice market)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "shareholders_count",
+      "value": 115392,
+      "unit": "shareholders",
+      "period": "2025-12-31",
+      "as_of": null,
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 31,
+            "quote": "As of 31 December 2025, Almarai had 115,392 shareholders.",
+            "printed_page": "30"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "shareholders",
+        "period": "2025-12-31"
+      }
+    },
+    {
+      "metric": "ghg_emissions_scope1_2",
+      "value": {
+        "total": 2677941,
+        "scope1": 1128707,
+        "scope2": 1549234
+      },
+      "unit": "tCO2e",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "91",
+        "evidence": [
+          {
+            "pdf_page": 92,
+            "quote": "2,677,941 tCO2e",
+            "printed_page": "91"
+          },
+          {
+            "pdf_page": 92,
+            "quote": "1,128,707 tCO2e",
+            "printed_page": "91"
+          },
+          {
+            "pdf_page": 92,
+            "quote": "1,549,234 tCO2e",
+            "printed_page": "91"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "tCO2e",
+        "period": "FY2025"
+      }
+    }
+  ]
+}

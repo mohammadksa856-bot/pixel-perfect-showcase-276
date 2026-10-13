@@ -1,0 +1,86 @@
+{
+  "company_id": "sa:2082",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.acwapower.com/media/5ulnuxhn/api_consolidated_fs_year-end_2025-_3-03_compressed.pdf",
+  "source_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "shares_outstanding",
+      "value": 766490498,
+      "unit": "shares",
+      "period": "2025-12-31",
+      "as_of": null,
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 48,
+            "quote": "The Company’s authorised and fully paid-up share capital consists of 766,490,498 shares (31 December 2024: 732,561,928"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "par value SAR 10 each",
+        "unit": "shares",
+        "period": "2025-12-31"
+      }
+    },
+    {
+      "metric": "acquired_kuwait_bahrain_capacity",
+      "value": {
+        "power_gw": 4.6,
+        "water_m3_per_day": 1114000
+      },
+      "unit": "GW; m3/day",
+      "period": "2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "70",
+        "evidence": [
+          {
+            "pdf_page": 70,
+            "quote": "The acquired entities own gas-fired power generation (4.6GW), water desalination (1,114k m3/day) and related Operations and Maintenance companies."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Capacity of acquired Kuwait/Bahrain entities only, not group total",
+        "unit": "GW; m3/day",
+        "period": "2025"
+      }
+    },
+    {
+      "metric": "acwa_guc_capacity",
+      "value": 950,
+      "unit": "MW",
+      "period": "2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "7.1.2 ACWA GUC (the “Project Company”) is a 950 MW combined-cycle gas turbine power plant (the “Plant”) situated in Kirikkale, Turkey"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "MW",
+        "period": "2025"
+      }
+    }
+  ]
+}

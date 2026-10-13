@@ -1,0 +1,283 @@
+{
+  "company_id": "sa:2010",
+  "market": "SA",
+  "symbol": "2010",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "not_stated_in_document",
+  "filed_at_confidence": "unknown",
+  "filed_at_note": "The archived PDF does not state a publication date; 2026-03-31 is a placeholder pending Codex's official calendar (DATA-01).",
+  "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+  "reader": "manual.review/data-02-sabic-integrated-annual-report-2025",
+  "notes": "DATA-02 batch-01. Gap fill only: keys absent from the engine's current SABIC profile. Every item carries verbatim evidence (PDF page + quote).",
+  "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "vice_chairman_name",
+      "value": "Dr. Mohammed Al-Qahtani",
+      "category": "governance",
+      "metadata": {
+        "source_page": "91",
+        "evidence": [
+          {
+            "pdf_page": 91,
+            "quote": "KHALID AL-DABBAGH DR. MOHAMMED AL-QAHTANI Board Chairman, Non-Executive Director Board Vice Chairman, Non-Executive Director"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_term",
+      "value": {
+        "reconstituted": "2025-04",
+        "tenure_years": 3,
+        "previous_members_left_on": "2025-04-09"
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "90",
+        "evidence": [
+          {
+            "pdf_page": 90,
+            "quote": "Upon completion of its previous term, the Board and its Committees were duly reconstituted in April 2025. Their new term will continue for three years"
+          },
+          {
+            "pdf_page": 96,
+            "quote": "MEMBERS WHO LEFT THE BOARD AND ITS COMMITTEES ON APRIL 9, 2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_composition_note",
+      "value": "The Board is composed of a majority of independent and non-executive directors.",
+      "category": "governance",
+      "metadata": {
+        "source_page": "90",
+        "evidence": [
+          {
+            "pdf_page": 90,
+            "quote": "The Board is composed of a majority of independent and non-executive directors"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_committees",
+      "value": [
+        "Board Audit Committee (BAC)",
+        "Board Remuneration and Nomination Committee (BRNC)",
+        "Board Sustainability, Risk, and EHSS Committee (BSREC)",
+        "Board Investment Committee (BIC)"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "104",
+        "evidence": [
+          {
+            "pdf_page": 104,
+            "quote": "BOARD AUDIT COMMITTEE (BAC)"
+          },
+          {
+            "pdf_page": 106,
+            "quote": "COMMITTEE (BRNC)"
+          },
+          {
+            "pdf_page": 108,
+            "quote": "COMMITTEE (BSREC)"
+          },
+          {
+            "pdf_page": 110,
+            "quote": "BOARD INVESTMENT COMMITTEE (BIC)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_factors",
+      "value": {
+        "strategic": [
+          "Highly competitive industries",
+          "Cyclical nature of petrochemicals industry and market conditions",
+          "Environmental challenges",
+          "Evolving regulations relating to sustainability and ESG",
+          "Digital transformation and artificial intelligence (AI)"
+        ],
+        "operational": [
+          "Talent management",
+          "Disruption of supply chain services",
+          "Geopolitical instability and pandemic",
+          "Use of information technology",
+          "Inherent process safety",
+          "Projects under development"
+        ],
+        "compliance": [
+          "Intellectual property and technology licenses",
+          "Disputes and/or litigation",
+          "International trade controls",
+          "Use and handling of materials and products",
+          "Regional chemical regulations"
+        ],
+        "financial": [
+          "Customer credit",
+          "Foreign exchange",
+          "Insurance policies"
+        ]
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "Highly competitive industries"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Cyclical nature of petrochemicals industry and market conditions"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Evolving regulations relating to sustainability and ESG"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Inherent process safety"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Regional chemical regulations"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Customer credit"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Insurance policies"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Risk headings as listed in the report; no quantified exposure or ranking is disclosed."
+      }
+    },
+    {
+      "attribute_key": "competitive_environment",
+      "value": {
+        "named_competitors": "none named in this document",
+        "issuer_statement": "SABIC's principal competitors vary from product to product and range from large petrochemical companies to smaller regional companies."
+      },
+      "category": "competitive_position",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "SABIC’s principal competitors vary from product to product and range from large petrochemical companies to smaller regional companies."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "The report names no competitors. This is 'not disclosed in this document', not 'not applicable'."
+      }
+    },
+    {
+      "attribute_key": "dividend_policy",
+      "value": {
+        "mechanism": "Interim dividend for H1 announced after approval of Q2 interim results; H2 dividend announced after annual results are finalized.",
+        "disclosed_since": "2024",
+        "fixed_minimum": "not stated in this document"
+      },
+      "category": "dividends",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "In 2024, we disclosed our new mechanism for interim dividend distribution, under which interim dividends for the first half of the year will be announced following the approval of interim financial results for the second quarter of that same year."
+          },
+          {
+            "pdf_page": 19,
+            "quote": "the interim dividend distribution for the second half of the year will be announced after the annual financial results for the same year are finalized."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:2010:divestment:alba-2024",
+      "action_type": "divestment",
+      "title": "Agreement to sell 20.62% of ALBA to Ma'aden",
+      "announcement_date": "2024-09-17",
+      "status": "announced",
+      "currency": null,
+      "cash_amount": null,
+      "details": {
+        "shares": 292804000,
+        "stake_pct": 0.2062,
+        "buyer": "Saudi Arabian Mining Company (Ma'aden)",
+        "seller": "SABIC Industrial Investment Company",
+        "classification_fy2025": "asset held for sale",
+        "metadata": {
+          "source_page": "206",
+          "evidence": [
+            {
+              "pdf_page": 206,
+              "quote": "(corresponding to 17 September 2024), the Group announced the signing by SABIC Industrial Investment Company, a wholly owned subsidiary of SABIC, of an agreement for the sale of its holding of 292,804,000 ordinary shares in ALBA (representing 20.62% of its issued share capital) to Saudi Arabian Mining Company (“Ma’aden”).",
+              "printed_page": "206"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-01)"
+          }
+        }
+      }
+    }
+  ]
+}

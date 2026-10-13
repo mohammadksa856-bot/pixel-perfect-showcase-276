@@ -1,0 +1,60 @@
+{
+  "company_id": "sa:7010",
+  "kind": "corporate_action_candidates",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+  "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+  "why_not_in_manifest": "The engine requires announcement_date (NOT NULL); the report gives only payment dates. Not fabricated.",
+  "overlap_note": "Both were paid in 2025, so they are already inside Codex's sa:7010:dividend:2025:aggregate (SAR 21bn); per-event rows must not be summed with it.",
+  "candidates": [
+    {
+      "proposed_action_key": "sa:7010:dividend:2024:q4",
+      "action_type": "cash_dividend",
+      "dividend_per_share": 0.55,
+      "currency": "SAR",
+      "payment_date": "2025-03-24",
+      "announcement_date": null,
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q4 2024 dividend distribution (& 0.55 per share) 24 March 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "currency_note": "The riyal sign is rendered as a glyph ('%'/'&'/'$') in the PDF text layer; currency SAR per the audited statements (FS PDF p14)."
+      }
+    },
+    {
+      "proposed_action_key": "sa:7010:dividend:2024:special",
+      "action_type": "special_dividend",
+      "dividend_per_share": 2.0,
+      "currency": "SAR",
+      "payment_date": "2025-06-02",
+      "announcement_date": null,
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Special dividends distribution for 2024 (& 2 per share) 02 June 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "currency_note": "The riyal sign is rendered as a glyph ('%'/'&'/'$') in the PDF text layer; currency SAR per the audited statements (FS PDF p14)."
+      }
+    }
+  ]
+}

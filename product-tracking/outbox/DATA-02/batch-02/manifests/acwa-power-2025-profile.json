@@ -1,0 +1,1322 @@
+{
+  "company_id": "sa:2082",
+  "market": "SA",
+  "symbol": "2082",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-03",
+  "filed_at_basis": "board_authorisation_date_stated_in_document",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.acwapower.com/media/5ulnuxhn/api_consolidated_fs_year-end_2025-_3-03_compressed.pdf",
+  "source_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+  "source_archive": {
+    "engine_ref": "claude/data-utilities-1",
+    "engine_commit": "ce167a8",
+    "engine_archive_path": "data/raw/SA/2082/documents/b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295.pdf",
+    "on_engine_main": false,
+    "text_layer": "digital"
+  },
+  "reader": "manual.review/data-02-batch-02-acwa-power",
+  "notes": "DATA-02 batch-02. Qualitative profile from ACWA Power audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "ACWA POWER Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "ACWA POWER Company (the “Company” or “ACWA” or the “Group” or the “Parent”)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi listed joint stock company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "is a Saudi listed joint stock company"
+          },
+          {
+            "pdf_page": 1,
+            "quote": "(Saudi Listed Joint Stock Company)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": "1010253392",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "under commercial registration number 1010253392 dated 10 Rajab 1429H"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "(corresponding to 13 July 2008)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "CR dated 10 Rajab 1429H (13 July 2008); unified number not stated"
+      }
+    },
+    {
+      "attribute_key": "incorporation_date",
+      "value": "2008-07-05",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "established pursuant to a ministerial resolution numbered 215 dated 2 Rajab 1429H (corresponding to 5 July 2008)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Date of establishing ministerial resolution"
+      }
+    },
+    {
+      "attribute_key": "history_predecessor",
+      "value": "Shortly after its establishment in 2008, ACWA POWER acquired ACWA Power Projects (APP), which had been active since 2004.",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Shortly after its establishment in 2008, ACWA POWER acquired"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "ACWA Power Projects (APP), which had been active since 2004."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": "Exit 8, Eastern Ring Road, Qurtubah District, P.O. Box 22616, Riyadh 11416, Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Company’s Head Office is located at Exit 8, Eastern Ring Road, Qurtubah District, P.O."
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Box 22616, Riyadh 11416, Kingdom of Saudi Arabia"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": "KPMG Professional Services Company (signing partner Dr. Abdullah Hamad Al Fozan, License No 348; report dated 04 March 2026)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 6,
+            "quote": "KPMG Professional Services Company"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "Dr. Abdullah Hamad Al Fozan"
+          },
+          {
+            "pdf_page": 6,
+            "quote": "Riyadh on 04 March 2026"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "prepared in accordance with International Financial"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "(collectively referred as “IFRS as endorsed in"
+          },
+          {
+            "pdf_page": 2,
+            "quote": "in accordance with IFRS as issued by"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "functional_presentation_currency",
+      "value": "SAR (Saudi Riyal)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "which is the functional and presentation"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "currency of the Company"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "'These consolidated financial statements are presented in Saudi Riyals' — riyal sign extracted as glyph"
+      }
+    },
+    {
+      "attribute_key": "principal_activities",
+      "value": "The Company’s main activities are the development, investment, operation and maintenance of power generation, water desalination and green hydrogen production plants and bulk sale of electricity, desalinated water, green hydrogen and/or green ammonia to address the needs of state utilities and industries on long-term offtaker contracts under utility services outsourcing models in the Kingdom of Saudi Arabia and internationally.",
+      "category": "sector",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Company’s main activities are the development, investment, operation and maintenance of power generation, water"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "desalination and green hydrogen production plants and bulk sale of electricity, desalinated water, green hydrogen and/or green"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "ammonia to address the needs of state utilities and industries on long-term offtaker contracts under utility services outsourcing"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "contract_model",
+      "value": "Long-term offtaker contracts under utility services outsourcing models (PPAs/WPAs with state utilities and industries); short-term offtaker contracts in certain international jurisdictions; some PPAs/WPAs accounted as finance leases under IFRS 16",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Additionally, the group also has short-term offtaker contracts in"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "In relation to certain Power Purchase Agreements (“PPA”) or Water Purchase Agreements (“WPA”) between the Group’s"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "subsidiaries and their offtaker, the Group management has concluded that the PPA or WPA are within the scope of IFRS 16,"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_segments",
+      "value": [
+        {
+          "name": "Thermal and Water Desalination",
+          "description": "Power and water desalination plants using fossil fuel (oil, coal, gas) and stand-alone reverse osmosis desalination plants; IPPs, IWPPs and IWPs; develop, invest, operate and optimize"
+        },
+        {
+          "name": "Renewables",
+          "description": "PV, CSP, Wind plants and Hydrogen; develop, invest, operate and optimise"
+        },
+        {
+          "name": "Others",
+          "description": "Results of the ACWA Power reinsurance business"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "Thermal and"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "The term Thermal refers to the power and water desalination plants which use fossil fuel (oil, coal,"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Water Desalination refers to the stand-alone reverse osmosis desalination plants."
+          },
+          {
+            "pdf_page": 73,
+            "quote": "This includes the Group’s business line which comprises of PV (Photovoltaic), CSP (Concentrated"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Solar Power), Wind plants and Hydrogen."
+          },
+          {
+            "pdf_page": 73,
+            "quote": "This includes the results of the ACWA Power reinsurance business."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "chief_operating_decision_maker",
+      "value": "Management Committee, chaired by the Chief Executive Officer",
+      "category": "governance",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "The Group has determined that the Management Committee, chaired by the Chief Executive Officer, is the chief operating"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "geographic_presence",
+      "value": "Headquartered in KSA; revenue/non-current assets reported for Kingdom of Saudi Arabia, Middle East and Asia, and Africa; trade receivable exposures include UAE, KSA, Morocco, Jordan, Uzbekistan, Oman, China",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "The Company is headquartered in the Kingdom of Saudi Arabia."
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Middle East and Asia"
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Africa"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Morocco (covered by government letter of support)"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Hashemite Kingdom of Jordan (covered by government guarantee)"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Republic of Uzbekistan"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Sultanate of Oman (covered by government guarantee)"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "People’s Republic of China"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "customer_concentration",
+      "value": "One customer (2024: one) individually accounted for more than 10% of revenue, attributable to the Thermal and Water Desalination segment",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "During the year, one customer (2024: one) individually accounted for more than 10% of the Group’s revenues."
+          },
+          {
+            "pdf_page": 74,
+            "quote": "The revenue from these customers is attributable to the Thermal and Water Desalination reportable operating segment."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "key_direct_subsidiaries",
+      "value": [
+        {
+          "name": "ACWA Power Saudi Electricity and Water Development Company (APSE)",
+          "country": "KSA",
+          "direct_shareholding_2025": 1.0
+        },
+        {
+          "name": "Kahromaa Company",
+          "country": "KSA"
+        },
+        {
+          "name": "ACWA Power Reinsurance Co. Ltd. (ACWA Re)",
+          "country": "UAE (DIFC)"
+        },
+        {
+          "name": "Multiple Shares Company (MSC)",
+          "country": "KSA"
+        },
+        {
+          "name": "ACWA Power Bahrain Holdings W.L.L. (APBH)",
+          "country": "Bahrain"
+        },
+        {
+          "name": "ACWA Power Global Services Ltd. (APGS)",
+          "country": "UAE (DIFC)",
+          "direct_shareholding_2025": 1.0
+        },
+        {
+          "name": "ACWA Power Management and Investments One Ltd. (APMI One)",
+          "country": "UAE (DIFC)",
+          "direct_shareholding_2025": 1.0
+        },
+        {
+          "name": "ACWA Power Renewable Energy Holding Ltd. (APREH)",
+          "country": "UAE (DIFC)"
+        },
+        {
+          "name": "First National Holding Company (NOMAC)",
+          "country": "KSA",
+          "direct_shareholding_2025": 1.0
+        },
+        {
+          "name": "Nasamat for Energy Company (Formerly AIICO)",
+          "country": "KSA",
+          "direct_shareholding_2025": 1.0
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Information of the Group’s direct subsidiaries/investees as of 31 December is included in the below table:"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "(“APSE”)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Kahromaa Company"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "(“ACWA Re”)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Multiple Shares Company"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Holdings W.L.L. (“APBH”)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "ACWA Power Global"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "(“APMI One”)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "(“APREH”)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "First National Holding"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Company (Formerly AIICO)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Direct subsidiaries table note 1.1; shareholdings for columns that are ambiguous in two-column extraction omitted"
+      }
+    },
+    {
+      "attribute_key": "om_subsidiary_nomac",
+      "value": "NOMAC provides operation and maintenance (O&M) under long-term contracts for power, water desalination and related plants",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "NOMAC is engaged in constructing, owning,"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "maintenance (O&M) under long-term contracts."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "fs_approval_date",
+      "value": "2026-03-03",
+      "category": "governance",
+      "metadata": {
+        "source_page": "82",
+        "evidence": [
+          {
+            "pdf_page": 82,
+            "quote": "These consolidated financial statements were approved by the Board of Directors and authorised for issue on 14 Ramadan"
+          },
+          {
+            "pdf_page": 82,
+            "quote": "1447H, corresponding to 3 March 2026."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "related_party_policy",
+      "value": "Related parties include equity accounted investees, shareholders, key management personnel and affiliates; transactions on mutually agreed terms approved by the Board as necessary; IAS 24 government-related entity exemption used",
+      "category": "governance",
+      "metadata": {
+        "source_page": "62",
+        "evidence": [
+          {
+            "pdf_page": 62,
+            "quote": "The transactions with related parties are made on mutually agreed terms and approved by the Board of Directors as necessary."
+          },
+          {
+            "pdf_page": 62,
+            "quote": "the exemptions in respect of related party disclosures for government-related entities in IAS 24 “Related Party Disclosures”."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "employee_stock_incentive_program",
+      "value": "Employees Stock Incentive Program approved by the Board in 2023; 597,878 additional shares purchased (SAR 132.6m) after shareholder approval on 30 June 2025, held as treasury shares",
+      "category": "governance",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "Pursuant to Employees Stock Incentive Program (“Program”) as approved by the Board of Directors in 2023 and"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "Company purchased additional 597,878 shares amounting to"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "shareholder_public_investment_fund",
+      "value": {
+        "holder_name": "Public Investment Fund of Saudi Arabia",
+        "holder_type": "sovereign_wealth_fund",
+        "ownership_pct": null,
+        "as_of_date": "2025-12-31"
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "64",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "to the Public Investment Fund of Saudi Arabia (the “Shareholder”), was converted into a long-term non-interest-bearing"
+          },
+          {
+            "pdf_page": 62,
+            "quote": "controlled by Public Investment Fund, being the sovereign wealth fund of the Kingdom of Saudi Arabia."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "PIF identified as a shareholder; percentage holding not stated in FS",
+        "review_note": "The statements name PIF as 'the Shareholder' but give no holding percentage; delivered as an attribute, not an ownership row."
+      }
+    },
+    {
+      "attribute_key": "dividend_recognition_policy",
+      "value": "Final dividends recognised as liability when approved by General Assembly; interim/proposed dividends when approved by the Board",
+      "category": "dividends",
+      "metadata": {
+        "source_page": "28",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Final dividends are recognised as a liability at the time of their approval by the General Assembly."
+          },
+          {
+            "pdf_page": 28,
+            "quote": "dividends are recorded as and when approved by the Board of Directors."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "capital_management",
+      "value": "Board policy to maintain an efficient capital base; monitors return on capital employed and dividend level; not subject to externally imposed capital requirements",
+      "category": "risk",
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 48,
+            "quote": "The Board of Directors’ policy is to maintain an efficient capital base to retain investors, creditors, market confidence and to"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "The Company is not subject to"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "externally imposed capital requirements."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_governance",
+      "value": "Board has overall responsibility for risk management framework; Risk Management Committee develops and monitors policies and reports to the Board; risk management carried out by senior management",
+      "category": "risk",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 75,
+            "quote": "The Board of Directors has overall responsibility for the establishment and oversight of the Group’s risk management"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "framework. The Board has established a Risk Management Committee, which is responsible for developing and monitoring"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Risk management is carried out by senior management."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "financial_risk_categories",
+      "value": [
+        "market risk (currency, interest rate, other price)",
+        "credit risk",
+        "liquidity risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 75,
+            "quote": "The Group’s activities expose it to a variety of financial risks: market risk (including currency risk, interest rate risks and"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "other price risk), credit risk and liquidity risk."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "liquidity_risk_management",
+      "value": "Ensures sufficient bank facilities are available; SAR 2,436.0m undrawn on revolving corporate Murabaha and other revolvers at 31 Dec 2025",
+      "category": "risk",
+      "metadata": {
+        "source_page": "77",
+        "evidence": [
+          {
+            "pdf_page": 77,
+            "quote": "Accordingly, the Group ensures that sufficient bank facilities are always"
+          },
+          {
+            "pdf_page": 77,
+            "quote": "from its Revolving Corporate Murabaha Facility and other corporate revolver facilities."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "significant_judgements",
+      "value": [
+        "Impairment of PPE and equity accounted investees",
+        "Impairment of goodwill",
+        "Impairment of accounts receivable",
+        "Provisions",
+        "Useful lives of PPE",
+        "Fair value of unquoted financial instruments",
+        "Lease classification and subsequent remeasurement",
+        "Assets held for sale",
+        "Classification of joint arrangements",
+        "Control assessment"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 30,
+            "quote": "Impairment of property, plant and equipment and equity accounted investees"
+          },
+          {
+            "pdf_page": 30,
+            "quote": "Impairment of goodwill"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "(iii) Impairment of accounts receivable"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "(iv) Provisions"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "Useful lives of property, plant and equipment"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "(vi) Fair value of unquoted financial instruments"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "(vii) Lease classification and subsequent remeasurement"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "(viii) Assets held for sale"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "(ix) Classification of joint arrangements"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Control Assessment"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "climate_change_assessment",
+      "value": "Group monitors climate change impact on operating assets; mix of renewable and thermal assets; no material impact currently expected",
+      "category": "sustainability",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 30,
+            "quote": "The Group has a mix of renewable and thermal assets and currently no material impact is expected"
+          },
+          {
+            "pdf_page": 30,
+            "quote": "to emanate due to climate change considerations."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "going_concern",
+      "value": "Financial statements prepared on the going concern basis",
+      "category": "risk",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "The Group has prepared the financial statements on the basis that it will continue to operate as a going"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "concern."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:2082:cash_dividend:2024-02-28",
+      "action_type": "cash_dividend",
+      "title": "Cash dividend fy2023",
+      "announcement_date": "2024-02-28",
+      "payment_date": "2024-05-13",
+      "cash_amount": 329000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "dividend_per_share": 0.45,
+        "effective_date": "2024-04-29",
+        "metadata": {
+          "source_page": "49",
+          "evidence": [
+            {
+              "pdf_page": 49,
+              "quote": "On 28 February 2024, the Board of Directors approved a dividend payment of"
+            },
+            {
+              "pdf_page": 49,
+              "quote": "meeting held on 29 April 2024. The dividend was paid on 13 May 2024."
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          }
+        }
+      }
+    },
+    {
+      "action_key": "sa:2082:bonus_issue:2024-02-28",
+      "action_type": "bonus_issue",
+      "title": "Bonus issue 2024",
+      "announcement_date": "2024-02-28",
+      "currency": "SAR",
+      "status": "completed; capital increased from 7,310,997,290 to 7,325,619,280",
+      "details": {
+        "ratio": "1 for 500",
+        "effective_date": "2024-04-29",
+        "metadata": {
+          "source_page": "49",
+          "evidence": [
+            {
+              "pdf_page": 49,
+              "quote": "The Board of Directors, through circulation on 28 February 2024, recommended to increase the Company’s capital by"
+            },
+            {
+              "pdf_page": 49,
+              "quote": "granting 1 share for every 500 shares owned. The bonus share issuance was approved by the shareholders at the extraordinary"
+            },
+            {
+              "pdf_page": 49,
+              "quote": "general assembly meeting held on 29 April 2024."
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "No bonus issue in 2025 disclosed; this one was in 2024"
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "ownership_disclosure",
+      "title": "Pif shareholder loan",
+      "body_text": "2020 one-off dividend of SAR 2,701.0m; portion payable to PIF converted into SAR 901.0m long-term non-interest-bearing loan via a PIF subsidiary, to be repaid/settled by 31 December 2030",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "64",
+        "evidence": [
+          {
+            "pdf_page": 64,
+            "quote": "During 2020, the Group declared a one-off dividend of"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "loan amounting to"
+          },
+          {
+            "pdf_page": 64,
+            "quote": "The loan will be repaid or settled by 31 December 2030 unless the repayment or settlement"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Rights issue 2025",
+      "body_text": "{\"action_type\": \"rights_issue\", \"dividend_per_share\": null, \"ratio\": null, \"announcement_date\": null, \"eligibility_date\": null, \"payment_date\": null, \"effective_date\": \"2025-06-30\", \"cash_amount_total\": 7124900000, \"currency\": \"SAR\", \"status\": \"completed; net proceeds received 31 July 2025\", \"shares_offered\": 33928570, \"offer_price\": 210, \"capital_before\": 7325600000, \"capital_after\": 7664900000}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "49",
+        "evidence": [
+          {
+            "pdf_page": 49,
+            "quote": "On 30 June 2025 (corresponding to 05/01/1447H), the Company's Extraordinary General Assembly approved the"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "ordinary Shares at an Offering Price of"
+          },
+          {
+            "pdf_page": 49,
+            "quote": "of the rights on the Saudi Exchange were completed in July 2025, with net proceeds received on 31 July 2025."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "effective_date = EGM approval date"
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Contingencies and commitments",
+      "body_text": "Contingent liabilities (letters of guarantee, corporate guarantees for project company bank facilities, performance guarantees) of SAR 25.83bn (2024: 22.13bn); further equity commitments to investees SAR 9.68bn; EPC arbitration claim SAR 487.5m (ACWA share 195.0m) unprovided",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "72",
+        "evidence": [
+          {
+            "pdf_page": 72,
+            "quote": "As of 31 December 2025 the Group had outstanding contingent liabilities in the form of letters of guarantee, corporate"
+          },
+          {
+            "pdf_page": 72,
+            "quote": "guarantees issued in relation to bank facilities for project companies and performance guarantees amounting to"
+          },
+          {
+            "pdf_page": 72,
+            "quote": "There is a formal dispute between one of the project companies and its EPC Contractor relating to certain claims amounting"
+          },
+          {
+            "pdf_page": 72,
+            "quote": "therefore the group has not recorded any"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition kuwait bahrain 2025",
+      "body_text": "SPA to acquire equity interests in entities in Kuwait and Bahrain (gas-fired power, desalination, O&M) via new HoldCos for SAR 1,813m; Bahrain concluded 30 Nov 2025, Kuwait 31 Dec 2025; accounted as business combination",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "70",
+        "evidence": [
+          {
+            "pdf_page": 70,
+            "quote": "34.2 During the year ended 31 December 2025, the Group entered into a Sale and Purchase Agreement (“SPA”) to acquire equity interests in certain entities in Kuwait and Kingdom of"
+          },
+          {
+            "pdf_page": 70,
+            "quote": "was executed through newly created HoldCos under ACWA for an aggregate transaction consideration of"
+          },
+          {
+            "pdf_page": 70,
+            "quote": "concluded on 30 November 2025 and 31 December 2025 respectively following satisfaction of all conditions precedents (“CPs”) stipulated in the SPA."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition china renewables 2025",
+      "body_text": "Asset acquisitions of equity interests in entities in the People's Republic of China (Yanghe, Yangbu, Yanggong at 85% on 28 Mar 2025; Xinyang Mingshang 100% on 30 Sep 2025; Boli County Runfeng 100% on 29 Dec 2025)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "70",
+        "evidence": [
+          {
+            "pdf_page": 70,
+            "quote": "the Group entered into Sale and Purchase Purchase Agreements (“SPAs”) to acquire equity interests in certain"
+          },
+          {
+            "pdf_page": 70,
+            "quote": "entities incorporated in the People’s Republic of China, at various points during the reporting period."
+          },
+          {
+            "pdf_page": 70,
+            "quote": "Yanghe New Energy Power Generation Co. Ltd"
+          },
+          {
+            "pdf_page": 70,
+            "quote": "Boli County Runfeng New Energy Co., Ltd"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Swec stake acquisition spa",
+      "body_text": "24 Dec 2025 SPA to acquire Badeel's (PIF subsidiary) 32% stake in Shuaibah Water and Electricity Company (900 MW; 880,000 m3/day) for SAR 843.32m, raising effective ownership from 30% to 62%; subject to CPs",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "71",
+        "evidence": [
+          {
+            "pdf_page": 71,
+            "quote": "34.3 On 24 December 2025, the Group entered into a Sale and Purchase Agreement (“SPA”) to acquire the entire stake owned by Water and Electricity Holding Company “Badeel”"
+          },
+          {
+            "pdf_page": 71,
+            "quote": "ownership in SWEC from 30% to 62%. The completion of the transaction is subject to satisfaction of certain condition precedents (“CPs”) as highlighted in the SPA."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-24"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Divestment hajar mourjan 2025",
+      "body_text": "Divestment of 60% shareholding of Hajar One Holding Company and Al Mourjan Two Holding Company; loss of control, now equity accounted",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "Additionally, following the divestment of 60% shareholding of Hajar One Holding Company and Al Mourjan Two Holding Company and subsequent loss of control, these Group’s subsidiaries have been"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Major equity investments 2025",
+      "body_text": "Major additions to equity accounted investees in 2025: Noor Energy 1, Isha Holding, Saad 2 Holding and NEOM Green Hydrogen Company",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "7.1.1 The major additions made during the year ended 31 December 2025 is in relation to the Group’s investment in Noor Energy 1 P.S.C, Isha Holding Company, Saad 2 Holding Company and Neom Green"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Subsidiary bond refinancing 2025",
+      "body_text": "A subsidiary refinanced SAR 1,766.25m floating-rate senior debt via SAR 1,237.5m amortising bonds (via SPV) and a SAR 375.0m commercial facility; maturities Sep 2045-Dec 2046",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "56",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "16.6 During the year ended 31 December 2025, one of the Group’s subsidiaries refinanced its outstanding"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "floating-rate amortising bonds, with final maturities ranging between September 2045 and December 2046."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Sukuk program",
+      "body_text": "SAR 2,800.0m Sukuk issued 14 June 2021; SAR 1,800.0m Sukuk issued 2 Feb 2023 under SAR 4,600.0m programme; SIBOR plus margin, 7-year maturity. No new Sukuk in 2025 disclosed.",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "56",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "On 14 June 2021, the Group issued an Islamic bond (Sukuk) amounting to"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "2023, the Group completed the issuance of"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "The Sukuk will be redeemed at par on its maturity i.e., 7 years from the date of the"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "sustainability_disclosure",
+      "title": "Csr contribution",
+      "body_text": "SAR 36.3m CSR contributions in 2025 (2024: 46.2m) mainly education; SAR 75m commitment over 5 years in Uzbekistan",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "68",
+        "evidence": [
+          {
+            "pdf_page": 68,
+            "quote": "Saudi Arabia primarily to support education and related infrastructure, and other social responsibilities. In addition"
+          },
+          {
+            "pdf_page": 68,
+            "quote": "to this, in the upcoming 5 years, the Group has a commitment to contribute"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Subsequent events",
+      "body_text": "No material subsequent events expected; group entered into or negotiating various agreements",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "82",
+        "evidence": [
+          {
+            "pdf_page": 82,
+            "quote": "Management does not expect these to have any material impact on the Group’s consolidated results"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ]
+}

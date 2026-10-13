@@ -1,0 +1,1176 @@
+{
+  "batch": "DATA-02/batch-01",
+  "engine_commit": "b70254e",
+  "company_list_note": "Codex's central 20-company list was not found on any branch; batch 01 covers only the five companies named in the request. No substitute list was created.",
+  "rules": [
+    "A topic is never marked not_applicable automatically; missing disclosure is recorded with its reason.",
+    "Numeric topics are DATA-01 (Codex); this inventory only records their state.",
+    "engine_before reflects Codex's imports on engine main, not the bundled preview database."
+  ],
+  "reasons": {
+    "covered": "covered_by_engine_or_batch",
+    "not_in_doc": "not_disclosed_in_archived_document",
+    "doc_missing": "official_document_not_archived",
+    "net": "official_site_blocked_by_session_network_policy",
+    "licensed": "licensed_feed_required",
+    "market": "market_data_feed_required",
+    "numeric": "numeric_scope_DATA-01",
+    "not_reviewed": "archived_but_not_reviewed_in_batch_01"
+  },
+  "topics": [
+    {
+      "key": "identity",
+      "ar": "هوية الشركة"
+    },
+    {
+      "key": "business_model",
+      "ar": "نموذج العمل والمنتجات ومصادر الإيراد"
+    },
+    {
+      "key": "management_governance",
+      "ar": "الإدارة والحوكمة"
+    },
+    {
+      "key": "ownership",
+      "ar": "الملكية"
+    },
+    {
+      "key": "financial_statements",
+      "ar": "القوائم المالية"
+    },
+    {
+      "key": "earnings_quality",
+      "ar": "جودة الأرباح"
+    },
+    {
+      "key": "ratios",
+      "ar": "النسب المالية"
+    },
+    {
+      "key": "operating_kpis",
+      "ar": "المؤشرات التشغيلية"
+    },
+    {
+      "key": "dividends",
+      "ar": "التوزيعات"
+    },
+    {
+      "key": "sector_industry",
+      "ar": "القطاع والصناعة"
+    },
+    {
+      "key": "competitors",
+      "ar": "المنافسون"
+    },
+    {
+      "key": "trading_liquidity",
+      "ar": "التداول والسيولة"
+    },
+    {
+      "key": "guidance",
+      "ar": "التوجيهات والتوقعات"
+    },
+    {
+      "key": "analyst_coverage",
+      "ar": "تغطية المحللين"
+    },
+    {
+      "key": "valuation",
+      "ar": "التقييم"
+    },
+    {
+      "key": "risks",
+      "ar": "المخاطر والإفصاحات"
+    },
+    {
+      "key": "sustainability",
+      "ar": "الاستدامة"
+    },
+    {
+      "key": "news_ir",
+      "ar": "الأخبار ومواد المستثمرين"
+    }
+  ],
+  "companies": {
+    "2222": {
+      "identity": {
+        "state": "available",
+        "engine_before_b70254e": "37 attributes incl. ISIN, legal form, listing date",
+        "batch_01_added": [],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "engine_before_b70254e": "business_model, business_segments, products, revenue_by_product/geography facts",
+        "batch_01_added": [
+          "concession_terms"
+        ],
+        "remaining_gap": "unit economics not disclosed as fields",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "available",
+        "engine_before_b70254e": "board, independence, 4 committees with members, executives, board_term_end, compensation_policy (governance-risk.json)",
+        "batch_01_added": [
+          "risk_governance"
+        ],
+        "remaining_gap": "director remuneration amounts not reviewed in batch 01",
+        "reason": "archived_but_not_reviewed_in_batch_01",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "engine_before_b70254e": "4 ownership positions",
+        "batch_01_added": [],
+        "remaining_gap": "foreign-ownership limit / QFI not in archived report",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "engine_before_b70254e": "5y annual + 2 quarters (P01-14)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "engine_before_b70254e": "adjusted_net_income, income_quality",
+        "batch_01_added": [],
+        "remaining_gap": "auditor opinion / going-concern flag not in contract",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "available",
+        "engine_before_b70254e": "engine ratios",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "available",
+        "engine_before_b70254e": "production, liquids, reserves, lifting cost facts",
+        "batch_01_added": [],
+        "remaining_gap": "NGL reserves, liquids share, crude share of revenue → numeric-candidates",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "engine_before_b70254e": "dividend facts, 8 corporate actions",
+        "batch_01_added": [
+          "dividend_policy"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "engine_before_b70254e": "industry_overview, industry_drivers, regulatory_environment",
+        "batch_01_added": [],
+        "remaining_gap": "no aggregated sector statistics",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "partial",
+        "engine_before_b70254e": "competitive_environment (categories only)",
+        "batch_01_added": [],
+        "remaining_gap": "report names no competitor",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "engine_before_b70254e": "23 price days",
+        "batch_01_added": [],
+        "remaining_gap": "beta, volatility, ADTV, short interest",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "partial",
+        "engine_before_b70254e": "aramco-2025-guidance-targets.json",
+        "batch_01_added": [],
+        "remaining_gap": "none beyond Codex",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "engine_before_b70254e": "licensed_consensus_feed_required",
+        "batch_01_added": [],
+        "remaining_gap": "no licence",
+        "reason": "licensed_feed_required",
+        "candidate_official_sources": [],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no multiples in company_page (ACR-001)",
+        "batch_01_added": [],
+        "remaining_gap": "needs price feed + DATA-01",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "engine_before_b70254e": "12 narrative risk disclosures + litigation + liquidity",
+        "batch_01_added": [
+          "risk_factor_headings"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "available",
+        "engine_before_b70254e": "emissions, intensity, water; net-zero ambition",
+        "batch_01_added": [],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "Aramco Annual Report 2025 (archived, sha256 78bb678e8e45…)"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "partial",
+        "engine_before_b70254e": "15 disclosures",
+        "batch_01_added": [],
+        "remaining_gap": "post-2025 announcements need Tadawul feed",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "2010": {
+      "identity": {
+        "state": "available",
+        "engine_before_b70254e": "30 attributes",
+        "batch_01_added": [],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "engine_before_b70254e": "business_model incl. segments & feedstocks, products, geographic_presence",
+        "batch_01_added": [],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "engine_before_b70254e": "ceo_name, chairman_name, auditor",
+        "batch_01_added": [
+          "vice_chairman_name",
+          "board_term",
+          "board_composition_note",
+          "board_committees"
+        ],
+        "remaining_gap": "full director list with independence, committee members, remuneration (IAR pp. 89-110) not captured",
+        "reason": "archived_but_not_reviewed_in_batch_01",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "engine_before_b70254e": "Aramco Downstream 70%, free float 30%, foreign 6.21%",
+        "batch_01_added": [],
+        "remaining_gap": "foreign-ownership limit",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "engine_before_b70254e": "5y annual; no quarters (P01-14)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "engine_before_b70254e": "MARAFIQ restatement disclosure",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "available",
+        "engine_before_b70254e": "engine ratios",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "engine_before_b70254e": "segment volumes/EBITDA (gap-closure, sector-operational)",
+        "batch_01_added": [],
+        "remaining_gap": "none found beyond Codex",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "engine_before_b70254e": "H2-2024, H1/H2-2025 actions",
+        "batch_01_added": [
+          "dividend_policy"
+        ],
+        "remaining_gap": "no fixed policy amount disclosed",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "engine_before_b70254e": "industry classification; cycle risk disclosure",
+        "batch_01_added": [],
+        "remaining_gap": "no aggregated sector statistics",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "partial",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [
+          "competitive_environment"
+        ],
+        "remaining_gap": "report names no competitor",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no price history",
+        "batch_01_added": [],
+        "remaining_gap": "price feed",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "partial",
+        "engine_before_b70254e": "strategy_update: USD 3bn EBITDA uplift target",
+        "batch_01_added": [],
+        "remaining_gap": "none beyond Codex",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "engine_before_b70254e": "licensed_consensus_feed_required",
+        "batch_01_added": [],
+        "remaining_gap": "no licence",
+        "reason": "licensed_feed_required",
+        "candidate_official_sources": [],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no multiples",
+        "batch_01_added": [],
+        "remaining_gap": "needs price feed + DATA-01",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "partial",
+        "engine_before_b70254e": "1 risk_factor + liquidity + contingency disclosures",
+        "batch_01_added": [
+          "risk_factors"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "available",
+        "engine_before_b70254e": "carbon roadmap, GHG reduction",
+        "batch_01_added": [],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "SABIC Integrated Annual Report 2025 (archived, sha256 888b4c0373f7…)"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "partial",
+        "engine_before_b70254e": "13 disclosures",
+        "batch_01_added": [
+          "sa:2010:divestment:alba-2024"
+        ],
+        "remaining_gap": "post-2025 announcements",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "7010": {
+      "identity": {
+        "state": "available",
+        "engine_before_b70254e": "49-attribute profile (stc-2025-company-profile.json)",
+        "batch_01_added": [
+          "national_number"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "stc audited FS 2025 (archived, sha256 aeec895e88a6…)"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "engine_before_b70254e": "business_model, products_services, segment revenues (segments-financial-notes)",
+        "batch_01_added": [
+          "strategy_themes",
+          "subsidiary_highlight_stc_bank",
+          "business_segments",
+          "main_activities"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)",
+          "stc audited FS 2025 (archived, sha256 aeec895e88a6…)"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "available",
+        "engine_before_b70254e": "board list, committees, chair, CEO, audit committee",
+        "batch_01_added": [
+          "vice_chairman_name",
+          "board_term"
+        ],
+        "remaining_gap": "director independence classification and remuneration not reviewed",
+        "reason": "archived_but_not_reviewed_in_batch_01",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "engine_before_b70254e": "PIF 62%, public float 38%",
+        "batch_01_added": [],
+        "remaining_gap": "foreign-ownership limit",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "engine_before_b70254e": "Codex FY2025 imports",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "stc audited FS 2025 (archived, sha256 aeec895e88a6…)"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "engine_before_b70254e": "Codex notes",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "stc audited FS 2025 (archived, sha256 aeec895e88a6…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "engine_before_b70254e": "engine ratios once loaded",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "stc audited FS 2025 (archived, sha256 aeec895e88a6…)"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "engine_before_b70254e": "5G coverage 2021-2023 facts; subscriber update disclosure",
+        "batch_01_added": [],
+        "remaining_gap": "FY2025 5G coverage 63% filed as numeric candidate for DATA-01",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "engine_before_b70254e": "policy + Q1-Q4 2025 + aggregate",
+        "batch_01_added": [],
+        "remaining_gap": "Q4-2024 and special-2024 per-event rows lack announcement date → candidates",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "engine_before_b70254e": "stc-2024-industry-context.json, telecom regulation",
+        "batch_01_added": [
+          "market_share_by_revenue_ksa"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "CST telecom market indicators (Codex has stc-2024-industry-context.json)"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "annual report names no competitor; peers Mobily/Zain exist in engine as separate companies (inferred, not issuer-declared)",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no price history",
+        "batch_01_added": [],
+        "remaining_gap": "price feed",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "partial",
+        "engine_before_b70254e": "center3 capacity target, dividend policy horizon",
+        "batch_01_added": [],
+        "remaining_gap": "none beyond Codex",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "engine_before_b70254e": "licensed_consensus_feed_required",
+        "batch_01_added": [],
+        "remaining_gap": "no licence",
+        "reason": "licensed_feed_required",
+        "candidate_official_sources": [],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no multiples",
+        "batch_01_added": [],
+        "remaining_gap": "needs price feed + DATA-01",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "engine_before_b70254e": "8 risk disclosures",
+        "batch_01_added": [
+          "enterprise_risk_families"
+        ],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "available",
+        "engine_before_b70254e": "emission targets, ESG scores, Saudization",
+        "batch_01_added": [],
+        "remaining_gap": "none found",
+        "reason": "covered_by_engine_or_batch",
+        "candidate_official_sources": [
+          "stc Annual Report 2025 (archived, sha256 7dccc9e19eb2…)"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "available",
+        "engine_before_b70254e": "20 disclosures",
+        "batch_01_added": [],
+        "remaining_gap": "post-2025 announcements",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "1120": {
+      "identity": {
+        "state": "available",
+        "engine_before_b70254e": "0 attributes (P01-14: no_sourced_company_attributes)",
+        "batch_01_added": [
+          "legal_name",
+          "legal_form",
+          "founding_date",
+          "commercial_registration",
+          "national_number",
+          "headquarters_address",
+          "auditor",
+          "reporting_standard",
+          "currency"
+        ],
+        "remaining_gap": "ISIN, listing date, website not in FS",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "Al Rajhi audited FY2025 FS (archived, sha256 67b6f23b571e…)",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [
+          "business_activity",
+          "shariah_compliance",
+          "business_segments",
+          "subsidiaries_and_foreign_branches"
+        ],
+        "remaining_gap": "product and revenue-source breakdown beyond segments; subsidiary table continues on PDF p17 (not captured)",
+        "reason": "archived_but_not_reviewed_in_batch_01",
+        "candidate_official_sources": [
+          "Al Rajhi audited FY2025 FS (archived, sha256 67b6f23b571e…)",
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "CEO, chairman, board, committees, Shariah board, remuneration: not in FS",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "unavailable",
+        "engine_before_b70254e": "0 ownership positions",
+        "batch_01_added": [],
+        "remaining_gap": "major shareholders, foreign ownership: not in FS",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session",
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "available",
+        "engine_before_b70254e": "5y annual; 0 quarters (P01-14)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Al Rajhi audited FY2025 FS (archived, sha256 67b6f23b571e…)"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "engine_before_b70254e": "bank metrics",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Al Rajhi audited FY2025 FS (archived, sha256 67b6f23b571e…)"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "available",
+        "engine_before_b70254e": "bank ratio set",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Al Rajhi audited FY2025 FS (archived, sha256 67b6f23b571e…)"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "engine_before_b70254e": "branches in 2026-Q2 supplement facts; not delivered by API (P01-14)",
+        "batch_01_added": [
+          "branches",
+          "employees"
+        ],
+        "remaining_gap": "ATMs, customers, digital KPIs",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "partial",
+        "engine_before_b70254e": "dividends_paid fact; DCR-001 per-share unit defect withheld",
+        "batch_01_added": [
+          "sa:1120:dividend:2025:h1",
+          "sa:1120:dividend:2024:h2",
+          "sa:1120:dividend:2025:h2"
+        ],
+        "remaining_gap": "dividend policy text not in FS",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "engine_before_b70254e": "classification only",
+        "batch_01_added": [],
+        "remaining_gap": "SAMA banking statistics",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "SAMA / Insurance Authority sector statistics — not archived"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "engine_before_b70254e": "inferred peers only (P01-15)",
+        "batch_01_added": [],
+        "remaining_gap": "no issuer-declared competitors in FS",
+        "reason": "not_disclosed_in_archived_document",
+        "candidate_official_sources": [
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no price history",
+        "batch_01_added": [],
+        "remaining_gap": "price feed",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "guidance is in investor presentations, not archived",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "engine_before_b70254e": "licensed_consensus_feed_required",
+        "batch_01_added": [],
+        "remaining_gap": "no licence",
+        "reason": "licensed_feed_required",
+        "candidate_official_sources": [],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "engine_before_b70254e": "no multiples",
+        "batch_01_added": [],
+        "remaining_gap": "needs price feed + DATA-01",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "partial",
+        "engine_before_b70254e": "Pillar III quantitative disclosures",
+        "batch_01_added": [
+          "risk_management"
+        ],
+        "remaining_gap": "principal-risk narrative of the annual report",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Al Rajhi audited FY2025 FS (archived, sha256 67b6f23b571e…)",
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "ESG report not archived",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Al Rajhi Integrated Annual Report 2025 / Board of Directors report (alrajhibank.com.sa) — not archived, site blocked"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "partial",
+        "engine_before_b70254e": "0 disclosures",
+        "batch_01_added": [],
+        "remaining_gap": "announcements",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "candidate_official_sources": [
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "8010": {
+      "identity": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "engine_before_b70254e": "30 FY2025 facts from an unverified import file (P02/BR-007 notice)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope; original PDF unverifiable",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "engine_before_b70254e": "30 FY2025 facts from an unverified import file (P02/BR-007 notice)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope; original PDF unverifiable",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "engine_before_b70254e": "30 FY2025 facts from an unverified import file (P02/BR-007 notice)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope; original PDF unverifiable",
+        "reason": "numeric_scope_DATA-01",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "engine_before_b70254e": "30 FY2025 facts from an unverified import file (P02/BR-007 notice)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope; original PDF unverifiable",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "engine_before_b70254e": "licensed_consensus_feed_required",
+        "batch_01_added": [],
+        "remaining_gap": "no licence",
+        "reason": "licensed_feed_required",
+        "candidate_official_sources": [],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "partial",
+        "engine_before_b70254e": "30 FY2025 facts from an unverified import file (P02/BR-007 notice)",
+        "batch_01_added": [],
+        "remaining_gap": "numeric scope; original PDF unverifiable",
+        "reason": "market_data_feed_required",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "engine_before_b70254e": "none",
+        "batch_01_added": [],
+        "remaining_gap": "qualitative profile: No original Tawuniya document is archived (tawuniya-2025-fy.json is an import file whose PDF returned 403). Nothing can be quoted, so nothing is added.",
+        "reason": "official_document_not_archived",
+        "candidate_official_sources": [
+          "Tawuniya Annual Report 2025 https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf — 403 for Codex, blocked here",
+          "Tawuniya Board of Directors report 2025 (tawuniya.com / Saudi Exchange) — not archived",
+          "Saudi Exchange issuer profile and announcements (saudiexchange.sa) — blocked in this session"
+        ],
+        "applicability": "applicable"
+      }
+    }
+  }
+}

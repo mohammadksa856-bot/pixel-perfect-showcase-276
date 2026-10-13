@@ -1,0 +1,118 @@
+{
+  "company_id": "sa:7010",
+  "market": "SA",
+  "symbol": "7010",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "not_stated_in_document",
+  "filed_at_confidence": "unknown",
+  "filed_at_note": "Same placeholder date Codex uses in stc-2025-company-profile.json; the archived PDF states no publication date.",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc_Annual-2025-en.pdf",
+  "reader": "manual.review/data-02-stc-financial-statements-2025",
+  "notes": "DATA-02 batch-01. New keys from the audited FY2025 consolidated financial statements only.",
+  "source_sha256": "aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "national_number",
+      "value": "700876768",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "National No. 700876768",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_segments",
+      "value": [
+        "stc",
+        "Channels",
+        "Solutions",
+        "stc Kuwait",
+        "stc Bahrain",
+        "Center 3",
+        "STC Bank",
+        "Sirar",
+        "Specialized",
+        "iot2",
+        "SCCC",
+        "Other operating segments"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 54,
+            "quote": "9. SEGMENT INFORMATION"
+          },
+          {
+            "pdf_page": 54,
+            "quote": "Revenue is distributed to an operating segment based on the entity of the Group reporting the revenue."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Segment names as in FS note 9. Segment revenues are already Codex facts (stc-2025-segments-financial-notes.json) and match this note."
+      }
+    },
+    {
+      "attribute_key": "main_activities",
+      "value": [
+        "Fixed and mobile telecommunication networks, systems and infrastructure",
+        "Telecommunication and IT services, managed and cloud services, internet of things",
+        "Digital banking services",
+        "Cybersecurity services",
+        "Construction and maintenance of telecommunication and radar stations and towers",
+        "Real estate investment",
+        "Supply chain services"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "comprise the provision of telecommunications, information, media services and digital payments",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Provide digital banking services.",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 13,
+            "quote": "Provide cybersecurity services.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Selection of the 16 activities listed in FS note 1(B); full list in the source."
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "company_id": "sa:2222",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+  "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+  "for": "DATA-01 (Codex). Not ingested; proposed metric keys are suggestions only.",
+  "candidates": [
+    {
+      "metric": "crude_oil_sales_share_of_revenue",
+      "value": 0.442,
+      "unit": "ratio",
+      "period_kind": "fy",
+      "fiscal_year": 2025,
+      "prior_year_value": 0.47,
+      "metadata": {
+        "source_page": "82",
+        "evidence": [
+          {
+            "pdf_page": 84,
+            "quote": "Sales of crude oil are the largest component of Aramco’s consolidated revenue and other income related to sales, accounting for 44.2% and 47.0% for the years ended December 31, 2025 and 2024, respectively.",
+            "printed_page": "82"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "metric": "ngl_reserves",
+      "value": 26.2,
+      "unit": "billion_barrels",
+      "period_kind": "instant",
+      "period_end": "2025-12-31",
+      "prior_year_value": 26.1,
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "26.2 billion barrels of NGL (2024: 26.1 billion barrels)",
+            "printed_page": "48"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "metric": "liquids_share_of_hydrocarbon_production",
+      "value": 0.83,
+      "unit": "ratio",
+      "period_kind": "fy",
+      "fiscal_year": 2025,
+      "prior_year_value": 0.83,
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "approximately 83% (2024: 83%) of the aggregate hydrocarbon production consisted of liquids",
+            "printed_page": "48"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ]
+}

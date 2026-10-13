@@ -1,0 +1,1208 @@
+{
+  "company_id": "sa:4190",
+  "market": "SA",
+  "symbol": "4190",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/454_0_2026-03-31_11-52-35_En.pdf",
+  "source_sha256": "7c1e35764a96d4d66cc748468d4608d9e4d2b13ff159e990596948c6e9ce2f36",
+  "source_archive": {
+    "engine_ref": "claude/data-retail-1",
+    "engine_commit": "ccead20",
+    "engine_archive_path": "data/raw/SA/4190/documents/7c1e35764a96d4d66cc748468d4608d9e4d2b13ff159e990596948c6e9ce2f36.pdf",
+    "on_engine_main": false,
+    "text_layer": "notes digital; primary statements scanned"
+  },
+  "reader": "manual.review/data-02-batch-02-jarir",
+  "notes": "DATA-02 batch-02. Qualitative profile from Jarir audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Jarir Marketing Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Jarir Marketing Company (the \"Company”) is a Saudi joint stock company",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi joint stock company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "1",
+        "evidence": [
+          {
+            "pdf_page": 1,
+            "quote": "(A Saudi Joint Stock Company)"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "is a Saudi joint stock company formed pursuant to the resolution",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "joint_stock_formation",
+      "value": "Formed pursuant to Ministry of Commerce resolution No. 1193 dated Rajab 11, 1421H (October 8, 2000)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "formed pursuant to the resolution of the Ministry of Commerce Number 1193 dated Rajab 11, 1421H (corresponding to October 8, 2000)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2000-10-08"
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "cr_number": "1010032264",
+        "cr_date": "1980-07-01",
+        "cr_date_hijri": "Shaa'ban 18, 1400H",
+        "unified_national_no": "7000953104"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Unified National No. 7000953104 and Commercial Registration Number 1010032264 dated Shaa'ban 18, 1400H (corresponding to July 1, 1980)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters",
+      "value": "Riyadh, Kingdom of Saudi Arabia (registered office); no street address given",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Company's registered office is based in Riyadh.",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "is registered in Riyadh, Kingdom of Saudi Arabia",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Only city stated; full street address not disclosed"
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": "Ernst & Young Professional Services (Professional LLC)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "Ernst & Young Professional Services (Professional LLC)"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "We have audited the consolidated financial statements of Jarir Marketing Company"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Auditor letterhead on digital audit-report page; signing partner/date page is scanned and not quoted"
+      }
+    },
+    {
+      "attribute_key": "audit_opinion",
+      "value": "Unmodified (presents fairly, in all material respects)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "present fairly, in all material respects, the consolidated financial position of the Group as at 31 December 2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "key_audit_matters",
+      "value": [
+        "Revenue recognition",
+        "Existence and valuation of inventories"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Revenue recognition"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "Existence and valuation of inventories"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "have been prepared in accordance with International Financial Reporting Standards as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by the Saudi Organization for Chartered and Professional Accountants",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "19",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "The consolidated financial statements are presented in Saudi Riyals, which is the Company's functional currency and the Group's presentation currency."
+          },
+          {
+            "pdf_page": 14,
+            "quote": "(All amounts in Saudi Riyals thousands unless otherwise stated)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Amounts in SAR thousands unless otherwise stated"
+      }
+    },
+    {
+      "attribute_key": "fiscal_year_end",
+      "value": "December 31",
+      "category": "identity",
+      "metadata": {
+        "source_page": "1",
+        "evidence": [
+          {
+            "pdf_page": 1,
+            "quote": "For the year ended December 31, 2025"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activities",
+      "value": "Retail and wholesale trading in office and school supplies, smartphones and accessories, books, educational aids, office furniture, engineering equipment, computers and computer systems, electronic and electrical devices, video games and accessories, maintenance of computers, smartphones and electronic and electrical devices, sports and scout equipment and paper; purchase of residential and commercial buildings and acquisition of land to construct buildings for sale or lease",
+      "category": "sector",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "include; retail and wholesale trading in office and school supplies, smartphones and accessories, books, educational aids, office furniture, engineering equipment, computers and computer systems, electronic and electrical devices, video games and accessories, maintenance of computers, smartphones and electronic and electrical devices, sports and scout equipment and paper.",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "It also includes, purchase of residential and commercial buildings and the acquisition of land to construct buildings for sale or lease for the interest of the Company.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "revenue_disaggregation_categories",
+      "value": [
+        "Smartphones, electronics and accessories",
+        "Other IT and digital products and services",
+        "Books and office, school and arts supplies"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "The following table sets out the Group’s revenue disaggregated by products and services category by reportable segment:",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Smartphones, electronics and accessories",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Other IT and digital products and services",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Books and office, school and arts supplies",
+            "printed_page": "41"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_segments",
+      "value": [
+        {
+          "name": "Retail outlets",
+          "description": "Sale of office supplies, school supplies, books, computers & peripherals, computer supplies, smartphones and accessories, electronics, art & craft supplies, video games, smart TV's, kids' development products and provides after-sale services"
+        },
+        {
+          "name": "Wholesale",
+          "description": "Sale of office supplies, school supplies, computer supplies, and art & craft supplies to other resellers"
+        },
+        {
+          "name": "E-commerce",
+          "description": "Online sales through Jarir.com website and Jarir Bookstore app"
+        },
+        {
+          "name": "All other segments",
+          "description": "Mainly corporate sales and rentals"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "44",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "The Group has three major operating segments namely, retail outlets, wholesale and E-commerce.",
+            "printed_page": "44"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "Sale of office supplies, school supplies, computer supplies, and art & craft supplies to other resellers.",
+            "printed_page": "44"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "The sources of income of those segments mainly include corporate sales and rentals.",
+            "printed_page": "44"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "geographic_segments",
+      "value": [
+        "Kingdom of Saudi Arabia",
+        "Other Gulf countries and Egypt"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "The Group operates in two geographical segments namely, Saudi Arabia and other Gulf countries and Egypt.",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "subsidiaries",
+      "value": [
+        {
+          "name": "Jarir Bookstore (United Company for Office Supplies) WLL",
+          "type": "Subsidiary",
+          "country": "Qatar",
+          "ownership_pct": 1.0
+        },
+        {
+          "name": "Jarir Trading Company LLC",
+          "type": "Subsidiary",
+          "country": "UAE",
+          "ownership_pct": 1.0
+        },
+        {
+          "name": "United Bookstore",
+          "type": "Subsidiary",
+          "country": "UAE",
+          "ownership_pct": 1.0
+        },
+        {
+          "name": "Jarir Marketing Company, Sharjah branch",
+          "type": "Branch",
+          "country": "UAE",
+          "ownership_pct": 1.0
+        },
+        {
+          "name": "Jarir International Central Market WLL",
+          "type": "Subsidiary",
+          "country": "Kuwait",
+          "ownership_pct": 1.0
+        },
+        {
+          "name": "Jarir Egypt Real Estate Company - SAE",
+          "type": "Subsidiary",
+          "country": "Egypt",
+          "ownership_pct": 1.0
+        },
+        {
+          "name": "Jarir Marketing Bahrain WLL",
+          "type": "Subsidiary",
+          "country": "Bahrain",
+          "ownership_pct": 1.0
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "Supplies) WLL Subsidiary Qatar 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Jarir Trading Company LLC Subsidiary UAE 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "United Bookstore Subsidiary UAE 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Jarir Marketing Company, Sharjah branch Branch UAE 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Jarir International Central Market WLL Subsidiary Kuwait 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Jarir Egypt Real Estate Company - SAE Subsidiary Egypt 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Jarir Marketing Bahrain WLL Subsidiary Bahrain 100% 100%",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "Certain ownership interests in the subsidiaries are registered in the name of trustees who have formally assigned their shares to the Company.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Direct and indirect ownership; quotes are -layout table rows",
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "fs_board_approval_date",
+      "value": "2026-03-30",
+      "category": "governance",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "approved by the Company's Board of Directors on Shawal 11, 1447 (corresponding to March 30, 2026)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "share_structure",
+      "value": {
+        "shares": 1200000000,
+        "par_value_sar": 1
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Company's share capital amounting to Saudi Riyals 1,200 million, as of December 31, 2025, is divided into 1,200 million ordinary shares of par value Saudi Riyals 1 each.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31",
+        "review_note": "share_capital amount is already a Codex numeric fact (BATCH20_GAP_MATRIX fields_present); only share count and par value are delivered."
+      }
+    },
+    {
+      "attribute_key": "financial_risk_management",
+      "value": {
+        "categories": [
+          "credit risk",
+          "foreign currency risk",
+          "interest rate risk",
+          "liquidity risk"
+        ],
+        "governance": "Board has overall responsibility; finance function assists"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "The principal financial risks faced by the Group relate to credit risk, foreign currency risk, interest rate risk and liquidity risk.",
+            "printed_page": "48"
+          },
+          {
+            "pdf_page": 50,
+            "quote": "The Board has overall responsibility for setting the Group's risk management objectives and policies",
+            "printed_page": "48"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:4190:cash_dividend:2025-03-23",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20250323",
+      "announcement_date": "2025-03-23",
+      "cash_amount": 276000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 23, May 11, August 5, and November 5, 2025 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Saudi Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 192 million, and Saudi Riyals 336 million respectively, which were paid to the shareholders during the year ended December 31, 2025 (Saudi Riyals 0.86 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2025; per-share amount stated only in aggregate for the year (0.86 SAR); based on General Assembly pre-approval",
+          "period": "FY2025"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2025-05-11",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20250511",
+      "announcement_date": "2025-05-11",
+      "cash_amount": 228000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 23, May 11, August 5, and November 5, 2025 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Saudi Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 192 million, and Saudi Riyals 336 million respectively, which were paid to the shareholders during the year ended December 31, 2025 (Saudi Riyals 0.86 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2025; per-share amount stated only in aggregate for the year (0.86 SAR); based on General Assembly pre-approval",
+          "period": "FY2025"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2025-08-05",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20250805",
+      "announcement_date": "2025-08-05",
+      "cash_amount": 192000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 23, May 11, August 5, and November 5, 2025 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Saudi Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 192 million, and Saudi Riyals 336 million respectively, which were paid to the shareholders during the year ended December 31, 2025 (Saudi Riyals 0.86 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2025; per-share amount stated only in aggregate for the year (0.86 SAR); based on General Assembly pre-approval",
+          "period": "FY2025"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2025-11-05",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20251105",
+      "announcement_date": "2025-11-05",
+      "cash_amount": 336000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 23, May 11, August 5, and November 5, 2025 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Saudi Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 192 million, and Saudi Riyals 336 million respectively, which were paid to the shareholders during the year ended December 31, 2025 (Saudi Riyals 0.86 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2025; per-share amount stated only in aggregate for the year (0.86 SAR); based on General Assembly pre-approval",
+          "period": "FY2025"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2024-03-07",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20240307",
+      "announcement_date": "2024-03-07",
+      "cash_amount": 276000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 7, May 13, August 8, and November 7, 2024 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 180 million and Saudi Riyals 312 million respectively, which were paid to the shareholders during the year ended December 31, 2024 (Saudi Riyals 0.83 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2024; per-share amount stated only in aggregate for the year (0.83 SAR); based on General Assembly pre-approval",
+          "period": "FY2024"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2024-05-13",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20240513",
+      "announcement_date": "2024-05-13",
+      "cash_amount": 228000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 7, May 13, August 8, and November 7, 2024 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 180 million and Saudi Riyals 312 million respectively, which were paid to the shareholders during the year ended December 31, 2024 (Saudi Riyals 0.83 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2024; per-share amount stated only in aggregate for the year (0.83 SAR); based on General Assembly pre-approval",
+          "period": "FY2024"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2024-08-08",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20240808",
+      "announcement_date": "2024-08-08",
+      "cash_amount": 180000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 7, May 13, August 8, and November 7, 2024 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 180 million and Saudi Riyals 312 million respectively, which were paid to the shareholders during the year ended December 31, 2024 (Saudi Riyals 0.83 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2024; per-share amount stated only in aggregate for the year (0.83 SAR); based on General Assembly pre-approval",
+          "period": "FY2024"
+        }
+      }
+    },
+    {
+      "action_key": "sa:4190:cash_dividend:2024-11-07",
+      "action_type": "cash_dividend",
+      "title": "Interim cash dividend 20241107",
+      "announcement_date": "2024-11-07",
+      "cash_amount": 312000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "issuer_action_label": "interim_cash_dividend",
+        "metadata": {
+          "source_page": "43",
+          "evidence": [
+            {
+              "pdf_page": 45,
+              "quote": "the Board of Directors in their meetings held on March 7, May 13, August 8, and November 7, 2024 resolved to distribute interim cash dividends",
+              "printed_page": "43"
+            },
+            {
+              "pdf_page": 45,
+              "quote": "Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 180 million and Saudi Riyals 312 million respectively, which were paid to the shareholders during the year ended December 31, 2024 (Saudi Riyals 0.83 per share).",
+              "printed_page": "43"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Board resolution date; paid during 2024; per-share amount stated only in aggregate for the year (0.83 SAR); based on General Assembly pre-approval",
+          "period": "FY2024"
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Brand and channels",
+      "body_text": "All retail outlets operate under the 'Jarir bookstore' brand; online sales via Jarir.com website and Jarir Bookstore app",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "44",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "All the retail outlets operate under the “Jarir bookstore” brand.",
+            "printed_page": "44"
+          },
+          {
+            "pdf_page": 46,
+            "quote": "Online sales through “Jarir.com” website and “Jarir Bookstore app” of the same products and services offered in the retail outlets.",
+            "printed_page": "44"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Seasonality",
+      "body_text": "Sales positively affected by back-to-school seasons, particularly school and office supplies",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "The Group’s sales are positively affected by the back to school seasons, particularly sales of school and office supplies.",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Other income sources",
+      "body_text": "Rental revenue from investment properties and subleases; administrative fees from financing companies providing purchase finance to customers",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 45,
+            "quote": "administrative fees earned from financing companies which provide purchases finance service to the customers of the Group",
+            "printed_page": "43"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Lease portfolio",
+      "body_text": "Leases showrooms, storage spaces and employee housing, plus retail spaces for sublease attached to showrooms; typical term 5-25 years, fixed rent with escalation clauses; also leases out investment properties as lessor",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "The Group leases showrooms, storage spaces, and employee housing.",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "The leases typically run for periods between 5 and 25 years and on a fixed rent basis with escalation clauses.",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 48,
+            "quote": "The Group leases out its investment properties which consist of its owned as well as leased properties.",
+            "printed_page": "46"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Key management compensation",
+      "body_text": "Key management personnel (including all board members) compensation disclosed: short-term benefits, post-employment benefits and long-term incentive plan",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "Key management personnel, including all members of the board of directors, compensation comprised the following:",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "Other long-term benefits (long-term incentive plan)",
+            "printed_page": "41"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Related parties",
+      "body_text": "Board of Directors and parties related to the Board of Directors (construction and engineering services, rent income/expense, consulting services)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 42,
+            "quote": "Parties related to the Board of Directors",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 42,
+            "quote": "Construction and engineering services – cost",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "This balance includes capital commitment of Saudi Riyals 21.1 million with a party related to the Board of Directors",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Dividend policy",
+      "body_text": "Maintain dividend payout at no less than 80%; interim dividends based on General Assembly pre-approval",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "the Group may issue new shares or adjust the dividend payment to shareholders, while maintaining dividend payout at no less than 80%.",
+            "printed_page": "54"
+          },
+          {
+            "pdf_page": 45,
+            "quote": "Based on the pre-approval of the General Assembly",
+            "printed_page": "43"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Capital management policy",
+      "body_text": "Keep ratio of net debt to shareholders' equity below 50%",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "The Group’s policy is to keep this ratio below 50%.",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Contingencies and commitments",
+      "body_text": "Letters of credit and letters of guarantee outstanding; capital commitments SAR 35.6m (2024: 44.3m) mainly for construction of buildings and leasehold improvements",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "Letters of credit",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "At December 31, 2025, the Group had capital commitments of Saudi Riyals 35.6 million (December 31, 2024: Saudi Riyals 44.3 million).",
+            "printed_page": "45"
+          },
+          {
+            "pdf_page": 47,
+            "quote": "principally relating to the construction of the buildings and leasehold improvements",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Zakat status",
+      "body_text": "ZATCA finalized to 2015; 2016-2022 disputes settled; 2023 no differences; 2024 under review",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "38",
+        "evidence": [
+          {
+            "pdf_page": 40,
+            "quote": "ZATCA completed review of year 2023 and found no assessment differences to claim.",
+            "printed_page": "38"
+          },
+          {
+            "pdf_page": 40,
+            "quote": "Year 2024 is currently under review by ZATCA, and not yet concluded.",
+            "printed_page": "38"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Egypt currency hyperinflation risk",
+      "body_text": "Egypt not considered hyperinflationary at 31 Dec 2025; IAS 29 may apply in future",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "Egypt was not considered hyperinflationary as at December 31, 2025",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Subsequent events",
+      "body_text": "Intensified Middle East geopolitical tensions after year-end; no material impact identified; non-adjusting event",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "56",
+        "evidence": [
+          {
+            "pdf_page": 58,
+            "quote": "Subsequent to the reporting date, geopolitical tensions in the Middle East have intensified leading to regional instability.",
+            "printed_page": "56"
+          },
+          {
+            "pdf_page": 58,
+            "quote": "These developments represent a non-adjusting event after the reporting period",
+            "printed_page": "56"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ]
+}

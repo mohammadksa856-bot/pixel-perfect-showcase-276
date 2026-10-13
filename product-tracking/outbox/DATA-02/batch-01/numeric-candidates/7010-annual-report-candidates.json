@@ -1,0 +1,37 @@
+{
+  "company_id": "sa:7010",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+  "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+  "for": "DATA-01 (Codex). Not ingested. Codex's metric key five_g_coverage exists for 2021-2023 (stc-2021-2023-network-kpis.json).",
+  "candidates": [
+    {
+      "metric": "five_g_coverage",
+      "value": 0.63,
+      "unit": "ratio",
+      "period_kind": "fy",
+      "fiscal_year": 2025,
+      "dimensions": {
+        "network_type": "5G",
+        "geography": "Saudi Arabia"
+      },
+      "metadata": {
+        "source_page": "38",
+        "evidence": [
+          {
+            "pdf_page": 20,
+            "quote": "In KSA, stc group expanded its nationwide 5G network, achieving 63% population coverage",
+            "printed_page": "38"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Narrative statement in the FY2025 report; measurement date within the year not stated."
+      }
+    }
+  ]
+}

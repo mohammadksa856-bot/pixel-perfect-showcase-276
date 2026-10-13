@@ -1,0 +1,53 @@
+{
+  "company_id": "sa:4190",
+  "symbol": "4190",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/454_0_2026-03-31_11-52-35_En.pdf",
+  "source_sha256": "7c1e35764a96d4d66cc748468d4608d9e4d2b13ff159e990596948c6e9ce2f36",
+  "purpose": "Close the BATCH20_GAP_MATRIX sector/industry gap with documented evidence. Read-only proposal; Codex owns config/companies.json.",
+  "classifications": [
+    {
+      "company_id": "sa:4190",
+      "symbol": "4190",
+      "codex_matrix": {
+        "sector": null,
+        "industry": null,
+        "issuer_sector_gate": "NEEDS_REVIEW"
+      },
+      "engine_main_registry": null,
+      "proposed": {
+        "sector": "Consumer Discretionary",
+        "industry": "Specialty Retail",
+        "taxonomy": "engine registry taxonomy (as used in config/companies.json on main)",
+        "proposal_origin": "engine branch claude/data-retail-1 config/companies.json (unmerged); not an official exchange classification"
+      },
+      "status": "consistent_with_quoted_activity_statement",
+      "official_exchange_classification": {
+        "status": "unverified",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "source_needed": "Saudi Exchange issuer profile (saudiexchange.sa) sector/industry fields"
+      },
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "include; retail and wholesale trading in office and school supplies, smartphones and accessories, books, educational aids, office furniture, engineering equipment, computers and computer systems, electronic and electrical devices, video games and accessories, maintenance of computers, smartphones and electronic and electrical devices, sports and scout equipment and paper.",
+            "printed_page": "12"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "It also includes, purchase of residential and commercial buildings and the acquisition of land to construct buildings for sale or lease for the interest of the Company.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Activity statement quoted from the issuer's own filing; the proposed labels must be confirmed by Codex against the Saudi Exchange classification before any registry change."
+      }
+    }
+  ]
+}

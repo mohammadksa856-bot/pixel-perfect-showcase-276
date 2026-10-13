@@ -1,0 +1,169 @@
+{
+  "company_id": "sa:7010",
+  "market": "SA",
+  "symbol": "7010",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "not_stated_in_document",
+  "filed_at_confidence": "unknown",
+  "filed_at_note": "Same placeholder date Codex uses in stc-2025-company-profile.json; the archived PDF states no publication date.",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+  "reader": "manual.review/data-02-stc-annual-report-2025",
+  "notes": "DATA-02 batch-01. Adds keys absent from Codex's STC profile. Every item carries verbatim evidence (PDF page + quote). PDF pages are two-page spreads; printed page numbers given where visible.",
+  "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "vice_chairman_name",
+      "value": "Yazeed Abdulrahman Al-Humied",
+      "category": "governance",
+      "metadata": {
+        "source_page": "100",
+        "evidence": [
+          {
+            "pdf_page": 100,
+            "quote": "Mr. Yazeed Abdulrahman Al-Humied (Vice Chairman of the Board)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_term",
+      "value": {
+        "term": "ninth",
+        "elected_on": "2024-07-24",
+        "tenure_years": 4
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "182",
+        "evidence": [
+          {
+            "pdf_page": 92,
+            "quote": "On 24 July 2024, a new Board of Directors was elected for the ninth term, with a tenure of four calendar years.",
+            "printed_page": "182"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "market_share_by_revenue_ksa",
+      "value": 0.72,
+      "category": "competitive_position",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 12,
+            "quote": "Market leadership in Saudi Arabia with a 72% market share by revenue in the largest market in the region."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "unit": "ratio",
+        "period": "FY2025",
+        "basis": "Issuer's own statement in the investment case; methodology not disclosed."
+      }
+    },
+    {
+      "attribute_key": "strategy_themes",
+      "value": [
+        "Reinforce leadership in telco",
+        "Capture the infrastructure opportunity",
+        "Strengthen the digital portfolio"
+      ],
+      "category": "strategy",
+      "metadata": {
+        "source_page": "38",
+        "evidence": [
+          {
+            "pdf_page": 20,
+            "quote": "1. Reinforce leadership in telco",
+            "printed_page": "38"
+          },
+          {
+            "pdf_page": 21,
+            "quote": "2. Capture the infrastructure opportunity"
+          },
+          {
+            "pdf_page": 21,
+            "quote": "3. Strengthen the digital portfolio"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "The vision statement itself is already in Codex's `vision` attribute."
+      }
+    },
+    {
+      "attribute_key": "subsidiary_highlight_stc_bank",
+      "value": "STC Bank launched as a digital bank in Saudi Arabia in 2025.",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "4",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "launch of STC Bank as a digital bank in Saudi Arabia"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "enterprise_risk_families",
+      "value": [
+        "Operational risk",
+        "Technology risk",
+        "Financial risk",
+        "Legal and compliance risk",
+        "Corporate risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 28,
+            "quote": "Corporate risk 01 Operational risk 02 Technology risk 03 Financial risk 04 Legal and compliance risk 05",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Category 1 risk families of the ERM framework; Codex's risk disclosures are narrative and do not list this taxonomy."
+      }
+    }
+  ]
+}

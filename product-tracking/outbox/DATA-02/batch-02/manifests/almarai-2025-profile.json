@@ -1,0 +1,1912 @@
+{
+  "company_id": "sa:2280",
+  "market": "SA",
+  "symbol": "2280",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-28",
+  "filed_at_basis": "pdf_creation_metadata",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+  "source_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+  "source_archive": {
+    "engine_ref": "claude/data-food-1",
+    "engine_commit": "2b17c0e",
+    "engine_archive_path": "data/raw/SA/2280/documents/08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297.pdf",
+    "on_engine_main": false,
+    "text_layer": "digital"
+  },
+  "reader": "manual.review/data-02-batch-02-almarai",
+  "notes": "DATA-02 batch-02. Qualitative profile from Almarai Integrated Annual Report 2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Almarai Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "Almarai Company (the",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "is a Saudi Joint Stock Company, which was converted from a limited liability company to a joint stock company on 2 Rajab 1426 A.H. (8 August 2005)",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "commercial_registration",
+      "value": {
+        "cr_number": "1010084223",
+        "unified_number": "7001360630"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "operates under Commercial Registration No. 1010084223 and issued unified number 7001360630",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "founding_date",
+      "value": {
+        "founded_year": 1977,
+        "commenced_trading_as_company": "1991-07-01",
+        "converted_to_jsc": "2005-08-08"
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "Founded in 1977, Almarai Company is the",
+            "printed_page": "6"
+          },
+          {
+            "pdf_page": 167,
+            "quote": "The Company initially commenced trading on 19 Dul Hijjah 1411 A.H. (1 July 1991)",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "founder",
+      "value": "HH Prince Sultan Bin Mohammed Bin Saud Al Kabeer",
+      "category": "identity",
+      "metadata": {
+        "source_page": "8",
+        "evidence": [
+          {
+            "pdf_page": 9,
+            "quote": "Almarai was founded in Saudi Arabia by HH Prince Sultan Bin Mohammed Bin Saud Al Kabeer.",
+            "printed_page": "8"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": "Exit 7, North Ring Road, Al Izdihar District, P.O. Box 8524, Riyadh 11492, Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "The Company’s Head Office is located at Exit 7, North Ring Road, Al Izdihar District, P.O. Box 8524, Riyadh 11492, Kingdom of Saudi Arabia",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": "KPMG Professional Services Company (License No. 469)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "154",
+        "evidence": [
+          {
+            "pdf_page": 155,
+            "quote": "KPMG Professional Services Company",
+            "printed_page": "154"
+          },
+          {
+            "pdf_page": 155,
+            "quote": "License No.: 469",
+            "printed_page": "154"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "audited by the Group’s independent auditors, KPMG Professional Services (KPMG).",
+            "printed_page": "13"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS Accounting Standards as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "170",
+        "evidence": [
+          {
+            "pdf_page": 171,
+            "quote": "prepared in accordance with International Financial Reporting Standards (“IFRS”) Accounting Standards as endorsed in the Kingdom of Saudi Arabia",
+            "printed_page": "170"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "currency",
+      "value": "SAR (inferred; the riyal sign is extracted as a glyph; amounts rounded to nearest thousand)",
+      "category": "identity",
+      "metadata": {
+        "source_page": "171",
+        "evidence": [
+          {
+            "pdf_page": 172,
+            "quote": "which is the Company’s functional and the Group’s presentation currency. All amounts have been rounded to the nearest thousand",
+            "printed_page": "171"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Currency named only by riyal symbol (extracted as 'X'); SAR inferred, though the report uses 'SAR million' in sustainability data tables (p248).",
+        "review_note": "No textual statement of the currency in the report text layer; SAR is inferred (the riyal sign is a glyph). Sustainability tables label amounts 'SAR million'."
+      }
+    },
+    {
+      "attribute_key": "listing_info",
+      "value": {
+        "exchange": "Saudi Stock (Tadawul)",
+        "symbol": "2280",
+        "isin": "SA000A0ETHT1",
+        "listing_year": 2005,
+        "shares_issued": 1000000000
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 30,
+            "quote": "SA000A0ETHT1",
+            "printed_page": "29"
+          },
+          {
+            "pdf_page": 30,
+            "quote": "Saudi Stock (Tadawul)",
+            "printed_page": "29"
+          },
+          {
+            "pdf_page": 30,
+            "quote": "Listing Date",
+            "printed_page": "29"
+          },
+          {
+            "pdf_page": 9,
+            "quote": "Almarai transitioned from private ownership to being publicly listed on the Saudi Exchange (Tadawul).",
+            "printed_page": "8"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "share_structure",
+      "value": {
+        "shares": 1000000000,
+        "par_value": 10.0
+      },
+      "category": "identity",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "Almarai’s paid up share capital amounted to X 10 billion, consisting of 1 billion fully paid and issued shares of X 10.00 each.",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31",
+        "review_note": "share_capital amount is already a Codex numeric fact (BATCH20_GAP_MATRIX fields_present); only share count and par value are delivered."
+      }
+    },
+    {
+      "attribute_key": "fs_board_approval_date",
+      "value": "2026-01-18",
+      "category": "identity",
+      "metadata": {
+        "source_page": "216",
+        "evidence": [
+          {
+            "pdf_page": 217,
+            "quote": "These Consolidated Financial Statements were approved by the Board of Directors on 29 Rajab 1447 A.H. (18 January 2026).",
+            "printed_page": "216"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "brands",
+      "value": [
+        "Almarai",
+        "L'usine",
+        "7DAYS",
+        "ALYOUM",
+        "Teeba",
+        "Beyti",
+        "Ice Leaf",
+        "Bashayer",
+        "Nuralac",
+        "Farm's Select",
+        "Almarai Pro",
+        "Almarai YOGO",
+        "Almarai Treats",
+        "Almarai Marvello",
+        "Almira",
+        "Seama",
+        "Bakemart",
+        "Premier Chef",
+        "Oska",
+        "Ival",
+        "Yaqoot",
+        "Trofos",
+        "Benalac",
+        "Evolac",
+        "Surenutri",
+        "Kol Youm"
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "including Almarai, L’usine, 7DAYS, ALYOUM, Teeba, Beyti, Ice Leaf, Bashayer, Nuralac, Farm’s Select, Almarai Pro, Almarai YOGO, Almarai Treats, Almarai Marvello, Almira, Seama, Bakemart, Premier Chef, Oska, Ival, Yaqoot, Trofos, Benalac, Evolac, Surenutri, and Kol Youm.",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "product_categories",
+      "value": {
+        "core": [
+          "Dairy",
+          "Juice",
+          "Bakery",
+          "Poultry"
+        ],
+        "adjacent": [
+          "seafood",
+          "beverages",
+          "ice cream",
+          "frozen foods"
+        ]
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "Almarai operates across core categories of Dairy, Juice, Bakery, and Poultry, complemented by a growing presence in adjacent segments such as seafood, beverages, ice cream, and frozen foods.",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "business_segments",
+      "value": [
+        {
+          "name": "Dairy and Juice",
+          "comprises": "Milk production, dairy, fruits juice, ice cream product processing and distribution"
+        },
+        {
+          "name": "Bakery",
+          "comprises": "Bakery products manufacturing and distribution"
+        },
+        {
+          "name": "Poultry",
+          "comprises": "Poultry products manufacturing and distribution"
+        },
+        {
+          "name": "Other Activities",
+          "comprises": "Arable, horticulture, infant nutrition, seafood, value added meat products and water"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "203",
+        "evidence": [
+          {
+            "pdf_page": 204,
+            "quote": "Milk production, dairy, fruits juice, ice cream product processing and distribution",
+            "printed_page": "203"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "Bakery products manufacturing and distribution",
+            "printed_page": "203"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "Poultry products manufacturing and distribution",
+            "printed_page": "203"
+          },
+          {
+            "pdf_page": 204,
+            "quote": "Arable, horticulture, infant nutrition, seafood, value added meat products and water.",
+            "printed_page": "203"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "markets_geographies",
+      "value": {
+        "operations": [
+          "Saudi Arabia",
+          "Egypt",
+          "Jordan",
+          "other GCC countries"
+        ],
+        "gcc_distribution": [
+          "UAE",
+          "Oman",
+          "Bahrain (subsidiaries)",
+          "Kuwait",
+          "Qatar (agency agreements)"
+        ],
+        "arable_farms": [
+          "Argentina",
+          "USA"
+        ]
+      },
+      "category": "business_model",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "It also operates in Egypt, Jordan and other Gulf Cooperation Council",
+            "printed_page": "166"
+          },
+          {
+            "pdf_page": 167,
+            "quote": "The distribution centres in GCC countries are managed through subsidiaries in UAE, Sultanate of Oman (“Oman”) and Kingdom of Bahrain (“Bahrain”) and an agency agreements in Kuwait and Qatar",
+            "printed_page": "166"
+          },
+          {
+            "pdf_page": 168,
+            "quote": "The Group owns and operates arable farms in Argentina and United States of America",
+            "printed_page": "167"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "revenue_geographic_breakdown_basis",
+      "value": "Segment note presents revenue by geographical region (Saudi Arabia, Other GCC Countries, other) for each business segment",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "205",
+        "evidence": [
+          {
+            "pdf_page": 206,
+            "quote": "The revenue from business segments categorised by geographical region is as follows:",
+            "printed_page": "205"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Figures belong to numbers team"
+      }
+    },
+    {
+      "attribute_key": "main_subsidiaries",
+      "value": [
+        {
+          "name": "International Dairy and Juice Limited (IDJ)",
+          "country": "Egypt and Jordan operations",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Hail Agricultural Development Company",
+          "country": "Saudi Arabia",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Western Bakeries Company Limited",
+          "country": "Saudi Arabia",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Modern Food Industries Company Limited",
+          "country": "Saudi Arabia",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Almarai Baby Food Company Limited",
+          "country": "Saudi Arabia",
+          "effective_ownership": 1.0
+        },
+        {
+          "name": "Agricultural Input Company Limited (Mudkhalat) - dormant",
+          "country": "Saudi Arabia",
+          "effective_ownership": 0.52
+        },
+        {
+          "name": "Almarai Investment Holding Company W.L.L.",
+          "country": "Bahrain",
+          "role": "manages non-GCC business (IDJ, Fondomonte)",
+          "effective_ownership": null
+        },
+        {
+          "name": "Pure Beverages Industry Company Limited",
+          "country": "Saudi Arabia",
+          "effective_ownership": 1.0,
+          "note": "acquired 31 July 2025"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "Dairy, fruit juices and related food business in Egypt and Jordan operates through a fully owned subsidiary International Dairy and Juice Limited",
+            "printed_page": "166"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Hail Agricultural Development Company",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Western Bakeries Company Limited",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Modern Food Industries Company Limited",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Almarai Baby Food Company Limited",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Agricultural Input Company Limited (Mudkhalat)",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Saudi Arabia\n\nPoultry/Agricultural Company\n\n100%\n\n100%",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 169,
+            "quote": "Dormant\n\n52%\n\n52%",
+            "printed_page": "168"
+          },
+          {
+            "pdf_page": 168,
+            "quote": "The Group’s non-GCC business operations under IDJ and Fondomonte are managed through Almarai Investment Holding Company W.L.L., a company incorporated in Bahrain.",
+            "printed_page": "167"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Effective ownership from subsidiaries table (2025 column); only key entities listed"
+      }
+    },
+    {
+      "attribute_key": "distribution_model",
+      "value": "Long-haul distribution fleet from manufacturing facilities to local distribution centres",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "final consumer packed products are distributed from manufacturing facilities to local distribution centres by the Group’s long haul distribution fleet",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "chairman",
+      "value": "HH Prince Naif Bin Sultan Bin Mohammed Bin Saud Al Kabeer (Non-Executive)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "112",
+        "evidence": [
+          {
+            "pdf_page": 113,
+            "quote": "The Board reappointed HH Prince Naif Bin Sultan Bin Mohammed Bin Saud Al Kabeer as Chairman",
+            "printed_page": "112"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "vice_chairman",
+      "value": "Mr. Sulaiman Bin Abdulkadir Almuhaidib (Non-Executive)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "112",
+        "evidence": [
+          {
+            "pdf_page": 113,
+            "quote": "Mr. Sulaiman Almuhaidib as Vice Chairman for the new term",
+            "printed_page": "112"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "ceo",
+      "value": "Fawaz Aljasser (effective 16 January 2026)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "109",
+        "evidence": [
+          {
+            "pdf_page": 110,
+            "quote": "Fawaz Aljasser\nChief Executive Officer",
+            "printed_page": "109"
+          },
+          {
+            "pdf_page": 19,
+            "quote": "the Board appointed Mr. Fawaz Aljasser as Chief Executive Officer, effective 16 January 2026.",
+            "printed_page": "18"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Previous CEO resigned during 2025 (p113); predecessor's name not stated in the reviewed pages"
+      }
+    },
+    {
+      "attribute_key": "cfo",
+      "value": "Danko Maras (appointed April 2020)",
+      "category": "governance",
+      "metadata": {
+        "source_page": "110",
+        "evidence": [
+          {
+            "pdf_page": 111,
+            "quote": "Danko Maras was appointed as Almarai’s CFO in April 2020.",
+            "printed_page": "110"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_composition",
+      "value": {
+        "members": 9,
+        "non_executive": 6,
+        "independent": 3,
+        "executive": 0
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "116",
+        "evidence": [
+          {
+            "pdf_page": 117,
+            "quote": "comprised nine members, including six non-executive members and three independent directors",
+            "printed_page": "116"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "board_members",
+      "value": [
+        {
+          "name": "HH Prince Naif Bin Sultan Bin Mohammed Bin Saud Al Kabeer",
+          "position": "Chairman",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Mr. Sulaiman Bin Abdulkadir Almuhaidib",
+          "position": "Vice Chairman",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "HE Engr. Abdulrahman Abdulmohsen Al Fadley",
+          "position": "Member (from 17 Nov 2025)",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "HH Prince Saud Bin Sultan Bin Mohammed Bin Saud Al Kabeer",
+          "position": "Member",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Mr. Georges Schorderet",
+          "position": "Member (from 7 Aug 2025)",
+          "classification": "Independent"
+        },
+        {
+          "name": "Engr. Ammar Bin Abdulwahid Alkhudairy",
+          "position": "Member",
+          "classification": "Independent"
+        },
+        {
+          "name": "Mr. Salman Bin Abdelmuhsin Alsudeary",
+          "position": "Member",
+          "classification": "Independent"
+        },
+        {
+          "name": "Engr. Sulaiman Abdulrahman Alrumaih",
+          "position": "Member (from 7 Aug 2025)",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Mr. Bader Bin Abdullah Al Issa",
+          "position": "Member",
+          "classification": "Non-Executive"
+        },
+        {
+          "name": "Mr. Hosam Bin Ali Alqurashi",
+          "classification": "Independent",
+          "note": "membership ended 6 Aug 2025"
+        },
+        {
+          "name": "Mr. Waleed Bin Khalid Fatani",
+          "classification": "Non-Executive",
+          "note": "membership ended 6 Aug 2025"
+        },
+        {
+          "name": "Mr. Mohammed Bin Mansour Almousa",
+          "classification": "Non-Executive",
+          "note": "membership ended 16 Nov 2025"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "116",
+        "evidence": [
+          {
+            "pdf_page": 117,
+            "quote": "Mr. Georges Schorderet\n\nBoard\nMember\n\nIndependent",
+            "printed_page": "116"
+          },
+          {
+            "pdf_page": 118,
+            "quote": "Engr. Ammar BIn\nAbdulwahid Alkhudairy\n\nBoard\nMember\n\nIndependent",
+            "printed_page": "117"
+          },
+          {
+            "pdf_page": 118,
+            "quote": "Mr. Salman Bin\nAbdelmuhsin Alsudeary\n\nBoard\nMember\n\nIndependent",
+            "printed_page": "117"
+          },
+          {
+            "pdf_page": 118,
+            "quote": "Engr. Sulaiman Alrumaih\n\nBoard\nMember\n\nNonExecutive",
+            "printed_page": "117"
+          },
+          {
+            "pdf_page": 117,
+            "quote": "HE Engr. Abdulrahman\nAbdulmohsen Al Fadley\n\nBoard\nMember\n\nNonExecutive",
+            "printed_page": "116"
+          },
+          {
+            "pdf_page": 120,
+            "quote": "*Membership Ended on 6 August 2025",
+            "printed_page": "119"
+          },
+          {
+            "pdf_page": 120,
+            "quote": "**Membership Started on 7 August 2025",
+            "printed_page": "119"
+          },
+          {
+            "pdf_page": 120,
+            "quote": "***Membership Ended on 16 November 2025",
+            "printed_page": "119"
+          },
+          {
+            "pdf_page": 120,
+            "quote": "****Membership Started on 17 November 2025",
+            "printed_page": "119"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Classifications per board composition and attendance tables (p117-120)",
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "board_term",
+      "value": {
+        "start": "2025-08-07",
+        "end": "2029-08-06",
+        "length_years": 4
+      },
+      "category": "governance",
+      "metadata": {
+        "source_page": "112",
+        "evidence": [
+          {
+            "pdf_page": 113,
+            "quote": "shareholders elected the members of the Board of Directors for a four-year term beginning on 7 August 2025 and ending on 6 August 2029",
+            "printed_page": "112"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_committees",
+      "value": [
+        {
+          "name": "Audit Committee",
+          "chair": "Mr. Raied Bin Ali Alseif",
+          "meetings_2025": 5
+        },
+        {
+          "name": "Risk Committee (Risk Management Committee)",
+          "chair": "Mr. Georges Schorderet",
+          "meetings_2025": 4
+        },
+        {
+          "name": "Remuneration and Nomination Committee",
+          "chair": "Engr. Ammar Bin Abdulwahid Alkhudairy",
+          "meetings_2025": 2
+        },
+        {
+          "name": "Investment Committee",
+          "chair": "Mr. Bader Bin Abdullah Al Issa",
+          "meetings_2025": 5
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "122",
+        "evidence": [
+          {
+            "pdf_page": 123,
+            "quote": "the Audit Committee, the Risk Management Committee, the Remuneration and Nomination Committee, and the Investment Committee",
+            "printed_page": "122"
+          },
+          {
+            "pdf_page": 127,
+            "quote": "During 2025, the Audit Committee held five meetings.",
+            "printed_page": "126"
+          },
+          {
+            "pdf_page": 127,
+            "quote": "Mr. Raied Bin Ali Alseif\n\nChairman",
+            "printed_page": "126"
+          },
+          {
+            "pdf_page": 130,
+            "quote": "During 2025, the Risk Committee held four meetings.",
+            "printed_page": "129"
+          },
+          {
+            "pdf_page": 130,
+            "quote": "Mr. Georges Schorderet **\n\nChairman",
+            "printed_page": "129"
+          },
+          {
+            "pdf_page": 125,
+            "quote": "During 2025, the Remuneration and Nomination Committee held two meetings.",
+            "printed_page": "124"
+          },
+          {
+            "pdf_page": 125,
+            "quote": "Engr. Ammar Bin Abdulwahid Alkhudairy\n\nChairman",
+            "printed_page": "124"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "During 2025, the Investment Committee held five meetings.",
+            "printed_page": "131"
+          },
+          {
+            "pdf_page": 132,
+            "quote": "Mr. Bader Bin Abdullah Al Issa\n\nChairman",
+            "printed_page": "131"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "board_meetings_2025",
+      "value": 6,
+      "category": "governance",
+      "metadata": {
+        "source_page": "118",
+        "evidence": [
+          {
+            "pdf_page": 119,
+            "quote": "The Board met six times during the year.",
+            "printed_page": "118"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "period": "FY2025"
+      }
+    },
+    {
+      "attribute_key": "shareholder_base",
+      "value": {
+        "shareholders": 115392,
+        "institutional_pct": 0.869,
+        "individual_pct": 0.131,
+        "saudi_pct": 0.864,
+        "other_nationalities_pct": 0.136,
+        "holders_5pct_plus_total": 0.4521
+      },
+      "category": "ownership",
+      "metadata": {
+        "source_page": "30",
+        "evidence": [
+          {
+            "pdf_page": 31,
+            "quote": "As of 31 December 2025, Almarai had 115,392 shareholders. Institutional investors represented 86.9% of total share ownership, while individual investors represented 13.1%.",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 31,
+            "quote": "Other\nNationalities\n\n13.6",
+            "printed_page": "30"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "Total\n\n428,918,510\n\n42.89\n\n452,073,003\n\n45.21",
+            "printed_page": "31"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Foreign ownership proxied only by 'Other Nationalities' share; no free-float figure stated",
+        "as_of": "2025-12-31"
+      }
+    },
+    {
+      "attribute_key": "dividend_policy",
+      "value": "Targets payout ratio of 40-60% over 2026-2030; dividends approved by General Assembly considering financial performance, cash flows, capex and funding needs",
+      "category": "dividends",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "Almarai targets a dividend payout ratio of 40 to 60% over the five-year period from 2026 to 2030.",
+            "printed_page": "32"
+          },
+          {
+            "pdf_page": 115,
+            "quote": "Cash dividends are approved or recommended taking into account the Company’s financial performance, cash flows, capital investment requirements, and future funding needs",
+            "printed_page": "114"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_risks_2025",
+      "value": [
+        "operational resilience and supply continuity (biosecurity and animal health, critical production assets, supply chain disruption, power and water availability)",
+        "food safety and product integrity",
+        "reputational risks",
+        "emerging technology and cybersecurity",
+        "regulatory and compliance (incl. sustainability and climate transition)",
+        "occupational health and safety",
+        "workforce risks (cost pressures, talent availability, succession planning)",
+        "strategy execution risks"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "148",
+        "evidence": [
+          {
+            "pdf_page": 149,
+            "quote": "principal risks were monitored across operational resilience and supply continuity, including biosecurity and animal health risks in dairy and poultry operations",
+            "printed_page": "148"
+          },
+          {
+            "pdf_page": 149,
+            "quote": "Food safety and product integrity risks also remained a central focus",
+            "printed_page": "148"
+          },
+          {
+            "pdf_page": 149,
+            "quote": "The risk profile for the year also included emerging technology and cybersecurity risks.",
+            "printed_page": "148"
+          },
+          {
+            "pdf_page": 149,
+            "quote": "regulatory and compliance risks were an area of focus",
+            "printed_page": "148"
+          },
+          {
+            "pdf_page": 149,
+            "quote": "workforce risks, including cost pressures, talent availability, and succession planning",
+            "printed_page": "148"
+          },
+          {
+            "pdf_page": 149,
+            "quote": "execution risks also remained a point of emphasis",
+            "printed_page": "148"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_governance",
+      "value": "Board approves risk management framework; Board Risk Committee oversees ERM; quarterly risk register review by risk champions and EVPs as risk owners",
+      "category": "risk",
+      "metadata": {
+        "source_page": "115",
+        "evidence": [
+          {
+            "pdf_page": 116,
+            "quote": "Approving the risk management framework and overseeing the Company’s principal risks and risk mitigation measures",
+            "printed_page": "115"
+          },
+          {
+            "pdf_page": 148,
+            "quote": "Residual critical and significant risks, along with their mitigation plans, are escalated to executive management and form the basis for reporting to the Board Risk Committee.",
+            "printed_page": "147"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_appetite",
+      "value": "Higher appetite for investment risk; low for financial, continuity, compliance and IT; zero for food safety, serious H&S incidents and material reputational risk",
+      "category": "risk",
+      "metadata": {
+        "source_page": "147",
+        "evidence": [
+          {
+            "pdf_page": 148,
+            "quote": "Almarai maintains a higher appetite for investmentrelated risks",
+            "printed_page": "147"
+          },
+          {
+            "pdf_page": 149,
+            "quote": "Almarai maintains zero appetite, including food safety risks, serious health and safety incidents",
+            "printed_page": "148"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "financial_risk_categories",
+      "value": [
+        "credit risk",
+        "liquidity risk",
+        "market price risk",
+        "capital management risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "211",
+        "evidence": [
+          {
+            "pdf_page": 212,
+            "quote": "The Group’s activities expose it to a variety of financial risks; credit risk, liquidity risk, market price risk and capital management risk.",
+            "printed_page": "211"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "sustainability_strategy",
+      "value": "'Doing Better Every Day' launched 2019, three pillars (Caring for People, Protecting the Planet, Producing Responsible Products), targets through 2025; next cycle 2026-2030",
+      "category": "sustainability",
+      "metadata": {
+        "source_page": "67",
+        "evidence": [
+          {
+            "pdf_page": 68,
+            "quote": "Almarai’s sustainability strategy “Doing Better Every Day,” launched in 2019, is structured around three pillars and includes goals and targets through 2025.",
+            "printed_page": "67"
+          },
+          {
+            "pdf_page": 70,
+            "quote": "To be carried forward to next Sustainability Strategy Cycle (2026-2030)",
+            "printed_page": "69"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "sustainability_target_progress_energy_fleet",
+      "value": [
+        {
+          "target": "Fuel efficiency +10% by 2025 (2018 baseline)",
+          "status": "achieved 2022"
+        },
+        {
+          "target": "100% sales-depot cold stores CFC-free by 2025",
+          "status": "achieved 2022"
+        },
+        {
+          "target": "Energy consumption -15% (2018 intensity baseline) by 2025",
+          "status": "on track 2025"
+        },
+        {
+          "target": "20% electricity from clean sources by 2025",
+          "status": "on track 2025"
+        },
+        {
+          "target": "ISO 50001 certification by 2025",
+          "status": "on track 2025"
+        }
+      ],
+      "category": "sustainability",
+      "metadata": {
+        "source_page": "90",
+        "evidence": [
+          {
+            "pdf_page": 91,
+            "quote": "2025 (2018 baseline).\n\nTarget achieved as of\n2022.",
+            "printed_page": "90"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "Increase share of electricity from clean-energy sources across",
+            "printed_page": "90"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "20% by 2025.\n\nTarget on track as of 2025.",
+            "printed_page": "90"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "sustainability_target_progress_water_packaging",
+      "value": [
+        {
+          "target": "Water efficiency +15% by 2025 (2018 baseline)",
+          "status": "on track as of 2025"
+        },
+        {
+          "target": "Avoid 9,000 t plastics by 2025",
+          "status": "on track as of 2025; 301 t reduced in 2025"
+        }
+      ],
+      "category": "sustainability",
+      "metadata": {
+        "source_page": "85",
+        "evidence": [
+          {
+            "pdf_page": 86,
+            "quote": "Target on\ntrack as of\n2025.",
+            "printed_page": "85"
+          },
+          {
+            "pdf_page": 86,
+            "quote": "Manufacturing water intensity in 2025 was broadly in line\nwith the 2018 baseline.",
+            "printed_page": "85"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Packaging optimization initiatives delivered a reduction of\n301 metric tons of plastic in 2025",
+            "printed_page": "87"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "strategy_growth_pillars",
+      "value": [
+        "Core Acceleration",
+        "Category Expansion",
+        "Channel Expansion",
+        "Geographic Expansion"
+      ],
+      "category": "strategy",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "1. Core Acceleration",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "2. Category Expansion",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "3. Channel Expansion",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "4. Geographic Expansion",
+            "printed_page": "40"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "attribute_key": "strategy_enablers",
+      "value": [
+        "Operating Model",
+        "People",
+        "Manufacturing and Supply Chain",
+        "Marketing and Branding",
+        "Innovation",
+        "Digitalization"
+      ],
+      "category": "strategy",
+      "metadata": {
+        "source_page": "40",
+        "evidence": [
+          {
+            "pdf_page": 41,
+            "quote": "Manufacturing and\nSupply Chain",
+            "printed_page": "40"
+          },
+          {
+            "pdf_page": 41,
+            "quote": "Marketing and\nBranding",
+            "printed_page": "40"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ],
+  "ownership_positions": [
+    {
+      "holder_key": "sultan_holding_group",
+      "holder_name": "Sultan Holding Group",
+      "holder_type": "corporate",
+      "ownership_type": "direct_or_indirect_as_stated",
+      "as_of_date": "2025-12-31",
+      "ownership_pct": 0.237,
+      "country": "SA",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "Sultan Holding Group\n\n236,956,536\n\n23.70\n\n236,956,536\n\n23.70",
+            "printed_page": "31"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "holder_key": "saudi_agricultural_and_livestock_investment_company_salic",
+      "holder_name": "Saudi Agricultural and Livestock Investment Company (SALIC)",
+      "holder_type": "government-related investment company",
+      "ownership_type": "direct_or_indirect_as_stated",
+      "as_of_date": "2025-12-31",
+      "ownership_pct": 0.1632,
+      "country": "SA",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "Livestock Investment\nCompany (SALIC)\n\n163,233,480\n\n16.32\n\n163,233,480\n\n16.32",
+            "printed_page": "31"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "holder_type not stated in document; label is descriptive"
+      }
+    },
+    {
+      "holder_key": "abdulqader_al_muhaidib_and_sons_co",
+      "holder_name": "Abdulqader Al Muhaidib and Sons Co",
+      "holder_type": "corporate",
+      "ownership_type": "direct_or_indirect_as_stated",
+      "as_of_date": "2025-12-31",
+      "ownership_pct": 0.0519,
+      "country": "SA",
+      "metadata": {
+        "source_page": "31",
+        "evidence": [
+          {
+            "pdf_page": 32,
+            "quote": "and Sons Co\n\n28,728,494\n\n2.87\n\n51,882,987\n\n5.19",
+            "printed_page": "31"
+          },
+          {
+            "pdf_page": 32,
+            "quote": "indicating that Abdulqader Al Muhaidib and Sons Co. had acquired an ownership interest exceeding 5% of the Company’s issued share capital",
+            "printed_page": "31"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "2.87% at beginning of 2025"
+      }
+    }
+  ],
+  "corporate_actions": [
+    {
+      "action_key": "sa:2280:cash_dividend:2025-12-16",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2025",
+      "announcement_date": "2025-12-16",
+      "cash_amount": 1150000000,
+      "currency": "SAR",
+      "status": "recommended",
+      "details": {
+        "dividend_per_share": 1.15,
+        "metadata": {
+          "source_page": "216",
+          "evidence": [
+            {
+              "pdf_page": 217,
+              "quote": "a dividend of X 1.15 billion (X 1.15 per share) for the year ended 31 December 2025",
+              "printed_page": "216"
+            },
+            {
+              "pdf_page": 34,
+              "quote": "*2025 is recommended by the Board of Directors for EGM approval and is subject to change.",
+              "printed_page": "33"
+            },
+            {
+              "pdf_page": 34,
+              "quote": "2025* 16 Dec 2025 As per EGM Approval As per EGM Approval Account transfer 1.15",
+              "printed_page": "33"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "GA set for 21 Apr 2026; preliminary distribution window 23 Apr-14 May 2026 (p113)",
+          "review_note": "Recommended by the Board for EGM approval; due and distribution dates 'As per EGM Approval' (not yet stated)."
+        }
+      }
+    },
+    {
+      "action_key": "sa:2280:cash_dividend:2024-12-19",
+      "action_type": "cash_dividend",
+      "title": "Dividend fy2024",
+      "announcement_date": "2024-12-19",
+      "record_date": "2025-04-13",
+      "payment_date": "2025-04-24",
+      "cash_amount": 1000000000,
+      "currency": "SAR",
+      "status": "paid",
+      "details": {
+        "dividend_per_share": 1.0,
+        "metadata": {
+          "source_page": "33",
+          "evidence": [
+            {
+              "pdf_page": 34,
+              "quote": "19 Dec 2024\n\n13 Apr 2025\n\n24 Apr 2025\n\nAccount transfer\n\n1",
+              "printed_page": "33"
+            },
+            {
+              "pdf_page": 217,
+              "quote": "approved dividends of X 1,000 million (X 1 per share) for the year ended 31 December 2024 out of which X 985.5 million was paid during the year.",
+              "printed_page": "216"
+            },
+            {
+              "pdf_page": 34,
+              "quote": "2024 19 Dec 2024 13 Apr 2025 24 Apr 2025 Account transfer 1",
+              "printed_page": "33"
+            }
+          ],
+          "verification": {
+            "status": "extracted_quote_on_page",
+            "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+            "independent_review": false,
+            "extracted_by": "Claude Code (DATA-02 batch-02)"
+          },
+          "basis": "Approved by EGM on 13 Apr 2025; table 'Due Date' 13 Apr 2025 used as eligibility date",
+          "review_note": "Issuer's dividend table column 'Due Date' (13 Apr 2025) is mapped to record_date; announcement/distribution dates are the table's own columns."
+        }
+      }
+    }
+  ],
+  "disclosures": [
+    {
+      "disclosure_type": "profile_note",
+      "title": "Sector statement",
+      "body_text": "Major integrated consumer food and beverage Group in the Middle East with leading market share in Saudi Arabia",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "166",
+        "evidence": [
+          {
+            "pdf_page": 167,
+            "quote": "are a major integrated consumer food and beverage Group in the Middle East with leading market share in Saudi Arabia",
+            "printed_page": "166"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Saudi Exchange sector classification name not stated in document"
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Self description",
+      "body_text": "World's largest vertically integrated dairy company and largest F&B manufacturing and distribution company in MENA (company claim)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "world’s largest vertically integrated dairy company and the largest food and beverage manufacturing and distribution company in MENA",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Principal activities",
+      "body_text": "Manufacturing and trading of dairy and juice products (Almarai, Beyti, Teeba), bakery products (L'usine, 7 Days), poultry (Alyoum, AlBashayer); other activities: arable, horticulture, infant nutrition, seafood, value added meat products and water",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "203",
+        "evidence": [
+          {
+            "pdf_page": 204,
+            "quote": "The Group’s principal business activities involve manufacturing and trading of dairy and juice products under Almarai, Beyti and Teeba brands, bakery products under L’usine and 7 Days brands and poultry products under Alyoum and AlBashayer brands.",
+            "printed_page": "203"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "profile_note",
+      "title": "Business description",
+      "body_text": "Vertically integrated model: sources ingredients globally, manufacturing in Saudi Arabia, UAE, Egypt and Jordan, extensive cold-chain and distribution networks",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "6",
+        "evidence": [
+          {
+            "pdf_page": 7,
+            "quote": "operates world-class manufacturing facilities in Saudi Arabia, UAE, Egypt, and Jordan and maintains extensive cold-chain and distribution networks",
+            "printed_page": "6"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Governance changes 2025",
+      "body_text": "New board term from 7 Aug 2025; CEO resigned during the year and a new CEO was appointed; one board member resigned and a new member appointed",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "112",
+        "evidence": [
+          {
+            "pdf_page": 113,
+            "quote": "The Chief Executive Officer resigned during the year, and a new Chief Executive Officer was appointed.",
+            "printed_page": "112"
+          },
+          {
+            "pdf_page": 113,
+            "quote": "A Board member resigned during the year, and a new Board member was appointed",
+            "printed_page": "112"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "governance_disclosure",
+      "title": "Related party major dealings",
+      "body_text": "Significant related-party sales to Panda Retail Company (Savola Group) and Abdullah Al Othaim Markets, approved by General Assembly",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "141",
+        "evidence": [
+          {
+            "pdf_page": 142,
+            "quote": "Panda Retail Company\n\nProduct Sales\n\n1,131,529",
+            "printed_page": "141"
+          },
+          {
+            "pdf_page": 143,
+            "quote": "Abdullah Al Othaim Markets\n\nProduct Sales\n\n860,511",
+            "printed_page": "142"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR thousand (inferred)",
+        "period": "FY2025"
+      }
+    },
+    {
+      "disclosure_type": "dividend_disclosure",
+      "title": "Cumulative distributions",
+      "body_text": "Since listing through 2024, approx. 22,009 million distributed in cash dividends and bonus shares; cash dividends approx. 12,909 million (58.7%)",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "32",
+        "evidence": [
+          {
+            "pdf_page": 33,
+            "quote": "Since its listing on Tadawul through 2024, Almarai has distributed approximately X 22,009 million to its shareholders",
+            "printed_page": "32"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "risk_disclosure",
+      "title": "Climate risk statement",
+      "body_text": "Group subject to short- and long-term climate change related risks",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "167",
+        "evidence": [
+          {
+            "pdf_page": 168,
+            "quote": "The Group is subject to short-term and long-term climate change related risks.",
+            "printed_page": "167"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Investment programme",
+      "body_text": "5-year, 18 billion investment plan; poultry expansion ~7 billion to double capacity (approx. 250m to 450m birds) by 2028",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "52",
+        "evidence": [
+          {
+            "pdf_page": 53,
+            "quote": "As part of the overarching 5-year, X 18 billion investment",
+            "printed_page": "52"
+          },
+          {
+            "pdf_page": 21,
+            "quote": "progressing steadily with our X 7 billion investment plan to",
+            "printed_page": "20"
+          },
+          {
+            "pdf_page": 25,
+            "quote": "planned capacity expansion from roughly 250 million birds processed to around 450",
+            "printed_page": "24"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Acquisition pure beverages 2025",
+      "body_text": "{\"action_type\": \"acquisition\", \"target\": \"Pure Beverages Industry Company Limited\", \"stake\": 1.0, \"spa_date\": \"2025-06-15\", \"completion_date\": \"2025-07-31\", \"consideration\": \"1,012 million (SAR, inferred)\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "167",
+        "evidence": [
+          {
+            "pdf_page": 168,
+            "quote": "On 31 July 2025, the Group has completed the acquisition and settled the consideration amounting to X 1,012 million.",
+            "printed_page": "167"
+          },
+          {
+            "pdf_page": 168,
+            "quote": "to acquire 100% shares in Pure Beverages Industry Company Limited",
+            "printed_page": "167"
+          },
+          {
+            "pdf_page": 168,
+            "quote": "This acquisition marks Group‘s strategic entry into the bottled water segment",
+            "printed_page": "167"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Hammoudeh acquisition discontinued",
+      "body_text": "{\"action_type\": \"acquisition_terminated\", \"target\": \"Hammoudeh Food Industries (Jordan)\", \"consideration\": \"263 million\", \"discontinued_date\": \"2025-03-17\"}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "167",
+        "evidence": [
+          {
+            "pdf_page": 168,
+            "quote": "the transaction has been discontinued on 17 Ramadan 1446 A.H (17 March 2025)",
+            "printed_page": "167"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Sukuk usd500m 2025",
+      "body_text": "{\"action_type\": \"debt_issuance\", \"instrument\": \"USD sukuk\", \"amount_usd\": 500000000, \"profit_rate\": 0.0445}",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 10,
+            "quote": "USD 500 million sukuk offering at a\n4.45% annual return",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Listed under 2025 in 'Our Journey' timeline"
+      }
+    },
+    {
+      "disclosure_type": "material_event",
+      "title": "Seafood entry seama",
+      "body_text": "Entered branded seafood category with Seama brand",
+      "period_end": "2025-12-31",
+      "metadata": {
+        "source_page": "9",
+        "evidence": [
+          {
+            "pdf_page": 10,
+            "quote": "Almarai entered the seafood market\nby launching the Seama brand",
+            "printed_page": "9"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        }
+      }
+    }
+  ]
+}

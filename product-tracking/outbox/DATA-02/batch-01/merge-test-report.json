@@ -1,0 +1,48 @@
+{
+  "engine_commit": "b70254e",
+  "baseline_manifests": [
+    "stc-2025-company-profile.json",
+    "aramco-2025-governance-risk.json"
+  ],
+  "preflight": {
+    "status": "ready",
+    "published_manifests": 5,
+    "integrity": "ok"
+  },
+  "resync_counts": {
+    "inserted": 0,
+    "restated": 0,
+    "duplicate": 80
+  },
+  "tables": {
+    "company_attributes": {
+      "before": 136,
+      "after": 172,
+      "added": 36,
+      "expected_added": 36,
+      "pre_existing_rows_changed": 0
+    },
+    "ownership_positions": {
+      "before": 9,
+      "after": 9,
+      "added": 0,
+      "expected_added": 0,
+      "pre_existing_rows_changed": 0
+    },
+    "corporate_actions": {
+      "before": 16,
+      "after": 20,
+      "added": 4,
+      "expected_added": 4,
+      "pre_existing_rows_changed": 0
+    },
+    "disclosures": {
+      "before": 61,
+      "after": 61,
+      "added": 0,
+      "expected_added": 0,
+      "pre_existing_rows_changed": 0
+    }
+  },
+  "passed": true
+}

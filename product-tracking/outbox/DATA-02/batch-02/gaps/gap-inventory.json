@@ -1,0 +1,1531 @@
+{
+  "batch": "DATA-02/batch-02",
+  "engine_main_commit": "b70254e",
+  "company_list": "BATCH20_GAP_MATRIX.json (codex/data01-market-batch-20261013 @ ab98885), companies 6-10",
+  "rules": [
+    "A topic is never marked not_applicable automatically; missing disclosure is recorded with its reason.",
+    "Numeric topics are DATA-01 (Codex); their state is taken from the Codex matrix, not re-measured.",
+    "batch_02_added lists exactly the keys delivered in this batch for that topic."
+  ],
+  "reasons": {
+    "covered": "covered_by_batch_or_engine",
+    "not_in_doc": "not_disclosed_in_archived_document",
+    "doc_missing": "official_document_not_archived",
+    "net": "official_site_blocked_by_session_network_policy",
+    "licensed": "licensed_feed_required",
+    "market": "market_data_feed_required",
+    "numeric": "numeric_scope_DATA-01"
+  },
+  "topics": [
+    {
+      "key": "identity",
+      "ar": "هوية الشركة"
+    },
+    {
+      "key": "business_model",
+      "ar": "نموذج العمل والمنتجات ومصادر الإيراد"
+    },
+    {
+      "key": "management_governance",
+      "ar": "الإدارة والحوكمة"
+    },
+    {
+      "key": "ownership",
+      "ar": "الملكية"
+    },
+    {
+      "key": "financial_statements",
+      "ar": "القوائم المالية"
+    },
+    {
+      "key": "earnings_quality",
+      "ar": "جودة الأرباح"
+    },
+    {
+      "key": "ratios",
+      "ar": "النسب المالية"
+    },
+    {
+      "key": "operating_kpis",
+      "ar": "المؤشرات التشغيلية"
+    },
+    {
+      "key": "dividends",
+      "ar": "التوزيعات"
+    },
+    {
+      "key": "sector_industry",
+      "ar": "القطاع والصناعة"
+    },
+    {
+      "key": "competitors",
+      "ar": "المنافسون"
+    },
+    {
+      "key": "trading_liquidity",
+      "ar": "التداول والسيولة"
+    },
+    {
+      "key": "guidance",
+      "ar": "التوجيهات والتوقعات"
+    },
+    {
+      "key": "analyst_coverage",
+      "ar": "تغطية المحللين"
+    },
+    {
+      "key": "valuation",
+      "ar": "التقييم"
+    },
+    {
+      "key": "risks",
+      "ar": "المخاطر والإفصاحات"
+    },
+    {
+      "key": "sustainability",
+      "ar": "الاستدامة"
+    },
+    {
+      "key": "news_ir",
+      "ar": "الأخبار ومواد المستثمرين"
+    }
+  ],
+  "companies": {
+    "2082": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "ipo_listing_date; unified_number",
+        "batch_02_added": [
+          "auditor",
+          "commercial_registration",
+          "functional_presentation_currency",
+          "headquarters_address",
+          "history_predecessor",
+          "incorporation_date",
+          "legal_form",
+          "legal_name",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [
+          "ipo_listing_date",
+          "unified_number"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "business_segments",
+          "contract_model",
+          "customer_concentration",
+          "geographic_presence",
+          "key_direct_subsidiaries",
+          "om_subsidiary_nomac"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "management_names; board_member_names",
+        "batch_02_added": [
+          "chief_operating_decision_maker",
+          "employee_stock_incentive_program",
+          "fs_approval_date",
+          "related_party_policy"
+        ],
+        "recorded_gaps": [
+          "management_names",
+          "board_member_names"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "ownership_percentages",
+        "batch_02_added": [
+          "ownership_disclosure|Pif shareholder loan",
+          "shareholder_public_investment_fund"
+        ],
+        "recorded_gaps": [
+          "ownership_percentages"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 672 original values, 58 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 672 original values, 58 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 672 original values, 58 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "group_total_capacity_and_project_count",
+        "batch_02_added": [
+          "numeric:acquired_kuwait_bahrain_capacity",
+          "numeric:acwa_guc_capacity",
+          "numeric:shares_outstanding"
+        ],
+        "recorded_gaps": [
+          "group_total_capacity_and_project_count"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "dividend_declared_2025; dividend_policy",
+        "batch_02_added": [
+          "dividend_recognition_policy",
+          "sa:2082:bonus_issue:2024-02-28",
+          "sa:2082:cash_dividend:2024-02-28"
+        ],
+        "recorded_gaps": [
+          "dividend_declared_2025",
+          "dividend_policy"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_02_added": [
+          "classification:Utilities/Utilities",
+          "principal_activities"
+        ],
+        "recorded_gaps": [
+          "exchange_sector_classification"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "competitors"
+        ],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1237 daily price records; liquidity metrics not measured",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs ACWA Power Annual Report / Board report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025",
+          "ACWA Power Annual Report / Board report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "capital_management",
+          "financial_risk_categories",
+          "going_concern",
+          "liquidity_risk_management",
+          "risk_disclosure|Contingencies and commitments",
+          "risk_governance",
+          "significant_judgements"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "climate_change_assessment",
+          "sustainability_disclosure|Csr contribution"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "material_event|Acquisition china renewables 2025",
+          "material_event|Acquisition kuwait bahrain 2025",
+          "material_event|Divestment hajar mourjan 2025",
+          "material_event|Major equity investments 2025",
+          "material_event|Rights issue 2025",
+          "material_event|Subsequent events",
+          "material_event|Subsidiary bond refinancing 2025",
+          "material_event|Sukuk program",
+          "material_event|Swec stake acquisition spa"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "ACWA Power audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "2280": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "exact_listing_date",
+        "batch_02_added": [
+          "auditor",
+          "commercial_registration",
+          "currency",
+          "founder",
+          "founding_date",
+          "fs_board_approval_date",
+          "headquarters_address",
+          "legal_form",
+          "legal_name",
+          "listing_info",
+          "reporting_standard",
+          "share_structure"
+        ],
+        "recorded_gaps": [
+          "exact_listing_date"
+        ],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "brands",
+          "business_segments",
+          "distribution_model",
+          "main_subsidiaries",
+          "markets_geographies",
+          "product_categories",
+          "profile_note|Business description",
+          "profile_note|Principal activities",
+          "profile_note|Sector statement",
+          "profile_note|Self description",
+          "revenue_geographic_breakdown_basis",
+          "strategy_enablers",
+          "strategy_growth_pillars"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "board_committees",
+          "board_composition",
+          "board_meetings_2025",
+          "board_members",
+          "board_term",
+          "ceo",
+          "cfo",
+          "chairman",
+          "governance_disclosure|Governance changes 2025",
+          "governance_disclosure|Related party major dealings",
+          "vice_chairman"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "free_float_pct; foreign_ownership_limit_or_pct",
+        "batch_02_added": [
+          "abdulqader_al_muhaidib_and_sons_co",
+          "saudi_agricultural_and_livestock_investment_company_salic",
+          "shareholder_base",
+          "sultan_holding_group"
+        ],
+        "recorded_gaps": [
+          "free_float_pct",
+          "foreign_ownership_limit_or_pct"
+        ],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 483 original values, 37 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 483 original values, 37 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 483 original values, 37 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "numeric:arable_farms",
+          "numeric:dairy_farms_and_herd",
+          "numeric:employees",
+          "numeric:fresh_juice_market_share",
+          "numeric:ghg_emissions_scope1_2",
+          "numeric:manufacturing_and_distribution",
+          "numeric:poultry_operations",
+          "numeric:reach",
+          "numeric:saudi_market_share_bakery",
+          "numeric:saudi_market_share_dairy",
+          "numeric:saudi_market_share_poultry",
+          "numeric:shareholders_count"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "fy2025_dividend_eligibility_and_payment_dates",
+        "batch_02_added": [
+          "dividend_disclosure|Cumulative distributions",
+          "dividend_policy",
+          "sa:2280:cash_dividend:2024-12-19",
+          "sa:2280:cash_dividend:2025-12-16"
+        ],
+        "recorded_gaps": [
+          "fy2025_dividend_eligibility_and_payment_dates"
+        ],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_02_added": [
+          "classification:Consumer Staples/Food & Agriculture"
+        ],
+        "recorded_gaps": [
+          "saudi_exchange_sector_name"
+        ],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors_named",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "competitors_named"
+        ],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1499 daily price records; liquidity metrics not measured",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Saudi Exchange issuer profile",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "principal_risks_detailed_register",
+        "batch_02_added": [
+          "financial_risk_categories",
+          "principal_risks_2025",
+          "risk_appetite",
+          "risk_disclosure|Climate risk statement",
+          "risk_governance"
+        ],
+        "recorded_gaps": [
+          "principal_risks_detailed_register"
+        ],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025",
+          "Saudi Exchange issuer profile"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "sustainability_strategy",
+          "sustainability_target_progress_energy_fleet",
+          "sustainability_target_progress_water_packaging"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "material_event|Acquisition pure beverages 2025",
+          "material_event|Hammoudeh acquisition discontinued",
+          "material_event|Investment programme",
+          "material_event|Seafood entry seama",
+          "material_event|Sukuk usd500m 2025"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Almarai Integrated Annual Report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "4190": {
+      "identity": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "headquarters_street_address",
+        "batch_02_added": [
+          "commercial_registration",
+          "fiscal_year_end",
+          "headquarters",
+          "joint_stock_formation",
+          "legal_form",
+          "legal_name",
+          "presentation_currency",
+          "reporting_standard",
+          "share_structure"
+        ],
+        "recorded_gaps": [
+          "headquarters_street_address"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "strategy_statement",
+        "batch_02_added": [
+          "business_segments",
+          "geographic_segments",
+          "profile_note|Brand and channels",
+          "profile_note|Lease portfolio",
+          "profile_note|Other income sources",
+          "profile_note|Seasonality",
+          "revenue_disaggregation_categories",
+          "subsidiaries"
+        ],
+        "recorded_gaps": [
+          "strategy_statement"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "chairman_name; ceo_name",
+        "batch_02_added": [
+          "audit_opinion",
+          "auditor",
+          "fs_board_approval_date",
+          "governance_disclosure|Key management compensation",
+          "governance_disclosure|Related parties",
+          "key_audit_matters"
+        ],
+        "recorded_gaps": [
+          "chairman_name",
+          "ceo_name"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "controlling_shareholder_or_major_holders",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "controlling_shareholder_or_major_holders"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 411 original values, 44 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 411 original values, 44 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 411 original values, 44 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "employee_count",
+        "batch_02_added": [
+          "numeric:dividends_per_share_paid_fy2024",
+          "numeric:dividends_per_share_paid_fy2025",
+          "numeric:retail_showrooms_count",
+          "numeric:revenue_by_category",
+          "numeric:sales_by_geography",
+          "numeric:segment_revenue"
+        ],
+        "recorded_gaps": [
+          "employee_count"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "dividend_disclosure|Dividend policy",
+          "sa:4190:cash_dividend:2024-03-07",
+          "sa:4190:cash_dividend:2024-05-13",
+          "sa:4190:cash_dividend:2024-08-08",
+          "sa:4190:cash_dividend:2024-11-07",
+          "sa:4190:cash_dividend:2025-03-23",
+          "sa:4190:cash_dividend:2025-05-11",
+          "sa:4190:cash_dividend:2025-08-05",
+          "sa:4190:cash_dividend:2025-11-05"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_02_added": [
+          "classification:Consumer Discretionary/Specialty Retail",
+          "principal_activities"
+        ],
+        "recorded_gaps": [
+          "saudi_exchange_sector_classification"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "competitors"
+        ],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1505 daily price records; liquidity metrics not measured",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Jarir Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "financial_risk_management",
+          "risk_disclosure|Capital management policy",
+          "risk_disclosure|Contingencies and commitments",
+          "risk_disclosure|Egypt currency hyperinflation risk",
+          "risk_disclosure|Subsequent events",
+          "risk_disclosure|Zakat status"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Jarir Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Jarir Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Jarir audited consolidated financial statements FY2025",
+          "Jarir Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "4004": {
+      "identity": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "commercial_registration",
+          "conversion_to_joint_stock_date",
+          "former_name",
+          "headquarters_address",
+          "incorporation_date",
+          "legal_form",
+          "legal_name",
+          "listing_date",
+          "presentation_currency",
+          "reporting_standard"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "expected_opening_dates_new_hospitals",
+        "batch_02_added": [
+          "acquired_hospitals",
+          "branches",
+          "care_shield_subsidiaries",
+          "equity_accounted_investees",
+          "operating_segments",
+          "profile_note|Geographic scope",
+          "profile_note|Principal activities",
+          "subsidiaries"
+        ],
+        "recorded_gaps": [
+          "expected_opening_dates_new_hospitals"
+        ],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "chief_executive_officer_name",
+        "batch_02_added": [
+          "auditor",
+          "chairman",
+          "fs_approval_date",
+          "governance_disclosure|Related parties",
+          "key_audit_matters"
+        ],
+        "recorded_gaps": [
+          "chief_executive_officer_name"
+        ],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "dallah_al_baraka_holding_company",
+          "share_structure",
+          "treasury_share_programme"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 496 original values, 47 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 496 original values, 47 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 496 original values, 47 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "operating_kpis_beds_patients_employees",
+        "batch_02_added": [
+          "numeric:gearing_ratio",
+          "numeric:key_management_and_board_remuneration_2025",
+          "numeric:revenue_by_category_2025",
+          "numeric:revenue_by_geographic_region_2025",
+          "numeric:revenue_by_timing_2025"
+        ],
+        "recorded_gaps": [
+          "operating_kpis_beds_patients_employees"
+        ],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "dividend_disclosure|Dividend policy",
+          "sa:4004:bonus_issue:2026-03-04",
+          "sa:4004:cash_dividend:2023-12-26",
+          "sa:4004:cash_dividend:2024-06-11",
+          "sa:4004:cash_dividend:2024-08-04",
+          "sa:4004:cash_dividend:2024-11-07",
+          "sa:4004:cash_dividend:2025-03-17",
+          "sa:4004:cash_dividend:2025-05-29",
+          "sa:4004:cash_dividend:2025-08-03",
+          "sa:4004:cash_dividend:2025-11-02",
+          "sa:4004:cash_dividend:2026-03-04"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_02_added": [
+          "classification:Health Care/Health Care Facilities"
+        ],
+        "recorded_gaps": [
+          "saudi_exchange_sector_classification"
+        ],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "competitors"
+        ],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "partial",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 1499 daily price records; liquidity metrics not measured",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "projects_under_construction"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "contingencies_and_commitments",
+          "murabaha_facilities",
+          "risk_disclosure|Financial risk management",
+          "risk_disclosure|Zakat status"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Dallah Healthcare Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025",
+          "Dallah Healthcare Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "material_event|Acquisition al salam and al ahsa 2025",
+          "material_event|Acquisition nci care shield 2025",
+          "material_event|Acquisition nci makkah medical center 2025",
+          "material_event|Associate al faqih sale offer",
+          "material_event|Wahet al nakheel land contribution"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dallah Healthcare audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      }
+    },
+    "4300": {
+      "identity": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "auditor",
+          "commercial_registration",
+          "fs_approval_date",
+          "going_concern_basis",
+          "legal_form",
+          "legal_name",
+          "listing_statement",
+          "presentation_functional_currency",
+          "registered_office_address",
+          "reporting_standard",
+          "share_structure"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "business_model": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "acquisition_compass_project_investments_spv",
+          "associates_and_joint_ventures",
+          "disposal_qatar_subsidiary",
+          "profile_note|Credit sales policy",
+          "profile_note|Geographic footprint",
+          "projects_named",
+          "reporting_segments",
+          "subsidiaries",
+          "subsidiary_compass_project_investments_spv"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "management_governance": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "board_chair_ceo_names",
+        "batch_02_added": [
+          "governance_disclosure|Board oversight statement"
+        ],
+        "recorded_gaps": [
+          "board_chair_ceo_names"
+        ],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ownership": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "major_shareholders",
+        "batch_02_added": [
+          "loan_to_related_party",
+          "related_parties"
+        ],
+        "recorded_gaps": [
+          "major_shareholders"
+        ],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "financial_statements": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 823 original values, 124 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "earnings_quality": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 823 original values, 124 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "ratios": {
+        "state": "partial",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "numeric scope; Codex matrix: 823 original values, 124 periods (not acceptance)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "operating_kpis": {
+        "state": "partial",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "units_sold; land_bank_sqm; employee_count",
+        "batch_02_added": [
+          "numeric:dg_plc_investment_fair_value",
+          "numeric:key_management_compensation_total",
+          "numeric:murabaha_weighted_average_rate"
+        ],
+        "recorded_gaps": [
+          "units_sold",
+          "land_bank_sqm",
+          "employee_count"
+        ],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "dividends": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "dividends_declared_2025; dividend_policy",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "dividends_declared_2025",
+          "dividend_policy"
+        ],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sector_industry": {
+        "state": "partial",
+        "reason": "official_site_blocked_by_session_network_policy",
+        "remaining_gap": "documented activity-based classification candidate delivered; official Saudi Exchange sector/industry unverified",
+        "batch_02_added": [
+          "classification:Real Estate/Real Estate Development",
+          "principal_activity"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "competitors": {
+        "state": "unavailable",
+        "reason": "not_disclosed_in_archived_document",
+        "remaining_gap": "competitors; market_share",
+        "batch_02_added": [],
+        "recorded_gaps": [
+          "competitors",
+          "market_share"
+        ],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "trading_liquidity": {
+        "state": "unavailable",
+        "reason": "market_data_feed_required",
+        "remaining_gap": "Codex holds 0 daily price records; liquidity metrics not measured",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "guidance": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Dar Al Arkan Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "analyst_coverage": {
+        "state": "unavailable",
+        "reason": "licensed_feed_required",
+        "remaining_gap": "no licensed consensus feed",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "valuation": {
+        "state": "unavailable",
+        "reason": "numeric_scope_DATA-01",
+        "remaining_gap": "needs accepted financials + prices (DATA-01)",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "risks": {
+        "state": "available",
+        "reason": "covered_by_batch_or_engine",
+        "remaining_gap": "none found in the archived document",
+        "batch_02_added": [
+          "capital_management",
+          "commitments",
+          "financial_risk_categories",
+          "key_audit_matters",
+          "risk_disclosure|Financial covenant compliance",
+          "risk_disclosure|Litigation",
+          "risk_disclosure|Zakat assessment status",
+          "subsequent_event_white_land_tax",
+          "sukuk_outstanding"
+        ],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025"
+        ],
+        "applicability": "applicable"
+      },
+      "sustainability": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Dar Al Arkan Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      },
+      "news_ir": {
+        "state": "unavailable",
+        "reason": "official_document_not_archived",
+        "remaining_gap": "not covered by the archived document; needs Dar Al Arkan Board of Directors report 2025",
+        "batch_02_added": [],
+        "recorded_gaps": [],
+        "candidate_official_sources": [
+          "Dar Al Arkan audited consolidated financial statements FY2025",
+          "Dar Al Arkan Board of Directors report 2025"
+        ],
+        "applicability": "applicable"
+      }
+    }
+  }
+}

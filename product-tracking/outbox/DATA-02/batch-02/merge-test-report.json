@@ -1,0 +1,51 @@
+{
+  "engine_commit": "b70254e",
+  "baseline_manifests": [
+    "acwa-power-2025-fy.json",
+    "almarai-2025-fy.json",
+    "dallah-2025-fy.json",
+    "dar-al-arkan-2025-fy.json",
+    "jarir-2025-fy.json"
+  ],
+  "preflight": {
+    "status": "ready",
+    "published_manifests": 5,
+    "integrity": "ok"
+  },
+  "resync_counts": {
+    "inserted": 0,
+    "restated": 0,
+    "duplicate": 438
+  },
+  "tables": {
+    "company_attributes": {
+      "before": 67,
+      "after": 206,
+      "added": 139,
+      "expected_added": 139,
+      "pre_existing_rows_changed": 0
+    },
+    "ownership_positions": {
+      "before": 7,
+      "after": 11,
+      "added": 4,
+      "expected_added": 4,
+      "pre_existing_rows_changed": 0
+    },
+    "corporate_actions": {
+      "before": 11,
+      "after": 33,
+      "added": 22,
+      "expected_added": 22,
+      "pre_existing_rows_changed": 0
+    },
+    "disclosures": {
+      "before": 28,
+      "after": 82,
+      "added": 54,
+      "expected_added": 54,
+      "pre_existing_rows_changed": 0
+    }
+  },
+  "passed": true
+}

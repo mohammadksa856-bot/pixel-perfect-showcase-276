@@ -1,0 +1,178 @@
+{
+  "company_id": "sa:2222",
+  "market": "SA",
+  "symbol": "2222",
+  "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+  "purpose": "Page-verified evidence for keys Codex already publishes. Read-only; nothing here is ingested.",
+  "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+  "engine_commit_reviewed": "b70254e",
+  "codex_key_reviews": [
+    {
+      "codex_file": "aramco-2025-governance-risk.json",
+      "domain": "company_attributes",
+      "key": "board_of_directors[Deputy Chairman]",
+      "codex_value": "Ibrahim A. Al-Assaf",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "100",
+        "evidence": [
+          {
+            "pdf_page": 102,
+            "quote": "H.E. Dr. Ibrahim A. Al-Assaf Deputy Chairman Non-executive Director since 1999",
+            "printed_page": "100"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "aramco-2025-governance-risk.json",
+      "domain": "company_attributes",
+      "key": "board_committees",
+      "codex_value": [
+        "Audit",
+        "Sustainability, Risk and HSE",
+        "Nomination",
+        "Compensation"
+      ],
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "98",
+        "evidence": [
+          {
+            "pdf_page": 98,
+            "quote": "Audit Committee report"
+          },
+          {
+            "pdf_page": 98,
+            "quote": "Sustainability, Risk, and HSE Committee report"
+          },
+          {
+            "pdf_page": 98,
+            "quote": "Nomination Committee statement"
+          },
+          {
+            "pdf_page": 98,
+            "quote": "Compensation Committee statement"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "aramco-2025-governance-risk.json",
+      "domain": "company_attributes",
+      "key": "competitive_environment",
+      "codex_value": {
+        "crude_oil_competitors": "National and international oil companies"
+      },
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "83",
+        "evidence": [
+          {
+            "pdf_page": 85,
+            "quote": "Aramco’s primary competitors for the sale of crude oil outside the Kingdom include national and international oil companies, many of which have substantial crude oil reserves and financial resources.",
+            "printed_page": "83"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "The primary factors affecting competition are the price, reliability, quantity, quality, and geographic location of crude oil produced.",
+            "printed_page": "83"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "No competitor is named in the report."
+      }
+    },
+    {
+      "codex_file": "aramco-2025-annual-metrics.json",
+      "domain": "facts",
+      "key": "total_hydrocarbon_reserves / crude_oil_reserves / gas_reserves",
+      "codex_value": {
+        "total_bn_boe": 247.2,
+        "crude_bn_bbl": 186.5,
+        "gas_tscf": 211.7
+      },
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "As at December 31, 2025, Aramco’s reserves under the Concession agreement were 247.2 billion boe (2024: 250.0 billion boe), including 186.5 billion barrels of crude oil and condensate (2024: 189.8 billion barrels), 26.2 billion barrels of NGL (2024: 26.1 billion barrels), and 211.7 tscf of natural gas (2024: 209.8 tscf).",
+            "printed_page": "48"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "Codex has no NGL reserves fact matched by this search (26.2 bn bbl); see numeric candidates."
+      }
+    },
+    {
+      "codex_file": "aramco-2025-annual-metrics.json",
+      "domain": "facts",
+      "key": "total_hydrocarbon_production",
+      "codex_value": 12.9,
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "an average total daily hydrocarbon production of 12.9 mmboed (2024: 12.4 mmboed). For the year ended December 31, 2025, approximately 83% (2024: 83%) of the aggregate hydrocarbon production consisted of liquids",
+            "printed_page": "48"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "aramco-2025-guidance-targets.json",
+      "domain": "company_attributes|disclosures",
+      "key": "net-zero 2050 ambition",
+      "codex_value": "Scope 1 and 2 net zero by 2050",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "72",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "has an ambition to achieve net-zero Scope 1 and Scope 2 GHG emissions by 2050 across wholly-owned operated assets.",
+            "printed_page": "72"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ]
+}

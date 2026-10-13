@@ -1,0 +1,193 @@
+{
+  "company_id": "sa:4190",
+  "kind": "numeric_fact_candidates",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/454_0_2026-03-31_11-52-35_En.pdf",
+  "source_sha256": "7c1e35764a96d4d66cc748468d4608d9e4d2b13ff159e990596948c6e9ce2f36",
+  "for": "DATA-01 (Codex). Not ingested; keys are suggestions. Values exactly as stated in the source.",
+  "candidates": [
+    {
+      "metric": "retail_showrooms_count",
+      "value": {
+        "2025": 75,
+        "2024": 73
+      },
+      "unit": "showrooms",
+      "period": null,
+      "as_of": "2025-12-31",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "As at December 31, 2025, the Company had 75 retail showrooms (2024: 73 retail showrooms) in the Kingdom of Saudi Arabia and the other Gulf countries",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "as_of": "2025-12-31",
+        "unit": "showrooms"
+      }
+    },
+    {
+      "metric": "revenue_by_category",
+      "value": {
+        "Smartphones, electronics and accessories": 7042,
+        "Other IT and digital products and services": 3250,
+        "Books and office, school and arts supplies": 1073,
+        "Total": 11365
+      },
+      "unit": "SAR millions",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "41",
+        "evidence": [
+          {
+            "pdf_page": 43,
+            "quote": "(Saudi Riyals in millions)",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "7,042",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "3,250",
+            "printed_page": "41"
+          },
+          {
+            "pdf_page": 43,
+            "quote": "1,073 11,365",
+            "printed_page": "41"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR millions",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "segment_revenue",
+      "value": {
+        "Retail outlets": 7319,
+        "Wholesale": 256,
+        "E-Commerce": 3665,
+        "All other segments": 125,
+        "Consolidated": 11365
+      },
+      "unit": "SAR millions",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "44",
+        "evidence": [
+          {
+            "pdf_page": 46,
+            "quote": "7,319 256 3,665 125 11,365",
+            "printed_page": "44"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR millions",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "sales_by_geography",
+      "value": {
+        "Kingdom of Saudi Arabia": 10291,
+        "Other Gulf Countries and Egypt": 1074,
+        "Consolidated": 11365
+      },
+      "unit": "SAR millions",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "45",
+        "evidence": [
+          {
+            "pdf_page": 47,
+            "quote": "10,291 1,695 1,074 198 11,365 1,893",
+            "printed_page": "45"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "basis": "Layout row: sales then non-current assets per column",
+        "unit": "SAR millions",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "dividends_per_share_paid_fy2025",
+      "value": 0.86,
+      "unit": "SAR per share",
+      "period": "FY2025",
+      "as_of": null,
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 45,
+            "quote": "Saudi Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 192 million, and Saudi Riyals 336 million respectively, which were paid to the shareholders during the year ended December 31, 2025 (Saudi Riyals 0.86 per share).",
+            "printed_page": "43"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR per share",
+        "period": "FY2025"
+      }
+    },
+    {
+      "metric": "dividends_per_share_paid_fy2024",
+      "value": 0.83,
+      "unit": "SAR per share",
+      "period": "FY2024",
+      "as_of": null,
+      "metadata": {
+        "source_page": "43",
+        "evidence": [
+          {
+            "pdf_page": 45,
+            "quote": "Riyals 276 million, Saudi Riyals 228 million, Saudi Riyals 180 million and Saudi Riyals 312 million respectively, which were paid to the shareholders during the year ended December 31, 2024 (Saudi Riyals 0.83 per share).",
+            "printed_page": "43"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "unit": "SAR per share",
+        "period": "FY2024"
+      }
+    }
+  ]
+}

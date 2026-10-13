@@ -1,0 +1,363 @@
+{
+  "company_id": "sa:7010",
+  "market": "SA",
+  "symbol": "7010",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+  "purpose": "Page-verified evidence for keys Codex already publishes. Read-only; nothing here is ingested.",
+  "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+  "engine_commit_reviewed": "b70254e",
+  "codex_key_reviews": [
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "ceo_name",
+      "codex_value": "Olayan Mohammed Alwetaid",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "35",
+        "evidence": [
+          {
+            "pdf_page": 18,
+            "quote": "Olayan M. Alwetaid CEO of stc group",
+            "printed_page": "35"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "Dr. Khaled Biyari appears as 'stc group CEO' only under a previous occupation; he is a current board member (PDF p96)."
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "chairman_name",
+      "codex_value": "HRH Prince Mohammed Khalid Al-Faisal",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "33",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "Mohammed bin Khalid Al-Abdullah Al-Faisal Chairman of stc group Board",
+            "printed_page": "33"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "board_of_directors",
+      "codex_value": "11 names incl. H.E. Dr. Khaled Hussain Biyari",
+      "finding": "partially_supported",
+      "metadata": {
+        "source_page": "96",
+        "evidence": [
+          {
+            "pdf_page": 96,
+            "quote": "H.E. Dr. Khaled Hussain Biyari"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "Only Biyari's membership was spot-checked; full list not re-verified."
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "board_committees",
+      "codex_value": [
+        "Audit",
+        "Risk",
+        "Nomination and Remuneration",
+        "Executive",
+        "Investment"
+      ],
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "96",
+        "evidence": [
+          {
+            "pdf_page": 96,
+            "quote": "Executive Committee (ExCom)"
+          },
+          {
+            "pdf_page": 96,
+            "quote": "Investment Committee (IC)"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "Nomination and Remuneration Committee (NRC)"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "Audit Committee (AC)"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "Risk Committee (RC)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "dividend_policy",
+      "codex_value": {
+        "quarterly_dividend_per_share": 0.55,
+        "source_page": 23
+      },
+      "finding": "differs",
+      "metadata": {
+        "source_page": "201",
+        "evidence": [
+          {
+            "pdf_page": 101,
+            "quote": "maintaining a minimum dividend of",
+            "printed_page": "201"
+          },
+          {
+            "pdf_page": 101,
+            "quote": "per share per quarter for the next three years starting from the dividends distribution of the fourth quarter of 2024 until the third quarter of 2027.",
+            "printed_page": "201"
+          },
+          {
+            "pdf_page": 101,
+            "quote": "(corresponding to 24 August 2024), the Board of Directors approved stc’s dividends distribution policy for the next three years.",
+            "printed_page": "201"
+          },
+          {
+            "pdf_page": 101,
+            "quote": "(corresponding to 6 November 2024).",
+            "printed_page": "201"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "Substance agrees, but the report calls SAR 0.55 a MINIMUM per quarter; Codex's key `quarterly_dividend_per_share` reads as a fixed amount. Suggest `minimum_quarterly_dividend_per_share` and adding board approval 2024-08-24 / GA approval 2024-11-06.",
+        "currency_note": "The riyal sign is rendered as a glyph ('%'/'&'/'$') in the PDF text layer; currency SAR per the audited statements (FS PDF p14)."
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "corporate_actions",
+      "key": "sa:7010:dividend:2025:q1",
+      "codex_value": {
+        "cash_per_share": 0.55,
+        "payment_date": "2025-05-20"
+      },
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q1 2025 dividend distribution (& 0.55 per share) 20 May 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "corporate_actions",
+      "key": "sa:7010:dividend:2025:q2",
+      "codex_value": {
+        "cash_per_share": 0.55,
+        "payment_date": "2025-08-19"
+      },
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q2 2025 dividend distribution (& 0.55 per share) 19 August 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "corporate_actions",
+      "key": "sa:7010:dividend:2025:q3",
+      "codex_value": {
+        "cash_per_share": 0.55,
+        "payment_date": "2025-11-26"
+      },
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q3 2025 dividend distribution (& 0.55 per share) 26 November 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "employees",
+      "codex_value": 18921,
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "36",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "Talented and diverse team of 18,921 employees.",
+            "printed_page": "36"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "isin",
+      "codex_value": "SA0007879543",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "SA0007879543",
+            "printed_page": "26"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "listing_date",
+      "codex_value": "2003",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "2003 Tadawul 7010",
+            "printed_page": "26"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "ownership_positions",
+      "key": "public_investment_fund",
+      "codex_value": 0.62,
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "26",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "62% Public Investment Fund",
+            "printed_page": "26"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "business_description",
+      "codex_value": "telecommunications and digital-services group …",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "36",
+        "evidence": [
+          {
+            "pdf_page": 19,
+            "quote": "stc group is leading the digital transformation, nationally and regionally, by offering a variety of ICT solutions and digital services in several categories including telecommunication, IT, financial technology, digital media, cybersecurity and other advanced digital solutions.",
+            "printed_page": "36"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ]
+}

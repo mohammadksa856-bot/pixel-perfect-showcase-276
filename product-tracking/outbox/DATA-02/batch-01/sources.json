@@ -1,0 +1,104 @@
+{
+  "batch": "DATA-02/batch-01",
+  "engine_commit": "b70254e",
+  "access_note": "The session's network policy blocks the issuers' sites, saudiexchange.sa and argaam.com. Only PDFs already archived in the engine repo (SHA-256 recomputed) were used.",
+  "documents_used": [
+    {
+      "company": "2222",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "bytes": 17683967,
+      "pdf_pages": 246,
+      "engine_archive_path": "data/raw/SA/2222/documents/78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227.pdf",
+      "used_by": [
+        "manifests/aramco-2025-annual-report-profile.json",
+        "numeric-candidates/2222-annual-report-candidates.json",
+        "reviews/2222-annual-report-codex-keys.json"
+      ]
+    },
+    {
+      "company": "1120",
+      "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+      "sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+      "bytes": 4459942,
+      "pdf_pages": 109,
+      "engine_archive_path": "data/raw/SA/1120/documents/67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52.pdf",
+      "used_by": [
+        "manifests/alrajhi-2025-financial-statements-profile.json"
+      ]
+    },
+    {
+      "company": "7010",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "bytes": 11940283,
+      "pdf_pages": 154,
+      "engine_archive_path": "data/raw/SA/7010/documents/7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21.pdf",
+      "used_by": [
+        "manifests/stc-2025-annual-report-profile.json",
+        "numeric-candidates/7010-annual-report-candidates.json",
+        "numeric-candidates/7010-dividend-event-candidates.json",
+        "reviews/7010-annual-report-codex-keys.json"
+      ]
+    },
+    {
+      "company": "7010",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc_Annual-2025-en.pdf",
+      "sha256": "aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55",
+      "bytes": 5004594,
+      "pdf_pages": 106,
+      "engine_archive_path": "data/raw/SA/7010/documents/aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55.pdf",
+      "used_by": [
+        "manifests/stc-2025-financial-statements-profile.json",
+        "reviews/7010-financial-statements-codex-keys.json"
+      ]
+    },
+    {
+      "company": "2010",
+      "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+      "sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+      "bytes": 10346684,
+      "pdf_pages": 262,
+      "engine_archive_path": "data/raw/SA/2010/documents/888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa.pdf",
+      "used_by": [
+        "manifests/sabic-2025-integrated-annual-report-profile.json",
+        "reviews/2010-integrated-annual-report-codex-keys.json"
+      ]
+    }
+  ],
+  "documents_needed_not_available": [
+    {
+      "company": "8010",
+      "document": "Tawuniya Annual Report 2025",
+      "source_url": "https://www.tawuniya.com/docs/2025_Annual_Report_EN.pdf",
+      "status": "not archived; 403 for Codex; blocked here"
+    },
+    {
+      "company": "8010",
+      "document": "Tawuniya Board of Directors report 2025",
+      "status": "not archived"
+    },
+    {
+      "company": "1120",
+      "document": "Al Rajhi Integrated Annual Report 2025 / Board of Directors report",
+      "status": "not archived; alrajhibank.com.sa blocked here"
+    },
+    {
+      "company": "all",
+      "document": "Saudi Exchange issuer pages (major shareholders, foreign ownership limits, announcements)",
+      "status": "blocked here"
+    }
+  ],
+  "other_archived_not_used_in_batch_01": [
+    {
+      "company": "7010",
+      "source_url": "https://www.stc.com.sa/content/dam/groupsites/en/pdf/stc-sustainability-report2023englishV2.pdf",
+      "sha256": "4c00b056bf0e03cb213945863636e3ca5dff60d12b25211c888fdcb7dfc24591"
+    },
+    {
+      "company": "7010",
+      "source_url": "https://www.stc.com.sa/content/dam/stc/stc-annual-report-2024/assets/img/pdfs/stc_AR2024_English.pdf",
+      "sha256": "eaef9595d99bb0ab50d692738520be356db8d14661ef51ae6c2e266b87ec410c"
+    }
+  ]
+}

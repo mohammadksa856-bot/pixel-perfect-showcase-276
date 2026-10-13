@@ -51,32 +51,65 @@ if (EXPECT === "off") {
   };
   for (const [symbol, exp] of Object.entries(companies)) {
     await check(`${symbol} ar: renders 18 topics, statuses, sources; no errors`, async () => {
-      const { context, page, response, requests, errors } = await openPage(`/preview/companies/${symbol}`);
+      const { context, page, response, requests, errors } = await openPage(
+        `/preview/companies/${symbol}`,
+      );
       assert.equal(response.status(), 200);
       assert.equal(await page.getAttribute("html", "dir"), "rtl");
       assert.equal(await page.locator("[data-topic]").count(), 18);
       assert.equal(await page.locator("[data-preview-badge]").count(), 1);
-      const statuses = await page.locator("[data-topic-status]").evaluateAll((els) => els.map((e) => e.dataset.topicStatus));
-      assert.ok(statuses.every((s) => ["available", "partial", "unavailable", "not_measured", "not_applicable"].includes(s)));
+      const statuses = await page
+        .locator("[data-topic-status]")
+        .evaluateAll((els) => els.map((e) => e.dataset.topicStatus));
+      assert.ok(
+        statuses.every((s) =>
+          ["available", "partial", "unavailable", "not_measured", "not_applicable"].includes(s),
+        ),
+      );
       assert.ok((await page.locator("[data-metric]").count()) > 0, "shows metric rows");
       // كل رابط مصدر http(s) فقط
-      const hrefs = await page.locator("a[target=_blank]").evaluateAll((els) => els.map((a) => a.href));
-      assert.ok(hrefs.length > 0 && hrefs.every((h) => /^https?:\/\//.test(h)), "only http(s) source links");
+      const hrefs = await page
+        .locator("a[target=_blank]")
+        .evaluateAll((els) => els.map((a) => a.href));
+      assert.ok(
+        hrefs.length > 0 && hrefs.every((h) => /^https?:\/\//.test(h)),
+        "only http(s) source links",
+      );
       // الرسوم
-      const charts = await page.locator("[data-chart]").evaluateAll((els) => els.map((e) => e.dataset.chart));
+      const charts = await page
+        .locator("[data-chart]")
+        .evaluateAll((els) => els.map((e) => e.dataset.chart));
       assert.deepEqual(charts, exp.charts);
       if (!exp.charts.length) assert.equal(await page.locator("[data-history-empty]").count(), 1);
       // الربع منفصل وموسوم
       const qRows = await page.locator('[data-period-kind="quarter"]').count();
       assert.equal(qRows > 0, exp.quarter);
-      if (exp.quarter) assert.match(await page.locator('[data-period-kind="quarter"]').first().innerText(), /ربع منفرد/);
+      if (exp.quarter)
+        assert.match(
+          await page.locator('[data-period-kind="quarter"]').first().innerText(),
+          /ربع منفرد/,
+        );
       // لا اتصال من المتصفح بالمحرك ولا بـ Supabase عند التحميل، ولا مفتاح في الصفحة
-      assert.equal(requests.filter((u) => u.includes(`:${ENGINE_PORT}`)).length, 0, "browser never calls engine");
-      assert.equal(requests.filter((u) => /supabase\.co/.test(u)).length, 0, "no Supabase requests on load");
+      assert.equal(
+        requests.filter((u) => u.includes(`:${ENGINE_PORT}`)).length,
+        0,
+        "browser never calls engine",
+      );
+      assert.equal(
+        requests.filter((u) => /supabase\.co/.test(u)).length,
+        0,
+        "no Supabase requests on load",
+      );
       const html = await page.content();
       assert.ok(!html.includes(KEY), "API key absent from DOM");
-      assert.ok(!/2[,]?500[,]?000(?!\d)/.test(html) && !/5[,]?853[,]?702/.test(html), "DCR-001 values absent");
-      assert.deepEqual(errors.filter((e) => !/favicon|Failed to load resource.*404/.test(e)), []);
+      assert.ok(
+        !/2[,]?500[,]?000(?!\d)/.test(html) && !/5[,]?853[,]?702/.test(html),
+        "DCR-001 values absent",
+      );
+      assert.deepEqual(
+        errors.filter((e) => !/favicon|Failed to load resource.*404/.test(e)),
+        [],
+      );
       await page.screenshot({ path: `${SHOTS}/p02-${symbol}-ar-desktop.png`, fullPage: false });
       await context.close();
     });
@@ -93,7 +126,9 @@ if (EXPECT === "off") {
 
     await check(`${symbol} mobile 390px: no horizontal page overflow`, async () => {
       const { context, page } = await openPage(`/preview/companies/${symbol}`, { width: 390 });
-      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - window.innerWidth,
+      );
       assert.ok(overflow <= 1, `page overflows by ${overflow}px`);
       await page.screenshot({ path: `${SHOTS}/p02-${symbol}-ar-mobile.png` });
       await context.close();
@@ -118,7 +153,8 @@ if (EXPECT === "off") {
 }
 
 await browser.close();
-for (const r of results) console.log(`${r.ok ? "PASS" : "FAIL"} ${r.name}${r.ok ? "" : `\n     ${r.error}`}`);
+for (const r of results)
+  console.log(`${r.ok ? "PASS" : "FAIL"} ${r.name}${r.ok ? "" : `\n     ${r.error}`}`);
 const failed = results.filter((r) => !r.ok).length;
 console.log(`\n${results.length - failed} pass, ${failed} fail`);
 process.exit(failed ? 1 : 0);

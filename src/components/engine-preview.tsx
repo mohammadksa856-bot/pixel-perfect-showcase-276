@@ -25,7 +25,7 @@ import { iso } from "@/lib/bidi";
 
 const STATUS: Record<TopicStatus, { label: LocalizedText; icon: string; className: string }> = {
   available: {
-    label: { ar: "متوفر", en: "Available" },
+    label: { ar: "مكتمل", en: "Complete" },
     icon: "✓",
     className: "text-tone-emerald border-tone-emerald/40",
   },

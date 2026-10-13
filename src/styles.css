@@ -217,3 +217,40 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ═══ WEB-V1: دلالات الحالة (إضافية؛ لا تغيّر أي رمز قائم) ═══
+ * كل حالة بيانات لها لون واحد في كل الموقع، ولا يُستخدم اللون وحده: معه رمز ونص دائمًا.
+ * ready/complete/passed  → أخضر   · partial/not_ready → كهرماني · missing/failed → أحمر
+ * not_assessed/unknown   → محايد  · withheld (محجوب بقاعدة جودة) → بنفسجي · excluded (مستثنى بقاعدة مستشهد بها) → سماوي
+ */
+:root {
+  --status-ok: var(--tone-emerald);
+  --status-warn: var(--tone-amber);
+  --status-bad: var(--tone-rose);
+  --status-neutral: oklch(0.66 0.015 258);
+  --status-withheld: var(--tone-violet);
+  --status-excluded: var(--tone-sky);
+  --status-target: var(--gold);
+}
+
+@theme inline {
+  --color-status-ok: var(--status-ok);
+  --color-status-warn: var(--status-warn);
+  --color-status-bad: var(--status-bad);
+  --color-status-neutral: var(--status-neutral);
+  --color-status-withheld: var(--status-withheld);
+  --color-status-excluded: var(--status-excluded);
+  --color-status-target: var(--status-target);
+  --font-numeric: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* الأرقام: أعمدة متساوية العرض دائمًا، والاتجاه يُعزل بـ iso() في المكوّن. */
+@utility num {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* WEB-V1: زر إغلاق نافذة البحث ثابت في الجهة اليمنى؛ نترك له مساحة كي لا يتداخل مع أيقونة البحث في RTL. */
+[cmdk-input-wrapper] {
+  padding-right: 2.75rem;
+}

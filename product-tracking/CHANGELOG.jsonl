@@ -83,3 +83,14 @@
 {"ts": "2026-10-13T10:40:00Z", "task": "DATA-02-B03", "event": "test_run", "run": "RUN-2026-10-13-28", "result": "174 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"}
 {"ts": "2026-10-13T10:45:00Z", "task": "DATA-02-B03", "event": "commit", "branch": "claude/data-02-batch-03", "commit": "191f341", "detail": "manifests, classification, candidates, gaps, sources, tests"}
 {"ts": "2026-10-13T11:00:00Z", "task": "BR-010", "event": "batch_report", "path": "product-tracking/reports/BR-010_DATA-02_batch-03.md"}
+{"ts": "2026-10-13T14:00:00Z", "task": "DATA-02-B04", "event": "started", "branch": "claude/data-02-batch-04", "base": "2d836f5"}
+{"ts": "2026-10-13T14:05:00Z", "task": "DATA-02-REVIEW", "event": "received", "branch": "codex/data02-current-engine-review-20261013", "commit": "239d107", "verification": "5/5 MANIFEST sha256 match; receipt of CLAUDE_REVIEW_REQUEST_AR.md confirmed"}
+{"ts": "2026-10-13T14:10:00Z", "task": "DATA-02-B04", "event": "blocked_partial", "detail": "no archived filing for 4340/4140/4260/9510/4164 in 69 engine branches; issuer, Saudi Exchange and CMA sites blocked; nothing extracted"}
+{"ts": "2026-10-13T15:30:00Z", "task": "DATA-02-REVIEW", "event": "corrected", "detail": "batch-01 ALBA recorded only the 2024 announcement; SABIC AR p206 states completion 2025-02-19; re-proposed as dated disclosure"}
+{"ts": "2026-10-13T16:10:00Z", "task": "DATA-02-B04", "event": "test_run", "run": "RUN-2026-10-13-29", "result": "5/5 files match"}
+{"ts": "2026-10-13T16:10:00Z", "task": "DATA-02-B04", "event": "test_run", "run": "RUN-2026-10-13-30", "result": "all source sha256 recomputed; 216 = 215 REVIEW + 1 REJECT"}
+{"ts": "2026-10-13T16:10:00Z", "task": "DATA-02-B04", "event": "test_run", "run": "RUN-2026-10-13-31", "result": "24/24 quotes on page (11 OCR)"}
+{"ts": "2026-10-13T16:10:00Z", "task": "DATA-02-B04", "event": "test_run", "run": "RUN-2026-10-13-32", "result": "11/11; tamper check 1 fail as expected"}
+{"ts": "2026-10-13T16:10:00Z", "task": "DATA-02-B04", "event": "test_run", "run": "RUN-2026-10-13-33", "result": "185 pass, 14 skip (integration), 0 fail; tsc 0; eslint clean"}
+{"ts": "2026-10-13T16:15:00Z", "task": "DATA-02-B04", "event": "commit", "branch": "claude/data-02-batch-04", "commit": "279618f", "detail": "entity assessment, gaps, sources, review-support, reviews, tests"}
+{"ts": "2026-10-13T16:30:00Z", "task": "BR-011", "event": "batch_report", "path": "product-tracking/reports/BR-011_DATA-02_batch-04.md"}

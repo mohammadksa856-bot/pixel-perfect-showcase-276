@@ -1,0 +1,73 @@
+{
+  "schema": "data03-shaker-portable-source-recovery/1",
+  "review_date": "2026-10-13",
+  "company_id": "sa:1214",
+  "snapshot": {
+    "observed_at": "2026-10-13T02:40:41.718152+00:00",
+    "sha256": "e5ece84fa6d02e51b7d065e3bbca74f53a0266a89fdd1558dc2775ff6d2cbade",
+    "live": false,
+    "original_valued_cells": 620,
+    "underlying_sources": 29
+  },
+  "source_to_point_bindings": {
+    "local_receipt_reference_sha256": "2593e34af3f421ea5c36a5538b6a70a0636fd0a02885a9a73ce126c82058e1ca",
+    "local_receipt_redistributed": false,
+    "sha256": "a2f221e90ca16e68648e9a5d8177c43a86a7d50cbd73023a0749a42ca8790438",
+    "includes_all29_source_keys_and620_original_point_ids": true,
+    "values_exported": false
+  },
+  "retrieval_method": "Bounded readonly SSH archive byte download; checked byte count and frame/source SHA256. No server writes, SQL operations or extraction replay.",
+  "documents": [
+    {
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/373_0_2026-03-01_13-15-59_En.pdf",
+      "sha256": "aad6ca527df02ffb036c61092935861f60f4512729799ed32749a89f0b1a14e4",
+      "bytes": 833645,
+      "pages": 53,
+      "retrieval": "VERIFIED_ARCHIVE_BYTES",
+      "cover_independently_viewed": true,
+      "actual_cover_period": "FY2025 ended2025-12-31",
+      "scope": "consolidated",
+      "cover_pdf_page": 1,
+      "existing_original_cells_bound": 26,
+      "known_at": null,
+      "numeric_cells_independently_verified": 0
+    },
+    {
+      "source_url": "https://shaker.com.sa/wp-content/uploads/2025/04/FY-2024-Financial-Statement.pdf",
+      "sha256": "c9da92e420cc71381330dd748eca686e4af9a3f5cb7f71b2284da59767d5c9a7",
+      "bytes": 1947970,
+      "pages": 53,
+      "retrieval": "VERIFIED_ARCHIVE_BYTES",
+      "cover_independently_viewed": true,
+      "actual_cover_period": "FY2024 ended2024-12-31",
+      "scope": "consolidated",
+      "cover_pdf_page": 1,
+      "existing_original_cells_bound": 23,
+      "known_at": null,
+      "numeric_cells_independently_verified": 0
+    },
+    {
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/373_0_2026-08-09_15-35-56_En.pdf",
+      "sha256": "25fc8fd450bf6459c51e6495522a341b3ba6b6ac2dfb589a8d2fabbee080e9e2",
+      "retrieval": "BLOCKED_FIRST_ATTEMPT_CONNECTION_RESET",
+      "existing_original_cells_bound": 38,
+      "actual_cover_period": null,
+      "known_at": null,
+      "numeric_cells_independently_verified": 0,
+      "error": "client_loop: send disconnect: Connection reset"
+    }
+  ],
+  "counts": {
+    "sources_in_frozen_inventory": 29,
+    "bounded_source_retrieval_attempts": 3,
+    "hash_verified_native_documents": 2,
+    "cover_identity_period_verified": 2,
+    "transport_blocked": 1,
+    "original_cells_bound_to_recovered_bytes": 49,
+    "numeric_accuracy_verified": 0,
+    "database_rows_modified": 0,
+    "production_published": 0
+  },
+  "important": "SHAKER missing Batch03 profile document is not absent financial data. ALLSA has620 originals. Recovery restores byte/source provenance for49existingcells without proving their values. Existing source filed_at metadata must not be treated as official known_at.",
+  "rights": "Keep full PDF and page image copies local. Portable handoff uses public issuer URLs, hash and page pointers only; no full document redistribution license established."
+}

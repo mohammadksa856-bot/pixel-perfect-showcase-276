@@ -1,0 +1,103 @@
+{
+  "schema": "data03-maaden-vintage-supplement/2",
+  "review_date": "2026-10-13",
+  "preserves_prior_review": "DATA03_SOURCE_DISCREPANCY_REVIEW_20261013_v1.json",
+  "new_primary_source": {
+    "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/results-centre/2025/maaden-q3-25-cfs---eng---final--signed.pdf",
+    "retrieval": "Direct official URL HTTP200 application/pdf",
+    "archive_matching_exact_url": 0,
+    "bytes": 2725818,
+    "sha256": "cc9bd8c85afcb2880b9808b2e91af3925412246a50df85efc6c6147336ed0725",
+    "local_path_reference_sha256": "df83faba06a0aa6d27aa49b17fcbf9e62ec08250fc047bec2ec94c1dd1600b01",
+    "local_path_redistributed": false,
+    "pdf_pages": 36,
+    "independently_viewed_pdf_pages": [
+      1,
+      31
+    ],
+    "printed_note_page": 30,
+    "note": "17.1b",
+    "cover_period": "quarter and nine months ended2025-09-30",
+    "audit_status": "Unaudited interim",
+    "known_at": null
+  },
+  "source_verified_vintages": [
+    {
+      "basis_as_of": "2025-09-30",
+      "scope": "Group completed offering during period ended September30",
+      "aggregate_face_value": "1250000000",
+      "currency": "USD",
+      "source_reported_SAR_equivalent": "4678000000",
+      "tranches": [
+        {
+          "value": "750000000",
+          "currency": "USD",
+          "tenor_years": 5,
+          "profit_rate": "5.25%",
+          "maturity": "2030-02-13"
+        },
+        {
+          "value": "500000000",
+          "currency": "USD",
+          "tenor_years": 10,
+          "profit_rate": "5.50%",
+          "maturity": "2035-02-13"
+        }
+      ],
+      "source_sha256": "cc9bd8c85afcb2880b9808b2e91af3925412246a50df85efc6c6147336ed0725",
+      "pdf_page": 31
+    },
+    {
+      "basis_as_of": "2025-12-31",
+      "scope": "Group offering including additional funding raised October14",
+      "aggregate_face_value": "1500000000",
+      "currency": "USD",
+      "source_reported_SAR_equivalent": "5664000000",
+      "tranches": [
+        {
+          "value": "750000000",
+          "currency": "USD",
+          "tenor_years": 5,
+          "profit_rate": "5.25%",
+          "maturity": "2030-02-13"
+        },
+        {
+          "value": "750000000",
+          "currency": "USD",
+          "tenor_years": 10,
+          "profit_rate": "5.50%",
+          "maturity": "2035-02-13"
+        }
+      ],
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "pdf_page": 183,
+      "printed_page": 181,
+      "note": "35.6b"
+    }
+  ],
+  "verdict": "ACCEPT_SOURCE_VINTAGES_SEPARATELY_CANONICAL_ADMISSION_HELD",
+  "new_page_image_pins": [
+    {
+      "pdf_page": 1,
+      "path": "output/DATA03-review-20261013/page-review/1211-q3-cover.png",
+      "sha256": "9bec6cc2add08dc340334ca594379b09aba2027cf676e21b2e0a51f1e532ca4d"
+    },
+    {
+      "pdf_page": 31,
+      "path": "output/DATA03-review-20261013/page-review/1211-q3-page31.png",
+      "sha256": "9fa6f5296311603b4d043501b4a512c8c6e715d3137de398baada3b3bae389f6"
+    }
+  ],
+  "reconciliation": "The Q3 primary filing proves1.25b aggregate with750m/500m tranches before October. The annual note proves1.5b aggregate including additional funding with750m/750m tranches. These are distinct disclosed vintages, not contradictory amounts for an identical scope/date. This corroborates the annual strategic narrative without rewriting the earlier immutable review.",
+  "prohibited_inferences": [
+    "Do not record1.5b entirely issued onFebruary9",
+    "Do not create a250mOctober transaction merely by subtraction",
+    "Do not equate reported equivalents with actual paid cash or derive foreign-exchange rates",
+    "Maturities do not by themselves prove exact initial completion dates",
+    "No official known_at inferred from URL, cover, retrieval or metadata"
+  ],
+  "numeric_apply": false,
+  "production_published": 0,
+  "rights": "Full primary PDF and page images local only; portable handoff issuer URL/hash/page pointers. No source passage quoted in this supplemental record.",
+  "remaining_gates": "Canonical event-versus-stock metric/scope policy, official known-at, local import contracts, independent deployment gates remain separate."
+}

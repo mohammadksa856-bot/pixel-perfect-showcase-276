@@ -1,0 +1,965 @@
+{
+  "schema": "data03-numeric-candidate-checkpoint/2",
+  "review_date": "2026-10-13",
+  "source_correctness_separate_from_mapping": true,
+  "canonical_admission": 0,
+  "database_writes": 0,
+  "known_at": null,
+  "items": [
+    {
+      "candidate_id": "1211:1",
+      "company_id": "sa:1211",
+      "proposed_metric": "segment_sales_share_2025",
+      "source_value": {
+        "Phosphate BU": 0.54,
+        "Aluminum BU": 0.29,
+        "Base metals and new minerals BU": 0.16,
+        "All other segments": 0.01
+      },
+      "source_unit": "fraction of total sales",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        102
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:2",
+      "company_id": "sa:1211",
+      "proposed_metric": "board_meetings_2025",
+      "source_value": {
+        "count": 5,
+        "dates": [
+          "2025-03-06",
+          "2025-05-06",
+          "2025-08-07",
+          "2025-11-05",
+          "2025-12-15"
+        ]
+      },
+      "source_unit": "meetings",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        118
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:3",
+      "company_id": "sa:1211",
+      "proposed_metric": "board_committee_remuneration_total_2025",
+      "source_value": 13555000,
+      "source_unit": "SAR",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        100
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:4",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_dap_2025",
+      "source_value": 6723,
+      "source_unit": "kmt",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:5",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_ammonia_2025",
+      "source_value": 3008,
+      "source_unit": "kmt",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:6",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_alumina_2025",
+      "source_value": 1891,
+      "source_unit": "kmt",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:7",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_aluminum_2025",
+      "source_value": 999,
+      "source_unit": "kmt",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:8",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_flat_rolled_products_2025",
+      "source_value": 311,
+      "source_unit": "kmt",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:9",
+      "company_id": "sa:1211",
+      "proposed_metric": "production_gold_2025",
+      "source_value": 478,
+      "source_unit": "koz",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:10",
+      "company_id": "sa:1211",
+      "proposed_metric": "gold_aisc_2025",
+      "source_value": 1291,
+      "source_unit": "USD/oz",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        18
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:11",
+      "company_id": "sa:1211",
+      "proposed_metric": "phosphate_fertilizer_sales_2025",
+      "source_value": 6.7,
+      "source_unit": "million tonnes",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        35
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:12",
+      "company_id": "sa:1211",
+      "proposed_metric": "ultra_low_carbon_ammonia_2025",
+      "source_value": 452,
+      "source_unit": "thousand tonnes",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        35
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:13",
+      "company_id": "sa:1211",
+      "proposed_metric": "employees_fte_2025",
+      "source_value": 7107,
+      "source_unit": "people",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        64
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:14",
+      "company_id": "sa:1211",
+      "proposed_metric": "saudization_rate_2025",
+      "source_value": 0.787,
+      "source_unit": "fraction",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        64
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:15",
+      "company_id": "sa:1211",
+      "proposed_metric": "female_representation_2025",
+      "source_value": 0.086,
+      "source_unit": "fraction",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        64
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:16",
+      "company_id": "sa:1211",
+      "proposed_metric": "fatalities_contractors_2025",
+      "source_value": 2,
+      "source_unit": "count",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        67,
+        68
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:17",
+      "company_id": "sa:1211",
+      "proposed_metric": "lost_time_injuries_2025",
+      "source_value": {
+        "employees": 1,
+        "contractors": 5
+      },
+      "source_unit": "count",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        68
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:18",
+      "company_id": "sa:1211",
+      "proposed_metric": "ghg_scope1_2_2025",
+      "source_value": 14661724,
+      "source_unit": "tCO2e",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        56
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:19",
+      "company_id": "sa:1211",
+      "proposed_metric": "ghg_intensity_2025",
+      "source_value": 0.974,
+      "source_unit": "tCO2e per ton production",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        56
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:20",
+      "company_id": "sa:1211",
+      "proposed_metric": "social_investment_2025",
+      "source_value": 52488341,
+      "source_unit": "SAR",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        101
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:21",
+      "company_id": "sa:1211",
+      "proposed_metric": "gold_resource_addition_jan2026",
+      "source_value": 7.8,
+      "source_unit": "million ounces",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        15
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "1211:22",
+      "company_id": "sa:1211",
+      "proposed_metric": "wadi_al_jaww_inferred_resource",
+      "source_value": {
+        "tonnes_mt": 76.8,
+        "grade_g_t_au": 1.25,
+        "contained_moz": 3.08
+      },
+      "source_unit": "Mt / g/t / Moz",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "delivery_sha256": "32fcbb45f1da540fb53b250aee8b876ea77ea3b3994f68477988ce3823e88fb6",
+      "pdf_pages": [
+        29
+      ],
+      "independent_verdict": "NOT_YET_VISUALLY_REVIEWED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null
+    },
+    {
+      "candidate_id": "3020:1",
+      "company_id": "sa:3020",
+      "proposed_metric": "cwip_production_line_project",
+      "source_value": 1.196,
+      "source_unit": "SAR million (as printed)",
+      "proposed_period": null,
+      "proposed_as_of": "2025-12-31",
+      "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+      "delivery_sha256": "2798ae8b4e610678e805e4ead598617c76c5eea68807917db12292d0e54a2f59",
+      "pdf_pages": [
+        4,
+        25
+      ],
+      "independent_verdict": "BLOCKED_SUBSET_UNIT_UNRESOLVED",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "review_ref": "DATA03_SOURCE_DISCREPANCY_REVIEW_20261013_v1.json"
+    },
+    {
+      "candidate_id": "3020:2",
+      "company_id": "sa:3020",
+      "proposed_metric": "clinker_inventory_value",
+      "source_value": 421400000,
+      "source_unit": "SAR",
+      "proposed_period": null,
+      "proposed_as_of": "2025-12-31",
+      "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+      "delivery_sha256": "2798ae8b4e610678e805e4ead598617c76c5eea68807917db12292d0e54a2f59",
+      "pdf_pages": [
+        4
+      ],
+      "independent_verdict": "VERIFY_ROUNDED_SOURCE_VALUE",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "review_ref": "DATA03_SOURCE_DISCREPANCY_REVIEW_20261013_v1.json",
+      "precision": "421.4 million SAR rounded KAM disclosure, not proven exact SAR-to-unit precision"
+    },
+    {
+      "candidate_id": "4030:1",
+      "company_id": "sa:4030",
+      "proposed_metric": "segment_revenue",
+      "source_value": {
+        "transportation_of_oil": 5860009,
+        "transportation_of_chemicals": 2856471,
+        "logistics": 1120486,
+        "transportation_of_dry_bulk": 402689,
+        "others": 107066
+      },
+      "source_unit": "SAR thousands",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        28
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Full thousand SAR heading; FY2025 segment revenues exclude subtotal/total double-counting. Other107066 distinct segment.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page28.png",
+          "sha256": "28772b5b5b3239c49199b3b26b2343a33cfccec171ed60e558b7720ecd917b73"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:2",
+      "company_id": "sa:4030",
+      "proposed_metric": "fleet_size",
+      "source_value": {
+        "owned_vessels": 104,
+        "leased_vessels": 9,
+        "prior_year_owned": 93,
+        "prior_year_leased": 16
+      },
+      "source_unit": "vessels",
+      "proposed_period": null,
+      "proposed_as_of": "2025-12-31",
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        14
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Instant2025-12-31;104owned+9leased, prior93+16. Not FYadditive flows.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page14.png",
+          "sha256": "286cf1d5ed324cb82cbbb6149bfc5ae7d2abc2eb9eaf74e6d496a23d33e56e6b"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:3",
+      "company_id": "sa:4030",
+      "proposed_metric": "fleet_by_segment",
+      "source_value": {
+        "oil_vlccs": 50,
+        "chemicals_owned": 33,
+        "chemicals_leased": 9,
+        "logistics_rocon": 6,
+        "logistics_mpp": 2,
+        "dry_bulk_owned": 13
+      },
+      "source_unit": "vessels",
+      "proposed_period": null,
+      "proposed_as_of": "2025-12-31",
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        14
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Instant2025-12-31;chemicals33owned+9leased, logistics6RoCon+2MPP, oil50VLCC,dry13owned; owned total104. Chartermarket descriptions do not change vessel ownership.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page14.png",
+          "sha256": "286cf1d5ed324cb82cbbb6149bfc5ae7d2abc2eb9eaf74e6d496a23d33e56e6b"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:4",
+      "company_id": "sa:4030",
+      "proposed_metric": "revenue_disaggregation",
+      "source_value": {
+        "spot": 7762572,
+        "charter_hire": 1567061,
+        "freight_forwarding": 559585,
+        "time_charter": 341830,
+        "water_desalination": 94721,
+        "others": 20952
+      },
+      "source_unit": "SAR thousands",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        42
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "FY2025 disaggregation by revenue type, not operating segment. SARthousand scale1000; components total10346721.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page42.png",
+          "sha256": "b8fe6b681837f277359273b3d5b70b2725c12ea8ef0680f85a257a2648ef7800"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:5",
+      "company_id": "sa:4030",
+      "proposed_metric": "major_customer_concentration",
+      "source_value": {
+        "related_party_major_customers_share_of_revenue": 0.468,
+        "prior_year": 0.506
+      },
+      "source_unit": "fraction",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        28
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Source says around46.8%, not exact fraction; FY2025 related-party major-customer revenue share, not grossreceivables concentration45% onp47.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page28.png",
+          "sha256": "28772b5b5b3239c49199b3b26b2343a33cfccec171ed60e558b7720ecd917b73"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:6",
+      "company_id": "sa:4030",
+      "proposed_metric": "aramco_related_party_revenue",
+      "source_value": {
+        "value": 4727083,
+        "prior_year": 4238859
+      },
+      "source_unit": "SAR thousands",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        43
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "ARAMCO and subsidiaries shareholder revenue4727083thousand; not bunker purchases738016. FY2025, prior4238859.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page43.png",
+          "sha256": "8ea98fb2f8f32c49695a8507b118dc32866a3419b0f33e6d3a6cf566f8c25b0b"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:7",
+      "company_id": "sa:4030",
+      "proposed_metric": "share_of_results_equity_investees",
+      "source_value": {
+        "petredec": 607014,
+        "imi": -3648,
+        "ngc": -36941,
+        "total": 566425
+      },
+      "source_unit": "SAR thousands",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        34
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Group recognized FY2025 shareprofitPetredec607014 and lossesIMI3648/NGC36941thousand; underlying Petredec information has two-month lag (p14) and tables31October, not identical investee calendar. Preserve group recognition versus investee underlying period.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page34.png",
+          "sha256": "9938b31c5186f9226de16f8721df9c247176ea6008ff5a70e08f5dc9de4f7272"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:8",
+      "company_id": "sa:4030",
+      "proposed_metric": "key_management_compensation",
+      "source_value": {
+        "total": 50986,
+        "short_term": 45375,
+        "post_employment": 5611,
+        "board_remuneration_sar_millions": 14.4
+      },
+      "source_unit": "SAR thousands",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        44
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Mixed unit composite:50986/45375/5611thousandSAR, board14.4millionSAR separate rounded amount. Do not add board twice or apply same multiplier to all members.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page44.png",
+          "sha256": "b466d12cc110df4c6999c3b245308b3a951a298241a9e577cf077789cfdff398"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:9",
+      "company_id": "sa:4030",
+      "proposed_metric": "unutilized_credit_facilities",
+      "source_value": {
+        "value": 3490,
+        "prior_year": 2732
+      },
+      "source_unit": "SAR millions",
+      "proposed_period": null,
+      "proposed_as_of": "2025-12-31",
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        47
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "Source expressly3490millionSAR, not thousand heading; instantDecember31, prior2732million. Not borrowings drawn or cashassets.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page47.png",
+          "sha256": "b922b7d5b1dddd5a7a67f3d122ce4a720114ba8208dfa9b3a7f1ade4d40bca5d"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4030:10",
+      "company_id": "sa:4030",
+      "proposed_metric": "gearing_ratio",
+      "source_value": {
+        "value": 0.37,
+        "prior_year": 0.35
+      },
+      "source_unit": "fraction",
+      "proposed_period": null,
+      "proposed_as_of": "2025-12-31",
+      "source_sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "delivery_sha256": "6b5265d3fc88e96994eecd2edf0aab80e23ee5876cd9e742f0ccd4c1e4215fa6",
+      "pdf_pages": [
+        49
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "context_restrictions": "InstantDecember31;37%rounded FY2025/35%FY2024. Source net debt includesborrowings+leases lesscash/shortdeposits; denominator netdebt+capital. Do not relabel as debt/equity.",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/4030-page49.png",
+          "sha256": "1fc04fa5c869632558b798673559ae05abafbed060222744991540a3fe07f722"
+        }
+      ]
+    },
+    {
+      "candidate_id": "7203:1",
+      "company_id": "sa:7203",
+      "proposed_metric": "revenue_by_segment",
+      "source_value": {
+        "digital_business": 6724579826,
+        "business_process_outsourcing": 2557943322,
+        "professional_services": 182361840
+      },
+      "source_unit": "SAR",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "delivery_sha256": "2d997895a9c324ba8e36a9cdf0108adaad69234174bbebdce213213622283427",
+      "pdf_pages": [
+        52
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "scale": "1",
+      "currency": "SAR",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/7203-page52.png",
+          "sha256": "0573ec149579c6ee6a5967481b30a64688ce06461f6a29b9634d8f36dbcff212"
+        }
+      ],
+      "period_semantics": "fy2025-01-01..2025-12-31",
+      "restriction": "Breakdown dimensions are distinct: segment versus customer_type versus revenue recognition timing. No mixing or replacing group total."
+    },
+    {
+      "candidate_id": "7203:2",
+      "company_id": "sa:7203",
+      "proposed_metric": "revenue_by_customer_type",
+      "source_value": {
+        "private_parties": 5430151562,
+        "government_agencies": 4034733426
+      },
+      "source_unit": "SAR",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "delivery_sha256": "2d997895a9c324ba8e36a9cdf0108adaad69234174bbebdce213213622283427",
+      "pdf_pages": [
+        33
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "scale": "1",
+      "currency": "SAR",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/7203-page33.png",
+          "sha256": "0dabbb87a8d98dfe8d5a4c323b6cc3313dc5c7d6c585ae95a834139d69210c53"
+        }
+      ],
+      "period_semantics": "fy2025-01-01..2025-12-31",
+      "restriction": "Breakdown dimensions are distinct: segment versus customer_type versus revenue recognition timing. No mixing or replacing group total."
+    },
+    {
+      "candidate_id": "7203:3",
+      "company_id": "sa:7203",
+      "proposed_metric": "revenue_by_recognition_timing",
+      "source_value": {
+        "at_a_point_in_time": 6484617192,
+        "over_a_period_of_time": 2980267796
+      },
+      "source_unit": "SAR",
+      "proposed_period": "FY2025",
+      "proposed_as_of": null,
+      "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "delivery_sha256": "2d997895a9c324ba8e36a9cdf0108adaad69234174bbebdce213213622283427",
+      "pdf_pages": [
+        33
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "scale": "1",
+      "currency": "SAR",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/7203-page33.png",
+          "sha256": "0dabbb87a8d98dfe8d5a4c323b6cc3313dc5c7d6c585ae95a834139d69210c53"
+        }
+      ],
+      "period_semantics": "fy2025-01-01..2025-12-31",
+      "restriction": "Breakdown dimensions are distinct: segment versus customer_type versus revenue recognition timing. No mixing or replacing group total."
+    },
+    {
+      "candidate_id": "7203:4",
+      "company_id": "sa:7203",
+      "proposed_metric": "receivables_by_customer_type",
+      "source_value": {
+        "government": 2363370268,
+        "private": 1991467082
+      },
+      "source_unit": "SAR",
+      "proposed_period": "as of 2025-12-31",
+      "proposed_as_of": null,
+      "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "delivery_sha256": "2d997895a9c324ba8e36a9cdf0108adaad69234174bbebdce213213622283427",
+      "pdf_pages": [
+        54
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "scale": "1",
+      "currency": "SAR",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/7203-page54.png",
+          "sha256": "f63fd1d7a67c82c134932ffe10e225852e12849ac8e5daff42732a945ea780a3"
+        }
+      ],
+      "period_semantics": "instant2025-12-31",
+      "restriction": "Accounts receivable book value before ECL, excludes separate contract assets and is not net receivables. Government/private dimensions required."
+    },
+    {
+      "candidate_id": "7203:5",
+      "company_id": "sa:7203",
+      "proposed_metric": "off_balance_sheet_agent_cash",
+      "source_value": 12500000000,
+      "source_unit": "SAR",
+      "proposed_period": "as of 2025-12-31",
+      "proposed_as_of": null,
+      "source_sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "delivery_sha256": "2d997895a9c324ba8e36a9cdf0108adaad69234174bbebdce213213622283427",
+      "pdf_pages": [
+        46
+      ],
+      "independent_verdict": "VERIFY_SOURCE_VALUES_CONTEXT",
+      "mapping_verdict": "HOLD_CANONICAL_SEMANTICS_DIMENSIONS_PERIOD_POLICY",
+      "known_at": null,
+      "scope": "consolidated group",
+      "scale": "1",
+      "currency": "SAR",
+      "evidence_images": [
+        {
+          "path": "output/DATA03-review-20261013/page-review/7203-page46.png",
+          "sha256": "8ecaa6a6bdaa868bd79c7377d7bc26a2564de1ffc9b221fd0c5f187186c94bdc"
+        }
+      ],
+      "period_semantics": "instant2025-12-31",
+      "precision": "rounded12.5billion",
+      "restriction": "Agent funds NOT recognized group assets; do not map to cash or add to asset/cash totals"
+    }
+  ],
+  "source_pins": [
+    {
+      "company": "4030",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/439_0_2026-03-17_13-59-49_En.pdf",
+      "sha256": "3236f81fdc8baa9592a7d7a44228ea5972cd19799c4f43b58e8f3179d8b00872"
+    },
+    {
+      "company": "3020",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+      "sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0"
+    },
+    {
+      "company": "1211",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6"
+    },
+    {
+      "company": "7203",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/2784_0_2026-03-05_17-23-45_En.pdf",
+      "sha256": "363810a1a59f0d824d5c053286e35900c0bd4092b22807a125003cddb0c11600"
+    }
+  ],
+  "counts": {
+    "objects": 39,
+    "source_values_context_visually_reviewed": 16,
+    "source_unit_unresolved": 1,
+    "not_yet_visually_reviewed": 22,
+    "canonical_admitted": 0,
+    "production_published": 0
+  },
+  "preserves_prior_review": "DATA03_NUMERIC39_REVIEW_CHECKPOINT_20261013_v1.json"
+}

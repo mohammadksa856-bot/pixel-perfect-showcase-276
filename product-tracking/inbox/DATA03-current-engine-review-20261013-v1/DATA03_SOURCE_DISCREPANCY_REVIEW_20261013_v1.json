@@ -1,0 +1,131 @@
+{
+  "schema": "data03-independent-source-discrepancy/1",
+  "review_date": "2026-10-13",
+  "method": "Native complete PDF pages rendered and independently viewed; extraction text used only to locate pages. No inferred corrections or database writes.",
+  "reviews": [
+    {
+      "company_id": "sa:3020",
+      "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+      "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+      "pages": [
+        {
+          "pdf_page": 4,
+          "image_sha256": "149f7f73d0c35e269ad0714259454f457dbc51961896784eed375bb1f523efed"
+        },
+        {
+          "pdf_page": 25,
+          "printed_page": 23,
+          "image_sha256": "0439149cafe545fe4035a1e39e46142bb96bee30ec8d279a18ff8f0094a423d2"
+        }
+      ],
+      "period_end": "2025-12-31",
+      "currency": "SAR",
+      "findings": [
+        {
+          "location": "p4 auditor key audit matter",
+          "measure": "Total capital work in progress",
+          "reported_value": "1.2",
+          "reported_unit": "billion SAR",
+          "precision": "rounded",
+          "scope": "Company total CWIP",
+          "comparative": "1.1 billion SAR FY2024"
+        },
+        {
+          "location": "p25 note6 CWIP column closing cost and net book value",
+          "measure": "Total capital work in progress",
+          "reported_value": "1205456525",
+          "reported_unit": "SAR",
+          "precision": "exact printed table",
+          "scope": "Company total CWIP",
+          "opening": "1142381610",
+          "additions": "389663261",
+          "transfers": "-326588346",
+          "reconciliation": "1142381610+389663261-326588346=1205456525"
+        },
+        {
+          "location": "p25 note6 narrative below table",
+          "measure": "Production line project expenditures included in CWIP",
+          "reported_value": "1.196",
+          "reported_unit": "million SAR",
+          "precision": "as printed",
+          "scope": "Project subset of company CWIP",
+          "minimal_excerpt_reference_sha256": "c63d074b611d50194712dc129a6d7ded960719c60e4c2de6b5fe8d20324c1ba1",
+          "minimal_excerpt_redistributed": false
+        }
+      ],
+      "verdict": "BLOCKED_PROJECT_AMOUNT_UNIT_UNRESOLVED",
+      "reason": "The candidate compares a project subset narrative with a company-total auditor amount. Total exact table agrees with rounded KAM, but does not prove the subset unit is a misprint. The project could conceivably be smaller; multiplying it by1000 is not independently established.",
+      "safe_next_step": "Keep project candidate separate and unadmitted; seek issuer clarification, corrected filing or project-specific corroborating note. Total CWIP table can be reviewed under a separate canonical total field, never substitute for the project subset.",
+      "numeric_apply": false,
+      "known_at": null
+    },
+    {
+      "company_id": "sa:1211",
+      "source_url": "https://axvpvthrjz64.compat.objectstorage.me-jeddah-1.oraclecloud.com/maaden-website-assets/reports/annual-reports/maaden-ar-updated-ver---mar-26-eng-ver_compressed.pdf",
+      "source_sha256": "dae44e050e70e412049516a4caea688f9ff0cd918cab44b393ee86ecaf4b02a6",
+      "pages": [
+        {
+          "pdf_page": 104,
+          "printed_page": 102,
+          "image_sha256": "e2b7d7e76b8d2056f863cc47f71b161400d1d7f32882a9a65c216a47a5c49cda"
+        },
+        {
+          "pdf_page": 183,
+          "printed_page": 181,
+          "image_sha256": "6766f786efee4212d7a64b166437571ddb6d2114274911cb865048c7c418d0c7"
+        }
+      ],
+      "period": "FY2025 consolidated group",
+      "findings": [
+        {
+          "location": "p104 strategic pillars foundation narrative",
+          "measure": "First international senior unsecured sukuk offering face amount",
+          "reported_value": "1.25",
+          "reported_unit": "USD billion",
+          "date": "Not specified on this statement",
+          "scope": "Narrative offering; initial-vs-expanded basis not explicit here"
+        },
+        {
+          "location": "p183 note35.6b",
+          "measure": "Offering face value including additional funding",
+          "reported_value": "1.5",
+          "reported_unit": "USD billion",
+          "reported_SAR_equivalent": "5664 million SAR",
+          "completed_initial_date_as_reported": "2025-02-09",
+          "additional_funding_date_as_reported": "2025-10-14",
+          "scope": "Consolidated group offering INCLUDING additional funding",
+          "tranches": [
+            {
+              "principal": "750 million USD",
+              "tenor_years": 5,
+              "profit_rate": "5.25%",
+              "maturity": "2030-02-13"
+            },
+            {
+              "principal": "750 million USD",
+              "tenor_years": 10,
+              "profit_rate": "5.50%",
+              "maturity": "2035-02-13"
+            }
+          ],
+          "minimal_excerpt_reference_sha256": "c22d44608f85eb92434178b750df8cd125c30ef9e4196db156c6734f94426e66",
+          "minimal_excerpt_redistributed": false
+        }
+      ],
+      "verdict": "SEPARATE_EVENT_VINTAGES_NOT_SINGLE_AMOUNT",
+      "reason": "Note35.6 explicitly includes an October expansion. Therefore the two amounts cannot be treated as unqualified contradictory same-date facts. Whether1.25 is precisely the initial amount remains unconfirmed by these pages alone. Do not infer250million expansion or derive FX conversion; preserve the source-reported SAR equivalent separately.",
+      "safe_next_step": "Represent note35.6 as year-end aggregate including additional funding, not1.5b issued solely on9February. Keep initial issuance amount and expansion split held until dated issuer release/term sheet proves them. Preserve the1.25b narrative as a separate sourced claim.",
+      "numeric_apply": false,
+      "known_at": null
+    }
+  ],
+  "counts": {
+    "documents_independently_reviewed": 2,
+    "complete_pages_viewed": 4,
+    "conflicts_reviewed": 2,
+    "numeric_corrections_applied": 0,
+    "production_published": 0
+  },
+  "rights": "Full PDFs and full-page PNG evidence remain local. Portable delivery should contain issuer URLs, hashes, page pointers and only minimal excerpts; availability online does not establish redistribution rights.",
+  "limits": "Independent review of these named claims only, not all39 numeric candidates or complete company financial statements. Official publication/known-at timing remains unconfirmed. Source quote accuracy is not canonical mapping approval."
+}

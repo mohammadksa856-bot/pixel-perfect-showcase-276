@@ -1,0 +1,97 @@
+{
+  "schema": "data03-independent-canonical-named-cell/1",
+  "review_date": "2026-10-13",
+  "company_id": "sa:3020",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/424_0_2026-02-25_15-17-48_En.pdf",
+  "source_sha256": "5f522341d6ad40c84c4ba13fec7de717f89c31dd93365088f382b097eea802a0",
+  "source_title": "Yamama Cement Company FY2025 financial statements and independent auditor report",
+  "source_scope_evidence": {
+    "scope": "company-level standalone financial statements",
+    "not_consolidated": true,
+    "basis": "Cover p1 and auditor opinion p3 identify financial statements of the Company, not a Group or consolidated statements. Signed statement p7 has Company title. Note2 p11 says Company historical-cost accounts with equity-method associates.",
+    "scope_to_engine_proposal": "standalone",
+    "do_not_force_default_consolidated": true
+  },
+  "named_cell": {
+    "metric": "construction_in_progress",
+    "source_label": "Capital Works in Progress",
+    "table_ref": "Note6 PPE; CWIP column; closing net book value as atDecember31,2025",
+    "pdf_page": 25,
+    "printed_page": 23,
+    "raw_value": "1205456525",
+    "source_unit": "SAR",
+    "scale": "1",
+    "normalized_value": "1205456525",
+    "currency": "SAR",
+    "normalized_unit": "SAR",
+    "sign": "positive",
+    "period_kind": "instant",
+    "period_start": "",
+    "period_end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 0,
+    "scope": "standalone",
+    "dimensions": {},
+    "is_calculated": false,
+    "original_point_id": null,
+    "known_at": null,
+    "filed_at": null
+  },
+  "accounting_basis": {
+    "measurement": "historical-cost CWIP carrying amount",
+    "closing_cost": "1205456525",
+    "accumulated_depreciation": "0 shown as dash in CWIP column",
+    "closing_net_book_value": "1205456525",
+    "choice": "Use explicitly printed net book value; same as cost because CWIP accumulated depreciation is nil in this table",
+    "reconciliation": {
+      "opening": "1142381610",
+      "additions": "389663261",
+      "transfers_out": "326588346",
+      "result": "1205456525"
+    },
+    "ppe_total_net_book_value": "5938946684",
+    "no_double_counting": "CWIP is a subset of PPE total already included onp7; do not add CWIP to PPE when aggregating assets"
+  },
+  "independent_verdict": "VERIFY_SOURCE_NAMED_CELL_UNIT_PERIOD_COMPANY_SCOPE",
+  "canonical_verdict": "SOURCE_SUPPORTED_CANDIDATE_LOCAL_CONTRACT_CHECKS_REQUIRED",
+  "presence_check": {
+    "snapshot_sha256": "e5ece84fa6d02e51b7d065e3bbca74f53a0266a89fdd1558dc2775ff6d2cbade",
+    "snapshot_observed_at": "2026-10-13T02:40:41.718152+00:00",
+    "live": false,
+    "construction_in_progress_cells_any_year_any_scope": 0,
+    "note": "Not a statement that all semantic aliases are absent; do not replayexisting PPEtotal or use project-subset alias"
+  },
+  "page_image_pins": [
+    {
+      "pdf_page": 1,
+      "sha256": "8ea93c8dc9754e160a33912c821c313f925b2d658b2b64b63f184f09cb421baa"
+    },
+    {
+      "pdf_page": 3,
+      "sha256": "c12218fac1a5e493cf63fcd46566ba704e5685b0e26957387668ebc7c341c1e1"
+    },
+    {
+      "pdf_page": 7,
+      "sha256": "878f3068b0462696fe9aea316016016c6f0fc304be99be0a6bacf1bb80be14d6"
+    },
+    {
+      "pdf_page": 11,
+      "sha256": "19e5b061614d409783b95e0ac635d0a9064d4a47fffb3adedefb85b5f6a73e7b"
+    },
+    {
+      "pdf_page": 25,
+      "sha256": "0439149cafe545fe4035a1e39e46142bb96bee30ec8d279a18ff8f0094a423d2"
+    }
+  ],
+  "image_path_template_reference_sha256": "c539e15b3706a39aaea6bdebc3785614cb60e59e72dd846aa760bbb6a5e3f66d",
+  "image_path_template_redistributed": false,
+  "project_subset_still_held": "Separate1.196millionSARproduction-line-project narrative is not corrected, substituted or admitted by this total-cell evidence.",
+  "publication": {
+    "database_writes": 0,
+    "production_published": 0,
+    "official_known_at_confirmed": false,
+    "numeric_publication_approval": false
+  },
+  "rights": "Full source PDF and page images local only; portable handoff issuer URL/hash/page pointers. No long source excerpts.",
+  "limits": "One named CWIPcell independently reviewed, not entire filing completeness or accuracy. Auditor opinion supports accounting context, not automatic extraction certification."
+}

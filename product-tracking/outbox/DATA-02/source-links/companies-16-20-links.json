@@ -1,0 +1,81 @@
+{
+  "purpose": "Official 2025 source links for companies 16-20 supplied by the user. Not fetched, not hashed, not evidence. Codex: archive the PDFs (engine data/raw + SHA-256) so DATA-02 extraction can start; until then nothing is extracted.",
+  "hosts_to_allow_for_direct_access": [
+    "www.saudiexchange.sa",
+    "investors.nahdi.sa"
+  ],
+  "links": [
+    {
+      "company_id": "sa:4340",
+      "name": "Al Rajhi REIT",
+      "kind": "saudi_exchange_announcement_page",
+      "description": "Annual report and financial statements 2025 (announcement page)",
+      "url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=1&anId=94122&cs=4340&locale=en",
+      "provided_by": "user (2026-10-13)",
+      "fetched": false,
+      "sha256": null,
+      "fetch_attempt": "blocked: host denied by this session's network policy (HTTP 000 via agent proxy)",
+      "note": "announcement page, not necessarily the full PDF; the attached PDF link must be resolved and archived"
+    },
+    {
+      "company_id": "sa:4140",
+      "name": "Saudi Industrial Export Co.",
+      "kind": "saudi_exchange_announcement_page",
+      "description": "Annual financial results 2025 (announcement page)",
+      "url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details?anCat=1&anId=94688&locale=en",
+      "provided_by": "user (2026-10-13)",
+      "fetched": false,
+      "sha256": null,
+      "fetch_attempt": "blocked: host denied by this session's network policy (HTTP 000 via agent proxy)",
+      "note": "announcement page, not necessarily the full PDF; the attached PDF link must be resolved and archived"
+    },
+    {
+      "company_id": "sa:4260",
+      "name": "Budget Saudi",
+      "kind": "saudi_exchange_announcement_page",
+      "description": "Annual financial results 2025 (announcement page)",
+      "url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details?anCat=1&anId=93653&locale=en",
+      "provided_by": "user (2026-10-13)",
+      "fetched": false,
+      "sha256": null,
+      "fetch_attempt": "blocked: host denied by this session's network policy (HTTP 000 via agent proxy)",
+      "note": "announcement page, not necessarily the full PDF; the attached PDF link must be resolved and archived"
+    },
+    {
+      "company_id": "sa:9510",
+      "name": "National Building and Marketing Co.",
+      "kind": "saudi_exchange_announcement_page",
+      "description": "Annual financial results 2025 (announcement page; Nomu)",
+      "url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=17&anId=93976&cs=9510&locale=en",
+      "provided_by": "user (2026-10-13)",
+      "fetched": false,
+      "sha256": null,
+      "fetch_attempt": "blocked: host denied by this session's network policy (HTTP 000 via agent proxy)",
+      "note": "announcement page, not necessarily the full PDF; the attached PDF link must be resolved and archived"
+    },
+    {
+      "company_id": "sa:4164",
+      "name": "Nahdi Medical",
+      "kind": "direct_pdf",
+      "description": "Annual report 2025 (full PDF)",
+      "url": "https://investors.nahdi.sa/media/03odkrxk/nahdi-2025-annual-report-en.pdf",
+      "provided_by": "user (2026-10-13)",
+      "fetched": false,
+      "sha256": null,
+      "fetch_attempt": "blocked: host denied by this session's network policy (HTTP 000 via agent proxy)",
+      "note": "direct PDF; archive and pin SHA-256 before extraction"
+    },
+    {
+      "company_id": "sa:4164",
+      "name": "Nahdi Medical",
+      "kind": "direct_pdf",
+      "description": "Audited financial statements 2025 (PDF)",
+      "url": "https://www.saudiexchange.sa/Resources/fsPdf/17555_2964_2026-04-21_18-42-44_en.pdf",
+      "provided_by": "user (2026-10-13)",
+      "fetched": false,
+      "sha256": null,
+      "fetch_attempt": "blocked: host denied by this session's network policy (HTTP 000 via agent proxy)",
+      "note": "direct PDF; archive and pin SHA-256 before extraction"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "company_id": "sa:2222",
+  "market": "SA",
+  "symbol": "2222",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "not_stated_in_document",
+  "filed_at_confidence": "unknown",
+  "filed_at_note": "The archived PDF does not state a publication date; 2026-03-31 is a placeholder pending Codex's official calendar (DATA-01).",
+  "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+  "reader": "manual.review/data-02-aramco-annual-report-2025",
+  "notes": "DATA-02 batch-01. Gap fill only: keys absent from the engine's current Aramco profile. Every item carries verbatim evidence (PDF page + quote). Printed page = PDF page - 2.",
+  "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "risk_governance",
+      "value": {
+        "board_oversight": "Sustainability, Risk and HSE Committee",
+        "management_oversight": "Group Executive Committee, chaired by the President & CEO",
+        "model": "Three Lines Model"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "80",
+        "evidence": [
+          {
+            "pdf_page": 82,
+            "quote": "Management-level oversight of the ERM framework is provided by the Group Executive Committee, chaired by the President & CEO.",
+            "printed_page": "80"
+          },
+          {
+            "pdf_page": 82,
+            "quote": "The framework is based on the Three Lines Model",
+            "printed_page": "80"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-01:aramco-2025-annual-report-profile.json:sa:2222:company_attributes:0",
+          "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+          "source_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "not_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    }
+  ],
+  "ownership_positions": [],
+  "corporate_actions": [],
+  "disclosures": []
+}

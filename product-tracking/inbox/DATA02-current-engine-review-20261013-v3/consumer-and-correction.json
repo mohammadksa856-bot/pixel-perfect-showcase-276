@@ -1,0 +1,125 @@
+{
+  "observed_at": "2026-10-13T11:41:34.104491+00:00",
+  "checks": [
+    {
+      "symbol": "2222",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 1,
+      "viewer_contains_new_values": false,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "1120",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 5,
+      "viewer_contains_new_values": false,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "7010",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 0,
+      "viewer_contains_new_values": false,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "2082",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 9,
+      "viewer_contains_new_values": true,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "2280",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 12,
+      "viewer_contains_new_values": false,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "4190",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 9,
+      "viewer_contains_new_values": false,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "4004",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 7,
+      "viewer_contains_new_values": true,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    },
+    {
+      "symbol": "4300",
+      "http_api_status": 200,
+      "http_view_status": 200,
+      "accepted_profile_records_in_API": 0,
+      "viewer_contains_new_values": false,
+      "financial_acceptance": false,
+      "production_flags_enabled": false
+    }
+  ],
+  "retired_originals_and_descendants": [
+    {
+      "id": 1095658,
+      "metric_key": "accounts_payable",
+      "is_current": 0
+    },
+    {
+      "id": 1095659,
+      "metric_key": "intangible_assets",
+      "is_current": 0
+    },
+    {
+      "id": 1095669,
+      "metric_key": "tangible_book_value",
+      "is_current": 0
+    }
+  ],
+  "STC_policy_semantic_correction": {
+    "old_id": 210,
+    "old_version": 1,
+    "old_row_sha256": "c0363c88e17e7a358cccf7c8d544615f80b9e710980a4dae6ae738ccadbb345b",
+    "old_value": {
+      "currency": "SAR",
+      "effective_from": "2024-Q4",
+      "effective_through": "2027-Q3",
+      "quarterly_dividend_per_share": 0.55,
+      "special_dividends": "subject to Board recommendation and General Assembly approval"
+    },
+    "new_value": {
+      "minimum_quarterly_dividend_per_share": "0.55",
+      "currency": "SAR",
+      "unit": "SAR/share",
+      "valid_from_quarter": "2024-Q4",
+      "valid_through_quarter": "2027-Q3",
+      "board_approval_date": "2024-08-24",
+      "general_assembly_approval_date": "2024-11-06",
+      "actual_paid_dividend_per_share": null,
+      "special_dividend_is_separate": true
+    },
+    "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+    "full_page": 101,
+    "preserved_prior_version": true,
+    "local_only": true,
+    "not_counted_as_new_numeric_cell": true
+  },
+  "production_changes": 0,
+  "financial_accepted_new_points": 0,
+  "scope": "current engine HTTP API plus engine company viewer; P02 product adapter review is separate"
+}

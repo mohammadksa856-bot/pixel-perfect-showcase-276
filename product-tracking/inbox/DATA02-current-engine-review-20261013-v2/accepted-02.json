@@ -1,0 +1,426 @@
+{
+  "company_id": "sa:2082",
+  "market": "SA",
+  "symbol": "2082",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-03",
+  "filed_at_basis": "board_authorisation_date_stated_in_document",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.acwapower.com/media/5ulnuxhn/api_consolidated_fs_year-end_2025-_3-03_compressed.pdf",
+  "source_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+  "source_archive": {
+    "engine_ref": "claude/data-utilities-1",
+    "engine_commit": "ce167a8",
+    "engine_archive_path": "data/raw/SA/2082/documents/b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295.pdf",
+    "on_engine_main": false,
+    "text_layer": "digital"
+  },
+  "reader": "manual.review/data-02-batch-02-acwa-power",
+  "notes": "DATA-02 batch-02. Qualitative profile from ACWA Power audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "ACWA POWER Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "ACWA POWER Company (the “Company” or “ACWA” or the “Group” or the “Parent”)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:0",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi listed joint stock company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "is a Saudi listed joint stock company"
+          },
+          {
+            "pdf_page": 1,
+            "quote": "(Saudi Listed Joint Stock Company)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:1",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+      "category": "identity",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "prepared in accordance with International Financial"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "(collectively referred as “IFRS as endorsed in"
+          },
+          {
+            "pdf_page": 2,
+            "quote": "in accordance with IFRS as issued by"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:7",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "principal_activities",
+      "value": "The Company’s main activities are the development, investment, operation and maintenance of power generation, water desalination and green hydrogen production plants and bulk sale of electricity, desalinated water, green hydrogen and/or green ammonia to address the needs of state utilities and industries on long-term offtaker contracts under utility services outsourcing models in the Kingdom of Saudi Arabia and internationally.",
+      "category": "sector",
+      "metadata": {
+        "source_page": "14",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The Company’s main activities are the development, investment, operation and maintenance of power generation, water"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "desalination and green hydrogen production plants and bulk sale of electricity, desalinated water, green hydrogen and/or green"
+          },
+          {
+            "pdf_page": 14,
+            "quote": "ammonia to address the needs of state utilities and industries on long-term offtaker contracts under utility services outsourcing"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:9",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "business_segments",
+      "value": [
+        {
+          "name": "Thermal and Water Desalination",
+          "description": "Power and water desalination plants using fossil fuel (oil, coal, gas) and stand-alone reverse osmosis desalination plants; IPPs, IWPPs and IWPs; develop, invest, operate and optimize"
+        },
+        {
+          "name": "Renewables",
+          "description": "PV, CSP, Wind plants and Hydrogen; develop, invest, operate and optimise"
+        },
+        {
+          "name": "Others",
+          "description": "Results of the ACWA Power reinsurance business"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "73",
+        "evidence": [
+          {
+            "pdf_page": 73,
+            "quote": "Thermal and"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "The term Thermal refers to the power and water desalination plants which use fossil fuel (oil, coal,"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Water Desalination refers to the stand-alone reverse osmosis desalination plants."
+          },
+          {
+            "pdf_page": 73,
+            "quote": "This includes the Group’s business line which comprises of PV (Photovoltaic), CSP (Concentrated"
+          },
+          {
+            "pdf_page": 73,
+            "quote": "Solar Power), Wind plants and Hydrogen."
+          },
+          {
+            "pdf_page": 73,
+            "quote": "This includes the results of the ACWA Power reinsurance business."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:11",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "geographic_presence",
+      "value": "Headquartered in KSA; revenue/non-current assets reported for Kingdom of Saudi Arabia, Middle East and Asia, and Africa; trade receivable exposures include UAE, KSA, Morocco, Jordan, Uzbekistan, Oman, China",
+      "category": "business_model",
+      "metadata": {
+        "source_page": "74",
+        "evidence": [
+          {
+            "pdf_page": 74,
+            "quote": "The Company is headquartered in the Kingdom of Saudi Arabia."
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Middle East and Asia"
+          },
+          {
+            "pdf_page": 74,
+            "quote": "Africa"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Morocco (covered by government letter of support)"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Hashemite Kingdom of Jordan (covered by government guarantee)"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Republic of Uzbekistan"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Sultanate of Oman (covered by government guarantee)"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "People’s Republic of China"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:13",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_governance",
+      "value": "Board has overall responsibility for risk management framework; Risk Management Committee develops and monitors policies and reports to the Board; risk management carried out by senior management",
+      "category": "risk",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 75,
+            "quote": "The Board of Directors has overall responsibility for the establishment and oversight of the Group’s risk management"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "framework. The Board has established a Risk Management Committee, which is responsible for developing and monitoring"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "Risk management is carried out by senior management."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:23",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "financial_risk_categories",
+      "value": [
+        "market risk (currency, interest rate, other price)",
+        "credit risk",
+        "liquidity risk"
+      ],
+      "category": "risk",
+      "metadata": {
+        "source_page": "75",
+        "evidence": [
+          {
+            "pdf_page": 75,
+            "quote": "The Group’s activities expose it to a variety of financial risks: market risk (including currency risk, interest rate risks and"
+          },
+          {
+            "pdf_page": 75,
+            "quote": "other price risk), credit risk and liquidity risk."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:24",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "going_concern",
+      "value": "Financial statements prepared on the going concern basis",
+      "category": "risk",
+      "metadata": {
+        "source_page": "17",
+        "evidence": [
+          {
+            "pdf_page": 17,
+            "quote": "The Group has prepared the financial statements on the basis that it will continue to operate as a going"
+          },
+          {
+            "pdf_page": 17,
+            "quote": "concern."
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:acwa-power-2025-profile.json:sa:2082:company_attributes:28",
+          "source_document_sha256": "b5dad4f16ad2478b5146880d1b96f9cb52174f3ae9bc724f12e53c686de70295",
+          "source_commit": "ce167a85b3a2abf69edce9798862fc45257f3fae",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "board_authorisation_date_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    }
+  ],
+  "corporate_actions": [],
+  "disclosures": [],
+  "ownership_positions": []
+}

@@ -1,0 +1,2290 @@
+{
+  "contract_version": 5,
+  "generated_at": "2026-10-13T12:44:34+00:00",
+  "placeholder_policy": "never_substitute_demo_values",
+  "company": {
+    "company_id": "sa:2280",
+    "market": "SA",
+    "symbol": "2280",
+    "name": "ALMARAI",
+    "currency": "SAR",
+    "cik": null,
+    "isin": null,
+    "fiscal_year_end": "12-31",
+    "exchange": "Saudi Exchange",
+    "country": "SA",
+    "sector": null,
+    "industry": null,
+    "timezone": "Asia/Riyadh",
+    "locale": "en",
+    "fact_counts": {},
+    "latest_filing": "2026-10-02",
+    "listings": [
+      {
+        "security_id": "security:sa:2280:common",
+        "security_type": "common_stock",
+        "security_name": "ALMARAI",
+        "isin": null,
+        "listing_id": "listing:SA:2280",
+        "market": "SA",
+        "exchange": "Saudi Exchange",
+        "symbol": "2280",
+        "currency": "SAR",
+        "country": "SA",
+        "timezone": "Asia/Riyadh",
+        "is_primary": 1,
+        "active": 1
+      }
+    ],
+    "completeness": {
+      "expected_fields": 0,
+      "populated_fields": 0,
+      "required_fields": 0,
+      "populated_required_fields": 0,
+      "completeness_score": null,
+      "status": "not_assessed",
+      "reason": "completeness_not_measured",
+      "categories": []
+    }
+  },
+  "sections": {
+    "profile": {
+      "business_segments": {
+        "value": [
+          {
+            "comprises": "Milk production, dairy, fruits juice, ice cream product processing and distribution",
+            "name": "Dairy and Juice"
+          },
+          {
+            "comprises": "Bakery products manufacturing and distribution",
+            "name": "Bakery"
+          },
+          {
+            "comprises": "Poultry products manufacturing and distribution",
+            "name": "Poultry"
+          },
+          {
+            "comprises": "Arable, horticulture, infant nutrition, seafood, value added meat products and water",
+            "name": "Other Activities"
+          }
+        ],
+        "category": "business_model",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:14",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 204,
+                  "printed_page": "203",
+                  "quote": "Milk production, dairy, fruits juice, ice cream product processing and distribution"
+                },
+                {
+                  "pdf_page": 204,
+                  "printed_page": "203",
+                  "quote": "Bakery products manufacturing and distribution"
+                },
+                {
+                  "pdf_page": 204,
+                  "printed_page": "203",
+                  "quote": "Poultry products manufacturing and distribution"
+                },
+                {
+                  "pdf_page": 204,
+                  "printed_page": "203",
+                  "quote": "Arable, horticulture, infant nutrition, seafood, value added meat products and water."
+                }
+              ],
+              "source_page": "203",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "distribution_model": {
+        "value": "Long-haul distribution fleet from manufacturing facilities to local distribution centres",
+        "category": "business_model",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:18",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 167,
+                  "printed_page": "166",
+                  "quote": "final consumer packed products are distributed from manufacturing facilities to local distribution centres by the Group’s long haul distribution fleet"
+                }
+              ],
+              "source_page": "166",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "markets_geographies": {
+        "value": {
+          "arable_farms": [
+            "Argentina",
+            "USA"
+          ],
+          "gcc_distribution": [
+            "UAE",
+            "Oman",
+            "Bahrain (subsidiaries)",
+            "Kuwait",
+            "Qatar (agency agreements)"
+          ],
+          "operations": [
+            "Saudi Arabia",
+            "Egypt",
+            "Jordan",
+            "other GCC countries"
+          ]
+        },
+        "category": "business_model",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:15",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 167,
+                  "printed_page": "166",
+                  "quote": "It also operates in Egypt, Jordan and other Gulf Cooperation Council"
+                },
+                {
+                  "pdf_page": 167,
+                  "printed_page": "166",
+                  "quote": "The distribution centres in GCC countries are managed through subsidiaries in UAE, Sultanate of Oman (“Oman”) and Kingdom of Bahrain (“Bahrain”) and an agency agreements in Kuwait and Qatar"
+                },
+                {
+                  "pdf_page": 168,
+                  "printed_page": "167",
+                  "quote": "The Group owns and operates arable farms in Argentina and United States of America"
+                }
+              ],
+              "source_page": "166",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "product_categories": {
+        "value": {
+          "adjacent": [
+            "seafood",
+            "beverages",
+            "ice cream",
+            "frozen foods"
+          ],
+          "core": [
+            "Dairy",
+            "Juice",
+            "Bakery",
+            "Poultry"
+          ]
+        },
+        "category": "business_model",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:13",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 7,
+                  "printed_page": "6",
+                  "quote": "Almarai operates across core categories of Dairy, Juice, Bakery, and Poultry, complemented by a growing presence in adjacent segments such as seafood, beverages, ice cream, and frozen foods."
+                }
+              ],
+              "source_page": "6",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "revenue_geographic_breakdown_basis": {
+        "value": "Segment note presents revenue by geographical region (Saudi Arabia, Other GCC Countries, other) for each business segment",
+        "category": "business_model",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "basis": "Figures belong to numbers team",
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:16",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 206,
+                  "printed_page": "205",
+                  "quote": "The revenue from business segments categorised by geographical region is as follows:"
+                }
+              ],
+              "source_page": "205",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "legal_form": {
+        "value": "Saudi Joint Stock Company",
+        "category": "identity",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:1",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 167,
+                  "printed_page": "166",
+                  "quote": "is a Saudi Joint Stock Company, which was converted from a limited liability company to a joint stock company on 2 Rajab 1426 A.H. (8 August 2005)"
+                }
+              ],
+              "source_page": "166",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "legal_name": {
+        "value": "Almarai Company",
+        "category": "identity",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:0",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 167,
+                  "printed_page": "166",
+                  "quote": "Almarai Company (the"
+                }
+              ],
+              "source_page": "166",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "reporting_standard": {
+        "value": "IFRS Accounting Standards as endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements issued by SOCPA",
+        "category": "identity",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:7",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 171,
+                  "printed_page": "170",
+                  "quote": "prepared in accordance with International Financial Reporting Standards (“IFRS”) Accounting Standards as endorsed in the Kingdom of Saudi Arabia"
+                }
+              ],
+              "source_page": "170",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "financial_risk_categories": {
+        "value": [
+          "credit risk",
+          "liquidity risk",
+          "market price risk",
+          "capital management risk"
+        ],
+        "category": "risk",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:33",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 212,
+                  "printed_page": "211",
+                  "quote": "The Group’s activities expose it to a variety of financial risks; credit risk, liquidity risk, market price risk and capital management risk."
+                }
+              ],
+              "source_page": "211",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "risk_governance": {
+        "value": "Board approves risk management framework; Board Risk Committee oversees ERM; quarterly risk register review by risk champions and EVPs as risk owners",
+        "category": "risk",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:31",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 116,
+                  "printed_page": "115",
+                  "quote": "Approving the risk management framework and overseeing the Company’s principal risks and risk mitigation measures"
+                },
+                {
+                  "pdf_page": 148,
+                  "printed_page": "147",
+                  "quote": "Residual critical and significant risks, along with their mitigation plans, are escalated to executive management and form the basis for reporting to the Board Risk Committee."
+                }
+              ],
+              "source_page": "115",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "strategy_enablers": {
+        "value": [
+          "Operating Model",
+          "People",
+          "Manufacturing and Supply Chain",
+          "Marketing and Branding",
+          "Innovation",
+          "Digitalization"
+        ],
+        "category": "strategy",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:38",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 41,
+                  "printed_page": "40",
+                  "quote": "Manufacturing and\nSupply Chain"
+                },
+                {
+                  "pdf_page": 41,
+                  "printed_page": "40",
+                  "quote": "Marketing and\nBranding"
+                }
+              ],
+              "source_page": "40",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      },
+      "strategy_growth_pillars": {
+        "value": [
+          "Core Acceleration",
+          "Category Expansion",
+          "Channel Expansion",
+          "Geographic Expansion"
+        ],
+        "category": "strategy",
+        "language": "en",
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "effective_at": "2025-12-31",
+        "version": 1,
+        "provenance": {
+          "source": {
+            "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+            "filing_type": "annual-report",
+            "filed_at": "2026-03-28",
+            "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+            "artifact_key": null,
+            "artifact_sha256": null,
+            "content_type": null,
+            "byte_size": null,
+            "metadata": {
+              "data02_local_preview": true,
+              "filed_at_unverified": true,
+              "financially_accepted": false,
+              "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+              "official_known_at": null
+            }
+          }
+        },
+        "evidence": [
+          {
+            "metadata": {
+              "data02_review": {
+                "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+                "filed_at_basis": "pdf_creation_metadata",
+                "financially_accepted": false,
+                "independent_financial_verification": false,
+                "item_id": "batch-02:almarai-2025-profile.json:sa:2280:company_attributes:37",
+                "measurement_policy_changed": false,
+                "official_known_at": null,
+                "production_accepted": false,
+                "source_commit": "2b17c0e2992a3aa1fe13e48b65d08224165be57d",
+                "source_document_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "source_report_period": "2025-12-31"
+              },
+              "evidence": [
+                {
+                  "pdf_page": 41,
+                  "printed_page": "40",
+                  "quote": "1. Core Acceleration"
+                },
+                {
+                  "pdf_page": 41,
+                  "printed_page": "40",
+                  "quote": "2. Category Expansion"
+                },
+                {
+                  "pdf_page": 41,
+                  "printed_page": "40",
+                  "quote": "3. Channel Expansion"
+                },
+                {
+                  "pdf_page": 41,
+                  "printed_page": "40",
+                  "quote": "4. Geographic Expansion"
+                }
+              ],
+              "source_page": "40",
+              "verification": {
+                "extracted_by": "Claude Code (DATA-02 batch-02)",
+                "independent_review": false,
+                "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+                "status": "extracted_quote_on_page"
+              }
+            },
+            "source": {
+              "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+              "filing_type": "annual-report",
+              "filed_at": "2026-03-28",
+              "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+              "artifact_key": null,
+              "artifact_sha256": null,
+              "content_type": null,
+              "byte_size": null,
+              "metadata": {
+                "data02_local_preview": true,
+                "filed_at_unverified": true,
+                "financially_accepted": false,
+                "native_pdf_sha256": "08ec6e6c6182287604d0b8ead05fd557717c9a3adc38a07484c76db87442e297",
+                "official_known_at": null
+              }
+            },
+            "created_at": "2026-10-13 11:41:05"
+          }
+        ]
+      }
+    },
+    "financials": {
+      "annual": {
+        "status": "unavailable",
+        "reason": "no_fy_facts",
+        "period_kind": "fy",
+        "period_end": null,
+        "metrics": {}
+      },
+      "quarter": {
+        "status": "unavailable",
+        "reason": "no_quarter_facts",
+        "period_kind": "quarter",
+        "period_end": null,
+        "metrics": {}
+      },
+      "ytd": {
+        "status": "unavailable",
+        "reason": "no_ytd_facts",
+        "period_kind": "ytd",
+        "period_end": null,
+        "metrics": {}
+      },
+      "ttm": {
+        "status": "unavailable",
+        "reason": "no_ttm_facts",
+        "period_kind": "ttm",
+        "period_end": null,
+        "metrics": {}
+      },
+      "instant": {
+        "status": "unavailable",
+        "reason": "no_instant_facts",
+        "period_kind": "instant",
+        "period_end": null,
+        "metrics": {}
+      },
+      "history": {
+        "annual": {
+          "status": "unavailable",
+          "reason": "no_fy_history",
+          "period_kind": "fy",
+          "periods": []
+        },
+        "annual_position": {
+          "status": "unavailable",
+          "reason": "no_instant_history",
+          "period_kind": "instant",
+          "periods": []
+        },
+        "quarter": {
+          "status": "unavailable",
+          "reason": "no_quarter_history",
+          "period_kind": "quarter",
+          "periods": []
+        }
+      }
+    },
+    "market": {
+      "latest": null,
+      "history": []
+    },
+    "ownership": [],
+    "corporate_actions": [],
+    "disclosures": [],
+    "consensus": [],
+    "peer_comparison": {
+      "status": "unavailable",
+      "reason": "company_classification_required",
+      "methodology": null,
+      "scope": null,
+      "peer_count": 0,
+      "metric_count": 0,
+      "companies": []
+    },
+    "official_sources": [
+      {
+        "source_key": "document:sa:2280:f60923061c2b7c0479343602836d124a599b0d70a435443f9d76c61c77b053a7",
+        "filing_type": "interim-report",
+        "filed_at": "2026-10-02",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/27614_408_2026-10-02_20-40-21_en.pdf",
+        "status": "review_required",
+        "content_hash": "f60923061c2b7c0479343602836d124a599b0d70a435443f9d76c61c77b053a7",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "sa-market:a4aa856f08ca1cb7e83705a6d60852d58bb6a08344543d3bd738294eb0a40c6b",
+        "filing_type": "Saudi Exchange historical price snapshot",
+        "filed_at": "2026-09-15",
+        "source_url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/reports-publications/historical-reports?locale=en",
+        "status": "published",
+        "content_hash": "a4aa856f08ca1cb7e83705a6d60852d58bb6a08344543d3bd738294eb0a40c6b",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:ab3a5278a537e56ff691c6c7b410c88bae98f592fa8156b2f3d4ddd1b30e8f26",
+        "filing_type": "interim-report",
+        "filed_at": "2026-07-06",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2026-07-06_16-23-29_En.pdf",
+        "status": "published",
+        "content_hash": "ab3a5278a537e56ff691c6c7b410c88bae98f592fa8156b2f3d4ddd1b30e8f26",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:99d41ad5238da30d367531151bb8a25797c73b6aca0046f0c0553a66e3a52c47",
+        "filing_type": "interim-report",
+        "filed_at": "2026-07-03",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/27614_408_2026-07-03_21-45-42_en.pdf",
+        "status": "review_required",
+        "content_hash": "99d41ad5238da30d367531151bb8a25797c73b6aca0046f0c0553a66e3a52c47",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:f997c5d6cb7b328755233dfa8fa1efe1e2386ca5b93887a14b3b8c2fe33c0f26",
+        "filing_type": "interim-report",
+        "filed_at": "2026-04-06",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2026-04-06_12-57-39_En.pdf",
+        "status": "published",
+        "content_hash": "f997c5d6cb7b328755233dfa8fa1efe1e2386ca5b93887a14b3b8c2fe33c0f26",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:939261f3bd57249ad36249e6eba416ebe3e041121c896c5e6c2caa7173bee2d2",
+        "filing_type": "interim-report",
+        "filed_at": "2026-04-02",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/21913_408_2026-04-02_23-27-42_en.pdf",
+        "status": "review_required",
+        "content_hash": "939261f3bd57249ad36249e6eba416ebe3e041121c896c5e6c2caa7173bee2d2",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "data02-local:3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "filing_type": "annual-report",
+        "filed_at": "2026-03-28",
+        "source_url": "https://annualreport.almarai.com/downloads/pdf/en/full-report.pdf",
+        "status": "fetched",
+        "content_hash": "3d8f6d2a45d54a0949b4dd85e9db5d24b06d4a0547a0e739f330d86b5db2085a",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:6e4fd37aab394b16e53bd29b3a6d6b8f7e403f27eacc9065c6a514f8e7e0fac3",
+        "filing_type": "financial-statements",
+        "filed_at": "2026-01-20",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2026-01-20_09-51-05_En.pdf",
+        "status": "published",
+        "content_hash": "6e4fd37aab394b16e53bd29b3a6d6b8f7e403f27eacc9065c6a514f8e7e0fac3",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:c7080310ca4bdc04202008616d02dc5445f80b61f6f918d7893196882f308ff2",
+        "filing_type": "financial-statements",
+        "filed_at": "2026-01-15",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/21913_408_2026-01-15_14-05-06_en.pdf",
+        "status": "review_required",
+        "content_hash": "c7080310ca4bdc04202008616d02dc5445f80b61f6f918d7893196882f308ff2",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:b89f410ce7cb8c48c07e49afebbeba93065a09baf5389670494c2f1dfc40f225",
+        "filing_type": "interim-report",
+        "filed_at": "2025-10-05",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2025-10-05_20-59-14_En.pdf",
+        "status": "published",
+        "content_hash": "b89f410ce7cb8c48c07e49afebbeba93065a09baf5389670494c2f1dfc40f225",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:caf4687e67714a23a260de1c22b10e3947b908442185f7468562ff503bf5de1d",
+        "filing_type": "interim-report",
+        "filed_at": "2025-10-02",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/21913_408_2025-10-02_15-26-17_en.pdf",
+        "status": "review_required",
+        "content_hash": "caf4687e67714a23a260de1c22b10e3947b908442185f7468562ff503bf5de1d",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:5fbb38fffd788ab0f5fb32fb863c69804b935c85988a8889fedd2c552e050c86",
+        "filing_type": "interim-report",
+        "filed_at": "2025-07-07",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2025-07-07_07-14-09_En.pdf",
+        "status": "published",
+        "content_hash": "5fbb38fffd788ab0f5fb32fb863c69804b935c85988a8889fedd2c552e050c86",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:b467f1fbf30d017e2c133b28d61ab31390292bcdcd6d78b9f99a64991c7de926",
+        "filing_type": "interim-report",
+        "filed_at": "2025-07-03",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/21913_408_2025-07-03_11-32-27_en.pdf",
+        "status": "review_required",
+        "content_hash": "b467f1fbf30d017e2c133b28d61ab31390292bcdcd6d78b9f99a64991c7de926",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:2c630883f339dd99144c8511d5daaf4e39e886fe96938521dbee4ad35febcf60",
+        "filing_type": "interim-report",
+        "filed_at": "2025-04-20",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2025-04-20_15-05-09_En.pdf",
+        "status": "published",
+        "content_hash": "2c630883f339dd99144c8511d5daaf4e39e886fe96938521dbee4ad35febcf60",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:8608a63da541ee7e413d4edd93234c5d8ff9cd3c31ea4af0cbb1347d8bc174c6",
+        "filing_type": "interim-report",
+        "filed_at": "2025-04-19",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/20152_408_2025-04-19_20-37-16_en.pdf",
+        "status": "review_required",
+        "content_hash": "8608a63da541ee7e413d4edd93234c5d8ff9cd3c31ea4af0cbb1347d8bc174c6",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:5fa17637edda320d5bd2b080588b226227e830eefdb131b2821c2b79f450d7de",
+        "filing_type": "financial-statements",
+        "filed_at": "2025-01-20",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2025-01-20_15-02-50_En.pdf",
+        "status": "published",
+        "content_hash": "5fa17637edda320d5bd2b080588b226227e830eefdb131b2821c2b79f450d7de",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:23de2d7e2e8acfcb470f43cc4f7d45cb54e3e78f5169d9ad7a658a7dc42ea474",
+        "filing_type": "financial-statements",
+        "filed_at": "2025-01-18",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/20152_408_2025-01-18_19-02-56_en.pdf",
+        "status": "review_required",
+        "content_hash": "23de2d7e2e8acfcb470f43cc4f7d45cb54e3e78f5169d9ad7a658a7dc42ea474",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:5d74a232d7781ecf9cc96bdb93009d92e168258e1453c521cb510fc7701081c9",
+        "filing_type": "interim-report",
+        "filed_at": "2024-10-07",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2024-10-07_11-07-11_En.pdf",
+        "status": "published",
+        "content_hash": "5d74a232d7781ecf9cc96bdb93009d92e168258e1453c521cb510fc7701081c9",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:7705a02a217dac9d7e845aec2a3d68a93988def675bca82f955572dc1067bc9c",
+        "filing_type": "interim-report",
+        "filed_at": "2024-07-07",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2024-07-07_16-11-17_En.pdf",
+        "status": "published",
+        "content_hash": "7705a02a217dac9d7e845aec2a3d68a93988def675bca82f955572dc1067bc9c",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:b3abae94d320cea93eec72e7812f8e39412b91bcf41fb16609e322815032d8a0",
+        "filing_type": "interim-report",
+        "filed_at": "2024-07-06",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/20152_408_2024-07-06_18-44-51_en.pdf",
+        "status": "review_required",
+        "content_hash": "b3abae94d320cea93eec72e7812f8e39412b91bcf41fb16609e322815032d8a0",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:d2dea31ef88ae61edf1bdb2d9a800fe3c0a3b719f690a7f043651c015464948b",
+        "filing_type": "interim-report",
+        "filed_at": "2024-04-21",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2024-04-21_17-32-30_En.pdf",
+        "status": "published",
+        "content_hash": "d2dea31ef88ae61edf1bdb2d9a800fe3c0a3b719f690a7f043651c015464948b",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:5d9384a8f8c78df7909f00ee3d032579c7ac20ab6e8c30359e7f63fb2ba07711",
+        "filing_type": "interim-report",
+        "filed_at": "2024-04-20",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/12498_408_2024-04-20_15-36-39_en.pdf",
+        "status": "review_required",
+        "content_hash": "5d9384a8f8c78df7909f00ee3d032579c7ac20ab6e8c30359e7f63fb2ba07711",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:79604d624bec5e954dbfe192ad1b0ce3e8b7d1fd0c8c7a1b1f4e10b8f3dafaba",
+        "filing_type": "financial-statements",
+        "filed_at": "2024-01-21",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2024-01-21_15-24-41_En.pdf",
+        "status": "published",
+        "content_hash": "79604d624bec5e954dbfe192ad1b0ce3e8b7d1fd0c8c7a1b1f4e10b8f3dafaba",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:523b3c36e2232bf59a008c6a8f4e0ad59823469f6d033efa59cd0195991a68f0",
+        "filing_type": "financial-statements",
+        "filed_at": "2024-01-20",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/12498_408_2024-01-20_21-13-45_en.pdf",
+        "status": "review_required",
+        "content_hash": "523b3c36e2232bf59a008c6a8f4e0ad59823469f6d033efa59cd0195991a68f0",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:968802dcf76b48d61e2ae5b3ecf8c6a7db14948cd4e1d6a7165f0d0fc052ae23",
+        "filing_type": "interim-report",
+        "filed_at": "2023-10-08",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2023-10-08_09-58-25_En.pdf",
+        "status": "published",
+        "content_hash": "968802dcf76b48d61e2ae5b3ecf8c6a7db14948cd4e1d6a7165f0d0fc052ae23",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:e271fe50fd2f2ca3a938751491cfed026e0cc83958fab7b63c35ed5bcd693233",
+        "filing_type": "interim-report",
+        "filed_at": "2023-10-07",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/13676_408_2023-10-07_21-57-07_en.pdf",
+        "status": "review_required",
+        "content_hash": "e271fe50fd2f2ca3a938751491cfed026e0cc83958fab7b63c35ed5bcd693233",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:895178d61c0fce3098a64e877644f9eed5edaab53381a24134547925da255f70",
+        "filing_type": "interim-report",
+        "filed_at": "2023-07-16",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2023-07-16_15-16-36_En.pdf",
+        "status": "published",
+        "content_hash": "895178d61c0fce3098a64e877644f9eed5edaab53381a24134547925da255f70",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:6b45ec1a95ac9e4476956d84709db4b62f558188fbd718689a5c2ef49944ea99",
+        "filing_type": "interim-report",
+        "filed_at": "2023-04-09",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2023-04-09_11-39-24_En.pdf",
+        "status": "published",
+        "content_hash": "6b45ec1a95ac9e4476956d84709db4b62f558188fbd718689a5c2ef49944ea99",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:767d737be25b779338cd26c9a975efba0f256633ba989b899d5349faf413ee59",
+        "filing_type": "interim-report",
+        "filed_at": "2023-04-08",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/13676_408_2023-04-08_17-48-00_en.pdf",
+        "status": "review_required",
+        "content_hash": "767d737be25b779338cd26c9a975efba0f256633ba989b899d5349faf413ee59",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:4c69cb4f22ccee1c54a94c8385b4629773abb030f559a66dae484fd07624577d",
+        "filing_type": "financial-statements",
+        "filed_at": "2023-01-22",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2023-01-22_14-19-29_En.pdf",
+        "status": "published",
+        "content_hash": "4c69cb4f22ccee1c54a94c8385b4629773abb030f559a66dae484fd07624577d",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:b5e2a786435a49ee91d8d914257504355ba406a4afa6e9524e7f332b6a38c244",
+        "filing_type": "financial-statements",
+        "filed_at": "2023-01-21",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/12498_408_2023-01-21_17-35-07_en.pdf",
+        "status": "review_required",
+        "content_hash": "b5e2a786435a49ee91d8d914257504355ba406a4afa6e9524e7f332b6a38c244",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:033ad8cf2162925fc9fbe9a6174b412cd3b150e0743505eaa11cd97974452fe5",
+        "filing_type": "interim-report",
+        "filed_at": "2022-10-09",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2022-10-09_08-51-35_En.pdf",
+        "status": "published",
+        "content_hash": "033ad8cf2162925fc9fbe9a6174b412cd3b150e0743505eaa11cd97974452fe5",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:d7bcc437b10025bc9a1c1643119234b4c42fd70c3522d8d5a4d9dcb73464a9b2",
+        "filing_type": "interim-report",
+        "filed_at": "2022-10-08",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/13676_408_2022-10-08_17-06-59_en.pdf",
+        "status": "review_required",
+        "content_hash": "d7bcc437b10025bc9a1c1643119234b4c42fd70c3522d8d5a4d9dcb73464a9b2",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:6808366703a9e9bb56061990489384e2f6b2e0680a82cba38eed2942670aa926",
+        "filing_type": "interim-report",
+        "filed_at": "2022-07-17",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2022-07-17_10-30-20_En.pdf",
+        "status": "published",
+        "content_hash": "6808366703a9e9bb56061990489384e2f6b2e0680a82cba38eed2942670aa926",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:3e352d3379d98dbc5478b7536c33cb3e13b79a04c98b76e95290f228c61fed64",
+        "filing_type": "interim-report",
+        "filed_at": "2022-07-16",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/12498_408_2022-07-16_22-01-39_en.pdf",
+        "status": "review_required",
+        "content_hash": "3e352d3379d98dbc5478b7536c33cb3e13b79a04c98b76e95290f228c61fed64",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:675cd1d7191f68bb0267b1509317e876b8d0a950323ecc5fb2826c2179618d1b",
+        "filing_type": "interim-report",
+        "filed_at": "2022-07-16",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/12498_408_2022-07-16_22-01-34_en.pdf",
+        "status": "review_required",
+        "content_hash": "675cd1d7191f68bb0267b1509317e876b8d0a950323ecc5fb2826c2179618d1b",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:0b73283df9f62cfa83f8c839fea58ece82f20cbeec6094f6aae50e46988e68e5",
+        "filing_type": "interim-report",
+        "filed_at": "2022-04-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/408_0_2022-04-10_14-39-01_En.pdf",
+        "status": "published",
+        "content_hash": "0b73283df9f62cfa83f8c839fea58ece82f20cbeec6094f6aae50e46988e68e5",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:212c8b7f056e14c3b2ca96eaaa9c36b70bf1b67d0e2a4d41ce060dfc247e7b4e",
+        "filing_type": "interim-report",
+        "filed_at": "2022-04-09",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/11877_408_2022-04-09_21-43-55_en.pdf",
+        "status": "review_required",
+        "content_hash": "212c8b7f056e14c3b2ca96eaaa9c36b70bf1b67d0e2a4d41ce060dfc247e7b4e",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:c734e0290cccfdb565c4e0562c54c54ba4c1729077994207fbdc4efb03661791",
+        "filing_type": "interim-report",
+        "filed_at": "2022-04-09",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/11877_408_2022-04-09_21-43-59_en.pdf",
+        "status": "review_required",
+        "content_hash": "c734e0290cccfdb565c4e0562c54c54ba4c1729077994207fbdc4efb03661791",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:0ec013f5a0b85da83db9c8f1c53e61c204045de64eb27240363ff581218bad22",
+        "filing_type": "financial-statements",
+        "filed_at": "2022-01-23",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/11877_408_2022-01-23_00-03-45_en.pdf",
+        "status": "review_required",
+        "content_hash": "0ec013f5a0b85da83db9c8f1c53e61c204045de64eb27240363ff581218bad22",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:3845479d75637082cfb8cda4221bfde977d548b5ce10692e5039e7ba977a475d",
+        "filing_type": "financial-statements",
+        "filed_at": "2022-01-23",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/11877_408_2022-01-23_00-03-47_en.pdf",
+        "status": "review_required",
+        "content_hash": "3845479d75637082cfb8cda4221bfde977d548b5ce10692e5039e7ba977a475d",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:b47a93d6c2aee8c6a936d786df1f2b15b67111f5343751493bb60db1bfd758d3",
+        "filing_type": "interim-report",
+        "filed_at": "2021-10-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/11877_408_2021-10-10_00-57-12_en.pdf",
+        "status": "review_required",
+        "content_hash": "b47a93d6c2aee8c6a936d786df1f2b15b67111f5343751493bb60db1bfd758d3",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:c74e31b4dab2e009693a2571fd5a30478619ec9aa9fd88d62986b20e8a051de3",
+        "filing_type": "interim-report",
+        "filed_at": "2021-10-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/11877_408_2021-10-10_00-57-26_en.pdf",
+        "status": "review_required",
+        "content_hash": "c74e31b4dab2e009693a2571fd5a30478619ec9aa9fd88d62986b20e8a051de3",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:93efc4856585fb5436ebb0144cba293030dfe6127557ce51905f19641a357217",
+        "filing_type": "interim-report",
+        "filed_at": "2021-07-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/10358_408_2021-07-10_19-05-50_en.pdf",
+        "status": "review_required",
+        "content_hash": "93efc4856585fb5436ebb0144cba293030dfe6127557ce51905f19641a357217",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:c5411ba4af7130c65a133397f6b8e4bad90ddd0a0741c7447e2a32fd881bcd09",
+        "filing_type": "interim-report",
+        "filed_at": "2021-07-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/10358_408_2021-07-10_19-06-01_en.pdf",
+        "status": "review_required",
+        "content_hash": "c5411ba4af7130c65a133397f6b8e4bad90ddd0a0741c7447e2a32fd881bcd09",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:e53d8b74edb7c917f3eba7ba7c9b34a5b99879e7a908652bcae1b1e579c9a6b6",
+        "filing_type": "interim-report",
+        "filed_at": "2021-04-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/10358_408_2021-04-10_21-02-27_en.pdf",
+        "status": "review_required",
+        "content_hash": "e53d8b74edb7c917f3eba7ba7c9b34a5b99879e7a908652bcae1b1e579c9a6b6",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:e8a65870a1e03b6829b4a899d8d2a7c0297c314ac31fe1f7df54b9c1705cd2be",
+        "filing_type": "interim-report",
+        "filed_at": "2021-04-10",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/10358_408_2021-04-10_21-02-15_en.pdf",
+        "status": "review_required",
+        "content_hash": "e8a65870a1e03b6829b4a899d8d2a7c0297c314ac31fe1f7df54b9c1705cd2be",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:143c53c9a5eb340635c6979fcd058a811d7eea3ff55184d5deb2beb289eb505f",
+        "filing_type": "financial-statements",
+        "filed_at": "2021-01-23",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/10358_408_2021-01-23_19-55-05_en.pdf",
+        "status": "review_required",
+        "content_hash": "143c53c9a5eb340635c6979fcd058a811d7eea3ff55184d5deb2beb289eb505f",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:685e48af668d60db724de5abebe875aac958e74066a83f0b507a15d689e1e640",
+        "filing_type": "financial-statements",
+        "filed_at": "2021-01-23",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/10358_408_2021-01-23_19-55-54_en.pdf",
+        "status": "review_required",
+        "content_hash": "685e48af668d60db724de5abebe875aac958e74066a83f0b507a15d689e1e640",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:02b8c4470f5cfe388b2833c31d4593c869a465a60acdb6e8948d1314c4f47bc8",
+        "filing_type": "interim-report",
+        "filed_at": "2020-10-03",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/8194_408_2020-10-03_15-56-18_en.pdf",
+        "status": "review_required",
+        "content_hash": "02b8c4470f5cfe388b2833c31d4593c869a465a60acdb6e8948d1314c4f47bc8",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:ef9e20a1a0e26656bfc5c438f12ba7fda729f84650d5d2f66c8f19393b1b4710",
+        "filing_type": "interim-report",
+        "filed_at": "2020-10-03",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/8194_408_2020-10-03_15-56-14_en.pdf",
+        "status": "review_required",
+        "content_hash": "ef9e20a1a0e26656bfc5c438f12ba7fda729f84650d5d2f66c8f19393b1b4710",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:15e5897954c3cb72393781ea50b94659ba83738a2d1bff58ed0f330c08ed510d",
+        "filing_type": "interim-report",
+        "filed_at": "2020-07-04",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/8194_408_2020-07-04_22-30-12_en.pdf",
+        "status": "review_required",
+        "content_hash": "15e5897954c3cb72393781ea50b94659ba83738a2d1bff58ed0f330c08ed510d",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:cc0f10915358799ce3dbbaf7352f9e5dd0b2688b6a9799387acc8b39989ea164",
+        "filing_type": "interim-report",
+        "filed_at": "2020-04-05",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4683_408_2020-04-05_00-36-45_en.pdf",
+        "status": "review_required",
+        "content_hash": "cc0f10915358799ce3dbbaf7352f9e5dd0b2688b6a9799387acc8b39989ea164",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:7370bff05251c4253fc3216f96ff6a3736a63844aa1cba29f6e2c7e864500548",
+        "filing_type": "financial-statements",
+        "filed_at": "2020-01-18",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4683_408_2020-01-18_18-17-04_en.pdf",
+        "status": "review_required",
+        "content_hash": "7370bff05251c4253fc3216f96ff6a3736a63844aa1cba29f6e2c7e864500548",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:d67ef2ce18e17dd433990f5e769107a9a82e0737ffa76a1f55ef835769de46da",
+        "filing_type": "financial-statements",
+        "filed_at": "2020-01-18",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4683_408_2020-01-18_18-17-19_en.pdf",
+        "status": "review_required",
+        "content_hash": "d67ef2ce18e17dd433990f5e769107a9a82e0737ffa76a1f55ef835769de46da",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:723964b41e9aa53a66ea10abdb4451b4a69782bdfeec47754ac5a598843e3575",
+        "filing_type": "interim-report",
+        "filed_at": "2019-10-05",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4683_408_2019-10-05_13-35-51_en.pdf",
+        "status": "review_required",
+        "content_hash": "723964b41e9aa53a66ea10abdb4451b4a69782bdfeec47754ac5a598843e3575",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:e11efb640263bfc23e1aa12e5a4ee799866ca2623bb616f7db541294ec5bf10f",
+        "filing_type": "interim-report",
+        "filed_at": "2019-10-05",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4683_408_2019-10-05_13-36-35_en.pdf",
+        "status": "review_required",
+        "content_hash": "e11efb640263bfc23e1aa12e5a4ee799866ca2623bb616f7db541294ec5bf10f",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:89fd0379b3958e4dd11426d37fab5e823725e215b710901d10f4ef5cb55245f5",
+        "filing_type": "interim-report",
+        "filed_at": "2019-07-06",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4683_408_2019-07-06_21-23-51_en.pdf",
+        "status": "review_required",
+        "content_hash": "89fd0379b3958e4dd11426d37fab5e823725e215b710901d10f4ef5cb55245f5",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:0cc42ada635ad16787df46b05767f92a9957e84f8d6511d5a00212b42cc4f49c",
+        "filing_type": "interim-report",
+        "filed_at": "2019-04-07",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4682_408_2019-04-07_08-16-00_en.pdf",
+        "status": "review_required",
+        "content_hash": "0cc42ada635ad16787df46b05767f92a9957e84f8d6511d5a00212b42cc4f49c",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:af247c05f3207afa6d2252fbcd10af0d724783339b4a73a62908a1650d34bfd4",
+        "filing_type": "financial-statements",
+        "filed_at": "2019-01-20",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4682_408_2019-01-20_09-08-57_en.pdf",
+        "status": "review_required",
+        "content_hash": "af247c05f3207afa6d2252fbcd10af0d724783339b4a73a62908a1650d34bfd4",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      },
+      {
+        "source_key": "document:sa:2280:4c13591cc2fa040c0fa1aaf411fd0df0d8c8d33d8570700782eea6843ceabfb9",
+        "filing_type": "interim-report",
+        "filed_at": "2018-10-07",
+        "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/4682_408_2018-10-07_08-45-00_en.pdf",
+        "status": "review_required",
+        "content_hash": "4c13591cc2fa040c0fa1aaf411fd0df0d8c8d33d8570700782eea6843ceabfb9",
+        "artifact_key": null,
+        "artifact_hash": null,
+        "artifact_content_type": null,
+        "artifact_bytes": null
+      }
+    ]
+  },
+  "capabilities": {
+    "profile": {
+      "status": "available",
+      "count": 12,
+      "reason": null
+    },
+    "annual_financials": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "no_fy_facts"
+    },
+    "quarterly_financials": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "no_quarter_facts"
+    },
+    "market_history": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "authorized_market_history_feed_required"
+    },
+    "ownership": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "no_sourced_ownership_positions"
+    },
+    "corporate_actions": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "no_sourced_corporate_actions"
+    },
+    "disclosures": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "announcement_feed_not_connected"
+    },
+    "consensus": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "licensed_consensus_feed_required"
+    },
+    "peer_comparison": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "company_classification_required"
+    },
+    "news": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "authorized_news_feed_required"
+    },
+    "five_year_history": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "fewer_than_five_annual_periods"
+    },
+    "official_sources": {
+      "status": "available",
+      "count": 61,
+      "reason": null
+    }
+  },
+  "data_quality": {
+    "completeness": {
+      "expected_fields": 0,
+      "populated_fields": 0,
+      "required_fields": 0,
+      "populated_required_fields": 0,
+      "completeness_score": null,
+      "status": "not_assessed",
+      "reason": "completeness_not_measured",
+      "categories": []
+    },
+    "understanding": {
+      "company_id": "sa:2280",
+      "readiness_state": "not_assessed",
+      "total_score": null,
+      "target_score": "95",
+      "source_map_version": "18-categories-v1",
+      "hard_gates": {},
+      "blocking_reasons": [
+        "run_understanding_refresh"
+      ],
+      "categories": [
+        {
+          "category_key": "identity",
+          "ordinal": 1,
+          "name_en": "Identity",
+          "name_ar": "هوية الشركة",
+          "weight": 5,
+          "description": "Legal identity, listing and classification.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "business",
+          "ordinal": 2,
+          "name_en": "Business model",
+          "name_ar": "نموذج العمل",
+          "weight": 8,
+          "description": "Products, economics, segments and geography.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "governance",
+          "ordinal": 3,
+          "name_en": "Management and governance",
+          "name_ar": "الإدارة والحوكمة",
+          "weight": 4,
+          "description": "Management, board, committees and audit.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "ownership",
+          "ordinal": 4,
+          "name_en": "Ownership",
+          "name_ar": "الملكية والمساهمون",
+          "weight": 4,
+          "description": "Major holders, free float and ownership changes.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "financials",
+          "ordinal": 5,
+          "name_en": "Historical financials",
+          "name_ar": "القوائم المالية التاريخية",
+          "weight": 15,
+          "description": "Audited annual and interim statements.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "earnings_quality",
+          "ordinal": 6,
+          "name_en": "Earnings quality",
+          "name_ar": "جودة الأرباح",
+          "weight": 5,
+          "description": "Audit opinion, one-offs, restatements and cash conversion.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "ratios",
+          "ordinal": 7,
+          "name_en": "Financial ratios",
+          "name_ar": "النسب المالية",
+          "weight": 7,
+          "description": "Company-type-specific calculated ratios.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "operations",
+          "ordinal": 8,
+          "name_en": "Operational KPIs",
+          "name_ar": "المؤشرات التشغيلية",
+          "weight": 8,
+          "description": "Sector-specific operating drivers.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "dividends_actions",
+          "ordinal": 9,
+          "name_en": "Dividends and actions",
+          "name_ar": "التوزيعات وإجراءات الشركة",
+          "weight": 5,
+          "description": "Dividend history and corporate actions.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "industry",
+          "ordinal": 10,
+          "name_en": "Industry and sector",
+          "name_ar": "القطاع والصناعة",
+          "weight": 5,
+          "description": "Sector dynamics, regulation and aggregates.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "competitors",
+          "ordinal": 11,
+          "name_en": "Competitors",
+          "name_ar": "المنافسون والحصة السوقية",
+          "weight": 5,
+          "description": "Peers, market share and relative position.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "trading",
+          "ordinal": 12,
+          "name_en": "Trading and liquidity",
+          "name_ar": "التداول والسيولة",
+          "weight": 4,
+          "description": "Prices, liquidity and market risk.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "forecasts",
+          "ordinal": 13,
+          "name_en": "Guidance and forecasts",
+          "name_ar": "التوجيهات والتوقعات",
+          "weight": 5,
+          "description": "Issuer guidance and forward estimates.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "analysts",
+          "ordinal": 14,
+          "name_en": "Analyst coverage",
+          "name_ar": "تغطية المحللين",
+          "weight": 3,
+          "description": "Attributed ratings, targets and consensus.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "valuation",
+          "ordinal": 15,
+          "name_en": "Valuation",
+          "name_ar": "التقييم",
+          "weight": 5,
+          "description": "Relative and intrinsic valuation with declared methodology.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "risks",
+          "ordinal": 16,
+          "name_en": "Risks and exposures",
+          "name_ar": "المخاطر والتعرضات",
+          "weight": 7,
+          "description": "Disclosed risks, debt, concentration and contingencies.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "esg",
+          "ordinal": 17,
+          "name_en": "Sustainability",
+          "name_ar": "الاستدامة",
+          "weight": 3,
+          "description": "Environmental, social and governance indicators.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        },
+        {
+          "category_key": "news",
+          "ordinal": 18,
+          "name_en": "News and materials",
+          "name_ar": "الأخبار ومواد المستثمرين",
+          "weight": 2,
+          "description": "Official announcements, attributed press and IR materials.",
+          "score": null,
+          "weighted_score": null,
+          "status": null,
+          "checked_at": null,
+          "evidence": {},
+          "gaps": []
+        }
+      ]
+    },
+    "factory_readiness": {
+      "company_id": "sa:2280",
+      "scoring_model": "factory_18_category_contract",
+      "readiness_state": "not_assessed",
+      "total_score": null,
+      "target_score": "95",
+      "blocking_reasons": [
+        "run_factory_contract_readiness"
+      ],
+      "categories": []
+    },
+    "field_availability": [],
+    "open_backlog": 0
+  }
+}

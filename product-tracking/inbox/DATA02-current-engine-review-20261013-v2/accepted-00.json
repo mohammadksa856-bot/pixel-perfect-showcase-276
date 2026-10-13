@@ -1,0 +1,200 @@
+{
+  "company_id": "sa:1120",
+  "market": "SA",
+  "symbol": "1120",
+  "profile": "bank",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "not_stated_in_document",
+  "filed_at_confidence": "unknown",
+  "filed_at_note": "Audit report date not used as filing date; placeholder pending DATA-01 calendar.",
+  "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+  "reader": "manual.review/data-02-alrajhi-financial-statements-2025",
+  "source_host_note": "Hosted on the bank's marketing object storage (Oracle Cloud, Jeddah), not on alrajhibank.com.sa. Codex should confirm this is the official FY2025 statement (document self-identifies as audited FY2025 consolidated statements).",
+  "notes": "DATA-02 batch-01. Qualitative items from the audited FY2025 consolidated financial statements only.",
+  "source_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Al Rajhi Banking and Investment Corporation",
+      "category": "identity",
+      "metadata": {
+        "source_page": "16",
+        "evidence": [
+          {
+            "pdf_page": 16,
+            "quote": "Al Rajhi Banking and Investment Corporation, a Saudi Joint Stock Company, (the “Bank”), was formed and licensed"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:0",
+          "source_document_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+          "source_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "not_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "1",
+        "evidence": [
+          {
+            "pdf_page": 1,
+            "quote": "(A SAUDI JOINT STOCK COMPANY)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:1",
+          "source_document_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+          "source_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "not_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "auditor",
+      "value": [
+        "Deloitte and Touche & Co. Chartered Accountants",
+        "Ernst & Young Professional Services (Professional LLC)"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "Deloitte and Touche & Co. Chartered Accountants"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "ERNST & YOUNG PROFESSIONAL SERVICES (PROFESSIONAL LLC)"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "To the Shareholders of Al Rajhi Banking and Investment Corporation"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Joint auditors' report on the FY2025 consolidated financial statements.",
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:6",
+          "source_document_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+          "source_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "not_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in KSA and other standards and pronouncements",
+      "category": "reporting",
+      "metadata": {
+        "source_page": "20",
+        "evidence": [
+          {
+            "pdf_page": 20,
+            "quote": "in conformity with IFRS as endorsed in KSA"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:7",
+          "source_document_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+          "source_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "not_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "currency",
+      "value": "SAR",
+      "category": "reporting",
+      "metadata": {
+        "source_page": "20",
+        "evidence": [
+          {
+            "pdf_page": 20,
+            "quote": "These consolidated financial statements are presented in Saudi Arabian Riyals"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-01:alrajhi-2025-financial-statements-profile.json:sa:1120:company_attributes:8",
+          "source_document_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+          "source_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "not_stated_in_document",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    }
+  ],
+  "corporate_actions": [],
+  "ownership_positions": [],
+  "disclosures": []
+}

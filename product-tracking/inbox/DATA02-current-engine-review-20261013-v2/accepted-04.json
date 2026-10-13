@@ -1,0 +1,292 @@
+{
+  "company_id": "sa:4004",
+  "market": "SA",
+  "symbol": "4004",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "financial-statements",
+  "filed_at": "2026-03-12",
+  "filed_at_basis": "saudi_exchange_file_name_timestamp",
+  "filed_at_confidence": "inferred",
+  "source_url": "https://www.saudiexchange.sa/Resources/fsPdf/435_0_2026-03-12_15-01-34_En.pdf",
+  "source_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+  "source_archive": {
+    "engine_ref": "claude/data-healthcare-2",
+    "engine_commit": "d076577",
+    "engine_archive_path": "data/raw/SA/4004/documents/61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b.pdf",
+    "on_engine_main": false,
+    "text_layer": "notes digital; primary statements scanned"
+  },
+  "reader": "manual.review/data-02-batch-02-dallah-healthcare",
+  "notes": "DATA-02 batch-02. Qualitative profile from Dallah Healthcare audited consolidated financial statements FY2025. New keys only; every item carries page evidence.",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "legal_name",
+      "value": "Dallah Healthcare Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Dallah Healthcare Company (the “Company”) was established as a Limited Liability Company",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:0",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "legal_form",
+      "value": "Saudi Joint Stock Company",
+      "category": "identity",
+      "metadata": {
+        "source_page": "1",
+        "evidence": [
+          {
+            "pdf_page": 1,
+            "quote": "(A Saudi Joint Stock Company)"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:1",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "headquarters_address",
+      "value": "King Fahad Road, Riyadh, Kingdom of Saudi Arabia",
+      "category": "identity",
+      "metadata": {
+        "source_page": "11",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company’s registered office is located at King Fahad Road, Riyadh, Kingdom of Saudi Arabia.",
+            "printed_page": "11"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:7",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "reporting_standard",
+      "value": "IFRS as endorsed in the Kingdom of Saudi Arabia and other SOCPA standards and pronouncements",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "prepared in accordance with International Financial Reporting Standards (IFRS) as issued by International Accounting Standards Board (IASB) that are endorsed in the Kingdom of Saudi Arabia (KSA)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:9",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "presentation_currency",
+      "value": "SAR",
+      "category": "identity",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "These consolidated financial statements are presented in Saudi Arabian Riyals (SR) which is also the Group’s functional currency.",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:10",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "operating_segments",
+      "value": [
+        {
+          "name": "Medical Facilities and Pharmacies",
+          "description": "operations of hospitals, clinics, and both inpatient and outpatient pharmacies"
+        },
+        {
+          "name": "Distribution of Pharmaceutical Products",
+          "description": "marketing and distributing medicines and pharmaceutical products"
+        }
+      ],
+      "category": "business_model",
+      "metadata": {
+        "source_page": "54",
+        "evidence": [
+          {
+            "pdf_page": 56,
+            "quote": "Medical Facilities and Pharmacies: include the operations of hospitals, clinics, and both inpatient and outpatient pharmacies.",
+            "printed_page": "54"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "Distribution of Pharmaceutical Products: include the activities of marketing and distributing medicines and pharmaceutical",
+            "printed_page": "54"
+          },
+          {
+            "pdf_page": 56,
+            "quote": "The CODM has been determined to be the Chief Executive Officer",
+            "printed_page": "54"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:11",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    },
+    {
+      "attribute_key": "key_audit_matters",
+      "value": [
+        "Revenue Recognition – Estimate of variable consideration",
+        "Expected Credit Losses on trade receivables"
+      ],
+      "category": "governance",
+      "metadata": {
+        "source_page": "2",
+        "evidence": [
+          {
+            "pdf_page": 4,
+            "quote": "Revenue Recognition – Estimate of variable consideration",
+            "printed_page": "2"
+          },
+          {
+            "pdf_page": 5,
+            "quote": "Expected Credit Losses on trade receivables",
+            "printed_page": "3"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-02)"
+        },
+        "data02_review": {
+          "decision": "ACCEPT_LOCAL_ATTRIBUTED_PREVIEW",
+          "item_id": "batch-02:dallah-healthcare-2025-profile.json:sa:4004:company_attributes:24",
+          "source_document_sha256": "61cf552a91922dc3ef68a9f7c92c04abe575984ec0f473242327b291f6b98c1b",
+          "source_commit": "d076577b36a8fc2496947fb85a198963384514a0",
+          "independent_financial_verification": false,
+          "financially_accepted": false,
+          "official_known_at": null,
+          "source_report_period": "2025-12-31",
+          "filed_at_basis": "saudi_exchange_file_name_timestamp",
+          "production_accepted": false,
+          "measurement_policy_changed": false
+        }
+      }
+    }
+  ],
+  "ownership_positions": [],
+  "corporate_actions": [],
+  "disclosures": []
+}

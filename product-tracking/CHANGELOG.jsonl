@@ -94,3 +94,15 @@
 {"ts": "2026-10-13T16:10:00Z", "task": "DATA-02-B04", "event": "test_run", "run": "RUN-2026-10-13-33", "result": "185 pass, 14 skip (integration), 0 fail; tsc 0; eslint clean"}
 {"ts": "2026-10-13T16:15:00Z", "task": "DATA-02-B04", "event": "commit", "branch": "claude/data-02-batch-04", "commit": "279618f", "detail": "entity assessment, gaps, sources, review-support, reviews, tests"}
 {"ts": "2026-10-13T16:30:00Z", "task": "BR-011", "event": "batch_report", "path": "product-tracking/reports/BR-011_DATA-02_batch-04.md"}
+{"ts": "2026-10-13T17:30:00Z", "task": "DATA-02-REVIEW", "event": "received", "branch": "codex/data03-current-engine-review-20261013", "commit": "5179346", "verification": "v1 13/13 and v2 1/1 MANIFEST sha256 match"}
+{"ts": "2026-10-13T17:35:00Z", "task": "DATA-02-B05", "event": "started", "branch": "claude/data-02-batch-05", "base": "8590888"}
+{"ts": "2026-10-13T17:40:00Z", "task": "DATA-02-B05", "event": "blocked_partial", "detail": "companies 16-20 and Shaker: no published filings or links; official hosts blocked; no extraction"}
+{"ts": "2026-10-13T18:30:00Z", "task": "DATA-02-B05", "event": "corrected", "detail": "display map v1 merged 7 keys with different legal concept or period rule; split in v2"}
+{"ts": "2026-10-13T19:40:00Z", "task": "DATA-02-B05", "event": "test_run", "run": "RUN-2026-10-13-34", "result": "13/13 and 1/1 match"}
+{"ts": "2026-10-13T19:40:00Z", "task": "DATA-02-B05", "event": "test_run", "run": "RUN-2026-10-13-35", "result": "1,244 evidence: 1,097 match, 25 fail, 122 OCR (no native text)"}
+{"ts": "2026-10-13T19:40:00Z", "task": "DATA-02-B05", "event": "test_run", "run": "RUN-2026-10-13-36", "result": "62/62"}
+{"ts": "2026-10-13T19:40:00Z", "task": "DATA-02-B05", "event": "test_run", "run": "RUN-2026-10-13-37", "result": "62/62, 0 fail"}
+{"ts": "2026-10-13T19:40:00Z", "task": "DATA-02-B05", "event": "test_run", "run": "RUN-2026-10-13-38", "result": "13/13; tamper (REVIEW->ACCEPT) 1 fail as expected"}
+{"ts": "2026-10-13T19:40:00Z", "task": "DATA-02-B05", "event": "test_run", "run": "RUN-2026-10-13-39", "result": "198 pass, 14 skip (integration), 0 fail; tsc 0; eslint clean"}
+{"ts": "2026-10-13T19:45:00Z", "task": "DATA-02-B05", "event": "commit", "branch": "claude/data-02-batch-05", "commit": "8b9cad9", "detail": "review closure, display map v2, entity specs, mupdf tool, tests"}
+{"ts": "2026-10-13T20:00:00Z", "task": "BR-012", "event": "batch_report", "path": "product-tracking/reports/BR-012_DATA-02_batch-05.md"}

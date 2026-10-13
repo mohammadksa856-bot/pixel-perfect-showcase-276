@@ -1,6 +1,7 @@
 import type { LocalizedText } from "@/lib/i18n";
 import { safeSourceUrl } from "./peer-comparison";
 import { iso } from "@/lib/bidi";
+import { normalizeReadiness, type RawReadiness, type Readiness } from "./readiness";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02).
@@ -118,10 +119,14 @@ export type EnginePage = {
   };
   capabilities: Record<string, Capability>;
   data_quality: {
+    /** الفئات التشغيلية الـ18 (عقد v5). غيابها في v4 يعني «لم تُقيَّم». */
+    factory_readiness?: RawReadiness;
     understanding: {
       readiness_state: string | null;
       total_score: string | null;
       target_score: string | null;
+      blocking_reasons?: string[];
+      hard_gates?: Record<string, { passed: boolean }>;
       categories: {
         category_key: string;
         ordinal: number;
@@ -157,8 +162,8 @@ export function contractProblems(page: unknown): string[] {
 // ───────────────────────── نموذج العرض
 
 export type CompanyKind = "bank" | "insurer" | "ordinary";
-export type TopicStatus =
-  "available" | "partial" | "unavailable" | "not_measured" | "not_applicable";
+/** لا توجد حالة «غير منطبق»: دون قاعدة مستشهد بها يبقى الموضوع «غير مقاس» ولا يأخذ درجة. */
+export type TopicStatus = "available" | "partial" | "unavailable" | "not_measured";
 export type ProofKind = "reported_extracted" | "reported_manifest" | "calculated_inputs_reproduced";
 /** هل المستند المؤرشف هو الأصلي (PDF/Excel) أم ملف إدخال JSON فقط؟ */
 /** المستند المؤرشف: أصلي مؤكد، أو ملف إدخال مؤكد، أو غير مذكور في الرد (لا نفترض أيًا منهما). */
@@ -272,7 +277,8 @@ export type CompanyPreview = {
     latestFiling: string | null;
   };
   kind: CompanyKind;
-  readiness: { state: string | null; score: number | null; target: number | null };
+  /** نموذجان منفصلان: موضوعات المستثمر، والفئات التشغيلية. */
+  readiness: { investorTopics: Readiness; operationalCategories: Readiness };
   topics: Topic[];
   counts: { shown: number; withheld: number };
   /** تنبيهات على مستوى الشركة عن طبيعة المصدر (مثلًا: ملف إدخال دون المستند الأصلي). */
@@ -990,6 +996,10 @@ const REASONS: Record<string, LocalizedText> = {
     "No operating KPIs for this company type in the engine yet",
   ),
   not_assessed: L("لم يُقيَّم هذا الموضوع في المحرك بعد", "Not yet assessed by the engine"),
+  not_applicable_without_cited_rule: L(
+    "وصفه المحرك بأنه غير منطبق دون قاعدة مستشهد بها، فيبقى غير مقاس ولا يُحتسب مكتملًا",
+    "Marked not applicable by the engine without a cited rule, so it stays not measured and is never counted as complete",
+  ),
 };
 
 const reasonText = (code: string): LocalizedText =>
@@ -1001,9 +1011,10 @@ function topicStatus(
   cat: { status: string | null; score: string | null } | undefined,
 ): TopicStatus {
   if (!cat || cat.status === null || cat.score === null) return "not_measured";
+  // «غير منطبق» دون قاعدة مستشهد بها لا يمنح الموضوع حالة ولا درجة.
+  if (cat.status === "not_applicable") return "not_measured";
   if (cat.status === "complete") return "available";
   if (cat.status === "partial") return "partial";
-  if (cat.status === "not_applicable") return "not_applicable";
   return "unavailable";
 }
 
@@ -1298,7 +1309,11 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
       const blocks = (blocksByTopic[cat.ordinal] ?? []).filter(blockHasContent);
       const status = topicStatus(cat);
       const codes = [
-        ...(status === "not_measured" ? ["not_assessed"] : (cat.gaps ?? [])),
+        ...(cat.status === "not_applicable"
+          ? ["not_applicable_without_cited_rule"]
+          : status === "not_measured"
+            ? ["not_assessed"]
+            : (cat.gaps ?? [])),
         ...(extraReasons[cat.ordinal] ?? []),
       ];
       return {
@@ -1306,7 +1321,8 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
         ordinal: cat.ordinal,
         title: { ar: cat.name_ar, en: cat.name_en },
         status,
-        score: cat.score === null ? null : Number(cat.score),
+        // لا تغطية لموضوع غير مقاس: الدرجة تُعرض فقط حين قاس المحرك الموضوع فعلًا.
+        score: status === "not_measured" || cat.score === null ? null : Number(cat.score),
         reasons: [...new Set(codes)].map(reasonText),
         blocks,
         shownCount: blocks.reduce((n, b) => n + blockCount(b), 0),
@@ -1333,9 +1349,11 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     },
     kind,
     readiness: {
-      state: u.readiness_state,
-      score: u.total_score === null ? null : Number(u.total_score),
-      target: u.target_score === null ? null : Number(u.target_score),
+      investorTopics: normalizeReadiness(u, "investor_topics"),
+      operationalCategories: normalizeReadiness(
+        page.data_quality.factory_readiness,
+        "operational_categories",
+      ),
     },
     topics,
     counts: {

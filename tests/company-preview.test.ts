@@ -78,9 +78,7 @@ describe("three companies, three business models", () => {
     for (const v of [aramco, rajhi, tawuniya]) {
       expect(v.topics.map((t) => t.ordinal)).toEqual([...Array(18)].map((_, i) => i + 1));
       for (const t of v.topics)
-        expect(["available", "partial", "unavailable", "not_measured", "not_applicable"]).toContain(
-          t.status,
-        );
+        expect(["available", "partial", "unavailable", "not_measured"]).toContain(t.status);
     }
     const engineStatus = (s: keyof typeof PAGES, ord: number) =>
       PAGES[s].data_quality.understanding.categories.find((c) => c.ordinal === ord)!.status;
@@ -101,7 +99,7 @@ describe("three companies, three business models", () => {
 
   test("no topic is marked not applicable for these three (no approved topic-level rule)", () => {
     for (const v of [aramco, rajhi, tawuniya])
-      expect(v.topics.some((t) => t.status === "not_applicable")).toBe(false);
+      expect(v.topics.some((t) => (t.status as string) === "not_applicable")).toBe(false);
   });
 
   test("Aramco: income FY2025, balance as of interim date, quarter labelled as single quarter", () => {

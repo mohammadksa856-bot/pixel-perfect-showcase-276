@@ -15,6 +15,7 @@ import type {
   WithheldReason,
 } from "@/lib/engine/company-preview";
 import type { PeerTable } from "@/lib/engine/peer-comparison";
+import type { Readiness, ReadinessState } from "@/lib/engine/readiness";
 import { iso } from "@/lib/bidi";
 
 /**
@@ -41,11 +42,6 @@ const STATUS: Record<TopicStatus, { label: LocalizedText; icon: string; classNam
   not_measured: {
     label: { ar: "غير مقاس", en: "Not measured" },
     icon: "?",
-    className: "text-muted-foreground border-border",
-  },
-  not_applicable: {
-    label: { ar: "غير منطبق", en: "Not applicable" },
-    icon: "—",
     className: "text-muted-foreground border-border",
   },
 };
@@ -561,8 +557,8 @@ export function TopicSection({
         {topic.score !== null && (
           <span className="text-[11px] text-muted-foreground">
             {t({
-              ar: `تغطية ${iso((topic.score * 100).toFixed(0) + "%")}`,
-              en: `${(topic.score * 100).toFixed(0)}% coverage`,
+              ar: `تغطية الموضوع في المحرك ${iso((topic.score * 100).toFixed(0) + "%")}`,
+              en: `Engine topic coverage ${(topic.score * 100).toFixed(0)}%`,
             })}
           </span>
         )}
@@ -622,5 +618,66 @@ export function TopicOverview({ topics }: { topics: Topic[] }) {
         </a>
       ))}
     </nav>
+  );
+}
+
+const READINESS: Record<ReadinessState, { label: LocalizedText; className: string }> = {
+  ready: {
+    label: { ar: "جاهز", en: "Ready" },
+    className: "text-tone-emerald border-tone-emerald/40",
+  },
+  not_ready: {
+    label: { ar: "غير جاهز", en: "Not ready" },
+    className: "text-tone-amber border-tone-amber/40",
+  },
+  not_assessed: {
+    label: { ar: "لم يُقيَّم", en: "Not assessed" },
+    className: "text-night-foreground/60 border-night-foreground/30",
+  },
+};
+
+const READINESS_MODEL: Record<Readiness["model"], LocalizedText> = {
+  investor_topics: { ar: "جاهزية موضوعات المستثمر (18)", en: "Investor topics readiness (18)" },
+  operational_categories: {
+    ar: "جاهزية الفئات التشغيلية (18)",
+    en: "Operational categories readiness (18)",
+  },
+};
+
+/**
+ * بطاقة جاهزية لنموذج واحد. «لم يُقيَّم» لا تُعرض معها درجة ولا شريط تقدّم،
+ * و«جاهز» لا تظهر إلا كما طبّعها `normalizeReadiness` (المعيار 95 ثابت).
+ */
+export function ReadinessCard({ readiness }: { readiness: Readiness }) {
+  const { t } = useI18n();
+  const s = READINESS[readiness.state];
+  return (
+    <div
+      className="bg-night px-3.5 py-3"
+      data-readiness-model={readiness.model}
+      data-readiness-state={readiness.state}
+    >
+      <div className="text-[10px] text-night-foreground/50">
+        {t(READINESS_MODEL[readiness.model])}
+      </div>
+      <div className="mt-1 flex flex-wrap items-center gap-2">
+        <span
+          className={cn(
+            "inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium",
+            s.className,
+          )}
+        >
+          {t(s.label)}
+        </span>
+        {readiness.state !== "not_assessed" && readiness.score !== null && (
+          <span className="text-[13px] font-semibold tabular-nums">
+            {t({
+              ar: `${iso(readiness.score.toFixed(1))} من ${iso(readiness.target)}`,
+              en: `${readiness.score.toFixed(1)} of ${readiness.target}`,
+            })}
+          </span>
+        )}
+      </div>
+    </div>
   );
 }

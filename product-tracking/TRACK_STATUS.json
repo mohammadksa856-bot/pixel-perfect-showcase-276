@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-13T23:00:00Z",
+  "updated_at": "2026-10-14T00:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -164,7 +164,8 @@
         "archive Tawuniya AR2025 and Al Rajhi AR2025 or allow their domains",
         "confirm Al Rajhi FS host is official"
       ],
-      "commit": "3bbd420"
+      "commit": "3bbd420",
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
     },
     "DATA-02-B02": {
       "status": "delivered_pending_codex_review",
@@ -190,7 +191,8 @@
         "publish engine commit 2391513 or confirm b70254e",
         "board reports 2025 for 2082/4190/4004/4300 and Saudi Exchange profiles",
         "confirm Dallah chairman (inferred from related-party table)"
-      ]
+      ],
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
     },
     "DATA-02-B03": {
       "status": "delivered_pending_codex_review",
@@ -217,7 +219,8 @@
         "4030/1211 (and batch-02 four) missing from engine main registry",
         "engine commit 2391513 unpublished: collision check against Codex's current DB incomplete",
         "Yamama CWIP unit conflict and Ma'aden sukuk size conflict unresolved"
-      ]
+      ],
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
     },
     "DATA-02-B04": {
       "status": "delivered_pending_codex_review",
@@ -244,7 +247,8 @@
         "approve display map",
         "archive filings for 4340/4140/4260/9510/4164 or allow their domains",
         "product rule for REIT and Nomu topics"
-      ]
+      ],
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
     },
     "DATA-02-B05": {
       "status": "delivered_pending_codex_review",
@@ -288,7 +292,8 @@
         "approve display map v2 and entity specs before any central contract change",
         "Shaker recovered PDFs and companies 16-20 filings: archive or allow domains",
         "cite CMA REIT instructions and Nomu continuing-obligation rules"
-      ]
+      ],
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
     },
     "DATA-02-B06": {
       "status": "delivered_pending_codex_review",
@@ -299,7 +304,8 @@
       "result": "165 DATA03 contextual dossiers (MuPDF+pdftotext; 8 MuPDF misses all covered by batch-05 repairs); 452 records linked to 18 topics (71 ACCEPT: identity 40, business_model 16, earnings_quality 7, risks 6, guidance 2; 13 topics with no accepted record)",
       "decisions_needed": [
         "Codex: use dossiers to close REVIEW groups; prioritise governance, ownership, dividends"
-      ]
+      ],
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
     },
     "DATA-02-B07": {
       "status": "delivered_pending_codex_review",
@@ -316,7 +322,22 @@
         "Codex: re-download, verify sha256 and archive Nahdi AR2025",
         "PDFs for 4340/4140/4260/9510 via Codex or issuer-site links",
         "resolve 3 Nahdi source-internal conflicts"
-      ]
+      ],
+      "priority_hold": "MAREFA-WEB-V1: no new data-expansion batches until it closes; outputs preserved on their branches"
+    },
+    "WEB-V1-READINESS": {
+      "status": "IMPLEMENTED, TESTED",
+      "branch": "main-fz2efq",
+      "report": "product-tracking/reports/BR-015_MAREFA-WEB-V1_readiness.md",
+      "files": [
+        "src/lib/engine/readiness.ts",
+        "src/lib/engine/company-preview.ts",
+        "src/components/engine-preview.tsx",
+        "src/routes/preview.companies.$symbol.tsx",
+        "tests/web-readiness.test.ts"
+      ],
+      "result": "two separate readiness cards (investor topics / operational categories), three states, fixed 95; engine not_applicable without cited rule → not measured, no score; 'ready' only when engine state, score, gates and target agree",
+      "not_done": "not REVIEWED/MERGED/ACCEPTED/DEPLOYED; feature flags still off; awaits WEB-01..06 definitions and Codex acceptance tests"
     }
   },
   "open_dependencies_on_codex": {
@@ -850,6 +871,35 @@
       "branch": "claude/data-02-batch-07",
       "commit": "working tree on f32dadb + engine b70254e",
       "result": "211 pass, 14 skip, 0 fail; tsc 0; eslint clean"
+    },
+    {
+      "id": "RUN-2026-10-14-50",
+      "suite": "bun test tests/ + tsc + eslint (changed files)",
+      "repo": "site",
+      "branch": "main-fz2efq",
+      "commit": "working tree on 0bf5c28",
+      "result": "223 pass, 14 skip, 0 fail; tsc 0; eslint clean on changed files (repo-wide errors pre-existing in untouched files)"
     }
-  ]
+  ],
+  "active_track": {
+    "id": "MAREFA-WEB-V1",
+    "role": "Claude Code = UI implementation lead; Codex = data contracts, quality review, integration, design acceptance tests",
+    "status_labels": [
+      "IMPLEMENTED",
+      "TESTED",
+      "REVIEWED",
+      "MERGED",
+      "ACCEPTED",
+      "DEPLOYED"
+    ],
+    "rules": [
+      "readiness states ready / not_ready / not_assessed only",
+      "18 investor topics (understanding) kept separate from 18 operational categories (factory_readiness)",
+      "95% criterion unchanged",
+      "unmeasured never shown as complete; no free score for not-applicable categories",
+      "acceptance templates: 2222 Aramco, 1120 Al Rajhi, 8010 Tawuniya",
+      "no change to main, AWS, Supabase or production without approval"
+    ],
+    "web_task_definitions": "WEB-01..WEB-06 not yet published on GitHub by Codex (checked up to codex/data04-current-engine-review-20261013 @ 8436843)"
+  }
 }

@@ -70,7 +70,7 @@ describe("page v5 is consumed through the base contract only", () => {
     for (const s of ["2222", "1120"]) {
       const v = buildCompanyPreview(page(s));
       expect(new Set(v.topics.map((t) => t.status))).toEqual(new Set(["not_measured"]));
-      expect(v.readiness.score).toBeNull();
+      expect(v.readiness.investorTopics).toMatchObject({ state: "not_assessed", score: null });
     }
   });
 });

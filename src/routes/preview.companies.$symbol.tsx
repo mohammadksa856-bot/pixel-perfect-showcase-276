@@ -1,10 +1,9 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { PageShell, Container } from "@/components/page-shell";
-import { TopicOverview, TopicSection } from "@/components/engine-preview";
+import { ReadinessCard, TopicOverview, TopicSection } from "@/components/engine-preview";
 import { getCompanyPreview } from "@/lib/engine/company-preview.functions";
 import { getPeerTable } from "@/lib/engine/peer-comparison.functions";
 import { useI18n } from "@/lib/i18n";
-import { iso } from "@/lib/bidi";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02). معطّلة افتراضيًا: دون
@@ -86,18 +85,12 @@ function PreviewPage() {
             </span>
             {[c.exchange, c.sector, c.industry].filter(Boolean).map((v) => ` · ${v}`)}
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-night-foreground/10 sm:grid-cols-5">
+          <div className="mt-6 grid gap-px overflow-hidden rounded-xl bg-night-foreground/10 sm:grid-cols-2">
+            <ReadinessCard readiness={p.readiness.investorTopics} />
+            <ReadinessCard readiness={p.readiness.operationalCategories} />
+          </div>
+          <div className="mt-px grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-night-foreground/10 sm:grid-cols-4">
             {[
-              {
-                label: { ar: "جاهزية البيانات", en: "Data readiness" },
-                value:
-                  p.readiness.score !== null
-                    ? t({
-                        ar: `${iso(p.readiness.score.toFixed(1))} من ${iso(p.readiness.target ?? 95)}`,
-                        en: `${p.readiness.score.toFixed(1)} of ${p.readiness.target ?? 95}`,
-                      })
-                    : t({ ar: "غير مقاسة", en: "Not measured" }),
-              },
               { label: { ar: "قيم معروضة", en: "Values shown" }, value: String(p.counts.shown) },
               {
                 label: { ar: "قيم محجوبة", en: "Values withheld" },

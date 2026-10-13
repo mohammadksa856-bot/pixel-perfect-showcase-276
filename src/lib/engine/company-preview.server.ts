@@ -1,6 +1,7 @@
 // خادم فقط: يقرأ صفحة الشركة من API المحرك ويبني نموذج العرض قبل أي إرسال للمتصفح.
 // المفتاح والعنوان لا يغادران الخادم، والقيم المحجوبة لا تُسلسل إلى العميل.
 import { buildCompanyPreview, contractProblems, type CompanyPreview } from "./company-preview";
+import { designReviewFixturesEnabled } from "../web-v1/design-review-policy";
 
 type Env = Record<string, string | undefined>;
 
@@ -23,6 +24,11 @@ export async function fetchCompanyPreview(
   fetchImpl: typeof fetch = fetch,
 ): Promise<PreviewResult> {
   if (!enginePreviewEnabled(env)) return { state: "disabled" };
+  if (env["MAREFA_DESIGN_FIXTURES"] === "true") {
+    if (!designReviewFixturesEnabled(env)) return { state: "disabled" };
+    const { frozenDesignPreview } = await import("../web-v1/design-fixtures.server");
+    return frozenDesignPreview(input);
+  }
   const base = env["FINENGINE_API_URL"]?.replace(/\/+$/, "");
   const apiKey = env["FINENGINE_API_KEY"];
   if (!base || !apiKey) return { state: "engine_unavailable", reason: "engine_not_configured" };

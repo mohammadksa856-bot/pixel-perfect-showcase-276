@@ -68,8 +68,8 @@ export function WebV1Shell({
         data-preview-banner
       >
         {t({
-          ar: "معاينة تصميم MAREFA-WEB-V1 للمراجعة، وليست الصفحة المنشورة",
-          en: "MAREFA-WEB-V1 design preview for review, not the published page",
+          ar: "معاينة تصميم • عينات تطوير مجمدة، ليست بيانات حية أو اعتمادًا ماليًا • الجاهزية غير مقاسة",
+          en: "Design preview • frozen development samples, not live or financially accepted data • readiness not measured",
         })}
       </div>
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">

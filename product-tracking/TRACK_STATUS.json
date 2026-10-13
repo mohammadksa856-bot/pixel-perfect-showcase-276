@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-13T20:00:00Z",
+  "updated_at": "2026-10-13T21:00:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -143,7 +143,7 @@
       ]
     },
     "DATA-02": {
-      "status": "batches_01_to_05_delivered_pending_codex_review",
+      "status": "batches_01_to_06_delivered_pending_codex_review",
       "branch": "claude/data-02-batch-01",
       "base": "bc6b450",
       "outbox": "product-tracking/outbox/DATA-02/batch-01",
@@ -288,6 +288,17 @@
         "approve display map v2 and entity specs before any central contract change",
         "Shaker recovered PDFs and companies 16-20 filings: archive or allow domains",
         "cite CMA REIT instructions and Nomu continuing-obligation rules"
+      ]
+    },
+    "DATA-02-B06": {
+      "status": "delivered_pending_codex_review",
+      "branch": "claude/data-02-batch-06",
+      "base": "d72c03e",
+      "outbox": "product-tracking/outbox/DATA-02/batch-06",
+      "report": "product-tracking/reports/BR-013_DATA-02_batch-06.md",
+      "result": "165 DATA03 contextual dossiers (MuPDF+pdftotext; 8 MuPDF misses all covered by batch-05 repairs); 452 records linked to 18 topics (71 ACCEPT: identity 40, business_model 16, earnings_quality 7, risks 6, guidance 2; 13 topics with no accepted record)",
+      "decisions_needed": [
+        "Codex: use dossiers to close REVIEW groups; prioritise governance, ownership, dividends"
       ]
     }
   },
@@ -742,6 +753,30 @@
       "branch": "claude/data-02-batch-05",
       "commit": "8b9cad9 + engine b70254e + sector branches",
       "result": "198 pass, 14 skip (integration), 0 fail; tsc 0; eslint clean"
+    },
+    {
+      "id": "RUN-2026-10-13-40",
+      "suite": "build_b06 dossiers + topic linkage",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-06",
+      "commit": "working tree on d72c03e",
+      "result": "165 dossiers, 452 links, 0 outside Codex reviews"
+    },
+    {
+      "id": "RUN-2026-10-13-41",
+      "suite": "bun test tests/data02-batch-06.test.ts",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-06",
+      "commit": "working tree on d72c03e",
+      "result": "4/4"
+    },
+    {
+      "id": "RUN-2026-10-13-42",
+      "suite": "bun test tests/ + tsc + eslint (new file)",
+      "repo": "site+engine",
+      "branch": "claude/data-02-batch-06",
+      "commit": "working tree on d72c03e",
+      "result": "202 pass, 14 skip (integration), 0 fail; tsc 0; eslint clean"
     }
   ]
 }

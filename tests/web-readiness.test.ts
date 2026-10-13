@@ -141,7 +141,7 @@ describe("factory contract: the 18 operational categories", () => {
       score: null,
       thresholdPassed: null,
     });
-    expect(op.notApplicableRule).toMatchObject({ pack: "banking" });
+    expect(op.exclusionRule).toMatchObject({ pack: "banking" });
     expect(f.readiness).toMatchObject({ state: "not_ready", score: null });
     expect(f.readiness.reasons).toContain("total_includes_not_applicable_credit");
   });

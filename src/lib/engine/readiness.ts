@@ -160,7 +160,7 @@ export type FactoryCategory = {
     populatedRequired: number | null;
   };
   missingFields: { group: string; fields: string[] }[];
-  notApplicableRule: { pack: string | null; rule: string | null; reason: string | null } | null;
+  exclusionRule: { pack: string | null; rule: string | null; reason: string | null } | null;
   /** المصادر الرسمية للفئة. null = لم يسلّمها العقد بعد (لا نقرأ ملفات إعداد المحرك). */
   officialSources: string[] | null;
   reasons: string[];
@@ -248,7 +248,7 @@ function factoryCategory(
       fieldGroups: [],
       fields: { expected: null, populated: null, required: null, populatedRequired: null },
       missingFields: [],
-      notApplicableRule: null,
+      exclusionRule: null,
       reasons: ["category_not_assessed"],
     };
 
@@ -297,7 +297,7 @@ function factoryCategory(
       group,
       fields,
     })),
-    notApplicableRule: rule
+    exclusionRule: rule
       ? { pack: rule.pack ?? null, rule: rule.rule ?? null, reason: rule.reason ?? null }
       : null,
     reasons,

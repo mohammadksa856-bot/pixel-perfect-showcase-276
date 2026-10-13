@@ -1,6 +1,7 @@
 import { MarketTicker } from "@/components/MarketTicker";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroSpace from "@/assets/hero-space.jpg";
+import { ResearchHero } from "@/components/research-hero";
+import { usableEditorialTitle } from "@/lib/editorial-display";
 import { PageShell } from "@/components/page-shell";
 import { SearchBox } from "@/components/search-box";
 import {
@@ -55,54 +56,12 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const { t } = useI18n();
   const { stats, markets, sectors, companies, research, knowledge } = Route.useLoaderData();
+  const displayedResearch = research.filter((r) => usableEditorialTitle(t(r.title)));
+  const displayedKnowledge = knowledge.filter((k) => usableEditorialTitle(t(k.title)));
 
   return (
     <PageShell>
-      {/* Hero */}
-      <section className="night-panel relative isolate overflow-hidden">
-        <img
-          src={heroSpace}
-          alt=""
-          width={1920}
-          height={900}
-          className="absolute inset-0 -z-10 size-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night/70 via-night/45 to-night/90" />
-        <div className="chart-grid absolute inset-0 -z-10 opacity-40" />
-        <svg
-          className="absolute inset-x-0 bottom-0 -z-10 h-40 w-full opacity-40"
-          viewBox="0 0 1200 200"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <path
-            className="chart-line"
-            d="M0,160 L100,140 L200,150 L300,110 L400,125 L500,80 L600,95 L700,60 L800,72 L900,40 L1000,55 L1100,25 L1200,35"
-            fill="none"
-            stroke="var(--brand)"
-            strokeWidth="2"
-          />
-        </svg>
-
-        <div className="mx-auto max-w-3xl px-4 pb-40 pt-24 text-center sm:px-6 sm:pt-32">
-          <h1 className="animate-rise text-4xl font-bold tracking-tight sm:text-6xl">
-            {t(ui.heroTitle)}
-          </h1>
-          <p className="animate-rise mt-5 text-base font-medium text-night-foreground/90 sm:text-lg">
-            {t(ui.heroSubtitle)}
-          </p>
-          <p className="animate-rise mx-auto mt-4 max-w-2xl text-sm leading-8 text-night-foreground/65">
-            {t(ui.heroDescription)}
-          </p>
-
-          <div className="animate-rise mt-10">
-            <SearchBox
-              placeholder={t(ui.searchPlaceholder)}
-              inputClassName="text-card-foreground"
-            />
-          </div>
-        </div>
-      </section>
+      <ResearchHero />
 
       <MarketTicker />
 
@@ -167,17 +126,25 @@ function HomePage() {
         <section>
           <SectionHeading title={t(ui.latestResearch)} />
           <div className="grid gap-5 md:grid-cols-3">
-            {research.slice(0, 3).map((r) => (
+            {displayedResearch.slice(0, 3).map((r) => (
               <ResearchCard key={r.slug} item={r} />
             ))}
             <MoreCard to="/research" />
           </div>
+          {displayedResearch.length === 0 && (
+            <p className="mt-4 rounded-xl border border-dashed border-border p-4 text-xs leading-7 text-muted-foreground">
+              {t({
+                ar: "لا توجد مواد مؤهلة للعرض في هذه القائمة حاليًا. تظهر المواد بعد مراجعة عنوانها ومحتواها.",
+                en: "No display-eligible items in this list right now. Materials appear after title and content review.",
+              })}
+            </p>
+          )}
         </section>
 
         <section>
           <SectionHeading title={t(ui.knowledgeLibrary)} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {knowledge.slice(0, 5).map((k) => (
+            {displayedKnowledge.slice(0, 5).map((k) => (
               <KnowledgeCard key={k.slug} item={k} />
             ))}
             <MoreCard to="/knowledge" />

@@ -8,6 +8,8 @@ import type { Company } from "@/data/types";
 import { cn } from "@/lib/utils";
 import { WatchlistButton } from "@/components/watchlist-button";
 import { PriceChart } from "@/components/price-chart";
+import { CompanyResearchGuide } from "@/components/company-research-guide";
+import { FactoryQualityPanel } from "@/components/factory-quality-panel";
 import { PeerComparisonPanel } from "@/components/peer-comparison-panel";
 import { getPeerTable } from "@/lib/engine/peer-comparison.functions";
 import { engineMarketForExchange } from "@/lib/engine/peer-comparison";
@@ -196,6 +198,8 @@ function CompanyPage() {
       </section>
 
       <Container>
+        <CompanyResearchGuide />
+        <FactoryQualityPanel />
         <ChapterHead
           num={1}
           id="c1"

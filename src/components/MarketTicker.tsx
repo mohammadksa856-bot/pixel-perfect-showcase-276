@@ -49,7 +49,10 @@ export function MarketTicker() {
 
         <span className="ms-1 h-4 w-px shrink-0 bg-border" aria-hidden />
         <span className="shrink-0 whitespace-nowrap ps-3 text-[11px] text-muted-foreground">
-          {t(ui.marketsLastUpdated)}
+          {t({
+            ar: "بيانات عرض تجريبية · ليست أسعارًا حية",
+            en: "Demonstration data · Not live prices",
+          })}
         </span>
       </div>
       <div

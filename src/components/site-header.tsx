@@ -26,7 +26,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-2xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center gap-5 px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center gap-3 px-4 sm:gap-5 sm:px-6">
         {/* Logo */}
 
         <Link to="/" className="flex items-center gap-3 shrink-0">
@@ -35,13 +35,21 @@ export function SiteHeader() {
           </div>
 
           <div className="leading-tight">
-            <div className="font-bold text-lg">معرفة استثمار</div>
+            <div className="font-bold text-base sm:text-lg">
+              {t({ ar: "معرفة استثمار", en: "Marefa Investment" })}
+            </div>
+            <div className="mt-1 text-[9px] font-normal text-muted-foreground">
+              {t({ ar: "استثمر بمعرفة", en: "Invest with knowledge" })}
+            </div>
           </div>
         </Link>
 
         {/* Navigation */}
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav
+          aria-label={t({ ar: "التنقل الرئيسي", en: "Main navigation" })}
+          className="hidden lg:flex items-center gap-1"
+        >
           {nav.map((item) => (
             <Link
               key={item.to}
@@ -60,8 +68,8 @@ export function SiteHeader() {
         {/* Search */}
 
         {!isHome ? (
-          <div className="hidden xl:flex flex-1 justify-center">
-            <SearchBox placeholder={t(ui.searchPlaceholder)} className="w-full max-w-md" />
+          <div className="hidden min-w-0 flex-1 justify-center 2xl:flex">
+            <SearchBox placeholder={t(ui.searchPlaceholder)} className="w-full max-w-xs" />
           </div>
         ) : (
           <div className="hidden flex-1 xl:block" aria-hidden />
@@ -69,7 +77,7 @@ export function SiteHeader() {
 
         {/* Right */}
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ms-auto flex shrink-0 items-center gap-2">
           <Link
             to="/watchlist"
             className="hidden md:flex items-center justify-center rounded-full border border-border p-2 hover:bg-muted transition"
@@ -78,14 +86,17 @@ export function SiteHeader() {
             <Star className="h-4 w-4" />
           </Link>
           <button
-            className="hidden md:flex items-center gap-2 rounded-full border border-border px-3 py-2 text-sm hover:bg-muted transition"
+            className="flex items-center gap-2 rounded-full border border-border px-2.5 py-2 text-xs hover:bg-muted transition"
             onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
           >
-            {locale === "ar" ? "English" : "العربية"}
+            {locale === "ar" ? "EN" : "العربية"}
           </button>
 
           <button
             onClick={() => setOpen(!open)}
+            aria-label={t({ ar: "قائمة التنقل", en: "Navigation menu" })}
+            aria-expanded={open}
+            aria-controls="site-mobile-navigation"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -95,7 +106,10 @@ export function SiteHeader() {
       {/* Mobile Menu */}
 
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
+        <div
+          id="site-mobile-navigation"
+          className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden"
+        >
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5">
             {/* Mobile Search */}
 

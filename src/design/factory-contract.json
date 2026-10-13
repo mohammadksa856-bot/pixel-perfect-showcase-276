@@ -1,0 +1,598 @@
+{
+  "contract_version": "1.0.0",
+  "source_sha256": "a229596adfa8f70b9a281e57aa11b8e41c647eca6ceb3ee2f3eb2918ced92608",
+  "overall_completeness_threshold": 0.95,
+  "anti_averaging_principle": "A category's hard_gates are pass/fail conditions that cannot be offset by strength elsewhere. The overall weighted score is informative, but a data factory run is only 'ready' when (a) the weighted average >= overall_completeness_threshold, (b) every category's own score >= its own completeness_threshold, and (c) every category's hard_gates all pass. This mirrors language already in this branch's docs/data/telecom-sector.md: 'the engine must not label the sector ready before the weighted score and all hard gates pass.'",
+  "categories": [
+    {
+      "category_key": "company_profile",
+      "weight": 8,
+      "completeness_threshold": 0.85,
+      "hard_gates": [
+        {
+          "condition": "company_model completeness < 60%",
+          "action": "category is treated as failing regardless of governance_profile/industry_context scores; a company record cannot be usable without a minimally identified issuer"
+        }
+      ],
+      "official_sources": [
+        "issuer_investor_relations_site",
+        "issuer_annual_report",
+        "company_registry",
+        "exchange_disclosure_archive"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "universal",
+        "condition": "always_applicable",
+        "flag_source": null,
+        "description": "Every company has an identity, a governance structure and an industry context. No sector pack may mark this category not_applicable in whole; only individual fields within it (e.g. sharia_status for a non-Saudi cross-listed issuer) may be narrowed by a sector/company pack flag."
+      }
+    },
+    {
+      "category_key": "financial_statements",
+      "weight": 14,
+      "completeness_threshold": 0.95,
+      "hard_gates": [
+        {
+          "condition": "fewer than 5 audited annual periods OR fewer than 12 trailing quarterly periods ingested",
+          "action": "category is capped at not-ready regardless of per-field completeness, matching the project's existing five-annual/12-quarter readiness gate described in docs/data/telecom-sector.md"
+        },
+        {
+          "condition": "any statement value is present without a matching source_documents/content_hash row",
+          "action": "value is rejected at validation, never published — no synthetic or derived-without-declared-formula statement values are allowed (project rule, see docs/data/known-data-regressions-cleanup.md and telecom-sector.md 'no-synthetic-source' gate)"
+        }
+      ],
+      "official_sources": [
+        "issuer_audited_financial_statements",
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": []
+      },
+      "applicability": {
+        "rule": "universal",
+        "condition": "always_applicable",
+        "flag_source": null,
+        "description": "Every listed company files financial statements. financial_notes sub-items (e.g. segment note detail) may be narrowed by whether that note class exists for the company (e.g. no lease_maturity_by_band if the company has no leases), which is a per-field not_applicable, not a category-level exemption."
+      }
+    },
+    {
+      "category_key": "profitability",
+      "weight": 6,
+      "completeness_threshold": 0.85,
+      "hard_gates": [
+        {
+          "condition": "a ratio is populated but one or more of its declared formula inputs is itself unavailable/not_applicable",
+          "action": "publish is rejected; the ratio must be marked missing_formula_inputs_or_history instead of silently computed from a substituted or estimated input (no filling gaps to make a derived number look complete)"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Instead of a document_hash, a calculated field must carry a formula_id (a versioned identifier for the exact formula used) plus the field_key/period of every input it consumed, so the number is reproducible without re-deriving provenance by hand."
+      },
+      "applicability": {
+        "rule": "conditional_on_company_type",
+        "condition": "financial_statements category has enough inputs populated to compute the formula; for banking/insurance issuers, the sector pack's own ratio set (see sector-specific_fields) takes precedence and the corresponding generic ratio may be not_applicable",
+        "flag_source": "sector_pack.ratio_set_override",
+        "description": "Applicable to every company by default. A sector pack may declare that a specific generic ratio is superseded by a sector-specific equivalent (e.g. a bank's net_interest_margin supersedes the generic gross_margin concept for that line), in which case the generic field is not_applicable for that sector, not unavailable."
+      }
+    },
+    {
+      "category_key": "liquidity_solvency",
+      "weight": 5,
+      "completeness_threshold": 0.9,
+      "hard_gates": [
+        {
+          "condition": "a ratio is populated but one or more of its declared formula inputs is itself unavailable/not_applicable",
+          "action": "publish is rejected; the ratio must be marked missing_formula_inputs_or_history instead of silently computed from a substituted or estimated input (no filling gaps to make a derived number look complete)"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Instead of a document_hash, a calculated field must carry a formula_id (a versioned identifier for the exact formula used) plus the field_key/period of every input it consumed, so the number is reproducible without re-deriving provenance by hand."
+      },
+      "applicability": {
+        "rule": "conditional_on_company_type",
+        "condition": "financial_statements category has enough inputs populated to compute the formula; for banking/insurance issuers, the sector pack's own ratio set (see sector-specific_fields) takes precedence and the corresponding generic ratio may be not_applicable",
+        "flag_source": "sector_pack.ratio_set_override",
+        "description": "Applicable to every company by default. A sector pack may declare that a specific generic ratio is superseded by a sector-specific equivalent (e.g. a bank's net_interest_margin supersedes the generic gross_margin concept for that line), in which case the generic field is not_applicable for that sector, not unavailable."
+      }
+    },
+    {
+      "category_key": "efficiency",
+      "weight": 4,
+      "completeness_threshold": 0.85,
+      "hard_gates": [
+        {
+          "condition": "a ratio is populated but one or more of its declared formula inputs is itself unavailable/not_applicable",
+          "action": "publish is rejected; the ratio must be marked missing_formula_inputs_or_history instead of silently computed from a substituted or estimated input (no filling gaps to make a derived number look complete)"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Instead of a document_hash, a calculated field must carry a formula_id (a versioned identifier for the exact formula used) plus the field_key/period of every input it consumed, so the number is reproducible without re-deriving provenance by hand."
+      },
+      "applicability": {
+        "rule": "conditional_on_company_type",
+        "condition": "financial_statements category has enough inputs populated to compute the formula; for banking/insurance issuers, the sector pack's own ratio set (see sector-specific_fields) takes precedence and the corresponding generic ratio may be not_applicable",
+        "flag_source": "sector_pack.ratio_set_override",
+        "description": "Applicable to every company by default. A sector pack may declare that a specific generic ratio is superseded by a sector-specific equivalent (e.g. a bank's net_interest_margin supersedes the generic gross_margin concept for that line), in which case the generic field is not_applicable for that sector, not unavailable."
+      }
+    },
+    {
+      "category_key": "growth",
+      "weight": 5,
+      "completeness_threshold": 0.8,
+      "hard_gates": [
+        {
+          "condition": "a ratio is populated but one or more of its declared formula inputs is itself unavailable/not_applicable",
+          "action": "publish is rejected; the ratio must be marked missing_formula_inputs_or_history instead of silently computed from a substituted or estimated input (no filling gaps to make a derived number look complete)"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Instead of a document_hash, a calculated field must carry a formula_id (a versioned identifier for the exact formula used) plus the field_key/period of every input it consumed, so the number is reproducible without re-deriving provenance by hand."
+      },
+      "applicability": {
+        "rule": "conditional_on_company_type",
+        "condition": "financial_statements category has enough inputs populated to compute the formula; for banking/insurance issuers, the sector pack's own ratio set (see sector-specific_fields) takes precedence and the corresponding generic ratio may be not_applicable",
+        "flag_source": "sector_pack.ratio_set_override",
+        "description": "Applicable to every company by default. A sector pack may declare that a specific generic ratio is superseded by a sector-specific equivalent (e.g. a bank's net_interest_margin supersedes the generic gross_margin concept for that line), in which case the generic field is not_applicable for that sector, not unavailable."
+      }
+    },
+    {
+      "category_key": "per_share",
+      "weight": 3,
+      "completeness_threshold": 0.9,
+      "hard_gates": [
+        {
+          "condition": "a ratio is populated but one or more of its declared formula inputs is itself unavailable/not_applicable",
+          "action": "publish is rejected; the ratio must be marked missing_formula_inputs_or_history instead of silently computed from a substituted or estimated input (no filling gaps to make a derived number look complete)"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Instead of a document_hash, a calculated field must carry a formula_id (a versioned identifier for the exact formula used) plus the field_key/period of every input it consumed, so the number is reproducible without re-deriving provenance by hand."
+      },
+      "applicability": {
+        "rule": "conditional_on_company_type",
+        "condition": "financial_statements category has enough inputs populated to compute the formula; for banking/insurance issuers, the sector pack's own ratio set (see sector-specific_fields) takes precedence and the corresponding generic ratio may be not_applicable",
+        "flag_source": "sector_pack.ratio_set_override",
+        "description": "Applicable to every company by default. A sector pack may declare that a specific generic ratio is superseded by a sector-specific equivalent (e.g. a bank's net_interest_margin supersedes the generic gross_margin concept for that line), in which case the generic field is not_applicable for that sector, not unavailable."
+      }
+    },
+    {
+      "category_key": "valuation",
+      "weight": 6,
+      "completeness_threshold": 0.8,
+      "hard_gates": [
+        {
+          "condition": "relative valuation multiples (price_to_earnings, price_to_book, ev_ebitda) are below 90% even though market_data and financial_statements are both above their own thresholds",
+          "action": "category fails regardless of the consensus sub-group's score, since consensus is the one part of this category this project has already accepted as structurally hard to close for free"
+        }
+      ],
+      "official_sources": [
+        "internal_computation",
+        "exchange_market_data_feed",
+        "licensed_data_vendor"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Relative-valuation fields carry a formula_id like the other derived categories. Consensus fields, when populated, must carry the vendor/publication name and date as source_url-equivalent attribution per docs/SOURCE_MAP.md's Opinion/Secondary tier rule (always attributed, never promoted to a primary fact)."
+      },
+      "applicability": {
+        "rule": "universal_for_relative_valuation_conditional_for_consensus",
+        "condition": "the 'valuation' field_group is always applicable once market_data and financial_statements exist; the 'consensus' field_group is only applicable if the company has attributable analyst coverage at all (many Nomu-listed and small-cap issuers have none, which is not_applicable rather than unavailable)",
+        "flag_source": "company_pack.has_analyst_coverage",
+        "description": "Relative valuation multiples (P/E, EV/EBITDA, etc.) are internally computed and always applicable. Consensus-estimate fields require the company to actually have third-party coverage; absence of coverage is a structural fact about the company, not a missing extraction."
+      }
+    },
+    {
+      "category_key": "market_data",
+      "weight": 5,
+      "completeness_threshold": 0.85,
+      "hard_gates": [
+        {
+          "condition": "no market_data value has been retrieved from exchange_market_data_feed in the last 5 trading days for an actively listed company",
+          "action": "category is flagged failing even if historical depth is otherwise strong; stale live price data cannot be averaged away by good historical coverage"
+        }
+      ],
+      "official_sources": [
+        "exchange_market_data_feed",
+        "issuer_investor_relations_site"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "universal",
+        "condition": "always_applicable_while_actively_listed",
+        "flag_source": "company_pack.listing_status",
+        "description": "Applies to every actively listed company. A delisted or suspended company's market_data becomes not_applicable going forward (it still keeps its historical values) once the sector/company pack's listing_status flag changes."
+      }
+    },
+    {
+      "category_key": "dividends",
+      "weight": 5,
+      "completeness_threshold": 0.9,
+      "hard_gates": [
+        {
+          "condition": "a dividend_per_share or payout figure is populated with no matching corporate_actions/disclosures announcement id",
+          "action": "rejected at validation; dividend facts must trace to an actual announcement, never be inferred from a price change alone"
+        }
+      ],
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site",
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "conditional",
+        "condition": "applicable to every company; a company that has never declared a dividend has an empty-but-valid history, which is event_not_observed, not unavailable",
+        "flag_source": null,
+        "description": "Every company is eligible to pay dividends, so the category itself is always applicable; individual history fields for a non-paying company are not_applicable via event_not_observed rather than unavailable, so a young or growth-stage issuer is not penalized for having no dividend to report."
+      }
+    },
+    {
+      "category_key": "segments",
+      "weight": 4,
+      "completeness_threshold": 0.75,
+      "hard_gates": [
+        {
+          "condition": "company_pack.reports_multiple_segments is true (multi-segment) AND segment_revenue is missing for any disclosed segment",
+          "action": "category fails outright; a multi-segment company cannot be treated as complete while silently dropping one segment's revenue line"
+        }
+      ],
+      "official_sources": [
+        "issuer_audited_financial_statements",
+        "issuer_investor_presentation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference",
+          "filed_at_or_period_date"
+        ],
+        "optional_fields": [
+          "retrieval_timestamp"
+        ]
+      },
+      "applicability": {
+        "rule": "conditional",
+        "condition": "applicable only if the company reports more than one operating segment under its accounting standard; a genuinely single-business-line company has this category marked not_applicable at the company level, evidenced by the operating-segments note itself stating there is one reportable segment",
+        "flag_source": "company_pack.reports_multiple_segments",
+        "description": "This is the canonical example the task description calls out: 'Segments may not apply to a single-business-line company'. The flag is data-driven — it must cite the note in the audited statements that states the segment count, not an assumption from the sector."
+      }
+    },
+    {
+      "category_key": "ownership",
+      "weight": 5,
+      "completeness_threshold": 0.85,
+      "hard_gates": [
+        {
+          "condition": "sum of disclosed ownership_percentage across all holder rows for a period exceeds 100% or, once free_float is added, is inconsistent with it",
+          "action": "rejected at validation; ownership must reconcile arithmetically, matching the project's existing practice of publishing ownership only when positions reconcile to 100% (docs/data/telecom-sector.md)"
+        }
+      ],
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "sector_regulator",
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "universal_with_licensed_subfield",
+        "condition": "always applicable; the named-institutional-holder breakdown (e.g. identifying Vanguard/BlackRock by name rather than an ownership_percentage aggregate) is the one sub-field this project has already flagged as requiring a licensed/attributed vendor (docs/SOURCE_MAP.md category 4)",
+        "flag_source": null,
+        "description": "Applies to every company. The free/official disclosure covers holder percentages ≥5%, free float and foreign ownership; granular named-institutional-holder detail is the licensed exception, tracked explicitly rather than silently folded into the free majority of the category."
+      }
+    },
+    {
+      "category_key": "corporate_actions",
+      "weight": 4,
+      "completeness_threshold": 0.9,
+      "hard_gates": [
+        {
+          "condition": "a corporate action fact exists with no announcement_id linking it to a disclosures record",
+          "action": "rejected; every action must trace to the announcement that declared it"
+        }
+      ],
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "universal",
+        "condition": "always_applicable; an individual action type (e.g. stock_split) with no historical occurrence is event_not_observed",
+        "flag_source": null,
+        "description": "Every listed company is eligible for every corporate action type; a specific action never having happened is a fact about the company's history, not a gap."
+      }
+    },
+    {
+      "category_key": "announcements",
+      "weight": 5,
+      "completeness_threshold": 0.8,
+      "hard_gates": [
+        {
+          "condition": "no announcement captured for an actively listed company in the trailing 180 days",
+          "action": "flagged failing regardless of historical density, since a live issuer that stops appearing in the feed is far more likely to indicate a broken connector than a genuinely silent company"
+        }
+      ],
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "universal",
+        "condition": "always_applicable",
+        "flag_source": null,
+        "description": "Every listed company publishes exchange/issuer announcements. This category is measured as polling coverage over a rolling window, not as a fixed field checklist, because new announcements are an open-ended, continuously arriving stream rather than a fill-once set of fields."
+      }
+    },
+    {
+      "category_key": "operational_kpis",
+      "weight": 7,
+      "completeness_threshold": 0.85,
+      "hard_gates": [
+        {
+          "condition": "the sector pack activates a field_group for this company but zero fields in it are populated across the trailing 4 quarters",
+          "action": "category fails outright for that company even if other activated field_groups are strong, so one entirely-empty activated KPI group cannot be averaged away by a well-covered one"
+        }
+      ],
+      "official_sources": [
+        "issuer_investor_presentation",
+        "issuer_results_call_transcript",
+        "issuer_annual_report",
+        "sector_regulator"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "document_hash",
+          "page_or_table_reference"
+        ]
+      },
+      "applicability": {
+        "rule": "sector_pack_selected",
+        "condition": "a company is assigned exactly the operational KPI field_groups its sector pack activates (e.g. telecommunications for a telecom operator); every other field_group in this category is not_applicable for that company by construction, not by exception",
+        "flag_source": "sector_pack.activated_field_groups",
+        "description": "This category holds physical/operating-unit metrics (subscriber counts, occupancy, production volumes, store counts, bed counts, AUM) as distinct from category 16's sector-specific financial-statement-shaped lines and ratios — see docs/architecture/data-factory-18-categories.md for the explicit dividing rule between the two, since catalog.py itself does not separate them within a single industry field_group."
+      }
+    },
+    {
+      "category_key": "sector_specific_fields",
+      "weight": 7,
+      "completeness_threshold": 0.9,
+      "hard_gates": [
+        {
+          "condition": "sector_pack activates this category for a company and its score is materially near zero while financial_statements and profitability both pass their own thresholds",
+          "action": "overall readiness cannot be labeled ready; this is the contract's direct implementation of the anti-averaging principle named in the task ('a whole category cannot be near-zero even if others are strong'), and mirrors the existing project rule in docs/data/telecom-sector.md that 'the engine must not label the sector ready before the weighted score and all hard gates pass'"
+        }
+      ],
+      "official_sources": [
+        "issuer_audited_financial_statements",
+        "sector_regulator",
+        "exchange_disclosure_archive"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": []
+      },
+      "applicability": {
+        "rule": "sector_pack_selected",
+        "condition": "a company is assigned exactly the sector-specific financial-statement-shaped field_groups its sector pack activates (e.g. banking for a bank); this is the category the task description's 'Banking-Specific' example maps to",
+        "flag_source": "sector_pack.activated_field_groups",
+        "description": "Holds sector-specific balance-sheet/income/ratio lines that replace or supplement the universal financial_statements/profitability categories for a given sector (gross_loans, net_interest_margin for banks; loss_ratio, combined_ratio for insurers; FFO/NAV for REITs) — distinct from category 15's physical operating-unit KPIs."
+      }
+    },
+    {
+      "category_key": "calculated_smart_metrics",
+      "weight": 5,
+      "completeness_threshold": 0.9,
+      "hard_gates": [
+        {
+          "condition": "a composite score (piotroski_f_score, altman_z_score, beneish_m_score) is populated while one of its declared component sub-scores is marked unavailable",
+          "action": "rejected; a composite score can never be computed from a partial input set with the gap silently zero-filled — it must be marked missing_formula_inputs_or_history as a whole instead"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference"
+        ],
+        "calculated_field_supplement": "Every field in this category must carry a formula_id and its full list of consumed input field_key/period pairs — this is the category where 'no AI/LLM as a source' matters most operationally, since a formula_id must resolve to a declared, versioned, human-authored formula in the codebase, never to an LLM-estimated number."
+      },
+      "applicability": {
+        "rule": "conditional_on_inputs",
+        "condition": "applicable whenever the underlying financial_statements/market_data inputs a given metric needs are themselves populated; a metric needing a longer history than the company has listed (e.g. a 10-year CAGR) is not_applicable for that company, not unavailable",
+        "flag_source": null,
+        "description": "Composite/smart scores (Piotroski F-score, Altman Z-score, Beneish M-score, accrual ratio) and long-window analytics (10y CAGRs, total returns, moving averages). All are internally computed, never fetched."
+      }
+    },
+    {
+      "category_key": "sources_lineage_freshness",
+      "weight": 2,
+      "completeness_threshold": 1,
+      "hard_gates": [
+        {
+          "condition": "any published fact anywhere in the dataset is missing one of its own category's provenance_requirements.mandatory_fields",
+          "action": "that fact is excluded from its category's completeness numerator entirely (it does not count as populated) until the missing provenance is supplied — this is the single hard gate that enforces every other category's provenance_requirements block"
+        },
+        {
+          "condition": "any published fact's age exceeds its own category's freshness_policy.max_age_before_stale_days",
+          "action": "the fact is flagged stale and excluded from the 'currently fresh' completeness numerator, even though it remains visible as historical data with its staleness disclosed"
+        }
+      ],
+      "official_sources": [
+        "internal_computation"
+      ],
+      "provenance_requirements": {
+        "mandatory_fields": [
+          "source_url",
+          "document_hash",
+          "page_or_table_reference",
+          "filed_at_or_period_date",
+          "retrieval_timestamp"
+        ],
+        "optional_fields": []
+      },
+      "applicability": {
+        "rule": "universal_cross_cutting",
+        "condition": "applies to every fact in every other category; this category's own score is not measured over a distinct field list but over the provenance completeness of all other categories' populated facts",
+        "flag_source": null,
+        "description": "Not a content category like 1-17. It is the audit layer: for every fact published anywhere in the contract, did it carry the provenance_requirements its own category mandates, and is it within its own category's freshness_policy. This category exists so provenance/freshness is scored and gated explicitly rather than assumed."
+      }
+    }
+  ]
+}

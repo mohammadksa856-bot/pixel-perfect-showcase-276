@@ -5,9 +5,10 @@ import { PeerComparisonPanel } from "../src/components/peer-comparison-panel";
 import { I18nProvider } from "../src/lib/i18n";
 import { buildPeerTable, type EnginePeerResponse } from "../src/lib/engine/peer-comparison";
 import banks from "./fixtures/engine-b70254e_peers_SA-1120_banks.json";
+import { withUnitTestLineage } from "./peer-lineage-fixture";
 
 test("engine panel is a separate provenance boundary, not a site-data endorsement", () => {
-  const table = buildPeerTable(banks as unknown as EnginePeerResponse, "bank");
+  const table = buildPeerTable(withUnitTestLineage(banks), "bank");
   const html = renderToStaticMarkup(
     <I18nProvider>
       <PeerComparisonPanel table={table} />

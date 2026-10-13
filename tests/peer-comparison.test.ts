@@ -1,5 +1,5 @@
 // اختبارات P01-15. تُشغَّل بـ `bun test tests/` ولا تحتاج شبكة ولا اعتماديات جديدة.
-// البيانات في tests/fixtures ردود حقيقية من المحرك @ b70254e، لا قيم مصطنعة.
+// Frozen engine values plus explicit SYNTHETIC lineage for isolated unit branches; not source accuracy proof.
 import { describe, expect, test } from "bun:test";
 import banks from "./fixtures/engine-b70254e_peers_SA-1120_banks.json";
 import bankDefault from "./fixtures/engine-b70254e_peers_SA-1120_default.json";
@@ -15,10 +15,11 @@ import {
   type EnginePeerResponse,
 } from "../src/lib/engine/peer-comparison";
 import { enginePeersEnabled, fetchPeerTable } from "../src/lib/engine/peer-comparison.server";
+import { withUnitTestLineage } from "./peer-lineage-fixture";
 
-const clone = (r: unknown) => structuredClone(r) as EnginePeerResponse;
+const clone = withUnitTestLineage;
 
-describe("buildPeerTable — real engine data", () => {
+describe("buildPeerTable — frozen values with synthetic unit-only lineage", () => {
   const table = buildPeerTable(clone(banks), "bank");
 
   test("banks: available with all 5 bank metrics and 10 companies", () => {

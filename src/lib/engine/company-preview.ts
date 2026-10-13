@@ -1,6 +1,7 @@
 import type { LocalizedText } from "@/lib/i18n";
 import { safeSourceUrl } from "./peer-comparison";
 import { iso } from "@/lib/bidi";
+import { hasReproducedInputs, type InputLineage } from "./calculation-evidence";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02).
@@ -54,7 +55,7 @@ export type EngineMetricRow = {
       type?: string | null;
       calculation?: string | null;
       /** v5: هل أُعيد إنتاج المدخلات الحالية للمعادلة؟ غيابه يعني لا (فشل مغلق). */
-      lineage?: { status?: string | null; current_inputs_reproduced?: boolean | null } | null;
+      lineage?: InputLineage | null;
     } | null;
   } | null;
 };
@@ -595,7 +596,7 @@ function checkRow(
   const formula = derivation?.calculation ?? row.calculation ?? null;
   if (calculated && !formula) return "calculated_without_formula";
   // المعادلة وحدها لا تثبت الرقم: يلزم أن يكون المحرك قد أعاد إنتاج مدخلاتها الحالية.
-  if (calculated && derivation?.lineage?.current_inputs_reproduced !== true)
+  if (calculated && !hasReproducedInputs(derivation?.lineage))
     return "calculated_inputs_not_reproduced";
   const contentType = row.provenance?.source?.content_type?.toLowerCase() ?? "";
   const pageRaw = row.provenance?.extraction?.page;
@@ -1306,7 +1307,7 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
         ordinal: cat.ordinal,
         title: { ar: cat.name_ar, en: cat.name_en },
         status,
-        score: cat.score === null ? null : Number(cat.score),
+        score: null, // Legacy understanding is not the approved B05/95% measurement.
         reasons: [...new Set(codes)].map(reasonText),
         blocks,
         shownCount: blocks.reduce((n, b) => n + blockCount(b), 0),
@@ -1333,9 +1334,9 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     },
     kind,
     readiness: {
-      state: u.readiness_state,
-      score: u.total_score === null ? null : Number(u.total_score),
-      target: u.target_score === null ? null : Number(u.target_score),
+      state: "not_assessed",
+      score: null,
+      target: null,
     },
     topics,
     counts: {

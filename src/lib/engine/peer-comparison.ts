@@ -1,4 +1,5 @@
 import type { LocalizedText } from "@/lib/i18n";
+import { hasReproducedInputs, type InputLineage } from "./calculation-evidence";
 
 /**
  * مقارنة النظراء من محرك البيانات (P01-15).
@@ -25,7 +26,7 @@ export type EnginePeerMetric = {
       filing_type?: string | null;
       filed_at?: string | null;
     } | null;
-    derivation?: { type?: string | null; calculation?: string | null } | null;
+    derivation?: { type?: string | null; calculation?: string | null; lineage?: InputLineage | null } | null;
   } | null;
 };
 
@@ -126,6 +127,7 @@ export type WithheldReason =
   | "no_source"
   | "unsafe_source_url"
   | "calculated_without_formula"
+  | "calculated_inputs_not_reproduced"
   | "too_few_companies";
 
 /**
@@ -141,6 +143,11 @@ export type PeerEvidence = {
   sourceUrl: string;
   filingType: string | null;
   independentlyVerified: false;
+  inputLineage?: {
+    currentInputsReproduced: true;
+    evidenceSHA256: string;
+    inputs: { pointId: number; version: number; metric: string; value: string; unit: string; periodEnd: string; sourceKey: string }[];
+  } | null;
 };
 
 export type PeerCell = { value: number; display: string; evidence: PeerEvidence };
@@ -219,6 +226,8 @@ function checkMetric(metric: string, raw: EnginePeerMetric | undefined): Checked
   const calculated = Boolean(raw.is_calculated) || Boolean(derivation);
   if (calculated && !derivation?.calculation)
     return { ok: false, reason: "calculated_without_formula" };
+  if (calculated && !hasReproducedInputs(derivation?.lineage))
+    return { ok: false, reason: "calculated_inputs_not_reproduced" };
   const normalized = raw.unit === "percent" ? value / 100 : value;
   return {
     ok: true,
@@ -232,6 +241,14 @@ function checkMetric(metric: string, raw: EnginePeerMetric | undefined): Checked
         sourceUrl,
         filingType: raw.provenance?.source?.filing_type ?? null,
         independentlyVerified: false,
+        inputLineage: calculated ? {
+          currentInputsReproduced: true,
+          evidenceSHA256: derivation!.lineage!.evidence_sha256!,
+          inputs: derivation!.lineage!.consumed_inputs!.map(input => {
+            const row=input as Record<string,unknown>;
+            return {pointId:Number(row["id"]),version:Number(row["version"]),metric:String(row["metric_key"]),value:String(row["value_decimal"]),unit:String(row["unit"]),periodEnd:String(row["period_end"]),sourceKey:String(row["source_key"])};
+          }),
+        } : null,
       },
     },
   };

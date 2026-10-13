@@ -18,12 +18,20 @@ for (const symbol of ["2222", "1120", "8010"]) {
     const raw = readFileSync(new URL(`samples/${symbol}/page.json`, root), "utf8");
     expect(JSON.parse(raw).contract_version).toBe(5);
     const result = await fetchCompanyPreview({market: "SA", symbol}, env, async () => new Response(raw));
-    expect(result.state).toBe("engine_unavailable");
-    expect(result).not.toHaveProperty("preview");
+    expect(result.state).toBe("ok");
+    if (result.state === "ok") {
+      expect(result.preview.readiness.score).toBeNull();
+      expect(result.preview.topics.every(topic => topic.score === null)).toBe(true);
+      const evidence=JSON.parse(readFileSync(new URL(`samples/${symbol}/preview-evidence.json`,root),"utf8"));
+      for (const topic of result.preview.topics) for (const block of topic.blocks) {
+        if (block.type!=="metrics") continue;
+        for (const cell of block.group.cells) expect(evidence.numeric_evidence.some((row: {metric:string;period_end:string;status:string;value:string|null})=>row.metric===cell.key&&row.period_end===cell.period.end&&row.status==="available"&&Number(row.value)===cell.value)).toBe(true);
+      }
+    }
   });
   test(`${symbol}: legacy page4 without companion is blocked, not upgraded or displayed`, async () => {
     const raw = gunzipSync(readFileSync(new URL(`./fixtures/p02/engine-b70254e_page_SA-${symbol}.json.gz`, import.meta.url))).toString();
     const result = await fetchCompanyPreview({market: "SA", symbol}, env, async () => new Response(raw));
-    expect(result).toEqual({state: "engine_unavailable", reason: "preview_evidence_adapter_pending"});
+    expect(result).toEqual({state: "engine_unavailable", reason: "preview_requires_page5"});
   });
 }

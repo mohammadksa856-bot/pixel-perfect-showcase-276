@@ -448,7 +448,7 @@ describe("server fetch: flag off by default, no fallback", () => {
     };
     const r = await fetchCompanyPreview({ market: "sa", symbol: "2222" }, env, spy);
     expect(seen).toEqual({ url: "http://engine/v1/companies/SA/2222/page", key: "k" });
-    expect(r).toEqual({ state: "engine_unavailable", reason: "preview_evidence_adapter_pending" });
+    expect(r).toEqual({ state: "engine_unavailable", reason: "preview_requires_page5" });
     expect(JSON.stringify(r)).not.toContain('"k"');
   });
 });

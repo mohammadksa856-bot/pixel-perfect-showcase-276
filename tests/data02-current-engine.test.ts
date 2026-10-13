@@ -24,4 +24,19 @@ for (const symbol of symbols) test(`DATA02 current-engine ${symbol}: safe produc
     expect(policy.actual_paid_dividend_per_share).toBeNull();
     expect('quarterly_dividend_per_share' in policy).toBe(false);
   }
+  if (process.env.DATA02_EXPECT_FINANCIAL_HOLDS==='true' && ['2082','4004','4190'].includes(symbol)) {
+    const financial=page.sections.financials;
+    const keys=symbol==='2082'?['other_reserves','share_capital','other_expense']:['finance_costs'];
+    for (const key of keys) {
+      const rows=financial.annual.metrics[key] ?? financial.instant.metrics[key];
+      expect(rows).toBeDefined();
+      for (const row of rows ?? []) {
+        expect(row.value).toBeNull();
+        expect(row.quality_status).toBe('quarantined');
+        expect(row.quality_reasons).toContain('source_not_accepted_for_display');
+      }
+    }
+    const displayed=preview.topics.flatMap(t=>t.blocks.flatMap(b=>b.type==='metrics'?b.group.cells:[]));
+    expect(displayed.some(c=>keys.includes(c.key))).toBe(false);
+  }
 });

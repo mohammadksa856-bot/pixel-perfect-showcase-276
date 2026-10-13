@@ -45,3 +45,14 @@
 {"ts":"2026-10-13T02:45:00Z","task":"P02-ALIGN","event":"commit","branch":"claude/p02-evidence-alignment","commit":"debaf22","detail":"lineage gate, v5 contract, no display n/a, document kind + notice"}
 {"ts":"2026-10-13T02:55:00Z","task":"P02-ALIGN","event":"test_run","run":"RUN-2026-10-13-10","commit":"debaf22","result":"all green; 0 disagreements vs companion"}
 {"ts":"2026-10-13T03:00:00Z","task":"BR-007","event":"batch_report","path":"product-tracking/reports/BR-007_codex_evidence_review.md"}
+{"ts": "2026-10-13T03:30:00Z", "task": "DATA-02", "event": "started", "branch": "claude/data-02-batch-01", "base": "bc6b450"}
+{"ts": "2026-10-13T03:31:00Z", "task": "DATA-02", "event": "blocked_partial", "detail": "Codex 20-company list not found; proceeding with the 5 named companies only, no substitute list"}
+{"ts": "2026-10-13T03:32:00Z", "task": "DATA-02", "event": "blocked_partial", "detail": "session network policy blocks issuer sites, saudiexchange.sa, argaam.com; only engine-archived PDFs used; no Tawuniya original archived"}
+{"ts": "2026-10-13T04:20:00Z", "task": "DATA-02", "event": "corrected", "detail": "engine data/imports hold Codex profiles not in the bundled DB (stc 49 attrs, aramco governance-risk); 20 key collisions found and removed; Codex-owned keys moved to reviews/"}
+{"ts": "2026-10-13T04:30:00Z", "task": "DATA-02", "event": "corrected", "detail": "merge test: engine publish_corporate_action takes no metadata and requires announcement_date; evidence moved to details.metadata; 2 STC events without announcement date moved to candidates"}
+{"ts": "2026-10-13T04:50:00Z", "task": "DATA-02", "event": "test_run", "run": "RUN-2026-10-13-11", "result": "141/141 quotes on page; 5/5 document sha256 match"}
+{"ts": "2026-10-13T04:50:00Z", "task": "DATA-02", "event": "test_run", "run": "RUN-2026-10-13-12", "result": "5/5 manifests, 0 collisions (20 before restructure)"}
+{"ts": "2026-10-13T04:50:00Z", "task": "DATA-02", "event": "test_run", "run": "RUN-2026-10-13-13", "result": "integrity ok; +36 attributes +4 actions as expected; 0 pre-existing rows changed; resync 0 inserted 0 restated"}
+{"ts": "2026-10-13T04:50:00Z", "task": "DATA-02", "event": "test_run", "run": "RUN-2026-10-13-14", "result": "28/28; tamper check 2 fail as expected"}
+{"ts": "2026-10-13T04:50:00Z", "task": "DATA-02", "event": "test_run", "run": "RUN-2026-10-13-15", "result": "115 pass, 14 skip (integration, no engine API), 0 fail; tsc 0; eslint clean"}
+{"ts": "2026-10-13T05:00:00Z", "task": "BR-008", "event": "batch_report", "path": "product-tracking/reports/BR-008_DATA-02_batch-01.md"}

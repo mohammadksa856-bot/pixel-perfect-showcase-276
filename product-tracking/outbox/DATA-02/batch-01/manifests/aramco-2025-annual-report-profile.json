@@ -1,0 +1,239 @@
+{
+  "company_id": "sa:2222",
+  "market": "SA",
+  "symbol": "2222",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "filing_type": "annual-report",
+  "filed_at": "2026-03-31",
+  "filed_at_basis": "not_stated_in_document",
+  "filed_at_confidence": "unknown",
+  "filed_at_note": "The archived PDF does not state a publication date; 2026-03-31 is a placeholder pending Codex's official calendar (DATA-01).",
+  "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+  "reader": "manual.review/data-02-aramco-annual-report-2025",
+  "notes": "DATA-02 batch-01. Gap fill only: keys absent from the engine's current Aramco profile. Every item carries verbatim evidence (PDF page + quote). Printed page = PDF page - 2.",
+  "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+  "facts": [],
+  "company_attributes": [
+    {
+      "attribute_key": "risk_governance",
+      "value": {
+        "board_oversight": "Sustainability, Risk and HSE Committee",
+        "management_oversight": "Group Executive Committee, chaired by the President & CEO",
+        "model": "Three Lines Model"
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "80",
+        "evidence": [
+          {
+            "pdf_page": 82,
+            "quote": "Management-level oversight of the ERM framework is provided by the Group Executive Committee, chaired by the President & CEO.",
+            "printed_page": "80"
+          },
+          {
+            "pdf_page": 82,
+            "quote": "The framework is based on the Three Lines Model",
+            "printed_page": "80"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "risk_factor_headings",
+      "value": {
+        "operations_and_activities": [
+          "Crude oil supply and demand",
+          "Competitive environment",
+          "Climate change",
+          "Economic or political developments in Asia",
+          "Operational risks and hazards",
+          "Delivery of current and future projects",
+          "Insufficient insurance",
+          "Terrorism and armed conflict",
+          "Hydrocarbon reserves",
+          "Epidemics and pandemics",
+          "Acquisition benefits and integration",
+          "Operating in several countries",
+          "Senior Management and key personnel",
+          "Dependency on IT systems"
+        ],
+        "legal_and_regulatory": [
+          "Litigation",
+          "Regulatory changes",
+          "Sanctions and trade restrictions",
+          "Environmental regulations",
+          "Mechanism of equalization compensation"
+        ],
+        "kingdom": [
+          "Government directive of MSC",
+          "Political and social instability",
+          "Government projects"
+        ],
+        "ordering_note": "The report states the risks are not necessarily presented in order of priority."
+      },
+      "category": "risk",
+      "metadata": {
+        "source_page": "82",
+        "evidence": [
+          {
+            "pdf_page": 84,
+            "quote": "The risks described in this section are not necessarily presented in order of priority based on their importance or expected effect on Aramco.",
+            "printed_page": "82"
+          },
+          {
+            "pdf_page": 84,
+            "quote": "Risks related to Aramco’s operations and activities",
+            "printed_page": "82"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Competitive environment",
+            "printed_page": "83"
+          },
+          {
+            "pdf_page": 85,
+            "quote": "Economic or political developments in Asia",
+            "printed_page": "83"
+          },
+          {
+            "pdf_page": 86,
+            "quote": "Operational risks and hazards",
+            "printed_page": "84"
+          },
+          {
+            "pdf_page": 87,
+            "quote": "Delivery of current and future projects",
+            "printed_page": "85"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Insufficient insurance",
+            "printed_page": "86"
+          },
+          {
+            "pdf_page": 88,
+            "quote": "Terrorism and armed conflict",
+            "printed_page": "86"
+          },
+          {
+            "pdf_page": 89,
+            "quote": "Acquisition benefits and integration",
+            "printed_page": "87"
+          },
+          {
+            "pdf_page": 90,
+            "quote": "Dependency on IT systems",
+            "printed_page": "88"
+          },
+          {
+            "pdf_page": 91,
+            "quote": "Risks related to the legal and regulatory environment",
+            "printed_page": "89"
+          },
+          {
+            "pdf_page": 92,
+            "quote": "Sanctions and trade restrictions",
+            "printed_page": "90"
+          },
+          {
+            "pdf_page": 93,
+            "quote": "Environmental regulations",
+            "printed_page": "91"
+          },
+          {
+            "pdf_page": 94,
+            "quote": "Mechanism of equalization compensation",
+            "printed_page": "92"
+          },
+          {
+            "pdf_page": 95,
+            "quote": "Risks related to the Kingdom",
+            "printed_page": "93"
+          },
+          {
+            "pdf_page": 96,
+            "quote": "Political and social instability",
+            "printed_page": "94"
+          },
+          {
+            "pdf_page": 97,
+            "quote": "Government projects",
+            "printed_page": "95"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "basis": "Risk headings from the 'Risk factors' section (PDF pp. 84-97); headings only, no quantified exposure."
+      }
+    },
+    {
+      "attribute_key": "dividend_policy",
+      "value": {
+        "components": [
+          "sustainable and progressive base dividend",
+          "performance-linked dividend (introduced 2023)"
+        ],
+        "base_dividend_track_record": "increased by at least 4.0% in each of the last three years",
+        "fixed_payout_ratio": "not stated in this document"
+      },
+      "category": "dividends",
+      "metadata": {
+        "source_page": "34",
+        "evidence": [
+          {
+            "pdf_page": 36,
+            "quote": "Aramco’s aim to maximize shareholder value is anchored by its sustainable and progressive base dividend. In 2023, Aramco introduced a performance-linked dividend to provide upside to shareholders through a direct link to the Company’s financial success.",
+            "printed_page": "34"
+          },
+          {
+            "pdf_page": 36,
+            "quote": "increasing its base dividend by at least 4.0% for each of the last three years.",
+            "printed_page": "34"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "attribute_key": "concession_terms",
+      "value": {
+        "initial_period_years": 40,
+        "extension_years": 20,
+        "extension_condition": "Aramco satisfies certain conditions commensurate with current operating practices"
+      },
+      "category": "regulation",
+      "metadata": {
+        "source_page": "48",
+        "evidence": [
+          {
+            "pdf_page": 50,
+            "quote": "an initial period of 40 years, which will be extended by the Government for 20 years provided Aramco satisfies certain conditions commensurate with current operating practices.",
+            "printed_page": "48"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ]
+}

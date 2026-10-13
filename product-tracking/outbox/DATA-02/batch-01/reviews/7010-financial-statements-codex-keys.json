@@ -1,0 +1,178 @@
+{
+  "company_id": "sa:7010",
+  "market": "SA",
+  "symbol": "7010",
+  "profile": "corporate",
+  "period_end": "2025-12-31",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc_Annual-2025-en.pdf",
+  "purpose": "Page-verified evidence for keys Codex already publishes. Read-only; nothing here is ingested.",
+  "source_sha256": "aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55",
+  "engine_commit_reviewed": "b70254e",
+  "codex_key_reviews": [
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "legal_name",
+      "codex_value": "Saudi Telecom Company (A Saudi Joint Stock Company)",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Saudi Telecom Company (A Saudi Joint Stock Company)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "founding_date",
+      "codex_value": "1998-04-21",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "Royal Decree No. M/35 dated 24 Dhul Hijja 1418H (corresponding to 21 April 1998)",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "headquarters_address",
+      "codex_value": "King Abdulaziz Complex, … Riyadh",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Company’s head office is located in King Abdulaziz Complex, Imam Mohammed Bin Saud Street Al Mursalat Area, Riyadh, Kingdom of Saudi Arabia",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "ownership_positions",
+      "key": "public_investment_fund",
+      "codex_value": 0.62,
+      "finding": "agrees_with_detail",
+      "metadata": {
+        "source_page": "12",
+        "evidence": [
+          {
+            "pdf_page": 13,
+            "quote": "The Public Investment Fund (“PIF”) is the ultimate controlling party of the Company through its ownership of 62% as at 31 December 2025 (2024: 62%).",
+            "printed_page": "12"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        },
+        "note": "FS adds that PIF is the ultimate controlling party, and gives the prior-year comparative."
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "auditor",
+      "codex_value": "Deloitte and Touche & Co., Mazen A. Al-Omari, License No. 480",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "3",
+        "evidence": [
+          {
+            "pdf_page": 3,
+            "quote": "Deloitte and Touche & Co. Chartered Accountants"
+          },
+          {
+            "pdf_page": 3,
+            "quote": "To the Shareholders of Saudi Telecom Company"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "reporting_standard",
+      "codex_value": "IFRS endorsed in KSA …",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "International Financial Reporting Standards endorsed in the Kingdom of Saudi Arabia (IFRS Accounting Standards)",
+            "printed_page": "13"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    },
+    {
+      "codex_file": "stc-2025-company-profile.json",
+      "domain": "company_attributes",
+      "key": "currency",
+      "codex_value": "SAR",
+      "finding": "agrees",
+      "metadata": {
+        "source_page": "13",
+        "evidence": [
+          {
+            "pdf_page": 14,
+            "quote": "The consolidated financial statements are presented in Saudi Riyals",
+            "printed_page": "13"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "method": "verbatim quote checked against pdftotext of the archived PDF page (tools/data02_verify.py)",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-01)"
+        }
+      }
+    }
+  ]
+}

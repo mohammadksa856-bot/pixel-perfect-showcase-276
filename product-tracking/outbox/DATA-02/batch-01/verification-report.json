@@ -1,0 +1,106 @@
+{
+  "batch": "batch-01",
+  "manifests": [
+    {
+      "manifest": "manifests/alrajhi-2025-financial-statements-profile.json",
+      "source_url": "https://objectstorage.me-jeddah-1.oraclecloud.com/n/ax0k7s74wvl7/b/Marketing_Email_Images/o/Financial%20ResultsQ4en.pdf",
+      "source_sha256": "67b6f23b571e6bc1171b21c620aa52f0992174d6e926d4acd97ed729a43b4a52",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "manifests/aramco-2025-annual-report-profile.json",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "manifests/sabic-2025-integrated-annual-report-profile.json",
+      "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+      "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "manifests/stc-2025-annual-report-profile.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "manifests/stc-2025-financial-statements-profile.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc_Annual-2025-en.pdf",
+      "source_sha256": "aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "numeric-candidates/2222-annual-report-candidates.json",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "numeric-candidates/7010-annual-report-candidates.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "numeric-candidates/7010-dividend-event-candidates.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/2010-integrated-annual-report-codex-keys.json",
+      "source_url": "https://www.sabic.com/en/Images/SABIC-Integrated-Annual-Report-2025-EN_tcm1010-49452.pdf",
+      "source_sha256": "888b4c0373f7da9588dc393a44c8d5682c0f2206bdfc8185ad4d9a37bf8ba6aa",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/2222-annual-report-codex-keys.json",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/7010-annual-report-codex-keys.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+      "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    },
+    {
+      "manifest": "reviews/7010-financial-statements-codex-keys.json",
+      "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc_Annual-2025-en.pdf",
+      "source_sha256": "aeec895e88a6d48c1ae9e64c99eadeed5773deb87381239e9265403137b95e55",
+      "document_found": true,
+      "sha256_recomputed_match": true,
+      "failures": []
+    }
+  ],
+  "evidence_checked": 141,
+  "evidence_failed": 0,
+  "items_without_evidence": 0,
+  "documents_failed": [],
+  "passed": true
+}

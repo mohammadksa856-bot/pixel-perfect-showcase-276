@@ -25,3 +25,17 @@
 {"ts":"2026-10-12T23:02:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-13","commit":"1a6fe17","result":"SSR off/on/tampered all correct"}
 {"ts":"2026-10-12T23:05:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-12-14","commit":"1a6fe17","result":"all green"}
 {"ts":"2026-10-12T23:10:00Z","task":"BR-005","event":"batch_report","path":"product-tracking/reports/BR-005.md"}
+{"ts":"2026-10-12T23:45:00Z","task":"P02","event":"started","branch":"claude/p02-engine-company-preview","base":"20a018e"}
+{"ts":"2026-10-13T00:05:00Z","task":"P02","event":"data","detail":"8010 loaded into scratch DB copy via engine sync-manifests (5/5 checks); engine repo unchanged"}
+{"ts":"2026-10-13T00:20:00Z","task":"P01-15","event":"commit","branch":"claude/p02-engine-company-preview","commit":"6e34e5e","detail":"withhold sector-fallback comparisons"}
+{"ts":"2026-10-13T00:21:00Z","task":"P02","event":"commit","branch":"claude/p02-engine-company-preview","commit":"ca4e783","detail":"preview route, view model, server fetch, flag off"}
+{"ts":"2026-10-13T01:05:00Z","task":"P02","event":"commit","branch":"claude/p02-engine-company-preview","commit":"f906bbb","detail":"tests, bidi and mobile fixes"}
+{"ts":"2026-10-13T01:10:00Z","task":"P02","event":"commit","branch":"claude/p02-engine-company-preview","commit":"7caf2ca","detail":"format browser script"}
+{"ts":"2026-10-13T01:12:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-01","commit":"f906bbb","result":"66/66 unit"}
+{"ts":"2026-10-13T01:14:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-02","commit":"f906bbb+b70254e","result":"9/9 integration"}
+{"ts":"2026-10-13T01:15:00Z","task":"P01-15","event":"test_run","run":"RUN-2026-10-13-03","commit":"f906bbb+b70254e","result":"5/5 integration"}
+{"ts":"2026-10-13T01:18:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-04","commit":"7caf2ca","result":"tsc 0, eslint no new, build ok, 0 leak"}
+{"ts":"2026-10-13T01:22:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-05","commit":"7caf2ca","result":"browser flag off 2/2"}
+{"ts":"2026-10-13T01:22:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-06","commit":"7caf2ca","result":"browser flag on 11/11"}
+{"ts":"2026-10-13T01:26:00Z","task":"P02","event":"test_run","run":"RUN-2026-10-13-07","commit":"7caf2ca+b70254e","result":"13/13 companies built; withheld only 1120, 1150"}
+{"ts":"2026-10-13T01:30:00Z","task":"BR-006","event":"batch_report","path":"product-tracking/reports/BR-006.md"}

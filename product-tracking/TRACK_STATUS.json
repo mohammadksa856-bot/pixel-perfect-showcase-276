@@ -1,13 +1,14 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-12T23:10:00Z",
+  "updated_at": "2026-10-13T01:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
       "repo": "mohammadksa856-bot/pixel-perfect-showcase-276",
       "branch": "main-fz2efq",
       "base": "main@c4882ea",
-      "dev_branch": "claude/br005-r02-p01-15-dev"
+      "dev_branch": "claude/p02-engine-company-preview",
+      "dev_branch_base": "claude/br005-r02-p01-15-dev@20a018e (latest reachable; Codex local merge of P01-15 not on GitHub)"
     },
     "engine_read_only": {
       "repo": "mohammadksa856-bot/-Market-Agnostic-Financial-Data-Engine-1",
@@ -16,7 +17,9 @@
     }
   },
   "feature_flags": {
-    "ENGINE_PEERS_ENABLED": "off by default (exact 'true' only); company page wired on dev branch claude/br005-r02-p01-15-dev only; not set in any environment"
+    "ENGINE_PREVIEW_ENABLED": "off by default (exact 'true' only); /preview/companies* return 404 when off",
+    "ENGINE_PEERS_ENABLED": "off by default (exact 'true' only)",
+    "set_in_any_environment": false
   },
   "tasks": {
     "P01-08": {
@@ -83,17 +86,59 @@
       "review_findings": {
         "P01-15-QUARANTINE-FLAG": "fixed in 59e179d",
         "P01-15-SOURCE-URL": "fixed in 59e179d"
-      }
+      },
+      "sector_fallback_fix": "6e34e5e: comparisons built on engine sector fallback withheld (Tawuniya vs banks)"
+    },
+    "P02": {
+      "status": "done_pending_review",
+      "branch": "claude/p02-engine-company-preview",
+      "commits": [
+        "6e34e5e",
+        "ca4e783",
+        "f906bbb",
+        "7caf2ca"
+      ],
+      "report": "product-tracking/reports/BR-006.md",
+      "companies": {
+        "2222": {
+          "kind": "ordinary",
+          "shown": 78,
+          "withheld": 0,
+          "not_applicable": 0,
+          "readiness": 64.8
+        },
+        "1120": {
+          "kind": "bank",
+          "shown": 53,
+          "withheld": 2,
+          "not_applicable": 3,
+          "readiness": 28.7
+        },
+        "8010": {
+          "kind": "insurer",
+          "shown": 30,
+          "withheld": 0,
+          "not_applicable": 3,
+          "readiness": 15.4,
+          "data_note": "loaded into a scratch DB copy with the engine's own sync-manifests from data/imports/tawuniya-2025-fy.json (5/5 verification); not in the engine's bundled DB"
+        }
+      },
+      "data_source": "engine main b70254e, scratch copy built by product-tracking/tools/p02_build_preview_db.sh",
+      "supabase_reads": "none for page data; site header search and footer newsletter still use Supabase on user action only"
     }
   },
   "open_dependencies_on_codex": {
-    "DCR-001": "still open in b70254e: 1120 dividends_per_share & eps_diluted, and 1150 dividends_per_share & eps_diluted stored in SAR at x1e6 scale",
+    "DCR-001": "still open in b70254e: 1120 dividends_per_share & eps_diluted, 1150 dividends_per_share & eps_diluted (x1e6, unit SAR); new: 1120 weighted_average_shares_diluted stored with unit SAR",
     "ACR-001": "confirmed needed: no valuation multiple in company_page for any company",
     "ACR-004": "confirmed needed: company_page 809 KB (2222), 322 KB (1120)",
     "ACR-005": "proposed: company-type ratio set in contract; bank FCF/capex ratios returned today",
     "PCR-001": "engine main has src/finengine/telegram.py (/company /profile /metric /snapshot /coverage) but no withholding",
     "ACR-006": "proposed: peer_comparison excludes instant metrics, so loans_to_deposits / NPL ratio never compare; income metrics via ?metrics= work (3/3 for 10 banks)",
-    "PCR-002": "proposed: engine bot reads company_page, applies capabilities + withholding, labels period and source"
+    "PCR-002": "proposed: engine bot reads company_page, applies capabilities + withholding, labels period and source",
+    "ENGINE-DB-8010": "bundled data/financial.sqlite3 lacks 8010 although data/imports/tawuniya-2025-fy.json is reviewed; ingest --sa-manifest file:// records the manifest URL as source_url (use sync-manifests)",
+    "ENGINE-ARCHIVE-INDEX": "data/raw/archive-index.json references companies absent from bundled DB → sync-manifests FOREIGN KEY failure",
+    "ENGINE-HISTORY-1120": "annual history for 1120 has net_income for 2025 only; net_income_parent covers 5 years",
+    "ENGINE-PROFILE": "1120 and 8010 have no sourced profile attributes (no Arabic name, ISIN, management)"
   },
   "test_runs": [
     {
@@ -211,6 +256,62 @@
       "branch": "claude/br005-r02-p01-15-dev",
       "commit": "1a6fe17",
       "result": "tsc 0; eslint 0; unit 30/30; Codex 2/2; integration 5/5; build ok; 0 leak files"
+    },
+    {
+      "id": "RUN-2026-10-13-01",
+      "suite": "P02 unit + P01-15 unit (bun test tests/)",
+      "repo": "site",
+      "branch": "claude/p02-engine-company-preview",
+      "commit": "f906bbb",
+      "result": "66 pass, 0 fail, 14 integration skipped (run separately)"
+    },
+    {
+      "id": "RUN-2026-10-13-02",
+      "suite": "P02 integration: raw /page contract + preview vs live local engine API (preview DB)",
+      "repo": "site+engine",
+      "branch": "claude/p02-engine-company-preview + engine main",
+      "commit": "f906bbb + b70254e",
+      "result": "9/9"
+    },
+    {
+      "id": "RUN-2026-10-13-03",
+      "suite": "P01-15 integration (regression)",
+      "repo": "site+engine",
+      "branch": "claude/p02-engine-company-preview + engine main",
+      "commit": "f906bbb + b70254e",
+      "result": "5/5"
+    },
+    {
+      "id": "RUN-2026-10-13-04",
+      "suite": "tsc, eslint, build, client-bundle leak scan",
+      "repo": "site",
+      "branch": "claude/p02-engine-company-preview",
+      "commit": "7caf2ca",
+      "result": "tsc 0; eslint changed files 0; repo eslint 816 (= BR-005 baseline, no new); build ok; 0/60 client js contain engine env/key/endpoint/server modules"
+    },
+    {
+      "id": "RUN-2026-10-13-05",
+      "suite": "browser (Chromium 1194 via playwright-core outside repo): flag off",
+      "repo": "site",
+      "branch": "claude/p02-engine-company-preview",
+      "commit": "7caf2ca",
+      "result": "2/2"
+    },
+    {
+      "id": "RUN-2026-10-13-06",
+      "suite": "browser: flag on, 3 companies x (ar, en, 390px) + withheld/n-a UI + unknown 404",
+      "repo": "site",
+      "branch": "claude/p02-engine-company-preview",
+      "commit": "7caf2ca",
+      "result": "11/11; no Supabase or engine requests from browser; key and DCR-001 values absent"
+    },
+    {
+      "id": "RUN-2026-10-13-07",
+      "suite": "view model over all 13 Saudi engine companies (robustness)",
+      "repo": "site+engine",
+      "branch": "claude/p02-engine-company-preview + engine main",
+      "commit": "7caf2ca + b70254e",
+      "result": "13/13 built without error; withheld only 1120 (2) and 1150 (3), all unit_conflict (DCR-001 family)"
     }
   ]
 }

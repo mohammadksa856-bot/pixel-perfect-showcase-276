@@ -4,6 +4,7 @@ import { describe, expect, test } from "bun:test";
 import banks from "./fixtures/engine-b70254e_peers_SA-1120_banks.json";
 import bankDefault from "./fixtures/engine-b70254e_peers_SA-1120_default.json";
 import aramco from "./fixtures/engine-b70254e_peers_SA-2222_default.json";
+import tawuniya from "./fixtures/engine-b70254e_peers_SA-8010_ordinary.json";
 import {
   PEER_METRICS,
   buildPeerTable,
@@ -244,6 +245,22 @@ describe("regression — source URL safety (P01-15-SOURCE-URL)", () => {
   test("safeSourceUrl normalizes valid http(s)", () => {
     expect(safeSourceUrl(" https://example.com/a b.pdf ")).toBe("https://example.com/a%20b.pdf");
     expect(safeSourceUrl("http://example.com/x")).toBe("http://example.com/x");
+  });
+});
+
+describe("regression — sector fallback (P02 finding)", () => {
+  test("real engine response: Tawuniya (insurer) falls back to banks → withheld", () => {
+    const r = clone(tawuniya);
+    expect(r.status).toBe("available"); // المحرك نفسه يعدّها متاحة
+    expect(r.scope?.fallback_from?.value).toBe("Insurance");
+    const t = buildPeerTable(r, "ordinary");
+    expect(t.status).toBe("unavailable");
+    expect(t.reason).toBe("sector_fallback_not_comparable");
+    expect(t.rows).toHaveLength(0);
+  });
+
+  test("same banks without fallback_from stay comparable", () => {
+    expect(buildPeerTable(clone(banks), "bank").status).toBe("available");
   });
 });
 

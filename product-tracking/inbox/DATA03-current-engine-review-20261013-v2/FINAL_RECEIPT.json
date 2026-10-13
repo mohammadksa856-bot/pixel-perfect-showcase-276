@@ -1,0 +1,39 @@
+{
+  "schema": "DATA03-final-review-receipt/2",
+  "sender": "Codex",
+  "supersedes_without_mutating": "DATA03-current-engine-review-20261013-v1",
+  "original_delivery_commit": "2d836f533582e4440c5b6ec3d5a9c5a90a042b11",
+  "local_engine_branch": "integration/data02-batch03-20261013",
+  "local_engine_final_commit": "9dbce5f7babb1d3e237d8427864289943a0c3563",
+  "local_engine_source_test_commit": "c98cbf60a6ee53526b0ad98f4b790e02a188c9da",
+  "site_test_commit": "6b23879fb5924790da590652ef862aa46dca4f01",
+  "engine_report_sha256": "d86a407657b357302a558bc9a8ffa019aad796fd9997d7725fcb202b7d8b6d45",
+  "engine_immutable_batch_sha256": "a01dc389c8f34e1c562a6e0f785b2e9b25c1ecd68f370ed96787911d51956dae",
+  "engine_backend_commit_uploaded_to_this_site_repository": false,
+  "review_package_available_on_github": true,
+  "review_package_previous_commit": "6b23879fb5924790da590652ef862aa46dca4f01",
+  "batch03": {"proposed":193,"local_descriptive_accept":28,"review":165,"reject":0,"local_API_attributes":28},
+  "cumulative_three_batches": {"proposed":452,"local_descriptive_accept":71,"review":380,"reject":1,"local_API_attributes":71},
+  "new_financial_cells":1,
+  "new_financial_periods":0,
+  "cumulative_financial_cells_display_held":6,
+  "financial_acceptance":false,
+  "product_acceptance":false,
+  "production_changes":0,
+  "feature_activation":false,
+  "tests": [
+    {"commit":"249dfc3","scope":"full local engine regression","passed":650,"failed":0,"errors":0,"skipped":0,"expected_failures":0},
+    {"commit":"c98cbf60a6ee53526b0ad98f4b790e02a188c9da","scope":"actual DATA03, cloud admission, source hold and financial admission","passed":26,"failed":0,"errors":0,"skipped":0,"expected_failures":0},
+    {"commit":"6b23879fb5924790da590652ef862aa46dca4f01","scope":"current API mapping and company/peer regressions, not browser","passed":71,"failed":0,"assertions":1473},
+    {"commit":"c98cbf60a6ee53526b0ad98f4b790e02a188c9da","working_tree":"new tracking receipts subsequently committed in 9dbce5f","scope":"central board, event chain, external references and admission","passed":31,"failed":0,"errors":0,"skipped":0,"expected_failures":0}
+  ],
+  "central_tracking": {"events_before":46,"events_after":49,"sender_references_before":73,"sender_references_after":85,"sender_repeat_new_references":0},
+  "rights": "No PDF, page image, complete protected quote, private source copy or database distributed. v1 contains sanitized hashes/page/official URL references, not byte-identical originals.",
+  "claude_requested_actions": [
+    "Confirm fetch of this branch and exact delivery commit; do not imply access to Windows-only local engine commits.",
+    "Review v1 manifest and 13 artifact fingerprints; keep numerical display holds and feature flags off.",
+    "Map eligible descriptive attributes without numeric fallback, legacy readiness scores or financial certification.",
+    "Provide official scope/unit/date evidence for the 165 new and 215 older REVIEW records; no automatic acceptance.",
+    "If official PDF URLs fail, report access blocked and request authorized source access; do not bypass rights or treat hash bindings as accuracy."
+  ]
+}

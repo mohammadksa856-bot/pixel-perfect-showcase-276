@@ -1,0 +1,209 @@
+{
+  "company_id": "sa:7010",
+  "market": "SA",
+  "symbol": "7010",
+  "source_url": "https://www.stc.com/content/dam/groupsites/en/pdf/stc2025-annual-report-en.pdf",
+  "source_sha256": "7dccc9e19eb2627fd7e455fab047b79044ad893071a327f6c23eb92663c7ad21",
+  "purpose": "Response to Codex review request (codex/data02-current-engine-review-20261013 @ 239d107). Proposal only; nothing here is ingested.",
+  "codex_key_reviews": [
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_3:sa:7010:dividend_policy",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "policy": {
+          "minimum_regular_dividend_per_share_per_quarter": 0.55,
+          "currency": "SAR",
+          "applies": "Q4 2024 to Q3 2027",
+          "board_approval": "2024-08-24",
+          "general_assembly_approval": "2024-11-06",
+          "is_minimum_not_actual": true,
+          "official_known_at": null
+        }
+      },
+      "metadata": {
+        "source_page": "201",
+        "evidence": [
+          {
+            "pdf_page": 101,
+            "quote": "maintaining a minimum dividend of",
+            "printed_page": "201"
+          },
+          {
+            "pdf_page": 101,
+            "quote": "per share per quarter for the next three years starting from the dividends distribution of the fourth quarter of 2024 until the third quarter of 2027.",
+            "printed_page": "201"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Policy only. The 0.55 is a floor; it is not the amount of any individual distribution."
+      }
+    },
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_3:sa:7010:paid:Q4 2024",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "kind": "regular",
+        "label": "Q4 2024",
+        "dividend_per_share": 0.55,
+        "currency": "SAR",
+        "payment_date": "2025-03-24",
+        "announcement_date": null,
+        "official_known_at": null
+      },
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q4 2024 dividend distribution (& 0.55 per share) 24 March 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Actual paid distribution as listed in the 2025 report; announcement date not stated in this document."
+      }
+    },
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_3:sa:7010:paid:Q1 2025",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "kind": "regular",
+        "label": "Q1 2025",
+        "dividend_per_share": 0.55,
+        "currency": "SAR",
+        "payment_date": "2025-05-20",
+        "announcement_date": null,
+        "official_known_at": null
+      },
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q1 2025 dividend distribution (& 0.55 per share) 20 May 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Actual paid distribution as listed in the 2025 report; announcement date not stated in this document."
+      }
+    },
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_3:sa:7010:paid:Special for 2024",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "kind": "special",
+        "label": "Special for 2024",
+        "dividend_per_share": 2.0,
+        "currency": "SAR",
+        "payment_date": "2025-06-02",
+        "announcement_date": null,
+        "official_known_at": null
+      },
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Special dividends distribution for 2024 (& 2 per share) 02 June 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Actual paid distribution as listed in the 2025 report; announcement date not stated in this document."
+      }
+    },
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_3:sa:7010:paid:Q2 2025",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "kind": "regular",
+        "label": "Q2 2025",
+        "dividend_per_share": 0.55,
+        "currency": "SAR",
+        "payment_date": "2025-08-19",
+        "announcement_date": null,
+        "official_known_at": null
+      },
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q2 2025 dividend distribution (& 0.55 per share) 19 August 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Actual paid distribution as listed in the 2025 report; announcement date not stated in this document."
+      }
+    },
+    {
+      "codex_file": "CLAUDE_REVIEW_REQUEST_AR.md",
+      "domain": "codex_request_response",
+      "key": "request_3:sa:7010:paid:Q3 2025",
+      "codex_value": null,
+      "finding": "agrees_with_detail",
+      "proposal": {
+        "kind": "regular",
+        "label": "Q3 2025",
+        "dividend_per_share": 0.55,
+        "currency": "SAR",
+        "payment_date": "2025-11-26",
+        "announcement_date": null,
+        "official_known_at": null
+      },
+      "metadata": {
+        "source_page": "29",
+        "evidence": [
+          {
+            "pdf_page": 15,
+            "quote": "Q3 2025 dividend distribution (& 0.55 per share) 26 November 2025",
+            "printed_page": "29"
+          }
+        ],
+        "verification": {
+          "status": "extracted_quote_on_page",
+          "independent_review": false,
+          "extracted_by": "Claude Code (DATA-02 batch-04 review support)"
+        },
+        "note": "Actual paid distribution as listed in the 2025 report; announcement date not stated in this document."
+      }
+    }
+  ]
+}

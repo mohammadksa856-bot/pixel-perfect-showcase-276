@@ -1,0 +1,61 @@
+{
+  "batch": "DATA-02/batch-04",
+  "engine_main_commit": "b70254e",
+  "company_list_reference": {
+    "file": "product-tracking/inbox/DATA01-market-batch-20261013-v7/BATCH20_GAP_MATRIX.json",
+    "commit": "ab98885",
+    "sha256": "0823b6eb66d1c1ecd765deaa424ac4928e0fb62251952e57ae0c2eee4bc344e9",
+    "order": "4340, 4140, 4260, 9510, 4164 (matrix order 16-20)"
+  },
+  "search": {
+    "engine_branches_searched": 69,
+    "result": "no data/raw document and no import manifest for any of the five; only config/sa-market-registry.json names them"
+  },
+  "access_note": "saudiexchange.sa, alrajhi-capital.sa, nahdi.sa, budgetsaudi.com, sieco.com.sa, argaam.com and cma.org.sa are denied by the session network policy.",
+  "comparison_limits": {
+    "codex_engine_commit_cited": "2391513",
+    "codex_engine_commit_available_on_github": false,
+    "not_compared": "Codex's local sources behind the matrix counts (e.g. 457 original values for 4260) are not published; nothing in this batch was extracted, so no collision can arise."
+  },
+  "documents_used": [],
+  "documents_needed_not_available": [
+    {
+      "company": "4340",
+      "documents": [
+        "Fund terms and conditions (current version)",
+        "Annual report 2025 and audited FS 2025 of the fund",
+        "Latest valuation reports / NAV disclosures",
+        "Fund board and fund manager disclosures"
+      ]
+    },
+    {
+      "company": "4140",
+      "documents": [
+        "Audited FS 2025",
+        "Board of Directors report 2025"
+      ]
+    },
+    {
+      "company": "4260",
+      "documents": [
+        "Audited FS 2025 (legal name, entity type)",
+        "Board of Directors report 2025 / annual report"
+      ]
+    },
+    {
+      "company": "9510",
+      "documents": [
+        "Audited FS 2025 or latest semi-annual FS",
+        "Nomu disclosure obligations applicable to the company (CMA rules)",
+        "Board report"
+      ]
+    },
+    {
+      "company": "4164",
+      "documents": [
+        "Audited FS 2025",
+        "Annual report / Board of Directors report 2025"
+      ]
+    }
+  ]
+}

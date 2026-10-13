@@ -1,0 +1,204 @@
+{
+  "input": {
+    "file": "product-tracking/inbox/DATA02-current-engine-review-20261013-v1/review-and-merge.json",
+    "branch": "codex/data02-current-engine-review-20261013",
+    "commit": "239d107",
+    "sha256": "3a434c01a407a0db32a2a1b6cb4327236b41ab54304be6f4fab5a0e8a6e59bae"
+  },
+  "records": 216,
+  "groups": {
+    "G1_identity_registration": {
+      "records": 39,
+      "by_company": {
+        "sa:1120": 4,
+        "sa:7010": 1,
+        "sa:2082": 7,
+        "sa:2280": 5,
+        "sa:4004": 7,
+        "sa:4300": 10,
+        "sa:4190": 5
+      },
+      "closing_evidence_required": "Second location in the same filing (cover/audit report/note 1) plus, for registration numbers and dates, the issuer's Saudi Exchange profile or Ministry of Commerce record (not reachable from this session)."
+    },
+    "G7_descriptive_semantic": {
+      "records": 71,
+      "by_company": {
+        "sa:1120": 4,
+        "sa:2222": 2,
+        "sa:2010": 3,
+        "sa:7010": 5,
+        "sa:2082": 9,
+        "sa:2280": 11,
+        "sa:4004": 9,
+        "sa:4300": 15,
+        "sa:4190": 13
+      },
+      "closing_evidence_required": "Contextual review that the delivered wording does not go beyond the quoted sentence; full-sentence context is provided for each quote."
+    },
+    "G5_numeric_description": {
+      "records": 27,
+      "by_company": {
+        "sa:1120": 2,
+        "sa:2222": 1,
+        "sa:7010": 1,
+        "sa:2082": 5,
+        "sa:2280": 4,
+        "sa:4004": 5,
+        "sa:4300": 7,
+        "sa:4190": 2
+      },
+      "closing_evidence_required": "Numbers inside the description must be confirmed against the filing's own tables (corroborating pages listed) and kept out of financial acceptance until DATA-01 accepts the underlying cells."
+    },
+    "G8_quote_diagnostic_failed": {
+      "records": 6,
+      "by_company": {
+        "sa:1120": 2,
+        "sa:2010": 1,
+        "sa:2280": 3
+      },
+      "closing_evidence_required": "A replacement quote that matches the native reading-order text of the same page exactly (provided where possible)."
+    },
+    "G4_securities_event": {
+      "records": 24,
+      "by_company": {
+        "sa:1120": 2,
+        "sa:2082": 2,
+        "sa:2280": 2,
+        "sa:4004": 10,
+        "sa:4190": 8
+      },
+      "closing_evidence_required": "The Saudi Exchange announcement (announcement/eligibility/payment dates) plus the filing's dividend note; reconciliation with the cash-flow 'dividends paid' line is provided below where available."
+    },
+    "G2_governance_people": {
+      "records": 14,
+      "by_company": {
+        "sa:2010": 3,
+        "sa:7010": 2,
+        "sa:2280": 9
+      },
+      "closing_evidence_required": "A dated governance source stating the role and term: Board of Directors report or the Corporate Governance section of the annual report; financial-statement notes alone do not establish current appointments."
+    },
+    "R1_rejected_domain": {
+      "records": 1,
+      "by_company": {
+        "sa:2010": 1
+      },
+      "closing_evidence_required": "Re-propose as a dated disclosure (not a corporate action); see codex-requests-response.json item 4."
+    },
+    "G3_ownership": {
+      "records": 12,
+      "by_company": {
+        "sa:2082": 1,
+        "sa:2280": 6,
+        "sa:4004": 3,
+        "sa:4300": 1,
+        "sa:4190": 1
+      },
+      "closing_evidence_required": "A dated shareholding statement (annual report shareholder section, Board report or Saudi Exchange major-shareholders page) with percentage and as-of date."
+    },
+    "G6_event_disclosure": {
+      "records": 21,
+      "by_company": {
+        "sa:2082": 10,
+        "sa:2280": 5,
+        "sa:4004": 5,
+        "sa:4190": 1
+      },
+      "closing_evidence_required": "Event date proof: the issuer's Saudi Exchange announcement or the dated note in the filing; the description must keep the filing's own wording on completion status."
+    },
+    "G9_official_board_report_required": {
+      "records": 1,
+      "by_company": {
+        "sa:4004": 1
+      },
+      "closing_evidence_required": "Dated official Board report naming the role and term (requested explicitly by Codex)."
+    }
+  },
+  "dividend_reconciliation": {
+    "sa:1120": [
+      {
+        "payment_year": "2025",
+        "events": [
+          "sa:1120:dividend:2025:h1",
+          "sa:1120:dividend:2024:h2"
+        ],
+        "sum_of_event_amounts": 8840000000.0,
+        "codex_dividends_paid_fact": 8840000000.0,
+        "fact_file": "alrajhi-2025-fy.json",
+        "fact_page": 15,
+        "difference": 0.0,
+        "reading": "matches"
+      }
+    ],
+    "sa:2010": [],
+    "sa:2082": [
+      {
+        "payment_year": "2024",
+        "events": [
+          "sa:2082:cash_dividend:2024-02-28"
+        ],
+        "sum_of_event_amounts": 329000000.0,
+        "codex_dividends_paid_fact": 450307000.0,
+        "fact_file": "acwa-power-2025-fy.json",
+        "fact_page": 11,
+        "difference": 121307000.0,
+        "reading": "differs (cash-flow line can include NCI dividends or timing; not by itself an error)"
+      }
+    ],
+    "sa:2280": [
+      {
+        "payment_year": "2025",
+        "events": [
+          "sa:2280:cash_dividend:2024-12-19"
+        ],
+        "sum_of_event_amounts": 1000000000.0,
+        "codex_dividends_paid_fact": 985506000.0,
+        "fact_file": "almarai-2025-fy.json",
+        "fact_page": 0,
+        "difference": -14494000.0,
+        "reading": "differs (cash-flow line can include NCI dividends or timing; not by itself an error)"
+      }
+    ],
+    "sa:4004": [
+      {
+        "payment_year": "2024",
+        "events": [
+          "sa:4004:cash_dividend:2023-12-26",
+          "sa:4004:cash_dividend:2024-06-11",
+          "sa:4004:cash_dividend:2024-08-04",
+          "sa:4004:cash_dividend:2024-11-07"
+        ],
+        "sum_of_event_amounts": 195007248.0,
+        "codex_dividends_paid_fact": 201211248.0,
+        "fact_file": "dallah-2025-fy.json",
+        "fact_page": 10,
+        "difference": 6204000.0,
+        "reading": "differs (cash-flow line can include NCI dividends or timing; not by itself an error)"
+      },
+      {
+        "payment_year": "2025",
+        "events": [
+          "sa:4004:cash_dividend:2025-03-17",
+          "sa:4004:cash_dividend:2025-05-29",
+          "sa:4004:cash_dividend:2025-08-03",
+          "sa:4004:cash_dividend:2025-11-02"
+        ],
+        "sum_of_event_amounts": 202377536.0,
+        "codex_dividends_paid_fact": 208581536.0,
+        "fact_file": "dallah-2025-fy.json",
+        "fact_page": 10,
+        "difference": 6204000.0,
+        "reading": "differs (cash-flow line can include NCI dividends or timing; not by itself an error)"
+      },
+      {
+        "payment_year": "2026",
+        "events": [
+          "sa:4004:cash_dividend:2026-03-04"
+        ],
+        "sum_of_event_amounts": 50551474.0,
+        "codex_dividends_paid_fact": null
+      }
+    ],
+    "sa:4190": []
+  }
+}

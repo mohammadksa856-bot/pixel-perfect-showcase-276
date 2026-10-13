@@ -7,24 +7,31 @@ import { fetchCompanyPreview } from "../src/lib/engine/company-preview.server";
 const url = process.env["ENGINE_IT_URL"];
 const key = process.env["ENGINE_IT_KEY"];
 const env = { ENGINE_PREVIEW_ENABLED: "true", FINENGINE_API_URL: url, FINENGINE_API_KEY: key };
+// Separate existing insurer import-preview database, never silently merged with native engine records.
+const urlFor=(symbol: string)=>symbol==="8010"?process.env["ENGINE_IT_INSURANCE_URL"]??url:url;
 
 describe.skipIf(!url || !key)("engine API contract and preview (live local API)", () => {
   for (const symbol of ["2222", "1120", "8010"]) {
-    test(`${symbol}: raw /page response satisfies contract v4`, async () => {
-      const res = await fetch(`${url}/v1/companies/SA/${symbol}/page`, {
+    test(`${symbol}: raw /page response satisfies current contract v5`, async () => {
+      const res = await fetch(`${urlFor(symbol)}/v1/companies/SA/${symbol}/page`, {
         headers: { "X-API-Key": key! },
       });
       expect(res.status).toBe(200);
-      expect(contractProblems(await res.json())).toEqual([]);
+      const raw=await res.json();
+      expect(raw.contract_version).toBe(5);
+      expect(contractProblems(raw)).toEqual([]);
     });
 
     test(`${symbol}: preview builds with 18 topics and sourced values`, async () => {
-      const r = await fetchCompanyPreview({ market: "SA", symbol }, env);
+      const r = await fetchCompanyPreview({ market: "SA", symbol }, {...env,FINENGINE_API_URL:urlFor(symbol)});
       expect(r.state).toBe("ok");
       if (r.state !== "ok") return;
       expect(r.preview.topics).toHaveLength(18);
       expect(r.preview.counts.shown).toBeGreaterThan(0);
-      expect(r.preview.topics.every((t) => t.status !== "not_measured")).toBe(true);
+      // Missing measurement stays unmeasured: never require a fabricated readiness score to pass.
+      expect(r.preview.readiness.score).toBeNull();
+      expect(r.preview.topics.every((t) => t.score===null)).toBe(true);
+      if(symbol==="8010")expect(r.preview.dataNotices.length).toBeGreaterThan(0);
     });
   }
 

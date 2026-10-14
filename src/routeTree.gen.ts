@@ -48,6 +48,11 @@ import { Route as PreviewWebV1DesignSystemRouteImport } from './routes/preview.w
 import { Route as PreviewWebV1SearchRouteImport } from './routes/preview.web-v1.search'
 import { Route as PreviewWebV1CompaniesIndexRouteImport } from './routes/preview.web-v1.companies.index'
 import { Route as PreviewWebV1CompaniesSymbolRouteImport } from './routes/preview.web-v1.companies.$symbol'
+import { Route as PreviewWebV1MarketsIndexRouteImport } from './routes/preview.web-v1.markets.index'
+import { Route as PreviewWebV1SectorsIndexRouteImport } from './routes/preview.web-v1.sectors.index'
+import { Route as PreviewWebV1SectorsSlugRouteImport } from './routes/preview.web-v1.sectors.$slug'
+import { Route as PreviewWebV1MarketsSaudiIndexRouteImport } from './routes/preview.web-v1.markets.saudi.index'
+import { Route as PreviewWebV1MarketsSaudiBoardRouteImport } from './routes/preview.web-v1.markets.saudi.$board'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -252,6 +257,35 @@ const PreviewWebV1CompaniesSymbolRoute =
     path: '/preview/web-v1/companies/$symbol',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PreviewWebV1MarketsIndexRoute =
+  PreviewWebV1MarketsIndexRouteImport.update({
+    id: '/preview/web-v1/markets/',
+    path: '/preview/web-v1/markets/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PreviewWebV1SectorsIndexRoute =
+  PreviewWebV1SectorsIndexRouteImport.update({
+    id: '/preview/web-v1/sectors/',
+    path: '/preview/web-v1/sectors/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PreviewWebV1SectorsSlugRoute = PreviewWebV1SectorsSlugRouteImport.update({
+  id: '/preview/web-v1/sectors/$slug',
+  path: '/preview/web-v1/sectors/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreviewWebV1MarketsSaudiIndexRoute =
+  PreviewWebV1MarketsSaudiIndexRouteImport.update({
+    id: '/preview/web-v1/markets/saudi/',
+    path: '/preview/web-v1/markets/saudi/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PreviewWebV1MarketsSaudiBoardRoute =
+  PreviewWebV1MarketsSaudiBoardRouteImport.update({
+    id: '/preview/web-v1/markets/saudi/$board',
+    path: '/preview/web-v1/markets/saudi/$board',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -291,7 +325,12 @@ export interface FileRoutesByFullPath {
   '/preview/companies/': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1/': typeof PreviewWebV1IndexRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
+  '/preview/web-v1/sectors/$slug': typeof PreviewWebV1SectorsSlugRoute
   '/preview/web-v1/companies/': typeof PreviewWebV1CompaniesIndexRoute
+  '/preview/web-v1/markets/': typeof PreviewWebV1MarketsIndexRoute
+  '/preview/web-v1/sectors/': typeof PreviewWebV1SectorsIndexRoute
+  '/preview/web-v1/markets/saudi/$board': typeof PreviewWebV1MarketsSaudiBoardRoute
+  '/preview/web-v1/markets/saudi/': typeof PreviewWebV1MarketsSaudiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -330,7 +369,12 @@ export interface FileRoutesByTo {
   '/preview/companies': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1': typeof PreviewWebV1IndexRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
+  '/preview/web-v1/sectors/$slug': typeof PreviewWebV1SectorsSlugRoute
   '/preview/web-v1/companies': typeof PreviewWebV1CompaniesIndexRoute
+  '/preview/web-v1/markets': typeof PreviewWebV1MarketsIndexRoute
+  '/preview/web-v1/sectors': typeof PreviewWebV1SectorsIndexRoute
+  '/preview/web-v1/markets/saudi/$board': typeof PreviewWebV1MarketsSaudiBoardRoute
+  '/preview/web-v1/markets/saudi': typeof PreviewWebV1MarketsSaudiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -372,7 +416,12 @@ export interface FileRoutesById {
   '/preview/companies/': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1/': typeof PreviewWebV1IndexRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
+  '/preview/web-v1/sectors/$slug': typeof PreviewWebV1SectorsSlugRoute
   '/preview/web-v1/companies/': typeof PreviewWebV1CompaniesIndexRoute
+  '/preview/web-v1/markets/': typeof PreviewWebV1MarketsIndexRoute
+  '/preview/web-v1/sectors/': typeof PreviewWebV1SectorsIndexRoute
+  '/preview/web-v1/markets/saudi/$board': typeof PreviewWebV1MarketsSaudiBoardRoute
+  '/preview/web-v1/markets/saudi/': typeof PreviewWebV1MarketsSaudiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -414,7 +463,12 @@ export interface FileRouteTypes {
     | '/preview/companies/'
     | '/preview/web-v1/'
     | '/preview/web-v1/companies/$symbol'
+    | '/preview/web-v1/sectors/$slug'
     | '/preview/web-v1/companies/'
+    | '/preview/web-v1/markets/'
+    | '/preview/web-v1/sectors/'
+    | '/preview/web-v1/markets/saudi/$board'
+    | '/preview/web-v1/markets/saudi/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -453,7 +507,12 @@ export interface FileRouteTypes {
     | '/preview/companies'
     | '/preview/web-v1'
     | '/preview/web-v1/companies/$symbol'
+    | '/preview/web-v1/sectors/$slug'
     | '/preview/web-v1/companies'
+    | '/preview/web-v1/markets'
+    | '/preview/web-v1/sectors'
+    | '/preview/web-v1/markets/saudi/$board'
+    | '/preview/web-v1/markets/saudi'
   id:
     | '__root__'
     | '/'
@@ -494,7 +553,12 @@ export interface FileRouteTypes {
     | '/preview/companies/'
     | '/preview/web-v1/'
     | '/preview/web-v1/companies/$symbol'
+    | '/preview/web-v1/sectors/$slug'
     | '/preview/web-v1/companies/'
+    | '/preview/web-v1/markets/'
+    | '/preview/web-v1/sectors/'
+    | '/preview/web-v1/markets/saudi/$board'
+    | '/preview/web-v1/markets/saudi/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -527,7 +591,12 @@ export interface RootRouteChildren {
   PreviewCompaniesIndexRoute: typeof PreviewCompaniesIndexRoute
   PreviewWebV1IndexRoute: typeof PreviewWebV1IndexRoute
   PreviewWebV1CompaniesSymbolRoute: typeof PreviewWebV1CompaniesSymbolRoute
+  PreviewWebV1SectorsSlugRoute: typeof PreviewWebV1SectorsSlugRoute
   PreviewWebV1CompaniesIndexRoute: typeof PreviewWebV1CompaniesIndexRoute
+  PreviewWebV1MarketsIndexRoute: typeof PreviewWebV1MarketsIndexRoute
+  PreviewWebV1SectorsIndexRoute: typeof PreviewWebV1SectorsIndexRoute
+  PreviewWebV1MarketsSaudiBoardRoute: typeof PreviewWebV1MarketsSaudiBoardRoute
+  PreviewWebV1MarketsSaudiIndexRoute: typeof PreviewWebV1MarketsSaudiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -805,6 +874,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PreviewWebV1CompaniesSymbolRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/preview/web-v1/markets/': {
+      id: '/preview/web-v1/markets/'
+      path: '/preview/web-v1/markets'
+      fullPath: '/preview/web-v1/markets/'
+      preLoaderRoute: typeof PreviewWebV1MarketsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/web-v1/sectors/': {
+      id: '/preview/web-v1/sectors/'
+      path: '/preview/web-v1/sectors'
+      fullPath: '/preview/web-v1/sectors/'
+      preLoaderRoute: typeof PreviewWebV1SectorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/web-v1/sectors/$slug': {
+      id: '/preview/web-v1/sectors/$slug'
+      path: '/preview/web-v1/sectors/$slug'
+      fullPath: '/preview/web-v1/sectors/$slug'
+      preLoaderRoute: typeof PreviewWebV1SectorsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/web-v1/markets/saudi/': {
+      id: '/preview/web-v1/markets/saudi/'
+      path: '/preview/web-v1/markets/saudi'
+      fullPath: '/preview/web-v1/markets/saudi/'
+      preLoaderRoute: typeof PreviewWebV1MarketsSaudiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/web-v1/markets/saudi/$board': {
+      id: '/preview/web-v1/markets/saudi/$board'
+      path: '/preview/web-v1/markets/saudi/$board'
+      fullPath: '/preview/web-v1/markets/saudi/$board'
+      preLoaderRoute: typeof PreviewWebV1MarketsSaudiBoardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -874,7 +978,12 @@ const rootRouteChildren: RootRouteChildren = {
   PreviewCompaniesIndexRoute: PreviewCompaniesIndexRoute,
   PreviewWebV1IndexRoute: PreviewWebV1IndexRoute,
   PreviewWebV1CompaniesSymbolRoute: PreviewWebV1CompaniesSymbolRoute,
+  PreviewWebV1SectorsSlugRoute: PreviewWebV1SectorsSlugRoute,
   PreviewWebV1CompaniesIndexRoute: PreviewWebV1CompaniesIndexRoute,
+  PreviewWebV1MarketsIndexRoute: PreviewWebV1MarketsIndexRoute,
+  PreviewWebV1SectorsIndexRoute: PreviewWebV1SectorsIndexRoute,
+  PreviewWebV1MarketsSaudiBoardRoute: PreviewWebV1MarketsSaudiBoardRoute,
+  PreviewWebV1MarketsSaudiIndexRoute: PreviewWebV1MarketsSaudiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

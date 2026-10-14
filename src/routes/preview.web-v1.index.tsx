@@ -421,14 +421,14 @@ function Browse() {
   const { t } = useI18n();
   const tiles = [
     {
-      to: "/markets/saudi",
-      title: { ar: "السوق السعودي", en: "Saudi market" },
-      hint: { ar: "تاسي ونمو", en: "TASI and Nomu" },
+      to: "/preview/web-v1/markets/saudi",
+      title: { ar: "السوق السعودية", en: "Saudi market" },
+      hint: { ar: "السوق الرئيسية ونمو", en: "Main Market and Nomu" },
     },
     {
-      to: "/sectors",
+      to: "/preview/web-v1/sectors",
       title: { ar: "القطاعات", en: "Sectors" },
-      hint: { ar: "تصنيف الشركات حسب النشاط", en: "Companies by activity" },
+      hint: { ar: "القطاعات الموثقة وشركاتها", en: "Documented sectors and companies" },
     },
     {
       to: "/research",
@@ -448,8 +448,8 @@ function Browse() {
       </h2>
       <p className="mb-5 mt-1 text-[13px] text-muted-foreground">
         {t({
-          ar: "تفتح هذه الأقسام صفحات الموقع الحالية بمحتواها المنشور. إعادة تصميمها في دفعة لاحقة.",
-          en: "These open the current site pages with their published content. Their redesign comes in a later batch.",
+          ar: "الأسواق والقطاعات بصفحات المعاينة الجديدة. الأبحاث والمعرفة تفتح صفحات الموقع الحالية، وإعادة تصميمها في دفعة لاحقة.",
+          en: "Markets and sectors open the new preview pages. Research and knowledge open the current site pages; their redesign comes in a later batch.",
         })}
       </p>
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">

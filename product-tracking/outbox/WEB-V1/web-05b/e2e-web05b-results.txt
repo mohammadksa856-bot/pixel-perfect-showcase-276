@@ -1,0 +1,22 @@
+PASS  markets index: Saudi counts from the list; US kept in structure as not covered; no prices
+PASS  Saudi market: tiles, both boards, index cards without values, documented sectors + unclassified
+PASS  Main Market table: search by ticker and Arabic name, sector and data filters, reset
+PASS  pagination: next/previous pages, 50 rows each, page in the URL
+PASS  shareable URL restores filters and sort; Latin query explains the English-name limit
+PASS  board tabs: Main ↔ Nomu; Nomu has no documented sector (only All + Not classified)
+PASS  navigation market → sector → company: row sector link, then open the company page
+PASS  navigation sector → industry → company, and sector → board filtered to the sector
+PASS  unclassified page and missing-data states; unknown sector and board
+PASS  sectors directory: search by sector or industry (source labels); empty state
+PASS  shell: header Markets/Sectors open the new pages; search finds a sector page
+PASS  breadcrumbs: board page links back to Saudi market and markets
+PASS  English: LTR, English labels, sector labels as in source
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/markets
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/markets/saudi
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/markets/saudi/main
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/sectors
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/sectors/financials
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/sectors/unclassified
+PASS  mobile: table becomes a list; filters and pagination usable; bottom-bar Markets opens markets
+
+20/20 passed

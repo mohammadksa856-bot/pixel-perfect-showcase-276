@@ -120,6 +120,16 @@ export function facets(entries: readonly DirectoryEntry[]) {
   };
 }
 
+/** WEB-05B: رابط ثابت للقطاع من تسميته في المصدر: "Communication Services" → "communication-services". */
+export function sectorSlug(name: string): string {
+  return name
+    .normalize("NFKD")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9؀-ۿ]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 // ───────────────────────── البحث الموحد
 
 export type SearchGroupState =
@@ -193,7 +203,7 @@ export function searchCatalog(
           id: s,
           title: { ar: s, en: s },
           subtitle: null,
-          href: `/preview/web-v1/companies?sector=${encodeURIComponent(s)}`,
+          href: `/preview/web-v1/sectors/${sectorSlug(s)}`,
           badge: null,
         })),
       ),

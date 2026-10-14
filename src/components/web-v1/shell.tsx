@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
 import { COMPANY_GROUPS, COVERAGE_TAB, type CompanyTab } from "@/lib/web-v1/model";
 
 const NAV = [
-  { to: "/markets", label: ui.markets, icon: Globe2 },
-  { to: "/sectors", label: ui.sectors, icon: Layers },
+  { to: "/preview/web-v1/markets", label: ui.markets, icon: Globe2 },
+  { to: "/preview/web-v1/sectors", label: ui.sectors, icon: Layers },
   { to: "/preview/web-v1/companies", label: ui.companies, icon: Building2 },
   { to: "/knowledge", label: ui.knowledge, icon: LayoutGrid },
   { to: "/research", label: ui.research, icon: LayoutGrid },
@@ -139,7 +139,7 @@ export function WebV1Shell({
       >
         {[
           { label: ui.home, icon: Home, to: "/preview/web-v1" as const },
-          { label: ui.markets, icon: Globe2, to: "/markets" as const },
+          { label: ui.markets, icon: Globe2, to: "/preview/web-v1/markets" as const },
           { label: ui.search, icon: Search, onClick: () => setSearchOpen(true) },
           { label: ui.companies, icon: Building2, to: "/preview/web-v1/companies" as const },
           {

@@ -1,0 +1,13 @@
+import {spawnSync} from "node:child_process";
+import {writeFileSync,readFileSync} from "node:fs";
+import {createHash} from "node:crypto";
+const r=spawnSync(process.execPath,["test","review-delivery/WEB03-SYNTHETIC/cases.test.ts"],{encoding:"utf8"});
+const output=r.stdout+r.stderr;
+const count=k=>Number(output.match(new RegExp("^\\s*(\\d+) "+k+"\\s*$","m"))?.[1]??0);
+const result={baseline_commit:"cb41d33d9733e571dc6dfbd45e21e4d30804fff5",observed_at:new Date().toISOString(),passed:count("pass"),failed:count("fail"),exit:r.status,scope:"Fully synthetic challenge tests, not financial data",repair_commit:null,after_repair:"PENDING_DELIVERY"};
+writeFileSync(new URL("BASELINE_RESULT.json",import.meta.url),JSON.stringify(result,null,2)+"\n");
+const files=["cases.test.ts","INSTRUCTIONS.json","run.mjs","BASELINE_RESULT.json"];
+const manifest={package:"WEB03-SYNTHETIC/1",files:Object.fromEntries(files.map(n=>[n,createHash("sha256").update(readFileSync(new URL(n,import.meta.url))).digest("hex")]))};
+writeFileSync(new URL("MANIFEST.json",import.meta.url),JSON.stringify(manifest,null,2)+"\n");
+console.log(JSON.stringify(result));
+process.exit(r.status??1);

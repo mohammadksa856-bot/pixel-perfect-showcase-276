@@ -1,0 +1,12 @@
+{
+  "package": "WEB03-SYNTHETIC/1",
+  "baseline_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
+  "purpose": "Independent reproducible evidence; tests assert desired behavior and fail on the baseline. No design fixes included.",
+  "command": "bun test review-delivery/WEB03-SYNTHETIC/cases.test.ts",
+  "requirements": "Use existing reviewed site dependencies from bun.lock. No live API, credentials, issuer files or production data required.",
+  "fixtures": "Fully synthetic numeric values and example.com source URLs; never financial evidence or UI production values.",
+  "handoff": "Run the unchanged test file against Claude's exact repair commit. Report each case separately; do not claim closure from a build or unrelated tests.",
+  "expected_baseline": {"passed": 0, "failed": 3},
+  "repair_commit": null,
+  "after_repair_result": "PENDING_DELIVERY"
+}

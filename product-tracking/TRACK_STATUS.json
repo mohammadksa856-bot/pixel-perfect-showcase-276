@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T22:30:00Z",
+  "updated_at": "2026-10-14T23:40:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -463,6 +463,15 @@
       "evidence": "product-tracking/outbox/WEB-V1/web-05b-fixes",
       "result": "boundary audit 60/60 clean (0 leaving links, 0 overflow at 390px, 0 Supabase, 0 writes); Codex boundary test pass; preview footer isolated, newsletter disabled; card names wrap",
       "preview_env_note": "branch likely needs Vercel Preview config overrides (as Codex did for claude/web-05b-markets-sectors); not changed by Claude"
+    },
+    "WEB-05C-READER-FIXES": {
+      "status": "IMPLEMENTED, TESTED; WEB-05C DESIGN PREVIEW re-acceptance requested",
+      "branch": "claude/web-05c-reader-final-fixes",
+      "base": "dc2ac11",
+      "commit": "7bee848",
+      "review": "Codex WEB-05C at 6d696b9 (two defects; no independent test package received)",
+      "report": "product-tracking/reports/BR-025_WEB-05C_reader_fixes.md",
+      "evidence": "product-tracking/outbox/WEB-V1/web-05c-reader-fixes"
     }
   },
   "open_dependencies_on_codex": {
@@ -1071,6 +1080,21 @@
       "suite": "bun test + e2e (05A, 05B, 05C) + boundary audit + Codex 6058def + tsc + vite build",
       "branch": "claude/web-05b-final-fixes",
       "result": "357 pass, 14 skip, 0 fail; e2e 05A 18/18, 05B 26/26 (21/26 before), 05C 18/18; audit 0/60 failing (60/60 before); Codex boundary pass (fail before); builds ok; Vercel success"
+    },
+    {
+      "id": "RUN-2026-10-14-62",
+      "branch": "claude/web-05c-reader-final-fixes",
+      "runs": {
+        "reader-fixes unit": "before 2 pass/9 fail; after 11/11",
+        "bun test tests": "368 pass, 14 skip, 0 fail",
+        "e2e 05C": "before 17/24; after 24/24",
+        "e2e 05A": "18/18",
+        "e2e 05B": "26/26",
+        "boundary audit": "0/60 failing",
+        "tsc": "0",
+        "vite build preview/production-like": "exit 0 / exit 0",
+        "vercel build": "success (page opening not verified)"
+      }
     }
   ],
   "active_track": {

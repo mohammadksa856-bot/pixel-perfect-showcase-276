@@ -1,0 +1,15 @@
+{
+ "schema":"marefa-web05c-code-only-evidence/1",
+ "application_proven_failing":"6d696b9ba6befa691dede0f0216b21c541a6f3a0",
+ "local_review_commit":"2a1a0c279818e1b398d4b856982f1e0d32ffdfa5",
+ "tests":[
+  {"file":"web05c-negative-acceptance.test.ts","case":"malformed financial table must not silently discard an extra numeric cell","result":"FAIL","evidence":"999999 silently removed; no explicit rejection block","policy":"Preserve original safely OR visibly reject; never invent a column or period"},
+  {"file":"web05c-negative-acceptance.test.ts","case":"impossible publication dates must stay absent, never presented as valid date","result":"FAIL","evidence":"2026-02-31 returned/displayed unchanged as valid date"},
+  {"file":"web05c-independent.test.ts","passed":6,"failed":0,"scope":"HTML links language source metadata and valid table regressions"},
+  {"file":"web05c-server-guards.test.ts","passed":4,"failed":0,"scope":"Frozen no database invocation; published=true; HTTP and connection error states"}
+ ],
+ "independent_runs":"Each file ran separately on stated applicationSHA. Do not combine two executions of the same negative tests as four defects.",
+ "data":"Synthetic strings and placeholders only; example.com references; no original documents or production records",
+ "git_history":"Publish as parentless commit with ONLY this review package; no private engine history or application history",
+ "publication_does_not_authorize_live_content":true
+}

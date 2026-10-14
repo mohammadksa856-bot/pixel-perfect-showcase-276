@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T23:30:00Z",
+  "updated_at": "2026-10-15T00:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -419,6 +419,15 @@
       "report": "product-tracking/reports/BR-020_WEB-05A_search_copy.md",
       "evidence": "product-tracking/outbox/WEB-V1/web-05a-search-copy",
       "result": "search copy states the source limit (Arabic name + ticker; English where available, 3 of 396); algorithm and source unchanged"
+    },
+    "WEB-03-SOURCE-CONFLICT-FIX": {
+      "status": "IMPLEMENTED, TESTED; WEB-03 re-acceptance requested",
+      "branch": "claude/web-03-source-conflict-fix",
+      "base": "a8a76f2",
+      "commit": "839f849",
+      "report": "product-tracking/reports/BR-021_WEB-03_source_conflict.md",
+      "evidence": "product-tracking/outbox/WEB-V1/web-03-source-conflict",
+      "result": "all candidates compared before choosing; contradictory eligible values -> source_conflict; numeric identity-rejected record blocks substitutes (rejection_not_overridden); review evidence without values; 1 of 1810 fixture cells changed (v4 1120 eps_diluted)"
     }
   },
   "open_dependencies_on_codex": {
@@ -1003,6 +1012,12 @@
       "suite": "bun test + e2e + tsc + eslint + vite build",
       "branch": "claude/web-05a-search-copy-fix",
       "result": "293 pass, 14 skip, 0 fail; copy tests 10/10; e2e 18/18; builds ok"
+    },
+    {
+      "id": "RUN-2026-10-15-58",
+      "suite": "bun test + tsc + eslint + vite build",
+      "branch": "claude/web-03-source-conflict-fix",
+      "result": "317 pass, 14 skip, 0 fail; synthetic 21/21; Codex package adapted 3/3, unchanged 2/3 (F01: test page lacks company.currency); builds ok; Vercel success"
     }
   ],
   "active_track": {

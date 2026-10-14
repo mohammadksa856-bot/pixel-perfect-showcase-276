@@ -17,7 +17,7 @@ import { ResearchCard } from "@/components/web-v1/library-cards";
 import {
   ArticleSections,
   ArticleSkeleton,
-  DateText,
+  PublishedDate,
   L,
   LibraryStateView,
   Meta,
@@ -131,7 +131,9 @@ function Article({ item, related }: { item: ResearchItem; related: ResearchItem[
                       )}
                     </span>
                   ),
-                  item.publishedAt && <DateText key="d" date={item.publishedAt} />,
+                  item.dateStatus !== "missing" && (
+                    <PublishedDate key="d" date={item.publishedAt} status={item.dateStatus} />
+                  ),
                   item.readingTime && <ReadingTime key="r" minutes={item.readingTime} />,
                 ]}
               />

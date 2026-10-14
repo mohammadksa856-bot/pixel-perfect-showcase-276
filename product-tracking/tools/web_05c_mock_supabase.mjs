@@ -24,6 +24,23 @@ const tableEn = [
   "| Third item | 1,000 | 1,100 | 10% |",
 ].join("\n");
 
+// WEB-05C reader fixes: a synthetic table whose rows do not match the header (one longer, one shorter),
+// with untrusted HTML in a cell, and a research piece with an impossible date (2026-02-31).
+const mismatch = [
+  "| البند (اصطناعي) | الفترة أ | الفترة ب |",
+  "|---|---|---|",
+  "| بند طويل | 100 | 120 | 999 |",
+  "| بند قصير | (١٢٫٥) |",
+  "| <script>alert(1)</script> | -3.4% | +7 |",
+].join("\n");
+const mismatchEn = [
+  "| Item (synthetic) | Period A | Period B |",
+  "|---|---|---|",
+  "| Long row | 100 | 120 | 999 |",
+  "| Short row | (12.5) |",
+  "| <script>alert(1)</script> | -3.4% | +7 |",
+].join("\n");
+
 const research = [
   {
     slug: "synthetic-research-1",
@@ -107,6 +124,35 @@ const research = [
     sections: [],
     refs: [],
   },
+  {
+    slug: "synthetic-research-4",
+    title: T(
+      "بحث اختبار اصطناعي ٤: تاريخ مستحيل وجدول غير متسق",
+      "Synthetic test research 4: impossible date, inconsistent table",
+    ),
+    summary: T(
+      "اختبار لتاريخ نشر غير صالح وجدول لا تطابق صفوفه رأسه.",
+      "Tests an invalid publication date and a table whose rows do not match its header.",
+    ),
+    author: T("مؤلف اختبار", "Test author"),
+    author_role: null,
+    reading_time: 3,
+    published_at: "2026-02-31T00:00:00Z",
+    tags: [],
+    sectors: { slug: "test-sector-b", name: T("قطاع اختبار ب", "Test sector B") },
+    sections: [
+      {
+        id: "mismatch",
+        heading: T("جدول غير متسق", "Inconsistent table"),
+        body: T(
+          `قبل الجدول.\n\n${mismatch}\n\nبعد الجدول.`,
+          `Before the table.\n\n${mismatchEn}\n\nAfter the table.`,
+        ),
+      },
+      { id: "valid", heading: T("جدول سليم", "Valid table"), body: T(table, tableEn) },
+    ],
+    refs: [],
+  },
 ];
 
 const knowledge = [
@@ -145,6 +191,9 @@ const knowledge = [
       heading: T("مثال", "Example"),
       body: T(`مثال اصطناعي:\n\n${table}`, `A synthetic example:\n\n${tableEn}`),
     },
+    ...(i === 1
+      ? [{ heading: T("جدول غير متسق", "Inconsistent table"), body: T(mismatch, mismatchEn) }]
+      : []),
   ],
   videos:
     i === 0

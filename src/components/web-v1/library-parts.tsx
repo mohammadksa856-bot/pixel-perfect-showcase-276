@@ -246,6 +246,8 @@ function BlockView({ b, lang }: { b: Block; lang: Lang }) {
         </Tag>
       );
     }
+    case "table_mismatch":
+      return <TableMismatch b={b} />;
     case "table":
       return (
         <figure className="-mx-4 sm:mx-0" data-article-table>
@@ -414,6 +416,56 @@ export function ReadingTime({ minutes }: { minutes: number | null }) {
     <span className="flex items-center gap-1">
       <BookOpen className="size-3.5" />
       {t({ ar: `${iso(minutes)} دقائق قراءة`, en: `${minutes} min read` })}
+    </span>
+  );
+}
+
+/**
+ * WEB-05C (إصلاح القبول): جدول لا تطابق صفوفه رأسه. لا يُعرض جدولًا ماليًا؛ تنبيه واضح ثم النص الأصلي كاملًا
+ * بترتيبه داخل <pre> (نص فقط: React يهرّب أي HTML، ولا روابط)، قابل للقراءة والنسخ والتمرير داخله.
+ */
+function TableMismatch({ b }: { b: Extract<Block, { type: "table_mismatch" }> }) {
+  const { t } = useI18n();
+  const bad = b.widths.filter((w) => w !== b.header).length;
+  return (
+    <figure
+      className="rounded-xl border border-status-warn/40 bg-status-warn/5"
+      data-table-mismatch
+      role="note"
+    >
+      <figcaption className="flex items-start gap-2 px-4 py-3 text-[13px] leading-6">
+        <AlertTriangle className="mt-1 size-4 shrink-0 text-status-warn" />
+        <span>
+          {t({
+            ar: `بنية هذا الجدول لا تطابق المصدر: الرأس فيه ${iso(b.header)} أعمدة، و${iso(bad)} من أسطره بعدد خلايا مختلف. لا يُعرض جدولًا ولا تُحذف أو تُضاف خلايا؛ النص الأصلي كاملًا أدناه.`,
+            en: `This table's structure does not match its source: the header has ${b.header} columns and ${bad} of its lines have a different number of cells. It is not shown as a table and no cell is dropped or added; the full original text is below.`,
+          })}
+        </span>
+      </figcaption>
+      <pre
+        className="overflow-x-auto whitespace-pre border-t border-status-warn/30 px-4 py-3 font-mono text-[12px] leading-6 [unicode-bidi:plaintext] ltr:text-left rtl:text-right"
+        data-table-original
+      >
+        {b.text}
+      </pre>
+    </figure>
+  );
+}
+
+/** تاريخ نشر البحث بحالته: صحيح يُعرض، غائب لا يُعرض، ومستحيل يُعلن دون عرض قيمته أو تصحيحها. */
+export function PublishedDate({
+  date,
+  status,
+}: {
+  date: string | null;
+  status: "valid" | "missing" | "invalid";
+}) {
+  const { t } = useI18n();
+  if (status === "valid") return <DateText date={date} />;
+  if (status === "missing") return null;
+  return (
+    <span className="text-status-warn" data-date-state="invalid">
+      {t({ ar: "تاريخ النشر غير صالح في المصدر", en: "Publication date invalid in source" })}
     </span>
   );
 }

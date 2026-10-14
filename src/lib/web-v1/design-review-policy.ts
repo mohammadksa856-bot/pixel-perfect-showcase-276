@@ -17,6 +17,8 @@ export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
   "claude/web-05c-research-knowledge",
   // WEB-05B final fixes branch (exact name), so its Preview renders the frozen samples.
   "claude/web-05b-final-fixes",
+  // WEB-05C reader final fixes branch (exact name), so its Preview renders the frozen samples.
+  "claude/web-05c-reader-final-fixes",
 ];
 type Env = Record<string, string | undefined>;
 

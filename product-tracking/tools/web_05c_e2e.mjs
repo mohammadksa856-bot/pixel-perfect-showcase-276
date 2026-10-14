@@ -49,17 +49,24 @@ const attr = (page, sel, a) => page.locator(sel).first().getAttribute(a);
 const noHorizontalScroll = async (page) =>
   assert.ok(
     // مقارنة بعرض الجهاز المضبوط لا بـ innerWidth: محاكي الجوال يوسّع innerWidth مع المحتوى فيخفي التجاوز.
-    (await page.evaluate(() => document.documentElement.scrollWidth)) <= page.viewportSize().width + 1,
+    (await page.evaluate(() => document.documentElement.scrollWidth)) <=
+      page.viewportSize().width + 1,
     "horizontal overflow",
   );
 
 await run("research index: published items newest first, undated last", async (page, go) => {
   await go("/preview/web-v1/research");
-  assert.equal(await attr(page, "[data-research-count]", "data-research-count"), "3");
+  // 4 synthetic items since the WEB-05C reader fixes (research-4: impossible date, sorted as undated).
+  assert.equal(await attr(page, "[data-research-count]", "data-research-count"), "4");
   const order = await page
     .locator("[data-research-card]")
     .evaluateAll((els) => els.map((e) => e.getAttribute("data-research-card")));
-  assert.deepEqual(order, ["synthetic-research-1", "synthetic-research-2", "synthetic-research-3"]);
+  assert.deepEqual(order, [
+    "synthetic-research-1",
+    "synthetic-research-2",
+    "synthetic-research-3",
+    "synthetic-research-4",
+  ]);
   await page.locator('[data-filter="sort"]').selectOption("oldest");
   await page.waitForURL(/sort=oldest/);
   assert.equal(
@@ -72,12 +79,14 @@ await run("research search, sector and tag filters, reset, shareable URL", async
   await go("/preview/web-v1/research");
   await page.locator("[data-research-input]").fill("٢");
   await page.waitForFunction(
-    () => document.querySelector("[data-research-count]")?.getAttribute("data-research-count") === "1",
+    () =>
+      document.querySelector("[data-research-count]")?.getAttribute("data-research-count") === "1",
   );
   await page.locator("[data-research-reset]").click();
   await page.locator('[data-filter="sector"]').selectOption("test-sector-a");
   await page.waitForFunction(
-    () => document.querySelector("[data-research-count]")?.getAttribute("data-research-count") === "2",
+    () =>
+      document.querySelector("[data-research-count]")?.getAttribute("data-research-count") === "2",
   );
   await go("/preview/web-v1/research?tag=tag-a");
   assert.equal(await attr(page, "[data-research-count]", "data-research-count"), "2");
@@ -85,46 +94,55 @@ await run("research search, sector and tag filters, reset, shareable URL", async
   await page.locator('[data-library-state="empty"]').waitFor();
 });
 
-await run("reader: TOC jumps to sections, table, lists, references (unsafe ref is text)", async (page, go) => {
-  await go("/preview/web-v1/research");
-  await page.locator('[data-research-card="synthetic-research-1"]').click();
-  await page.waitForURL(/\/research\/synthetic-research-1/);
-  // التنقل داخل التطبيق: انتظر انتهاء التحميل (هيكل التحميل يسبق المقال).
-  await page.locator("[data-article-section]").first().waitFor();
-  assert.equal(await page.locator("[data-article-section]").count(), 4);
-  await page.locator('[data-toc] [data-toc-link="s-table"]').click();
-  await page.waitForURL(/#s-table/);
-  assert.ok(await page.locator("[data-article-table] table").isVisible());
-  assert.equal(await page.locator("[data-reference]").count(), 4);
-  assert.equal(await page.locator('[data-reference] a[href^="https://example.com/"]').count(), 2);
-  assert.equal(await page.locator('[data-reference] a[href^="javascript"]').count(), 0);
-  await page.locator('[data-company-link-state="none"]').waitFor();
-});
+await run(
+  "reader: TOC jumps to sections, table, lists, references (unsafe ref is text)",
+  async (page, go) => {
+    await go("/preview/web-v1/research");
+    await page.locator('[data-research-card="synthetic-research-1"]').click();
+    await page.waitForURL(/\/research\/synthetic-research-1/);
+    // التنقل داخل التطبيق: انتظر انتهاء التحميل (هيكل التحميل يسبق المقال).
+    await page.locator("[data-article-section]").first().waitFor();
+    assert.equal(await page.locator("[data-article-section]").count(), 4);
+    await page.locator('[data-toc] [data-toc-link="s-table"]').click();
+    await page.waitForURL(/#s-table/);
+    assert.ok(await page.locator("[data-article-table] table").isVisible());
+    assert.equal(await page.locator("[data-reference]").count(), 4);
+    assert.equal(await page.locator('[data-reference] a[href^="https://example.com/"]').count(), 2);
+    assert.equal(await page.locator('[data-reference] a[href^="javascript"]').count(), 0);
+    await page.locator('[data-company-link-state="none"]').waitFor();
+  },
+);
 
-await run("reader: related research by sector/tag; tag and sector links filter the index", async (page, go) => {
-  await go("/preview/web-v1/research/synthetic-research-1");
-  const related = await page
-    .locator("[data-related] [data-research-card]")
-    .evaluateAll((els) => els.map((e) => e.getAttribute("data-research-card")));
-  assert.deepEqual(related.sort(), ["synthetic-research-2", "synthetic-research-3"]);
-  await page.locator('[data-tag-link="tag-b"]').click();
-  await page.waitForURL(/tag=tag-b/);
-  assert.equal(await attr(page, "[data-research-count]", "data-research-count"), "1");
-  await go("/preview/web-v1/research/synthetic-research-1");
-  await page.locator("[data-sector-research]").click();
-  await page.waitForURL(/sector=test-sector-a/);
-});
+await run(
+  "reader: related research by sector/tag; tag and sector links filter the index",
+  async (page, go) => {
+    await go("/preview/web-v1/research/synthetic-research-1");
+    const related = await page
+      .locator("[data-related] [data-research-card]")
+      .evaluateAll((els) => els.map((e) => e.getAttribute("data-research-card")));
+    assert.deepEqual(related.sort(), ["synthetic-research-2", "synthetic-research-3"]);
+    await page.locator('[data-tag-link="tag-b"]').click();
+    await page.waitForURL(/tag=tag-b/);
+    assert.equal(await attr(page, "[data-research-count]", "data-research-count"), "1");
+    await go("/preview/web-v1/research/synthetic-research-1");
+    await page.locator("[data-sector-research]").click();
+    await page.waitForURL(/sector=test-sector-a/);
+  },
+);
 
-await run("reader: missing metadata is not invented; no sections/references shown as states", async (page, go) => {
-  await go("/preview/web-v1/research/synthetic-research-3");
-  await page.locator('[data-library-state="empty"]').waitFor();
-  await page.locator("[data-references-empty]").waitFor();
-  // لا تاريخ في رأس البحث (البطاقات ذات الصلة لها تواريخها).
-  assert.equal(await page.locator(".night-panel time").count(), 0);
-  await go("/preview/web-v1/research/synthetic-research-2");
-  const header = await page.locator(".night-panel").first().innerText();
-  assert.doesNotMatch(header, /دقائق قراءة|min read/);
-});
+await run(
+  "reader: missing metadata is not invented; no sections/references shown as states",
+  async (page, go) => {
+    await go("/preview/web-v1/research/synthetic-research-3");
+    await page.locator('[data-library-state="empty"]').waitFor();
+    await page.locator("[data-references-empty]").waitFor();
+    // لا تاريخ في رأس البحث (البطاقات ذات الصلة لها تواريخها).
+    assert.equal(await page.locator(".night-panel time").count(), 0);
+    await go("/preview/web-v1/research/synthetic-research-2");
+    const header = await page.locator(".night-panel").first().innerText();
+    assert.doesNotMatch(header, /دقائق قراءة|min read/);
+  },
+);
 
 await run(
   "English UI: LTR; Arabic-only section flagged and kept RTL; coverage notice",
@@ -146,14 +164,17 @@ await run("not found: unknown slug shows a state with a way back", async (page, 
   await page.locator('[data-library-state="not_found"]').waitFor();
 });
 
-await run("knowledge directory: grouped by source category; uncategorised kept apart", async (page, go) => {
-  await go("/preview/web-v1/knowledge");
-  assert.equal(await attr(page, "[data-knowledge-count]", "data-knowledge-count"), "4");
-  const groups = await page
-    .locator("[data-knowledge-group]")
-    .evaluateAll((els) => els.map((e) => e.getAttribute("data-knowledge-group")));
-  assert.deepEqual(groups, ["test-category-a", "test-category-b", "uncategorized"]);
-});
+await run(
+  "knowledge directory: grouped by source category; uncategorised kept apart",
+  async (page, go) => {
+    await go("/preview/web-v1/knowledge");
+    assert.equal(await attr(page, "[data-knowledge-count]", "data-knowledge-count"), "4");
+    const groups = await page
+      .locator("[data-knowledge-group]")
+      .evaluateAll((els) => els.map((e) => e.getAttribute("data-knowledge-group")));
+    assert.deepEqual(groups, ["test-category-a", "test-category-b", "uncategorized"]);
+  },
+);
 
 await run("knowledge: category and level filters, search, reset", async (page, go) => {
   await go("/preview/web-v1/knowledge");
@@ -165,29 +186,34 @@ await run("knowledge: category and level filters, search, reset", async (page, g
   await page.locator("[data-knowledge-reset]").click();
   await page.locator("[data-knowledge-input]").fill("٣");
   await page.waitForFunction(
-    () => document.querySelector("[data-knowledge-count]")?.getAttribute("data-knowledge-count") === "1",
+    () =>
+      document.querySelector("[data-knowledge-count]")?.getAttribute("data-knowledge-count") ===
+      "1",
   );
   await page.locator("[data-knowledge-input]").fill("zzzz");
   await page.locator('[data-library-state="empty"]').waitFor();
 });
 
-await run("knowledge topic: sections, videos (link only when given), related topics, back to category", async (page, go) => {
-  await go("/preview/web-v1/knowledge");
-  await page.locator('[data-knowledge-card="synthetic-topic-1"]').click();
-  await page.waitForURL(/\/knowledge\/synthetic-topic-1/);
-  await page.locator("[data-article-section]").first().waitFor();
-  assert.equal(await page.locator("[data-article-section]").count(), 2);
-  assert.equal(await page.locator("[data-video]").count(), 2);
-  assert.equal(await page.locator("[data-video-no-link]").count(), 1);
-  const related = await page
-    .locator("[data-related] [data-knowledge-card]")
-    .evaluateAll((els) => els.map((e) => e.getAttribute("data-knowledge-card")));
-  assert.deepEqual(related, ["synthetic-topic-2"]);
-  await page.locator("[data-category-link]").click();
-  await page.waitForURL(/category=test-category-a/);
-  await go("/preview/web-v1/knowledge/synthetic-topic-4");
-  await page.locator("[data-related-empty]").waitFor();
-});
+await run(
+  "knowledge topic: sections, videos (link only when given), related topics, back to category",
+  async (page, go) => {
+    await go("/preview/web-v1/knowledge");
+    await page.locator('[data-knowledge-card="synthetic-topic-1"]').click();
+    await page.waitForURL(/\/knowledge\/synthetic-topic-1/);
+    await page.locator("[data-article-section]").first().waitFor();
+    assert.equal(await page.locator("[data-article-section]").count(), 2);
+    assert.equal(await page.locator("[data-video]").count(), 2);
+    assert.equal(await page.locator("[data-video-no-link]").count(), 1);
+    const related = await page
+      .locator("[data-related] [data-knowledge-card]")
+      .evaluateAll((els) => els.map((e) => e.getAttribute("data-knowledge-card")));
+    assert.deepEqual(related, ["synthetic-topic-2"]);
+    await page.locator("[data-category-link]").click();
+    await page.waitForURL(/category=test-category-a/);
+    await go("/preview/web-v1/knowledge/synthetic-topic-4");
+    await page.locator("[data-related-empty]").waitFor();
+  },
+);
 
 await run("shell: header Research/Knowledge open the new pages", async (page, go) => {
   await go("/preview/web-v1");
@@ -252,11 +278,97 @@ await run(
     await page.waitForURL(/#s-lists/);
     const box = await page
       .locator("[data-article-table] > div")
-      .evaluate((el) => ({ sw: el.scrollWidth, cw: el.clientWidth, ox: getComputedStyle(el).overflowX }));
+      .evaluate((el) => ({
+        sw: el.scrollWidth,
+        cw: el.clientWidth,
+        ox: getComputedStyle(el).overflowX,
+      }));
     assert.equal(box.ox, "auto");
   },
   { mobile: true, locale: "en" },
 );
+
+// ───────── WEB-05C reader acceptance fixes (Codex review at 6d696b9)
+const mismatchChecks = async (page) => {
+  const fig = page.locator("[data-table-mismatch]").first();
+  await fig.waitFor();
+  const original = await fig.locator("[data-table-original]").innerText();
+  // every original cell kept, in order, signs unchanged; nothing executed
+  for (const cell of ["999", "-3.4%", "+7", "<script>alert(1)</script>"])
+    assert.ok(original.includes(cell), cell);
+  assert.equal(await page.locator("[data-table-mismatch] script").count(), 0);
+  assert.equal(await page.evaluate(() => typeof window.__xss), "undefined");
+};
+
+await run(
+  "research reader: inconsistent table shown as warning + full original text, valid table still a table",
+  async (page, go) => {
+    await go("/preview/web-v1/research/synthetic-research-4");
+    await mismatchChecks(page);
+    assert.equal(await page.locator("[data-table-mismatch]").count(), 1);
+    assert.equal(await page.locator("[data-article-table]").count(), 1);
+    // the valid table keeps its sticky first column
+    assert.equal(
+      await page
+        .locator("[data-article-table] tbody td")
+        .first()
+        .evaluate((el) => getComputedStyle(el).position),
+      "sticky",
+    );
+  },
+);
+
+await run("knowledge reader: same rule for an inconsistent table", async (page, go) => {
+  await go("/preview/web-v1/knowledge/synthetic-topic-2");
+  await mismatchChecks(page);
+});
+
+await run(
+  "impossible date 2026-02-31: flagged as invalid on card and article, never shown or rolled over",
+  async (page, go) => {
+    await go("/preview/web-v1/research");
+    const card = page.locator('[data-research-card="synthetic-research-4"]');
+    assert.equal(await card.locator('[data-date-state="invalid"]').count(), 1);
+    assert.equal(await card.locator("time").count(), 0);
+    await go("/preview/web-v1/research/synthetic-research-4");
+    const header = page.locator(".night-panel").first();
+    assert.equal(await header.locator('[data-date-state="invalid"]').count(), 1);
+    const text = await page.locator("main").innerText();
+    assert.doesNotMatch(text, /2026-02-31|2026-03-03/);
+  },
+);
+
+await run(
+  "English: invalid-date label and mismatch warning in English",
+  async (page, go) => {
+    await go("/preview/web-v1/research/synthetic-research-4");
+    assert.match(
+      await page.locator('[data-date-state="invalid"]').first().innerText(),
+      /Publication date invalid in source/,
+    );
+    assert.match(
+      await page.locator("[data-table-mismatch] figcaption").innerText(),
+      /does not match its source/,
+    );
+  },
+  { locale: "en" },
+);
+
+for (const locale of ["ar", "en"])
+  await run(
+    `mobile 390px ${locale}: inconsistent table scrolls inside its box, page does not`,
+    async (page, go) => {
+      await go("/preview/web-v1/research/synthetic-research-4");
+      await noHorizontalScroll(page);
+      assert.equal(
+        await page
+          .locator("[data-table-original]")
+          .evaluate((el) => getComputedStyle(el).overflowX),
+        "auto",
+      );
+    },
+    { mobile: true, locale },
+  );
 
 await browser.close();
 for (const r of results) console.log(r.join("  "));

@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { hasText, type KnowledgeItem, type ResearchItem } from "@/lib/web-v1/library";
-import { DateText, L, Meta, ReadingTime } from "./library-parts";
+import { L, Meta, PublishedDate, ReadingTime } from "./library-parts";
 
 /** WEB-05C: بطاقتا البحث والمقال. كل حقل غائب في المصدر لا يظهر (لا مؤلف أو تاريخ أو صورة افتراضية). */
 export function ResearchCard({ r }: { r: ResearchItem }) {
@@ -16,7 +16,9 @@ export function ResearchCard({ r }: { r: ResearchItem }) {
         <Meta
           items={[
             hasText(r.sectorName) && <L t={r.sectorName} className="font-medium text-brand" />,
-            r.publishedAt && <DateText key="d" date={r.publishedAt} />,
+            r.dateStatus !== "missing" && (
+              <PublishedDate key="d" date={r.publishedAt} status={r.dateStatus} />
+            ),
           ]}
         />
         <ArrowUpRight className="size-4 shrink-0 text-brand opacity-60 group-hover:opacity-100" />

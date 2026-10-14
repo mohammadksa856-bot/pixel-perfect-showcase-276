@@ -28,6 +28,8 @@ export type ResearchItem = {
   /** كما في المحتوى؛ null إن لم يُذكر (لا يُحسب). */
   readingTime: number | null;
   publishedAt: string | null;
+  /** valid = تاريخ صحيح؛ missing = غائب في المصدر؛ invalid = موجود لكنه مستحيل أو بصيغة غير مدعومة. */
+  dateStatus: DateStatus;
   tags: Text[];
   /** القطاع كما في محتوى الموقع (جدول sectors في Supabase)، لا تصنيف المحرك. */
   sectorSlug: string | null;
@@ -83,12 +85,26 @@ const arr = (v: unknown): unknown[] => (Array.isArray(v) ? v : []);
 const num = (v: unknown): number | null =>
   typeof v === "number" && Number.isFinite(v) && v > 0 ? v : null;
 
-/** تاريخ ISO صالح فقط (YYYY-MM-DD)؛ غير ذلك null. */
-function date(v: unknown): string | null {
+export type DateStatus = "valid" | "missing" | "invalid";
+
+const isLeap = (y: number) => (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+const DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+/**
+ * WEB-05C (إصلاح القبول): تاريخ النشر كما يرسله العقد الحالي: YYYY-MM-DD وحده، أو متبوعًا بوقت
+ * (T أو مسافة، كما في timestamptz). يُتحقق من التقويم فعليًا (الشهر 1–12، واليوم حسب الشهر والسنة الكبيسة).
+ * لا يُعتمد على Date.parse: فهو يحوّل 2026-02-31 إلى 2026-03-03 بصمت. التاريخ المستحيل لا يُصحَّح ولا
+ * يُستبدل: يصبح "invalid" بلا قيمة، والغائب "missing" بلا قيمة.
+ */
+export function dateOf(v: unknown): { value: string | null; status: DateStatus } {
   const s = str(v);
-  if (!s) return null;
-  const m = /^(\d{4}-\d{2}-\d{2})/.exec(s);
-  return m && !Number.isNaN(Date.parse(m[1]!)) ? m[1]! : null;
+  if (!s) return { value: null, status: "missing" };
+  const m = /^(\d{4})-(\d{2})-(\d{2})(?:$|[T ]\d{2}:\d{2})/.exec(s);
+  if (!m) return { value: null, status: "invalid" };
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const max = mo === 2 && isLeap(y) ? 29 : (DAYS[mo - 1] ?? 0);
+  if (y < 1 || mo < 1 || mo > 12 || d < 1 || d > max) return { value: null, status: "invalid" };
+  return { value: `${m[1]}-${m[2]}-${m[3]}`, status: "valid" };
 }
 
 /** رابط http(s) بلا بيانات اعتماد فقط؛ غير ذلك لا يصبح رابطًا. */
@@ -152,6 +168,7 @@ export function normalizeResearch(row: unknown): ResearchItem | null {
   const slug = str(r["slug"]);
   const title = text(r["title"]);
   if (!slug || !hasText(title)) return null;
+  const published = dateOf(r["published_at"]);
   const sector =
     r["sectors"] && typeof r["sectors"] === "object"
       ? (r["sectors"] as Record<string, unknown>)
@@ -163,7 +180,8 @@ export function normalizeResearch(row: unknown): ResearchItem | null {
     author: text(r["author"]),
     authorRole: text(r["author_role"]),
     readingTime: num(r["reading_time"]),
-    publishedAt: date(r["published_at"]),
+    publishedAt: published.value,
+    dateStatus: published.status,
     tags: arr(r["tags"]).map(text).filter(hasText),
     sectorSlug: str(sector?.["slug"]),
     sectorName: text(sector?.["name"]),
@@ -202,7 +220,12 @@ export type Block =
   | { type: "h"; text: string }
   | { type: "quote"; text: string }
   | { type: "list"; ordered: boolean; items: string[] }
-  | { type: "table"; header: string[]; rows: string[][] };
+  | { type: "table"; header: string[]; rows: string[][] }
+  /**
+   * جدول لا تطابق صفوفه عدد أعمدة رأسه: لا يُعرض جدولًا، ولا تُقصّ خلية ولا تُضاف. يُحفظ النص الأصلي كاملًا
+   * بترتيبه (أسطر الجدول كما وردت) مع عدد أعمدة الرأس وعدد خلايا كل سطر للتنبيه.
+   */
+  | { type: "table_mismatch"; text: string; header: number; widths: number[] };
 
 const cells = (line: string) =>
   line
@@ -216,6 +239,7 @@ const isSeparator = (line: string) =>
 /**
  * يقسّم النص إلى كتل. نص بلا أي صيغة يبقى فقرات كما هو. لا HTML ولا روابط مضمّنة: يُعرض نصًا فقط.
  * الجدول: أسطر متتالية تبدأ بـ "|"، والسطر الأول رأس الجدول، وسطر الفاصل (---) اختياري.
+ * إن اختلف عدد خلايا أي سطر عن الرأس: كتلة table_mismatch بالنص الأصلي كاملًا، لا جدول مقصوص أو مكمّل.
  */
 export function parseBody(input: string | null): Block[] {
   if (!input) return [];
@@ -235,20 +259,29 @@ export function parseBody(input: string | null): Block[] {
     }
     if (t.startsWith("|")) {
       flush();
+      const raw: string[] = [];
       const rows: string[][] = [];
+      const widths: number[] = [];
       while (i < lines.length && lines[i]!.trim().startsWith("|")) {
-        if (!isSeparator(lines[i]!)) rows.push(cells(lines[i]!));
+        raw.push(lines[i]!);
+        const c = cells(lines[i]!);
+        widths.push(c.length);
+        if (!isSeparator(lines[i]!)) rows.push(c);
         i++;
       }
       i--;
       const [header, ...body] = rows;
       if (header) {
-        const width = header.length;
-        blocks.push({
-          type: "table",
-          header,
-          rows: body.map((r) => Array.from({ length: width }, (_, k) => r[k] ?? "")),
-        });
+        // كل سطر (ومنه سطر الفاصل) يجب أن يطابق عدد أعمدة الرأس، وإلا فالبنية لا تطابق المصدر.
+        if (widths.every((w) => w === header.length))
+          blocks.push({ type: "table", header, rows: body });
+        else
+          blocks.push({
+            type: "table_mismatch",
+            text: raw.join("\n"),
+            header: header.length,
+            widths,
+          });
       }
       continue;
     }

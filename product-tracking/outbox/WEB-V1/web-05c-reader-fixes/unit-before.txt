@@ -1,0 +1,208 @@
+# BEFORE — base dc2ac11 (claude/web-05b-final-fixes), no code change; new test file only
+bun test v1.4.2 (744846f84)
+
+tests/web-05c-reader-fixes.test.ts:
+38 | const LONG = "| البند | 2024 | 2025 |\n|---|---|---|\n| الإيرادات | 100 | 120 | 999 |";
+39 | const SHORT = "| Item | 2024 | 2025 |\n|---|---|---|\n| Revenue | 100 |";
+40 | 
+41 | describe("1. a row that does not match the header is never cut, padded or shown as a sound table", () => {
+42 |   test("row longer than the header: no table; every cell (999) kept", () => {
+43 |     expect(tables(LONG)).toEqual([]);
+                              ^
+error: expect(received).toEqual(expected)
+
+- []
++ [
++   {
++     "header": [
++       "البند",
++       "2024",
++       "2025",
++     ],
++     "rows": [
++       [
++         "الإيرادات",
++         "100",
++         "120",
++       ],
++     ],
++     "type": "table",
++   },
++ ]
+
+- Expected  - 1
++ Received  + 17
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:43:26)
+(fail) 1. a row that does not match the header is never cut, padded or shown as a sound table > row longer than the header: no table; every cell (999) kept [8.49ms]
+43 |     expect(tables(LONG)).toEqual([]);
+44 |     expect(JSON.stringify(parseBody(LONG))).toContain("999");
+45 |   });
+46 | 
+47 |   test("row shorter than the header: no table; no empty cell invented", () => {
+48 |     expect(tables(SHORT)).toEqual([]);
+                               ^
+error: expect(received).toEqual(expected)
+
+- []
++ [
++   {
++     "header": [
++       "Item",
++       "2024",
++       "2025",
++     ],
++     "rows": [
++       [
++         "Revenue",
++         "100",
++         "",
++       ],
++     ],
++     "type": "table",
++   },
++ ]
+
+- Expected  - 1
++ Received  + 17
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:48:27)
+(fail) 1. a row that does not match the header is never cut, padded or shown as a sound table > row shorter than the header: no table; no empty cell invented [0.31ms]
+50 |   });
+51 | 
+52 |   test("the original text is kept whole, in order, unchanged (signs, Arabic and Latin digits)", () => {
+53 |     const src = "| البند | ٢٠٢٤ | 2025 |\n|---|---|---|\n| صافي الربح | (١٢٫٥) | -3.4% | +7 |";
+54 |     const html = ssr(createElement(ArticleSections, { sections: section(src) }));
+55 |     for (const line of src.split("\n")) expect(html).toContain(line);
+                                                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "| البند | ٢٠٢٤ | 2025 |"
+Received: "<div class=\"space-y-12\"><section id=\"s-1\" class=\"scroll-mt-24\" data-article-section=\"s-1\" lang=\"ar\" dir=\"rtl\"><h2 class=\"flex items-baseline gap-3 text-xl font-bold tracking-tight\"><span class=\"num text-[13px] text-brand\">⁦01⁩</span>قسم</h2><div class=\"mt-4 space-y-5\"><figure class=\"-mx-4 sm:mx-0\" data-article-table=\"true\"><div class=\"overflow-x-auto border-y border-border/70 sm:rounded-xl sm:border\"><table class=\"w-full min-w-max text-[13px]\" dir=\"rtl\"><thead class=\"bg-muted/60 text-[12px]\"><tr><th class=\"whitespace-nowrap px-3 py-2.5 text-start font-semibold sticky start-0 bg-muted\">البند</th><th class=\"whitespace-nowrap px-3 py-2.5 text-start font-semibold\">٢٠٢٤</th><th class=\"whitespace-nowrap px-3 py-2.5 text-start font-semibold\">2025</th></tr></thead><tbody><tr class=\"border-t border-border/60\"><td class=\"whitespace-nowrap px-3 py-2 sticky start-0 bg-card font-medium\">صافي الربح</td><td class=\"whitespace-nowrap px-3 py-2 num text-end\" dir=\"ltr\">(١٢٫٥)</td><td class=\"whitespace-nowrap px-3 py-2 num text-end\" dir=\"ltr\">-3.4%</td></tr></tbody></table></div></figure></div></section></div>"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:55:54)
+(fail) 1. a row that does not match the header is never cut, padded or shown as a sound table > the original text is kept whole, in order, unchanged (signs, Arabic and Latin digits) [22.02ms]
+56 |     expect(html).toContain("data-table-mismatch");
+57 |   });
+58 | 
+59 |   test("the warning says the structure does not match, in the reader for research and knowledge alike", () => {
+60 |     const html = ssr(createElement(ArticleSections, { sections: section(LONG) }));
+61 |     expect(html).toContain("data-table-mismatch");
+                      ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "data-table-mismatch"
+Received: "<div class=\"space-y-12\"><section id=\"s-1\" class=\"scroll-mt-24\" data-article-section=\"s-1\" lang=\"ar\" dir=\"rtl\"><h2 class=\"flex items-baseline gap-3 text-xl font-bold tracking-tight\"><span class=\"num text-[13px] text-brand\">⁦01⁩</span>قسم</h2><div class=\"mt-4 space-y-5\"><figure class=\"-mx-4 sm:mx-0\" data-article-table=\"true\"><div class=\"overflow-x-auto border-y border-border/70 sm:rounded-xl sm:border\"><table class=\"w-full min-w-max text-[13px]\" dir=\"rtl\"><thead class=\"bg-muted/60 text-[12px]\"><tr><th class=\"whitespace-nowrap px-3 py-2.5 text-start font-semibold sticky start-0 bg-muted\">البند</th><th class=\"whitespace-nowrap px-3 py-2.5 text-start font-semibold\">2024</th><th class=\"whitespace-nowrap px-3 py-2.5 text-start font-semibold\">2025</th></tr></thead><tbody><tr class=\"border-t border-border/60\"><td class=\"whitespace-nowrap px-3 py-2 sticky start-0 bg-card font-medium\">الإيرادات</td><td class=\"whitespace-nowrap px-3 py-2 num text-end\" dir=\"ltr\">100</td><td class=\"whitespace-nowrap px-3 py-2 num text-end\" dir=\"ltr\">120</td></tr></tbody></table></div></figure></div></section></div>"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:61:18)
+(fail) 1. a row that does not match the header is never cut, padded or shown as a sound table > the warning says the structure does not match, in the reader for research and knowledge alike [2.47ms]
+ 95 | describe("2. impossible dates are rejected, not rolled over", () => {
+ 96 |   const at = (published_at: unknown) =>
+ 97 |     normalizeResearch({ slug: "r", title: T("بحث", "Research"), published_at })!;
+ 98 | 
+ 99 |   test("2026-02-31 and 2025-02-29 are rejected; 2024-02-29 is accepted", () => {
+100 |     expect(at("2026-02-31").publishedAt).toBeNull();
+                                               ^
+error: expect(received).toBeNull()
+
+Received: "2026-02-31"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:100:42)
+(fail) 2. impossible dates are rejected, not rolled over > 2026-02-31 and 2025-02-29 are rejected; 2024-02-29 is accepted [1.16ms]
+104 |     expect(at("2026-09-01T00:00:00+00:00").publishedAt).toBe("2026-09-01");
+105 |   });
+106 | 
+107 |   test("other impossible parts: month 13, day 00, month 00, April 31", () => {
+108 |     for (const d of ["2026-13-01", "2026-01-00", "2026-00-10", "2026-04-31"])
+109 |       expect(at(d).publishedAt, d).toBeNull();
+                                         ^
+error: 2026-04-31
+
+Received: "2026-04-31"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:109:36)
+(fail) 2. impossible dates are rejected, not rolled over > other impossible parts: month 13, day 00, month 00, April 31 [0.66ms]
+108 |     for (const d of ["2026-13-01", "2026-01-00", "2026-00-10", "2026-04-31"])
+109 |       expect(at(d).publishedAt, d).toBeNull();
+110 |   });
+111 | 
+112 |   test("missing stays missing; invalid is recorded as invalid (not as a date)", () => {
+113 |     expect(at(undefined)).toMatchObject({ publishedAt: null, dateStatus: "missing" });
+                                ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "dateStatus": "missing",
++   "author": {
++     "ar": null,
++     "en": null,
++   },
++   "authorRole": {
++     "ar": null,
++     "en": null,
++   },
+    "publishedAt": null,
++   "readingTime": null,
++   "references": [],
++   "sections": [],
++   "sectorName": {
++     "ar": null,
++     "en": null,
++   },
++   "sectorSlug": null,
++   "slug": "r",
++   "summary": {
++     "ar": null,
++     "en": null,
++   },
++   "tags": [],
++   "title": {
++     "ar": "بحث",
++     "en": "Research",
++   },
+  }
+
+- Expected  - 1
++ Received  + 26
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:113:27)
+(fail) 2. impossible dates are rejected, not rolled over > missing stays missing; invalid is recorded as invalid (not as a date) [0.79ms]
+119 |     const items = [
+120 |       normalizeResearch({ slug: "bad", title: T("أ", "A"), published_at: "2026-02-31" })!,
+121 |       normalizeResearch({ slug: "ok", title: T("ب", "B"), published_at: "2026-03-01" })!,
+122 |     ];
+123 |     expect(queryResearch(items, RESEARCH_DEFAULTS).map((r) => r.slug)).toEqual(["ok", "bad"]);
+124 |     expect(queryResearch(items, { ...RESEARCH_DEFAULTS, sort: "oldest" }).map((r) => r.slug)).toEqual(["ok", "bad"]);
+                                                                                                    ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "ok",
+    "bad",
++   "ok",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:124:95)
+(fail) 2. impossible dates are rejected, not rolled over > an invalid date sorts like an undated item, never as a date [8.07ms]
+128 |     const html = ssr(
+129 |       createElement(ResearchCard, {
+130 |         r: normalizeResearch({ slug: "bad", title: T("أ", "A"), published_at: "2026-02-31" })!,
+131 |       }),
+132 |     );
+133 |     expect(html).not.toContain("<time");
+                           ^
+error: expect(received).not.toContain(expected)
+
+Expected to not contain: "<time"
+Received: "<a data-research-card=\"bad\" href=\"/preview/web-v1/research/bad\" class=\"group flex h-full flex-col rounded-2xl border border-border/70 bg-card p-5 transition-colors hover:border-brand/50\"><div class=\"flex items-start justify-between gap-3\"><div class=\"flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] text-muted-foreground\"><span class=\"flex items-center gap-3\"><time dateTime=\"2026-02-31\" class=\"num\" dir=\"ltr\">2026-02-31</time></span></div><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right size-4 shrink-0 text-brand opacity-60 group-hover:opacity-100\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></div><h2 class=\"mt-3 text-[16px] font-bold leading-7\" lang=\"ar\" dir=\"rtl\">أ</h2><div class=\"mt-auto pt-4\"></div></a>"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-05c-reader-fixes.test.ts:133:22)
+(fail) 2. impossible dates are rejected, not rolled over > the card says the source date is invalid and shows no date [7.51ms]
+
+ 2 pass
+ 9 fail
+ 20 expect() calls
+Ran 11 tests across 1 file. [289.00ms]

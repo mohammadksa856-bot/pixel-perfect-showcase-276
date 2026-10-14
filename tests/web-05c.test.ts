@@ -144,17 +144,17 @@ describe("body parsing: paragraphs, lists, tables, quotes — no HTML", () => {
     ]);
   });
 
-  test("pipe table with separator; short rows padded, not invented", () => {
+  // WEB-05C reader fixes: this test used to assert that a short row is padded with "" — the defect
+  // Codex found. A row that does not match the header now yields the original text, not a table.
+  test("pipe table with separator; a short row is not padded: original text kept (WEB-05C fix)", () => {
     const b = parseBody("قبل\n| أ | ب | ج |\n|---|---|---|\n| 1 | 2 |\n| 3 | 4 | 5 |\nبعد");
     expect(b[1]).toEqual({
-      type: "table",
-      header: ["أ", "ب", "ج"],
-      rows: [
-        ["1", "2", ""],
-        ["3", "4", "5"],
-      ],
+      type: "table_mismatch",
+      text: "| أ | ب | ج |\n|---|---|---|\n| 1 | 2 |\n| 3 | 4 | 5 |",
+      header: 3,
+      widths: [3, 3, 2, 3],
     });
-    expect(b.map((x) => x.type)).toEqual(["p", "table", "p"]);
+    expect(b.map((x) => x.type)).toEqual(["p", "table_mismatch", "p"]);
   });
 
   test("lists, subheading, quote", () => {

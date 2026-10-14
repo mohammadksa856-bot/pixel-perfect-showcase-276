@@ -1,0 +1,41 @@
+{
+  "title": "معرفة استثمار — WEB-06 سجل إغلاق النطاق المنفذ، لا قبول نهائي",
+  "status": "CHECKPOINT_READY_NOT_CLOSED",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "preview": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+  "central_commit": "5332b6c1d479398e2ccbc22aa2f495128d538a63",
+  "engineering_accepted": "WEB-01/02 وWEB-03 وWEB-04 وWEB-05A/B/C ضمن الأدلة المجمدة/القارئ الاصطناعي المحلي فقط؛ القبول السابق محفوظ.",
+  "user_visual": "اعتماد الاتجاه المجمد القديم لـWEB01/02 محفوظ. النسخة الموحدة والنطاق النهائي ينتظران موافقة صريحة؛ لا USER_FINAL_ACCEPTANCE ولا WEB06 CLOSED.",
+  "partial_scope": "الأسواق المعروضة لقائمة سعودية تاريخية فقط؛ محتوى السوق الأمريكي وأسعار/مؤشرات حية غير منفذ. قوالب الأبحاث والمعرفة مقبولة محليًا لكن المحتوى المجمد غير متاح. التفاصيل المالية الشاملة لا تثبتها تغطية واجهات18موضوعًا وحدها.",
+  "not_implemented": "متابعتي، المجتمع، الحسابات/الاشتراكات، من نحن، التواصل، الخصوصية، الشروط، وإرسال النشرة: تسميات/عناصر معطلة وليست وظائف منجزة. إدراجها أو تأجيلها يحتاج قرار نطاق صريح.",
+  "decisions": [
+    "Approve visual design for exact c3bfd2f frozen/synthetic scope, separate from prior01/02 direction approval",
+    "Decide explicit deferral or inclusion of remaining pages/functions and complete live content/history",
+    "Approve terms of WEB06 closure only after visual pack/source linkage; no inferred closure",
+    "Any live integration or production release requires separate authorization"
+  ],
+  "tests": {
+    "application_rerun": false,
+    "prior_application_evidence": "797913559ab622dece75747dd3396acab612d8c5",
+    "checkpoint_consistency": {
+      "passed": 3,
+      "failed": 0,
+      "scope": "matrix metadata only"
+    },
+    "tracking_history": {
+      "passed": 10,
+      "failed": 0,
+      "scope": "central append-only tracking only"
+    },
+    "no_aggregation_of_prior_runs": true
+  },
+  "visual_pack": "فهرس Claude النهائي يحتاج SHA التطبيق وبصمات الصور ومساراتها ولغتها ومقاسها ووضع بياناتها. الصور القديمة لا يعاد نسبتها تلقائيًا إلى المرجع الجديد.",
+  "coordination_issue": "GitHub create_issue failed403; no issue created. Coordination request is included in this accessible review branch.",
+  "live": "WEB-LIVE01..04 والبحث الحي وصلاحيات المحتوى والاعتماد المالي باقيةBLOCKED. لا تكليف إصلاحها هنا.",
+  "release": "لا تغيير تطبيق أو main أو إنتاج أوAWSأوSupabase، ولا دمج مكرر أو تفعيل.",
+  "next_three": [
+    "Claude delivers baseline-linked visual manifest and user review route",
+    "Validate manifest SHA/data-mode links only; no new design cycle absent proven regression",
+    "User explicitly decides design/scope acceptance; only then record allowed WEB06 closure"
+  ]
+}

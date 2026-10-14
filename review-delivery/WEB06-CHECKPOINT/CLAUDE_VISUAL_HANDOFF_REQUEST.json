@@ -1,0 +1,26 @@
+{
+  "recipient": "Claude Code",
+  "purpose": "Baseline-linked visual handoff, not design changes",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "preview": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+  "independent_package_sha": "797913559ab622dece75747dd3396acab612d8c5",
+  "required_metadata": [
+    "application SHA",
+    "delivery SHA",
+    "path",
+    "sha256",
+    "route",
+    "locale",
+    "viewport",
+    "captured_at",
+    "data_mode FROZEN_DESIGN / LOCAL_SYNTHETIC_READER"
+  ],
+  "request_ar": "جهز فهرس صور ومسار مراجعة المستخدم للنسخة المرجعية. افصل صور FROZEN_DESIGN من صور LOCAL_SYNTHETIC_READER. احتفظ بتاريخ الصور القديمة؛ لا تعرض قياسات المصنع التاريخية مكان حالة غير مقاس، ولا تنسب صورة قديمة لSHA جديد دون دليل تطابق المكونات ووضع البيانات. سلّم commit التقرير والفهرس وبصمات كل صورة دون مستندات مقيدة أو أسرار. لا تعديل تصميم أو نشر جديد مطلوب.",
+  "response_location": "Your separate delivery/report branch; Codex reviews links then updates central board. Do not write central board.",
+  "approval_limits": {
+    "USER_FINAL_ACCEPTANCE": false,
+    "WEB06_CLOSED": false,
+    "production_authorized": false
+  },
+  "delivery_channel": "This GitHub code-only branch. Issue creation unavailable403; no claim of issue delivery or agent run."
+}

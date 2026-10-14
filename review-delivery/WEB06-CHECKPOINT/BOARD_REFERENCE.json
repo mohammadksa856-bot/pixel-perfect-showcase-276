@@ -1,0 +1,143 @@
+{
+  "schema": "marefa-safe-board-projection/1",
+  "is_independent_board": false,
+  "source_repository": "central engineering integration (private history not exported)",
+  "source_board_path": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "source_commit": "5332b6c1d479398e2ccbc22aa2f495128d538a63",
+  "source_event_sequence": 83,
+  "source_event_sha256": "30c1dd6be6f403e7200a965b48b9faca032f1b6e3a3b0e4f6445dacd2ae5e531",
+  "central_matrix_path": "docs/tracking/checkpoints/WEB06-ACCEPTANCE-CHECKPOINT-20261015.json",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "preview": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+  "scope": "Public read-only projection for WEB acceptance only; no whole private board/history/documents/secrets.",
+  "tasks": [
+    {
+      "id": "WEB-01",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PRIOR_USER_APPROVAL_FROZEN_ONLY",
+      "reviewed_sha": "0a63e35533d4e88809a0675d70c67798e3bad32a",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-02",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PRIOR_USER_APPROVAL_FROZEN_ONLY",
+      "reviewed_sha": "0a63e35533d4e88809a0675d70c67798e3bad32a",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-03",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "reviewed_sha": "67c636824e87e45fe3151615285e538bba671d1c",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-04",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "reviewed_sha": "67c636824e87e45fe3151615285e538bba671d1c",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-05A",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "reviewed_sha": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-05B",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "reviewed_sha": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-05C",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "reviewed_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-05",
+      "owner": "Claude implementation / Codex independent review",
+      "central_state": "TODO",
+      "engineering_acceptance": "IMPLEMENTED_SCOPE_ACCEPTED_ONLY",
+      "user_visual_acceptance": "PENDING_SCOPE_DECISIONS",
+      "reviewed_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": true
+    },
+    {
+      "id": "WEB-06",
+      "owner": "Codex tracking / Claude visual handoff / user final approval",
+      "central_state": "REVIEW",
+      "engineering_acceptance": "CHECKPOINT_READY_NOT_CLOSED",
+      "user_visual_acceptance": "PENDING_EXPLICIT_SCOPE_AND_VISUAL_APPROVAL",
+      "reviewed_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+      "main_merged": false,
+      "production_published": false,
+      "unified_branch_contains_code": false
+    }
+  ],
+  "live_dependencies": [
+    {
+      "id": "WEB-LIVE-01",
+      "state": "BLOCKED",
+      "scope": "Period-start/duration and report-scope comparison identity"
+    },
+    {
+      "id": "WEB-LIVE-02",
+      "state": "BLOCKED",
+      "scope": "Historical-topic arbitration and preventing withheld-value re-exposure"
+    },
+    {
+      "id": "WEB-LIVE-03",
+      "state": "BLOCKED",
+      "scope": "Governed source versions/restatements and snapshot replacement policy"
+    },
+    {
+      "id": "WEB-LIVE-04",
+      "state": "BLOCKED",
+      "scope": "Independent official-number verification and authenticated API end-to-end"
+    },
+    {
+      "id": "WEB-CONTENT-LIVE-01",
+      "state": "BLOCKED",
+      "scope": "Legacy search HTTP errors, published/draft access, authorization/editorial approval"
+    }
+  ],
+  "USER_FINAL_ACCEPTANCE": false,
+  "WEB06_CLOSED": false
+}

@@ -1,0 +1,355 @@
+{
+  "schema": "marefa-central-acceptance-checkpoint/1",
+  "checkpoint_id": "WEB06-ACCEPTANCE-CHECKPOINT-20261015",
+  "observed_at": "2026-10-14T22:59:01Z",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "application_branch": "claude/web-05c-reader-final-fixes",
+  "independent_package_sha": "797913559ab622dece75747dd3396acab612d8c5",
+  "preview_url": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+  "central_reference": {
+    "path": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+    "base_commit": "4ec87b91be2872dffc0373e9cd150eb42271c77c",
+    "note": "This matrix is a linked central tracking artifact, not a competing board. Public projection excludes private tasks, paths, documents and history."
+  },
+  "USER_FINAL_ACCEPTANCE": false,
+  "WEB06_CLOSED": false,
+  "PRODUCTION_RELEASE": "NOT_AUTHORIZED",
+  "new_application_tests": [],
+  "evidence_policy": "Reuse immutable prior receipts; no new application regression or visual cycle. Historical runs remain at their actual SHA and scope.",
+  "numbering_note": "Early central descriptions used WEB03 for secondary pages and WEB04 for mobile. Later accepted Claude delivery uses WEB03 company financial explorer, WEB04 factory panel, WEB05A/B/C secondary pages. Historical labels/events unchanged; explicit semantic mapping below.",
+  "acceptance_matrix": [
+    {
+      "task": "WEB-01",
+      "implemented_scope": "Design system, existing identity, homepage/navigation foundation",
+      "reviewed_sha": "0a63e35533d4e88809a0675d70c67798e3bad32a",
+      "evidence_receipt": "docs/tracking/batches/MAREFA-WEB-INDEPENDENT-20261014.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PRIOR_USER_APPROVAL_FROZEN_ONLY",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-02",
+      "implemented_scope": "Company skeleton, five investor groups, bilingual/mobile interaction",
+      "reviewed_sha": "0a63e35533d4e88809a0675d70c67798e3bad32a",
+      "evidence_receipt": "docs/tracking/batches/MAREFA-DESIGN-PREVIEW-ACTIVATED-20261014.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PRIOR_USER_APPROVAL_FROZEN_ONLY",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-03",
+      "implemented_scope": "Company financial explorer, identity checks and safe frozen sample display",
+      "reviewed_sha": "67c636824e87e45fe3151615285e538bba671d1c",
+      "evidence_receipt": "docs/tracking/batches/WEB03-CONFLICT-FINAL-20261014.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-04",
+      "implemented_scope": "Separate factory18 panel: contract weights/thresholds/gates, unmeasured/withheld states",
+      "reviewed_sha": "67c636824e87e45fe3151615285e538bba671d1c",
+      "evidence_receipt": "docs/tracking/batches/WEB04-INDEPENDENT-ACCEPT-20261014.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-05A",
+      "implemented_scope": "Home/catalog/unified-search wording, sourced names/tickers/limited English",
+      "reviewed_sha": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
+      "evidence_receipt": "docs/tracking/batches/WEB05A-ACCEPT-WEB03-POLICY-20261014.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-05B",
+      "implemented_scope": "Markets/Saudi/Main/Nomu/sectors, Preview boundaries, disabled writes/mobile",
+      "reviewed_sha": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
+      "evidence_receipt": "docs/tracking/batches/WEB05BC-CLOSEOUT-20261015.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-05C",
+      "implemented_scope": "Research/knowledge templates independently tested with local synthetic content; frozen unavailable states",
+      "reviewed_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+      "evidence_receipt": "docs/tracking/batches/WEB05C-FINAL-ACCEPT-20261015.json",
+      "engineering_acceptance": "ACCEPT_FROZEN_DESIGN",
+      "user_visual_acceptance": "PENDING_FINAL_VISUAL",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-05",
+      "implemented_scope": "Aggregate of A/B/C implemented scope; original complete-site target not automatically closed",
+      "reviewed_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+      "evidence_receipt": "docs/tracking/batches/WEB05C-FINAL-ACCEPT-20261015.json",
+      "engineering_acceptance": "IMPLEMENTED_SCOPE_ACCEPTED_ONLY",
+      "user_visual_acceptance": "PENDING_SCOPE_DECISIONS",
+      "in_unified_delivery_ancestry": true,
+      "IMPLEMENTED": true,
+      "TESTED": "PRIOR_RECEIPTS_ONLY",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    },
+    {
+      "task": "WEB-06",
+      "implemented_scope": "Acceptance matrix and unified reference, not final design approval/release",
+      "reviewed_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+      "evidence_receipt": "docs/tracking/batches/WEB06-ACCEPTANCE-CHECKPOINT-20261015.json",
+      "engineering_acceptance": "CHECKPOINT_READY_NOT_CLOSED",
+      "user_visual_acceptance": "PENDING_EXPLICIT_SCOPE_AND_VISUAL_APPROVAL",
+      "in_unified_delivery_ancestry": false,
+      "IMPLEMENTED": true,
+      "TESTED": "TRACKING_CHECKS_ONLY_NO_NEW_APP_RUN",
+      "REVIEWED": true,
+      "MERGED": "Contained in delivery ancestry; no reviewer duplicate merge; main unchanged",
+      "DEPLOYED": "PREVIEW_ONLY",
+      "live_financial_content_acceptance": "NOT_GRANTED",
+      "production_release": "NOT_AUTHORIZED"
+    }
+  ],
+  "original_scope_reconciliation": [
+    {
+      "original_item": 1,
+      "requirement": "Use existing safe site and P02, not a new project",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-01",
+        "WEB-02",
+        "WEB-03"
+      ],
+      "limit": "Existing-source ancestry, frozen preview only"
+    },
+    {
+      "original_item": 2,
+      "requirement": "Inventory existing pages/components before development",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-01"
+      ],
+      "limit": "Historical inventory reused, no new inventory"
+    },
+    {
+      "original_item": 3,
+      "requirement": "UX map and unified design system preserving identity",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-01",
+        "WEB-02"
+      ],
+      "limit": "Final user visual approval pending"
+    },
+    {
+      "original_item": 4,
+      "requirement": "Five company groups containing all18 investor topics, keep missing topics",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-02",
+        "WEB-03"
+      ],
+      "limit": "18 topic interfaces/states, not18 complete financial datasets or approved topic scores"
+    },
+    {
+      "original_item": 5,
+      "requirement": "Separate operational18 categories with weights, thresholds, sources and reasons",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-04"
+      ],
+      "limit": "Display contract and safe unmeasured states; no approved live assessment or production scoring policy"
+    },
+    {
+      "original_item": 6,
+      "requirement": "Aramco/AlRajhi/Tawuniya sector templates",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-03",
+        "WEB-04"
+      ],
+      "limit": "Frozen samples; Tawuniya import preview not independently financially verified"
+    },
+    {
+      "original_item": 7,
+      "requirement": "Home/search/company directory/sectors/markets/research/knowledge",
+      "classification": "PARTIALLY_IMPLEMENTED",
+      "evidence_tasks": [
+        "WEB-05A",
+        "WEB-05B",
+        "WEB-05C"
+      ],
+      "limit": "Named layouts accepted. Saudi markets sourced historical snapshot; US content unavailable. Research/knowledge reading accepted locally only; public frozen pages intentionally unavailable. User must approve this implemented subset explicitly, not silently waive original full-site target."
+    },
+    {
+      "original_item": 8,
+      "requirement": "Loading/error/missing/withheld/unmeasured states without invented financial values",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-03",
+        "WEB-04",
+        "WEB-05A",
+        "WEB-05C"
+      ],
+      "limit": "Tested frozen/synthetic boundaries; no live editorial/authentication approval"
+    },
+    {
+      "original_item": 9,
+      "requirement": "Financial tables/charts/deep detail and years/quarters/scopes navigation",
+      "classification": "PARTIALLY_IMPLEMENTED",
+      "evidence_tasks": [
+        "WEB-03"
+      ],
+      "limit": "Accepted explorer/cards/chart/fiscal display on frozen samples; full historical and every-topic data-backed deep dive not proved by partial source coverage. Decide deferred scope, do not count absent content as complete."
+    },
+    {
+      "original_item": 10,
+      "requirement": "Actual desktop/mobile AR/EN visual testing",
+      "classification": "IMPLEMENTED_ACCEPTED",
+      "evidence_tasks": [
+        "WEB-01",
+        "WEB-03",
+        "WEB-04",
+        "WEB-05A",
+        "WEB-05B",
+        "WEB-05C"
+      ],
+      "limit": "Evidence at recorded SHAs/390px and named templates; no all-device or formal WCAG certification; Claude final visual pack linkage pending"
+    }
+  ],
+  "deferred_or_unimplemented": [
+    {
+      "item": "US market sourced content, price/index feeds",
+      "classification": "NOT_IMPLEMENTED",
+      "scope_note": "Markets requirement retained; decide explicit deferral, no fabricated market values"
+    },
+    {
+      "item": "Public research/article content availability",
+      "classification": "NEEDS_DEFERRAL_DECISION",
+      "scope_note": "Templates implemented/tested locally; live source blocked. Unavailable screen is not reader completion."
+    },
+    {
+      "item": "Watchlist, community, accounts/subscriptions, about, contact, privacy, terms, newsletter sending",
+      "classification": "NOT_IMPLEMENTED",
+      "scope_note": "Visible scaffold labels/disabled controls only. These ancillary pages were not all explicitly named in original core-page list; decide inclusion/deferment rather than treating disabled links as delivered."
+    },
+    {
+      "item": "Complete historical and sourced detail across every investor topic",
+      "classification": "NEEDS_DEFERRAL_DECISION",
+      "scope_note": "18-topic presence not content completeness; no data expansion authorized now"
+    },
+    {
+      "item": "Final visual pack / user review route",
+      "classification": "PARTIALLY_IMPLEMENTED",
+      "scope_note": "Older Claude screenshot packs exist; final baseline-specific manifest not delivered/verified."
+    }
+  ],
+  "live_dependencies": [
+    {
+      "id": "WEB-LIVE-01",
+      "state": "BLOCKED",
+      "scope": "Period-start/duration and report-scope comparison identity"
+    },
+    {
+      "id": "WEB-LIVE-02",
+      "state": "BLOCKED",
+      "scope": "Historical-topic arbitration and preventing withheld-value re-exposure"
+    },
+    {
+      "id": "WEB-LIVE-03",
+      "state": "BLOCKED",
+      "scope": "Governed source versions/restatements and snapshot replacement policy"
+    },
+    {
+      "id": "WEB-LIVE-04",
+      "state": "BLOCKED",
+      "scope": "Independent official-number verification and authenticated API end-to-end"
+    },
+    {
+      "id": "WEB-CONTENT-LIVE-01",
+      "state": "BLOCKED",
+      "scope": "Legacy search HTTP errors, published/draft access, authorization/editorial approval"
+    }
+  ],
+  "visual_handoff": {
+    "owner": "Claude Code",
+    "state": "AWAITING_BASELINE_LINKED_MANIFEST",
+    "required_metadata": [
+      "application SHA",
+      "delivery SHA",
+      "path",
+      "sha256",
+      "route",
+      "locale",
+      "viewport",
+      "captured_at",
+      "data_mode FROZEN_DESIGN / LOCAL_SYNTHETIC_READER"
+    ],
+    "historical_pack_caution": "Original screens at b70254e evaluated factory are historical local evidence, not current unmeasured Preview. Do not relabel as current baseline.",
+    "coordination": "GitHub issue create returned403; request will be published as code-only coordination document on review branch. No claim an issue was sent or that Claude started."
+  },
+  "required_user_decisions": [
+    "Approve visual design for exact c3bfd2f frozen/synthetic scope, separate from prior01/02 direction approval",
+    "Decide explicit deferral or inclusion of remaining pages/functions and complete live content/history",
+    "Approve terms of WEB06 closure only after visual pack/source linkage; no inferred closure",
+    "Any live integration or production release requires separate authorization"
+  ],
+  "next_three": [
+    "Claude delivers baseline-linked visual manifest and user review route",
+    "Validate manifest SHA/data-mode links only; no new design cycle absent proven regression",
+    "User explicitly decides design/scope acceptance; only then record allowed WEB06 closure"
+  ]
+}

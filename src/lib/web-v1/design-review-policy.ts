@@ -13,6 +13,8 @@ export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
   "claude/web-03-source-conflict-fix",
   // WEB-05B markets & sectors branch (exact name), so its Preview renders the frozen samples.
   "claude/web-05b-markets-sectors",
+  // WEB-05C research & knowledge branch (exact name), so its Preview renders the frozen samples.
+  "claude/web-05c-research-knowledge",
 ];
 type Env = Record<string, string | undefined>;
 

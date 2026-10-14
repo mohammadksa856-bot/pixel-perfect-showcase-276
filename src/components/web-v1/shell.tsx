@@ -15,8 +15,8 @@ const NAV = [
   { to: "/preview/web-v1/markets", label: ui.markets, icon: Globe2 },
   { to: "/preview/web-v1/sectors", label: ui.sectors, icon: Layers },
   { to: "/preview/web-v1/companies", label: ui.companies, icon: Building2 },
-  { to: "/knowledge", label: ui.knowledge, icon: LayoutGrid },
-  { to: "/research", label: ui.research, icon: LayoutGrid },
+  { to: "/preview/web-v1/knowledge", label: ui.knowledge, icon: LayoutGrid },
+  { to: "/preview/web-v1/research", label: ui.research, icon: LayoutGrid },
 ] as const;
 
 const OpenSearch = createContext<() => void>(() => {});

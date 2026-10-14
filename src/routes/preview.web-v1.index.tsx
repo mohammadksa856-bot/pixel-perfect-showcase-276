@@ -431,12 +431,12 @@ function Browse() {
       hint: { ar: "القطاعات الموثقة وشركاتها", en: "Documented sectors and companies" },
     },
     {
-      to: "/research",
+      to: "/preview/web-v1/research",
       title: { ar: "الأبحاث", en: "Research" },
       hint: { ar: "تحليلات معمّقة", en: "In-depth analysis" },
     },
     {
-      to: "/knowledge",
+      to: "/preview/web-v1/knowledge",
       title: { ar: "المعرفة", en: "Knowledge" },
       hint: { ar: "مفاهيم الاستثمار بالعربية", en: "Investing concepts" },
     },
@@ -448,8 +448,8 @@ function Browse() {
       </h2>
       <p className="mb-5 mt-1 text-[13px] text-muted-foreground">
         {t({
-          ar: "الأسواق والقطاعات بصفحات المعاينة الجديدة. الأبحاث والمعرفة تفتح صفحات الموقع الحالية، وإعادة تصميمها في دفعة لاحقة.",
-          en: "Markets and sectors open the new preview pages. Research and knowledge open the current site pages; their redesign comes in a later batch.",
+          ar: "كلها تفتح صفحات المعاينة الجديدة. الأبحاث والمعرفة من محتوى الموقع المنشور، وتظهر حالة صريحة حين لا يتوفر.",
+          en: "All open the new preview pages. Research and knowledge come from the published site content, with an explicit state when it is unavailable.",
         })}
       </p>
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">

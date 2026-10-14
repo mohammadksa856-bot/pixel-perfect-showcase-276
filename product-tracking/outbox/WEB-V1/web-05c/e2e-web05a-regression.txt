@@ -1,0 +1,20 @@
+PASS  home: hero search opens the dialog; ticker finds the company; Enter opens full results
+PASS  Ctrl+K from the directory; unknown query shows the empty state
+PASS  search result navigates to the company page
+PASS  research and knowledge are declared unavailable in the frozen sample
+PASS  directory filters: market, data availability, sector; counts and URL
+PASS  directory search: Arabic without hamza, Arabic-Indic digits, English name
+PASS  directory: empty state with reset, and 'show more' pagination
+PASS  external link with a numeric query (?q=1120) keeps the ticker
+PASS  search copy: SABIC (English, no source name) explains the limit; سابك (Arabic) finds 2010
+PASS  search copy (English UI): accurate placeholder and coverage note
+PASS  shareable URL: filters restore from the address
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/companies
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/search?q=2222
+PASS  mobile 390px: no horizontal scroll, bottom bar visible — /preview/web-v1/companies/2222?tab=business
+PASS  mobile: filters hidden until toggled; search from the bottom bar
+PASS  English: LTR layout and English labels on the directory
+PASS  live-content mode with Supabase unreachable: research/knowledge show the error state, companies still work
+
+18/18 passed

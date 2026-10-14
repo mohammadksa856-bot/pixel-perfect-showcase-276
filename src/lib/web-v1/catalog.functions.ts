@@ -103,8 +103,8 @@ export const searchSite = createServerFn({ method: "GET" })
         groups: {
           ...base.groups,
           sectors: base.groups.sectors.state === "results" ? base.groups.sectors : liveSectors,
-          research: pick("research", "/research"),
-          knowledge: pick("knowledge", "/knowledge"),
+          research: pick("research", "/preview/web-v1/research"),
+          knowledge: pick("knowledge", "/preview/web-v1/knowledge"),
         },
       };
     } catch {

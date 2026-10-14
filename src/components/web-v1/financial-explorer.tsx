@@ -193,7 +193,10 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
             />
           )}
           <div className="overflow-x-auto" data-statement-table>
-            <table className="w-full min-w-[560px] border-separate border-spacing-0 text-[13px]">
+            <table
+              className="w-full border-separate border-spacing-0 text-[13px]"
+              style={{ minWidth: 160 + view.periods.length * 104 }}
+            >
               <thead>
                 <tr className="text-[11px] text-muted-foreground">
                   <th className="sticky start-0 z-10 min-w-[9.5rem] bg-card px-4 py-2.5 text-start font-medium sm:min-w-[13rem]">

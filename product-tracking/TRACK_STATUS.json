@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T03:00:00Z",
+  "updated_at": "2026-10-14T17:00:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -372,6 +372,26 @@
       "commits": [
         "5ee45d1"
       ]
+    },
+    "WEB-03": {
+      "status": "IMPLEMENTED, TESTED (not accepted)",
+      "branch": "claude/web-03-04-company-page",
+      "base": "codex/vercel-claude-build-review-20261014@0a63e35",
+      "report": "product-tracking/reports/BR-017_WEB-03_WEB-04.md",
+      "matrix": "product-tracking/outbox/WEB-V1/acceptance-matrix.md",
+      "screens": "product-tracking/outbox/WEB-V1/screens-web03-04",
+      "result": "statement explorer (annual/quarterly/YTD, scale, trend chart, sources), key figures by company type, topic rail, per-topic design spec; same structure for 2222/1120/8010",
+      "preview": "https://pixel-perfect-showcase-git-c47448-mohammadksa856-bots-projects.vercel.app (Vercel status success for b4277b1; not opened from this environment: *.vercel.app blocked)"
+    },
+    "WEB-04": {
+      "status": "IMPLEMENTED, TESTED (not accepted)",
+      "branch": "claude/web-03-04-company-page",
+      "base": "codex/vercel-claude-build-review-20261014@0a63e35",
+      "report": "product-tracking/reports/BR-017_WEB-03_WEB-04.md",
+      "matrix": "product-tracking/outbox/WEB-V1/acceptance-matrix.md",
+      "screens": "product-tracking/outbox/WEB-V1/screens-web03-04",
+      "result": "factory panel with contract definitions (engine b70254e contract 1.0.0), names AR/EN, weight, minimum, score, fields, gates, sources, freshness, last assessment, separation note",
+      "preview": "https://pixel-perfect-showcase-git-c47448-mohammadksa856-bots-projects.vercel.app (Vercel status success for b4277b1; not opened from this environment: *.vercel.app blocked)"
     }
   },
   "open_dependencies_on_codex": {
@@ -932,6 +952,12 @@
       "id": "RUN-2026-10-14-53",
       "suite": "Playwright screenshots via fixture engine (engine b70254e responses)",
       "result": "25 screens, no page errors"
+    },
+    {
+      "id": "RUN-2026-10-14-54",
+      "suite": "bun test + tsc + eslint + vite build (vercel preset, preview and production-like)",
+      "branch": "claude/web-03-04-company-page",
+      "result": "254 pass, 14 skip, 0 fail; tsc 0; eslint 0 errors/10 warnings; both builds succeed; production-like build bundles no fixtures"
     }
   ],
   "active_track": {

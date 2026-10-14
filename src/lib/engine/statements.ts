@@ -146,7 +146,8 @@ function buildView(
       if (picked.ok === true) {
         unit ??= picked.cell.unit;
         currency ??= rows?.[0]?.currency ?? null;
-        if (!periodLabels.has(end) || part.expected !== "instant") periodLabels.set(end, picked.cell.period.label);
+        if (!periodLabels.has(end) || part.expected !== "instant")
+          periodLabels.set(end, picked.cell.period.label);
         if (!used.has(end))
           used.set(end, {
             url: picked.cell.proof.sourceUrl,

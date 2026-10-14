@@ -4,6 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
 import { BOARD_TEXT, DATA_TEXT, type DirectoryEntry } from "@/lib/web-v1/catalog";
+import { TaxonomyLabel } from "./display-label";
 import { Pill, READINESS_META } from "./primitives";
 
 /**
@@ -47,12 +48,12 @@ export function CompanyCard({ e }: { e: DirectoryEntry }) {
         >
           {t(BOARD_TEXT[e.board])}
         </span>
-        <span
-          className="rounded-md border border-border px-1.5 py-0.5 text-muted-foreground"
-          dir="auto"
-        >
-          {e.sector ??
-            t({ ar: "القطاع غير مصنّف في المصدر", en: "Sector not classified in source" })}
+        <span className="rounded-md border border-border px-1.5 py-0.5 text-muted-foreground">
+          {e.sector ? (
+            <TaxonomyLabel raw={e.sector} />
+          ) : (
+            t({ ar: "القطاع غير مصنّف في المصدر", en: "Sector not classified in source" })
+          )}
         </span>
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 border-t border-border/60 pt-3">

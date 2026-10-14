@@ -1,4 +1,5 @@
 import type { LocalizedText } from "@/lib/i18n";
+import { labelText, labelVariants } from "./display-labels";
 import type { ReadinessState } from "@/lib/engine/readiness";
 
 /**
@@ -65,7 +66,13 @@ export function matchScore(e: DirectoryEntry, raw: string): number {
   if (!q) return 1;
   if (e.symbol === q) return 100;
   if (/^\d+$/.test(q)) return e.symbol.startsWith(q) ? 80 : 0;
-  const names = [e.name.ar, e.name.en ?? "", e.sector ?? "", e.industry ?? ""].map(normalize);
+  // WEB-06 (D5): القطاع والصناعة يُبحث فيهما بالأصل وبترجمة العرض (عرض فقط؛ لا يغيّر التصنيف).
+  const names = [
+    e.name.ar,
+    e.name.en ?? "",
+    ...(e.sector ? labelVariants(e.sector) : []),
+    ...(e.industry ? labelVariants(e.industry) : []),
+  ].map(normalize);
   if (names.slice(0, 2).some((n) => n.startsWith(q))) return 60;
   if (names.slice(0, 2).some((n) => n.split(" ").some((w) => w.startsWith(q)))) return 50;
   if (names.slice(0, 2).some((n) => n.includes(q))) return 40;
@@ -177,7 +184,9 @@ export function searchCatalog(
   const companies = queryDirectory(entries, { q }).items.slice(0, limit);
   const nq = normalize(q);
   const sectorNames = [...new Set(entries.map((e) => e.sector).filter(Boolean) as string[])];
-  const sectors = nq ? sectorNames.filter((s) => normalize(s).includes(nq)) : [];
+  const sectors = nq
+    ? sectorNames.filter((s) => labelVariants(s).some((v) => normalize(v).includes(nq)))
+    : [];
   const unavailable: SearchGroupState = {
     state: "unavailable",
     reason: {
@@ -193,7 +202,9 @@ export function searchCatalog(
         companies.map((e) => ({
           id: e.symbol,
           title: { ar: e.name.ar, en: e.name.en ?? e.name.ar },
-          subtitle: e.sector ? { ar: e.sector, en: e.sector } : BOARD_TEXT[e.board],
+          subtitle: e.sector
+            ? { ar: labelText(e.sector, "ar"), en: e.sector }
+            : BOARD_TEXT[e.board],
           href: e.dataStatus === "engine_page" ? `/preview/web-v1/companies/${e.symbol}` : null,
           badge: e.symbol,
         })),
@@ -201,7 +212,7 @@ export function searchCatalog(
       sectors: group(
         sectors.map((s) => ({
           id: s,
-          title: { ar: s, en: s },
+          title: { ar: labelText(s, "ar"), en: s },
           subtitle: null,
           href: `/preview/web-v1/sectors/${sectorSlug(s)}`,
           badge: null,

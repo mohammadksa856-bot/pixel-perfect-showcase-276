@@ -44,7 +44,8 @@ const count = (page) =>
 const noHorizontalScroll = async (page) =>
   assert.ok(
     // مقارنة بعرض الجهاز المضبوط لا بـ innerWidth: محاكي الجوال يوسّع innerWidth مع المحتوى فيخفي التجاوز.
-    (await page.evaluate(() => document.documentElement.scrollWidth)) <= page.viewportSize().width + 1,
+    (await page.evaluate(() => document.documentElement.scrollWidth)) <=
+      page.viewportSize().width + 1,
     "horizontal overflow",
   );
 
@@ -82,8 +83,18 @@ await run(
   "research and knowledge are declared unavailable in the frozen sample",
   async (page, go) => {
     await go("/preview/web-v1/search?q=%D8%A7%D9%84%D8%B1%D8%A7%D8%AC%D8%AD%D9%8A");
-    await page.locator('[data-search-group="research"][data-group-state="unavailable"]').waitFor();
-    await page.locator('[data-search-group="knowledge"][data-group-state="unavailable"]').waitFor();
+    // WEB-06 D12: one merged short message instead of two repeated notices
+    await page
+      .locator(
+        '[data-search-group="library"][data-merged-groups="research knowledge"][data-group-state="unavailable"]',
+      )
+      .waitFor();
+    if (
+      (await page
+        .locator('[data-search-group="research"], [data-search-group="knowledge"]')
+        .count()) !== 0
+    )
+      throw new Error("research/knowledge still rendered as separate unavailable groups");
   },
 );
 
@@ -144,28 +155,45 @@ await run("external link with a numeric query (?q=1120) keeps the ticker", async
   assert.equal(await count(page), 1);
 });
 
-await run("search copy: SABIC (English, no source name) explains the limit; سابك (Arabic) finds 2010", async (page, go) => {
-  await go("/preview/web-v1/companies?q=SABIC");
-  await page.locator("[data-directory-empty]").waitFor();
-  assert.ok((await page.locator("[data-directory-empty]").innerText()).includes("اسم إنجليزي"));
-  await go(`/preview/web-v1/companies?q=${encodeURIComponent("سابك")}`);
-  assert.equal(await page.locator("[data-company-card]").first().getAttribute("data-company-card"), "2010");
-  assert.ok((await page.locator("[data-english-coverage]").innerText()).includes("3 من 396"));
-});
+await run(
+  "search copy: SABIC (English, no source name) explains the limit; سابك (Arabic) finds 2010",
+  async (page, go) => {
+    await go("/preview/web-v1/companies?q=SABIC");
+    await page.locator("[data-directory-empty]").waitFor();
+    assert.ok((await page.locator("[data-directory-empty]").innerText()).includes("اسم إنجليزي"));
+    await go(`/preview/web-v1/companies?q=${encodeURIComponent("سابك")}`);
+    assert.equal(
+      await page.locator("[data-company-card]").first().getAttribute("data-company-card"),
+      "2010",
+    );
+    assert.ok((await page.locator("[data-english-coverage]").innerText()).includes("3 من 396"));
+  },
+);
 
-await run("search copy (English UI): accurate placeholder and coverage note", async (page, go) => {
-  await go("/preview/web-v1/companies");
-  assert.equal(
-    await page.locator("[data-directory-input]").getAttribute("placeholder"),
-    "Search by ticker or Arabic company name. English names are supported where available.",
-  );
-  assert.ok((await page.locator("[data-english-coverage]").innerText()).includes("3 of 396"));
-  await page.keyboard.press("Control+k");
-  assert.equal(await page.locator("[data-search-input]").getAttribute("placeholder"), "Ticker, Arabic company name or topic…");
-  await page.locator("[data-search-input]").fill("SABIC");
-  await page.locator('[data-search-dialog] [data-search-state="empty"]').waitFor();
-  assert.ok((await page.locator('[data-search-dialog] [data-search-state="empty"]').innerText()).includes("no English name"));
-}, { locale: "en" });
+await run(
+  "search copy (English UI): accurate placeholder and coverage note",
+  async (page, go) => {
+    await go("/preview/web-v1/companies");
+    assert.equal(
+      await page.locator("[data-directory-input]").getAttribute("placeholder"),
+      "Search by ticker or Arabic company name. English names are supported where available.",
+    );
+    assert.ok((await page.locator("[data-english-coverage]").innerText()).includes("3 of 396"));
+    await page.keyboard.press("Control+k");
+    assert.equal(
+      await page.locator("[data-search-input]").getAttribute("placeholder"),
+      "Ticker, Arabic company name or topic…",
+    );
+    await page.locator("[data-search-input]").fill("SABIC");
+    await page.locator('[data-search-dialog] [data-search-state="empty"]').waitFor();
+    assert.ok(
+      (await page.locator('[data-search-dialog] [data-search-state="empty"]').innerText()).includes(
+        "no English name",
+      ),
+    );
+  },
+  { locale: "en" },
+);
 
 await run("shareable URL: filters restore from the address", async (page, go) => {
   await go("/preview/web-v1/companies?board=nomu&sort=name");

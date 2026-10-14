@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Building2, Globe2, Home, Layers, LayoutGrid, Menu, Search, Star } from "lucide-react";
+import { Building2, Globe2, Home, Layers, LayoutGrid, Menu, Search } from "lucide-react";
 import { LogoMark } from "@/components/logo-mark";
 import { PreviewFooter } from "./preview-footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -108,23 +108,7 @@ export function WebV1Shell({
             >
               <Search className="size-4" />
             </button>
-            {/* متابعتي غير منفّذة في المعاينة: زر معطّل بوضوح، لا رابط إلى صفحة الموقع القديمة. */}
-            <button
-              type="button"
-              disabled
-              title={t({
-                ar: "متابعتي: غير متاحة في المعاينة",
-                en: "Watchlist: not available in this preview",
-              })}
-              aria-label={t({
-                ar: "متابعتي: غير متاحة في المعاينة",
-                en: "Watchlist: not available in this preview",
-              })}
-              className="hidden size-10 cursor-not-allowed items-center justify-center rounded-xl border border-dashed border-border text-muted-foreground opacity-60 md:flex"
-              data-unavailable="watchlist"
-            >
-              <Star className="size-4" />
-            </button>
+            {/* WEB-06 (D10): متابعتي مؤجلة بقرار معتمد؛ لا مدخل لها في الرأس (SCOPE_DEFERRED.md). */}
             <button
               type="button"
               onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
@@ -328,9 +312,16 @@ export function UnifiedSearch({
 export function PreviewContainer({
   children,
   className,
+  ...data
 }: {
   children: ReactNode;
   className?: string;
+  /** سمات data-* للاختبار (كانت تُسقط بصمت قبل WEB-06). */
+  [key: `data-${string}`]: string | boolean | undefined;
 }) {
-  return <div className={cn("mx-auto max-w-7xl px-4 sm:px-6", className)}>{children}</div>;
+  return (
+    <div className={cn("mx-auto max-w-7xl px-4 sm:px-6", className)} {...data}>
+      {children}
+    </div>
+  );
 }

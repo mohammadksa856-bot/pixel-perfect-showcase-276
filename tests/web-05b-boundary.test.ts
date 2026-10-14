@@ -47,6 +47,8 @@ describe("every Preview link stays under /preview/web-v1", () => {
     expect(shell).not.toContain("site-footer");
     expect(shell).toContain("<PreviewFooter />");
     expect(shell).not.toMatch(/to="\/watchlist"/);
+    // WEB-06 D10: لا مدخل لمتابعتي (مؤجلة)، ولا زر معطّل يبدو قابلًا للتشغيل.
+    expect(shell).not.toContain('data-unavailable="watchlist"');
   });
 });
 
@@ -69,22 +71,19 @@ describe("Preview footer", () => {
     for (const h of hrefs) expect(h).toMatch(/^\/preview\/web-v1\//);
   });
 
-  test("pages not built in the Preview are listed as text, never as links", () => {
-    expect(NOT_IN_PREVIEW.map((x) => x.key)).toEqual([
-      "watchlist",
-      "community",
-      "accounts",
-      "about",
-      "contact",
-      "privacy",
-      "terms",
-    ]);
+  test("pages not built in the Preview are listed as plain text, never as links", () => {
+    expect(NOT_IN_PREVIEW.map((x) => x.key)).toEqual(["about", "contact", "privacy", "terms"]);
     for (const x of NOT_IN_PREVIEW) expect(html).toContain(`data-not-in-preview-item="${x.key}"`);
+    const block = /<p[^>]*data-not-in-preview[\s\S]*?<\/p>/.exec(html)![0];
+    expect(block).not.toMatch(/<a |<button/);
   });
 
-  test("newsletter: inputs disabled, no Supabase anywhere in the footer module", () => {
-    const form = /<form[^>]*data-preview-form="newsletter"[\s\S]*?<\/form>/.exec(html)![0];
-    expect(form.match(/disabled=""/g)).toHaveLength(2);
+  // WEB-06 D10 (قرار معتمد بتغيير السلوك، لا تخفيف): الوظائف المؤجلة لا مدخل لها في التذييل،
+  // ولا نموذج كتابة (بما فيه نموذج النشرة المعطّل) في المعاينة.
+  test("deferred features have no entry; no form of any kind; no Supabase in the footer module", () => {
+    for (const k of ["watchlist", "community", "accounts"])
+      expect(html).not.toContain(`data-not-in-preview-item="${k}"`);
+    expect(html).not.toMatch(/<form|<input|data-preview-form/);
     const src = read("src/components/web-v1/preview-footer.tsx");
     expect(src).not.toMatch(/supabase|\.insert\(|fetch\(/);
   });

@@ -111,6 +111,9 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
     (r) => isAmount(r) && r.cells.filter((c) => c.state === "value").length >= 2,
   );
   const [picked, setPicked] = useState<string | null>(null);
+  // WEB-06 (D6): قائمة واحدة معروضة في كل مرة (تبويب)، وعرض مختصر افتراضي على الجوال.
+  const [sectionPick, setSectionPick] = useState<StatementSection | null>(null);
+  const [allRows, setAllRows] = useState(false);
   const chartRow = view.rows.find((r) => r.key === picked) ?? firstChartable ?? null;
   // عملة الجدول من عقد الصفحة (عملة التقارير)؛ الخلايا بعملة أخرى محجوبة في نموذج العرض.
   const currency = view.currency ?? "SAR";
@@ -124,6 +127,13 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
     for (const r of view.rows) m.set(r.section, [...(m.get(r.section) ?? []), r]);
     return [...m.entries()];
   }, [view]);
+  const section: StatementSection | null =
+    sections.find(([s]) => s === sectionPick)?.[0] ?? sections[0]?.[0] ?? null;
+  const sectionRows = sections.find(([s]) => s === section)?.[1] ?? [];
+  // بند «مؤهل للعرض المختصر»: له قيمة معروضة واحدة على الأقل في نموذج العرض. لا حساب ولا ملء.
+  const hasValue = (r: StatementRow) => r.cells.some((c) => c.state === "value");
+  const condensedCount = sectionRows.filter(hasValue).length;
+  const condensed = !allRows && condensedCount < sectionRows.length;
   const counts = view.rows.reduce(
     (acc, r) => {
       for (const c of r.cells) acc[c.state]++;
@@ -209,6 +219,67 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
               unitLabel={t(scaleLabel(scale))}
             />
           )}
+          {sections.length > 1 && (
+            <div
+              role="tablist"
+              aria-label={t({ ar: "القوائم", en: "Statements" })}
+              className="scrollbar-none flex gap-1 overflow-x-auto border-b border-border/70 px-4 py-2"
+              data-section-tabs
+            >
+              {sections.map(([s, rows]) => (
+                <button
+                  key={s}
+                  type="button"
+                  role="tab"
+                  aria-selected={s === section}
+                  onClick={() => {
+                    setSectionPick(s);
+                    setAllRows(false);
+                  }}
+                  className={cn(
+                    "shrink-0 rounded-lg px-3 py-1.5 text-[12px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand",
+                    // D11: المحدد نص فاتح على خلفية مظللة بإطار، لا أبيض على الأزرق (3.46:1).
+                    s === section
+                      ? "bg-brand/15 font-semibold text-foreground ring-1 ring-brand/60"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                  )}
+                  data-section-tab={s}
+                >
+                  {t(SECTIONS[s])}
+                  <span className="num ms-1">{iso(rows.length)}</span>
+                </button>
+              ))}
+            </div>
+          )}
+          {condensedCount < sectionRows.length && (
+            <div
+              className="flex flex-wrap items-center justify-between gap-2 border-b border-border/70 px-4 py-2 text-[12px] sm:hidden"
+              data-condensed-note={condensed ? "condensed" : "all"}
+            >
+              <span className="text-muted-foreground">
+                {condensed
+                  ? t({
+                      ar: `عرض مختصر: ${iso(condensedCount)} من ${iso(sectionRows.length)} بندًا (البنود التي لها قيمة معروضة)`,
+                      en: `Condensed view: ${condensedCount} of ${sectionRows.length} items (items with a shown value)`,
+                    })
+                  : t({
+                      ar: `جميع البنود: ${iso(sectionRows.length)}`,
+                      en: `All items: ${sectionRows.length}`,
+                    })}
+              </span>
+              <button
+                type="button"
+                onClick={() => setAllRows((v) => !v)}
+                aria-expanded={!condensed}
+                className="rounded-lg border border-border px-2.5 py-1 font-medium hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                data-show-all-rows
+              >
+                {condensed
+                  ? t({ ar: "عرض جميع البنود", en: "Show all items" })
+                  : t({ ar: "عرض مختصر", en: "Condensed view" })}
+              </button>
+            </div>
+          )}
           <div className="overflow-x-auto" data-statement-table>
             <table
               className="w-full border-separate border-spacing-0 text-[13px]"
@@ -229,23 +300,26 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
                   ))}
                 </tr>
               </thead>
-              {sections.map(([section, rows]) => (
-                <tbody key={section}>
+              {sections.map(([sec, rows]) => (
+                // القوائم غير المختارة تبقى في الصفحة مخفية (hidden)، فلا يُحذف أي بند.
+                <tbody key={sec} hidden={sec !== section} data-section={sec}>
                   <tr>
                     <th
                       colSpan={view.periods.length + 1}
                       className="sticky start-0 border-t border-border/70 bg-muted/40 px-4 py-2 text-start text-[11px] font-semibold text-muted-foreground"
                     >
-                      {t(SECTIONS[section])}
+                      {t(SECTIONS[sec])}
                     </th>
                   </tr>
                   {rows.map((r) => (
                     <tr
                       key={r.key}
                       data-row={r.key}
+                      data-condensed-hidden={(condensed && !hasValue(r)) || undefined}
                       onClick={() => isAmount(r) && setPicked(r.key)}
                       className={cn(
                         "group",
+                        condensed && !hasValue(r) && "max-sm:hidden",
                         isAmount(r) && "cursor-pointer",
                         chartRow?.key === r.key && "bg-brand/5",
                       )}

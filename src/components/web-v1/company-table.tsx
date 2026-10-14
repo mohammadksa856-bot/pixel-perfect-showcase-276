@@ -19,6 +19,8 @@ import {
   type TableQuery,
   tableSearch,
 } from "@/lib/web-v1/markets";
+import { labelText } from "@/lib/web-v1/display-labels";
+import { TaxonomyLabel } from "./display-label";
 import { Pill, READINESS_META } from "./primitives";
 
 /**
@@ -44,7 +46,7 @@ export function CompanyTable({
   industries?: { name: string; count: number }[];
   emptyHint?: LocalizedText;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [text, setText] = useState(query.q);
   const latest = useRef(query.q);
   latest.current = query.q;
@@ -112,7 +114,9 @@ export function CompanyTable({
               data="sector"
               options={[
                 ["all", t({ ar: "كل القطاعات", en: "All sectors" })],
-                ...sectors.map((s) => [s.slug, `${s.name} (${s.count})`] as [string, string]),
+                ...sectors.map(
+                  (s) => [s.slug, `${labelText(s.name, locale)} (${s.count})`] as [string, string],
+                ),
                 [UNCLASSIFIED, t(MARKET_COPY.unclassified)],
               ]}
             />
@@ -125,7 +129,9 @@ export function CompanyTable({
               data="industry"
               options={[
                 ["all", t({ ar: "كل الصناعات", en: "All industries" })],
-                ...industries.map((i) => [i.name, `${i.name} (${i.count})`] as [string, string]),
+                ...industries.map(
+                  (i) => [i.name, `${labelText(i.name, locale)} (${i.count})`] as [string, string],
+                ),
               ]}
             />
           )}
@@ -176,6 +182,8 @@ export function CompanyTable({
           </button>
         )}
       </div>
+
+      <StateLegend />
 
       {r.total === 0 ? (
         <div
@@ -237,8 +245,8 @@ export function CompanyTable({
                     <td className="px-3 py-2.5">
                       <SectorLink e={e} />
                     </td>
-                    <td className="px-3 py-2.5 text-muted-foreground" dir="auto">
-                      {e.industry ?? "—"}
+                    <td className="px-3 py-2.5 text-muted-foreground">
+                      <IndustryCell e={e} />
                     </td>
                     <td className="px-3 py-2.5">
                       <DataState e={e} />
@@ -421,12 +429,65 @@ export function BoardLink({ board }: { board: DirectoryEntry["board"] }) {
   );
 }
 
+/**
+ * WEB-06 (D4): حالات قصيرة في خلايا الجدول، وكل حالة بنصها (لا رمز مشترك ولا لون وحده):
+ * «غير مصنّف» ≠ «بلا صفحة بيانات» ≠ «لم يُقيَّم». الشرح العام مرة واحدة في StateLegend.
+ */
+const SHORT_STATE = {
+  unclassified: { ar: "غير مصنّف", en: "Unclassified" },
+  noPage: { ar: "بلا صفحة بيانات", en: "No data page" },
+} satisfies Record<string, LocalizedText>;
+
+function StateLegend() {
+  const { t } = useI18n();
+  return (
+    <details className="mt-2 text-[12px]" data-table-legend>
+      <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
+        {t({ ar: "معنى الحالات في الجدول", en: "What the table states mean" })}
+      </summary>
+      <dl className="mt-2 grid gap-x-3 gap-y-1.5 rounded-xl border border-border/70 bg-card p-3 text-muted-foreground sm:grid-cols-[auto_1fr]">
+        <dt className="font-semibold text-foreground" data-legend="unclassified">
+          {t(SHORT_STATE.unclassified)}
+        </dt>
+        <dd>
+          {t({
+            ar: "لا قطاع أو صناعة للشركة في المصادر الحالية؛ لا نخمّن التصنيف.",
+            en: "No sector or industry for the company in the current sources; we do not guess it.",
+          })}
+        </dd>
+        <dt className="font-semibold text-foreground" data-legend="no-page">
+          {t(SHORT_STATE.noPage)}
+        </dt>
+        <dd>
+          {t({
+            ar: "الشركة مدرجة في القائمة، ولا صفحة بيانات لها من المحرك بعد.",
+            en: "The company is listed, but has no engine data page yet.",
+          })}
+        </dd>
+        <dt className="font-semibold text-foreground" data-legend="not-assessed">
+          {t(READINESS_META.not_assessed.label)}
+        </dt>
+        <dd>
+          {t({
+            ar: "للشركة صفحة بيانات، ولم يُشغَّل تقييم معتمد لموضوعات المستثمر بعد؛ لا درجة.",
+            en: "The company has a data page, but no approved investor-topic assessment has run yet; no score.",
+          })}
+        </dd>
+      </dl>
+    </details>
+  );
+}
+
 function SectorLink({ e }: { e: DirectoryEntry }) {
   const { t } = useI18n();
   if (!e.sector)
     return (
-      <span className="text-[12px] text-muted-foreground" data-sector-cell="unclassified">
-        {t(MARKET_COPY.unclassified)}
+      <span
+        className="text-[12px] text-muted-foreground"
+        data-sector-cell="unclassified"
+        title={t(MARKET_COPY.unclassified)}
+      >
+        {t(SHORT_STATE.unclassified)}
       </span>
     );
   return (
@@ -435,24 +496,45 @@ function SectorLink({ e }: { e: DirectoryEntry }) {
       params={{ slug: sectorSlug(e.sector) }}
       search={tableSearch()}
       className="text-[12px] font-medium text-brand hover:underline"
-      dir="auto"
       data-sector-link={sectorSlug(e.sector)}
     >
-      {e.sector}
+      <TaxonomyLabel raw={e.sector} />
     </Link>
   );
+}
+
+function IndustryCell({ e }: { e: DirectoryEntry }) {
+  const { t } = useI18n();
+  if (!e.industry)
+    return (
+      <span className="text-[12px]" data-industry-cell="unclassified">
+        {t(SHORT_STATE.unclassified)}
+      </span>
+    );
+  return <TaxonomyLabel raw={e.industry} className="text-[12px]" />;
 }
 
 function DataState({ e }: { e: DirectoryEntry }) {
   const { t } = useI18n();
   if (e.dataStatus === "engine_page" && e.readiness)
     return (
-      <span className="inline-flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+      <span
+        className="inline-flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground"
+        data-data-cell="engine_page"
+      >
         {t({ ar: "موضوعات", en: "Topics" })}
         <Pill meta={READINESS_META[e.readiness.investorTopics]} />
       </span>
     );
-  return <span className="text-[11px] text-muted-foreground">{t(DATA_TEXT[e.dataStatus])}</span>;
+  return (
+    <span
+      className="text-[11px] text-muted-foreground"
+      data-data-cell={e.dataStatus}
+      title={t(DATA_TEXT[e.dataStatus])}
+    >
+      {e.dataStatus === "listed_only" ? t(SHORT_STATE.noPage) : t(DATA_TEXT[e.dataStatus])}
+    </span>
+  );
 }
 
 function OpenLink({ e, withText = false }: { e: DirectoryEntry; withText?: boolean }) {

@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Lock } from "lucide-react";
 import { ui, useI18n, type LocalizedText } from "@/lib/i18n";
 import { DIRECTORY_DEFAULT_SEARCH } from "@/lib/web-v1/catalog";
 import { KNOWLEDGE_DEFAULTS, RESEARCH_DEFAULTS } from "@/lib/web-v1/library";
@@ -8,7 +7,10 @@ import { KNOWLEDGE_DEFAULTS, RESEARCH_DEFAULTS } from "@/lib/web-v1/library";
  * WEB-05B (إصلاح حدود المعاينة): تذييل المعاينة المستقل. التذييل الإنتاجي (site-footer.tsx) لم يُعدَّل.
  * - كل رابط هنا يبقى داخل /preview/web-v1.
  * - ما لم يُنفَّذ في المعاينة يُعرض نصًا بشارة "خارج المعاينة"، لا رابطًا إلى صفحة قديمة.
- * - نموذج النشرة البريدية معطّل: لا يستورد Supabase ولا يرسل أي بيانات.
+ * - WEB-06 (D10، قرار معتمد): متابعتي والمجتمع والحسابات والاشتراكات وإرسال النشرة وظائف مؤجلة؛ أُزيلت
+ *   مداخلها من التذييل (لا شارات ولا نموذج معطّل يبدو قابلًا للتشغيل). سجلها في
+ *   product-tracking/SCOPE_DEFERRED.md. لا يُعاد إدخال التذييل الإنتاجي ولا نماذج الكتابة.
+ * - صفحات ما قبل الإطلاق (من نحن، التواصل، الخصوصية، الشروط) تُذكر نصًا عاديًا فقط، دون محتوى مخترع.
  */
 const AVAILABLE = [
   { to: "/preview/web-v1/markets", label: ui.markets, search: undefined },
@@ -18,11 +20,8 @@ const AVAILABLE = [
   { to: "/preview/web-v1/knowledge", label: ui.knowledge, search: KNOWLEDGE_DEFAULTS },
 ] as const;
 
-/** صفحات قائمة في الموقع أو مخططة، ليست جزءًا من هذه المعاينة. */
+/** صفحات مطلوبة قبل الإطلاق، ليست جزءًا من هذه المعاينة (نص عادي، لا روابط ولا أزرار). */
 export const NOT_IN_PREVIEW: { key: string; label: LocalizedText }[] = [
-  { key: "watchlist", label: { ar: "متابعتي", en: "Watchlist" } },
-  { key: "community", label: ui.community },
-  { key: "accounts", label: { ar: "الحسابات والاشتراكات", en: "Accounts and subscriptions" } },
   { key: "about", label: { ar: "من نحن", en: "About" } },
   { key: "contact", label: { ar: "تواصل معنا", en: "Contact" } },
   { key: "privacy", label: { ar: "سياسة الخصوصية", en: "Privacy" } },
@@ -68,56 +67,17 @@ export function PreviewFooter() {
 
         <div>
           <h2 className="text-[13px] font-semibold">
-            {t({ ar: "لم يُنفَّذ في المعاينة بعد", en: "Not in this preview yet" })}
+            {t({ ar: "صفحات لم تُبنَ في المعاينة", en: "Pages not built in this preview" })}
           </h2>
-          <ul className="mt-3 flex flex-wrap gap-1.5" data-not-in-preview>
-            {NOT_IN_PREVIEW.map((x) => (
-              <li
-                key={x.key}
-                className="rounded-md border border-night-foreground/15 px-2 py-0.5 text-[12px] text-night-foreground/55"
-                data-not-in-preview-item={x.key}
-              >
+          <p className="mt-3 text-[12px] leading-6 text-night-foreground/70" data-not-in-preview>
+            {NOT_IN_PREVIEW.map((x, i) => (
+              <span key={x.key} data-not-in-preview-item={x.key}>
+                {i > 0 && t({ ar: "، ", en: ", " })}
                 {t(x.label)}
-              </li>
+              </span>
             ))}
-          </ul>
-
-          <form
-            className="mt-6"
-            onSubmit={(e) => e.preventDefault()}
-            data-preview-form="newsletter"
-            aria-describedby="newsletter-disabled-note"
-          >
-            <label className="text-[13px] font-semibold" htmlFor="preview-newsletter-email">
-              {t({ ar: "النشرة البريدية", en: "Newsletter" })}
-            </label>
-            <div className="mt-2 flex overflow-hidden rounded-xl border border-night-foreground/15 opacity-60">
-              <input
-                id="preview-newsletter-email"
-                type="email"
-                disabled
-                placeholder={t({ ar: "بريدك الإلكتروني", en: "Your email" })}
-                className="min-w-0 flex-1 bg-transparent px-3 py-2 text-[13px] outline-none"
-              />
-              <button
-                type="submit"
-                disabled
-                className="flex items-center gap-1.5 bg-night-foreground/10 px-3 text-[12px]"
-              >
-                <Lock className="size-3.5" />
-                {t(ui.subscribe)}
-              </button>
-            </div>
-            <p
-              id="newsletter-disabled-note"
-              className="mt-2 text-[11px] leading-5 text-night-foreground/55"
-            >
-              {t({
-                ar: "معطّل في المعاينة: لا يُرسل أي بريد ولا يُكتب شيء.",
-                en: "Disabled in this preview: no email is sent and nothing is written.",
-              })}
-            </p>
-          </form>
+            {t({ ar: ". مطلوبة قبل الإطلاق.", en: ". Required before launch." })}
+          </p>
         </div>
       </div>
     </footer>

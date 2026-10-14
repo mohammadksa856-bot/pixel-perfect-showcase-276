@@ -127,14 +127,34 @@ export function SearchResults({
         </Link>
       </div>
     );
+  // WEB-06 (D12): حين تكون الأبحاث والمعرفة كلتاهما «غير متاحة» تُدمجان في رسالة واحدة قصيرة.
+  // الخطأ لا يُدمج: يبقى لكل قسم حالته (خطأ ≠ غير متاح ≠ لا نتائج).
+  const libraryUnavailable =
+    r.groups.research.state === "unavailable" && r.groups.knowledge.state === "unavailable";
   return (
     <div className="divide-y divide-border/60" data-search-state="results">
-      {ORDER.map((k) => (
+      {ORDER.filter((k) => !(libraryUnavailable && LIBRARY_GROUPS.includes(k))).map((k) => (
         <SearchGroup key={k} k={k} g={r.groups[k]} onNavigate={onNavigate} compact={compact} />
       ))}
+      {libraryUnavailable && (
+        <p
+          className="flex items-center gap-2 px-4 py-2.5 text-[12px] text-muted-foreground"
+          data-search-group="library"
+          data-merged-groups="research knowledge"
+          data-group-state="unavailable"
+        >
+          <Library className="size-3.5 shrink-0" />
+          {t({
+            ar: "الأبحاث والمعرفة غير مشمولة في بحث عينة المعاينة.",
+            en: "Research and knowledge are not included in the preview sample search.",
+          })}
+        </p>
+      )}
     </div>
   );
 }
+
+const LIBRARY_GROUPS: readonly GroupKey[] = ["research", "knowledge"];
 
 function SearchGroup({
   k,

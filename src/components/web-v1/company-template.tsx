@@ -6,7 +6,16 @@ import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
 import type { CompanyPreview, Topic } from "@/lib/engine/company-preview";
 import type { PeerTable } from "@/lib/engine/peer-comparison";
-import { COMPANY_GROUPS, COVERAGE_TAB, TOPIC_DESIGN, type CompanyTab } from "@/lib/web-v1/model";
+import {
+  COMPANY_GROUPS,
+  COVERAGE_TAB,
+  FROZEN_SAMPLE_TOPIC_REASON_EN,
+  TOPIC_DESIGN,
+  type CompanyTab,
+} from "@/lib/web-v1/model";
+import { sectorSlug } from "@/lib/web-v1/catalog";
+import { TABLE_DEFAULTS } from "@/lib/web-v1/markets";
+import { TaxonomyLabel } from "./display-label";
 import { FactoryPanel } from "./factory-panel";
 import { FinancialExplorer, KeyFigures } from "./financial-explorer";
 import { Pill, READINESS_META, TONE_BAR, TOPIC_META, WITHHELD_META } from "./primitives";
@@ -17,6 +26,9 @@ const KIND = {
   bank: { ar: "بنك", en: "Bank" },
   insurer: { ar: "تأمين", en: "Insurer" },
 } as const;
+
+/** WEB-06 (D3): أسباب عامة تُعرض في تنبيه الصفحة فقط. */
+const PAGE_LEVEL_REASONS: ReadonlySet<string> = new Set([FROZEN_SAMPLE_TOPIC_REASON_EN]);
 
 export function topicGroup(ordinal: number): CompanyTab {
   return COMPANY_GROUPS.find((g) => (g.topics as readonly number[]).includes(ordinal))!.id;
@@ -42,9 +54,34 @@ export function CompanyHero({ p }: { p: CompanyPreview }) {
             {t({ ar: "السوق السعودي", en: "Saudi market" })}
           </Link>
           <ChevronLeft className="size-3.5 ltr:rotate-180" />
-          <span>{c.sector ?? "—"}</span>
+          {/* WEB-06 (D9): القطاع والصناعة من صفحة المحرك نفسها، إلى صفحة القطاع في المعاينة (والصناعة مصفّاة). */}
+          {c.sector ? (
+            <Link
+              to="/preview/web-v1/sectors/$slug"
+              params={{ slug: sectorSlug(c.sector) }}
+              search={TABLE_DEFAULTS}
+              className="hover:text-night-foreground"
+              data-crumb-sector={sectorSlug(c.sector)}
+            >
+              <TaxonomyLabel raw={c.sector} />
+            </Link>
+          ) : (
+            <span>—</span>
+          )}
           <ChevronLeft className="size-3.5 ltr:rotate-180" />
-          <span>{c.industry ?? "—"}</span>
+          {c.sector && c.industry ? (
+            <Link
+              to="/preview/web-v1/sectors/$slug"
+              params={{ slug: sectorSlug(c.sector) }}
+              search={{ ...TABLE_DEFAULTS, industry: c.industry }}
+              className="hover:text-night-foreground"
+              data-crumb-industry={c.industry}
+            >
+              <TaxonomyLabel raw={c.industry} />
+            </Link>
+          ) : (
+            <span>{c.industry ?? "—"}</span>
+          )}
         </nav>
         <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="min-w-0">
@@ -59,7 +96,9 @@ export function CompanyHero({ p }: { p: CompanyPreview }) {
                 {t(KIND[p.kind])}
               </span>
               {c.exchange && (
-                <span className="text-[12px] text-night-foreground/60">{c.exchange}</span>
+                <span className="text-[12px] text-night-foreground/70">
+                  <TaxonomyLabel raw={c.exchange} />
+                </span>
               )}
             </div>
             <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-[2rem]" dir="auto">
@@ -228,6 +267,18 @@ export function GroupView({
   return (
     <div data-group={g.id}>
       <PreviewContainer className="py-8">
+        {p.dataNotices.length > 0 && (
+          // WEB-06 (D3): تنبيه واحد للصفحة بدل تكرار الرسالة العامة داخل كل موضوع.
+          <div
+            className="mb-6 rounded-xl border border-status-warn/40 bg-status-warn/5 px-4 py-3 text-[13px] leading-6"
+            role="note"
+            data-page-notice
+          >
+            {p.dataNotices.map((n) => (
+              <p key={n.en}>{t(n)}</p>
+            ))}
+          </div>
+        )}
         <KeyFigures figures={p.keyFigures} />
         <div className="mt-8 grid gap-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
           <aside className="hidden lg:block" data-topic-rail>
@@ -301,6 +352,7 @@ export function GroupView({
                   preview={p}
                   peers={peers}
                   before={<FinancialExplorer views={p.statements} kind={p.kind} />}
+                  hideReasons={PAGE_LEVEL_REASONS}
                   collapse={{
                     ar: "كل بنود آخر سنة مالية وآخر ربع (تفصيلي)",
                     en: "All line items for the latest fiscal year and quarter (detail)",
@@ -313,15 +365,9 @@ export function GroupView({
                   preview={p}
                   peers={peers}
                   design={TOPIC_DESIGN[x.ordinal]}
+                  hideReasons={PAGE_LEVEL_REASONS}
                 />
               ),
-            )}
-            {p.dataNotices.length > 0 && (
-              <div className="mt-10 rounded-xl border border-status-warn/30 bg-status-warn/5 p-4 text-[12px] leading-6">
-                {p.dataNotices.map((n) => (
-                  <p key={n.en}>{t(n)}</p>
-                ))}
-              </div>
             )}
           </div>
         </div>

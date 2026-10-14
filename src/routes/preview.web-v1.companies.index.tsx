@@ -15,6 +15,7 @@ import {
   type DirectoryQuery,
 } from "@/lib/web-v1/catalog";
 import { queryText } from "@/lib/web-v1/catalog";
+import { TaxonomyLabel } from "@/components/web-v1/display-label";
 import { useI18n, type LocalizedText } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
@@ -130,7 +131,7 @@ function Directory() {
             count={f.sector[s]}
             data={`sector-${s}`}
           >
-            <span dir="auto">{s}</span>
+            <TaxonomyLabel raw={s} />
           </Chip>
         ))}
         <Chip

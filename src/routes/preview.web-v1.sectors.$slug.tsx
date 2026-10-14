@@ -10,6 +10,8 @@ import {
   type TableQuery,
   tableSearch,
 } from "@/lib/web-v1/markets";
+import { TaxonomyLabel } from "@/components/web-v1/display-label";
+import { labelText } from "@/lib/web-v1/display-labels";
 import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
@@ -43,7 +45,7 @@ function SectorPage() {
   const { slug } = Route.useParams();
   const query = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const found = findSector(entries, slug);
   const crumbs = [
     { label: { ar: "الرئيسية", en: "Home" }, to: "/preview/web-v1" },
@@ -94,8 +96,11 @@ function SectorPage() {
   return (
     <WebV1Shell>
       <PageHeader
-        crumbs={[...crumbs, { label: { ar: name, en: name } }]}
-        title={name}
+        crumbs={[
+          ...crumbs,
+          { label: isSector ? { ar: labelText(name, "ar"), en: name } : { ar: name, en: name } },
+        ]}
+        title={isSector ? labelText(name, locale) : name}
         titleDir={isSector ? "auto" : undefined}
         description={t(
           isSector
@@ -148,7 +153,11 @@ function SectorPage() {
                   data-industry={i.name}
                 >
                   <span dir="auto">
-                    {i.name === "all" ? t({ ar: "كل الصناعات", en: "All industries" }) : i.name}
+                    {i.name === "all" ? (
+                      t({ ar: "كل الصناعات", en: "All industries" })
+                    ) : (
+                      <TaxonomyLabel raw={i.name} />
+                    )}
                   </span>
                   <span className="num opacity-70">{iso(i.count)}</span>
                 </button>

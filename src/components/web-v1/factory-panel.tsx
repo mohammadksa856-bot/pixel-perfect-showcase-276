@@ -108,6 +108,19 @@ export function FactoryPanel({
               </span>
             )}
           </div>
+          {!assessed && (
+            <div className="mt-4 space-y-1.5" data-not-assessed-summary>
+              <p className="text-[15px] font-bold">
+                {t({ ar: "لم تُقيّم البيانات بعد", en: "The data has not been assessed yet" })}
+              </p>
+              <p className="text-[12px] leading-6 text-muted-foreground">
+                {t({
+                  ar: `تصبح الشركة «جاهزة» حين تبلغ التغطية الموزونة ${r.target}% أو أكثر، وتبلغ كل فئة حدّها الخاص، وتُقيَّم كل البوابات الصارمة وتنجح، ويعتمد مراجعٌ التقييم. لم يتحقق أي من ذلك بعد لأن التقييم لم يُشغَّل.`,
+                  en: `A company becomes “ready” when weighted coverage reaches ${r.target}% or more, every category meets its own threshold, every hard gate is evaluated and passes, and a reviewer approves the assessment. None of this has been checked yet because the assessment has not run.`,
+                })}
+              </p>
+            </div>
+          )}
           {r.score !== null && (
             <div className="mt-4">
               <ScoreBar value={r.score / 100} threshold={r.target / 100} tone="warn" />
@@ -183,6 +196,14 @@ export function FactoryPanel({
               ))}
           </div>
         </div>
+        {!assessed && (
+          <p className="mb-2 text-[12px] text-muted-foreground" data-map-shared-state>
+            {t({
+              ar: "الحالة واحدة لكل الفئات: لم تُقيَّم. افتح أي فئة لتعريفها من العقد: الوزن والحد الأدنى والمصادر والبوابات.",
+              en: "All categories share one state: not assessed. Open any category for its contract definition: weight, minimum, sources and gates.",
+            })}
+          </p>
+        )}
         <ol className="grid grid-cols-3 gap-1.5 sm:grid-cols-6 lg:grid-cols-9" data-category-map>
           {factory.categories.map((c) => {
             const meta = FACTORY_META[c.status];
@@ -191,12 +212,19 @@ export function FactoryPanel({
               <li key={c.key}>
                 <a
                   href={`#cat-${c.key}`}
-                  className="flex h-full flex-col justify-between rounded-lg border border-border/70 bg-card p-2 hover:border-brand/50"
+                  onClick={() => openCategory(c.key)}
+                  className="flex h-full flex-col justify-between rounded-lg border border-border/70 bg-card p-2 hover:border-brand/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                   title={t(meta.label)}
+                  aria-label={`${iso(c.ordinal)} ${t(c.title)} · ${t(meta.label)}`}
                 >
                   <span className="flex items-center justify-between gap-1">
                     <span className="num text-[10px] text-muted-foreground">{iso(c.ordinal)}</span>
-                    <span className={cn("size-2 rounded-full", TONE_BAR[meta.tone])} />
+                    {assessed && (
+                      <span
+                        className={cn("size-2 rounded-full", TONE_BAR[meta.tone])}
+                        aria-hidden
+                      />
+                    )}
                   </span>
                   <span className="mt-1 line-clamp-2 text-[11px] font-medium leading-4">
                     {t(c.title)}
@@ -210,7 +238,7 @@ export function FactoryPanel({
                         {" ≥ "}
                         {((c.threshold ?? s?.threshold ?? 0) * 100).toFixed(0)}%
                       </>
-                    ) : (
+                    ) : !assessed ? null : (
                       <span dir="auto">{t(meta.label)}</span>
                     )}
                   </span>
@@ -221,9 +249,19 @@ export function FactoryPanel({
         </ol>
       </div>
 
-      {/* الجدول التفصيلي */}
-      <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-        <div className="hidden grid-cols-[2rem_minmax(11rem,1.5fr)_3.5rem_4rem_minmax(8rem,1.2fr)_8rem_6rem_7.5rem] items-center gap-3 border-b border-border px-4 py-2.5 text-[11px] text-muted-foreground lg:grid">
+      {/* الجدول التفصيلي — مطويّ افتراضيًا حين لا تقييم (D7)، حتى لا تتكرر الحالة نفسها في الخريطة والجدول */}
+      <details
+        className="group/table overflow-hidden rounded-2xl border border-border/70 bg-card"
+        open={assessed || openKey !== undefined}
+        data-category-table
+      >
+        <summary className="cursor-pointer px-4 py-3 text-[13px] font-semibold hover:bg-muted/40 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand">
+          {t({
+            ar: "الجدول التفصيلي للفئات الـ18 (الوزن، الحد، الحقول، البوابات، المصادر)",
+            en: "Detailed table of the 18 categories (weight, minimum, fields, gates, sources)",
+          })}
+        </summary>
+        <div className="hidden grid-cols-[2rem_minmax(11rem,1.5fr)_3.5rem_4rem_minmax(8rem,1.2fr)_8rem_6rem_7.5rem] items-center gap-3 border-y border-border px-4 py-2.5 text-[11px] text-muted-foreground lg:grid">
           <span>#</span>
           <span>{t({ ar: "الفئة", en: "Category" })}</span>
           <span>{t({ ar: "الوزن", en: "Weight" })}</span>
@@ -240,7 +278,7 @@ export function FactoryPanel({
             <CategoryRow key={c.key} c={c} open={c.key === firstFailing} />
           ))}
         </ol>
-      </div>
+      </details>
       <p className="text-[12px] leading-6 text-muted-foreground">
         {assessed
           ? t({
@@ -254,6 +292,15 @@ export function FactoryPanel({
       </p>
     </div>
   );
+}
+
+/** فتح الجدول التفصيلي وتفاصيل الفئة عند الانتقال من الخريطة (لا يعتمد على التمرير وحده). */
+function openCategory(key: string) {
+  if (typeof document === "undefined") return;
+  const table = document.querySelector<HTMLDetailsElement>("[data-category-table]");
+  if (table) table.open = true;
+  const row = document.getElementById(`cat-${key}`)?.querySelector("details");
+  if (row) row.open = true;
 }
 
 function CategoryRow({ c, open }: { c: FactoryCategory; open: boolean }) {

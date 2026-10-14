@@ -63,6 +63,13 @@ export type GroupId = (typeof COMPANY_GROUPS)[number]["id"];
 export type CompanyTab = GroupId | "coverage";
 export const COMPANY_TABS: readonly CompanyTab[] = [...COMPANY_GROUPS.map((g) => g.id), "coverage"];
 
+/**
+ * WEB-06 (D3): نص السبب العام الذي تضيفه المعاينة المجمّدة لكل موضوع (design-fixtures.server.ts).
+ * يُعرض مرة واحدة على مستوى الصفحة ويُخفى من الموضوعات. يُطابق بالنص الإنجليزي حرفيًا؛ اختبار يتحقق من التطابق.
+ */
+export const FROZEN_SAMPLE_TOPIC_REASON_EN =
+  "Frozen development sample; no approved assessment or independent financial verification.";
+
 export const COVERAGE_TAB = {
   title: { ar: "تغطية البيانات", en: "Data coverage" },
   question: {

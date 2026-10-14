@@ -184,8 +184,8 @@ export function queryTable(entries: readonly DirectoryEntry[], query: TableQuery
 export const MARKET_COPY = {
   saudi: { ar: "السوق المالية السعودية", en: "Saudi Exchange" },
   sectorSource: {
-    ar: "القطاع والصناعة من صفحة الشركة في المحرك، بالتسمية الإنجليزية كما وردت. تصنيف السوق المالية الرسمي غير متوفر في المصادر الحالية، ولا نخمّنه ولا نترجمه آليًا.",
-    en: "Sector and industry come from the company's engine page, with the engine's English labels as given. The exchange's official classification is not in the current sources; we do not guess or machine-translate it.",
+    ar: "القطاع والصناعة من صفحة الشركة في المحرك. تُعرض بالعربية من قاموس عرض قابل للمراجعة، والتسمية الأصلية في التلميح؛ ما لا ترجمة معتمدة له يبقى بلغته. تصنيف السوق المالية الرسمي غير متوفر في المصادر الحالية، ولا نخمّنه ولا نترجمه آليًا.",
+    en: "Sector and industry come from the company's engine page, with the engine's labels as given. The exchange's official classification is not in the current sources; we do not guess or machine-translate it.",
   },
   noPrices: {
     ar: "لا أسعار ولا قيم مؤشرات ولا قيم سوقية: لا مصدر أسعار موثق في هذه المعاينة.",

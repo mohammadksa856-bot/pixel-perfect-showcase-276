@@ -9,6 +9,7 @@ import {
   UNCLASSIFIED,
   tableSearch,
 } from "@/lib/web-v1/markets";
+import { TaxonomyLabel } from "@/components/web-v1/display-label";
 import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
@@ -164,11 +165,16 @@ function SaudiMarket() {
                 data-sector-card={x.slug}
               >
                 <div className="min-w-0">
-                  <div className="truncate text-[14px] font-bold" dir="auto">
-                    {x.name}
+                  <div className="text-[14px] font-bold break-words">
+                    <TaxonomyLabel raw={x.name} />
                   </div>
-                  <div className="text-[11px] text-muted-foreground" dir="auto">
-                    {x.industries.map((i) => i.name).join(" · ")}
+                  <div className="text-[11px] text-muted-foreground">
+                    {x.industries.map((i, n) => (
+                      <span key={i.name}>
+                        {n > 0 && " · "}
+                        <TaxonomyLabel raw={i.name} />
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <span className="num shrink-0 rounded-lg bg-muted px-2 py-1 text-[12px] font-semibold">

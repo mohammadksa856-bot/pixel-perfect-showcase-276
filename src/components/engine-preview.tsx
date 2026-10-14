@@ -17,6 +17,8 @@ import type {
 import type { PeerTable } from "@/lib/engine/peer-comparison";
 import type { Readiness, ReadinessState } from "@/lib/engine/readiness";
 import { iso } from "@/lib/bidi";
+import { safeSourceUrl } from "@/lib/engine/peer-comparison";
+import { LanguageMark } from "@/components/web-v1/display-label";
 
 /**
  * مكونات معاينة صفحة الشركة من المحرك (P02). تعرض نموذج العرض كما بُني على الخادم:
@@ -351,19 +353,42 @@ function BlockView({
     case "facts":
       return (
         <Panel>
-          <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            {block.facts.map((f) => (
-              <div key={f.key} data-fact={f.key}>
-                <dt className="text-[11px] text-muted-foreground">{t(f.label)}</dt>
-                <dd className="mt-0.5 text-sm leading-6" dir="auto">
-                  {f.text}
-                </dd>
-                <dd className="text-[10px] text-muted-foreground">
-                  {f.asOf && t({ ar: `كما في ${iso(f.asOf)} · `, en: `As of ${f.asOf} · ` })}
-                  <SourceLink href={f.sourceUrl} />
-                </dd>
-              </div>
-            ))}
+          {/* WEB-06 (D1): كل خلية تلتف داخل عمودها؛ الرابط الطويل يبقى كاملًا قابلًا للنقر دون تداخل. */}
+          <dl className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+            {block.facts.map((f) => {
+              const url = /^https?:\/\//i.test(f.text) ? safeSourceUrl(f.text) : null;
+              return (
+                <div key={f.key} className="min-w-0" data-fact={f.key}>
+                  <dt className="text-[11px] text-muted-foreground">{t(f.label)}</dt>
+                  <dd
+                    className="mt-0.5 min-w-0 text-sm leading-6 [overflow-wrap:anywhere]"
+                    dir="auto"
+                  >
+                    {url ? (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-brand hover:underline"
+                        dir="ltr"
+                        data-fact-link
+                      >
+                        {f.text}
+                      </a>
+                    ) : (
+                      <>
+                        {f.text}
+                        <LanguageMark text={f.text} />
+                      </>
+                    )}
+                  </dd>
+                  <dd className="text-[10px] text-muted-foreground">
+                    {f.asOf && t({ ar: `كما في ${iso(f.asOf)} · `, en: `As of ${f.asOf} · ` })}
+                    <SourceLink href={f.sourceUrl} />
+                  </dd>
+                </div>
+              );
+            })}
           </dl>
         </Panel>
       );
@@ -375,7 +400,10 @@ function BlockView({
             {block.rows.map((r) => (
               <li key={r.segment} data-segment>
                 <div className="flex justify-between gap-3 text-sm">
-                  <span dir="auto">{r.segment}</span>
+                  <span dir="auto" className="min-w-0 [overflow-wrap:anywhere]">
+                    {r.segment}
+                    <LanguageMark text={r.segment} />
+                  </span>
                   <span className="font-semibold tabular-nums">{t(r.display)}</span>
                 </div>
                 <div className="mt-1 h-1.5 rounded-full bg-muted">
@@ -449,29 +477,41 @@ function BlockView({
         </Panel>
       );
     case "actions":
+      // WEB-06 (D2): صف لكل إجراء بدل جدول ضيق: الوصف كاملًا، ثم المبلغ (بعملته كما في نموذج العرض)
+      // والتاريخ والمصدر كحقول منفصلة بعناوين. لا قص ولا تغيير في القيم.
       return (
         <Panel title={t({ ar: "إجراءات الشركة", en: "Corporate actions" })}>
-          <DataTable
-            headers={[
-              t({ ar: "الإجراء", en: "Action" }),
-              t({ ar: "المبلغ", en: "Amount" }),
-              t({ ar: "التاريخ", en: "Date" }),
-              "",
-            ]}
-          >
+          <ul className="divide-y divide-border/60" data-actions>
             {block.rows.map((r, i) => (
-              <tr key={`${r.title}-${i}`} className="border-b border-border/60">
-                <td className="py-2.5 pe-3" dir="auto">
+              <li key={`${r.title}-${i}`} className="py-3" data-action>
+                <p className="text-sm leading-6 [overflow-wrap:anywhere]" dir="auto">
                   {r.title}
-                </td>
-                <td className="py-2.5 pe-3 tabular-nums">{r.amount ? t(r.amount) : "—"}</td>
-                <td className="py-2.5 pe-3 text-[12px] text-muted-foreground">{r.date ?? "—"}</td>
-                <td className="py-2.5 text-[12px]">
-                  <SourceLink href={r.sourceUrl} />
-                </td>
-              </tr>
+                  <LanguageMark text={r.title} />
+                </p>
+                <dl className="mt-1.5 flex flex-wrap gap-x-5 gap-y-1 text-[12px]">
+                  <div className="flex gap-1.5" data-action-amount>
+                    <dt className="text-muted-foreground">{t({ ar: "المبلغ", en: "Amount" })}</dt>
+                    <dd
+                      className={r.amount ? "font-semibold tabular-nums" : "text-muted-foreground"}
+                    >
+                      {r.amount
+                        ? t(r.amount)
+                        : t({ ar: "لا مبلغ في المصدر", en: "No amount in source" })}
+                    </dd>
+                  </div>
+                  <div className="flex gap-1.5" data-action-date>
+                    <dt className="text-muted-foreground">{t({ ar: "التاريخ", en: "Date" })}</dt>
+                    <dd className="tabular-nums" dir="ltr">
+                      {r.date ?? t({ ar: "لا تاريخ في المصدر", en: "No date in source" })}
+                    </dd>
+                  </div>
+                  <dd>
+                    <SourceLink href={r.sourceUrl} />
+                  </dd>
+                </dl>
+              </li>
             ))}
-          </DataTable>
+          </ul>
         </Panel>
       );
     case "documents":
@@ -574,6 +614,7 @@ export function TopicSection({
   before,
   collapse,
   design,
+  hideReasons,
 }: {
   topic: Topic;
   preview: CompanyPreview;
@@ -584,8 +625,14 @@ export function TopicSection({
   collapse?: LocalizedText | undefined;
   /** WEB-03: وصف الواجهة المخصصة وما تحتاجه، يظهر حين لا توجد بيانات (بلا أي قيمة). */
   design?: { component: LocalizedText; needs: LocalizedText } | undefined;
+  /**
+   * WEB-06 (D3): أسباب عامة معروضة مرة واحدة على مستوى الصفحة (تُطابق بنصها الإنجليزي)، فلا تتكرر في كل
+   * موضوع. أسباب الموضوع الخاصة (عدم القياس، الحجب، النقص) تبقى.
+   */
+  hideReasons?: ReadonlySet<string> | undefined;
 }) {
   const { t } = useI18n();
+  const reasons = hideReasons ? topic.reasons.filter((r) => !hideReasons.has(r.en)) : topic.reasons;
   return (
     <section
       id={`topic-${topic.ordinal}`}
@@ -608,9 +655,9 @@ export function TopicSection({
           </span>
         )}
       </div>
-      {topic.reasons.length > 0 && (
+      {reasons.length > 0 && (
         <ul className="mb-4 space-y-1 text-[12px] text-muted-foreground" data-reasons>
-          {topic.reasons.map((r) => (
+          {reasons.map((r) => (
             <li key={r.en}>• {t(r)}</li>
           ))}
         </ul>

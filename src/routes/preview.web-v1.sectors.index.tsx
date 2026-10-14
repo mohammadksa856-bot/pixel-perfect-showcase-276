@@ -10,6 +10,8 @@ import {
   UNCLASSIFIED,
   tableSearch,
 } from "@/lib/web-v1/markets";
+import { TaxonomyLabel } from "@/components/web-v1/display-label";
+import { labelText, labelVariants } from "@/lib/web-v1/display-labels";
 import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
 import { PreviewContainer, WebV1Shell } from "@/components/web-v1/shell";
@@ -37,13 +39,15 @@ export const Route = createFileRoute("/preview/web-v1/sectors/")({
 function SectorsIndex() {
   const { entries, source } = Route.useLoaderData();
   const { q: initial } = Route.useSearch();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [q, setQ] = useState(initial);
   const idx = sectorIndex(entries);
   const nq = normalize(q);
   const shown = nq
     ? idx.sectors.filter((s) =>
-        [s.name, ...s.industries.map((i) => i.name)].some((n) => normalize(n).includes(nq)),
+        [s.name, ...s.industries.map((i) => i.name)]
+          .flatMap(labelVariants)
+          .some((n) => normalize(n).includes(nq)),
       )
     : idx.sectors;
   return (
@@ -88,7 +92,7 @@ function SectorsIndex() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={t({
-              ar: "ابحث باسم القطاع أو الصناعة كما في المصدر (بالإنجليزية)",
+              ar: "ابحث باسم القطاع أو الصناعة بالعربية أو كما في المصدر",
               en: "Search sector or industry as named in the source",
             })}
             className="h-full w-full min-w-0 bg-transparent text-[13px] outline-none placeholder:text-muted-foreground"
@@ -148,18 +152,24 @@ function SectorsIndex() {
                 <tbody>
                   {shown.map((s) => (
                     <tr key={s.slug} className="border-t border-border/60" data-sector-row={s.slug}>
-                      <td className="px-3 py-3 font-bold" dir="auto">
+                      <td className="px-3 py-3 font-bold">
                         <Link
                           to="/preview/web-v1/sectors/$slug"
                           params={{ slug: s.slug }}
                           search={tableSearch()}
                           className="hover:text-brand"
                         >
-                          {s.name}
+                          <TaxonomyLabel raw={s.name} />
                         </Link>
                       </td>
-                      <td className="px-3 py-3 text-muted-foreground" dir="auto">
-                        {s.industries.map((i) => `${i.name} (${i.count})`).join(" · ")}
+                      <td className="px-3 py-3 text-muted-foreground">
+                        {s.industries.map((i, n) => (
+                          <span key={i.name}>
+                            {n > 0 && " · "}
+                            <TaxonomyLabel raw={i.name} />{" "}
+                            <span className="num">({iso(i.count)})</span>
+                          </span>
+                        ))}
                       </td>
                       <td className="num px-3 py-3 font-semibold">{iso(s.count)}</td>
                       <td className="num px-3 py-3">{iso(s.main)}</td>
@@ -170,7 +180,7 @@ function SectorsIndex() {
                           to="/preview/web-v1/sectors/$slug"
                           params={{ slug: s.slug }}
                           search={tableSearch()}
-                          aria-label={s.name}
+                          aria-label={labelText(s.name, locale)}
                         >
                           <ArrowUpRight className="size-4 text-brand" />
                         </Link>
@@ -192,15 +202,20 @@ function SectorsIndex() {
                     data-sector-card={s.slug}
                   >
                     <div className="flex items-center justify-between gap-3">
-                      <span className="text-[15px] font-bold" dir="auto">
-                        {s.name}
+                      <span className="text-[15px] font-bold">
+                        <TaxonomyLabel raw={s.name} />
                       </span>
                       <span className="num rounded-lg bg-muted px-2 py-0.5 text-[12px] font-semibold">
                         {iso(s.count)}
                       </span>
                     </div>
-                    <div className="mt-1 text-[12px] text-muted-foreground" dir="auto">
-                      {s.industries.map((i) => i.name).join(" · ")}
+                    <div className="mt-1 text-[12px] text-muted-foreground">
+                      {s.industries.map((i, n) => (
+                        <span key={i.name}>
+                          {n > 0 && " · "}
+                          <TaxonomyLabel raw={i.name} />
+                        </span>
+                      ))}
                     </div>
                     <div className="mt-2 text-[11px] text-muted-foreground">
                       {t({

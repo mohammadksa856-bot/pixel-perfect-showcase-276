@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, FileCheck2, Search, ShieldCheck, Target } from "lucide-react";
 import { getCompanyPreview, PREVIEW_COMPANIES } from "@/lib/engine/company-preview.functions";
@@ -6,6 +7,7 @@ import { getWebV1Enabled } from "@/lib/web-v1/flag.functions";
 import { getListedSummary } from "@/lib/web-v1/catalog.functions";
 import { DIRECTORY_DEFAULT_SEARCH, SEARCH_COPY } from "@/lib/web-v1/catalog";
 import { COMPANY_GROUPS } from "@/lib/web-v1/model";
+import { labelText } from "@/lib/web-v1/display-labels";
 import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
@@ -172,10 +174,17 @@ function ExploreMarket({
           <h2 className="text-xl font-bold tracking-tight">
             {t({ ar: "دليل الشركات", en: "Company directory" })}
           </h2>
-          <p className="mt-1 text-[13px] text-muted-foreground">
+          {/* WEB-06 (D8): شرح مختصر على الجوال، والكامل على الشاشات الأوسع. */}
+          <p className="mt-1 text-[13px] text-muted-foreground max-sm:hidden">
             {t({
               ar: "كل الشركات المدرجة في السوق المالية السعودية، بالاسم العربي والرمز والسوق. العدد من قائمة السوق المالية، دون أسعار أو أرقام مالية.",
               en: "Every company listed on the Saudi Exchange, by Arabic name, ticker and market. Counts from the exchange list, with no prices or financial figures.",
+            })}
+          </p>
+          <p className="mt-1 text-[13px] text-muted-foreground sm:hidden" data-mobile-short>
+            {t({
+              ar: "كل الشركات المدرجة، دون أسعار.",
+              en: "Every listed company, no prices.",
             })}
           </p>
         </div>
@@ -234,23 +243,49 @@ function Principles() {
       },
     },
   ];
+  // WEB-06 (D8): على الجوال تظهر العناوين فقط، والشرح خلف زر واحد (لا يُحذف شيء).
+  const [open, setOpen] = useState(false);
   return (
-    <PreviewContainer className="py-12">
-      <div className="grid gap-4 md:grid-cols-3">
+    <PreviewContainer className="py-12 max-sm:py-8" data-principles>
+      <div className="grid gap-4 max-sm:gap-2 md:grid-cols-3">
         {items.map((it) => (
-          <div key={it.title.en} className="rounded-2xl border border-border/70 bg-card p-5">
-            <it.icon className="size-5 text-brand" />
-            <h3 className="mt-3 text-[15px] font-bold">{t(it.title)}</h3>
-            <p className="mt-1.5 text-[13px] leading-6 text-muted-foreground">{t(it.body)}</p>
+          <div
+            key={it.title.en}
+            className="rounded-2xl border border-border/70 bg-card p-5 max-sm:p-3.5"
+          >
+            <div className="flex items-center gap-3 sm:block">
+              <it.icon className="size-5 shrink-0 text-brand" />
+              <h3 className="text-[15px] font-bold sm:mt-3">{t(it.title)}</h3>
+            </div>
+            <p
+              className={cn(
+                "mt-1.5 text-[13px] leading-6 text-muted-foreground",
+                !open && "max-sm:hidden",
+              )}
+              data-principle-body
+            >
+              {t(it.body)}
+            </p>
           </div>
         ))}
       </div>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="mt-2 text-[13px] font-medium text-brand underline-offset-4 hover:underline sm:hidden"
+        data-principles-toggle
+      >
+        {open
+          ? t({ ar: "إخفاء الشرح", en: "Hide the explanation" })
+          : t({ ar: "عرض الشرح", en: "Show the explanation" })}
+      </button>
     </PreviewContainer>
   );
 }
 
 function Companies({ companies }: { companies: Card[] }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   return (
     <PreviewContainer className="pb-12">
       <div className="mb-5 flex items-end justify-between gap-4">
@@ -289,7 +324,7 @@ function Companies({ companies }: { companies: Card[] }) {
                 <div className="text-[16px] font-bold">{t(c.name)}</div>
                 <div className="mt-0.5 text-[12px] text-muted-foreground">
                   {t(c.kind)}
-                  {c.preview?.industry ? ` · ${c.preview.industry}` : ""}
+                  {c.preview?.industry ? ` · ${labelText(c.preview.industry, locale)}` : ""}
                 </div>
               </div>
               <code dir="ltr" className="rounded-md bg-muted px-2 py-0.5 text-[12px] font-semibold">
@@ -336,6 +371,7 @@ function Companies({ companies }: { companies: Card[] }) {
                   <div
                     className="grid gap-0.5"
                     style={{ gridTemplateColumns: "repeat(18, minmax(0, 1fr))" }}
+                    aria-hidden
                   >
                     {c.preview.topics.map((tp) => (
                       <span
@@ -345,6 +381,7 @@ function Companies({ companies }: { companies: Card[] }) {
                       />
                     ))}
                   </div>
+                  <TopicStripSummary topics={c.preview.topics} />
                 </div>
               </>
             ) : (
@@ -360,6 +397,23 @@ function Companies({ companies }: { companies: Card[] }) {
       </div>
       <Legend />
     </PreviewContainer>
+  );
+}
+
+/** WEB-06 (D11): مكافئ نصي لشريط الموضوعات الملوّن (الحالة لا تعتمد على اللون وحده). */
+function TopicStripSummary({ topics }: { topics: { status: keyof typeof TOPIC_META }[] }) {
+  const { t } = useI18n();
+  const counts = topics.reduce<Partial<Record<keyof typeof TOPIC_META, number>>>((acc, x) => {
+    acc[x.status] = (acc[x.status] ?? 0) + 1;
+    return acc;
+  }, {});
+  return (
+    <p className="mt-1.5 text-[11px] text-muted-foreground" data-topic-strip-summary>
+      {(Object.keys(TOPIC_META) as (keyof typeof TOPIC_META)[])
+        .filter((k) => counts[k])
+        .map((k) => `${t(TOPIC_META[k].label)} ${iso(counts[k]!)}`)
+        .join(" · ")}
+    </p>
   );
 }
 
@@ -384,8 +438,10 @@ function PageAnatomy({
 }) {
   const { t } = useI18n();
   const title = (o: number) => topics.find((x) => x.ordinal === o)?.title;
+  // WEB-06 (D8): على الجوال تظهر المجموعات الخمس وعدد موضوعاتها، والقائمة الكاملة خلف زر واحد.
+  const [open, setOpen] = useState(false);
   return (
-    <section className="border-y border-border/60 bg-card/40">
+    <section className="border-y border-border/60 bg-card/40" data-page-anatomy>
       <PreviewContainer className="py-12">
         <h2 className="text-xl font-bold tracking-tight">
           {t({
@@ -405,7 +461,18 @@ function PageAnatomy({
               <div className="num text-[11px] text-brand">{iso(i + 1)}</div>
               <h3 className="mt-1 text-[14px] font-bold">{t(g.title)}</h3>
               <p className="mt-1 text-[12px] leading-5 text-muted-foreground">{t(g.question)}</p>
-              <ul className="mt-3 space-y-1 text-[12px]">
+              <p
+                className={cn("mt-2 text-[11px] text-muted-foreground sm:hidden", open && "hidden")}
+              >
+                {t({
+                  ar: `${iso(g.topics.length)} موضوعات`,
+                  en: `${g.topics.length} topics`,
+                })}
+              </p>
+              <ul
+                className={cn("mt-3 space-y-1 text-[12px]", !open && "max-sm:hidden")}
+                data-group-topics
+              >
                 {(g.topics as readonly number[]).map((o) => (
                   <li key={o} className="flex gap-2">
                     <span className="num w-4 text-muted-foreground">{o}</span>
@@ -416,6 +483,17 @@ function PageAnatomy({
             </li>
           ))}
         </ol>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="mt-3 text-[13px] font-medium text-brand underline-offset-4 hover:underline sm:hidden"
+          data-anatomy-toggle
+        >
+          {open
+            ? t({ ar: "إخفاء الموضوعات", en: "Hide the topics" })
+            : t({ ar: "عرض الموضوعات الثمانية عشر", en: "Show the eighteen topics" })}
+        </button>
       </PreviewContainer>
     </section>
   );
@@ -450,13 +528,13 @@ function Browse() {
       <h2 className="text-xl font-bold tracking-tight">
         {t({ ar: "الأسواق والقطاعات والمكتبة", en: "Markets, sectors and library" })}
       </h2>
-      <p className="mb-5 mt-1 text-[13px] text-muted-foreground">
+      <p className="mb-5 mt-1 text-[13px] text-muted-foreground max-sm:hidden">
         {t({
           ar: "كلها تفتح صفحات المعاينة الجديدة. الأبحاث والمعرفة من محتوى الموقع المنشور، وتظهر حالة صريحة حين لا يتوفر.",
           en: "All open the new preview pages. Research and knowledge come from the published site content, with an explicit state when it is unavailable.",
         })}
       </p>
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 max-sm:mt-4 lg:grid-cols-4">
         {tiles.map((x) => (
           <Link
             key={x.to}

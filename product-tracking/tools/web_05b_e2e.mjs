@@ -352,7 +352,7 @@ await run(
 );
 
 await run(
-  "footer: every link stays in the Preview; unbuilt pages are labelled, not linked; newsletter disabled and silent",
+  "footer: every link stays in the Preview; unbuilt pages are plain text; no form (WEB-06 D10)",
   async (page, go) => {
     await go("/preview/web-v1/markets/saudi");
     const hrefs = await page
@@ -360,14 +360,13 @@ await run(
       .evaluateAll((as) => as.map((a) => a.getAttribute("href")));
     assert.ok(hrefs.length >= 5);
     for (const h of hrefs) assert.match(h, /^\/preview\/web-v1\//, `footer link ${h}`);
-    assert.equal(await page.locator("[data-not-in-preview-item]").count(), 7);
-    assert.equal(await page.locator("[data-not-in-preview] a").count(), 0);
-    const form = page.locator('[data-preview-form="newsletter"]');
-    assert.equal(await form.locator("input").isDisabled(), true);
-    assert.equal(await form.locator("button").isDisabled(), true);
-    // even a forced submit sends nothing (the run() guard fails on any write request)
-    await form.evaluate((f) => f.requestSubmit());
-    await page.waitForTimeout(500);
+    // WEB-06 D10: pre-launch pages as plain text; deferred features and the newsletter form removed
+    assert.equal(await page.locator("[data-not-in-preview-item]").count(), 4);
+    assert.equal(
+      await page.locator("[data-not-in-preview] a, [data-not-in-preview] button").count(),
+      0,
+    );
+    assert.equal(await page.locator("footer form, footer input").count(), 0);
     inPreview(page);
     await page.locator('footer [data-footer-link="/preview/web-v1/sectors"]').click();
     await page.waitForURL(/\/preview\/web-v1\/sectors/);
@@ -376,11 +375,10 @@ await run(
 );
 
 await run(
-  "header: Watchlist is visibly unavailable (disabled), not a link to the old page",
+  "header: deferred Watchlist has no entry and no old-site link (WEB-06 D10)",
   async (page, go) => {
     await go("/preview/web-v1/markets");
-    const w = page.locator('[data-unavailable="watchlist"]');
-    assert.equal(await w.isDisabled(), true);
+    assert.equal(await page.locator('[data-unavailable="watchlist"]').count(), 0);
     assert.equal(await page.locator('a[href="/watchlist"]').count(), 0);
   },
 );

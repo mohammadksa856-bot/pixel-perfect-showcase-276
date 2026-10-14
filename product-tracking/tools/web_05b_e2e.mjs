@@ -25,6 +25,19 @@ async function run(name, fn, { mobile = false, locale = "ar" } = {}) {
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e)));
+  // WEB-05B final fixes: the frozen Preview must never call Supabase nor send a write request.
+  const forbidden = [];
+  page.on("request", (r) => {
+    const u = new URL(r.url());
+    if (
+      /supabase/.test(u.host) ||
+      u.pathname.startsWith("/rest/v1") ||
+      u.pathname.startsWith("/auth/v1")
+    )
+      forbidden.push(`${r.method()} ${u.host}${u.pathname}`);
+    if (["POST", "PATCH", "PUT", "DELETE"].includes(r.method()))
+      forbidden.push(`${r.method()} ${u.pathname}`);
+  });
   const go = async (path) => {
     const r = await page.goto(BASE + path, { waitUntil: "networkidle", timeout: 90000 });
     await page.waitForTimeout(300);
@@ -33,6 +46,7 @@ async function run(name, fn, { mobile = false, locale = "ar" } = {}) {
   try {
     await fn(page, go);
     assert.deepEqual(errors, [], "page errors");
+    assert.deepEqual(forbidden, [], "Supabase or write requests");
     results.push(["PASS", name]);
   } catch (e) {
     results.push(["FAIL", name, String(e).split("\n")[0]]);
@@ -52,7 +66,9 @@ const tile = (page, k) =>
   page.locator(`[data-count-tile="${k}"]`).getAttribute("data-value").then(Number);
 const noHorizontalScroll = async (page) =>
   assert.ok(
-    await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1),
+    // مقارنة بعرض الجهاز المضبوط لا بـ innerWidth: محاكي الجوال يوسّع innerWidth مع المحتوى فيخفي التجاوز.
+    (await page.evaluate(() => document.documentElement.scrollWidth)) <=
+      page.viewportSize().width + 1,
     "horizontal overflow",
   );
 /** لا أسعار ولا نسب تغيّر ولا قيم سوقية في صفحات الأسواق والقطاعات. */
@@ -301,6 +317,118 @@ await run(
   },
   { mobile: true },
 );
+
+// ───────── WEB-05B final fixes (Codex FIX REQUIRED at 407d7e8): Preview boundary + mobile cards
+const inPreview = (page) =>
+  assert.match(new URL(page.url()).pathname, /^\/preview\/web-v1(\/|$)/, "left the Preview");
+const banner = (page) => page.locator("[data-preview-banner]").waitFor();
+
+await run(
+  "journey: home → markets → Saudi → Main → Financials → Banks → 1120 → back to the Saudi market, never leaving the Preview",
+  async (page, go) => {
+    await go("/preview/web-v1");
+    await page.locator('header a[href="/preview/web-v1/markets"]').click();
+    await page.waitForURL(/\/preview\/web-v1\/markets$/);
+    await page.locator('[data-market-card="saudi"]').click();
+    await page.waitForURL(/\/markets\/saudi$/);
+    await page.locator('[data-board-card="main"]').click();
+    await page.waitForURL(/\/markets\/saudi\/main/);
+    await page.locator('[data-filter="sector"]').selectOption("financials");
+    await waitCount(page, 2);
+    await page.locator('[data-row="1120"] [data-sector-link="financials"]').click();
+    await page.waitForURL(/\/sectors\/financials/);
+    await page.locator('[data-industry="Banks"]').click();
+    await waitCount(page, 1);
+    await page.locator('[data-open-company="1120"]').first().click();
+    await page.waitForURL(/\/preview\/web-v1\/companies\/1120/);
+    await page.locator("[data-company-hero]").waitFor();
+    await page.locator("[data-crumb-market]").click();
+    await page.waitForURL(/\/preview\/web-v1\/markets\/saudi$/);
+    inPreview(page);
+    await banner(page);
+    assert.equal(await tile(page, "total"), 396);
+    await noPrices(page);
+  },
+);
+
+await run(
+  "footer: every link stays in the Preview; unbuilt pages are labelled, not linked; newsletter disabled and silent",
+  async (page, go) => {
+    await go("/preview/web-v1/markets/saudi");
+    const hrefs = await page
+      .locator("footer a[href]")
+      .evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+    assert.ok(hrefs.length >= 5);
+    for (const h of hrefs) assert.match(h, /^\/preview\/web-v1\//, `footer link ${h}`);
+    assert.equal(await page.locator("[data-not-in-preview-item]").count(), 7);
+    assert.equal(await page.locator("[data-not-in-preview] a").count(), 0);
+    const form = page.locator('[data-preview-form="newsletter"]');
+    assert.equal(await form.locator("input").isDisabled(), true);
+    assert.equal(await form.locator("button").isDisabled(), true);
+    // even a forced submit sends nothing (the run() guard fails on any write request)
+    await form.evaluate((f) => f.requestSubmit());
+    await page.waitForTimeout(500);
+    inPreview(page);
+    await page.locator('footer [data-footer-link="/preview/web-v1/sectors"]').click();
+    await page.waitForURL(/\/preview\/web-v1\/sectors/);
+    await banner(page);
+  },
+);
+
+await run(
+  "header: Watchlist is visibly unavailable (disabled), not a link to the old page",
+  async (page, go) => {
+    await go("/preview/web-v1/markets");
+    const w = page.locator('[data-unavailable="watchlist"]');
+    assert.equal(await w.isDisabled(), true);
+    assert.equal(await page.locator('a[href="/watchlist"]').count(), 0);
+  },
+);
+
+await run("no page-level link leaves the Preview (markets, sectors, company)", async (page, go) => {
+  for (const p of [
+    "/preview/web-v1/markets/saudi",
+    "/preview/web-v1/sectors/financials",
+    "/preview/web-v1/companies/1120?tab=business",
+  ]) {
+    await go(p);
+    const leaving = await page.evaluate(() =>
+      [...document.querySelectorAll("a[href^='/']")]
+        .map((a) => a.getAttribute("href"))
+        .filter((h) => !h.startsWith("/preview/web-v1")),
+    );
+    assert.deepEqual(leaving, [], p);
+  }
+});
+
+for (const locale of ["en", "ar"])
+  await run(
+    `mobile 390px ${locale}: Saudi market company cards fit, full names visible (no truncation)`,
+    async (page, go) => {
+      await go("/preview/web-v1/markets/saudi");
+      await noHorizontalScroll(page);
+      const cards = await page.locator("[data-company-card]").evaluateAll((els) =>
+        els.map((e) => {
+          const r = e.getBoundingClientRect();
+          const name = e.querySelector(".font-bold");
+          return {
+            right: r.right,
+            left: r.left,
+            clipped: name.scrollWidth > name.clientWidth + 1,
+            text: name.textContent,
+          };
+        }),
+      );
+      assert.equal(cards.length, 3);
+      for (const c of cards) {
+        assert.ok(c.left >= 0 && c.right <= 390 + 1, `card outside viewport: ${c.text}`);
+        assert.equal(c.clipped, false, `name clipped: ${c.text}`);
+      }
+      if (locale === "en")
+        assert.ok(cards.some((c) => c.text === "The Company for Cooperative Insurance (Tawuniya)"));
+    },
+    { mobile: true, locale },
+  );
 
 await browser.close();
 for (const r of results) console.log(r.join("  "));

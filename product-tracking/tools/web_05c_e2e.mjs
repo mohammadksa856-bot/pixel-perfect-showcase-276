@@ -48,7 +48,8 @@ async function run(name, fn, { mobile = false, locale = "ar", base = LIVE } = {}
 const attr = (page, sel, a) => page.locator(sel).first().getAttribute(a);
 const noHorizontalScroll = async (page) =>
   assert.ok(
-    await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1),
+    // مقارنة بعرض الجهاز المضبوط لا بـ innerWidth: محاكي الجوال يوسّع innerWidth مع المحتوى فيخفي التجاوز.
+    (await page.evaluate(() => document.documentElement.scrollWidth)) <= page.viewportSize().width + 1,
     "horizontal overflow",
   );
 

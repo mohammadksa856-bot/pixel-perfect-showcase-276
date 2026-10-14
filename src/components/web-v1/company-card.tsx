@@ -19,11 +19,12 @@ export function CompanyCard({ e }: { e: DirectoryEntry }) {
     <>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="truncate text-[15px] font-bold" dir="auto">
+          {/* WEB-05B: الاسم يلتف ولا يُقصّ (لا نص مخفي، ولا تجاوز لعرض الجوال). */}
+          <div className="break-words text-[15px] font-bold [unicode-bidi:plaintext] ltr:text-left rtl:text-right">
             {name}
           </div>
           {alt && alt !== name && (
-            <div className="truncate text-[11px] text-muted-foreground" dir="auto">
+            <div className="break-words text-[11px] text-muted-foreground [unicode-bidi:plaintext] ltr:text-left rtl:text-right">
               {alt}
             </div>
           )}
@@ -75,7 +76,8 @@ export function CompanyCard({ e }: { e: DirectoryEntry }) {
       )}
     </>
   );
-  const cls = "block h-full rounded-2xl border border-border/70 bg-card p-4 transition-colors";
+  const cls =
+    "block h-full min-w-0 rounded-2xl border border-border/70 bg-card p-4 transition-colors";
   return hasPage ? (
     <Link
       to="/preview/web-v1/companies/$symbol"

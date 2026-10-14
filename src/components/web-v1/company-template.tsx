@@ -34,7 +34,11 @@ export function CompanyHero({ p }: { p: CompanyPreview }) {
     <section className="night-panel border-b border-border/40" data-company-hero>
       <PreviewContainer className="py-7 sm:py-9">
         <nav className="flex items-center gap-1 text-[12px] text-night-foreground/55">
-          <Link to="/markets/saudi" className="hover:text-night-foreground">
+          <Link
+            to="/preview/web-v1/markets/saudi"
+            className="hover:text-night-foreground"
+            data-crumb-market
+          >
             {t({ ar: "السوق السعودي", en: "Saudi market" })}
           </Link>
           <ChevronLeft className="size-3.5 ltr:rotate-180" />

@@ -265,7 +265,11 @@ function Companies({ companies }: { companies: Card[] }) {
             })}
           </p>
         </div>
-        <Link to="/companies" className="hidden items-center gap-1 text-[13px] text-brand sm:flex">
+        <Link
+          to="/preview/web-v1/companies"
+          search={DIRECTORY_DEFAULT_SEARCH}
+          className="hidden items-center gap-1 text-[13px] text-brand sm:flex"
+        >
           {t({ ar: "كل الشركات", en: "All companies" })}
           <ArrowLeft className="size-4 ltr:rotate-180" />
         </Link>

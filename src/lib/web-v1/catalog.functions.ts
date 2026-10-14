@@ -84,19 +84,21 @@ export const searchSite = createServerFn({ method: "GET" })
           setTimeout(() => reject(new Error("timeout")), TIMEOUT_MS),
         ),
       ]);
-      const pick = (type: "sector" | "research" | "knowledge", path: string) => {
+      // path = null: لا صفحة معاينة لهذا النوع، فتُعرض النتيجة بلا رابط (لا خروج إلى صفحة قديمة).
+      const pick = (type: "sector" | "research" | "knowledge", path: string | null) => {
         const items = results
           .filter((r) => r.type === type)
           .map((r) => ({
             id: r.slug,
             title: r.title,
             subtitle: r.subtitle,
-            href: `${path}/${r.slug}`,
+            href: path ? `${path}/${r.slug}` : null,
             badge: null,
           }));
         return items.length ? { state: "results" as const, items } : { state: "empty" as const };
       };
-      const liveSectors = pick("sector", "/sectors");
+      // قطاعات محتوى الموقع ليست تصنيف المحرك في صفحات القطاعات بالمعاينة.
+      const liveSectors = pick("sector", null);
       return {
         ...base,
         source: "live_content",

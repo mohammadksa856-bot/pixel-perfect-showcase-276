@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Building2, Globe2, Home, Layers, LayoutGrid, Menu, Search, Star } from "lucide-react";
 import { LogoMark } from "@/components/logo-mark";
-import { SiteFooter } from "@/components/site-footer";
+import { PreviewFooter } from "./preview-footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { hasResults, SearchResults, useSiteSearch } from "./site-search";
 import { SEARCH_COPY } from "@/lib/web-v1/catalog";
@@ -108,13 +108,23 @@ export function WebV1Shell({
             >
               <Search className="size-4" />
             </button>
-            <Link
-              to="/watchlist"
-              className="hidden size-10 items-center justify-center rounded-xl border border-border hover:bg-muted md:flex"
-              aria-label={t({ ar: "متابعتي", en: "Watchlist" })}
+            {/* متابعتي غير منفّذة في المعاينة: زر معطّل بوضوح، لا رابط إلى صفحة الموقع القديمة. */}
+            <button
+              type="button"
+              disabled
+              title={t({
+                ar: "متابعتي: غير متاحة في المعاينة",
+                en: "Watchlist: not available in this preview",
+              })}
+              aria-label={t({
+                ar: "متابعتي: غير متاحة في المعاينة",
+                en: "Watchlist: not available in this preview",
+              })}
+              className="hidden size-10 cursor-not-allowed items-center justify-center rounded-xl border border-dashed border-border text-muted-foreground opacity-60 md:flex"
+              data-unavailable="watchlist"
             >
               <Star className="size-4" />
-            </Link>
+            </button>
             <button
               type="button"
               onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
@@ -130,7 +140,7 @@ export function WebV1Shell({
       <OpenSearch.Provider value={() => setSearchOpen(true)}>
         <main className="flex-1">{children}</main>
       </OpenSearch.Provider>
-      <SiteFooter />
+      <PreviewFooter />
 
       {/* شريط الجوال السفلي */}
       <nav

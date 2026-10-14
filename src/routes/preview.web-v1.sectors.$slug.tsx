@@ -220,7 +220,9 @@ function SectorPage() {
         <SourceNote>
           {t(MARKET_COPY.sectorSource)} {t({ ar: "قائمة الشركات: ", en: "Company list: " })}
           <code dir="ltr">{source.path}</code> · sha256{" "}
-          <code dir="ltr">{source.sha256.slice(0, 12)}</code>.
+          <code dir="ltr">{source.sha256.slice(0, 12)}</code> ·{" "}
+          {t({ ar: "آخر تحديث في المستودع ", en: "last updated in repo " })}
+          {iso(source.updatedInRepo)}.
         </SourceNote>
       </PreviewContainer>
     </WebV1Shell>

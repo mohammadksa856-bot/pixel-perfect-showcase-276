@@ -43,7 +43,8 @@ const count = (page) =>
   page.locator("[data-result-count]").getAttribute("data-result-count").then(Number);
 const noHorizontalScroll = async (page) =>
   assert.ok(
-    await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1),
+    // مقارنة بعرض الجهاز المضبوط لا بـ innerWidth: محاكي الجوال يوسّع innerWidth مع المحتوى فيخفي التجاوز.
+    (await page.evaluate(() => document.documentElement.scrollWidth)) <= page.viewportSize().width + 1,
     "horizontal overflow",
   );
 

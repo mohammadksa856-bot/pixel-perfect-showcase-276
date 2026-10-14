@@ -15,6 +15,8 @@ export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
   "claude/web-05b-markets-sectors",
   // WEB-05C research & knowledge branch (exact name), so its Preview renders the frozen samples.
   "claude/web-05c-research-knowledge",
+  // WEB-05B final fixes branch (exact name), so its Preview renders the frozen samples.
+  "claude/web-05b-final-fixes",
 ];
 type Env = Record<string, string | undefined>;
 

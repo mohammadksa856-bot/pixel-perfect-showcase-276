@@ -389,9 +389,13 @@ function CompanyName({ e }: { e: DirectoryEntry }) {
   return (
     <div className="min-w-0">
       {/* plaintext: اتجاه كل اسم من نصه، والمحاذاة من اتجاه الصفحة (فلا ينفصل الاسم البديل إلى الطرف الآخر). */}
-      <div className="font-semibold [unicode-bidi:plaintext]">{name}</div>
+      <div className="font-semibold [unicode-bidi:plaintext] ltr:text-left rtl:text-right">
+        {name}
+      </div>
       {alt && alt !== name && (
-        <div className="text-[11px] text-muted-foreground [unicode-bidi:plaintext]">{alt}</div>
+        <div className="text-[11px] text-muted-foreground [unicode-bidi:plaintext] ltr:text-left rtl:text-right">
+          {alt}
+        </div>
       )}
     </div>
   );

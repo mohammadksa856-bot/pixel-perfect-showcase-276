@@ -8,6 +8,7 @@ import {
   type RawFactoryReadiness,
   type Readiness,
 } from "./readiness";
+import { buildStatements, keyFigures, type KeyFigure, type StatementView } from "./statements";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02).
@@ -66,7 +67,7 @@ export type EngineMetricRow = {
   } | null;
 };
 
-type Snapshot = {
+export type Snapshot = {
   status: string;
   reason: string | null;
   period_kind?: string | null;
@@ -74,7 +75,7 @@ type Snapshot = {
   metrics: Record<string, EngineMetricRow[]>;
 };
 
-type History = {
+export type History = {
   status: string;
   reason: string | null;
   periods: { period_end: string; metrics: Record<string, EngineMetricRow[]> }[];
@@ -287,6 +288,10 @@ export type CompanyPreview = {
   readiness: { investorTopics: Readiness; operationalCategories: Readiness };
   /** لوحة الفئات التشغيلية الـ18 (عقد المصنع). لا تُقرأ من نموذج المستثمر. */
   factory: FactoryCoverage;
+  /** WEB-03: القوائم متعددة الفترات (سنوي، ربعي، منذ بداية السنة) بنفس قواعد الثقة. */
+  statements: StatementView[];
+  /** WEB-03: أرقام المفتاح من آخر سنة مالية، حسب نوع الشركة. */
+  keyFigures: KeyFigure[];
   topics: Topic[];
   counts: { shown: number; withheld: number };
   /** تنبيهات على مستوى الشركة عن طبيعة المصدر (مثلًا: ملف إدخال دون المستند الأصلي). */
@@ -304,7 +309,7 @@ export function companyKind(industry: string | null | undefined): CompanyKind {
 
 const PER_SHARE_KEY = /(_per_share$|^basic_eps$|^eps_diluted$|^earnings_per_share)/;
 const SHARE_COUNT_KEY = /^(weighted_average_shares|shares_outstanding|shares_issued_count)/;
-const AMOUNT_UNITS = new Set(["SAR", "USD"]);
+export const AMOUNT_UNITS = new Set(["SAR", "USD"]);
 
 /**
  * اتساق الوحدة مع معنى المقياس (من R02): القيمة لكل سهم بوحدة {العملة}/share، وعدد الأسهم
@@ -500,6 +505,10 @@ export const METRIC_LABELS: Record<string, LocalizedText> = {
   total_assets: L("إجمالي الأصول", "Total assets"),
   total_liabilities: L("إجمالي المطلوبات", "Total liabilities"),
   total_equity: L("إجمالي حقوق الملكية", "Total equity"),
+  current_assets: L("الأصول المتداولة", "Current assets"),
+  current_liabilities: L("المطلوبات المتداولة", "Current liabilities"),
+  net_debt: L("صافي الدين", "Net debt"),
+  shares_outstanding: L("الأسهم القائمة", "Shares outstanding"),
   equity_parent: L("حقوق الملكية العائدة للمساهمين", "Equity attributable to shareholders"),
   share_capital: L("رأس المال", "Share capital"),
   retained_earnings: L("الأرباح المبقاة", "Retained earnings"),
@@ -582,12 +591,12 @@ export const METRIC_LABELS: Record<string, LocalizedText> = {
   revenue_by_geography: L("الإيرادات حسب الجغرافيا", "Revenue by geography"),
 };
 
-const labelOf = (key: string, row?: EngineMetricRow | null): LocalizedText =>
+export const labelOf = (key: string, row?: EngineMetricRow | null): LocalizedText =>
   METRIC_LABELS[key] ?? { ar: row?.display_name ?? key, en: row?.display_name ?? key };
 
 // ───────────────────────── اختيار القيمة وفحصها
 
-type Pick_ =
+export type Pick_ =
   { ok: true; cell: ValueCell } | { ok: false; reason: WithheldReason } | { ok: "missing" };
 
 function checkRow(
@@ -645,7 +654,7 @@ const isConsolidated = (r: EngineMetricRow) =>
   (r.scope ?? "consolidated") === "consolidated" && Object.keys(r.dimensions ?? {}).length === 0;
 
 /** أول صف موحّد يجتاز كل الفحوص. صف خاطئ لا يغطي على صف صحيح للفترة نفسها. */
-function pickValue(
+export function pickValue(
   key: string,
   rows: EngineMetricRow[] | undefined,
   expectedPeriod: string,
@@ -689,7 +698,7 @@ function buildGroup(
 
 // ───────────────────────── تعريف الأقسام حسب نوع الشركة
 
-const INCOME: Record<CompanyKind, string[]> = {
+export const INCOME: Record<CompanyKind, string[]> = {
   ordinary: [
     "revenue",
     "ebitda",
@@ -736,7 +745,7 @@ const INCOME: Record<CompanyKind, string[]> = {
   ],
 };
 
-const BALANCE: Record<CompanyKind, string[]> = {
+export const BALANCE: Record<CompanyKind, string[]> = {
   ordinary: ["cash", "total_assets", "total_liabilities", "total_equity", "tangible_book_value"],
   bank: [
     "cash_and_balances_with_central_bank",
@@ -771,7 +780,7 @@ const BALANCE: Record<CompanyKind, string[]> = {
   ],
 };
 
-const CASH_FLOW = [
+export const CASH_FLOW = [
   "operating_cash_flow",
   "investing_cash_flow",
   "financing_cash_flow",
@@ -796,7 +805,7 @@ const EARNINGS_QUALITY = [
   "effective_tax_rate",
 ];
 
-const RATIOS: Record<CompanyKind, string[]> = {
+export const RATIOS: Record<CompanyKind, string[]> = {
   ordinary: [
     "operating_margin",
     "ebitda_margin",
@@ -1362,6 +1371,8 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
       operationalCategories: factory.readiness,
     },
     factory,
+    statements: buildStatements(page, kind),
+    keyFigures: keyFigures(page, kind),
     topics,
     counts: {
       shown: groups.reduce((n, g) => n + g.cells.length, 0),

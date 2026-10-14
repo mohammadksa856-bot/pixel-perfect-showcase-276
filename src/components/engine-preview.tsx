@@ -412,8 +412,16 @@ function BlockView({
                 <td className="py-2.5 pe-3" dir="auto">
                   {r.holder}
                 </td>
-                <td className="py-2.5 pe-3 font-semibold tabular-nums" dir="ltr">
-                  {(r.pct * 100).toFixed(2)}%
+                <td className="w-40 py-2.5 pe-3" data-stake>
+                  <div className="font-semibold tabular-nums" dir="ltr">
+                    {(r.pct * 100).toFixed(2)}%
+                  </div>
+                  <div className="mt-1 h-1.5 rounded-full bg-muted">
+                    <div
+                      className="h-1.5 rounded-full bg-brand"
+                      style={{ width: `${Math.max(1, r.pct * 100)}%` }}
+                    />
+                  </div>
                 </td>
                 <td className="py-2.5 pe-3 text-[12px] text-muted-foreground">{r.asOf}</td>
                 <td className="py-2.5 text-[12px]">
@@ -461,7 +469,19 @@ function BlockView({
                 key={`${d.sourceUrl}-${i}`}
                 className="flex items-center justify-between gap-3 py-2 text-sm"
               >
-                <span dir="auto">{d.title}</span>
+                <span className="flex min-w-0 items-center gap-2">
+                  {d.type && (
+                    <span
+                      className="shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground"
+                      dir="ltr"
+                    >
+                      {d.type.replace(/_/g, " ")}
+                    </span>
+                  )}
+                  <span dir="auto" className="truncate">
+                    {d.title}
+                  </span>
+                </span>
                 <span className="shrink-0 text-[12px] text-muted-foreground">
                   {d.date ?? ""} · <SourceLink href={d.sourceUrl} />
                 </span>
@@ -535,10 +555,19 @@ export function TopicSection({
   topic,
   preview,
   peers,
+  before,
+  collapse,
+  design,
 }: {
   topic: Topic;
   preview: CompanyPreview;
   peers: PeerTable | null;
+  /** WEB-03: محتوى يسبق كتل الموضوع (مثل مستكشف القوائم المالية). */
+  before?: ReactNode;
+  /** WEB-03: إن وُجد، تُطوى كتل الموضوع تحت هذا العنوان. */
+  collapse?: LocalizedText | undefined;
+  /** WEB-03: وصف الواجهة المخصصة وما تحتاجه، يظهر حين لا توجد بيانات (بلا أي قيمة). */
+  design?: { component: LocalizedText; needs: LocalizedText } | undefined;
 }) {
   const { t } = useI18n();
   return (
@@ -570,28 +599,85 @@ export function TopicSection({
           ))}
         </ul>
       )}
-      {topic.blocks.length === 0 ? (
-        <p
-          className="rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground"
-          data-empty
+      {before}
+      {collapse && topic.blocks.length > 0 ? (
+        <details
+          className="mt-5 rounded-2xl border border-border/70 bg-card/40"
+          data-collapsed-blocks
         >
-          {t({ ar: "لا تُعرض بيانات لهذا الموضوع.", en: "No data is shown for this topic." })}
-        </p>
+          <summary className="cursor-pointer px-4 py-3 text-[13px] font-medium">
+            {t(collapse)}
+          </summary>
+          <div className="p-4 pt-0">
+            {topic.blocks.length === 0 ? (
+              <p
+                className="rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground"
+                data-empty
+              >
+                {t({ ar: "لا تُعرض بيانات لهذا الموضوع.", en: "No data is shown for this topic." })}
+                {design && (
+                  <span className="mt-2 block text-[12px] leading-6" data-topic-design>
+                    {t({ ar: "يظهر هنا عند توفر البيانات: ", en: "Shown here when data exists: " })}
+                    <span className="text-foreground">{t(design.component)}</span>
+                    <br />
+                    {t({ ar: "يتطلب: ", en: "Requires: " })}
+                    {t(design.needs)}
+                  </span>
+                )}
+              </p>
+            ) : (
+              <div className="grid gap-5 lg:grid-cols-2">
+                {topic.blocks.map((b, i) => (
+                  <div
+                    key={i}
+                    className={cn(
+                      "min-w-0",
+                      (b.type === "metrics" || b.type === "history" || b.type === "peers") &&
+                        "lg:col-span-2",
+                    )}
+                  >
+                    <BlockView block={b} preview={preview} peers={peers} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </details>
       ) : (
-        <div className="grid gap-5 lg:grid-cols-2">
-          {topic.blocks.map((b, i) => (
-            <div
-              key={i}
-              className={cn(
-                "min-w-0",
-                (b.type === "metrics" || b.type === "history" || b.type === "peers") &&
-                  "lg:col-span-2",
-              )}
+        <>
+          {topic.blocks.length === 0 ? (
+            <p
+              className="rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground"
+              data-empty
             >
-              <BlockView block={b} preview={preview} peers={peers} />
+              {t({ ar: "لا تُعرض بيانات لهذا الموضوع.", en: "No data is shown for this topic." })}
+              {design && (
+                <span className="mt-2 block text-[12px] leading-6" data-topic-design>
+                  {t({ ar: "يظهر هنا عند توفر البيانات: ", en: "Shown here when data exists: " })}
+                  <span className="text-foreground">{t(design.component)}</span>
+                  <br />
+                  {t({ ar: "يتطلب: ", en: "Requires: " })}
+                  {t(design.needs)}
+                </span>
+              )}
+            </p>
+          ) : (
+            <div className="grid gap-5 lg:grid-cols-2">
+              {topic.blocks.map((b, i) => (
+                <div
+                  key={i}
+                  className={cn(
+                    "min-w-0",
+                    (b.type === "metrics" || b.type === "history" || b.type === "peers") &&
+                      "lg:col-span-2",
+                  )}
+                >
+                  <BlockView block={b} preview={preview} peers={peers} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
     </section>
   );

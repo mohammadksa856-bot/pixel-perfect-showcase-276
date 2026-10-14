@@ -1,4 +1,9 @@
 export const DESIGN_REVIEW_BRANCH = "codex/vercel-claude-build-review-20261014";
+/** Review branches allowed to bundle the frozen fixtures (exact names, no patterns). */
+export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
+  DESIGN_REVIEW_BRANCH,
+  "claude/web-03-04-company-page",
+];
 type Env = Record<string, string | undefined>;
 
 /** Frozen fixtures are never a fallback for a failed live API or a production deployment. */
@@ -6,7 +11,7 @@ export function designReviewFixturesEnabled(env: Env = process.env): boolean {
   return (
     env["MAREFA_DESIGN_FIXTURES"] === "true" &&
     env["VERCEL_ENV"] === "preview" &&
-    env["VERCEL_GIT_COMMIT_REF"] === DESIGN_REVIEW_BRANCH &&
+    DESIGN_REVIEW_BRANCHES.includes(env["VERCEL_GIT_COMMIT_REF"] ?? "") &&
     env["WEB_V1_PREVIEW_ENABLED"] === "true" &&
     env["ENGINE_PREVIEW_ENABLED"] === "true"
   );

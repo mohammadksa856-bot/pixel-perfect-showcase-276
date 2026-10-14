@@ -6,8 +6,9 @@ import { iso } from "@/lib/bidi";
 import { cn } from "@/lib/utils";
 import type { CompanyPreview, Topic } from "@/lib/engine/company-preview";
 import type { PeerTable } from "@/lib/engine/peer-comparison";
-import { COMPANY_GROUPS, COVERAGE_TAB, type CompanyTab } from "@/lib/web-v1/model";
+import { COMPANY_GROUPS, COVERAGE_TAB, TOPIC_DESIGN, type CompanyTab } from "@/lib/web-v1/model";
 import { FactoryPanel } from "./factory-panel";
+import { FinancialExplorer, KeyFigures } from "./financial-explorer";
 import { Pill, READINESS_META, TONE_BAR, TOPIC_META, WITHHELD_META } from "./primitives";
 import { PreviewContainer } from "./shell";
 
@@ -223,36 +224,103 @@ export function GroupView({
   return (
     <div data-group={g.id}>
       <PreviewContainer className="py-8">
-        <div className="flex flex-col gap-4 border-b border-border/60 pb-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-xl font-bold tracking-tight sm:text-2xl">{t(g.title)}</h2>
-            <p className="mt-1 text-[13px] text-muted-foreground">{t(g.question)}</p>
+        <KeyFigures figures={p.keyFigures} />
+        <div className="mt-8 grid gap-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
+          <aside className="hidden lg:block" data-topic-rail>
+            <nav className="sticky top-32 space-y-5">
+              {COMPANY_GROUPS.map((grp) => (
+                <div key={grp.id}>
+                  <Link
+                    to="."
+                    search={{ tab: grp.id }}
+                    className={cn(
+                      "text-[12px] font-semibold",
+                      grp.id === g.id
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground",
+                    )}
+                  >
+                    {t(grp.title)}
+                  </Link>
+                  {grp.id === g.id && (
+                    <ol className="mt-2 space-y-1 border-s border-border ps-3">
+                      {topics.map((x) => (
+                        <li key={x.ordinal}>
+                          <a
+                            href={`#topic-${x.ordinal}`}
+                            className="flex items-center justify-between gap-2 rounded-md py-1 text-[12px] text-muted-foreground hover:text-foreground"
+                          >
+                            <span className="truncate">
+                              <span className="num me-1.5">{x.ordinal}</span>
+                              {t(x.title)}
+                            </span>
+                            <span
+                              className={cn(
+                                "size-2 shrink-0 rounded-full",
+                                TONE_BAR[TOPIC_META[x.status].tone],
+                              )}
+                              title={t(TOPIC_META[x.status].label)}
+                            />
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </aside>
+          <div className="min-w-0">
+            <div className="border-b border-border/60 pb-5">
+              <h2 className="text-xl font-bold tracking-tight sm:text-2xl">{t(g.title)}</h2>
+              <p className="mt-1 text-[13px] text-muted-foreground">{t(g.question)}</p>
+              <ol className="scrollbar-none mt-4 flex gap-2 overflow-x-auto lg:hidden">
+                {topics.map((x) => (
+                  <li key={x.ordinal} className="shrink-0">
+                    <a
+                      href={`#topic-${x.ordinal}`}
+                      className="flex items-center gap-2 rounded-lg border border-border/70 bg-card px-2.5 py-1.5 text-[12px]"
+                    >
+                      <span className="num text-muted-foreground">{x.ordinal}</span>
+                      {t(x.title)}
+                      <Pill meta={TOPIC_META[x.status]} />
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            {topics.map((x) =>
+              x.ordinal === 5 ? (
+                <TopicSection
+                  key={x.key}
+                  topic={{ ...x, blocks: x.blocks.filter((b) => b.type !== "history") }}
+                  preview={p}
+                  peers={peers}
+                  before={<FinancialExplorer views={p.statements} kind={p.kind} />}
+                  collapse={{
+                    ar: "كل بنود آخر سنة مالية وآخر ربع (تفصيلي)",
+                    en: "All line items for the latest fiscal year and quarter (detail)",
+                  }}
+                />
+              ) : (
+                <TopicSection
+                  key={x.key}
+                  topic={x}
+                  preview={p}
+                  peers={peers}
+                  design={TOPIC_DESIGN[x.ordinal]}
+                />
+              ),
+            )}
+            {p.dataNotices.length > 0 && (
+              <div className="mt-10 rounded-xl border border-status-warn/30 bg-status-warn/5 p-4 text-[12px] leading-6">
+                {p.dataNotices.map((n) => (
+                  <p key={n.en}>{t(n)}</p>
+                ))}
+              </div>
+            )}
           </div>
-          <ol className="flex flex-wrap gap-2">
-            {topics.map((x) => (
-              <li key={x.ordinal}>
-                <a
-                  href={`#topic-${x.ordinal}`}
-                  className="flex items-center gap-2 rounded-lg border border-border/70 bg-card px-2.5 py-1.5 text-[12px] hover:border-brand/50"
-                >
-                  <span className="num text-muted-foreground">{x.ordinal}</span>
-                  {t(x.title)}
-                  <Pill meta={TOPIC_META[x.status]} />
-                </a>
-              </li>
-            ))}
-          </ol>
         </div>
-        {topics.map((x) => (
-          <TopicSection key={x.key} topic={x} preview={p} peers={peers} />
-        ))}
-        {p.dataNotices.length > 0 && (
-          <div className="mt-10 rounded-xl border border-status-warn/30 bg-status-warn/5 p-4 text-[12px] leading-6">
-            {p.dataNotices.map((n) => (
-              <p key={n.en}>{t(n)}</p>
-            ))}
-          </div>
-        )}
       </PreviewContainer>
     </div>
   );

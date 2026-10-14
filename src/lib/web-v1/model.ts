@@ -169,3 +169,151 @@ const REASONS: Record<string, LocalizedText> = {
   score_below_target: { ar: "الدرجة دون 95", en: "Score below 95" },
   unknown_state: { ar: "حالة لا يعرفها العقد", en: "State unknown to the contract" },
 };
+
+/**
+ * WEB-03: الواجهة المخصصة لكل موضوع من الـ18، وما تحتاجه من البيانات لتظهر.
+ * تُستخدم في الحالة الفارغة (بدل «لا توجد بيانات») وفي مصفوفة القبول. لا تُعرض أي قيمة هنا.
+ */
+export const TOPIC_DESIGN: Record<number, { component: LocalizedText; needs: LocalizedText }> = {
+  1: {
+    component: {
+      ar: "بطاقة هوية: الاسم القانوني، ISIN، الإدراج، المقر، المعيار المحاسبي",
+      en: "Identity card: legal name, ISIN, listing, HQ, accounting standard",
+    },
+    needs: { ar: "خصائص ملف الشركة بمصدر", en: "Sourced profile attributes" },
+  },
+  2: {
+    component: {
+      ar: "وصف النشاط + أشرطة الإيرادات حسب المنتج والجغرافيا + نتائج القطاعات",
+      en: "Business description + revenue by product/geography bars + segment results",
+    },
+    needs: { ar: "إيضاح القطاعات التشغيلية (IFRS 8)", en: "Operating segment note (IFRS 8)" },
+  },
+  3: {
+    component: {
+      ar: "رئيس المجلس والرئيس التنفيذي والمراجع، ثم المجلس واللجان والمكافآت",
+      en: "Chair, CEO and auditor, then board, committees and remuneration",
+    },
+    needs: { ar: "تقرير مجلس الإدارة والحوكمة", en: "Board and governance report" },
+  },
+  4: {
+    component: {
+      ar: "جدول كبار الملاك بأشرطة النسب وتاريخ «كما في»",
+      en: "Major holders table with stake bars and as-of date",
+    },
+    needs: { ar: "إفصاحات الملكية المؤرخة", en: "Dated ownership disclosures" },
+  },
+  5: {
+    component: {
+      ar: "مستكشف القوائم: سنوي/ربعي/منذ بداية السنة، مقياس مليون/مليار، رسم اتجاه",
+      en: "Statement explorer: annual/quarterly/YTD, million/billion scale, trend chart",
+    },
+    needs: { ar: "قوائم مدققة لخمس سنوات و12 ربعًا", en: "Five audited years and twelve quarters" },
+  },
+  6: {
+    component: {
+      ar: "جدول جودة الأرباح: الأرباح المعدّلة، جودة الدخل، الاستحقاقات",
+      en: "Earnings-quality table: adjusted earnings, income quality, accruals",
+    },
+    needs: { ar: "مشتقات بمدخلات مُعاد إنتاجها", en: "Derivatives with reproduced inputs" },
+  },
+  7: {
+    component: {
+      ar: "مجموعات النسب حسب نوع الشركة (عادية/بنك/تأمين)",
+      en: "Ratio sets by company type (ordinary/bank/insurer)",
+    },
+    needs: {
+      ar: "نسب محسوبة بمعادلة ومدخلات معتمدة",
+      en: "Ratios with recorded formula and approved inputs",
+    },
+  },
+  8: {
+    component: {
+      ar: "مؤشرات تشغيلية خاصة بالقطاع (إنتاج، فروع، وثائق…)",
+      en: "Sector operating KPIs (production, branches, policies…)",
+    },
+    needs: { ar: "مؤشرات القطاع في عقد الصفحة", en: "Sector KPIs delivered in the page contract" },
+  },
+  9: {
+    component: {
+      ar: "التوزيع للسهم ونسبة التوزيع + سجل إجراءات التوزيع بتواريخها",
+      en: "DPS and payout + dated distribution actions log",
+    },
+    needs: {
+      ar: "إعلانات التوزيع وإجراءات الشركة",
+      en: "Dividend announcements and corporate actions",
+    },
+  },
+  10: {
+    component: {
+      ar: "تصنيف القطاع والصناعة ومؤشرات القطاع المجمعة",
+      en: "Sector and industry classification with aggregate sector indicators",
+    },
+    needs: { ar: "بيانات قطاعية من جهة رسمية", en: "Official sector datasets" },
+  },
+  11: {
+    component: {
+      ar: "جدول مقارنة النظراء (نظراء مستنتجون لا منافسون معلنون)",
+      en: "Peer comparison table (inferred peers, not declared competitors)",
+    },
+    needs: {
+      ar: "نظراء من الصناعة نفسها ببيانات قابلة للمقارنة",
+      en: "Same-industry peers with comparable data",
+    },
+  },
+  12: {
+    component: {
+      ar: "آخر إغلاق بتاريخه + رسم الأسعار + السيولة",
+      en: "Last close with date + price chart + liquidity",
+    },
+    needs: { ar: "تغذية أسعار مرخصة", en: "Licensed price feed" },
+  },
+  13: {
+    component: {
+      ar: "توجيهات الإدارة كنصوص مقتبسة بمصدرها (لا أرقام متوقعة)",
+      en: "Management guidance as sourced quotes (no projected figures)",
+    },
+    needs: { ar: "توجيهات منشورة من الشركة", en: "Company-published guidance" },
+  },
+  14: {
+    component: {
+      ar: "إجماع المحللين مع تاريخ ومصدر مرخص",
+      en: "Analyst consensus with date and licensed source",
+    },
+    needs: { ar: "ترخيص بيانات الإجماع", en: "Consensus data licence" },
+  },
+  15: {
+    component: {
+      ar: "مكررات التقييم (P/E، P/B، عائد التوزيع) بتاريخ السعر",
+      en: "Valuation multiples (P/E, P/B, yield) with price date",
+    },
+    needs: {
+      ar: "سعر مرخص ومقاييس سهم معتمدة في التاريخ نفسه",
+      en: "Licensed price and approved per-share data on the same date",
+    },
+  },
+  16: {
+    component: {
+      ar: "عوامل المخاطر المصنفة + التصنيف الائتماني + استحقاقات الدين",
+      en: "Classified risk factors + credit rating + debt maturities",
+    },
+    needs: { ar: "إفصاح المخاطر وإيضاح الدين", en: "Risk disclosure and debt note" },
+  },
+  17: {
+    component: {
+      ar: "مؤشرات الانبعاثات والطاقة والمياه بوحداتها",
+      en: "Emissions, energy and water indicators with units",
+    },
+    needs: { ar: "تقرير استدامة بمصدر", en: "Sourced sustainability report" },
+  },
+  18: {
+    component: {
+      ar: "قائمة الإفصاحات الرسمية مرتبة زمنيًا مع نوع المستند",
+      en: "Official disclosures in date order with document type",
+    },
+    needs: {
+      ar: "إفصاحات السوق والمستندات الرسمية",
+      en: "Exchange disclosures and official documents",
+    },
+  },
+};

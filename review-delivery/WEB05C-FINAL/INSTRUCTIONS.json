@@ -1,0 +1,15 @@
+{
+  "scope": "Code-only independent acceptance evidence. No documents, production data, environment secrets or inherited Git history.",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "setup": [
+    "Create isolated app worktree at application_sha; install locked deps with lifecycle scripts disabled.",
+    "Copy .test.ts files into app/review-evidence. Run each file with bun test SEPARATELY (server mock isolation).",
+    "Run bun test tests separately; 14 live cases are skipped and not considered passed.",
+    "Local reader: original Claude synthetic server54326, proxy54325, Vite4398; only localhost Supabase URL and placeholder test keys. Never deploy synthetic source/config.",
+    "See original bundle2495e1f instructions for local harness and source hashes.",
+    "Do not run imports, Supabase writes, production deployments or feature activation from these examples."
+  ],
+  "results": "See REPORT.json: separate runs at c3bfd2f; original two failures at6d are historical evidence, not pooled.",
+  "preview": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+  "acceptance": "Engineering frozen DESIGN ACCEPT only. LIVE BLOCKED; user final design acceptance and WEB06 remain pending."
+}

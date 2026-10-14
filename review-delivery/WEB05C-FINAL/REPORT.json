@@ -1,0 +1,215 @@
+{
+  "review_id": "WEB05C-FINAL-INDEPENDENT-20261015",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "code_sha": "7bee848b869d33f20fa541f2498ff16f75b46b24",
+  "original_suite_sha": "2495e1f20a1a7b9747f2fe6c45853d25463b48bb",
+  "original_suite_verified_files": 6,
+  "original_suite_adaptations": [],
+  "observed_at": "2026-10-14T22:46:06Z",
+  "decisions": {
+    "table": "PASS",
+    "date": "PASS",
+    "design": "ACCEPT",
+    "live": "BLOCKED"
+  },
+  "before": {
+    "application_sha": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
+    "original_negative_passed": 0,
+    "original_negative_failed": 2,
+    "note": "Historical recorded run, not rerun or pooled with current runs"
+  },
+  "runs": [
+    {
+      "artifact": "review-negative-acceptance.txt",
+      "scope": "Unchanged original independent defect tests",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "artifact": "review-independent.txt",
+      "scope": "Unchanged independent security/source/language tests",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "artifact": "review-server-guards.txt",
+      "scope": "Four actual frozen handler closures with local mocked adapters; zero DB invocations",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "artifact": "review-edgecases.txt",
+      "scope": "Additional independent long/short/empty/signs/leap/century/absence/sort cases",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "artifact": "review-claude-reader.txt",
+      "scope": "Separately rerun Claude reader suite",
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "artifact": "review-regression.txt",
+      "scope": "Repository regression on exact delivery SHA",
+      "passed": 368,
+      "failed": 0,
+      "skipped": 14
+    },
+    {
+      "artifact": "review-newsletter.txt",
+      "scope": "Forced actual footer callback prevents default, zero fetch, disabled controls",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "artifact": "review-boundary.txt",
+      "scope": "Original desired WEB05B boundary acceptance",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "typecheck_exit": 0,
+  "build_exit": 0,
+  "browser": {
+    "local_only": true,
+    "synthetic_upstream": "127.0.0.1:54326",
+    "independent_proxy": "127.0.0.1:54325",
+    "research_reader": [
+      "synthetic-research-1",
+      "synthetic-research-4"
+    ],
+    "knowledge_reader": "synthetic-topic-2",
+    "desktop_width": 1265,
+    "mobile_configured_width": 390,
+    "mobile_document_width": 375,
+    "languages": [
+      "ar RTL",
+      "en LTR"
+    ],
+    "malformed_table": "Warning visible in both actual readers; original text preserved including extra and short rows, signs and escaped script",
+    "copyability": "Original PRE is selectable text (user-select:auto), full text available; no clipboard round-trip claimed",
+    "valid_wide_table": {
+      "container_width": 375,
+      "scroll_width_ar": 516,
+      "overflow": "auto",
+      "page_width": 375
+    },
+    "dates": "Invalid card and article use same warning, no TIME value or rollover; missing remains missing; oldest/newest put invalid/undated after valid",
+    "security": "No article script nodes or javascript links; refs retain unsafe URL as text; one-language fallback remains explicit",
+    "instrumentation_note": "Viewport override initially propagated late; desktop measurements were not counted as mobile evidence. Subsequent verified390 runs recorded375 document width.",
+    "initial_setup_error": "Restricted socket permissions blocked first local browser attempt; restarted loopback servers with authorized network permissions, no application change."
+  },
+  "preview": {
+    "url": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+    "deployment": "77HdHRq1UpQjufjhMdmBQnrHs4vQ",
+    "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+    "build": "READY",
+    "routes_opened": 13,
+    "internal_legacy_links": 0,
+    "mobile_document_width": 375,
+    "initial": "Previous deployment t9bd1yytj returned404; four Config flags added only to exact Preview branch; redeployed same SHA",
+    "branch": "claude/web-05c-reader-final-fixes",
+    "flags": {
+      "WEB_V1_PREVIEW_ENABLED": "true",
+      "ENGINE_PREVIEW_ENABLED": "true",
+      "MAREFA_DESIGN_FIXTURES": "true",
+      "ENGINE_PEERS_ENABLED": "false"
+    },
+    "research_knowledge": "Explicit unavailable; synthetic content not published",
+    "network_evidence": "Frozen handler unit tests show zero DB invocation; no claim of full intercepted Vercel network trace",
+    "journey": "Home > markets > Saudi > company1120 > Saudi breadcrumb verified through actual links"
+  },
+  "page_map": {
+    "available": [
+      "/preview/web-v1",
+      "/preview/web-v1/companies",
+      "/preview/web-v1/markets",
+      "/preview/web-v1/markets/saudi",
+      "/preview/web-v1/markets/saudi/main",
+      "/preview/web-v1/markets/saudi/nomu",
+      "/preview/web-v1/sectors",
+      "/preview/web-v1/sectors/financials",
+      "/preview/web-v1/companies/2222",
+      "/preview/web-v1/companies/1120",
+      "/preview/web-v1/companies/8010"
+    ],
+    "unavailable_frozen": [
+      "/preview/web-v1/research",
+      "/preview/web-v1/knowledge"
+    ],
+    "not_implemented": [
+      "US market content",
+      "Watchlist",
+      "Community",
+      "Accounts/subscriptions",
+      "About",
+      "Contact",
+      "Privacy",
+      "Terms",
+      "Newsletter delivery"
+    ],
+    "local_synthetic_reader_only": [
+      "/preview/web-v1/research/synthetic-research-1",
+      "/preview/web-v1/research/synthetic-research-4",
+      "/preview/web-v1/knowledge/synthetic-topic-2"
+    ]
+  },
+  "ancestry": {
+    "contains_dc2ac11": true,
+    "contains_web03_67c6368": true,
+    "contains_web05a_a8a76f2": true,
+    "duplicate_merge": false
+  },
+  "claude_report": {
+    "path": "product-tracking/reports/BR-025_WEB-05C_reader_fixes.md",
+    "sha256": "dfd7cc17767ed7ecdf355246a09a83880a2fc57d12344ec981b502becc72da56",
+    "note": "Read original; statement that independent package was unavailable is historical Claude context, not current fact"
+  },
+  "phase_status": {
+    "IMPLEMENTED": true,
+    "TESTED": true,
+    "REVIEWED": true,
+    "MERGED": "Already present in delivered ancestry; no new integration merge",
+    "ACCEPTED": "Engineering frozen design only",
+    "DEPLOYED": "Preview only",
+    "USER_FINAL_ACCEPTANCE": false,
+    "PRODUCTION": false
+  },
+  "deferred_live": [
+    "Legacy unified search masks HTTP failures; not authorized for repair in this batch",
+    "Published/draft access, authorization and editorial source approval not independently established",
+    "Financial integration dependencies remain separate; no financial approval"
+  ],
+  "not_tested": [
+    "14 live API/peer tests skipped, not passed",
+    "Real Supabase access, writes or RLS",
+    "Production behavior",
+    "Live financial/editorial correctness"
+  ],
+  "next_three": [
+    "User reviews unified Preview visually",
+    "Run separately authorized WEB06 final acceptance checklist; no automatic closure",
+    "Resolve live dependencies only under separate authorization"
+  ],
+  "screenshots_local": [
+    "knowledge-warning-mobile.jpg",
+    "knowledge-mobile-ar.jpg",
+    "knowledge-mobile-en.jpg",
+    "research-mobile-ar.jpg",
+    "research-mobile-en.jpg",
+    "knowledge-desktop-en.jpg",
+    "knowledge-desktop-ar.jpg",
+    "research-desktop-en.jpg",
+    "unified-preview-knowledge.jpg",
+    "unified-preview-market.jpg"
+  ],
+  "review_commit": "23a5f1b464e44a5d12231dd4a90e5a16d6422667"
+}

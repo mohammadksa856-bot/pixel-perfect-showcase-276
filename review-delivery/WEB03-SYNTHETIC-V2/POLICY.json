@@ -1,0 +1,11 @@
+{
+ "policy_version":"web03-annual-replacement/1",
+ "status":"REVIEW_ACCEPTANCE_POLICY_ONLY_NOT_PRODUCTION_IMPLEMENTATION",
+ "decision":"Permit an independently qualified same-period annual snapshot to fill an absent or rejected historical cell; never permit it to hide a qualified-source conflict",
+ "required_identity":["metric","period_end","period_kind","period_start/duration when applicable","consolidated scope and dimensions","unit/scale","reporting currency","source and version"],
+ "gates":["Existing quality/source/unit/period/derivation gates remain mandatory","Snapshot must match an existing history column; it cannot create a period","Incorrect history is retained with rejection reasons; replacement provenance and version must be traceable","All qualified candidates must agree; collect across each array, repeated history periods and snapshots before selection","Disagreement is withheld unless explicit engine evidence records a reviewed supersession/restatement; ordering is not evidence","Absent or unreproduced derivation inputs never become accepted through fallback","Headline must use exactly the accepted table cell and its period; no independent fallback"],
+ "legacy_test_handling":"Original F03 no-value assertion retained as LEGACY compatibility evidence. It fails when a valid snapshot replaces invalid history, without proving the wrong-date fact was displayed. Policy tests separately require rejection without an eligible snapshot and accept only correctly identified replacement. Historical failures are not overwritten or relabelled PASS.",
+ "F01_correction":"company.currency=SAR supplied in fixture; repaired KeyFigure period accessor f.period replaces f.cell.period; assertion strengthened to exact accepted table-cell equality and matching unit, key and period",
+ "application_changes_in_delivery":false,
+ "financial_accuracy_certificate":false
+}

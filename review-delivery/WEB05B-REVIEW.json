@@ -1,0 +1,61 @@
+{
+  "review_id": "WEB05B-INDEPENDENT-20261014",
+  "observed_at": "2026-10-14T20:10:03Z",
+  "application_tested": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+  "application_branch": "claude/web-05b-markets-sectors",
+  "local_review_commit": "f739fe2ecb93f97e8f44e9bfcd88e9ac7e802557",
+  "central_tracking_event": {"sequence":75,"sha256":"edd0d8500317ee7f3b823a008677d1f6fbddc656675dc2970baf651c06447423","chain_verified":75,"tracking_unit_tests_passed":10},
+  "decision": "FIX REQUIRED",
+  "scope": "WEB-05B DESIGN PREVIEW only; WEB03 and WEB04 decisions preserved; no live acceptance",
+  "phase_status": {"implemented":true,"tested":true,"reviewed":true,"merged":false,"accepted":false,"deployed_preview":true,"deployed_production":false},
+  "preview": {
+    "url":"https://pixel-perfect-showcase-276-mvqioa37s.vercel.app/preview/web-v1/markets",
+    "deployment_id":"6JseRZRC28yQ749LJMYRST1P7HqT",
+    "verified_commit":"407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+    "before":"Original branch alias rendered application404 despite READY",
+    "action":"Added Config overrides to Preview for exact branch claude/web-05b-markets-sectors only; redeployed same source",
+    "config":{"WEB_V1_PREVIEW_ENABLED":"true","ENGINE_PREVIEW_ENABLED":"true","MAREFA_DESIGN_FIXTURES":"true","ENGINE_PEERS_ENABLED":"false"},
+    "production_changed":false,"secrets_changed":false,"other_branches_changed":false,
+    "runtime":"All six requested route families rendered; no build-only acceptance"
+  },
+  "source": {
+    "path":"tadawul-data-lake/data-lake/raw/all_company_names.json",
+    "sha256":"1df4505542a04fdc2ab8233f91311d4d7fed529ff361eb5a68c84cee45de0cd4",
+    "updated_in_repository":"2026-08-30",
+    "date_limit":"Repository snapshot date, not independently proven date of each exchange observation; not a live census",
+    "identities_checked":396,"main":270,"nomu":126,"classified_from_frozen_engine_pages":3,"unclassified":393,
+    "classification_limit":"Engine labels only, not independently licensed official exchange taxonomy",
+    "financial_acceptance":false
+  },
+  "test_runs":[
+    {"id":"repository","passed":330,"failed":0,"skipped":14,"scope":"bun test tests, on407d7e8; 14 live API tests not authorized/configured"},
+    {"id":"independent-source-and-query","passed":5,"failed":0,"skipped":0,"scope":"807 assertions; every identity against original file, hash, partition, search and query roundtrip; breadcrumb existence captured as defect evidence, not acceptance"},
+    {"id":"boundary-acceptance","passed":0,"failed":1,"skipped":0,"scope":"Desired frozen company-to-market breadcrumb boundary; observed legacy route fails acceptance"},
+    {"id":"typescript","exit_code":0,"scope":"bun x tsc --noEmit"},
+    {"id":"local-preview-build","exit_code":0,"scope":"vite build, branch-scoped frozen Preview mode"},
+    {"id":"WEB05A-previously-unrun-error-case","passed":1,"failed":0,"skipped":0,"scope":"Same DOM assertions as optional BASE_LIVE test, independently exercised through Chrome on localhost4397, not original Playwright runner; frozen=false, engine=false, Supabase endpointslocalhost9 with test-only placeholders. research=error, knowledge=error, data-result1120 present"}
+  ],
+  "runtime_checks":{
+    "routes":["/preview/web-v1/markets","/preview/web-v1/markets/saudi","/preview/web-v1/markets/saudi/main","/preview/web-v1/markets/saudi/nomu","/preview/web-v1/sectors","/preview/web-v1/sectors/financials","/preview/web-v1/sectors/unclassified"],
+    "search":"Arabic سابك returns2010/2020; SABIC returns empty with English-name limit; Banks narrows sector directory to Financials",
+    "filter_sort_share":"Financials+Arabic-name sorting gives2 rows; reload shared URL retains filters/results; Banks industry gives1120",
+    "pagination":"Nomu Next gives51–100 of126 and URLpage2; all396 identities partitioned without duplication in independent test",
+    "unified_search":"Ctrl+K Financials gives2 companies and1 sector; Enter opens shareable search?q=Financials; sector link remains Preview",
+    "market_sector_company":"Main→Financials→Banks→company1120 succeeds; company return breadcrumb fails frozen boundary",
+    "empty_states":"SABIC explicitly unavailable as undocumented English name;393 unclassified; Nomu0 classified/0engine pages; no invented numeric market index or sector aggregate in new pages",
+    "mobile_ar":"390px RTL, Markets/Saudi/Main/Nomu/Sectors/Financials/unclassified rendered; measured pages fit viewport",
+    "mobile_en":"390px LTR, six main requestedpages rendered; Saudi overflows467px, other testedpages375pxscrollWidth",
+    "not_run":"Claude original20-test browser runner not rerun; independent Chrome checks and original unit suite are reported separately"
+  },
+  "findings":[
+    {"id":"WEB05B-F01","severity":"BLOCKER","file":"src/components/web-v1/company-template.tsx","line":37,"issue":"Saudi market breadcrumb exits to/markets/saudi","observed":"After market→sector→1120→Saudi market, frozen banner disappears and legacy page renders prices, marketcaps and broader sectors without frozen provenance","requirement":"Keep market/sector/company navigation within Preview; do not change legacy production page or its data; Claude to implement and retest"},
+    {"id":"WEB05B-F02","severity":"BLOCKER","file":"src/components/web-v1/shell.tsx","issue":"Shared footer Sectors/Companies links escape Preview","observed":"Mobile footer Sectors opens/sectors then This page didn't load; footer source routes also bypass Preview boundary","requirement":"In frozen layout, reviewed market/sector/company links must target corresponding Preview routes; unrelated pending pages should be explicitly outside scope/unavailable"},
+    {"id":"WEB05B-F03","severity":"NON_BLOCKING_DESIGN_DEFECT","file":"src/routes/preview.web-v1.markets.saudi.index.tsx","issue":"English Saudi market company cards force horizontal document overflow","observed":"Viewport390px,document.scrollWidth467px; three listcards extend toright467.57, header/name/ticker flexrows exceedwidth","requirement":"Constrain/shrink/wrap long English card names and metadata; verify390pxen and ar without horizontal document overflow"},
+    {"id":"WEB05B-N01","severity":"NON_BLOCKING_SCOPE_NOTE","issue":"Sector detail source footnote omits snapshot date while showing file/hash","requirement":"Prefer consistent snapshot date on all entry routes; do not relabel repository modification date as a verified capturetime"},
+    {"id":"WEB05B-N02","severity":"OUTSIDE_FROZEN_ACCEPTANCE","issue":"Local nonfrozen diagnostic still uses frozen banner copy","requirement":"Do not infer live integration acceptance from local error-state assertion; reserve banner-mode correction for separately authorized live scope"}
+  ],
+  "required_decisions":["Claude fixes Preview-boundary links, then independent retest on new SHA; no permission to change design files by reviewer","Human product acceptance remains separate from engineering review; no main/production approval"],
+  "next_three":["Claude corrects Preview navigation boundary without changing legacy routes","Claude corrects English Saudi card overflow","Codex retests new deliverySHA and updates existing central board"],
+  "security":"This delivery adds review code and sanitized metadata only: no official documents, screenshots, raw financial rows, environment files, credentials or private central board",
+  "preserved_reviews":["WEB03 DESIGN PREVIEW ACCEPT at67c6368; LIVEBLOCKED","WEB04 DESIGN PREVIEW ACCEPT independent review preserved","WEB05A previous frozen acceptance preserved"]
+}

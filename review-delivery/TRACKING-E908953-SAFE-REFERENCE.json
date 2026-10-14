@@ -1,0 +1,17 @@
+{
+ "schema":"marefa-tracking-safe-reference/1",
+ "source_local_commit":"e90895339e31389aa328077f3d2cbcedfd6559ca",
+ "source_commit_public":false,
+ "meaning":"Sanitized verifiable GitHub receipt referring to local tracking checkpoint. Not a claim that the private original Git commit is published or publicly independently reconstructible.",
+ "receipt":{"path":"docs/tracking/batches/WEB04-INDEPENDENT-ACCEPT-20261014.json","sha256":"01d1d3dee46f8691aa600d57a254d92305bee059829480d8214733897ae05c10"},
+ "event_chain":{"verified_count":74,"last_event_sha256":"f105163204b8664ddff3e084bb83af1652cabe722589bbe9ff8782c9142ba358"},
+ "safe_task_projection":[
+  {"id":"WEB-03","state":"REVIEW","engineering_decision":"ACCEPT_FROZEN_DESIGN_ONLY","latest_event_sha256":"a01e89f83af7c85a4a29cfcc01dc5b7b1a7f9a14e86f4cdb8af1a5a25a4f5609"},
+  {"id":"WEB-04","state":"REVIEW","engineering_decision":"ACCEPT_FROZEN_DESIGN_ONLY","latest_event_sha256":"8561b5dc7a8df6ccfd40c356e20a3412ec45255981ac62c72f17619d03f36517"},
+  {"id":"WEB-05A","state":"REVIEW","engineering_decision":"ACCEPT_FROZEN_DESIGN_ONLY","latest_event_sha256":"d3a2a5e9adc0b6aab71a9f1c00c277206f5fb244ab1aadb08d89881b1fd91065"}
+ ],
+ "live_dependencies":["WEB-LIVE-01","WEB-LIVE-02","WEB-LIVE-03","WEB-LIVE-04"],
+ "public_previous_delivery":"b3a18b3dff6be1131daefd9f4526d9532dcbf0ce",
+ "confidential_content_exported":false,
+ "validation":"For an authorized holder of local engine repo: git show e908953:docs/tracking/batches/WEB04-INDEPENDENT-ACCEPT-20261014.json then SHA256 exact bytes; verify_events(root) checks immutable74-eventchain. Public readers can verify this receipt and prior public WEB04 review, not private sourceboard."
+}

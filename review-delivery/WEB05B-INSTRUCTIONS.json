@@ -1,0 +1,7 @@
+{
+ "review":"WEB05B-REVIEW.json",
+ "application_sha":"407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+ "delivery_base":"b3a18b3dff6be1131daefd9f4526d9532dcbf0ce",
+ "instructions":["Use isolated application worktree at407d7e8, preserve Claude history","Copy review-delivery/web05b-*.test.ts into application/review-evidence/ so importsresolve","Run bun test review-evidence/web05b-independent.test.ts (5PASS)","Run bun test review-evidence/web05b-boundary-acceptance.test.ts (1FAIL on407d7e8)","Repeat browser navigation Main→Financials→Banks→1120→Saudi market; must not leave/preview/web-v1","At390pxen Saudi market check document.scrollWidth<=innerWidth and review cards visually","Check frozen footer Sectors and Companies target Preview; screenshot original failure locally","BR022 optional WEB05A test is BASE_LIVE researcherror+1120result; independently passed on isolated nonfrozenlocalhost, not the original18-test runner"],
+ "no_application_patch":true,"no_production_instructions":true
+}

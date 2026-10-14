@@ -1,0 +1,225 @@
+{
+  "schema": "marefa-web06-polish-acceptance/1",
+  "decision": "APPROVED_DESIGN_DECISIONS_AND_V1_SCOPE",
+  "application_baseline": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "accepted_preview": "https://pixel-perfect-showcase-276-61hi01b0t.vercel.app/preview/web-v1",
+  "polish_branch": "claude/web-06-visual-polish",
+  "polish_delivery_sha": null,
+  "status": "CRITERIA_FIXED_AWAITING_DELIVERY_NOT_REVIEWED",
+  "USER_FINAL_ACCEPTANCE": false,
+  "WEB06_CLOSED": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "review_owner": "Codex",
+  "implementation_owner": "Claude Code",
+  "notes": [
+    {
+      "id": "D1",
+      "title": "التفاف الروابط الطويلة ببطاقة الهوية",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "src/components/engine-preview.tsx; company identity renderer",
+      "acceptance": "لا تداخل أو اقتطاع يخفي وجهة الرابط؛ نص URL/الهدف الأصلي محفوظ؛ التفاف/عزل اتجاه آمن عند390 والكمبيوتر",
+      "checks": "Identity links hitboxes and keyboard reachability; no unsafe URLs introduced",
+      "severity": "BLOCKING_IF_CONTENT_OBSCURED",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D2",
+      "title": "عرض جدول إجراءات الشركة",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "Corporate action renderer / responsive table",
+      "acceptance": "فصل التاريخ والمبلغ والوحدة والوصف؛ لا تعديل الأرقام أو الفترات؛ عرض الجدول/بطاقات متمايز قابل للقراءة والتمرير الداخلي",
+      "checks": "Cell identity/value/unit/period/source comparison before-after; header relations",
+      "severity": "BLOCKING_IF_DATA_AMBIGUOUS",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D3",
+      "title": "تقليل التنبيهات العامة في الموضوعات",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "TopicSection / page banner",
+      "acceptance": "تنبيه عام واحد أو تنظيم غير مكرر؛ يبقى سبب الحجب/النقص ومصدر كل معلومة؛ جميع18موضوعًا قابلة للوصول",
+      "checks": "No removal of per-value provenance or withholding reason; screen-reader labels",
+      "severity": "PREFERENCE_UNLESS_SAFETY_REGRESSION",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D4",
+      "title": "اختصار الحالات الافتراضية في قوائم السوق",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "Directory/board table status cells",
+      "acceptance": "اختصار تكرار نقص التصنيف/صفحة البيانات بمفتاح مفهوم؛ لا اختراع تصنيف ولا إزالة صفوف/بحث/تصفية",
+      "checks": "Accessible text/key for icon statuses; same rows and result counts",
+      "severity": "PREFERENCE_UNLESS_MEANING_LOST",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D5",
+      "title": "تعريب تسميات العرض لا المصدر",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "i18n labels / sourced sector display",
+      "acceptance": "تعريب التسميات الثابتة أو قاموس عرض موثق مرتبط بمفتاح موجود؛ حفظ الوصف/المنتجات/اسم المصدر كما ورد؛ لا ترجمة مختلقة ولا تصنيف جديد",
+      "checks": "Original source values unchanged; display label mapping explicit; fallback lang/dir",
+      "severity": "BLOCKING_IF_SOURCE_MUTATED",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D6",
+      "title": "تقليل كثافة القوائم المالية",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "financial-explorer.tsx / table collapse controls",
+      "acceptance": "عرض مختصر/طي اختياري مع إتاحة كل البنود والقيم والفترات والحجب؛ لا إخفاء نقص يغير التفسير ولا اشتقاق جديد",
+      "checks": "Keyboard-expand all; row sets invariant; 390 internal scrolling; chart/table consistency",
+      "severity": "PREFERENCE_UNLESS_ROWS_UNREACHABLE",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D7",
+      "title": "تبسيط لوحة المصنع",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "factory panel / category disclosure",
+      "acceptance": "ملخص غير مقاس وتفاصيل قابلة للطي؛18فئة بأوزانها وحدودها وبواباتها ومصادرها متاحة؛ لا درجة مجانية أو جاهزية مزيفة",
+      "checks": "Category key/order/weight/threshold/gate invariant; aria-expanded; unmeasured states",
+      "severity": "BLOCKING_IF_CONTRACT_OR_SCORE_REGRESSION",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D8",
+      "title": "اختصار الرئيسية للجوال",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "Preview home / shared cards",
+      "acceptance": "تحسين الهرمية والطول دون اختراع أسعار/درجات أو إسقاط مداخل18موضوعًا؛ لا حد بكسلات اعتباطي لطول الصفحة",
+      "checks": "390 fixed viewport; principal actions and keyboard navigation accessible",
+      "severity": "VISUAL_PREFERENCE",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D9",
+      "title": "روابط القطاع والصناعة الموثقة",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "company breadcrumb / catalog sector routing",
+      "acceptance": "إن وجد ارتباط فعلي موثق يفتح صفحة القطاع داخلPreview؛ غير الموثق نص بلا رابط؛ لا بناء رابط من اسم أو تخمين",
+      "checks": "Source-to-route mapping and Preview boundary regression",
+      "severity": "BLOCKING_IF_UNSOURCED_OR_LEGACY_ROUTE",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D10",
+      "title": "إزالة المداخل المضللة للوظائف المؤجلة",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "shared shell / preview-footer / mobile tabbar",
+      "acceptance": "إزالة/تمييز مداخل Watchlist/community/accounts/newsletter؛ لا تبدو وظائف نشطة؛ يبقى القرار أنها مؤجلة لا مكتملة؛ لا footerإنتاجي أو كتابة",
+      "checks": "No submit/network writes; disabled/unavailable semantics; no legacy production navigation",
+      "severity": "BLOCKING_IF_WRITES_OR_MISLEADING_ACTION",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D11",
+      "title": "التباين والكيبورد والتركيز والحالة غير اللونية",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "Shared controls/labels/table/shell",
+      "acceptance": "قياس تباين النص العادي>=4.5:1 والكبير>=3:1 وأجزاء التحكم المطلوبة>=3:1؛ تركيز واضح وترتيب منطقي ودون مصيدة؛ حالة نصية/رمز بجانب اللون",
+      "checks": "Record computed contrast pairs; Tab/ShiftTab/Enter/Space/Escape; focus after dialogs/disclosures",
+      "severity": "BLOCKING_FOR_REQUIRED_ACCESS_FAILURE",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D12",
+      "title": "تبسيط مجموعات البحث غير المتاحة",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "unified search dialog / results",
+      "acceptance": "دمج/تقليل إعلانات عدم توفر البحث/المعرفة فيالمجمد؛ إبقاء حالة عدم التوفر صادقة؛ لا تحولها إلى0نتائج أو محتوى مختلق",
+      "checks": "Search company names/tickers unchanged; CtrlK/Escape/focus restoration; no live fallback",
+      "severity": "PREFERENCE_UNLESS_STATE_OR_SEARCH_REGRESSION",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    },
+    {
+      "id": "D13",
+      "title": "اختبار الثيم الآخر إن كان موجودًا",
+      "status": "WAITING_DELIVERY",
+      "affected_components_hint": "existing theme control / style tokens",
+      "acceptance": "فحص الثيم الآخر فقط إن كان متاحًا فعليًا فينسخةالتسليم؛ وإلاNOT_APPLICABLE_EXISTING_THEME_ABSENT مع دليل؛ لا ثيم جديد",
+      "checks": "Code/UI evidence of theme availability; contrast/focus/withholding if available",
+      "severity": "CONDITIONAL_NO_NEW_THEME",
+      "implementation_result": null,
+      "independent_result": "NOT_RUN",
+      "before_evidence": "Claude handoff c5e4fa90 INDEX section5; screenshots historical/local, not Vercel"
+    }
+  ],
+  "scope": {
+    "approved_now": "Polish existing implemented pages forD1..D13; no rebuild, data expansion, live integration or new theme",
+    "required_before_launch_outside_this_batch": [
+      "About / من نحن",
+      "Contact / التواصل",
+      "Privacy / الخصوصية",
+      "Terms / الشروط"
+    ],
+    "deferred_from_v1_user_approved": [
+      "Watchlist",
+      "Community",
+      "Accounts/login/subscriptions",
+      "Newsletter sending"
+    ],
+    "deferred_items_implemented": false,
+    "retained_in_long_term_scope": true,
+    "launch_safety_gates_not_waived": true
+  },
+  "shared_regression_checks": [
+    "Test exact delivery SHA vs accepted c3bfd2f, only affected shared components and necessary regression",
+    "Preserve original/calculated eligibility and value/period/scope/unit/currency/source identity; no blocked values reappear",
+    "All18investor topics and18factory categories reachable after folds; categories not conflated",
+    "Preview routes remain bounded; external documented sources still allowed",
+    "No source/mock publication or Supabase write/fallback; frozen library remains explicit unavailable",
+    "Viewport configured390; compare document width to390, not expanded innerWidth",
+    "Before/after only affected sections; record source SHA and data mode perimage; unmodified accepted paths not reopened"
+  ],
+  "review_rules": {
+    "sample_data_missing": "Not a new visual blocker if honestly displayed in accepted scope",
+    "blockers": "Safety/identity/contract loss, inaccessible required controls, overflow obscuring content, misleading active deferred functions",
+    "preferences": "Spacing/density/length decisions not arbitrary blockers once required content remains usable",
+    "historical_acceptance_preserved": true,
+    "previous_preview_kept_for_rollback": true,
+    "full_new_capture_or_test_cycle_requested": false,
+    "review_app_sha": "Only actual supplied final delivery SHA, never documentation-only c5e4fa90"
+  },
+  "visual_handoff": {
+    "state": "RECEIVED_AND_REFERENCE_VERIFIED",
+    "delivery_sha": "c5e4fa90b50510815b4c2734cecc13a110bbe0f2",
+    "index": "product-tracking/handoff/WEB-06/INDEX.md",
+    "verification": "docs/tracking/checkpoints/WEB06-VISUAL-HANDOFF-VERIFIED-20261015.json",
+    "pictures_are_local": true,
+    "no_vercel_capture_claim": true,
+    "docs_separate_from_app": true,
+    "individual_capture_times_missing": true
+  },
+  "live_dependencies_unchanged": [
+    "WEB-LIVE-01",
+    "WEB-LIVE-02",
+    "WEB-LIVE-03",
+    "WEB-LIVE-04",
+    "WEB-CONTENT-LIVE-01"
+  ]
+}

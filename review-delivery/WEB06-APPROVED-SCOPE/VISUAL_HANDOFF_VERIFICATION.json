@@ -1,0 +1,1715 @@
+{
+  "schema": "marefa-visual-handoff-verification/1",
+  "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "delivery_sha": "c5e4fa90b50510815b4c2734cecc13a110bbe0f2",
+  "state": "RECEIVED_AND_REFERENCE_VERIFIED",
+  "app_code_unchanged": true,
+  "changed_paths": 115,
+  "images": 112,
+  "modes": {
+    "frozen": 92,
+    "local_synthetic": 20
+  },
+  "relative_links_verified": 179,
+  "capture_log": "Claude recorded112 HTTP200, no pageerrors and no configured-width overflow; not independently rerun",
+  "timestamps": "Per-image capture timestamp absent; commit date is not substituted as capture time",
+  "screenshot_caveat": "capture.mjs temporarily makes mobile tabbar absolute for full-page shots; screenshots do not prove sticky-bar interaction",
+  "runtime_preview": "Reuse independent c3bfd2f acceptance; local screenshots are not Vercel captures",
+  "manifest": [
+    {
+      "path": "product-tracking/handoff/WEB-06/INDEX.md",
+      "sha256": "78e887edccf5abfee954f277d0eba88a0412c5e79b596629025503d5bef92576",
+      "bytes": 29994
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/capture-log.txt",
+      "sha256": "00c531106567597540981da199d193de12551ead79d4346f658836a2324a198c",
+      "bytes": 8284
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/capture.mjs",
+      "sha256": "408a59e4a9babb8491d9a84e342190cab4b4ae6b2926834a28445f8eef2cd86d",
+      "bytes": 5211
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/01-home.ar.jpg",
+      "sha256": "e763aa312a79cbf5ced1d8c45a2a2dcf1a734c85ac36281c9c3c4bea3327c96c",
+      "bytes": 203705,
+      "height": 2431,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/01-home.en.jpg",
+      "sha256": "44e0175b59c74a31611409f0d4e7e8aaf2b4c6dc01e52cd51581c96a7e2b1f1d",
+      "bytes": 237673,
+      "height": 2535,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/02-search-dialog.ar.jpg",
+      "sha256": "02376691f3a5f3d38f3f18b8f10071ddfc0a632535a7ed63e882665896bc1ed2",
+      "bytes": 39579,
+      "height": 900,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/02-search-dialog.en.jpg",
+      "sha256": "00bcb860ccd5496c48c3947201cf6b01cf64877085361e9e84679a613cfc0ca8",
+      "bytes": 44874,
+      "height": 900,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/03-search-results.ar.jpg",
+      "sha256": "6808dd32eaf6b4c28d61ac31318ead8f18a7b4c9955866bb686d205c483967b0",
+      "bytes": 55561,
+      "height": 963,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/03-search-results.en.jpg",
+      "sha256": "8331e91766f17043b2fc9b7047f9d069686658b55b62e34922ea31403d4c90a1",
+      "bytes": 62743,
+      "height": 963,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/04-company-directory.ar.jpg",
+      "sha256": "9cc8865aee2b6de511ba756adcd91150a06e1c058b916b1dc049830cfb055c77",
+      "bytes": 192097,
+      "height": 2176,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/04-company-directory.en.jpg",
+      "sha256": "9e7d2a8de52f888a3dd4244192b4a2d9814ec4dd7412bbb0cd6d2c122630b942",
+      "bytes": 208392,
+      "height": 2204,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/05-company-2222-business.ar.jpg",
+      "sha256": "0b5bccaeab75cdaeccff15d537fac133f2f8c09cedf029c6de5835f6c816b2ac",
+      "bytes": 273753,
+      "height": 3261,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/05-company-2222-business.en.jpg",
+      "sha256": "2a532ff340623af66bcedcebb31b6966cb8e0f3b17245186092ba03e90039e96",
+      "bytes": 292517,
+      "height": 3261,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/06-company-2222-financials.ar.jpg",
+      "sha256": "35e09bea34b20a6a5a418c3ecea03311ed4ae2072247311936d6a64b6eb21fe4",
+      "bytes": 421012,
+      "height": 5307,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/06-company-2222-financials.en.jpg",
+      "sha256": "c7f8a94f36f3f74ad835abefe4fbe37096e4c26f2215ca3c903d6fc501c8ca71",
+      "bytes": 442635,
+      "height": 5307,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/07-company-1120-financials.ar.jpg",
+      "sha256": "8716cf4cdbd4592ee0334fe65c11384f4ab0ea8ab532ff57b66f5908bd0aa1df",
+      "bytes": 359927,
+      "height": 5052,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/07-company-1120-financials.en.jpg",
+      "sha256": "c6ea0f5949da35027f593616f6c22436e7822bd3c0d687d798b43ede206349b2",
+      "bytes": 396363,
+      "height": 5052,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/08-company-8010-financials.ar.jpg",
+      "sha256": "e7c076f6dc1b030b4578c877b5bf3d75c549677f65c1fd4a31d2d9509b565bd5",
+      "bytes": 289579,
+      "height": 4011,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/08-company-8010-financials.en.jpg",
+      "sha256": "40389e694fc2eb796c446d359179d986baca0e717e19cc0370aa32fc184a870e",
+      "bytes": 324957,
+      "height": 4077,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/09-company-2222-shareholders.ar.jpg",
+      "sha256": "b2d13f024b345d17dd93da9f910a183c65d491dc96ae02e8e44e0f642ffcae2e",
+      "bytes": 234332,
+      "height": 3064,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/09-company-2222-shareholders.en.jpg",
+      "sha256": "336f1e9da7f234d051a5151dbaff213095303d564c9b6ca6389aabde66072ef3",
+      "bytes": 249809,
+      "height": 3084,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/10-company-2222-market.ar.jpg",
+      "sha256": "34e5167ac2a5bd518d595ac55d85b2594534d7db0b6b09a5e7c1a9287b641262",
+      "bytes": 178872,
+      "height": 2325,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/10-company-2222-market.en.jpg",
+      "sha256": "50ce575297c2140af4709ddba0675085e6508e8d6fabb66b2fe4a75410e8afcd",
+      "bytes": 205632,
+      "height": 2325,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/11-company-2222-risks.ar.jpg",
+      "sha256": "efbc6d204a6b77d8319658064a12539ebabfafc4b193d576bbd9f4ea2946576b",
+      "bytes": 239846,
+      "height": 2912,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/11-company-2222-risks.en.jpg",
+      "sha256": "8623aab9710ee56aa48019cedafc5c35466537580b616f4a8c57a491f2a8726e",
+      "bytes": 253168,
+      "height": 2912,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/12-company-2222-coverage-factory.ar.jpg",
+      "sha256": "2c01e060133077aa44886b037a6acfd360960a8d4cbcac2fe0440d69bd6661a0",
+      "bytes": 229106,
+      "height": 2731,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/12-company-2222-coverage-factory.en.jpg",
+      "sha256": "b26c4cceb8cee9c9dd0a918fc11b794904b9c14007febff5717ad752d437c619",
+      "bytes": 266295,
+      "height": 2747,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/13-company-1120-coverage-factory.ar.jpg",
+      "sha256": "22b8ba72dbdb8923b6257eeb7d7140c0ea8ff3d46ccdff7ac47df780af76434e",
+      "bytes": 220676,
+      "height": 2731,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/13-company-1120-coverage-factory.en.jpg",
+      "sha256": "f44585c9507ef5ee7c5111be6809f66360b581c4c1e4765f4aa4774403f70442",
+      "bytes": 260454,
+      "height": 2747,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/14-markets.ar.jpg",
+      "sha256": "cd0ec05a87436b274334d21c69c5a0ef04db395fc830224979c6f05811f8e28f",
+      "bytes": 77678,
+      "height": 1063,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/14-markets.en.jpg",
+      "sha256": "3befff5ce7febef823e74e05672becdf1ee3323025eb10198d1b431d4596186c",
+      "bytes": 85077,
+      "height": 1087,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/15-market-saudi.ar.jpg",
+      "sha256": "b4f91f5b138ecdfc6adb4793a7eb575543422bcd168adac746163b6687a1f2f4",
+      "bytes": 143049,
+      "height": 1903,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/15-market-saudi.en.jpg",
+      "sha256": "58ce173cca7e6461bc6328bbf8e6427c6cbd1c62c069d28e5da1d997a5e27371",
+      "bytes": 163317,
+      "height": 1950,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/16-market-saudi-main.ar.jpg",
+      "sha256": "2b8d2eb75c1a3573dd60c6fcfb299473cebf7bf324c3a0048ca87c5f0407aeb2",
+      "bytes": 265724,
+      "height": 3394,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/16-market-saudi-main.en.jpg",
+      "sha256": "7dd6f24908c77310afa121997ebf89c37b3298866b44fbea44b44a67be50b6ac",
+      "bytes": 286768,
+      "height": 3394,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/17-market-saudi-nomu.ar.jpg",
+      "sha256": "72efec0c8cdc548d11644760d8330c8a06b4196b5132b74db7d2c5dfa945bd19",
+      "bytes": 269305,
+      "height": 3378,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/17-market-saudi-nomu.en.jpg",
+      "sha256": "5dfeeb93cfa1144c38ecebe9458930e45867ac31a54dd58c6481416a23954573",
+      "bytes": 290714,
+      "height": 3378,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/18-sectors.ar.jpg",
+      "sha256": "4942cc052e342273031fa9304cb648b4dd2a9edb28bd966116b998b15bef5b53",
+      "bytes": 96258,
+      "height": 1303,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/18-sectors.en.jpg",
+      "sha256": "3c88eefaae483927a0f76bc4564baf622c56c9a4b384b1edfb0586a86792f1a3",
+      "bytes": 111381,
+      "height": 1327,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/19-sector-financials.ar.jpg",
+      "sha256": "a8d5757e96a49cd3e44532823b926c1ed1265fbd6ccc958bcc29372977462f34",
+      "bytes": 113580,
+      "height": 1640,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/19-sector-financials.en.jpg",
+      "sha256": "6cc6c68130f3a9f75c44855510a9f7bebd2f808505b799be394803ea549fc643",
+      "bytes": 128987,
+      "height": 1640,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/20-sector-unclassified.ar.jpg",
+      "sha256": "983687b1b4924a0e5673553d987b3de71569c34233719eb0cab7b8a2d2bcf981",
+      "bytes": 72394,
+      "height": 900,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/20-sector-unclassified.en.jpg",
+      "sha256": "1c787078af5384fb088e79bfc7d3b79127bf2b1e0c3bde9d5cb5af6617de02f9",
+      "bytes": 79226,
+      "height": 900,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/21-research-unavailable.ar.jpg",
+      "sha256": "152baa58f3ab6f83f8c79ef9de17cb28e8c479b1bbe818b95510ffa74e63698d",
+      "bytes": 59218,
+      "height": 903,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/21-research-unavailable.en.jpg",
+      "sha256": "2934cce3bb1e0f75b3a60ff4791c6b0e5ded7891fe71db09b543022641eb91f5",
+      "bytes": 68146,
+      "height": 903,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/22-knowledge-unavailable.ar.jpg",
+      "sha256": "ce81adc3a75040c04d2b25235938e1050216d58f94018fa6545dd54639e44c4b",
+      "bytes": 60436,
+      "height": 903,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/22-knowledge-unavailable.en.jpg",
+      "sha256": "1303faf9770e31e35b0a00e224fbf8a3b6ecdd9125c81c5f7d07064410f7738c",
+      "bytes": 69092,
+      "height": 903,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/23-design-system.ar.jpg",
+      "sha256": "0ead96d439ce05d3ceb6dde5e1e012e4fb3980ab9da9f3c86f0fd60aeaed0a3d",
+      "bytes": 198419,
+      "height": 2675,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/desktop/23-design-system.en.jpg",
+      "sha256": "77ac3716d9506577fd95f31eb84a8b9ee11a5e9de22831f1070895e1b8a46a7a",
+      "bytes": 216432,
+      "height": 2705,
+      "width": 1440,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/01-home.ar.jpg",
+      "sha256": "18d5bfdd12952c45628136309d1c748381451eddec20f5aee009fe4d054dc2e9",
+      "bytes": 174431,
+      "height": 4692,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/01-home.en.jpg",
+      "sha256": "90a6f89ebb8b06480326f53458d38b146410858ebab63c9b1ad23ba1ae531c90",
+      "bytes": 201561,
+      "height": 4938,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/02-search-dialog.ar.jpg",
+      "sha256": "19ad75ceb3b87bffab40c3c209a47d93d88ddd862b1dde77d0d04c4275be5217",
+      "bytes": 24915,
+      "height": 844,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/02-search-dialog.en.jpg",
+      "sha256": "102403e3f5d9134fe3e6fce463a120111a117c1f0b3a8d81f7dff605cdf05273",
+      "bytes": 26593,
+      "height": 844,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/03-search-results.ar.jpg",
+      "sha256": "ec97b536e30532db814da320f143ab014e53aa616fb304f6a152a7e254ece78f",
+      "bytes": 40574,
+      "height": 1328,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/03-search-results.en.jpg",
+      "sha256": "64ba58518c3423553f7a3f436fc63a9608f5107f4e20d4b8d7acaba9eed972f7",
+      "bytes": 48400,
+      "height": 1404,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/04-company-directory.ar.jpg",
+      "sha256": "b8c6d5865d719f0db5e591bbec033f21248849988ac5186fea5d2c6adb15e5d2",
+      "bytes": 162206,
+      "height": 4977,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/04-company-directory.en.jpg",
+      "sha256": "92fee0ba7f3e828b696871aa58fdba66b8b3cfc74a09f3651b19054790cf70e7",
+      "bytes": 174044,
+      "height": 5055,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/05-company-2222-business.ar.jpg",
+      "sha256": "7860de54e30813b9868161bca66468a30df79d37e3dfecf6cbc83220f5235a4d",
+      "bytes": 222057,
+      "height": 4926,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/05-company-2222-business.en.jpg",
+      "sha256": "04e70f5e591711d7f32b462829a719f22065278a37bc3b19cdfa2a33eea32544",
+      "bytes": 233995,
+      "height": 5070,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/06-company-2222-financials.ar.jpg",
+      "sha256": "30732b9b7b961186cb2c70eb2347e500cd7e19de830cb8948bfccb3151171d4a",
+      "bytes": 285749,
+      "height": 6753,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/06-company-2222-financials.en.jpg",
+      "sha256": "3f766f8cac094aed1aef8510fdf402f066a2ea417af6ba934add5e298c84569f",
+      "bytes": 296593,
+      "height": 6824,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/07-company-1120-financials.ar.jpg",
+      "sha256": "36e15e495e67a493a4718d032bdfa421818c38f19f2fc1521907bbe22ff5b5b7",
+      "bytes": 257494,
+      "height": 6355,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/07-company-1120-financials.en.jpg",
+      "sha256": "8321cc561bc8889c116f49de320ab249e3074c118f489fd2e1f8f2e462e8b6b2",
+      "bytes": 282459,
+      "height": 6339,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/08-company-8010-financials.ar.jpg",
+      "sha256": "44e569643b542d3658f452870619c7c18210475354626261a61e261a0f4e9c9f",
+      "bytes": 215578,
+      "height": 5041,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/08-company-8010-financials.en.jpg",
+      "sha256": "8b47c462e4188a51fe3f684049cd000ec0fe551a016fb8462f20a11f161bd12f",
+      "bytes": 242731,
+      "height": 5240,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/09-company-2222-shareholders.ar.jpg",
+      "sha256": "af8fd957ab2115786ed76c4fc52cb9e7401494cd0b22627624c1a2ed37988653",
+      "bytes": 183800,
+      "height": 4390,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/09-company-2222-shareholders.en.jpg",
+      "sha256": "b7cbdfc6f41f2c3a4b34b52e1f632ca76e393bf24367c1f56a4ad88f8ff16740",
+      "bytes": 193535,
+      "height": 4573,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/10-company-2222-market.ar.jpg",
+      "sha256": "83284d7d6da558378a3bb3a8989df52d0e2b9f1add60757c4776994fbbe7208a",
+      "bytes": 134885,
+      "height": 3302,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/10-company-2222-market.en.jpg",
+      "sha256": "9fc2722967e4266f2024f8ae299733032ae564ed37040bd81d0bc664dc408320",
+      "bytes": 157318,
+      "height": 3508,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/11-company-2222-risks.ar.jpg",
+      "sha256": "d2f1d23276c2603be2dead998103a69835204e8f77456917eb6269832ee0f214",
+      "bytes": 177192,
+      "height": 3989,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/11-company-2222-risks.en.jpg",
+      "sha256": "1ba2be0c4d32f1a4ffd9dde9661d798ff684a1c96a097390e0074fd67fe73fc1",
+      "bytes": 184829,
+      "height": 4095,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/12-company-2222-coverage-factory.ar.jpg",
+      "sha256": "f1d2b2cd87d493c6a9788239c31d819840958b98508ce406c1d9e3a475862413",
+      "bytes": 173706,
+      "height": 5002,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/12-company-2222-coverage-factory.en.jpg",
+      "sha256": "d7a7813328d9ad3f0584e210d87da7e4d2ff858c437858c9e45d5a0d3d2e3cc3",
+      "bytes": 203395,
+      "height": 5175,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/13-company-1120-coverage-factory.ar.jpg",
+      "sha256": "264f3d93eb10c73b7787e12a435cce2f4015567ddf34527d3e1eaad69dccd72c",
+      "bytes": 165866,
+      "height": 4945,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/13-company-1120-coverage-factory.en.jpg",
+      "sha256": "8c564bfcdadeda8117d1c121de1a806300d602f144a249c601b4af01bbabb264",
+      "bytes": 202495,
+      "height": 5150,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/14-markets.ar.jpg",
+      "sha256": "b64d46987bc3093271726d9896938df7c4ec7a5ae8c88cddfccd821a09d8eb25",
+      "bytes": 60064,
+      "height": 1655,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/14-markets.en.jpg",
+      "sha256": "ae4adde9183c51b61006685e6ea093f9f63eca3094ee20e71ada3d43d3461768",
+      "bytes": 64795,
+      "height": 1759,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/15-market-saudi.ar.jpg",
+      "sha256": "1ff3aef98381777e2fb3f5f733e173b2e5eb48ae55e0981cfeaa548b75e42d68",
+      "bytes": 118737,
+      "height": 3304,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/15-market-saudi.en.jpg",
+      "sha256": "d072a14474e70c149224f25018c348b679f68a5e22db7b6d79c31e1e54f34146",
+      "bytes": 136726,
+      "height": 3499,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/16-market-saudi-main.ar.jpg",
+      "sha256": "e5ebefe36fd1cdb668e67f74fef95b87758128e2d412f0165419be31e9681c2f",
+      "bytes": 210883,
+      "height": 5826,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/16-market-saudi-main.en.jpg",
+      "sha256": "b10e95b700aea22bbebba7c057a5b0983b88adf5a85a37a57626cc0bcec81c5a",
+      "bytes": 231179,
+      "height": 5921,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/17-market-saudi-nomu.ar.jpg",
+      "sha256": "8112cf86980304c4022d084c4358e47a7866ed136d07bff2691ac6e852add046",
+      "bytes": 213073,
+      "height": 5773,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/17-market-saudi-nomu.en.jpg",
+      "sha256": "73f5c5029e3ab3d925a91f53aee431b40704266b6e013dbadfeb4769bf6b42c2",
+      "bytes": 231797,
+      "height": 5892,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/18-sectors.ar.jpg",
+      "sha256": "000070308e0388f7364bdfa788bc8139260872f4d1e595e2b5c8502de42a9601",
+      "bytes": 71857,
+      "height": 1901,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/18-sectors.en.jpg",
+      "sha256": "0947df31cac76d6081b3b6f8193892917855cc99204fdedcc62aec4442c8ea56",
+      "bytes": 83660,
+      "height": 2022,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/19-sector-financials.ar.jpg",
+      "sha256": "0e671b95d4f89274f3d6fe8916ae54f92062a78b4196fd5f5e0b0ffe4c646ae6",
+      "bytes": 85470,
+      "height": 2470,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/19-sector-financials.en.jpg",
+      "sha256": "8b269c9fd9e20eede7b45f3e0df3c90d33cbad0b3cb91cd1a7d5a472412132df",
+      "bytes": 99821,
+      "height": 2579,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/20-sector-unclassified.ar.jpg",
+      "sha256": "f5ff3d0da6863e613c9f74487bfb51811818c2ded1dab687c5b1db6dd4e907df",
+      "bytes": 34641,
+      "height": 844,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/20-sector-unclassified.en.jpg",
+      "sha256": "ac1375af71f56877bec30f9d6043c805dc85fb54b20295b7d7fe3a915e64521f",
+      "bytes": 38682,
+      "height": 844,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/21-research-unavailable.ar.jpg",
+      "sha256": "ca2040214c6d0ed6375283404280270b2dbaf64cbdf0fcb9e39e43aa100d3b9f",
+      "bytes": 43030,
+      "height": 1280,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/21-research-unavailable.en.jpg",
+      "sha256": "3c4fae6b0572b2b10a7df4197e743d5d717b0ba9978fea0a1d65a961ae94b923",
+      "bytes": 51681,
+      "height": 1369,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/22-knowledge-unavailable.ar.jpg",
+      "sha256": "feee749f2d9a987065354ca931a354f8fefb3a99986c12881faffef377d69b6c",
+      "bytes": 43857,
+      "height": 1256,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/22-knowledge-unavailable.en.jpg",
+      "sha256": "18d9c4d0fb7dc79c0700d6d1990797be1f6346778cccfafa194a90f94110a554",
+      "bytes": 52347,
+      "height": 1369,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/23-design-system.ar.jpg",
+      "sha256": "62fc543e30013246effa54b82b54cf4afb95efbcb1f3b9d1a549a7b3e4388b0b",
+      "bytes": 164869,
+      "height": 4461,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/frozen/mobile/23-design-system.en.jpg",
+      "sha256": "604a7b32c63c5177f2f0973f5128a3a1ac141e8708f930cc911e993b97ffb769",
+      "bytes": 181088,
+      "height": 4658,
+      "width": 390,
+      "data_mode": "frozen",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/31-research-index.ar.jpg",
+      "sha256": "ecced1be2dc884c035d856368e578886a3a0c2e1d007343a6a39cb5fc5e2ee9d",
+      "bytes": 87610,
+      "height": 1251,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/31-research-index.en.jpg",
+      "sha256": "b5b33cc3718eb1e413502de58cc0cb70740dde469c529a97fab3c120253d560d",
+      "bytes": 99195,
+      "height": 1275,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/32-research-reader.ar.jpg",
+      "sha256": "9e57c6ea4d1de52ce0dfb187126e770cec6d73d8675a1fe099a59bf12c8b51e3",
+      "bytes": 143310,
+      "height": 2463,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/32-research-reader.en.jpg",
+      "sha256": "83e45f69a5dba6b84c7b568c4027ea07ef10913bee9647591da480009e344c1b",
+      "bytes": 185665,
+      "height": 2595,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/33-research-reader-table-date-states.ar.jpg",
+      "sha256": "b896348ed04411ae3bcce74504b5a4ce90ee77dce88211642db8bac51d0e64a8",
+      "bytes": 123738,
+      "height": 1854,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/33-research-reader-table-date-states.en.jpg",
+      "sha256": "26265242c8a3d93b22434ce81456997b1e4313b98088a53f9beb690747f61ba9",
+      "bytes": 146332,
+      "height": 1878,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/34-knowledge-index.ar.jpg",
+      "sha256": "1fa7fae0254edf7b1bb85f1de425302c5387f74b06551c1dfb6a6a77a3f8b388",
+      "bytes": 83531,
+      "height": 1303,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/34-knowledge-index.en.jpg",
+      "sha256": "3d1413d104dc7cb3b5f1d1f6b9995b7a5fe8c5c1c83e172743f983f8e74b4a86",
+      "bytes": 90378,
+      "height": 1303,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/35-knowledge-topic.ar.jpg",
+      "sha256": "7916571dc1d9f8970b359a537fa93cc50a6d1cfe80016d3cde0330bdd3a7f9fc",
+      "bytes": 85782,
+      "height": 1642,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/desktop/35-knowledge-topic.en.jpg",
+      "sha256": "25871b909bf8d3be0dd9dfd4746dd897470535d8ec0d89d7dbf0d41294a2cb49",
+      "bytes": 92579,
+      "height": 1642,
+      "width": 1440,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/31-research-index.ar.jpg",
+      "sha256": "aa759b54c32129f6e2f3ac654721ce19c9589f2285622adbad6164d4576ca651",
+      "bytes": 69180,
+      "height": 2022,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/31-research-index.en.jpg",
+      "sha256": "edd65d6ab72818c74f6385ad2d1c49c65cbb3f597a2eff89bca0b6fd1480db95",
+      "bytes": 78424,
+      "height": 2086,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/32-research-reader.ar.jpg",
+      "sha256": "791c630a55c7e943643d5c4c21ecd11ae943828bf3c48a66ac647ada7db77d1d",
+      "bytes": 114942,
+      "height": 3514,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/32-research-reader.en.jpg",
+      "sha256": "1df6ee65e9b29192f2b03826f9ba36450fb0d91d69627c250484ff5f761035b9",
+      "bytes": 142675,
+      "height": 3815,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/33-research-reader-table-date-states.ar.jpg",
+      "sha256": "6755905b44746734dea22ff2369a62c07a2a9cdde80b5e252399d83cb876e98e",
+      "bytes": 95509,
+      "height": 2609,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/33-research-reader-table-date-states.en.jpg",
+      "sha256": "f4f658e37975d9c33293f49db768e57279c1943de737fe98c4a2475d696cd746",
+      "bytes": 115484,
+      "height": 2771,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/34-knowledge-index.ar.jpg",
+      "sha256": "595414aeb761d261ef5c589e57659ec4783d935b7bdf4fd81f54c1f40a0f25f7",
+      "bytes": 65471,
+      "height": 2046,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/34-knowledge-index.en.jpg",
+      "sha256": "a85f9a540dae3aa1ac45f9c492691a02e7402d771266e077047a247cd2278cb6",
+      "bytes": 70253,
+      "height": 2110,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/35-knowledge-topic.ar.jpg",
+      "sha256": "7b754d55ec6f180026302fb5a61a44a4c095a0a87b961500799b51cad1a8e374",
+      "bytes": 62450,
+      "height": 2012,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    },
+    {
+      "path": "product-tracking/handoff/WEB-06/screens/local-synthetic/mobile/35-knowledge-topic.en.jpg",
+      "sha256": "8bae865312fc880d105389f53505a791a25b17073fd2cd45c38859e4bba8488e",
+      "bytes": 68133,
+      "height": 2053,
+      "width": 390,
+      "data_mode": "local-synthetic",
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "captured_from": "LOCAL_SERVER_NOT_VERCEL",
+      "application_sha": "c3bfd2f18cd145c25ae26aa826f4100c99342f51"
+    }
+  ]
+}

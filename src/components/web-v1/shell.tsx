@@ -4,7 +4,7 @@ import { Building2, Globe2, Home, Layers, LayoutGrid, Menu, Search, Star } from 
 import { LogoMark } from "@/components/logo-mark";
 import { SiteFooter } from "@/components/site-footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { SearchResults, useSiteSearch } from "./site-search";
+import { hasResults, SearchResults, useSiteSearch } from "./site-search";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ui, useI18n, type LocalizedText } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -290,7 +290,9 @@ export function UnifiedSearch({
               </ul>
             </section>
           )}
-          <SearchResults status={status} onNavigate={close} compact />
+          {!(inCompany.length > 0 && status.state === "done" && !hasResults(status.response)) && (
+            <SearchResults status={status} onNavigate={close} compact />
+          )}
         </div>
         {q.trim() && (
           <div className="flex items-center justify-between border-t border-border px-4 py-2 text-[11px] text-muted-foreground">

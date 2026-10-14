@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T17:00:00Z",
+  "updated_at": "2026-10-14T19:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -392,6 +392,17 @@
       "screens": "product-tracking/outbox/WEB-V1/screens-web03-04",
       "result": "factory panel with contract definitions (engine b70254e contract 1.0.0), names AR/EN, weight, minimum, score, fields, gates, sources, freshness, last assessment, separation note",
       "preview": "https://pixel-perfect-showcase-git-c47448-mohammadksa856-bots-projects.vercel.app (Vercel status success for b4277b1; not opened from this environment: *.vercel.app blocked)"
+    },
+    "WEB-05A": {
+      "status": "IMPLEMENTED, TESTED (not accepted)",
+      "branch": "claude/web-05a-site-pages",
+      "base": "claude/web-03-04-company-page@cb41d33",
+      "report": "product-tracking/reports/BR-018_WEB-05A.md",
+      "screens": "product-tracking/outbox/WEB-V1/screens-web05a",
+      "result": "home directory entry + library links; company directory (396 listed, identity only) with search/filters/sort/paging; unified search with loading/empty/error/unavailable states",
+      "web03_04_files_touched": [
+        "src/lib/web-v1/design-review-policy.ts (branch name added, required for Preview)"
+      ]
     }
   },
   "open_dependencies_on_codex": {
@@ -958,6 +969,12 @@
       "suite": "bun test + tsc + eslint + vite build (vercel preset, preview and production-like)",
       "branch": "claude/web-03-04-company-page",
       "result": "254 pass, 14 skip, 0 fail; tsc 0; eslint 0 errors/10 warnings; both builds succeed; production-like build bundles no fixtures"
+    },
+    {
+      "id": "RUN-2026-10-14-55",
+      "suite": "bun test + Playwright e2e + tsc + eslint + vite build",
+      "branch": "claude/web-05a-site-pages",
+      "result": "270 pass, 14 skip, 0 fail; e2e 16/16; tsc 0; eslint 0 errors; builds ok"
     }
   ],
   "active_track": {

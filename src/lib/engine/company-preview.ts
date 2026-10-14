@@ -206,7 +206,15 @@ export type WithheldReason =
   | "unsafe_source_url"
   | "calculated_without_formula"
   /** محسوبة دون إعادة إنتاج مدخلاتها (lineage غير مسجّل). قاعدة Codex للمشتقات القديمة. */
-  | "calculated_inputs_not_reproduced";
+  | "calculated_inputs_not_reproduced"
+  /** WEB-03: period_end لا يطابق العمود الذي ستظهر فيه القيمة. */
+  | "period_end_mismatch"
+  /** WEB-03: عملة غير عملة التقارير (أو العملة تخالف الوحدة). لا تحويل في الواجهة. */
+  | "currency_mismatch"
+  /** WEB-03: مصدران للفترة نفسها بقيمتين مختلفتين. */
+  | "source_conflict"
+  /** WEB-03: للمقياس قيمة في المحرك لكنها لم تجتز شروط الجدول، فلا تُعرض في البطاقة. */
+  | "not_in_statement_table";
 
 export type MetricGroup = {
   id: string;
@@ -1352,6 +1360,7 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
     .map((b) => b.group);
   const u = page.data_quality.understanding;
   const factory = normalizeFactoryCoverage(page.data_quality.factory_readiness);
+  const statements = buildStatements(page, kind);
   const nameAr = attributeText(profile["company_name_ar"]?.value);
   return {
     company: {
@@ -1371,8 +1380,8 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
       operationalCategories: factory.readiness,
     },
     factory,
-    statements: buildStatements(page, kind),
-    keyFigures: keyFigures(page, kind),
+    statements,
+    keyFigures: keyFigures(page, kind, statements),
     topics,
     counts: {
       shown: groups.reduce((n, g) => n + g.cells.length, 0),

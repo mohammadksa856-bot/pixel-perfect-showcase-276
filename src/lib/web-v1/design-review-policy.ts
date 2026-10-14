@@ -5,6 +5,8 @@ export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
   "claude/web-03-04-company-page",
   // WEB-05A: added so this batch's Preview can render; the only change to a WEB-03/04 file (noted in BR-018).
   "claude/web-05a-site-pages",
+  // WEB-03 acceptance fixes branch (exact name), so its Preview renders the frozen samples.
+  "claude/web-03-acceptance-fixes",
 ];
 type Env = Record<string, string | undefined>;
 

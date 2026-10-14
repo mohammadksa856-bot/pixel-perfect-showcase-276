@@ -47,6 +47,22 @@ const STATUS: Record<TopicStatus, { label: LocalizedText; icon: string; classNam
 };
 
 const WITHHELD: Record<WithheldReason, LocalizedText> = {
+  period_end_mismatch: {
+    ar: "تاريخ نهاية الفترة لا يطابق العمود",
+    en: "Period end does not match the column",
+  },
+  currency_mismatch: {
+    ar: "بعملة غير عملة التقارير؛ لا تحويل",
+    en: "In a currency other than the reporting currency; not converted",
+  },
+  source_conflict: {
+    ar: "مصدران للفترة نفسها بقيمتين مختلفتين",
+    en: "Two sources disagree for the same period",
+  },
+  not_in_statement_table: {
+    ar: "لا تطابق خلية في جدول القوائم (فترة أو عملة أو نطاق مختلف)",
+    en: "Does not match a statement-table cell (different period, currency or scope)",
+  },
   quality_flagged: { ar: "عليها علامة جودة سلبية", en: "Quality-flagged" },
   non_numeric_value: { ar: "قيمة غير رقمية", en: "Non-numeric value" },
   unit_conflict: { ar: "الوحدة لا تتسق مع معنى المقياس", en: "Unit inconsistent with the metric" },

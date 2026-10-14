@@ -1,0 +1,265 @@
+bun test v1.4.2 (744846f84)
+
+tests/web-03-acceptance.test.ts:
+65 |           c?.state,
+66 |           `${name} ${f.key}: card shown but table cell is ${c?.state ?? "absent"}`,
+67 |         ).toBe("value");
+68 |         if (c?.state !== "value") continue;
+69 |         expect(c.cell.value, `${name} ${f.key} value`).toBe(f.cell.value);
+70 |         expect(f.period.end, `${name} ${f.key} period`).toBe(latest);
+                      ^
+TypeError: undefined is not an object (evaluating 'f.period.end')
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:70:18)
+(fail) 1. key figure = the statement-table cell, or withheld > every shown key figure is the same key, latest annual column, same value and unit as the table [43.44ms]
+84 |   test("Tawuniya: insurance revenue card and table row agree, and the row carries the IFRS 17 key", () => {
+85 |     const v = buildCompanyPreview(frozen(V5("8010")));
+86 |     const f = v.keyFigures.find((x) => x.key === "insurance_revenue")!;
+87 |     const c = cellAt(annualOf(v), "insurance_revenue", "2025-12-31");
+88 |     if (f.state === "value")
+89 |       expect(c).toMatchObject({ state: "value", cell: { value: f.cell.value } });
+                     ^
+error: expect(received).toMatchObject(expected)
+
+Matcher error: received value must be a non-null object
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:89:17)
+(fail) 1. key figure = the statement-table cell, or withheld > Tawuniya: insurance revenue card and table row agree, and the row carries the IFRS 17 key [4.05ms]
+ 97 |     for (const r of histRows(page, "annual", "2023-12-31", "net_income")) {
+ 98 |       r.currency = "USD";
+ 99 |       r.unit = "USD";
+100 |     }
+101 |     const c = cellAt(annualOf(buildCompanyPreview(page)), "net_income", "2023-12-31");
+102 |     expect(c).toMatchObject({ state: "withheld", reason: "currency_mismatch" });
+                    ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "reason": "currency_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦454.76⁩ مليار دولار",
++       "en": "USD 454.76bn",
++     },
++     "proof": {
++       "document": "not_stated",
++       "kind": "reported_extracted",
++       "page": null,
++       "sourceUrl": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
++     },
++     "value": 454764000000,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:102:15)
+(fail) 2. one currency per table; other currencies withheld, never converted > a USD amount in a SAR table is withheld (currency_mismatch) [12.50ms]
+107 |     for (const r of histRows(page, "annual", "2024-12-31", "dividends_per_share")) {
+108 |       r.currency = "USD";
+109 |       r.unit = "USD/share";
+110 |     }
+111 |     const c = cellAt(annualOf(buildCompanyPreview(page)), "dividends_per_share", "2024-12-31");
+112 |     expect(c).toMatchObject({ state: "withheld", reason: "currency_mismatch" });
+                    ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "reason": "currency_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦1.93⁩ دولار/سهم",
++       "en": "USD 1.93/share",
++     },
++     "proof": {
++       "document": "not_stated",
++       "kind": "reported_extracted",
++       "page": 222,
++       "sourceUrl": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
++     },
++     "value": 1.926,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:112:15)
+(fail) 2. one currency per table; other currencies withheld, never converted > a USD per-share value in a SAR table is withheld [13.72ms]
+114 | 
+115 |   test("currency field and unit disagreeing (SAR unit, USD currency) is withheld", () => {
+116 |     const page = V4("2222");
+117 |     for (const r of histRows(page, "annual", "2022-12-31", "revenue")) r.currency = "USD";
+118 |     const c = cellAt(annualOf(buildCompanyPreview(page)), "revenue", "2022-12-31");
+119 |     expect(c).toMatchObject({ state: "withheld", reason: "currency_mismatch" });
+                    ^
+error: expect(received).toMatchObject(expected)
+
+@@ -1,3 +1,3 @@
+  {
+-   "reason": "currency_mismatch",
++   "reason": "unit_conflict",
+    "state": "withheld",
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:119:15)
+(fail) 2. one currency per table; other currencies withheld, never converted > currency field and unit disagreeing (SAR unit, USD currency) is withheld [11.97ms]
+120 |   });
+121 | 
+122 |   test("the table states its currency, and it is the company's reporting currency", () => {
+123 |     for (const [name, page] of PAGES()) {
+124 |       const annual = annualOf(buildCompanyPreview(page));
+125 |       expect(annual.currency, name).toBe(page.company.currency);
+                                          ^
+error: v4:2222
+
+Expected: "SAR"
+Received: undefined
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:125:37)
+(fail) 2. one currency per table; other currencies withheld, never converted > the table states its currency, and it is the company's reporting currency [34.25ms]
+135 |     for (const r of histRows(page, "annual", "2025-12-31", "revenue")) {
+136 |       r.currency = "USD";
+137 |       r.unit = "USD";
+138 |     }
+139 |     const f = buildCompanyPreview(page).keyFigures.find((x) => x.key === "revenue")!;
+140 |     expect(f).toMatchObject({ state: "withheld", reason: "currency_mismatch" });
+                    ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "reason": "currency_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦1,559.34⁩ مليار دولار",
++       "en": "USD 1,559.34bn",
++     },
++     "key": "revenue",
++     "label": {
++       "ar": "الإيرادات",
++       "en": "Revenue",
++     },
++     "period": {
++       "end": "2025-12-31",
++       "kind": "fy",
++       "label": {
++         "ar": "السنة المالية ⁦2025⁩",
++         "en": "FY 2025",
++       },
++     },
++     "proof": {
++       "document": "not_stated",
++       "filingType": "Annual financial report comparative",
++       "formula": null,
++       "independentlyVerified": false,
++       "kind": "reported_extracted",
++       "page": null,
++       "sourceUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
++     },
++     "unit": "USD",
++     "value": 1559342000000,
++   },
++   "key": "revenue",
++   "label": {
++     "ar": "الإيرادات",
++     "en": "Revenue",
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 36
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:140:15)
+(fail) 2. one currency per table; other currencies withheld, never converted > a key figure in another currency is withheld, not shown [9.93ms]
+144 | describe("3. a value appears only in the column whose period it belongs to", () => {
+145 |   test("a row whose period_end differs from its column is withheld (period_end_mismatch)", () => {
+146 |     const page = V4("2222");
+147 |     for (const r of histRows(page, "annual", "2024-12-31", "revenue")) r.period_end = "2023-12-31";
+148 |     const annual = annualOf(buildCompanyPreview(page));
+149 |     expect(cellAt(annual, "revenue", "2024-12-31")).toMatchObject({
+                                                          ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "reason": "period_end_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦1,637.30⁩ مليار ريال",
++       "en": "SAR 1,637.30bn",
++     },
++     "proof": {
++       "document": "not_stated",
++       "kind": "reported_extracted",
++       "page": null,
++       "sourceUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
++     },
++     "value": 1637299000000,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:149:53)
+(fail) 3. a value appears only in the column whose period it belongs to > a row whose period_end differs from its column is withheld (period_end_mismatch) [15.20ms]
+155 |   test("a balance row from an interim date never fills an annual column", () => {
+156 |     const page = V4("2222");
+157 |     for (const r of histRows(page, "annual_position", "2025-12-31", "total_assets"))
+158 |       r.period_end = "2026-06-30";
+159 |     const c = cellAt(annualOf(buildCompanyPreview(page)), "total_assets", "2025-12-31");
+160 |     expect(c?.state).not.toBe("value");
+                               ^
+error: expect(received).not.toBe(expected)
+
+Expected: not "value"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:160:26)
+(fail) 3. a value appears only in the column whose period it belongs to > a balance row from an interim date never fills an annual column [14.72ms]
+163 |   test("a YTD row whose end differs from the YTD column is withheld", () => {
+164 |     const page = V4("2222");
+165 |     for (const r of page.sections.financials.ytd.metrics["revenue"] as unknown as Row[])
+166 |       r.period_end = "2026-03-31";
+167 |     const ytd = buildCompanyPreview(page).statements.find((x) => x.mode === "ytd")!;
+168 |     expect(cellAt(ytd, "revenue", ytd.periods[0]!.end)).toMatchObject({
+                                                              ^
+error: expect(received).toMatchObject(expected)
+
+  {
+-   "reason": "period_end_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦883.87⁩ مليار ريال",
++       "en": "SAR 883.87bn",
++     },
++     "proof": {
++       "document": "not_stated",
++       "kind": "reported_extracted",
++       "page": null,
++       "sourceUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
++     },
++     "value": 883873000000,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-acceptance.test.ts:168:57)
+(fail) 3. a value appears only in the column whose period it belongs to > a YTD row whose end differs from the YTD column is withheld [13.46ms]
+
+ 3 pass
+ 10 fail
+ 20 expect() calls
+Ran 13 tests across 1 file. [253.00ms]

@@ -1,0 +1,1319 @@
+{
+  "generated_from": {
+    "pages": "tests/fixtures/codex-20261013 (frozen v5)",
+    "factory": "tests/fixtures/web-v1/factory-b70254e.json.gz",
+    "contract": {
+      "repo": "-Market-Agnostic-Financial-Data-Engine-1",
+      "commit": "b70254e",
+      "path": "config/factory/18-category-contract.json",
+      "sha256": "a229596adfa8f70b9a281e57aa11b8e41c647eca6ceb3ee2f3eb2918ced92608",
+      "contract_version": "1.0.0"
+    }
+  },
+  "investor_topics": [
+    {
+      "ordinal": 1,
+      "group": "business",
+      "title": {
+        "ar": "هوية الشركة",
+        "en": "Identity"
+      },
+      "component": {
+        "ar": "بطاقة هوية: الاسم القانوني، ISIN، الإدراج، المقر، المعيار المحاسبي",
+        "en": "Identity card: legal name, ISIN, listing, HQ, accounting standard"
+      },
+      "needs": {
+        "ar": "خصائص ملف الشركة بمصدر",
+        "en": "Sourced profile attributes"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 10,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 2,
+      "group": "business",
+      "title": {
+        "ar": "نموذج العمل",
+        "en": "Business model"
+      },
+      "component": {
+        "ar": "وصف النشاط + أشرطة الإيرادات حسب المنتج والجغرافيا + نتائج القطاعات",
+        "en": "Business description + revenue by product/geography bars + segment results"
+      },
+      "needs": {
+        "ar": "إيضاح القطاعات التشغيلية (IFRS 8)",
+        "en": "Operating segment note (IFRS 8)"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 11,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 3,
+      "group": "shareholders",
+      "title": {
+        "ar": "الإدارة والحوكمة",
+        "en": "Management and governance"
+      },
+      "component": {
+        "ar": "رئيس المجلس والرئيس التنفيذي والمراجع، ثم المجلس واللجان والمكافآت",
+        "en": "Chair, CEO and auditor, then board, committees and remuneration"
+      },
+      "needs": {
+        "ar": "تقرير مجلس الإدارة والحوكمة",
+        "en": "Board and governance report"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 4,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 4,
+      "group": "shareholders",
+      "title": {
+        "ar": "الملكية والمساهمون",
+        "en": "Ownership"
+      },
+      "component": {
+        "ar": "جدول كبار الملاك بأشرطة النسب وتاريخ «كما في»",
+        "en": "Major holders table with stake bars and as-of date"
+      },
+      "needs": {
+        "ar": "إفصاحات الملكية المؤرخة",
+        "en": "Dated ownership disclosures"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 4,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 5,
+      "group": "financials",
+      "title": {
+        "ar": "القوائم المالية التاريخية",
+        "en": "Historical financials"
+      },
+      "component": {
+        "ar": "مستكشف القوائم: سنوي/ربعي/منذ بداية السنة، مقياس مليون/مليار، رسم اتجاه",
+        "en": "Statement explorer: annual/quarterly/YTD, million/billion scale, trend chart"
+      },
+      "needs": {
+        "ar": "قوائم مدققة لخمس سنوات و12 ربعًا",
+        "en": "Five audited years and twelve quarters"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 89,
+          "withheld": 13,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 105,
+          "withheld": 49,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 52,
+          "withheld": 2,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 6,
+      "group": "financials",
+      "title": {
+        "ar": "جودة الأرباح",
+        "en": "Earnings quality"
+      },
+      "component": {
+        "ar": "جدول جودة الأرباح: الأرباح المعدّلة، جودة الدخل، الاستحقاقات",
+        "en": "Earnings-quality table: adjusted earnings, income quality, accruals"
+      },
+      "needs": {
+        "ar": "مشتقات بمدخلات مُعاد إنتاجها",
+        "en": "Derivatives with reproduced inputs"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 3,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 1,
+          "withheld": 4,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 3,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 7,
+      "group": "financials",
+      "title": {
+        "ar": "النسب المالية",
+        "en": "Financial ratios"
+      },
+      "component": {
+        "ar": "مجموعات النسب حسب نوع الشركة (عادية/بنك/تأمين)",
+        "en": "Ratio sets by company type (ordinary/bank/insurer)"
+      },
+      "needs": {
+        "ar": "نسب محسوبة بمعادلة ومدخلات معتمدة",
+        "en": "Ratios with recorded formula and approved inputs"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 12,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 1,
+          "withheld": 17,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 4,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 8,
+      "group": "financials",
+      "title": {
+        "ar": "المؤشرات التشغيلية",
+        "en": "Operational KPIs"
+      },
+      "component": {
+        "ar": "مؤشرات تشغيلية خاصة بالقطاع (إنتاج، فروع، وثائق…)",
+        "en": "Sector operating KPIs (production, branches, policies…)"
+      },
+      "needs": {
+        "ar": "مؤشرات القطاع في عقد الصفحة",
+        "en": "Sector KPIs delivered in the page contract"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 7,
+          "withheld": 1,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 9,
+      "group": "shareholders",
+      "title": {
+        "ar": "التوزيعات وإجراءات الشركة",
+        "en": "Dividends and actions"
+      },
+      "component": {
+        "ar": "التوزيع للسهم ونسبة التوزيع + سجل إجراءات التوزيع بتواريخها",
+        "en": "DPS and payout + dated distribution actions log"
+      },
+      "needs": {
+        "ar": "إعلانات التوزيع وإجراءات الشركة",
+        "en": "Dividend announcements and corporate actions"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 1,
+          "withheld": 3,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 10,
+          "withheld": 2,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 10,
+      "group": "business",
+      "title": {
+        "ar": "القطاع والصناعة",
+        "en": "Industry and sector"
+      },
+      "component": {
+        "ar": "تصنيف القطاع والصناعة ومؤشرات القطاع المجمعة",
+        "en": "Sector and industry classification with aggregate sector indicators"
+      },
+      "needs": {
+        "ar": "بيانات قطاعية من جهة رسمية",
+        "en": "Official sector datasets"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 11,
+      "group": "business",
+      "title": {
+        "ar": "المنافسون والحصة السوقية",
+        "en": "Competitors"
+      },
+      "component": {
+        "ar": "جدول مقارنة النظراء (نظراء مستنتجون لا منافسون معلنون)",
+        "en": "Peer comparison table (inferred peers, not declared competitors)"
+      },
+      "needs": {
+        "ar": "نظراء من الصناعة نفسها ببيانات قابلة للمقارنة",
+        "en": "Same-industry peers with comparable data"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 12,
+      "group": "market",
+      "title": {
+        "ar": "التداول والسيولة",
+        "en": "Trading and liquidity"
+      },
+      "component": {
+        "ar": "آخر إغلاق بتاريخه + رسم الأسعار + السيولة",
+        "en": "Last close with date + price chart + liquidity"
+      },
+      "needs": {
+        "ar": "تغذية أسعار مرخصة",
+        "en": "Licensed price feed"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 1,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 13,
+      "group": "market",
+      "title": {
+        "ar": "التوجيهات والتوقعات",
+        "en": "Guidance and forecasts"
+      },
+      "component": {
+        "ar": "توجيهات الإدارة كنصوص مقتبسة بمصدرها (لا أرقام متوقعة)",
+        "en": "Management guidance as sourced quotes (no projected figures)"
+      },
+      "needs": {
+        "ar": "توجيهات منشورة من الشركة",
+        "en": "Company-published guidance"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 14,
+      "group": "market",
+      "title": {
+        "ar": "تغطية المحللين",
+        "en": "Analyst coverage"
+      },
+      "component": {
+        "ar": "إجماع المحللين مع تاريخ ومصدر مرخص",
+        "en": "Analyst consensus with date and licensed source"
+      },
+      "needs": {
+        "ar": "ترخيص بيانات الإجماع",
+        "en": "Consensus data licence"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 15,
+      "group": "market",
+      "title": {
+        "ar": "التقييم",
+        "en": "Valuation"
+      },
+      "component": {
+        "ar": "مكررات التقييم (P/E، P/B، عائد التوزيع) بتاريخ السعر",
+        "en": "Valuation multiples (P/E, P/B, yield) with price date"
+      },
+      "needs": {
+        "ar": "سعر مرخص ومقاييس سهم معتمدة في التاريخ نفسه",
+        "en": "Licensed price and approved per-share data on the same date"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 16,
+      "group": "risks",
+      "title": {
+        "ar": "المخاطر والتعرضات",
+        "en": "Risks and exposures"
+      },
+      "component": {
+        "ar": "عوامل المخاطر المصنفة + التصنيف الائتماني + استحقاقات الدين",
+        "en": "Classified risk factors + credit rating + debt maturities"
+      },
+      "needs": {
+        "ar": "إفصاح المخاطر وإيضاح الدين",
+        "en": "Risk disclosure and debt note"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 1,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 17,
+      "group": "risks",
+      "title": {
+        "ar": "الاستدامة",
+        "en": "Sustainability"
+      },
+      "component": {
+        "ar": "مؤشرات الانبعاثات والطاقة والمياه بوحداتها",
+        "en": "Emissions, energy and water indicators with units"
+      },
+      "needs": {
+        "ar": "تقرير استدامة بمصدر",
+        "en": "Sourced sustainability report"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 8,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 0,
+          "withheld": 0,
+          "engine_status": "unavailable"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 18,
+      "group": "risks",
+      "title": {
+        "ar": "الأخبار ومواد المستثمرين",
+        "en": "News and materials"
+      },
+      "component": {
+        "ar": "قائمة الإفصاحات الرسمية مرتبة زمنيًا مع نوع المستند",
+        "en": "Official disclosures in date order with document type"
+      },
+      "needs": {
+        "ar": "إفصاحات السوق والمستندات الرسمية",
+        "en": "Exchange disclosures and official documents"
+      },
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "shown": 2,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "2222": {
+          "shown": 40,
+          "withheld": 0,
+          "engine_status": "not_measured"
+        },
+        "8010": {
+          "shown": 1,
+          "withheld": 0,
+          "engine_status": "partial"
+        }
+      },
+      "acceptance": "PENDING_REVIEW"
+    }
+  ],
+  "factory_categories": [
+    {
+      "ordinal": 1,
+      "key": "company_profile",
+      "weight": 8,
+      "threshold": 0.85,
+      "official_sources": [
+        "issuer_investor_relations_site",
+        "issuer_annual_report",
+        "company_registry",
+        "exchange_disclosure_archive"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.15517241379310345,
+          "populated": 9,
+          "expected": 58,
+          "gates": [
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.5517241379310345,
+          "populated": 32,
+          "expected": 58,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 2,
+      "key": "financial_statements",
+      "weight": 14,
+      "threshold": 0.95,
+      "official_sources": [
+        "issuer_audited_financial_statements",
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site"
+      ],
+      "gates_defined": 2,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.1220472440944882,
+          "populated": 31,
+          "expected": 254,
+          "gates": [
+            "failed",
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.7874015748031497,
+          "populated": 200,
+          "expected": 254,
+          "gates": [
+            "failed",
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 3,
+      "key": "profitability",
+      "weight": 6,
+      "threshold": 0.85,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.2608695652173913,
+          "populated": 6,
+          "expected": 23,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.6521739130434783,
+          "populated": 15,
+          "expected": 23,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 4,
+      "key": "liquidity_solvency",
+      "weight": 5,
+      "threshold": 0.9,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.15,
+          "populated": 3,
+          "expected": 20,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.85,
+          "populated": 17,
+          "expected": 20,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 5,
+      "key": "efficiency",
+      "weight": 4,
+      "threshold": 0.85,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.17647058823529413,
+          "populated": 3,
+          "expected": 17,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.5294117647058824,
+          "populated": 9,
+          "expected": 17,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 6,
+      "key": "growth",
+      "weight": 5,
+      "threshold": 0.8,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.14285714285714285,
+          "populated": 5,
+          "expected": 35,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.42857142857142855,
+          "populated": 15,
+          "expected": 35,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 7,
+      "key": "per_share",
+      "weight": 3,
+      "threshold": 0.9,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.3076923076923077,
+          "populated": 4,
+          "expected": 13,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "complete",
+          "score": 1,
+          "populated": 13,
+          "expected": 13,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 8,
+      "key": "valuation",
+      "weight": 6,
+      "threshold": 0.8,
+      "official_sources": [
+        "internal_computation",
+        "exchange_market_data_feed",
+        "licensed_data_vendor"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "missing",
+          "score": 0,
+          "populated": 0,
+          "expected": 31,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.4838709677419355,
+          "populated": 15,
+          "expected": 31,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 9,
+      "key": "market_data",
+      "weight": 5,
+      "threshold": 0.85,
+      "official_sources": [
+        "exchange_market_data_feed",
+        "issuer_investor_relations_site"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "missing",
+          "score": 0,
+          "populated": 0,
+          "expected": 26,
+          "gates": [
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.2692307692307692,
+          "populated": 7,
+          "expected": 26,
+          "gates": [
+            "failed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 10,
+      "key": "dividends",
+      "weight": 5,
+      "threshold": 0.9,
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site",
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.25,
+          "populated": 5,
+          "expected": 20,
+          "gates": [
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.2,
+          "populated": 4,
+          "expected": 20,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 11,
+      "key": "segments",
+      "weight": 4,
+      "threshold": 0.75,
+      "official_sources": [
+        "issuer_audited_financial_statements",
+        "issuer_investor_presentation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "missing",
+          "score": 0,
+          "populated": 0,
+          "expected": 22,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.5333333333333333,
+          "populated": 24,
+          "expected": 45,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 12,
+      "key": "ownership",
+      "weight": 5,
+      "threshold": 0.85,
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "sector_regulator",
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "missing",
+          "score": 0,
+          "populated": 0,
+          "expected": 18,
+          "gates": [
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.3333333333333333,
+          "populated": 6,
+          "expected": 18,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 13,
+      "key": "corporate_actions",
+      "weight": 4,
+      "threshold": 0.9,
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "missing",
+          "score": 0,
+          "populated": 0,
+          "expected": 21,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.2857142857142857,
+          "populated": 6,
+          "expected": 21,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 14,
+      "key": "announcements",
+      "weight": 5,
+      "threshold": 0.8,
+      "official_sources": [
+        "exchange_disclosure_archive",
+        "issuer_investor_relations_site"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "missing",
+          "score": 0,
+          "populated": 0,
+          "expected": 28,
+          "gates": [
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.2857142857142857,
+          "populated": 8,
+          "expected": 28,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 15,
+      "key": "operational_kpis",
+      "weight": 7,
+      "threshold": 0.85,
+      "official_sources": [
+        "issuer_investor_presentation",
+        "issuer_results_call_transcript",
+        "issuer_annual_report",
+        "sector_regulator"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "not_applicable_by_rule",
+          "score": null,
+          "populated": null,
+          "expected": null,
+          "gates": [
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.6739130434782609,
+          "populated": 31,
+          "expected": 46,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 16,
+      "key": "sector_specific_fields",
+      "weight": 7,
+      "threshold": 0.9,
+      "official_sources": [
+        "issuer_audited_financial_statements",
+        "sector_regulator",
+        "exchange_disclosure_archive"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.5370370370370371,
+          "populated": 29,
+          "expected": 54,
+          "gates": [
+            "not_evaluated"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.71875,
+          "populated": 23,
+          "expected": 32,
+          "gates": [
+            "not_evaluated"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 17,
+      "key": "calculated_smart_metrics",
+      "weight": 5,
+      "threshold": 0.9,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 1,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "partial",
+          "score": 0.13333333333333333,
+          "populated": 4,
+          "expected": 30,
+          "gates": [
+            "passed"
+          ]
+        },
+        "2222": {
+          "b70254e": "partial",
+          "score": 0.4666666666666667,
+          "populated": 14,
+          "expected": 30,
+          "gates": [
+            "passed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    },
+    {
+      "ordinal": 18,
+      "key": "sources_lineage_freshness",
+      "weight": 2,
+      "threshold": 1,
+      "official_sources": [
+        "internal_computation"
+      ],
+      "gates_defined": 2,
+      "ui": "IMPLEMENTED",
+      "companies": {
+        "1120": {
+          "b70254e": "complete",
+          "score": 1,
+          "populated": null,
+          "expected": null,
+          "gates": [
+            "passed",
+            "failed"
+          ]
+        },
+        "2222": {
+          "b70254e": "complete",
+          "score": 1,
+          "populated": null,
+          "expected": null,
+          "gates": [
+            "passed",
+            "failed"
+          ]
+        },
+        "8010": {
+          "b70254e": "not_assessed"
+        }
+      },
+      "frozen_preview": "not_assessed (Codex design policy)",
+      "acceptance": "PENDING_REVIEW"
+    }
+  ]
+}

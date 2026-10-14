@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T19:30:00Z",
+  "updated_at": "2026-10-14T22:00:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -403,6 +403,14 @@
       "web03_04_files_touched": [
         "src/lib/web-v1/design-review-policy.ts (branch name added, required for Preview)"
       ]
+    },
+    "WEB-03-FIX": {
+      "status": "IMPLEMENTED, TESTED (not accepted)",
+      "branch": "claude/web-03-acceptance-fixes",
+      "base": "claude/web-05a-site-pages@889230e",
+      "report": "product-tracking/reports/BR-019_WEB-03_acceptance_fixes.md",
+      "evidence": "product-tracking/outbox/WEB-V1/web-03-acceptance",
+      "result": "key figure = statement cell (same key/period/scope/unit/currency) or withheld; one reporting currency per table, other currencies withheld, no conversion; period_end/kind/scope must match the column; negative tests 10 fail before, 13/13 after"
     }
   },
   "open_dependencies_on_codex": {
@@ -975,6 +983,12 @@
       "suite": "bun test + Playwright e2e + tsc + eslint + vite build",
       "branch": "claude/web-05a-site-pages",
       "result": "270 pass, 14 skip, 0 fail; e2e 16/16; tsc 0; eslint 0 errors; builds ok"
+    },
+    {
+      "id": "RUN-2026-10-14-56",
+      "suite": "bun test + negative tests + WEB-05A e2e + tsc + eslint + vite build",
+      "branch": "claude/web-03-acceptance-fixes",
+      "result": "283 pass, 14 skip, 0 fail; negative 10 fail before -> 13/13 after; e2e 15/15; builds ok"
     }
   ],
   "active_track": {

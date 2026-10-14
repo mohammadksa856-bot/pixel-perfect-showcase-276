@@ -56,6 +56,22 @@ const UNAVAILABLE: Record<string, LocalizedText> = {
 };
 const NO_PERIODS: LocalizedText = { ar: "لا توجد فترات.", en: "No periods." };
 export const WITHHELD_TEXT: Record<WithheldReason, LocalizedText> = {
+  period_end_mismatch: {
+    ar: "تاريخ نهاية الفترة لا يطابق العمود",
+    en: "Period end does not match the column",
+  },
+  currency_mismatch: {
+    ar: "بعملة غير عملة التقارير؛ لا تحويل",
+    en: "In a currency other than the reporting currency; not converted",
+  },
+  source_conflict: {
+    ar: "مصدران للفترة نفسها بقيمتين مختلفتين",
+    en: "Two sources disagree for the same period",
+  },
+  not_in_statement_table: {
+    ar: "لا تطابق خلية في جدول القوائم (فترة أو عملة أو نطاق مختلف)",
+    en: "Does not match a statement-table cell (different period, currency or scope)",
+  },
   quality_flagged: { ar: "عليها علامة جودة سلبية", en: "Quality-flagged" },
   non_numeric_value: { ar: "قيمة غير رقمية", en: "Non-numeric value" },
   unit_conflict: { ar: "الوحدة لا تتسق مع المقياس", en: "Unit inconsistent with the metric" },
@@ -96,7 +112,8 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
   );
   const [picked, setPicked] = useState<string | null>(null);
   const chartRow = view.rows.find((r) => r.key === picked) ?? firstChartable ?? null;
-  const currency = amounts.find((r) => r.currency)?.currency ?? "SAR";
+  // عملة الجدول من عقد الصفحة (عملة التقارير)؛ الخلايا بعملة أخرى محجوبة في نموذج العرض.
+  const currency = view.currency ?? "SAR";
   const scaleLabel = (s: Scale): LocalizedText =>
     s === 1e9
       ? { ar: `مليار ${currency === "SAR" ? "ريال" : currency}`, en: `${currency} bn` }
@@ -423,7 +440,7 @@ export function KeyFigures({ figures }: { figures: KeyFigure[] }) {
                 {t(f.cell.display)}
               </a>
               <div className="num truncate text-[10px] text-muted-foreground">
-                {t(f.cell.period.label)}
+                {t(f.period.label)}
                 {f.cell.proof.page ? ` · ${t({ ar: "ص", en: "p." })} ${f.cell.proof.page}` : ""}
               </div>
             </>

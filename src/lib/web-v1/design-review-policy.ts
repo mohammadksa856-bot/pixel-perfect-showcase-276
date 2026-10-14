@@ -7,6 +7,8 @@ export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
   "claude/web-05a-site-pages",
   // WEB-03 acceptance fixes branch (exact name), so its Preview renders the frozen samples.
   "claude/web-03-acceptance-fixes",
+  // WEB-05A search-copy fix branch (exact name), so its Preview renders the frozen samples.
+  "claude/web-05a-search-copy-fix",
 ];
 type Env = Record<string, string | undefined>;
 

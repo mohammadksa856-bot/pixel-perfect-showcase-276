@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { searchSite } from "@/lib/web-v1/catalog.functions";
 import {
   DIRECTORY_DEFAULT_SEARCH,
+  isLatinQuery,
+  SEARCH_COPY,
   SEARCH_GROUP_TEXT,
   type SearchGroupState,
   type SearchItem,
@@ -79,10 +81,7 @@ export function SearchResults({
         className="px-4 py-6 text-center text-[13px] text-muted-foreground"
         data-search-state="idle"
       >
-        {t({
-          ar: "اكتب اسم شركة بالعربية أو الإنجليزية، أو رمزها مثل 1120.",
-          en: "Type a company name in Arabic or English, or its ticker such as 1120.",
-        })}
+        {t(SEARCH_COPY.idle)}
       </p>
     );
   if (status.state === "loading")
@@ -116,10 +115,7 @@ export function SearchResults({
           {t({ ar: `لا نتائج لـ «${r.query}»`, en: `No results for “${r.query}”` })}
         </p>
         <p className="mt-1 text-[12px] text-muted-foreground">
-          {t({
-            ar: "جرّب الرمز أو جزءًا من الاسم، أو تصفّح دليل الشركات.",
-            en: "Try the ticker or part of the name, or browse the company directory.",
-          })}
+          {t(isLatinQuery(r.query) ? SEARCH_COPY.latinEmpty : SEARCH_COPY.empty)}
         </p>
         <Link
           to="/preview/web-v1/companies"

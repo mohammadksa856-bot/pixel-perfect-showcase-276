@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T22:00:00Z",
+  "updated_at": "2026-10-14T23:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -411,6 +411,14 @@
       "report": "product-tracking/reports/BR-019_WEB-03_acceptance_fixes.md",
       "evidence": "product-tracking/outbox/WEB-V1/web-03-acceptance",
       "result": "key figure = statement cell (same key/period/scope/unit/currency) or withheld; one reporting currency per table, other currencies withheld, no conversion; period_end/kind/scope must match the column; negative tests 10 fail before, 13/13 after"
+    },
+    "WEB-05A-COPY-FIX": {
+      "status": "IMPLEMENTED, TESTED; WEB-05A acceptance requested",
+      "branch": "claude/web-05a-search-copy-fix",
+      "base": "073c711",
+      "report": "product-tracking/reports/BR-020_WEB-05A_search_copy.md",
+      "evidence": "product-tracking/outbox/WEB-V1/web-05a-search-copy",
+      "result": "search copy states the source limit (Arabic name + ticker; English where available, 3 of 396); algorithm and source unchanged"
     }
   },
   "open_dependencies_on_codex": {
@@ -989,6 +997,12 @@
       "suite": "bun test + negative tests + WEB-05A e2e + tsc + eslint + vite build",
       "branch": "claude/web-03-acceptance-fixes",
       "result": "283 pass, 14 skip, 0 fail; negative 10 fail before -> 13/13 after; e2e 15/15; builds ok"
+    },
+    {
+      "id": "RUN-2026-10-14-57",
+      "suite": "bun test + e2e + tsc + eslint + vite build",
+      "branch": "claude/web-05a-search-copy-fix",
+      "result": "293 pass, 14 skip, 0 fail; copy tests 10/10; e2e 18/18; builds ok"
     }
   ],
   "active_track": {

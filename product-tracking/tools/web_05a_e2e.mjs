@@ -143,6 +143,29 @@ await run("external link with a numeric query (?q=1120) keeps the ticker", async
   assert.equal(await count(page), 1);
 });
 
+await run("search copy: SABIC (English, no source name) explains the limit; سابك (Arabic) finds 2010", async (page, go) => {
+  await go("/preview/web-v1/companies?q=SABIC");
+  await page.locator("[data-directory-empty]").waitFor();
+  assert.ok((await page.locator("[data-directory-empty]").innerText()).includes("اسم إنجليزي"));
+  await go(`/preview/web-v1/companies?q=${encodeURIComponent("سابك")}`);
+  assert.equal(await page.locator("[data-company-card]").first().getAttribute("data-company-card"), "2010");
+  assert.ok((await page.locator("[data-english-coverage]").innerText()).includes("3 من 396"));
+});
+
+await run("search copy (English UI): accurate placeholder and coverage note", async (page, go) => {
+  await go("/preview/web-v1/companies");
+  assert.equal(
+    await page.locator("[data-directory-input]").getAttribute("placeholder"),
+    "Search by ticker or Arabic company name. English names are supported where available.",
+  );
+  assert.ok((await page.locator("[data-english-coverage]").innerText()).includes("3 of 396"));
+  await page.keyboard.press("Control+k");
+  assert.equal(await page.locator("[data-search-input]").getAttribute("placeholder"), "Ticker, Arabic company name or topic…");
+  await page.locator("[data-search-input]").fill("SABIC");
+  await page.locator('[data-search-dialog] [data-search-state="empty"]').waitFor();
+  assert.ok((await page.locator('[data-search-dialog] [data-search-state="empty"]').innerText()).includes("no English name"));
+}, { locale: "en" });
+
 await run("shareable URL: filters restore from the address", async (page, go) => {
   await go("/preview/web-v1/companies?board=nomu&sort=name");
   assert.equal(await count(page), 126);

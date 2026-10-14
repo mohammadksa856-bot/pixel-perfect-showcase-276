@@ -5,6 +5,7 @@ import { LogoMark } from "@/components/logo-mark";
 import { SiteFooter } from "@/components/site-footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { hasResults, SearchResults, useSiteSearch } from "./site-search";
+import { SEARCH_COPY } from "@/lib/web-v1/catalog";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ui, useI18n, type LocalizedText } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -93,9 +94,7 @@ export function WebV1Shell({
             data-search-trigger
           >
             <Search className="size-4" />
-            <span className="flex-1 text-start">
-              {t({ ar: "ابحث عن شركة أو رمز أو موضوع", en: "Search a company, ticker or topic" })}
-            </span>
+            <span className="flex-1 text-start">{t(SEARCH_COPY.short)}</span>
             <kbd className="rounded border border-border px-1.5 text-[10px]" dir="ltr">
               Ctrl K
             </kbd>
@@ -257,10 +256,7 @@ export function UnifiedSearch({
             autoFocus
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder={t({
-              ar: "اسم الشركة أو رمزها أو موضوع…",
-              en: "Company name, ticker or topic…",
-            })}
+            placeholder={t(SEARCH_COPY.dialog)}
             className="h-12 w-full bg-transparent text-[14px] outline-none placeholder:text-muted-foreground"
             aria-label={t(ui.search)}
             data-search-input

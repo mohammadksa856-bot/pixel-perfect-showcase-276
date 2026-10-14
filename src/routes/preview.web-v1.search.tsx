@@ -2,7 +2,7 @@ import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { getWebV1Enabled } from "@/lib/web-v1/flag.functions";
-import { queryText } from "@/lib/web-v1/catalog";
+import { queryText, SEARCH_COPY } from "@/lib/web-v1/catalog";
 import { useI18n } from "@/lib/i18n";
 import { PreviewContainer, WebV1Shell } from "@/components/web-v1/shell";
 import { SearchResults, useSiteSearch } from "@/components/web-v1/site-search";
@@ -45,7 +45,7 @@ function SearchPage() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             className="h-full w-full bg-transparent text-[14px] outline-none"
-            placeholder={t({ ar: "اسم الشركة أو رمزها", en: "Company name or ticker" })}
+            placeholder={t(SEARCH_COPY.short)}
             aria-label={t({ ar: "بحث", en: "Search" })}
             data-search-page-input
           />

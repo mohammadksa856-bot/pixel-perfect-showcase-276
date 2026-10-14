@@ -5,6 +5,9 @@ import { getDirectory } from "@/lib/web-v1/catalog.functions";
 import {
   BOARD_TEXT,
   DATA_TEXT,
+  englishCoverage,
+  isLatinQuery,
+  SEARCH_COPY,
   facets,
   queryDirectory,
   type Board,
@@ -166,10 +169,7 @@ function Directory() {
             <input
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder={t({
-                ar: "ابحث بالاسم العربي أو الإنجليزي أو الرمز",
-                en: "Search by Arabic or English name, or ticker",
-              })}
+              placeholder={t(SEARCH_COPY.placeholder)}
               className="h-full w-full bg-transparent text-[14px] outline-none placeholder:text-muted-foreground"
               aria-label={t({ ar: "بحث في الدليل", en: "Search the directory" })}
               data-directory-input
@@ -184,6 +184,9 @@ function Directory() {
               </button>
             )}
           </label>
+          <p className="mt-2 text-[12px] text-night-foreground/60" data-english-coverage>
+            {t(englishCoverage(entries))}
+          </p>
         </PreviewContainer>
       </section>
 
@@ -244,10 +247,14 @@ function Directory() {
                   {t({ ar: "لا شركات تطابق البحث", en: "No companies match" })}
                 </p>
                 <p className="mt-1 text-[12px] text-muted-foreground">
-                  {t({
-                    ar: "جرّب الرمز أو جزءًا من الاسم، أو أزل بعض المرشحات.",
-                    en: "Try the ticker or part of the name, or remove some filters.",
-                  })}
+                  {t(
+                    isLatinQuery(search.q)
+                      ? SEARCH_COPY.latinEmpty
+                      : {
+                          ar: "جرّب الرمز أو جزءًا من الاسم العربي، أو أزل بعض المرشحات.",
+                          en: "Try the ticker or part of the Arabic name, or remove some filters.",
+                        },
+                  )}
                 </p>
                 <button
                   type="button"

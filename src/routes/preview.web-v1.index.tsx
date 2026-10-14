@@ -4,7 +4,7 @@ import { getCompanyPreview, PREVIEW_COMPANIES } from "@/lib/engine/company-previ
 import type { CompanyPreview } from "@/lib/engine/company-preview";
 import { getWebV1Enabled } from "@/lib/web-v1/flag.functions";
 import { getListedSummary } from "@/lib/web-v1/catalog.functions";
-import { DIRECTORY_DEFAULT_SEARCH } from "@/lib/web-v1/catalog";
+import { DIRECTORY_DEFAULT_SEARCH, SEARCH_COPY } from "@/lib/web-v1/catalog";
 import { COMPANY_GROUPS } from "@/lib/web-v1/model";
 import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
@@ -108,8 +108,8 @@ function Hero({ companies }: { companies: Card[] }) {
           <Search className="size-5 text-brand" />
           <span className="flex-1">
             {t({
-              ar: "ابحث باسم الشركة أو رمزها، مثل 2222",
-              en: "Search by company name or ticker, e.g. 2222",
+              ar: `${SEARCH_COPY.placeholder.ar}، مثل 2222`,
+              en: `${SEARCH_COPY.placeholder.en.replace(/\.$/, "")}, e.g. 2222`,
             })}
           </span>
           <kbd
@@ -174,8 +174,8 @@ function ExploreMarket({
           </h2>
           <p className="mt-1 text-[13px] text-muted-foreground">
             {t({
-              ar: "كل الشركات المدرجة في السوق المالية السعودية، بالاسم والرمز والسوق. العدد من قائمة السوق المالية، دون أسعار أو أرقام مالية.",
-              en: "Every company listed on the Saudi Exchange, by name, ticker and market. Counts from the exchange list, with no prices or financial figures.",
+              ar: "كل الشركات المدرجة في السوق المالية السعودية، بالاسم العربي والرمز والسوق. العدد من قائمة السوق المالية، دون أسعار أو أرقام مالية.",
+              en: "Every company listed on the Saudi Exchange, by Arabic name, ticker and market. Counts from the exchange list, with no prices or financial figures.",
             })}
           </p>
         </div>

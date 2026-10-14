@@ -221,3 +221,46 @@ export function queryText(v: unknown): string {
   if (typeof v === "number" && Number.isFinite(v)) return String(v);
   return typeof v === "string" ? v.slice(0, 80) : "";
 }
+
+/**
+ * WEB-05A (ملاحظة Codex): نصوص البحث تَعِد بما يدعمه المصدر فقط. قائمة الشركات الـ396 فيها
+ * الاسم العربي والرمز؛ الاسم الإنجليزي متوفر فقط لمن له صفحة من المحرك. مصدر واحد لكل النصوص.
+ */
+export const SEARCH_COPY = {
+  placeholder: {
+    ar: "ابحث باسم الشركة العربي أو رمزها، وبالإنجليزية عند توفر الاسم",
+    en: "Search by ticker or Arabic company name. English names are supported where available.",
+  },
+  short: {
+    ar: "اسم الشركة العربي أو رمزها",
+    en: "Ticker or Arabic company name",
+  },
+  dialog: {
+    ar: "اسم الشركة العربي أو رمزها أو موضوع…",
+    en: "Ticker, Arabic company name or topic…",
+  },
+  idle: {
+    ar: "اكتب اسم الشركة بالعربية أو رمزها مثل 1120. الأسماء الإنجليزية متاحة لعدد محدود من الشركات فقط.",
+    en: "Type the Arabic company name or its ticker, such as 1120. English names are available for a limited number of companies only.",
+  },
+  empty: {
+    ar: "جرّب الرمز أو جزءًا من الاسم العربي، أو تصفّح دليل الشركات.",
+    en: "Try the ticker or part of the Arabic name, or browse the company directory.",
+  },
+  latinEmpty: {
+    ar: "معظم الشركات بلا اسم إنجليزي في المصدر الحالي؛ ابحث بالاسم العربي أو الرمز.",
+    en: "Most companies have no English name in the current source; search by Arabic name or ticker.",
+  },
+} as const satisfies Record<string, LocalizedText>;
+
+/** هل الاستعلام بحروف لاتينية؟ (لتوضيح حدود المصدر عند عدم وجود نتائج). */
+export const isLatinQuery = (q: string) => /[a-z]/i.test(q) && !/[؀-ۿ]/.test(q);
+
+/** نص التغطية الفعلية للأسماء الإنجليزية، محسوب من القائمة لا مكتوب يدويًا. */
+export function englishCoverage(entries: readonly DirectoryEntry[]): LocalizedText {
+  const n = entries.filter((e) => e.name.en).length;
+  return {
+    ar: `الأسماء الإنجليزية متوفرة لـ ${n} من ${entries.length} شركة؛ البقية بالاسم العربي والرمز.`,
+    en: `English names are available for ${n} of ${entries.length} companies; the rest by Arabic name and ticker.`,
+  };
+}

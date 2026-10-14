@@ -1,0 +1,22 @@
+{
+ "task":"WEB-04 Independent Acceptance",
+ "decision":"ACCEPT",
+ "scope":"Frozen design Preview only: operational factory definitions, safe unmeasured states, bilingual/responsive display. Not financial acceptance, evaluated production scoring, main merge or deployment approval.",
+ "application_tested":"67c636824e87e45fe3151615285e538bba671d1c",
+ "contract":{"commit":"b70254e","version":"1.0.0","sha256":"a229596adfa8f70b9a281e57aa11b8e41c647eca6ceb3ee2f3eb2918ced92608","categories":18,"weights_sum":100,"weighted_target":95,"comparison":"Exact original Git blob SHA; every key/order/weight/threshold/gate condition/source/field group/provenance field and copied freshness parameter matched"},
+ "test_runs":[{"scope":"Independent original-contract and state tests","passed":5,"failed":0,"skipped":0},{"scope":"Existing WEB04 panel tests only","passed":4,"failed":0,"filtered_outside_scope":7},{"scope":"Readiness and design/separation tests","passed":26,"failed":0,"skipped":0}],
+ "types":"PASS; no diagnostics",
+ "UI":{"companies":["2222","1120","8010"],"factory_categories_each":18,"measured_scores_each":0,"factory_state":"not_assessed","five_ready_conditions":"unknown; missing gate evidence is not a pass","languages":["ar/rtl","en/ltr"],"mobile_width":390,"separation":"Investor18 topics are not factory18 categories","numbers":"Only documented contract weights/limits/gate counts displayed; no measured score or company field count invented","exceptions":"Cited/uncited N/A states tested; category score null; historical free-credit total withheld; frozen pages make no actual exclusion claim"},
+ "runtime":{"checked_preview":"https://pixel-perfect-showcase-276-huvkfddfl.vercel.app/preview/web-v1/companies/1120?tab=coverage","deployment_commit":"a8a76f2ad0ca0be9a12744584c5e424be0d4e85d","bridge":"factory-panel, readiness, factory-contract.spec, design-fixtures.server, model and shell have no differences between a8a76f2 and67c6368; runtime and local test runs remain separate evidence","exact67c6368_branch_route":"404 observed; no exact-commit runtime success claimed","preview_config_changed_by_this_batch":false,"production_changed":false},
+ "phase_status":{"IMPLEMENTED":"Claude existing WEB04 code; no reimplementation","TESTED":"Local67c6368 tests plus unchanged-panel Preview bridge","REVIEWED":"ACCEPT frozen design only","ACCEPTED":"Independent engineering decision; human final product acceptance separate","MERGED":false,"DEPLOYED":"Existing a8a76f2 Preview inspected only; no new deployment"},
+ "WEB03":{"design_decision":"ACCEPT at67c6368 retained","live_integration":"BLOCKED retained","previous_reports_preserved":true,"reopened":false},
+ "live_dependencies":[
+  {"id":"WEB-LIVE-01","description":"Period-start/duration and explicit report-scope identity","state":"BLOCKED","blocks":"LIVE_FINANCIAL_INTEGRATION","blocks_design":false},
+  {"id":"WEB-LIVE-02","description":"Prevent historical-topic re-exposure of withheld repeated-period figures","state":"BLOCKED","blocks":"LIVE_FINANCIAL_INTEGRATION","blocks_design":false},
+  {"id":"WEB-LIVE-03","description":"Govern source versions/restatements and explicit snapshot replacement policy","state":"BLOCKED","blocks":"LIVE_FINANCIAL_INTEGRATION","blocks_design":false},
+  {"id":"WEB-LIVE-04","description":"Official independent number verification and authenticated API/end-to-end acceptance","state":"BLOCKED","blocks":"LIVE_FINANCIAL_INTEGRATION","blocks_design":false}
+ ],
+ "delivery":"Code-only summary, test and dependency metadata; no issuer PDFs, financial samples, screenshots, environment files or full private board",
+ "WEB05B":"Not touched or reviewed",
+ "main_Production_AWS_Supabase_changed":false
+}

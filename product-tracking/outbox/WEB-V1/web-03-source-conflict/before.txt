@@ -1,0 +1,428 @@
+# BEFORE — commit a8a76f2 (fix not applied; new tests only)
+bun test v1.4.2 (744846f84)
+
+tests/web-03-source-conflict.test.ts:
+104 | 
+105 | describe("1. contradictory values inside one source", () => {
+106 |   test("two eligible rows for the same key/period/scope/unit/currency → source_conflict, card withheld", () => {
+107 |     const p = page({ history: { revenue: [row("1234567", END), row("7654321", END)] } });
+108 |     const v = annualOf(p);
+109 |     expect(cell(v, "revenue")).toEqual({ state: "withheld", reason: "source_conflict" });
+                                     ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "reason": "source_conflict",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦1.23⁩ مليون ريال",
++       "en": "SAR 1.23m",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 1,
++       "sourceUrl": "https://example.com/synthetic-1",
++     },
++     "value": 1234567,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:109:32)
+(fail) 1. contradictory values inside one source > two eligible rows for the same key/period/scope/unit/currency → source_conflict, card withheld [76.12ms]
+113 |   });
+114 | 
+115 |   test("the result does not depend on row order (no 'first wins')", () => {
+116 |     const a = annualOf(page({ history: { revenue: [row("1", END), row("2", END)] } }));
+117 |     const b = annualOf(page({ history: { revenue: [row("2", END), row("1", END)] } }));
+118 |     expect(cell(a, "revenue")).toEqual(cell(b, "revenue"));
+                                     ^
+error: expect(received).toEqual(expected)
+
+@@ -3,4 +3,4 @@
+      "display": {
+-       "ar": "⁦2⁩ ريال",
+-       "en": "SAR 2",
++       "ar": "⁦1⁩ ريال",
++       "en": "SAR 1",
+      },
+@@ -9,6 +9,6 @@
+        "kind": "reported_extracted",
+-       "page": 7,
+-       "sourceUrl": "https://example.com/synthetic-7",
++       "page": 4,
++       "sourceUrl": "https://example.com/synthetic-4",
+      },
+-     "value": 2,
++     "value": 1,
+    },
+
+- Expected  - 5
++ Received  + 5
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:118:32)
+(fail) 1. contradictory values inside one source > the result does not depend on row order (no 'first wins') [3.48ms]
+126 | 
+127 |   test("the same number under two different units is a conflict, not a match", () => {
+128 |     const v = annualOf(
+129 |       page({ history: { revenue: [row("500", END), row("500", END, { unit: "ratio" })] } }),
+130 |     );
+131 |     expect(cell(v, "revenue")).toEqual({ state: "withheld", reason: "source_conflict" });
+                                     ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "reason": "source_conflict",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦500⁩ ريال",
++       "en": "SAR 500",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 13,
++       "sourceUrl": "https://example.com/synthetic-13",
++     },
++     "value": 500,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:131:32)
+(fail) 1. contradictory values inside one source > the same number under two different units is a conflict, not a match [0.65ms]
+145 |     );
+146 |     expect(cell(v, "revenue")).toMatchObject({ state: "value", cell: { value: 500 } });
+147 |   });
+148 | 
+149 |   test("P02 snapshot groups (pickValue) also refuse to pick the first of two contradictory rows", () => {
+150 |     expect(pickValue("revenue", [row("1", END), row("2", END)], "fy")).toEqual({
+                                                                             ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "ok": false,
+-   "reason": "source_conflict",
++   "cell": {
++     "display": {
++       "ar": "⁦1⁩ ريال",
++       "en": "SAR 1",
++     },
++     "key": "revenue",
++     "label": {
++       "ar": "الإيرادات",
++       "en": "Revenue",
++     },
++     "period": {
++       "end": "2025-12-31",
++       "kind": "fy",
++       "label": {
++         "ar": "السنة المالية ⁦2025⁩",
++         "en": "FY 2025",
++       },
++     },
++     "proof": {
++       "document": "original_document",
++       "filingType": null,
++       "formula": null,
++       "independentlyVerified": false,
++       "kind": "reported_extracted",
++       "page": 20,
++       "sourceUrl": "https://example.com/synthetic-20",
++     },
++     "unit": "SAR",
++     "value": 1,
++   },
++   "ok": true,
+  }
+
+- Expected  - 2
++ Received  + 31
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:150:72)
+(fail) 1. contradictory values inside one source > P02 snapshot groups (pickValue) also refuse to pick the first of two contradictory rows [0.49ms]
+156 | 
+157 |   test("quarterly table: same rule", () => {
+158 |     const q = (v: string) => row(v, "2025-09-30", { period_kind: "quarter" });
+159 |     const views = buildStatements(page({ quarter: { revenue: [q("10"), q("11")] } }), "ordinary");
+160 |     const quarter = views.find((x) => x.mode === "quarter")!;
+161 |     expect(cell(quarter, "revenue", "2025-09-30")).toEqual({
+                                                         ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "reason": "source_conflict",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦10⁩ ريال",
++       "en": "SAR 10",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 22,
++       "sourceUrl": "https://example.com/synthetic-22",
++     },
++     "value": 10,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:161:52)
+(fail) 1. contradictory values inside one source > quarterly table: same rule [0.64ms]
+181 |       history: { total_assets: [inst("100")] },
+182 |       position: { total_assets: [inst("200")] },
+183 |     });
+184 |     // قبل الإصلاح: كان الجزء الأول المقبول يفوز. الآن تُقارن كل المرشحات.
+185 |     const v = annualOf(p);
+186 |     expect(cell(v, "total_assets")?.state).toBe("withheld");
+                                                 ^
+error: expect(received).toBe(expected)
+
+Expected: "withheld"
+Received: "value"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:186:44)
+(fail) 2. contradictory values between two sources > history vs a second history part (annual vs annual_position) → source_conflict [0.78ms]
+199 |     });
+200 |   });
+201 | 
+202 |   test("snapshot with two contradictory rows conflicts even when history has none", () => {
+203 |     const p = page({ history: {}, snapshot: { net_income: [row("7", END), row("8", END)] } });
+204 |     expect(cell(annualOf(p), "net_income")).toEqual({
+                                                  ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "reason": "source_conflict",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦7⁩ ريال",
++       "en": "SAR 7",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 34,
++       "sourceUrl": "https://example.com/synthetic-34",
++     },
++     "value": 7,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:204:45)
+(fail) 2. contradictory values between two sources > snapshot with two contradictory rows conflicts even when history has none [0.80ms]
+223 |     const p = page({
+224 |       history: { revenue: [row("1000", "2020-12-31")] },
+225 |       snapshot: { revenue: [row("1000", END)] },
+226 |     });
+227 |     const v = annualOf(p);
+228 |     expect(cell(v, "revenue")).toEqual({ state: "withheld", reason: "period_end_mismatch" });
+                                     ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "reason": "period_end_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦1,000⁩ ريال",
++       "en": "SAR 1,000",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 41,
++       "sourceUrl": "https://example.com/synthetic-41",
++     },
++     "value": 1000,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:228:32)
+(fail) 3. rejected-date record + substitute snapshot: rejection is not silently overridden > history row dated 2020 in the 2025 column + correct snapshot → withheld period_end_mismatch [0.62ms]
+229 |     expect(card(p, "revenue")).toMatchObject({ state: "withheld", reason: "period_end_mismatch" });
+230 |   });
+231 | 
+232 |   test("same inside one source: a wrong-dated row does not hide behind a right-dated one", () => {
+233 |     const v = annualOf(page({ history: { revenue: [row("1", "2020-12-31"), row("2", END)] } }));
+234 |     expect(cell(v, "revenue")).toEqual({ state: "withheld", reason: "period_end_mismatch" });
+                                     ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "reason": "period_end_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦2⁩ ريال",
++       "en": "SAR 2",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 44,
++       "sourceUrl": "https://example.com/synthetic-44",
++     },
++     "value": 2,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:234:32)
+(fail) 3. rejected-date record + substitute snapshot: rejection is not silently overridden > same inside one source: a wrong-dated row does not hide behind a right-dated one [0.47ms]
+244 |     for (const [over, reason] of cases) {
+245 |       const p = page({
+246 |         history: { revenue: [row("1000", END, over)] },
+247 |         snapshot: { revenue: [row("1000", END)] },
+248 |       });
+249 |       expect(cell(annualOf(p), "revenue"), reason).toEqual({ state: "withheld", reason });
+                                                         ^
+error: currency_mismatch
+
+  {
+-   "reason": "currency_mismatch",
+-   "state": "withheld",
++   "cell": {
++     "display": {
++       "ar": "⁦1,000⁩ ريال",
++       "en": "SAR 1,000",
++     },
++     "proof": {
++       "document": "original_document",
++       "kind": "reported_extracted",
++       "page": 47,
++       "sourceUrl": "https://example.com/synthetic-47",
++     },
++     "value": 1000,
++   },
++   "state": "value",
+  }
+
+- Expected  - 2
++ Received  + 14
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:249:52)
+(fail) 3. rejected-date record + substitute snapshot: rejection is not silently overridden > other identity rejections also block a substitute: currency, period kind, unit, quality [1.89ms]
+254 |     const noSource = row("1000", END, { provenance: { source: { source_url: null } } });
+255 |     const v = annualOf(
+256 |       page({ history: { revenue: [noSource] }, snapshot: { revenue: [row("1000", END)] } }),
+257 |     );
+258 |     expect(cell(v, "revenue")).toMatchObject({ state: "value", cell: { value: 1000 } });
+259 |     const r = v.review.find((x) => x.key === "revenue" && x.periodEnd === END)!;
+                      ^
+TypeError: undefined is not an object (evaluating 'v.review.find')
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:259:17)
+(fail) 3. rejected-date record + substitute snapshot: rejection is not silently overridden > an unproven record (no source) does not block a proven one, but is recorded for review [2.20ms]
+272 |     const p = page({
+273 |       history: { revenue: [row("1234567", END)], net_income: [row("1000", "2020-12-31")] },
+274 |       snapshot: { revenue: [row("7654321", END)], net_income: [row("1000", END)] },
+275 |     });
+276 |     const v = annualOf(p);
+277 |     const conflict = v.review.find((x) => x.key === "revenue")!;
+                             ^
+TypeError: undefined is not an object (evaluating 'v.review.find')
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:277:24)
+(fail) 4. evidence for review, without leaking withheld values > each blocked cell has a review entry: rule, reason, candidate origins, no values [0.57ms]
+297 |       expect(json).not.toContain(leaked);
+298 |   });
+299 | 
+300 |   test("clean cells produce no review noise", () => {
+301 |     const v = annualOf(page({ history: { revenue: [row("5", END)] } }));
+302 |     expect(v.review).toEqual([]);
+                           ^
+error: expect(received).toEqual(expected)
+
+Expected: []
+Received: undefined
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-source-conflict.test.ts:302:22)
+(fail) 4. evidence for review, without leaking withheld values > clean cells produce no review noise [0.33ms]
+
+tests/web-03-synthetic-codex.test.ts:
+42 |   expect(c.state!=="value" || "currency" in c.cell).toBe(true);
+43 | });
+44 | test("WEB03-F03: the fact date must match its column, not just its period kind",()=>{
+45 |   const p=fixture(); p.sections.financials.history.annual.periods[0]!.metrics["revenue"]=[row("2020-12-31")];
+46 |   const annual=buildStatements(p,"ordinary")[0]!;
+47 |   expect(annual.rows.find(x=>x.key==="revenue")!.cells[0]!.state).not.toBe("value");
+                                                                           ^
+error: expect(received).not.toBe(expected)
+
+Expected: not "value"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/tests/web-03-synthetic-codex.test.ts:47:71)
+(fail) WEB03-F03: the fact date must match its column, not just its period kind [1.96ms]
+
+ 8 pass
+ 14 fail
+ 26 expect() calls
+Ran 22 tests across 2 files. [175.00ms]
+
+# Codex original, unchanged (259adec)
+bun test v1.4.2 (744846f84)
+
+review-delivery/WEB03-SYNTHETIC/cases.test.ts:
+254 | }
+255 | 
+256 | export function buildStatements(page: EnginePage, kind: CompanyKind): StatementView[] {
+257 |   const fin = page.sections.financials;
+258 |   const h = fin.history;
+259 |   const currency = page.company.currency ?? null;
+                              ^
+TypeError: undefined is not an object (evaluating 'page.company.currency')
+      at buildStatements (/home/user/pixel-perfect-showcase-276/src/lib/engine/statements.ts:259:25)
+      at keyFigures (/home/user/pixel-perfect-showcase-276/src/lib/engine/statements.ts:348:33)
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/review-delivery/WEB03-SYNTHETIC/cases.test.ts:21:11)
+(fail) WEB03-F01: insurance headline and annual table must expose the same qualified metric [0.99ms]
+254 | }
+255 | 
+256 | export function buildStatements(page: EnginePage, kind: CompanyKind): StatementView[] {
+257 |   const fin = page.sections.financials;
+258 |   const h = fin.history;
+259 |   const currency = page.company.currency ?? null;
+                              ^
+TypeError: undefined is not an object (evaluating 'page.company.currency')
+      at buildStatements (/home/user/pixel-perfect-showcase-276/src/lib/engine/statements.ts:259:25)
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/review-delivery/WEB03-SYNTHETIC/cases.test.ts:30:16)
+(fail) WEB03-F02: mixed currencies require explicit per-cell identity or withholding [0.28ms]
+254 | }
+255 | 
+256 | export function buildStatements(page: EnginePage, kind: CompanyKind): StatementView[] {
+257 |   const fin = page.sections.financials;
+258 |   const h = fin.history;
+259 |   const currency = page.company.currency ?? null;
+                              ^
+TypeError: undefined is not an object (evaluating 'page.company.currency')
+      at buildStatements (/home/user/pixel-perfect-showcase-276/src/lib/engine/statements.ts:259:25)
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/review-delivery/WEB03-SYNTHETIC/cases.test.ts:36:16)
+(fail) WEB03-F03: the fact date must match its column, not just its period kind [0.15ms]
+
+ 0 pass
+ 3 fail
+Ran 3 tests across 1 file. [13.00ms]

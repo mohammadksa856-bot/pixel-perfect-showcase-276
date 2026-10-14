@@ -2,7 +2,8 @@
  * WEB-03: القوائم المالية متعددة الفترات (سنوي / ربعي / منذ بداية السنة).
  *
  * تُبنى من سجل المحرك (`financials.history`) ومن لقطة YTD، بنفس قواعد الثقة في P02:
- * كل خلية تمر عبر `pickValue` (المصدر، الوحدة، نوع الفترة، علامات الجودة، إعادة إنتاج المشتقات).
+ * كل مرشح لكل خلية يمر عبر فحوص P02 (`checkRow`: المصدر، الوحدة، نوع الفترة، علامات الجودة، إعادة إنتاج
+ * المشتقات)، ثم تُقارن كل المرشحات قبل القبول (`decideCell`): لا اختيار لأول قيمة.
  * لا تحسب الواجهة أي رقم، ولا تملأ فترة غائبة، ولا تحسب نسب التغيّر.
  */
 import type { LocalizedText } from "@/lib/i18n";
@@ -12,8 +13,9 @@ import {
   CASH_FLOW,
   INCOME,
   RATIOS,
+  checkRow,
   labelOf,
-  pickValue,
+  valueIdentity,
   type CompanyKind,
   type EngineMetricRow,
   type Pick_,
@@ -68,6 +70,44 @@ export type StatementView = {
   rows: StatementRow[];
   /** المصادر المستخدمة فعليًا في الخلايا المقبولة، لكل فترة. */
   sources: { periodEnd: string; url: string; filingType: string | null }[];
+  /**
+   * أدلة المراجعة (لـ Codex): كل خلية طُبقت عليها قاعدة تعارض أو رفض بين مرشحات متعددة.
+   * لا تحمل أي قيمة رقمية: المصدر ورقم الصفحة والحكم فقط، فلا تتسرب القيمة المحجوبة.
+   */
+  review: ReviewEntry[];
+};
+
+export type CandidateOrigin = "history" | "snapshot";
+/**
+ * قواعد الاختيار والحجب لخلية لها أكثر من مرشح (WEB-03، إصلاح التعارض النهائي):
+ * - contradictory_eligible_values: مرشحان مقبولان أو أكثر بهويات مختلفة (قيمة/وحدة/فترة) → source_conflict.
+ * - rejection_not_overridden: مرشح موضوع لهذه الخلية يحمل رقمًا ورُفض لسبب يخص هوية الحقيقة (التاريخ،
+ *   نوع الفترة، العملة، الوحدة، علامة الجودة) → تُحجب الخلية بسبب الرفض نفسه، ولا يعوّضها مرشح آخر
+ *   (لقطة أو صف ثانٍ).
+ * - accepted_unproven_candidate_ignored: مرشح لا يدّعي رقمًا (قيمة فارغة، ولو معزولًا) أو بلا إثبات (بلا مصدر،
+ *   رابط غير آمن، مشتق بلا معادلة أو إعادة إنتاج) → يُتجاهل وتُقبل القيمة المثبتة، مع تسجيل ذلك هنا.
+ */
+export type ReviewRule =
+  | "contradictory_eligible_values"
+  | "rejection_not_overridden"
+  | "accepted_unproven_candidate_ignored";
+export type ReviewEntry = {
+  key: string;
+  periodEnd: string;
+  /** سبب الحجب المعروض، أو null إن قُبلت القيمة. */
+  reason: WithheldReason | null;
+  rule: ReviewRule;
+  /** عدد الهويات المختلفة بين المرشحات المقبولة (القيم نفسها لا تُنشر). */
+  distinctValues: number;
+  candidates: {
+    origin: CandidateOrigin;
+    /** نوع الفترة الذي يُنتظر في هذا المصدر (fy، instant، quarter، ytd). */
+    expected: string;
+    verdict: "eligible" | WithheldReason;
+    /** رابط المصدر الآمن للمرشح المقبول فقط. */
+    sourceUrl: string | null;
+    page: number | null;
+  }[];
 };
 
 const PER_SHARE = new Set([
@@ -123,24 +163,94 @@ function currencyMismatch(row: EngineMetricRow, currency: string | null): boolea
   return cur !== null && cur !== currency;
 }
 
+/** رفض يعني أن الصف يدّعي حقيقة مختلفة عن العمود: لا يجوز لمرشح آخر أن يعوّضه بصمت. */
+const IDENTITY_REJECTIONS = new Set<WithheldReason>([
+  "period_end_mismatch",
+  "period_kind_mismatch",
+  "currency_mismatch",
+  "unit_conflict",
+  "quality_flagged",
+]);
+/** عند غياب أي مرشح مقبول: السبب الأبعد في سلسلة الفحص (كما في P02: تاريخ ← عملة ← بقية الفحوص). */
+const rejectionRank = (r: WithheldReason) =>
+  r === "period_end_mismatch" ? 0 : r === "currency_mismatch" ? 1 : 2;
+
+/** الصف يدّعي رقمًا فعلًا. صف معزول بلا قيمة لا يدّعي شيئًا فلا يحجب قيمة مقبولة (قاعدة Codex في P02). */
+const claimsNumber = (r: EngineMetricRow) =>
+  r.value !== null && r.value !== "" && Number.isFinite(Number(r.value));
+
+type CellSource = { origin: CandidateOrigin; part: PeriodSource };
+
 /**
- * اختيار قيمة لعمود محدد: النطاق موحّد بلا أبعاد، وperiod_end = نهاية العمود، وperiod_kind المتوقع،
- * والعملة عملة التقارير، ثم بقية فحوص P02 (pickValue). أي صف لا يطابق العمود لا يُنقل إلى عمود آخر.
+ * خلية عمود محدد: تُجمع كل الصفوف الموحّدة (بلا أبعاد) من كل المصادر قبل أي اختيار، ويُحكم على كل صف:
+ * period_end = نهاية العمود، والعملة عملة التقارير، ثم فحوص P02 (checkRow) بنوع فترة المصدر.
+ * لا "الأول يفوز": القبول يتطلب ألا يُرفض أي مرشح لسبب هوية، وأن تتفق كل المرشحات المقبولة.
  */
-function pickForColumn(
+function decideCell(
   key: string,
-  rows: EngineMetricRow[] | undefined,
-  expected: string,
   end: string,
   currency: string | null,
-): Pick_ {
-  const consolidated = (rows ?? []).filter(isConsolidatedRow);
-  if (!consolidated.length) return { ok: "missing" };
-  const sameEnd = consolidated.filter((r) => r.period_end === end);
-  if (!sameEnd.length) return { ok: false, reason: "period_end_mismatch" };
-  const sameCurrency = sameEnd.filter((r) => !currencyMismatch(r, currency));
-  if (!sameCurrency.length) return { ok: false, reason: "currency_mismatch" };
-  return pickValue(key, sameCurrency, expected);
+  sources: CellSource[],
+): { pick: Pick_; review: ReviewEntry | null } {
+  const cands = sources.flatMap(({ origin, part }) =>
+    (part.metrics[key] ?? []).filter(isConsolidatedRow).map((row) => {
+      const verdict: ValueCell | WithheldReason =
+        row.period_end !== end
+          ? "period_end_mismatch"
+          : currencyMismatch(row, currency)
+            ? "currency_mismatch"
+            : checkRow(key, row, part.expected);
+      return { origin, expected: part.expected, row, verdict };
+    }),
+  );
+  if (!cands.length) return { pick: { ok: "missing" }, review: null };
+  const eligible = cands.flatMap((c) => (typeof c.verdict === "string" ? [] : [c.verdict]));
+  if (!eligible.length) {
+    let reason = cands[0]!.verdict as WithheldReason;
+    for (const c of cands)
+      if (rejectionRank(c.verdict as WithheldReason) > rejectionRank(reason))
+        reason = c.verdict as WithheldReason;
+    return { pick: { ok: false, reason }, review: null };
+  }
+  const distinctValues = new Set(eligible.map(valueIdentity)).size;
+  const review = (rule: ReviewRule, reason: WithheldReason | null): ReviewEntry => ({
+    key,
+    periodEnd: end,
+    reason,
+    rule,
+    distinctValues,
+    candidates: cands.map((c) => {
+      const pageRaw = c.row.provenance?.extraction?.page;
+      const page =
+        pageRaw === null || pageRaw === undefined || pageRaw === "" ? NaN : Number(pageRaw);
+      return {
+        origin: c.origin,
+        expected: c.expected,
+        verdict: typeof c.verdict === "string" ? c.verdict : "eligible",
+        sourceUrl: typeof c.verdict === "string" ? null : c.verdict.proof.sourceUrl,
+        page: Number.isFinite(page) ? page : null,
+      };
+    }),
+  });
+  const blocking = cands.find(
+    (c) =>
+      typeof c.verdict === "string" && IDENTITY_REJECTIONS.has(c.verdict) && claimsNumber(c.row),
+  );
+  if (blocking) {
+    const reason = blocking.verdict as WithheldReason;
+    return { pick: { ok: false, reason }, review: review("rejection_not_overridden", reason) };
+  }
+  if (distinctValues > 1)
+    return {
+      pick: { ok: false, reason: "source_conflict" },
+      review: review("contradictory_eligible_values", "source_conflict"),
+    };
+  // كل المرشحات المقبولة متطابقة: الإثبات من أول مرشح (السجل قبل اللقطة) — القيمة نفسها أيًّا كان.
+  return {
+    pick: { ok: true, cell: eligible[0]! },
+    review:
+      eligible.length < cands.length ? review("accepted_unproven_candidate_ignored", null) : null,
+  };
 }
 
 function buildView(
@@ -166,6 +276,7 @@ function buildView(
       periods: [],
       rows: [],
       sources: [],
+      review: [],
     };
   const mergeKeys = new Set(statementKeys(kind));
   const mergeByEnd = new Map<string, PeriodSource[]>();
@@ -185,6 +296,7 @@ function buildView(
   const periodLabels = new Map<string, LocalizedText>();
   const used = new Map<string, { url: string; filingType: string | null }>();
   const rows: StatementRow[] = [];
+  const review: ReviewEntry[] = [];
   for (const [key, position] of keys) {
     let unit: string | null = null;
     let label: LocalizedText | null = null;
@@ -194,21 +306,11 @@ function buildView(
       if (!parts.length && !extra.length) return { state: "missing" };
       const firstRow = (parts[0] ?? extra[0])!.metrics[key]?.[0];
       label ??= labelOf(key, firstRow);
-      const pick = (list: PeriodSource[]): Pick_ => {
-        let res: Pick_ = { ok: "missing" };
-        for (const part of list) {
-          res = pickForColumn(key, part.metrics[key], part.expected, end, currency);
-          if (res.ok === true) return res;
-        }
-        return res;
-      };
-      const hist = parts.length ? pick(parts) : ({ ok: "missing" } as Pick_);
-      const snap = extra.length ? pick(extra) : ({ ok: "missing" } as Pick_);
-      // مصدران للفترة نفسها: يجب أن يتفقا، وإلا تُحجب الخلية.
-      if (hist.ok === true && snap.ok === true && hist.cell.value !== snap.cell.value)
-        return { state: "withheld", reason: "source_conflict" };
-      const picked =
-        hist.ok === true ? hist : snap.ok === true ? snap : hist.ok === false ? hist : snap;
+      const { pick: picked, review: entry } = decideCell(key, end, currency, [
+        ...parts.map((part) => ({ origin: "history" as const, part })),
+        ...extra.map((part) => ({ origin: "snapshot" as const, part })),
+      ]);
+      if (entry) review.push(entry);
       if (picked.ok === true) {
         unit ??= picked.cell.unit;
         const fromPosition = picked.cell.period.kind === "instant";
@@ -250,13 +352,14 @@ function buildView(
     })),
     rows,
     sources: ends.filter((e) => used.has(e)).map((e) => ({ periodEnd: e, ...used.get(e)! })),
+    review,
   };
 }
 
 export function buildStatements(page: EnginePage, kind: CompanyKind): StatementView[] {
   const fin = page.sections.financials;
   const h = fin.history;
-  const currency = page.company.currency ?? null;
+  const currency = page.company?.currency ?? null;
   const hist = (x: typeof h.annual | undefined, expected: string): PeriodSource[] =>
     (x?.periods ?? []).map((p) => ({ end: p.period_end, metrics: p.metrics ?? {}, expected }));
   const snap = (x: typeof fin.annual | undefined, expected: string): PeriodSource[] =>

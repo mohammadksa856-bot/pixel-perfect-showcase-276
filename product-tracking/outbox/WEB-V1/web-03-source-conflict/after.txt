@@ -1,0 +1,38 @@
+# AFTER — fix applied on top of a8a76f2 (uncommitted working tree; commit hash in BR-021)
+bun test v1.4.2 (744846f84)
+
+ 24 pass
+ 0 fail
+ 48 expect() calls
+Ran 24 tests across 2 files. [33.00ms]
+
+# Codex original, unchanged (259adec, sha256 5d9da9ff…231b)
+bun test v1.4.2 (744846f84)
+
+review-delivery/WEB03-SYNTHETIC/cases.test.ts:
+17 | }
+18 | 
+19 | test("WEB03-F01: insurance headline and annual table must expose the same qualified metric",()=>{
+20 |   const p=fixture(); p.sections.financials.annual.metrics={insurance_revenue:[row("2025-12-31")]};
+21 |   const f=keyFigures(p,"insurer").find(x=>x.key==="insurance_revenue")!;
+22 |   expect(f.state).toBe("value");
+                       ^
+error: expect(received).toBe(expected)
+
+Expected: "value"
+Received: "withheld"
+
+      at <anonymous> (/home/user/pixel-perfect-showcase-276/review-delivery/WEB03-SYNTHETIC/cases.test.ts:22:19)
+(fail) WEB03-F01: insurance headline and annual table must expose the same qualified metric [2.74ms]
+
+ 2 pass
+ 1 fail
+ 3 expect() calls
+Ran 3 tests across 1 file. [11.00ms]
+
+# Full suite: bun test tests
+ 317 pass
+ 14 skip
+ 0 fail
+ 14808 expect() calls
+Ran 331 tests across 21 files. [1.66s]

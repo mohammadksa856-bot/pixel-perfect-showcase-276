@@ -211,7 +211,7 @@ export type WithheldReason =
   | "period_end_mismatch"
   /** WEB-03: عملة غير عملة التقارير (أو العملة تخالف الوحدة). لا تحويل في الواجهة. */
   | "currency_mismatch"
-  /** WEB-03: مصدران للفترة نفسها بقيمتين مختلفتين. */
+  /** WEB-03: مرشحان مقبولان (من مصدر واحد أو مصدرين) للمقياس والفترة والنطاق نفسها بقيمتين مختلفتين. */
   | "source_conflict"
   /** WEB-03: للمقياس قيمة في المحرك لكنها لم تجتز شروط الجدول، فلا تُعرض في البطاقة. */
   | "not_in_statement_table";
@@ -607,7 +607,7 @@ export const labelOf = (key: string, row?: EngineMetricRow | null): LocalizedTex
 export type Pick_ =
   { ok: true; cell: ValueCell } | { ok: false; reason: WithheldReason } | { ok: "missing" };
 
-function checkRow(
+export function checkRow(
   key: string,
   row: EngineMetricRow,
   expectedPeriod: string,
@@ -661,7 +661,17 @@ function checkRow(
 const isConsolidated = (r: EngineMetricRow) =>
   (r.scope ?? "consolidated") === "consolidated" && Object.keys(r.dimensions ?? {}).length === 0;
 
-/** أول صف موحّد يجتاز كل الفحوص. صف خاطئ لا يغطي على صف صحيح للفترة نفسها. */
+/**
+ * هوية القيمة المعروضة: الرقم مع وحدته ونوع فترته ونهايتها. مرشحان مقبولان بهويتين مختلفتين
+ * للمقياس نفسه متناقضان، ولا يُختار أحدهما (WEB-03: لا "الأول يفوز").
+ */
+export const valueIdentity = (c: ValueCell): string =>
+  JSON.stringify([c.value, c.unit, c.period.kind, c.period.end]);
+
+/**
+ * يفحص كل الصفوف الموحّدة قبل الاختيار. صف لا يجتاز الفحوص لا يغطي على صف صحيح للفترة نفسها،
+ * لكن صفّين مقبولين بقيمتين مختلفتين يُحجبان معًا (source_conflict) أيًّا كان ترتيبهما.
+ */
 export function pickValue(
   key: string,
   rows: EngineMetricRow[] | undefined,
@@ -670,12 +680,16 @@ export function pickValue(
   const candidates = (rows ?? []).filter(isConsolidated);
   if (!candidates.length) return { ok: "missing" };
   let firstReason: WithheldReason | null = null;
+  const eligible: ValueCell[] = [];
   for (const row of candidates) {
     const r = checkRow(key, row, expectedPeriod);
-    if (typeof r !== "string") return { ok: true, cell: r };
-    firstReason ??= r;
+    if (typeof r !== "string") eligible.push(r);
+    else firstReason ??= r;
   }
-  return { ok: false, reason: firstReason! };
+  if (!eligible.length) return { ok: false, reason: firstReason! };
+  if (new Set(eligible.map(valueIdentity)).size > 1)
+    return { ok: false, reason: "source_conflict" };
+  return { ok: true, cell: eligible[0]! };
 }
 
 function buildGroup(

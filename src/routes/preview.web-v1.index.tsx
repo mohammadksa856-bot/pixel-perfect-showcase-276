@@ -3,6 +3,8 @@ import { ArrowLeft, FileCheck2, Search, ShieldCheck, Target } from "lucide-react
 import { getCompanyPreview, PREVIEW_COMPANIES } from "@/lib/engine/company-preview.functions";
 import type { CompanyPreview } from "@/lib/engine/company-preview";
 import { getWebV1Enabled } from "@/lib/web-v1/flag.functions";
+import { getListedSummary } from "@/lib/web-v1/catalog.functions";
+import { DIRECTORY_DEFAULT_SEARCH } from "@/lib/web-v1/catalog";
 import { COMPANY_GROUPS } from "@/lib/web-v1/model";
 import { useI18n } from "@/lib/i18n";
 import { iso } from "@/lib/bidi";
@@ -29,7 +31,9 @@ export const Route = createFileRoute("/preview/web-v1/")({
         getCompanyPreview({ data: { market: "SA", symbol: c.symbol } }).catch(() => null),
       ),
     );
+    const summary = await getListedSummary();
     return {
+      summary,
       companies: PREVIEW_COMPANIES.map((c, i) => {
         const r = results[i];
         return { ...c, preview: r && r.state === "ok" ? slim(r.preview) : null };
@@ -57,10 +61,11 @@ function slim(p: CompanyPreview) {
 }
 
 function HomePage() {
-  const { companies } = Route.useLoaderData();
+  const { companies, summary } = Route.useLoaderData();
   return (
     <WebV1Shell>
       <Hero companies={companies} />
+      {summary && <ExploreMarket summary={summary} />}
       <Principles />
       <Companies companies={companies} />
       <PageAnatomy topics={companies.find((c) => c.preview)?.preview?.topics ?? []} />
@@ -129,6 +134,75 @@ function Hero({ companies }: { companies: Card[] }) {
         </div>
       </PreviewContainer>
     </section>
+  );
+}
+
+function ExploreMarket({
+  summary,
+}: {
+  summary: NonNullable<Awaited<ReturnType<typeof getListedSummary>>>;
+}) {
+  const { t } = useI18n();
+  const tiles = [
+    {
+      label: { ar: "كل الشركات المدرجة", en: "All listed companies" },
+      n: summary.total,
+      search: {},
+    },
+    {
+      label: { ar: "السوق الرئيسية", en: "Main Market" },
+      n: summary.main,
+      search: { board: "main" as const },
+    },
+    {
+      label: { ar: "نمو (السوق الموازية)", en: "Nomu (Parallel Market)" },
+      n: summary.nomu,
+      search: { board: "nomu" as const },
+    },
+    {
+      label: { ar: "بصفحة بيانات من المحرك", en: "With an engine data page" },
+      n: summary.withPages,
+      search: { data: "engine_page" as const },
+    },
+  ];
+  return (
+    <PreviewContainer className="pt-12" data-explore-market>
+      <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h2 className="text-xl font-bold tracking-tight">
+            {t({ ar: "دليل الشركات", en: "Company directory" })}
+          </h2>
+          <p className="mt-1 text-[13px] text-muted-foreground">
+            {t({
+              ar: "كل الشركات المدرجة في السوق المالية السعودية، بالاسم والرمز والسوق. العدد من قائمة السوق المالية، دون أسعار أو أرقام مالية.",
+              en: "Every company listed on the Saudi Exchange, by name, ticker and market. Counts from the exchange list, with no prices or financial figures.",
+            })}
+          </p>
+        </div>
+        <Link
+          to="/preview/web-v1/companies"
+          search={DIRECTORY_DEFAULT_SEARCH}
+          className="inline-flex items-center gap-1 text-[13px] text-brand"
+        >
+          {t({ ar: "افتح الدليل", en: "Open the directory" })}
+          <ArrowLeft className="size-4 ltr:rotate-180" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {tiles.map((x) => (
+          <Link
+            key={x.label.en}
+            to="/preview/web-v1/companies"
+            search={{ ...DIRECTORY_DEFAULT_SEARCH, ...x.search }}
+            className="rounded-2xl border border-border/70 bg-card p-4 transition-colors hover:border-brand/50"
+            data-market-tile
+          >
+            <div className="num text-2xl font-bold">{iso(x.n)}</div>
+            <div className="mt-1 text-[12px] text-muted-foreground">{t(x.label)}</div>
+          </Link>
+        ))}
+      </div>
+    </PreviewContainer>
   );
 }
 
@@ -369,7 +443,15 @@ function Browse() {
   ] as const;
   return (
     <PreviewContainer className="py-12">
-      <h2 className="mb-5 text-xl font-bold tracking-tight">{t({ ar: "تصفّح", en: "Browse" })}</h2>
+      <h2 className="text-xl font-bold tracking-tight">
+        {t({ ar: "الأسواق والقطاعات والمكتبة", en: "Markets, sectors and library" })}
+      </h2>
+      <p className="mb-5 mt-1 text-[13px] text-muted-foreground">
+        {t({
+          ar: "تفتح هذه الأقسام صفحات الموقع الحالية بمحتواها المنشور. إعادة تصميمها في دفعة لاحقة.",
+          en: "These open the current site pages with their published content. Their redesign comes in a later batch.",
+        })}
+      </p>
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         {tiles.map((x) => (
           <Link

@@ -45,6 +45,8 @@ import { Route as PreviewCompaniesIndexRouteImport } from './routes/preview.comp
 import { Route as PreviewCompaniesSymbolRouteImport } from './routes/preview.companies.$symbol'
 import { Route as PreviewWebV1IndexRouteImport } from './routes/preview.web-v1.index'
 import { Route as PreviewWebV1DesignSystemRouteImport } from './routes/preview.web-v1.design-system'
+import { Route as PreviewWebV1SearchRouteImport } from './routes/preview.web-v1.search'
+import { Route as PreviewWebV1CompaniesIndexRouteImport } from './routes/preview.web-v1.companies.index'
 import { Route as PreviewWebV1CompaniesSymbolRouteImport } from './routes/preview.web-v1.companies.$symbol'
 
 const IndexRoute = IndexRouteImport.update({
@@ -233,6 +235,17 @@ const PreviewWebV1DesignSystemRoute =
     path: '/preview/web-v1/design-system',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PreviewWebV1SearchRoute = PreviewWebV1SearchRouteImport.update({
+  id: '/preview/web-v1/search',
+  path: '/preview/web-v1/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreviewWebV1CompaniesIndexRoute =
+  PreviewWebV1CompaniesIndexRouteImport.update({
+    id: '/preview/web-v1/companies/',
+    path: '/preview/web-v1/companies/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PreviewWebV1CompaniesSymbolRoute =
   PreviewWebV1CompaniesSymbolRouteImport.update({
     id: '/preview/web-v1/companies/$symbol',
@@ -273,10 +286,12 @@ export interface FileRoutesByFullPath {
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
   '/preview/companies/$symbol': typeof PreviewCompaniesSymbolRoute
   '/preview/web-v1/design-system': typeof PreviewWebV1DesignSystemRoute
+  '/preview/web-v1/search': typeof PreviewWebV1SearchRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/preview/companies/': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1/': typeof PreviewWebV1IndexRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
+  '/preview/web-v1/companies/': typeof PreviewWebV1CompaniesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -310,10 +325,12 @@ export interface FileRoutesByTo {
   '/admin/sectors': typeof AuthenticatedAdminSectorsRoute
   '/preview/companies/$symbol': typeof PreviewCompaniesSymbolRoute
   '/preview/web-v1/design-system': typeof PreviewWebV1DesignSystemRoute
+  '/preview/web-v1/search': typeof PreviewWebV1SearchRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/preview/companies': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1': typeof PreviewWebV1IndexRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
+  '/preview/web-v1/companies': typeof PreviewWebV1CompaniesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -350,10 +367,12 @@ export interface FileRoutesById {
   '/_authenticated/admin/sectors': typeof AuthenticatedAdminSectorsRoute
   '/preview/companies/$symbol': typeof PreviewCompaniesSymbolRoute
   '/preview/web-v1/design-system': typeof PreviewWebV1DesignSystemRoute
+  '/preview/web-v1/search': typeof PreviewWebV1SearchRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/preview/companies/': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1/': typeof PreviewWebV1IndexRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
+  '/preview/web-v1/companies/': typeof PreviewWebV1CompaniesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -390,10 +409,12 @@ export interface FileRouteTypes {
     | '/admin/sectors'
     | '/preview/companies/$symbol'
     | '/preview/web-v1/design-system'
+    | '/preview/web-v1/search'
     | '/admin/'
     | '/preview/companies/'
     | '/preview/web-v1/'
     | '/preview/web-v1/companies/$symbol'
+    | '/preview/web-v1/companies/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -427,10 +448,12 @@ export interface FileRouteTypes {
     | '/admin/sectors'
     | '/preview/companies/$symbol'
     | '/preview/web-v1/design-system'
+    | '/preview/web-v1/search'
     | '/admin'
     | '/preview/companies'
     | '/preview/web-v1'
     | '/preview/web-v1/companies/$symbol'
+    | '/preview/web-v1/companies'
   id:
     | '__root__'
     | '/'
@@ -466,10 +489,12 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/sectors'
     | '/preview/companies/$symbol'
     | '/preview/web-v1/design-system'
+    | '/preview/web-v1/search'
     | '/_authenticated/admin/'
     | '/preview/companies/'
     | '/preview/web-v1/'
     | '/preview/web-v1/companies/$symbol'
+    | '/preview/web-v1/companies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -498,9 +523,11 @@ export interface RootRouteChildren {
   SectorsIndexRoute: typeof SectorsIndexRoute
   PreviewCompaniesSymbolRoute: typeof PreviewCompaniesSymbolRoute
   PreviewWebV1DesignSystemRoute: typeof PreviewWebV1DesignSystemRoute
+  PreviewWebV1SearchRoute: typeof PreviewWebV1SearchRoute
   PreviewCompaniesIndexRoute: typeof PreviewCompaniesIndexRoute
   PreviewWebV1IndexRoute: typeof PreviewWebV1IndexRoute
   PreviewWebV1CompaniesSymbolRoute: typeof PreviewWebV1CompaniesSymbolRoute
+  PreviewWebV1CompaniesIndexRoute: typeof PreviewWebV1CompaniesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -757,6 +784,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PreviewWebV1DesignSystemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/preview/web-v1/search': {
+      id: '/preview/web-v1/search'
+      path: '/preview/web-v1/search'
+      fullPath: '/preview/web-v1/search'
+      preLoaderRoute: typeof PreviewWebV1SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/web-v1/companies/': {
+      id: '/preview/web-v1/companies/'
+      path: '/preview/web-v1/companies'
+      fullPath: '/preview/web-v1/companies/'
+      preLoaderRoute: typeof PreviewWebV1CompaniesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/preview/web-v1/companies/$symbol': {
       id: '/preview/web-v1/companies/$symbol'
       path: '/preview/web-v1/companies/$symbol'
@@ -829,9 +870,11 @@ const rootRouteChildren: RootRouteChildren = {
   SectorsIndexRoute: SectorsIndexRoute,
   PreviewCompaniesSymbolRoute: PreviewCompaniesSymbolRoute,
   PreviewWebV1DesignSystemRoute: PreviewWebV1DesignSystemRoute,
+  PreviewWebV1SearchRoute: PreviewWebV1SearchRoute,
   PreviewCompaniesIndexRoute: PreviewCompaniesIndexRoute,
   PreviewWebV1IndexRoute: PreviewWebV1IndexRoute,
   PreviewWebV1CompaniesSymbolRoute: PreviewWebV1CompaniesSymbolRoute,
+  PreviewWebV1CompaniesIndexRoute: PreviewWebV1CompaniesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

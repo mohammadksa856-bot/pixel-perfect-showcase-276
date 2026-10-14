@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T20:30:00Z",
+  "updated_at": "2026-10-14T21:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -440,6 +440,18 @@
         "product-tracking/outbox/WEB-V1/web-05b"
       ],
       "result": "markets index, Saudi Exchange, Main/Nomu boards, sectors directory, sector detail, unclassified page; documented data only (sector from engine pages: 3 of 396); no prices/index values/sector stats"
+    },
+    "WEB-05C": {
+      "status": "IMPLEMENTED, TESTED; acceptance requested",
+      "branch": "claude/web-05c-research-knowledge",
+      "base": "407d7e8",
+      "commit": "1a4f402",
+      "report": "product-tracking/reports/BR-023_WEB-05C_research_knowledge.md",
+      "evidence": [
+        "product-tracking/outbox/WEB-V1/screens-web05c",
+        "product-tracking/outbox/WEB-V1/web-05c"
+      ],
+      "result": "research browse + reader, knowledge directory + topic reader; published Supabase content only; frozen preview = explicit unavailable state; error state on source failure; no machine translation; no company links (no documented field)"
     }
   },
   "open_dependencies_on_codex": {
@@ -1036,6 +1048,12 @@
       "suite": "bun test + e2e (05B, 05A) + tsc + eslint + vite build",
       "branch": "claude/web-05b-markets-sectors",
       "result": "330 pass, 14 skip, 0 fail; web-05b 13/13; e2e 05B 20/20, 05A 17/17; builds ok; Vercel success"
+    },
+    {
+      "id": "RUN-2026-10-14-60",
+      "suite": "bun test + e2e (05C, 05B, 05A) + tsc + eslint + vite build",
+      "branch": "claude/web-05c-research-knowledge",
+      "result": "351 pass, 14 skip, 0 fail; web-05c 21/21; e2e 05C 18/18, 05B 20/20, 05A 18/18; builds ok; Vercel success"
     }
   ],
   "active_track": {

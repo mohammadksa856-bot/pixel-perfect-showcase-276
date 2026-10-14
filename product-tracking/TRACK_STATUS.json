@@ -1,6 +1,6 @@
 {
   "track": "claude-product",
-  "updated_at": "2026-10-14T21:30:00Z",
+  "updated_at": "2026-10-14T22:30:00Z",
   "note": "Recreated in this repository. The previous TRACK_STATUS/CHANGELOG and branch claude/engine-company-page existed only in a prior session's local container and are not on GitHub; history before 2026-10-12 is summarized from the handoff and BR-002, not reconstructed.",
   "repos": {
     "site": {
@@ -430,7 +430,7 @@
       "result": "all candidates compared before choosing; contradictory eligible values -> source_conflict; numeric identity-rejected record blocks substitutes (rejection_not_overridden); review evidence without values; 1 of 1810 fixture cells changed (v4 1120 eps_diluted)"
     },
     "WEB-05B": {
-      "status": "IMPLEMENTED, TESTED; acceptance requested",
+      "status": "FIX REQUIRED (Codex 407d7e8) -> fixed in WEB-05B-FINAL-FIXES; re-acceptance requested",
       "branch": "claude/web-05b-markets-sectors",
       "base": "67c6368",
       "commit": "3e04bf8",
@@ -452,6 +452,17 @@
         "product-tracking/outbox/WEB-V1/web-05c"
       ],
       "result": "research browse + reader, knowledge directory + topic reader; published Supabase content only; frozen preview = explicit unavailable state; error state on source failure; no machine translation; no company links (no documented field)"
+    },
+    "WEB-05B-FINAL-FIXES": {
+      "status": "IMPLEMENTED, TESTED; WEB-05B re-acceptance requested",
+      "branch": "claude/web-05b-final-fixes",
+      "base": "6d696b9",
+      "commit": "b891137",
+      "review": "Codex WEB05B-INDEPENDENT-20261014 (package 6058def)",
+      "report": "product-tracking/reports/BR-024_WEB-05B_final_fixes.md",
+      "evidence": "product-tracking/outbox/WEB-V1/web-05b-fixes",
+      "result": "boundary audit 60/60 clean (0 leaving links, 0 overflow at 390px, 0 Supabase, 0 writes); Codex boundary test pass; preview footer isolated, newsletter disabled; card names wrap",
+      "preview_env_note": "branch likely needs Vercel Preview config overrides (as Codex did for claude/web-05b-markets-sectors); not changed by Claude"
     }
   },
   "open_dependencies_on_codex": {
@@ -1054,6 +1065,12 @@
       "suite": "bun test + e2e (05C, 05B, 05A) + tsc + eslint + vite build",
       "branch": "claude/web-05c-research-knowledge",
       "result": "351 pass, 14 skip, 0 fail; web-05c 21/21; e2e 05C 18/18, 05B 20/20, 05A 18/18; builds ok; Vercel success"
+    },
+    {
+      "id": "RUN-2026-10-14-61",
+      "suite": "bun test + e2e (05A, 05B, 05C) + boundary audit + Codex 6058def + tsc + vite build",
+      "branch": "claude/web-05b-final-fixes",
+      "result": "357 pass, 14 skip, 0 fail; e2e 05A 18/18, 05B 26/26 (21/26 before), 05C 18/18; audit 0/60 failing (60/60 before); Codex boundary pass (fail before); builds ok; Vercel success"
     }
   ],
   "active_track": {

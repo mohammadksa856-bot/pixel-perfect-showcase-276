@@ -3,8 +3,8 @@
 //   BEFORE=http://127.0.0.1:5177  frozen design preview served from a worktree at c3bfd2f
 //   AFTER=http://127.0.0.1:5173   frozen design preview served from the polish code commit
 // Both: MAREFA_DESIGN_FIXTURES=true, VERCEL_ENV=preview, allowlisted branch ref, no Supabase, no engine.
-// Usage: node web_06_polish_capture.mjs <outDir>  → <outDir>/{before,after,path}/<view>/<id>.<locale>.jpg + captures.json
-// For element captures the sticky header/mobile tab bar are made static so they do not cover the part.
+// Usage: [ONLY=before|after] node web_06_polish_capture.mjs <outDir>  → <outDir>/{before,after,path}/<view>/<id>.<locale>.jpg + captures.json
+// For element captures the sticky header, company tab bar and mobile tab bar are made static/hidden so they do not cover the part.
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
 
@@ -22,7 +22,13 @@ const PARTS = [
   ["d1-identity-card", "D1 D5", `${P}/companies/2222?tab=business`, "#topic-1"],
   ["d2-corporate-actions", "D2", `${P}/companies/2222?tab=shareholders`, "#topic-9"],
   ["d3-page-notice-topics", "D3", `${P}/companies/1120?tab=business`, "[data-group]"],
-  ["d4-company-table", "D4 D5", `${P}/markets/saudi/main`, "[data-company-table]", ["[data-table-legend] > summary"]],
+  [
+    "d4-company-table",
+    "D4 D5",
+    `${P}/markets/saudi/main`,
+    "[data-company-table]",
+    ["[data-table-legend] > summary"],
+  ],
   ["d5-sectors-index", "D5", `${P}/sectors`, "main"],
   ["d6-statements", "D6", `${P}/companies/2222?tab=financials`, "#topic-5"],
   ["d7-factory-panel", "D7", `${P}/companies/2222?tab=coverage`, "[data-factory-panel]"],
@@ -41,14 +47,21 @@ const PATH = [
   ["p5-financials", `${P}/companies/1120?tab=financials`],
   ["p6-coverage", `${P}/companies/1120?tab=coverage`],
 ];
+// ONLY=before|after runs one side (the two dev servers must not run at once: they share Vite's dep cache).
+const ONLY = process.env.ONLY ?? "";
 const RUNS = [
   ["before", BEFORE, ["ar"]],
   ["after", AFTER, ["ar", "en"]],
-];
+].filter(([k]) => !ONLY || k === ONLY);
 const log = [];
 async function shoot(kind, base, view, locale, id, path, sel, clicks = []) {
   const m = view === "mobile";
-  const ctx = await browser.newContext({ viewport: VIEWS[view], isMobile: m, hasTouch: m, deviceScaleFactor: 1 });
+  const ctx = await browser.newContext({
+    viewport: VIEWS[view],
+    isMobile: m,
+    hasTouch: m,
+    deviceScaleFactor: 1,
+  });
   await ctx.addInitScript((l) => localStorage.setItem("mi.locale", l), locale);
   const page = await ctx.newPage();
   const errors = [];
@@ -68,29 +81,60 @@ async function shoot(kind, base, view, locale, id, path, sel, clicks = []) {
     await page.screenshot({ path: file, type: "jpeg", quality: 82 });
   } else {
     await page.addStyleTag({
-      content: "header{position:static!important}[data-mobile-tabbar]{display:none!important}",
+      content:
+        "header,.sticky.top-16{position:static!important}[data-mobile-tabbar]{display:none!important}",
     });
-    if (sel === null) await page.screenshot({ path: file, fullPage: true, type: "jpeg", quality: 80 });
+    if (sel === null)
+      await page.screenshot({ path: file, fullPage: true, type: "jpeg", quality: 80 });
     else if (await page.locator(sel).count())
       await page.locator(sel).first().screenshot({ path: file, type: "jpeg", quality: 82 });
     else found = false;
   }
   const sw = await page.evaluate(() => document.documentElement.scrollWidth);
   const rec = {
-    kind, id, view, locale, route: path, base, http: r.status(), selector: sel ?? null,
-    captured_at: new Date().toISOString(), scrollWidth: sw, deviceWidth: VIEWS[view].width,
-    file: found ? file.slice(OUT.length + 1) : null, pageErrors: errors.length,
+    kind,
+    id,
+    view,
+    locale,
+    route: path,
+    base,
+    http: r.status(),
+    selector: sel ?? null,
+    captured_at: new Date().toISOString(),
+    scrollWidth: sw,
+    deviceWidth: VIEWS[view].width,
+    file: found ? file.slice(OUT.length + 1) : null,
+    pageErrors: errors.length,
   };
   log.push(rec);
-  console.log([kind, view, locale, id, `http=${r.status()}`, `sw=${sw}/${VIEWS[view].width}`, found ? "ok" : "PART-NOT-FOUND", errors.length ? "ERR" : ""].join(" "));
+  console.log(
+    [
+      kind,
+      view,
+      locale,
+      id,
+      `http=${r.status()}`,
+      `sw=${sw}/${VIEWS[view].width}`,
+      found ? "ok" : "PART-NOT-FOUND",
+      errors.length ? "ERR" : "",
+    ].join(" "),
+  );
   await ctx.close();
 }
 for (const [kind, base, locales] of RUNS)
   for (const [id, , path, sel, clicks] of PARTS)
     for (const view of ["desktop", "mobile"])
       for (const locale of locales) await shoot(kind, base, view, locale, id, path, sel, clicks);
-for (const [id, path] of PATH)
-  for (const view of ["desktop", "mobile"])
-    for (const locale of ["ar", "en"]) await shoot("path", AFTER, view, locale, id, path, null);
-writeFileSync(`${OUT}/captures.json`, JSON.stringify({ parts: PARTS.map(([id, d, path, sel]) => ({ id, decisions: d, path, sel })), shots: log }, null, 2));
+if (ONLY !== "before")
+  for (const [id, path] of PATH)
+    for (const view of ["desktop", "mobile"])
+      for (const locale of ["ar", "en"]) await shoot("path", AFTER, view, locale, id, path, null);
+writeFileSync(
+  `${OUT}/captures${ONLY ? "-" + ONLY : ""}.json`,
+  JSON.stringify(
+    { parts: PARTS.map(([id, d, path, sel]) => ({ id, decisions: d, path, sel })), shots: log },
+    null,
+    2,
+  ),
+);
 await browser.close();

@@ -1,0 +1,26 @@
+PASS  research index: published items newest first, undated last
+PASS  research search, sector and tag filters, reset, shareable URL
+PASS  reader: TOC jumps to sections, table, lists, references (unsafe ref is text)
+PASS  reader: related research by sector/tag; tag and sector links filter the index
+PASS  reader: missing metadata is not invented; no sections/references shown as states
+PASS  English UI: LTR; Arabic-only section flagged and kept RTL; coverage notice
+PASS  not found: unknown slug shows a state with a way back
+PASS  knowledge directory: grouped by source category; uncategorised kept apart
+PASS  knowledge: category and level filters, search, reset
+PASS  knowledge topic: sections, videos (link only when given), related topics, back to category
+PASS  shell: header Research/Knowledge open the new pages
+PASS  frozen preview: research and knowledge declare 'unavailable' (no invented content)
+PASS  source error: explicit error state with retry, no substitute content
+PASS  mobile 390px: no page-level horizontal scroll — /preview/web-v1/research
+PASS  mobile 390px: no page-level horizontal scroll — /preview/web-v1/research/synthetic-research-1
+PASS  mobile 390px: no page-level horizontal scroll — /preview/web-v1/knowledge
+PASS  mobile 390px: no page-level horizontal scroll — /preview/web-v1/knowledge/synthetic-topic-1
+PASS  mobile reader: collapsible contents; wide table scrolls inside itself
+PASS  research reader: inconsistent table shown as warning + full original text, valid table still a table
+PASS  knowledge reader: same rule for an inconsistent table
+PASS  impossible date 2026-02-31: flagged as invalid on card and article, never shown or rolled over
+PASS  English: invalid-date label and mismatch warning in English
+PASS  mobile 390px ar: inconsistent table scrolls inside its box, page does not
+PASS  mobile 390px en: inconsistent table scrolls inside its box, page does not
+
+24/24 passed

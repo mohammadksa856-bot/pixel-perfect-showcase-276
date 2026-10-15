@@ -156,3 +156,7 @@
 {"ts": "2026-10-14T23:20:00Z", "task": "WEB-05C-READER-FIXES", "event": "implemented", "commit": "7bee848"}
 {"ts": "2026-10-14T23:30:00Z", "task": "WEB-05C-READER-FIXES", "event": "test_run", "result": "unit 11/11 (9 fail before); app 368/14 skip/0 fail; e2e 05A 18/18, 05B 26/26, 05C 24/24 (17/24 before)"}
 {"ts": "2026-10-14T23:40:00Z", "task": "BR-025", "event": "batch_report", "path": "product-tracking/reports/BR-025_WEB-05C_reader_fixes.md"}
+{"ts": "2026-10-15T00:40:00Z", "task": "WEB-06-VISUAL-POLISH", "event": "implemented", "commit": "0effcfc", "result": "approved decisions D1-D12 at display layer; D13 documented (light theme unreachable)"}
+{"ts": "2026-10-15T00:45:00Z", "task": "WEB-06-VISUAL-POLISH", "event": "scope_deferred", "path": "product-tracking/SCOPE_DEFERRED.md", "result": "watchlist, community, accounts, newsletter: DEFERRED (not completed, not cancelled)"}
+{"ts": "2026-10-15T01:10:00Z", "task": "WEB-06-VISUAL-POLISH", "event": "test_run", "result": "unit 387/14 skip/0 fail; web-06 19/19; e2e 05A 18/18, 05B 26/26, 05C 24/24; boundary 60/60; contrast 0 fail; keyboard 6/6; reflow 18/18; builds exit 0"}
+{"ts": "2026-10-15T01:20:00Z", "task": "BR-026", "event": "delivery", "commit": "f1a84e2", "path": "product-tracking/reports/BR-026_WEB-06_visual_polish.md", "result": "96 images with IMAGE_MANIFEST.json (sha256 verified in commit); Codex review requested; no acceptance or closure recorded"}

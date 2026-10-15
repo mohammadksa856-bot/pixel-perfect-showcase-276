@@ -472,6 +472,19 @@
       "review": "Codex WEB-05C at 6d696b9 (two defects; no independent test package received)",
       "report": "product-tracking/reports/BR-025_WEB-05C_reader_fixes.md",
       "evidence": "product-tracking/outbox/WEB-V1/web-05c-reader-fixes"
+    },
+    "WEB-06-VISUAL-POLISH": {
+      "status": "IMPLEMENTED, TESTED; Codex review requested (not visual acceptance, not WEB-06 closure)",
+      "branch": "claude/web-06-visual-polish",
+      "base": "c3bfd2f",
+      "commit": "0effcfc",
+      "delivery_commit": "f1a84e2",
+      "decisions": "D1-D13 (D13: light theme unreachable, not tested)",
+      "deferred_scope": "product-tracking/SCOPE_DEFERRED.md",
+      "report": "product-tracking/reports/BR-026_WEB-06_visual_polish.md",
+      "evidence": "product-tracking/outbox/WEB-V1/web-06-visual-polish",
+      "USER_FINAL_ACCEPTANCE": false,
+      "WEB06_CLOSED": false
     }
   },
   "open_dependencies_on_codex": {
@@ -1094,6 +1107,25 @@
         "tsc": "0",
         "vite build preview/production-like": "exit 0 / exit 0",
         "vercel build": "success (page opening not verified)"
+      }
+    },
+    {
+      "id": "RUN-2026-10-15-63",
+      "branch": "claude/web-06-visual-polish",
+      "runs": {
+        "bun test tests": "387 pass, 14 skip, 0 fail",
+        "web-06-polish unit": "19/19",
+        "tsc": "0",
+        "eslint changed": "0 errors, 6 warnings",
+        "e2e 05A": "18/18",
+        "e2e 05B": "26/26",
+        "e2e 05C": "24/24 (first run 1/24: shared Vite dep cache with the before-server; rerun alone, no code change)",
+        "boundary audit": "0/60 failing",
+        "contrast": "52 checks, 0 failures, min 4.68:1",
+        "keyboard": "6/6",
+        "reflow 320px": "18/18",
+        "vite build preview/production-like": "exit 0 / exit 0",
+        "vercel build": "success on 0effcfc (page opening not verified)"
       }
     }
   ],

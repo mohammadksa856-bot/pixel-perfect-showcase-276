@@ -1,0 +1,176 @@
+{
+  "schema": "marefa-web06-d11-preview-acceptance/1",
+  "observed_at": "2026-10-15T01:38:01Z",
+  "decision": "WEB-06 VISUAL POLISH ENGINEERING REVIEW: ACCEPT",
+  "application_sha": "6c79f4560ae2da0a65510254b82ac4cafcb422c9",
+  "contrast_code_sha": "bd99cb7ce99f5b0a27a6e1d21b4f93edbd83a29c",
+  "claude_report_sha": "1e9eb59c0b3a6bbfcde6a197a3d58ed5b29fff7f",
+  "branch": "claude/web-06-d11-contrast-fix",
+  "FINAL_USER_VISUAL_REVIEW_READY": true,
+  "USER_FINAL_ACCEPTANCE": false,
+  "WEB06_CLOSED": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "preview": {
+    "url": "https://pixel-perfect-showcase-276-d1fvbx1ug.vercel.app/preview/web-v1",
+    "tested_company": "https://pixel-perfect-showcase-276-d1fvbx1ug.vercel.app/preview/web-v1/companies/2222?tab=business",
+    "deployment": "6W3xSX7bSxQpBDZycjc3WDaFSVai",
+    "state": "READY",
+    "actual_runtime": "PASS frozen company page opened; language switch and group navigation function",
+    "source_sha": "6c79f4560ae2da0a65510254b82ac4cafcb422c9",
+    "build_duration": "23s",
+    "settings_scope": "Four Config variables only Preview branch claude/web-06-d11-contrast-fix; sameSHA redeployed",
+    "variables": {
+      "WEB_V1_PREVIEW_ENABLED": true,
+      "ENGINE_PREVIEW_ENABLED": true,
+      "MAREFA_DESIGN_FIXTURES": true,
+      "ENGINE_PEERS_ENABLED": false
+    },
+    "production_or_secrets_changed": false
+  },
+  "measurement": {
+    "font_size": "13px",
+    "font_weight": "500",
+    "classification": "normal text",
+    "foreground": "oklch(0.93 0.008 250)",
+    "background": "oklab(0.62 -0.0547232 -0.150351 / 0.15)",
+    "effective_foreground_rgb": [
+      227.92345197819353,
+      232.32848101223604,
+      237.08451552806204
+    ],
+    "effective_background_rgb": [
+      18.757764338794516,
+      37.391689730975145,
+      57.64207661221591
+    ],
+    "contrast_ratio": 12.600230771265442,
+    "minimum_ratio": 4.5,
+    "result": "PASS",
+    "method": "Independent OKLab/OKLCH->sRGB; ancestor alpha composition and WCAG relative luminance, no early rounding. Actual Preview computed styles match previously independently calculated local pair.",
+    "limitations": "Not a whole-site WCAG audit; no simulation of arbitrary image content beneath backdrop blur."
+  },
+  "browser_cases": [
+    {
+      "case": "Arabic desktop",
+      "result": "PASS",
+      "lang": "ar",
+      "dir": "rtl",
+      "client_width": 1265,
+      "document_width": 1265,
+      "font_size": "13px",
+      "font_weight": "500",
+      "computed_pair": "same measurement",
+      "active_count": 1,
+      "aria_current": "page"
+    },
+    {
+      "case": "English desktop",
+      "result": "PASS",
+      "lang": "en",
+      "dir": "ltr",
+      "client_width": 1265,
+      "document_width": 1265,
+      "font_size": "13px",
+      "font_weight": "500",
+      "computed_pair": "same measurement",
+      "active_count": 1,
+      "aria_current": "page"
+    },
+    {
+      "case": "English mobile",
+      "result": "PASS",
+      "configured_css_viewport": 390,
+      "media_query_width_390": true,
+      "client_width": 375,
+      "document_scroll_width": 375,
+      "root_rect_width": 374.6666870117187,
+      "font_size": "13px",
+      "font_weight": "500",
+      "computed_pair": "same measurement",
+      "nav_client_width": 351,
+      "nav_scroll_width": 1064,
+      "nav_overflow_x": "auto",
+      "active_rect_left": 155.9791717529297,
+      "active_rect_right": 351.62501525878906
+    },
+    {
+      "case": "Arabic mobile",
+      "result": "PASS",
+      "configured_css_viewport": 390,
+      "media_query_width_390": true,
+      "client_width": 375,
+      "document_scroll_width": 375,
+      "root_rect_width": 374.6666870117187,
+      "font_size": "13px",
+      "font_weight": "500",
+      "computed_pair": "same measurement",
+      "nav_client_width": 351,
+      "nav_scroll_width": 826,
+      "nav_overflow_x": "auto",
+      "active_rect_left": 11.895833969116213,
+      "active_rect_right": 173.6354274749756,
+      "active_count": 1,
+      "aria_current": "page"
+    }
+  ],
+  "viewport_evidence": "Exact matchMedia('(width:390px)') true, root/client/scroll measurements and actual screenshot; not innerWidth alone.375px content area reflects vertical scrollbar within390CSSpx viewport. Previous failed override targeted a different selected Chrome tab; no app defect. Override reset after test.",
+  "keyboard": [
+    {
+      "case": "English desktop",
+      "actions": "Tab business->financials;Enter activates financials",
+      "result": "PASS",
+      "focus_visible": true,
+      "outline_width": "2px",
+      "outline_offset": "2px",
+      "outline_style": "solid"
+    },
+    {
+      "case": "Arabic mobile",
+      "actions": "Tab financials->shareholders;Enter activates shareholders",
+      "result": "PASS",
+      "focus_visible": true,
+      "outline_width": "2px",
+      "outline_offset": "2px",
+      "outline_style": "solid",
+      "active_link_in_visible_viewport": true
+    }
+  ],
+  "regression": {
+    "run_id": "WEB06-D11-preview-6c79f45",
+    "application_sha": "6c79f4560ae2da0a65510254b82ac4cafcb422c9",
+    "files": [
+      "tests/web-06-d11-tabs.test.ts",
+      "tests/design-preview-activation.test.ts"
+    ],
+    "passed": 12,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "expectations": 203,
+    "duration_ms": 416,
+    "previous_runs_not_pooled": true,
+    "full_suite_or96images_rerun": false
+  },
+  "change_scope": {
+    "runtime_files_since0eff": [
+      "src/components/web-v1/company-template.tsx",
+      "src/lib/web-v1/design-review-policy.ts"
+    ],
+    "latest_allowlist_diff": "One exact branch literal and comment; all environment checks unchanged; no patterns/main allowance",
+    "global_brand_tokens_changed": false,
+    "financial_components_or_data_changed": false,
+    "prior_D1_D10_D12_decisions": "PRESERVED; not reopened",
+    "D13": "NOT_APPLICABLE_EXISTING_THEME_ABSENT",
+    "repeated_merge": false,
+    "reviewer_application_edits": false
+  },
+  "remaining_gates": [
+    "Final user visual acceptance of design and V1scope",
+    "About/Contact/Privacy/Terms separately approved correct content before launch",
+    "WEB-LIVE-01..04 and live-content/search authorization, financial acceptance remain separate",
+    "Production release requires explicit approval"
+  ],
+  "tracking_state": "REVIEW awaiting user; engineering acceptance is not product acceptance or WEB06 closure",
+  "evidence_image": "D11-Vercel-mobile390.png: actual redeployed6c79f45 Preview, not local/synthetic reader; no96-image cycle",
+  "safety": "No main,Production,AWS,Supabase,engine or95% methodology changes. Frozen preview only; peers disabled; no write paths enabled."
+}

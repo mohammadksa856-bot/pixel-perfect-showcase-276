@@ -216,10 +216,13 @@ export function CompanyTabs({ p, tab }: { p: CompanyPreview; tab: CompanyTab }) 
                 search={{ tab: g.id }}
                 data-tab={g.id}
                 data-active={active || undefined}
+                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium transition-colors",
+                  "flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand",
+                  // WEB-06 D11: النشط نص فاتح على خلفية مظللة بإطار (لا أبيض على الأزرق 3.44:1).
+                  // الإطار علامة شكلية لا تعتمد على اللون وحده.
                   active
-                    ? "bg-brand text-brand-foreground"
+                    ? "bg-brand/15 text-foreground ring-1 ring-inset ring-brand/70"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground",
                   g.id === "coverage" && "ms-auto",
                 )}
@@ -232,10 +235,7 @@ export function CompanyTabs({ p, tab }: { p: CompanyPreview; tab: CompanyTab }) 
                       return (
                         <span
                           key={o}
-                          className={cn(
-                            "size-1.5 rounded-full",
-                            active ? "bg-brand-foreground/70" : TONE_BAR[TOPIC_META[st].tone],
-                          )}
+                          className={cn("size-1.5 rounded-full", TONE_BAR[TOPIC_META[st].tone])}
                         />
                       );
                     })}

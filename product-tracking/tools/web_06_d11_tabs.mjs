@@ -97,6 +97,7 @@ for (const view of ["desktop", "mobile"])
       await page.waitForTimeout(250);
       hover = await measure(page, '[data-company-tabs] a[data-tab="financials"]');
       await page.mouse.move(0, 0);
+      await page.waitForTimeout(400); // let the hover transition finish before the capture
     }
     const dir = `${OUT}/${LABEL}/${view}`;
     mkdirSync(dir, { recursive: true });

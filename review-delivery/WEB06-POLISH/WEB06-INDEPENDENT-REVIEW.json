@@ -1,0 +1,226 @@
+{
+  "schema": "marefa-web06-independent-polish-review/1",
+  "observed_at": "2026-10-15 00:42:41 UTC",
+  "application_sha": "0effcfcd956b2bcc5f5df874b73980a0d542a1d8",
+  "delivery_report_sha": "f1a84e23cdd119b5e268d61d8dc3d373a04435e9",
+  "tracking_sha": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
+  "criteria_sha": "f59f64167d544640303b6df87cc754b5a910fe50",
+  "branch": "review/web06-polish-independent-20261015",
+  "decision": "FIX REQUIRED",
+  "blocking_items": [
+    "D11"
+  ],
+  "USER_FINAL_ACCEPTANCE": false,
+  "WEB06_CLOSED": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "preview": {
+    "url": "https://pixel-perfect-showcase-276-lr4rh9knu.vercel.app/preview/web-v1",
+    "deployment": "GGXoPHt1iv776cejVhoAuLLjof5A",
+    "application_sha": "0effcfcd956b2bcc5f5df874b73980a0d542a1d8",
+    "ready": true,
+    "actual_routes_opened": [
+      "/preview/web-v1/companies/2222?tab=business",
+      "/preview/web-v1/companies/2222?tab=shareholders"
+    ],
+    "initial_previous_deployment": "Bzzk96je6rSXJ5YWVVXWzZ5VTgJd",
+    "initial_previous_preview_result": "404 on preview routes; not application build failure",
+    "remediation": "Four Config variables added only to Preview branch claude/web-06-visual-polish; same application SHA redeployed. Production/secrets untouched.",
+    "variables": {
+      "WEB_V1_PREVIEW_ENABLED": true,
+      "ENGINE_PREVIEW_ENABLED": true,
+      "MAREFA_DESIGN_FIXTURES": true,
+      "ENGINE_PEERS_ENABLED": false
+    }
+  },
+  "criteria_results": [
+    {
+      "id": "D1",
+      "result": "PASS",
+      "evidence": "Source links preserve original targets and ltr/anywhere wrapping; actual browser hitboxes within parent."
+    },
+    {
+      "id": "D2",
+      "result": "PASS",
+      "evidence": "Separate action title/amount/date/source; observed 8 action items, 8 amount/date labels; original model preserved."
+    },
+    {
+      "id": "D3",
+      "result": "PASS",
+      "evidence": "Only identical general frozen reason deduplicated; specific withholding reasons retained."
+    },
+    {
+      "id": "D4",
+      "result": "PASS",
+      "evidence": "Status labels simplified without changing catalog rows/filters or inventing sectors; affected regression passed."
+    },
+    {
+      "id": "D5",
+      "result": "PASS",
+      "evidence": "Explicit display-only dictionary uses original keys; source strings and filter keys unchanged; unknown strings preserved."
+    },
+    {
+      "id": "D6",
+      "result": "PASS",
+      "evidence": "All 32 fixture rows retained in DOM; mobile income disclosure expands 8 to9 via Space; sections keyboard accessible; no financial eligibility/model changes."
+    },
+    {
+      "id": "D7",
+      "result": "PASS",
+      "evidence": "18 categories,18 map links, original weights/thresholds/gates; unmeasured has no score. Outer and inner native disclosures keyboard accessible."
+    },
+    {
+      "id": "D8",
+      "result": "PASS",
+      "evidence": "Existing mobile home sections condensed, not deleted; code/targeted regression and supplied local before-after evidence reviewed; no new fake prices or scores."
+    },
+    {
+      "id": "D9",
+      "result": "PASS",
+      "evidence": "Sector links require existing source fields; industry additionally requires sector; original keys form Preview route/filter."
+    },
+    {
+      "id": "D10",
+      "result": "PASS",
+      "evidence": "No active watchlist/newsletter entry or form in reviewed frozen shell; isolated Preview boundary regression passed; no production footer reintroduced."
+    },
+    {
+      "id": "D11",
+      "result": "FAIL",
+      "evidence": "Active group tab normal text:13px,500; computed text contrast3.436:1 <4.5:1 on local and actual Vercel application."
+    },
+    {
+      "id": "D12",
+      "result": "PASS",
+      "evidence": "Combined library message requires both unavailable; error state remains distinct; no live fallback introduced."
+    },
+    {
+      "id": "D13",
+      "result": "NOT_APPLICABLE_EXISTING_THEME_ABSENT",
+      "evidence": "Dark theme forced; no accessible second-theme toggle; no new theme required."
+    }
+  ],
+  "contrast": {
+    "foreground_oklch": [
+      0.98,
+      0.004,
+      250
+    ],
+    "background_oklch": [
+      0.62,
+      0.16,
+      250
+    ],
+    "foreground_srgb": [
+      246.3991761208524,
+      248.62911731836695,
+      251.04041191007133
+    ],
+    "background_srgb": [
+      35.41008534810046,
+      137.46956220011202,
+      225.55481476906905
+    ],
+    "ratio": 3.4361722675008006,
+    "fontSizePx": 13,
+    "fontWeight": 500,
+    "large_text": false,
+    "required_text_ratio": 4.5,
+    "decision": "FAIL_D11",
+    "actual_preview_computed": {
+      "color": "oklch(0.98 0.004 250)",
+      "background": "oklch(0.62 0.16 250)",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "opacity": 1
+    },
+    "classification": "NORMAL_TEXT; below 24px regular or approximately18.67px bold large-text thresholds",
+    "source": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html",
+    "non_text": "Separate criterion: 3:1 non-text UI contrast does not waive 4.5:1 normal text. No comprehensive non-text certification claimed.",
+    "screenshot_local": "D11-preview-tabs.jpg"
+  },
+  "runs": [
+    {
+      "id": "WEB06-targeted-0effcfc",
+      "application_sha": "0effcfcd956b2bcc5f5df874b73980a0d542a1d8",
+      "scope": [
+        "tests/web-06-polish.test.ts",
+        "tests/web-05b-boundary.test.ts",
+        "tests/web-03-04.test.ts",
+        "tests/web-readiness.test.ts",
+        "tests/web-v1-design.test.ts",
+        "tests/web-05c-reader-fixes.test.ts"
+      ],
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "review-targeted.txt"
+    },
+    {
+      "id": "WEB06-types-0effcfc",
+      "command": "bun x tsc --noEmit",
+      "exit_code": 0,
+      "diagnostics": 0,
+      "application_sha": "0effcfcd956b2bcc5f5df874b73980a0d542a1d8",
+      "scope": "Independent type check, not counted as73 unit cases"
+    },
+    {
+      "id": "WEB06-browser-0effcfc",
+      "scope": "Targeted actual Preview + isolated frozen local390px disclosures, source links, actions, factory; manual accessibility measurements",
+      "failed_criterion": "D11",
+      "configured_width": 390,
+      "observed_document_width": 375,
+      "viewport_reset": true
+    },
+    {
+      "id": "WEB06-evidence-manifest",
+      "delivery_sha": "f1a84e23cdd119b5e268d61d8dc3d373a04435e9",
+      "verified_images": 96,
+      "manifest_sha256": "4cf118fd3611ed83fcf355b92e35c4c3310afc62333bb6bad8fe838d5253bcea",
+      "before": 24,
+      "after": 48,
+      "path": 24,
+      "all_frozen_local": true,
+      "not_vercel_captures": true,
+      "capture_css_overrides": "product-tracking/tools/web_06_polish_capture.mjs (sticky header/company tab bar made static and mobile tab bar hidden for element captures)",
+      "artifact": "review-verify-images.mjs",
+      "images_are_Claude_local_captures": true,
+      "new_vercel_captures_only": "D11-preview-tabs.jpg"
+    }
+  ],
+  "unchanged_files_evidence": "No code diff 0effcfc..e57f00e in src/tests/package.json/bun.lock. Frozen fixtures, engine library, live content library, design-fixture source and factory contract spec unchanged against accepted c3bfd2f.",
+  "non_blocking_observations": [
+    "Factory map shortcut opened outer disclosure/hash but did not reliably leave nested category open; its own summary opened by Enter, so all18 remain accessible. Optional shortcut refinement, not a new blocker.",
+    "Local browser emitted hydration warnings involving injected extension attributes and disclosure open state during DOM interaction; no financial eligibility regression demonstrated. Not a clean-console certification."
+  ],
+  "not_rerun": [
+    "Full387-test suite reported by Claude (not our run)",
+    "Independent full local production build (actual redeployment READY and runtime checked)",
+    "Full new screenshot cycle",
+    "Live financial/content/Supabase integration",
+    "Unavailable second theme"
+  ],
+  "review_scope": "Frozen design only, affected code and necessary regression; no live financial/content approval.",
+  "next_required": "Claude fixes active group tab text contrast only, then reviewer remeasures changed colors and focused regression. No fresh D1-D13 development cycle.",
+  "final_user_review_ready": false,
+  "previous_accepted_reference_preserved": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+  "required_before_launch": [
+    "About",
+    "Contact",
+    "Privacy",
+    "Terms: separately approved correct content"
+  ],
+  "deferred_v1": [
+    "Watchlist",
+    "Community",
+    "Accounts/login/subscriptions",
+    "Newsletter sending"
+  ],
+  "unchanged_live_blockers": [
+    "WEB-LIVE-01",
+    "WEB-LIVE-02",
+    "WEB-LIVE-03",
+    "WEB-LIVE-04",
+    "WEB-CONTENT-LIVE-01"
+  ],
+  "safety": "No reviewer application edits, no repeated merges, main/Production/AWS/Supabase/engine/95% methodology untouched. Only authorized exact-branch Preview Config setup and redeployment."
+}

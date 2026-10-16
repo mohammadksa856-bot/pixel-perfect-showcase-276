@@ -1,0 +1,11 @@
+bun test v1.4.3 (c6da4a4d3)
+
+tests\web07-final-independent-period.test.ts:
+(pass) different units must disable comparison bars and preserve per-row source [85.68ms]
+(pass) same end date but quarter versus FY must not share a period or compare bars [37.95ms]
+(pass) different end dates must disable comparison bars and preserve periods [49.87ms]
+
+ 3 pass
+ 0 fail
+ 8 expect() calls
+Ran 3 tests across 1 file. [500.00ms]

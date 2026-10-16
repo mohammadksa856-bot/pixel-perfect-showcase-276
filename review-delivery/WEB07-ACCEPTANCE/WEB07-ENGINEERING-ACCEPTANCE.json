@@ -1,0 +1,254 @@
+{
+  "schema": "marefa-web07-independent-engineering-acceptance/1",
+  "observed_at": "2026-10-16T16:31:57Z",
+  "application_sha": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+  "delivery_sha": "f56f269ac3577d97498ffc49032f0cb89f87aef0",
+  "baseline_web06": "6c79f4560ae2da0a65510254b82ac4cafcb422c9",
+  "baseline_is_ancestor": true,
+  "previous_review": "fc59e76134e9f57c1454377bc20e47066f57401b",
+  "branch": "review/web07-acceptance-20261016",
+  "decision": "ACCEPT",
+  "acceptance_scope": "WEB07 frozen design engineering only; Aramco supported Overview/Intelligence sample; no authored investment analysis, 95% coverage, live data or production acceptance",
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "WEB06_previous_acceptance": "PRESERVED",
+  "decisions": {
+    "R01": "PASS own-row ownership source/asOf retained; shared only when all match",
+    "R02": "PASS source + period.kind + period.end + unit identity; FY/quarter same-end case no longer shared or compared",
+    "R03": "PASS missing and withheld states",
+    "N01": "PASS retained separately labelled newest-first actions/documents",
+    "N02": "OPEN_INDEPENDENT_CONTENT_BACKLOG_NOT_ACCEPTED",
+    "previous_lint_regression": "CLOSED_37_FORMAT_ONLY_ERRORS_REMOVED"
+  },
+  "code_review": {
+    "runtime_delta": [
+      "src/lib/web-v1/company-experience.ts",
+      "src/components/web-v1/company-overview.tsx"
+    ],
+    "sharedProvenance": "Compares sourceUrl, date, optionalperiodKind and unit across every row; null on difference",
+    "segmentProvenance": "Passes each row's original proof.sourceUrl, period.end, period.kind and unit",
+    "comparableCells": "True only nonempty rows, identical unit, identical period.kind|period.end. It may compare different sources for distinct segments only with row-level attribution and identical unit/period; no policy to collapse contradictory values is introduced.",
+    "visible_render": "Per-row period.label and Source rendered when shared metadata is null; comparison bars are absent when comparableCells is false",
+    "identity_scope": "Full available Period contract is {kind,end,label}; label is localized display, not semantic key. No period starts/version fields invented. Future live identity is not accepted here.",
+    "ownership": "Point-in-time holders use original asOf+source, not flow-period kind",
+    "untouched": "No delta in engine, fixture data, category contracts, package/lock or ESLint configuration from previous6eab697; WEB06 explorer code unchanged",
+    "delivery_diff": "Application to delivery changes tracking/report/logs only; no additional src/tests/package code"
+  },
+  "test_integrity": {
+    "method": "Independent identical Prettier formatting applied in memory to original and formatted file; exact result equality; neither test file edited by reviewer.",
+    "original_reference": "6eab69721aafdfab21051999ec7445cdc95535b9:tests/web07-independent-provenance.test.ts",
+    "extended_reference": "68341602b620b3e87695be9f1af34f33d6644989:tests/web07-final-independent-period.test.ts",
+    "original": true,
+    "extended": true,
+    "assertions_fixtures_logic_unchanged": true,
+    "diagnostic": "Initial TypeScript-printer text equality was false because printer preserves quotes/parentheses. This is a representation mismatch, not changed assertions. Identical Prettier normalization proves exact equivalent formatted text; both results preserved in identity log."
+  },
+  "runs": [
+    {
+      "id": "WEB07-ACCEPT-original-d7d88c1",
+      "artifact": "WEB07-ACCEPT-original.txt",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 8,
+      "duration_ms": 527,
+      "scope": "Original R01/R02/R03 separate run, no assertion relaxed"
+    },
+    {
+      "id": "WEB07-ACCEPT-extended-d7d88c1",
+      "artifact": "WEB07-ACCEPT-extended.txt",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 8,
+      "duration_ms": 500,
+      "scope": "Independent unit mismatch, FY/quarter same end, end-date mismatch; all assertions now execute"
+    },
+    {
+      "id": "WEB07-ACCEPT-targeted-regression-d7d88c1",
+      "artifact": "WEB07-ACCEPT-regression.txt",
+      "passed": 89,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 1134,
+      "duration_ms": 929,
+      "scope": "Six targeted suites, one run including WEB07/WEB03-04/WEB06 D11+polish/WEB05B boundary/readiness; not pooled with original6",
+      "earlier_same_sha_run": "Also89PASS at1372ms, not pooled; saved final run929ms"
+    },
+    {
+      "id": "WEB07-ACCEPT-types-d7d88c1",
+      "command": "bun x tsc --noEmit",
+      "exit_code": 0,
+      "diagnostics": 0,
+      "scope": "Exact application plus standalone review identity script, no application edits"
+    },
+    {
+      "id": "WEB07-ACCEPT-lint-current-d7d88c1",
+      "artifact": "WEB07-ACCEPT-lint-current.json",
+      "exit_code": 1,
+      "files_considered": 241,
+      "errors": 846,
+      "warnings": 23,
+      "scope": "Every tracked lintable Git blob exactSHA, unchanged ESLint rules; canonicalLF avoids Windows CRLF noise, excludes review overlay"
+    },
+    {
+      "id": "WEB07-ACCEPT-lint-baseline-6ac8e4e",
+      "artifact": "WEB07-ACCEPT-lint-baseline.json",
+      "exit_code": 1,
+      "files_considered": 237,
+      "errors": 846,
+      "warnings": 23,
+      "scope": "Separate run of documented846/23 debt baseline, not WEB06 baselineSHA"
+    }
+  ],
+  "lint_comparison": {
+    "baseline_sha": "6ac8e4e90d236370834aa6c03f1edb8dfdb35739",
+    "current_sha": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+    "baseline_errors": 846,
+    "current_errors": 846,
+    "baseline_warnings": 23,
+    "current_warnings": 23,
+    "per_file_equal": true,
+    "new_errors": 0,
+    "new_warnings": 0
+  },
+  "lint_decision": "Existing full-project846 errors/23 warnings remain unresolved. Per-file error/warning/rule summaries identical to previous baseline, zero added/worsened files.37 copied-test formatting violations removed; neither lint gates nor assertions weakened. No claim full lint passes.",
+  "deployment": {
+    "id": "dpl_G5fvZExJ9KmNCu2KE6YN6He7TXgS",
+    "url": "pixel-perfect-showcase-276-9mdp62xty.vercel.app",
+    "state": "READY",
+    "target": null,
+    "commit": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+    "branch": "claude/web-07-company-experience"
+  },
+  "actual_chrome": {
+    "base": "https://pixel-perfect-showcase-276-9mdp62xty.vercel.app",
+    "routes": [
+      {
+        "path": "/preview/web-v1/companies/2222/overview",
+        "state": "PASS actual Chrome Arabic/English",
+        "withheld": "Basic EPS/ربحية السهم الأساسية remains Withheld/محجوب with quality reason; no numeric fallback",
+        "sources": 37,
+        "unsafe_source_links": 0,
+        "forms": 0
+      },
+      {
+        "path": "/preview/web-v1/companies/2222/intelligence",
+        "state": "PASS actual Chrome Arabic/English",
+        "topics": 18,
+        "groups": 5,
+        "deep_link": "topic=financials&focus=total_assets opens correct statement row, data-focused=true",
+        "row_values": "2551.96,2423.63,2477.94,2492.92,2162.69; source links retained"
+      },
+      {
+        "path": "/preview/web-v1/companies/2222?tab=business",
+        "state": "PASS actual Chrome Arabic/English; six group/coverage links, not role=tab controls"
+      },
+      {
+        "path": "/preview/web-v1/companies/2222?tab=coverage",
+        "state": "PASS English390;18 factory categories,0 scores; distinct investor18",
+        "categories": 18,
+        "scores": 0
+      },
+      {
+        "path": "/preview/web-v1/companies/2222?tab=financials",
+        "state": "PASS Arabic320 after selecting balance-sheet tab; assets row/source matches prior WEB06; no unsafe source links"
+      }
+    ],
+    "responsive": [
+      {
+        "lang": "en",
+        "css_width": 390,
+        "css_exact_match": true,
+        "client_width": 375,
+        "document_scroll_width": 375,
+        "routes": [
+          "Overview",
+          "Intelligence",
+          "MarefaData",
+          "factorycoverage"
+        ]
+      },
+      {
+        "lang": "ar",
+        "css_width": 390,
+        "css_exact_match": true,
+        "client_width": 375,
+        "document_scroll_width": 375,
+        "routes": [
+          "Intelligence"
+        ]
+      },
+      {
+        "lang": "ar",
+        "css_width": 320,
+        "css_exact_match": true,
+        "client_width": 305,
+        "document_scroll_width": 305,
+        "routes": [
+          "Overview",
+          "Intelligence",
+          "MarefaData business",
+          "MarefaData financials"
+        ]
+      }
+    ],
+    "keyboard": "Enter on MarefaData level link opens correct new route; original deep metric focus remains working",
+    "viewport_reset": true,
+    "login_403": false,
+    "application_404": false,
+    "harness_notes": [
+      "Pre-transition DOM readings (0topics) discarded; target component render rechecked explicitly18/5",
+      "Initial lookup Factory coverage as a tab was incorrect harness assumption; actual Data coverage link used successfully",
+      "Assets row initially hidden while income tab selected, not missing; balance tab opened and row verified"
+    ],
+    "limits": "Targeted journeys, not full browser automation427-test reproduction or network trace; no claim all source documents financially reverified"
+  },
+  "remaining": [
+    {
+      "id": "N02",
+      "state": "NOT_STARTED_SEPARATE",
+      "reason": "Authored investment summary/risk interpretation incomplete, per existing SCOPE_DEFERRED.md; not accepted and not95%coverage"
+    },
+    {
+      "id": "LINT-BASELINE-DEBT",
+      "state": "OPEN",
+      "errors": 846,
+      "warnings": 23,
+      "blocking_this_scoped_acceptance": false
+    },
+    {
+      "id": "LIVE-INTEGRATION",
+      "state": "NOT_ACCEPTED",
+      "reason": "Prior financial/content/source identity requirements and approvals stay independent"
+    }
+  ],
+  "phase_status": {
+    "IMPLEMENTED": "Claude d7d88c1",
+    "TESTED": "Independent3+3+89 separate PASS runs; typesPASS; lint remains baselineFAIL",
+    "REVIEWED": "ACCEPT_SCOPED_ENGINEERING",
+    "MERGED": "No application merge performed",
+    "ACCEPTED": "Engineering frozen preview only; no final user acceptance",
+    "DEPLOYED": "Existing exactSHA Preview confirmed, not production"
+  },
+  "safety": {
+    "application_code_changed_by_reviewer": false,
+    "claude_branch_changed": false,
+    "main_changed": false,
+    "production_changed": false,
+    "Supabase_changed": false,
+    "AWS_changed": false,
+    "engine_changed": false,
+    "preview_env_changed": false,
+    "secrets_accessed": false,
+    "new_data_extraction": false
+  },
+  "next_three": [
+    "Present exactSHA frozen Preview for user's independent visual/scope acceptance",
+    "Keep N02 authored-analysis scope pending separate assignment, not engineering blocker closure by inference",
+    "Track baseline lint/live integration as separate work requiring scope/authorization; no expansion in this review"
+  ]
+}

@@ -1,0 +1,11 @@
+bun test v1.4.3 (c6da4a4d3)
+
+tests\web07-independent-provenance.test.ts:
+(pass) each ownership number keeps its own source, not the first holder source [94.59ms]
+(pass) each revenue segment preserves source and period, not first-row metadata [54.55ms]
+(pass) empty returns/ownership card explains missing data instead of title-only content [40.16ms]
+
+ 3 pass
+ 0 fail
+ 8 expect() calls
+Ran 3 tests across 1 file. [527.00ms]

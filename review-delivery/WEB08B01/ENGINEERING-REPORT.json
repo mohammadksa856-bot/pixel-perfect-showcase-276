@@ -1,0 +1,127 @@
+{
+  "schema": "marefa-web08b01-engineering-delivery/1",
+  "code_sha": "4f38e55f5f916b67b5172f0e18feb61848754124",
+  "application_baseline": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+  "audit_baseline": "b037ecb7be41661243ccf5f68b4d536f8e23aedd",
+  "branch": "codex/web08b01-research-contract-20261016",
+  "observed_at": "2026-10-16T17:41:41Z",
+  "implementation": "IMPLEMENTED_AND_AUTHOR_TESTED",
+  "independent_review": {
+    "state": "IN_PROGRESS",
+    "thread_id": "01a145cd-1c9e-7623-9919-f76ad5aea1fc",
+    "code_sha": "4f38e55f5f916b67b5172f0e18feb61848754124",
+    "decision": null
+  },
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "claims_financially_approved_for_real_issuers": 0,
+  "files": [
+    "research-evidence/v1/contract.ts",
+    "research-evidence/v1/adapter.ts",
+    "research-evidence/v1/synthetic.ts",
+    "research-evidence/v1/poc.ts",
+    "research-evidence/v1/contract.test.ts",
+    "research-evidence/v1/poc.test.ts",
+    "research-evidence/v1/tsconfig.json",
+    "research-evidence/v1/README_AR.md"
+  ],
+  "author_runs": [
+    {
+      "id": "B01-first-uncommitted-unit-fixture",
+      "passed": 33,
+      "failed": 1,
+      "skipped": 0,
+      "artifact": "author-tests-first-red.txt",
+      "scope": "Earlier uncommitted implementation; test fixture shared reference mutated claim and resolver together. Fixed by independent deep clones; assertions unchanged. Not a run on final code SHA."
+    },
+    {
+      "id": "B01-contract-poc-4f38e55",
+      "passed": 37,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 121,
+      "duration_ms": 212,
+      "artifact": "author-contract-poc-tests.txt",
+      "scope": "34 contract tests+3syntheticPoC tests; one run; no real numeric correctness acceptance"
+    },
+    {
+      "id": "B01-WEB07-regression-4f38e55",
+      "passed": 95,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 1150,
+      "duration_ms": 1286,
+      "artifact": "author-web07-regression.txt",
+      "scope": "Eight existing WEB07/WEB06/readiness/boundary suites; separate from37"
+    },
+    {
+      "id": "B01-contract-types-4f38e55",
+      "command": "bun x tsc -p research-evidence/v1/tsconfig.json --noEmit",
+      "exit_code": 0,
+      "scope": "Contract/adapter/synthetic/PoC strict TS; Bun tests run separately, not included in this TSproject"
+    },
+    {
+      "id": "B01-app-types-4f38e55",
+      "command": "bun x tsc --noEmit",
+      "exit_code": 0,
+      "scope": "Existing app tsconfig unchanged"
+    },
+    {
+      "id": "B01-new-folder-lint-4f38e55",
+      "command": "bun x eslint research-evidence/v1",
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "scope": "New folder only; full repository lint debt not claimed resolved"
+    }
+  ],
+  "poc": {
+    "mode": "READ_ONLY_LOOPBACK_SYNTHETIC_ONLY",
+    "browser": "Actual Chrome",
+    "journey": [
+      "/intelligence showed referenced claim without numeric payload",
+      "/evidence showed exactfactID/version/hash anddocument/version/page",
+      "/marefa-data exactref resolved original synthetic123SAR",
+      "withheld case Draft/blocked, no evidence/original link",
+      "wrong-version404 andHTMLescape tested"
+    ],
+    "evidence_certificates": "All synthetic, no genuine verification. Repeated hexadecimal strings are dummy fixture digests.",
+    "network": "First sandbox socket access failed; restarted authorized loopback server, browser worked; no public deployment or secret changes",
+    "server_stopped": true,
+    "app_component_integration": false
+  },
+  "compatibility": {
+    "current_engine": "NOT_LIVE_READY",
+    "adapter": "Read-only resolver port; no financial datastore or copied values",
+    "WEB07": "Unchanged; Intelligence intent matches topic/focus; MarefaData tab only, exact row/version selection unsupported and explicitlyfalse",
+    "missing": [
+      "immutable engine fact IDs/versions",
+      "original artifact IDs/versions/hashes",
+      "period starts/scope/dimensions atdisplayboundary",
+      "rights grants and verification certificates",
+      "trusted immutable review persistence andauthentication"
+    ],
+    "fallback": "NONE"
+  },
+  "safety": {
+    "production_changed": false,
+    "Supabase_changed": false,
+    "engine_changed": false,
+    "main_changed": false,
+    "app_src_changed": false,
+    "React_calculations_added": false,
+    "new_dependencies": false,
+    "live_data_imported": false,
+    "DCF_built": false,
+    "readiness_95_changed": false
+  },
+  "remaining_risks": [
+    "Server context is a trusted-port requirement, not cryptographically authenticated by this standalone module",
+    "Hash chain is not a signature or persistent append-only service",
+    "Actual evidence and reviewer/rights approval must be integrated separately",
+    "PoC demonstrates a synthetic trace, not activated WEB07 live integration",
+    "Independent session verdict pending; author tests are not independent acceptance"
+  ]
+}

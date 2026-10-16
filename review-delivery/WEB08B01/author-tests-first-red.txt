@@ -1,0 +1,58 @@
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\v1\contract.test.ts:
+(pass) metadata-only strict contract refuses duplicated numeric payloads and score [7.75ms]
+(pass) Draft -> FinanciallyReviewed -> EditoriallyApproved, stages remain separate [5.60ms]
+(pass) editorial cannot precede finance and author cannot review own work [2.65ms]
+(pass) unavailable and withheld are different from present/qualified [4.80ms]
+(pass) technical eligibility is not independent financial verification [2.44ms]
+(pass) identity rejects period end mismatch, never silently substitutes [5.73ms]
+(pass) identity rejects same end but quarter mismatch, never silently substitutes [1.40ms]
+(pass) identity rejects period start mismatch, never silently substitutes [1.50ms]
+(pass) identity rejects unit mismatch, never silently substitutes [2.03ms]
+(pass) identity rejects currency mismatch, never silently substitutes [1.68ms]
+(pass) identity rejects scope mismatch, never silently substitutes [1.69ms]
+(pass) identity rejects dimensions mismatch, never silently substitutes [1.58ms]
+(pass) resolver identity mismatch rejected even with unchanged claim [2.15ms]
+(pass) source URL/page/hash/version all pinned [6.80ms]
+(pass) contradictory sources for same semantic fact block rather than select first [2.78ms]
+(pass) same meaning/value from two sources is not an invented conflict [1.37ms]
+(pass) restatement invalidates present claim but earlier as-of reproduces old result [1.94ms]
+(pass) document reissue invalidates approval even if numeric digest unchanged [1.13ms]
+(pass) future publication cannot enter historical analysis [1.24ms]
+(pass) future actual period rejected; explicit published guidance can cover future horizon [1.81ms]
+(pass) impossible calendar dates rejected, leap-day accepted [0.97ms]
+(pass) unsafe source URL, missing locator and malformed timestamp fail closed [0.78ms]
+(pass) rights unknown/restricted/expired/public-absent are not financial truth flags [3.61ms]
+(pass) modifying content revokes prior review digest; old revision remains intact [1.66ms]
+(pass) ledger tampering and duplicate actor/fact identities rejected [1.94ms]
+(pass) withdrawal blocks source trail and approval [5.62ms]
+(pass) resolver time mismatch cannot substitute a different as-of snapshot [0.42ms]
+(pass) PoC trace points to exact original version without copying any value [1.69ms]
+(pass) derived result consumes exact engine lineage refs without computing a number [3.08ms]
+1 | import { test, expect } from "bun:test";
+2 | import { ClaimSchema, ContextSchema, TOPICS, appendReview, canonical, digest, evaluate, type Claim } from "./contract";
+3 | import { fixture, reviewedFixture } from "./synthetic";
+4 | import { legacyWEB07Compatibility, resolveTrail } from "./adapter";
+5 | const blocked = (x: ReturnType<typeof fixture>, reason: string) => { const r = evaluate(x.claim, x.context); expect(r.publication).toBe("blocked"); expect(r.reasons).toContain(reason); };
+                                                                                                                                                                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "derivation_lineage_mismatch"
+Received: []
+
+      at blocked (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b01-contract-20261016\research-evidence\v1\contract.test.ts:5:167)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b01-contract-20261016\research-evidence\v1\contract.test.ts:39:472)
+(fail) changed input version, incomplete lineage, method and rights all block derived content [1.62ms]
+(pass) derived source cannot masquerade as issuer reported fact [0.86ms]
+(pass) rejected financial input stays rejected, missing never becomes complete [1.38ms]
+(pass) content kinds distinguish interpretation/assumption/scenario from reported data [0.90ms]
+(pass) claim revision retains supersedes reference and reproducible canonical digest [0.74ms]
+
+1 tests failed:
+(fail) changed input version, incomplete lineage, method and rights all block derived content [1.62ms]
+
+ 33 pass
+ 1 fail
+ 103 expect() calls
+Ran 34 tests across 1 file. [139.00ms]

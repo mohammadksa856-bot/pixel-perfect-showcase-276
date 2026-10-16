@@ -1,0 +1,47 @@
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\v1\contract.test.ts:
+(pass) metadata-only strict contract refuses duplicated numeric payloads and score [11.43ms]
+(pass) Draft -> FinanciallyReviewed -> EditoriallyApproved, stages remain separate [9.91ms]
+(pass) editorial cannot precede finance and author cannot review own work [2.95ms]
+(pass) unavailable and withheld are different from present/qualified [8.51ms]
+(pass) technical eligibility is not independent financial verification [3.23ms]
+(pass) identity rejects period end mismatch, never silently substitutes [10.27ms]
+(pass) identity rejects same end but quarter mismatch, never silently substitutes [2.02ms]
+(pass) identity rejects period start mismatch, never silently substitutes [1.98ms]
+(pass) identity rejects unit mismatch, never silently substitutes [2.00ms]
+(pass) identity rejects currency mismatch, never silently substitutes [2.05ms]
+(pass) identity rejects scope mismatch, never silently substitutes [1.68ms]
+(pass) identity rejects dimensions mismatch, never silently substitutes [1.75ms]
+(pass) resolver identity mismatch rejected even with unchanged claim [1.97ms]
+(pass) source URL/page/hash/version all pinned [8.57ms]
+(pass) contradictory sources for same semantic fact block rather than select first [2.42ms]
+(pass) same meaning/value from two sources is not an invented conflict [1.79ms]
+(pass) restatement invalidates present claim but earlier as-of reproduces old result [2.36ms]
+(pass) document reissue invalidates approval even if numeric digest unchanged [1.46ms]
+(pass) future publication cannot enter historical analysis [2.04ms]
+(pass) future actual period rejected; explicit published guidance can cover future horizon [2.85ms]
+(pass) impossible calendar dates rejected, leap-day accepted [1.18ms]
+(pass) unsafe source URL, missing locator and malformed timestamp fail closed [1.09ms]
+(pass) rights unknown/restricted/expired/public-absent are not financial truth flags [5.12ms]
+(pass) modifying content revokes prior review digest; old revision remains intact [2.01ms]
+(pass) ledger tampering and duplicate actor/fact identities rejected [1.69ms]
+(pass) withdrawal blocks source trail and approval [5.56ms]
+(pass) resolver time mismatch cannot substitute a different as-of snapshot [0.50ms]
+(pass) PoC trace points to exact original version without copying any value [2.05ms]
+(pass) derived result consumes exact engine lineage refs without computing a number [4.27ms]
+(pass) changed input version, incomplete lineage, method and rights all block derived content [4.36ms]
+(pass) derived source cannot masquerade as issuer reported fact [1.16ms]
+(pass) rejected financial input stays rejected, missing never becomes complete [2.06ms]
+(pass) content kinds distinguish interpretation/assumption/scenario from reported data [1.48ms]
+(pass) claim revision retains supersedes reference and reproducible canonical digest [3.80ms]
+
+research-evidence\v1\poc.test.ts:
+(pass) synthetic reader journey exposes exact reference then original, never numbers in claim [6.52ms]
+(pass) withheld or wrong original version has no fallback or original numeric payload [3.39ms]
+(pass) untrusted HTML is escaped and PoC stays explicit synthetic [2.63ms]
+
+ 37 pass
+ 0 fail
+ 121 expect() calls
+Ran 37 tests across 2 files. [212.00ms]

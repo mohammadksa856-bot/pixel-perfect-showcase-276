@@ -11,6 +11,7 @@ import {
   RouterContextProvider,
 } from "@tanstack/react-router";
 import { I18nProvider } from "../src/lib/i18n";
+import type { Block } from "../src/lib/engine/company-preview";
 
 const pages = Object.fromEntries(
   ["2222", "1120"].map((s) => [
@@ -92,8 +93,14 @@ describe("Overview model: every value is an existing cell, nothing computed or i
       for (const r of m.rows)
         expect(cellsInPage.has(`${r.key}|${r.value}|${r.period.end}`)).toBe(true);
     expect(o.operations.cells).toHaveLength(7);
-    expect(o.operations.withheld).toBe(1);
-    expect(o.dividends.withheld).toBe(2);
+    // withheld values keep their label and reason (R03), not just a count
+    expect(o.operations.withheld.map((w) => w.key)).toEqual(["reserve_life_index"]);
+    expect(o.dividends.withheld.map((w) => w.key).sort()).toEqual([
+      "dividend_cagr_3y",
+      "payout_ratio",
+    ]);
+    for (const w of [...o.operations.withheld, ...o.dividends.withheld])
+      expect(w.reason).toBeTruthy();
   });
 
   test("business description is the source text, both languages, with source URL", () => {
@@ -219,5 +226,96 @@ describe("levels and Marefa Data", () => {
     expect(read("src/routes/preview.web-v1.companies.$symbol_.intelligence.tsx")).toContain(
       "<NotBuiltYet symbol={symbol} />",
     );
+  });
+});
+
+// ───────────────────────── WEB-07 rework (Codex R01–R03, N01): synthetic provenance cases
+describe("rework: provenance is per row unless provably shared", () => {
+  const clone = () => structuredClone(preview("2222"));
+  const render = (pp: ReturnType<typeof clone>) => ssr(createElement(CompanyOverview, { p: pp }));
+  const block = <T extends Block["type"]>(pp: ReturnType<typeof clone>, type: T) =>
+    pp.topics
+      .flatMap((t) => t.blocks)
+      .find((b): b is Extract<Block, { type: T }> => b.type === type)!;
+
+  test("sharedProvenance: identical rows share; any difference in source, date or unit does not", () => {
+    const r = { sourceUrl: "https://a.example/x.pdf", date: "2025-12-31", unit: "SAR" };
+    expect(X.sharedProvenance([r, { ...r }])).toEqual(r);
+    expect(X.sharedProvenance([r, { ...r, sourceUrl: "https://b.example/y.pdf" }])).toBeNull();
+    expect(X.sharedProvenance([r, { ...r, date: "2024-12-31" }])).toBeNull();
+    expect(X.sharedProvenance([r, { ...r, unit: "USD" }])).toBeNull();
+    expect(X.sharedProvenance([])).toBeNull();
+  });
+
+  test("real Aramco ownership and segments are homogeneous: one date/source line, marked shared", () => {
+    const html = render(clone());
+    expect(html).toMatch(/data-overview-ownership[\s\S]*?data-provenance="shared"/);
+    expect(html.match(/data-revenue-mix="[^"]+" data-provenance="shared"/g)).toHaveLength(2);
+  });
+
+  test("ownership: one differing row switches every row to its own date and source", () => {
+    const pp = clone();
+    const b = block(pp, "ownership");
+    b.rows[2].sourceUrl = "https://example.org/synthetic-third.pdf";
+    const html = render(pp);
+    const own = /<div[^>]*data-overview-ownership[\s\S]*?<\/ul>/.exec(html)![0];
+    expect(own).toContain('data-provenance="per-row"');
+    for (const r of b.rows.slice(0, 4)) {
+      const li = new RegExp(
+        `<li[^>]*data-holder="${r.holder.replace(/[()]/g, ".")}"[\\s\\S]*?</li>`,
+      ).exec(own)![0];
+      expect(li).toContain(r.asOf);
+      expect(li).toContain(r.sourceUrl.replace(/&/g, "&amp;"));
+    }
+  });
+
+  test("segments: different units → no comparison bars, each row keeps period and source", () => {
+    const pp = clone();
+    const b = block(pp, "segments");
+    b.rows[1].unit = "USD";
+    const html = render(pp);
+    const fig = new RegExp(`<figure[^>]*data-revenue-mix="${b.title.en}"[\\s\\S]*?</figure>`).exec(
+      html,
+    )![0];
+    expect(fig).toContain('data-provenance="per-row"');
+    expect(fig).not.toContain("rounded-full bg-brand");
+    expect(fig.match(/data-source-link/g)).toHaveLength(b.rows.length);
+  });
+
+  test("dividends all withheld: explicit state plus every reason; ownership missing: explicit state", () => {
+    const pp = clone();
+    for (const t of pp.topics) {
+      if (t.ordinal === 4) t.blocks = [];
+      if (t.ordinal === 9)
+        for (const bl of t.blocks)
+          if (bl.type === "metrics") {
+            bl.group.withheld.push(
+              ...bl.group.cells.map((c) => ({
+                key: c.key,
+                label: c.label,
+                reason: "quality_flagged" as const,
+              })),
+            );
+            bl.group.cells = [];
+          }
+    }
+    const html = render(pp);
+    const card = /<section[^>]*data-overview-card="shareholders"[\s\S]*?<\/section>/.exec(html)![0];
+    expect(card).toContain('data-overview-missing="dividends"');
+    expect(card).toContain('data-overview-missing="ownership"');
+    expect(card.match(/data-withheld-item=/g)).toHaveLength(4);
+    expect(card).not.toContain("data-overview-metric");
+  });
+
+  test("developments: actions and documents in two labelled lists, each newest first", () => {
+    const html = render(clone());
+    for (const kind of ["actions", "documents"]) {
+      const sec = new RegExp(`<section data-developments="${kind}"[\\s\\S]*?</section>`).exec(
+        html,
+      )![0];
+      const dates = [...sec.matchAll(/data-date="([^"]*)"/g)].map((m) => m[1]!);
+      expect(dates.length).toBeGreaterThan(0);
+      expect(dates).toEqual([...dates].sort().reverse());
+    }
   });
 });

@@ -9,7 +9,10 @@ import { safeSourceUrl } from "@/lib/engine/peer-comparison";
 import {
   buildOverview,
   intelGroups,
+  ownershipProvenance,
+  segmentProvenance,
   type IntelTarget,
+  type Overview,
   type OverviewFact,
 } from "@/lib/web-v1/company-experience";
 import { LanguageMark } from "./display-label";
@@ -207,7 +210,7 @@ export function CompanyOverview({ p }: { p: CompanyPreview }) {
               text={{ ar: "لا مؤشرات تشغيلية بمصدر.", en: "No sourced operating indicators." }}
             />
           )}
-          <WithheldNote n={o.operations.withheld} />
+          <WithheldNote items={o.operations.withheld} />
         </Card>
 
         {/* مزيج الإيرادات */}
@@ -223,18 +226,30 @@ export function CompanyOverview({ p }: { p: CompanyPreview }) {
           {o.revenueMix.length ? (
             <div className="space-y-5">
               {o.revenueMix.map((m) => {
+                // R02: الفترة والمصدر يُعرضان مرة واحدة فقط إن تطابقا (مع الوحدة) في كل الصفوف؛
+                // وإلا يحمل كل صف فترته ومصدره. الأعمدة تُرسم فقط لصفوف بوحدة وفترة واحدة.
+                const shared = segmentProvenance(m.rows);
+                const comparable =
+                  new Set(m.rows.map((r) => r.unit)).size === 1 &&
+                  new Set(m.rows.map((r) => r.period.end)).size === 1;
                 const max = Math.max(...m.rows.map((r) => Math.abs(r.value)), 1);
                 return (
-                  <figure key={m.title.en} data-revenue-mix={m.title.en}>
+                  <figure
+                    key={m.title.en}
+                    data-revenue-mix={m.title.en}
+                    data-provenance={shared ? "shared" : "per-row"}
+                  >
                     <figcaption className="mb-2 flex items-center justify-between gap-2 text-[12px] font-semibold">
                       {t(m.title)}
                       <span className="font-normal text-muted-foreground">
-                        {m.rows[0] ? t(m.rows[0].period.label) : ""}
+                        {shared && m.rows[0]
+                          ? t(m.rows[0].period.label)
+                          : t({ ar: "إسناد مختلف لكل بند", en: "Different attribution per item" })}
                       </span>
                     </figcaption>
                     <ul className="space-y-2">
                       {m.rows.map((r) => (
-                        <li key={r.segment}>
+                        <li key={r.segment} data-segment={r.segment}>
                           <div className="flex items-baseline justify-between gap-3 text-[13px]">
                             <span dir="auto" className="min-w-0 break-words">
                               {r.segment}
@@ -242,16 +257,24 @@ export function CompanyOverview({ p }: { p: CompanyPreview }) {
                             </span>
                             <span className="num shrink-0 font-semibold">{t(r.display)}</span>
                           </div>
-                          <div className="mt-1 h-1.5 rounded-full bg-muted" aria-hidden>
-                            <div
-                              className="h-full rounded-full bg-brand"
-                              style={{ width: `${(Math.abs(r.value) / max) * 100}%` }}
-                            />
-                          </div>
+                          {comparable && (
+                            <div className="mt-1 h-1.5 rounded-full bg-muted" aria-hidden>
+                              <div
+                                className="h-full rounded-full bg-brand"
+                                style={{ width: `${(Math.abs(r.value) / max) * 100}%` }}
+                              />
+                            </div>
+                          )}
+                          {!shared && (
+                            <div className="mt-0.5 flex flex-wrap items-center gap-x-3 text-[11px] text-muted-foreground">
+                              <span>{t(r.period.label)}</span>
+                              <Source href={r.proof.sourceUrl} />
+                            </div>
+                          )}
                         </li>
                       ))}
                     </ul>
-                    {m.rows[0] && <Meta href={m.rows[0].proof.sourceUrl} />}
+                    {shared && <Meta href={shared.sourceUrl} />}
                   </figure>
                 );
               })}
@@ -269,41 +292,87 @@ export function CompanyOverview({ p }: { p: CompanyPreview }) {
           more={<IntelLink p={p} target={o.dividends.target} />}
           data="shareholders"
         >
-          {o.dividends.cells.length > 0 && <CellList cells={o.dividends.cells} p={p} />}
-          <WithheldNote n={o.dividends.withheld} />
-          {o.ownership.rows.length > 0 && (
-            <div className="mt-4 border-t border-border/60 pt-4" data-overview-ownership>
-              <h3 className="mb-2 text-[12px] font-semibold text-muted-foreground">
-                {t({ ar: "كبار الملاك", en: "Major holders" })}{" "}
-                <span className="font-normal">· {iso(o.ownership.rows[0]!.asOf)}</span>
-              </h3>
-              <ul className="space-y-2 text-[13px]">
-                {o.ownership.rows.slice(0, 4).map((r) => (
-                  <li key={r.holder}>
-                    <div className="flex items-baseline justify-between gap-3">
-                      <span dir="auto" className="min-w-0 break-words">
-                        {r.holder}
-                        <LanguageMark text={r.holder} />
-                      </span>
-                      <span className="num shrink-0 font-semibold" dir="ltr">
-                        {(r.pct * 100).toFixed(2)}%
-                      </span>
-                    </div>
-                    <div className="mt-1 h-1.5 rounded-full bg-muted" aria-hidden>
-                      <div
-                        className="h-full rounded-full bg-tone-indigo"
-                        style={{ width: `${r.pct * 100}%` }}
-                      />
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-2 flex flex-wrap gap-3 text-[12px]">
-                <IntelLink p={p} target={o.ownership.target} compact />
-                <Source href={o.ownership.rows[0]!.sourceUrl} />
-              </div>
-            </div>
+          {/* R03: حالة صريحة لكل جزء غائب، وسبب الحجب إن وُجد؛ لا بطاقة بعنوان ورابط فقط. */}
+          <h3 className="mb-1 text-[12px] font-semibold text-muted-foreground">
+            {t({ ar: "التوزيعات", en: "Dividends" })}
+          </h3>
+          {o.dividends.cells.length > 0 ? (
+            <CellList cells={o.dividends.cells} p={p} />
+          ) : (
+            <p
+              className="text-[13px] leading-6 text-muted-foreground"
+              data-overview-missing="dividends"
+            >
+              {o.dividends.withheld.length
+                ? t({
+                    ar: "لا قيمة توزيعات معروضة: كل قيم التوزيعات محجوبة (الأسباب أدناه).",
+                    en: "No dividend value shown: every dividend value is withheld (reasons below).",
+                  })
+                : t({
+                    ar: "لا بيانات توزيعات بمصدر في صفحة المحرك.",
+                    en: "No sourced dividend data on the engine page.",
+                  })}
+            </p>
           )}
+          <WithheldNote items={o.dividends.withheld} />
+          <div className="mt-4 border-t border-border/60 pt-4" data-overview-ownership>
+            {(() => {
+              const rows = o.ownership.rows.slice(0, 4);
+              // R01: تاريخ ومصدر واحد للقائمة فقط إن تطابقا في كل الصفوف المعروضة؛ وإلا لكل صف إسناده.
+              const shared = ownershipProvenance(rows);
+              return (
+                <>
+                  <h3 className="mb-2 text-[12px] font-semibold text-muted-foreground">
+                    {t({ ar: "كبار الملاك", en: "Major holders" })}
+                    {shared && <span className="font-normal"> · {iso(shared.date)}</span>}
+                  </h3>
+                  {rows.length === 0 ? (
+                    <p
+                      className="text-[13px] leading-6 text-muted-foreground"
+                      data-overview-missing="ownership"
+                    >
+                      {t({
+                        ar: "لا بيانات ملكية بمصدر في صفحة المحرك.",
+                        en: "No sourced ownership data on the engine page.",
+                      })}
+                    </p>
+                  ) : (
+                    <>
+                      <ul
+                        className="space-y-2 text-[13px]"
+                        data-provenance={shared ? "shared" : "per-row"}
+                      >
+                        {rows.map((r) => (
+                          <li key={r.holder} data-holder={r.holder}>
+                            <div className="flex items-baseline justify-between gap-3">
+                              <span dir="auto" className="min-w-0 break-words">
+                                {r.holder}
+                                <LanguageMark text={r.holder} />
+                              </span>
+                              <span className="num shrink-0 font-semibold" dir="ltr">
+                                {(r.pct * 100).toFixed(2)}%
+                              </span>
+                            </div>
+                            <div className="mt-1 h-1.5 rounded-full bg-muted" aria-hidden>
+                              <div
+                                className="h-full rounded-full bg-tone-indigo"
+                                style={{ width: `${r.pct * 100}%` }}
+                              />
+                            </div>
+                            {!shared && <Meta asOf={r.asOf} href={r.sourceUrl} />}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-2 flex flex-wrap gap-3 text-[12px]">
+                        <IntelLink p={p} target={o.ownership.target} compact />
+                        {shared && <Source href={shared.sourceUrl} />}
+                      </div>
+                    </>
+                  )}
+                </>
+              );
+            })()}
+          </div>
         </Card>
 
         {/* التطورات */}
@@ -319,41 +388,74 @@ export function CompanyOverview({ p }: { p: CompanyPreview }) {
           {o.developments.total === 0 ? (
             <Empty text={{ ar: "لا تطورات بمصدر.", en: "No sourced developments." }} />
           ) : (
-            <ol className="space-y-3 text-[13px]">
-              {o.developments.actions.map((a) => (
-                <li key={`a-${a.title}`} data-development="action">
-                  <div className="flex items-baseline gap-2">
-                    <span className="num shrink-0 text-[11px] text-muted-foreground" dir="ltr">
-                      {a.date ?? "—"}
-                    </span>
-                    <span dir="auto" className="min-w-0 break-words">
-                      {a.title}
-                      <LanguageMark text={a.title} />
-                    </span>
-                  </div>
-                  <div className="mt-0.5 flex flex-wrap gap-x-3 text-[12px] text-muted-foreground">
-                    {a.amount && <span className="num">{t(a.amount)}</span>}
-                    <Source href={a.sourceUrl} />
-                  </div>
-                </li>
-              ))}
-              {o.developments.documents.map((d) => (
-                <li key={`d-${d.title}-${d.date}`} data-development="document">
-                  <div className="flex items-baseline gap-2">
-                    <span className="num shrink-0 text-[11px] text-muted-foreground" dir="ltr">
-                      {d.date ?? "—"}
-                    </span>
-                    <span dir="auto" className="min-w-0 break-words">
-                      {d.title}
-                      <LanguageMark text={d.title} />
-                    </span>
-                  </div>
-                  <div className="mt-0.5 text-[12px]">
-                    <Source href={d.sourceUrl} />
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <div className="space-y-4 text-[13px]">
+              {/* N01: قائمتان منفصلتان بعنوانين، كل منهما الأحدث أولًا؛ لا خلط بين الإجراءات والوثائق. */}
+              <section data-developments="actions">
+                <h3 className="mb-2 text-[12px] font-semibold text-muted-foreground">
+                  {t({ ar: "إجراءات الشركة", en: "Corporate actions" })}
+                </h3>
+                {o.developments.actions.length === 0 ? (
+                  <Empty text={{ ar: "لا إجراءات بمصدر.", en: "No sourced corporate actions." }} />
+                ) : (
+                  <ol className="space-y-3">
+                    {o.developments.actions.map((a) => (
+                      <li key={`a-${a.title}`} data-development="action" data-date={a.date ?? ""}>
+                        <div className="flex items-baseline gap-2">
+                          <span
+                            className="num shrink-0 text-[11px] text-muted-foreground"
+                            dir="ltr"
+                          >
+                            {a.date ?? "—"}
+                          </span>
+                          <span dir="auto" className="min-w-0 break-words">
+                            {a.title}
+                            <LanguageMark text={a.title} />
+                          </span>
+                        </div>
+                        <div className="mt-0.5 flex flex-wrap gap-x-3 text-[12px] text-muted-foreground">
+                          {a.amount && <span className="num">{t(a.amount)}</span>}
+                          <Source href={a.sourceUrl} />
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </section>
+              <section data-developments="documents" className="border-t border-border/60 pt-4">
+                <h3 className="mb-2 text-[12px] font-semibold text-muted-foreground">
+                  {t({ ar: "أحدث الوثائق", en: "Latest documents" })}
+                </h3>
+                {o.developments.documents.length === 0 ? (
+                  <Empty text={{ ar: "لا وثائق بمصدر.", en: "No sourced documents." }} />
+                ) : (
+                  <ol className="space-y-3">
+                    {o.developments.documents.map((d) => (
+                      <li
+                        key={`d-${d.title}-${d.date}`}
+                        data-development="document"
+                        data-date={d.date ?? ""}
+                      >
+                        <div className="flex items-baseline gap-2">
+                          <span
+                            className="num shrink-0 text-[11px] text-muted-foreground"
+                            dir="ltr"
+                          >
+                            {d.date ?? "—"}
+                          </span>
+                          <span dir="auto" className="min-w-0 break-words">
+                            {d.title}
+                            <LanguageMark text={d.title} />
+                          </span>
+                        </div>
+                        <div className="mt-0.5 text-[12px]">
+                          <Source href={d.sourceUrl} />
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </section>
+            </div>
           )}
         </Card>
 
@@ -700,20 +802,26 @@ function CellList({
   );
 }
 
-function WithheldNote({ n }: { n: number }) {
+function WithheldNote({ items }: { items: Overview["operations"]["withheld"] }) {
   const { t } = useI18n();
-  if (!n) return null;
+  if (!items.length) return null;
   return (
-    <p
-      className="mt-3 flex items-center gap-1.5 text-[12px] text-muted-foreground"
-      data-overview-withheld={n}
-    >
-      <EyeOff className="size-3.5" aria-hidden />
-      {t({
-        ar: `${iso(n)} قيمة محجوبة لا تُعرض؛ السبب في التحليل التفصيلي.`,
-        en: `${n} withheld value(s) not shown; the reason is in the detailed analysis.`,
-      })}
-    </p>
+    <div className="mt-3 text-[12px] text-muted-foreground" data-overview-withheld={items.length}>
+      <p className="flex items-center gap-1.5">
+        <EyeOff className="size-3.5" aria-hidden />
+        {t({
+          ar: `${iso(items.length)} قيمة محجوبة لا تُعرض:`,
+          en: `${items.length} withheld value(s) not shown:`,
+        })}
+      </p>
+      <ul className="mt-1 space-y-0.5 ps-5">
+        {items.map((w) => (
+          <li key={w.key} data-withheld-item={w.key}>
+            {t(w.label)}: {t(WITHHELD_TEXT[w.reason])}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

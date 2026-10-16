@@ -5,6 +5,7 @@ import type {
   CompanyPreview,
   DocumentRow,
   MarketQuote,
+  MetricGroup,
   OwnershipRow,
   TextFact,
   Topic,
@@ -73,8 +74,8 @@ export type Overview = {
     target: IntelTarget;
   }[];
   keyFigures: OverviewKeyFigure[];
-  operations: { cells: OverviewCell[]; withheld: number; target: IntelTarget };
-  dividends: { cells: OverviewCell[]; withheld: number; target: IntelTarget };
+  operations: { cells: OverviewCell[]; withheld: WithheldItem[]; target: IntelTarget };
+  dividends: { cells: OverviewCell[]; withheld: WithheldItem[]; target: IntelTarget };
   ownership: { rows: OwnershipRow[]; target: IntelTarget };
   governance: OverviewFact[];
   developments: {
@@ -107,6 +108,38 @@ export type Overview = {
 
 const withTarget = <T>(x: T, target: IntelTarget) => ({ ...x, target });
 
+/** قيمة محجوبة كما في نموذج العرض: تسميتها وسبب حجبها (يُعرضان في النظرة العامة، لا العدد فقط). */
+export type WithheldItem = MetricGroup["withheld"][number];
+
+/**
+ * WEB-07 (R01/R02): الإسناد المشترك لمجموعة صفوف. يُعاد المصدر والتاريخ/الفترة والوحدة مرة واحدة
+ * فقط إذا تطابقت في كل الصفوف؛ وإلا null، فيُعرض إسناد كل صف بجانبه. لا يُنسب رقم إلى إسناد صف آخر.
+ */
+export type SharedProvenance = { sourceUrl: string; date: string; unit: string | null };
+export function sharedProvenance(
+  rows: readonly { sourceUrl: string; date: string; unit?: string | null }[],
+): SharedProvenance | null {
+  const first = rows[0];
+  if (!first) return null;
+  const same = rows.every(
+    (r) =>
+      r.sourceUrl === first.sourceUrl &&
+      r.date === first.date &&
+      (r.unit ?? null) === (first.unit ?? null),
+  );
+  return same ? { sourceUrl: first.sourceUrl, date: first.date, unit: first.unit ?? null } : null;
+}
+
+/** صفوف القطاعات بإسنادها: المصدر ونهاية الفترة والوحدة لكل صف. */
+export const segmentProvenance = (rows: readonly ValueCell[]) =>
+  sharedProvenance(
+    rows.map((r) => ({ sourceUrl: r.proof.sourceUrl, date: r.period.end, unit: r.unit })),
+  );
+
+/** صفوف الملكية بإسنادها: المصدر وتاريخ «كما في» لكل صف. */
+export const ownershipProvenance = (rows: readonly OwnershipRow[]) =>
+  sharedProvenance(rows.map((r) => ({ sourceUrl: r.sourceUrl, date: r.asOf })));
+
 export function buildOverview(p: CompanyPreview): Overview {
   const t = (o: number) => topicByOrdinal(p, o);
   const key = (o: number) => t(o)?.key ?? String(o);
@@ -123,7 +156,7 @@ export function buildOverview(p: CompanyPreview): Overview {
       cells: groups
         .flatMap((b) => b.group.cells)
         .map((c) => withTarget(c, { topic: key(o), focus: c.key })),
-      withheld: groups.reduce((n, b) => n + b.group.withheld.length, 0),
+      withheld: groups.flatMap((b) => b.group.withheld),
       target: { topic: key(o) },
     };
   };

@@ -1,0 +1,28 @@
+bun test v1.4.3 (c6da4a4d3)
+
+outputs\final-additional.test.ts:
+(pass) ASCII proof selection is stable when context facts are reordered [31.27ms]
+D1/Unicode-order: {"ids":["proof-é","proof-é"],"before":{"availability":"present","technical":"eligible","financial":"verified","editorial":"approved","rights":"permitted","workflow":"EditoriallyApproved","publication":"eligible","reasons":[],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"},"after":{"availability":"present","technical":"eligible","financial":"verified","editorial":"approved","rights":"permitted","workflow":"EditoriallyApproved","publication":"eligible","reasons":[],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}}
+(pass) D1: distinct schema-valid Unicode proof refs have an order independent selection [17.05ms]
+(pass) selection pins proof-a rather than nonselected proof-z [17.85ms]
+(pass) selected locator receipt delete blocks previous approval [7.60ms]
+(pass) selected locator receipt withhold blocks previous approval [7.20ms]
+(pass) selected locator receipt unavailable blocks previous approval [6.36ms]
+(pass) selected locator receipt ineligible blocks previous approval [9.16ms]
+(pass) selected locator receipt rejected blocks previous approval [6.83ms]
+(pass) selected locator receipt unreviewed blocks previous approval [3.91ms]
+(pass) selected locator receipt no-certificate blocks previous approval [3.64ms]
+(pass) selected locator receipt unknown-reviewer blocks previous approval [3.33ms]
+(pass) selected locator receipt author-reviewer blocks previous approval [5.15ms]
+(pass) selected locator receipt role-revoked blocks previous approval [3.29ms]
+(pass) selected locator receipt future blocks previous approval [3.41ms]
+(pass) selected locator receipt prepublication blocks previous approval [3.59ms]
+(pass) a different valid proof does not silently inherit the old receipt's approval [5.92ms]
+(pass) adding a lexically prior receipt requires fresh approval [4.17ms]
+(pass) an unrelated fact certificate mutation does not change the verdict [4.78ms]
+(pass) registered locator does not depend on an unused alternate fact receipt [6.06ms]
+
+ 19 pass
+ 0 fail
+ 28 expect() calls
+Ran 19 tests across 1 file. [219.00ms]

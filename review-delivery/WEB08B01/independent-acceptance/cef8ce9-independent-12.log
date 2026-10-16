@@ -1,0 +1,22 @@
+bun test v1.4.3 (c6da4a4d3)
+
+outputs\rereview-edge.test.ts:
+(pass) R1: baseline source-only receipt is actually required and can authorize page two [19.76ms]
+(pass) R1: replacing a source locator verification receipt invalidates prior approval [15.53ms]
+R1/unbound-receipt-replaced: {"pinnedBasis":"e987eb16c45b926781b94fa1bce4db3b5dad9993773745af28f2d0bd38369a61","result":{"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["financial_review_basis_changed"],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}}
+(pass) R1: finance approval cannot precede required source locator receipt [5.72ms]
+R1/unbound-receipt-late: {"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["review_precedes_input_verification"],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}
+(pass) R1: replay cannot use a source locator receipt created after both approvals [11.25ms]
+(pass) control: rejected locator receipt is not accepted as proof [1.99ms]
+(pass) control: source proof from future evaluation time is blocked [2.05ms]
+(pass) control: explicit trusted locator registry supports the second page without fact fallback [14.79ms]
+(pass) control: future withheld successor leaves old as-of unchanged, then invalidates [10.16ms]
+(pass) control: unrelated receipt changes do not invalidate an unrelated claim [4.86ms]
+(pass) control: bound source certificate replacement invalidates and fresh approvals recover [9.24ms]
+(pass) control: stale basis can be withdrawn but cannot revive after withdrawal [7.18ms]
+(pass) control: caller-only locator is blocked even after trusted doc locator list exists [1.62ms]
+
+ 12 pass
+ 0 fail
+ 22 expect() calls
+Ran 12 tests across 1 file. [182.00ms]

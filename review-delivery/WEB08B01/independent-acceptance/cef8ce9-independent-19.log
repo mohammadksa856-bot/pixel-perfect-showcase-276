@@ -1,0 +1,33 @@
+bun test v1.4.3 (c6da4a4d3)
+
+outputs\independent.test.ts:
+F1/withheld: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F1: superseded old fact stays blocked when replacement is withheld [20.59ms]
+(pass) F1: superseded old fact stays blocked when replacement is unavailable [6.14ms]
+F1/unavailable: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+F1/ineligible: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F1: superseded old fact stays blocked when replacement is ineligible [7.78ms]
+(pass) F1: superseded old fact stays blocked when replacement is changed-identity [13.92ms]
+F1/changed-identity: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+F2/replay: {"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["review_precedes_input_verification"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F2: finance approval cannot predate independent fact verification [4.81ms]
+(pass) F2: appendReview must reject a backdated approval before certification [1.46ms]
+(pass) F3: two locators in the same original document can both be evidenced [1.68ms]
+F3/one-document: {"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Draft","publication":"blocked","reasons":[],"claimDigest":"e1ea9ed70e1ffaacff0ef52b7f59e159a10eaf1b4f8c3d0504b9c3ea3bb2f813"}
+(pass) F3: duplicating the document registry per locator is rejected [1.14ms]
+(pass) independent control: resolver start mismatch blocks [5.80ms]
+(pass) independent control: resolver kind mismatch blocks [5.07ms]
+(pass) independent control: resolver unit mismatch blocks [4.73ms]
+(pass) independent control: resolver currency mismatch blocks [5.40ms]
+(pass) independent control: resolver scope mismatch blocks [5.99ms]
+(pass) independent control: resolver dimensions mismatch blocks [2.98ms]
+(pass) independent control: conflict result is invariant to source ordering [3.49ms]
+(pass) independent control: future reissue does not leak into old as-of [4.40ms]
+(pass) independent control: unauthorized certificate, rights and edited text block [9.73ms]
+(pass) independent control: withheld binding produces no trail [3.00ms]
+(pass) independent direct-render journey plus wrong hash/version and withholding [23.43ms]
+
+ 19 pass
+ 0 fail
+ 45 expect() calls
+Ran 19 tests across 1 file. [219.00ms]

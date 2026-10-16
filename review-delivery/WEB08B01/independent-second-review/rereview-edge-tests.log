@@ -1,0 +1,73 @@
+bun test v1.4.3 (c6da4a4d3)
+
+outputs\rereview-edge.test.ts:
+(pass) R1: baseline source-only receipt is actually required and can authorize page two [10.05ms]
+R1/unbound-receipt-replaced: {"pinnedBasis":"907c7c2794c6eed140dde8fb753d710c071b23ebcdfd60673c697fc9a677b699","result":{"availability":"present","technical":"eligible","financial":"verified","editorial":"approved","rights":"permitted","workflow":"EditoriallyApproved","publication":"eligible","reasons":[],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}}
+38 |   expect(evaluate(x.claim, x.context).publication).toBe("eligible");
+39 |   const pinnedBasis = x.context.events[0]!.basisDigest;
+40 |   x.context.facts[1]!.verification!.reportSha256 = "9".repeat(64);
+41 |   const result = evaluate(x.claim, x.context);
+42 |   console.log(`R1/unbound-receipt-replaced: ${JSON.stringify({ pinnedBasis, result })}`);
+43 |   expect(result.publication).toBe("blocked");
+                                  ^
+error: expect(received).toBe(expected)
+
+Expected: "blocked"
+Received: "eligible"
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-10-16\web08b01-independent-review\outputs\rereview-edge.test.ts:43:30)
+(fail) R1: replacing a source locator verification receipt invalidates prior approval [6.49ms]
+46 | test("R1: finance approval cannot precede required source locator receipt", () => {
+47 |   const x = sourceReceiptFixture();
+48 |   x.context.facts[1]!.verification!.reviewedAt = "2026-03-05T00:00:00.000Z";
+49 |   expect(evaluate(x.claim, x.context).technical).toBe("eligible");
+50 |   expect(() => appendReview(x.claim, x.context, "financial_review", "synthetic-finance",
+51 |     "2026-03-03T00:00:00.000Z", "f".repeat(64))).toThrow();
+                                                      ^
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: [
+  {
+    eventId: "review-1",
+    action: "financial_review",
+    actorId: "synthetic-finance",
+    at: "2026-03-03T00:00:00.000Z",
+    claimDigest: "766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f",
+    basisDigest: "907c7c2794c6eed140dde8fb753d710c071b23ebcdfd60673c697fc9a677b699",
+    previousHash: null,
+    evidenceReportSha256: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    eventHash: "ad9d48ac31acb4eed696c510650da17eb04b0422c487418ef2845c729dc67b0f",
+  }
+]
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-10-16\web08b01-independent-review\outputs\rereview-edge.test.ts:51:50)
+(fail) R1: finance approval cannot precede required source locator receipt [2.43ms]
+R1/unbound-receipt-late: {"availability":"present","technical":"eligible","financial":"verified","editorial":"approved","rights":"permitted","workflow":"EditoriallyApproved","publication":"eligible","reasons":[],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}
+54 | test("R1: replay cannot use a source locator receipt created after both approvals", () => {
+55 |   const x = approve(sourceReceiptFixture());
+56 |   x.context.facts[1]!.verification!.reviewedAt = "2026-03-05T00:00:00.000Z";
+57 |   const result = evaluate(x.claim, x.context);
+58 |   console.log(`R1/unbound-receipt-late: ${JSON.stringify(result)}`);
+59 |   expect(result.publication).toBe("blocked");
+                                  ^
+error: expect(received).toBe(expected)
+
+Expected: "blocked"
+Received: "eligible"
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-10-16\web08b01-independent-review\outputs\rereview-edge.test.ts:59:30)
+(fail) R1: replay cannot use a source locator receipt created after both approvals [3.45ms]
+(pass) control: rejected locator receipt is not accepted as proof [1.02ms]
+(pass) control: source proof from future evaluation time is blocked [0.82ms]
+(pass) control: explicit trusted locator registry supports the second page without fact fallback [9.09ms]
+(pass) control: future withheld successor leaves old as-of unchanged, then invalidates [3.54ms]
+(pass) control: unrelated receipt changes do not invalidate an unrelated claim [2.27ms]
+(pass) control: bound source certificate replacement invalidates and fresh approvals recover [5.23ms]
+(pass) control: stale basis can be withdrawn but cannot revive after withdrawal [7.63ms]
+(pass) control: caller-only locator is blocked even after trusted doc locator list exists [0.92ms]
+
+ 9 pass
+ 3 fail
+ 22 expect() calls
+Ran 12 tests across 1 file. [86.00ms]

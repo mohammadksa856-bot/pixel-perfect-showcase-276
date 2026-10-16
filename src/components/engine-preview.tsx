@@ -172,7 +172,7 @@ function MetricTable({ group }: { group: MetricGroup }) {
         // الهاتف: بطاقات متراصة بدل جدول من أربعة أعمدة.
         <ul className="divide-y divide-border/60 sm:hidden" data-mobile-list>
           {group.cells.map((c) => (
-            <li key={c.key} className="py-3">
+            <li key={c.key} className="py-3" data-metric={c.key}>
               <div className="flex items-baseline justify-between gap-3">
                 <span className="text-[13px]">{t(c.label)}</span>
                 <span className="shrink-0 text-[14px] font-semibold tabular-nums">

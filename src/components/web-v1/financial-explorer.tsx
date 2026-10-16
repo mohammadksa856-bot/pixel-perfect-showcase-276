@@ -93,7 +93,16 @@ const isAmount = (r: StatementRow) => r.unit !== null && AMOUNT_UNITS.has(r.unit
 const fmt = (n: number, digits: number) =>
   n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
-export function FinancialExplorer({ views, kind }: { views: StatementView[]; kind: CompanyKind }) {
+export function FinancialExplorer({
+  views,
+  kind,
+  focusRow,
+}: {
+  views: StatementView[];
+  kind: CompanyKind;
+  /** WEB-07: رابط عميق إلى بند؛ تُفتح القائمة التي تحويه بدل الأولى. دونه السلوك كما في WEB-06. */
+  focusRow?: string | undefined;
+}) {
   const { t, locale } = useI18n();
   const [mode, setMode] = useState<StatementMode>(
     views.find((v) => v.status === "available")?.mode ?? "annual",
@@ -112,7 +121,9 @@ export function FinancialExplorer({ views, kind }: { views: StatementView[]; kin
   );
   const [picked, setPicked] = useState<string | null>(null);
   // WEB-06 (D6): قائمة واحدة معروضة في كل مرة (تبويب)، وعرض مختصر افتراضي على الجوال.
-  const [sectionPick, setSectionPick] = useState<StatementSection | null>(null);
+  const [sectionPick, setSectionPick] = useState<StatementSection | null>(
+    () => (focusRow && view.rows.find((r) => r.key === focusRow)?.section) || null,
+  );
   const [allRows, setAllRows] = useState(false);
   const chartRow = view.rows.find((r) => r.key === picked) ?? firstChartable ?? null;
   // عملة الجدول من عقد الصفحة (عملة التقارير)؛ الخلايا بعملة أخرى محجوبة في نموذج العرض.

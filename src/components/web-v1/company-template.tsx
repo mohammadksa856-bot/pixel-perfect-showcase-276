@@ -139,7 +139,8 @@ export function CompanyHero({ p }: { p: CompanyPreview }) {
               )}
             </div>
             <Link
-              to="."
+              to="/preview/web-v1/companies/$symbol"
+              params={{ symbol: c.symbol }}
               search={{ tab: "business" }}
               className="block bg-night px-4 py-3 hover:bg-night/70"
               data-hero-readiness="investor_topics"
@@ -166,7 +167,8 @@ export function CompanyHero({ p }: { p: CompanyPreview }) {
               </div>
             </Link>
             <Link
-              to="."
+              to="/preview/web-v1/companies/$symbol"
+              params={{ symbol: c.symbol }}
               search={{ tab: "coverage" }}
               className="block bg-night px-4 py-3 hover:bg-night/70"
               data-hero-readiness="operational_categories"
@@ -344,34 +346,68 @@ export function GroupView({
                 ))}
               </ol>
             </div>
-            {topics.map((x) =>
-              x.ordinal === 5 ? (
-                <TopicSection
-                  key={x.key}
-                  topic={{ ...x, blocks: x.blocks.filter((b) => b.type !== "history") }}
-                  preview={p}
-                  peers={peers}
-                  before={<FinancialExplorer views={p.statements} kind={p.kind} />}
-                  hideReasons={PAGE_LEVEL_REASONS}
-                  collapse={{
-                    ar: "كل بنود آخر سنة مالية وآخر ربع (تفصيلي)",
-                    en: "All line items for the latest fiscal year and quarter (detail)",
-                  }}
-                />
-              ) : (
-                <TopicSection
-                  key={x.key}
-                  topic={x}
-                  preview={p}
-                  peers={peers}
-                  design={TOPIC_DESIGN[x.ordinal]}
-                  hideReasons={PAGE_LEVEL_REASONS}
-                />
-              ),
-            )}
+            {topics.map((x) => (
+              <CompanyTopic key={x.key} topic={x} p={p} peers={peers} />
+            ))}
           </div>
         </div>
       </PreviewContainer>
+    </div>
+  );
+}
+
+/**
+ * موضوع واحد كما يُعرض في «بيانات معرفة» (WEB-06) وفي «تحليل الشركة» (WEB-07): الموضوع 5 مع مستكشف القوائم،
+ * وبقية الموضوعات بتصميمها. مصدر واحد للعرض حتى لا يختلف المستويان في الأرقام أو الحجب.
+ */
+export function CompanyTopic({
+  topic,
+  p,
+  peers,
+  focusRow,
+}: {
+  topic: Topic;
+  p: CompanyPreview;
+  peers: PeerTable | null;
+  /** WEB-07: بند مستهدف برابط عميق (يفتح قائمته في مستكشف القوائم). */
+  focusRow?: string | undefined;
+}) {
+  return topic.ordinal === 5 ? (
+    <TopicSection
+      topic={{ ...topic, blocks: topic.blocks.filter((b) => b.type !== "history") }}
+      preview={p}
+      peers={peers}
+      before={<FinancialExplorer views={p.statements} kind={p.kind} focusRow={focusRow} />}
+      hideReasons={PAGE_LEVEL_REASONS}
+      collapse={{
+        ar: "كل بنود آخر سنة مالية وآخر ربع (تفصيلي)",
+        en: "All line items for the latest fiscal year and quarter (detail)",
+      }}
+    />
+  ) : (
+    <TopicSection
+      topic={topic}
+      preview={p}
+      peers={peers}
+      design={TOPIC_DESIGN[topic.ordinal]}
+      hideReasons={PAGE_LEVEL_REASONS}
+    />
+  );
+}
+
+/** تنبيه الصفحة الواحد (WEB-06 D3)، مشترك بين المستويات. */
+export function PageNotice({ p }: { p: CompanyPreview }) {
+  const { t } = useI18n();
+  if (!p.dataNotices.length) return null;
+  return (
+    <div
+      className="mb-6 rounded-xl border border-status-warn/40 bg-status-warn/5 px-4 py-3 text-[13px] leading-6"
+      role="note"
+      data-page-notice
+    >
+      {p.dataNotices.map((n) => (
+        <p key={n.en}>{t(n)}</p>
+      ))}
     </div>
   );
 }

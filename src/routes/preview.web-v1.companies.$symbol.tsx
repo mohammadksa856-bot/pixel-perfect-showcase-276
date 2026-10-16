@@ -12,6 +12,8 @@ import {
   GroupView,
   topicGroup,
 } from "@/components/web-v1/company-template";
+import { CompanyLevels } from "@/components/web-v1/company-levels";
+import { hasExperience } from "@/lib/web-v1/company-experience";
 
 /**
  * WEB-V1: قالب صفحة الشركة (خمس مجموعات + تغطية البيانات). معطّل افتراضيًا:
@@ -82,6 +84,8 @@ function CompanyPage() {
       }}
     >
       <CompanyHero p={p} />
+      {/* WEB-07: هذه الصفحة هي المستوى 3 «بيانات معرفة» (واجهة WEB-06 كما هي) للشركات التي بُنيت لها التجربة. */}
+      {hasExperience(p.company.symbol) && <CompanyLevels symbol={p.company.symbol} level="data" />}
       <CompanyTabs p={p} tab={tab} />
       {tab === "coverage" ? (
         <CoverageView p={p} open={open} />

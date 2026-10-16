@@ -23,6 +23,8 @@ export const DESIGN_REVIEW_BRANCHES: readonly string[] = [
   "claude/web-06-visual-polish",
   // WEB-06 D11 contrast fix branch (exact name), so its Preview renders the frozen samples.
   "claude/web-06-d11-contrast-fix",
+  // WEB-07 company experience branch (exact name), so its Preview renders the frozen samples.
+  "claude/web-07-company-experience",
 ];
 type Env = Record<string, string | undefined>;
 

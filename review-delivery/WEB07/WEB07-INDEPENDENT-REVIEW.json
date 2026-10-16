@@ -1,0 +1,245 @@
+{
+  "schema": "marefa-web07-independent-review/1",
+  "observed_at": "2026-10-16 13:58:07 UTC",
+  "decision": "REWORK",
+  "application_sha": "6ac8e4e90d236370834aa6c03f1edb8dfdb35739",
+  "delivery_sha": "245a83ec91217e231eeee7728568bc46b7e64156",
+  "baseline_web06_sha": "6c79f4560ae2da0a65510254b82ac4cafcb422c9",
+  "branch": "review/web07-independent-20261016",
+  "claude_branch": "claude/web-07-company-experience",
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "WEB06_acceptance_preserved": true,
+  "scope": {
+    "new_experience": "Aramco2222 only perClaude; other companies explicitly NotBuiltYet, retain MarefaData",
+    "runtime_files_changed": 14,
+    "engine_data_contract_fixture_package_changes": "No diff in src/lib/engine, tests/fixtures, config, package.json or bun.lock",
+    "application_diff_code_to_delivery": "No src/tests/package/lock diff",
+    "new_calculations": "No new financial ratio/forecast; bar widths and ownership percent formatting only",
+    "independent_financial_acceptance": false
+  },
+  "findings": [
+    {
+      "id": "WEB07-R01",
+      "severity": "BLOCKER_PROVENANCE",
+      "title": "Ownership rows lose their own source/date in Overview",
+      "file": "src/components/web-v1/company-overview.tsx",
+      "line": 278,
+      "additional_line": 303,
+      "proof": "Independent component test supplies a second valid OwnershipRow with its own synthetic sourceURL/asOf. Holder and percentage render, its sourceURL is absent; one date/source is taken from rows[0].",
+      "case_type": "Synthetic allowed display-model case; not a claim that current frozen Aramco percentage is numerically wrong",
+      "reproduce": "bun test tests/web07-independent-provenance.test.ts; first case",
+      "expected": "Preserve each row's own source/date, or group only after proving identical provenance and asOf. Never silently label a second number with first-row metadata."
+    },
+    {
+      "id": "WEB07-R02",
+      "severity": "BLOCKER_PROVENANCE_PERIOD",
+      "title": "Revenue-mix figure assumes first row's period and source for all numbers",
+      "file": "src/components/web-v1/company-overview.tsx",
+      "line": 232,
+      "additional_line": 254,
+      "proof": "Second segment has distinct sourceURL/period under the typed presentation model. Number remains displayed while its source disappears; figure caption comes from first row. No homogeneity check.",
+      "case_type": "Synthetic component contract; current frozen segments same-period not independently found wrong",
+      "reproduce": "Same independent test file; second case",
+      "expected": "Either retain per-row source/period/unit/currency, or validate homogeneous groups and refuse ambiguous mixed groups; do not silently reuse first metadata."
+    },
+    {
+      "id": "WEB07-R03",
+      "severity": "FIX_REQUIRED_MISSING_STATE",
+      "title": "Returns/ownership card becomes title plus Analysis link when no data exists",
+      "file": "src/components/web-v1/company-overview.tsx",
+      "line": 262,
+      "proof": "Independent third case clears ownership/dividend blocks; section still renders with no analytic content and no explicit missing-data state.",
+      "expected": "Add explicit unavailable/withheld state with reason without inventing analysis/data.",
+      "reproduce": "Same independent file; third case"
+    },
+    {
+      "id": "WEB07-R04",
+      "severity": "PREVIEW_CONFIGURATION_BLOCKER",
+      "title": "READY deployment still returns404 on actual Overview route",
+      "proof": "Chrome opened exact code deployment ag1iwwpio at6ac8e4e /preview/web-v1/companies/2222/overview; actual404. BR-028 itself did not verify runtime. Local frozen runtime works.",
+      "expected": "Owner configures exact WEB07 branch Preview flags and verifies all three actual routes; no Production changes. This review did not mutate Vercel settings."
+    },
+    {
+      "id": "WEB07-N01",
+      "severity": "NON_BLOCKING_ORDERING",
+      "title": "Latest developments is not one globally newest-first feed",
+      "proof": "Actual local card shows2026-03 actions then2025-10 action before2026-09/08 documents; arrays sorted separately and rendered consecutively.",
+      "expected": "Separate labelled action/document lists, or merge sort by actual date without conflating events."
+    },
+    {
+      "id": "WEB07-N02",
+      "severity": "SCOPE_CONTENT_GAP",
+      "title": "Company Intelligence is primarily sourced data exploration, not completed authored investment analysis",
+      "proof": "18 topics/5groups exist; facts/tables/credit-rating source shown; explicit absence for sectors, peers, valuation, forecasts, analysts and catalysts. No fabricated narrative. BR-028 admits authored investment summary not implemented.",
+      "expected": "Do not market this as completed analytical content; disclose source-only scope and missing editorial/risk interpretation. No invented narrative requested."
+    }
+  ],
+  "runs": [
+    {
+      "id": "WEB07-targeted-regression-6ac8e4e",
+      "passed": 63,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "expectations": 889,
+      "duration_ms": 2290,
+      "files": [
+        "tests/web-07.test.ts",
+        "tests/web-03-04.test.ts",
+        "tests/web-06-d11-tabs.test.ts",
+        "tests/web-05b-boundary.test.ts",
+        "tests/web-readiness.test.ts"
+      ],
+      "artifact": "WEB07-regression.txt"
+    },
+    {
+      "id": "WEB07-independent-component-cases-6ac8e4e",
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "skipped": 0,
+      "artifact": "WEB07-independent-failures.txt",
+      "repro": "tests/web07-independent-provenance.test.ts",
+      "note": "Separate from63regression; tests assert expected safety behaviour. Earlier2-case run also failed2; compact boolean assertions changed output only; third empty-state case added. No production fixture data changed."
+    },
+    {
+      "id": "WEB07-types-6ac8e4e",
+      "command": "bun x tsc --noEmit",
+      "exit_code": 0,
+      "diagnostics": 0,
+      "note": "Independent test overlay included; no application edits"
+    },
+    {
+      "id": "WEB07-browser-local-6ac8e4e",
+      "result": "PASS scoped journeys",
+      "modes": "Frozen local loopback4408, exactbranch flags, peersfalse, nonproduction placeholderSupabase config",
+      "checks": [
+        "Overview->CompanyIntelligence total_assets opens balance section, focuses correct2025 row2,551.96 and sources",
+        "Overview->operating lifting_cost_per_boe focuses3.51 USD/boe FY2025 with sourcepage44",
+        "18 topics and5groups retained; English liftingcost search returns operations, Arabic dividends returns financials+dividends; no-results state+clear works",
+        "MarefaData annual5years/quarter2periods/YTD1period available; mode switches and table/graph labels distinct",
+        "Factory18categories,0category scores,95shown as rule; withheldEPS never numeric inOverview",
+        "Keyboard Enter level nav/deep metric works; focused metric outlined2px and visible",
+        "No unsafe http/javascript/data links in Overview source check;37source links,0forms; not a complete network capture"
+      ],
+      "mobile": [
+        {
+          "route": "Intelligence",
+          "lang": "en",
+          "css_width": 390,
+          "media_match": true,
+          "client": 375,
+          "scroll": 375
+        },
+        {
+          "route": "Overview",
+          "lang": "en",
+          "css_width": 390,
+          "media_match": true,
+          "client": 375,
+          "scroll": 375
+        },
+        {
+          "route": "Overview",
+          "lang": "en",
+          "css_width": 320,
+          "media_match": true,
+          "client": 305,
+          "scroll": 305
+        },
+        {
+          "route": "Intelligence",
+          "lang": "en",
+          "css_width": 320,
+          "media_match": true,
+          "client": 305,
+          "scroll": 305
+        },
+        {
+          "route": "Intelligence",
+          "lang": "ar",
+          "css_width": 320,
+          "media_match": true,
+          "client": 305,
+          "scroll": 305
+        },
+        {
+          "route": "MarefaData",
+          "lang": "ar",
+          "css_width": 320,
+          "media_match": true,
+          "client": 305,
+          "scroll": 305
+        },
+        {
+          "route": "MarefaData factory",
+          "lang": "ar",
+          "css_width": 390,
+          "media_match": true,
+          "client": 375,
+          "scroll": 375
+        },
+        {
+          "route": "Intelligence liftingcost direct",
+          "lang": "ar",
+          "css_width": 390,
+          "media_match": true,
+          "target_top": 387.3333,
+          "target_bottom": 456,
+          "target_width": 293.3333,
+          "viewport_height": 844,
+          "keyboard_focus": true
+        }
+      ],
+      "image": "WEB07-local-deeplink390-verified.png: local frozen runtime only, notVercel",
+      "discarded_image": "WEB07-local-deeplink390.png captured during smooth scroll, blank transient; not proof of final visibility",
+      "viewport_reset": true
+    }
+  ],
+  "topics": {
+    "count": 18,
+    "groups": 5,
+    "all_ordinals_preserved": true,
+    "explicit_no_data": [
+      "industry10",
+      "competitors11",
+      "valuation15",
+      "forecasts13",
+      "analysts14"
+    ],
+    "partial": [
+      "risks16 creditratingonly",
+      "news18 documentspresent, licensednewsabsent"
+    ],
+    "separate_factory_categories": 18,
+    "not_financially_accepted": true
+  },
+  "preview": {
+    "code_deployment": "https://pixel-perfect-showcase-276-ag1iwwpio.vercel.app/preview/web-v1/companies/2222/overview",
+    "deployment_id": "5LgmFApUKDkcmseWLYQupc3GZT5j",
+    "code_sha": "6ac8e4e90d236370834aa6c03f1edb8dfdb35739",
+    "build_state": "READY",
+    "runtime": "404 observed",
+    "report_deployment": "https://pixel-perfect-showcase-276-e7msqnp5u.vercel.app",
+    "report_sha": "245a83ec91217e231eeee7728568bc46b7e64156",
+    "report_deployment_runtime": "NOT_TESTED; not pooled with code deployment",
+    "settings_changed": false
+  },
+  "not_claimed": [
+    "Full414case suite independently rerun",
+    "Financial source numbers independently audited",
+    "API/live-data acceptance",
+    "No-network-write complete trace",
+    "Other companies' Overview/Intelligence implemented",
+    "Synthetic provenance fixtures deployed",
+    "Final user visual or production approval"
+  ],
+  "required_retest": [
+    "Per-row provenance and mixed-period guards on Overview",
+    "Empty returns/ownership state",
+    "Allthree publicPreview routes after exactbranch config",
+    "Affected code regression only; preserve priorWEB06acceptance"
+  ],
+  "safety": "No application design/code fixes,main,Production,AWS,Supabase,engine or95policy changes; only isolated review tests/reports; user changes preserved."
+}

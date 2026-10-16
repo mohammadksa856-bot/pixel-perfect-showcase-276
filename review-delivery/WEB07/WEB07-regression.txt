@@ -1,0 +1,79 @@
+bun test v1.4.3 (c6da4a4d3)
+
+tests\web-03-04.test.ts:
+(pass) WEB-03: multi-period statements > annual periods come only from engine history, newest first; nothing is invented [104.57ms]
+(pass) WEB-03: multi-period statements > quarterly and YTD views are unavailable with a reason where the engine has none [64.14ms]
+(pass) WEB-03: multi-period statements > every shown cell carries a source link; calculated values without reproduced inputs are withheld [96.86ms]
+(pass) WEB-03: multi-period statements > sector changes the metrics, not the page structure [112.90ms]
+(pass) WEB-03: multi-period statements > explorer: unavailable periods are disabled tabs, withheld cells say so, no change ratios [125.39ms]
+(pass) WEB-03: multi-period statements > each of the 18 topics has a designed component and its data requirement [0.50ms]
+(pass) WEB-04: factory contract panel > contract definitions: 18 categories in contract order, weights sum to 100 [0.20ms]
+(pass) WEB-04: factory contract panel > not assessed: definitions shown (weight, minimum, sources, gates), but no score or field counts [42.46ms]
+(pass) WEB-04: factory contract panel > assessed (engine b70254e): scores, field counts, gates, last assessment, separation note [58.82ms]
+(pass) WEB-04: factory contract panel > Al Rajhi: excluded category has its rule and no score; total withheld [30.14ms]
+(pass) frozen design preview branches > only the two named review branches; never main, production or a pattern [0.29ms]
+
+tests\web-05b-boundary.test.ts:
+(pass) every Preview link stays under /preview/web-v1 > no Link/to or href to a non-Preview internal route in Preview components and routes [17.44ms]
+(pass) every Preview link stays under /preview/web-v1 > Codex boundary acceptance: company breadcrumb targets the Preview Saudi market [0.84ms]
+(pass) every Preview link stays under /preview/web-v1 > the shell uses the isolated Preview footer; the production footer is untouched and unused here [0.67ms]
+(pass) Preview footer > all links are Preview routes [0.51ms]
+(pass) Preview footer > pages not built in the Preview are listed as plain text, never as links [0.31ms]
+(pass) Preview footer > deferred features have no entry; no form of any kind; no Supabase in the footer module [0.76ms]
+
+tests\web-06-d11-tabs.test.ts:
+(pass) business: one active tab, local high-contrast style with a ring, same tabs and text size [6.14ms]
+(pass) financials: one active tab, local high-contrast style with a ring, same tabs and text size [1.42ms]
+(pass) shareholders: one active tab, local high-contrast style with a ring, same tabs and text size [1.55ms]
+(pass) market: one active tab, local high-contrast style with a ring, same tabs and text size [1.78ms]
+(pass) risks: one active tab, local high-contrast style with a ring, same tabs and text size [1.91ms]
+(pass) coverage: one active tab, local high-contrast style with a ring, same tabs and text size [2.74ms]
+
+tests\web-07.test.ts:
+(pass) WEB-07 scope > experience is built for Aramco only; other companies keep Marefa Data [0.16ms]
+(pass) WEB-07 scope > three levels in order [0.07ms]
+(pass) WEB-07 scope > allowlist addition is the exact branch name [0.94ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > key figures are the page's key figures, unchanged, each with a deep link to topic 5 [0.39ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > operating, dividend and revenue-mix values all exist in the topics [0.24ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > business description is the source text, both languages, with source URL [0.11ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > valuation: recorded close only, no documented multiples, no forecasts or analysts [0.07ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > developments newest first, from actions and documents only [0.11ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > status keeps investor topics and factory separate; counts are counts [0.11ms]
+(pass) Overview render > no invented price, multiple, forecast or 95% achievement [1.45ms]
+(pass) Overview render > prominent entry to Company Intelligence and links to Marefa Data [0.32ms]
+(pass) Overview render > each key figure has a deep link (topic+focus) and its source [0.72ms]
+(pass) Overview render > every external link is https and opens in a new tab [0.42ms]
+(pass) Company Intelligence > all 18 topics in the five groups of model.ts, each exactly once [0.42ms]
+(pass) Company Intelligence > search: Arabic and English, every word must match, empty matches all, nothing removed [6.92ms]
+(pass) Company Intelligence > render: 18 topic sections, 5 groups, index, search, data links [70.10ms]
+(pass) Company Intelligence > render with a search query hides non-matching topics but keeps them in the page [42.62ms]
+(pass) Company Intelligence > deep-link search params are validated [0.58ms]
+(pass) levels and Marefa Data > level nav marks the current level with aria-current [2.98ms]
+(pass) levels and Marefa Data > Marefa Data page shows the level nav only for experience companies; WEB-06 template unchanged [0.79ms]
+(pass) levels and Marefa Data > other companies: Overview/Intelligence show a not-built state, not an invented page [1.25ms]
+
+tests\web-readiness.test.ts:
+(pass) investor topics readiness > ready only with engine 'ready', score ≥ 95, target 95 and every gate present and passed [0.17ms]
+(pass) investor topics readiness > missing hard gates are not a pass [0.39ms]
+(pass) investor topics readiness > engine 'ready' contradicted by score or a failed gate → not ready, with the reason [0.14ms]
+(pass) investor topics readiness > no valid assessment → not assessed and no score [0.12ms]
+(pass) investor topics readiness > no free score: a scored not-applicable category withholds the total [0.14ms]
+(pass) factory contract: the 18 operational categories > always 18 categories in contract order, even when the block is absent [0.30ms]
+(pass) factory contract: the 18 operational categories > Aramco @ b70254e: not ready at 56.6, thresholds, gates and missing fields carried through [1.57ms]
+(pass) factory contract: the 18 operational categories > Al Rajhi @ b70254e: not-applicable category shows its rule, no score, and the total is withheld [1.45ms]
+(pass) factory contract: the 18 operational categories > a not-applicable category without a cited rule is labelled as such [1.17ms]
+(pass) factory contract: the 18 operational categories > ready needs every category, threshold and gate, plus an approved assessment [8.46ms]
+(pass) factory contract: the 18 operational categories > an invalid assessment shows no score: wrong model, investor score blended, or target ≠ 95 [2.67ms]
+(pass) factory contract: the 18 operational categories > the investor model is never used as factory evidence [35.83ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > contract v4: investor topics measured and not ready; factory not in contract [59.04ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > contract v5: the two models stay separate and keep the engine's own states [76.52ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > no template is ever shown as ready, in either contract or with the factory evaluation [117.33ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > a topic the engine calls not applicable (no cited rule) is not measured, with no score [15.46ms]
+(pass) rendering > not assessed renders no score and no 'ready' label [1.46ms]
+(pass) rendering > not ready renders the engine score against 95 [22.04ms]
+(pass) rendering > a measured topic shows its coverage; a not-measured topic shows none [101.36ms]
+
+ 63 pass
+ 0 fail
+ 889 expect() calls
+Ran 63 tests across 5 files. [2.29s]

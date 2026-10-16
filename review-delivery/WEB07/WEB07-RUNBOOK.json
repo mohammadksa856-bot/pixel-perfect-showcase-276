@@ -1,0 +1,21 @@
+{
+  "schema": "marefa-web07-reproduction/1",
+  "review": "REWORK",
+  "application_sha": "6ac8e4e90d236370834aa6c03f1edb8dfdb35739",
+  "claude_delivery_sha": "245a83ec91217e231eeee7728568bc46b7e64156",
+  "central_commit": "eec0cb6f21275d150ffa1dac13affd9ee769095b",
+  "event_sequence": 92,
+  "event_sha256": "0b420422f35fe2b21839b367b8b8956ce8c291b0872c5c99afbd4f555ce32a1f",
+  "steps": [
+    "Use an isolated clone/worktree of mohammadksa856-bot/pixel-perfect-showcase-276 at exact application SHA; do not overwrite another worktree",
+    "Copy review-delivery/WEB07/web07-independent-provenance.test.ts to that application's tests/web07-independent-provenance.test.ts",
+    "Install/use locked dependencies locally; no production credentials needed",
+    "Run bun test tests/web07-independent-provenance.test.ts; expected current result 0pass3fail",
+    "Read WEB07-INDEPENDENT-REVIEW.json for separate63pass regression command, actual404 Preview and local journey evidence"
+  ],
+  "synthetic_data": "Only in-memory changes to display model; example.org synthetic sources. No documents, data imports or network calls. This is not a financial audit.",
+  "acceptance": "Fix per-row provenance or enforce homogeneous groups without silently mislabelling; add explicit empty state; verify actual Preview. Retest exact new SHA.",
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "WEB06_acceptance_preserved": true
+}

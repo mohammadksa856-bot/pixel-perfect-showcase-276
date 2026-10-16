@@ -364,7 +364,11 @@ function locatorReceipt(source: z.infer<typeof EvidenceSchema>, claim: Claim, co
           f.verification.reviewedAt <= context.evaluatedAt &&
           f.verification.reviewedAt >= source.publishedAt,
       )
-      .sort((a, b) => canonical(a.ref).localeCompare(canonical(b.ref)))[0] ?? null
+      .sort((a, b) => {
+        const left = canonical(a.ref),
+          right = canonical(b.ref);
+        return left < right ? -1 : left > right ? 1 : 0;
+      })[0] ?? null
   );
 }
 

@@ -339,10 +339,46 @@ export type Verdict = {
   claimDigest: string | null;
 };
 
+/** Resolve only the proof actually used for a locator; unrelated context is not review input. */
+function locatorReceipt(source: z.infer<typeof EvidenceSchema>, claim: Claim, context: Context) {
+  const doc = context.documents.find((d) => sameRef(d.evidence.document, source.document));
+  if (
+    !doc ||
+    canonical(doc.evidence.locator) === canonical(source.locator) ||
+    doc.verifiedLocators.some((l) => canonical(l) === canonical(source.locator))
+  )
+    return null;
+  return (
+    context.facts
+      .filter(
+        (f) =>
+          canonical(f.evidence) === canonical(source) &&
+          f.availability === "present" &&
+          f.technical === "eligible" &&
+          f.financial === "verified" &&
+          f.verification &&
+          context.actors.some(
+            (a) => a.id === f.verification!.reviewerId && a.roles.includes("financial_reviewer"),
+          ) &&
+          f.verification.reviewerId !== claim.authorId &&
+          f.verification.reviewedAt <= context.evaluatedAt &&
+          f.verification.reviewedAt >= source.publishedAt,
+      )
+      .sort((a, b) => canonical(a.ref).localeCompare(canonical(b.ref)))[0] ?? null
+  );
+}
+
+function reviewFacts(claim: Claim, context: Context) {
+  return [
+    ...claim.bindings.map((b) => context.facts.find((f) => sameRef(f.ref, b.fact)) ?? null),
+    ...claim.sources.map((s) => locatorReceipt(s, claim, context)),
+  ];
+}
+
 /** Review pins the actual verification receipts and input metadata, not only the text/ref list. */
 function reviewBasis(claim: Claim, context: Context): string {
   return digest({
-    facts: claim.bindings.map((b) => context.facts.find((f) => sameRef(f.ref, b.fact)) ?? null),
+    facts: reviewFacts(claim, context),
     documents: claim.sources.map(
       (s) => context.documents.find((d) => sameRef(d.evidence.document, s.document)) ?? null,
     ),
@@ -407,10 +443,9 @@ function eventsState(
   if (stage === "FinanciallyReviewed" || stage === "EditoriallyApproved") {
     const reviewedAt = lastFinancialReview!.at;
     if (
-      claim.bindings.some((b) => {
-        const f = context.facts.find((f) => sameRef(f.ref, b.fact));
-        return f?.verification && f.verification.reviewedAt > reviewedAt;
-      })
+      reviewFacts(claim, context).some(
+        (f) => f?.verification && f.verification.reviewedAt > reviewedAt,
+      )
     )
       return { stage: "Invalidated", reasons: ["review_precedes_input_verification"] };
     if (lastFinancialReview!.basisDigest !== reviewBasis(claim, context))
@@ -491,16 +526,7 @@ export function evaluate(input: unknown, environment: unknown): Verdict {
       doc &&
       (canonical(doc.evidence.locator) === canonical(source.locator) ||
         doc.verifiedLocators.some((l) => canonical(l) === canonical(source.locator)) ||
-        x.facts.some(
-          (f) =>
-            canonical(f.evidence) === canonical(source) &&
-            f.financial === "verified" &&
-            f.verification &&
-            role(f.verification.reviewerId, "financial_reviewer") &&
-            f.verification.reviewerId !== c.authorId &&
-            f.verification.reviewedAt <= x.evaluatedAt &&
-            f.verification.reviewedAt >= source.publishedAt,
-        ));
+        locatorReceipt(source, c, x) !== null);
     if (!sameFile || !locatorProved) {
       availability = "unavailable";
       reasons.push("document_reference_mismatch");

@@ -112,12 +112,24 @@ const withTarget = <T>(x: T, target: IntelTarget) => ({ ...x, target });
 export type WithheldItem = MetricGroup["withheld"][number];
 
 /**
- * WEB-07 (R01/R02): الإسناد المشترك لمجموعة صفوف. يُعاد المصدر والتاريخ/الفترة والوحدة مرة واحدة
- * فقط إذا تطابقت في كل الصفوف؛ وإلا null، فيُعرض إسناد كل صف بجانبه. لا يُنسب رقم إلى إسناد صف آخر.
+ * WEB-07 (R01/R02): الإسناد المشترك لمجموعة صفوف. يُعاد المصدر والفترة والوحدة مرة واحدة فقط إذا
+ * تطابقت في كل الصفوف؛ وإلا null، فيُعرض إسناد كل صف بجانبه. لا يُنسب رقم إلى إسناد صف آخر.
+ * هوية الفترة كاملة: نوعها ونهايتها معًا (R02-PERIOD-KIND). سنة مالية وربع ينتهيان في التاريخ نفسه
+ * ليسا فترة واحدة.
  */
-export type SharedProvenance = { sourceUrl: string; date: string; unit: string | null };
+export type SharedProvenance = {
+  sourceUrl: string;
+  date: string;
+  periodKind: string | null;
+  unit: string | null;
+};
 export function sharedProvenance(
-  rows: readonly { sourceUrl: string; date: string; unit?: string | null }[],
+  rows: readonly {
+    sourceUrl: string;
+    date: string;
+    periodKind?: string | null;
+    unit?: string | null;
+  }[],
 ): SharedProvenance | null {
   const first = rows[0];
   if (!first) return null;
@@ -125,15 +137,40 @@ export function sharedProvenance(
     (r) =>
       r.sourceUrl === first.sourceUrl &&
       r.date === first.date &&
+      (r.periodKind ?? null) === (first.periodKind ?? null) &&
       (r.unit ?? null) === (first.unit ?? null),
   );
-  return same ? { sourceUrl: first.sourceUrl, date: first.date, unit: first.unit ?? null } : null;
+  return same
+    ? {
+        sourceUrl: first.sourceUrl,
+        date: first.date,
+        periodKind: first.periodKind ?? null,
+        unit: first.unit ?? null,
+      }
+    : null;
 }
 
-/** صفوف القطاعات بإسنادها: المصدر ونهاية الفترة والوحدة لكل صف. */
+/** هوية الفترة الكاملة لخلية: النوع + النهاية. */
+export const periodIdentity = (c: ValueCell) => `${c.period.kind}|${c.period.end}`;
+
+/**
+ * هل يمكن رسم أعمدة مقارنة بين الصفوف؟ فقط لوحدة واحدة وهوية فترة واحدة (النوع والنهاية).
+ * المصدر قد يختلف هنا دون أن يمنع المقارنة؛ الإسناد عندها يُعرض لكل صف.
+ */
+export const comparableCells = (rows: readonly ValueCell[]) =>
+  rows.length > 0 &&
+  new Set(rows.map((r) => r.unit)).size === 1 &&
+  new Set(rows.map(periodIdentity)).size === 1;
+
+/** صفوف القطاعات بإسنادها: المصدر ونوع الفترة ونهايتها والوحدة لكل صف. */
 export const segmentProvenance = (rows: readonly ValueCell[]) =>
   sharedProvenance(
-    rows.map((r) => ({ sourceUrl: r.proof.sourceUrl, date: r.period.end, unit: r.unit })),
+    rows.map((r) => ({
+      sourceUrl: r.proof.sourceUrl,
+      date: r.period.end,
+      periodKind: r.period.kind,
+      unit: r.unit,
+    })),
   );
 
 /** صفوف الملكية بإسنادها: المصدر وتاريخ «كما في» لكل صف. */

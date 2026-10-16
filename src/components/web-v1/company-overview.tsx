@@ -9,6 +9,7 @@ import { safeSourceUrl } from "@/lib/engine/peer-comparison";
 import {
   buildOverview,
   intelGroups,
+  comparableCells,
   ownershipProvenance,
   segmentProvenance,
   type IntelTarget,
@@ -226,12 +227,10 @@ export function CompanyOverview({ p }: { p: CompanyPreview }) {
           {o.revenueMix.length ? (
             <div className="space-y-5">
               {o.revenueMix.map((m) => {
-                // R02: الفترة والمصدر يُعرضان مرة واحدة فقط إن تطابقا (مع الوحدة) في كل الصفوف؛
-                // وإلا يحمل كل صف فترته ومصدره. الأعمدة تُرسم فقط لصفوف بوحدة وفترة واحدة.
+                // R02: الفترة (نوعها ونهايتها) والمصدر والوحدة تُعرض مرة واحدة فقط إن تطابقت في كل
+                // الصفوف؛ وإلا يحمل كل صف فترته ومصدره. الأعمدة فقط لوحدة واحدة وهوية فترة واحدة.
                 const shared = segmentProvenance(m.rows);
-                const comparable =
-                  new Set(m.rows.map((r) => r.unit)).size === 1 &&
-                  new Set(m.rows.map((r) => r.period.end)).size === 1;
+                const comparable = comparableCells(m.rows);
                 const max = Math.max(...m.rows.map((r) => Math.abs(r.value)), 1);
                 return (
                   <figure

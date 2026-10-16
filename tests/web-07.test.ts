@@ -238,13 +238,38 @@ describe("rework: provenance is per row unless provably shared", () => {
       .flatMap((t) => t.blocks)
       .find((b): b is Extract<Block, { type: T }> => b.type === type)!;
 
-  test("sharedProvenance: identical rows share; any difference in source, date or unit does not", () => {
-    const r = { sourceUrl: "https://a.example/x.pdf", date: "2025-12-31", unit: "SAR" };
+  test("sharedProvenance: identical rows share; any difference in source, date, period kind or unit does not", () => {
+    const r = {
+      sourceUrl: "https://a.example/x.pdf",
+      date: "2025-12-31",
+      periodKind: "fy",
+      unit: "SAR",
+    };
     expect(X.sharedProvenance([r, { ...r }])).toEqual(r);
     expect(X.sharedProvenance([r, { ...r, sourceUrl: "https://b.example/y.pdf" }])).toBeNull();
     expect(X.sharedProvenance([r, { ...r, date: "2024-12-31" }])).toBeNull();
+    // R02-PERIOD-KIND: FY and quarter ending the same day are not one period
+    expect(X.sharedProvenance([r, { ...r, periodKind: "quarter" }])).toBeNull();
     expect(X.sharedProvenance([r, { ...r, unit: "USD" }])).toBeNull();
     expect(X.sharedProvenance([])).toBeNull();
+  });
+
+  test("comparableCells: bars only for one unit and one full period identity (kind + end)", () => {
+    const rows = structuredClone(o.revenueMix[0]!.rows);
+    expect(X.comparableCells(rows)).toBe(true);
+    const kind = structuredClone(rows);
+    kind[1]!.period = { ...kind[1]!.period, kind: "quarter" };
+    expect(X.comparableCells(kind)).toBe(false);
+    expect(X.segmentProvenance(kind)).toBeNull();
+    const end = structuredClone(rows);
+    end[1]!.period = { ...end[1]!.period, end: "2024-12-31" };
+    expect(X.comparableCells(end)).toBe(false);
+    const unit = structuredClone(rows);
+    unit[1]!.unit = "USD";
+    expect(X.comparableCells(unit)).toBe(false);
+    // the original period data is kept on every row (nothing rewritten)
+    expect(kind[1]!.period.end).toBe(rows[1]!.period.end);
+    expect(X.comparableCells([])).toBe(false);
   });
 
   test("real Aramco ownership and segments are homogeneous: one date/source line, marked shared", () => {

@@ -1,0 +1,92 @@
+{
+  "schema": "marefa-engine-research-gap-matrix/1",
+  "scope": "Accepted WEB07 frozen display snapshot generated2026-10-13, not live engine DB introspection",
+  "columns": [
+    {
+      "requirement": "company identity",
+      "observed": "company.company_id / market / symbol",
+      "status": "Available",
+      "action": "Do not mint new issuer identifiers"
+    },
+    {
+      "requirement": "full financial period",
+      "observed": "raw row period_start/end/kind/fiscal_year/fiscal_quarter",
+      "status": "Partially available",
+      "action": "Ten observations cannot exactly map full period metadata; empty string is not null. Many requested older rows absent from this display snapshot, not asserted absent from underlying DB."
+    },
+    {
+      "requirement": "unit, currency, scope, dimensions",
+      "observed": "raw row unit/currency/scope/dimensions",
+      "status": "Available per row, semantic differences remain",
+      "action": "Do not conflate segment-keyed consolidated rows with true segment scope or parent income with group income"
+    },
+    {
+      "requirement": "engine fact identity",
+      "observed": "No stable fact_id on selected display rows",
+      "status": "Missing",
+      "action": "Use actual engine immutable identity, not metric/array position/JSON checksum"
+    },
+    {
+      "requirement": "fact version",
+      "observed": "raw row version",
+      "status": "Available but cannot bind without stable fact identity",
+      "action": "Preserve original version; do not treat it as document version"
+    },
+    {
+      "requirement": "fact revision digest",
+      "observed": "No dedicated immutable fact_sha256",
+      "status": "Missing",
+      "action": "Do not use source content_hash as fact digest"
+    },
+    {
+      "requirement": "document identity/version",
+      "observed": "source_key available; document_id/version absent",
+      "status": "Missing",
+      "action": "file:<content_hash> is not proven to be the original PDF identity/version"
+    },
+    {
+      "requirement": "file fingerprint",
+      "observed": "content_hash populated; artifact_sha256 null",
+      "status": "Missing at engine boundary",
+      "action": "Locally downloaded PDF SHA256 verified independently; do not backfill the engine or declare same-URL byte identity"
+    },
+    {
+      "requirement": "page/table/column",
+      "observed": "Not exposed in display source",
+      "status": "Missing in engine",
+      "action": "Audit record has one-based PDF page, printed page and label; not copied into production"
+    },
+    {
+      "requirement": "publication time",
+      "observed": "filed_at is YYYY-MM-DD",
+      "status": "Date precision only",
+      "action": "B01 requires exact canonical UTC time; do not invent midnight"
+    },
+    {
+      "requirement": "rights grant",
+      "observed": "User asserted yes twice, no document/reference/scope",
+      "status": "Unverified",
+      "action": "rights remains withheld. Public availability and yes alone do not constitute reviewed grant"
+    },
+    {
+      "requirement": "independent review certificate",
+      "observed": "No real B01 verification report ID/hash/actor at input boundary",
+      "status": "Missing",
+      "action": "Author visual check and technical tests are not formal financial review"
+    },
+    {
+      "requirement": "derived lineage",
+      "observed": "calculation/definition fields sometimes present; current_inputs_reproduced false/not recorded",
+      "status": "Insufficient",
+      "action": "FCF/EPS/EBITDA/margins remain withheld, no formula replication in UI"
+    },
+    {
+      "requirement": "exact Marefa Data navigation",
+      "observed": "WEB07 tab/open routes lack immutable fact-version resolution",
+      "status": "Unavailable",
+      "action": "B02 does not implement live integration"
+    }
+  ],
+  "no_reference_fabrication": true,
+  "source_of_truth_unchanged": true
+}

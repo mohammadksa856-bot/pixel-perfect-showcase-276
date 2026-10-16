@@ -1,0 +1,93 @@
+{
+  "schema": "marefa-derivative-readiness-study/1",
+  "status": "DEFINITIONS_AND_INPUT_BINDINGS_NOT_APPROVED",
+  "no_calculation_performed": true,
+  "items": [
+    {
+      "metric": "FCF",
+      "recipe": "DER-01",
+      "source_inputs": "CFO and cash-capex observed for FY2024/FY2025/Q1/Q2/H1-2026",
+      "definition_decisions": [
+        "Gross vs net capital spend; exclusion/inclusion of acquisitions",
+        "Source cash-flow outflow sign vs engine positive cash-capex convention",
+        "Cash boundary and lease/interest treatment"
+      ],
+      "blocked_by": [
+        "B01 stable input/version bindings absent",
+        "Rights document and financial review absent",
+        "No approved method version"
+      ],
+      "source_locators": [
+        "FY2024 PDF16",
+        "FY2025 PDF18",
+        "Q1 PDF27",
+        "H1 PDF31"
+      ]
+    },
+    {
+      "metric": "EPS",
+      "recipe": "DER-03 input/readiness, not ratio approval",
+      "source_inputs": "Reported basic/diluted EPS in all selected income statements; annual weighted share counts and parent profit separately located",
+      "definition_decisions": [
+        "Use parent ordinary-share profit, not consolidated group profit",
+        "Weighted average vs issued shares; basic vs diluted; share-event adjustments",
+        "No EPS subtraction for quarters; no denominator backsolve from rounded EPS",
+        "Interim weighted share denominator not separately qualified"
+      ],
+      "blocked_by": [
+        "Engine reported EPS values withheld/null in some snapshot rows",
+        "Exact input revisions/rights/review absent"
+      ],
+      "source_locators": [
+        "FY2024 PDF72",
+        "FY2025 PDF75",
+        "Q1 PDF23",
+        "H1 PDF27"
+      ]
+    },
+    {
+      "metric": "EBITDA",
+      "recipe": "DER-02/DER-05 prerequisites",
+      "source_inputs": "Operating income, group/segment EBIT and D&A located but not interchangeable",
+      "definition_decisions": [
+        "Operating EBITDA vs issuer EBIT-based EBITDA; associates/non-operating income",
+        "Impairment excluded or included; FY2024 reclassification vs FY2025 comparative basis",
+        "Group vs segment and eliminations; amortization boundary"
+      ],
+      "blocked_by": [
+        "Methodology not approved",
+        "Comparative presentation versions and lineage incomplete",
+        "Rights and independent financial approval absent"
+      ],
+      "source_locators": [
+        "FY2024 PDF12/16",
+        "FY2025 PDF14/18/24/36",
+        "Q1 PDF31",
+        "H1 PDF35"
+      ]
+    },
+    {
+      "metric": "MARGINS",
+      "recipe": "DER-02",
+      "source_inputs": "Revenue and revenue-plus-other-sales-income are separately observed, as are group/parent/operating profits",
+      "definition_decisions": [
+        "Choose disclosed denominator convention; do not relabel combined revenue as revenue",
+        "Same period, currency, scope and presentation revision",
+        "Segment external vs intersegment sales and consolidation eliminations"
+      ],
+      "blocked_by": [
+        "No approved margin method and point-version graph",
+        "No rights/financial certificates"
+      ],
+      "source_locators": [
+        "FY2024 PDF12",
+        "FY2025 PDF14/36",
+        "Q1 PDF23/31",
+        "H1 PDF27/35"
+      ]
+    }
+  ],
+  "DCF": "NOT_STARTED",
+  "forecasts": "NOT_STARTED",
+  "production_authorization": false
+}

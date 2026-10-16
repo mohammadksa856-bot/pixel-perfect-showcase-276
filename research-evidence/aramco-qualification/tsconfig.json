@@ -1,0 +1,5 @@
+{
+  "extends": "../v1/tsconfig.json",
+  "include": ["qualification.ts", "audit.ts"],
+  "exclude": ["*.test.ts"]
+}

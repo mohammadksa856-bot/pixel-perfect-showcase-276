@@ -260,6 +260,7 @@ export const FactSchema = z
 export const DocumentSchema = z
   .object({
     evidence: EvidenceSchema,
+    verifiedLocators: z.array(EvidenceSchema.shape.locator).default([]),
     kind: z.enum(["issuer", "exchange", "analyst", "other"]),
     originalArtifactVerified: z.boolean(),
     supersedes: RefSchema.nullable(),
@@ -283,6 +284,7 @@ export const EventSchema = z
     actorId: text,
     at: time,
     claimDigest: hash,
+    basisDigest: hash,
     previousHash: hash.nullable(),
     evidenceReportSha256: hash,
     eventHash: hash,
@@ -337,6 +339,16 @@ export type Verdict = {
   claimDigest: string | null;
 };
 
+/** Review pins the actual verification receipts and input metadata, not only the text/ref list. */
+function reviewBasis(claim: Claim, context: Context): string {
+  return digest({
+    facts: claim.bindings.map((b) => context.facts.find((f) => sameRef(f.ref, b.fact)) ?? null),
+    documents: claim.sources.map(
+      (s) => context.documents.find((d) => sameRef(d.evidence.document, s.document)) ?? null,
+    ),
+  });
+}
+
 function eventsState(
   claim: Claim,
   context: Context,
@@ -345,6 +357,7 @@ function eventsState(
   let stage: Verdict["workflow"] = "Draft";
   let finActor: string | null = null;
   let lastAt = claim.createdAt;
+  let lastFinancialReview: ReviewEvent | null = null;
   const seen = new Set<string>();
   for (const event of context.events) {
     const { eventHash, ...body } = event;
@@ -368,6 +381,7 @@ function eventsState(
         return { stage: "Invalidated", reasons: ["unauthorized_financial_review"] };
       stage = "FinanciallyReviewed";
       finActor = event.actorId;
+      lastFinancialReview = event;
     } else if (event.action === "editorial_approve") {
       if (
         stage !== "FinanciallyReviewed" ||
@@ -389,6 +403,18 @@ function eventsState(
     seen.add(event.eventId);
     previous = eventHash;
     lastAt = event.at;
+  }
+  if (stage === "FinanciallyReviewed" || stage === "EditoriallyApproved") {
+    const reviewedAt = lastFinancialReview!.at;
+    if (
+      claim.bindings.some((b) => {
+        const f = context.facts.find((f) => sameRef(f.ref, b.fact));
+        return f?.verification && f.verification.reviewedAt > reviewedAt;
+      })
+    )
+      return { stage: "Invalidated", reasons: ["review_precedes_input_verification"] };
+    if (lastFinancialReview!.basisDigest !== reviewBasis(claim, context))
+      return { stage: "Invalidated", reasons: ["financial_review_basis_changed"] };
   }
   return { stage, reasons: [] };
 }
@@ -458,7 +484,24 @@ export function evaluate(input: unknown, environment: unknown): Verdict {
     reasons.push("claim_publication_precedes_sources");
   for (const source of sources) {
     const doc = x.documents.find((d) => sameRef(d.evidence.document, source.document));
-    if (!doc || canonical(doc.evidence) !== canonical(source)) {
+    // File identity is separate from its many page/table locators.
+    const sameFile =
+      doc && doc.evidence.url === source.url && doc.evidence.publishedAt === source.publishedAt;
+    const locatorProved =
+      doc &&
+      (canonical(doc.evidence.locator) === canonical(source.locator) ||
+        doc.verifiedLocators.some((l) => canonical(l) === canonical(source.locator)) ||
+        x.facts.some(
+          (f) =>
+            canonical(f.evidence) === canonical(source) &&
+            f.financial === "verified" &&
+            f.verification &&
+            role(f.verification.reviewerId, "financial_reviewer") &&
+            f.verification.reviewerId !== c.authorId &&
+            f.verification.reviewedAt <= x.evaluatedAt &&
+            f.verification.reviewedAt >= source.publishedAt,
+        ));
+    if (!sameFile || !locatorProved) {
       availability = "unavailable";
       reasons.push("document_reference_mismatch");
       continue;
@@ -498,10 +541,11 @@ export function evaluate(input: unknown, environment: unknown): Verdict {
         other.availability === "present" &&
         other.technical === "eligible",
     );
-    if (candidates.some((other) => other.supersedes && sameRef(other.supersedes, f.ref)))
+    const knownAsOf = x.facts.filter((other) => other.evidence.publishedAt <= x.asOf);
+    if (knownAsOf.some((other) => other.supersedes && sameRef(other.supersedes, f.ref)))
       reasons.push("fact_superseded_asof");
     const active = candidates.filter(
-      (other) => !candidates.some((next) => next.supersedes && sameRef(next.supersedes, other.ref)),
+      (other) => !knownAsOf.some((next) => next.supersedes && sameRef(next.supersedes, other.ref)),
     );
     if (new Set(active.map((other) => other.valueDigest)).size > 1) reasons.push("source_conflict");
     if (
@@ -509,7 +553,8 @@ export function evaluate(input: unknown, environment: unknown): Verdict {
       !f.verification ||
       !role(f.verification.reviewerId, "financial_reviewer") ||
       f.verification.reviewerId === c.authorId ||
-      f.verification.reviewedAt > x.evaluatedAt
+      f.verification.reviewedAt > x.evaluatedAt ||
+      f.verification.reviewedAt < f.evidence.publishedAt
     )
       financialInputs = false;
     if (f.financial === "rejected") reasons.push("financial_input_rejected");
@@ -585,13 +630,15 @@ export function evaluate(input: unknown, environment: unknown): Verdict {
 
 /** Append-only in-memory PoC; persistence/authentication must be supplied by a trusted server. */
 export function appendReview(
-  claim: Claim,
-  context: Context,
+  claimInput: Claim,
+  contextInput: Context,
   action: ReviewEvent["action"],
   actorId: string,
   at: string,
   reportSha256: string,
 ): ReviewEvent[] {
+  const claim = ClaimSchema.parse(claimInput),
+    context = ContextSchema.parse(contextInput);
   const before = evaluate(claim, context);
   if (
     action !== "withdraw" &&
@@ -605,6 +652,7 @@ export function appendReview(
     actorId,
     at,
     claimDigest: digest(ClaimSchema.parse(claim)),
+    basisDigest: reviewBasis(claim, context),
     previousHash: context.events.at(-1)?.eventHash ?? null,
     evidenceReportSha256: reportSha256,
   };

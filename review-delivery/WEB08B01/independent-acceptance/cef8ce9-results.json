@@ -1,0 +1,30 @@
+{
+  "decision": "ACCEPT",
+  "scope": "research-evidence/v1 contract and synthetic local PoC only",
+  "testedSha": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+  "previousReviewedSha": "f045964eb5b76e2400f92b0f10dce4d320a1db7d",
+  "reviewCheckout": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/work/review",
+  "outputDirectory": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs",
+  "report": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/ACCEPTANCE_cef8ce9.md",
+  "runtime": "bun 1.4.3 (c6da4a4d3)",
+  "runsAreSeparateAndOverlap": true,
+  "runs": [
+    {"command": "bun test research-evidence/v1", "cwd": "work/review", "exitCode": 0, "pass": 91, "fail": 0, "assertions": 224, "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-repository-91.log"},
+    {"command": "bun test ./outputs/independent.test.ts", "cwd": ".", "originalAssertionsUnchanged": true, "exitCode": 0, "pass": 19, "fail": 0, "assertions": 45, "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-independent-19.log"},
+    {"command": "bun test ./outputs/rereview-edge.test.ts", "cwd": ".", "originalAssertionsUnchanged": true, "exitCode": 0, "pass": 12, "fail": 0, "assertions": 22, "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-independent-12.log"},
+    {"command": "bun test ./outputs/final-additional.test.ts", "cwd": ".", "originalAssertionsUnchanged": true, "exitCode": 0, "pass": 19, "fail": 0, "assertions": 28, "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-additional-19.log"},
+    {"command": "bun node_modules/typescript/bin/tsc -p research-evidence/v1/tsconfig.json --noEmit", "cwd": "work/review", "exitCode": 0, "diagnostics": [], "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-types.log"}
+  ],
+  "closedFindings": ["F1", "F2", "F3", "R1", "D1"],
+  "openFindingsFromThisReview": [],
+  "preservedPriorArtifactsManifest": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-preserved-artifacts.json",
+  "previousManifestHashesVerified": true,
+  "authorCheckoutModified": false,
+  "reviewCheckoutTrackedFilesModified": false,
+  "centralDashboardModified": false,
+  "productionContacted": false,
+  "liveResearchIntegration": "BLOCKED as declared; excluded from acceptance",
+  "userAcceptanceGranted": false,
+  "productionAcceptanceGranted": false,
+  "readiness95PercentGranted": false
+}

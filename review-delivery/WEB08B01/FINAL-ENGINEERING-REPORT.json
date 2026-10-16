@@ -1,0 +1,193 @@
+{
+  "schema": "marefa-web08b01-final-delivery/1",
+  "code_sha": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+  "branch": "codex/web08b01-research-contract-20261016",
+  "application_baseline": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+  "audit_baseline": "b037ecb7be41661243ccf5f68b4d536f8e23aedd",
+  "observed_at": "2026-10-16T18:08:13Z",
+  "scope": "Standalone research-claim/1 server metadata contract and synthetic read-only PoC; not activated in WEB07",
+  "implemented": [
+    "Strict ref-only claim, period, source, rights, verification and append-only review-event schemas",
+    "All18 original investor topic keys; five content kinds, full semantic identity and source/fact versions",
+    "Independent availability/technical/financial/editorial/rights/workflow/publication axes",
+    "As-of/source reissue/conflict/supersession/withholding/lineage guards; source receipt dependency closure and deterministic reference ordering",
+    "Draft -> FinanciallyReviewed -> EditoriallyApproved; independent actors and dated review reports; source/certificate changes invalidate prior approval",
+    "Read-only resolver port and synthetic Intelligence -> evidence -> exact original Marefa Data reference PoC; no copied numeric value in claims/trail",
+    "Nine WEB08A derivation recipes mapped to required references, no formula orDCF implemented"
+  ],
+  "author_runs": [
+    {
+      "id": "cef8ce9-contract-poc",
+      "sha": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+      "passed": 91,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "assertions": 224,
+      "artifact": "author-cef8ce9-contract-tests.log"
+    },
+    {
+      "id": "cef8ce9-WEB07-WEB06-regression",
+      "sha": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+      "passed": 95,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "assertions": 1150,
+      "artifact": "author-cef8ce9-web07-regression.log"
+    },
+    {
+      "id": "cef8ce9-contract-types",
+      "exit_code": 0,
+      "scope": "Contract adapter/synthetic/PoC strict TS; test files executed by Bun separately"
+    },
+    {
+      "id": "cef8ce9-app-types",
+      "exit_code": 0
+    },
+    {
+      "id": "cef8ce9-new-folder-eslint",
+      "exit_code": 0,
+      "scope": "New research folder only; full-repository old lint debt not claimed resolved"
+    }
+  ],
+  "runs_overlap": "The independent test groups have repository copies; do not add these counts as unique tests.",
+  "review_history": [
+    {
+      "sha": "4f38e55f5f916b67b5172f0e18feb61848754124",
+      "decision": "REWORK",
+      "original_independent": {
+        "passed": 12,
+        "failed": 7
+      },
+      "artifact": "independent-first-review/REVIEW_AR.md",
+      "fixed_by": "4570432d4130094c84e68db2c9a19bd92dbda08c"
+    },
+    {
+      "sha": "4570432d4130094c84e68db2c9a19bd92dbda08c",
+      "decision": "REWORK",
+      "additional_independent": {
+        "passed": 9,
+        "failed": 3
+      },
+      "artifact": "independent-second-review/REREVIEW_AR_4570432.md",
+      "fixed_by": "f045964eb5b76e2400f92b0f10dce4d320a1db7d"
+    },
+    {
+      "sha": "f045964eb5b76e2400f92b0f10dce4d320a1db7d",
+      "decision": "REWORK",
+      "additional_independent": {
+        "passed": 18,
+        "failed": 1
+      },
+      "artifact": "independent-third-review/final-review-f045964.md",
+      "fixed_by": "cef8ce9f3b463fc75324960ed47c06ace261cff4"
+    }
+  ],
+  "poc": {
+    "actual_browser": "Chrome, local loopback only, on initial and457 implementations; not rerun as a browser claim on cef8ce9",
+    "latest_automated": "Synthetic journey included in91 on cef8ce9",
+    "trail": "Intelligence claim ref -> evidence exact ID/version/hash/page -> original synthetic123SAR; withholding/wrongref fail closed",
+    "server_stopped": true,
+    "public_or_production_deployment": false
+  },
+  "compatibility": {
+    "current_engine": "BLOCKED_FOR_LIVE",
+    "WEB07": "Unchanged; display references insufficient for this contract",
+    "missing": [
+      "Immutable fact IDs/versions and original file IDs/versions/hashes",
+      "Full period start/scope/dimensions at the display boundary",
+      "Dated independent review certificates and real rights grants",
+      "Trusted authenticated server resolution and persistent append-only review storage",
+      "Exact fact/version selection by Marefa Data route"
+    ],
+    "parallel_numeric_truth_store": false,
+    "React_calculations": false
+  },
+  "safety": {
+    "main_changed": false,
+    "production_changed": false,
+    "engine_changed": false,
+    "Supabase_changed": false,
+    "live_import": false,
+    "WEB07_src_changed": false,
+    "readiness_95_changed": false,
+    "DCF_built": false
+  },
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "live_integration_acceptance": false,
+  "real_financial_claims_approved": 0,
+  "next_three": [
+    "Review/adopt the contract scope and resolve trusted identity/rights/auth interfaces before live work",
+    "Agree an authorized engine reference/lineage adapter without numeric duplication",
+    "Specify exact-version Marefa Data navigation and a separately reviewed real-evidence pilot; no live work authorized by this delivery"
+  ],
+  "independent_review": {
+    "decision": "ACCEPT",
+    "scope": "Contract and synthetic local PoC only",
+    "thread_id": "01a145cd-1c9e-7623-9919-f76ad5aea1fc",
+    "tested_sha": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+    "artifact": "independent-acceptance/ACCEPTANCE_cef8ce9.md",
+    "runs": [
+      {
+        "command": "bun test research-evidence/v1",
+        "cwd": "work/review",
+        "exitCode": 0,
+        "pass": 91,
+        "fail": 0,
+        "assertions": 224,
+        "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-repository-91.log"
+      },
+      {
+        "command": "bun test ./outputs/independent.test.ts",
+        "cwd": ".",
+        "originalAssertionsUnchanged": true,
+        "exitCode": 0,
+        "pass": 19,
+        "fail": 0,
+        "assertions": 45,
+        "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-independent-19.log"
+      },
+      {
+        "command": "bun test ./outputs/rereview-edge.test.ts",
+        "cwd": ".",
+        "originalAssertionsUnchanged": true,
+        "exitCode": 0,
+        "pass": 12,
+        "fail": 0,
+        "assertions": 22,
+        "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-independent-12.log"
+      },
+      {
+        "command": "bun test ./outputs/final-additional.test.ts",
+        "cwd": ".",
+        "originalAssertionsUnchanged": true,
+        "exitCode": 0,
+        "pass": 19,
+        "fail": 0,
+        "assertions": 28,
+        "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-additional-19.log"
+      },
+      {
+        "command": "bun node_modules/typescript/bin/tsc -p research-evidence/v1/tsconfig.json --noEmit",
+        "cwd": "work/review",
+        "exitCode": 0,
+        "diagnostics": [],
+        "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/cef8ce9-types.log"
+      }
+    ],
+    "closed_findings": [
+      "F1",
+      "F2",
+      "F3",
+      "R1",
+      "D1"
+    ]
+  },
+  "auxiliary_tracking_checks": {
+    "baseline_central_sha": "84c475c970b7593ac4ea97f7327b544936d9df4e",
+    "first_attempt": "10 setup errors: sandbox denied temporary fixture directories, no assertions ran",
+    "authorized_retry": "10PASS using same tests outside restricted temp sandbox; separate from application tests"
+  }
+}

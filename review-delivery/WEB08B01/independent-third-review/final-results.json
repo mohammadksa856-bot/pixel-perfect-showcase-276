@@ -1,0 +1,23 @@
+{
+  "decision": "REWORK",
+  "openFinding": {"id": "D1", "priority": "P2", "file": "research-evidence/v1/contract.ts", "line": 367, "summary": "localeCompare can tie distinct schema-valid Unicode refs, making locator receipt choice depend on context array order", "observedEffect": "false invalidation and publication blocking after facts.reverse(), without metadata changes"},
+  "scope": "research-evidence/v1 contract and synthetic PoC only",
+  "testedSha": "f045964eb5b76e2400f92b0f10dce4d320a1db7d",
+  "runtime": "bun 1.4.3 (c6da4a4d3)",
+  "previousFindingReproductionsNowPass": ["F1", "F2", "F3", "R1"],
+  "runsAreSeparateAndOverlap": true,
+  "runs": [
+    {"command": "bun test research-evidence/v1", "cwd": "work/review", "exitCode": 0, "pass": 72, "fail": 0, "assertions": 196, "log": "final-repository-72.log"},
+    {"command": "bun test ./outputs/independent.test.ts", "cwd": ".", "originalAssertionsUnchanged": true, "exitCode": 0, "pass": 19, "fail": 0, "assertions": 45, "log": "final-independent-19.log"},
+    {"command": "bun test ./outputs/rereview-edge.test.ts", "cwd": ".", "originalAssertionsUnchanged": true, "exitCode": 0, "pass": 12, "fail": 0, "assertions": 22, "log": "final-independent-12.log"},
+    {"command": "bun node_modules/typescript/bin/tsc -p research-evidence/v1/tsconfig.json --noEmit", "cwd": "work/review", "exitCode": 0, "diagnostics": [], "log": "final-types.log"},
+    {"command": "bun test ./outputs/final-additional.test.ts", "cwd": ".", "exitCode": 1, "pass": 18, "fail": 1, "assertions": 28, "log": "final-additional-tests.log"}
+  ],
+  "preservedPriorArtifactsManifest": "final-preserved-artifacts.json",
+  "authorCheckoutModified": false,
+  "reviewCheckoutTrackedFilesModified": false,
+  "centralDashboardModified": false,
+  "productionContacted": false,
+  "liveResearchIntegration": "BLOCKED as declared; not a finding",
+  "userOrProductionAcceptanceGranted": false
+}

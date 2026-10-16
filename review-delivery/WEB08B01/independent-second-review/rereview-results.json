@@ -1,0 +1,25 @@
+{
+  "decision": "REWORK",
+  "scope": "research-evidence/v1 contract and synthetic PoC only",
+  "testedSha": "4570432d4130094c84e68db2c9a19bd92dbda08c",
+  "previousReviewedSha": "4f38e55f5f916b67b5172f0e18feb61848754124",
+  "runtime": "bun 1.4.3 (c6da4a4d3)",
+  "runsAreSeparateAndOverlap": true,
+  "runs": [
+    {"command": "bun test research-evidence/v1", "cwd": "work/review", "exitCode": 0, "pass": 60, "fail": 0, "assertions": 174, "log": "rereview-author-tests.log"},
+    {"command": "bun test ./outputs/independent.test.ts", "cwd": ".", "originalAssertionsUnchanged": true, "exitCode": 0, "pass": 19, "fail": 0, "assertions": 45, "log": "rereview-original-independent.log"},
+    {"command": "bun node_modules/typescript/bin/tsc -p research-evidence/v1/tsconfig.json --noEmit", "cwd": "work/review", "exitCode": 0, "diagnostics": [], "log": "rereview-types.log"},
+    {"command": "bun test ./outputs/rereview-edge.test.ts", "cwd": ".", "exitCode": 1, "pass": 9, "fail": 3, "assertions": 22, "log": "rereview-edge-tests.log"}
+  ],
+  "findings": [{"id": "R1", "priority": "P1", "summary": "Unbound fact receipts used to prove source locators are omitted from review basis and review-time checks", "sourceLines": ["contract.ts:343-348", "contract.ts:407-417", "contract.ts:494-502"], "newNegativeTestsFailing": 3}],
+  "priorArtifactsPreservedSha256": {
+    "REVIEW_AR.md": "55E3F86AAFDBF3B833C0ED5E125C3B9BB6407FFA7A889DB693D44A70ECC0CCA0",
+    "independent.test.ts": "F4D48A1465356277896CA7E892F61A051BB8EF460EEAEBEB3E1F5475444ADA3F",
+    "independent-test.log": "C97DC60F9488F9449FD8681A12B088DED848C961D0366ACEEC943C52D31843C8"
+  },
+  "authorCheckoutModified": false,
+  "reviewCheckoutTrackedFilesModified": false,
+  "productionContacted": false,
+  "liveResearchIntegration": "BLOCKED as declared; not a new finding",
+  "userOrProductionAcceptanceGranted": false
+}

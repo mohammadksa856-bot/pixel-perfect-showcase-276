@@ -1,0 +1,29 @@
+{
+  "schema": "marefa-web08a-audit-verification/1",
+  "application_sha": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+  "audit_scope": "Metadata/display-inventory/report-consistency checks only; not numerical financial verification",
+  "passed": 12,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "expectations": 199,
+  "command": "bun test review-delivery/WEB08A/audit.test.ts",
+  "source_fingerprint_match": true,
+  "application_code_changed": false,
+  "full_application_regression_rerun": false,
+  "types_full_app_rerun": false,
+  "financial_values_independently_reverified": false,
+  "source_documents_downloaded": 0,
+  "coverage_percentage_computed": false,
+  "DCF_built": false,
+  "topics": 18,
+  "groups": 5,
+  "original_model_fields_proposed": 186,
+  "requirement_count_not_approved_denominator": true,
+  "browser": "Actual Chrome /2222/intelligence on pinned Preview; all18sections and5groups read",
+  "issues_retained": [
+    "N02 not closed by audit",
+    "Financial input qualification and numeric source verification remain future authorized work",
+    "No approved live data/content or production release"
+  ]
+}

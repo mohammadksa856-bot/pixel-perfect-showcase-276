@@ -1,0 +1,608 @@
+{
+  "snapshots": {
+    "annual": {
+      "status": "partial",
+      "period": "2025-12-31",
+      "keys": [
+        "accrual_ratio",
+        "altman_z_score",
+        "capex_to_depreciation",
+        "dividend_growth",
+        "dividend_per_share_growth",
+        "eps_cagr_3y",
+        "eps_growth",
+        "free_cash_flow",
+        "free_cash_flow_growth",
+        "income_quality",
+        "net_income_cagr_3y",
+        "net_income_cagr_5y",
+        "net_income_growth",
+        "operating_cash_flow_growth",
+        "operating_income_growth",
+        "payout_ratio",
+        "piotroski_f_score",
+        "research_development_to_revenue",
+        "return_on_tangible_equity",
+        "revenue_cagr_3y",
+        "revenue_cagr_5y",
+        "revenue_growth",
+        "selling_general_administrative_to_revenue",
+        "share_based_compensation_to_revenue",
+        "accounts_payable_change",
+        "accounts_receivable_change",
+        "acquisitions",
+        "actuarial_gain_loss",
+        "adjusted_net_income",
+        "base_dividends_paid",
+        "basic_eps",
+        "capex",
+        "capex_per_share",
+        "cash_beginning",
+        "cash_change",
+        "cash_end",
+        "comprehensive_income",
+        "current_tax_expense",
+        "debt_issued",
+        "debt_repaid",
+        "deferred_tax",
+        "deferred_tax_expense",
+        "depreciation_amortization",
+        "depreciation_amortization_cash_flow",
+        "depreciation_by_ppe_class",
+        "distributions_joint_ventures_associates",
+        "dividend_cagr_3y",
+        "dividend_coverage_ratio",
+        "dividends_from_investments",
+        "dividends_noncontrolling",
+        "dividends_paid",
+        "dividends_per_share",
+        "due_from_government_change",
+        "earnings_per_share_normalized",
+        "ebit",
+        "ebit_per_share",
+        "ebitda",
+        "ebitda_per_share",
+        "employee_benefit_expense",
+        "eps_diluted",
+        "exploration_evaluation_written_off",
+        "exploration_expense",
+        "fcf_dividend_coverage_ratio",
+        "fcf_payout_ratio",
+        "finance_and_other_income",
+        "finance_cost_by_type",
+        "finance_costs",
+        "finance_income",
+        "financing_cash_flow",
+        "free_cash_flow_per_share",
+        "gain_loss_investing",
+        "impairment_by_asset_class",
+        "impairment_cash_flow",
+        "impairment_charges",
+        "income_before_income_taxes_and_zakat",
+        "income_tax_expense",
+        "income_taxes_and_zakat",
+        "intangible_additions_by_class",
+        "intangible_amortization_by_class",
+        "interest_income",
+        "interest_paid",
+        "interest_received",
+        "inventory_change",
+        "investing_cash_flow",
+        "investment_fair_value_change",
+        "investment_income",
+        "key_management_compensation",
+        "lease_interest_expense",
+        "lease_payments",
+        "low_value_lease_expense",
+        "minority_interest_income",
+        "net_income",
+        "net_income_noncontrolling",
+        "net_income_parent",
+        "net_interest_employee_benefits",
+        "operating_cash_flow",
+        "operating_cash_flow_per_share",
+        "operating_costs",
+        "operating_income",
+        "other_income_related_to_sales",
+        "other_operating_changes",
+        "performance_linked_dividends_paid",
+        "ppe_additions_by_class",
+        "ppe_disposals_by_class",
+        "proceeds_asset_sales",
+        "proceeds_noncontrolling_sale",
+        "producing_manufacturing_expense",
+        "provision_additions",
+        "provision_utilization",
+        "purchases",
+        "related_party_purchases",
+        "related_party_revenue",
+        "research_and_development_expense",
+        "revenue",
+        "revenue_and_other_income_related_to_sales",
+        "revenue_by_geography",
+        "revenue_by_product",
+        "revenue_per_share",
+        "royalties_and_other_taxes",
+        "royalties_payable_change",
+        "selling_general_administrative_expense",
+        "service_cost_employee_benefits",
+        "share_based_compensation",
+        "share_of_profit_associates",
+        "shares_issued",
+        "short_term_borrowings_net",
+        "short_term_lease_expense",
+        "tax_reconciliation_by_component",
+        "taxes_paid",
+        "weighted_average_shares_basic",
+        "weighted_average_shares_diluted",
+        "working_capital_change",
+        "zakat_expense",
+        "average_realized_crude_oil_price",
+        "base_oils_sold",
+        "corporate_adjusted_ebit",
+        "corporate_capex",
+        "corporate_depreciation_amortization",
+        "corporate_ebit",
+        "corporate_ebitda",
+        "corporate_revenue",
+        "crude_oil_revenue",
+        "crude_refined_products_traded",
+        "domestic_revenue",
+        "downstream_adjusted_ebit",
+        "downstream_capex",
+        "downstream_crude_utilization",
+        "downstream_depreciation_amortization",
+        "downstream_ebit",
+        "downstream_ebitda",
+        "downstream_revenue",
+        "energy_intensity",
+        "finished_lubricants_sold",
+        "flaring_intensity",
+        "hydrocarbon_discharge_to_water",
+        "industrial_waste_disposed",
+        "international_revenue",
+        "lifting_cost_per_boe",
+        "liquid_chemicals_traded",
+        "methane_intensity",
+        "natural_gas_revenue",
+        "reserve_life_index",
+        "scope_1_emissions",
+        "scope_2_emissions",
+        "sox_emissions",
+        "supply_reliability",
+        "total_gas_production",
+        "total_hydrocarbon_production",
+        "total_liquids_production",
+        "upstream_adjusted_ebit",
+        "upstream_capex",
+        "upstream_capex_per_boe",
+        "upstream_carbon_intensity",
+        "upstream_depreciation_amortization",
+        "upstream_ebit",
+        "upstream_ebitda",
+        "upstream_revenue",
+        "water_consumption",
+        "water_withdrawal",
+        "asset_turnover",
+        "capex_to_cfo",
+        "capex_to_depreciation_amortization",
+        "capex_to_revenue",
+        "cash_conversion_of_earnings",
+        "cash_return_on_assets",
+        "cash_return_on_equity",
+        "cfo_margin",
+        "cfo_to_debt",
+        "days_sales_outstanding",
+        "debt_to_ebitda",
+        "ebit_margin",
+        "ebitda_margin",
+        "effective_tax_rate",
+        "fcf_conversion",
+        "fcf_margin",
+        "fcf_to_debt",
+        "interest_coverage",
+        "net_debt_to_ebitda",
+        "net_margin",
+        "operating_margin",
+        "pretax_margin",
+        "receivables_turnover",
+        "return_on_assets",
+        "return_on_equity",
+        "roace"
+      ]
+    },
+    "quarter": {
+      "status": "available",
+      "period": "2026-06-30",
+      "keys": [
+        "free_cash_flow",
+        "income_quality",
+        "capex",
+        "net_income",
+        "operating_cash_flow",
+        "revenue",
+        "capex_to_cfo",
+        "capex_to_revenue",
+        "cash_conversion_of_earnings",
+        "cfo_margin",
+        "fcf_margin",
+        "net_margin"
+      ]
+    },
+    "ytd": {
+      "status": "available",
+      "period": "2026-06-30",
+      "keys": [
+        "free_cash_flow",
+        "income_quality",
+        "capex",
+        "net_income",
+        "operating_cash_flow",
+        "revenue",
+        "capex_to_cfo",
+        "capex_to_revenue",
+        "cash_conversion_of_earnings",
+        "cfo_margin",
+        "fcf_margin",
+        "net_margin"
+      ]
+    },
+    "ttm": {
+      "status": "unavailable",
+      "period": null,
+      "keys": []
+    },
+    "instant": {
+      "status": "available",
+      "period": "2026-06-30",
+      "keys": [
+        "asset_growth",
+        "equity_growth",
+        "cash",
+        "tangible_book_value",
+        "total_assets",
+        "total_equity",
+        "total_liabilities",
+        "equity_ratio",
+        "liabilities_to_assets",
+        "liabilities_to_equity"
+      ]
+    }
+  },
+  "disclosureKeys": [
+    {
+      "type": "interim_report",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "interim_report",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "commercial_contract",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "purchase_commitment",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "annual_report",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "contingency",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "customer_concentration",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "earnings_release",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "financial_results_announcement",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "guidance",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "guidance",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "material_event",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "material_event",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "risk_factor",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    },
+    {
+      "type": "strategy_update",
+      "keys": [
+        "disclosure_type",
+        "title",
+        "body_text",
+        "language",
+        "published_at",
+        "period_end",
+        "version",
+        "source_key",
+        "source_url",
+        "metadata",
+        "provenance"
+      ]
+    }
+  ],
+  "capabilities": {
+    "profile": {
+      "status": "available",
+      "count": 37,
+      "reason": null
+    },
+    "annual_financials": {
+      "status": "partial",
+      "count": 205,
+      "reason": "financial_unit_review_required"
+    },
+    "quarterly_financials": {
+      "status": "available",
+      "count": 12,
+      "reason": null
+    },
+    "market_history": {
+      "status": "partial",
+      "count": 23,
+      "reason": "authorized_market_history_feed_required"
+    },
+    "ownership": {
+      "status": "available",
+      "count": 4,
+      "reason": null
+    },
+    "corporate_actions": {
+      "status": "available",
+      "count": 8,
+      "reason": null
+    },
+    "disclosures": {
+      "status": "available",
+      "count": 15,
+      "reason": null
+    },
+    "consensus": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "licensed_consensus_feed_required"
+    },
+    "peer_comparison": {
+      "status": "partial",
+      "count": 0,
+      "reason": "no_other_peer_with_comparable_facts"
+    },
+    "news": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "authorized_news_feed_required"
+    },
+    "five_year_history": {
+      "status": "available",
+      "count": 5,
+      "reason": null
+    },
+    "official_sources": {
+      "status": "available",
+      "count": 25,
+      "reason": null
+    }
+  },
+  "profileStoredNotRendered": [
+    {
+      "key": "incorporation_date",
+      "available": true,
+      "dated": true,
+      "source": true
+    },
+    {
+      "key": "commercial_registration_date",
+      "available": true,
+      "dated": true,
+      "source": true
+    },
+    {
+      "key": "sector",
+      "available": true,
+      "dated": true,
+      "source": true
+    },
+    {
+      "key": "industry",
+      "available": true,
+      "dated": true,
+      "source": true
+    },
+    {
+      "key": "sub_industry",
+      "available": true,
+      "dated": true,
+      "source": true
+    }
+  ]
+}

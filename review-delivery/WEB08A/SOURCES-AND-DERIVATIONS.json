@@ -1,0 +1,232 @@
+{
+  "schema": "marefa-web08a-source-and-derivation-proposal/1",
+  "source_validation_scope": "Existing SRC-1..8 URLs are identifiers observed in the frozen fixture, not new document downloads or financial verification. Candidate landing pages were inspected where marked. No source licence is inferred from public accessibility.",
+  "candidate_sources": {
+    "CAND-EXCHANGE": {
+      "publisher": "Saudi Exchange",
+      "url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/rules-guidance/fees?locale=en",
+      "observed": "Official fee/licensing catalogue discovered; exact issuer/reference-data classification snapshot still required",
+      "status": "CANDIDATE_NOT_IMPORTED",
+      "rights": "Reference-data and market display/derived/redistribution rights must be checked for chosen dataset"
+    },
+    "CAND-RESULTS": {
+      "publisher": "Aramco",
+      "url": "https://www.aramco.com/en/investors/annual-report/results-and-performance",
+      "observed": "2025 results landing page inspected; no new numeric extraction",
+      "status": "LANDING_PAGE_CHECKED_NOT_FINANCIALLY_VERIFIED",
+      "rights": "Link and cite; republication of full content not approved"
+    },
+    "CAND-GOV": {
+      "publisher": "Aramco",
+      "url": "https://www.aramco.com/en/investors/annual-report/downloads",
+      "locator": "Corporate governance.pdf",
+      "status": "CATALOGUE_LINK_CHECKED_DOCUMENT_NOT_REVIEWED",
+      "rights": "No full-document redistribution approved"
+    },
+    "CAND-AUDIT": {
+      "publisher": "Aramco",
+      "url": "https://www.aramco.com/en/investors/annual-report/downloads",
+      "locator": "Consolidated financial statements.pdf and auditor opinion",
+      "status": "CATALOGUE_LINK_CHECKED_DOCUMENT_NOT_REVIEWED",
+      "rights": "No full-document redistribution approved"
+    },
+    "CAND-RISK": {
+      "publisher": "Aramco",
+      "url": "https://www.aramco.com/en/investors/annual-report/downloads",
+      "locator": "Risk.pdf; Additional financial and legal information.pdf; financial statement notes",
+      "status": "CATALOGUE_LINK_CHECKED_DOCUMENT_NOT_REVIEWED",
+      "rights": "No full-document redistribution approved"
+    },
+    "CAND-ESG": {
+      "publisher": "Aramco",
+      "url": "https://www.aramco.com/en/sustainability/sustainability-report/our-esg-data-and-assurance",
+      "observed": "Official 2025 data/assurance landing page explicitly distinguishes reporting boundaries and limited-assurance scope; 2021-2025 table and data/basis/assurance download links present",
+      "status": "LANDING_PAGE_CHECKED_NOT_IMPORTED",
+      "rights": "Metric-level extraction/storage/display and document redistribution require separate review; assurance not transferable to all metrics"
+    },
+    "CAND-SECTOR": {
+      "publisher_candidates": [
+        "Saudi official sector/regulatory publications",
+        "EIA",
+        "OPEC",
+        "JODI"
+      ],
+      "url": null,
+      "status": "DATASETS_AND_RIGHTS_NOT_SELECTED_OR_REVIEWED",
+      "rights": "Review dataset-specific redistribution and reuse conditions before acquisition"
+    },
+    "CAND-PEERS": {
+      "publisher_candidates": ["Chosen peer issuers' audited statements and operating reports"],
+      "url": null,
+      "status": "PEER_UNIVERSE_NOT_APPROVED",
+      "rights": "Official filings do not automatically grant redistribution of complete documents"
+    },
+    "CAND-MARKET": {
+      "publisher": "Saudi Exchange or licensed vendor",
+      "url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/rules-guidance/fees?locale=en",
+      "status": "NO_FEED_OR_LICENCE_PURCHASED",
+      "rights": "Contract must cover historical/live display as applicable, storage, adjusted prices, derived analytics, benchmark and redistribution"
+    },
+    "CAND-CONSENSUS": {
+      "publisher": null,
+      "url": null,
+      "status": "NO_PROVIDER_SELECTED_OR_LICENSED",
+      "rights": "Estimates, targets, rating text, excerpts and history need explicit permission; a public report is not permission to aggregate/re-publish"
+    },
+    "CAND-VALUATION-INPUTS": {
+      "publisher_candidates": [
+        "Verified issuer statements",
+        "Approved market/rates/benchmark source"
+      ],
+      "url": null,
+      "status": "INPUT_READINESS_REVIEW_REQUIRED_BEFORE_DCF",
+      "rights": "Inputs and model methodology approval separate from data access"
+    },
+    "CAND-NEWS": {
+      "publisher": null,
+      "url": null,
+      "status": "NO_NEWS_OR_TRANSCRIPT_PROVIDER_SELECTED",
+      "rights": "Named source attribution, excerpt rights and storage/display rights required; issuer announcement differs from press opinion"
+    }
+  },
+  "common_derivation_gate": [
+    "All inputs independently qualified to the required risk-based standard; source hashes/pages, source versions, restatement status and as-of publication dates pinned",
+    "Same entity/consolidation scope, currency, semantic definition, period start/end/kind, units and required dimensions",
+    "Named formula and method version, input identifiers/versions, execution timestamp and reproducible result in calculation lineage",
+    "Zero/negative denominators, missing inputs, source conflicts and accounting changes handled explicitly, no silent substitution",
+    "Result classified calculated, not issuer-reported; original input versions retained; no calculations added to UI in WEB08A",
+    "Frozen Preview deliberately withholds unapproved derivatives, even if historical lineage claims exist"
+  ],
+  "recipes": [
+    {
+      "id": "DER-01",
+      "topics": [5, 6, 9],
+      "output": "free_cash_flow",
+      "definition": "CFO - cash capex outflow magnitude (or CFO + signed negative capex); must choose and disclose sign convention",
+      "inputs": ["operating_cash_flow", "cash_capex_same_period_scope"],
+      "availability": "CFO/capex shown in annual/latest-quarter/YTD topic groups, but current FCF is withheld; qualified-input certificate absent. Cash capex, PPE additions and issuer capital investment are not interchangeable.",
+      "status": "CONDITIONALLY_DERIVABLE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "DER-02",
+      "topics": [6, 7],
+      "output": "net/operating margins and cash conversion",
+      "definition": "Chosen same-scope profit or CFO divided by same-period revenue or net income; denominator basis explicit",
+      "inputs": [
+        "revenue",
+        "operating_income",
+        "net_income_or_parent_basis",
+        "operating_cash_flow"
+      ],
+      "availability": "Some inputs displayed, but affected derived fields are withheld. Retain withholding pending independent input and formula acceptance.",
+      "status": "CONDITIONALLY_DERIVABLE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "DER-03",
+      "topics": [7],
+      "output": "ROE/ROA/ROIC",
+      "definition": "Approved profit or NOPAT basis divided by approved average equity/assets/invested capital; do not relabel issuer ROACE as ROIC",
+      "inputs": [
+        "opening_and_closing_balance_same_scope",
+        "profit_basis",
+        "tax_and_invested_capital_definition"
+      ],
+      "availability": "Balance/profit history sparse; opening balance and NOPAT method gaps remain",
+      "status": "INPUT_GAPS"
+    },
+    {
+      "id": "DER-04",
+      "topics": [5, 7],
+      "output": "year-over-year growth, CAGR, TTM and Q4",
+      "definition": "YoY over matching periods; CAGR=(end/start)^(1/elapsed_years)-1 only with valid endpoints and sign policy; Q4=FY-YTD9m for additive flow items only, never balance stocks, EPS or ratios by subtraction",
+      "inputs": [
+        "full_period_dates",
+        "comparative_versions",
+        "FY",
+        "YTD9m",
+        "adjacent_full_quarters_or_currentYTD+priorFY-priorYTD"
+      ],
+      "availability": "2021-2025 provides four elapsed years, not a five-year CAGR; only two quarters and one current YTD, no YTD9m shown; TTM raw unavailable",
+      "status": "PARTIAL_INPUT_GAPS_NO_COMPUTATION"
+    },
+    {
+      "id": "DER-05",
+      "topics": [2, 8],
+      "output": "segment shares/price-volume bridges/unit costs",
+      "definition": "External segment revenue divided by reconciled group denominator; price-volume bridge requires compatible sold volumes, prices, FX, mix and intersegment eliminations",
+      "inputs": [
+        "segment_revenue",
+        "reconciled_denominator",
+        "sold_volumes_not_production_proxy",
+        "compatible_prices_and_costs"
+      ],
+      "availability": "Product/geography values shown for one FY; upstream/downstream raw keys are candidates, not yet validated. Do not infer sold volumes or percentages from unqualified inputs.",
+      "status": "INPUT_GAPS"
+    },
+    {
+      "id": "DER-06",
+      "topics": [9, 15],
+      "output": "payout, dividend yield and dividend coverage",
+      "definition": "DPS/EPS or total dividend/parent profit with consistently defined bases; trailing yield requires price as-of and adjusted dividend window; forward coverage requires approved forecasts",
+      "inputs": [
+        "dividend_policy_vs_actual_paid",
+        "DPS_or_total_dividends",
+        "qualified_EPS_or_parent_profit",
+        "price_asof",
+        "share_adjustments"
+      ],
+      "availability": "Historical dividends shown; EPS withheld and price old; no forward forecast. Aggregate/base/performance-linked must not be double counted.",
+      "status": "PARTIAL_INPUT_GAPS"
+    },
+    {
+      "id": "DER-07",
+      "topics": [11, 15],
+      "output": "relative valuation / EV bridge",
+      "definition": "P/E, P/B and EV/EBITDA only with approved metric definitions; EV equity value+qualifying debt+NCI/other adjustments-cash/nonoperating assets according to approved method",
+      "inputs": [
+        "price_asof",
+        "actual_shares_not_weighted_average_proxy",
+        "qualified_EPS",
+        "book_equity_per_share",
+        "debt_cash_NCI_investments",
+        "qualified_EBITDA",
+        "peer_alignment"
+      ],
+      "availability": "Some shares/net debt/history rows shown but no complete verified bridge. No permission to calculate merely because a numerator exists.",
+      "status": "NOT_READY"
+    },
+    {
+      "id": "DER-08",
+      "topics": [12],
+      "output": "volatility/beta/relative total return/liquidity",
+      "definition": "Approved return window, adjustment basis, benchmark, observation frequency and minimum sample policy",
+      "inputs": [
+        "licensed_price_volume_history",
+        "corporate_actions_dividends",
+        "licensed_benchmark",
+        "bid_ask_if_spread"
+      ],
+      "availability": "23 partial historical sessions and latest close are not a 52-week or robust beta dataset",
+      "status": "NEW_DATA_AND_RIGHTS_REQUIRED"
+    },
+    {
+      "id": "DER-09",
+      "topics": [15],
+      "output": "DCF readiness only (no model built)",
+      "definition": "Approve FCFF versus FCFE, forecast horizon, nominal/real currency consistency, discounting convention, fiscal royalty/tax regime and terminal sustainability before any valuation",
+      "inputs": [
+        "qualified_historical_CFO_capex_working_capital_DA",
+        "operating_driver_scenarios",
+        "tax_royalty_regime",
+        "maintenance_growth_capex",
+        "WACC_cost_of_capital_inputs",
+        "terminal_assumptions",
+        "EV_to_equity_bridge",
+        "dilution_and_share_count",
+        "forecast_source_versions"
+      ],
+      "availability": "Several critical inputs and methodologies missing or unverified; EPS/EBITDA/FCF remain withheld; no financial valuation approval",
+      "status": "DCF_BUILD_BLOCKED_PENDING_INPUT_REVIEW_AND_METHOD_APPROVAL"
+    }
+  ]
+}

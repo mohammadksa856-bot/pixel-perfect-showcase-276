@@ -1,0 +1,4201 @@
+{
+  "schema": "marefa-web08a-frozen-display-inventory/1",
+  "application_sha": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+  "fixture_uncompressed_sha256": "e98863c41faf85069a4562b0d330a77f49863979bc3fb78502912ced5d95c936",
+  "contract": 5,
+  "company": {
+    "market": "SA",
+    "symbol": "2222",
+    "name": {
+      "ar": "شركة الزيت العربية السعودية (أرامكو السعودية)",
+      "en": "Saudi Arabian Oil Company (Aramco)"
+    },
+    "sector": "Energy",
+    "industry": "Integrated Oil & Gas",
+    "exchange": "Saudi Exchange",
+    "currency": "SAR",
+    "fiscalYearEnd": "12-31",
+    "latestFiling": "2026-09-04"
+  },
+  "counting_policy": "Presentation occurrences, not unique financial facts, verified values or coverage%; statement cells keyed by mode+metric+period. Every displayed metric independentlyVerified=false. No financial values are exported here.",
+  "groups": [
+    {
+      "id": "business",
+      "title": { "ar": "الشركة ونشاطها", "en": "The business" },
+      "ordinals": [1, 2, 10, 11]
+    },
+    {
+      "id": "financials",
+      "title": { "ar": "الأداء المالي", "en": "Financial performance" },
+      "ordinals": [5, 6, 7, 8]
+    },
+    {
+      "id": "shareholders",
+      "title": { "ar": "المساهمون والحوكمة", "en": "Shareholders and governance" },
+      "ordinals": [4, 9, 3]
+    },
+    {
+      "id": "market",
+      "title": { "ar": "السوق والتقييم", "en": "Market and valuation" },
+      "ordinals": [12, 15, 13, 14]
+    },
+    {
+      "id": "risks",
+      "title": { "ar": "المخاطر والإفصاحات", "en": "Risks and disclosures" },
+      "ordinals": [16, 17, 18]
+    }
+  ],
+  "topics": [
+    {
+      "ordinal": 1,
+      "key": "identity",
+      "title": { "ar": "هوية الشركة", "en": "Identity" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 10,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "facts",
+          "facts": [
+            { "key": "legal_name", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "legal_name_ar", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "isin", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "listing_date", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "legal_form", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "founding_date", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "headquarters_address", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "reporting_standard", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "website", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "investor_relations_url", "asOf": "2025-12-31", "sourceUrl": "SRC-1" }
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "key": "business",
+      "title": { "ar": "نموذج العمل", "en": "Business model" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 11,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "facts",
+          "facts": [
+            { "key": "business_description_ar", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "business_description", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "products_services", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "business_segments", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "geographic_presence", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "subsidiaries_count", "asOf": "2025-12-31", "sourceUrl": "SRC-1" }
+          ]
+        },
+        {
+          "type": "segments",
+          "title": { "ar": "الإيرادات حسب المنتج", "en": "Revenue by product" },
+          "rows": [
+            {
+              "key": "revenue_by_product",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 64,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial statement notes - dimensional detail",
+                "document": "not_stated",
+                "independentlyVerified": false
+              },
+              "segment": "Crude oil"
+            },
+            {
+              "key": "revenue_by_product",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 64,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial statement notes - dimensional detail",
+                "document": "not_stated",
+                "independentlyVerified": false
+              },
+              "segment": "Natural gas and NGLs"
+            },
+            {
+              "key": "revenue_by_product",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 64,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial statement notes - dimensional detail",
+                "document": "not_stated",
+                "independentlyVerified": false
+              },
+              "segment": "Refined and chemical products"
+            }
+          ]
+        },
+        {
+          "type": "segments",
+          "title": { "ar": "الإيرادات حسب الجغرافيا", "en": "Revenue by geography" },
+          "rows": [
+            {
+              "key": "revenue_by_geography",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 37,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial statement gap fill - audited tables",
+                "document": "not_stated",
+                "independentlyVerified": false
+              },
+              "segment": "In-Kingdom"
+            },
+            {
+              "key": "revenue_by_geography",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 37,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial statement gap fill - audited tables",
+                "document": "not_stated",
+                "independentlyVerified": false
+              },
+              "segment": "Out-of-Kingdom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "key": "governance",
+      "title": { "ar": "الإدارة والحوكمة", "en": "Management and governance" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 4,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "facts",
+          "facts": [
+            { "key": "ceo_name", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "chairman_name", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "auditor", "asOf": "2025-12-31", "sourceUrl": "SRC-1" },
+            { "key": "employees", "asOf": "2025-12-31", "sourceUrl": "SRC-1" }
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "key": "ownership",
+      "title": { "ar": "الملكية والمساهمون", "en": "Ownership" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 4,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "ownership",
+          "rows": [
+            { "asOf": "2025-12-31", "sourceUrl": "SRC-1", "type": "government" },
+            { "asOf": "2025-12-31", "sourceUrl": "SRC-1", "type": "sovereign_and_strategic" },
+            { "asOf": "2025-12-31", "sourceUrl": "SRC-1", "type": "public" },
+            { "asOf": "2025-12-31", "sourceUrl": "SRC-1", "type": "company" }
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 5,
+      "key": "financials",
+      "title": { "ar": "القوائم المالية التاريخية", "en": "Historical financials" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 28,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "metrics",
+          "id": "income",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "revenue",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial report comparative",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "ebit",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 34,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial statement notes",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "operating_income",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 39,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "finance_costs",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 177,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "income_before_income_taxes_and_zakat",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 39,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "income_taxes_and_zakat",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 39,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "net_income",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial report comparative",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "net_income_parent",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 244,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "ebitda",
+              "label": { "ar": "الربح قبل الفوائد والضرائب والإهلاك", "en": "EBITDA" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "basic_eps",
+              "label": { "ar": "ربحية السهم الأساسية", "en": "Basic EPS" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "eps_diluted",
+              "label": { "ar": "ربحية السهم المخففة", "en": "Diluted EPS" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "metrics",
+          "id": "balance",
+          "expectedPeriod": "instant",
+          "cells": [
+            {
+              "key": "cash",
+              "period": {
+                "kind": "instant",
+                "end": "2026-06-30",
+                "label": { "ar": "كما في ⁦2026-06-30⁩", "en": "As of 2026-06-30" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "total_assets",
+              "period": {
+                "kind": "instant",
+                "end": "2026-06-30",
+                "label": { "ar": "كما في ⁦2026-06-30⁩", "en": "As of 2026-06-30" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "total_liabilities",
+              "period": {
+                "kind": "instant",
+                "end": "2026-06-30",
+                "label": { "ar": "كما في ⁦2026-06-30⁩", "en": "As of 2026-06-30" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "total_equity",
+              "period": {
+                "kind": "instant",
+                "end": "2026-06-30",
+                "label": { "ar": "كما في ⁦2026-06-30⁩", "en": "As of 2026-06-30" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "tangible_book_value",
+              "label": { "ar": "القيمة الدفترية الملموسة", "en": "Tangible book value" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "metrics",
+          "id": "cash_flow",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "operating_cash_flow",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial report comparative",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "investing_cash_flow",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 181,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "financing_cash_flow",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 181,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "capex",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-2",
+                "filingType": "Annual financial report comparative",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "dividends_paid",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 243,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "cash_end",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 181,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "free_cash_flow",
+              "label": { "ar": "التدفق النقدي الحر", "en": "Free cash flow" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "metrics",
+          "id": "quarter",
+          "expectedPeriod": "quarter",
+          "cells": [
+            {
+              "key": "revenue",
+              "period": {
+                "kind": "quarter",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "الربع ⁦2⁩ من ⁦2026⁩ (ربع منفرد)",
+                  "en": "Q2 2026 (single quarter)"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "net_income",
+              "period": {
+                "kind": "quarter",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "الربع ⁦2⁩ من ⁦2026⁩ (ربع منفرد)",
+                  "en": "Q2 2026 (single quarter)"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "operating_cash_flow",
+              "period": {
+                "kind": "quarter",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "الربع ⁦2⁩ من ⁦2026⁩ (ربع منفرد)",
+                  "en": "Q2 2026 (single quarter)"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "capex",
+              "period": {
+                "kind": "quarter",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "الربع ⁦2⁩ من ⁦2026⁩ (ربع منفرد)",
+                  "en": "Q2 2026 (single quarter)"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "free_cash_flow",
+              "label": { "ar": "التدفق النقدي الحر", "en": "Free cash flow" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "net_margin",
+              "label": { "ar": "صافي الهامش", "en": "Net margin" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "metrics",
+          "id": "ytd",
+          "expectedPeriod": "ytd",
+          "cells": [
+            {
+              "key": "revenue",
+              "period": {
+                "kind": "ytd",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "منذ بداية ⁦2026⁩ حتى ⁦2026-06-30⁩",
+                  "en": "Year to date to 2026-06-30"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "net_income",
+              "period": {
+                "kind": "ytd",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "منذ بداية ⁦2026⁩ حتى ⁦2026-06-30⁩",
+                  "en": "Year to date to 2026-06-30"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "operating_cash_flow",
+              "period": {
+                "kind": "ytd",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "منذ بداية ⁦2026⁩ حتى ⁦2026-06-30⁩",
+                  "en": "Year to date to 2026-06-30"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "capex",
+              "period": {
+                "kind": "ytd",
+                "end": "2026-06-30",
+                "label": {
+                  "ar": "منذ بداية ⁦2026⁩ حتى ⁦2026-06-30⁩",
+                  "en": "Year to date to 2026-06-30"
+                }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": null,
+                "formula": null,
+                "sourceUrl": "SRC-3",
+                "filingType": "Q2 interim report",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "free_cash_flow",
+              "label": { "ar": "التدفق النقدي الحر", "en": "Free cash flow" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "net_margin",
+              "label": { "ar": "صافي الهامش", "en": "Net margin" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "history",
+          "series": [
+            {
+              "key": "revenue",
+              "periodEnds": ["2021-12-31", "2022-12-31", "2023-12-31", "2024-12-31", "2025-12-31"]
+            },
+            {
+              "key": "net_income",
+              "periodEnds": ["2021-12-31", "2022-12-31", "2023-12-31", "2024-12-31", "2025-12-31"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 6,
+      "key": "earnings_quality",
+      "title": { "ar": "جودة الأرباح", "en": "Earnings quality" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 1,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "metrics",
+          "id": "earnings_quality",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "adjusted_net_income",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 39,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "income_quality",
+              "label": {
+                "ar": "جودة الدخل (التدفق التشغيلي ÷ صافي الدخل)",
+                "en": "Income quality (CFO ÷ net income)"
+              },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "accrual_ratio",
+              "label": { "ar": "نسبة الاستحقاق", "en": "Accrual ratio" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "cash_conversion_of_earnings",
+              "label": { "ar": "تحويل الأرباح إلى نقد", "en": "Cash conversion of earnings" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "effective_tax_rate",
+              "label": { "ar": "معدل الزكاة والضريبة الفعلي", "en": "Effective tax rate" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        }
+      ]
+    },
+    {
+      "ordinal": 7,
+      "key": "ratios",
+      "title": { "ar": "النسب المالية", "en": "Financial ratios" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 1,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "metrics",
+          "id": "ratios",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "roace",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "percent",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 39,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "operating_margin",
+              "label": { "ar": "الهامش التشغيلي", "en": "Operating margin" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "ebitda_margin",
+              "label": { "ar": "هامش EBITDA", "en": "EBITDA margin" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "net_margin",
+              "label": { "ar": "صافي الهامش", "en": "Net margin" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "return_on_equity",
+              "label": { "ar": "العائد على حقوق الملكية", "en": "Return on equity" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "return_on_assets",
+              "label": { "ar": "العائد على الأصول", "en": "Return on assets" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "debt_to_ebitda",
+              "label": { "ar": "الدين إلى EBITDA", "en": "Debt to EBITDA" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "net_debt_to_ebitda",
+              "label": { "ar": "صافي الدين إلى EBITDA", "en": "Net debt to EBITDA" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "interest_coverage",
+              "label": { "ar": "تغطية الفوائد", "en": "Interest coverage" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "asset_turnover",
+              "label": { "ar": "دوران الأصول", "en": "Asset turnover" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "metrics",
+          "id": "position_ratios",
+          "expectedPeriod": "instant",
+          "cells": [],
+          "withheld": [
+            {
+              "key": "equity_ratio",
+              "label": { "ar": "حقوق الملكية إلى الأصول", "en": "Equity to assets" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "liabilities_to_equity",
+              "label": { "ar": "المطلوبات إلى حقوق الملكية", "en": "Liabilities to equity" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "metrics",
+          "id": "growth",
+          "expectedPeriod": "fy",
+          "cells": [],
+          "withheld": [
+            {
+              "key": "revenue_growth",
+              "label": { "ar": "نمو الإيرادات", "en": "Revenue growth" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "net_income_growth",
+              "label": { "ar": "نمو صافي الدخل", "en": "Net income growth" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "eps_growth",
+              "label": { "ar": "نمو ربحية السهم", "en": "EPS growth" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "revenue_cagr_5y",
+              "label": {
+                "ar": "النمو السنوي المركب للإيرادات (5 سنوات)",
+                "en": "Revenue CAGR (5y)"
+              },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "net_income_cagr_5y",
+              "label": {
+                "ar": "النمو السنوي المركب لصافي الدخل (5 سنوات)",
+                "en": "Net income CAGR (5y)"
+              },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "eps_cagr_3y",
+              "label": {
+                "ar": "النمو السنوي المركب لربحية السهم (3 سنوات)",
+                "en": "EPS CAGR (3y)"
+              },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        }
+      ]
+    },
+    {
+      "ordinal": 8,
+      "key": "operations",
+      "title": { "ar": "المؤشرات التشغيلية", "en": "Operational KPIs" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 7,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "metrics",
+          "id": "operations",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "total_hydrocarbon_production",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "mmboed",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 52,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report operational production table precision update",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "total_liquids_production",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "mmbpd",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 52,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report operational production table precision update",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "total_gas_production",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "bscfd",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 52,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report operational production table precision update",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "average_realized_crude_oil_price",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "USD/bbl",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 39,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "lifting_cost_per_boe",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "USD/boe",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 44,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "downstream_crude_utilization",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "percent",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 50,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "supply_reliability",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "percent",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 29,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "reserve_life_index",
+              "label": { "ar": "العمر المتبقي للاحتياطيات", "en": "Reserve life index" },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        }
+      ]
+    },
+    {
+      "ordinal": 9,
+      "key": "dividends_actions",
+      "title": { "ar": "التوزيعات وإجراءات الشركة", "en": "Dividends and actions" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 10,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "metrics",
+          "id": "dividends",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "dividends_per_share",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR/share",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 243,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "dividends_paid",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "SAR",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 243,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [
+            {
+              "key": "payout_ratio",
+              "label": { "ar": "نسبة التوزيع", "en": "Payout ratio" },
+              "reason": "quality_flagged"
+            },
+            {
+              "key": "dividend_cagr_3y",
+              "label": {
+                "ar": "النمو السنوي المركب للتوزيع (3 سنوات)",
+                "en": "Dividend CAGR (3y)"
+              },
+              "reason": "quality_flagged"
+            }
+          ],
+          "missing": []
+        },
+        {
+          "type": "actions",
+          "rows": [
+            {
+              "title": "FY 2025 dividends paid (aggregate)",
+              "type": "cash_dividend",
+              "date": "2026-03-09",
+              "status": "paid",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Fourth quarter 2025 base dividend",
+              "type": "cash_dividend",
+              "date": "2026-03-09",
+              "status": "announced",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Share buyback program up to SAR 11.3 billion",
+              "type": "share_buyback",
+              "date": "2026-03-09",
+              "status": "announced",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Acquisition of an additional 22.5% stake in Petro Rabigh",
+              "type": "acquisition",
+              "date": "2025-10-09",
+              "status": "completed",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "2023 bonus share issue",
+              "type": "bonus_shares",
+              "date": "2023-05-08",
+              "status": "completed",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "2023 capital increase through retained earnings capitalization",
+              "type": "capital_increase",
+              "date": "2023-05-08",
+              "status": "completed",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "2022 bonus share issue",
+              "type": "bonus_shares",
+              "date": "2022-05-12",
+              "status": "completed",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "2022 capital increase through retained earnings capitalization",
+              "type": "capital_increase",
+              "date": "2022-05-12",
+              "status": "completed",
+              "sourceUrl": "SRC-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ordinal": 10,
+      "key": "industry",
+      "title": { "ar": "القطاع والصناعة", "en": "Industry and sector" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 0,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        {
+          "ar": "لا توجد بيانات قطاعية مجمّعة في المحرك بعد",
+          "en": "No sector-level datasets in the engine yet"
+        }
+      ],
+      "blocks": []
+    },
+    {
+      "ordinal": 11,
+      "key": "competitors",
+      "title": { "ar": "المنافسون والحصة السوقية", "en": "Competitors" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 0,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        { "ar": "لا توجد شركة مماثلة ببيانات قابلة للمقارنة", "en": "No peer with comparable data" }
+      ],
+      "blocks": [{ "type": "peers" }]
+    },
+    {
+      "ordinal": 12,
+      "key": "trading",
+      "title": { "ar": "التداول والسيولة", "en": "Trading and liquidity" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 1,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        {
+          "ar": "يحتاج تغذية أسعار مرخّصة؛ السجل الحالي جزئي أو غير موجود",
+          "en": "Needs an authorized price feed; current history is partial or absent"
+        }
+      ],
+      "blocks": [
+        { "type": "market", "observedAt": "2026-09-03", "sourceUrl": "SRC-4", "historyCount": 23 }
+      ]
+    },
+    {
+      "ordinal": 13,
+      "key": "forecasts",
+      "title": { "ar": "التوجيهات والتوقعات", "en": "Guidance and forecasts" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 0,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        {
+          "ar": "لا توجد توقعات أو توجيهات في عقد الصفحة الحالي",
+          "en": "No forecasts or guidance in the current page contract"
+        }
+      ],
+      "blocks": []
+    },
+    {
+      "ordinal": 14,
+      "key": "analysts",
+      "title": { "ar": "تغطية المحللين", "en": "Analyst coverage" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 0,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        {
+          "ar": "يحتاج ترخيص بيانات إجماع المحللين",
+          "en": "Needs a licensed analyst-consensus feed"
+        }
+      ],
+      "blocks": []
+    },
+    {
+      "ordinal": 15,
+      "key": "valuation",
+      "title": { "ar": "التقييم", "en": "Valuation" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 0,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        {
+          "ar": "مكررات التقييم لا تصل في عقد API الحالي (ACR-001)",
+          "en": "Valuation multiples are not in the current API contract (ACR-001)"
+        }
+      ],
+      "blocks": []
+    },
+    {
+      "ordinal": 16,
+      "key": "risks",
+      "title": { "ar": "المخاطر والتعرضات", "en": "Risks and exposures" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 1,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "facts",
+          "facts": [{ "key": "credit_rating", "asOf": "2025-12-31", "sourceUrl": "SRC-1" }]
+        }
+      ]
+    },
+    {
+      "ordinal": 17,
+      "key": "esg",
+      "title": { "ar": "الاستدامة", "en": "Sustainability" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 8,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" }
+      ],
+      "blocks": [
+        {
+          "type": "metrics",
+          "id": "esg",
+          "expectedPeriod": "fy",
+          "cells": [
+            {
+              "key": "scope_1_emissions",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "million_tonnes_co2e",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "scope_2_emissions",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "million_tonnes_co2e",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "upstream_carbon_intensity",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "kg_co2e_per_boe",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "methane_intensity",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "percent",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "flaring_intensity",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "scf_per_boe",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "energy_intensity",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "thousand_btu_per_boe",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "water_consumption",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "million_m3",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            },
+            {
+              "key": "sox_emissions",
+              "period": {
+                "kind": "fy",
+                "end": "2025-12-31",
+                "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" }
+              },
+              "unit": "kilotonnes",
+              "proof": {
+                "kind": "reported_extracted",
+                "page": 87,
+                "formula": null,
+                "sourceUrl": "SRC-1",
+                "filingType": "Annual report supplementary metrics and comparative restatement",
+                "document": "not_stated",
+                "independentlyVerified": false
+              }
+            }
+          ],
+          "withheld": [],
+          "missing": []
+        }
+      ]
+    },
+    {
+      "ordinal": 18,
+      "key": "news",
+      "title": { "ar": "الأخبار ومواد المستثمرين", "en": "News and materials" },
+      "readiness": "not_measured",
+      "score": null,
+      "shownCount": 40,
+      "reasons": [
+        {
+          "ar": "عينة تطوير مجمدة؛ لا تقييم معتمد أو تحقق مالي مستقل.",
+          "en": "Frozen development sample; no approved assessment or independent financial verification."
+        },
+        { "ar": "لم يُقيَّم هذا الموضوع في المحرك بعد", "en": "Not yet assessed by the engine" },
+        { "ar": "يحتاج مصدر أخبار مرخّص", "en": "Needs an authorized news feed" }
+      ],
+      "blocks": [
+        {
+          "type": "documents",
+          "rows": [
+            {
+              "title": "Saudi Exchange historical price snapshot",
+              "type": "official_source",
+              "date": "2026-09-04",
+              "sourceUrl": "SRC-4"
+            },
+            {
+              "title": "Saudi Aramco H1 2026 interim report",
+              "type": "interim_report",
+              "date": "2026-08-04",
+              "sourceUrl": "SRC-3"
+            },
+            {
+              "title": "Q2 interim report",
+              "type": "official_source",
+              "date": "2026-08-04",
+              "sourceUrl": "SRC-3"
+            },
+            {
+              "title": "Saudi Aramco Q1 2026 interim report",
+              "type": "interim_report",
+              "date": "2026-05-11",
+              "sourceUrl": "SRC-5"
+            },
+            {
+              "title": "Q1 interim report",
+              "type": "official_source",
+              "date": "2026-05-11",
+              "sourceUrl": "SRC-5"
+            },
+            {
+              "title": "Jafurah midstream minimum-volume commitment",
+              "type": "commercial_contract",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Guaranteed offshore and onshore rig purchases",
+              "type": "purchase_commitment",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial report comparative",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial statement notes comparative",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial report comparative",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial statement notes - dimensional detail",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial statement lease finance costs",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial statement notes",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Annual financial statement gap fill - audited tables",
+              "type": "official_source",
+              "date": "2026-03-10",
+              "sourceUrl": "SRC-2"
+            },
+            {
+              "title": "Saudi Aramco Annual Report 2025",
+              "type": "annual_report",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Ordinary-course disputed matters and project support obligations",
+              "type": "contingency",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Global customer base limits geographic credit concentration",
+              "type": "customer_concentration",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "FY 2025 earnings release",
+              "type": "earnings_release",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "FY 2025 financial results",
+              "type": "financial_results_announcement",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "2026 capital investment guidance",
+              "type": "guidance",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Fourth quarter 2025 base dividend",
+              "type": "guidance",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Jafurah, Tanajib and Marjan project milestones",
+              "type": "material_event",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Share buyback program",
+              "type": "material_event",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Hydrocarbon market and production risks",
+              "type": "risk_factor",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "2030 gas growth and crude capacity strategy",
+              "type": "strategy_update",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report supplementary metrics and comparative restatement",
+              "type": "official_source",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report operating segment EBITDA inputs",
+              "type": "official_source",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report operational production table precision update",
+              "type": "official_source",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report other reserve component detail",
+              "type": "official_source",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report contingency disclosure",
+              "type": "official_source",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report customer credit concentration disclosure",
+              "type": "official_source",
+              "date": "2026-03-09",
+              "sourceUrl": "SRC-1"
+            },
+            {
+              "title": "Annual report supplementary metrics",
+              "type": "official_source",
+              "date": "2025-03-04",
+              "sourceUrl": "SRC-6"
+            },
+            {
+              "title": "Annual report",
+              "type": "official_source",
+              "date": "2024-03-10",
+              "sourceUrl": "SRC-7"
+            },
+            {
+              "title": "Annual report supplementary metrics",
+              "type": "official_source",
+              "date": "2024-03-10",
+              "sourceUrl": "SRC-7"
+            },
+            {
+              "title": "Annual report supplementary metrics",
+              "type": "official_source",
+              "date": "2023-03-12",
+              "sourceUrl": "SRC-8"
+            },
+            {
+              "title": "Annual report historical highlights",
+              "type": "official_source",
+              "date": "2023-03-12",
+              "sourceUrl": "SRC-8"
+            },
+            {
+              "title": "Annual report historical highlights",
+              "type": "official_source",
+              "date": "2023-03-12",
+              "sourceUrl": "SRC-8"
+            },
+            {
+              "title": "Annual report historical highlights",
+              "type": "official_source",
+              "date": "2023-03-12",
+              "sourceUrl": "SRC-8"
+            },
+            {
+              "title": "Annual report supplementary metrics",
+              "type": "official_source",
+              "date": "2023-03-12",
+              "sourceUrl": "SRC-8"
+            },
+            {
+              "title": "Annual report historical highlights",
+              "type": "official_source",
+              "date": "2023-03-12",
+              "sourceUrl": "SRC-8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "statements": [
+    {
+      "mode": "annual",
+      "status": "available",
+      "reason": null,
+      "currency": "SAR",
+      "periods": [
+        { "end": "2025-12-31", "label": { "ar": "السنة المالية ⁦2025⁩", "en": "FY 2025" } },
+        { "end": "2024-12-31", "label": { "ar": "السنة المالية ⁦2024⁩", "en": "FY 2024" } },
+        { "end": "2023-12-31", "label": { "ar": "السنة المالية ⁦2023⁩", "en": "FY 2023" } },
+        { "end": "2022-12-31", "label": { "ar": "السنة المالية ⁦2022⁩", "en": "FY 2022" } },
+        { "end": "2021-12-31", "label": { "ar": "السنة المالية ⁦2021⁩", "en": "FY 2021" } }
+      ],
+      "sources": [
+        {
+          "periodEnd": "2025-12-31",
+          "url": "SRC-2",
+          "filingType": "Annual financial report comparative"
+        },
+        {
+          "periodEnd": "2024-12-31",
+          "url": "SRC-2",
+          "filingType": "Annual financial report comparative"
+        },
+        { "periodEnd": "2023-12-31", "url": "SRC-7", "filingType": "Annual report" },
+        {
+          "periodEnd": "2022-12-31",
+          "url": "SRC-8",
+          "filingType": "Annual report historical highlights"
+        },
+        {
+          "periodEnd": "2021-12-31",
+          "url": "SRC-8",
+          "filingType": "Annual report historical highlights"
+        }
+      ],
+      "cells": [
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "ebitda",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "ebitda",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebitda",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebitda",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebitda",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebit",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 34,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "ebit",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 34,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "ebit",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebit",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebit",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "operating_income",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 39,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_income",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 177,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_income",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 35,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_income",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 35,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_income",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 35,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "finance_costs",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 177,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "finance_costs",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "finance_costs",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "finance_costs",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "finance_costs",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_before_income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 39,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "income_before_income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_before_income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_before_income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_before_income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 39,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "income_taxes_and_zakat",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income_parent",
+          "section": "income",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 244,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income_parent",
+          "section": "income",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 222,
+            "sourceUrl": "SRC-6",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income_parent",
+          "section": "income",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 224,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income_parent",
+          "section": "income",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 215,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income_parent",
+          "section": "income",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 215,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_assets",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_assets",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_assets",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 36,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_assets",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_assets",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_liabilities",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_liabilities",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_liabilities",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 36,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_liabilities",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_liabilities",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_equity",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_equity",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_equity",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 36,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_equity",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "total_equity",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "current_assets",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 179,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "current_assets",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 179,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "current_assets",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "current_assets",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "current_assets",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "current_liabilities",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 180,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "current_liabilities",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 180,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "current_liabilities",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "current_liabilities",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "current_liabilities",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "equity_parent",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 179,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "equity_parent",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "equity_parent",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "equity_parent",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "equity_parent",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "net_debt",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 32,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_debt",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 32,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_debt",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "net_debt",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "net_debt",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "shares_outstanding",
+          "section": "balance",
+          "periodEnd": "2025-12-31",
+          "unit": "shares",
+          "currency": null,
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 102,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "shares_outstanding",
+          "section": "balance",
+          "periodEnd": "2024-12-31",
+          "unit": "shares",
+          "currency": null,
+          "state": "missing"
+        },
+        {
+          "key": "shares_outstanding",
+          "section": "balance",
+          "periodEnd": "2023-12-31",
+          "unit": "shares",
+          "currency": null,
+          "state": "missing"
+        },
+        {
+          "key": "shares_outstanding",
+          "section": "balance",
+          "periodEnd": "2022-12-31",
+          "unit": "shares",
+          "currency": null,
+          "state": "missing"
+        },
+        {
+          "key": "shares_outstanding",
+          "section": "balance",
+          "periodEnd": "2021-12-31",
+          "unit": "shares",
+          "currency": null,
+          "state": "missing"
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "investing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 181,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "investing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "investing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "investing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "investing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "financing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 181,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "financing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "financing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "financing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "financing_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "capex",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "capex",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-2",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "capex",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "capex",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "capex",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "dividends_paid",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 243,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "dividends_paid",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "dividends_paid",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "dividends_paid",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "dividends_paid",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "cash_end",
+          "section": "cash_flow",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 181,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "cash_end",
+          "section": "cash_flow",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "cash_end",
+          "section": "cash_flow",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "cash_end",
+          "section": "cash_flow",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "cash_end",
+          "section": "cash_flow",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "basic_eps",
+          "section": "per_share",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "basic_eps",
+          "section": "per_share",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "basic_eps",
+          "section": "per_share",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "basic_eps",
+          "section": "per_share",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "basic_eps",
+          "section": "per_share",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "eps_diluted",
+          "section": "per_share",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "eps_diluted",
+          "section": "per_share",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "eps_diluted",
+          "section": "per_share",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "eps_diluted",
+          "section": "per_share",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "eps_diluted",
+          "section": "per_share",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "dividends_per_share",
+          "section": "per_share",
+          "periodEnd": "2025-12-31",
+          "unit": "SAR/share",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 243,
+            "sourceUrl": "SRC-1",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "dividends_per_share",
+          "section": "per_share",
+          "periodEnd": "2024-12-31",
+          "unit": "SAR/share",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 222,
+            "sourceUrl": "SRC-6",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "dividends_per_share",
+          "section": "per_share",
+          "periodEnd": "2023-12-31",
+          "unit": "SAR/share",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 222,
+            "sourceUrl": "SRC-7",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "dividends_per_share",
+          "section": "per_share",
+          "periodEnd": "2022-12-31",
+          "unit": "SAR/share",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 215,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "dividends_per_share",
+          "section": "per_share",
+          "periodEnd": "2021-12-31",
+          "unit": "SAR/share",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 215,
+            "sourceUrl": "SRC-8",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_margin",
+          "section": "ratios",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "operating_margin",
+          "section": "ratios",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "operating_margin",
+          "section": "ratios",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "operating_margin",
+          "section": "ratios",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "operating_margin",
+          "section": "ratios",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "ebitda_margin",
+          "section": "ratios",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "ebitda_margin",
+          "section": "ratios",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebitda_margin",
+          "section": "ratios",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebitda_margin",
+          "section": "ratios",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "ebitda_margin",
+          "section": "ratios",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "missing"
+        },
+        {
+          "key": "net_margin",
+          "section": "ratios",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "net_margin",
+          "section": "ratios",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "net_margin",
+          "section": "ratios",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "net_margin",
+          "section": "ratios",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "net_margin",
+          "section": "ratios",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_equity",
+          "section": "ratios",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_equity",
+          "section": "ratios",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_equity",
+          "section": "ratios",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_equity",
+          "section": "ratios",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_equity",
+          "section": "ratios",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_assets",
+          "section": "ratios",
+          "periodEnd": "2025-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_assets",
+          "section": "ratios",
+          "periodEnd": "2024-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_assets",
+          "section": "ratios",
+          "periodEnd": "2023-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_assets",
+          "section": "ratios",
+          "periodEnd": "2022-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "return_on_assets",
+          "section": "ratios",
+          "periodEnd": "2021-12-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        }
+      ],
+      "review": []
+    },
+    {
+      "mode": "quarter",
+      "status": "available",
+      "reason": null,
+      "currency": "SAR",
+      "periods": [
+        {
+          "end": "2026-06-30",
+          "label": { "ar": "الربع ⁦2⁩ من ⁦2026⁩ (ربع منفرد)", "en": "Q2 2026 (single quarter)" }
+        },
+        {
+          "end": "2026-03-31",
+          "label": { "ar": "الربع ⁦1⁩ من ⁦2026⁩ (ربع منفرد)", "en": "Q1 2026 (single quarter)" }
+        }
+      ],
+      "sources": [
+        { "periodEnd": "2026-06-30", "url": "SRC-3", "filingType": "Q2 interim report" },
+        { "periodEnd": "2026-03-31", "url": "SRC-5", "filingType": "Q1 interim report" }
+      ],
+      "cells": [
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2026-03-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 22,
+            "sourceUrl": "SRC-5",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2026-03-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 22,
+            "sourceUrl": "SRC-5",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2026-03-31",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": 26,
+            "sourceUrl": "SRC-5",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2026-03-31",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        }
+      ],
+      "review": []
+    },
+    {
+      "mode": "ytd",
+      "status": "available",
+      "reason": null,
+      "currency": "SAR",
+      "periods": [
+        {
+          "end": "2026-06-30",
+          "label": { "ar": "منذ بداية ⁦2026⁩ حتى ⁦2026-06-30⁩", "en": "Year to date to 2026-06-30" }
+        }
+      ],
+      "sources": [{ "periodEnd": "2026-06-30", "url": "SRC-3", "filingType": "Q2 interim report" }],
+      "cells": [
+        {
+          "key": "revenue",
+          "section": "income",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "net_income",
+          "section": "income",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "income_quality",
+          "section": "income",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "cash_conversion_of_earnings",
+          "section": "income",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "operating_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "capex",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": "SAR",
+          "currency": "SAR",
+          "state": "value",
+          "proof": {
+            "kind": "reported_extracted",
+            "page": null,
+            "sourceUrl": "SRC-3",
+            "document": "not_stated"
+          }
+        },
+        {
+          "key": "free_cash_flow",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "capex_to_cfo",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "capex_to_revenue",
+          "section": "cash_flow",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "net_margin",
+          "section": "ratios",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "cfo_margin",
+          "section": "ratios",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        },
+        {
+          "key": "fcf_margin",
+          "section": "ratios",
+          "periodEnd": "2026-06-30",
+          "unit": null,
+          "currency": "SAR",
+          "state": "withheld",
+          "reason": "quality_flagged"
+        }
+      ],
+      "review": []
+    }
+  ],
+  "overview": {
+    "shownMetricOccurrences": 45,
+    "withheldMetricOccurrences": 33,
+    "topicsWithData": 13,
+    "topicsTotal": 18
+  },
+  "rawCapabilities": {
+    "profile": { "status": "available", "count": 37, "reason": null },
+    "annual_financials": {
+      "status": "partial",
+      "count": 205,
+      "reason": "financial_unit_review_required"
+    },
+    "quarterly_financials": { "status": "available", "count": 12, "reason": null },
+    "market_history": {
+      "status": "partial",
+      "count": 23,
+      "reason": "authorized_market_history_feed_required"
+    },
+    "ownership": { "status": "available", "count": 4, "reason": null },
+    "corporate_actions": { "status": "available", "count": 8, "reason": null },
+    "disclosures": { "status": "available", "count": 15, "reason": null },
+    "consensus": {
+      "status": "unavailable",
+      "count": 0,
+      "reason": "licensed_consensus_feed_required"
+    },
+    "peer_comparison": {
+      "status": "partial",
+      "count": 0,
+      "reason": "no_other_peer_with_comparable_facts"
+    },
+    "news": { "status": "unavailable", "count": 0, "reason": "authorized_news_feed_required" },
+    "five_year_history": { "status": "available", "count": 5, "reason": null },
+    "official_sources": { "status": "available", "count": 25, "reason": null }
+  },
+  "profileKeys": [
+    "business_description",
+    "business_description_ar",
+    "business_segments",
+    "geographic_presence",
+    "products_services",
+    "subsidiaries_count",
+    "credit_rating",
+    "industry",
+    "sector",
+    "sub_industry",
+    "investor_relations_url",
+    "website",
+    "auditor",
+    "ceo_name",
+    "chairman_name",
+    "commercial_registration_date",
+    "company_name",
+    "company_name_ar",
+    "country",
+    "founding_date",
+    "headquarters_address",
+    "incorporation_date",
+    "legal_form",
+    "legal_name",
+    "legal_name_ar",
+    "exchange",
+    "isin",
+    "listing_date",
+    "market",
+    "symbol",
+    "currency",
+    "fiscal_year_end",
+    "reporting_languages",
+    "reporting_standard",
+    "mission",
+    "vision",
+    "employees"
+  ],
+  "officialSourceMetadata": [
+    {
+      "filing_type": "Saudi Exchange historical price snapshot",
+      "filed_at": "2026-09-04",
+      "source_url": "SRC-4"
+    },
+    { "filing_type": "Q2 interim report", "filed_at": "2026-08-04", "source_url": "SRC-3" },
+    { "filing_type": "Q1 interim report", "filed_at": "2026-05-11", "source_url": "SRC-5" },
+    {
+      "filing_type": "Annual financial report comparative",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual financial statement notes comparative",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual financial report comparative",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual financial statement notes - dimensional detail",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual financial statement lease finance costs",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual financial statement notes",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual financial statement gap fill - audited tables",
+      "filed_at": "2026-03-10",
+      "source_url": "SRC-2"
+    },
+    {
+      "filing_type": "Annual report supplementary metrics and comparative restatement",
+      "filed_at": "2026-03-09",
+      "source_url": "SRC-1"
+    },
+    {
+      "filing_type": "Annual report operating segment EBITDA inputs",
+      "filed_at": "2026-03-09",
+      "source_url": "SRC-1"
+    },
+    {
+      "filing_type": "Annual report operational production table precision update",
+      "filed_at": "2026-03-09",
+      "source_url": "SRC-1"
+    },
+    {
+      "filing_type": "Annual report other reserve component detail",
+      "filed_at": "2026-03-09",
+      "source_url": "SRC-1"
+    },
+    {
+      "filing_type": "Annual report contingency disclosure",
+      "filed_at": "2026-03-09",
+      "source_url": "SRC-1"
+    },
+    {
+      "filing_type": "Annual report customer credit concentration disclosure",
+      "filed_at": "2026-03-09",
+      "source_url": "SRC-1"
+    },
+    {
+      "filing_type": "Annual report supplementary metrics",
+      "filed_at": "2025-03-04",
+      "source_url": "SRC-6"
+    },
+    { "filing_type": "Annual report", "filed_at": "2024-03-10", "source_url": "SRC-7" },
+    {
+      "filing_type": "Annual report supplementary metrics",
+      "filed_at": "2024-03-10",
+      "source_url": "SRC-7"
+    },
+    {
+      "filing_type": "Annual report supplementary metrics",
+      "filed_at": "2023-03-12",
+      "source_url": "SRC-8"
+    },
+    {
+      "filing_type": "Annual report historical highlights",
+      "filed_at": "2023-03-12",
+      "source_url": "SRC-8"
+    },
+    {
+      "filing_type": "Annual report historical highlights",
+      "filed_at": "2023-03-12",
+      "source_url": "SRC-8"
+    },
+    {
+      "filing_type": "Annual report historical highlights",
+      "filed_at": "2023-03-12",
+      "source_url": "SRC-8"
+    },
+    {
+      "filing_type": "Annual report supplementary metrics",
+      "filed_at": "2023-03-12",
+      "source_url": "SRC-8"
+    },
+    {
+      "filing_type": "Annual report historical highlights",
+      "filed_at": "2023-03-12",
+      "source_url": "SRC-8"
+    }
+  ],
+  "source_registry": {
+    "SRC-1": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "SRC-2": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "SRC-3": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "SRC-4": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/reports-publications/historical-reports?locale=en",
+    "SRC-5": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "SRC-6": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
+    "SRC-7": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+    "SRC-8": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf"
+  }
+}

@@ -1,0 +1,20 @@
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08A\audit.test.ts:
+(pass) audit baseline is the accepted exact application SHA [0.03ms]
+(pass) fixture fingerprint matches exact consumed uncompressed JSON, not a claimed PDF hash [3.90ms]
+(pass) all original investor18 mapped exactly once to five groups [0.62ms]
+(pass) no invented readiness score or false financial certificate [0.26ms]
+(pass) observed data presence is separate from completeness [0.17ms]
+(pass) each topic has field requirements, history, source, comparison and acceptance checklist [0.12ms]
+(pass) every proposed/existing source ref resolves without fabricated source URL [0.15ms]
+(pass) statement cells and states reconcile to their own presentation denominators [1.38ms]
+(pass) year and quarter labels are not a complete history claim [0.19ms]
+(pass) source rows are not miscounted as unique documents [0.75ms]
+(pass) routing gaps distinguish stored guidance from missing forecast contract [0.67ms]
+(pass) calculation proposal has input gates and does not authorize DCF [0.06ms]
+
+ 12 pass
+ 0 fail
+ 199 expect() calls
+Ran 12 tests across 1 file. [43.00ms]

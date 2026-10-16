@@ -1,0 +1,93 @@
+{
+  "schema": "marefa-web08a-browser-observation/1",
+  "observed_date_utc": "2026-10-16",
+  "browser": "Actual Chrome via connected browser tool",
+  "application_sha": "d7d88c19fee626346b12d961f3a539fc31423f1f",
+  "url": "https://pixel-perfect-showcase-276-9mdp62xty.vercel.app/preview/web-v1/companies/2222/intelligence",
+  "language": "ar",
+  "groups": { "business": 4, "financials": 4, "shareholders": 3, "market": 4, "risks": 3 },
+  "topics": [
+    { "ordinal": 1, "key": "identity", "observed": "Ten facts, dates/sources; not measured" },
+    {
+      "ordinal": 2,
+      "key": "business",
+      "observed": "Description, product/geography lists; no independent analytical chart"
+    },
+    { "ordinal": 3, "key": "governance", "observed": "Four sourced facts only" },
+    {
+      "ordinal": 4,
+      "key": "ownership",
+      "observed": "Four source-attributed holder/group rows dated2025-12-31"
+    },
+    {
+      "ordinal": 5,
+      "key": "financials",
+      "observed": "Shared explorer annual5/quarter2/YTD1, selected revenue trend; other sections/detail tables present"
+    },
+    {
+      "ordinal": 6,
+      "key": "earnings_quality",
+      "observed": "One adjusted income metric; quality ratios withheld"
+    },
+    { "ordinal": 7, "key": "ratios", "observed": "One issuer ROACE; other ratios/growth withheld" },
+    {
+      "ordinal": 8,
+      "key": "operations",
+      "observed": "Seven sourced metrics, reserve life withheld"
+    },
+    {
+      "ordinal": 9,
+      "key": "dividends_actions",
+      "observed": "Dividend metrics and actions; payout/growth withheld"
+    },
+    {
+      "ordinal": 10,
+      "key": "industry",
+      "observed": "Explicit no data; official sector dataset requirement"
+    },
+    {
+      "ordinal": 11,
+      "key": "competitors",
+      "observed": "Company comparison disabled in this environment"
+    },
+    {
+      "ordinal": 12,
+      "key": "trading",
+      "observed": "Historical not-live close dated2026-09-03;23partial sessions mentioned; no price chart"
+    },
+    {
+      "ordinal": 13,
+      "key": "forecasts",
+      "observed": "No forecasts/guidance in page contract; explicit requirement"
+    },
+    {
+      "ordinal": 14,
+      "key": "analysts",
+      "observed": "Licensed consensus requirement; no invented target"
+    },
+    {
+      "ordinal": 15,
+      "key": "valuation",
+      "observed": "No documented multiples; requires licensed price and qualified per-share metrics"
+    },
+    { "ordinal": 16, "key": "risks", "observed": "Credit rating text only, not risk analysis" },
+    {
+      "ordinal": 17,
+      "key": "esg",
+      "observed": "Eight environmental metrics, no full E/S/G analysis"
+    },
+    {
+      "ordinal": 18,
+      "key": "news",
+      "observed": "15 source links/items displayed from40model rows; not40distinct documents"
+    }
+  ],
+  "DOM_count_policy": "Duplicate responsive renderings and hidden table cells are not unique facts or verification evidence.",
+  "not_retested": [
+    "Full WEB07 suite",
+    "new financial correctness verification",
+    "live engine API",
+    "production connectivity or permissions"
+  ],
+  "changes_to_site_or_environment": false
+}

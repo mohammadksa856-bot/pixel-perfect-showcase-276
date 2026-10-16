@@ -23,7 +23,7 @@
 |---|---|
 | `tests/web07-final-independent-period.test.ts` (Codex، الحالات الثلاث دون تخفيف) | **3/3** (كان 2/3) |
 | `tests/web07-independent-provenance.test.ts` (R01–R03 الأصلية) | 3/3 |
-| انحدار WEB-07 وWEB-06 (`web-07`، `web-03-04`، `web-06-d11-tabs`، `web-05b-boundary`، `web-readiness`، `web-06-polish`) | 91/91 |
+| انحدار WEB-07 وWEB-06 (`web-07`، `web-03-04`، `web-06-d11-tabs`، `web-05b-boundary`، `web-readiness`، `web-06-polish`) | 89/89 |
 | `bun test tests` | 427 ناجحًا، و14 متجاوزًا (تكامل المحرك الحي)، و0 إخفاق |
 | `tsc --noEmit` | 0 |
 | e2e WEB-07 / 05A / 05B (محلي، وضع مجمّد) | 17/17 / 17/17 / 26/26 |

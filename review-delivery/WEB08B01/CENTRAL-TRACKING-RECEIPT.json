@@ -1,0 +1,338 @@
+{
+  "schema": "marefa-central-task-safe-export/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "central_commit": "a3152569c3a5cd40dadfac3f64ec4b6b8b465a07",
+  "exported_at": "2026-10-16 18:12:41 UTC",
+  "scope": "Single current task and immutable event97 only; no parallel board, original central history retained",
+  "timing_note": "Event97 and FINAL-ENGINEERING-REPORT observed_at carry the author's results snapshot time, not the later independent review completion time; this export records the completed review receipt.",
+  "task": {
+    "id": "WEB08-B01",
+    "description": "Research Evidence and Claim Contract v1 with synthetic-only trace PoC; independent fixed-SHA session review required",
+    "owner": "Codex engineering; separate Codex session independent review",
+    "priority": 0,
+    "parent_task_id": "MAREFA-WEB-V1",
+    "dependencies": [
+      "WEB-07",
+      "WEB-08A"
+    ],
+    "state": "REVIEW",
+    "user_scope_authorization": "Explicit WEB-08B01 implementation and separate-session review request",
+    "independent_review_thread_id": "01a145cd-1c9e-7623-9919-f76ad5aea1fc",
+    "USER_FINAL_ACCEPTANCE": false,
+    "PRODUCTION_RELEASE_APPROVAL": false,
+    "live_integration_acceptance": false,
+    "production_published": false,
+    "phase_status": {
+      "IMPLEMENTED": "cef8ce9f3b463fc75324960ed47c06ace261cff4 standalone contract and syntheticPoC",
+      "TESTED": "Author91 contract/PoC and95 WEB07/06 regression separatePASS; contract/app typesPASS; new-folder lintPASS; independent91/19/12/19 separateoverlappingPASS",
+      "REVIEWED": "SeparateCodex session ACCEPT oncef8ce9; F1/F2/F3/R1/D1 closed; three priorREWORK decisions preserved",
+      "MERGED": false,
+      "ACCEPTED": "Engineering contract and syntheticPoC only; USER_FINAL_ACCEPTANCE=false",
+      "DEPLOYED": false
+    },
+    "branch": "codex/web08b01-research-contract-20261016",
+    "commits": [
+      "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+      "4c2d7541d807f4819b3659a59817fe27312f11cc"
+    ],
+    "changed_files": [
+      "research-evidence/v1/",
+      "review-delivery/WEB08B01/"
+    ],
+    "test_runs": [
+      {
+        "run_id": "B01-first-independent-4f38e55",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "4f38e55f5f916b67b5172f0e18feb61848754124",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-first-review/independent-test.log",
+        "scope": "Historical REWORK, original19; not a current failure on acceptedSHA",
+        "passed": 12,
+        "failed": 7,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "B01-second-independent-4570432",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "4570432d4130094c84e68db2c9a19bd92dbda08c",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-second-review/rereview-edge-tests.log",
+        "scope": "Historical REWORK, additional12; source-only receipt defect",
+        "passed": 9,
+        "failed": 3,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "B01-third-independent-f045964",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "f045964eb5b76e2400f92b0f10dce4d320a1db7d",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-third-review/final-additional-tests.log",
+        "scope": "Historical REWORK, additional19; Unicode collation defect",
+        "passed": 18,
+        "failed": 1,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "cef8ce9-contract-poc",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/author-cef8ce9-contract-tests.log",
+        "scope": "Author fixed-SHA run; separate counts, overlapping contract cases not pooled",
+        "passed": 91,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "cef8ce9-WEB07-WEB06-regression",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/author-cef8ce9-web07-regression.log",
+        "scope": "Author fixed-SHA run; separate counts, overlapping contract cases not pooled",
+        "passed": 95,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "B01-final-independent-0",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-repository-91.log",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "passed": 91,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "B01-final-independent-1",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-independent-19.log",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "passed": 19,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "B01-final-independent-2",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-independent-12.log",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "passed": 12,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      },
+      {
+        "run_id": "B01-final-independent-3",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-additional-19.log",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "passed": 19,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-16T18:08:13Z"
+      }
+    ],
+    "evidence": [
+      "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/FINAL-ENGINEERING-REPORT.json",
+      "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/ACCEPTANCE_cef8ce9.md"
+    ],
+    "blockers": [
+      "Immutable fact IDs/versions and original file IDs/versions/hashes",
+      "Full period start/scope/dimensions at the display boundary",
+      "Dated independent review certificates and real rights grants",
+      "Trusted authenticated server resolution and persistent append-only review storage",
+      "Exact fact/version selection by Marefa Data route"
+    ],
+    "required_decisions": [
+      "Review contract scope and future trusted identity/rights/auth interfaces",
+      "Any live adapter or production work requires separate authority; no final user acceptance"
+    ],
+    "change_stage": "IMPLEMENTED_TESTED_INDEPENDENTLY_REVIEWED_NOT_MERGED_OR_DEPLOYED",
+    "latest_event_sha256": "2424b1500a014c8ab162f5af442948264bb09e27f26dafb0474fd410ab5bcb6f",
+    "latest_batch_report": "docs/tracking/batches/WEB08B01-INDEPENDENT-ACCEPTANCE-20261016.json"
+  },
+  "event": {
+    "actor": "Codex",
+    "batch_report": "docs/tracking/batches/WEB08B01-INDEPENDENT-ACCEPTANCE-20261016.json",
+    "blockers": [
+      "Immutable fact IDs/versions and original file IDs/versions/hashes",
+      "Full period start/scope/dimensions at the display boundary",
+      "Dated independent review certificates and real rights grants",
+      "Trusted authenticated server resolution and persistent append-only review storage",
+      "Exact fact/version selection by Marefa Data route"
+    ],
+    "branch": "codex/web08b01-research-contract-20261016",
+    "change": "Independent scoped ACCEPT of contract/syntheticPoC oncef8ce9; historicalREWORK preserved; no user/live/production acceptance.",
+    "change_stage": "IMPLEMENTED_TESTED_INDEPENDENTLY_REVIEWED_NOT_MERGED_OR_DEPLOYED",
+    "changed_files": [
+      "research-evidence/v1/",
+      "review-delivery/WEB08B01/"
+    ],
+    "commits": [
+      "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+      "4c2d7541d807f4819b3659a59817fe27312f11cc"
+    ],
+    "event_id": "WEB08B01-INDEPENDENT-ACCEPTANCE-20261016",
+    "event_sha256": "2424b1500a014c8ab162f5af442948264bb09e27f26dafb0474fd410ab5bcb6f",
+    "evidence": [
+      "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/FINAL-ENGINEERING-REPORT.json",
+      "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/ACCEPTANCE_cef8ce9.md"
+    ],
+    "occurred_at": "2026-10-16T18:08:13Z",
+    "previous_event_sha256": "f58c43c5a6ae04bb9e4ac1480b59004f448f2357cfd8b9e579637a9b977170d0",
+    "production_published": false,
+    "required_decisions": [
+      "Review contract scope and future trusted identity/rights/auth interfaces",
+      "Any live adapter or production work requires separate authority; no final user acceptance"
+    ],
+    "review_decision": "ACCEPT_SCOPED_CONTRACT_SYNTHETIC_ONLY",
+    "sequence": 97,
+    "state": "REVIEW",
+    "task_id": "WEB08-B01",
+    "test_runs": [
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-first-review/independent-test.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "4f38e55f5f916b67b5172f0e18feb61848754124",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 7,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 12,
+        "run_id": "B01-first-independent-4f38e55",
+        "scope": "Historical REWORK, original19; not a current failure on acceptedSHA",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-second-review/rereview-edge-tests.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "4570432d4130094c84e68db2c9a19bd92dbda08c",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 3,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 9,
+        "run_id": "B01-second-independent-4570432",
+        "scope": "Historical REWORK, additional12; source-only receipt defect",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-third-review/final-additional-tests.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "f045964eb5b76e2400f92b0f10dce4d320a1db7d",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 1,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 18,
+        "run_id": "B01-third-independent-f045964",
+        "scope": "Historical REWORK, additional19; Unicode collation defect",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/author-cef8ce9-contract-tests.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 91,
+        "run_id": "cef8ce9-contract-poc",
+        "scope": "Author fixed-SHA run; separate counts, overlapping contract cases not pooled",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/author-cef8ce9-web07-regression.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 95,
+        "run_id": "cef8ce9-WEB07-WEB06-regression",
+        "scope": "Author fixed-SHA run; separate counts, overlapping contract cases not pooled",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-repository-91.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 91,
+        "run_id": "B01-final-independent-0",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-independent-19.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 19,
+        "run_id": "B01-final-independent-1",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-independent-12.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 12,
+        "run_id": "B01-final-independent-2",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "skipped": 0
+      },
+      {
+        "artifact": "4c2d7541d807f4819b3659a59817fe27312f11cc:review-delivery/WEB08B01/independent-acceptance/cef8ce9-additional-19.log",
+        "branch": "codex/web08b01-research-contract-20261016",
+        "commit": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-16T18:08:13Z",
+        "passed": 19,
+        "run_id": "B01-final-independent-3",
+        "scope": "Independent session fixedSHA; external originals unchanged; counts overlap repository suite",
+        "skipped": 0
+      }
+    ]
+  }
+}

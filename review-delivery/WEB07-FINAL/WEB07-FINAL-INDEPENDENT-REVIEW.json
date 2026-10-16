@@ -1,0 +1,200 @@
+{
+  "schema": "marefa-web07-final-independent-review/1",
+  "observed_at": "2026-10-16T15:44:04Z",
+  "application_sha": "6eab69721aafdfab21051999ec7445cdc95535b9",
+  "report_sha": "53fb331e2f520eab6056ef06e0de78944ea4f433",
+  "prior_review_sha": "9e9ea409821cca2a9dc74dc97470ad86f52529c1",
+  "decision": "REWORK",
+  "scope": "Engineering final re-review only; no final user visual/content/financial or production approval",
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "WEB06_acceptance_preserved": true,
+  "decisions": {
+    "R01": "PASS original case and own-row source/asOf path",
+    "R02_original": "PASS original different-source/end-date case",
+    "R02_extended": "FAIL same-end-date different period.kind: FY versus quarter incorrectly shared/compared",
+    "R03": "PASS missing and withheld states",
+    "R04": "PASS actual Chrome routes on exact code deployment",
+    "N01": "PASS two separately labelled lists sorted newest first",
+    "N02": "OPEN_SEPARATE_CONTENT_GAP_NOT_COMPLETED_NOT_95_PERCENT"
+  },
+  "original_test_identity": {
+    "blob_at_review": "f2cbf2017494b85e5bb3eef236164ca6a78c914d",
+    "blob_at_application": "f2cbf2017494b85e5bb3eef236164ca6a78c914d",
+    "byte_identical": true,
+    "no_assertion_relaxed": true
+  },
+  "runs": [
+    {
+      "id": "WEB07-original-three-6eab697",
+      "artifact": "WEB07-final-original-three.txt",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 8,
+      "duration_ms": 346,
+      "scope": "Original independent R01/R02/R03 file byte-identical; separate run; prior0/3 now3/3"
+    },
+    {
+      "id": "WEB07-final-targeted-regression-6eab697",
+      "artifact": "WEB07-final-regression.txt",
+      "passed": 69,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "expectations": 919,
+      "duration_ms": 726,
+      "files": [
+        "tests/web-07.test.ts",
+        "tests/web-03-04.test.ts",
+        "tests/web-06-d11-tabs.test.ts",
+        "tests/web-05b-boundary.test.ts",
+        "tests/web-readiness.test.ts"
+      ],
+      "scope": "One exact-SHA targeted run; not pooled with original3 or extended cases"
+    },
+    {
+      "id": "WEB07-final-extended-period-units-6eab697",
+      "artifact": "WEB07-final-extended.txt",
+      "reproduce": "bun test tests/web07-final-independent-period.test.ts",
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0,
+      "errors": 0,
+      "duration_ms": 290,
+      "scope": "Different unit PASS; different period.end PASS; same end date but quarter versus FY FAIL. Synthetic presentation-model cases only."
+    },
+    {
+      "id": "WEB07-final-types-6eab697",
+      "command": "bun x tsc --noEmit",
+      "exit_code": 0,
+      "diagnostics": 0,
+      "scope": "Includes reviewer overlay; no application edits"
+    },
+    {
+      "id": "WEB07-full-lint-worktree",
+      "command": "bun run lint",
+      "exit_code": 1,
+      "scope": "Actual full lint failed; CRLF Windows checkout causes many Prettier errors. Reviewer overlay may be scanned; raw inflated count not used as canonical code result"
+    },
+    {
+      "id": "WEB07-lint-tracked-source-6eab697",
+      "command": "bun review-lint-tracked.mjs 6eab69721aafdfab21051999ec7445cdc95535b9",
+      "exit_code": 1,
+      "files_considered": 239,
+      "errors": 883,
+      "warnings": 23,
+      "scope": "Every tracked lintable Git blob at exactSHA, unchanged ESLint configuration/rules, original LF, excludes untracked reviewer files; not a claim that raw lint passed",
+      "copied_test": {
+        "file": "tests/web07-independent-provenance.test.ts",
+        "errors": 37,
+        "warnings": 0,
+        "rules": [
+          "prettier/prettier"
+        ]
+      }
+    },
+    {
+      "id": "WEB07-lint-baseline-6ac8e4e",
+      "command": "bun review-lint-tracked.mjs 6ac8e4e90d236370834aa6c03f1edb8dfdb35739",
+      "exit_code": 1,
+      "files_considered": 237,
+      "errors": 846,
+      "warnings": 23,
+      "artifact": "WEB07-final-lint-baseline.json",
+      "scope": "Separate previous application run, same rules; copied test adds37 errors; baseline debt is not newly caused by fix"
+    }
+  ],
+  "remaining_findings": [
+    {
+      "id": "WEB07-R02-PERIOD-KIND",
+      "severity": "BLOCKER_PERIOD_ATTRIBUTION",
+      "file": "src/lib/web-v1/company-experience.ts",
+      "line": 136,
+      "related_file": "src/components/web-v1/company-overview.tsx",
+      "related_line": 234,
+      "reason": "segmentProvenance keys sourceUrl+period.end+unit, not period.kind. comparable bars keys onlyunit+period.end. FY2025 andQ42025 ending2025-12-31 collapse to shared FY label; quarter identity disappears and bars compare unlike durations.",
+      "reproduce": "Use extended independent test, change only second segment's period.kind toquarter and its label toSyntheticQ42025; keep end/source/unit equal. First expectation data-provenance=per-row fails. Chart omission follows same end-only static condition; later assertions are not reached after first failure.",
+      "expected": "Use complete available period identity includingkind+end for shared metadata and comparison. Preserve per-row label; don't compare quarter versus annual because end dates coincide.",
+      "data_scope": "Synthetic valid ValueCell/Period display-model test, not a claim that frozen Aramco actual cells are numerically wrong."
+    },
+    {
+      "id": "WEB07-LINT-COPIED-TEST",
+      "severity": "QUALITY_GATE_FAILED_FORMAT_ONLY",
+      "file": "tests/web07-independent-provenance.test.ts",
+      "reason": "37 new canonical Prettier violations from reviewer test copied byte-identically. Claude correctly did not alter original assertions; byte identity is not a reason to leave full lint failing.",
+      "expected": "Formatting-only change with identical assertions/fixtures and rerun. Do not ignore test or weaken rule. Baseline846 errors remain separately visible; no mass unrelated cleanup requested."
+    }
+  ],
+  "preview": {
+    "base": "https://pixel-perfect-showcase-276-1xa23kb34.vercel.app",
+    "application_sha": "6eab69721aafdfab21051999ec7445cdc95535b9",
+    "routes": [
+      {
+        "path": "/preview/web-v1/companies/2222/overview",
+        "state": "OPENED actual Chrome; Arabic andEnglish; actual N01 lists, EPSwithheld"
+      },
+      {
+        "path": "/preview/web-v1/companies/2222/intelligence",
+        "state": "OPENED via total_assets deep link;18topics/5groups; focused annual row2,551.96, sources"
+      },
+      {
+        "path": "/preview/web-v1/companies/2222?tab=business",
+        "state": "OPENED actualChrome;6tabs; factorycoverage18categories/0scores"
+      }
+    ],
+    "protection": "No Vercel login/403 or application404 in observed final runtime; initial navigation timeout resolved by reading completed rendered state, not classified as app defect",
+    "environment_settings_changed": false,
+    "deployment_protection_changed": false,
+    "no_secrets_accessed": true
+  },
+  "browser_regression": {
+    "english_mobile390": {
+      "css_width_query": true,
+      "client_width": 375,
+      "document_width": 375,
+      "overview": true,
+      "eps": "Withheld",
+      "N01_lists": [
+        "actions",
+        "documents"
+      ]
+    },
+    "arabic_mobile320": {
+      "css_width_query": true,
+      "client_width": 305,
+      "document_width": 305,
+      "overview": true
+    },
+    "factory320": {
+      "categories": 18,
+      "scores": 0,
+      "detail_table_initially_closed": true
+    },
+    "keyboard": "Enter level nav works; financial deep link places focus on target row after route settles",
+    "initial_race_observations": "Pre-transition DOM counts discarded; final checks explicitly waited for target component and focusedrow.",
+    "collapsed_table_wait": "Waiting for an initially closed detail row to be visible timed out; correctly observed native collapsed state, not application failure.",
+    "viewport_reset": true,
+    "image": "WEB07-final-Vercel-overview.png: actual final code deployment, local image file; no synthetic values published"
+  },
+  "N02": {
+    "status": "OPEN_NOT_STARTED",
+    "claude_evidence": "product-tracking/SCOPE_DEFERRED.md web07-authored-analysis",
+    "content": "Authored investment summary and risk interpretation not implemented. New engineering work does not mean editorial analysis complete or95% coverage achieved.",
+    "separate_from_engineering": true
+  },
+  "changes_scope": "Runtime diff from prior WEB07 only company-overview.tsx and company-experience.ts; no new engine/data/contracts or WEB06financialexplorer changes. Code/report SHA src/tests/package diff empty. No reviewer application edits or main/production mutations.",
+  "required_next": [
+    "Claude includes period.kind in segment shared/comparable identity and delivers exactSHA",
+    "Format copied independent test without changing assertions; retain baseline lint debt separately",
+    "Rerun focused failingcase+originalthree, confirm exact new Preview; preserve N02 separate backlog"
+  ],
+  "not_claimed": [
+    "Full423tests independently rerun",
+    "New financial source number acceptance",
+    "Live integration approval",
+    "Final user approval",
+    "Production release approval"
+  ]
+}

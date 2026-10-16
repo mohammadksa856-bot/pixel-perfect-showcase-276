@@ -1,0 +1,24 @@
+bun test v1.4.3 (c6da4a4d3)
+
+tests\web07-final-independent-period.test.ts:
+(pass) different units must disable comparison bars and preserve per-row source [55.29ms]
+18 |  const p=preview(),b=segments(p);b.rows[1]!.unit='USD';b.rows[1]!.display={ar:'123 دولار اصطناعي',en:'Synthetic USD123'};
+19 |  const h=figure(render(p));expect(h.includes('data-provenance="per-row"')).toBe(true);expect(h.includes('rounded-full bg-brand')).toBe(false);
+20 | });
+21 | test('same end date but quarter versus FY must not share a period or compare bars',()=>{
+22 |  const p=preview(),b=segments(p);b.rows[1]!.period={...b.rows[1]!.period,kind:'quarter',label:{ar:'الربع الرابع الاصطناعي2025',en:'Synthetic Q42025'}};
+23 |  const h=figure(render(p));expect(h.includes('data-provenance="per-row"')).toBe(true);expect(h.includes('الربع الرابع الاصطناعي2025')).toBe(true);expect(h.includes('rounded-full bg-brand')).toBe(false);
+                                                                                ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web07-final-20261016\tests\web07-final-independent-period.test.ts:23:76)
+(fail) same end date but quarter versus FY must not share a period or compare bars [25.13ms]
+(pass) different end dates must disable comparison bars and preserve periods [22.84ms]
+
+ 2 pass
+ 1 fail
+ 6 expect() calls
+Ran 3 tests across 1 file. [290.00ms]

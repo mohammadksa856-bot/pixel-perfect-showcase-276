@@ -118,14 +118,20 @@ const CURRENCY_BEFORE = new RegExp(
  */
 const UNSUPPORTED_CODES = String.raw`AED|EUR|GBP|JPY|CNY|RMB|INR|KWD|QAR|BHD|OMR|EGP|CHF|CAD|AUD|HKD|SGD|KRW|درهم|دراهم|دينار|يورو|جنيه|ين`;
 const UNSUPPORTED_SYMBOLS = String.raw`[¥₹₩₽₺₪₦฿₣₫₱₴‰‱]`;
-const UNSUPPORTED_BEFORE = new RegExp(
-  String.raw`(?:(?:^|[^\p{L}])(?:${UNSUPPORTED_CODES})|${UNSUPPORTED_SYMBOLS})${GAP_BEFORE}$`,
-  "iu",
-);
-const UNSUPPORTED_AFTER = new RegExp(
-  String.raw`^(?:(?:${UNSUPPORTED_CODES})(?![\p{L}])|${UNSUPPORTED_SYMBOLS})`,
-  "iu",
-);
+/** رموز ISO 4217 الأخرى، بحروف كبيرة فقط (حساسة لحالة الأحرف) حتى لا تتأثر الكلمات العادية. */
+const ISO_CODES =
+  "AED|AFN|ALL|AMD|ANG|AOA|ARS|AUD|AWG|AZN|BAM|BBD|BDT|BGN|BHD|BIF|BMD|BND|BOB|BRL|BSD|BTN|BWP|BYN|BZD|CAD|CDF|CHF|CLP|CNY|COP|CRC|CUP|CVE|CZK|DJF|DKK|DOP|DZD|EGP|ERN|ETB|EUR|FJD|FKP|GBP|GEL|GHS|GIP|GMD|GNF|GTQ|GYD|HKD|HNL|HTG|HUF|IDR|ILS|INR|IQD|IRR|ISK|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LRD|LSL|LYD|MAD|MDL|MGA|MKD|MMK|MNT|MOP|MRU|MUR|MVR|MWK|MXN|MYR|MZN|NAD|NGN|NIO|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PYG|QAR|RON|RSD|RUB|RWF|SBD|SCR|SDG|SEK|SGD|SHP|SLE|SOS|SRD|SSP|STN|SYP|SZL|THB|TJS|TMT|TND|TOP|TRY|TTD|TWD|TZS|UAH|UGX|UYU|UZS|VES|VND|VUV|WST|XAF|XCD|XOF|XPF|YER|ZAR|ZMW|ZWL";
+const UNSUPPORTED_BEFORE = [
+  new RegExp(
+    String.raw`(?:(?:^|[^\p{L}])(?:${UNSUPPORTED_CODES})|${UNSUPPORTED_SYMBOLS})${GAP_BEFORE}$`,
+    "iu",
+  ),
+  new RegExp(String.raw`(?:^|[^\p{L}])(?:${ISO_CODES})${GAP_BEFORE}$`, "u"),
+];
+const UNSUPPORTED_AFTER = [
+  new RegExp(String.raw`^(?:(?:${UNSUPPORTED_CODES})(?![\p{L}])|${UNSUPPORTED_SYMBOLS})`, "iu"),
+  new RegExp(String.raw`^(?:${ISO_CODES})(?![\p{L}])`, "u"),
+];
 /** فواصل لا تجعل الرقم ملتبسًا. */
 const SEP = /[\s.,;:!?()[\]«»"'\u201c\u201d\-\u2013\u2014/\u060c\u061b\u061f]/u;
 /** سوابق عربية تلتصق بالكلمة (و، ب، ل، ك، ف، ال…) ولا تغيّر دلالة الرقم. */
@@ -147,7 +153,7 @@ export function numberTokens(s: string): NumberToken[] {
     const after = clean.slice(m.index! + m[0].length);
     const classes = new Set<string>();
     if (CURRENCY_BEFORE.test(before)) classes.add("currency");
-    else if (UNSUPPORTED_BEFORE.test(before)) classes.add(AMBIGUOUS);
+    else if (UNSUPPORTED_BEFORE.some((re) => re.test(before))) classes.add(AMBIGUOUS);
     else {
       // كلمة ملاصقة قبل الرقم: سابقة عربية مقبولة؛ غير ذلك صيغة ملتبسة.
       const glued = /([^\s\d]+)$/u.exec(before)?.[1];
@@ -169,7 +175,7 @@ export function numberTokens(s: string): NumberToken[] {
     const tail = gluedAfter ? after : after.slice(GAP_AFTER.exec(after)![0].length);
     const c1 = classOf(tail);
     if (gluedAfter && !c1 && !YEAR_MARK.test(gluedAfter)) classes.add(AMBIGUOUS);
-    if (!c1 && UNSUPPORTED_AFTER.test(tail)) classes.add(AMBIGUOUS);
+    if (!c1 && UNSUPPORTED_AFTER.some((re) => re.test(tail))) classes.add(AMBIGUOUS);
     if (c1) classes.add(c1);
     if (c1 === SCALE) {
       const c2 = classOf(tail.replace(/^\S+\s*/, ""));

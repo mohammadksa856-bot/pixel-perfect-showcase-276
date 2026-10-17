@@ -127,6 +127,9 @@ describe("unsupported currencies and per-mille fail closed, before or after, thr
     "2025 ‱",
     "(2025) ‰",
     "2025‰",
+    "MXN 2025", // any ISO 4217 code, uppercase
+    "(2025) ZAR",
+    "TRY: 2025",
   ])
     test(JSON.stringify(s), () => expect(classesOf(s)).toEqual(["ambiguous"]));
 });
@@ -146,6 +149,8 @@ describe("the binding stays local: no distant words, sentence ends or ranges", (
     "2026 results in SAR", // words between the number and the unit
     "AEDX 2025", // not a currency code
     "2025 Aedes", // code must be a whole word
+    "try 2025 again", // ISO codes match uppercase only
+    "Top results 2025",
   ];
   for (const s of free)
     test(JSON.stringify(s), () => {

@@ -24,7 +24,9 @@ describe("render", () => {
     expect(en).toContain('dir="ltr"');
     expect(en).toContain("data-translation-pending");
     // long identifiers in evidence labels must wrap on narrow screens (no horizontal page scroll)
-    expect(ar).toContain("code{overflow-wrap:anywhere;word-break:break-word}");
+    expect(ar).toContain("code,td{overflow-wrap:anywhere;word-break:break-word}");
+    expect(en).toContain(">In the original per the reviewer; not extracted</td>");
+    expect(en.match(/data-field-status="/g)).toHaveLength(pack.projects.length * 4);
   });
   test("hostile text and labels are escaped", () => {
     const h0 = structuredClone(pack);

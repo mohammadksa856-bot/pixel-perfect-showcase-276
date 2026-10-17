@@ -27,6 +27,33 @@ const KIND: Record<Kind, { ar: string; en: string }> = {
 };
 const label = (m: Record<string, { ar: string; en: string }>, k: string, l: L) =>
   esc(m[k]?.[l] ?? k);
+/** حالات مشاريع B03 بلغة مقروءة؛ الرمز الأصلي يبقى في السمة data-*. */
+const FIELD: Record<string, { ar: string; en: string }> = {
+  commenced_production: {
+    ar: "بدأ الإنتاج (تقرير 2025)",
+    en: "Commenced production (2025 report)",
+  },
+  commenced_operations: {
+    ar: "بدأ التشغيل (تقرير 2025)",
+    en: "Commenced operations (2025 report)",
+  },
+  onstream: { ar: "دخل الخدمة (تقرير 2025)", en: "Came onstream (2025 report)" },
+  target: { ar: "هدف إدارة، لا إنجاز", en: "Management target, not an achievement" },
+  stated_in_engine_quote_not_extracted: {
+    ar: "مذكور في مقطع المحرك؛ لم يُستخرج",
+    en: "Stated in the engine excerpt; not extracted",
+  },
+  in_original_per_independent_review_not_extracted: {
+    ar: "في الأصل وفق المراجع؛ لم يُستخرج",
+    en: "In the original per the reviewer; not extracted",
+  },
+  not_in_engine_record_original_unchecked: {
+    ar: "غير مذكور في السجل؛ الأصل لم يُفحص",
+    en: "Not in the record; original unchecked",
+  },
+};
+const cell = (head: string, code: string, l: L) =>
+  `<td data-label="${esc(head)}" data-field-status="${esc(code)}">${label(FIELD, code, l)}</td>`;
 
 function link(base: string | null, path: string, text: string) {
   return base
@@ -72,7 +99,7 @@ export function renderReader(pack: Pack, l: L, appBase: string): string {
                 (pr) =>
                   `<section class="sub" data-project="${esc(pr.id)}"><h3>${l === "ar" ? "مشروع" : "Project"}: <bdi dir="ltr">${esc(pr.id)}</bdi></h3>
 <table class="stack"><thead><tr><th>${l === "ar" ? "الحالة" : "Status"}</th><th>${l === "ar" ? "السعة" : "Capacity"}</th><th>${l === "ar" ? "التوقيت" : "Timing"}</th><th>${l === "ar" ? "التكلفة" : "Cost"}</th></tr></thead><tbody><tr>
-<td data-label="${l === "ar" ? "الحالة" : "Status"}">${esc(pr.b03.executionStatus)}</td><td data-label="${l === "ar" ? "السعة" : "Capacity"}">${esc(pr.b03.capacity)}</td><td data-label="${l === "ar" ? "التوقيت" : "Timing"}">${esc(pr.b03.timing)}</td><td data-label="${l === "ar" ? "التكلفة" : "Cost"}">${esc(pr.b03.cost)}</td></tr></tbody></table>
+${cell(l === "ar" ? "الحالة" : "Status", pr.b03.executionStatus, l)}${cell(l === "ar" ? "السعة" : "Capacity", pr.b03.capacity, l)}${cell(l === "ar" ? "التوقيت" : "Timing", pr.b03.timing, l)}${cell(l === "ar" ? "التكلفة" : "Cost", pr.b03.cost, l)}</tr></tbody></table>
 ${byParent(pr.id)
   .map((p) => para(p, l))
   .join("")}</section>`,
@@ -134,7 +161,7 @@ h2{font-size:1.25rem;border-bottom:1px solid var(--line);padding-bottom:.4rem;ma
 .card header{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.78rem}
 .badge{border:1px solid var(--line);border-radius:999px;padding:0 .55rem}.st{color:#ffc2c2;border-color:var(--bad)}
 .topics,.muted,small,details{color:var(--muted);font-size:.82rem} .card p{margin:.35rem 0}
-code{overflow-wrap:anywhere;word-break:break-word} details li{overflow-wrap:anywhere}
+code,td{overflow-wrap:anywhere;word-break:break-word} details li{overflow-wrap:anywhere}
 table{border-collapse:collapse;width:100%;font-size:.85rem;margin:.5rem 0} th,td{border-bottom:1px solid var(--line);padding:.4rem;text-align:start;vertical-align:top}
 .sub{margin:1rem 0;padding-inline-start:.6rem;border-inline-start:1px dashed var(--line)}
 nav.top{display:flex;flex-wrap:wrap;gap:.8rem;margin:.6rem 0}

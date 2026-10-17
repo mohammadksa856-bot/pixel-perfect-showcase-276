@@ -1,0 +1,126 @@
+{"run": "final-independent", "sha": "31aa6c68a9368b44bee629e208eb50e58613d41e", "started": "2026-10-17T22:04:13.581356+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-FINAL-ACCEPTANCE/final-independent.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-FINAL-ACCEPTANCE\final-independent.test.ts:
+(pass) G0 repeated delimiters prefix [18.72ms]
+(pass) G0 repeated delimiters suffix [11.26ms]
+(pass) G1 repeated delimiters prefix [10.96ms]
+(pass) G1 repeated delimiters suffix [10.00ms]
+(pass) G2 repeated delimiters prefix [10.70ms]
+(pass) G2 repeated delimiters suffix [10.49ms]
+(pass) G3 repeated delimiters prefix [10.91ms]
+(pass) G3 repeated delimiters suffix [12.25ms]
+(pass) G4 repeated delimiters prefix [12.22ms]
+(pass) G4 repeated delimiters suffix [10.35ms]
+(pass) G5 repeated delimiters prefix [10.38ms]
+(pass) G5 repeated delimiters suffix [11.55ms]
+(pass) G6 repeated delimiters prefix [8.99ms]
+(pass) G6 repeated delimiters suffix [11.28ms]
+(pass) U0 recognized whitespace, reject at intended guard [21.22ms]
+(pass) U1 recognized whitespace, reject at intended guard [22.16ms]
+(pass) U2 recognized whitespace, reject at intended guard [21.74ms]
+(pass) U3 recognized whitespace, reject at intended guard [20.46ms]
+(pass) U4 recognized whitespace, reject at intended guard [19.43ms]
+(pass) U5 recognized whitespace, reject at intended guard [19.34ms]
+(pass) ISO MXN separated amount must not become a year [22.10ms]
+(pass) ISO ZAR separated amount must not become a year [19.83ms]
+(pass) ISO TRY separated amount must not become a year [19.55ms]
+(pass) ISO AED separated amount must not become a year [20.91ms]
+21 |   expect(attempt("Profit USD"+gap+"2025.").error).toMatch(numericGuard);
+22 |   expect(attempt("الربح 2025"+gap+"ريال.").error).toMatch(numericGuard);
+23 | });
+24 | const unsupported=["MXN","ZAR","TRY","AED","XCG","ZWG","XAU"];
+25 | for(const code of unsupported) test("ISO "+code+" separated amount must not become a year",()=>{
+26 |   expect(attempt("Profit "+code+": 2025.").error).toMatch(/ambiguous_number_format:final-independent/);
+                                                       ^
+error: Received value must be a string: null
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b04-final-acceptance-20261018\review-delivery\WEB08B04-FINAL-ACCEPTANCE\final-independent.test.ts:26:51)
+(fail) ISO XCG separated amount must not become a year [36.74ms]
+21 |   expect(attempt("Profit USD"+gap+"2025.").error).toMatch(numericGuard);
+22 |   expect(attempt("الربح 2025"+gap+"ريال.").error).toMatch(numericGuard);
+23 | });
+24 | const unsupported=["MXN","ZAR","TRY","AED","XCG","ZWG","XAU"];
+25 | for(const code of unsupported) test("ISO "+code+" separated amount must not become a year",()=>{
+26 |   expect(attempt("Profit "+code+": 2025.").error).toMatch(/ambiguous_number_format:final-independent/);
+                                                       ^
+error: Received value must be a string: null
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b04-final-acceptance-20261018\review-delivery\WEB08B04-FINAL-ACCEPTANCE\final-independent.test.ts:26:51)
+(fail) ISO ZWG separated amount must not become a year [17.16ms]
+21 |   expect(attempt("Profit USD"+gap+"2025.").error).toMatch(numericGuard);
+22 |   expect(attempt("الربح 2025"+gap+"ريال.").error).toMatch(numericGuard);
+23 | });
+24 | const unsupported=["MXN","ZAR","TRY","AED","XCG","ZWG","XAU"];
+25 | for(const code of unsupported) test("ISO "+code+" separated amount must not become a year",()=>{
+26 |   expect(attempt("Profit "+code+": 2025.").error).toMatch(/ambiguous_number_format:final-independent/);
+                                                       ^
+error: Received value must be a string: null
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b04-final-acceptance-20261018\review-delivery\WEB08B04-FINAL-ACCEPTANCE\final-independent.test.ts:26:51)
+(fail) ISO XAU separated amount must not become a year [14.18ms]
+error: Received value must be a string: null
+(fail) C0 new ambiguous amount rejected, Arabic field [14.77ms]
+error: Received value must be a string: null
+(fail) C0 same guard in English field [22.25ms]
+error: Received value must be a string: null
+(fail) C1 new ambiguous amount rejected, Arabic field [11.28ms]
+error: Received value must be a string: null
+(fail) C1 same guard in English field [14.09ms]
+error: Received value must be a string: null
+(fail) C2 new ambiguous amount rejected, Arabic field [12.68ms]
+error: Received value must be a string: null
+(fail) C2 same guard in English field [13.50ms]
+error: Received value must be a string: null
+(fail) C3 new ambiguous amount rejected, Arabic field [9.88ms]
+error: Received value must be a string: null
+(fail) C3 same guard in English field [11.91ms]
+error: Received value must be a string: null
+(fail) C4 new ambiguous amount rejected, Arabic field [13.31ms]
+error: Received value must be a string: null
+(fail) C4 same guard in English field [13.68ms]
+error: Received value must be a string: null
+(fail) C5 new ambiguous amount rejected, Arabic field [12.35ms]
+error: Received value must be a string: null
+(fail) C5 same guard in English field [13.56ms]
+error: Received value must be a string: null
+(fail) C6 new ambiguous amount rejected, Arabic field [12.61ms]
+error: Received value must be a string: null
+(fail) C6 same guard in English field [14.34ms]
+error: Received value must be a string: null
+(fail) C7 new ambiguous amount rejected, Arabic field [11.61ms]
+error: Received value must be a string: null
+(fail) C7 same guard in English field [13.00ms]
+(pass) positive control Results (2025). [13.00ms]
+(pass) positive control السنة: 2025. [13.76ms]
+(pass) positive control رمز الشركة (2222). [11.18ms]
+(pass) positive control الفترة 2024-2025. [12.03ms]
+(pass) positive control WEB-08B03 وB02. [12.49ms]
+(pass) positive control Revenue in USD rose in 2025. [12.64ms]
+(pass) positive control try 2025 again. [12.28ms]
+(pass) credit rating Aa3 preserves bare documented token [0.14ms]
+(pass) seven delimiter boundary documented, not mistaken for passed safety coverage [0.07ms]
+(pass) frozen draft still compiles [12.55ms]
+
+19 tests failed:
+(fail) ISO XCG separated amount must not become a year [36.74ms]
+(fail) ISO ZWG separated amount must not become a year [17.16ms]
+(fail) ISO XAU separated amount must not become a year [14.18ms]
+(fail) C0 new ambiguous amount rejected, Arabic field [14.77ms]
+(fail) C0 same guard in English field [22.25ms]
+(fail) C1 new ambiguous amount rejected, Arabic field [11.28ms]
+(fail) C1 same guard in English field [14.09ms]
+(fail) C2 new ambiguous amount rejected, Arabic field [12.68ms]
+(fail) C2 same guard in English field [13.50ms]
+(fail) C3 new ambiguous amount rejected, Arabic field [9.88ms]
+(fail) C3 same guard in English field [11.91ms]
+(fail) C4 new ambiguous amount rejected, Arabic field [13.31ms]
+(fail) C4 same guard in English field [13.68ms]
+(fail) C5 new ambiguous amount rejected, Arabic field [12.35ms]
+(fail) C5 same guard in English field [13.56ms]
+(fail) C6 new ambiguous amount rejected, Arabic field [12.61ms]
+(fail) C6 same guard in English field [14.34ms]
+(fail) C7 new ambiguous amount rejected, Arabic field [11.61ms]
+(fail) C7 same guard in English field [13.00ms]
+
+ 34 pass
+ 19 fail
+ 64 expect() calls
+Ran 53 tests across 1 file. [783.00ms]

@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {compilePack} from '../../research-evidence/aramco-research-pack/pack';
+import {loadContext} from '../../research-evidence/aramco-research-pack/evidence';
+const p=compilePack(),c=loadContext();
+const w=JSON.parse(readFileSync(new URL('../WEB08B02/QUALIFIED-WITHHELD-INPUT-REGISTER-v4.json',import.meta.url),'utf8'));
+if(p.analyses.length!==7||p.analyses.some(x=>x.status!=='BLOCKED'))throw Error('analyses_hold_regression');
+if(c.register.claims.length!==22||c.register.claims.some(x=>x.qualification.status!=='WITHHELD'||x.qualification.publicationEligible))throw Error('claims_hold_regression');
+if(w.results.length!==142||w.results.some((x:any)=>x.qualification.state!=='WITHHELD'||x.qualification.publicationAuthorized))throw Error('inputs_hold_regression');
+writeFileSync(new URL('HOLDS.json',import.meta.url),JSON.stringify({tested_sha:'31aa6c68a9368b44bee629e208eb50e58613d41e',blockedAnalyses:7,withheldClaims:22,withheldInputs:142,financiallyQualified:0,financialApproval:false,editorialApproval:false,USER_FINAL_ACCEPTANCE:false,publicationAuthorized:false},null,2)+'\n');
+console.log('PASS 7 BLOCKED / 22 WITHHELD / 142 WITHHELD / 0 qualified');

@@ -1,0 +1,23 @@
+{"run": "additional", "sha": "31aa6c68a9368b44bee629e208eb50e58613d41e", "started": "2026-10-17T22:02:47.572214+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-FINAL-ACCEPTANCE/additional.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-FINAL-ACCEPTANCE\additional.test.ts:
+(pass) A01 currency prefix: unsupported profit SAR 2025 is not a year [18.47ms]
+(pass) A02 no-space suffix: unsupported profit2025ريال is a quantity [12.05ms]
+(pass) A03 Arabic percent glyph: margin2025٪ is not a year [11.02ms]
+(pass) A04 currency symbol prefix: profit $2025 is not a year [10.31ms]
+(pass) A05 newline currency remains rejected [12.51ms]
+(pass) A06 impossible leap day remains rejected [12.97ms]
+(pass) A07 valid historical leap day is accepted without qualification [36.03ms]
+(pass) A08 future exact date rejected [11.67ms]
+(pass) A09 explicit currency conflict rejected even if unit is identical [10.58ms]
+(pass) A10 explicit FY quarter YTD instant have distinct identities at common end [9.05ms]
+(pass) A11 same source but different version fails closed [10.05ms]
+(pass) A12 different fiscal-year sources retained per row not summarized as first source [9.05ms]
+(pass) A13 impossible fiscal quarter rejected not labelled Q5 [0.11ms]
+(pass) A14 impossible instant calendar rejected in row label [0.04ms]
+
+ 14 pass
+ 0 fail
+ 16 expect() calls
+Ran 14 tests across 1 file. [195.00ms]

@@ -1,0 +1,89 @@
+{
+  "decision": "REWORK",
+  "application_sha": "91fc3eea7528837ca37edbfe6dbe57fdb3a260e7",
+  "tested_delivery_sha": "31aa6c68a9368b44bee629e208eb50e58613d41e",
+  "scope": "RR-ENG03-01_ONLY",
+  "previous_cases_P0_P7": "CLOSED",
+  "preserved_closed": [
+    "FIN-01–07",
+    "LINK-01",
+    "RR-ENG02-01"
+  ],
+  "findings": [
+    {
+      "id": "RR-ENG03-01",
+      "severity": "P1_SCOPE_ACCEPTANCE_BLOCKER_NOT_PRODUCTION_INCIDENT",
+      "file": "research-evidence/aramco-research-pack/pack.ts",
+      "status": "OPEN",
+      "variants": [
+        {
+          "id": "punctuation",
+          "lines": [
+            108,
+            112,
+            175,
+            300
+          ],
+          "cases": [
+            "Profit SAR, 2025.",
+            "صافي الربح SAR، 2025.",
+            "Profit USD;2025.",
+            "الربح SAR؛2025."
+          ],
+          "expected": "Reject unsupported/ambiguous quantity at numeric guard.",
+          "actual": "accepted=true,error=null,token.classes=[]; currency-before delimiters incomplete even within6characters."
+        },
+        {
+          "id": "ISO_codes",
+          "lines": [
+            119,
+            122,
+            129,
+            133
+          ],
+          "cases": [
+            "Profit XCG: 2025.",
+            "Profit ZWG: 2025.",
+            "Profit XAU: 2025.",
+            "Profit (2025) XCG."
+          ],
+          "expected": "Fail closed for unsupported ISO currencies/units.",
+          "actual": "Missing listed codes produce bare-year exemption. Official SIX ListOne2026-09-17 verified selected codes; source receipt included."
+        },
+        {
+          "id": "Unicode",
+          "lines": [
+            150,
+            281
+          ],
+          "cases": [
+            "Profit USD\\u200b 2025.",
+            "الربح SAR\\u200e 2025.",
+            "Profit USD ２０２５.",
+            "Profit USD 𝟚𝟘𝟚𝟝."
+          ],
+          "expected": "Reject unsupported numeric formatting or detect the quantity; no silent acceptance.",
+          "actual": "Format controls break association; fullwidth and mathematical digit strings are never tokenized, so compile succeeds."
+        }
+      ],
+      "reproduction": [
+        "bun test ./review-delivery/WEB08B04-FINAL-ACCEPTANCE/final-independent.test.ts",
+        "bun ./review-delivery/WEB08B04-FINAL-ACCEPTANCE/edge-probe.ts"
+      ],
+      "new_tests": {
+        "passed": 34,
+        "failed": 19,
+        "total": 53
+      },
+      "fix_owner": "Claude Code; reviewer has not modified implementation."
+    }
+  ],
+  "limit_observation": {
+    "six_character_boundary": "0..6repeated delimiters work",
+    "seven_character_boundary": "Bare-year acceptance documented; not a separate new blocker or sole rejection basis"
+  },
+  "financially_qualified": 0,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "production_release_approval": false
+}

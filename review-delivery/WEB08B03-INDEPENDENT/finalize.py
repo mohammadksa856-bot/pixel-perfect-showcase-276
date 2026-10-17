@@ -37,6 +37,7 @@ result={
 names=['INDEPENDENT-REVIEW_AR.md','README.md','FINDINGS.json','RESULTS.json','UI-REVIEW.json','RESEARCH-SOURCE-REVIEW.json','SOURCE-BLOB-INTEGRITY.json','SETUP-FAILURES.json','boundaries.test.ts','run_review.py','source_check.py','collect_evidence.py','finalize.py']
 names += ['runs/'+p.name for p in sorted((HERE/'runs').glob('*.txt'))]
 if (HERE/'CENTRAL-TRACKING-RECEIPT.json').exists():names.append('CENTRAL-TRACKING-RECEIPT.json')
+if (HERE/'GITHUB-DELIVERY.json').exists():names.append('GITHUB-DELIVERY.json')
 files=[]
 for name in names:
  p=HERE/name;b=p.read_bytes().replace(b'\r\n',b'\n')

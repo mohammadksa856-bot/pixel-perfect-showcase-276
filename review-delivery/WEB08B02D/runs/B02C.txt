@@ -1,0 +1,72 @@
+Code SHA:7ba75414e7cd7c581c84f12f8efd7b58c1efa8e1
+Run:B02C
+Command:& 'C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe' test ./research-evidence/engine-bridge
+Exit:0
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\engine-bridge\bridge.test.ts:
+(pass) synthetic exact metadata maps into accepted B01, not a release [17.25ms]
+(pass) exact identity, no interpretation or first-match repair > missing stable ID [1.84ms]
+(pass) exact identity, no interpretation or first-match repair > integer database ID is not global fact reference [1.16ms]
+(pass) exact identity, no interpretation or first-match repair > different revision [1.43ms]
+(pass) exact identity, no interpretation or first-match repair > different hash [1.55ms]
+(pass) exact identity, no interpretation or first-match repair > wrong value digest [1.22ms]
+(pass) exact identity, no interpretation or first-match repair > issuer [1.14ms]
+(pass) exact identity, no interpretation or first-match repair > same end annual versus quarter [1.37ms]
+(pass) exact identity, no interpretation or first-match repair > YTD versus standalone [1.03ms]
+(pass) exact identity, no interpretation or first-match repair > different period start [1.04ms]
+(pass) exact identity, no interpretation or first-match repair > different unit [0.91ms]
+(pass) exact identity, no interpretation or first-match repair > different currency [0.94ms]
+(pass) exact identity, no interpretation or first-match repair > scope [0.88ms]
+(pass) exact identity, no interpretation or first-match repair > dimensions [1.15ms]
+(pass) exact identity, no interpretation or first-match repair > empty period start is not invented [1.08ms]
+(pass) exact identity, no interpretation or first-match repair > document ID [1.02ms]
+(pass) exact identity, no interpretation or first-match repair > document version [0.83ms]
+(pass) exact identity, no interpretation or first-match repair > content hash not artifact proof [0.73ms]
+(pass) exact identity, no interpretation or first-match repair > source URL [0.70ms]
+(pass) exact identity, no interpretation or first-match repair > date precision [0.82ms]
+(pass) exact identity, no interpretation or first-match repair > locator [0.84ms]
+(pass) exact identity, no interpretation or first-match repair > hidden source [0.64ms]
+(pass) exact identity, no interpretation or first-match repair > no positive quality assessment [0.73ms]
+(pass) exact identity, no interpretation or first-match repair > withheld fact [0.59ms]
+(pass) exact identity, no interpretation or first-match repair > rejected finance [0.67ms]
+(pass) exact identity, no interpretation or first-match repair > derived without lineage [9.33ms]
+(pass) exact identity, no interpretation or first-match repair > artifact not verified [0.85ms]
+(pass) duplicate revision is not chosen by order [0.63ms]
+(pass) contradicting sources block in either order even when second not requested [1.21ms]
+(pass) known superseding withheld fact prevents stale fallback [0.69ms]
+(pass) known superseding document prevents old link [0.62ms]
+(pass) later source does not leak backward into as-of snapshot [0.70ms]
+(pass) current-only export is insufficient for historical claim [0.50ms]
+(pass) export from future evaluation fails [0.88ms]
+(pass) withdrawal blocks even older analysis [1.13ms]
+(pass) unproven withdrawal observation time fails closed [0.87ms]
+(pass) user permission does not mint grant; missing grant remains separate B01 gate [2.11ms]
+(pass) financial review not inferred from extraction or mapping [2.04ms]
+(pass) existing reviewed synthetic B01 claim still evaluated by original ledger [4.53ms]
+(pass) missing derived operand is not reconstructed [0.73ms]
+(pass) no mutation, determinism, no values in diagnostic or mapped metadata [1.65ms]
+(pass) unknown bridge properties cannot smuggle publication approval [0.91ms]
+
+research-evidence\engine-bridge\hardening.test.ts:
+(pass) unrequested fact cannot be resolved just because it exists in trusted context [1.84ms]
+(pass) period end outside knowledge date is blocked by original B01 evaluator [2.62ms]
+(pass) future-only rows cannot produce context [3.28ms]
+(pass) same ID/revision with conflicting digest fails schema rather than choose first [0.76ms]
+(pass) unverified alternate page cannot acquire locator proof [0.63ms]
+(pass) verified alternate locator works without rewriting document's primary page [0.69ms]
+(pass) impossible evaluation date rejected without rollover [0.47ms]
+(pass) empty engine result is not complete or a fallback to context facts [0.43ms]
+(pass) source withdrawal after evaluation does not rewrite historical result [0.59ms]
+
+research-evidence\engine-bridge\resolver.test.ts:
+(pass) synthetic claim travels through bridge to original evidence/link contract [6.22ms]
+(pass) unproven rights hides trail, not just publication badge [2.64ms]
+(pass) withheld record cannot be resolved into legacy fallback [1.70ms]
+(pass) resolver does not accept a different as-of request [1.55ms]
+(pass) caller mutation never changes captured immutable context [1.45ms]
+
+ 56 pass
+ 0 fail
+ 191 expect() calls
+Ran 56 tests across 3 files. [169.00ms]

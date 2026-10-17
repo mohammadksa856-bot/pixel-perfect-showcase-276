@@ -1,0 +1,1319 @@
+{
+ "status": "UNAPPROVED_RESEARCH_DRAFT — WITHHELD",
+ "publication": "not_for_public_display",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "basis": {
+  "snapshotGeneratedAt": "2026-10-13T00:06:16+00:00",
+  "b03Implementation": "1735609abafa85ee6e101ab7e3640496f0e43088",
+  "b03Accept": "4f7145e6927ff98559ccf82dfb6103b6953c3892"
+ },
+ "note": "Defined quantitative analyses. All BLOCKED: no qualified input exists. Inputs are identities; values live in Marefa Data.",
+ "analyses": [
+  {
+   "id": "fa-revenue",
+   "title": {
+    "ar": "الإيرادات حسب النشاط ومحركاتها",
+    "en": "Revenue by activity and its drivers"
+   },
+   "topics": [
+    "financials",
+    "operations"
+   ],
+   "definition": {
+    "ar": "الإيرادات من العقود مع العملاء وفق IFRS كما تعرضها القوائم: حسب نوع المنتج، والإيرادات الخارجية لكل قطاع بعد استبعاد ما بين القطاعات، والتقسيم الجغرافي حسب موقع الكيان البائع.",
+    "basis": "ifrs_line_item"
+   },
+   "questions": [
+    "كم من تغير إيرادات الخام بين سنتين يعود إلى السعر المحقق، وكم إلى الكمية؟",
+    "ما وزن تيار الغاز وسوائله في الإيرادات، وكيف تغير خلال السنوات الخمس المتاحة؟",
+    "كم من الإيرادات الخارجية للتكرير تجارة بهامش منخفض، وكم منتجات مصنعة؟"
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "NO_FINANCIAL_REVIEW",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "revenue",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "revenue_by_product",
+     "bucket": "annual",
+     "dims": {
+      "product": "Crude oil"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 64,
+     "table": "revenue by product type",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_product",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "revenue_by_product",
+     "bucket": "annual",
+     "dims": {
+      "product": "Natural gas and NGLs"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 64,
+     "table": "revenue by product type",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_product",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "revenue_by_product",
+     "bucket": "annual",
+     "dims": {
+      "product": "Refined and chemical products"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 64,
+     "table": "revenue by product type",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_product",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "upstream_revenue",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Upstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 44,
+     "table": "upstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_revenue",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "downstream_revenue",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Downstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 54,
+     "table": "downstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_revenue",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "average_realized_crude_oil_price",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "USD/bbl",
+     "page": 39,
+     "table": "key financial metrics",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=average_realized_crude_oil_price",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "total_liquids_production",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "mmbpd",
+     "page": 52,
+     "table": "Upstream hydrocarbon production",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liquids_production",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "total_gas_production",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "bscfd",
+     "page": 52,
+     "table": "Upstream hydrocarbon production",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_gas_production",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "revenue",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "revenue_and_other_income_related_to_sales",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "external_revenue",
+     "observations": 12,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "intersegment_revenue",
+     "observations": 16,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-revenue-d1"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+    "data": "/preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "id": "fa-profitability",
+   "title": {
+    "ar": "الربحية والهوامش",
+    "en": "Profitability and margins"
+   },
+   "topics": [
+    "financials",
+    "earnings_quality",
+    "ratios"
+   ],
+   "definition": {
+    "ar": "الربح قبل الفوائد والضرائب لكل قطاع كما في إيضاح القطاعات. «الأرباح المعدلة» مقياس غير IFRS من المُصدر، ويحتاج ربط تعريفه الأصلي قبل الاستخدام. الهوامش نسب معيارية: الربح ÷ الإيرادات للفترة نفسها.",
+    "basis": "issuer_non_ifrs"
+   },
+   "questions": [
+    "ما حصة كل قطاع من الربح التشغيلي، وكيف تغيرت مع السعر المحقق؟",
+    "ما البنود التي تفصل الأرباح المعدلة عن المعلنة، وهل تتكرر؟",
+    "كم من الربح يقتطعه بند الإتاوات والضرائب الأخرى، ثم ضرائب الدخل والزكاة؟"
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "ISSUER_DEFINITION_NOT_BOUND",
+    "NO_FINANCIAL_REVIEW",
+    "UNAPPROVED_DERIVED_METRIC",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "upstream_ebit",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Upstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 44,
+     "table": "upstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_ebit",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "downstream_ebit",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Downstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 54,
+     "table": "downstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_ebit",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "corporate_ebit",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Corporate"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 54,
+     "table": "corporate results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=corporate_ebit",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "upstream_adjusted_ebit",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Upstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 44,
+     "table": "upstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_adjusted_ebit",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "downstream_adjusted_ebit",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Downstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 54,
+     "table": "downstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_adjusted_ebit",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "operating_income",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 39,
+     "table": "summarized consolidated statement of income",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "net_income",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "adjusted_net_income",
+     "bucket": "annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 39,
+     "table": "adjusted net income",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=adjusted_net_income",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "operating_margin",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_margin",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "net_margin",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_margin",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "operating_income",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "net_income",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "net_income_parent",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "adjusted_net_income",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "segment_ebit",
+     "observations": 16,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-profitability-d1"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+    "data": "/preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "id": "fa-cash-flow",
+   "title": {
+    "ar": "التدفقات النقدية",
+    "en": "Cash flows"
+   },
+   "topics": [
+    "financials",
+    "earnings_quality"
+   ],
+   "definition": {
+    "ar": "التدفق النقدي من الأنشطة التشغيلية والاستثمارية والتمويلية كما في قائمة التدفقات. «التدفق النقدي الحر» = التدفق التشغيلي ناقص الإنفاق الرأسمالي. تعريف المُصدر له يحتاج ربطًا؛ والقيمة في المحرك مشتقة غير معتمدة.",
+    "basis": "issuer_non_ifrs"
+   },
+   "questions": [
+    "هل يغطي التدفق التشغيلي الإنفاق الرأسمالي والتوزيعات معًا في كل سنة من السنوات المتاحة؟",
+    "ما أثر تغيرات رأس المال العامل على التدفق التشغيلي، خصوصًا المستحق من الحكومة؟"
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "ISSUER_DEFINITION_NOT_BOUND",
+    "NO_FINANCIAL_REVIEW",
+    "UNAPPROVED_DERIVED_METRIC",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "operating_cash_flow",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "investing_cash_flow",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "financing_cash_flow",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "free_cash_flow",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=free_cash_flow",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "capex",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "operating_cash_flow",
+     "bucket": "history_quarter",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "2026Q1",
+      "2026Q2"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "operating_cash_flow",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "capex",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "cash_flow_end",
+     "observations": 1,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "depreciation_amortization_cash_flow",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-cash-flow-d1"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+    "data": "/preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "id": "fa-capex",
+   "title": {
+    "ar": "الإنفاق الرأسمالي",
+    "en": "Capital expenditure"
+   },
+   "topics": [
+    "financials",
+    "operations",
+    "forecasts"
+   ],
+   "definition": {
+    "ar": "الإنفاق الرأسمالي كما يعرضه المُصدر في نتائج القطاعات، والإنفاق النقدي على الأصول الثابتة في قائمة التدفقات. لا يُطابَق آليًا مع «توجيه الاستثمار الرأسمالي»، وهو خطة لها نطاق تعريف مختلف محتمل.",
+    "basis": "issuer_non_ifrs"
+   },
+   "questions": [
+    "كيف يتوزع الإنفاق بين القطاعين، وهل يتجه نحو الغاز؟",
+    "ما الفرق بين الإنفاق الفعلي لعام 2026 والتوجيه، بعد ربط مصدر التوجيه وتعريفه؟"
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "ISSUER_DEFINITION_NOT_BOUND",
+    "NO_FINANCIAL_REVIEW",
+    "UNAPPROVED_DERIVED_METRIC",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "capex",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "upstream_capex",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Upstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 44,
+     "table": "upstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_capex",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "downstream_capex",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Downstream"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 54,
+     "table": "downstream results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_capex",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "corporate_capex",
+     "bucket": "annual",
+     "dims": {
+      "segment": "Corporate"
+     },
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 54,
+     "table": "corporate results",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=corporate_capex",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "upstream_capex_per_boe",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "USD/boe",
+     "page": 44,
+     "table": "upstream performance",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_capex_per_boe",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "capex_to_depreciation_amortization",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex_to_depreciation_amortization",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "capex",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "cash_capex",
+     "observations": 12,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-capex-d1"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+    "data": "/preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "id": "fa-working-capital-debt",
+   "title": {
+    "ar": "رأس المال العامل والديون",
+    "en": "Working capital and debt"
+   },
+   "topics": [
+    "financials",
+    "risks",
+    "ratios"
+   ],
+   "definition": {
+    "ar": "تغيرات رأس المال العامل كما في قائمة التدفقات: الذمم المدينة، والمخزون، والدائنون، والمستحق من الحكومة، والإتاوات المستحقة. الدين: الاقتراض قصير وطويل الأجل والإيجارات. نسب الدين إلى EBITDA ومعامل التغطية مشتقات معيارية غير معتمدة في المحرك.",
+    "basis": "standard_ratio"
+   },
+   "questions": [
+    "هل يتغير المستحق من الحكومة بما يؤثر على التدفق التشغيلي، وما طبيعته؟",
+    "ما صافي الدين بتعريف المُصدر، وكيف تغير مع التوزيعات والاستحواذات؟"
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "NO_FINANCIAL_REVIEW",
+    "UNAPPROVED_DERIVED_METRIC",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "working_capital_change",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 16,
+     "table": "change in working capital; sum of disclosed components",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=working_capital_change",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "accounts_receivable_change",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=accounts_receivable_change",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "due_from_government_change",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=due_from_government_change",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "royalties_payable_change",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=royalties_payable_change",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "debt_issued",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=debt_issued",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "debt_repaid",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=debt_repaid",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "interest_paid",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=interest_paid",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "lease_payments",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 181,
+     "table": "consolidated statement of cash flows",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=lease_payments",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "net_debt_to_ebitda",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_debt_to_ebitda",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "total_liabilities",
+     "bucket": "history_position",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "@2021-12-31",
+      "@2022-12-31",
+      "@2023-12-31",
+      "@2024-12-31",
+      "@2025-12-31"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liabilities",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "current_borrowings",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "noncurrent_borrowings",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "cash",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "total_liabilities",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-wc-d1"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+    "data": "/preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "id": "fa-dividends",
+   "title": {
+    "ar": "توزيعات الأرباح وإعادة الشراء",
+    "en": "Dividends and buybacks"
+   },
+   "topics": [
+    "dividends_actions",
+    "financials"
+   ],
+   "definition": {
+    "ar": "التوزيعات المدفوعة كما في قائمة التدفقات وإيضاح التوزيعات، بمكونيها الأساسي والمرتبط بالأداء، والتوزيع للسهم. نسبة التغطية = التدفق الحر ÷ التوزيعات المدفوعة؛ القيمة في المحرك مشتقة غير معتمدة.",
+    "basis": "ifrs_line_item"
+   },
+   "questions": [
+    "ما حصة التوزيع المرتبط بالأداء من المدفوع، وكيف تغيرت؟",
+    "هل غطى التدفق الحر التوزيعات في كل سنة متاحة؟",
+    "كيف يتفاعل برنامج إعادة الشراء مع التوزيعات بعد تنفيذه؟ لا تنفيذ مُبلغ عنه بعد."
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "NO_FINANCIAL_REVIEW",
+    "UNAPPROVED_DERIVED_METRIC",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "dividends_paid",
+     "bucket": "annual",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 243,
+     "table": "dividends",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_paid",
+      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+     }
+    },
+    {
+     "key": "base_dividends_paid",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 243,
+     "table": "dividends",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=base_dividends_paid",
+      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+     }
+    },
+    {
+     "key": "performance_linked_dividends_paid",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "SAR",
+     "page": 243,
+     "table": "dividends",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=performance_linked_dividends_paid",
+      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+     }
+    },
+    {
+     "key": "dividends_per_share",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "SAR/share",
+     "page": 243,
+     "table": "dividends",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_per_share",
+      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+     }
+    },
+    {
+     "key": "fcf_dividend_coverage_ratio",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=fcf_dividend_coverage_ratio",
+      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "dividends_paid",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "basic_eps",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "weighted_average_shares_basic",
+     "observations": 2,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-dividends-d1",
+    "fa-dividends-d2"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   }
+  },
+  {
+   "id": "fa-returns",
+   "title": {
+    "ar": "العائد على رأس المال",
+    "en": "Return on capital"
+   },
+   "topics": [
+    "ratios",
+    "financials"
+   ],
+   "definition": {
+    "ar": "العائد على متوسط رأس المال المستخدم (ROACE) مقياس غير IFRS من المُصدر، وتعريفه الأصلي يحتاج ربطًا قبل الاستخدام. العائد على حقوق الملكية والأصول في المحرك مشتقات معيارية غير معتمدة.",
+    "basis": "issuer_non_ifrs"
+   },
+   "questions": [
+    "كيف يتغير العائد على رأس المال مع السعر المحقق، ومع تراكم الإنفاق على مشاريع لم تبلغ طاقتها؟",
+    "ما أثر الطاقة الفائضة على العائد مقارنة بشركات متكاملة؟ يتعذر بلا نظراء في اللقطة."
+   ],
+   "status": "BLOCKED",
+   "blockers": [
+    "B02_WITHHELD_INPUT",
+    "ISSUER_DEFINITION_NOT_BOUND",
+    "NO_FINANCIAL_REVIEW",
+    "UNAPPROVED_DERIVED_METRIC",
+    "UNREVIEWED_ENGINE_FACT"
+   ],
+   "inputs": [
+    {
+     "key": "roace",
+     "bucket": "annual",
+     "dims": null,
+     "status": "UNREVIEWED_ENGINE_FACT",
+     "periods": [
+      "FY2025"
+     ],
+     "unit": "percent",
+     "page": 39,
+     "table": "key financial metrics",
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=roace",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "return_on_equity",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=return_on_equity",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "return_on_assets",
+     "bucket": "history_annual",
+     "dims": null,
+     "status": "UNAPPROVED_DERIVED_METRIC",
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ],
+     "unit": "ratio",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=return_on_assets",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "total_equity",
+     "bucket": "history_position",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "@2021-12-31",
+      "@2022-12-31",
+      "@2023-12-31",
+      "@2024-12-31",
+      "@2025-12-31"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=total_equity",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    },
+    {
+     "key": "total_assets",
+     "bucket": "history_position",
+     "dims": null,
+     "status": "B02_WITHHELD_INPUT",
+     "periods": [
+      "@2021-12-31",
+      "@2022-12-31",
+      "@2023-12-31",
+      "@2024-12-31",
+      "@2025-12-31"
+     ],
+     "unit": "SAR",
+     "page": null,
+     "table": null,
+     "links": {
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=total_assets",
+      "data": "/preview/web-v1/companies/2222?tab=financials"
+     }
+    }
+   ],
+   "b02Inputs": [
+    {
+     "metric": "total_equity",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "parent_equity",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "total_assets",
+     "observations": 4,
+     "status": "B02_WITHHELD_INPUT"
+    },
+    {
+     "metric": "net_income",
+     "observations": 5,
+     "status": "B02_WITHHELD_INPUT"
+    }
+   ],
+   "drivers": [
+    "fa-returns-d1"
+   ],
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios",
+    "data": "/preview/web-v1/companies/2222?tab=financials"
+   }
+  }
+ ]
+}

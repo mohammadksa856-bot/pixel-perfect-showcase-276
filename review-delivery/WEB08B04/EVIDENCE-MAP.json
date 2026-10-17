@@ -1,0 +1,5503 @@
+{
+ "status": "UNAPPROVED_RESEARCH_DRAFT — WITHHELD",
+ "publication": "not_for_public_display",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "basis": {
+  "snapshotGeneratedAt": "2026-10-13T00:06:16+00:00",
+  "b03Implementation": "1735609abafa85ee6e101ab7e3640496f0e43088",
+  "b03Accept": "4f7145e6927ff98559ccf82dfb6103b6953c3892"
+ },
+ "note": "Per paragraph: kind, status, topics and resolved evidence (identities only, no metric values).",
+ "counts": {
+  "paragraphs": 99,
+  "analyses": 7,
+  "projects": 5,
+  "kind:reported_record": 31,
+  "kind:management_plan": 6,
+  "kind:research_interpretation": 33,
+  "kind:assumption": 3,
+  "kind:scenario": 4,
+  "kind:methodology": 4,
+  "kind:gap": 18
+ },
+ "paragraphs": [
+  {
+   "id": "scope-what",
+   "section": "scope",
+   "role": "body",
+   "parent": null,
+   "kind": "methodology",
+   "status": "METHODOLOGY_PENDING_APPROVAL",
+   "topics": [
+    "news"
+   ],
+   "hasEnglish": true,
+   "evidence": [
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "CODEX_B03_ACCEPT"
+     },
+     "label": "Independent review CODEX_B03_ACCEPT @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "revenue"
+     },
+     "label": "B02 withheld input identity: revenue (5 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2024",
+      "fy:2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scope-kinds",
+   "section": "scope",
+   "role": "body",
+   "parent": null,
+   "kind": "methodology",
+   "status": "METHODOLOGY_PENDING_APPROVAL",
+   "topics": [
+    "news"
+   ],
+   "hasEnglish": true,
+   "evidence": [
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "CODEX_B03_ACCEPT"
+     },
+     "label": "Independent review CODEX_B03_ACCEPT @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "scope-originals",
+   "section": "scope",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "news"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "GAS_TARGET"
+     },
+     "label": "Independent review GAS_TARGET @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "CAPITAL_INVESTMENT_GUIDANCE"
+     },
+     "label": "Independent review CAPITAL_INVESTMENT_GUIDANCE @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "bm-identity",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "identity"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "legal_name"
+     },
+     "label": "Engine profile: legal_name",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "legal_form"
+     },
+     "label": "Engine profile: legal_form",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "headquarters_address"
+     },
+     "label": "Engine profile: headquarters_address",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "listing_date"
+     },
+     "label": "Engine profile: listing_date",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "reporting_standard"
+     },
+     "label": "Engine profile: reporting_standard",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "bm-description",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "business"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "business_description"
+     },
+     "label": "Engine profile: business_description",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "business_description_ar"
+     },
+     "label": "Engine profile: business_description_ar",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "geographic_presence"
+     },
+     "label": "Engine profile: geographic_presence",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "subsidiaries_count"
+     },
+     "label": "Engine profile: subsidiaries_count",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "bm-ownership",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "ownership",
+    "governance"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_ownership",
+      "holder": "saudi_government_direct"
+     },
+     "label": "Engine ownership: saudi_government_direct",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2025-12-31",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_ownership",
+      "holder": "other_strategic"
+     },
+     "label": "Engine ownership: other_strategic",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2025-12-31",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_ownership",
+      "holder": "public"
+     },
+     "label": "Engine ownership: public",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2025-12-31",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_ownership",
+      "holder": "treasury"
+     },
+     "label": "Engine ownership: treasury",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2025-12-31",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "bm-ownership-interp",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "ownership",
+    "governance",
+    "dividends_actions"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_ownership",
+      "holder": "saudi_government_direct"
+     },
+     "label": "Engine ownership: saudi_government_direct",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2025-12-31",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-q4-2025-base-dividend"
+     },
+     "label": "B03 aramco-q4-2025-base-dividend (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-buyback-2026"
+     },
+     "label": "B03 aramco-buyback-2026 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "bm-governance",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "governance"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "chairman_name"
+     },
+     "label": "Engine profile: chairman_name",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "ceo_name"
+     },
+     "label": "Engine profile: ceo_name",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "auditor"
+     },
+     "label": "Engine profile: auditor",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "bm-rating",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks",
+    "identity"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "credit_rating"
+     },
+     "label": "Engine profile: credit_rating",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "up-scope",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "business",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "business_segments"
+     },
+     "label": "Engine profile: business_segments",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "products_services"
+     },
+     "label": "Engine profile: products_services",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "up-msc",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "management_plan",
+   "status": "WITHHELD",
+   "topics": [
+    "operations",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "up-volumes",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_liquids_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_liquids_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_gas_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_gas_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_hydrocarbon_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_hydrocarbon_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "up-spare",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_liquids_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_liquids_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "up-unit-costs",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "operations",
+    "earnings_quality"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "lifting_cost_per_boe",
+      "bucket": "annual"
+     },
+     "label": "Engine metric lifting_cost_per_boe [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_capex_per_boe",
+      "bucket": "annual"
+     },
+     "label": "Engine metric upstream_capex_per_boe [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "up-margin-logic",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "financials",
+    "competitors"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "average_realized_crude_oil_price",
+      "bucket": "annual"
+     },
+     "label": "Engine metric average_realized_crude_oil_price [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "lifting_cost_per_boe",
+      "bucket": "annual"
+     },
+     "label": "Engine metric lifting_cost_per_boe [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "peer_comparison"
+     },
+     "label": "Engine capability peer_comparison: partial (no_other_peer_with_comparable_facts)",
+     "status": "PARTIAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "up-reserves-gap",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "reserve_life_index",
+      "bucket": "annual"
+     },
+     "label": "Engine metric reserve_life_index [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dn-scope",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "business",
+    "industry"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "business_segments"
+     },
+     "label": "Engine profile: business_segments",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "dn-volumes",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_crude_utilization",
+      "bucket": "annual"
+     },
+     "label": "Engine metric downstream_crude_utilization [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream business model"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "base_oils_sold",
+      "bucket": "annual"
+     },
+     "label": "Engine metric base_oils_sold [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream volumes"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "finished_lubricants_sold",
+      "bucket": "annual"
+     },
+     "label": "Engine metric finished_lubricants_sold [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream volumes"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "crude_refined_products_traded",
+      "bucket": "annual"
+     },
+     "label": "Engine metric crude_refined_products_traded [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream volumes"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "liquid_chemicals_traded",
+      "bucket": "annual"
+     },
+     "label": "Engine metric liquid_chemicals_traded [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream volumes"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dn-petro-rabigh",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "dividends_actions",
+    "business"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-petro-rabigh-stake-2025"
+     },
+     "label": "B03 aramco-petro-rabigh-stake-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 232,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_event",
+      "id": "evt-petro-rabigh-2025"
+     },
+     "label": "B03 record group evt-petro-rabigh-2025 (single_record)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "dn-jv-support",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks",
+    "business"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sadara-petro-rabigh-support"
+     },
+     "label": "B03 aramco-sadara-petro-rabigh-support (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "dn-held-for-sale",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "business",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "cash_held_for_sale"
+     },
+     "label": "B02 withheld input identity: cash_held_for_sale (1 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "instant:2026"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dn-earnings-logic",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "business",
+    "financials",
+    "risks",
+    "industry"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_ebit {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_crude_utilization",
+      "bucket": "annual"
+     },
+     "label": "Engine metric downstream_crude_utilization [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream business model"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "share_of_profit_associates",
+      "bucket": "annual"
+     },
+     "label": "Engine metric share_of_profit_associates [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sadara-petro-rabigh-support"
+     },
+     "label": "B03 aramco-sadara-petro-rabigh-support (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rv-product",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_product",
+      "bucket": "annual",
+      "dims": {
+       "product": "Crude oil"
+      }
+     },
+     "label": "Engine metric revenue_by_product {\"product\":\"Crude oil\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "revenue by product type"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_product",
+      "bucket": "annual",
+      "dims": {
+       "product": "Natural gas and NGLs"
+      }
+     },
+     "label": "Engine metric revenue_by_product {\"product\":\"Natural gas and NGLs\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "revenue by product type"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_product",
+      "bucket": "annual",
+      "dims": {
+       "product": "Refined and chemical products"
+      }
+     },
+     "label": "Engine metric revenue_by_product {\"product\":\"Refined and chemical products\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "revenue by product type"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-geography",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_geography",
+      "bucket": "annual",
+      "dims": {
+       "basis": "location of selling entity",
+       "geography": "In-Kingdom"
+      }
+     },
+     "label": "Engine metric revenue_by_geography {\"basis\":\"location of selling entity\",\"geography\":\"In-Kingdom\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 37,
+      "table": "Note 4 - external revenue by geographical area"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_geography",
+      "bucket": "annual",
+      "dims": {
+       "basis": "location of selling entity",
+       "geography": "Out-of-Kingdom"
+      }
+     },
+     "label": "Engine metric revenue_by_geography {\"basis\":\"location of selling entity\",\"geography\":\"Out-of-Kingdom\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 37,
+      "table": "Note 4 - external revenue by geographical area"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-geography-reading",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_geography",
+      "bucket": "annual",
+      "dims": {
+       "basis": "location of selling entity",
+       "geography": "Out-of-Kingdom"
+      }
+     },
+     "label": "Engine metric revenue_by_geography {\"basis\":\"location of selling entity\",\"geography\":\"Out-of-Kingdom\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 37,
+      "table": "Note 4 - external revenue by geographical area"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-segments",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_revenue",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_revenue {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_revenue",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_revenue {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "corporate_revenue",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Corporate"
+      }
+     },
+     "label": "Engine metric corporate_revenue {\"segment\":\"Corporate\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "external revenue by segment"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_ebit {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_ebit {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "corporate_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Corporate"
+      }
+     },
+     "label": "Engine metric corporate_ebit {\"segment\":\"Corporate\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "corporate results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_adjusted_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_adjusted_ebit {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_adjusted_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_adjusted_ebit {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-cost-lines",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "financials",
+    "earnings_quality"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "purchases",
+      "bucket": "annual"
+     },
+     "label": "Engine metric purchases [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "producing_manufacturing_expense",
+      "bucket": "annual"
+     },
+     "label": "Engine metric producing_manufacturing_expense [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "selling_general_administrative_expense",
+      "bucket": "annual"
+     },
+     "label": "Engine metric selling_general_administrative_expense [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "exploration_expense",
+      "bucket": "annual"
+     },
+     "label": "Engine metric exploration_expense [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "depreciation_amortization",
+      "bucket": "annual"
+     },
+     "label": "Engine metric depreciation_amortization [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "income_taxes_and_zakat",
+      "bucket": "annual"
+     },
+     "label": "Engine metric income_taxes_and_zakat [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "summarized consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-mechanics",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials",
+    "earnings_quality"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_product",
+      "bucket": "annual",
+      "dims": {
+       "product": "Crude oil"
+      }
+     },
+     "label": "Engine metric revenue_by_product {\"product\":\"Crude oil\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "revenue by product type"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "purchases",
+      "bucket": "annual"
+     },
+     "label": "Engine metric purchases [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_ebit {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-gas-price-gap",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "financials",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "natural_gas_revenue",
+      "bucket": "annual"
+     },
+     "label": "Engine metric natural_gas_revenue [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "natural gas and NGL revenue"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "average_realized_crude_oil_price",
+      "bucket": "annual"
+     },
+     "label": "Engine metric average_realized_crude_oil_price [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rv-royalty-gap",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "financials",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "in-interseg",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "business",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "intersegment_revenue"
+     },
+     "label": "B02 withheld input identity: intersegment_revenue (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "external_revenue"
+     },
+     "label": "B02 withheld input identity: external_revenue (12 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "in-midstream",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "business",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "in-channels",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "business",
+    "financials",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "intersegment_revenue"
+     },
+     "label": "B02 withheld input identity: intersegment_revenue (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "business_segments"
+     },
+     "label": "Engine profile: business_segments",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "in-transfer-gap",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "financials",
+    "earnings_quality"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "intersegment_revenue"
+     },
+     "label": "B02 withheld input identity: intersegment_revenue (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_depreciation_amortization",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_depreciation_amortization {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 196,
+      "table": "Note 4 - operating segments"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dr-price",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "average_realized_crude_oil_price",
+      "bucket": "annual"
+     },
+     "label": "Engine metric average_realized_crude_oil_price [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "dr-volume",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_gas_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_gas_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "dr-margin",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "financials",
+    "industry"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_crude_utilization",
+      "bucket": "annual"
+     },
+     "label": "Engine metric downstream_crude_utilization [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream business model"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "crude_refined_products_traded",
+      "bucket": "annual"
+     },
+     "label": "Engine metric crude_refined_products_traded [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream volumes"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "purchases",
+      "bucket": "annual"
+     },
+     "label": "Engine metric purchases [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dr-capacity",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "GAS_TARGET"
+     },
+     "label": "Independent review GAS_TARGET @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "dr-sensitivity-blocked",
+   "section": "business-model",
+   "role": "body",
+   "parent": null,
+   "kind": "methodology",
+   "status": "METHODOLOGY_PENDING_APPROVAL",
+   "topics": [
+    "financials",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "average_realized_crude_oil_price",
+      "bucket": "annual"
+     },
+     "label": "Engine metric average_realized_crude_oil_price [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "segment_ebit"
+     },
+     "label": "B02 withheld input identity: segment_ebit (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pg-frame",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "forecasts",
+    "business"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pg-milestones-composite",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_event",
+      "id": "evt-projects-2025"
+     },
+     "label": "B03 record group evt-projects-2025 (composite_of_distinct_milestones)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pg-capex-guidance",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "management_plan",
+   "status": "WITHHELD",
+   "topics": [
+    "forecasts",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-capex-guidance-2026"
+     },
+     "label": "B03 aramco-capex-guidance-2026 (management_plan/issuer_guidance)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "CAPITAL_INVESTMENT_GUIDANCE"
+     },
+     "label": "Independent review CAPITAL_INVESTMENT_GUIDANCE @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pg-capex-segments",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "financials",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_capex {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_capex {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "corporate_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Corporate"
+      }
+     },
+     "label": "Engine metric corporate_capex {\"segment\":\"Corporate\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "corporate results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "capex",
+      "bucket": "history_annual"
+     },
+     "label": "Engine metric capex [history_annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "capex"
+     },
+     "label": "B02 withheld input identity: capex (5 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2024",
+      "fy:2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pg-rigs",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-rig-purchase-commitments"
+     },
+     "label": "B03 aramco-rig-purchase-commitments (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 69,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pg-rigs-reading",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "forecasts",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-rig-purchase-commitments"
+     },
+     "label": "B03 aramco-rig-purchase-commitments (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 69,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_capex {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pg-project-cost-gap",
+   "section": "projects-growth",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "financials",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "jafurah"
+     },
+     "label": "B03 project jafurah",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "marjan-increment"
+     },
+     "label": "B03 project marjan-increment",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "sales-gas-growth-2030"
+     },
+     "label": "B03 project sales-gas-growth-2030",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-jafurah-nature",
+   "section": "projects-growth",
+   "role": "project_nature",
+   "parent": "jafurah",
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "operations",
+    "business"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "jafurah"
+     },
+     "label": "B03 project jafurah",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-jafurah-purpose",
+   "section": "projects-growth",
+   "role": "project_purpose",
+   "parent": "jafurah",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue_by_product",
+      "bucket": "annual",
+      "dims": {
+       "product": "Natural gas and NGLs"
+      }
+     },
+     "label": "Engine metric revenue_by_product {\"product\":\"Natural gas and NGLs\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "revenue by product type"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pj-jafurah-risk-volume",
+   "section": "projects-growth",
+   "role": "project_risk",
+   "parent": "jafurah",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-jafurah-gaps",
+   "section": "projects-growth",
+   "role": "project_gap",
+   "parent": "jafurah",
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "jafurah"
+     },
+     "label": "B03 project jafurah",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-tanajib-nature",
+   "section": "projects-growth",
+   "role": "project_nature",
+   "parent": "tanajib",
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "tanajib"
+     },
+     "label": "B03 project tanajib",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-tanajib-purpose",
+   "section": "projects-growth",
+   "role": "project_purpose",
+   "parent": "tanajib",
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations",
+    "business"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "tanajib"
+     },
+     "label": "B03 project tanajib",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_gas_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_gas_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pj-tanajib-risk",
+   "section": "projects-growth",
+   "role": "project_risk",
+   "parent": "tanajib",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "tanajib"
+     },
+     "label": "B03 project tanajib",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-tanajib-gaps",
+   "section": "projects-growth",
+   "role": "project_gap",
+   "parent": "tanajib",
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "tanajib"
+     },
+     "label": "B03 project tanajib",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-marjan-nature",
+   "section": "projects-growth",
+   "role": "project_nature",
+   "parent": "marjan-increment",
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "marjan-increment"
+     },
+     "label": "B03 project marjan-increment",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-marjan-purpose",
+   "section": "projects-growth",
+   "role": "project_purpose",
+   "parent": "marjan-increment",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "marjan-increment"
+     },
+     "label": "B03 project marjan-increment",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-marjan-risk",
+   "section": "projects-growth",
+   "role": "project_risk",
+   "parent": "marjan-increment",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "marjan-increment"
+     },
+     "label": "B03 project marjan-increment",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-marjan-gaps",
+   "section": "projects-growth",
+   "role": "project_gap",
+   "parent": "marjan-increment",
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "marjan-increment"
+     },
+     "label": "B03 project marjan-increment",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-gas-nature",
+   "section": "projects-growth",
+   "role": "project_nature",
+   "parent": "sales-gas-growth-2030",
+   "kind": "management_plan",
+   "status": "WITHHELD",
+   "topics": [
+    "forecasts",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "GAS_TARGET"
+     },
+     "label": "Independent review GAS_TARGET @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "sales-gas-growth-2030"
+     },
+     "label": "B03 project sales-gas-growth-2030",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-gas-purpose",
+   "section": "projects-growth",
+   "role": "project_purpose",
+   "parent": "sales-gas-growth-2030",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "forecasts",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "natural_gas_revenue",
+      "bucket": "annual"
+     },
+     "label": "Engine metric natural_gas_revenue [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 64,
+      "table": "natural gas and NGL revenue"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pj-gas-risk",
+   "section": "projects-growth",
+   "role": "project_risk",
+   "parent": "sales-gas-growth-2030",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "GAS_TARGET"
+     },
+     "label": "Independent review GAS_TARGET @ 4f7145e",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-gas-gaps",
+   "section": "projects-growth",
+   "role": "project_gap",
+   "parent": "sales-gas-growth-2030",
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "sales-gas-growth-2030"
+     },
+     "label": "B03 project sales-gas-growth-2030",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-msc-nature",
+   "section": "projects-growth",
+   "role": "project_nature",
+   "parent": "msc-12mbd",
+   "kind": "management_plan",
+   "status": "WITHHELD",
+   "topics": [
+    "operations",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "msc-12mbd"
+     },
+     "label": "B03 project msc-12mbd",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "pj-msc-purpose",
+   "section": "projects-growth",
+   "role": "project_purpose",
+   "parent": "msc-12mbd",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "operations",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_capex {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pj-msc-risk",
+   "section": "projects-growth",
+   "role": "project_risk",
+   "parent": "msc-12mbd",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "roace",
+      "bucket": "annual"
+     },
+     "label": "Engine metric roace [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pj-msc-gaps",
+   "section": "projects-growth",
+   "role": "project_gap",
+   "parent": "msc-12mbd",
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "operations",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_project",
+      "id": "msc-12mbd"
+     },
+     "label": "B03 project msc-12mbd",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_capex {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fin-frame",
+   "section": "financial-drivers",
+   "role": "body",
+   "parent": null,
+   "kind": "methodology",
+   "status": "METHODOLOGY_PENDING_APPROVAL",
+   "topics": [
+    "financials",
+    "ratios"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "revenue"
+     },
+     "label": "B02 withheld input identity: revenue (5 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2024",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "free_cash_flow",
+      "bucket": "history_annual"
+     },
+     "label": "Engine metric free_cash_flow [history_annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fin-coverage",
+   "section": "financial-drivers",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue",
+      "bucket": "history_annual"
+     },
+     "label": "Engine metric revenue [history_annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_assets",
+      "bucket": "history_position"
+     },
+     "label": "Engine metric total_assets [history_position]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "@2021-12-31",
+      "@2022-12-31",
+      "@2023-12-31",
+      "@2024-12-31",
+      "@2025-12-31"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue",
+      "bucket": "history_quarter"
+     },
+     "label": "Engine metric revenue [history_quarter]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+      "filedAt": "2026-08-04",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_revenue",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_revenue {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fa-revenue-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-revenue",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "average_realized_crude_oil_price",
+      "bucket": "annual"
+     },
+     "label": "Engine metric average_realized_crude_oil_price [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "crude_refined_products_traded",
+      "bucket": "annual"
+     },
+     "label": "Engine metric crude_refined_products_traded [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 50,
+      "table": "downstream volumes"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "purchases",
+      "bucket": "annual"
+     },
+     "label": "Engine metric purchases [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fa-profitability-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-profitability",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials",
+    "earnings_quality"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_adjusted_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_adjusted_ebit {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "corporate_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Corporate"
+      }
+     },
+     "label": "Engine metric corporate_ebit {\"segment\":\"Corporate\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "corporate results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "net_margin",
+      "bucket": "history_annual"
+     },
+     "label": "Engine metric net_margin [history_annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fa-cash-flow-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-cash-flow",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials",
+    "dividends_actions"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "free_cash_flow",
+      "bucket": "history_annual"
+     },
+     "label": "Engine metric free_cash_flow [history_annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-fy2025-dividends-paid"
+     },
+     "label": "B03 aramco-fy2025-dividends-paid (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-rig-purchase-commitments"
+     },
+     "label": "B03 aramco-rig-purchase-commitments (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 69,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "fa-capex-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-capex",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials",
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "capex_to_depreciation_amortization",
+      "bucket": "annual"
+     },
+     "label": "Engine metric capex_to_depreciation_amortization [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-capex-guidance-2026"
+     },
+     "label": "B03 aramco-capex-guidance-2026 (management_plan/issuer_guidance)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "fa-wc-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-working-capital-debt",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "financials",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "due_from_government_change",
+      "bucket": "annual"
+     },
+     "label": "Engine metric due_from_government_change [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 181,
+      "table": "consolidated statement of cash flows"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_payable_change",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_payable_change [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 181,
+      "table": "consolidated statement of cash flows"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fa-dividends-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-dividends",
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "dividends_actions"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "base_dividends_paid",
+      "bucket": "annual"
+     },
+     "label": "Engine metric base_dividends_paid [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 243,
+      "table": "dividends"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "performance_linked_dividends_paid",
+      "bucket": "annual"
+     },
+     "label": "Engine metric performance_linked_dividends_paid [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 243,
+      "table": "dividends"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-q4-2025-base-dividend"
+     },
+     "label": "B03 aramco-q4-2025-base-dividend (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-buyback-2026"
+     },
+     "label": "B03 aramco-buyback-2026 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "fa-dividends-d2",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-dividends",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "dividends_actions",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "base_dividends_paid",
+      "bucket": "annual"
+     },
+     "label": "Engine metric base_dividends_paid [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 243,
+      "table": "dividends"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "performance_linked_dividends_paid",
+      "bucket": "annual"
+     },
+     "label": "Engine metric performance_linked_dividends_paid [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 243,
+      "table": "dividends"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-buyback-2026"
+     },
+     "label": "B03 aramco-buyback-2026 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "fa-returns-d1",
+   "section": "financial-drivers",
+   "role": "analysis_driver",
+   "parent": "fa-returns",
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "ratios",
+    "competitors"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "roace",
+      "bucket": "annual"
+     },
+     "label": "Engine metric roace [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "peer_comparison"
+     },
+     "label": "Engine capability peer_comparison: partial (no_other_peer_with_comparable_facts)",
+     "status": "PARTIAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-disc-factors",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks",
+    "industry"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-disc-contingencies",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-contingencies-ordinary-course"
+     },
+     "label": "B03 aramco-contingencies-ordinary-course (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sadara-petro-rabigh-support"
+     },
+     "label": "B03 aramco-sadara-petro-rabigh-support (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-disc-credit",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-customer-credit-concentration"
+     },
+     "label": "B03 aramco-customer-credit-concentration (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 192,
+      "table": "Financial risk management - credit risk"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-disc-commitments",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "risks",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-rig-purchase-commitments"
+     },
+     "label": "B03 aramco-rig-purchase-commitments (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 69,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-disc-esg",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "reported_record",
+   "status": "WITHHELD",
+   "topics": [
+    "esg",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_carbon_intensity",
+      "bucket": "annual"
+     },
+     "label": "Engine metric upstream_carbon_intensity [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 87,
+      "table": "sustainability performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "methane_intensity",
+      "bucket": "annual"
+     },
+     "label": "Engine metric methane_intensity [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 87,
+      "table": "sustainability performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "flaring_intensity",
+      "bucket": "annual"
+     },
+     "label": "Engine metric flaring_intensity [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 87,
+      "table": "sustainability performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "scope_1_emissions",
+      "bucket": "annual"
+     },
+     "label": "Engine metric scope_1_emissions [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 87,
+      "table": "sustainability performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rk-mgmt-guidance",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "management_plan",
+   "status": "WITHHELD",
+   "topics": [
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-capex-guidance-2026"
+     },
+     "label": "B03 aramco-capex-guidance-2026 (management_plan/issuer_guidance)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-mgmt-contingency-view",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "management_plan",
+   "status": "WITHHELD",
+   "topics": [
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-contingencies-management-view"
+     },
+     "label": "B03 aramco-contingencies-management-view (management_plan/management_expectation)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-int-operational",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-project-milestones-2025"
+     },
+     "label": "B03 aramco-project-milestones-2025 (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-int-financial",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "financials",
+    "dividends_actions"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "base_dividends_paid",
+      "bucket": "annual"
+     },
+     "label": "Engine metric base_dividends_paid [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 243,
+      "table": "dividends"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-capex-guidance-2026"
+     },
+     "label": "B03 aramco-capex-guidance-2026 (management_plan/issuer_guidance)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-rig-purchase-commitments"
+     },
+     "label": "B03 aramco-rig-purchase-commitments (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 69,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sadara-petro-rabigh-support"
+     },
+     "label": "B03 aramco-sadara-petro-rabigh-support (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-int-sector",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks",
+    "industry",
+    "esg"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_ebit {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_carbon_intensity",
+      "bucket": "annual"
+     },
+     "label": "Engine metric upstream_carbon_intensity [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 87,
+      "table": "sustainability performance"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-int-geopolitical",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "research_interpretation",
+   "status": "UNAPPROVED_INTERPRETATION",
+   "topics": [
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_profile",
+      "field": "country"
+     },
+     "label": "Engine profile: country",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-asm-fiscal",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "assumption",
+   "status": "UNAPPROVED_ASSUMPTION",
+   "topics": [
+    "forecasts",
+    "financials"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rk-asm-production",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "assumption",
+   "status": "UNAPPROVED_ASSUMPTION",
+   "topics": [
+    "forecasts",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-hydrocarbon-risk-factors"
+     },
+     "label": "B03 aramco-hydrocarbon-risk-factors (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-asm-jv",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "assumption",
+   "status": "UNAPPROVED_ASSUMPTION",
+   "topics": [
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sadara-petro-rabigh-support"
+     },
+     "label": "B03 aramco-sadara-petro-rabigh-support (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-sc-price",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "scenario",
+   "status": "UNAPPROVED_SCENARIO",
+   "topics": [
+    "forecasts",
+    "risks"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "average_realized_crude_oil_price",
+      "bucket": "annual"
+     },
+     "label": "Engine metric average_realized_crude_oil_price [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 39,
+      "table": "key financial metrics"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "performance_linked_dividends_paid",
+      "bucket": "annual"
+     },
+     "label": "Engine metric performance_linked_dividends_paid [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 243,
+      "table": "dividends"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-capex-guidance-2026"
+     },
+     "label": "B03 aramco-capex-guidance-2026 (management_plan/issuer_guidance)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-sc-production",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "scenario",
+   "status": "UNAPPROVED_SCENARIO",
+   "topics": [
+    "forecasts",
+    "operations"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-msc-12mbd"
+     },
+     "label": "B03 aramco-msc-12mbd (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "total_liquids_production",
+      "bucket": "annual"
+     },
+     "label": "Engine metric total_liquids_production [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 52,
+      "table": "Upstream hydrocarbon production"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rk-sc-gas",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "scenario",
+   "status": "UNAPPROVED_SCENARIO",
+   "topics": [
+    "forecasts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sales-gas-growth-2030"
+     },
+     "label": "B03 aramco-sales-gas-growth-2030 (management_plan/management_target)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-jafurah-midstream-contract"
+     },
+     "label": "B03 aramco-jafurah-midstream-contract (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": 71,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "rk-sc-downstream",
+   "section": "risks-outlook",
+   "role": "body",
+   "parent": null,
+   "kind": "scenario",
+   "status": "UNAPPROVED_SCENARIO",
+   "topics": [
+    "forecasts",
+    "industry"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_ebit",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_ebit {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "share_of_profit_associates",
+      "bucket": "annual"
+     },
+     "label": "Engine metric share_of_profit_associates [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "b03_claim",
+      "id": "aramco-sadara-petro-rabigh-support"
+     },
+     "label": "B03 aramco-sadara-petro-rabigh-support (official_fact)",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 230,
+      "table": "Contingencies"
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "cg-competitors",
+   "section": "coverage-gaps",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "competitors",
+    "industry"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "peer_comparison"
+     },
+     "label": "Engine capability peer_comparison: partial (no_other_peer_with_comparable_facts)",
+     "status": "PARTIAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "cg-trading",
+   "section": "coverage-gaps",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "trading"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "market_history"
+     },
+     "label": "Engine capability market_history: partial (authorized_market_history_feed_required)",
+     "status": "PARTIAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "cg-valuation",
+   "section": "coverage-gaps",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "valuation"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "market_history"
+     },
+     "label": "Engine capability market_history: partial (authorized_market_history_feed_required)",
+     "status": "PARTIAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "free_cash_flow",
+      "bucket": "history_annual"
+     },
+     "label": "Engine metric free_cash_flow [history_annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+      "filedAt": "2026-03-10",
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "FY2021",
+      "FY2022",
+      "FY2023",
+      "FY2024",
+      "FY2025"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cg-analysts",
+   "section": "coverage-gaps",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "analysts"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "consensus"
+     },
+     "label": "Engine capability consensus: unavailable (licensed_consensus_feed_required)",
+     "status": "UNAVAILABLE",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  },
+  {
+   "id": "cg-news",
+   "section": "coverage-gaps",
+   "role": "body",
+   "parent": null,
+   "kind": "gap",
+   "status": "OPEN_GAP",
+   "topics": [
+    "news"
+   ],
+   "hasEnglish": false,
+   "evidence": [
+    {
+     "ref": {
+      "t": "engine_capability",
+      "name": "news"
+     },
+     "label": "Engine capability news: unavailable (authorized_news_feed_required)",
+     "status": "UNAVAILABLE",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "b03_event",
+      "id": "evt-fy2025-results"
+     },
+     "label": "B03 record group evt-fy2025-results (single_record)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": "2026-03-09",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1184 @@
+{
+ "status": "UNAPPROVED_RESEARCH_DRAFT — WITHHELD",
+ "publication": "not_for_public_display",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "basis": {
+  "snapshotGeneratedAt": "2026-10-13T00:06:16+00:00",
+  "b03Implementation": "1735609abafa85ee6e101ab7e3640496f0e43088",
+  "b03Accept": "4f7145e6927ff98559ccf82dfb6103b6953c3892"
+ },
+ "gaps": [
+  {
+   "id": "gap-definition:fa-profitability",
+   "kind": "issuer_definition",
+   "subject": "Profitability and margins",
+   "status": "ISSUER_DEFINITION_NOT_BOUND",
+   "detail": "Issuer non-IFRS definition must be bound to an original locator before any calculation.",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-definition:fa-cash-flow",
+   "kind": "issuer_definition",
+   "subject": "Cash flows",
+   "status": "ISSUER_DEFINITION_NOT_BOUND",
+   "detail": "Issuer non-IFRS definition must be bound to an original locator before any calculation.",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-definition:fa-capex",
+   "kind": "issuer_definition",
+   "subject": "Capital expenditure",
+   "status": "ISSUER_DEFINITION_NOT_BOUND",
+   "detail": "Issuer non-IFRS definition must be bound to an original locator before any calculation.",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-definition:fa-returns",
+   "kind": "issuer_definition",
+   "subject": "Return on capital",
+   "status": "ISSUER_DEFINITION_NOT_BOUND",
+   "detail": "Issuer non-IFRS definition must be bound to an original locator before any calculation.",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-input:revenue:history_annual",
+   "kind": "financial_input",
+   "subject": "revenue",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page none",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:revenue_by_product:annual:Crude oil",
+   "kind": "financial_input",
+   "subject": "revenue_by_product",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 64 (revenue by product type)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:revenue_by_product:annual:Natural gas and NGLs",
+   "kind": "financial_input",
+   "subject": "revenue_by_product",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 64 (revenue by product type)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:revenue_by_product:annual:Refined and chemical products",
+   "kind": "financial_input",
+   "subject": "revenue_by_product",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 64 (revenue by product type)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:upstream_revenue:annual:Upstream",
+   "kind": "financial_input",
+   "subject": "upstream_revenue",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 44 (upstream results)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:downstream_revenue:annual:Downstream",
+   "kind": "financial_input",
+   "subject": "downstream_revenue",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 54 (downstream results)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:average_realized_crude_oil_price:annual",
+   "kind": "financial_input",
+   "subject": "average_realized_crude_oil_price",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit USD/bbl; engine page 39 (key financial metrics)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:total_liquids_production:annual",
+   "kind": "financial_input",
+   "subject": "total_liquids_production",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit mmbpd; engine page 52 (Upstream hydrocarbon production)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:total_gas_production:annual",
+   "kind": "financial_input",
+   "subject": "total_gas_production",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit bscfd; engine page 52 (Upstream hydrocarbon production)",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-b02:revenue",
+   "kind": "financial_input",
+   "subject": "revenue",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-b02:revenue_and_other_income_related_to_sales",
+   "kind": "financial_input",
+   "subject": "revenue_and_other_income_related_to_sales",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-b02:external_revenue",
+   "kind": "financial_input",
+   "subject": "external_revenue",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "12 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-b02:intersegment_revenue",
+   "kind": "financial_input",
+   "subject": "intersegment_revenue",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "16 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-revenue"
+   ]
+  },
+  {
+   "id": "gap-input:upstream_ebit:annual:Upstream",
+   "kind": "financial_input",
+   "subject": "upstream_ebit",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 44 (upstream results)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:downstream_ebit:annual:Downstream",
+   "kind": "financial_input",
+   "subject": "downstream_ebit",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 54 (downstream results)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:corporate_ebit:annual:Corporate",
+   "kind": "financial_input",
+   "subject": "corporate_ebit",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 54 (corporate results)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:upstream_adjusted_ebit:annual:Upstream",
+   "kind": "financial_input",
+   "subject": "upstream_adjusted_ebit",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 44 (upstream results)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:downstream_adjusted_ebit:annual:Downstream",
+   "kind": "financial_input",
+   "subject": "downstream_adjusted_ebit",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 54 (downstream results)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:operating_income:history_annual",
+   "kind": "financial_input",
+   "subject": "operating_income",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page 39 (summarized consolidated statement of income)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:net_income:history_annual",
+   "kind": "financial_input",
+   "subject": "net_income",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page none",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:adjusted_net_income:annual",
+   "kind": "financial_input",
+   "subject": "adjusted_net_income",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2025; unit SAR; engine page 39 (adjusted net income)",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:operating_margin:history_annual",
+   "kind": "financial_input",
+   "subject": "operating_margin",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:net_margin:history_annual",
+   "kind": "financial_input",
+   "subject": "net_margin",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-b02:operating_income",
+   "kind": "financial_input",
+   "subject": "operating_income",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-b02:net_income",
+   "kind": "financial_input",
+   "subject": "net_income",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-profitability",
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-b02:net_income_parent",
+   "kind": "financial_input",
+   "subject": "net_income_parent",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-b02:adjusted_net_income",
+   "kind": "financial_input",
+   "subject": "adjusted_net_income",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-b02:segment_ebit",
+   "kind": "financial_input",
+   "subject": "segment_ebit",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "16 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-profitability"
+   ]
+  },
+  {
+   "id": "gap-input:operating_cash_flow:history_annual",
+   "kind": "financial_input",
+   "subject": "operating_cash_flow",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page none",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-input:investing_cash_flow:annual",
+   "kind": "financial_input",
+   "subject": "investing_cash_flow",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-input:financing_cash_flow:annual",
+   "kind": "financial_input",
+   "subject": "financing_cash_flow",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-input:free_cash_flow:history_annual",
+   "kind": "financial_input",
+   "subject": "free_cash_flow",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page none",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-input:capex:history_annual",
+   "kind": "financial_input",
+   "subject": "capex",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page none",
+   "usedBy": [
+    "fa-cash-flow",
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-input:operating_cash_flow:history_quarter",
+   "kind": "financial_input",
+   "subject": "operating_cash_flow",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods 2026Q1 2026Q2; unit SAR; engine page none",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-b02:operating_cash_flow",
+   "kind": "financial_input",
+   "subject": "operating_cash_flow",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-b02:capex",
+   "kind": "financial_input",
+   "subject": "capex",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-cash-flow",
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-b02:cash_flow_end",
+   "kind": "financial_input",
+   "subject": "cash_flow_end",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "1 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-b02:depreciation_amortization_cash_flow",
+   "kind": "financial_input",
+   "subject": "depreciation_amortization_cash_flow",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-cash-flow"
+   ]
+  },
+  {
+   "id": "gap-input:upstream_capex:annual:Upstream",
+   "kind": "financial_input",
+   "subject": "upstream_capex",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 44 (upstream results)",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-input:downstream_capex:annual:Downstream",
+   "kind": "financial_input",
+   "subject": "downstream_capex",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 54 (downstream results)",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-input:corporate_capex:annual:Corporate",
+   "kind": "financial_input",
+   "subject": "corporate_capex",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 54 (corporate results)",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-input:upstream_capex_per_boe:annual",
+   "kind": "financial_input",
+   "subject": "upstream_capex_per_boe",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit USD/boe; engine page 44 (upstream performance)",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-input:capex_to_depreciation_amortization:annual",
+   "kind": "financial_input",
+   "subject": "capex_to_depreciation_amortization",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-b02:cash_capex",
+   "kind": "financial_input",
+   "subject": "cash_capex",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "12 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-capex"
+   ]
+  },
+  {
+   "id": "gap-input:working_capital_change:annual",
+   "kind": "financial_input",
+   "subject": "working_capital_change",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 16 (change in working capital; sum of disclosed components)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:accounts_receivable_change:annual",
+   "kind": "financial_input",
+   "subject": "accounts_receivable_change",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:due_from_government_change:annual",
+   "kind": "financial_input",
+   "subject": "due_from_government_change",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:royalties_payable_change:annual",
+   "kind": "financial_input",
+   "subject": "royalties_payable_change",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:debt_issued:annual",
+   "kind": "financial_input",
+   "subject": "debt_issued",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:debt_repaid:annual",
+   "kind": "financial_input",
+   "subject": "debt_repaid",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:interest_paid:annual",
+   "kind": "financial_input",
+   "subject": "interest_paid",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:lease_payments:annual",
+   "kind": "financial_input",
+   "subject": "lease_payments",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:net_debt_to_ebitda:annual",
+   "kind": "financial_input",
+   "subject": "net_debt_to_ebitda",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:total_liabilities:history_position",
+   "kind": "financial_input",
+   "subject": "total_liabilities",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods @2021-12-31 @2022-12-31 @2023-12-31 @2024-12-31 @2025-12-31; unit SAR; engine page none",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-b02:current_borrowings",
+   "kind": "financial_input",
+   "subject": "current_borrowings",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-b02:noncurrent_borrowings",
+   "kind": "financial_input",
+   "subject": "noncurrent_borrowings",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-b02:cash",
+   "kind": "financial_input",
+   "subject": "cash",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-b02:total_liabilities",
+   "kind": "financial_input",
+   "subject": "total_liabilities",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-working-capital-debt"
+   ]
+  },
+  {
+   "id": "gap-input:dividends_paid:annual",
+   "kind": "financial_input",
+   "subject": "dividends_paid",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods FY2025; unit SAR; engine page 243 (dividends)",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-input:base_dividends_paid:annual",
+   "kind": "financial_input",
+   "subject": "base_dividends_paid",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 243 (dividends)",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-input:performance_linked_dividends_paid:annual",
+   "kind": "financial_input",
+   "subject": "performance_linked_dividends_paid",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 243 (dividends)",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-input:dividends_per_share:history_annual",
+   "kind": "financial_input",
+   "subject": "dividends_per_share",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR/share; engine page 243 (dividends)",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-input:fcf_dividend_coverage_ratio:annual",
+   "kind": "financial_input",
+   "subject": "fcf_dividend_coverage_ratio",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-b02:dividends_paid",
+   "kind": "financial_input",
+   "subject": "dividends_paid",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-b02:basic_eps",
+   "kind": "financial_input",
+   "subject": "basic_eps",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-b02:weighted_average_shares_basic",
+   "kind": "financial_input",
+   "subject": "weighted_average_shares_basic",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "2 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-dividends"
+   ]
+  },
+  {
+   "id": "gap-input:roace:annual",
+   "kind": "financial_input",
+   "subject": "roace",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit percent; engine page 39 (key financial metrics)",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-input:return_on_equity:history_annual",
+   "kind": "financial_input",
+   "subject": "return_on_equity",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-input:return_on_assets:history_annual",
+   "kind": "financial_input",
+   "subject": "return_on_assets",
+   "status": "UNAPPROVED_DERIVED_METRIC",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit ratio; engine page none",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-input:total_equity:history_position",
+   "kind": "financial_input",
+   "subject": "total_equity",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods @2021-12-31 @2022-12-31 @2023-12-31 @2024-12-31 @2025-12-31; unit SAR; engine page none",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-input:total_assets:history_position",
+   "kind": "financial_input",
+   "subject": "total_assets",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "periods @2021-12-31 @2022-12-31 @2023-12-31 @2024-12-31 @2025-12-31; unit SAR; engine page none",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-b02:total_equity",
+   "kind": "financial_input",
+   "subject": "total_equity",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-b02:parent_equity",
+   "kind": "financial_input",
+   "subject": "parent_equity",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-b02:total_assets",
+   "kind": "financial_input",
+   "subject": "total_assets",
+   "status": "B02_WITHHELD_INPUT",
+   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
+   "usedBy": [
+    "fa-returns"
+   ]
+  },
+  {
+   "id": "gap-text:scope-originals",
+   "kind": "source",
+   "subject": "scope-originals",
+   "status": "OPEN_GAP",
+   "detail": "لم يطّلع مؤلف الحزمة على المستندات الأصلية: الشبكة في بيئته تحجب موقع الناشر. نص «سجل المحرك» مقتطف من اللقطة ولم يُطابَق حرفيًا مع الأصل. ملاحظات المراجع المستقل على الأصل (المواضع، وتعارض هدف الغاز، ومصدر التوجيه الرأسمالي) طبقة مراجعة، لا تحقق.",
+   "usedBy": [
+    "scope"
+   ]
+  },
+  {
+   "id": "gap-text:up-reserves-gap",
+   "kind": "source",
+   "subject": "up-reserves-gap",
+   "status": "OPEN_GAP",
+   "detail": "مؤشر عمر الاحتياطيات في المحرك مشتق محسوب غير معتمد. أحجام الاحتياطيات نفسها ليست في اللقطة كحقائق مراجَعة. أي تحليل يقوم على الاحتياطيات محجوب.",
+   "usedBy": [
+    "business-model"
+   ]
+  },
+  {
+   "id": "gap-text:rv-gas-price-gap",
+   "kind": "source",
+   "subject": "rv-gas-price-gap",
+   "status": "OPEN_GAP",
+   "detail": "لا يحمل سجل المحرك سعرًا محققًا للغاز، بل متوسط السعر المحقق للنفط الخام فقط. بدونه لا يمكن فصل أثر السعر عن أثر الكمية في إيرادات الغاز وسوائله، وهي القناة التي يستهدفها برنامج توسعة الغاز.",
+   "usedBy": [
+    "business-model"
+   ]
+  },
+  {
+   "id": "gap-text:rv-royalty-gap",
+   "kind": "source",
+   "subject": "rv-royalty-gap",
+   "status": "OPEN_GAP",
+   "detail": "بند الإتاوات موجود، لكن هيكل نسبها وطريقة تغيرها مع الأسعار ليسا في الأدلة المتاحة. أي حساسية للأرباح تجاه السعر تبقى ناقصة دون موضع أصلي لنظام الإتاوات.",
+   "usedBy": [
+    "business-model"
+   ]
+  },
+  {
+   "id": "gap-text:in-transfer-gap",
+   "kind": "source",
+   "subject": "in-transfer-gap",
+   "status": "OPEN_GAP",
+   "detail": "أساس تسعير التحويلات بين القطاعات ليس في الأدلة المتاحة. تفسير توزيع الأرباح بين القطاعين يبقى ناقصًا حتى يُربط إيضاح القطاعات الأصلي.",
+   "usedBy": [
+    "business-model"
+   ]
+  },
+  {
+   "id": "gap-text:pg-milestones-composite",
+   "kind": "source",
+   "subject": "pg-milestones-composite",
+   "status": "OPEN_GAP",
+   "detail": "سجل مراحل المشاريع واحد يلخص ثلاث مراحل مختلفة خلال فترة تقرير 2025، دون تاريخ دقيق لكل منها. هو مجموعة سجل مركبة، لا ثلاثة أحداث مثبتة كلٌّ بتاريخه.",
+   "usedBy": [
+    "projects-growth"
+   ]
+  },
+  {
+   "id": "gap-text:pg-project-cost-gap",
+   "kind": "source",
+   "subject": "pg-project-cost-gap",
+   "status": "OPEN_GAP",
+   "detail": "لا تكلفة مشروع منفردة في سجلات المحرك لأي من المشاريع الخمسة، والأصل لم يُفحص للتكلفة. لذلك لا عائد مشروع ولا أثر ربحي لأي مشروع في هذه الحزمة.",
+   "usedBy": [
+    "projects-growth"
+   ]
+  },
+  {
+   "id": "gap-text:pj-jafurah-gaps",
+   "kind": "source",
+   "subject": "pj-jafurah-gaps",
+   "status": "OPEN_GAP",
+   "detail": "السعة والتوقيت موجودان في الأصل وفق المراجع، ولم يُستخرجا. التكلفة ليست في سجل المحرك. طبيعة المكمن ليست في الأدلة. تاريخ بدء مدة العقد غير مذكور.",
+   "usedBy": [
+    "jafurah"
+   ]
+  },
+  {
+   "id": "gap-text:pj-tanajib-purpose",
+   "kind": "source",
+   "subject": "pj-tanajib-purpose",
+   "status": "OPEN_GAP",
+   "detail": "الغرض الاقتصادي لتناجيب ومنتجاته ليسا في الأدلة المتاحة. المؤشر المرتبط في المحرك هو إنتاج الغاز، وهو ربط تنسيقي لا دليل على طبيعة المشروع.",
+   "usedBy": [
+    "tanajib"
+   ]
+  },
+  {
+   "id": "gap-text:pj-tanajib-gaps",
+   "kind": "source",
+   "subject": "pj-tanajib-gaps",
+   "status": "OPEN_GAP",
+   "detail": "السعة والتوقيت موجودان في الأصل وفق المراجع، ولم يُستخرجا. التكلفة ليست في سجل المحرك.",
+   "usedBy": [
+    "tanajib"
+   ]
+  },
+  {
+   "id": "gap-text:pj-marjan-gaps",
+   "kind": "source",
+   "subject": "pj-marjan-gaps",
+   "status": "OPEN_GAP",
+   "detail": "السعة والتوقيت موجودان في الأصل وفق المراجع، ولم يُستخرجا. التكلفة ليست في سجل المحرك. موقع الحقل وطبيعته ليسا في الأدلة.",
+   "usedBy": [
+    "marjan-increment"
+   ]
+  },
+  {
+   "id": "gap-text:pj-gas-gaps",
+   "kind": "source",
+   "subject": "pj-gas-gaps",
+   "status": "OPEN_GAP",
+   "detail": "الصيغة الأصلية للهدف وشروطه تحتاج ربط مستند موثوق ومراجعة مخولة. السعة والتوقيت في الأصل وفق المراجع، ولم يُستخرجا. التكلفة ليست في سجل المحرك.",
+   "usedBy": [
+    "sales-gas-growth-2030"
+   ]
+  },
+  {
+   "id": "gap-text:pj-msc-gaps",
+   "kind": "source",
+   "subject": "pj-msc-gaps",
+   "status": "OPEN_GAP",
+   "detail": "تقسيم الإنفاق الرأسمالي بين إنفاق المحافظة وإنفاق النمو ليس في الأدلة. توقيت الهدف غير مذكور في سجل المحرك.",
+   "usedBy": [
+    "msc-12mbd"
+   ]
+  },
+  {
+   "id": "gap-text:cg-competitors",
+   "kind": "coverage",
+   "subject": "cg-competitors",
+   "status": "OPEN_GAP",
+   "detail": "المنافسون والحصة السوقية: لا نظراء بحقائق قابلة للمقارنة في اللقطة. أي مقارنة تكلفة أو عائد مع شركات متكاملة أخرى محجوبة.",
+   "usedBy": [
+    "coverage-gaps"
+   ]
+  },
+  {
+   "id": "gap-text:cg-trading",
+   "kind": "coverage",
+   "subject": "cg-trading",
+   "status": "OPEN_GAP",
+   "detail": "التداول والسيولة: سجل السوق جزئي ويحتاج تغذية سوقية مرخصة. لا تحليل تداول.",
+   "usedBy": [
+    "coverage-gaps"
+   ]
+  },
+  {
+   "id": "gap-text:cg-valuation",
+   "kind": "coverage",
+   "subject": "cg-valuation",
+   "status": "OPEN_GAP",
+   "detail": "التقييم: لا تقييم في هذه الحزمة، لا DCF ولا مضاعفات. المدخلات غير مؤهلة، وسعر السوق جزئي. التقييم خارج النطاق المصرح به.",
+   "usedBy": [
+    "coverage-gaps"
+   ]
+  },
+  {
+   "id": "gap-text:cg-analysts",
+   "kind": "coverage",
+   "subject": "cg-analysts",
+   "status": "OPEN_GAP",
+   "detail": "تغطية المحللين: توقعات الإجماع غير متاحة، وتحتاج تغذية مرخصة.",
+   "usedBy": [
+    "coverage-gaps"
+   ]
+  },
+  {
+   "id": "gap-text:cg-news",
+   "kind": "coverage",
+   "subject": "cg-news",
+   "status": "OPEN_GAP",
+   "detail": "الأخبار ومواد المستثمرين: لا تغذية أخبار مصرح بها. المادة المتاحة هي إفصاحات المحرك وسجل الوثائق في B03.",
+   "usedBy": [
+    "coverage-gaps"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-capex-guidance-2026",
+   "kind": "claim_qualification",
+   "subject": "aramco-capex-guidance-2026",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original, original_locator_not_found",
+   "usedBy": [
+    "pg-capex-guidance",
+    "fa-capex-d1",
+    "rk-mgmt-guidance",
+    "rk-int-financial",
+    "rk-sc-price"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-sales-gas-growth-2030",
+   "kind": "claim_qualification",
+   "subject": "aramco-sales-gas-growth-2030",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original, engine_text_conflicts_with_original",
+   "usedBy": [
+    "scope-originals",
+    "dr-capacity",
+    "pg-frame",
+    "pj-gas-nature",
+    "pj-gas-purpose",
+    "pj-gas-risk",
+    "rk-mgmt-guidance",
+    "rk-sc-gas"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-msc-12mbd",
+   "kind": "claim_qualification",
+   "subject": "aramco-msc-12mbd",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "up-msc",
+    "up-spare",
+    "dr-volume",
+    "pg-frame",
+    "pj-marjan-purpose",
+    "pj-msc-nature",
+    "pj-msc-purpose",
+    "pj-msc-risk",
+    "fa-capex-d1",
+    "rk-mgmt-guidance",
+    "rk-asm-production",
+    "rk-sc-production"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-project-milestones-2025",
+   "kind": "claim_qualification",
+   "subject": "aramco-project-milestones-2025",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "dr-capacity",
+    "pg-frame",
+    "pg-milestones-composite",
+    "pj-jafurah-nature",
+    "pj-tanajib-nature",
+    "pj-marjan-nature",
+    "rk-int-operational"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-jafurah-midstream-contract",
+   "kind": "claim_qualification",
+   "subject": "aramco-jafurah-midstream-contract",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "in-midstream",
+    "in-channels",
+    "pj-jafurah-nature",
+    "pj-jafurah-purpose",
+    "pj-jafurah-risk-volume",
+    "rk-disc-commitments",
+    "rk-int-operational",
+    "rk-sc-gas"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-rig-purchase-commitments",
+   "kind": "claim_qualification",
+   "subject": "aramco-rig-purchase-commitments",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original, derived_figure_in_engine_text",
+   "usedBy": [
+    "pg-rigs",
+    "pg-rigs-reading",
+    "fa-cash-flow-d1",
+    "rk-disc-commitments",
+    "rk-int-financial"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-contingencies-ordinary-course",
+   "kind": "claim_qualification",
+   "subject": "aramco-contingencies-ordinary-course",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "rk-disc-contingencies"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-contingencies-management-view",
+   "kind": "claim_qualification",
+   "subject": "aramco-contingencies-management-view",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "rk-mgmt-contingency-view"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-sadara-petro-rabigh-support",
+   "kind": "claim_qualification",
+   "subject": "aramco-sadara-petro-rabigh-support",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "dn-jv-support",
+    "dn-earnings-logic",
+    "rk-disc-contingencies",
+    "rk-int-financial",
+    "rk-asm-jv",
+    "rk-sc-downstream"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-customer-credit-concentration",
+   "kind": "claim_qualification",
+   "subject": "aramco-customer-credit-concentration",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "rk-disc-credit"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-hydrocarbon-risk-factors",
+   "kind": "claim_qualification",
+   "subject": "aramco-hydrocarbon-risk-factors",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original, original_locator_not_found",
+   "usedBy": [
+    "up-spare",
+    "dr-price",
+    "dr-volume",
+    "pj-marjan-risk",
+    "rk-disc-factors",
+    "rk-int-operational",
+    "rk-int-sector",
+    "rk-int-geopolitical",
+    "rk-asm-production"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-q4-2025-base-dividend",
+   "kind": "claim_qualification",
+   "subject": "aramco-q4-2025-base-dividend",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "bm-ownership-interp",
+    "fa-dividends-d1"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-buyback-2026",
+   "kind": "claim_qualification",
+   "subject": "aramco-buyback-2026",
+   "status": "WITHHELD",
+   "detail": "engine_record_id_missing, document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "bm-ownership-interp",
+    "fa-dividends-d1",
+    "fa-dividends-d2"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-fy2025-dividends-paid",
+   "kind": "claim_qualification",
+   "subject": "aramco-fy2025-dividends-paid",
+   "status": "WITHHELD",
+   "detail": "document_version_missing, original_artifact_sha256_missing, locator_missing, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original",
+   "usedBy": [
+    "fa-cash-flow-d1"
+   ]
+  },
+  {
+   "id": "gap-claim:aramco-petro-rabigh-stake-2025",
+   "kind": "claim_qualification",
+   "subject": "aramco-petro-rabigh-stake-2025",
+   "status": "WITHHELD",
+   "detail": "document_version_missing, original_artifact_sha256_missing, locator_unverified, documented_rights_grant_missing, independent_review_receipt_missing, editorial_review_missing, engine_text_not_verified_against_original, locator_conflicts_with_independent_review, exact_date_unverified",
+   "usedBy": [
+    "dn-petro-rabigh"
+   ]
+  }
+ ]
+}

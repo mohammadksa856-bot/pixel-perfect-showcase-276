@@ -1,0 +1,120 @@
+{
+  "application_sha": "74c967da01edf518cf77b11c0d9b6ca05316a5ae",
+  "evidence_sha": "6737b47d86892bd7eb73d337a483a7e2a91766e1",
+  "published_ancestor_sha": "ef3da332d9f33f1bf21844d906c464418ffca0e9",
+  "engine_source_sha": "e82407fa544722328b4b075076e9d8b947560080",
+  "source_files_verified": 4,
+  "matrix_markers_verified": [
+    {
+      "requirement": "data_point_identity",
+      "path": "src/finengine/database.py",
+      "line": 180,
+      "verified": true
+    },
+    {
+      "requirement": "source_identity",
+      "path": "src/finengine/database.py",
+      "line": 89,
+      "verified": true
+    },
+    {
+      "requirement": "original_artifact",
+      "path": "src/finengine/database.py",
+      "line": 95,
+      "verified": true
+    },
+    {
+      "requirement": "revision_publication",
+      "path": "src/finengine/database.py",
+      "line": 1529,
+      "verified": true
+    },
+    {
+      "requirement": "read_only_facade",
+      "path": "src/finengine/query.py",
+      "line": 20,
+      "verified": true
+    },
+    {
+      "requirement": "artifact_selection",
+      "path": "src/finengine/query.py",
+      "line": 46,
+      "verified": true
+    },
+    {
+      "requirement": "hidden_row_id",
+      "path": "src/finengine/query.py",
+      "line": 111,
+      "verified": true
+    },
+    {
+      "requirement": "extraction_locator",
+      "path": "src/finengine/query.py",
+      "line": 88,
+      "verified": true
+    },
+    {
+      "requirement": "quality_quarantine",
+      "path": "src/finengine/query.py",
+      "line": 137,
+      "verified": true
+    },
+    {
+      "requirement": "current_only",
+      "path": "src/finengine/query.py",
+      "line": 198,
+      "verified": true
+    },
+    {
+      "requirement": "lineage_identity",
+      "path": "src/finengine/calculation_lineage.py",
+      "line": 25,
+      "verified": true
+    },
+    {
+      "requirement": "lineage_verification",
+      "path": "src/finengine/calculation_lineage.py",
+      "line": 282,
+      "verified": true
+    },
+    {
+      "requirement": "source_rights_policy",
+      "path": "src/finengine/database.py",
+      "line": 392,
+      "verified": true
+    },
+    {
+      "requirement": "preview_accuracy",
+      "path": "src/finengine/preview_delivery.py",
+      "line": 47,
+      "verified": true
+    }
+  ],
+  "manifest_entries_verified": 19,
+  "application_blobs_unchanged_after_EOL_normalization": true,
+  "protected_paths_unchanged": [
+    "src",
+    "config",
+    "research-evidence/v1",
+    "research-evidence/aramco-qualification",
+    "package.json"
+  ],
+  "B02_rows_still_withheld": 142,
+  "qualified": 0,
+  "approved_for_display": 0,
+  "scanned_delivery_ref": "f7ac30e271937f378117b04f44175cc3b8cf7118",
+  "outbound_commits": [
+    "f7ac30e271937f378117b04f44175cc3b8cf7118",
+    "6737b47d86892bd7eb73d337a483a7e2a91766e1",
+    "008d13feeb7ce2fe2a10fd86ec384ca56879be44",
+    "74c967da01edf518cf77b11c0d9b6ca05316a5ae",
+    "78bc99a805d4bc0e19d44bf82ac9dc79eed66bf9",
+    "35f48b9e957693aaf86389c0c84de9b72b010b7b"
+  ],
+  "outbound_file_count": 41,
+  "outbound_private_artifacts_found": 0,
+  "known_secret_patterns_found": 0,
+  "secret_scan_limits": "Known token/private-key patterns plus manual changed-file inspection; not a mathematical guarantee",
+  "database_opened": false,
+  "financial_values_requalified": 0
+}

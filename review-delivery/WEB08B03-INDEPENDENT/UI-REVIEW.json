@@ -1,0 +1,63 @@
+{
+  "schema": "marefa-local-ui-review/1",
+  "application_sha": "b72ad3a1c1a9d5bd43bfec78523aa287300a4639",
+  "delivery_sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+  "url": "http://127.0.0.1:4453/",
+  "method": "Independent Codex in-app browser, actual DOM inspection, clicks, keyboard and screenshots; not author screenshots",
+  "observed_at": "2026-10-17T15:18:35Z",
+  "checks": [
+    {
+      "locale": "ar",
+      "client_width": 400,
+      "scroll_width": 400,
+      "topics": 18,
+      "groups": 5,
+      "withheld": 22,
+      "broken_fragments": 0,
+      "search_controls": 0,
+      "forms": 0
+    },
+    {
+      "locale": "en",
+      "client_width": 340,
+      "scroll_width": 340
+    },
+    {
+      "locale": "en",
+      "client_width": 386,
+      "scroll_width": 386,
+      "project_table": "words split into very narrow columns; observed visually"
+    },
+    {
+      "locale": "ar",
+      "client_width": 386,
+      "scroll_width": 386
+    },
+    {
+      "locale": "ar",
+      "client_width": 1295,
+      "scroll_width": 1295,
+      "broken_fragments": 0
+    },
+    {
+      "locale": "en",
+      "client_width": 1295,
+      "scroll_width": 1295,
+      "keyboard_focus": "Risks and guidance",
+      "focus_outline": "solid",
+      "groups": 5,
+      "topics": 18,
+      "withheld": 22,
+      "forms": 0,
+      "scripts": 0,
+      "unsafe_default_links": 0,
+      "all_source_links_https": true
+    }
+  ],
+  "notes": [
+    "Viewport capability dimensions differed from actual CSS client widths; only actual measured widths are claimed.",
+    "Local source/claim text remained unapproved. Browser screenshots were inspected in-session, not uploaded or republished.",
+    "Navigation within demo and language toggle worked; Intelligence/Data destination server not started or verified.",
+    "No public B03 Preview or synthetic content deployment performed."
+  ]
+}

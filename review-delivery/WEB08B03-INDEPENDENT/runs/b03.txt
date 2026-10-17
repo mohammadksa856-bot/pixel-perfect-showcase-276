@@ -1,0 +1,43 @@
+{"id": "b03", "sha": "1030fa883531f98fae899bd4f6a93733ecff6190", "started": "2026-10-17T15:09:37.753547+00:00", "exit": 0, "command": ["<BUN>", "test", "research-evidence/aramco-disclosures"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-disclosures\demo.test.ts:
+(pass) render > banner says unapproved/local; every claim card is WITHHELD; Arabic RTL and English LTR [0.41ms]
+(pass) render > no scripts, forms or financial-statement values; results card links to Marefa Data [0.58ms]
+(pass) render > all 18 topics are present in the five groups; empty topics say so [0.21ms]
+(pass) render > projects keep capacity and cost unknown and drivers unauthored [0.12ms]
+(pass) render > hostile text is escaped and non-https source links are not rendered as links [2.61ms]
+(pass) server > GET / is 200 with CSP, noindex and no-store [12.92ms]
+(pass) server > non-GET is refused and unknown paths are 404 [1.44ms]
+
+research-evidence\aramco-disclosures\register.test.ts:
+(pass) inventory and separation of events from documents > every disclosure and corporate action in the snapshot is classified; nothing silently dropped [0.24ms]
+(pass) inventory and separation of events from documents > report editions are documents, never events or claims [0.17ms]
+(pass) inventory and separation of events from documents > one event per real-world event: two records of the buyback / Q4 dividend form one event [0.21ms]
+(pass) inventory and separation of events from documents > retrospective evidence is flagged (event before its source document) [0.08ms]
+(pass) claims: verbatim, sourced, WITHHELD > every quote is a verbatim substring of the engine text it cites [0.16ms]
+(pass) claims: verbatim, sourced, WITHHELD > every claim is WITHHELD, never publication-eligible, and lists rights/review/editorial gaps [0.13ms]
+(pass) claims: verbatim, sourced, WITHHELD > PDF hashes come only from B02's pinned downloads, never from engine content_hash [0.12ms]
+(pass) claims: verbatim, sourced, WITHHELD > locators are never claimed as verified: B02 reviewed only statement pages, not these [0.10ms]
+(pass) claims: verbatim, sourced, WITHHELD > topics are the 18 investor topics; categories are the four allowed; plans carry a plan kind [0.09ms]
+(pass) claims: verbatim, sourced, WITHHELD > guidance, targets and management expectations are never presented as facts [0.06ms]
+(pass) claims: verbatim, sourced, WITHHELD > no parallel financial store: results text is not quoted, no values or amounts in deliverables [0.98ms]
+(pass) claims: verbatim, sourced, WITHHELD > links point to Company Intelligence topics and Marefa Data groups of the accepted model [0.17ms]
+(pass) topic map, projects and the risk/guidance register > all 18 topics are mapped; topics without disclosures say so instead of being filled [0.13ms]
+(pass) topic map, projects and the risk/guidance register > projects: unknown capacity, cost and dates stay unknown; drivers not authored [0.15ms]
+(pass) topic map, projects and the risk/guidance register > risk/guidance register separates facts and plans; no assumptions or research opinions exist [0.04ms]
+(pass) WEB-08B01 contract bridge > no real Aramco claim is constructible: no trusted document identity exists [0.10ms]
+(pass) WEB-08B01 contract bridge > with a SYNTHETIC trusted identity a claim validates, yet evaluate() still blocks publication [7.73ms]
+(pass) WEB-08B01 contract bridge > a management plan bridges as issuer guidance, never as an actual [0.61ms]
+(pass) negative cases (synthetic snapshots) > an unknown disclosure type is reported as unclassified, not silently mapped [9.68ms]
+(pass) negative cases (synthetic snapshots) > a non-verbatim quote is rejected [0.59ms]
+(pass) negative cases (synthetic snapshots) > a curated record missing from the snapshot, or duplicated in it, fails closed [12.63ms]
+(pass) negative cases (synthetic snapshots) > a version change in the engine record does not inherit the curated decision [10.30ms]
+(pass) negative cases (synthetic snapshots) > an http source URL is reported as a gap [6.85ms]
+(pass) negative cases (synthetic snapshots) > a PDF hash is attached only on an exact URL match with B02, never by content_hash [0.65ms]
+(pass) deliverables > committed review-delivery/WEB08B03 files equal a fresh deterministic build [1.25ms]
+
+ 32 pass
+ 0 fail
+ 572 expect() calls
+Ran 32 tests across 2 files. [185.00ms]

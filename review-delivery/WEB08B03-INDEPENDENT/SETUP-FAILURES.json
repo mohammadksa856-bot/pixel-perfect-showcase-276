@@ -1,0 +1,36 @@
+{
+  "schema": "marefa-review-setup/1",
+  "application_sha": "b72ad3a1c1a9d5bd43bfec78523aa287300a4639",
+  "initial": [
+    {
+      "id": "b03-windows",
+      "passed": 29,
+      "failed": 3,
+      "reason": "Two loopback EACCES failures and one CRLF byte comparison failure"
+    },
+    {
+      "id": "lint-windows",
+      "errors": 2243,
+      "reason": "CRLF prettier violations only"
+    },
+    {
+      "id": "check-windows",
+      "diff_files": 6,
+      "reason": "CRLF byte comparisons"
+    },
+    {
+      "id": "b02-command-filter",
+      "exit": 1,
+      "reason": "Reviewer initially used non-existing filter aramco-financial; corrected to existing aramco-qualification, assertions untouched"
+    },
+    {
+      "id": "lf-missing-zod",
+      "passed": 0,
+      "failed": 2,
+      "errors": 2,
+      "reason": "Dependency junction permission failure; then linked preinstalled dependencies"
+    }
+  ],
+  "resolution": "Separate LF checkout-index copy; implementation and six JSON blobs verified byte-equal to1030fa8; loopback tests authorized locally; author checkout untouched.",
+  "raw_setup_output": "Original tool outputs in review session; metadata retained here. No claim of complete raw setup logs."
+}

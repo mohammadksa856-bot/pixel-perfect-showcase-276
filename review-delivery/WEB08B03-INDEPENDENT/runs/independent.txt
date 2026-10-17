@@ -1,0 +1,21 @@
+{"id": "independent", "sha": "1030fa883531f98fae899bd4f6a93733ecff6190", "started": "2026-10-17T15:22:43.944054+00:00", "exit": 1, "command": ["<BUN>", "test", "./review-delivery/WEB08B03-INDEPENDENT/boundaries.test.ts"]}
+(pass) CONTROL: all real claims remain WITHHELD, never publication eligible [3.86ms]
+(fail) F01: contradictory trusted PDF hash must not construct an evidence claim [12.39ms]
+(fail) F01: supplied earlier document publication must not backdate source knowledge [2.34ms]
+(fail) F02: an assumption must not become a published actual fact [2.27ms]
+(fail) F02: research interpretation must not become a published actual fact [1.49ms]
+(fail) F03: a known guidance year must survive bridge construction [1.22ms]
+(fail) F04: incompatible events sharing an id must not select the first event type [3.00ms]
+(fail) F05: conflicting hashes for the same B02 URL must not choose first [2.56ms]
+(fail) F06: an impossible event date must be rejected [3.29ms]
+(fail) F07: date fields must not inject HTML into the local reader [3.78ms]
+(fail) F08: unsafe APP_BASE must not generate javascript navigation links [3.07ms]
+(fail) F09: a different issuer must not inherit Aramco's curated decisions [3.24ms]
+(pass) CONTROL: no network, writes, numeric qualification or production integration added [0.49ms]
+(fail) R10: the 2030 gas target must not strengthen an approximately operator to greater-than [0.63ms]
+(fail) R11: a quoted capacity must not be represented as not disclosed [0.50ms]
+ 2 pass
+ 13 fail
+ 21 expect() calls
+Ran 15 tests across 1 file. [109.00ms]
+Raw assertion payload kept private; SHA256 6f048d60e307aa15b21880c1015f6e652207a369c560d9ba4bda3a2781048780

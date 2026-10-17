@@ -1,0 +1,36 @@
+{"id": "b02", "sha": "1030fa883531f98fae899bd4f6a93733ecff6190", "started": "2026-10-17T15:09:31.816181+00:00", "exit": 0, "command": ["<BUN>", "test", "research-evidence/aramco-qualification"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-qualification\company.test.ts:
+(pass) same period and amount from another issuer never matches [3.83ms]
+
+research-evidence\aramco-qualification\missing.test.ts:
+(pass) absence is not reported as a proven numeric disagreement [1.86ms]
+
+research-evidence\aramco-qualification\qualification.test.ts:
+(pass) exact comparison is not B01 qualification [1.88ms]
+(pass) FY vs quarter [0.56ms]
+(pass) YTD vs standalone [0.81ms]
+(pass) same end different start [0.27ms]
+(pass) flow vs stock [0.44ms]
+(pass) currency [0.28ms]
+(pass) unit [0.23ms]
+(pass) scope [0.15ms]
+(pass) dimensions [0.37ms]
+(pass) conflict blocks even if first record is equal, order invariant [0.62ms]
+(pass) different source is not silently accepted [0.22ms]
+(pass) signs are preserved, never abs-corrected [0.05ms]
+(pass) decimal EPS is not scaled by million [0.04ms]
+(pass) missing never means zero [0.20ms]
+(pass) derived copy not original [0.23ms]
+(pass) date-only publication and content hash cannot stand for artifact proof [0.09ms]
+(pass) user yes does not grant permission [0.11ms]
+(pass) rights cannot substitute for financial review [0.03ms]
+(pass) no code path grants publication [0.02ms]
+(pass) invalid calendars use B01 rejection [0.76ms]
+(pass) unmapped segment remains explicit, not guessed [0.14ms]
+
+ 23 pass
+ 0 fail
+ 28 expect() calls
+Ran 23 tests across 3 files. [116.00ms]

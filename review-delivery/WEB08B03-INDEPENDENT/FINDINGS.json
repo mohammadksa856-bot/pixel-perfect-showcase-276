@@ -1,0 +1,106 @@
+{
+  "schema": "marefa-independent-findings/1",
+  "decision": "REWORK",
+  "application_sha": "b72ad3a1c1a9d5bd43bfec78523aa287300a4639",
+  "findings": [
+    {
+      "id": "B03-R01",
+      "severity": "P1",
+      "gate": "EVIDENCE_BINDING",
+      "cases": [
+        "F01",
+        "F05"
+      ],
+      "files": [
+        "contract-bridge.ts:44-48",
+        "register.ts:323"
+      ],
+      "actual": "A supplied document hash conflicting with the pinned claim is accepted; an earlier publication timestamp replaces the real recorded date; duplicate URL hashes choose the first record.",
+      "expected": "Reject contradictory identity/publication evidence and ambiguous artifacts; bind company, source URL, document revision and digest through a verified resolver.",
+      "scope": "Constructible draft metadata, not an observed publication bypass; all22 remain WITHHELD."
+    },
+    {
+      "id": "B03-R02",
+      "severity": "P1",
+      "gate": "RESEARCH_SEMANTICS",
+      "cases": [
+        "F02",
+        "F03"
+      ],
+      "files": [
+        "contract-bridge.ts:54-77"
+      ],
+      "actual": "Assumption/research_opinion both become published_fact/actual; FY2026 guidance effect is dropped to a non-financial null period without retaining the year in structured scope/limitations.",
+      "expected": "Reject unsupported categories or map faithfully; preserve the known guidance/effect identity without inventing reporting periods.",
+      "scope": "Current sample has no assumptions or research opinions; category tests are independent boundary cases. FY guidance is a real sample case."
+    },
+    {
+      "id": "B03-R03",
+      "severity": "P1",
+      "gate": "ORIGINAL_SOURCE_ALIGNMENT",
+      "cases": [
+        "R10",
+        "R11"
+      ],
+      "files": [
+        "curation.ts",
+        "register.ts:592"
+      ],
+      "actual": "Gas target operator is strengthened relative to original; capacity fields say not_disclosed despite source/own quoted capacity; bonus/capital and acquisition locators do not match the original.",
+      "expected": "Keep engine excerpt distinct from original-source truth. Record conflicts and source/locator corrections in review metadata; retain withholding and use not_extracted/not_modelled rather than a false non-disclosure claim.",
+      "scope": "No automatic financial correction and no engine mutation. Full22-row source register supplied."
+    },
+    {
+      "id": "B03-R04",
+      "severity": "P2",
+      "gate": "IDENTITY_EVENT_DATE_VALIDATION",
+      "cases": [
+        "F04",
+        "F06",
+        "F09"
+      ],
+      "files": [
+        "register.ts:319-323",
+        "register.ts:483-500"
+      ],
+      "actual": "Incompatible events with the same id merge by first event type; impossible dates survive; a different company inherits the entire Aramco curation.",
+      "expected": "Validate issuer, civil dates and compatible event aggregation before returning a register; reject conflicts rather than selecting first.",
+      "scope": "Synthetic boundary cases; actual17 rows are curated event groups, not17 independently verified unique economic events."
+    },
+    {
+      "id": "B03-R05",
+      "severity": "P2",
+      "gate": "LOCAL_READER_SAFETY",
+      "cases": [
+        "F07",
+        "F08"
+      ],
+      "files": [
+        "demo.ts:156-172",
+        "demo.ts:199",
+        "demo.ts:298"
+      ],
+      "actual": "Effect dates are inserted as HTML without escaping; javascript APP_BASE generates unsafe navigation links.",
+      "expected": "Escape every text field; validate allowed local base URLs/protocols or reject unsafe configuration.",
+      "scope": "Current fixture has no malicious strings and default links are safe. CSP blocks scripts; actual script execution was not demonstrated. HTML content/link injection is proven."
+    }
+  ],
+  "nonblocking": [
+    {
+      "id": "N01",
+      "note": "Project table wraps many English words to one/two characters on386CSSpx; no page overflow, but readability needs improvement."
+    },
+    {
+      "id": "N02",
+      "note": "No search UI implemented. Cross-page destination on5173 not independently opened; do not claim end-to-end Intelligence/Data integration."
+    },
+    {
+      "id": "N03",
+      "note": "No historical as-of selection API in B03 demo. Retrospective warnings are not a historical knowledge filter; live/historical integration remains blocked."
+    },
+    {
+      "id": "N04",
+      "note": "B03 rights report predates later recorded commercial user authorization; preserve that authorization and keep third-party source grants distinct, without requesting the same approval again."
+    }
+  ]
+}

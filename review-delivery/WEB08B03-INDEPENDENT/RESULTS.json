@@ -1,0 +1,142 @@
+{
+  "schema": "marefa-web08b03-independent-review/1",
+  "decision": "REWORK",
+  "application_sha": "b72ad3a1c1a9d5bd43bfec78523aa287300a4639",
+  "delivery_sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+  "branch": "review/web08b03-independent-20261017",
+  "independent_tests": {
+    "passed": 2,
+    "failed": 13,
+    "errors": 0,
+    "skipped": 0,
+    "total": 15
+  },
+  "runs": [
+    {
+      "name": "app",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:31.934431+00:00",
+      "exit": 0,
+      "passed": 427,
+      "failed": 0,
+      "skipped": 14,
+      "artifact": "runs/app.txt"
+    },
+    {
+      "name": "b01",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:31.682909+00:00",
+      "exit": 0,
+      "passed": 91,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/b01.txt"
+    },
+    {
+      "name": "b02",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:31.816181+00:00",
+      "exit": 0,
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/b02.txt"
+    },
+    {
+      "name": "b03-types",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:32.016288+00:00",
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/b03-types.txt"
+    },
+    {
+      "name": "b03",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:37.753547+00:00",
+      "exit": 0,
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/b03.txt"
+    },
+    {
+      "name": "build",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:14:48.034758+00:00",
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/build.txt"
+    },
+    {
+      "name": "check",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:32.032940+00:00",
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/check.txt"
+    },
+    {
+      "name": "independent",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:22:43.944054+00:00",
+      "exit": 1,
+      "passed": 2,
+      "failed": 13,
+      "skipped": 0,
+      "artifact": "runs/independent.txt"
+    },
+    {
+      "name": "lint",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:32.032940+00:00",
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/lint.txt"
+    },
+    {
+      "name": "types",
+      "sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
+      "started": "2026-10-17T15:09:32.016288+00:00",
+      "exit": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "artifact": "runs/types.txt"
+    }
+  ],
+  "setup": "SETUP-FAILURES.json",
+  "claims_reviewed": 22,
+  "claims_withheld": 22,
+  "financially_qualified": 0,
+  "B02_142_inputs_unblocked": 0,
+  "documents_indexed": 9,
+  "private_original_pdfs_rehashed": 5,
+  "implementation_modified": false,
+  "B01_modified": false,
+  "WEB07_modified": false,
+  "live_engine_connection_claimed": false,
+  "parallel_financial_database_created": false,
+  "main_merged": false,
+  "content_published": false,
+  "production_modified": false,
+  "Supabase_modified": false,
+  "user_final_acceptance": false,
+  "financial_approval": false,
+  "B02C_acceptance_preserved": "18823e5c691029d487ea2bcb480481919b8738b2",
+  "B02D_acceptance_preserved": "e2ed85b1e62efb1d03106d8c16220e1c059af828",
+  "scope": "Engineering and research review of an unqualified local prototype; no final financial/editorial/user acceptance",
+  "remaining_external_dependencies": [
+    "Trusted immutable document/fact identities and publication history",
+    "Authorized independent financial/editorial reviews and third-party source grant evidence",
+    "Real engine integration separately blocked; existing B02C/B02D not reopened"
+  ]
+}

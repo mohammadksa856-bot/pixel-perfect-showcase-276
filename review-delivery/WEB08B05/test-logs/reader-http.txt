@@ -1,0 +1,28 @@
+# bun review-delivery/WEB08B05/tools/reader-http.ts @ 8fb84fb7c804d0591f1bc7f7b9949ed929c6706d
+GET /?lang=ar -> 200 (915308 bytes)
+GET /?lang=en -> 200 (925165 bytes)
+GET /assets/experience.css -> 200 (47803 bytes)
+GET /assets/fonts/cairo-arabic-700-normal.woff2 -> 200 (13952 bytes)
+GET /api -> 404 (36 bytes)
+GET /api/research -> 404 (36 bytes)
+GET /assets/fonts/../model.ts -> 404 (36 bytes)
+GET /assets/fonts/LICENSE-Cairo-OFL.txt -> 404 (36 bytes)
+GET /preview/web-v1/companies/2222/research -> 404 (36 bytes)
+POST / -> 405
+PUT / -> 405
+DELETE / -> 405
+OPTIONS / -> 405
+HEAD /?lang=en -> 200 body 0
+Host evil.example:4466 -> 421
+Host 127.0.0.1 -> 421
+Host localhost:4466 -> 200
+content-security-policy: default-src 'none'; script-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+x-robots-tag: noindex, nofollow, noarchive
+cache-control: no-store
+x-content-type-options: nosniff
+referrer-policy: no-referrer
+x-frame-options: DENY
+cross-origin-resource-policy: same-origin
+non-loopback 192.0.2.2:4466 -> refused (connect)
+paragraph cards: 99; analyses BLOCKED: 7; projects: 5; topics: 18; <script|<form|style=: 0
+exit=0

@@ -1,0 +1,494 @@
+{
+ "sha": "8fb84fb7c804d0591f1bc7f7b9949ed929c6706d",
+ "method": "Chromium against local vite dev server (frozen fixture); links taken from the rendered private reader page",
+ "summary": {
+  "metricLinks": 29,
+  "topicLinks": 18,
+  "dataLinks": 5,
+  "notRenderedShownAsText": 43,
+  "ok": 52,
+  "total": 52
+ },
+ "notRendered": [
+  "royalties_and_other_taxes",
+  "upstream_capex_per_boe",
+  "reserve_life_index",
+  "base_oils_sold",
+  "finished_lubricants_sold",
+  "crude_refined_products_traded",
+  "liquid_chemicals_traded",
+  "downstream_ebit",
+  "share_of_profit_associates",
+  "revenue_by_product",
+  "revenue_by_geography",
+  "upstream_revenue",
+  "downstream_revenue",
+  "corporate_revenue",
+  "upstream_ebit",
+  "corporate_ebit",
+  "upstream_adjusted_ebit",
+  "downstream_adjusted_ebit",
+  "upstream_capex",
+  "downstream_capex",
+  "corporate_capex",
+  "upstream_depreciation_amortization",
+  "downstream_depreciation_amortization",
+  "purchases",
+  "producing_manufacturing_expense",
+  "selling_general_administrative_expense",
+  "exploration_expense",
+  "depreciation_amortization",
+  "natural_gas_revenue",
+  "capex_to_depreciation_amortization",
+  "due_from_government_change",
+  "royalties_payable_change",
+  "working_capital_change",
+  "accounts_receivable_change",
+  "debt_issued",
+  "debt_repaid",
+  "interest_paid",
+  "lease_payments",
+  "net_debt_to_ebitda",
+  "short_term_borrowings_net",
+  "base_dividends_paid",
+  "performance_linked_dividends_paid",
+  "fcf_dividend_coverage_ratio"
+ ],
+ "results": [
+  {
+   "kind": "metric",
+   "key": "total_liquids_production",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_liquids_production",
+   "http": 200,
+   "focusedKey": "total_liquids_production",
+   "focusedTopic": "operations",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "total_gas_production",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_gas_production",
+   "http": 200,
+   "focusedKey": "total_gas_production",
+   "focusedTopic": "operations",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "total_hydrocarbon_production",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_hydrocarbon_production",
+   "http": 200,
+   "focusedKey": "total_hydrocarbon_production",
+   "focusedTopic": "operations",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "lifting_cost_per_boe",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=lifting_cost_per_boe",
+   "http": 200,
+   "focusedKey": "lifting_cost_per_boe",
+   "focusedTopic": "operations",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "average_realized_crude_oil_price",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=average_realized_crude_oil_price",
+   "http": 200,
+   "focusedKey": "average_realized_crude_oil_price",
+   "focusedTopic": "operations",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "downstream_crude_utilization",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=downstream_crude_utilization",
+   "http": 200,
+   "focusedKey": "downstream_crude_utilization",
+   "focusedTopic": "operations",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "income_taxes_and_zakat",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_taxes_and_zakat",
+   "http": 200,
+   "focusedKey": "income_taxes_and_zakat",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "capex",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex",
+   "http": 200,
+   "focusedKey": "capex",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "roace",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=roace",
+   "http": 200,
+   "focusedKey": "roace",
+   "focusedTopic": "ratios",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "free_cash_flow",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=free_cash_flow",
+   "http": 200,
+   "focusedKey": "free_cash_flow",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "revenue",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+   "http": 200,
+   "focusedKey": "revenue",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "total_assets",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
+   "http": 200,
+   "focusedKey": "total_assets",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "net_margin",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_margin",
+   "http": 200,
+   "focusedKey": "net_margin",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "operating_income",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
+   "http": 200,
+   "focusedKey": "operating_income",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "net_income",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+   "http": 200,
+   "focusedKey": "net_income",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "adjusted_net_income",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=adjusted_net_income",
+   "http": 200,
+   "focusedKey": "adjusted_net_income",
+   "focusedTopic": "earnings_quality",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "operating_margin",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_margin",
+   "http": 200,
+   "focusedKey": "operating_margin",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "operating_cash_flow",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+   "http": 200,
+   "focusedKey": "operating_cash_flow",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "investing_cash_flow",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
+   "http": 200,
+   "focusedKey": "investing_cash_flow",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "financing_cash_flow",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
+   "http": 200,
+   "focusedKey": "financing_cash_flow",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "dividends_paid",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_paid",
+   "http": 200,
+   "focusedKey": "dividends_paid",
+   "focusedTopic": "dividends_actions",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "dividends_per_share",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_per_share",
+   "http": 200,
+   "focusedKey": "dividends_per_share",
+   "focusedTopic": "dividends_actions",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "return_on_equity",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_equity",
+   "http": 200,
+   "focusedKey": "return_on_equity",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "return_on_assets",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_assets",
+   "http": 200,
+   "focusedKey": "return_on_assets",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "total_equity",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+   "http": 200,
+   "focusedKey": "total_equity",
+   "focusedTopic": "financials",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "upstream_carbon_intensity",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=upstream_carbon_intensity",
+   "http": 200,
+   "focusedKey": "upstream_carbon_intensity",
+   "focusedTopic": "esg",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "methane_intensity",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=methane_intensity",
+   "http": 200,
+   "focusedKey": "methane_intensity",
+   "focusedTopic": "esg",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "flaring_intensity",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=flaring_intensity",
+   "http": 200,
+   "focusedKey": "flaring_intensity",
+   "focusedTopic": "esg",
+   "ok": true
+  },
+  {
+   "kind": "metric",
+   "key": "scope_1_emissions",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=scope_1_emissions",
+   "http": 200,
+   "focusedKey": "scope_1_emissions",
+   "focusedTopic": "esg",
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "identity",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=identity",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "business",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=business",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "industry",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=industry",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "competitors",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=competitors",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "financials",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "earnings_quality",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "ratios",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=ratios",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "operations",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=operations",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "ownership",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=ownership",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "dividends_actions",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "governance",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=governance",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "trading",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=trading",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "valuation",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=valuation",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "forecasts",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "analysts",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=analysts",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "risks",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "esg",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=esg",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "topic",
+   "key": "news",
+   "url": "/preview/web-v1/companies/2222/intelligence?topic=news",
+   "http": 200,
+   "topicSection": true,
+   "ok": true
+  },
+  {
+   "kind": "data",
+   "url": "/preview/web-v1/companies/2222?tab=financials",
+   "http": 200,
+   "ok": true
+  },
+  {
+   "kind": "data",
+   "url": "/preview/web-v1/companies/2222?tab=shareholders",
+   "http": 200,
+   "ok": true
+  },
+  {
+   "kind": "data",
+   "url": "/preview/web-v1/companies/2222?tab=risks",
+   "http": 200,
+   "ok": true
+  },
+  {
+   "kind": "data",
+   "url": "/preview/web-v1/companies/2222?tab=business",
+   "http": 200,
+   "ok": true
+  },
+  {
+   "kind": "data",
+   "url": "/preview/web-v1/companies/2222?tab=market",
+   "http": 200,
+   "ok": true
+  }
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "sha": "8fb84fb7c804d0591f1bc7f7b9949ed929c6706d",
+ "tool": "axe-core 4.10.2 via Playwright Chromium; bypassCSP in the audit context only",
+ "note": "Automated aid, not a WCAG conformance claim. All <details> opened before the audit.",
+ "results": [
+  {
+   "lang": "ar",
+   "viewport": 1440,
+   "axe": {
+    "violations": [],
+    "passes": 29,
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 136
+     }
+    ]
+   },
+   "rtl": {
+    "htmlLang": "ar",
+    "htmlDir": "rtl",
+    "computedDir": "rtl",
+    "arabicBlocksRtl": true,
+    "arabicBlocks": 1,
+    "ltrCodes": 1254,
+    "ltrCodesLtr": true,
+    "tocStart": "toc-right(start)",
+    "sw": 1440,
+    "cw": 1440
+   },
+   "keyboard": {
+    "firstTab": {
+     "href": "#content",
+     "visible": true
+    },
+    "focusables": 944,
+    "summaryFocusable": true
+   }
+  },
+  {
+   "lang": "en",
+   "viewport": 1440,
+   "axe": {
+    "violations": [],
+    "passes": 29,
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 137
+     }
+    ]
+   },
+   "rtl": {
+    "htmlLang": "en",
+    "htmlDir": "ltr",
+    "computedDir": "ltr",
+    "arabicBlocksRtl": true,
+    "arabicBlocks": 111,
+    "ltrCodes": 1254,
+    "ltrCodesLtr": true,
+    "tocStart": "toc-left(start)",
+    "sw": 1440,
+    "cw": 1440
+   },
+   "keyboard": {
+    "firstTab": {
+     "href": "#content",
+     "visible": true
+    },
+    "focusables": 944,
+    "summaryFocusable": true
+   }
+  },
+  {
+   "lang": "ar",
+   "viewport": 390,
+   "axe": {
+    "violations": [],
+    "passes": 29,
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 134
+     }
+    ]
+   },
+   "rtl": {
+    "htmlLang": "ar",
+    "htmlDir": "rtl",
+    "computedDir": "rtl",
+    "arabicBlocksRtl": true,
+    "arabicBlocks": 1,
+    "ltrCodes": 1254,
+    "ltrCodesLtr": true,
+    "tocStart": "n/a",
+    "sw": 390,
+    "cw": 390
+   },
+   "keyboard": {
+    "firstTab": {
+     "href": "#content",
+     "visible": true
+    },
+    "focusables": 944,
+    "summaryFocusable": true
+   }
+  },
+  {
+   "lang": "en",
+   "viewport": 390,
+   "axe": {
+    "violations": [],
+    "passes": 29,
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 137
+     }
+    ]
+   },
+   "rtl": {
+    "htmlLang": "en",
+    "htmlDir": "ltr",
+    "computedDir": "ltr",
+    "arabicBlocksRtl": true,
+    "arabicBlocks": 111,
+    "ltrCodes": 1254,
+    "ltrCodesLtr": true,
+    "tocStart": "n/a",
+    "sw": 390,
+    "cw": 390
+   },
+   "keyboard": {
+    "firstTab": {
+     "href": "#content",
+     "visible": true
+    },
+    "focusables": 944,
+    "summaryFocusable": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "marefa-central-tracking-receipt/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "canonical_commit": "9ecab08f446438e92ac2f78f60f205b629709ae5",
+  "task_id": "WEB08-B03",
+  "event_sequence": 104,
+  "event_sha256": "c80207d12d3beb879c23e807746c3b25dc6ab2330e075e88b352b35b0bb7f6d2",
+  "event_chain_verified": 104,
+  "previous_REWORK_event_103_preserved": true,
+  "review_package_commit": "5c2db9c1b3f0e2f0911a1292dbce1dc95e4b082f",
+  "state": "REVIEW",
+  "engineering_decision": "ACCEPT",
+  "accepted_scope": "LOCAL_FROZEN_ENGINEERING_PROTOTYPE_ONLY",
+  "phase_status": {
+    "IMPLEMENTED": "Claude1735609; reviewer did not alter author code",
+    "TESTED": "Separate15/8/57/91/23PASS;app427PASS14SKIP;types/lint/localbuildPASS",
+    "REVIEWED": "Independent scopedACCEPT",
+    "MERGED": false,
+    "ACCEPTED": "ENGINEERING_ONLY_NOT_USER_FINAL",
+    "DEPLOYED": false
+  },
+  "withheld_claims": 22,
+  "withheld_financial_inputs": 142,
+  "financially_qualified": 0,
+  "live_integration": "BLOCKED",
+  "user_final_acceptance": false,
+  "production_release_approval": false,
+  "note": "Derived public receipt, not another board; immutable central events remain authoritative."
+}

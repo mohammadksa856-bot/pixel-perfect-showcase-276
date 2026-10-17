@@ -1,0 +1,33 @@
+{
+  "schema": "marefa-b02d-final-decision/1",
+  "engineering_decision": "ACCEPT",
+  "acceptance_scope": "DOCUMENTED_ADMINISTRATIVE_AUDIT_DISPOSITIONS_WITH_WITHHOLD_ONLY",
+  "implementation_sha": "7ba75414e7cd7c581c84f12f8efd7b58c1efa8e1",
+  "independently_reviewed_delivery_sha": "92414cc341cf53330862d63bd72d8b11334b0ce1",
+  "independent_thread_id": "01a149e2-4ea5-7401-8f8f-377b8878c301",
+  "independent_result": "independent/RESULTS.json",
+  "independent_report": "independent/REPORT_AR.md",
+  "independently_reclassified": 142,
+  "documented_dispositions": 142,
+  "administratively_closed_with_withhold": 142,
+  "financially_resolved": 0,
+  "research_qualified": 0,
+  "withheld": 142,
+  "approved_for_display": 0,
+  "real_engine_bridge": "BLOCKED",
+  "production_read": "UNAVAILABLE_CONNECTION_TIMEOUT",
+  "actual_local_engine_copy_read": true,
+  "native_rows_compared": 4960,
+  "financial_approval": false,
+  "user_final_acceptance": false,
+  "production_release_approval": false,
+  "main_merged": false,
+  "production_or_Supabase_modified": false,
+  "commercial_user_authorization": "PRESERVED_NOT_REREQUESTED",
+  "external_blockers": [
+    "Current authorized engine access or fresh export unavailable",
+    "Trusted immutable fact/document references, versions and knowledge completeness unavailable",
+    "Authorized financial review and accounting/derivative definition approval pending",
+    "Third-party source rights receipts undocumented; distinct from recorded user authorization"
+  ]
+}

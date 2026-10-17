@@ -1,0 +1,108 @@
+{
+  "decision": "ACCEPT",
+  "scope": "ENGINEERING_ADMINISTRATIVE_CLOSEOUT_ONLY",
+  "delivery_sha": "92414cc341cf53330862d63bd72d8b11334b0ce1",
+  "implementation_sha": "7ba75414e7cd7c581c84f12f8efd7b58c1efa8e1",
+  "isolated_materialization": "git archive core.autocrlf=false; all tracked blob bytes verified",
+  "tracked_blobs_verified": 1050,
+  "independently_reclassified": 142,
+  "native_rows_checked": 4960,
+  "private_manifest_files_verified": 27,
+  "administratively_closed_with_withhold": 142,
+  "withheld": 142,
+  "qualified": 0,
+  "financially_resolved": 0,
+  "publication_authorized": false,
+  "production_read_performed": false,
+  "financial_certificate_created": false,
+  "private_amounts_or_media_in_deliverables": false,
+  "bridge": {
+    "attempts": 142,
+    "blocked": 142,
+    "mapped": 0,
+    "boundary": "invalid/incomplete trusted input, not successful fact mapping"
+  },
+  "tests": [
+    {
+      "name": "D14",
+      "exit": 0,
+      "log": "logs/D14.txt",
+      "pass_counts": [],
+      "fail_counts": []
+    },
+    {
+      "name": "B01",
+      "exit": 0,
+      "log": "logs/B01.txt",
+      "pass_counts": [
+        "91"
+      ],
+      "fail_counts": [
+        "0"
+      ]
+    },
+    {
+      "name": "B02",
+      "exit": 0,
+      "log": "logs/B02.txt",
+      "pass_counts": [
+        "23"
+      ],
+      "fail_counts": [
+        "0"
+      ]
+    },
+    {
+      "name": "B02C",
+      "exit": 0,
+      "log": "logs/B02C.txt",
+      "pass_counts": [
+        "56"
+      ],
+      "fail_counts": [
+        "0"
+      ]
+    },
+    {
+      "name": "WEB",
+      "exit": 0,
+      "log": "logs/WEB.txt",
+      "pass_counts": [
+        "95"
+      ],
+      "fail_counts": [
+        "0"
+      ]
+    },
+    {
+      "name": "types",
+      "exit": 0,
+      "log": "logs/types.txt",
+      "pass_counts": [],
+      "fail_counts": []
+    },
+    {
+      "name": "lint",
+      "exit": 0,
+      "log": "logs/lint.txt",
+      "pass_counts": [],
+      "fail_counts": []
+    }
+  ],
+  "setup_failures_separate": [
+    "logs/WEB-setup-failure.txt",
+    "logs/lint-setup-failure.txt",
+    "logs/lint-archive-crlf.txt"
+  ],
+  "external_blockers": [
+    "Current authorized production read/export unavailable; recorded SSH and GET timeouts do not establish absence",
+    "Immutable fact/document version references and knowledge completeness missing",
+    "Authorized financial review and approved definitions pending",
+    "Third-party rights receipts remain undocumented"
+  ],
+  "limits": [
+    "Private values compared independently to local native export; source PDF row/column correctness not financially certified",
+    "No fresh database capture or network attempt; existing timeout receipts inspected",
+    "No executor code, assertions, main, production, AWS, Supabase, engine or 95% policy changed"
+  ]
+}

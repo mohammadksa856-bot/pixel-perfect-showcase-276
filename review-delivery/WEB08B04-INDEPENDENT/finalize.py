@@ -5,6 +5,10 @@ HERE=Path(__file__).parent;ROOT=HERE.parents[1]
 def read(p):return json.loads(p.read_text(encoding='utf8'))
 def emit(name,obj):(HERE/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 notes=read(HERE/'RESEARCH-NOTES.json'); em=read(ROOT/'review-delivery/WEB08B04/EVIDENCE-MAP.json')
+compiled=read(HERE/'COMPILED-IDENTITIES.json')
+for para in compiled['paragraphs']:
+ for ref in para['refs']:ref.pop('text',None)
+emit('COMPILED-IDENTITIES.json',compiled)
 rows=[]
 for i,p in enumerate(em['paragraphs'],1):
  note=notes['paragraphs'].get(p['id'],notes['other_paragraphs'].get(p['id']))

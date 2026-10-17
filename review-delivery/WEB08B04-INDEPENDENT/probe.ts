@@ -2,7 +2,7 @@ import {writeFileSync,readFileSync} from 'node:fs';
 import {loadContext,resolveRef} from '../../research-evidence/aramco-research-pack/evidence';
 import {compilePack} from '../../research-evidence/aramco-research-pack/pack';
 const out=new URL('./',import.meta.url), ctx=loadContext(), pack=compilePack(ctx);
-writeFileSync(new URL('COMPILED-IDENTITIES.json',out),JSON.stringify({counts:pack.counts,paragraphs:pack.paragraphs.map(p=>({id:p.id,kind:p.kind,refs:p.refs})),analyses:pack.analyses},null,2)+'\n');
+writeFileSync(new URL('COMPILED-IDENTITIES.json',out),JSON.stringify({counts:pack.counts,paragraphs:pack.paragraphs.map(p=>({id:p.id,kind:p.kind,refs:p.refs.map(({text,...identity})=>identity)})),analyses:pack.analyses},null,2)+'\n');
 const links=JSON.parse(readFileSync(new URL('../WEB08B04/MAREFA-DATA-LINKS.json',import.meta.url),'utf8')).metrics;
 const results=[];
 for(const link of links){

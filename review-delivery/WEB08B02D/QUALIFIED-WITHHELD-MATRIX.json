@@ -1,0 +1,5100 @@
+{
+  "schema": "marefa-b02d-qualification-matrix/1",
+  "observations": 142,
+  "research_qualified": 0,
+  "withheld": 142,
+  "financially_resolved": 0,
+  "audit_dispositions_closed_with_withhold": 142,
+  "rows": [
+    {
+      "audit_row": "OBS-001",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 12,
+        "table": "income",
+        "original_label": "Revenue",
+        "column": "SAR / current period",
+        "printed_page": 9
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-002",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue_and_other_income_related_to_sales",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 12,
+        "table": "income",
+        "original_label": "Revenue and other income related to sales",
+        "column": "SAR / current period",
+        "printed_page": 9
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-003",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 12,
+        "table": "income",
+        "original_label": "Operating income",
+        "column": "SAR / current period",
+        "printed_page": 9
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-004",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 12,
+        "table": "income",
+        "original_label": "Net income",
+        "column": "SAR / current period",
+        "printed_page": 9
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-005",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income_parent",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 12,
+        "table": "income",
+        "original_label": "Net income attributable to Shareholders’ equity",
+        "column": "SAR / current period",
+        "printed_page": 9
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-006",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 16,
+        "table": "cash_flow",
+        "original_label": "Net cash provided by operating activities",
+        "column": "SAR / current period",
+        "printed_page": 13
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-007",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "capex",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 16,
+        "table": "cash_flow",
+        "original_label": "Capital expenditures",
+        "column": "SAR / current period",
+        "printed_page": 13
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-008",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "dividends_paid",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 16,
+        "table": "cash_flow",
+        "original_label": "Dividends paid to shareholders of the Company",
+        "column": "SAR / current period",
+        "printed_page": 13
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-009",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "depreciation_amortization_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 16,
+        "table": "cash_flow",
+        "original_label": "Depreciation and amortization",
+        "column": "SAR / current period",
+        "printed_page": 13
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-010",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "basic_eps",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR/share",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 12,
+        "table": "income",
+        "original_label": "Earnings per share (basic and diluted)",
+        "column": "SAR / current period",
+        "printed_page": 9
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-011",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 14,
+        "table": "income",
+        "original_label": "Revenue",
+        "column": "SAR / current period",
+        "printed_page": 12
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-012",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue_and_other_income_related_to_sales",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 14,
+        "table": "income",
+        "original_label": "Revenue and other income related to sales",
+        "column": "SAR / current period",
+        "printed_page": 12
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-013",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 14,
+        "table": "income",
+        "original_label": "Operating income",
+        "column": "SAR / current period",
+        "printed_page": 12
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-014",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 14,
+        "table": "income",
+        "original_label": "Net income",
+        "column": "SAR / current period",
+        "printed_page": 12
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-015",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income_parent",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 14,
+        "table": "income",
+        "original_label": "Net income attributable to Shareholders’ equity",
+        "column": "SAR / current period",
+        "printed_page": 12
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-016",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 18,
+        "table": "cash_flow",
+        "original_label": "Net cash provided by operating activities",
+        "column": "SAR / current period",
+        "printed_page": 16
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-017",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "capex",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 18,
+        "table": "cash_flow",
+        "original_label": "Capital expenditures",
+        "column": "SAR / current period",
+        "printed_page": 16
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-018",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "dividends_paid",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 18,
+        "table": "cash_flow",
+        "original_label": "Dividends paid to shareholders of the Company",
+        "column": "SAR / current period",
+        "printed_page": 16
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-019",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "depreciation_amortization_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 18,
+        "table": "cash_flow",
+        "original_label": "Depreciation and amortization",
+        "column": "SAR / current period",
+        "printed_page": 16
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-020",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "basic_eps",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR/share",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 14,
+        "table": "income",
+        "original_label": "Earnings per share (basic and diluted)",
+        "column": "SAR / current period",
+        "printed_page": 12
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-021",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 23,
+        "table": "income",
+        "original_label": "Revenue",
+        "column": "SAR / current period",
+        "printed_page": 23
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-022",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue_and_other_income_related_to_sales",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 23,
+        "table": "income",
+        "original_label": "Revenue and other income related to sales",
+        "column": "SAR / current period",
+        "printed_page": 23
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-023",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 23,
+        "table": "income",
+        "original_label": "Operating income",
+        "column": "SAR / current period",
+        "printed_page": 23
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-024",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 23,
+        "table": "income",
+        "original_label": "Net income",
+        "column": "SAR / current period",
+        "printed_page": 23
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-025",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income_parent",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 23,
+        "table": "income",
+        "original_label": "Net income attributable to Shareholders’ equity",
+        "column": "SAR / current period",
+        "printed_page": 23
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-026",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 27,
+        "table": "cash_flow",
+        "original_label": "Net cash provided by operating activities",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-027",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "capex",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 27,
+        "table": "cash_flow",
+        "original_label": "Capital expenditures",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-028",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "dividends_paid",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 27,
+        "table": "cash_flow",
+        "original_label": "Dividends paid to shareholders of the Company",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-029",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "depreciation_amortization_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 27,
+        "table": "cash_flow",
+        "original_label": "Depreciation and amortization",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-030",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "basic_eps",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR/share",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 23,
+        "table": "income",
+        "original_label": "Earnings per share (basic and diluted)",
+        "column": "SAR / current period",
+        "printed_page": 23
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-031",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Revenue",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-032",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue_and_other_income_related_to_sales",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Revenue and other income related to sales",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-033",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Operating income",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-034",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Net income",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-035",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income_parent",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Net income attributable to Shareholders’ equity",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-036",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Net cash provided by operating activities",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-037",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "capex",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Capital expenditures",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-038",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "dividends_paid",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Dividends paid to shareholders of the Company",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-039",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "depreciation_amortization_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Depreciation and amortization",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-040",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "basic_eps",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR/share",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Earnings per share (basic and diluted)",
+        "column": "SAR / current period",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-041",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-042",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "revenue_and_other_income_related_to_sales",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Revenue and other income related to sales",
+        "column": "SAR / six months current year",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-043",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Operating income",
+        "column": "SAR / six months current year",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-044",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Net income",
+        "column": "SAR / six months current year",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-045",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "net_income_parent",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Net income attributable to Shareholders’ equity",
+        "column": "SAR / six months current year",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-046",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "operating_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Net cash provided by operating activities",
+        "column": "SAR / six months current year",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-047",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "capex",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Capital expenditures",
+        "column": "SAR / six months current year",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-048",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "dividends_paid",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Dividends paid to shareholders of the Company",
+        "column": "SAR / six months current year",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-049",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "depreciation_amortization_cash_flow",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Depreciation and amortization",
+        "column": "SAR / six months current year",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-050",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "basic_eps",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR/share",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 27,
+        "table": "income",
+        "original_label": "Earnings per share (basic and diluted)",
+        "column": "SAR / six months current year",
+        "printed_page": 27
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-051",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Cash and cash equivalents",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-052",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_assets",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Total assets",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-053",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-054",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "parent_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Shareholders’ equity subtotal (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-055",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_liabilities",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Total liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-056",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "noncurrent_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Non-current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-057",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "current_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 14,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 11
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-058",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Cash and cash equivalents",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-059",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_assets",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Total assets",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-060",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-061",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "parent_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Shareholders’ equity subtotal (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-062",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_liabilities",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Total liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-063",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "noncurrent_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Non-current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-064",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "current_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 16,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 14
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-065",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Cash and cash equivalents",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-066",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_assets",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Total assets",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-067",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-068",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "parent_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Shareholders’ equity subtotal (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-069",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_liabilities",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Total liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-070",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "noncurrent_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Non-current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-071",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "current_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 25,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 25
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-072",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Cash and cash equivalents",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-073",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_assets",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Total assets",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-074",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-075",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "parent_equity",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Shareholders’ equity subtotal (unlabelled subtotal)",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-076",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "total_liabilities",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Total liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-077",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "noncurrent_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Non-current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-078",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "current_borrowings",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 29,
+        "table": "balance_sheet",
+        "original_label": "Borrowings / Current liabilities",
+        "column": "SAR / reporting date current year",
+        "printed_page": 29
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-079",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "weighted_average_shares_basic",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "shares",
+        "currency": null,
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "fiscalYear": 2024,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2024",
+        "pdf_page": 72,
+        "table": "EPS note",
+        "original_label": "Weighted average number of ordinary shares (in millions)",
+        "column": "SAR / current period",
+        "printed_page": 69
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-080",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "weighted_average_shares_basic",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "shares",
+        "currency": null,
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 75,
+        "table": "EPS note",
+        "original_label": "Weighted average number of ordinary shares (in millions)",
+        "column": "SAR / current period",
+        "printed_page": 73
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-081",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-082",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-083",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-084",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-085",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-086",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-087",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-088",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-089",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-090",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-091",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-092",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-093",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-094",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "fiscalYear": 2025,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "FY2025",
+        "pdf_page": 36,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 34
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-095",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-096",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-097",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-098",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-099",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-100",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-101",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-102",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-103",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-104",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-105",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-106",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-107",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-108",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 31,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-109",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-110",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-111",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-112",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-113",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-114",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-115",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-116",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-117",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-118",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-119",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-120",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-121",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-122",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / current period",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-123",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-124",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-125",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "external_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "External revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-126",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-127",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-128",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-129",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "intersegment_revenue",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Inter-segment revenue",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-130",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-131",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-132",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-133",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "segment_ebit",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "eliminations"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Earnings (losses) before interest, income taxes and zakat",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-134",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "upstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-135",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "downstream"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-136",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_capex",
+        "scope": "segment",
+        "dimensions": {
+          "segment": "corporate"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 35,
+        "table": "operating_segments",
+        "original_label": "Capital expenditures - cash basis",
+        "column": "SAR / six months current year",
+        "printed_page": 35
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-137",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_flow_end",
+        "scope": "consolidated",
+        "dimensions": {
+          "cash_boundary": "including_held_for_sale"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 31,
+        "table": "cash_flow",
+        "original_label": "Cash and cash equivalents at end of the period",
+        "column": "SAR / reporting date current year",
+        "printed_page": 31
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-138",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "cash_held_for_sale",
+        "scope": "consolidated",
+        "dimensions": {
+          "disposal_group": "PRefChem"
+        },
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": null
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 42,
+        "table": "note16a",
+        "original_label": "PRefChem cash and cash equivalents classified as held for sale",
+        "column": "SAR / reporting date current year",
+        "printed_page": 42
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-139",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "adjusted_net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "Q1-2026",
+        "pdf_page": 13,
+        "table": "issuer_non_IFRS_adjusted_net_income",
+        "column": "Q1-2026 original presentation",
+        "presentation": "Q1-2026 original presentation",
+        "original_label": "Adjusted net income",
+        "printed_page": 13
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-140",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "adjusted_net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 1
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 15,
+        "table": "issuer_non_IFRS_adjusted_net_income",
+        "column": "Q1-2026 comparative amended in H1",
+        "presentation": "Q1-2026 comparative amended in H1",
+        "original_label": "Adjusted net income",
+        "printed_page": 15
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-141",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "adjusted_net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 15,
+        "table": "issuer_non_IFRS_adjusted_net_income",
+        "column": "Q2-2026 H1 presentation",
+        "presentation": "Q2-2026 H1 presentation",
+        "original_label": "Adjusted net income",
+        "printed_page": 15
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    },
+    {
+      "audit_row": "OBS-142",
+      "identity": {
+        "companyId": "sa:2222",
+        "metric": "adjusted_net_income",
+        "scope": "consolidated",
+        "dimensions": {},
+        "unit": "SAR",
+        "currency": "SAR",
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscalYear": 2026,
+        "fiscalQuarter": 2
+      },
+      "source": {
+        "document_key": "H1-Q2-2026",
+        "pdf_page": 15,
+        "table": "issuer_non_IFRS_adjusted_net_income",
+        "column": "H1-2026 presentation",
+        "presentation": "H1-2026 presentation",
+        "original_label": "Adjusted net income",
+        "printed_page": 15
+      },
+      "audit_disposition": "CLOSED_WITH_WITHHOLD",
+      "financial_review": "NOT_CERTIFIED",
+      "eligibility": "WITHHELD",
+      "remaining_blockers": [
+        "LIVE_ENGINE_READ_UNAVAILABLE",
+        "IMMUTABLE_REFERENCE_EXPORT_MISSING",
+        "AUTHORIZED_FINANCIAL_REVIEW_PENDING",
+        "THIRD_PARTY_RIGHTS_RECEIPT_UNDOCUMENTED"
+      ],
+      "engine_fact_ref": null,
+      "publicationAuthorized": false
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schema": "marefa-central-task-safe-export/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "central_commit": "9f86728b58f208dd804ad9f83c401902886ea7f9",
+  "exported_at": "2026-10-17 00:11:18 UTC",
+  "meaning": "Single-task receipt; not a parallel board. All 98 immutable central events retained and chain verified.",
+  "task": {
+    "id": "WEB08-B02",
+    "description": "Aramco FY2024/FY2025/Q1/Q2/H1-2026 read-only financial evidence qualification audit; no live integration",
+    "owner": "Codex engineering and separate independent Codex review",
+    "priority": 0,
+    "parent_task_id": "MAREFA-WEB-V1",
+    "dependencies": [
+      "WEB08-B01",
+      "WEB-08A",
+      "WEB-07"
+    ],
+    "state": "REVIEW",
+    "branch": "codex/web08b02-aramco-evidence-20261017",
+    "phase_status": {
+      "IMPLEMENTED": "b1f90a9 read-only audit and four document registers",
+      "TESTED": "23 audit /91 B01 /95 WEB07-WEB06 separate PASS; audit types/lint PASS",
+      "REVIEWED": "Independent Codex ACCEPT for audit package on b1f90a9; REWORK for research input eligibility; 24 independent cases PASS and nine source pages checked",
+      "MERGED": false,
+      "ACCEPTED": "Read-only audit engineering only; not financial inputs or user final acceptance",
+      "DEPLOYED": false
+    },
+    "financial_input_qualification": "WITHHELD_ALL_142",
+    "live_engine_snapshot": false,
+    "USER_FINAL_ACCEPTANCE": false,
+    "PRODUCTION_RELEASE_APPROVAL": false,
+    "production_published": false,
+    "commits": [
+      "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+      "eeeebd9b1d5878a4cbe156775d811575619bd73c"
+    ],
+    "changed_files": [
+      "research-evidence/aramco-qualification/qualification.ts",
+      "research-evidence/aramco-qualification/audit.ts",
+      "research-evidence/aramco-qualification/*.test.ts",
+      "review-delivery/WEB08B02/"
+    ],
+    "test_runs": [
+      {
+        "run_id": "B02-author-23",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/author-qualification-tests.txt",
+        "scope": "Author run, new audit module, synthetic cases; no financial correctness certification",
+        "passed": 23,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00"
+      },
+      {
+        "run_id": "B02-author-B01-91",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/author-B01-regression.txt",
+        "scope": "Author separate B01 contract regression run, unmodified accepted suite",
+        "passed": 91,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00"
+      },
+      {
+        "run_id": "B02-author-WEB07-95",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/author-WEB07-WEB06-regression.txt",
+        "scope": "Author separate eight-file WEB07/WEB06 regression run",
+        "passed": 95,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00"
+      },
+      {
+        "run_id": "B02-independent-0",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/b02.log",
+        "scope": "Separate independent session run on fixed SHA; results not pooled",
+        "passed": 23,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00"
+      },
+      {
+        "run_id": "B02-independent-1",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/b01.log",
+        "scope": "Separate independent session run on fixed SHA; results not pooled",
+        "passed": 91,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00"
+      },
+      {
+        "run_id": "B02-independent-5",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/independent-b02-tests.log",
+        "scope": "Separate independent session run on fixed SHA; results not pooled",
+        "passed": 24,
+        "failed": 0,
+        "errors": 0,
+        "expected_failures": 0,
+        "skipped": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00"
+      }
+    ],
+    "evidence": [
+      "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/FINAL-DECISION.json",
+      "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/INDEPENDENT-REVIEW_AR.md"
+    ],
+    "blockers": [
+      "documented reviewed rights grant with scope missing",
+      "stable engine fact/document IDs and evidence metadata missing",
+      "authorized independent financial review certificates missing",
+      "approved versioned derivative methods and input lineage incomplete",
+      "Current live-engine reconciliation not performed; compared snapshot generated2026-10-13 only"
+    ],
+    "required_decisions": [
+      "Supply actual rights grant reference/issuer/scope; two yes assertions recorded but not granted reviewed rights",
+      "Agree versioned financial definitions and authorise separately scoped immutable-reference/financial-review work before any unblocking",
+      "No production/main/Supabase/engine edits authorised"
+    ],
+    "change_stage": "READ_ONLY_IMPLEMENTED_TESTED_REVIEWED_NO_MERGE_OR_PUBLICATION",
+    "latest_event_sha256": "0df35bf03a2c537719118f0ce84e1aa7fbd8278f519b8923b243295cc65fa3b7",
+    "latest_batch_report": "docs/tracking/batches/WEB08B02-EVIDENCE-QUALIFICATION-20261017.json"
+  },
+  "event": {
+    "actor": "Codex",
+    "batch_report": "docs/tracking/batches/WEB08B02-EVIDENCE-QUALIFICATION-20261017.json",
+    "blockers": [
+      "documented reviewed rights grant with scope missing",
+      "stable engine fact/document IDs and evidence metadata missing",
+      "authorized independent financial review certificates missing",
+      "approved versioned derivative methods and input lineage incomplete",
+      "Current live-engine reconciliation not performed; compared snapshot generated2026-10-13 only"
+    ],
+    "branch": "codex/web08b02-aramco-evidence-20261017",
+    "change": "Independent ACCEPT for read-only audit package, REWORK for real financial research eligibility; all142WITHHELD, no actual values imported or production approval.",
+    "change_stage": "READ_ONLY_IMPLEMENTED_TESTED_REVIEWED_NO_MERGE_OR_PUBLICATION",
+    "changed_files": [
+      "research-evidence/aramco-qualification/qualification.ts",
+      "research-evidence/aramco-qualification/audit.ts",
+      "research-evidence/aramco-qualification/*.test.ts",
+      "review-delivery/WEB08B02/"
+    ],
+    "commits": [
+      "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+      "eeeebd9b1d5878a4cbe156775d811575619bd73c"
+    ],
+    "event_id": "WEB08B02-EVIDENCE-QUALIFICATION-20261017",
+    "event_sha256": "0df35bf03a2c537719118f0ce84e1aa7fbd8278f519b8923b243295cc65fa3b7",
+    "evidence": [
+      "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/FINAL-DECISION.json",
+      "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/INDEPENDENT-REVIEW_AR.md"
+    ],
+    "occurred_at": "2026-10-17T03:10:20.542513+03:00",
+    "previous_event_sha256": "2424b1500a014c8ab162f5af442948264bb09e27f26dafb0474fd410ab5bcb6f",
+    "production_published": false,
+    "required_decisions": [
+      "Supply actual rights grant reference/issuer/scope; two yes assertions recorded but not granted reviewed rights",
+      "Agree versioned financial definitions and authorise separately scoped immutable-reference/financial-review work before any unblocking",
+      "No production/main/Supabase/engine edits authorised"
+    ],
+    "review_decision": "ACCEPT_AUDIT_PACKAGE_REWORK_RESEARCH_INPUTS",
+    "sequence": 98,
+    "state": "REVIEW",
+    "task_id": "WEB08-B02",
+    "test_runs": [
+      {
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/author-qualification-tests.txt",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00",
+        "passed": 23,
+        "run_id": "B02-author-23",
+        "scope": "Author run, new audit module, synthetic cases; no financial correctness certification",
+        "skipped": 0
+      },
+      {
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/author-B01-regression.txt",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00",
+        "passed": 91,
+        "run_id": "B02-author-B01-91",
+        "scope": "Author separate B01 contract regression run, unmodified accepted suite",
+        "skipped": 0
+      },
+      {
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/author-WEB07-WEB06-regression.txt",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00",
+        "passed": 95,
+        "run_id": "B02-author-WEB07-95",
+        "scope": "Author separate eight-file WEB07/WEB06 regression run",
+        "skipped": 0
+      },
+      {
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/b02.log",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00",
+        "passed": 23,
+        "run_id": "B02-independent-0",
+        "scope": "Separate independent session run on fixed SHA; results not pooled",
+        "skipped": 0
+      },
+      {
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/b01.log",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00",
+        "passed": 91,
+        "run_id": "B02-independent-1",
+        "scope": "Separate independent session run on fixed SHA; results not pooled",
+        "skipped": 0
+      },
+      {
+        "artifact": "eeeebd9b1d5878a4cbe156775d811575619bd73c:review-delivery/WEB08B02/independent/independent-b02-tests.log",
+        "branch": "codex/web08b02-aramco-evidence-20261017",
+        "commit": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+        "errors": 0,
+        "expected_failures": 0,
+        "failed": 0,
+        "observed_at": "2026-10-17T03:10:20.542513+03:00",
+        "passed": 24,
+        "run_id": "B02-independent-5",
+        "scope": "Separate independent session run on fixed SHA; results not pooled",
+        "skipped": 0
+      }
+    ]
+  }
+}

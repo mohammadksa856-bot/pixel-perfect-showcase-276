@@ -1,0 +1,121 @@
+Application code SHA: 74c967da01edf518cf77b11c0d9b6ca05316a5ae
+Run: WEB95
+Command: & 'C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe' test ./tests/web-03-04.test.ts ./tests/web-05b-boundary.test.ts ./tests/web-06-d11-tabs.test.ts ./tests/web-06-polish.test.ts ./tests/web-07.test.ts ./tests/web-readiness.test.ts ./tests/web07-final-independent-period.test.ts ./tests/web07-independent-provenance.test.ts
+Exit: 0
+bun test v1.4.3 (c6da4a4d3)
+
+tests\web-03-04.test.ts:
+(pass) WEB-03: multi-period statements > annual periods come only from engine history, newest first; nothing is invented [61.27ms]
+(pass) WEB-03: multi-period statements > quarterly and YTD views are unavailable with a reason where the engine has none [37.80ms]
+(pass) WEB-03: multi-period statements > every shown cell carries a source link; calculated values without reproduced inputs are withheld [61.57ms]
+(pass) WEB-03: multi-period statements > sector changes the metrics, not the page structure [63.37ms]
+(pass) WEB-03: multi-period statements > explorer: unavailable periods are disabled tabs, withheld cells say so, no change ratios [67.28ms]
+(pass) WEB-03: multi-period statements > each of the 18 topics has a designed component and its data requirement [0.33ms]
+(pass) WEB-04: factory contract panel > contract definitions: 18 categories in contract order, weights sum to 100 [0.14ms]
+(pass) WEB-04: factory contract panel > not assessed: definitions shown (weight, minimum, sources, gates), but no score or field counts [20.08ms]
+(pass) WEB-04: factory contract panel > assessed (engine b70254e): scores, field counts, gates, last assessment, separation note [30.51ms]
+(pass) WEB-04: factory contract panel > Al Rajhi: excluded category has its rule and no score; total withheld [16.60ms]
+(pass) frozen design preview branches > only the two named review branches; never main, production or a pattern [0.24ms]
+
+tests\web-05b-boundary.test.ts:
+(pass) every Preview link stays under /preview/web-v1 > no Link/to or href to a non-Preview internal route in Preview components and routes [9.02ms]
+(pass) every Preview link stays under /preview/web-v1 > Codex boundary acceptance: company breadcrumb targets the Preview Saudi market [0.40ms]
+(pass) every Preview link stays under /preview/web-v1 > the shell uses the isolated Preview footer; the production footer is untouched and unused here [0.42ms]
+(pass) Preview footer > all links are Preview routes [0.30ms]
+(pass) Preview footer > pages not built in the Preview are listed as plain text, never as links [0.19ms]
+(pass) Preview footer > deferred features have no entry; no form of any kind; no Supabase in the footer module [0.52ms]
+
+tests\web-06-d11-tabs.test.ts:
+(pass) business: one active tab, local high-contrast style with a ring, same tabs and text size [2.53ms]
+(pass) financials: one active tab, local high-contrast style with a ring, same tabs and text size [0.95ms]
+(pass) shareholders: one active tab, local high-contrast style with a ring, same tabs and text size [0.93ms]
+(pass) market: one active tab, local high-contrast style with a ring, same tabs and text size [0.78ms]
+(pass) risks: one active tab, local high-contrast style with a ring, same tabs and text size [0.86ms]
+(pass) coverage: one active tab, local high-contrast style with a ring, same tabs and text size [1.64ms]
+
+tests\web-06-polish.test.ts:
+(pass) D3: one page-level frozen notice; item states kept > the display constant matches the reason the frozen fixtures add (Codex file, unchanged) [0.43ms]
+(pass) D3: one page-level frozen notice; item states kept > business tab: one notice, the general reason never repeated per topic, own reasons kept [33.53ms]
+(pass) D1/D2: identity links wrap; corporate actions separated > long URLs are real links (ltr, wrap anywhere), not clipped text [22.60ms]
+(pass) D1/D2: identity links wrap; corporate actions separated > every corporate action keeps its title, amount and date as separate labelled fields [21.68ms]
+(pass) D9: sector and industry crumbs link to existing preview routes > 2222: sector page and industry-filtered sector page; labels from the display dictionary [22.48ms]
+(pass) D5: display dictionary > translation is display-only and never assigns a sector [0.17ms]
+(pass) D5: display dictionary > dictionary keys are exactly the engine labels used by the three preview pages [33.90ms]
+(pass) D5: display dictionary > Arabic search finds the English source label; the entry itself is unchanged [1.32ms]
+(pass) D5: display dictionary > no sector literals leak into the guarded market files [4.60ms]
+(pass) D5: display dictionary > language marks only on real words, never on dates, codes or numbers [0.90ms]
+(pass) D6: statements split by section; condensed view removes nothing > 2222: every row of every section stays in the DOM [26.82ms]
+(pass) D6: statements split by section; condensed view removes nothing > 1120: every row of every section stays in the DOM [16.17ms]
+(pass) D6: statements split by section; condensed view removes nothing > 8010: every row of every section stays in the DOM [8.93ms]
+(pass) D7: factory panel when not assessed > one clear summary, 95% rule stated, compact map, detailed table closed [8.24ms]
+(pass) D7: factory panel when not assessed > assessed panels keep the open table (no behaviour change when data exists) [18.94ms]
+(pass) D12: search states > both unavailable: one merged short message [2.27ms]
+(pass) D12: search states > an error is never merged into 'unavailable' [0.72ms]
+(pass) D10: deferred features > recorded as deferred in the scope log, not done and not cancelled [0.85ms]
+(pass) D10: deferred features > allowlist addition is the exact branch name, nothing broader [0.45ms]
+
+tests\web-07.test.ts:
+(pass) WEB-07 scope > experience is built for Aramco only; other companies keep Marefa Data [0.11ms]
+(pass) WEB-07 scope > three levels in order [0.04ms]
+(pass) WEB-07 scope > allowlist addition is the exact branch name [0.50ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > key figures are the page's key figures, unchanged, each with a deep link to topic 5 [0.21ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > operating, dividend and revenue-mix values all exist in the topics [0.22ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > business description is the source text, both languages, with source URL [0.07ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > valuation: recorded close only, no documented multiples, no forecasts or analysts [0.03ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > developments newest first, from actions and documents only [0.05ms]
+(pass) Overview model: every value is an existing cell, nothing computed or invented > status keeps investor topics and factory separate; counts are counts [0.09ms]
+(pass) Overview render > no invented price, multiple, forecast or 95% achievement [0.81ms]
+(pass) Overview render > prominent entry to Company Intelligence and links to Marefa Data [0.15ms]
+(pass) Overview render > each key figure has a deep link (topic+focus) and its source [0.40ms]
+(pass) Overview render > every external link is https and opens in a new tab [0.25ms]
+(pass) Company Intelligence > all 18 topics in the five groups of model.ts, each exactly once [0.28ms]
+(pass) Company Intelligence > search: Arabic and English, every word must match, empty matches all, nothing removed [3.61ms]
+(pass) Company Intelligence > render: 18 topic sections, 5 groups, index, search, data links [25.92ms]
+(pass) Company Intelligence > render with a search query hides non-matching topics but keeps them in the page [31.63ms]
+(pass) Company Intelligence > deep-link search params are validated [0.28ms]
+(pass) levels and Marefa Data > level nav marks the current level with aria-current [1.91ms]
+(pass) levels and Marefa Data > Marefa Data page shows the level nav only for experience companies; WEB-06 template unchanged [0.76ms]
+(pass) levels and Marefa Data > other companies: Overview/Intelligence show a not-built state, not an invented page [0.61ms]
+(pass) rework: provenance is per row unless provably shared > sharedProvenance: identical rows share; any difference in source, date, period kind or unit does not [0.16ms]
+(pass) rework: provenance is per row unless provably shared > comparableCells: bars only for one unit and one full period identity (kind + end) [0.38ms]
+(pass) rework: provenance is per row unless provably shared > real Aramco ownership and segments are homogeneous: one date/source line, marked shared [27.86ms]
+(pass) rework: provenance is per row unless provably shared > ownership: one differing row switches every row to its own date and source [25.84ms]
+(pass) rework: provenance is per row unless provably shared > segments: different units → no comparison bars, each row keeps period and source [29.07ms]
+(pass) rework: provenance is per row unless provably shared > dividends all withheld: explicit state plus every reason; ownership missing: explicit state [21.05ms]
+(pass) rework: provenance is per row unless provably shared > developments: actions and documents in two labelled lists, each newest first [25.91ms]
+
+tests\web-readiness.test.ts:
+(pass) investor topics readiness > ready only with engine 'ready', score ≥ 95, target 95 and every gate present and passed [0.14ms]
+(pass) investor topics readiness > missing hard gates are not a pass [0.18ms]
+(pass) investor topics readiness > engine 'ready' contradicted by score or a failed gate → not ready, with the reason [0.17ms]
+(pass) investor topics readiness > no valid assessment → not assessed and no score [0.18ms]
+(pass) investor topics readiness > no free score: a scored not-applicable category withholds the total [0.13ms]
+(pass) factory contract: the 18 operational categories > always 18 categories in contract order, even when the block is absent [0.52ms]
+(pass) factory contract: the 18 operational categories > Aramco @ b70254e: not ready at 56.6, thresholds, gates and missing fields carried through [1.87ms]
+(pass) factory contract: the 18 operational categories > Al Rajhi @ b70254e: not-applicable category shows its rule, no score, and the total is withheld [1.55ms]
+(pass) factory contract: the 18 operational categories > a not-applicable category without a cited rule is labelled as such [0.89ms]
+(pass) factory contract: the 18 operational categories > ready needs every category, threshold and gate, plus an approved assessment [3.88ms]
+(pass) factory contract: the 18 operational categories > an invalid assessment shows no score: wrong model, investor score blended, or target ≠ 95 [1.41ms]
+(pass) factory contract: the 18 operational categories > the investor model is never used as factory evidence [19.70ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > contract v4: investor topics measured and not ready; factory not in contract [30.62ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > contract v5: the two models stay separate and keep the engine's own states [32.44ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > no template is ever shown as ready, in either contract or with the factory evaluation [65.53ms]
+(pass) acceptance templates: Aramco, Al Rajhi, Tawuniya > a topic the engine calls not applicable (no cited rule) is not measured, with no score [8.24ms]
+(pass) rendering > not assessed renders no score and no 'ready' label [0.70ms]
+(pass) rendering > not ready renders the engine score against 95 [10.94ms]
+(pass) rendering > a measured topic shows its coverage; a not-measured topic shows none [41.05ms]
+
+tests\web07-final-independent-period.test.ts:
+(pass) different units must disable comparison bars and preserve per-row source [25.91ms]
+(pass) same end date but quarter versus FY must not share a period or compare bars [24.52ms]
+(pass) different end dates must disable comparison bars and preserve periods [22.23ms]
+
+tests\web07-independent-provenance.test.ts:
+(pass) each ownership number keeps its own source, not the first holder source [25.70ms]
+(pass) each revenue segment preserves source and period, not first-row metadata [24.12ms]
+(pass) empty returns/ownership card explains missing data instead of title-only content [20.93ms]
+
+ 95 pass
+ 0 fail
+ 1150 expect() calls
+Ran 95 tests across 8 files. [1.66s]

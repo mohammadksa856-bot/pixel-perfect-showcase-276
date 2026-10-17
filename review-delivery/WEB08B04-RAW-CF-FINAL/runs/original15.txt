@@ -1,0 +1,24 @@
+{"run": "original15", "sha": "69714002f9279271be447b7bcf5fc12e0eb41a6a", "started": "2026-10-17T22:55:05.090927+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-RAW-CF-FINAL/boundaries.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-RAW-CF-FINAL\boundaries.test.ts:
+(pass) CONTROL: all real claims remain WITHHELD, never publication eligible [6.43ms]
+(pass) F01: contradictory trusted PDF hash must not construct an evidence claim [2.49ms]
+(pass) F01: supplied earlier document publication must not backdate source knowledge [1.41ms]
+(pass) F02: an assumption must not become a published actual fact [0.89ms]
+(pass) F02: research interpretation must not become a published actual fact [0.64ms]
+(pass) F03: a known guidance year must survive bridge construction [2.70ms]
+(pass) F04: incompatible events sharing an id must not select the first event type [0.55ms]
+(pass) F05: conflicting hashes for the same B02 URL must not choose first [0.08ms]
+(pass) F06: an impossible event date must be rejected [0.20ms]
+(pass) F07: date fields must not inject HTML into the local reader [2.24ms]
+(pass) F08: unsafe APP_BASE must not generate javascript navigation links [1.16ms]
+(pass) F09: a different issuer must not inherit Aramco's curated decisions [0.37ms]
+(pass) CONTROL: no network, writes, numeric qualification or production integration added [0.29ms]
+(pass) R10: the 2030 gas target must not strengthen an approximately operator to greater-than [0.32ms]
+(pass) R11: a quoted capacity must not be represented as not disclosed [0.30ms]
+
+ 15 pass
+ 0 fail
+ 21 expect() calls
+Ran 15 tests across 1 file. [63.00ms]

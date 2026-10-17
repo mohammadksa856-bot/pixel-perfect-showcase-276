@@ -1,0 +1,37 @@
+{
+  "decision": "ACCEPT",
+  "acceptance_scope": "ENGINEERING_AND_RESEARCH_STRUCTURE_LOCAL_WITHHELD_DRAFT_ONLY",
+  "application_sha": "946d7b48a06048e146b31825d88690aad93773e8",
+  "tested_delivery_sha": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
+  "previous_rework": "b58ecc24af7055eb86a569ca99d7d3813a0868f7",
+  "findings": [
+    {
+      "id": "RR-ENG03-01",
+      "variant": "RAW_FORMAT_CONTROL_LOST_WHEN_ALL_DIGITS_MASKED",
+      "status": "CLOSED_WITHIN_SCOPE",
+      "implementation_file": "research-evidence/aramco-research-pack/pack.ts",
+      "evidence": "checkText now rejects raw Cf unconditionally before mask/analyseNumbers; non_latin_digits remains first; original39PASS,original10files byte-exact,new18PASS with72exact assertions.",
+      "failure_reproductions_before": "structural-independent20PASS19FAIL at8e89637; same unchanged cases39PASS at946d7b4."
+    }
+  ],
+  "open_engineering_blockers_within_scope": [],
+  "preserved_closed": [
+    "FIN-01–07",
+    "LINK-01",
+    "RR-ENG02-01",
+    "99paragraph review",
+    "ISO full official set178 missing[] extra[]"
+  ],
+  "financially_qualified": 0,
+  "blocked_analyses": 7,
+  "withheld_claims": 22,
+  "withheld_inputs": 142,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "source_rights_approval": false,
+  "live_integration_approval": false,
+  "merge_approval": false,
+  "production_release_approval": false,
+  "USER_FINAL_ACCEPTANCE": false,
+  "B05_started": false
+}

@@ -1,0 +1,27 @@
+{"run": "raw-cf-independent", "sha": "69714002f9279271be447b7bcf5fc12e0eb41a6a", "started": "2026-10-17T22:55:45.937866+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-RAW-CF-FINAL/raw-cf-independent.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-RAW-CF-FINAL\raw-cf-independent.test.ts:
+(pass) first-control exact raw rejection across field/type [55.02ms]
+(pass) last-control exact raw rejection across field/type [42.09ms]
+(pass) inside-number exact raw rejection across field/type [40.56ms]
+(pass) inside-identifier exact raw rejection across field/type [38.85ms]
+(pass) date-and-code exact raw rejection across field/type [37.22ms]
+(pass) no-number exact raw rejection across field/type [39.66ms]
+(pass) supplementary-control exact raw rejection across field/type [40.66ms]
+(pass) currency-obfuscation exact raw rejection across field/type [36.88ms]
+(pass) non-ascii-priority-arabic exact raw rejection across field/type [36.34ms]
+(pass) non-ascii-priority-fullwidth exact raw rejection across field/type [42.41ms]
+(pass) non-ascii-priority-supplementary exact raw rejection across field/type [39.60ms]
+(pass) multiple-controls-first-codepoint exact raw rejection across field/type [37.84ms]
+(pass) positive control without Cf: التاريخ 2025-06-30 [77.97ms]
+(pass) positive control without Cf: WEB-08B03 وB02 [53.73ms]
+(pass) positive control without Cf: 1. وصف [46.84ms]
+(pass) positive control without Cf: السنة 2025 والرمز 2222 [51.65ms]
+(pass) positive control without Cf: وصف نصي [49.44ms]
+(pass) positive control without Cf: الفترة 2024-2025 [47.73ms]
+
+ 18 pass
+ 0 fail
+ 72 expect() calls
+Ran 18 tests across 1 file. [848.00ms]

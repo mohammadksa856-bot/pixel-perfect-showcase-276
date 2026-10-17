@@ -1,0 +1,48 @@
+{"run": "structural-independent", "sha": "69714002f9279271be447b7bcf5fc12e0eb41a6a", "started": "2026-10-17T22:55:00.795535+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-RAW-CF-FINAL/structural-independent.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-RAW-CF-FINAL\structural-independent.test.ts:
+(pass) U+200B masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [17.21ms]
+(pass) U+200B masked numeric text must reject at raw format guard: WEB-08B03 [11.54ms]
+(pass) U+200B no-number control rejects explicitly [9.58ms]
+(pass) U+200B unmasked-year control rejects explicitly [10.47ms]
+(pass) U+200E masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [11.22ms]
+(pass) U+200E masked numeric text must reject at raw format guard: WEB-08B03 [9.30ms]
+(pass) U+200E no-number control rejects explicitly [10.93ms]
+(pass) U+200E unmasked-year control rejects explicitly [7.98ms]
+(pass) U+61C masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [9.10ms]
+(pass) U+61C masked numeric text must reject at raw format guard: WEB-08B03 [8.73ms]
+(pass) U+61C no-number control rejects explicitly [12.63ms]
+(pass) U+61C unmasked-year control rejects explicitly [9.31ms]
+(pass) U+2060 masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [8.62ms]
+(pass) U+2060 masked numeric text must reject at raw format guard: WEB-08B03 [9.57ms]
+(pass) U+2060 no-number control rejects explicitly [9.47ms]
+(pass) U+2060 unmasked-year control rejects explicitly [11.20ms]
+(pass) U+202E masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [10.09ms]
+(pass) U+202E masked numeric text must reject at raw format guard: WEB-08B03 [7.77ms]
+(pass) U+202E no-number control rejects explicitly [9.79ms]
+(pass) U+202E unmasked-year control rejects explicitly [6.64ms]
+(pass) U+FEFF masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [11.03ms]
+(pass) U+FEFF masked numeric text must reject at raw format guard: WEB-08B03 [8.13ms]
+(pass) U+FEFF no-number control rejects explicitly [9.59ms]
+(pass) U+FEFF unmasked-year control rejects explicitly [13.37ms]
+(pass) English masked text still rejects: Date 2025-06-30 [9.48ms]
+(pass) English masked text still rejects: WEB-08B03 [9.05ms]
+(pass) mask interaction must not discard raw-control rejection: B02 [8.93ms]
+(pass) mask interaction must not discard raw-control rejection: 1. وصف [10.22ms]
+(pass) mask interaction must not discard raw-control rejection: 2025-06-30 WEB-08B03 [7.64ms]
+(pass) positive control without Cf: التاريخ 2025-06-30 [37.74ms]
+(pass) positive control without Cf: WEB-08B03 [15.18ms]
+(pass) positive control without Cf: B02 [11.22ms]
+(pass) positive control without Cf: 1. وصف [12.10ms]
+(pass) raw non-ASCII numeric evidence preserved: التاريخ ２０２５-06-30 [10.73ms]
+(pass) raw non-ASCII numeric evidence preserved: WEB-08B０３ [8.04ms]
+(pass) raw non-ASCII numeric evidence preserved: USD ² [9.68ms]
+(pass) masked date plus remaining year triggers numeric format guard [8.78ms]
+(pass) currency plus mask still cannot suppress raw format guard: USD (2025-06-30) [10.20ms]
+(pass) currency plus mask still cannot suppress raw format guard: SAR: WEB-08B03 [10.96ms]
+
+ 39 pass
+ 0 fail
+ 39 expect() calls
+Ran 39 tests across 1 file. [455.00ms]

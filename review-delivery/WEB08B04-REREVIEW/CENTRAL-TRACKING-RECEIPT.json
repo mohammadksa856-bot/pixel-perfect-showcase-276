@@ -1,0 +1,20 @@
+{
+ "canonical_board":"docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+ "canonical_local_commit":"4cc7b4c09cb126577e1797d50db84779b539f51f",
+ "task":"WEB08-B04",
+ "event_sequence":106,
+ "event_id":"WEB08B04-INDEPENDENT-REREVIEW-REWORK-20261018",
+ "event_sha256":"a567e913777130888c270b0eaf0bcf2d689e5d828380a1e1c90927add5226aec",
+ "prior_event105_preserved_sha256":"6b15af6a8281839335a011f46e60192fe90882ee3161081b71084ae382d362a6",
+ "verified_chain_events":106,
+ "review_commit":"258b3816cb2ec78c5270a96ca5968d910fd9de6d",
+ "application_sha":"49eeed82b84d9e071a49b91b1c959e4f13a7b82b",
+ "delivery_sha":"f46a2925376b59c7686ee4a23c3128506229792b",
+ "state":"REVIEW",
+ "decision":"REWORK_RESIDUAL_GUARDS_ONLY",
+ "phase_status":{"IMPLEMENTED":"Claude49eeed8","TESTED":"Original12/15/15PASS; new14cases8PASS6FAIL;15separate runs recorded","REVIEWED":"FIN01-07 andLINK01closed within frozen draft;2residual guard blockers","MERGED":false,"ACCEPTED":false,"DEPLOYED":false},
+ "withheld":{"analyses":7,"claims":22,"financial_inputs":142,"qualified":0},
+ "USER_FINAL_ACCEPTANCE":false,
+ "PRODUCTION_RELEASE_APPROVAL":false,
+ "note":"Scoped public receipt of existing central board, not a second board. Private central Git history is not published to website repository. Event105 and prior REWORK remain immutable."
+}

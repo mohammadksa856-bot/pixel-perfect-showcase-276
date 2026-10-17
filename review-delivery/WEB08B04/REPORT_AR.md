@@ -1,13 +1,14 @@
 # WEB-08B04 — حزمة البحث الاستثماري لأرامكو السعودية (2222): تقرير التسليم
 
-- **الحالة:** RR-ENG03-01 GUARD RESTRUCTURED, TESTED. مسودة بحث **غير معتمدة**. نطلب مراجعة Codex المستقلة. **لا ACCEPT.**
+- **الحالة:** RR-ENG03-01 RAW FORMAT-CONTROL FIX, TESTED. مسودة بحث **غير معتمدة**. نطلب مراجعة Codex المستقلة. **لا ACCEPT.**
 - **إغلاق REWORK:** قرار Codex REWORK على `fa3a772` (FIN-01–07، ENG-01–04، LINK-01) مغلق في `REWORK-CLOSURE_AR.md`. التنفيذ السابق `2685d94`.
 - **إغلاق المانعين المتبقيين:** قرار Codex على `a4150fe` (RR-ENG03-01، RR-ENG02-01، والملاحظتان RR-DOC-01/02) مغلق في `RESIDUAL-CLOSURE_AR.md`. التنفيذ المراجَع `49eeed8`.
 - **RR-ENG03-01 (الترقيم):** قرار Codex على `08f8b75` مغلق في `RR-ENG03-01-CLOSURE_AR.md`. التنفيذ المراجَع `acd116c`. RR-ENG02-01 مغلق لدى Codex.
 - **RR-ENG03-01 (إعادة بناء الحارس):** قرار Codex على `0fe3312` (الحدث 108) مغلق في `RR-ENG03-01-FINAL-CLOSURE_AR.md`. التنفيذ المراجَع `91fc3ee`.
+- **RR-ENG03-01 (محارف التنسيق الخام):** قرار Codex على `b58ecc2` (الحدث 109) مغلق في `RR-ENG03-01-RAW-CF-CLOSURE_AR.md`. التنفيذ المراجَع `8e89637`.
 - **الفرع:** `claude/web-08b04-aramco-research-pack`. أساسه `5ef2c56`، وهو خط B03 المقبول هندسيًا مع إغلاق DOC-01.
-- **Implementation SHA الثابت:** `8e896378a763f7cb5632ec5bb2963e5313664301`. المخرجات والسجلات والصور كلها مولدة عليه.
-- **Delivery SHA:** commit هذا التقرير. لا يغيّر كودًا ولا مخرجات بعد `8e89637`.
+- **Implementation SHA الثابت:** `946d7b48a06048e146b31825d88690aad93773e8`. المخرجات والسجلات والصور كلها مولدة عليه.
+- **Delivery SHA:** commit هذا التقرير. لا يغيّر كودًا ولا مخرجات بعد `946d7b4`.
 - **المرجعيات المحفوظة:**
   - B01 `cef8ce9`؛
   - B02 `b1f90a9`؛
@@ -33,9 +34,9 @@
 | 5. روابط Marefa Data دون أرقام | `MAREFA-DATA-LINKS.json` — 72 مقياسًا. لكل منها حالة موضع من نموذج التطبيق: 29 `FOCUSABLE` (رابط `?topic=&focus=`)، و43 `NOT_RENDERED` (بلا رابط، والحالة معلنة). ورابط البيانات (`?tab=`) |
 | هيكل البحث المالي | `FINANCIAL-STRUCTURE.json` — 7 تحليلات معرَّفة، كلها BLOCKED |
 | المشاريع | `PROJECTS.json` — 5 مشاريع بحالات B03 |
-| 6. اختبارات | `research-evidence/aramco-research-pack/*.test.ts` — 205 اختبارات (منها 22 في `rework.test.ts` و14 في `residual.test.ts` و60 في `punctuation.test.ts` و81 في `numeric-guard.test.ts`) |
+| 6. اختبارات | `research-evidence/aramco-research-pack/*.test.ts` — 270 اختبارًا (منها 22 في `rework.test.ts` و14 في `residual.test.ts` و60 في `punctuation.test.ts` و81 في `numeric-guard.test.ts` و65 في `raw-format-control.test.ts`) |
 | 7. نموذج عرض محلي | `reader.ts` على `127.0.0.1:4455`. صوره في `screenshots/` (20 صورة مع `IMAGE_MANIFEST.json`) |
-| 8. التقرير وSHA ثابت | هذا الملف، و`REWORK-CLOSURE_AR.md`، و`RESIDUAL-CLOSURE_AR.md`، و`RR-ENG03-01-CLOSURE_AR.md`، و`RR-ENG03-01-FINAL-CLOSURE_AR.md`، و`REVIEW-HANDOFF_AR.md` |
+| 8. التقرير وSHA ثابت | هذا الملف، و`REWORK-CLOSURE_AR.md`، و`RESIDUAL-CLOSURE_AR.md`، و`RR-ENG03-01-CLOSURE_AR.md`، و`RR-ENG03-01-FINAL-CLOSURE_AR.md`، و`RR-ENG03-01-RAW-CF-CLOSURE_AR.md`، و`REVIEW-HANDOFF_AR.md` |
 
 ## 2. محتوى البحث
 
@@ -118,7 +119,7 @@
   - خطة الإدارة تستند إلى ادعاء خطة، ولا تستند إلى ادعاء واقعة.
   - سجل المحرك لا يستند إلى ادعاء خطة.
 - **حارس الأرقام (ENG-03، RR-ENG03-01، `numeric-guard.ts`):** مسار واحد مرتب:
-  0. النص الخام: أي رقم Unicode غير 0–9 يُرفض (`non_latin_digits`)، وأي محرف تنسيق غير مرئي يُرفض (`format_control`).
+  0. النص الخام: أي رقم Unicode غير 0–9 يُرفض (`non_latin_digits`)، وأي محرف تنسيق غير مرئي يُرفض حتمًا قبل الحجب (`format_control`)، حتى لو كانت كل الأرقام في تاريخ أو كود.
   1. حجب التواريخ والأكواد.
   2. جانبا الرقم بقاموس وفاصل واحد. الفاصل المحلي ≤ 6 محارف من الترقيم والمسافات، والحد الصلب بجوار عملة يفشل مغلقًا.
   3. كمية، أو ملتبس، أو رقم مجرد.
@@ -148,12 +149,12 @@
   - لا فترة مخترعة. التوجيه لا يُطابَق مع الإنفاق الفعلي.
 - **الروابط (LINK-01):** من موضع المقياس الفعلي في نموذج التطبيق (`placement.ts`): `FOCUSABLE`، أو `CHART_ONLY_NOT_FOCUSABLE`، أو `NOT_RENDERED` بلا رابط.
 
-## 4. الاختبارات (`test-logs/`، كل سجل يحمل الأمر وSHA `8e89637`)
+## 4. الاختبارات (`test-logs/`، كل سجل يحمل الأمر وSHA `946d7b4`)
 
 | التشغيل | النتيجة |
 |---|---|
-| B04 | 205 ناجحًا، و0 فاشل |
-| حالات Codex المستقلة لـB04 (دون تعديل، من `0fe3312`) | final-independent 53 / 0، وresidual-independent 72 / 0، وadditional 14 / 0، وadversarial 12 / 0، وboundaries 15 / 0 |
+| B04 | 270 ناجحًا، و0 فاشل |
+| حالات Codex المستقلة لـB04 (دون تعديل، من `b58ecc2`) | structural-independent 39 / 0، وfinal-independent 53 / 0، وresidual-independent 72 / 0، وadditional 14 / 0، وadversarial 12 / 0، وboundaries 15 / 0 |
 | روابط المقاييس في المتصفح (`link-browser-check.json`) | 72 / 72 |
 | انحدار B03 | 57 / 0 |
 | حالات Codex لقبول B03 (ملف الأصل دون تعديل، blob `bc8ecb2b`) | 15 / 0 |

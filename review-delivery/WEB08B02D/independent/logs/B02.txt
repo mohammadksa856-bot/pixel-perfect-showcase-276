@@ -1,0 +1,37 @@
+Command: ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./research-evidence/aramco-qualification"]
+Exit: 0
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-qualification\company.test.ts:
+(pass) same period and amount from another issuer never matches [1.74ms]
+
+research-evidence\aramco-qualification\missing.test.ts:
+(pass) absence is not reported as a proven numeric disagreement [1.18ms]
+
+research-evidence\aramco-qualification\qualification.test.ts:
+(pass) exact comparison is not B01 qualification [0.76ms]
+(pass) FY vs quarter [0.37ms]
+(pass) YTD vs standalone [0.12ms]
+(pass) same end different start [0.14ms]
+(pass) flow vs stock [0.45ms]
+(pass) currency [0.13ms]
+(pass) unit [0.14ms]
+(pass) scope [0.20ms]
+(pass) dimensions [0.12ms]
+(pass) conflict blocks even if first record is equal, order invariant [0.34ms]
+(pass) different source is not silently accepted [0.12ms]
+(pass) signs are preserved, never abs-corrected [0.02ms]
+(pass) decimal EPS is not scaled by million [0.02ms]
+(pass) missing never means zero [0.17ms]
+(pass) derived copy not original [0.09ms]
+(pass) date-only publication and content hash cannot stand for artifact proof [0.06ms]
+(pass) user yes does not grant permission [0.06ms]
+(pass) rights cannot substitute for financial review [0.01ms]
+(pass) no code path grants publication
+(pass) invalid calendars use B01 rejection [0.48ms]
+(pass) unmapped segment remains explicit, not guessed [0.08ms]
+
+ 23 pass
+ 0 fail
+ 28 expect() calls
+Ran 23 tests across 3 files. [35.00ms]

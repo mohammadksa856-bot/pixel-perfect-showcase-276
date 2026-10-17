@@ -1,0 +1,120 @@
+Command: ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./research-evidence/v1"]
+Exit: 0
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\v1\contract.test.ts:
+(pass) metadata-only strict contract refuses duplicated numeric payloads and score [6.30ms]
+(pass) Draft -> FinanciallyReviewed -> EditoriallyApproved, stages remain separate [7.87ms]
+(pass) editorial cannot precede finance and author cannot review own work [2.50ms]
+(pass) unavailable and withheld are different from present/qualified [6.47ms]
+(pass) technical eligibility is not independent financial verification [8.69ms]
+(pass) identity rejects period end mismatch, never silently substitutes [2.11ms]
+(pass) identity rejects same end but quarter mismatch, never silently substitutes [1.33ms]
+(pass) identity rejects period start mismatch, never silently substitutes [1.30ms]
+(pass) identity rejects unit mismatch, never silently substitutes [1.77ms]
+(pass) identity rejects currency mismatch, never silently substitutes [1.80ms]
+(pass) identity rejects scope mismatch, never silently substitutes [2.64ms]
+(pass) identity rejects dimensions mismatch, never silently substitutes [1.74ms]
+(pass) resolver identity mismatch rejected even with unchanged claim [3.37ms]
+(pass) source URL/page/hash/version all pinned [6.71ms]
+(pass) contradictory sources for same semantic fact block rather than select first [1.70ms]
+(pass) same meaning/value from two sources is not an invented conflict [1.42ms]
+(pass) restatement invalidates present claim but earlier as-of reproduces old result [2.04ms]
+(pass) document reissue invalidates approval even if numeric digest unchanged [1.41ms]
+(pass) future publication cannot enter historical analysis [4.11ms]
+(pass) future actual period rejected; explicit published guidance can cover future horizon [0.97ms]
+(pass) impossible calendar dates rejected, leap-day accepted [0.72ms]
+(pass) unsafe source URL, missing locator and malformed timestamp fail closed [0.61ms]
+(pass) rights unknown/restricted/expired/public-absent are not financial truth flags [4.50ms]
+(pass) modifying content revokes prior review digest; old revision remains intact [3.08ms]
+(pass) ledger tampering and duplicate actor/fact identities rejected [1.57ms]
+(pass) withdrawal blocks source trail and approval [6.83ms]
+(pass) resolver time mismatch cannot substitute a different as-of snapshot [0.85ms]
+(pass) PoC trace points to exact original version without copying any value [3.44ms]
+(pass) derived result consumes exact engine lineage refs without computing a number [8.40ms]
+(pass) changed input version, incomplete lineage, method and rights all block derived content [6.34ms]
+(pass) derived source cannot masquerade as issuer reported fact [0.88ms]
+(pass) rejected financial input stays rejected, missing never becomes complete [1.74ms]
+(pass) content kinds distinguish interpretation/assumption/scenario from reported data [0.77ms]
+(pass) claim revision retains supersedes reference and reproducible canonical digest [0.62ms]
+
+research-evidence\v1\independent-determinism.test.ts:
+(pass) ASCII proof selection is stable when context facts are reordered [3.48ms]
+D1/Unicode-order: {"ids":["proof-é","proof-é"],"before":{"availability":"present","technical":"eligible","financial":"verified","editorial":"approved","rights":"permitted","workflow":"EditoriallyApproved","publication":"eligible","reasons":[],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"},"after":{"availability":"present","technical":"eligible","financial":"verified","editorial":"approved","rights":"permitted","workflow":"EditoriallyApproved","publication":"eligible","reasons":[],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}}
+(pass) D1: distinct schema-valid Unicode proof refs have an order independent selection [7.90ms]
+(pass) selection pins proof-a rather than nonselected proof-z [3.23ms]
+(pass) selected locator receipt delete blocks previous approval [2.70ms]
+(pass) selected locator receipt withhold blocks previous approval [2.02ms]
+(pass) selected locator receipt unavailable blocks previous approval [4.49ms]
+(pass) selected locator receipt ineligible blocks previous approval [2.20ms]
+(pass) selected locator receipt rejected blocks previous approval [2.44ms]
+(pass) selected locator receipt unreviewed blocks previous approval [2.23ms]
+(pass) selected locator receipt no-certificate blocks previous approval [2.31ms]
+(pass) selected locator receipt unknown-reviewer blocks previous approval [7.36ms]
+(pass) selected locator receipt author-reviewer blocks previous approval [2.01ms]
+(pass) selected locator receipt role-revoked blocks previous approval [2.40ms]
+(pass) selected locator receipt future blocks previous approval [1.48ms]
+(pass) selected locator receipt prepublication blocks previous approval [1.54ms]
+(pass) a different valid proof does not silently inherit the old receipt's approval [3.54ms]
+(pass) adding a lexically prior receipt requires fresh approval [1.81ms]
+(pass) an unrelated fact certificate mutation does not change the verdict [2.79ms]
+(pass) registered locator does not depend on an unused alternate fact receipt [2.21ms]
+
+research-evidence\v1\independent-locator.test.ts:
+(pass) R1: baseline source-only receipt is actually required and can authorize page two [0.70ms]
+R1/unbound-receipt-replaced: {"pinnedBasis":"e987eb16c45b926781b94fa1bce4db3b5dad9993773745af28f2d0bd38369a61","result":{"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["financial_review_basis_changed"],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}}
+(pass) R1: replacing a source locator verification receipt invalidates prior approval [3.06ms]
+(pass) R1: finance approval cannot precede required source locator receipt [0.94ms]
+R1/unbound-receipt-late: {"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["review_precedes_input_verification"],"claimDigest":"766e5158e6af67fe7bdf41b796f60002dab276a7bccac82b9552acf82b4d415f"}
+(pass) R1: replay cannot use a source locator receipt created after both approvals [1.49ms]
+(pass) control: rejected locator receipt is not accepted as proof [0.34ms]
+(pass) control: source proof from future evaluation time is blocked [0.33ms]
+(pass) control: explicit trusted locator registry supports the second page without fact fallback [1.40ms]
+(pass) control: future withheld successor leaves old as-of unchanged, then invalidates [1.76ms]
+(pass) control: unrelated receipt changes do not invalidate an unrelated claim [2.73ms]
+(pass) control: bound source certificate replacement invalidates and fresh approvals recover [2.64ms]
+(pass) control: stale basis can be withdrawn but cannot revive after withdrawal [2.38ms]
+(pass) control: caller-only locator is blocked even after trusted doc locator list exists [0.41ms]
+
+research-evidence\v1\independent-regression.test.ts:
+F1/withheld: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F1: superseded old fact stays blocked when replacement is withheld [5.66ms]
+F1/unavailable: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F1: superseded old fact stays blocked when replacement is unavailable [2.11ms]
+F1/ineligible: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F1: superseded old fact stays blocked when replacement is ineligible [1.22ms]
+F1/changed-identity: {"availability":"present","technical":"ineligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["fact_superseded_asof"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F1: superseded old fact stays blocked when replacement is changed-identity [1.17ms]
+F2/replay: {"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Invalidated","publication":"blocked","reasons":["review_precedes_input_verification"],"claimDigest":"198fcf50a72d54993079d5dd914b1affc82637ee35d1121d972d422b491e0f51"}
+(pass) F2: finance approval cannot predate independent fact verification [1.40ms]
+(pass) F2: appendReview must reject a backdated approval before certification [0.94ms]
+F3/one-document: {"availability":"present","technical":"eligible","financial":"unreviewed","editorial":"unreviewed","rights":"permitted","workflow":"Draft","publication":"blocked","reasons":[],"claimDigest":"e1ea9ed70e1ffaacff0ef52b7f59e159a10eaf1b4f8c3d0504b9c3ea3bb2f813"}
+(pass) F3: two locators in the same original document can both be evidenced [1.44ms]
+(pass) F3: duplicating the document registry per locator is rejected [0.51ms]
+(pass) independent control: resolver start mismatch blocks [3.91ms]
+(pass) independent control: resolver kind mismatch blocks [1.15ms]
+(pass) independent control: resolver unit mismatch blocks [1.04ms]
+(pass) independent control: resolver currency mismatch blocks [1.03ms]
+(pass) independent control: resolver scope mismatch blocks [1.00ms]
+(pass) independent control: resolver dimensions mismatch blocks [1.05ms]
+(pass) independent control: conflict result is invariant to source ordering [2.60ms]
+(pass) independent control: future reissue does not leak into old as-of [1.59ms]
+(pass) independent control: unauthorized certificate, rights and edited text block [5.13ms]
+(pass) independent control: withheld binding produces no trail [1.80ms]
+(pass) independent direct-render journey plus wrong hash/version and withholding [14.54ms]
+
+research-evidence\v1\poc.test.ts:
+(pass) synthetic reader journey exposes exact reference then original, never numbers in claim [5.03ms]
+(pass) withheld or wrong original version has no fallback or original numeric payload [1.99ms]
+(pass) untrusted HTML is escaped and PoC stays explicit synthetic [1.38ms]
+
+research-evidence\v1\review-fixes.test.ts:
+(pass) F3: caller-claimed locator with no registry or fact receipt remains blocked [1.42ms]
+(pass) F2: same-time replacement of verification certificate invalidates old review basis [1.36ms]
+(pass) F2: explicit fresh financial and editorial approvals may follow certificate change [4.11ms]
+(pass) source change does not prevent an explicit withdrawal of the stale claim [1.78ms]
+
+ 91 pass
+ 0 fail
+ 224 expect() calls
+Ran 91 tests across 6 files. [299.00ms]

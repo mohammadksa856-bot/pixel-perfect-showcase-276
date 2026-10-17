@@ -1,0 +1,872 @@
+{
+  "status": "PASS",
+  "observations": 142,
+  "manifest_files_verified": 27,
+  "native_rows": 4960,
+  "synthetic_conflict_both_orders_and_history": "PASS",
+  "classifications": {
+    "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE": 19,
+    "LOCAL_CURRENT_SIGN_DIFFERENCE": 7,
+    "LOCAL_PERIOD_NOT_PRESENT": 40,
+    "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE": 7,
+    "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE": 7,
+    "LOCAL_FULL_PERIOD_DIFFERENCE": 20,
+    "LOCAL_METRIC_NOT_PRESENT": 12,
+    "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE": 9,
+    "UNMAPPED_DEFINITION": 21
+  },
+  "rows": [
+    {
+      "audit_row": "OBS-001",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-002",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-003",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-004",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-005",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-006",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-007",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-008",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-009",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-010",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-011",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-012",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-013",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-014",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-015",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-016",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-017",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-018",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-019",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-020",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-021",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-022",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-023",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-024",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-025",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-026",
+      "classification": "LOCAL_CURRENT_SOURCE_AMOUNT_AGREE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-027",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-028",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-029",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-030",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-031",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-032",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-033",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-034",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-035",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-036",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-037",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-038",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-039",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-040",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-041",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-042",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-043",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-044",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-045",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-046",
+      "classification": "LOCAL_CURRENT_AMOUNT_AGREE_OTHER_SOURCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-047",
+      "classification": "LOCAL_CURRENT_SIGN_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-048",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-049",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-050",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-051",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-052",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-053",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-054",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-055",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-056",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-057",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-058",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-059",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 4,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-060",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-061",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-062",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 4,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-063",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-064",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-065",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-066",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-067",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-068",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-069",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-070",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-071",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-072",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 3,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-073",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 4,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-074",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-075",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-076",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 4,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-077",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-078",
+      "classification": "LOCAL_METRIC_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-079",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-080",
+      "classification": "LOCAL_UNIT_OR_CURRENCY_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-081",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-082",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-083",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-084",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-085",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-086",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-087",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-088",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-089",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-090",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-091",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-092",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-093",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-094",
+      "classification": "LOCAL_SCOPE_OR_DIMENSION_DIFFERENCE",
+      "native_references_checked": 2,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-095",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-096",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-097",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-098",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-099",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-100",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-101",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-102",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-103",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-104",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-105",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-106",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-107",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-108",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-109",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-110",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-111",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-112",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-113",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-114",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-115",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-116",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-117",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-118",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-119",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-120",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-121",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-122",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-123",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-124",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-125",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-126",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-127",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-128",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-129",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-130",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-131",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-132",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-133",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-134",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-135",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-136",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-137",
+      "classification": "LOCAL_FULL_PERIOD_DIFFERENCE",
+      "native_references_checked": 1,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-138",
+      "classification": "UNMAPPED_DEFINITION",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-139",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-140",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-141",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    },
+    {
+      "audit_row": "OBS-142",
+      "classification": "LOCAL_PERIOD_NOT_PRESENT",
+      "native_references_checked": 0,
+      "status": "PASS"
+    }
+  ]
+}

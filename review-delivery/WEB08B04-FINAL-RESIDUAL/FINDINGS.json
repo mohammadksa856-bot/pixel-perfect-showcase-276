@@ -1,0 +1,51 @@
+{
+  "decision": "REWORK",
+  "implementation": "acd116ced883133fa826f1c3bed979e22ac7f1d2",
+  "tested_delivery": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
+  "closed": [
+    "RR-ENG02-01"
+  ],
+  "preserved_closed": [
+    "FIN-01",
+    "FIN-02",
+    "FIN-03",
+    "FIN-04",
+    "FIN-05",
+    "FIN-06",
+    "FIN-07",
+    "LINK-01"
+  ],
+  "findings": [
+    {
+      "id": "RR-ENG03-01",
+      "severity": "P1_SCOPE_ACCEPTANCE_BLOCKER_NOT_PRODUCTION_INCIDENT",
+      "status": "OPEN",
+      "file": "research-evidence/aramco-research-pack/pack.ts",
+      "lines": [
+        105,
+        126,
+        144,
+        147,
+        267
+      ],
+      "cause": "Punctuation separates supported currency from a year-shaped amount; no token class is assigned, then isYear exempts it.",
+      "examples": [
+        "Profit SAR: 2025.",
+        "Profit USD (2025).",
+        "صافي الربح (2025) ريال.",
+        "Profit 2025, USD.",
+        "Profit $ (2025)."
+      ],
+      "supporting_ambiguous_forms": [
+        "Margin 2025 ‰.",
+        "Profit ¥ 2025.",
+        "Profit AED 2025."
+      ],
+      "reproduction": "bun test ./review-delivery/WEB08B04-FINAL-RESIDUAL/residual-independent.test.ts; bun ./review-delivery/WEB08B04-FINAL-RESIDUAL/guard-probe.ts",
+      "actual": "P0-P7 accepted by compilePack in interpretation and reported_record with only legal_name evidence; token.classes=[]; error=null",
+      "expected": "Reject via quantity_in_research_interpretation / unsupported_quantity / explicit ambiguous format guard; preserve legitimate years and source identifiers.",
+      "requested_fix": "Recognize supported financial-unit syntax across common delimiters and fail closed for clearly ambiguous financial forms; do not weaken assertions or infer financial qualification."
+    }
+  ],
+  "no_new_financial_qualification": true
+}

@@ -1,0 +1,99 @@
+{"run": "residual-independent", "sha": "894fad138ab47e57b63d054aa9c469c8efa6fe47", "started": "2026-10-17T21:36:30.840204+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-FINAL-RESIDUAL/residual-independent.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-FINAL-RESIDUAL\residual-independent.test.ts:
+(pass) N0 typed quantity rejected by numeric guard, interpretation [17.65ms]
+(pass) NR0 unsupported quantity rejected by intended evidence guard [9.49ms]
+(pass) N1 typed quantity rejected by numeric guard, interpretation [12.04ms]
+(pass) NR1 unsupported quantity rejected by intended evidence guard [11.67ms]
+(pass) N2 typed quantity rejected by numeric guard, interpretation [11.86ms]
+(pass) NR2 unsupported quantity rejected by intended evidence guard [12.14ms]
+(pass) N3 typed quantity rejected by numeric guard, interpretation [11.74ms]
+(pass) NR3 unsupported quantity rejected by intended evidence guard [10.48ms]
+(pass) N4 typed quantity rejected by numeric guard, interpretation [12.44ms]
+(pass) NR4 unsupported quantity rejected by intended evidence guard [10.33ms]
+(pass) N5 typed quantity rejected by numeric guard, interpretation [10.66ms]
+(pass) NR5 unsupported quantity rejected by intended evidence guard [10.65ms]
+(pass) N6 typed quantity rejected by numeric guard, interpretation [10.05ms]
+(pass) NR6 unsupported quantity rejected by intended evidence guard [11.57ms]
+(pass) N7 typed quantity rejected by numeric guard, interpretation [11.79ms]
+(pass) NR7 unsupported quantity rejected by intended evidence guard [11.78ms]
+(pass) N8 typed quantity rejected by numeric guard, interpretation [10.53ms]
+(pass) NR8 unsupported quantity rejected by intended evidence guard [12.81ms]
+(pass) N9 typed quantity rejected by numeric guard, interpretation [10.63ms]
+(pass) NR9 unsupported quantity rejected by intended evidence guard [10.78ms]
+(pass) N10 typed quantity rejected by numeric guard, interpretation [10.32ms]
+(pass) NR10 unsupported quantity rejected by intended evidence guard [10.25ms]
+(pass) N11 typed quantity rejected by numeric guard, interpretation [9.22ms]
+(pass) NR11 unsupported quantity rejected by intended evidence guard [10.68ms]
+(pass) N12 typed quantity rejected by numeric guard, interpretation [10.37ms]
+(pass) NR12 unsupported quantity rejected by intended evidence guard [10.23ms]
+error: Received value must be a string: null
+(fail) P0 ambiguous financial syntax fails closed [33.73ms]
+error: Received value must be a string: null
+(fail) P1 ambiguous financial syntax fails closed [17.45ms]
+error: Received value must be a string: null
+(fail) P2 ambiguous financial syntax fails closed [13.40ms]
+error: Received value must be a string: null
+(fail) P3 ambiguous financial syntax fails closed [15.26ms]
+error: Received value must be a string: null
+(fail) P4 ambiguous financial syntax fails closed [14.75ms]
+error: Received value must be a string: null
+(fail) P5 ambiguous financial syntax fails closed [15.49ms]
+error: Received value must be a string: null
+(fail) P6 ambiguous financial syntax fails closed [13.49ms]
+error: Received value must be a string: null
+(fail) P7 ambiguous financial syntax fails closed [13.66ms]
+(pass) ambiguous adjacent form "Profit x2025." [13.33ms]
+(pass) ambiguous adjacent form "Profit 2025k." [12.17ms]
+(pass) ambiguous adjacent form "Profit 2025​USD." [8.29ms]
+(pass) legitimate year or source code السنة 2025. [14.55ms]
+(pass) legitimate year or source code الرمز 2222. [16.64ms]
+(pass) legitimate year or source code WEB-08B03 وB02. [16.57ms]
+(pass) legitimate year or source code الفترة 2024-2025. [13.84ms]
+(pass) legitimate year or source code السنة 2025م. [13.76ms]
+(pass) rating Aa3 remains a number token, not a quantity or ambiguity [0.09ms]
+(pass) existing credit rating and full draft remain buildable [16.41ms]
+(pass) quarter rejects 0 [0.20ms]
+(pass) quarter rejects -1 [0.01ms]
+(pass) quarter rejects 5
+(pass) quarter rejects 99
+(pass) quarter rejects 1.5
+(pass) quarter rejects NaN
+(pass) quarter rejects Infinity
+(pass) year rejects 0 [0.04ms]
+(pass) year rejects -1
+(pass) year rejects 1899
+(pass) year rejects 2101
+(pass) year rejects 2025.5
+(pass) year rejects NaN
+(pass) year rejects Infinity
+(pass) invalid end 2025-02-29 [0.04ms]
+(pass) invalid end 2100-02-29
+(pass) invalid end 2025-04-31
+(pass) invalid end 2025-13-01
+(pass) invalid end 2025-00-10
+(pass) invalid end 2025-01-00
+(pass) invalid end 2025-1-01
+(pass) invalid start rejected separately [0.03ms]
+(pass) reversed bounds rejected separately [0.03ms]
+(pass) valid leap 2000-02-29 [0.02ms]
+(pass) valid leap 2024-02-29
+(pass) missing quarter stays missing [0.03ms]
+(pass) missing instant end not invented [0.03ms]
+(pass) null start allowed without invention [0.02ms]
+
+8 tests failed:
+(fail) P0 ambiguous financial syntax fails closed [33.73ms]
+(fail) P1 ambiguous financial syntax fails closed [17.45ms]
+(fail) P2 ambiguous financial syntax fails closed [13.40ms]
+(fail) P3 ambiguous financial syntax fails closed [15.26ms]
+(fail) P4 ambiguous financial syntax fails closed [14.75ms]
+(fail) P5 ambiguous financial syntax fails closed [15.49ms]
+(fail) P6 ambiguous financial syntax fails closed [13.49ms]
+(fail) P7 ambiguous financial syntax fails closed [13.66ms]
+
+ 64 pass
+ 8 fail
+ 72 expect() calls
+Ran 72 tests across 1 file. [588.00ms]

@@ -1,0 +1,12 @@
+# guard that closes each Codex a4150fe failing case (same inputs as additional.test.ts) @ acd116ced883133fa826f1c3bed979e22ac7f1d2
+A01 صافي الربح SAR 2025. (interpretation) -> quantity_in_research_interpretation:additional:2025 currency
+A02 صافي الربح 2025ريال. (interpretation) -> quantity_in_research_interpretation:additional:2025 currency
+A03 هامش الربح 2025٪. (interpretation) -> quantity_in_research_interpretation:additional:2025 percent
+A04 Profit $2025. (interpretation) -> quantity_in_research_interpretation:additional:2025 currency
+A01r same as reported_record -> unsupported_quantity:additional:2025 currency
+A02r same as reported_record -> unsupported_quantity:additional:2025 currency
+A03r same as reported_record -> unsupported_quantity:additional:2025 percent
+A04r same as reported_record -> unsupported_quantity:additional:2025 currency
+A13 quarter fy2025 fq5 -> unlabelled_period:invalid_fiscal_quarter:{"k":"quarter","fy":2025,"fq":5}
+A14 instant 2025-02-30 -> unlabelled_period:invalid_end_date:{"k":"instant","e":"2025-02-30"}
+exit=0

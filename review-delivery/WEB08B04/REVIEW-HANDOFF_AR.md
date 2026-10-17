@@ -1,88 +1,86 @@
-# WEB-08B04 — حزمة المراجعة المستقلة (Codex)، بعد REWORK
+# WEB-08B04 — حزمة إعادة المراجعة (Codex): المانعان المتبقيان فقط
 
-- **المطلوب:** مراجعة مستقلة وقرار ACCEPT أو REWORK على SHA ثابت. **لا ACCEPT من المؤلف.**
-- **الفرع:** `claude/web-08b04-aramco-research-pack` في `mohammadksa856-bot/pixel-perfect-showcase-276`.
-- **قرار REWORK المُعالَج:** `fa3a772daabaaecb44ee2eff842bb88456025f62`، بنود FIN-01–07 وENG-01–04 وLINK-01. الإغلاق بندًا بندًا في `REWORK-CLOSURE_AR.md`.
-- **Implementation SHA:** `49eeed82b84d9e071a49b91b1c959e4f13a7b82b`. التنفيذ السابق `2685d94`، وتسليمه `c0c506f`.
-- **Delivery SHA:** commit هذا الملف.
-  - تحقق بـ`git diff --stat 49eeed8 <Delivery SHA>`.
-  - يجب أن يقتصر على `review-delivery/WEB08B04/*.md` و`test-logs/` و`screenshots/` و`product-tracking/CHANGELOG.jsonl`.
-- **الأساس:** `5ef2c56` (B03 مع DOC-01). التفاصيل في `REPORT_AR.md`.
+## المطلوب
+
+- **القرار:** ACCEPT أو REWORK على SHA ثابت، لنطاق RR-ENG03-01 وRR-ENG02-01 وانحداراتهما. **لا ACCEPT من المؤلف.**
+- **ما لم يُفتح من جديد:**
+  - FIN-01–07 وLINK-01 (مغلقة في `a4150fe`)؛
+  - الفقرات الـ99؛
+  - B03.
+
+## المعرّفات
+
+| البند | القيمة |
+|---|---|
+| الفرع | `claude/web-08b04-aramco-research-pack` في `mohammadksa856-bot/pixel-perfect-showcase-276` |
+| القرار المُعالَج | `a4150feeddff9e036f14827476139902dc03d567` (`review-delivery/WEB08B04-REREVIEW/`) |
+| **Implementation SHA** | `acd116ced883133fa826f1c3bed979e22ac7f1d2` |
+| التنفيذ المراجَع سابقًا | `49eeed8`، وتسليمه `f46a292` |
+| **Delivery SHA** | commit هذا الملف |
+
+**فحص نطاق التسليم:** شغّل `git diff --stat acd116c <Delivery SHA>`. يجب أن يقتصر الفرق على:
+- `review-delivery/WEB08B04/*.md`
+- `test-logs/`
+- `screenshots/`
+- `product-tracking/CHANGELOG.jsonl`
+
+**فرق الإصلاح نفسه:** `git diff 49eeed8 acd116c`:
+- الكود في `research-evidence/aramco-research-pack/`: `pack.ts`، و`evidence.ts`، و`build.ts` (ملاحظة)، و`content-financial.ts` (سؤال واحد)، و`residual.test.ts`، و`README_AR.md`.
+- المخرجات المعاد توليدها: `RESEARCH-DRAFT_AR.md`، و`EVIDENCE-MAP.json`، و`FINANCIAL-STRUCTURE.json`.
+
+التفاصيل في `RESIDUAL-CLOSURE_AR.md`.
 
 ## 1. إعادة الإنتاج
 
 ```text
 git fetch origin claude/web-08b04-aramco-research-pack
-git checkout 49eeed82b84d9e071a49b91b1c959e4f13a7b82b        # LF checkout
+git checkout acd116ced883133fa826f1c3bed979e22ac7f1d2        # LF checkout
 bun install --frozen-lockfile
-bun test research-evidence/aramco-research-pack               # 50 pass (rework.test.ts: 22)
+
+# حالات Codex دون تعديل (للتشغيل فقط، لا تُضاف إلى الفرع):
+mkdir -p review-delivery/WEB08B04-REREVIEW review-delivery/WEB08B04-INDEPENDENT review-delivery/WEB08B03-REREVIEW
+git show a4150fe:review-delivery/WEB08B04-REREVIEW/additional.test.ts   > review-delivery/WEB08B04-REREVIEW/additional.test.ts     # blob 87aff979…
+git show fa3a772:review-delivery/WEB08B04-INDEPENDENT/adversarial.test.ts > review-delivery/WEB08B04-INDEPENDENT/adversarial.test.ts # blob 4078c3c4…
+git show fa3a772:review-delivery/WEB08B04-INDEPENDENT/boundaries.test.ts  > review-delivery/WEB08B04-INDEPENDENT/boundaries.test.ts  # blob bc8ecb2b…
+git show 4f7145e:review-delivery/WEB08B03-REREVIEW/boundaries.test.ts     > review-delivery/WEB08B03-REREVIEW/boundaries.test.ts     # blob bc8ecb2b…
+bun test ./review-delivery/WEB08B04-REREVIEW/additional.test.ts     # 14 pass (was 8/6)
+bun test ./review-delivery/WEB08B04-INDEPENDENT/adversarial.test.ts # 12 pass
+bun test ./review-delivery/WEB08B04-INDEPENDENT/boundaries.test.ts  # 15 pass
+bun test ./review-delivery/WEB08B03-REREVIEW/boundaries.test.ts     # 15 pass
+
+bun test research-evidence/aramco-research-pack               # 64 pass (residual.test.ts: 14)
 bun research-evidence/aramco-research-pack/build.ts --check   # same ×8
 bun x tsc -p research-evidence/aramco-research-pack/tsconfig.json --noEmit
 bun x eslint research-evidence/aramco-research-pack
-bun test research-evidence/aramco-disclosures                 # B03: 57 pass
-bun research-evidence/aramco-disclosures/build.ts --check     # B03: same ×6
+bun test research-evidence/aramco-disclosures && bun research-evidence/aramco-disclosures/build.ts --check
 bun test research-evidence/v1 && bun test research-evidence/aramco-qualification && bun test tests
-
-# حالات Codex المستقلة دون تعديل (من fa3a772، للتشغيل فقط):
-mkdir -p review-delivery/WEB08B04-INDEPENDENT
-for f in adversarial boundaries; do
-  git show fa3a772:review-delivery/WEB08B04-INDEPENDENT/$f.test.ts > review-delivery/WEB08B04-INDEPENDENT/$f.test.ts
-  git hash-object review-delivery/WEB08B04-INDEPENDENT/$f.test.ts   # 4078c3c4… / bc8ecb2b…
-done
-bun test ./review-delivery/WEB08B04-INDEPENDENT/adversarial.test.ts   # 12 pass
-bun test ./review-delivery/WEB08B04-INDEPENDENT/boundaries.test.ts    # 15 pass
-
-bun research-evidence/aramco-research-pack/reader.ts          # http://127.0.0.1:4455/?lang=ar | ?lang=en
 cd review-delivery/WEB08B04 && sha256sum -c <(sed -n '/^# deliverable sha256/,$p' test-logs/scope-and-hashes.txt | tail -n +2)
 ```
 
-**فحص الروابط في المتصفح (اختياري):**
-- شغّل خادم vite محليًا على اللقطة المجمدة بـ:
-  - `MAREFA_DESIGN_FIXTURES=true`
-  - `VERCEL_ENV=preview`
-  - `WEB_V1_PREVIEW_ENABLED=true`
-  - `ENGINE_PREVIEW_ENABLED=true`
-  - `VERCEL_GIT_COMMIT_REF=claude/web-07-company-experience` (الفرع المسموح به في قائمة fixtures؛ محليًا فقط).
-- افتح كل رابط في `MAREFA-DATA-LINKS.json`. النتيجة المسجلة في `test-logs/link-browser-check.json`: 72/72.
+السبب الذي يُغلق به كل من الحالات الست مسجل في `test-logs/residual-guard-reasons.txt`.
 
 ## 2. قائمة المراجعة المقترحة
 
-- [ ] **FIN-01–07:**
-  - راجع الفقرات الـ41 المعدلة، والـ58 الباقية، مقابل `PARAGRAPH-REVIEW.json` و`FINANCIAL-ANALYSIS-REVIEW.json`.
-  - هل بقي أي تفسير يتجاوز أدلته؟ تحديدًا:
-    - الطاقة الفائضة؛
-    - ربح البرميل؛
-    - هوامش التكرير؛
-    - محاسبة الجافورة؛
-    - توسعة الغاز؛
-    - التوزيعات والتدفقات.
-- [ ] **ENG-01/02:**
-  - هويات الصفوف الكاملة؛
-  - رفض الوحدات المختلطة والتعارض؛
-  - FY والربع وYTD منفصلة؛
-  - لا مصدر واحد لصفوف متعددة المصادر.
-- [ ] **ENG-03/04:**
-  - الكمية مرتبطة بالنوع والوحدة؛
-  - الرقم المطابق في دليل غير ذي صلة لا يكفي؛
-  - التواريخ التقويمية وحد اللقطة.
-  - جرّب حالات عدائية جديدة غير حالاتك الـ12.
-- [ ] **LINK-01:**
-  - 29 `FOCUSABLE` و43 `NOT_RENDERED`، من `placement.ts` المحسوب من نموذج التطبيق.
-  - هل يصيب كل رابط المقياس في موضوعه، أو يعلن عدم توفره؟
-- [ ] **الحجب:**
-  - الادعاءات الـ22 والمدخلات الـ142 بلا تغيير.
-  - التحليلات السبعة BLOCKED، ببوابات التعريف (`OUTPUT_DEFINITION_NOT_BOUND:*`).
-  - لا قيمة من اللقطة في أي مخرَج.
-- [ ] **القارئ:**
-  - loopback وGET-only وCSP؛
-  - رفض APP_BASE غير الآمن؛
-  - 320–1440 بلا تجاوز أفقي.
+- [ ] **RR-ENG03-01:**
+  - هل تُصنَّف العملة والنسبة كمية قبل الرقم وبعده، بمسافة ودونها، وبالعربية والإنجليزية؟
+  - هل تُرفض الصيغ الملتبسة (`ambiguous_number_format`) بدل اعتبارها سنة؟
+  - جرّب صيغًا عدائية جديدة.
+  - هل الاستثناءات ضيقة بما يكفي؟ وهي: السوابق العربية، و«م»/«هـ»، ودرجات التصنيف Aa1–Caa3 كرقم مجرد يلزمه دليل.
+- [ ] **RR-ENG02-01:**
+  - الربع 1–4؛
+  - السنة عدد صحيح؛
+  - التواريخ تقويمية، والكبيس صحيح؛
+  - البداية ≤ النهاية؛
+  - لا استكمال لفترة ناقصة.
+  - ملاحظة: صف Instant يحمل بداية يبقى مقبولًا، اتساقًا مع حالتك A10.
+- [ ] **RR-DOC-01 وRR-DOC-02:** صياغة ملاحظة الخريطة وسؤال إعادة الشراء.
+- [ ] **عدم التراجع:**
+  - المخرجات الخمسة الأخرى بنفس البصمات.
+  - الروابط 72/72.
+  - الحجب ثابت: 7 BLOCKED، و22 و142 WITHHELD.
 
-## 3. حدود لا يغلقها هذا التسليم
+## 3. حدود
 
-انظر القسم 6 في `REWORK-CLOSURE_AR.md` والقسم 5 في `REPORT_AR.md`. باختصار:
-- الأصل لم يطالعه المؤلف.
-- الحارس الرقمي محدود ولا يثبت المطابقة الدلالية للكميات في السجل.
-- لا رقم مؤهل.
-- الترجمة الإنجليزية جزئية.
-- حقوق المصادر مفتوحة.
+- الحارس نحوي، لا يعتمد دلالة الأرقام ماليًا (RR-LIVE-01).
+- التأهيل المالي مسار مستقل.
+- بقية الحدود في `REPORT_AR.md` القسم 5.

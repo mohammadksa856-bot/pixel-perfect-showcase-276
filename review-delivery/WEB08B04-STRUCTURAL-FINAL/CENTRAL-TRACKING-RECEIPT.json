@@ -1,0 +1,42 @@
+{
+  "schema": "central-tracking-public-receipt/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "canonical_local_commit": "61951ee07cb4faa255aec69273a6c723a82ee4d5",
+  "task_id": "WEB08-B04",
+  "event_sequence": 109,
+  "event_sha256": "4b8d90b0f66a8ae7f10fceee1ef5abbf7750536c9cc3fdf729f646984aadceee",
+  "previous_event108_preserved": "6d858de86c42ca1681e254920de57a457b539cc4656b5bc900bd2161afef5fd7",
+  "event_chain_verified": 109,
+  "review_commit": "61057aee786f6b6fe4ea089125a1ff91e2db7a68",
+  "decision": "REWORK_RR-ENG03-01_ONLY_RAW_CF_MASKING",
+  "prior_numeric_examples": "CLOSED",
+  "ISO_full_set": {
+    "official_unique_count": 178,
+    "implementation_unique_count": 178,
+    "missing": [],
+    "extra": [],
+    "equal": true
+  },
+  "closed_findings_preserved": [
+    "FIN-01–07",
+    "LINK-01",
+    "RR-ENG02-01"
+  ],
+  "phases": {
+    "IMPLEMENTED": "Claude8e89637",
+    "TESTED": "Original53/72/14/12/15/15PASS byte-exact and2original probes reject all; new39=20PASS19FAIL; all requested regression groups run separately",
+    "REVIEWED": "REWORK_RR-ENG03-01_ONLY_RAW_CF_MASKING",
+    "MERGED": false,
+    "ACCEPTED": false,
+    "DEPLOYED": false
+  },
+  "blocked_analyses": 7,
+  "withheld_claims": 22,
+  "withheld_inputs": 142,
+  "financially_qualified": 0,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "private_central_history_published": false
+}

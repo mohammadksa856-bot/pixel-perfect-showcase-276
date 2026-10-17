@@ -1,0 +1,33 @@
+{
+  "schema": "marefa-web08b02c-review-delivery/1",
+  "recorded_at": "2026-10-17T00:54:38Z",
+  "branch": "codex/web08b02c-evidence-bridge-20261017",
+  "application_sha": "74c967da01edf518cf77b11c0d9b6ca05316a5ae",
+  "baseline_sha": "78bc99a805d4bc0e19d44bf82ac9dc79eed66bf9",
+  "engine_inspection_sha": "e82407fa544722328b4b075076e9d8b947560080",
+  "decision": "LOCAL_IMPLEMENTATION_TESTED_READY_FOR_REVIEW",
+  "independent_review": "PENDING_NOT_CLAIMED",
+  "real_engine_bridge": "BLOCKED_PENDING_EXACT_TRUSTED_EVIDENCE_EXPORT",
+  "new_financial_inputs_qualified": 0,
+  "B02_inputs_unblocked": 0,
+  "runs": [
+    {"id":"bridge56","passed":56,"failed":0,"skipped":0,"expects":191,"artifact":"runs/bridge56.log"},
+    {"id":"B01_91","passed":91,"failed":0,"skipped":0,"expects":224,"artifact":"runs/B01_91.log"},
+    {"id":"B02_23","passed":23,"failed":0,"skipped":0,"expects":28,"artifact":"runs/B02_23.log"},
+    {"id":"WEB95","passed":95,"failed":0,"skipped":0,"expects":1150,"artifact":"runs/WEB95.log"},
+    {"id":"types","exit":0,"scope":"engine-bridge strict TypeScript and imported B01 modules","artifact":"runs/types.log"},
+    {"id":"lint","exit":0,"scope":"engine-bridge only","artifact":"runs/lint.log"}
+  ],
+  "runs_pooled": false,
+  "not_tested": ["full application lint", "full build", "browser or Vercel", "live engine", "independent financial certification", "authenticated production resolver"],
+  "financial_values_in_new_outputs": false,
+  "raw_documents_in_delivery": false,
+  "main_changed": false,
+  "production_changed": false,
+  "Supabase_changed": false,
+  "engine_changed": false,
+  "factory_policy_95_changed": false,
+  "user_final_acceptance": false,
+  "production_release_authorized": false,
+  "github_published": false
+}

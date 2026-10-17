@@ -1,0 +1,1253 @@
+{
+ "status": "UNQUALIFIED_SAMPLE — WITHHELD",
+ "publication": "not_for_public_display",
+ "note": "Read-only register over the accepted frozen snapshot. No values stored, no approvals, no forecasts.",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "claims": [
+  {
+   "id": "aramco-capex-guidance-2026",
+   "eventId": "evt-capex-guidance-2026",
+   "eventType": "capital_guidance",
+   "category": "management_plan",
+   "planKind": "issuer_guidance",
+   "topic": "forecasts",
+   "crossTopics": [
+    "financials"
+   ],
+   "quote": "Aramco stated 2026 capital investment guidance of USD 50 billion to USD 55 billion.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "guidance",
+    "title": "2026 capital investment guidance",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "guidance",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2026,
+    "note": "التوجيه لسنة 2026 كما ورد"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
+    "marefaData": "/preview/web-v1/companies/2222?tab=market"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "توجيه مُصدر لفترة مستقبلية: temporalBasis=issuer_guidance، لا يُعرض كبيان فعلي ولا يُقارن بإنفاق فعلي."
+  },
+  {
+   "id": "aramco-sales-gas-growth-2030",
+   "eventId": "evt-strategy-2030",
+   "eventType": "strategy_target",
+   "category": "management_plan",
+   "planKind": "management_target",
+   "topic": "forecasts",
+   "crossTopics": [
+    "operations"
+   ],
+   "quote": "Aramco targets growth in sales gas production capacity of more than 80% by 2030 compared with 2021 levels",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "strategy_update",
+    "title": "2030 gas growth and crude capacity strategy",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "strategy_update",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "through_year",
+    "baseYear": 2021,
+    "targetYear": 2030,
+    "note": "هدف إدارة مقابل مستوى 2021"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
+    "marefaData": "/preview/web-v1/companies/2222?tab=market"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "هدف إداري لا إنجاز؛ لا يُحوَّل إلى سعة فعلية أو توقع إنتاج."
+  },
+  {
+   "id": "aramco-msc-12mbd",
+   "eventId": "evt-strategy-2030",
+   "eventType": "strategy_target",
+   "category": "management_plan",
+   "planKind": "management_target",
+   "topic": "forecasts",
+   "crossTopics": [
+    "operations"
+   ],
+   "quote": "while maintaining maximum sustainable crude capacity at 12 million barrels per day",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "strategy_update",
+    "title": "2030 gas growth and crude capacity strategy",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "strategy_update",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "not_disclosed",
+    "note": "الجملة لا تذكر تاريخًا للحفاظ على السعة؛ عنوان السجل يذكر 2030 ولا يُنسب إليها بالاستنتاج"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
+    "marefaData": "/preview/web-v1/companies/2222?tab=market"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "خطة إدارة (الحفاظ على سعة)، ليست قياس إنتاج فعلي، ولا تاريخ مستهدف منسوب إليها."
+  },
+  {
+   "id": "aramco-project-milestones-2025",
+   "eventId": "evt-projects-2025",
+   "eventType": "project_milestone",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "operations",
+   "crossTopics": [
+    "business"
+   ],
+   "quote": "Jafurah commenced production, Tanajib commenced operations, and the Marjan increment came onstream during the period covered by the 2025 report.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "material_event",
+    "title": "Jafurah, Tanajib and Marjan project milestones",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "material_event",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "reporting_period",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "note": "خلال فترة تقرير 2025؛ التاريخ الدقيق لكل مرحلة غير معلن في السجل"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations",
+    "marefaData": "/preview/web-v1/companies/2222?tab=financials"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "واقعة منشورة عن حالة التنفيذ؛ لا سعة ولا تكلفة في السجل."
+  },
+  {
+   "id": "aramco-jafurah-midstream-contract",
+   "eventId": "evt-jafurah-midstream",
+   "eventType": "commercial_contract",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "business",
+   "crossTopics": [
+    "operations",
+    "risks"
+   ],
+   "quote": "Aramco retained exclusive use of the Jafurah Field Gas Plant and Riyas NGL Fractionation Plant for 20 years under a quarterly volume-based tariff backed by minimum volume commitments.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "commercial_contract",
+    "title": "Jafurah midstream minimum-volume commitment",
+    "publishedAt": "2026-03-10",
+    "version": 1
+   },
+   "engineType": "commercial_contract",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sourceKey": "file:a7bf4f582944854d2aad51b6d322d61fe6f4b65277a01fa1a6ac994bab255ad1",
+    "filingType": "Annual financial statement notes - dimensional detail",
+    "filedAt": "2026-03-10",
+    "page": 71,
+    "note": "34",
+    "table": null,
+    "pdfSha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4"
+   },
+   "effect": {
+    "kind": "term",
+    "years": 20,
+    "months": null,
+    "start": null,
+    "note": "مدة 20 سنة؛ تاريخ بدايتها غير معلن في السجل"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=business",
+    "marefaData": "/preview/web-v1/companies/2222?tab=business"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "شروط عقد منشورة. الحجم الملتزم به غير منشور صراحةً ويبقى مجهولًا (المصدر نفسه يقول ذلك)."
+  },
+  {
+   "id": "aramco-rig-purchase-commitments",
+   "eventId": "evt-rig-commitments",
+   "eventType": "purchase_commitment",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "crossTopics": [
+    "operations"
+   ],
+   "quote": "At year-end 2025, Aramco-related entities had remaining guaranteed commitments for 18 offshore rigs valued at SAR 22.275 billion and 36 onshore rigs valued at SAR 6.789 billion.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "purchase_commitment",
+    "title": "Guaranteed offshore and onshore rig purchases",
+    "publishedAt": "2026-03-10",
+    "version": 1
+   },
+   "engineType": "purchase_commitment",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sourceKey": "file:a7bf4f582944854d2aad51b6d322d61fe6f4b65277a01fa1a6ac994bab255ad1",
+    "filingType": "Annual financial statement notes - dimensional detail",
+    "filedAt": "2026-03-10",
+    "page": 69,
+    "note": "32(b)-(c)",
+    "table": null,
+    "pdfSha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4"
+   },
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "رصيد التزام في نهاية 2025؛ جدول التسليم والدفع غير معلن في السجل"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+    "marefaData": "/preview/web-v1/companies/2222?tab=risks"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "التزام قائم (تعرض)، لا إنفاق رأسمالي فعلي ولا توقع إنفاق."
+  },
+  {
+   "id": "aramco-contingencies-ordinary-course",
+   "eventId": "evt-contingencies-2025",
+   "eventType": "contingency",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "crossTopics": [],
+   "quote": "Aramco reports contingent assets and liabilities arising from contractor claims, lawsuits and arbitrations in the ordinary course of business.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "contingency",
+    "title": "Ordinary-course disputed matters and project support obligations",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "contingency",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:cc97113b045be15c17d514a2db4fc59612761de3349675bd8ebe2372d9bb0eeb",
+    "filingType": "Annual report contingency disclosure",
+    "filedAt": "2026-03-09",
+    "page": 230,
+    "note": "33",
+    "table": "Contingencies",
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+    "marefaData": "/preview/web-v1/companies/2222?tab=risks"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "واقعة منشورة: وجود مطالبات ونزاعات اعتيادية؛ لا مبلغ مجمّع منشور."
+  },
+  {
+   "id": "aramco-contingencies-management-view",
+   "eventId": "evt-contingencies-2025",
+   "eventType": "contingency",
+   "category": "management_plan",
+   "planKind": "management_expectation",
+   "topic": "risks",
+   "crossTopics": [],
+   "quote": "Management does not anticipate material adjustments from those matters.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "contingency",
+    "title": "Ordinary-course disputed matters and project support obligations",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "contingency",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:cc97113b045be15c17d514a2db4fc59612761de3349675bd8ebe2372d9bb0eeb",
+    "filingType": "Annual report contingency disclosure",
+    "filedAt": "2026-03-09",
+    "page": 230,
+    "note": "33",
+    "table": "Contingencies",
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "تقدير الإدارة كما في نهاية 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+    "marefaData": "/preview/web-v1/companies/2222?tab=risks"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "توقع إدارة، يُفصل عن الواقعة ولا يُعرض كنتيجة مؤكدة."
+  },
+  {
+   "id": "aramco-sadara-petro-rabigh-support",
+   "eventId": "evt-contingencies-2025",
+   "eventType": "contingency",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "crossTopics": [
+    "business"
+   ],
+   "quote": "The note separately describes support and guarantee arrangements involving Sadara and Petro Rabigh, but does not publish one aggregate contingency amount.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "contingency",
+    "title": "Ordinary-course disputed matters and project support obligations",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "contingency",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:cc97113b045be15c17d514a2db4fc59612761de3349675bd8ebe2372d9bb0eeb",
+    "filingType": "Annual report contingency disclosure",
+    "filedAt": "2026-03-09",
+    "page": 230,
+    "note": "33",
+    "table": "Contingencies",
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+    "marefaData": "/preview/web-v1/companies/2222?tab=risks"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "واقعة منشورة عن وجود ترتيبات دعم وضمان؛ المبلغ المجمّع غير منشور ويبقى مجهولًا."
+  },
+  {
+   "id": "aramco-customer-credit-concentration",
+   "eventId": "evt-customer-credit-2025",
+   "eventType": "customer_credit_concentration",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "crossTopics": [],
+   "quote": "Aramco states that its trade receivables arise from a global customer base, limiting geographic concentration of credit risk.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "customer_concentration",
+    "title": "Global customer base limits geographic credit concentration",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "customer_concentration",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:d2bd9f0c726867a99acfeb7f213a8b1da0b82170dd90436f473ed6b319decb18",
+    "filingType": "Annual report customer credit concentration disclosure",
+    "filedAt": "2026-03-09",
+    "page": 192,
+    "note": "3(a)(ii)",
+    "table": "Financial risk management - credit risk",
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+    "marefaData": "/preview/web-v1/companies/2222?tab=risks"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "بيان المُصدر عن تركّز الائتمان؛ لا مبلغ أو نسبة لعميل رئيسي منشورة، فلا يُستنتج تركّز رقمي."
+  },
+  {
+   "id": "aramco-hydrocarbon-risk-factors",
+   "eventId": "evt-risk-factors-2025",
+   "eventType": "risk_factor",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "crossTopics": [
+    "industry"
+   ],
+   "quote": "Results are exposed to crude oil and gas prices, global demand, regulation and government production decisions, in addition to operational, project and geopolitical risks.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "risk_factor",
+    "title": "Hydrocarbon market and production risks",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "risk_factor",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما وردت في تقرير 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
+    "marefaData": "/preview/web-v1/companies/2222?tab=risks"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "عوامل مخاطر يفصح عنها المُصدر؛ لا قياس حساسية ولا ترتيب أهمية من عندنا."
+  },
+  {
+   "id": "aramco-q4-2025-base-dividend",
+   "eventId": "evt-q4-2025-base-dividend",
+   "eventType": "dividend_declaration",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [],
+   "quote": "The Board declared a fourth-quarter 2025 base dividend",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "guidance",
+    "title": "Fourth quarter 2025 base dividend",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "guidance",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "not_disclosed",
+    "note": "تواريخ الاستحقاق والدفع غير معلنة في السجل"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "classification_override",
+     "same_event_multiple_records"
+    ]
+   },
+   "override": "المحرك يصنّف هذا السجل disclosure_type=guidance، لكن نصه إعلان مجلس عن توزيع مُقرّ؛ صُنّف واقعةً رسمية. لم يُعدَّل المحرك.",
+   "rationale": "إعلان توزيع مُقرّ، لا توجيه؛ المبلغ يبقى في سجل المحرك."
+  },
+  {
+   "id": "aramco-q4-2025-base-dividend-action",
+   "eventId": "evt-q4-2025-base-dividend",
+   "eventType": "dividend_declaration",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [],
+   "quote": "Fourth quarter 2025 base dividend",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:dividend:2025:q4-base",
+    "version": 1
+   },
+   "engineType": "cash_dividend",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "not_disclosed",
+    "note": "لا تاريخ استحقاق أو دفع في السجل"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "same_event_multiple_records"
+    ]
+   },
+   "override": null,
+   "rationale": "السجل الثاني للحدث نفسه (إجراء شركة)؛ يُجمع مع الإفصاح ولا يُعدّ مرتين."
+  },
+  {
+   "id": "aramco-buyback-2026",
+   "eventId": "evt-buyback-2026",
+   "eventType": "buyback_program",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [],
+   "quote": "Aramco announced a share buyback program of up to SAR 11.3 billion, equivalent to USD 3 billion, over 18 months.",
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "material_event",
+    "title": "Share buyback program",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "material_event",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "term",
+    "years": null,
+    "months": 18,
+    "start": null,
+    "note": "18 شهرًا؛ بداية التنفيذ وما نُفّذ منه غير معلنين في السجل"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "same_event_multiple_records"
+    ]
+   },
+   "override": null,
+   "rationale": "الإعلان واقعة؛ التنفيذ خلال 18 شهرًا غير مُبلغ عنه، فلا يُفترض تنفيذ أي جزء."
+  },
+  {
+   "id": "aramco-buyback-2026-action",
+   "eventId": "evt-buyback-2026",
+   "eventType": "buyback_program",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [],
+   "quote": "Share buyback program up to SAR 11.3 billion",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:buyback:2026",
+    "version": 1
+   },
+   "engineType": "share_buyback",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "term",
+    "years": null,
+    "months": 18,
+    "start": null,
+    "note": "كما في الإفصاح"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "same_event_multiple_records"
+    ]
+   },
+   "override": null,
+   "rationale": "السجل الثاني للحدث نفسه؛ يُجمع مع الإفصاح."
+  },
+  {
+   "id": "aramco-fy2025-results-publication",
+   "eventId": "evt-fy2025-results",
+   "eventType": "results_publication",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "financials",
+   "crossTopics": [
+    "news"
+   ],
+   "quote": null,
+   "quoteField": "body_text",
+   "language": "en",
+   "record": {
+    "section": "disclosures",
+    "type": "financial_results_announcement",
+    "title": "FY 2025 financial results",
+    "publishedAt": "2026-03-09",
+    "version": 1
+   },
+   "engineType": "financial_results_announcement",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2025,
+    "note": "نتائج السنة المالية 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
+    "marefaData": "/preview/web-v1/companies/2222?tab=financials"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "quote_not_copied_links_marefa_data"
+    ]
+   },
+   "override": null,
+   "rationale": "نص السجل يحمل أرقام القوائم المالية؛ لا تُقتبس هنا (لا قاعدة مالية موازية). الرابط إلى Marefa Data."
+  },
+  {
+   "id": "aramco-fy2025-dividends-paid",
+   "eventId": "evt-fy2025-dividends-paid",
+   "eventType": "dividend_paid",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [
+    "financials"
+   ],
+   "quote": "FY 2025 dividends paid (aggregate)",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:dividends:fy2025-paid",
+    "version": 1
+   },
+   "engineType": "cash_dividend",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": null,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2025,
+    "note": "مجموع ما دُفع خلال 2025"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   },
+   "override": null,
+   "rationale": "رقم مدفوع من القوائم؛ يُعرض في Marefa Data ولا يُكرر هنا."
+  },
+  {
+   "id": "aramco-petro-rabigh-stake-2025",
+   "eventId": "evt-petro-rabigh-2025",
+   "eventType": "acquisition",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [
+    "business"
+   ],
+   "quote": "Acquisition of an additional 22.5% stake in Petro Rabigh",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:acquisition:petro-rabigh:2025",
+    "version": 1
+   },
+   "engineType": "acquisition",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": 232,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "event_date",
+    "date": "2025-10-09",
+    "note": "تاريخ السريان في سجل المحرك"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "evidence_published_after_event"
+    ]
+   },
+   "override": null,
+   "rationale": "صفقة مكتملة؛ ليست مشروعًا. مصدرها تقرير لاحق (استرجاعي)."
+  },
+  {
+   "id": "aramco-bonus-2023",
+   "eventId": "evt-bonus-2023",
+   "eventType": "bonus_shares",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [
+    "ownership"
+   ],
+   "quote": "2023 bonus share issue",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:bonus:2023",
+    "version": 1
+   },
+   "engineType": "bonus_shares",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": 139,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "event_date",
+    "date": "2023-05-08",
+    "note": "تاريخ السريان في سجل المحرك"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "evidence_published_after_event"
+    ]
+   },
+   "override": null,
+   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+  },
+  {
+   "id": "aramco-capital-increase-2023",
+   "eventId": "evt-capital-increase-2023",
+   "eventType": "capital_increase",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [
+    "ownership"
+   ],
+   "quote": "2023 capital increase through retained earnings capitalization",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:capital-increase:2023",
+    "version": 1
+   },
+   "engineType": "capital_increase",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": 139,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "event_date",
+    "date": "2023-05-08",
+    "note": "تاريخ السريان في سجل المحرك"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "evidence_published_after_event"
+    ]
+   },
+   "override": null,
+   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+  },
+  {
+   "id": "aramco-bonus-2022",
+   "eventId": "evt-bonus-2022",
+   "eventType": "bonus_shares",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [
+    "ownership"
+   ],
+   "quote": "2022 bonus share issue",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:bonus:2022",
+    "version": 1
+   },
+   "engineType": "bonus_shares",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": 139,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "event_date",
+    "date": "2022-05-12",
+    "note": "تاريخ السريان في سجل المحرك"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "evidence_published_after_event"
+    ]
+   },
+   "override": null,
+   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+  },
+  {
+   "id": "aramco-capital-increase-2022",
+   "eventId": "evt-capital-increase-2022",
+   "eventType": "capital_increase",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "dividends_actions",
+   "crossTopics": [
+    "ownership"
+   ],
+   "quote": "2022 capital increase through retained earnings capitalization",
+   "quoteField": "title",
+   "language": "en",
+   "record": {
+    "section": "corporate_actions",
+    "actionKey": "sa:2222:capital-increase:2022",
+    "version": 1
+   },
+   "engineType": "capital_increase",
+   "evidence": {
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "filingType": "Annual report supplementary metrics and comparative restatement",
+    "filedAt": "2026-03-09",
+    "page": 139,
+    "note": null,
+    "table": null,
+    "pdfSha256": null
+   },
+   "effect": {
+    "kind": "event_date",
+    "date": "2022-05-12",
+    "note": "تاريخ السريان في سجل المحرك"
+   },
+   "links": {
+    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
+    "marefaData": "/preview/web-v1/companies/2222?tab=shareholders"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": [
+     "evidence_published_after_event"
+    ]
+   },
+   "override": null,
+   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+  }
+ ]
+}

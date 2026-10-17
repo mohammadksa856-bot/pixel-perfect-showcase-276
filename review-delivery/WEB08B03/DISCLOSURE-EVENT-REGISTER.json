@@ -1,0 +1,685 @@
+{
+ "status": "UNQUALIFIED_SAMPLE — WITHHELD",
+ "publication": "not_for_public_display",
+ "note": "Read-only register over the accepted frozen snapshot. No values stored, no approvals, no forecasts.",
+ "schema": "marefa-aramco-disclosure-register/1",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "snapshot": {
+  "generatedAt": "2026-10-13T00:06:16+00:00",
+  "contractVersion": 5,
+  "fixture": "tests/fixtures/codex-20261013/2222-page.json.gz"
+ },
+ "documents": [
+  {
+   "artifactUrl": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/reports-publications/historical-reports?locale=en",
+   "family": "exchange_data",
+   "editions": [],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:ade8f226d54bfd17df99a0b1bbfa6453c67187a47b92efdf090622791ebf2a85",
+     "filingType": "Saudi Exchange historical price snapshot",
+     "filedAt": "2026-09-04",
+     "contentHash": "ade8f226d54bfd17df99a0b1bbfa6453c67187a47b92efdf090622791ebf2a85"
+    }
+   ],
+   "pdfSha256": null,
+   "pdfSha256Origin": null,
+   "b02Key": null,
+   "firstFiledAt": "2026-09-04",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+   "family": "interim_report",
+   "editions": [
+    "H1/Q2 2026"
+   ],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+     "filingType": "Q2 interim report",
+     "filedAt": "2026-08-04",
+     "contentHash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae"
+    }
+   ],
+   "pdfSha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+   "pdfSha256Origin": "WEB08B02/FINANCIAL-EVIDENCE-REGISTER",
+   "b02Key": "H1-Q2-2026",
+   "firstFiledAt": "2026-08-04",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+   "family": "interim_report",
+   "editions": [
+    "Q1 2026"
+   ],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+     "filingType": "Q1 interim report",
+     "filedAt": "2026-05-11",
+     "contentHash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8"
+    }
+   ],
+   "pdfSha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+   "pdfSha256Origin": "WEB08B02/FINANCIAL-EVIDENCE-REGISTER",
+   "b02Key": "Q1-2026",
+   "firstFiledAt": "2026-05-11",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+   "family": "financial_statements",
+   "editions": [],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+     "filingType": "Annual financial report comparative",
+     "filedAt": "2026-03-10",
+     "contentHash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005"
+    },
+    {
+     "sourceKey": "file:6d4964544fb759ce100616c2a924d5e9cd409fc02517829bd961b7be34e30fdf",
+     "filingType": "Annual financial statement notes comparative",
+     "filedAt": "2026-03-10",
+     "contentHash": "6d4964544fb759ce100616c2a924d5e9cd409fc02517829bd961b7be34e30fdf"
+    },
+    {
+     "sourceKey": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+     "filingType": "Annual financial report comparative",
+     "filedAt": "2026-03-10",
+     "contentHash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626"
+    },
+    {
+     "sourceKey": "file:a7bf4f582944854d2aad51b6d322d61fe6f4b65277a01fa1a6ac994bab255ad1",
+     "filingType": "Annual financial statement notes - dimensional detail",
+     "filedAt": "2026-03-10",
+     "contentHash": "a7bf4f582944854d2aad51b6d322d61fe6f4b65277a01fa1a6ac994bab255ad1"
+    },
+    {
+     "sourceKey": "file:d366fc5187c1d786434ade2cf41f3f99d32a031f1024fe26401b55733f1a6747",
+     "filingType": "Annual financial statement lease finance costs",
+     "filedAt": "2026-03-10",
+     "contentHash": "d366fc5187c1d786434ade2cf41f3f99d32a031f1024fe26401b55733f1a6747"
+    },
+    {
+     "sourceKey": "file:d4487a96bbe43faa391851cc1195499a13e050f677ab13e247e50be0dcede5d2",
+     "filingType": "Annual financial statement notes",
+     "filedAt": "2026-03-10",
+     "contentHash": "d4487a96bbe43faa391851cc1195499a13e050f677ab13e247e50be0dcede5d2"
+    },
+    {
+     "sourceKey": "file:fa9353f1ac8ed8c17e21062bf0d42ce1cb3d8a386e527d60e859665a542bf101",
+     "filingType": "Annual financial statement gap fill - audited tables",
+     "filedAt": "2026-03-10",
+     "contentHash": "fa9353f1ac8ed8c17e21062bf0d42ce1cb3d8a386e527d60e859665a542bf101"
+    }
+   ],
+   "pdfSha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+   "pdfSha256Origin": "WEB08B02/FINANCIAL-EVIDENCE-REGISTER",
+   "b02Key": "FY2025",
+   "firstFiledAt": "2026-03-10",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+   "family": "annual_report",
+   "editions": [
+    "FY 2025"
+   ],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+     "filingType": "Annual report supplementary metrics and comparative restatement",
+     "filedAt": "2026-03-09",
+     "contentHash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f"
+    },
+    {
+     "sourceKey": "file:b20bc7989cc7161d9bd9bb0673af2bfb030c784791261eb39787e456c9d19fd1",
+     "filingType": "Annual report operating segment EBITDA inputs",
+     "filedAt": "2026-03-09",
+     "contentHash": "b20bc7989cc7161d9bd9bb0673af2bfb030c784791261eb39787e456c9d19fd1"
+    },
+    {
+     "sourceKey": "file:c0d6cdc64cb76a116f046b308064c2121588c21c4fb2d950f5da6ab7fde164b2",
+     "filingType": "Annual report operational production table precision update",
+     "filedAt": "2026-03-09",
+     "contentHash": "c0d6cdc64cb76a116f046b308064c2121588c21c4fb2d950f5da6ab7fde164b2"
+    },
+    {
+     "sourceKey": "file:c5403cbac69e0e0d6e15654f5ce617939e15b785e6827b6ebc665dfbaa36cc9a",
+     "filingType": "Annual report other reserve component detail",
+     "filedAt": "2026-03-09",
+     "contentHash": "c5403cbac69e0e0d6e15654f5ce617939e15b785e6827b6ebc665dfbaa36cc9a"
+    },
+    {
+     "sourceKey": "file:cc97113b045be15c17d514a2db4fc59612761de3349675bd8ebe2372d9bb0eeb",
+     "filingType": "Annual report contingency disclosure",
+     "filedAt": "2026-03-09",
+     "contentHash": "cc97113b045be15c17d514a2db4fc59612761de3349675bd8ebe2372d9bb0eeb"
+    },
+    {
+     "sourceKey": "file:d2bd9f0c726867a99acfeb7f213a8b1da0b82170dd90436f473ed6b319decb18",
+     "filingType": "Annual report customer credit concentration disclosure",
+     "filedAt": "2026-03-09",
+     "contentHash": "d2bd9f0c726867a99acfeb7f213a8b1da0b82170dd90436f473ed6b319decb18"
+    }
+   ],
+   "pdfSha256": null,
+   "pdfSha256Origin": null,
+   "b02Key": null,
+   "firstFiledAt": "2026-03-09",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
+   "family": "annual_report",
+   "editions": [],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:7d174a46cdf64631b8e2d0b2d89f0d160ec7838722fcc929eeaf543931aafaaa",
+     "filingType": "Annual report supplementary metrics",
+     "filedAt": "2025-03-04",
+     "contentHash": "7d174a46cdf64631b8e2d0b2d89f0d160ec7838722fcc929eeaf543931aafaaa"
+    }
+   ],
+   "pdfSha256": null,
+   "pdfSha256Origin": null,
+   "b02Key": null,
+   "firstFiledAt": "2025-03-04",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+   "family": "financial_statements",
+   "editions": [
+    "FY2024"
+   ],
+   "sourceRecords": [],
+   "pdfSha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+   "pdfSha256Origin": "WEB08B02/FINANCIAL-EVIDENCE-REGISTER",
+   "b02Key": "FY2024",
+   "firstFiledAt": "2025-03-04",
+   "inEngineSnapshot": false
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "family": "annual_report",
+   "editions": [],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+     "filingType": "Annual report",
+     "filedAt": "2024-03-10",
+     "contentHash": "030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f"
+    },
+    {
+     "sourceKey": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+     "filingType": "Annual report supplementary metrics",
+     "filedAt": "2024-03-10",
+     "contentHash": "b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+    }
+   ],
+   "pdfSha256": null,
+   "pdfSha256Origin": null,
+   "b02Key": null,
+   "firstFiledAt": "2024-03-10",
+   "inEngineSnapshot": true
+  },
+  {
+   "artifactUrl": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "family": "annual_report",
+   "editions": [],
+   "sourceRecords": [
+    {
+     "sourceKey": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+     "filingType": "Annual report supplementary metrics",
+     "filedAt": "2023-03-12",
+     "contentHash": "3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+    },
+    {
+     "sourceKey": "file:71de722afd87c97281910643b2b5a592b1a14617f4d879e3bc4dd029bf964baf",
+     "filingType": "Annual report historical highlights",
+     "filedAt": "2023-03-12",
+     "contentHash": "71de722afd87c97281910643b2b5a592b1a14617f4d879e3bc4dd029bf964baf"
+    },
+    {
+     "sourceKey": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+     "filingType": "Annual report historical highlights",
+     "filedAt": "2023-03-12",
+     "contentHash": "8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+    },
+    {
+     "sourceKey": "file:c59c59f2da0c33b174aaf483f57fe098796453ac488cdfc4db45123140d2d7d4",
+     "filingType": "Annual report historical highlights",
+     "filedAt": "2023-03-12",
+     "contentHash": "c59c59f2da0c33b174aaf483f57fe098796453ac488cdfc4db45123140d2d7d4"
+    },
+    {
+     "sourceKey": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+     "filingType": "Annual report supplementary metrics",
+     "filedAt": "2023-03-12",
+     "contentHash": "ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+    },
+    {
+     "sourceKey": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+     "filingType": "Annual report historical highlights",
+     "filedAt": "2023-03-12",
+     "contentHash": "d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+    }
+   ],
+   "pdfSha256": null,
+   "pdfSha256Origin": null,
+   "b02Key": null,
+   "firstFiledAt": "2023-03-12",
+   "inEngineSnapshot": true
+  }
+ ],
+ "events": [
+  {
+   "eventId": "evt-jafurah-midstream",
+   "eventType": "commercial_contract",
+   "topic": "business",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "commercial_contract",
+     "title": "Jafurah midstream minimum-volume commitment",
+     "publishedAt": "2026-03-10",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-jafurah-midstream-contract"
+   ],
+   "firstEvidenceFiledAt": "2026-03-10",
+   "effect": {
+    "kind": "term",
+    "years": 20,
+    "months": null,
+    "start": null,
+    "note": "مدة 20 سنة؛ تاريخ بدايتها غير معلن في السجل"
+   }
+  },
+  {
+   "eventId": "evt-rig-commitments",
+   "eventType": "purchase_commitment",
+   "topic": "risks",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "purchase_commitment",
+     "title": "Guaranteed offshore and onshore rig purchases",
+     "publishedAt": "2026-03-10",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-rig-purchase-commitments"
+   ],
+   "firstEvidenceFiledAt": "2026-03-10",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "رصيد التزام في نهاية 2025؛ جدول التسليم والدفع غير معلن في السجل"
+   }
+  },
+  {
+   "eventId": "evt-bonus-2022",
+   "eventType": "bonus_shares",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:bonus:2022",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-bonus-2022"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "event_date",
+    "date": "2022-05-12",
+    "note": "تاريخ السريان في سجل المحرك"
+   }
+  },
+  {
+   "eventId": "evt-bonus-2023",
+   "eventType": "bonus_shares",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:bonus:2023",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-bonus-2023"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "event_date",
+    "date": "2023-05-08",
+    "note": "تاريخ السريان في سجل المحرك"
+   }
+  },
+  {
+   "eventId": "evt-buyback-2026",
+   "eventType": "buyback_program",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "material_event",
+     "title": "Share buyback program",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    },
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:buyback:2026",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-buyback-2026",
+    "aramco-buyback-2026-action"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "term",
+    "years": null,
+    "months": 18,
+    "start": null,
+    "note": "18 شهرًا؛ بداية التنفيذ وما نُفّذ منه غير معلنين في السجل"
+   }
+  },
+  {
+   "eventId": "evt-capex-guidance-2026",
+   "eventType": "capital_guidance",
+   "topic": "forecasts",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "guidance",
+     "title": "2026 capital investment guidance",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-capex-guidance-2026"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2026,
+    "note": "التوجيه لسنة 2026 كما ورد"
+   }
+  },
+  {
+   "eventId": "evt-capital-increase-2022",
+   "eventType": "capital_increase",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:capital-increase:2022",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-capital-increase-2022"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "event_date",
+    "date": "2022-05-12",
+    "note": "تاريخ السريان في سجل المحرك"
+   }
+  },
+  {
+   "eventId": "evt-capital-increase-2023",
+   "eventType": "capital_increase",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:capital-increase:2023",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-capital-increase-2023"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "event_date",
+    "date": "2023-05-08",
+    "note": "تاريخ السريان في سجل المحرك"
+   }
+  },
+  {
+   "eventId": "evt-contingencies-2025",
+   "eventType": "contingency",
+   "topic": "risks",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "contingency",
+     "title": "Ordinary-course disputed matters and project support obligations",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-contingencies-ordinary-course",
+    "aramco-contingencies-management-view",
+    "aramco-sadara-petro-rabigh-support"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   }
+  },
+  {
+   "eventId": "evt-customer-credit-2025",
+   "eventType": "customer_credit_concentration",
+   "topic": "risks",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "customer_concentration",
+     "title": "Global customer base limits geographic credit concentration",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-customer-credit-concentration"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   }
+  },
+  {
+   "eventId": "evt-fy2025-dividends-paid",
+   "eventType": "dividend_paid",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:dividends:fy2025-paid",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-fy2025-dividends-paid"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2025,
+    "note": "مجموع ما دُفع خلال 2025"
+   }
+  },
+  {
+   "eventId": "evt-fy2025-results",
+   "eventType": "results_publication",
+   "topic": "financials",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "financial_results_announcement",
+     "title": "FY 2025 financial results",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-fy2025-results-publication"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2025,
+    "note": "نتائج السنة المالية 2025"
+   }
+  },
+  {
+   "eventId": "evt-petro-rabigh-2025",
+   "eventType": "acquisition",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:acquisition:petro-rabigh:2025",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-petro-rabigh-stake-2025"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "event_date",
+    "date": "2025-10-09",
+    "note": "تاريخ السريان في سجل المحرك"
+   }
+  },
+  {
+   "eventId": "evt-projects-2025",
+   "eventType": "project_milestone",
+   "topic": "operations",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "material_event",
+     "title": "Jafurah, Tanajib and Marjan project milestones",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-project-milestones-2025"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "reporting_period",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "note": "خلال فترة تقرير 2025؛ التاريخ الدقيق لكل مرحلة غير معلن في السجل"
+   }
+  },
+  {
+   "eventId": "evt-q4-2025-base-dividend",
+   "eventType": "dividend_declaration",
+   "topic": "dividends_actions",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "guidance",
+     "title": "Fourth quarter 2025 base dividend",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    },
+    {
+     "section": "corporate_actions",
+     "actionKey": "sa:2222:dividend:2025:q4-base",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-q4-2025-base-dividend",
+    "aramco-q4-2025-base-dividend-action"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "not_disclosed",
+    "note": "تواريخ الاستحقاق والدفع غير معلنة في السجل"
+   }
+  },
+  {
+   "eventId": "evt-risk-factors-2025",
+   "eventType": "risk_factor",
+   "topic": "risks",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "risk_factor",
+     "title": "Hydrocarbon market and production risks",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-hydrocarbon-risk-factors"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما وردت في تقرير 2025"
+   }
+  },
+  {
+   "eventId": "evt-strategy-2030",
+   "eventType": "strategy_target",
+   "topic": "forecasts",
+   "records": [
+    {
+     "section": "disclosures",
+     "type": "strategy_update",
+     "title": "2030 gas growth and crude capacity strategy",
+     "publishedAt": "2026-03-09",
+     "version": 1
+    }
+   ],
+   "claimIds": [
+    "aramco-sales-gas-growth-2030",
+    "aramco-msc-12mbd"
+   ],
+   "firstEvidenceFiledAt": "2026-03-09",
+   "effect": {
+    "kind": "through_year",
+    "baseYear": 2021,
+    "targetYear": 2030,
+    "note": "هدف إدارة مقابل مستوى 2021"
+   }
+  }
+ ],
+ "unclassified": []
+}

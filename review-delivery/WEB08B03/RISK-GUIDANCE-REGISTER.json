@@ -1,0 +1,296 @@
+{
+ "status": "UNQUALIFIED_SAMPLE — WITHHELD",
+ "publication": "not_for_public_display",
+ "note": "Read-only register over the accepted frozen snapshot. No values stored, no approvals, no forecasts.",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "categories": {
+  "official_fact": [
+   "aramco-jafurah-midstream-contract",
+   "aramco-rig-purchase-commitments",
+   "aramco-contingencies-ordinary-course",
+   "aramco-sadara-petro-rabigh-support",
+   "aramco-customer-credit-concentration",
+   "aramco-hydrocarbon-risk-factors"
+  ],
+  "management_plan": [
+   "aramco-capex-guidance-2026",
+   "aramco-sales-gas-growth-2030",
+   "aramco-msc-12mbd",
+   "aramco-contingencies-management-view"
+  ],
+  "assumption": [],
+  "research_opinion": []
+ },
+ "notes": {
+  "official_fact": "وقائع منشورة من المُصدر (مخاطر، التزامات، ترتيبات قائمة).",
+  "management_plan": "توجيهات وأهداف وتوقعات إدارة؛ مستقبلية بطبيعتها، لا تُعرض كوقائع ولا تُقارن بنتائج.",
+  "assumption": "لا افتراضات في هذه الدفعة. أي افتراض يُوسم assumption ولا يُعاد تصنيفه حقيقة.",
+  "research_opinion": "لا رأي بحثي معتمد في هذه الدفعة. أي رأي يحتاج مؤلفًا ومراجعة مالية وتحريرية وفق عقد WEB-08B01."
+ },
+ "entries": [
+  {
+   "id": "aramco-capex-guidance-2026",
+   "category": "management_plan",
+   "planKind": "issuer_guidance",
+   "topic": "forecasts",
+   "quote": "Aramco stated 2026 capital investment guidance of USD 50 billion to USD 55 billion.",
+   "effect": {
+    "kind": "fiscal_year",
+    "fiscalYear": 2026,
+    "note": "التوجيه لسنة 2026 كما ورد"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-sales-gas-growth-2030",
+   "category": "management_plan",
+   "planKind": "management_target",
+   "topic": "forecasts",
+   "quote": "Aramco targets growth in sales gas production capacity of more than 80% by 2030 compared with 2021 levels",
+   "effect": {
+    "kind": "through_year",
+    "baseYear": 2021,
+    "targetYear": 2030,
+    "note": "هدف إدارة مقابل مستوى 2021"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-msc-12mbd",
+   "category": "management_plan",
+   "planKind": "management_target",
+   "topic": "forecasts",
+   "quote": "while maintaining maximum sustainable crude capacity at 12 million barrels per day",
+   "effect": {
+    "kind": "not_disclosed",
+    "note": "الجملة لا تذكر تاريخًا للحفاظ على السعة؛ عنوان السجل يذكر 2030 ولا يُنسب إليها بالاستنتاج"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-jafurah-midstream-contract",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "business",
+   "quote": "Aramco retained exclusive use of the Jafurah Field Gas Plant and Riyas NGL Fractionation Plant for 20 years under a quarterly volume-based tariff backed by minimum volume commitments.",
+   "effect": {
+    "kind": "term",
+    "years": 20,
+    "months": null,
+    "start": null,
+    "note": "مدة 20 سنة؛ تاريخ بدايتها غير معلن في السجل"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-rig-purchase-commitments",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "quote": "At year-end 2025, Aramco-related entities had remaining guaranteed commitments for 18 offshore rigs valued at SAR 22.275 billion and 36 onshore rigs valued at SAR 6.789 billion.",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "رصيد التزام في نهاية 2025؛ جدول التسليم والدفع غير معلن في السجل"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-contingencies-ordinary-course",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "quote": "Aramco reports contingent assets and liabilities arising from contractor claims, lawsuits and arbitrations in the ordinary course of business.",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-contingencies-management-view",
+   "category": "management_plan",
+   "planKind": "management_expectation",
+   "topic": "risks",
+   "quote": "Management does not anticipate material adjustments from those matters.",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "تقدير الإدارة كما في نهاية 2025"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-sadara-petro-rabigh-support",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "quote": "The note separately describes support and guarantee arrangements involving Sadara and Petro Rabigh, but does not publish one aggregate contingency amount.",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-customer-credit-concentration",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "quote": "Aramco states that its trade receivables arise from a global customer base, limiting geographic concentration of credit risk.",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما في نهاية 2025"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_unverified",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "id": "aramco-hydrocarbon-risk-factors",
+   "category": "official_fact",
+   "planKind": null,
+   "topic": "risks",
+   "quote": "Results are exposed to crude oil and gas prices, global demand, regulation and government production decisions, in addition to operational, project and geopolitical risks.",
+   "effect": {
+    "kind": "as_of",
+    "date": "2025-12-31",
+    "note": "كما وردت في تقرير 2025"
+   },
+   "qualification": {
+    "status": "WITHHELD",
+    "publicationEligible": false,
+    "gaps": [
+     "engine_record_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "locator_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "editorial_review_missing"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

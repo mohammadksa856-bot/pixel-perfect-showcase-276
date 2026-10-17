@@ -1,0 +1,197 @@
+{
+ "status": "UNQUALIFIED_SAMPLE — WITHHELD",
+ "publication": "not_for_public_display",
+ "note": "Read-only register over the accepted frozen snapshot. No values stored, no approvals, no forecasts.",
+ "company": {
+  "id": "SA:2222",
+  "market": "SA",
+  "symbol": "2222"
+ },
+ "projects": [
+  {
+   "id": "jafurah",
+   "name": "Jafurah",
+   "kind": "project",
+   "description": [
+    {
+     "claimId": "aramco-project-milestones-2025",
+     "quote": "Jafurah commenced production, Tanajib commenced operations, and the Marjan increment came onstream during the period covered by the 2025 report."
+    },
+    {
+     "claimId": "aramco-jafurah-midstream-contract",
+     "quote": "Aramco retained exclusive use of the Jafurah Field Gas Plant and Riyas NGL Fractionation Plant for 20 years under a quarterly volume-based tariff backed by minimum volume commitments."
+    }
+   ],
+   "capacity": {
+    "status": "not_disclosed"
+   },
+   "executionStatus": {
+    "state": "commenced_production",
+    "claimId": "aramco-project-milestones-2025"
+   },
+   "targetDate": {
+    "status": "not_disclosed"
+   },
+   "disclosedCost": {
+    "status": "not_disclosed"
+   },
+   "relatedEngineMetrics": [
+    {
+     "key": "total_gas_production",
+     "presentInSnapshot": true
+    }
+   ],
+   "economicDrivers": {
+    "status": "not_authored",
+    "reason": "لا منهجية معتمدة لربط المشروع بأثر اقتصادي؛ أي ربط تفسيري رأي بحثي يحتاج تأليفًا ومراجعة مالية وتحريرية."
+   },
+   "qualification": "WITHHELD"
+  },
+  {
+   "id": "tanajib",
+   "name": "Tanajib",
+   "kind": "project",
+   "description": [
+    {
+     "claimId": "aramco-project-milestones-2025",
+     "quote": "Jafurah commenced production, Tanajib commenced operations, and the Marjan increment came onstream during the period covered by the 2025 report."
+    }
+   ],
+   "capacity": {
+    "status": "not_disclosed"
+   },
+   "executionStatus": {
+    "state": "commenced_operations",
+    "claimId": "aramco-project-milestones-2025"
+   },
+   "targetDate": {
+    "status": "not_disclosed"
+   },
+   "disclosedCost": {
+    "status": "not_disclosed"
+   },
+   "relatedEngineMetrics": [
+    {
+     "key": "total_gas_production",
+     "presentInSnapshot": true
+    }
+   ],
+   "economicDrivers": {
+    "status": "not_authored",
+    "reason": "لا منهجية معتمدة لربط المشروع بأثر اقتصادي؛ أي ربط تفسيري رأي بحثي يحتاج تأليفًا ومراجعة مالية وتحريرية."
+   },
+   "qualification": "WITHHELD"
+  },
+  {
+   "id": "marjan-increment",
+   "name": "Marjan increment",
+   "kind": "project",
+   "description": [
+    {
+     "claimId": "aramco-project-milestones-2025",
+     "quote": "Jafurah commenced production, Tanajib commenced operations, and the Marjan increment came onstream during the period covered by the 2025 report."
+    }
+   ],
+   "capacity": {
+    "status": "not_disclosed"
+   },
+   "executionStatus": {
+    "state": "onstream",
+    "claimId": "aramco-project-milestones-2025"
+   },
+   "targetDate": {
+    "status": "not_disclosed"
+   },
+   "disclosedCost": {
+    "status": "not_disclosed"
+   },
+   "relatedEngineMetrics": [
+    {
+     "key": "total_liquids_production",
+     "presentInSnapshot": true
+    },
+    {
+     "key": "total_gas_production",
+     "presentInSnapshot": true
+    }
+   ],
+   "economicDrivers": {
+    "status": "not_authored",
+    "reason": "لا منهجية معتمدة لربط المشروع بأثر اقتصادي؛ أي ربط تفسيري رأي بحثي يحتاج تأليفًا ومراجعة مالية وتحريرية."
+   },
+   "qualification": "WITHHELD"
+  },
+  {
+   "id": "sales-gas-growth-2030",
+   "name": "Sales gas capacity growth to 2030",
+   "kind": "program_target",
+   "description": [
+    {
+     "claimId": "aramco-sales-gas-growth-2030",
+     "quote": "Aramco targets growth in sales gas production capacity of more than 80% by 2030 compared with 2021 levels"
+    }
+   ],
+   "capacity": {
+    "status": "not_disclosed"
+   },
+   "executionStatus": {
+    "state": "target",
+    "claimId": "aramco-sales-gas-growth-2030"
+   },
+   "targetDate": {
+    "status": "management_target",
+    "year": 2030,
+    "claimId": "aramco-sales-gas-growth-2030"
+   },
+   "disclosedCost": {
+    "status": "not_disclosed"
+   },
+   "relatedEngineMetrics": [
+    {
+     "key": "total_gas_production",
+     "presentInSnapshot": true
+    }
+   ],
+   "economicDrivers": {
+    "status": "not_authored",
+    "reason": "لا منهجية معتمدة لربط المشروع بأثر اقتصادي؛ أي ربط تفسيري رأي بحثي يحتاج تأليفًا ومراجعة مالية وتحريرية."
+   },
+   "qualification": "WITHHELD"
+  },
+  {
+   "id": "msc-12mbd",
+   "name": "Maximum sustainable crude capacity",
+   "kind": "program_target",
+   "description": [
+    {
+     "claimId": "aramco-msc-12mbd",
+     "quote": "while maintaining maximum sustainable crude capacity at 12 million barrels per day"
+    }
+   ],
+   "capacity": {
+    "status": "not_disclosed"
+   },
+   "executionStatus": {
+    "state": "target",
+    "claimId": "aramco-msc-12mbd"
+   },
+   "targetDate": {
+    "status": "not_disclosed"
+   },
+   "disclosedCost": {
+    "status": "not_disclosed"
+   },
+   "relatedEngineMetrics": [
+    {
+     "key": "total_liquids_production",
+     "presentInSnapshot": true
+    }
+   ],
+   "economicDrivers": {
+    "status": "not_authored",
+    "reason": "لا منهجية معتمدة لربط المشروع بأثر اقتصادي؛ أي ربط تفسيري رأي بحثي يحتاج تأليفًا ومراجعة مالية وتحريرية."
+   },
+   "qualification": "WITHHELD"
+  }
+ ]
+}

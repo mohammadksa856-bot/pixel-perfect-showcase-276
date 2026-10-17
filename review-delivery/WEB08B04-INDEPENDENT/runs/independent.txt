@@ -1,0 +1,121 @@
+{"run": "independent", "sha": "c0c506f68bb72e528136e6b09ec58845b319db8a", "started": "2026-10-17T18:04:03.938925+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-INDEPENDENT/adversarial.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-INDEPENDENT\adversarial.test.ts:
+ 5 | const mutate=(text:string,kind='research_interpretation',ref:any={t:'engine_profile',field:'legal_name'})=>{
+ 6 |  const s=structuredClone(SECTIONS);s[0]!.paragraphs.push({id:'independent-mutation',kind,ar:text,en:null,topics:['financials'],refs:[ref]} as any);return ()=>{compilePack(loadContext(),s);};
+ 7 | };
+ 8 | test('R01: mixed units must not be represented by first-row unit',()=>{
+ 9 |  const c=loadContext();c.buckets.annual.set('synthetic',[{unit:'SAR',fiscal_year:2025,source_url:'https://example.com/a'},{unit:'USD',fiscal_year:2024,source_url:'https://example.com/b'}]);
+10 |  expect(()=>resolveRef({t:'engine_metric',key:'synthetic',bucket:'annual'},c)).toThrow();
+                                                                                    ^
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: {
+  ref: {
+    t: "engine_metric",
+    key: "synthetic",
+    bucket: "annual",
+  },
+  label: "Engine metric synthetic [annual]",
+  text: null,
+  source: {
+    url: "https://example.com/a",
+    filedAt: null,
+    page: null,
+    table: null,
+  },
+  status: "WITHHELD",
+  periods: [ "FY2024", "FY2025" ],
+  unit: "SAR",
+  calculated: false,
+}
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b04-independent-20261017\review-delivery\WEB08B04-INDEPENDENT\adversarial.test.ts:10:80)
+(fail) R01: mixed units must not be represented by first-row unit [19.75ms]
+ 9 |  const c=loadContext();c.buckets.annual.set('synthetic',[{unit:'SAR',fiscal_year:2025,source_url:'https://example.com/a'},{unit:'USD',fiscal_year:2024,source_url:'https://example.com/b'}]);
+10 |  expect(()=>resolveRef({t:'engine_metric',key:'synthetic',bucket:'annual'},c)).toThrow();
+11 | });
+12 | test('R02: conflicting document versions must not select first source',()=>{
+13 |  const c=loadContext();c.buckets.annual.set('synthetic',[{unit:'SAR',fiscal_year:2025,source_url:'https://example.com/v1'},{unit:'SAR',fiscal_year:2025,source_url:'https://example.com/v2'}]);
+14 |  expect(()=>resolveRef({t:'engine_metric',key:'synthetic',bucket:'annual'},c)).toThrow();
+                                                                                    ^
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: {
+  ref: {
+    t: "engine_metric",
+    key: "synthetic",
+    bucket: "annual",
+  },
+  label: "Engine metric synthetic [annual]",
+  text: null,
+  source: {
+    url: "https://example.com/v1",
+    filedAt: null,
+    page: null,
+    table: null,
+  },
+  status: "WITHHELD",
+  periods: [ "FY2025" ],
+  unit: "SAR",
+  calculated: false,
+}
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b04-independent-20261017\review-delivery\WEB08B04-INDEPENDENT\adversarial.test.ts:14:80)
+(fail) R02: conflicting document versions must not select first source [14.48ms]
+13 |  const c=loadContext();c.buckets.annual.set('synthetic',[{unit:'SAR',fiscal_year:2025,source_url:'https://example.com/v1'},{unit:'SAR',fiscal_year:2025,source_url:'https://example.com/v2'}]);
+14 |  expect(()=>resolveRef({t:'engine_metric',key:'synthetic',bucket:'annual'},c)).toThrow();
+15 | });
+16 | test('R03: YTD must not be labelled as a standalone quarter',()=>{
+17 |  const c=loadContext();c.buckets.ytd.set('synthetic',[{period_kind:'ytd',fiscal_year:2026,fiscal_quarter:2,period_end:'2026-06-30',unit:'SAR'}]);
+18 |  expect(resolveRef({t:'engine_metric',key:'synthetic',bucket:'ytd'},c).periods).not.toContain('2026Q2');
+                                                                                         ^
+error: expect(received).not.toContain(expected)
+
+Expected to not contain: "2026Q2"
+Received: [ "2026Q2" ]
+
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b04-independent-20261017\review-delivery\WEB08B04-INDEPENDENT\adversarial.test.ts:18:85)
+(fail) R03: YTD must not be labelled as a standalone quarter [13.49ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) R04: year-shaped financial amount cannot bypass numeric guard [17.17ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) R05: symbol-shaped financial amount cannot bypass numeric guard [12.66ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) R06: impossible civil date must be rejected [16.08ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) R07: future exact publication date must be rejected [13.17ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) R08: a number in evidence is not semantic support for unrelated profit [12.88ms]
+(pass) R09: thousand-grouped copied amount must be rejected [13.16ms]
+(pass) R10: decimal copied amount must be rejected [11.71ms]
+(pass) R11: seven analyses remain blocked and all 22 claims withheld [11.51ms]
+(pass) R12: hostile text remains escaped in reader [25.63ms]
+
+ 4 pass
+ 8 fail
+ 15 expect() calls
+Ran 12 tests across 1 file. [223.00ms]

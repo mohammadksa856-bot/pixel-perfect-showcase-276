@@ -1,0 +1,39 @@
+{"run": "b04", "sha": "c0c506f68bb72e528136e6b09ec58845b319db8a", "started": "2026-10-17T17:52:44.502765+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "research-evidence/aramco-research-pack"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-research-pack\pack.test.ts:
+(pass) withholding: nothing is approved, nothing is unblocked > every paragraph status is derived from its kind and none is approved [0.38ms]
+(pass) withholding: nothing is approved, nothing is unblocked > the 22 B03 claims and the 142 B02 inputs stay withheld [1.00ms]
+(pass) withholding: nothing is approved, nothing is unblocked > every quantitative analysis is BLOCKED and no input is qualified [0.21ms]
+(pass) withholding: nothing is approved, nothing is unblocked > an input that is one of the 142 is labelled as such [0.10ms]
+(pass) no parallel financial store and no numeric leak > no distinctive engine value (financials, ownership, market) appears in any deliverable [37.92ms]
+(pass) no parallel financial store and no numeric leak > figures inside B03 quotes are not re-published by the pack [0.68ms]
+(pass) no parallel financial store and no numeric leak > deliverables hold identities, not values [1.46ms]
+(pass) semantic separation (negative cases) > a management plan must cite a plan claim and never a fact claim [3.83ms]
+(pass) semantic separation (negative cases) > an engine record cannot rest on a management-plan claim [1.00ms]
+(pass) semantic separation (negative cases) > assumptions and scenarios carry no numbers [7.08ms]
+(pass) semantic separation (negative cases) > a number not present in the cited evidence is rejected (no invented figures) [1.67ms]
+(pass) semantic separation (negative cases) > an engine record cannot carry a year after the snapshot; plans may [1.05ms]
+(pass) semantic separation (negative cases) > Arabic-Indic digits, unknown meta numbers, duplicate ids, empty evidence and bad topics are rejected [2.37ms]
+(pass) semantic separation (negative cases) > unresolvable evidence fails closed [2.82ms]
+(pass) periods and sources > analysis input periods are the snapshot's own periods, not invented ones [0.11ms]
+(pass) periods and sources > guidance stays a plan for 2026; the capex analysis does not equate it with actual capex [0.04ms]
+(pass) periods and sources > every cited source URL is https; external reviews are pinned by SHA [0.15ms]
+(pass) periods and sources > projects mirror the accepted B03 project statuses, including no 'not_disclosed' [0.27ms]
+(pass) periods and sources > the gas target is never quoted with the conflicting magnitude [0.07ms]
+(pass) topics, links and gaps > all 18 topics are mapped, none empty; gap-only topics say so [0.17ms]
+(pass) topics, links and gaps > links are relative app routes to Company Intelligence and Marefa Data only [0.26ms]
+(pass) topics, links and gaps > the gap register covers inputs, issuer definitions, sources, coverage and cited claims [0.65ms]
+(pass) deliverables > committed review-delivery/WEB08B04 files equal a fresh deterministic build [0.95ms]
+
+research-evidence\aramco-research-pack\reader.test.ts:
+(pass) render > banner, every paragraph with its non-approved status, every analysis BLOCKED, 18 topics [1.65ms]
+(pass) render > hostile text and labels are escaped [24.52ms]
+(pass) render > unsafe APP_BASE disables app links and the server refuses to start [54.67ms]
+(pass) server > GET / is 200 with CSP, noindex and no-store [17.79ms]
+(pass) server > non-GET is refused and unknown paths are 404 [2.33ms]
+
+ 28 pass
+ 0 fail
+ 1237 expect() calls
+Ran 28 tests across 2 files. [326.00ms]

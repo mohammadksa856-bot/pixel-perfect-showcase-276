@@ -1,0 +1,636 @@
+[
+  {
+    "bucket": "history_annual",
+    "key": "free_cash_flow",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "free_cash_flow",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric free_cash_flow [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": true
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "capex",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "capex",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric capex [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "dividends_per_share",
+    "rows": 5,
+    "sources": 4,
+    "units": [
+      "SAR/share"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "dividends_per_share",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric dividends_per_share [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "filedAt": "2026-03-09",
+        "page": 243,
+        "table": "dividends"
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR/share",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "net_income",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "net_income",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric net_income [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "net_income_parent",
+    "rows": 5,
+    "sources": 4,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "net_income_parent",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric net_income_parent [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "filedAt": "2026-03-09",
+        "page": 244,
+        "table": "earnings per share"
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "operating_cash_flow",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "operating_cash_flow",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric operating_cash_flow [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "operating_income",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "operating_income",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric operating_income [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "filedAt": "2026-03-09",
+        "page": 39,
+        "table": "summarized consolidated statement of income"
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "revenue",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "revenue",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric revenue [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "net_margin",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "ratio"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "net_margin",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric net_margin [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "ratio",
+      "calculated": true
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "operating_margin",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "ratio"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "operating_margin",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric operating_margin [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "filedAt": "2026-03-09",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "ratio",
+      "calculated": true
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "return_on_assets",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "ratio"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "return_on_assets",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric return_on_assets [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "ratio",
+      "calculated": true
+    }
+  },
+  {
+    "bucket": "history_annual",
+    "key": "return_on_equity",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "ratio"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "return_on_equity",
+        "bucket": "history_annual"
+      },
+      "label": "Engine metric return_on_equity [history_annual]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "unit": "ratio",
+      "calculated": true
+    }
+  },
+  {
+    "bucket": "history_position",
+    "key": "total_assets",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "total_assets",
+        "bucket": "history_position"
+      },
+      "label": "Engine metric total_assets [history_position]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "@2021-12-31",
+        "@2022-12-31",
+        "@2023-12-31",
+        "@2024-12-31",
+        "@2025-12-31"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_position",
+    "key": "total_equity",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "total_equity",
+        "bucket": "history_position"
+      },
+      "label": "Engine metric total_equity [history_position]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "@2021-12-31",
+        "@2022-12-31",
+        "@2023-12-31",
+        "@2024-12-31",
+        "@2025-12-31"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_position",
+    "key": "total_liabilities",
+    "rows": 5,
+    "sources": 3,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "total_liabilities",
+        "bucket": "history_position"
+      },
+      "label": "Engine metric total_liabilities [history_position]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+        "filedAt": "2026-03-10",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "@2021-12-31",
+        "@2022-12-31",
+        "@2023-12-31",
+        "@2024-12-31",
+        "@2025-12-31"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_quarter",
+    "key": "free_cash_flow",
+    "rows": 2,
+    "sources": 2,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "free_cash_flow",
+        "bucket": "history_quarter"
+      },
+      "label": "Engine metric free_cash_flow [history_quarter]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+        "filedAt": "2026-08-04",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "2026Q1",
+        "2026Q2"
+      ],
+      "unit": "SAR",
+      "calculated": true
+    }
+  },
+  {
+    "bucket": "history_quarter",
+    "key": "net_income",
+    "rows": 2,
+    "sources": 2,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "net_income",
+        "bucket": "history_quarter"
+      },
+      "label": "Engine metric net_income [history_quarter]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+        "filedAt": "2026-08-04",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "2026Q1",
+        "2026Q2"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_quarter",
+    "key": "operating_cash_flow",
+    "rows": 2,
+    "sources": 2,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "operating_cash_flow",
+        "bucket": "history_quarter"
+      },
+      "label": "Engine metric operating_cash_flow [history_quarter]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+        "filedAt": "2026-08-04",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "2026Q1",
+        "2026Q2"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  },
+  {
+    "bucket": "history_quarter",
+    "key": "revenue",
+    "rows": 2,
+    "sources": 2,
+    "units": [
+      "SAR"
+    ],
+    "resolved": {
+      "ref": {
+        "t": "engine_metric",
+        "key": "revenue",
+        "bucket": "history_quarter"
+      },
+      "label": "Engine metric revenue [history_quarter]",
+      "text": null,
+      "source": {
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+        "filedAt": "2026-08-04",
+        "page": null,
+        "table": null
+      },
+      "status": "WITHHELD",
+      "periods": [
+        "2026Q1",
+        "2026Q2"
+      ],
+      "unit": "SAR",
+      "calculated": false
+    }
+  }
+]

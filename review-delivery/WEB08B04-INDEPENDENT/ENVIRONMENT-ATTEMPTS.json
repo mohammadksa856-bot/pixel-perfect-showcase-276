@@ -1,0 +1,17 @@
+{
+  "initial_sandbox_runs": [
+    {
+      "suite": "B04",
+      "pass": 26,
+      "fail": 2,
+      "reason": "localhost fetch EACCES, environment restriction, not application assertion failure"
+    },
+    {
+      "suite": "B03",
+      "pass": 55,
+      "fail": 2,
+      "reason": "same localhost EACCES"
+    }
+  ],
+  "rerun": "Same unmodified tests with localhost permission: B04 28PASS, B03 57PASS. Initial console output retained in conversation; final raw logs contain authorized rerun."
+}

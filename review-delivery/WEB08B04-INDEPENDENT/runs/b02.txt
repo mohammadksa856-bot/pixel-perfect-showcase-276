@@ -1,0 +1,36 @@
+{"run": "b02", "sha": "c0c506f68bb72e528136e6b09ec58845b319db8a", "started": "2026-10-17T17:51:43.907880+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "research-evidence/aramco-qualification"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-qualification\company.test.ts:
+(pass) same period and amount from another issuer never matches [1.16ms]
+
+research-evidence\aramco-qualification\missing.test.ts:
+(pass) absence is not reported as a proven numeric disagreement [0.70ms]
+
+research-evidence\aramco-qualification\qualification.test.ts:
+(pass) exact comparison is not B01 qualification [0.43ms]
+(pass) FY vs quarter [0.17ms]
+(pass) YTD vs standalone [0.16ms]
+(pass) same end different start [0.11ms]
+(pass) flow vs stock [0.37ms]
+(pass) currency [0.19ms]
+(pass) unit [0.11ms]
+(pass) scope [0.05ms]
+(pass) dimensions [0.18ms]
+(pass) conflict blocks even if first record is equal, order invariant [0.32ms]
+(pass) different source is not silently accepted [0.14ms]
+(pass) signs are preserved, never abs-corrected [0.03ms]
+(pass) decimal EPS is not scaled by million [0.03ms]
+(pass) missing never means zero [0.10ms]
+(pass) derived copy not original [0.12ms]
+(pass) date-only publication and content hash cannot stand for artifact proof [0.06ms]
+(pass) user yes does not grant permission [0.04ms]
+(pass) rights cannot substitute for financial review [0.01ms]
+(pass) no code path grants publication
+(pass) invalid calendars use B01 rejection [0.42ms]
+(pass) unmapped segment remains explicit, not guessed [0.07ms]
+
+ 23 pass
+ 0 fail
+ 28 expect() calls
+Ran 23 tests across 3 files. [42.00ms]

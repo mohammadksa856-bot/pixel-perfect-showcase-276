@@ -1,0 +1,22 @@
+{
+ "tested_application":"2685d944f25b8dc3ef8d63147fded0d81551bef9",
+ "tested_checkout":"c0c506f68bb72e528136e6b09ec58845b319db8a",
+ "reader":"http://127.0.0.1:4455/",
+ "browser":"Codex in-app browser; independent actual navigation, not author screenshots",
+ "measurements":[
+  {"language":"ar","mode":"desktop","clientWidth":1265,"scrollWidth":1265,"paragraphs":99,"blockedAnalyses":7,"scripts":0,"forms":0},
+  {"language":"ar","requestedViewportWidth":390,"clientWidth":375,"scrollWidth":375,"note":"Scrollbar occupies15px; do not describe this as390content pixels."},
+  {"language":"en","requestedViewportWidth":405,"clientWidth":390,"scrollWidth":390,"pendingTranslations":97},
+  {"language":"ar","requestedViewportWidth":335,"clientWidth":320,"scrollWidth":320,"projects":5},
+  {"language":"en","requestedViewportWidth":335,"clientWidth":320,"scrollWidth":320,"pendingTranslations":97}
+ ],
+ "keyboard":{"summaryNavigation":"PASS","activeTag":"SUMMARY","computedOutlineStyle":"solid","fullScreenReaderAudit":"NOT_TESTED"},
+ "screenshots":"Viewed independent desktop and mobile screenshots in session; no images of original documents or full financial preview values uploaded.",
+ "app_destination_setup":{"localOnly":true,"port":5173,"credentials":"none","liveApi":"none","frozenFixtures":true,"previewGateLocalHarnessBranchLabel":"claude/web-07-company-experience","actualGitBranch":"review/web08b04-independent-20261017","note":"Existing accepted fixture gate exercised via local process environment only; no platform or branch allowlist changed."},
+ "browser_samples":[
+  {"path":"/preview/web-v1/companies/2222/intelligence?topic=competitors&focus=average_realized_crude_oil_price","http":200,"targetAnywhere":true,"targetInRequestedTopic":false,"focusedTargets":0,"activeElement":"topic-11","decision":"FAIL_METRIC_DEEP_LINK"},
+  {"path":"/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue","focusedRow":"revenue","decision":"PASS_LINK_ONLY_NOT_FINANCIAL_QUALIFICATION"},
+  {"path":"/preview/web-v1/companies/2222?tab=financials","renderedTabs":["annual","income"],"frozenBanner":true,"decision":"PASS_TAB_NOT_INPUT_QUALIFICATION"}
+ ],
+ "not_certified":["live evidence binding","all71links browser-clicked","full English translation","official financial approval","public deployment","production","user final visual acceptance"]
+}

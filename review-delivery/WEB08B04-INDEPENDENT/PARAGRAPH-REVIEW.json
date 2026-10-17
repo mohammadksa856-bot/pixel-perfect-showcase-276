@@ -1,0 +1,2564 @@
+{
+  "count": 99,
+  "interpretations": 33,
+  "not_a_blanket_accuracy_certificate": true,
+  "rows": [
+    {
+      "ordinal": 1,
+      "id": "scope-what",
+      "kind": "methodology",
+      "status_preserved": "METHODOLOGY_PENDING_APPROVAL",
+      "evidence_refs": [
+        {
+          "t": "external_review",
+          "id": "CODEX_B03_ACCEPT"
+        },
+        {
+          "t": "b02_withheld",
+          "metric": "revenue"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION",
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "Methodology pending approval; not a review certificate or financial output.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 2,
+      "id": "scope-kinds",
+      "kind": "methodology",
+      "status_preserved": "METHODOLOGY_PENDING_APPROVAL",
+      "evidence_refs": [
+        {
+          "t": "external_review",
+          "id": "CODEX_B03_ACCEPT"
+        }
+      ],
+      "evidence_classes": [
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "Methodology pending approval; not a review certificate or financial output.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 3,
+      "id": "scope-originals",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "external_review",
+          "id": "GAS_TARGET"
+        },
+        {
+          "t": "external_review",
+          "id": "CAPITAL_INVESTMENT_GUIDANCE"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 4,
+      "id": "bm-identity",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_profile",
+          "field": "legal_name"
+        },
+        {
+          "t": "engine_profile",
+          "field": "legal_form"
+        },
+        {
+          "t": "engine_profile",
+          "field": "headquarters_address"
+        },
+        {
+          "t": "engine_profile",
+          "field": "listing_date"
+        },
+        {
+          "t": "engine_profile",
+          "field": "reporting_standard"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 5,
+      "id": "bm-description",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_profile",
+          "field": "business_description"
+        },
+        {
+          "t": "engine_profile",
+          "field": "business_description_ar"
+        },
+        {
+          "t": "engine_profile",
+          "field": "geographic_presence"
+        },
+        {
+          "t": "engine_profile",
+          "field": "subsidiaries_count"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 6,
+      "id": "bm-ownership",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_ownership",
+          "holder": "saudi_government_direct"
+        },
+        {
+          "t": "engine_ownership",
+          "holder": "other_strategic"
+        },
+        {
+          "t": "engine_ownership",
+          "holder": "public"
+        },
+        {
+          "t": "engine_ownership",
+          "holder": "treasury"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 7,
+      "id": "bm-ownership-interp",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_ownership",
+          "holder": "saudi_government_direct"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-q4-2025-base-dividend"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-buyback-2026"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable channel, but separate dividends to direct state owner from wider fiscal receipts and strategic holdings. No measured effect.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 8,
+      "id": "bm-governance",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_profile",
+          "field": "chairman_name"
+        },
+        {
+          "t": "engine_profile",
+          "field": "ceo_name"
+        },
+        {
+          "t": "engine_profile",
+          "field": "auditor"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 9,
+      "id": "bm-rating",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_profile",
+          "field": "credit_rating"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 10,
+      "id": "up-scope",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_profile",
+          "field": "business_segments"
+        },
+        {
+          "t": "engine_profile",
+          "field": "products_services"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 11,
+      "id": "up-msc",
+      "kind": "management_plan",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Issuer plan not actual result. Preserve withholding, original-source/version/date verification still required.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 12,
+      "id": "up-volumes",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "total_liquids_production",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_gas_production",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_hydrocarbon_production",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 13,
+      "id": "up-spare",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_liquids_production",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: crude-oil MSC minus total liquids is not spare crude capacity. Total liquids includes condensate and NGL. Require matched crude-only scope, period and availability definition (annual PDF52 footnote1).",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 14,
+      "id": "up-unit-costs",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "lifting_cost_per_boe",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_capex_per_boe",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only, units require original footnote matching: capex/boe is not full economic cost per barrel.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 15,
+      "id": "up-margin-logic",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "average_realized_crude_oil_price",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "lifting_cost_per_boe",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_capability",
+          "name": "peer_comparison"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: not an identity for profit/barrel. Crude realized USD/bbl is not commensurate with lifting USD/boe or group royalties SAR. Define contribution/EBIT/net earnings, product and scope; include all relevant costs/tax bases and do not treat cash capex as expense or claim a competitive position without peer basis.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 16,
+      "id": "up-reserves-gap",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "reserve_life_index",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 17,
+      "id": "dn-scope",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_profile",
+          "field": "business_segments"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 18,
+      "id": "dn-volumes",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "downstream_crude_utilization",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "base_oils_sold",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "finished_lubricants_sold",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "crude_refined_products_traded",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "liquid_chemicals_traded",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 19,
+      "id": "dn-petro-rabigh",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-petro-rabigh-stake-2025"
+        },
+        {
+          "t": "b03_event",
+          "id": "evt-petro-rabigh-2025"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Conflict/withholding explicit. Acquisition percentage does not by itself establish control or consolidation (annual note41 footnote3).",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 20,
+      "id": "dn-jv-support",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-sadara-petro-rabigh-support"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 21,
+      "id": "dn-held-for-sale",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b02_withheld",
+          "metric": "cash_held_for_sale"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 22,
+      "id": "dn-earnings-logic",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "downstream_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "downstream_crude_utilization",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "share_of_profit_associates",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sadara-petro-rabigh-support"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: spread times utilization alone does not produce profit. Require throughput, capacity, yield/product mix, energy, operating costs, depreciation and accounting perimeter. Equity-accounted JV results differ from consolidated sales; qualify general intuition.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 23,
+      "id": "rv-product",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_product",
+          "bucket": "annual",
+          "dims": {
+            "product": "Crude oil"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_product",
+          "bucket": "annual",
+          "dims": {
+            "product": "Natural gas and NGLs"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_product",
+          "bucket": "annual",
+          "dims": {
+            "product": "Refined and chemical products"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 24,
+      "id": "rv-geography",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_geography",
+          "bucket": "annual",
+          "dims": {
+            "basis": "location of selling entity",
+            "geography": "In-Kingdom"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_geography",
+          "bucket": "annual",
+          "dims": {
+            "basis": "location of selling entity",
+            "geography": "Out-of-Kingdom"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 25,
+      "id": "rv-geography-reading",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_geography",
+          "bucket": "annual",
+          "dims": {
+            "basis": "location of selling entity",
+            "geography": "Out-of-Kingdom"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable bounded inference from selling-entity basis, not customer demand geography. No numeric effect established.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 26,
+      "id": "rv-segments",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "upstream_revenue",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "downstream_revenue",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "corporate_revenue",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Corporate"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "downstream_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "corporate_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Corporate"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_adjusted_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "downstream_adjusted_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Metric identities resolved but cited refs omit capex/depreciation refs despite enumerating them. Add exact per-subclaim evidence. Annual PDF52/58 segment revenue includes intersegment and other sales-related income.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 27,
+      "id": "rv-cost-lines",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "purchases",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "producing_manufacturing_expense",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "selling_general_administrative_expense",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "exploration_expense",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "depreciation_amortization",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "income_taxes_and_zakat",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 28,
+      "id": "rv-mechanics",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_product",
+          "bucket": "annual",
+          "dims": {
+            "product": "Crude oil"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "purchases",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: price-times-sales-volume is a product-level conceptual decomposition, not one homogeneous group identity; product mix, other sales-related income, internal/external sales and purchases matter. Replace 'measured from Data' with explicit qualification gate.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 29,
+      "id": "rv-gas-price-gap",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "natural_gas_revenue",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "average_realized_crude_oil_price",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 30,
+      "id": "rv-royalty-gap",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Valid gap within cited snapshot; no claim that original disclosures contain no royalty framework. Do not infer royalty sensitivity from a group expense line.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 31,
+      "id": "in-interseg",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b02_withheld",
+          "metric": "intersegment_revenue"
+        },
+        {
+          "t": "b02_withheld",
+          "metric": "external_revenue"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 32,
+      "id": "in-midstream",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 33,
+      "id": "in-channels",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b02_withheld",
+          "metric": "intersegment_revenue"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        },
+        {
+          "t": "engine_profile",
+          "field": "business_segments"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: annual PDF231 note34 explicitly retains title and operational control; upfront proceeds are NCI equity at consolidation. A tariff contract does not establish group capex converted to operating expense. Separate parent cash flows, subsidiary tariff, consolidation and NCI distributions; qualify outlet stabilization.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 34,
+      "id": "in-transfer-gap",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b02_withheld",
+          "metric": "intersegment_revenue"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_depreciation_amortization",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Original annual PDF196 note4 states arm's-length transfer basis and pricing-basis change effective Oct2024. Snapshot gap is valid, but original information exists and must be recorded as located-unbound, not absent.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 35,
+      "id": "dr-price",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "average_realized_crude_oil_price",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Plausible ceteris-paribus mechanism. Different royalties and income-tax regimes, net/gross bases and price sensitivities need verified definitions before quantification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 36,
+      "id": "dr-volume",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_gas_production",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: crude MSC does not cap all gas/liquids volumes. Extra gas production is not automatically external sales. Specify crude scope and separate gas production, internal use and sales.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 37,
+      "id": "dr-margin",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "downstream_crude_utilization",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "crude_refined_products_traded",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "purchases",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: utilization and spread are drivers, not sufficient profit determination; low trading margin not proven by listed metric identities. Qualify and identify required costs/volume/mix.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 38,
+      "id": "dr-capacity",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "external_review",
+          "id": "GAS_TARGET"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "REWORK: increase in revenue share is not guaranteed by a capacity target/commencement. Relative oil/gas prices, volumes, internal use, consolidation and execution can reverse the share effect. Use conditional scenario.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 39,
+      "id": "dr-sensitivity-blocked",
+      "kind": "methodology",
+      "status_preserved": "METHODOLOGY_PENDING_APPROVAL",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "average_realized_crude_oil_price",
+          "bucket": "annual"
+        },
+        {
+          "t": "b02_withheld",
+          "metric": "segment_ebit"
+        },
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Methodology pending approval; not a review certificate or financial output.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 40,
+      "id": "pg-frame",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Plausible project taxonomy, explicitly leaves Tanajib unclassified. Marjan maintenance purpose remains an inference rather than a proved use-of-proceeds finding.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 41,
+      "id": "pg-milestones-composite",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_event",
+          "id": "evt-projects-2025"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 42,
+      "id": "pg-capex-guidance",
+      "kind": "management_plan",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-capex-guidance-2026"
+        },
+        {
+          "t": "external_review",
+          "id": "CAPITAL_INVESTMENT_GUIDANCE"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "Alternative official release date March10 retained separately; March9 engine date remains disputed, not validated or silently backdated.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 43,
+      "id": "pg-capex-segments",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "upstream_capex",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "downstream_capex",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "corporate_capex",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Corporate"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "capex",
+          "bucket": "history_annual"
+        },
+        {
+          "t": "b02_withheld",
+          "metric": "capex"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 44,
+      "id": "pg-rigs",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-rig-purchase-commitments"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Count-derivation warning preserved, but guaranteed affiliate purchase obligations are not direct consolidated cash capex.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 45,
+      "id": "pg-rigs-reading",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-rig-purchase-commitments"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_capex",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: suppliers/affiliates' guaranteed rig manufacturing orders are not necessarily Aramco drilling activity or direct group capex/payments. Separate buyer, guarantor, contingent exposure, delivery and cash recognition; avoid double counting.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 46,
+      "id": "pg-project-cost-gap",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "jafurah"
+        },
+        {
+          "t": "b03_project",
+          "id": "marjan-increment"
+        },
+        {
+          "t": "b03_project",
+          "id": "sales-gas-growth-2030"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 47,
+      "id": "pj-jafurah-nature",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        },
+        {
+          "t": "b03_project",
+          "id": "jafurah"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 48,
+      "id": "pj-jafurah-purpose",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        },
+        {
+          "t": "engine_metric",
+          "key": "revenue_by_product",
+          "bucket": "annual",
+          "dims": {
+            "product": "Natural gas and NGLs"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: tariff and physical processing do not prove removal of owned assets from consolidated accounts; note34 retains title/control. Separate physical purpose from financing/accounting.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 49,
+      "id": "pj-jafurah-risk-volume",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "REWORK: minimum-volume exposure supports possible payment floor, not 'any delay becomes fixed cost'. Need commencement, relief clauses, counterparty and consolidated treatment. Original note34 does not prove all conditions.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 50,
+      "id": "pj-jafurah-gaps",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "jafurah"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 51,
+      "id": "pj-tanajib-nature",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_project",
+          "id": "tanajib"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 52,
+      "id": "pj-tanajib-purpose",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "tanajib"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_gas_production",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 53,
+      "id": "pj-tanajib-risk",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "tanajib"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Acceptable generic ramp-up risk with explicit missing capacity/schedule. Not measured project risk or completion certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 54,
+      "id": "pj-tanajib-gaps",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "tanajib"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 55,
+      "id": "pj-marjan-nature",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_project",
+          "id": "marjan-increment"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 56,
+      "id": "pj-marjan-purpose",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "marjan-increment"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Tentative purpose clearly labelled, but project-name semantics alone do not substantiate products or capacity maintenance. Keep conditional and unapproved.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 57,
+      "id": "pj-marjan-risk",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "marjan-increment"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Plausible conditional spare-capacity risk; capacity could replace decline/enable reliability and coproducts. Not automatic zero-revenue conclusion.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 58,
+      "id": "pj-marjan-gaps",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "marjan-increment"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 59,
+      "id": "pj-gas-nature",
+      "kind": "management_plan",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "external_review",
+          "id": "GAS_TARGET"
+        },
+        {
+          "t": "b03_project",
+          "id": "sales-gas-growth-2030"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "Approximation conflict and demand/FID conditions faithfully retained, not newly financially certified.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 60,
+      "id": "pj-gas-purpose",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "engine_metric",
+          "key": "natural_gas_revenue",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: higher gas revenue weight/dependence is not proved. Conditional only with external-sales scope, relative prices and realized gas/LNG/NGL mix.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 61,
+      "id": "pj-gas-risk",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "external_review",
+          "id": "GAS_TARGET"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "TRANSFERRED_REVIEW_NOT_NEW_ORIGINAL_CHECK"
+      ],
+      "research_review": "Demand/FID conditions preserved; generic return risk, not quantified. Do not presume gas price is the sole cost-recovery driver or adjudicate target failure without dated milestones.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 62,
+      "id": "pj-gas-gaps",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "sales-gas-growth-2030"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 63,
+      "id": "pj-msc-nature",
+      "kind": "management_plan",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "b03_project",
+          "id": "msc-12mbd"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Issuer plan not actual result. Preserve withholding, original-source/version/date verification still required.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 64,
+      "id": "pj-msc-purpose",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_capex",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Generic industry maintenance mechanism properly labelled; do not infer company decline rate. Capacity option value/reliability and policy must accompany shareholder-cost interpretation.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 65,
+      "id": "pj-msc-risk",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "engine_metric",
+          "key": "roace",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REVIEW: possible return drag, not inevitable value destruction. Include security/option value, replacement decline, cost allocation and horizon before firm conclusion.",
+      "disposition": "REVIEW",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 66,
+      "id": "pj-msc-gaps",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "b03_project",
+          "id": "msc-12mbd"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_capex",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 67,
+      "id": "fin-frame",
+      "kind": "methodology",
+      "status_preserved": "METHODOLOGY_PENDING_APPROVAL",
+      "evidence_refs": [
+        {
+          "t": "b02_withheld",
+          "metric": "revenue"
+        },
+        {
+          "t": "engine_metric",
+          "key": "free_cash_flow",
+          "bucket": "history_annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Methodology pending approval; not a review certificate or financial output.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 68,
+      "id": "fin-coverage",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "revenue",
+          "bucket": "history_annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_assets",
+          "bucket": "history_position"
+        },
+        {
+          "t": "engine_metric",
+          "key": "revenue",
+          "bucket": "history_quarter"
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_revenue",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 69,
+      "id": "fa-revenue-d1",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "average_realized_crude_oil_price",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "crude_refined_products_traded",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "purchases",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable qualitative distinction between sales and profit, but sales volume not production; subject to external/intersegment reconciliation and no inferred realized margin.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 70,
+      "id": "fa-profitability-d1",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "upstream_adjusted_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Upstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "corporate_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Corporate"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "net_margin",
+          "bucket": "history_annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable analytical questions. Segment EBIT must reconcile to consolidated EBIT before operating income/net income; finance income and JV results prevent equivalence.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 71,
+      "id": "fa-cash-flow-d1",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "free_cash_flow",
+          "bucket": "history_annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-fy2025-dividends-paid"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-rig-purchase-commitments"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: FCF coverage is not a tracing test proving dividend funding source. Financing, asset disposals, investments, cash fungibility, timing and restricted cash matter. Use coverage indicator and cash bridge, not exclusive funding identity.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 72,
+      "id": "fa-capex-d1",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "capex_to_depreciation_amortization",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-capex-guidance-2026"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Plausible caution that capex/depreciation is not growth proof. Cash capex vs recognized additions, maintenance/growth and project scope still undefined.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 73,
+      "id": "fa-wc-d1",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "due_from_government_change",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "royalties_payable_change",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable cash-timing question; require original government receivables/royalty notes and sign conventions, not quantified state effect.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 74,
+      "id": "fa-dividends-d1",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "base_dividends_paid",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "performance_linked_dividends_paid",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-q4-2025-base-dividend"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-buyback-2026"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: absence of buyback execution report in a frozen subset is not proof none occurred as of snapshot. Say 'not established in available evidence' and cite monitoring boundary.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 75,
+      "id": "fa-dividends-d2",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "base_dividends_paid",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "performance_linked_dividends_paid",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-buyback-2026"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: base-dividend policy is not automatically an enforceable recurring liability before declaration. Distinguish policy/discretion, declaration/payment and lagged performance-linked formula.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 76,
+      "id": "fa-returns-d1",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "roace",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_capability",
+          "name": "peer_comparison"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable discussion, but issuer revised ROACE definition and old comparative must not be mixed (annual PDF45-46). Parent/group numerator, attributable earnings and averaging dates need binding.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 77,
+      "id": "rk-disc-factors",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 78,
+      "id": "rk-disc-contingencies",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-contingencies-ordinary-course"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sadara-petro-rabigh-support"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 79,
+      "id": "rk-disc-credit",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-customer-credit-concentration"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Prior original-review support transferred, not new independent financial certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 80,
+      "id": "rk-disc-commitments",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-rig-purchase-commitments"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 81,
+      "id": "rk-disc-esg",
+      "kind": "reported_record",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "upstream_carbon_intensity",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "methane_intensity",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "flaring_intensity",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "scope_1_emissions",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Engine-only wording/source identity inspected; original locators not all independently verified. Retain WITHHELD, not a fresh source certification.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 82,
+      "id": "rk-mgmt-guidance",
+      "kind": "management_plan",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-capex-guidance-2026"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Issuer plan not actual result. Preserve withholding, original-source/version/date verification still required.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 83,
+      "id": "rk-mgmt-contingency-view",
+      "kind": "management_plan",
+      "status_preserved": "WITHHELD",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-contingencies-management-view"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Issuer plan not actual result. Preserve withholding, original-source/version/date verification still required.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 84,
+      "id": "rk-int-operational",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-project-milestones-2025"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "REWORK: 'any production delay becomes fixed cost' unsupported contractual/generalized accounting claim; see Jafurah note34 and source restrictions.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 85,
+      "id": "rk-int-financial",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "base_dividends_paid",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-capex-guidance-2026"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-rig-purchase-commitments"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sadara-petro-rabigh-support"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REVIEW: potential liquidity trade-offs only, not proven current stress. Separate capex already captured in FCF from commitments to avoid double counting; base policy not debt obligation.",
+      "disposition": "REVIEW",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 86,
+      "id": "rk-int-sector",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "downstream_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "upstream_carbon_intensity",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Reasonable risk taxonomy with no benchmark judgement. Carbon intensity scope/denominator and transition/transmission mechanisms must be specified for future analysis.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 87,
+      "id": "rk-int-geopolitical",
+      "kind": "research_interpretation",
+      "status_preserved": "UNAPPROVED_INTERPRETATION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        },
+        {
+          "t": "engine_profile",
+          "field": "country"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REWORK: country and generic risk record do not rank geopolitical/production-policy risks above short-term demand. No supporting horizon/comparison; convert to unranked exposures.",
+      "disposition": "REWORK",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 88,
+      "id": "rk-asm-fiscal",
+      "kind": "assumption",
+      "status_preserved": "UNAPPROVED_ASSUMPTION",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "royalties_and_other_taxes",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Explicit unapproved assumption, not factual outcome.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 89,
+      "id": "rk-asm-production",
+      "kind": "assumption",
+      "status_preserved": "UNAPPROVED_ASSUMPTION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-hydrocarbon-risk-factors"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Explicit unapproved assumption, not factual outcome.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 90,
+      "id": "rk-asm-jv",
+      "kind": "assumption",
+      "status_preserved": "UNAPPROVED_ASSUMPTION",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-sadara-petro-rabigh-support"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "Explicit unapproved assumption, not factual outcome.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 91,
+      "id": "rk-sc-price",
+      "kind": "scenario",
+      "status_preserved": "UNAPPROVED_SCENARIO",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "average_realized_crude_oil_price",
+          "bucket": "annual"
+        },
+        {
+          "t": "engine_metric",
+          "key": "performance_linked_dividends_paid",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-capex-guidance-2026"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "REVIEW: conditional scenario, but 'first...then' claims sequencing and linked payout response without formula/lag; remove deterministic ordering.",
+      "disposition": "REVIEW",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 92,
+      "id": "rk-sc-production",
+      "kind": "scenario",
+      "status_preserved": "UNAPPROVED_SCENARIO",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-msc-12mbd"
+        },
+        {
+          "t": "engine_metric",
+          "key": "total_liquids_production",
+          "bucket": "annual"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Explicit qualitative unapproved scenario; not a forecast or verified effect.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 93,
+      "id": "rk-sc-gas",
+      "kind": "scenario",
+      "status_preserved": "UNAPPROVED_SCENARIO",
+      "evidence_refs": [
+        {
+          "t": "b03_claim",
+          "id": "aramco-sales-gas-growth-2030"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-jafurah-midstream-contract"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER"
+      ],
+      "research_review": "REVIEW: gas share and minimum commitment survival are not proved for every delay/demand outcome; condition on contracts and scope.",
+      "disposition": "REVIEW",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 94,
+      "id": "rk-sc-downstream",
+      "kind": "scenario",
+      "status_preserved": "UNAPPROVED_SCENARIO",
+      "evidence_refs": [
+        {
+          "t": "engine_metric",
+          "key": "downstream_ebit",
+          "bucket": "annual",
+          "dims": {
+            "segment": "Downstream"
+          }
+        },
+        {
+          "t": "engine_metric",
+          "key": "share_of_profit_associates",
+          "bucket": "annual"
+        },
+        {
+          "t": "b03_claim",
+          "id": "aramco-sadara-petro-rabigh-support"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Explicit qualitative unapproved scenario; not a forecast or verified effect.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 95,
+      "id": "cg-competitors",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_capability",
+          "name": "peer_comparison"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 96,
+      "id": "cg-trading",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_capability",
+          "name": "market_history"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 97,
+      "id": "cg-valuation",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_capability",
+          "name": "market_history"
+        },
+        {
+          "t": "engine_metric",
+          "key": "free_cash_flow",
+          "bucket": "history_annual"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 98,
+      "id": "cg-analysts",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_capability",
+          "name": "consensus"
+        }
+      ],
+      "evidence_classes": [
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    },
+    {
+      "ordinal": 99,
+      "id": "cg-news",
+      "kind": "gap",
+      "status_preserved": "OPEN_GAP",
+      "evidence_refs": [
+        {
+          "t": "engine_capability",
+          "name": "news"
+        },
+        {
+          "t": "b03_event",
+          "id": "evt-fy2025-results"
+        }
+      ],
+      "evidence_classes": [
+        "B03_WITHHELD_SOURCE_REVIEW_TRANSFER",
+        "ENGINE_OR_REGISTER_ONLY_NOT_ORIGINAL_VALIDATION"
+      ],
+      "research_review": "Gap transparently disclosed; not filled or considered complete. No new blocker identified in this paragraph.",
+      "disposition": "NO_NEW_BLOCKER_IDENTIFIED_LIMITED_SCOPE",
+      "financial_qualification": false
+    }
+  ]
+}

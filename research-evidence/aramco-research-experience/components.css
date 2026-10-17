@@ -1,0 +1,61 @@
+/* WEB-08B05: مكونات متكررة مبنية بـ@apply من رموز الموقع نفسها (لتقليل حجم الصفحة، لا لتغيير التصميم). */
+.xp-pill {
+  @apply inline-flex max-w-full flex-wrap items-center gap-1 rounded-full border px-2 py-0.5 text-[11.5px] font-medium leading-5;
+}
+.xp-ev {
+  @apply rounded-lg border border-border/70 bg-background/40 p-2.5;
+}
+.xp-ev-type {
+  @apply text-[11.5px] font-semibold text-muted-foreground;
+}
+.xp-ev-code {
+  @apply min-w-0 break-all text-[12px] text-foreground/90;
+}
+.xp-ev-dl {
+  @apply mt-1.5 grid gap-x-4 gap-y-0.5 text-[12px] text-muted-foreground sm:grid-cols-2;
+}
+.xp-link {
+  @apply inline-flex items-center gap-1 text-brand underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand;
+}
+.xp-card {
+  @apply scroll-mt-28 rounded-2xl border border-border/70 border-s-4 bg-card p-4 shadow-card;
+}
+.xp-topic {
+  @apply rounded-md px-1.5 py-0.5 hover:bg-muted hover:text-foreground;
+}
+.xp-chip {
+  @apply inline-flex items-center gap-1 rounded-md bg-muted/60 px-1.5 py-0.5 text-[11.5px] hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand;
+}
+.xp-evbox {
+  @apply mt-3 rounded-xl border border-border/60 bg-muted/20;
+}
+.xp-evsum {
+  @apply flex cursor-pointer list-none items-center gap-1.5 px-3 py-2 text-[12.5px] font-semibold text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand;
+}
+
+/* نص الشارات الصغيرة: لون الحالة نفسه ممزوجًا بلون النص، ليبلغ تباين WCAG AA (4.5:1) على خلفيته المعتمة
+ * دون تغيير رموز الموقع. الحدود والخلفية تبقى بلون الحالة الأصلي. */
+.xp-t-withheld {
+  color: color-mix(in oklch, var(--status-withheld) 62%, var(--foreground));
+}
+.xp-t-target {
+  color: color-mix(in oklch, var(--status-target) 75%, var(--foreground));
+}
+.xp-t-brand {
+  color: color-mix(in oklch, var(--brand) 62%, var(--foreground));
+}
+.xp-t-warn {
+  color: color-mix(in oklch, var(--status-warn) 75%, var(--foreground));
+}
+.xp-t-scenario {
+  color: color-mix(in oklch, var(--tone-orange) 70%, var(--foreground));
+}
+.xp-t-neutral {
+  color: color-mix(in oklch, var(--status-neutral) 70%, var(--foreground));
+}
+.xp-t-bad {
+  color: color-mix(in oklch, var(--status-bad) 62%, var(--foreground));
+}
+.xp-t-ok {
+  color: color-mix(in oklch, var(--status-ok) 70%, var(--foreground));
+}

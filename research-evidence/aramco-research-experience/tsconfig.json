@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": { "types": ["node"] },
+  "include": ["model.ts", "copy.ts", "ui.tsx", "assets.ts", "server.ts", "public-leak-scan.ts"]
+}

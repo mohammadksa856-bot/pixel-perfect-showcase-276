@@ -1,0 +1,50 @@
+{
+  "schema": "marefa-web08b02-final-decision/1",
+  "recorded_at": "2026-10-17 00:05:17 UTC",
+  "code_sha": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+  "branch": "codex/web08b02-aramco-evidence-20261017",
+  "audit_package_decision": "ACCEPT",
+  "financial_research_input_eligibility": "REWORK",
+  "input_state": "142_WITHHELD_0_QUALIFIED_0_DISPLAY_APPROVED",
+  "independent_review": "independent/INDEPENDENT-REVIEW_AR.md",
+  "independent_sha": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+  "independent_tests": {
+    "audit23": "PASS",
+    "B01_91": "PASS",
+    "new_independent24": "PASS",
+    "audit_and_B01_types": "PASS"
+  },
+  "author_tests": {
+    "audit23": "PASS",
+    "B01_91": "PASS",
+    "WEB07_WEB06_95": "PASS",
+    "audit_types_and_lint": "PASS"
+  },
+  "runs_not_pooled": true,
+  "independent_review_thread": "01a145cd-1c9e-7623-9919-f76ad5aea1fc",
+  "independent_integrity": {
+    "private_files27": true,
+    "documents4": true,
+    "classification_rows142": true,
+    "sampled_source_pages9": true
+  },
+  "exploratory_check": {
+    "outcome": "EXIT1_NOT_PRODUCT_FAILURE",
+    "scope": "Pixel equality at assumed scale:1900 vs1901px height; not adopted as integrity verdict; independent source-page visual review completed",
+    "artifact": "independent/page-render-verification.log"
+  },
+  "source_evidence_distribution": "No PDFs/PNGs/numeric working paper in Git; metadata and code only",
+  "withholding_reasons": [
+    "documented reviewed rights grant with scope missing",
+    "stable engine fact/document IDs and evidence metadata missing",
+    "authorized independent financial review certificates missing",
+    "approved versioned derivative methods and input lineage incomplete"
+  ],
+  "engine_snapshot": "2026-10-13T00:06:16+00:00; not live",
+  "user_final_acceptance": false,
+  "production_release_approval": false,
+  "main_merged": false,
+  "engine_or_Supabase_changed": false,
+  "readiness_95_changed": false,
+  "financial_calculations_activated": false
+}

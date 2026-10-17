@@ -1,0 +1,32 @@
+bun test v1.4.3 (c6da4a4d3)
+
+outputs\WEB08B02\independent-b02.test.ts:
+(pass) independent identity: end [2.00ms]
+(pass) independent identity: Q2 versus H1 [0.69ms]
+(pass) independent identity: FY versus quarter [0.14ms]
+(pass) independent identity: same end, different start [0.58ms]
+(pass) independent identity: fiscal year [0.13ms]
+(pass) independent identity: fiscal quarter [0.28ms]
+(pass) independent identity: flow versus instant [0.19ms]
+(pass) independent identity: company [0.06ms]
+(pass) independent identity: missing company [0.22ms]
+(pass) independent identity: scope [0.19ms]
+(pass) independent identity: dimensions [0.37ms]
+(pass) independent identity: currency [0.11ms]
+(pass) independent identity: unit [0.05ms]
+(pass) independent identity: missing currency [0.06ms]
+(pass) independent instant: empty start is not null [0.59ms]
+(pass) independent conflict does not disappear when exact source agrees [0.37ms]
+(pass) independent null is unavailable, not numeric mismatch or zero [0.32ms]
+(pass) independent present plus null does not silently choose present [0.20ms]
+(pass) independent exact decimal normalization preserves signs and EPS scale [0.05ms]
+(pass) independent invalid numeric representation and sign require review [0.22ms]
+(pass) independent source reissue and derived flags do not become direct source matches [0.18ms]
+(pass) independent unmapped and absent metrics do not invent mappings [0.09ms]
+(pass) independent impossible source period is rejected before comparison [0.42ms]
+(pass) independent content hash and yes cannot manufacture evidence or publication [0.12ms]
+
+ 24 pass
+ 0 fail
+ 46 expect() calls
+Ran 24 tests across 1 file. [40.00ms]

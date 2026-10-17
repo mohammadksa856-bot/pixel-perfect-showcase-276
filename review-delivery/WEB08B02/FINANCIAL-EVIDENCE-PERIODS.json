@@ -1,0 +1,152 @@
+{
+  "schema": "marefa-document-period-addendum/1",
+  "meaning": "Explicit period metadata for the registered originals; not engine references or a new calculation policy",
+  "documents": [
+    {
+      "key": "FY2024",
+      "primary_flow_period": {
+        "kind": "fy",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "balance_date": "2024-12-31",
+      "comparative_flow_year": 2023,
+      "comparatives_not_independently_qualified": true,
+      "reviewed_tables": [
+        {
+          "pdf_page": 12,
+          "table": "income"
+        },
+        {
+          "pdf_page": 14,
+          "table": "balance"
+        },
+        {
+          "pdf_page": 16,
+          "table": "cash_flows"
+        },
+        {
+          "pdf_page": 72,
+          "table": "dividends_and_EPS"
+        }
+      ]
+    },
+    {
+      "key": "FY2025",
+      "primary_flow_period": {
+        "kind": "fy",
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "balance_date": "2025-12-31",
+      "comparative_flow_year": 2024,
+      "comparative_presentation": "Some FY2024 rows reclassified; do not overwrite original FY2024",
+      "reviewed_tables": [
+        {
+          "pdf_page": 14,
+          "table": "income"
+        },
+        {
+          "pdf_page": 16,
+          "table": "balance"
+        },
+        {
+          "pdf_page": 18,
+          "table": "cash_flows"
+        },
+        {
+          "pdf_page": 24,
+          "table": "policy_2h"
+        },
+        {
+          "pdf_page": 36,
+          "table": "operating_segments"
+        },
+        {
+          "pdf_page": 75,
+          "table": "dividends_and_EPS"
+        }
+      ]
+    },
+    {
+      "key": "Q1-2026",
+      "primary_flow_period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "quarter": 1
+      },
+      "balance_date": "2026-03-31",
+      "auditor_review_not_annual_audit": true,
+      "reviewed_tables": [
+        {
+          "pdf_page": 13,
+          "table": "adjusted_net_income_original"
+        },
+        {
+          "pdf_page": 23,
+          "table": "income"
+        },
+        {
+          "pdf_page": 25,
+          "table": "balance"
+        },
+        {
+          "pdf_page": 27,
+          "table": "cash_flows"
+        },
+        {
+          "pdf_page": 31,
+          "table": "operating_segments"
+        }
+      ]
+    },
+    {
+      "key": "H1-Q2-2026",
+      "primary_flow_periods": [
+        {
+          "kind": "quarter",
+          "start": "2026-04-01",
+          "end": "2026-06-30",
+          "quarter": 2
+        },
+        {
+          "kind": "ytd",
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "quarter": 2
+        }
+      ],
+      "balance_date": "2026-06-30",
+      "auditor_review_not_annual_audit": true,
+      "reviewed_tables": [
+        {
+          "pdf_page": 15,
+          "table": "adjusted_net_income_and_revised_Q1_comparative"
+        },
+        {
+          "pdf_page": 27,
+          "table": "income"
+        },
+        {
+          "pdf_page": 29,
+          "table": "balance"
+        },
+        {
+          "pdf_page": 31,
+          "table": "cash_flows"
+        },
+        {
+          "pdf_page": 35,
+          "table": "operating_segments"
+        },
+        {
+          "pdf_page": 42,
+          "table": "held_for_sale_cash_note16a"
+        }
+      ]
+    }
+  ],
+  "publisher_revision_labels": "Not supplied; actual original SHA256 pins observed bytes. No issuer IDs or engine document versions invented.",
+  "timezone_and_precision": "Issuer catalogue publication dates observed at day precision only; exact B01 UTC timestamp remains unresolved."
+}

@@ -1,0 +1,35 @@
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-qualification\company.test.ts:
+(pass) same period and amount from another issuer never matches [2.47ms]
+
+research-evidence\aramco-qualification\missing.test.ts:
+(pass) absence is not reported as a proven numeric disagreement [1.82ms]
+
+research-evidence\aramco-qualification\qualification.test.ts:
+(pass) exact comparison is not B01 qualification [0.64ms]
+(pass) FY vs quarter [0.31ms]
+(pass) YTD vs standalone [0.34ms]
+(pass) same end different start [0.17ms]
+(pass) flow vs stock [0.15ms]
+(pass) currency [0.52ms]
+(pass) unit [0.18ms]
+(pass) scope [0.16ms]
+(pass) dimensions [0.32ms]
+(pass) conflict blocks even if first record is equal, order invariant [0.65ms]
+(pass) different source is not silently accepted [0.46ms]
+(pass) signs are preserved, never abs-corrected [0.06ms]
+(pass) decimal EPS is not scaled by million [0.04ms]
+(pass) missing never means zero [0.24ms]
+(pass) derived copy not original [0.21ms]
+(pass) date-only publication and content hash cannot stand for artifact proof [0.10ms]
+(pass) user yes does not grant permission [0.09ms]
+(pass) rights cannot substitute for financial review [0.02ms]
+(pass) no code path grants publication [0.02ms]
+(pass) invalid calendars use B01 rejection [1.15ms]
+(pass) unmapped segment remains explicit, not guessed [0.24ms]
+
+ 23 pass
+ 0 fail
+ 28 expect() calls
+Ran 23 tests across 3 files. [88.00ms]

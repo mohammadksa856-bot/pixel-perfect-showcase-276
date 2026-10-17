@@ -1,0 +1,89 @@
+{
+  "schema": "marefa-web08b02-author-report/1",
+  "code_sha": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+  "branch": "codex/web08b02-aramco-evidence-20261017",
+  "observed_at": "2026-10-16 23:57:35 UTC",
+  "decision": "REWORK_FOR_REAL_RESEARCH_QUALIFICATION",
+  "reason": "Rights grant artifact/scope, immutable engine fact/document references, financial review certificates and live-current reconciliation not established; no fabricated approvals",
+  "documents": 4,
+  "visually_reviewed_selected_pages": 21,
+  "source_observations": 142,
+  "qualified_for_research": 0,
+  "approved_for_display": 0,
+  "engine_snapshot_at": "2026-10-13T00:06:16+00:00",
+  "engine_is_live": false,
+  "raw_pdfs_published": false,
+  "numeric_working_paper_published": false,
+  "register": "QUALIFIED-WITHHELD-INPUT-REGISTER-v4.json",
+  "counts": {
+    "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION": 13,
+    "REVIEW_DIFFERENCE": 16,
+    "REQUESTED_PERIOD_NOT_IN_SNAPSHOT": 61,
+    "PERIOD_DIFFERENCE": 10,
+    "MISSING_IN_SNAPSHOT": 12,
+    "SCOPE_OR_DEFINITION_DIFFERENCE": 9,
+    "NO_APPROVED_METRIC_MAPPING": 21
+  },
+  "scope_notes": [
+    "Comparison categories are not counts of confirmed wrong source values",
+    "Author visual checking is independent of engine parser, not a formal financial certification",
+    "Financial source observations live in private audit working papers only, not a parallel financial database",
+    "User asserted permission exists twice; no grant document or scope supplied; no rights=permitted",
+    "No claim/document IDs or versions generated to fill engine gaps"
+  ],
+  "author_runs": [
+    {
+      "id": "B02-author-23",
+      "passed": 23,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "assertions": 28,
+      "artifact": "author-qualification-tests.txt",
+      "scope": "Three standalone audit-test files"
+    },
+    {
+      "id": "B02-B01-contract-regression-91",
+      "passed": 91,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "assertions": 224,
+      "artifact": "author-B01-regression.txt",
+      "scope": "Unmodified accepted B01 synthetic contract suite; separate from23"
+    },
+    {
+      "id": "B02-WEB07-WEB06-regression-95",
+      "passed": 95,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "assertions": 1150,
+      "artifact": "author-WEB07-WEB06-regression.txt",
+      "scope": "Eight unchanged application regression suites; separate run"
+    },
+    {
+      "id": "B02-new-types",
+      "exit_code": 0
+    },
+    {
+      "id": "B02-new-lint",
+      "exit_code": 0,
+      "scope": "New audit folder only; no full-project lint claim"
+    }
+  ],
+  "safety": {
+    "main_changed": false,
+    "WEB07_changed": false,
+    "B01_changed": false,
+    "engine_changed": false,
+    "Supabase_changed": false,
+    "production_changed": false,
+    "readiness_95_changed": false,
+    "live_ingestion": false,
+    "DCF": false,
+    "forecasts": false,
+    "user_final_acceptance": false
+  },
+  "independent_review": "IN_PROGRESS_IN_EXISTING_SEPARATE_CODEX_SESSION"
+}

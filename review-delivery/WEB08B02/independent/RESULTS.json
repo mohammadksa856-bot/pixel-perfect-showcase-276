@@ -1,0 +1,144 @@
+{
+  "testedSha": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+  "branch": "codex/web08b02-aramco-evidence-20261017",
+  "auditPackageDecision": "ACCEPT",
+  "researchInputEligibilityDecision": "REWORK",
+  "all142InputsWithheld": true,
+  "qualifiedForResearch": 0,
+  "approvedForDisplay": 0,
+  "professionalFinancialCertification": false,
+  "userAcceptanceGranted": false,
+  "productionAcceptanceGranted": false,
+  "readiness95PercentGranted": false,
+  "B01AcceptedSha": "cef8ce9f3b463fc75324960ed47c06ace261cff4",
+  "B01AcceptanceUnchanged": true,
+  "reviewCheckout": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/work/review-b02",
+  "outputDirectory": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02",
+  "report": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/INDEPENDENT-REVIEW_AR.md",
+  "runtime": "bun 1.4.3 (c6da4a4d3); bundled Python/pypdf/pypdfium2",
+  "snapshot": {
+    "generatedAt": "2026-10-13T03:06:16+03:00",
+    "contractVersion": 5,
+    "live": false,
+    "displayInstances": 388,
+    "uniqueRepresentations": 368
+  },
+  "integrity": {
+    "privateFilesVerified": 27,
+    "pdfsVerified": 4,
+    "pngsVerified": 21,
+    "observationFilesVerified": 2,
+    "uniqueObservationIds": 142,
+    "allSourceObservationDigestsMatch": true,
+    "regeneratedRegisterEqualsV4AsParsedJson": true,
+    "independentCategoriesAndReasonsMatchRows": 142,
+    "amountTokensOnPdfPages": 142,
+    "tokenPresenceIsNotFullRowColumnValidation": true
+  },
+  "visualSample": {
+    "independentlyRenderedAndInspectedPdfPages": 9,
+    "selectedObservationIds": [
+      "OBS-011",
+      "OBS-016",
+      "OBS-017",
+      "OBS-019",
+      "OBS-020",
+      "OBS-031",
+      "OBS-036",
+      "OBS-037",
+      "OBS-041",
+      "OBS-046",
+      "OBS-047",
+      "OBS-072",
+      "OBS-137",
+      "OBS-138",
+      "OBS-139",
+      "OBS-140",
+      "OBS-141",
+      "OBS-142"
+    ],
+    "entire142RowsVisuallyCertified": false,
+    "temporaryRendersRemoved": true
+  },
+  "runsAreSeparateNotCombined": true,
+  "runs": [
+    {
+      "command": "bun test research-evidence/aramco-qualification",
+      "cwd": "work/review-b02",
+      "exitCode": 0,
+      "pass": 23,
+      "fail": 0,
+      "assertions": 28,
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/b02.log"
+    },
+    {
+      "command": "bun test research-evidence/v1",
+      "cwd": "work/review-b02",
+      "exitCode": 0,
+      "pass": 91,
+      "fail": 0,
+      "assertions": 224,
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/b01.log"
+    },
+    {
+      "command": "bun node_modules/typescript/bin/tsc -p research-evidence/aramco-qualification/tsconfig.json --noEmit",
+      "cwd": "work/review-b02",
+      "exitCode": 0,
+      "diagnostics": [],
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/b02-types.log"
+    },
+    {
+      "command": "bun node_modules/typescript/bin/tsc -p research-evidence/v1/tsconfig.json --noEmit",
+      "cwd": "work/review-b02",
+      "exitCode": 0,
+      "diagnostics": [],
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/b01-types.log"
+    },
+    {
+      "command": "bun research-evidence/aramco-qualification/audit.ts --private-root <authorized-private-directory> --output ../../outputs/WEB08B02/reviewer-regenerated-v4.json",
+      "cwd": "work/review-b02",
+      "exitCode": 0,
+      "observations": 142,
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/audit.log"
+    },
+    {
+      "command": "bun test ./outputs/WEB08B02/independent-b02.test.ts",
+      "cwd": ".",
+      "exitCode": 0,
+      "pass": 24,
+      "fail": 0,
+      "assertions": 46,
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/independent-b02-tests.log"
+    },
+    {
+      "command": "python verify-evidence.py --repo <review-checkout> --private-root <authorized-private-directory> --output independent-integrity.json",
+      "exitCode": 0,
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/independent-integrity.log"
+    },
+    {
+      "command": "python check-classifications.py --repo <review-checkout> --private-root <authorized-private-directory> --output independent-classification.json",
+      "exitCode": 0,
+      "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/independent-classification.log"
+    }
+  ],
+  "exploratoryRun": {
+    "command": "python verify-page-renders.py --repo <review-checkout> --private-root <authorized-private-directory> --output page-render-verification.json",
+    "exitCode": 1,
+    "log": "C:/Users/Mohammed856/Documents/Codex/2026-10-16/web08b01-independent-review/outputs/WEB08B02/page-render-verification.log",
+    "productFailure": false,
+    "meaning": "Pixel equality at assumed scale not established; stored 1900 versus rerendered 1901 height observed. Retained transparently, not used as integrity failure or success. Replaced by direct independent visual inspection of nine source PDF pages."
+  },
+  "researchEligibilityBlockers": [
+    "documented reviewed rights grant with scope missing",
+    "stable engine fact/document IDs and evidence metadata missing",
+    "authorized independent financial review certificates missing",
+    "approved versioned derivative methods and input lineage incomplete"
+  ],
+  "authorCheckoutModified": false,
+  "reviewCheckoutTrackedFilesModified": false,
+  "centralDashboardModified": false,
+  "privatePdfsPngsOrObservationFilesCopiedIntoGit": false,
+  "productionContacted": false,
+  "coreDiffAgainstAcceptedB01": "no difference in src, supabase, research-evidence/v1",
+  "openAuditPackageFindings": []
+}

@@ -7,7 +7,7 @@
  * - كل تحليل كمي BLOCKED، ومدخلاته بحالة غير «مؤهل».
  */
 import { TOPICS } from "../v1/contract";
-import { groupOfTopic } from "../aramco-disclosures/register";
+import { groupOfTopic, isCivilDate } from "../aramco-disclosures/register";
 import { BUSINESS, SCOPE } from "./content-business";
 import { FINANCIAL } from "./content-financial";
 import { GROWTH } from "./content-growth";
@@ -20,6 +20,7 @@ import {
   type InputStatus,
   type ResolvedRef,
 } from "./evidence";
+import { metricPlacements, type Placement } from "./placement";
 import { STATUS_OF_KIND, type Analysis, type Paragraph, type Section, type Topic } from "./schema";
 
 export const SECTIONS: Section[] = [SCOPE, BUSINESS, GROWTH, FINANCIAL, RISKS, COVERAGE_GAPS];
@@ -27,21 +28,102 @@ export const SECTIONS: Section[] = [SCOPE, BUSINESS, GROWTH, FINANCIAL, RISKS, C
 const SYMBOL = "2222";
 export const intelligenceLink = (topic: Topic, focus?: string) =>
   `/preview/web-v1/companies/${SYMBOL}/intelligence?topic=${topic}${focus ? `&focus=${encodeURIComponent(focus)}` : ""}`;
+/**
+ * رابط مقياس محدد (LINK-01): يُبنى من موضعه الفعلي في تجربة الشركة، لا من موضوع الفقرة.
+ * - FOCUSABLE: الموضوع الذي يعرض المقياس + focus على عنصره.
+ * - CHART_ONLY_NOT_FOCUSABLE: يظهر منحنى تاريخيًا فقط؛ رابط الموضوع دون focus.
+ * - NOT_RENDERED: لا يظهر في تحليل الشركة؛ لا رابط، والحالة معلنة.
+ */
+export type MetricLink = {
+  key: string;
+  status: "FOCUSABLE" | "CHART_ONLY_NOT_FOCUSABLE" | "NOT_RENDERED";
+  topic: Topic | null;
+  mode: Placement["mode"] | null;
+  intelligence: string | null;
+  data: string | null;
+  shownPeriods: string[];
+  placements: Placement[];
+};
+export function metricLink(key: string, prefer: readonly Topic[] = []): MetricLink {
+  const all = metricPlacements().get(key) ?? [];
+  const rank = (x: Placement) =>
+    (x.mode === "chart_only" ? 10 : 0) +
+    (prefer.includes(x.topic) ? 0 : 1) +
+    (x.mode === "focus_statement_row" ? 0.5 : 0);
+  const best = [...all].sort((a, b) => rank(a) - rank(b) || a.topic.localeCompare(b.topic))[0];
+  if (!best)
+    return {
+      key,
+      status: "NOT_RENDERED",
+      topic: null,
+      mode: null,
+      intelligence: null,
+      data: null,
+      shownPeriods: [],
+      placements: [],
+    };
+  const focusable = best.mode !== "chart_only";
+  return {
+    key,
+    status: focusable ? "FOCUSABLE" : "CHART_ONLY_NOT_FOCUSABLE",
+    topic: best.topic,
+    mode: best.mode,
+    intelligence: intelligenceLink(best.topic, focusable ? key : undefined),
+    data: dataLink(best.topic),
+    shownPeriods: best.shownPeriods,
+    placements: all,
+  };
+}
 export const dataLink = (topic: Topic) =>
   `/preview/web-v1/companies/${SYMBOL}?tab=${groupOfTopic(topic)}`;
 
 /** أرقام أو تواريخ في نص؛ الأرقام الهندية-العربية ممنوعة أصلًا (تُكتب لاتينية للتحقق). */
-const NUM = /\d+(?:[.,]\d+)*/g;
 const DATE = /\b\d{4}-\d{2}-\d{2}\b/g;
 /** ترقيم القوائم في بداية السطر («1. ») ليس رقمًا. */
 const LIST_MARKER = /(^|\n)\s*\d{1,2}\.\s/g;
 /** معرفات مراحل المشروع (WEB-08B03، B02) ليست أرقامًا. */
 const CODES = /\bWEB-\d{2}[A-Z]\d{2}[A-Z]?\b|\bB0\d[A-Z]?\b/g;
-const numbersIn = (s: string) =>
-  (s.replace(DATE, " ").replace(CODES, " ").replace(LIST_MARKER, "$1").match(NUM) ?? []).map((x) =>
-    x.replace(/,/g, ""),
-  );
+/**
+ * وحدات تجعل الرقم «كمية» (ENG-03). الكلمة يجب أن تلي الرقم مباشرة بعد مسافة؛ وكلمة مقياس
+ * (مليون/مليار) تُضاف إليها وحدة الكلمة التالية. الصنف لا اللفظ هو ما يُطابَق مع الدليل (عربي/إنجليزي).
+ */
+const UNIT_CLASSES: [RegExp, string][] = [
+  [/^(%|في\s?المئة|بالمئة|percent)/i, "percent"],
+  [/^(ريال|ريالات|SAR|دولار|دولارات|USD|\$)/i, "currency"],
+  [/^(مليون|million|mn|مليار|billion|bn|ألف|آلاف|thousand|تريليون|trillion)/i, "scale"],
+  [/^(برميل|براميل|barrels?|bbl|boe|قدم|cubic|scf|طن|أطنان|tonnes?)/i, "volume"],
+  [
+    /^(سنة|سنوات|عامًا|عاما|أعوام|years?|شهرًا|شهرا|أشهر|شهور|months?|يومًا|أيام|days?)/i,
+    "duration",
+  ],
+];
+const SCALE = "scale";
+export type NumberToken = { n: string; classes: string[] };
+/** يستخرج الأرقام مع أصناف وحداتها الملاصقة. التاريخ والمعرفات وترقيم القوائم ليست أرقامًا. */
+export function numberTokens(s: string): NumberToken[] {
+  const clean = s.replace(DATE, " ").replace(CODES, " ").replace(LIST_MARKER, "$1");
+  const out: NumberToken[] = [];
+  for (const m of clean.matchAll(/(\d+(?:[.,]\d+)*)(%?)/g)) {
+    const n = m[1]!.replace(/,/g, "");
+    const after = clean.slice(m.index! + m[0].length);
+    const classes = new Set<string>();
+    if (m[2]) classes.add("percent");
+    const words = /^\s+(\S+)(?:\s+(\S+))?/.exec(after);
+    const classOf = (w: string | undefined) =>
+      w ? UNIT_CLASSES.find(([re]) => re.test(w))?.[1] : undefined;
+    const c1 = classOf(words?.[1]);
+    if (c1) classes.add(c1);
+    if (c1 === SCALE) {
+      const c2 = classOf(words?.[2]);
+      if (c2) classes.add(c2);
+    }
+    out.push({ n, classes: [...classes].sort() });
+  }
+  return out;
+}
 const isYear = (n: string) => /^(19|20)\d{2}$/.test(n);
+/** كمية مسموحة في السجل والخطة فقط، وفي غيرهما ممنوعة. */
+const QUANTITY_KINDS = new Set(["reported_record", "management_plan"]);
 
 export type CompiledParagraph = Omit<Paragraph, "refs"> & {
   section: string;
@@ -65,7 +147,7 @@ export type CompiledInput = {
   unit: string | null;
   page: number | null;
   table: string | null;
-  links: { intelligence: string; data: string };
+  links: MetricLink;
 };
 export type CompiledAnalysis = Omit<Analysis, "drivers" | "inputs" | "b02Inputs"> & {
   status: "BLOCKED";
@@ -116,6 +198,15 @@ export function compilePack(
   const ids = new Set<string>();
   const paragraphs: CompiledParagraph[] = [];
 
+  const asOfDate = ctx.register.snapshot.generatedAt.slice(0, 10);
+  /**
+   * حارس الأرقام والتواريخ (ENG-03/04):
+   * - الكمية (رقم + وحدة) تُقبل في السجل والخطة فقط، وبشرط ورود الرقم نفسه بأصناف الوحدة نفسها في دليل مستشهد به.
+   *   شكل السنة أو رمز السهم لا يعفي الكمية («2025 ريال» كمية).
+   * - الرقم المجرد: سنة، أو رمز السهم، أو عدد معلن للحزمة، أو رقم مجرد وارد في الدليل.
+   * - التاريخ تقويمي صالح؛ والسجل لا يحمل تاريخًا أو سنة بعد تاريخ اللقطة.
+   * تطابق الرقم ليس إثباتًا لصحة التفسير؛ لذلك تُمنع الكميات في التفسير والافتراض والسيناريو والتعريفات.
+   */
   const checkText = (
     where: string,
     text: string,
@@ -124,20 +215,31 @@ export function compilePack(
     kind?: string,
   ) => {
     if (/[٠-٩۰-۹]/.test(text)) throw Error(`non_latin_digits:${where}`);
-    const evNums = new Set(evidence.flatMap(numbersIn));
-    for (const d of text.match(DATE) ?? [])
-      if (Number.isNaN(Date.parse(`${d}T00:00:00Z`))) throw Error(`invalid_date:${where}:${d}`);
-    for (const n of numbersIn(text)) {
-      if (n === ctx.register.company.symbol) continue; // رمز السهم، لا رقم مالي
-      if (isYear(n)) {
-        if (kind === "reported_record" && Number(n) > snapshotYear)
-          throw Error(`future_year_in_record:${where}:${n}`);
+    for (const d of text.match(DATE) ?? []) {
+      if (!isCivilDate(d)) throw Error(`invalid_date:${where}:${d}`);
+      if (kind === "reported_record" && d > asOfDate)
+        throw Error(`future_date_in_record:${where}:${d}`);
+    }
+    const ev = evidence.flatMap(numberTokens);
+    const evBare = new Set(ev.map((t) => t.n));
+    for (const t of numberTokens(text)) {
+      if (t.classes.length) {
+        if (!kind || !QUANTITY_KINDS.has(kind))
+          throw Error(`quantity_in_${kind ?? "definition"}:${where}:${t.n} ${t.classes.join("+")}`);
+        const ok = ev.some((e) => e.n === t.n && t.classes.every((c) => e.classes.includes(c)));
+        if (!ok) throw Error(`unsupported_quantity:${where}:${t.n} ${t.classes.join("+")}`);
+        continue;
+      }
+      if (t.n === ctx.register.company.symbol) continue;
+      if (isYear(t.n)) {
+        if (kind === "reported_record" && Number(t.n) > snapshotYear)
+          throw Error(`future_year_in_record:${where}:${t.n}`);
         continue;
       }
       if (kind === "assumption" || kind === "scenario")
-        throw Error(`number_in_${kind}:${where}:${n}`);
-      if (meta.includes(n)) continue;
-      if (!evNums.has(n)) throw Error(`unsupported_number:${where}:${n}`);
+        throw Error(`number_in_${kind}:${where}:${t.n}`);
+      if (meta.includes(t.n)) continue;
+      if (!evBare.has(t.n)) throw Error(`unsupported_number:${where}:${t.n}`);
     }
   };
 
@@ -194,10 +296,7 @@ export function compilePack(
           unit: r.unit ?? null,
           page: r.source.page,
           table: r.source.table,
-          links: {
-            intelligence: intelligenceLink(a.topics[0]!, i.key),
-            data: dataLink(a.topics[0]!),
-          },
+          links: metricLink(i.key, a.topics),
         };
       });
       const b02Inputs = a.b02Inputs.map((m) => {
@@ -213,6 +312,7 @@ export function compilePack(
           ...inputs.map((i) => i.status),
           ...(b02Inputs.length ? (["B02_WITHHELD_INPUT"] as const) : []),
           ...(a.definition.basis === "issuer_non_ifrs" ? ["ISSUER_DEFINITION_NOT_BOUND"] : []),
+          ...(a.gates ?? []).map((g) => `OUTPUT_DEFINITION_NOT_BOUND:${g}`),
           "NO_FINANCIAL_REVIEW",
         ]),
       ].sort();

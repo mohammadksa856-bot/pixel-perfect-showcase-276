@@ -7,14 +7,14 @@ import { pathToFileURL } from "node:url";
 import { loadContext, type EvidenceContext, type ResolvedRef } from "./evidence";
 import {
   compilePack,
-  dataLink,
   gapRegister,
-  intelligenceLink,
+  metricLink,
+  type MetricLink,
   topicMap,
   type CompiledParagraph,
   type Pack,
 } from "./pack";
-import { STATUS_OF_KIND, type Kind } from "./schema";
+import { STATUS_OF_KIND, type Kind, type Topic } from "./schema";
 
 const OUT = new URL("../../review-delivery/WEB08B04/", import.meta.url);
 
@@ -43,6 +43,12 @@ const INPUT_AR: Record<string, string> = {
   NOT_IN_SNAPSHOT: "غير موجود في اللقطة",
 };
 
+const linkCell = (l: MetricLink, ar: boolean) =>
+  l.status === "NOT_RENDERED"
+    ? ar
+      ? "غير معروض في تحليل الشركة"
+      : "Not rendered in Company Intelligence"
+    : `[${ar ? "تحليل" : "intelligence"}](${l.intelligence})${l.status === "CHART_ONLY_NOT_FOCUSABLE" ? (ar ? " (منحنى، دون تركيز)" : " (chart, no focus)") : ""} · [${ar ? "بيانات" : "data"}](${l.data})`;
 const refKey = (r: ResolvedRef) => JSON.stringify(r.ref);
 const refLine = (r: ResolvedRef) => {
   const src = r.source;
@@ -109,7 +115,7 @@ export function renderDraft(pack: Pack, lang: "ar" | "en"): string {
     }
     for (const a of pack.analyses.filter(() => s.id === "financial-drivers")) {
       out.push(
-        `\n### ${ar ? a.title.ar : a.title.en} — BLOCKED\n\n**${ar ? "التعريف" : "Definition"} (${a.definition.basis}):** ${ar ? a.definition.ar : "_[Translation pending]_"}\n\n**${ar ? "الموانع" : "Blockers"}:** ${a.blockers.join(", ")}\n\n| ${ar ? "المدخل" : "Input"} | ${ar ? "السلة" : "Bucket"} | ${ar ? "الفترات المتاحة" : "Periods available"} | ${ar ? "الحالة" : "Status"} | Marefa Data |\n|---|---|---|---|---|\n${a.inputs.map((i) => `| \`${i.key}\`${i.dims ? ` ${Object.values(i.dims).join("/")}` : ""} | ${i.bucket} | ${i.periods.join(" ")} | ${ar ? INPUT_AR[i.status] : i.status} | [${ar ? "تحليل" : "intelligence"}](${i.links.intelligence}) · [${ar ? "بيانات" : "data"}](${i.links.data}) |`).join("\n")}\n\n${ar ? "مدخلات B02 المحجوبة" : "B02 withheld inputs"}: ${a.b02Inputs.map((b) => `\`${b.metric}\` (${b.observations})`).join(", ")}\n\n**${ar ? "أسئلة البحث" : "Research questions"}:**\n${ar ? a.questions.map((q) => `- ${q}`).join("\n") : "- _[Translation pending]_"}\n\n**${ar ? "المحركات" : "Drivers"}:**\n`,
+        `\n### ${ar ? a.title.ar : a.title.en} — BLOCKED\n\n**${ar ? "التعريف" : "Definition"} (${a.definition.basis}):** ${ar ? a.definition.ar : "_[Translation pending]_"}\n\n**${ar ? "الموانع" : "Blockers"}:** ${a.blockers.join(", ")}\n\n| ${ar ? "المدخل" : "Input"} | ${ar ? "السلة" : "Bucket"} | ${ar ? "الفترات المتاحة" : "Periods available"} | ${ar ? "الحالة" : "Status"} | Marefa Data |\n|---|---|---|---|---|\n${a.inputs.map((i) => `| \`${i.key}\`${i.dims ? ` ${Object.values(i.dims).join("/")}` : ""} | ${i.bucket} | ${i.periods.join(" ")} | ${ar ? INPUT_AR[i.status] : i.status} | ${linkCell(i.links, ar)} |`).join("\n")}\n\n${ar ? "مدخلات B02 المحجوبة" : "B02 withheld inputs"}: ${a.b02Inputs.map((b) => `\`${b.metric}\` (${b.observations})`).join(", ")}\n\n**${ar ? "أسئلة البحث" : "Research questions"}:**\n${ar ? a.questions.map((q) => `- ${q}`).join("\n") : "- _[Translation pending]_"}\n\n**${ar ? "المحركات" : "Drivers"}:**\n`,
       );
       for (const d of a.drivers)
         out.push(
@@ -183,18 +189,13 @@ export function deliverables(pack: Pack, ctx: EvidenceContext): Record<string, s
     "TOPIC-MAP.json": json({ ...head, topics: topicMap(pack) }),
     "MAREFA-DATA-LINKS.json": json({
       ...head,
-      note: "Links only. No figure is copied into this pack.",
+      note: "Links only, built from each metric's actual placement in the accepted company experience (buildCompanyPreview over the frozen snapshot). FOCUSABLE = topic + focus on the rendered element; CHART_ONLY_NOT_FOCUSABLE = shown as a history chart, topic link without focus; NOT_RENDERED = not shown in Company Intelligence, no link. No figure is copied.",
       metrics: [...metricLinks.values()]
         .sort((a, b) => a.key.localeCompare(b.key))
-        .map((m) => {
-          const t = [...m.topics].sort()[0] as Parameters<typeof intelligenceLink>[0];
-          return {
-            key: m.key,
-            topics: [...m.topics].sort(),
-            intelligence: intelligenceLink(t, m.key),
-            data: dataLink(t),
-          };
-        }),
+        .map((m) => ({
+          ...metricLink(m.key, [...m.topics].sort() as Topic[]),
+          researchTopics: [...m.topics].sort(),
+        })),
     }),
     "PROJECTS.json": json({ ...head, projects: pack.projects }),
   };

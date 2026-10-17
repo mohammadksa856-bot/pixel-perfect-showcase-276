@@ -118,7 +118,7 @@ describe("semantic separation (negative cases)", () => {
   test("assumptions and scenarios carry no numbers", () => {
     const s = clone();
     firstBody(s, "rk-sc-price").ar += " بانخفاض 20%";
-    expect(build(s)).toThrow(/number_in_scenario:rk-sc-price/);
+    expect(build(s)).toThrow(/quantity_in_scenario:rk-sc-price/);
     const s2 = clone();
     firstBody(s2, "rk-asm-fiscal").ar += " بنسبة 15";
     expect(build(s2)).toThrow(/number_in_assumption:rk-asm-fiscal/);
@@ -126,10 +126,10 @@ describe("semantic separation (negative cases)", () => {
   test("a number not present in the cited evidence is rejected (no invented figures)", () => {
     const s = clone();
     firstBody(s, "up-volumes").ar += " بلغ الإنتاج 9.5 مليون برميل يوميًا.";
-    expect(build(s)).toThrow(/unsupported_number:up-volumes:9.5/);
+    expect(build(s)).toThrow(/unsupported_quantity:up-volumes:9.5/);
     const s2 = clone();
     firstBody(s2, "rv-mechanics").ar += " الهامش 35%.";
-    expect(build(s2)).toThrow(/unsupported_number:rv-mechanics:35/);
+    expect(build(s2)).toThrow(/quantity_in_research_interpretation:rv-mechanics:35/);
   });
   test("an engine record cannot carry a year after the snapshot; plans may", () => {
     const s = clone();
@@ -206,7 +206,7 @@ describe("periods and sources", () => {
     for (const p of pack.paragraphs)
       for (const r of p.refs) {
         if (r.source.url) expect(r.source.url).toMatch(/^https:\/\//);
-        if (r.ref.t === "external_review") expect(r.label).toMatch(/@ 4f7145e$/);
+        if (r.ref.t === "external_review") expect(r.label).toMatch(/@ (4f7145e|fa3a772)$/);
       }
   });
   test("projects mirror the accepted B03 project statuses, including no 'not_disclosed'", () => {
@@ -249,13 +249,21 @@ describe("topics, links and gaps", () => {
   });
   test("links are relative app routes to Company Intelligence and Marefa Data only", () => {
     const links = JSON.parse(files["MAREFA-DATA-LINKS.json"]!).metrics as {
-      intelligence: string;
-      data: string;
+      status: string;
+      intelligence: string | null;
+      data: string | null;
     }[];
     expect(links.length).toBeGreaterThan(40);
     for (const l of links) {
+      if (l.status === "NOT_RENDERED") {
+        expect(l.intelligence).toBeNull();
+        expect(l.data).toBeNull();
+        continue;
+      }
       expect(l.intelligence).toMatch(
-        /^\/preview\/web-v1\/companies\/2222\/intelligence\?topic=[a-z_]+&focus=[a-z0-9_]+$/,
+        l.status === "FOCUSABLE"
+          ? /^\/preview\/web-v1\/companies\/2222\/intelligence\?topic=[a-z_]+&focus=[a-z0-9_]+$/
+          : /^\/preview\/web-v1\/companies\/2222\/intelligence\?topic=[a-z_]+$/,
       );
       expect(l.data).toMatch(
         /^\/preview\/web-v1\/companies\/2222\?tab=(business|financials|shareholders|market|risks)$/,

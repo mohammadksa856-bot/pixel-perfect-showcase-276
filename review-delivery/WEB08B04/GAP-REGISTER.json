@@ -237,7 +237,7 @@
    "kind": "financial_input",
    "subject": "operating_income",
    "status": "B02_WITHHELD_INPUT",
-   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page 39 (summarized consolidated statement of income)",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR; engine page none",
    "usedBy": [
     "fa-profitability"
    ]
@@ -586,11 +586,11 @@
    ]
   },
   {
-   "id": "gap-input:total_liabilities:history_position",
+   "id": "gap-input:short_term_borrowings_net:annual",
    "kind": "financial_input",
-   "subject": "total_liabilities",
-   "status": "B02_WITHHELD_INPUT",
-   "detail": "periods @2021-12-31 @2022-12-31 @2023-12-31 @2024-12-31 @2025-12-31; unit SAR; engine page none",
+   "subject": "short_term_borrowings_net",
+   "status": "UNREVIEWED_ENGINE_FACT",
+   "detail": "periods FY2025; unit SAR; engine page 181 (consolidated statement of cash flows)",
    "usedBy": [
     "fa-working-capital-debt"
    ]
@@ -619,16 +619,6 @@
    "id": "gap-b02:cash",
    "kind": "financial_input",
    "subject": "cash",
-   "status": "B02_WITHHELD_INPUT",
-   "detail": "4 withheld observation identities in WEB-08B02; values not copied",
-   "usedBy": [
-    "fa-working-capital-debt"
-   ]
-  },
-  {
-   "id": "gap-b02:total_liabilities",
-   "kind": "financial_input",
-   "subject": "total_liabilities",
    "status": "B02_WITHHELD_INPUT",
    "detail": "4 withheld observation identities in WEB-08B02; values not copied",
    "usedBy": [
@@ -670,7 +660,7 @@
    "kind": "financial_input",
    "subject": "dividends_per_share",
    "status": "UNREVIEWED_ENGINE_FACT",
-   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR/share; engine page 243 (dividends)",
+   "detail": "periods FY2021 FY2022 FY2023 FY2024 FY2025; unit SAR/share; engine page none",
    "usedBy": [
     "fa-dividends"
    ]
@@ -691,26 +681,6 @@
    "subject": "dividends_paid",
    "status": "B02_WITHHELD_INPUT",
    "detail": "5 withheld observation identities in WEB-08B02; values not copied",
-   "usedBy": [
-    "fa-dividends"
-   ]
-  },
-  {
-   "id": "gap-b02:basic_eps",
-   "kind": "financial_input",
-   "subject": "basic_eps",
-   "status": "B02_WITHHELD_INPUT",
-   "detail": "5 withheld observation identities in WEB-08B02; values not copied",
-   "usedBy": [
-    "fa-dividends"
-   ]
-  },
-  {
-   "id": "gap-b02:weighted_average_shares_basic",
-   "kind": "financial_input",
-   "subject": "weighted_average_shares_basic",
-   "status": "B02_WITHHELD_INPUT",
-   "detail": "2 withheld observation identities in WEB-08B02; values not copied",
    "usedBy": [
     "fa-dividends"
    ]
@@ -840,7 +810,7 @@
    "kind": "source",
    "subject": "in-transfer-gap",
    "status": "OPEN_GAP",
-   "detail": "أساس تسعير التحويلات بين القطاعات ليس في الأدلة المتاحة. تفسير توزيع الأرباح بين القطاعين يبقى ناقصًا حتى يُربط إيضاح القطاعات الأصلي.",
+   "detail": "أساس تسعير التحويلات بين القطاعات ليس في سجل المحرك. وجد المراجع المستقل في إيضاح القطاعات الأصلي أنه على أساس السعر الحر بين أطراف مستقلة، مع تغيير في أساس التسعير اعتبارًا من أكتوبر 2024. هذا موضع محدد غير مربوط بالحزمة. لذلك يبقى تفسير توزيع الأرباح بين القطاعين، والمقارنة قبل التغيير وبعده، ناقصًا حتى يُربط.",
    "usedBy": [
     "business-model"
    ]

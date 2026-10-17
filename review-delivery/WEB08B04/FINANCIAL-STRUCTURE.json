@@ -24,7 +24,7 @@
     "operations"
    ],
    "definition": {
-    "ar": "الإيرادات من العقود مع العملاء وفق IFRS كما تعرضها القوائم: حسب نوع المنتج، والإيرادات الخارجية لكل قطاع بعد استبعاد ما بين القطاعات، والتقسيم الجغرافي حسب موقع الكيان البائع.",
+    "ar": "الإيرادات من العقود مع العملاء وفق IFRS كما تعرضها القوائم: حسب نوع المنتج، والإيرادات الخارجية لكل قطاع، والتقسيم الجغرافي حسب موقع الكيان البائع. هويات «إيرادات القطاع» في المحرك تشمل ما بين القطاعات والإيرادات الأخرى المرتبطة بالمبيعات؛ فلا تُجمع لتساوي الإيرادات الموحدة إلا بمطابقة مع الاستبعادات. والإنتاج ليس كمية المبيعات.",
     "basis": "ifrs_line_item"
    },
    "questions": [
@@ -55,8 +55,35 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "revenue",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -73,8 +100,14 @@
      "page": 64,
      "table": "revenue by product type",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_product",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "revenue_by_product",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -91,8 +124,14 @@
      "page": 64,
      "table": "revenue by product type",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_product",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "revenue_by_product",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -109,8 +148,14 @@
      "page": 64,
      "table": "revenue by product type",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_product",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "revenue_by_product",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -127,8 +172,14 @@
      "page": 44,
      "table": "upstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_revenue",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "upstream_revenue",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -145,8 +196,14 @@
      "page": 54,
      "table": "downstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_revenue",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "downstream_revenue",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -161,8 +218,24 @@
      "page": 39,
      "table": "key financial metrics",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=average_realized_crude_oil_price",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "average_realized_crude_oil_price",
+      "status": "FOCUSABLE",
+      "topic": "operations",
+      "mode": "focus_metric",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=average_realized_crude_oil_price",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "operations",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -177,8 +250,24 @@
      "page": 52,
      "table": "Upstream hydrocarbon production",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liquids_production",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "total_liquids_production",
+      "status": "FOCUSABLE",
+      "topic": "operations",
+      "mode": "focus_metric",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_liquids_production",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "operations",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -193,8 +282,24 @@
      "page": 52,
      "table": "Upstream hydrocarbon production",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_gas_production",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "total_gas_production",
+      "status": "FOCUSABLE",
+      "topic": "operations",
+      "mode": "focus_metric",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_gas_production",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "operations",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     }
    ],
@@ -240,7 +345,7 @@
     "ratios"
    ],
    "definition": {
-    "ar": "الربح قبل الفوائد والضرائب لكل قطاع كما في إيضاح القطاعات. «الأرباح المعدلة» مقياس غير IFRS من المُصدر، ويحتاج ربط تعريفه الأصلي قبل الاستخدام. الهوامش نسب معيارية: الربح ÷ الإيرادات للفترة نفسها.",
+    "ar": "أربعة مقاييس منفصلة لا تُبدَّل: الربح التشغيلي (قائمة الدخل)، والربح قبل الفوائد والضرائب بتعريف المُصدر (يشمل معالجة دخل التمويل)، والمعدل منه (غير IFRS)، وصافي الربح. ربح القطاعات يُطابَق مع الربح الموحد عبر القطاع المؤسسي والاستبعادات ونتائج المشاريع المشتركة قبل أي حصة. وEBITDA ليس تلقائيًا الربح التشغيلي زائد الإهلاك عبر نطاقات مختلفة. الهوامش نسب للفترة والنطاق نفسيهما. التعريفات تحتاج ربطًا بالأصل.",
     "basis": "issuer_non_ifrs"
    },
    "questions": [
@@ -271,8 +376,14 @@
      "page": 44,
      "table": "upstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_ebit",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "upstream_ebit",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -289,8 +400,14 @@
      "page": 54,
      "table": "downstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_ebit",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "downstream_ebit",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -307,8 +424,14 @@
      "page": 54,
      "table": "corporate results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=corporate_ebit",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "corporate_ebit",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -325,8 +448,14 @@
      "page": 44,
      "table": "upstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_adjusted_ebit",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "upstream_adjusted_ebit",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -343,8 +472,14 @@
      "page": 54,
      "table": "downstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_adjusted_ebit",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "downstream_adjusted_ebit",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -360,11 +495,38 @@
       "FY2025"
      ],
      "unit": "SAR",
-     "page": 39,
-     "table": "summarized consolidated statement of income",
+     "page": null,
+     "table": null,
      "links": {
+      "key": "operating_income",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -383,8 +545,35 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "net_income",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -399,8 +588,24 @@
      "page": 39,
      "table": "adjusted net income",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=adjusted_net_income",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "adjusted_net_income",
+      "status": "FOCUSABLE",
+      "topic": "earnings_quality",
+      "mode": "focus_metric",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=adjusted_net_income",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "earnings_quality",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -419,8 +624,32 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "operating_margin",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_statement_row",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_margin",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "annual@2025-12-31",
+       "annual@2024-12-31",
+       "annual@2023-12-31",
+       "annual@2022-12-31",
+       "annual@2021-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -439,8 +668,32 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "net_margin",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_statement_row",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_margin",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "annual@2025-12-31",
+       "annual@2024-12-31",
+       "annual@2023-12-31",
+       "annual@2022-12-31",
+       "annual@2021-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     }
    ],
@@ -490,7 +743,7 @@
     "earnings_quality"
    ],
    "definition": {
-    "ar": "التدفق النقدي من الأنشطة التشغيلية والاستثمارية والتمويلية كما في قائمة التدفقات. «التدفق النقدي الحر» = التدفق التشغيلي ناقص الإنفاق الرأسمالي. تعريف المُصدر له يحتاج ربطًا؛ والقيمة في المحرك مشتقة غير معتمدة.",
+    "ar": "التدفق النقدي من الأنشطة التشغيلية والاستثمارية والتمويلية كما في قائمة التدفقات. «التدفق النقدي الحر» بتعريف المُصدر = التدفق التشغيلي ناقص الإنفاق الرأسمالي النقدي بوصفه تدفقًا خارجًا موجبًا؛ إن كانت إشارة الإنفاق سالبة في المصدر فلا يُطرح سالب. ليس التدفق الاستثماري ولا توجيه الاستثمار. التغطية مؤشر، لا مصدر تمويل. والنقد في نهاية الفترة يُطابَق مع نقد الميزانية والمحتفظ به للبيع والسحب على المكشوف. القيمة في المحرك مشتقة غير معتمدة.",
     "basis": "issuer_non_ifrs"
    },
    "questions": [
@@ -522,8 +775,35 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "operating_cash_flow",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -538,8 +818,35 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
+      "key": "investing_cash_flow",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -554,8 +861,35 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
+      "key": "financing_cash_flow",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -574,8 +908,32 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "free_cash_flow",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_statement_row",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=free_cash_flow",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "annual@2025-12-31",
+       "annual@2024-12-31",
+       "annual@2023-12-31",
+       "annual@2022-12-31",
+       "annual@2021-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -594,8 +952,35 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "capex",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -611,8 +996,35 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "operating_cash_flow",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     }
    ],
@@ -658,7 +1070,7 @@
     "forecasts"
    ],
    "definition": {
-    "ar": "الإنفاق الرأسمالي كما يعرضه المُصدر في نتائج القطاعات، والإنفاق النقدي على الأصول الثابتة في قائمة التدفقات. لا يُطابَق آليًا مع «توجيه الاستثمار الرأسمالي»، وهو خطة لها نطاق تعريف مختلف محتمل.",
+    "ar": "الإنفاق الرأسمالي كما يعرضه المُصدر في نتائج القطاعات، والإنفاق النقدي على الأصول الثابتة في قائمة التدفقات. لا يُطابَق آليًا مع «توجيه الاستثمار الرأسمالي»، وهو خطة لها نطاق تعريف مختلف محتمل. الإنفاق النقدي، والإضافات المعترف بها، وغير الملموسة، والاستحواذات، والاستثمارات الخارجية تعريفات مختلفة تُربط قبل أي مقارنة. وإنفاق القطاعات، والإنفاق الموحد، والالتزامات المضمونة لا تُجمع ولا تُبدَّل دون مطابقة.",
     "basis": "issuer_non_ifrs"
    },
    "questions": [
@@ -670,6 +1082,7 @@
     "B02_WITHHELD_INPUT",
     "ISSUER_DEFINITION_NOT_BOUND",
     "NO_FINANCIAL_REVIEW",
+    "OUTPUT_DEFINITION_NOT_BOUND:capex_definition_scope",
     "UNAPPROVED_DERIVED_METRIC",
     "UNREVIEWED_ENGINE_FACT"
    ],
@@ -690,8 +1103,35 @@
      "page": null,
      "table": null,
      "links": {
+      "key": "capex",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -708,8 +1148,14 @@
      "page": 44,
      "table": "upstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_capex",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "upstream_capex",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -726,8 +1172,14 @@
      "page": 54,
      "table": "downstream results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_capex",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "downstream_capex",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -744,8 +1196,14 @@
      "page": 54,
      "table": "corporate results",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=corporate_capex",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "corporate_capex",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -760,8 +1218,14 @@
      "page": 44,
      "table": "upstream performance",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_capex_per_boe",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "upstream_capex_per_boe",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -776,8 +1240,14 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex_to_depreciation_amortization",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "capex_to_depreciation_amortization",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     }
    ],
@@ -813,7 +1283,7 @@
     "ratios"
    ],
    "definition": {
-    "ar": "تغيرات رأس المال العامل كما في قائمة التدفقات: الذمم المدينة، والمخزون، والدائنون، والمستحق من الحكومة، والإتاوات المستحقة. الدين: الاقتراض قصير وطويل الأجل والإيجارات. نسب الدين إلى EBITDA ومعامل التغطية مشتقات معيارية غير معتمدة في المحرك.",
+    "ar": "تغيرات رأس المال العامل كما في قائمة التدفقات بإشاراتها: الذمم المدينة، والمخزون، والدائنون، والمستحق من الحكومة، والإتاوات المستحقة؛ وليست فروق أرصدة دون مطابقة. الاقتراض المُصدَر والمسدَّد تدفقات، والاقتراض والإيجارات أرصدة. إجمالي المطلوبات ليس دينًا. صافي الدين يحتاج أرصدة الدين أول الفترة وآخرها، والإيجارات، والنقد والنقد المقيد، وتعريف المُصدر. ونطاق EBITDA في نسب الدين يطابق نطاق الدين. النسب في المحرك مشتقات غير معتمدة.",
     "basis": "standard_ratio"
    },
    "questions": [
@@ -824,6 +1294,8 @@
    "blockers": [
     "B02_WITHHELD_INPUT",
     "NO_FINANCIAL_REVIEW",
+    "OUTPUT_DEFINITION_NOT_BOUND:net_debt",
+    "OUTPUT_DEFINITION_NOT_BOUND:net_debt_to_ebitda",
     "UNAPPROVED_DERIVED_METRIC",
     "UNREVIEWED_ENGINE_FACT"
    ],
@@ -840,8 +1312,14 @@
      "page": 16,
      "table": "change in working capital; sum of disclosed components",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=working_capital_change",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "working_capital_change",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -856,8 +1334,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=accounts_receivable_change",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "accounts_receivable_change",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -872,8 +1356,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=due_from_government_change",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "due_from_government_change",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -888,8 +1378,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=royalties_payable_change",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "royalties_payable_change",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -904,8 +1400,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=debt_issued",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "debt_issued",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -920,8 +1422,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=debt_repaid",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "debt_repaid",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -936,8 +1444,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=interest_paid",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "interest_paid",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -952,8 +1466,14 @@
      "page": 181,
      "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=lease_payments",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "lease_payments",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -968,28 +1488,36 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_debt_to_ebitda",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "net_debt_to_ebitda",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
-     "key": "total_liabilities",
-     "bucket": "history_position",
+     "key": "short_term_borrowings_net",
+     "bucket": "annual",
      "dims": null,
-     "status": "B02_WITHHELD_INPUT",
+     "status": "UNREVIEWED_ENGINE_FACT",
      "periods": [
-      "@2021-12-31",
-      "@2022-12-31",
-      "@2023-12-31",
-      "@2024-12-31",
-      "@2025-12-31"
+      "FY2025"
      ],
      "unit": "SAR",
-     "page": null,
-     "table": null,
+     "page": 181,
+     "table": "consolidated statement of cash flows",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liabilities",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "short_term_borrowings_net",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     }
    ],
@@ -1006,11 +1534,6 @@
     },
     {
      "metric": "cash",
-     "observations": 4,
-     "status": "B02_WITHHELD_INPUT"
-    },
-    {
-     "metric": "total_liabilities",
      "observations": 4,
      "status": "B02_WITHHELD_INPUT"
     }
@@ -1034,7 +1557,7 @@
     "financials"
    ],
    "definition": {
-    "ar": "التوزيعات المدفوعة كما في قائمة التدفقات وإيضاح التوزيعات، بمكونيها الأساسي والمرتبط بالأداء، والتوزيع للسهم. نسبة التغطية = التدفق الحر ÷ التوزيعات المدفوعة؛ القيمة في المحرك مشتقة غير معتمدة.",
+    "ar": "ثلاثة أشياء منفصلة: سياسة التوزيع، والتوزيع المُعلن، والتوزيع المدفوع (قائمة التدفقات وإيضاح التوزيعات)، بمكونيه الأساسي والمرتبط بالأداء. السياسة ليست التزامًا قبل الإعلان. التوزيعات للمساهمين تُفصل عن التوزيعات لغير المسيطرين. نسبة التغطية مقياس غير IFRS، تحتاج تعريفًا مربوطًا ومطابقة للفترة والإشارات. لا مخرج لربحية السهم في هذا التحليل.",
     "basis": "ifrs_line_item"
    },
    "questions": [
@@ -1046,6 +1569,7 @@
    "blockers": [
     "B02_WITHHELD_INPUT",
     "NO_FINANCIAL_REVIEW",
+    "OUTPUT_DEFINITION_NOT_BOUND:fcf_dividend_coverage",
     "UNAPPROVED_DERIVED_METRIC",
     "UNREVIEWED_ENGINE_FACT"
    ],
@@ -1062,8 +1586,42 @@
      "page": 243,
      "table": "dividends",
      "links": {
+      "key": "dividends_paid",
+      "status": "FOCUSABLE",
+      "topic": "dividends_actions",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_paid",
-      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+      "data": "/preview/web-v1/companies/2222?tab=shareholders",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       },
+       {
+        "topic": "dividends_actions",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -1078,8 +1636,14 @@
      "page": 243,
      "table": "dividends",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=base_dividends_paid",
-      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+      "key": "base_dividends_paid",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -1094,8 +1658,14 @@
      "page": 243,
      "table": "dividends",
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=performance_linked_dividends_paid",
-      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+      "key": "performance_linked_dividends_paid",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     },
     {
@@ -1111,11 +1681,38 @@
       "FY2025"
      ],
      "unit": "SAR/share",
-     "page": 243,
-     "table": "dividends",
+     "page": null,
+     "table": null,
      "links": {
+      "key": "dividends_per_share",
+      "status": "FOCUSABLE",
+      "topic": "dividends_actions",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_per_share",
-      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+      "data": "/preview/web-v1/companies/2222?tab=shareholders",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       },
+       {
+        "topic": "dividends_actions",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -1130,8 +1727,14 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=fcf_dividend_coverage_ratio",
-      "data": "/preview/web-v1/companies/2222?tab=shareholders"
+      "key": "fcf_dividend_coverage_ratio",
+      "status": "NOT_RENDERED",
+      "topic": null,
+      "mode": null,
+      "intelligence": null,
+      "data": null,
+      "shownPeriods": [],
+      "placements": []
      }
     }
    ],
@@ -1139,16 +1742,6 @@
     {
      "metric": "dividends_paid",
      "observations": 5,
-     "status": "B02_WITHHELD_INPUT"
-    },
-    {
-     "metric": "basic_eps",
-     "observations": 5,
-     "status": "B02_WITHHELD_INPUT"
-    },
-    {
-     "metric": "weighted_average_shares_basic",
-     "observations": 2,
      "status": "B02_WITHHELD_INPUT"
     }
    ],
@@ -1172,7 +1765,7 @@
     "financials"
    ],
    "definition": {
-    "ar": "العائد على متوسط رأس المال المستخدم (ROACE) مقياس غير IFRS من المُصدر، وتعريفه الأصلي يحتاج ربطًا قبل الاستخدام. العائد على حقوق الملكية والأصول في المحرك مشتقات معيارية غير معتمدة.",
+    "ar": "العائد على متوسط رأس المال المستخدم (ROACE) مقياس غير IFRS من المُصدر، عُدّل تعريفه مع جسر بين القديم والجديد، فلا سلسلة زمنية قابلة للمقارنة ضمنيًا. العائد على حقوق الملكية يحدد بسطه (الربح العائد للمساهمين) ومقامه (حقوق مساهمي الشركة الأم)، والعائد على الأصول يحدد بسطه وأساس متوسطه. والسنة والربع والفترة التراكمية لا تُبدَّل، ولا يُفترض التحويل إلى سنوي. المقاييس في المحرك مشتقات غير معتمدة.",
     "basis": "issuer_non_ifrs"
    },
    "questions": [
@@ -1200,8 +1793,24 @@
      "page": 39,
      "table": "key financial metrics",
      "links": {
+      "key": "roace",
+      "status": "FOCUSABLE",
+      "topic": "ratios",
+      "mode": "focus_metric",
       "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=roace",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "fy@2025-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "ratios",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "fy@2025-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -1220,8 +1829,32 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=return_on_equity",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "return_on_equity",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_statement_row",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_equity",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "annual@2025-12-31",
+       "annual@2024-12-31",
+       "annual@2023-12-31",
+       "annual@2022-12-31",
+       "annual@2021-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -1240,8 +1873,32 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=return_on_assets",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "return_on_assets",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_statement_row",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_assets",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "annual@2025-12-31",
+       "annual@2024-12-31",
+       "annual@2023-12-31",
+       "annual@2022-12-31",
+       "annual@2021-12-31"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -1260,8 +1917,35 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=total_equity",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "total_equity",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "instant@2026-06-30"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "instant@2026-06-30"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     },
     {
@@ -1280,8 +1964,35 @@
      "page": null,
      "table": null,
      "links": {
-      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=total_assets",
-      "data": "/preview/web-v1/companies/2222?tab=financials"
+      "key": "total_assets",
+      "status": "FOCUSABLE",
+      "topic": "financials",
+      "mode": "focus_metric",
+      "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
+      "data": "/preview/web-v1/companies/2222?tab=financials",
+      "shownPeriods": [
+       "instant@2026-06-30"
+      ],
+      "placements": [
+       {
+        "topic": "financials",
+        "mode": "focus_metric",
+        "shownPeriods": [
+         "instant@2026-06-30"
+        ]
+       },
+       {
+        "topic": "financials",
+        "mode": "focus_statement_row",
+        "shownPeriods": [
+         "annual@2025-12-31",
+         "annual@2024-12-31",
+         "annual@2023-12-31",
+         "annual@2022-12-31",
+         "annual@2021-12-31"
+        ]
+       }
+      ]
      }
     }
    ],

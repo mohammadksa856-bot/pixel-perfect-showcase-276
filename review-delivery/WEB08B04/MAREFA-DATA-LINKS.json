@@ -11,199 +11,414 @@
   "b03Implementation": "1735609abafa85ee6e101ab7e3640496f0e43088",
   "b03Accept": "4f7145e6927ff98559ccf82dfb6103b6953c3892"
  },
- "note": "Links only. No figure is copied into this pack.",
+ "note": "Links only, built from each metric's actual placement in the accepted company experience (buildCompanyPreview over the frozen snapshot). FOCUSABLE = topic + focus on the rendered element; CHART_ONLY_NOT_FOCUSABLE = shown as a history chart, topic link without focus; NOT_RENDERED = not shown in Company Intelligence, no link. No figure is copied.",
  "metrics": [
   {
    "key": "accounts_receivable_change",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=accounts_receivable_change",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "adjusted_net_income",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "earnings_quality",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=adjusted_net_income",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "earnings_quality",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=adjusted_net_income",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "average_realized_crude_oil_price",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "operations",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=average_realized_crude_oil_price",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "operations",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "competitors",
     "financials",
     "forecasts",
     "operations",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=competitors&focus=average_realized_crude_oil_price",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
   },
   {
    "key": "base_dividends_paid",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "dividends_actions",
     "financials",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=base_dividends_paid",
-   "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   ]
   },
   {
    "key": "base_oils_sold",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=base_oils_sold",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "capex",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=capex",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "capex_to_depreciation_amortization",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=capex_to_depreciation_amortization",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "corporate_capex",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=corporate_capex",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "corporate_ebit",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=corporate_ebit",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "corporate_revenue",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=corporate_revenue",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "crude_refined_products_traded",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "industry",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=crude_refined_products_traded",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "debt_issued",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=debt_issued",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "debt_repaid",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=debt_repaid",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "depreciation_amortization",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=depreciation_amortization",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "dividends_paid",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "dividends_actions",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_paid",
+   "data": "/preview/web-v1/companies/2222?tab=shareholders",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    },
+    {
+     "topic": "dividends_actions",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "dividends_actions",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_paid",
-   "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   ]
   },
   {
    "key": "dividends_per_share",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "dividends_actions",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_per_share",
+   "data": "/preview/web-v1/companies/2222?tab=shareholders",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    },
+    {
+     "topic": "dividends_actions",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "dividends_actions",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=dividends_per_share",
-   "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   ]
   },
   {
    "key": "downstream_adjusted_ebit",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=downstream_adjusted_ebit",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "downstream_capex",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_capex",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "downstream_crude_utilization",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "operations",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=downstream_crude_utilization",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "operations",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "business",
     "financials",
     "industry",
     "operations",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=downstream_crude_utilization",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
+  },
+  {
+   "key": "downstream_depreciation_amortization",
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
+    "financials"
+   ]
   },
   {
    "key": "downstream_ebit",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "business",
     "earnings_quality",
     "esg",
@@ -212,505 +427,1129 @@
     "industry",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=downstream_ebit",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
   },
   {
    "key": "downstream_revenue",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=downstream_revenue",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "due_from_government_change",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=due_from_government_change",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "exploration_expense",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=exploration_expense",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "fcf_dividend_coverage_ratio",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "dividends_actions",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=fcf_dividend_coverage_ratio",
-   "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   ]
   },
   {
    "key": "financing_cash_flow",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=financing_cash_flow",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "finished_lubricants_sold",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=finished_lubricants_sold",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "flaring_intensity",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "esg",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=flaring_intensity",
+   "data": "/preview/web-v1/companies/2222?tab=risks",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "esg",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "esg",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=flaring_intensity",
-   "data": "/preview/web-v1/companies/2222?tab=risks"
+   ]
   },
   {
    "key": "free_cash_flow",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_statement_row",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=free_cash_flow",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "annual@2025-12-31",
+    "annual@2024-12-31",
+    "annual@2023-12-31",
+    "annual@2022-12-31",
+    "annual@2021-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "dividends_actions",
     "earnings_quality",
     "financials",
     "ratios",
     "valuation"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=free_cash_flow",
-   "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   ]
   },
   {
    "key": "income_taxes_and_zakat",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_taxes_and_zakat",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=income_taxes_and_zakat",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "interest_paid",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=interest_paid",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "investing_cash_flow",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=investing_cash_flow",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "lease_payments",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=lease_payments",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "lifting_cost_per_boe",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "operations",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=lifting_cost_per_boe",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "operations",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "competitors",
     "earnings_quality",
     "financials",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=competitors&focus=lifting_cost_per_boe",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
   },
   {
    "key": "liquid_chemicals_traded",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=liquid_chemicals_traded",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "methane_intensity",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "esg",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=methane_intensity",
+   "data": "/preview/web-v1/companies/2222?tab=risks",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "esg",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "esg",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=methane_intensity",
-   "data": "/preview/web-v1/companies/2222?tab=risks"
+   ]
   },
   {
    "key": "natural_gas_revenue",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=natural_gas_revenue",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "net_debt_to_ebitda",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_debt_to_ebitda",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "net_income",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=net_income",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "net_margin",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_statement_row",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_margin",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "annual@2025-12-31",
+    "annual@2024-12-31",
+    "annual@2023-12-31",
+    "annual@2022-12-31",
+    "annual@2021-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=net_margin",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "operating_cash_flow",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=operating_cash_flow",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "operating_income",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=operating_income",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "operating_margin",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_statement_row",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_margin",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "annual@2025-12-31",
+    "annual@2024-12-31",
+    "annual@2023-12-31",
+    "annual@2022-12-31",
+    "annual@2021-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=operating_margin",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "performance_linked_dividends_paid",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "dividends_actions",
     "financials",
     "forecasts",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions&focus=performance_linked_dividends_paid",
-   "data": "/preview/web-v1/companies/2222?tab=shareholders"
+   ]
   },
   {
    "key": "producing_manufacturing_expense",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=producing_manufacturing_expense",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "purchases",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "industry",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=purchases",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "reserve_life_index",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=reserve_life_index",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "return_on_assets",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_statement_row",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_assets",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "annual@2025-12-31",
+    "annual@2024-12-31",
+    "annual@2023-12-31",
+    "annual@2022-12-31",
+    "annual@2021-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_assets",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "return_on_equity",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_statement_row",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_equity",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "annual@2025-12-31",
+    "annual@2024-12-31",
+    "annual@2023-12-31",
+    "annual@2022-12-31",
+    "annual@2021-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=return_on_equity",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "revenue",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "financials",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "revenue_by_geography",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue_by_geography",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "revenue_by_product",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=revenue_by_product",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "roace",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "ratios",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=ratios&focus=roace",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "ratios",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "competitors",
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=competitors&focus=roace",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
   },
   {
    "key": "royalties_and_other_taxes",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "competitors",
+    "dividends_actions",
     "earnings_quality",
     "financials",
     "forecasts",
+    "governance",
     "operations",
+    "ownership",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=competitors&focus=royalties_and_other_taxes",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
   },
   {
    "key": "royalties_payable_change",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=royalties_payable_change",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "scope_1_emissions",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "esg",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=scope_1_emissions",
+   "data": "/preview/web-v1/companies/2222?tab=risks",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "esg",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "esg",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=scope_1_emissions",
-   "data": "/preview/web-v1/companies/2222?tab=risks"
+   ]
   },
   {
    "key": "selling_general_administrative_expense",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=selling_general_administrative_expense",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "share_of_profit_associates",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "business",
     "financials",
     "forecasts",
     "industry",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=share_of_profit_associates",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
+  },
+  {
+   "key": "short_term_borrowings_net",
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
+    "financials",
+    "ratios",
+    "risks"
+   ]
   },
   {
    "key": "total_assets",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "instant@2026-06-30"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "instant@2026-06-30"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "total_equity",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "financials",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "instant@2026-06-30"
+   ],
+   "placements": [
+    {
+     "topic": "financials",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "instant@2026-06-30"
+     ]
+    },
+    {
+     "topic": "financials",
+     "mode": "focus_statement_row",
+     "shownPeriods": [
+      "annual@2025-12-31",
+      "annual@2024-12-31",
+      "annual@2023-12-31",
+      "annual@2022-12-31",
+      "annual@2021-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "total_gas_production",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "operations",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_gas_production",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "operations",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "business",
     "financials",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=total_gas_production",
-   "data": "/preview/web-v1/companies/2222?tab=business"
+   ]
   },
   {
    "key": "total_hydrocarbon_production",
-   "topics": [
-    "operations"
-   ],
+   "status": "FOCUSABLE",
+   "topic": "operations",
+   "mode": "focus_metric",
    "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_hydrocarbon_production",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
-  },
-  {
-   "key": "total_liabilities",
-   "topics": [
-    "financials",
-    "ratios",
-    "risks"
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
    ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liabilities",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   "placements": [
+    {
+     "topic": "operations",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
+    "operations"
+   ]
   },
   {
    "key": "total_liquids_production",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "operations",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations&focus=total_liquids_production",
+   "data": "/preview/web-v1/companies/2222?tab=financials",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "operations",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "financials",
     "forecasts",
     "operations",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liquids_production",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "upstream_adjusted_ebit",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=upstream_adjusted_ebit",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "upstream_capex",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "forecasts",
     "operations",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_capex",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "upstream_capex_per_boe",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "forecasts",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=upstream_capex_per_boe",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "upstream_carbon_intensity",
-   "topics": [
+   "status": "FOCUSABLE",
+   "topic": "esg",
+   "mode": "focus_metric",
+   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=upstream_carbon_intensity",
+   "data": "/preview/web-v1/companies/2222?tab=risks",
+   "shownPeriods": [
+    "fy@2025-12-31"
+   ],
+   "placements": [
+    {
+     "topic": "esg",
+     "mode": "focus_metric",
+     "shownPeriods": [
+      "fy@2025-12-31"
+     ]
+    }
+   ],
+   "researchTopics": [
     "esg",
     "industry",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=esg&focus=upstream_carbon_intensity",
-   "data": "/preview/web-v1/companies/2222?tab=risks"
+   ]
   },
   {
    "key": "upstream_depreciation_amortization",
-   "topics": [
-    "earnings_quality",
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=upstream_depreciation_amortization",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "upstream_ebit",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "earnings_quality",
     "financials",
     "ratios"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=earnings_quality&focus=upstream_ebit",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "upstream_revenue",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "operations"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=upstream_revenue",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   },
   {
    "key": "working_capital_change",
-   "topics": [
+   "status": "NOT_RENDERED",
+   "topic": null,
+   "mode": null,
+   "intelligence": null,
+   "data": null,
+   "shownPeriods": [],
+   "placements": [],
+   "researchTopics": [
     "financials",
     "ratios",
     "risks"
-   ],
-   "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials&focus=working_capital_change",
-   "data": "/preview/web-v1/companies/2222?tab=financials"
+   ]
   }
  ]
 }

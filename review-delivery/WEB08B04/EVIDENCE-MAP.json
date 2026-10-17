@@ -18,9 +18,9 @@
   "projects": 5,
   "kind:reported_record": 31,
   "kind:management_plan": 6,
-  "kind:research_interpretation": 33,
+  "kind:research_interpretation": 32,
   "kind:assumption": 3,
-  "kind:scenario": 4,
+  "kind:scenario": 5,
   "kind:methodology": 4,
   "kind:gap": 18
  },
@@ -431,6 +431,21 @@
     },
     {
      "ref": {
+      "t": "engine_ownership",
+      "holder": "other_strategic"
+     },
+     "label": "Engine ownership: other_strategic",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2025-12-31",
+      "page": null,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
       "t": "b03_claim",
       "id": "aramco-q4-2025-base-dividend"
      },
@@ -458,6 +473,24 @@
       "table": null
      },
      "periods": null
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "royalties_and_other_taxes",
+      "bucket": "annual"
+     },
+     "label": "Engine metric royalties_and_other_taxes [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 177,
+      "table": "consolidated statement of income"
+     },
+     "periods": [
+      "FY2025"
+     ]
     }
    ]
   },
@@ -690,6 +723,21 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_LIQUIDS_SCOPE"
+     },
+     "label": "Independent review B04_LIQUIDS_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -753,6 +801,21 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_LIQUIDS_SCOPE"
+     },
+     "label": "Independent review B04_LIQUIDS_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -1100,6 +1163,21 @@
       "table": null
      },
      "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_PETRO_RABIGH_CONTROL"
+     },
+     "label": "Independent review B04_PETRO_RABIGH_CONTROL @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -1249,6 +1327,21 @@
       "filedAt": "2026-03-09",
       "page": 230,
       "table": "Contingencies"
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_PETRO_RABIGH_CONTROL"
+     },
+     "label": "Independent review B04_PETRO_RABIGH_CONTROL @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
      },
      "periods": null
     }
@@ -1604,6 +1697,126 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_capex {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 44,
+      "table": "upstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_capex {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "downstream results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "corporate_capex",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Corporate"
+      }
+     },
+     "label": "Engine metric corporate_capex {\"segment\":\"Corporate\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 54,
+      "table": "corporate results"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "upstream_depreciation_amortization",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Upstream"
+      }
+     },
+     "label": "Engine metric upstream_depreciation_amortization {\"segment\":\"Upstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 196,
+      "table": "Note 4 - operating segments"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "downstream_depreciation_amortization",
+      "bucket": "annual",
+      "dims": {
+       "segment": "Downstream"
+      }
+     },
+     "label": "Engine metric downstream_depreciation_amortization {\"segment\":\"Downstream\"} [annual]",
+     "status": "WITHHELD",
+     "source": {
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "filedAt": "2026-03-09",
+      "page": 196,
+      "table": "Note 4 - operating segments"
+     },
+     "periods": [
+      "FY2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_SEGMENT_REVENUE_SCOPE"
+     },
+     "label": "Independent review B04_SEGMENT_REVENUE_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -1838,6 +2051,40 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "segment_ebit"
+     },
+     "label": "B02 withheld input identity: segment_ebit (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_SEGMENT_REVENUE_SCOPE"
+     },
+     "label": "Independent review B04_SEGMENT_REVENUE_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -2070,6 +2317,21 @@
       "table": null
      },
      "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_JAFURAH_NOTE34"
+     },
+     "label": "Independent review B04_JAFURAH_NOTE34 @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -2107,24 +2369,18 @@
     },
     {
      "ref": {
-      "t": "engine_metric",
-      "key": "upstream_depreciation_amortization",
-      "bucket": "annual",
-      "dims": {
-       "segment": "Upstream"
-      }
+      "t": "external_review",
+      "id": "B04_TRANSFER_PRICING"
      },
-     "label": "Engine metric upstream_depreciation_amortization {\"segment\":\"Upstream\"} [annual]",
-     "status": "WITHHELD",
+     "label": "Independent review B04_TRANSFER_PRICING @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
-      "filedAt": "2026-03-09",
-      "page": 196,
-      "table": "Note 4 - operating segments"
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
      },
-     "periods": [
-      "FY2025"
-     ]
+     "periods": null
     }
    ]
   },
@@ -2254,6 +2510,40 @@
       "table": null
      },
      "periods": null
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "intersegment_revenue"
+     },
+     "label": "B02 withheld input identity: intersegment_revenue (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_LIQUIDS_SCOPE"
+     },
+     "label": "Independent review B04_LIQUIDS_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -2332,8 +2622,8 @@
    "section": "business-model",
    "role": "body",
    "parent": null,
-   "kind": "research_interpretation",
-   "status": "UNAPPROVED_INTERPRETATION",
+   "kind": "scenario",
+   "status": "UNAPPROVED_SCENARIO",
    "topics": [
     "operations",
     "forecasts"
@@ -2689,11 +2979,11 @@
       "key": "capex",
       "bucket": "history_annual"
      },
-     "label": "Engine metric capex [history_annual]",
+     "label": "Engine metric capex [history_annual] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },
@@ -2977,6 +3267,21 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_JAFURAH_NOTE34"
+     },
+     "label": "Independent review B04_JAFURAH_NOTE34 @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -3004,6 +3309,21 @@
       "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
       "filedAt": "2026-03-10",
       "page": 71,
+      "table": null
+     },
+     "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_JAFURAH_NOTE34"
+     },
+     "label": "Independent review B04_JAFURAH_NOTE34 @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
       "table": null
      },
      "periods": null
@@ -3768,11 +4088,11 @@
       "key": "free_cash_flow",
       "bucket": "history_annual"
      },
-     "label": "Engine metric free_cash_flow [history_annual]",
+     "label": "Engine metric free_cash_flow [history_annual] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },
@@ -3804,11 +4124,11 @@
       "key": "revenue",
       "bucket": "history_annual"
      },
-     "label": "Engine metric revenue [history_annual]",
+     "label": "Engine metric revenue [history_annual] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },
@@ -3826,11 +4146,11 @@
       "key": "total_assets",
       "bucket": "history_position"
      },
-     "label": "Engine metric total_assets [history_position]",
+     "label": "Engine metric total_assets [history_position] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },
@@ -3848,7 +4168,26 @@
       "key": "revenue",
       "bucket": "history_quarter"
      },
-     "label": "Engine metric revenue [history_quarter]",
+     "label": "Engine metric revenue [history_quarter] — 2 sources by period",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2"
+     ]
+    },
+    {
+     "ref": {
+      "t": "engine_metric",
+      "key": "revenue",
+      "bucket": "ytd"
+     },
+     "label": "Engine metric revenue [ytd]",
      "status": "WITHHELD",
      "source": {
       "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
@@ -3857,8 +4196,7 @@
       "table": null
      },
      "periods": [
-      "2026Q1",
-      "2026Q2"
+      "YTD2026-01-01..2026-06-30"
      ]
     },
     {
@@ -3949,6 +4287,40 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "intersegment_revenue"
+     },
+     "label": "B02 withheld input identity: intersegment_revenue (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_SEGMENT_REVENUE_SCOPE"
+     },
+     "label": "Independent review B04_SEGMENT_REVENUE_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -4013,11 +4385,11 @@
       "key": "net_margin",
       "bucket": "history_annual"
      },
-     "label": "Engine metric net_margin [history_annual]",
+     "label": "Engine metric net_margin [history_annual] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },
@@ -4028,6 +4400,40 @@
       "FY2024",
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "b02_withheld",
+      "metric": "segment_ebit"
+     },
+     "label": "B02 withheld input identity: segment_ebit (16 observations)",
+     "status": "WITHHELD",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": [
+      "2026Q1",
+      "2026Q2",
+      "fy:2025"
+     ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_ISSUER_DEFINITIONS"
+     },
+     "label": "Independent review B04_ISSUER_DEFINITIONS @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -4050,11 +4456,11 @@
       "key": "free_cash_flow",
       "bucket": "history_annual"
      },
-     "label": "Engine metric free_cash_flow [history_annual]",
+     "label": "Engine metric free_cash_flow [history_annual] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },
@@ -4786,6 +5192,21 @@
       "table": null
      },
      "periods": null
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_JAFURAH_NOTE34"
+     },
+     "label": "Independent review B04_JAFURAH_NOTE34 @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -5200,6 +5621,21 @@
      "periods": [
       "FY2025"
      ]
+    },
+    {
+     "ref": {
+      "t": "external_review",
+      "id": "B04_LIQUIDS_SCOPE"
+     },
+     "label": "Independent review B04_LIQUIDS_SCOPE @ fa3a772",
+     "status": "REVIEW_RECORD_NOT_APPROVAL",
+     "source": {
+      "url": null,
+      "filedAt": null,
+      "page": null,
+      "table": null
+     },
+     "periods": null
     }
    ]
   },
@@ -5408,11 +5844,11 @@
       "key": "free_cash_flow",
       "bucket": "history_annual"
      },
-     "label": "Engine metric free_cash_flow [history_annual]",
+     "label": "Engine metric free_cash_flow [history_annual] — 3 sources by period",
      "status": "WITHHELD",
      "source": {
-      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
-      "filedAt": "2026-03-10",
+      "url": null,
+      "filedAt": null,
       "page": null,
       "table": null
      },

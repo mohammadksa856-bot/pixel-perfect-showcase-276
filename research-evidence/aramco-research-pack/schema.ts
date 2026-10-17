@@ -77,6 +77,37 @@ export const EXTERNAL_REVIEWS = {
     path: "review-delivery/WEB08B03-REREVIEW/RESEARCH-DECISIONS.json",
     note: "Relation supported (annual PDF 140); merge deferred; exact dates not established.",
   },
+  // ملاحظات المراجع المستقل على الأصل في مراجعة B04 (fa3a772). بيانات مراجعة، لا تحقق ولا اعتماد.
+  B04_LIQUIDS_SCOPE: {
+    sha: "fa3a772daabaaecb44ee2eff842bb88456025f62",
+    path: "review-delivery/WEB08B04-INDEPENDENT/FINDINGS.json#FIN-01",
+    note: "Annual report PDF 52 footnote 1: total liquids include crude oil, condensate and NGL; maximum sustainable capacity is a crude-only target.",
+  },
+  B04_JAFURAH_NOTE34: {
+    sha: "fa3a772daabaaecb44ee2eff842bb88456025f62",
+    path: "review-delivery/WEB08B04-INDEPENDENT/FINDINGS.json#FIN-04",
+    note: "Annual report PDF 231 (note 34): Aramco retains title and operational control of the Jafurah assets; upfront proceeds are non-controlling-interest equity at consolidation; commencement and relief conditions are not established.",
+  },
+  B04_TRANSFER_PRICING: {
+    sha: "fa3a772daabaaecb44ee2eff842bb88456025f62",
+    path: "review-delivery/WEB08B04-INDEPENDENT/RESEARCH-NOTES.json#in-transfer-gap",
+    note: "Annual report PDF 196 (note 4): intersegment transfers on an arm's-length basis, with a pricing-basis change effective October 2024. Located, not bound.",
+  },
+  B04_SEGMENT_REVENUE_SCOPE: {
+    sha: "fa3a772daabaaecb44ee2eff842bb88456025f62",
+    path: "review-delivery/WEB08B04-INDEPENDENT/FINANCIAL-ANALYSIS-REVIEW.json#fa-revenue",
+    note: "Annual report PDF 52/58 and note 4: segment revenue includes intersegment and other sales-related income; external and internal revenue are distinguished.",
+  },
+  B04_ISSUER_DEFINITIONS: {
+    sha: "fa3a772daabaaecb44ee2eff842bb88456025f62",
+    path: "review-delivery/WEB08B04-INDEPENDENT/FINANCIAL-ANALYSIS-REVIEW.json",
+    note: "Annual report PDF 45-47: ROACE definition revised (new/old bridge, no implicit comparable series); issuer EBIT definition includes finance-income treatment; free cash flow = operating cash flow less capital expenditure.",
+  },
+  B04_PETRO_RABIGH_CONTROL: {
+    sha: "fa3a772daabaaecb44ee2eff842bb88456025f62",
+    path: "review-delivery/WEB08B04-INDEPENDENT/RESEARCH-NOTES.json#dn-petro-rabigh",
+    note: "Annual report note 41 footnote 3: an acquired percentage does not by itself establish control or the consolidation basis.",
+  },
 } as const;
 export type ExternalReviewId = keyof typeof EXTERNAL_REVIEWS;
 
@@ -113,6 +144,8 @@ export type Analysis = {
   inputs: { key: string; bucket: MetricBucket; dims?: Record<string, string> }[];
   /** هويات من سجل B02 (المدخلات الـ142) يحتاجها التحليل. */
   b02Inputs: string[];
+  /** مخرجات تحتاج تعريفًا مربوطًا قبل أي حساب (بوابة تعريف لكل مخرج). */
+  gates?: string[];
   questions: string[];
   drivers: Paragraph[];
 };

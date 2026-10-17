@@ -23,11 +23,14 @@ const B02_WITHHELD = new URL(
 
 type Row = {
   period_kind?: string;
+  period_start?: string | null;
   period_end?: string;
   fiscal_year?: number;
   fiscal_quarter?: number | null;
   unit?: string;
+  currency?: string | null;
   scope?: string;
+  version?: number;
   is_calculated?: number;
   dimensions?: Record<string, string>;
   source_url?: string;
@@ -98,6 +101,26 @@ export function loadContext(): EvidenceContext {
   };
 }
 
+/** هوية صف مقياس كاملة (ENG-01/02): كل صف بمصدره وفترته ووحدته وإصداره، دون قيمة. */
+export type RowIdentity = {
+  period: string;
+  kind: string | null;
+  start: string | null;
+  end: string | null;
+  fiscalYear: number | null;
+  fiscalQuarter: number | null;
+  scope: string | null;
+  unit: string | null;
+  currency: string | null;
+  version: number | null;
+  dims: Record<string, string>;
+  sourceUrl: string | null;
+  filedAt: string | null;
+  page: number | null;
+  table: string | null;
+  calculated: boolean;
+};
+
 export type ResolvedRef = {
   ref: Ref;
   label: string;
@@ -109,14 +132,56 @@ export type ResolvedRef = {
   periods?: string[];
   unit?: string | null;
   calculated?: boolean;
+  /** للمقاييس: هوية كل صف منفردًا؛ لا يُنسب مصدر صف إلى فترات صفوف أخرى. */
+  rows?: RowIdentity[];
+  /** عدد المصادر المختلفة بين الصفوف؛ إن زاد عن واحد فـ source.url = null. */
+  sourceCount?: number;
 };
 
-const periodLabel = (r: Row) =>
-  r.period_kind === "quarter" || r.fiscal_quarter
-    ? `${r.fiscal_year}Q${r.fiscal_quarter}`
-    : r.period_kind === "instant"
-      ? `@${r.period_end}`
-      : `FY${r.fiscal_year}`;
+/**
+ * تسمية الفترة حسب نوعها لا حسب وجود رقم الربع (ENG-02):
+ * fy → FY2025، quarter → 2026Q2، ytd → YTD2026-01-01..2026-06-30، ttm → TTM..النهاية، instant → @التاريخ.
+ * نوع غير معروف أو حقول ناقصة → فشل، لا فترة مخترعة.
+ */
+export function periodLabel(r: Row): string {
+  const k = r.period_kind;
+  const bad = (why: string): never => {
+    throw Error(
+      `unlabelled_period:${why}:${JSON.stringify({ k, s: r.period_start, e: r.period_end, fy: r.fiscal_year, fq: r.fiscal_quarter })}`,
+    );
+  };
+  if (k === "fy") return r.fiscal_year ? `FY${r.fiscal_year}` : bad("fy_without_year");
+  if (k === "quarter")
+    return r.fiscal_year && r.fiscal_quarter
+      ? `${r.fiscal_year}Q${r.fiscal_quarter}`
+      : bad("quarter_identity");
+  if (k === "ytd")
+    return r.period_end
+      ? `YTD${r.period_start ? `${r.period_start}..` : "..."}${r.period_end}`
+      : bad("ytd_without_end");
+  if (k === "ttm") return r.period_end ? `TTM..${r.period_end}` : bad("ttm_without_end");
+  if (k === "instant") return r.period_end ? `@${r.period_end}` : bad("instant_without_end");
+  return bad("unknown_kind");
+}
+
+const rowIdentity = (r: Row): RowIdentity => ({
+  period: periodLabel(r),
+  kind: r.period_kind ?? null,
+  start: r.period_start || null,
+  end: r.period_end ?? null,
+  fiscalYear: r.fiscal_year ?? null,
+  fiscalQuarter: r.fiscal_quarter ?? null,
+  scope: r.scope ?? null,
+  unit: r.unit ?? null,
+  currency: r.currency ?? null,
+  version: r.version ?? null,
+  dims: r.dimensions ?? {},
+  sourceUrl: r.source_url ?? null,
+  filedAt: r.filed_at ?? null,
+  page: r.provenance?.extraction?.page ?? null,
+  table: r.provenance?.extraction?.table_ref ?? null,
+  calculated: r.is_calculated === 1,
+});
 
 const sameDims = (a: Record<string, string> = {}, b: Record<string, string> = {}) =>
   JSON.stringify(Object.entries(a).sort()) === JSON.stringify(Object.entries(b).sort());
@@ -188,25 +253,54 @@ export function resolveRef(ref: Ref, ctx: EvidenceContext): ResolvedRef {
       };
     }
     case "engine_metric": {
-      const rows = (ctx.buckets[ref.bucket].get(ref.key) ?? []).filter(
+      const raw = (ctx.buckets[ref.bucket].get(ref.key) ?? []).filter(
         (r) => !ref.dims || sameDims(r.dimensions, ref.dims),
       );
-      if (!rows.length) fail(`${ref.bucket}:${ref.key}:${JSON.stringify(ref.dims ?? {})}`);
-      const first = rows[0]!;
+      if (!raw.length) fail(`${ref.bucket}:${ref.key}:${JSON.stringify(ref.dims ?? {})}`);
+      // صف بلا period_kind يأخذ نوع سلته المعروف؛ لا يُستنتج من وجود رقم الربع.
+      const KIND_OF: Partial<Record<MetricBucket, string>> = {
+        annual: "fy",
+        history_annual: "fy",
+        history_position: "instant",
+        history_quarter: "quarter",
+        instant: "instant",
+        ytd: "ytd",
+        quarter: "quarter",
+      };
+      const rows = raw.map((r) =>
+        rowIdentity({ ...r, period_kind: r.period_kind ?? KIND_OF[ref.bucket] ?? "unknown" }),
+      );
+      // ENG-01: وحدات أو عملات مختلفة بين الصفوف = مرجع غير متجانس؛ يُرفض بدل تمثيله بوحدة الصف الأول.
+      const units = new Set(rows.map((r) => `${r.unit}|${r.currency ?? ""}`));
+      if (units.size > 1) fail(`heterogeneous_units:${ref.key}:${[...units].join(",")}`);
+      // ENG-01: صفان لنفس الهوية (الفترة والبُعد) بمصدر أو إصدار مختلف = تعارض؛ لا يُختار الأول.
+      const byIdentity = new Map<string, RowIdentity>();
+      for (const r of rows) {
+        const id = `${r.period}|${JSON.stringify(Object.entries(r.dims).sort())}|${r.scope ?? ""}`;
+        const prev = byIdentity.get(id);
+        if (prev && (prev.sourceUrl !== r.sourceUrl || prev.version !== r.version))
+          fail(`conflicting_rows:${ref.key}:${r.period}`);
+        if (prev) fail(`duplicate_rows:${ref.key}:${r.period}`);
+        byIdentity.set(id, r);
+      }
+      const sources = [...new Set(rows.map((r) => r.sourceUrl))];
+      const single = sources.length === 1 ? rows[0]! : null;
       return {
         ref,
-        label: `Engine metric ${ref.key}${ref.dims ? ` ${JSON.stringify(ref.dims)}` : ""} [${ref.bucket}]`,
+        label: `Engine metric ${ref.key}${ref.dims ? ` ${JSON.stringify(ref.dims)}` : ""} [${ref.bucket}]${sources.length > 1 ? ` — ${sources.length} sources by period` : ""}`,
         text: null,
         source: {
-          url: first.source_url ?? null,
-          filedAt: first.filed_at ?? null,
-          page: first.provenance?.extraction?.page ?? null,
-          table: first.provenance?.extraction?.table_ref ?? null,
+          url: single?.sourceUrl ?? null,
+          filedAt: single?.filedAt ?? null,
+          page: single && rows.length === 1 ? single.page : null,
+          table: single && rows.length === 1 ? single.table : null,
         },
         status: "WITHHELD",
-        periods: [...new Set(rows.map(periodLabel))].sort(),
-        unit: first.unit ?? null,
-        calculated: first.is_calculated === 1,
+        periods: rows.map((r) => r.period).sort(),
+        unit: rows[0]!.unit,
+        calculated: rows.some((r) => r.calculated),
+        rows: [...rows].sort((a, b) => a.period.localeCompare(b.period)),
+        sourceCount: sources.length,
       };
     }
     case "b02_withheld": {

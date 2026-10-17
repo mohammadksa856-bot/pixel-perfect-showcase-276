@@ -8,6 +8,7 @@ import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import {
   buildRegister,
+  isCivilDate,
   loadB02,
   loadSnapshot,
   type ClaimRecord,
@@ -150,6 +151,20 @@ export function periodLabel(r: Row): string {
       `unlabelled_period:${why}:${JSON.stringify({ k, s: r.period_start, e: r.period_end, fy: r.fiscal_year, fq: r.fiscal_quarter })}`,
     );
   };
+  // RR-ENG02-01: هوية الصف تُتحقق قبل الوسم. لا تُختلق بداية أو نهاية ناقصة، ولا يُفترض تقويم المُصدر.
+  if (
+    r.fiscal_year != null &&
+    !(Number.isInteger(r.fiscal_year) && r.fiscal_year >= 1900 && r.fiscal_year <= 2100)
+  )
+    bad("invalid_fiscal_year");
+  if (
+    r.fiscal_quarter != null &&
+    !(Number.isInteger(r.fiscal_quarter) && r.fiscal_quarter >= 1 && r.fiscal_quarter <= 4)
+  )
+    bad("invalid_fiscal_quarter");
+  if (r.period_start && !isCivilDate(r.period_start)) bad("invalid_start_date");
+  if (r.period_end != null && !isCivilDate(r.period_end)) bad("invalid_end_date");
+  if (r.period_start && r.period_end && r.period_start > r.period_end) bad("start_after_end");
   if (k === "fy") return r.fiscal_year ? `FY${r.fiscal_year}` : bad("fy_without_year");
   if (k === "quarter")
     return r.fiscal_year && r.fiscal_quarter

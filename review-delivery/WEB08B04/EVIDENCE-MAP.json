@@ -11,7 +11,7 @@
   "b03Implementation": "1735609abafa85ee6e101ab7e3640496f0e43088",
   "b03Accept": "4f7145e6927ff98559ccf82dfb6103b6953c3892"
  },
- "note": "Per paragraph: kind, status, topics and resolved evidence (identities only, no metric values).",
+ "note": "Summary per paragraph: kind, status, topics and resolved evidence (identities only, no metric values). It does not export every row identity; per-row identities (period, scope, unit, currency, version, source) are resolved at build time by resolveRef in evidence.ts and fail closed there. Not a B01-qualified binding.",
  "counts": {
   "paragraphs": 99,
   "analyses": 7,

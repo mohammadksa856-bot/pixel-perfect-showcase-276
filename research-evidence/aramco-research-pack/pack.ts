@@ -84,12 +84,13 @@ const LIST_MARKER = /(^|\n)\s*\d{1,2}\.\s/g;
 /** معرفات مراحل المشروع (WEB-08B03، B02) ليست أرقامًا. */
 const CODES = /\bWEB-\d{2}[A-Z]\d{2}[A-Z]?\b|\bB0\d[A-Z]?\b/g;
 /**
- * وحدات تجعل الرقم «كمية» (ENG-03). الكلمة يجب أن تلي الرقم مباشرة بعد مسافة؛ وكلمة مقياس
- * (مليون/مليار) تُضاف إليها وحدة الكلمة التالية. الصنف لا اللفظ هو ما يُطابَق مع الدليل (عربي/إنجليزي).
+ * وحدات تجعل الرقم «كمية» (ENG-03، RR-ENG03-01). الوحدة تُقرأ بعد الرقم، بمسافة أو ملاصقة
+ * («2025ريال»، «2025٪»)، والعملة تُقرأ قبله أيضًا («SAR 2025»، «$2025»). كلمة مقياس (مليون/مليار)
+ * تُضاف إليها وحدة الكلمة التالية. الصنف لا اللفظ هو ما يُطابَق مع الدليل (عربي/إنجليزي).
  */
 const UNIT_CLASSES: [RegExp, string][] = [
-  [/^(%|في\s?المئة|بالمئة|percent)/i, "percent"],
-  [/^(ريال|ريالات|SAR|دولار|دولارات|USD|\$)/i, "currency"],
+  [/^(%|٪|％|في\s?المئة|بالمئة|percent|per\s?cent)/i, "percent"],
+  [/^(ريال|ريالات|SAR|دولار|دولارات|USD|US\$|\$|﷼|€|£)/i, "currency"],
   [/^(مليون|million|mn|مليار|billion|bn|ألف|آلاف|thousand|تريليون|trillion)/i, "scale"],
   [/^(برميل|براميل|barrels?|bbl|boe|قدم|cubic|scf|طن|أطنان|tonnes?)/i, "volume"],
   [
@@ -98,23 +99,54 @@ const UNIT_CLASSES: [RegExp, string][] = [
   ],
 ];
 const SCALE = "scale";
+/** صنف الصيغة الملتبسة: رقم ملاصق لحروف أو رموز غير معروفة. يُرفض بدل اعتباره سنة (fail closed). */
+export const AMBIGUOUS = "ambiguous";
+/** عملة تسبق الرقم مباشرة، بمسافة أو دونها. */
+const CURRENCY_BEFORE = /(?:^|[^\p{L}])(SAR|USD|US\$|ريال|ريالات|دولار|دولارات)\s*$|[$﷼€£]\s*$/iu;
+/** فواصل لا تجعل الرقم ملتبسًا. */
+const SEP = /[\s.,;:!?()[\]«»"'\u201c\u201d\-\u2013\u2014/\u060c\u061b\u061f]/u;
+/** سوابق عربية تلتصق بالكلمة (و، ب، ل، ك، ف، ال…) ولا تغيّر دلالة الرقم. */
+const PROCLITIC = /^(و|ف|ب|ل|ك|وب|ول|فب|فل|وك|ال|بال|لل|وال|كال|فال)ـ?$/u;
+/** درجة التصنيف الائتماني (Aa3، Baa1): رقم مجرد يجب أن يرد في الدليل، لا صيغة ملتبسة. */
+const RATING_PREFIX = /^(Aa|A|Baa|Ba|B|Caa)$/;
+/** علامة السنة الميلادية أو الهجرية الملاصقة. */
+const YEAR_MARK = /^(م|هـ)$/u;
 export type NumberToken = { n: string; classes: string[] };
 /** يستخرج الأرقام مع أصناف وحداتها الملاصقة. التاريخ والمعرفات وترقيم القوائم ليست أرقامًا. */
 export function numberTokens(s: string): NumberToken[] {
   const clean = s.replace(DATE, " ").replace(CODES, " ").replace(LIST_MARKER, "$1");
   const out: NumberToken[] = [];
-  for (const m of clean.matchAll(/(\d+(?:[.,]\d+)*)(%?)/g)) {
+  const classOf = (w: string | undefined) =>
+    w ? UNIT_CLASSES.find(([re]) => re.test(w))?.[1] : undefined;
+  for (const m of clean.matchAll(/(\d+(?:[.,]\d+)*)/g)) {
     const n = m[1]!.replace(/,/g, "");
+    const before = clean.slice(0, m.index);
     const after = clean.slice(m.index! + m[0].length);
     const classes = new Set<string>();
-    if (m[2]) classes.add("percent");
-    const words = /^\s+(\S+)(?:\s+(\S+))?/.exec(after);
-    const classOf = (w: string | undefined) =>
-      w ? UNIT_CLASSES.find(([re]) => re.test(w))?.[1] : undefined;
-    const c1 = classOf(words?.[1]);
+    if (CURRENCY_BEFORE.test(before)) classes.add("currency");
+    else {
+      // كلمة ملاصقة قبل الرقم: سابقة عربية مقبولة؛ غير ذلك صيغة ملتبسة.
+      const glued = /([^\s\d]+)$/u.exec(before)?.[1];
+      if (glued && !SEP.test(glued.slice(-1))) {
+        const word = /([^\s.,;:!?()[\]«»"'\u201c\u201d\-\u2013\u2014/\u060c\u061b\u061f]+)$/u.exec(
+          glued,
+        )![1]!;
+        if (!PROCLITIC.test(word) && !(RATING_PREFIX.test(word) && /^[1-3]$/.test(n)))
+          classes.add(AMBIGUOUS);
+      }
+    }
+    const gluedAfter =
+      after && !SEP.test(after[0]!)
+        ? /^[^\s.,;:!?()[\]«»"'\u201c\u201d\u060c\u061b\u061f]+/u.exec(after)![0]
+        : null;
+    // الوحدة بعد الرقم: ملاصقة («2025ريال») أو بعد مسافة؛ ملاصق غير معروف صيغة ملتبسة.
+    // تُطابَق على النص التالي لا على كلمة واحدة، لأن بعض الوحدات عبارة («في المئة»، «per cent»).
+    const tail = gluedAfter ? after : /^\s/.test(after) ? after.trimStart() : "";
+    const c1 = classOf(tail);
+    if (gluedAfter && !c1 && !YEAR_MARK.test(gluedAfter)) classes.add(AMBIGUOUS);
     if (c1) classes.add(c1);
     if (c1 === SCALE) {
-      const c2 = classOf(words?.[2]);
+      const c2 = classOf(tail.replace(/^\S+\s*/, ""));
       if (c2) classes.add(c2);
     }
     out.push({ n, classes: [...classes].sort() });
@@ -223,6 +255,7 @@ export function compilePack(
     const ev = evidence.flatMap(numberTokens);
     const evBare = new Set(ev.map((t) => t.n));
     for (const t of numberTokens(text)) {
+      if (t.classes.includes(AMBIGUOUS)) throw Error(`ambiguous_number_format:${where}:${t.n}`);
       if (t.classes.length) {
         if (!kind || !QUANTITY_KINDS.has(kind))
           throw Error(`quantity_in_${kind ?? "definition"}:${where}:${t.n} ${t.classes.join("+")}`);

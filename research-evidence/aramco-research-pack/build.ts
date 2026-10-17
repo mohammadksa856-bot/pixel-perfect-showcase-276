@@ -160,7 +160,7 @@ export function deliverables(pack: Pack, ctx: EvidenceContext): Record<string, s
     "RESEARCH-DRAFT_EN.md": renderDraft(pack, "en"),
     "EVIDENCE-MAP.json": json({
       ...head,
-      note: "Per paragraph: kind, status, topics and resolved evidence (identities only, no metric values).",
+      note: "Summary per paragraph: kind, status, topics and resolved evidence (identities only, no metric values). It does not export every row identity; per-row identities (period, scope, unit, currency, version, source) are resolved at build time by resolveRef in evidence.ts and fail closed there. Not a B01-qualified binding.",
       counts: pack.counts,
       paragraphs: pack.paragraphs.map((p) => ({
         id: p.id,

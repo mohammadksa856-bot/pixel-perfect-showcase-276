@@ -1,0 +1,28 @@
+{
+  "schema": "marefa-central-tracking-receipt/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "canonical_workspace": "marefa-unified-20261012",
+  "canonical_commit": "0fde336ec1a53b96ba464ed9a9fbd937bc09542e",
+  "task_id": "WEB08-B03",
+  "event_sequence": 103,
+  "event_sha256": "8edfd1adabffb63e02fe1f73d39cb40a8cfd97d511612223ef773db27f1aa522",
+  "previous_events_preserved": true,
+  "event_chain_verified": 103,
+  "review_package_commit": "56ffa0576593eb454a6870e13bdb2982cdbc4887",
+  "state": "REVIEW",
+  "engineering_decision": "REWORK",
+  "phase_status": {
+    "IMPLEMENTED": "Claude b72ad3a; unchanged",
+    "TESTED": "Original suites pass; independent2pass13fail; app14skip",
+    "REVIEWED": "Independent REWORK",
+    "MERGED": false,
+    "ACCEPTED": false,
+    "DEPLOYED": false
+  },
+  "qualified": 0,
+  "withheld_claims": 22,
+  "B02_inputs_unblocked": 0,
+  "user_final_acceptance": false,
+  "production_release_approval": false,
+  "note": "Derived public review receipt only. Not a second execution board; central immutable event remains authoritative."
+}

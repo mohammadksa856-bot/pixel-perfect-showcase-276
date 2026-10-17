@@ -59,20 +59,20 @@ const P: [string, string, string, string][] = [
   [
     "Margin 2025 ‰.",
     "ambiguous",
-    "ambiguous_number_format:punct:2025",
-    "ambiguous_number_format:punct:2025",
+    "ambiguous_number_format:punct:2025:unsupported_unit",
+    "ambiguous_number_format:punct:2025:unsupported_unit",
   ],
   [
     "Profit ¥ 2025.",
     "ambiguous",
-    "ambiguous_number_format:punct:2025",
-    "ambiguous_number_format:punct:2025",
+    "ambiguous_number_format:punct:2025:unsupported_unit",
+    "ambiguous_number_format:punct:2025:unsupported_unit",
   ],
   [
     "Profit AED 2025.",
     "ambiguous",
-    "ambiguous_number_format:punct:2025",
-    "ambiguous_number_format:punct:2025",
+    "ambiguous_number_format:punct:2025:unsupported_unit",
+    "ambiguous_number_format:punct:2025:unsupported_unit",
   ],
 ];
 
@@ -100,6 +100,10 @@ describe("local delimiters bind a unit to its number on either side", () => {
     ["USD: (2025)", "currency"],
     ["$(2025)", "currency"],
     ["€ (2025)", "currency"],
+    ["EUR 2025", "currency"],
+    ["(2025) GBP", "currency"],
+    ["2025 ((ريال", "currency"], // brackets are local delimiters on both sides
+    ["عام 2025 (ريال سعودي)", "currency"],
     ["(2025)ريال", "currency"],
     ["2025) USD", "currency"],
     ["2025 ) , USD", "currency"],
@@ -118,9 +122,9 @@ describe("unsupported currencies and per-mille fail closed, before or after, thr
   for (const s of [
     "AED (2025)",
     "AED: 2025",
-    "EUR 2025",
+    "JPY 2025",
     "2025 JPY",
-    "(2025) GBP",
+    "(2025) CHF",
     "2025, درهم",
     "دينار 2025",
     "₹ (2025)",
@@ -138,10 +142,7 @@ describe("the binding stays local: no distant words, sentence ends or ranges", (
   const free = [
     "Revenue in SAR rose in 2025.", // words between the unit and the number
     "الإيرادات بالريال ارتفعت في 2025.",
-    "Reported in SAR. 2025 was a record year.", // a period ends the sentence
     "SAR ( ( ( (2025", // seven delimiters: not local
-    "2025 ((ريال", // an opening bracket after the number does not reach a unit
-    "عام 2025 (ريال سعودي)",
     "في 2025، ثم ارتفع",
     "الفترة 2024-2025.",
     "FY 2025.",

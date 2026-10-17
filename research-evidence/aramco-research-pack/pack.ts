@@ -20,6 +20,14 @@ import {
   type InputStatus,
   type ResolvedRef,
 } from "./evidence";
+import {
+  AMBIGUOUS,
+  DATE,
+  FORMAT_CONTROL,
+  NON_ASCII_NUMBER,
+  analyseNumbers,
+  numberTokens,
+} from "./numeric-guard";
 import { metricPlacements, type Placement } from "./placement";
 import { STATUS_OF_KIND, type Analysis, type Paragraph, type Section, type Topic } from "./schema";
 
@@ -77,114 +85,10 @@ export function metricLink(key: string, prefer: readonly Topic[] = []): MetricLi
 export const dataLink = (topic: Topic) =>
   `/preview/web-v1/companies/${SYMBOL}?tab=${groupOfTopic(topic)}`;
 
-/** أرقام أو تواريخ في نص؛ الأرقام الهندية-العربية ممنوعة أصلًا (تُكتب لاتينية للتحقق). */
-const DATE = /\b\d{4}-\d{2}-\d{2}\b/g;
-/** ترقيم القوائم في بداية السطر («1. ») ليس رقمًا. */
-const LIST_MARKER = /(^|\n)\s*\d{1,2}\.\s/g;
-/** معرفات مراحل المشروع (WEB-08B03، B02) ليست أرقامًا. */
-const CODES = /\bWEB-\d{2}[A-Z]\d{2}[A-Z]?\b|\bB0\d[A-Z]?\b/g;
-/**
- * وحدات تجعل الرقم «كمية» (ENG-03، RR-ENG03-01). الوحدة تُقرأ بعد الرقم، بمسافة أو ملاصقة
- * («2025ريال»، «2025٪»)، والعملة تُقرأ قبله أيضًا («SAR 2025»، «$2025»). كلمة مقياس (مليون/مليار)
- * تُضاف إليها وحدة الكلمة التالية. الصنف لا اللفظ هو ما يُطابَق مع الدليل (عربي/إنجليزي).
- */
-const UNIT_CLASSES: [RegExp, string][] = [
-  [/^(%|٪|％|في\s?المئة|بالمئة|percent|per\s?cent)/i, "percent"],
-  [/^(ريال|ريالات|SAR|دولار|دولارات|USD|US\$|\$|﷼|€|£)/i, "currency"],
-  [/^(مليون|million|mn|مليار|billion|bn|ألف|آلاف|thousand|تريليون|trillion)/i, "scale"],
-  [/^(برميل|براميل|barrels?|bbl|boe|قدم|cubic|scf|طن|أطنان|tonnes?)/i, "volume"],
-  [
-    /^(سنة|سنوات|عامًا|عاما|أعوام|years?|شهرًا|شهرا|أشهر|شهور|months?|يومًا|أيام|days?)/i,
-    "duration",
-  ],
-];
-const SCALE = "scale";
-/** صنف الصيغة الملتبسة: رقم ملاصق لحروف أو رموز غير معروفة. يُرفض بدل اعتباره سنة (fail closed). */
-export const AMBIGUOUS = "ambiguous";
-/**
- * فاصل محلي بين الوحدة والرقم (RR-ENG03-01): مسافات وأقواس وعلامات ترقيم شائعة، ستة محارف على
- * الأكثر، بلا كلمات. النقطة والشرطة لا تصل الوحدة بالرقم (نهاية جملة، أو مدى «2024-2025»).
- */
-const GAP_BEFORE = String.raw`[\s:(\[«"'\u201c]{0,6}`;
-const GAP_AFTER = /^[\s)\]»"'\u201d,:\u060c]{0,6}/u;
-/** عملة مدعومة تسبق الرقم: ملاصقة («SAR2025») أو بفاصل محلي («SAR: 2025»، «USD (2025)»، «$ (2025)»). */
-const CURRENCY_BEFORE = new RegExp(
-  String.raw`(?:^|[^\p{L}])(SAR|USD|US\$|ريال|ريالات|دولار|دولارات)${GAP_BEFORE}$|[$﷼€£]${GAP_BEFORE}$`,
-  "iu",
-);
-/**
- * عملات ورموز نسبة غير مدعومة في التصنيف. ملاصقتها للرقم، قبله أو بعده بفاصل محلي، تدل على مبلغ أو
- * نسبة لا يمكن مطابقتها مع الدليل، فتُرفض صيغةً ملتبسة بدل تمرير الرقم سنةً.
- */
-const UNSUPPORTED_CODES = String.raw`AED|EUR|GBP|JPY|CNY|RMB|INR|KWD|QAR|BHD|OMR|EGP|CHF|CAD|AUD|HKD|SGD|KRW|درهم|دراهم|دينار|يورو|جنيه|ين`;
-const UNSUPPORTED_SYMBOLS = String.raw`[¥₹₩₽₺₪₦฿₣₫₱₴‰‱]`;
-/** رموز ISO 4217 الأخرى، بحروف كبيرة فقط (حساسة لحالة الأحرف) حتى لا تتأثر الكلمات العادية. */
-const ISO_CODES =
-  "AED|AFN|ALL|AMD|ANG|AOA|ARS|AUD|AWG|AZN|BAM|BBD|BDT|BGN|BHD|BIF|BMD|BND|BOB|BRL|BSD|BTN|BWP|BYN|BZD|CAD|CDF|CHF|CLP|CNY|COP|CRC|CUP|CVE|CZK|DJF|DKK|DOP|DZD|EGP|ERN|ETB|EUR|FJD|FKP|GBP|GEL|GHS|GIP|GMD|GNF|GTQ|GYD|HKD|HNL|HTG|HUF|IDR|ILS|INR|IQD|IRR|ISK|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LRD|LSL|LYD|MAD|MDL|MGA|MKD|MMK|MNT|MOP|MRU|MUR|MVR|MWK|MXN|MYR|MZN|NAD|NGN|NIO|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PYG|QAR|RON|RSD|RUB|RWF|SBD|SCR|SDG|SEK|SGD|SHP|SLE|SOS|SRD|SSP|STN|SYP|SZL|THB|TJS|TMT|TND|TOP|TRY|TTD|TWD|TZS|UAH|UGX|UYU|UZS|VES|VND|VUV|WST|XAF|XCD|XOF|XPF|YER|ZAR|ZMW|ZWL";
-const UNSUPPORTED_BEFORE = [
-  new RegExp(
-    String.raw`(?:(?:^|[^\p{L}])(?:${UNSUPPORTED_CODES})|${UNSUPPORTED_SYMBOLS})${GAP_BEFORE}$`,
-    "iu",
-  ),
-  new RegExp(String.raw`(?:^|[^\p{L}])(?:${ISO_CODES})${GAP_BEFORE}$`, "u"),
-];
-const UNSUPPORTED_AFTER = [
-  new RegExp(String.raw`^(?:(?:${UNSUPPORTED_CODES})(?![\p{L}])|${UNSUPPORTED_SYMBOLS})`, "iu"),
-  new RegExp(String.raw`^(?:${ISO_CODES})(?![\p{L}])`, "u"),
-];
-/** فواصل لا تجعل الرقم ملتبسًا. */
-const SEP = /[\s.,;:!?()[\]«»"'\u201c\u201d\-\u2013\u2014/\u060c\u061b\u061f]/u;
-/** سوابق عربية تلتصق بالكلمة (و، ب، ل، ك، ف، ال…) ولا تغيّر دلالة الرقم. */
-const PROCLITIC = /^(و|ف|ب|ل|ك|وب|ول|فب|فل|وك|ال|بال|لل|وال|كال|فال)ـ?$/u;
-/** درجة التصنيف الائتماني (Aa3، Baa1): رقم مجرد يجب أن يرد في الدليل، لا صيغة ملتبسة. */
-const RATING_PREFIX = /^(Aa|A|Baa|Ba|B|Caa)$/;
-/** علامة السنة الميلادية أو الهجرية الملاصقة. */
-const YEAR_MARK = /^(م|هـ)$/u;
-export type NumberToken = { n: string; classes: string[] };
-/** يستخرج الأرقام مع أصناف وحداتها الملاصقة. التاريخ والمعرفات وترقيم القوائم ليست أرقامًا. */
-export function numberTokens(s: string): NumberToken[] {
-  const clean = s.replace(DATE, " ").replace(CODES, " ").replace(LIST_MARKER, "$1");
-  const out: NumberToken[] = [];
-  const classOf = (w: string | undefined) =>
-    w ? UNIT_CLASSES.find(([re]) => re.test(w))?.[1] : undefined;
-  for (const m of clean.matchAll(/(\d+(?:[.,]\d+)*)/g)) {
-    const n = m[1]!.replace(/,/g, "");
-    const before = clean.slice(0, m.index);
-    const after = clean.slice(m.index! + m[0].length);
-    const classes = new Set<string>();
-    if (CURRENCY_BEFORE.test(before)) classes.add("currency");
-    else if (UNSUPPORTED_BEFORE.some((re) => re.test(before))) classes.add(AMBIGUOUS);
-    else {
-      // كلمة ملاصقة قبل الرقم: سابقة عربية مقبولة؛ غير ذلك صيغة ملتبسة.
-      const glued = /([^\s\d]+)$/u.exec(before)?.[1];
-      if (glued && !SEP.test(glued.slice(-1))) {
-        const word = /([^\s.,;:!?()[\]«»"'\u201c\u201d\-\u2013\u2014/\u060c\u061b\u061f]+)$/u.exec(
-          glued,
-        )![1]!;
-        if (!PROCLITIC.test(word) && !(RATING_PREFIX.test(word) && /^[1-3]$/.test(n)))
-          classes.add(AMBIGUOUS);
-      }
-    }
-    const gluedAfter =
-      after && !SEP.test(after[0]!)
-        ? /^[^\s.,;:!?()[\]«»"'\u201c\u201d\u060c\u061b\u061f]+/u.exec(after)![0]
-        : null;
-    // الوحدة بعد الرقم: ملاصقة («2025ريال») أو بعد فاصل محلي («2025 ريال»، «(2025) ريال»، «2025, USD»)؛
-    // ملاصق غير معروف أو عملة غير مدعومة صيغة ملتبسة. تُطابَق على النص التالي لا على كلمة واحدة،
-    // لأن بعض الوحدات عبارة («في المئة»، «per cent»).
-    const tail = gluedAfter ? after : after.slice(GAP_AFTER.exec(after)![0].length);
-    const c1 = classOf(tail);
-    if (gluedAfter && !c1 && !YEAR_MARK.test(gluedAfter)) classes.add(AMBIGUOUS);
-    if (!c1 && UNSUPPORTED_AFTER.some((re) => re.test(tail))) classes.add(AMBIGUOUS);
-    if (c1) classes.add(c1);
-    if (c1 === SCALE) {
-      const c2 = classOf(tail.replace(/^\S+\s*/, ""));
-      if (c2) classes.add(c2);
-    }
-    out.push({ n, classes: [...classes].sort() });
-  }
-  return out;
-}
+// حارس الأرقام في numeric-guard.ts: مسار واحد مرتب، والاستثناءات في checkText بعده.
+export { AMBIGUOUS, numberTokens, type NumberToken } from "./numeric-guard";
+const codePoint = (c: string) =>
+  `U+${c.codePointAt(0)!.toString(16).toUpperCase().padStart(4, "0")}`;
 const isYear = (n: string) => /^(19|20)\d{2}$/.test(n);
 /** كمية مسموحة في السجل والخطة فقط، وفي غيرهما ممنوعة. */
 const QUANTITY_KINDS = new Set(["reported_record", "management_plan"]);
@@ -278,7 +182,12 @@ export function compilePack(
     meta: string[] = [],
     kind?: string,
   ) => {
-    if (/[٠-٩۰-۹]/.test(text)) throw Error(`non_latin_digits:${where}`);
+    // 0. النص الخام قبل أي تنظيف.
+    const nonAscii = NON_ASCII_NUMBER.exec(text);
+    if (nonAscii) throw Error(`non_latin_digits:${where}:${codePoint(nonAscii[0])}`);
+    const control = FORMAT_CONTROL.exec(text);
+    if (control && !/[0-9]/.test(text))
+      throw Error(`format_control:${where}:${codePoint(control[0])}`);
     for (const d of text.match(DATE) ?? []) {
       if (!isCivilDate(d)) throw Error(`invalid_date:${where}:${d}`);
       if (kind === "reported_record" && d > asOfDate)
@@ -286,8 +195,10 @@ export function compilePack(
     }
     const ev = evidence.flatMap(numberTokens);
     const evBare = new Set(ev.map((t) => t.n));
-    for (const t of numberTokens(text)) {
-      if (t.classes.includes(AMBIGUOUS)) throw Error(`ambiguous_number_format:${where}:${t.n}`);
+    // 1–3. كل رقم: ملتبس ← كمية ← رقم مجرد. الاستثناءات بعد ذلك فقط.
+    for (const t of analyseNumbers(text)) {
+      if (t.classes.includes(AMBIGUOUS) || t.reasons?.length)
+        throw Error(`ambiguous_number_format:${where}:${t.n}:${t.reasons!.join("+")}`);
       if (t.classes.length) {
         if (!kind || !QUANTITY_KINDS.has(kind))
           throw Error(`quantity_in_${kind ?? "definition"}:${where}:${t.n} ${t.classes.join("+")}`);

@@ -1,5 +1,6 @@
 {
   "schema": "marefa-safe-review-package/1",
+  "hash_mode": "UTF8_GIT_BLOBS_LF_NOT_WINDOWS_CRLF_CHECKOUT",
   "application_sha": "b72ad3a1c1a9d5bd43bfec78523aa287300a4639",
   "delivery_sha": "1030fa883531f98fae899bd4f6a93733ecff6190",
   "self_excluded": true,
@@ -13,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2370,
-      "sha256": "e3bb4c24a20bbc9bbd0ce77e90e80ceb6298b50908d6c222983a07dc096b47f6"
+      "bytes": 2542,
+      "sha256": "ae1607a176eb498be09037ea285236ef0a6b353a140990013e88e2c9135759ac"
     },
     {
       "path": "FINDINGS.json",
@@ -23,8 +24,8 @@
     },
     {
       "path": "RESULTS.json",
-      "bytes": 4245,
-      "sha256": "8e8d267f66c98d7384536dbbe510abc41aa5a0ff53c0adaec10b82c6cb564a1f"
+      "bytes": 4103,
+      "sha256": "1d291a77d18dfd189eeaa44b37c4fbd69e3c80c5f2442f671437cfabbebb32af"
     },
     {
       "path": "UI-REVIEW.json",
@@ -33,13 +34,13 @@
     },
     {
       "path": "RESEARCH-SOURCE-REVIEW.json",
-      "bytes": 18273,
-      "sha256": "0906bc66ae021062f75d63bfc4a507f887c2e8798f83ec4ae0a3ca091fe54eb8"
+      "bytes": 17884,
+      "sha256": "a61a33d73df56fb8b73e59c6a441d57942769dd293c5c50df8954f6abf49c79d"
     },
     {
       "path": "SOURCE-BLOB-INTEGRITY.json",
-      "bytes": 2536,
-      "sha256": "bbf14c053e3b54432d684e1515d94dac5561a84f7e5b3be8a4f093bc999f4c45"
+      "bytes": 2470,
+      "sha256": "9fef17c7e50f9d9c9457abd8c86c1559afb33d65acb0ed6ca5684fad238430c8"
     },
     {
       "path": "SETUP-FAILURES.json",
@@ -68,58 +69,58 @@
     },
     {
       "path": "finalize.py",
-      "bytes": 3880,
-      "sha256": "6245b48b38983e571c356f04a727a66b5b087d405172f5e011b9d4be84fe4b3d"
+      "bytes": 3961,
+      "sha256": "cd45170b79ba63ce4e20c10617d653c65c7fbd847130024bb617352432d1cbb1"
     },
     {
       "path": "runs/app.txt",
-      "bytes": 58435,
-      "sha256": "888e8891521dd243766ecb352aef349db99bab422b45d4dbad41ec878ce45969"
+      "bytes": 57910,
+      "sha256": "45fcb0f2bc48ca15e12dcbcc979c47370142c5d4a82d076c28951ca1ae2f1365"
     },
     {
       "path": "runs/b01.txt",
-      "bytes": 11467,
-      "sha256": "a96766595897e6d6db51d1070356c81a72bc95cfc8718dc0e5ea5164c432c780"
+      "bytes": 11348,
+      "sha256": "642f7accf75091052074b01b94536ba0da57ed452a159a434b102614109c3ecc"
     },
     {
       "path": "runs/b02.txt",
-      "bytes": 1640,
-      "sha256": "3fd2f09d435574dff8edb49b0aca24d9442e1eaa4a87734bedd609b3c0ea9092"
+      "bytes": 1604,
+      "sha256": "23e4af889d4208dcd214344f5efc796a3c325d3c3a0813f31c7b04e0df59561f"
     },
     {
       "path": "runs/b03-types.txt",
-      "bytes": 259,
-      "sha256": "b2b2ad202f7343ed3aa4ab00b5542fffa04a9ef4ea78783cdeef220c5aef5d82"
+      "bytes": 258,
+      "sha256": "90f93c4f179bec200017fe2936198462c762c73833175ffdd67092092ccdd368"
     },
     {
       "path": "runs/b03.txt",
-      "bytes": 4420,
-      "sha256": "0775bd6afea3bf5a531cce18588f3ed5398d647f699b9edb3cc0fd16e3c29752"
+      "bytes": 4377,
+      "sha256": "5904ca2487e55636f018575bf026eb7f1706dd7b4b0ca482af742769cabc31fa"
     },
     {
       "path": "runs/build.txt",
-      "bytes": 59622,
-      "sha256": "5ce1ebe7b9be0f1067d46abe7d2d113b0f8a130975699aefb03798d5af43e70e"
+      "bytes": 59143,
+      "sha256": "1a96c00386a84fa1d0afa8cc56c8a8dba9f181b5d1ad10b542804717f61b1fc5"
     },
     {
       "path": "runs/check.txt",
-      "bytes": 374,
-      "sha256": "4f3a17f7790a356fa58020ad81265b829b4a8a980ba6abaa42489ccd05b809a5"
+      "bytes": 367,
+      "sha256": "ed7796a046f3a918073a3d156441ff98159e6b769b1bbffbf49eeb106b342176"
     },
     {
       "path": "runs/independent.txt",
-      "bytes": 1694,
-      "sha256": "861b6f040d2d99b48c8ce36a8ab9786d6b74b7f483dad57a5ad519150dfaf102"
+      "bytes": 1673,
+      "sha256": "a78bb4e077dc4f348550b1fbe7f0138213ca6f05576e328993222a4199b75017"
     },
     {
       "path": "runs/lint.txt",
-      "bytes": 224,
-      "sha256": "96f28d07abbc4aae2b10b0790a0b629272c22ee2192bc791db2e2b2f80325dd1"
+      "bytes": 223,
+      "sha256": "c93dbb61b3276029b7bb5c94d74e8d149ba4fe5d5fa2481b3104ec15e3e37d86"
     },
     {
       "path": "runs/types.txt",
-      "bytes": 195,
-      "sha256": "c7c58993bb6fe8b022c41e012c191664a1675188e108af391d540a13b8d5239b"
+      "bytes": 194,
+      "sha256": "fbad3d901eafb820ea6ce9ce2fa559e4f4bf99aa4df30c79e7610453426e1a30"
     }
   ]
 }

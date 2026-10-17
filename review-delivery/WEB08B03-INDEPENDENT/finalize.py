@@ -39,11 +39,11 @@ names += ['runs/'+p.name for p in sorted((HERE/'runs').glob('*.txt'))]
 if (HERE/'CENTRAL-TRACKING-RECEIPT.json').exists():names.append('CENTRAL-TRACKING-RECEIPT.json')
 files=[]
 for name in names:
- p=HERE/name;b=p.read_bytes()
+ p=HERE/name;b=p.read_bytes().replace(b'\r\n',b'\n')
  assert p.suffix in ['.md','.json','.ts','.py','.txt']
  assert not any(token in b for token in [b'-----BEGIN '+b'PRIVATE KEY-----',b'-----BEGIN '+b'OPENSSH PRIVATE KEY-----'])
  assert not re.search(rb'gh[pousr]_[A-Za-z0-9]{30,}|AKIA[A-Z0-9]{16}|sb_secret_[A-Za-z0-9]{20,}',b),name
  files.append({'path':name,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
-manifest={'schema':'marefa-safe-review-package/1','application_sha':result['application_sha'],'delivery_sha':result['delivery_sha'],'self_excluded':True,'new_files_code_and_metadata_only':True,'original_pdfs_images_raw_exports_included':False,'files':files}
+manifest={'schema':'marefa-safe-review-package/1','hash_mode':'UTF8_GIT_BLOBS_LF_NOT_WINDOWS_CRLF_CHECKOUT','application_sha':result['application_sha'],'delivery_sha':result['delivery_sha'],'self_excluded':True,'new_files_code_and_metadata_only':True,'original_pdfs_images_raw_exports_included':False,'files':files}
 (HERE/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
 print(json.dumps({'files':len(files)+1,'decision':result['decision'],'runs':len(tests)}))

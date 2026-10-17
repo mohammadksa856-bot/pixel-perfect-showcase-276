@@ -35,6 +35,8 @@ This review did not start the5173target app, so deep-link destinations are not b
 The Python runner originally used local installed runtime paths; set BUN and REVIEW_ROOT for another computer.
 The source inspection scripts require separately authorized original PDFs in a private sibling folder.
 No original PDF, image, raw extract or financial database is supplied in this package.
+MANIFEST hashes Git text blobs with LF, not a Windows CRLF checkout. A staging-time
+CRLF hash mismatch was caught and corrected before publication; no author code changed.
 Source audit JSON contains locators and review dispositions, not qualified numeric inputs.
 Full failed-assertion payload is private; the published status-only log retains the raw log hash.
 14skipped app tests require live API configuration and are not counted as success.

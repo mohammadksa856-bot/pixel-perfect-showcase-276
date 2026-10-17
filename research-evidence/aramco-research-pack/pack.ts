@@ -185,9 +185,17 @@ export function compilePack(
     // 0. النص الخام قبل أي تنظيف.
     const nonAscii = NON_ASCII_NUMBER.exec(text);
     if (nonAscii) throw Error(`non_latin_digits:${where}:${codePoint(nonAscii[0])}`);
+    // محرف التنسيق يُرفض هنا حتمًا، قبل الحجب ودون الاعتماد على بقاء رقم بعده: رقم يقع كله في تاريخ
+    // أو كود أو ترقيم قائمة يُحجب، فلا يصل سبب format_control إلى حلقة الأرقام.
     const control = FORMAT_CONTROL.exec(text);
-    if (control && !/[0-9]/.test(text))
-      throw Error(`format_control:${where}:${codePoint(control[0])}`);
+    if (control) {
+      const rawDigits = /[0-9]+/.exec(text)?.[0];
+      throw Error(
+        rawDigits
+          ? `ambiguous_number_format:${where}:${rawDigits}:format_control`
+          : `format_control:${where}:${codePoint(control[0])}`,
+      );
+    }
     for (const d of text.match(DATE) ?? []) {
       if (!isCivilDate(d)) throw Error(`invalid_date:${where}:${d}`);
       if (kind === "reported_record" && d > asOfDate)

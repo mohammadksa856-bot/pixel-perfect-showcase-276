@@ -1,14 +1,27 @@
-# scope: files changed 5ef2c56 (B03 + DOC-01)..91fc3eea7528837ca37edbfe6dbe57fdb3a260e7 outside B04 folders
+# scope: files changed 5ef2c56 (B03 + DOC-01)..8e896378a763f7cb5632ec5bb2963e5313664301 outside B04 folders
 product-tracking/CHANGELOG.jsonl
 # src/ supabase/ research-evidence/v1 aramco-qualification aramco-disclosures review-delivery/WEB08B02 WEB08B03 tests/ changed: 0
-# RR-ENG03-01 punctuation fix acd116c..91fc3eea7528837ca37edbfe6dbe57fdb3a260e7 (code):
- .../aramco-research-pack/README_AR.md              |   4 +-
- research-evidence/aramco-research-pack/pack.ts     |  42 ++++-
- .../aramco-research-pack/punctuation.test.ts       | 177 +++++++++++++++++++++
- 3 files changed, 217 insertions(+), 6 deletions(-)
-# research deliverables (8) changed acd116c..91fc3eea7528837ca37edbfe6dbe57fdb3a260e7: 0
+# RR-ENG03-01 guard restructure 91fc3ee..8e896378a763f7cb5632ec5bb2963e5313664301 (code):
+ .../aramco-research-pack/README_AR.md              |  29 +-
+ research-evidence/aramco-research-pack/iso4217.ts  | 208 ++++++++++++++
+ .../aramco-research-pack/numeric-guard.test.ts     | 310 +++++++++++++++++++++
+ .../aramco-research-pack/numeric-guard.ts          | 216 ++++++++++++++
+ research-evidence/aramco-research-pack/pack.ts     | 133 ++-------
+ .../aramco-research-pack/punctuation.test.ts       |  23 +-
+ .../aramco-research-pack/tsconfig.json             |   2 +-
+ 7 files changed, 788 insertions(+), 133 deletions(-)
+# research deliverables (8): sha256 at 91fc3ee vs 8e896378a763f7cb5632ec5bb2963e5313664301
+RESEARCH-DRAFT_AR.md 5e7c57dcef76e462b9904443764c39408a767ac5bcf3079c5a24dbc6ef30da6b 5e7c57dcef76e462b9904443764c39408a767ac5bcf3079c5a24dbc6ef30da6b SAME
+RESEARCH-DRAFT_EN.md 21749475353081442f15672879bbac9faf8401910b3ebfd491efa995aadebc8e 21749475353081442f15672879bbac9faf8401910b3ebfd491efa995aadebc8e SAME
+EVIDENCE-MAP.json de9f7f27a3b0e65e004413901438237c9ac25ca577c512001d155e1391c1691b de9f7f27a3b0e65e004413901438237c9ac25ca577c512001d155e1391c1691b SAME
+FINANCIAL-STRUCTURE.json b96ea7983e3ebffa7615aed50412f90d46828f56791036b2f51f7f32cebbd308 b96ea7983e3ebffa7615aed50412f90d46828f56791036b2f51f7f32cebbd308 SAME
+GAP-REGISTER.json 2b6f2763da6d19414b6447b9f3688e7d9131b9f6c10555c526c0d9d8da985420 2b6f2763da6d19414b6447b9f3688e7d9131b9f6c10555c526c0d9d8da985420 SAME
+TOPIC-MAP.json 580518dccf858203efd3ffead17a50deac7c4afc85bf7f35b42ecb57cb7a0232 580518dccf858203efd3ffead17a50deac7c4afc85bf7f35b42ecb57cb7a0232 SAME
+MAREFA-DATA-LINKS.json 005c57e59a9a9a7ca394b0d44c8485bb23984601884d7520494e76903b7c51c7 005c57e59a9a9a7ca394b0d44c8485bb23984601884d7520494e76903b7c51c7 SAME
+PROJECTS.json b558fdeaac58415995d7ca0d749369aff4d83b626ba5ca0d5d3732f3b22e0020 b558fdeaac58415995d7ca0d749369aff4d83b626ba5ca0d5d3732f3b22e0020 SAME
+# research deliverables (8) changed acd116c..8e896378a763f7cb5632ec5bb2963e5313664301: 0
 # Codex review folders on this branch: 0 files
-# deliverable sha256 (identical to acd116c)
+# deliverable sha256
 5e7c57dcef76e462b9904443764c39408a767ac5bcf3079c5a24dbc6ef30da6b  RESEARCH-DRAFT_AR.md
 21749475353081442f15672879bbac9faf8401910b3ebfd491efa995aadebc8e  RESEARCH-DRAFT_EN.md
 de9f7f27a3b0e65e004413901438237c9ac25ca577c512001d155e1391c1691b  EVIDENCE-MAP.json

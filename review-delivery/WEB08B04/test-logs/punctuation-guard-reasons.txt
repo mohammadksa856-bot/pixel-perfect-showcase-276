@@ -1,5 +1,5 @@
-# bun ./review-delivery/WEB08B04-FINAL-RESIDUAL/guard-probe.ts (Codex probe, unmodified): guard that rejects P0-P7 @ 91fc3eea7528837ca37edbfe6dbe57fdb3a260e7
-# git blob expected a470fc164beb286e596748256128cf23dc9682d1 / file used a470fc164beb286e596748256128cf23dc9682d1; copied for the run only, not committed
+# bun ./review-delivery/WEB08B04-FINAL-ACCEPTANCE/guard-probe.ts (Codex probe, unmodified): P0-P7 @ 8e896378a763f7cb5632ec5bb2963e5313664301
+# git blob expected a470fc164beb286e596748256128cf23dc9682d1 / file used a470fc164beb286e596748256128cf23dc9682d1; from 0fe3312c20dd48102515f65b3c5a6fff505b1d01, copied for the run only, not committed
 {"text":"Profit SAR: 2025.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: quantity_in_research_interpretation:probe:2025 currency"}
 {"text":"Profit SAR: 2025.","kind":"reported_record","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: unsupported_quantity:probe:2025 currency"}
 {"text":"Profit USD (2025).","kind":"research_interpretation","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: quantity_in_research_interpretation:probe:2025 currency"}
@@ -10,12 +10,12 @@
 {"text":"Profit 2025, USD.","kind":"reported_record","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: unsupported_quantity:probe:2025 currency"}
 {"text":"Profit $ (2025).","kind":"research_interpretation","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: quantity_in_research_interpretation:probe:2025 currency"}
 {"text":"Profit $ (2025).","kind":"reported_record","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: unsupported_quantity:probe:2025 currency"}
-{"text":"Margin 2025 ‰.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025"}
-{"text":"Margin 2025 ‰.","kind":"reported_record","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025"}
-{"text":"Profit ¥ 2025.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025"}
-{"text":"Profit ¥ 2025.","kind":"reported_record","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025"}
-{"text":"Profit AED 2025.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025"}
-{"text":"Profit AED 2025.","kind":"reported_record","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025"}
+{"text":"Margin 2025 ‰.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025:unsupported_unit"}
+{"text":"Margin 2025 ‰.","kind":"reported_record","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025:unsupported_unit"}
+{"text":"Profit ¥ 2025.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025:unsupported_unit"}
+{"text":"Profit ¥ 2025.","kind":"reported_record","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025:unsupported_unit"}
+{"text":"Profit AED 2025.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025:unsupported_unit"}
+{"text":"Profit AED 2025.","kind":"reported_record","tokens":[{"n":"2025","classes":["ambiguous"]}],"accepted":false,"error":"Error: ambiguous_number_format:probe:2025:unsupported_unit"}
 {"text":"Profit SAR2025.","kind":"research_interpretation","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: quantity_in_research_interpretation:probe:2025 currency"}
 {"text":"Profit SAR2025.","kind":"reported_record","tokens":[{"n":"2025","classes":["currency"]}],"accepted":false,"error":"Error: unsupported_quantity:probe:2025 currency"}
 exit=0

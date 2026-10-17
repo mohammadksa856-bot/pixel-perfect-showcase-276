@@ -1,0 +1,28 @@
+{
+  "schema": "central-tracking-public-receipt/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "canonical_local_commit": "3d227dea2c922d0e24049c6d89de196727cc882e",
+  "task_id": "WEB08-B04",
+  "event_sequence": 107,
+  "event_sha256": "cdbbcf36444fe3820666aba849334ccf932774a8baa06ca9a290534b9e2460df",
+  "previous_event106_preserved": "a567e913777130888c270b0eaf0bcf2d689e5d828380a1e1c90927add5226aec",
+  "event_chain_verified": 107,
+  "review_commit": "72b806e2e91f47ebd4c7f8d5f28c2916fc7e352a",
+  "phases": {
+    "IMPLEMENTED": "Claude acd116c",
+    "TESTED": "Fixed delivery894fad1; original14/12/15/15PASS; new72=64PASS8FAIL; full required regressions executed separately",
+    "REVIEWED": "REWORK_NUMERIC_GUARD_ONLY;RR-ENG02-01_CLOSED",
+    "MERGED": false,
+    "ACCEPTED": false,
+    "DEPLOYED": false
+  },
+  "FIN01_07": "CLOSED_LIMITED_DRAFT_PRESERVED",
+  "LINK01": "CLOSED_FROZEN_MODEL_PRESERVED",
+  "blocked_analyses": 7,
+  "withheld_claims": 22,
+  "withheld_inputs": 142,
+  "financially_qualified": 0,
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "private_central_history_published": false
+}

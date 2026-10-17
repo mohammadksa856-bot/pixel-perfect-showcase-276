@@ -10,14 +10,20 @@ import { gunzipSync } from "node:zlib";
 import { TOPICS } from "../v1/contract";
 import {
   CLAIM_CURATION,
+  CURATION_COMPANY,
   DOCUMENT_CURATION,
+  EVENT_GROUPS,
   PROJECT_CURATION,
   type Category,
   type ClaimCuration,
   type EffectPeriod,
+  type EventGroupCuration,
+  type FieldSource,
+  type GroupBasis,
   type RecordRef,
   type Topic,
 } from "./curation";
+import { SOURCE_REVIEW, SOURCE_REVIEW_REF, type SourceFinding } from "./source-review";
 
 // ───────────────────────── المدخلات
 
@@ -115,7 +121,10 @@ export function snapshotFrom(raw: {
   return {
     generatedAt: raw.generated_at,
     contractVersion: raw.contract_version,
-    company: { market: "SA", symbol: String(raw.company.symbol ?? raw.company.ticker ?? "") },
+    company: {
+      market: String(raw.company.market ?? "SA"),
+      symbol: String(raw.company.symbol ?? raw.company.ticker ?? ""),
+    },
     disclosures: raw.sections.disclosures ?? [],
     actions: raw.sections.corporate_actions ?? [],
     officialSources: raw.sections.official_sources ?? [],
@@ -147,13 +156,23 @@ export type GapCode =
   | "documented_rights_grant_missing"
   | "independent_review_receipt_missing"
   | "editorial_review_missing"
-  | "source_url_not_https";
+  | "source_url_not_https"
+  // R03: طبقة المراجعة المستقلة للأصل، منفصلة عن نص المحرك.
+  | "engine_text_not_verified_against_original"
+  | "independent_source_review_missing"
+  | "engine_text_conflicts_with_original"
+  | "locator_conflicts_with_independent_review"
+  | "original_locator_not_found"
+  | "derived_figure_in_engine_text"
+  | "exact_date_unverified";
 export type WarningCode =
   | "evidence_published_after_event"
   | "classification_override"
   | "quote_not_copied_links_marefa_data"
   | "quote_contains_disclosed_figure"
-  | "same_event_multiple_records";
+  | "engine_excerpt_withheld_conflict"
+  | "same_event_multiple_records"
+  | "composite_of_distinct_milestones";
 
 /** A quantity in the verbatim text (money, percentage, scale). It stays text, never a parsed value. */
 const DISCLOSED_FIGURE = /\d[\d.,]*\s*(%|billion|million)|\b(USD|SAR)\s*\d/i;
@@ -180,13 +199,18 @@ export type DocumentRecord = {
 
 export type ClaimRecord = {
   id: string;
+  companyId: string;
   eventId: string;
   eventType: ClaimCuration["eventType"];
   category: Category;
   planKind: ClaimCuration["planKind"] | null;
   topic: Topic;
   crossTopics: Topic[];
+  /** مقطع حرفي من نص لقطة المحرك؛ ليس نصًا مطابقًا للمستند الأصلي. */
   quote: string | null;
+  quoteOrigin: "engine_snapshot_text" | null;
+  /** نص المحرك المحجوب عن الاقتباس لتعارضه مع الأصل (للتتبع فقط). */
+  engineExcerpt: { text: string; conflictingFragment: string; conflict: string } | null;
   quoteField: "body_text" | "title";
   language: "en";
   record: RecordRef;
@@ -196,12 +220,15 @@ export type ClaimRecord = {
     sourceKey: string;
     filingType: string;
     filedAt: string;
+    /** صفحة سجل المحرك كما هي؛ لا تُصحَّح هنا. صفحات المراجع في sourceReview. */
     page: number | null;
+    pageOrigin: "engine_record";
     note: string | null;
     table: string | null;
     pdfSha256: string | null;
   };
   effect: EffectPeriod;
+  sourceReview: (SourceFinding & { reviewSha: string }) | null;
   links: { intelligence: string; marefaData: string };
   qualification: {
     status: "WITHHELD";
@@ -213,14 +240,19 @@ export type ClaimRecord = {
   rationale: string;
 };
 
+/** مجموعة سجلات منسقة، لا حدث اقتصادي مستقل مثبت (economicEventVerified دائمًا false). */
 export type EventRecord = {
   eventId: string;
   eventType: ClaimCuration["eventType"];
   topic: Topic;
+  basis: GroupBasis;
+  economicEventVerified: false;
+  linked: NonNullable<EventGroupCuration["linked"]>;
   records: RecordRef[];
   claimIds: string[];
   firstEvidenceFiledAt: string;
-  effect: EffectPeriod;
+  /** فترات الأثر المختلفة لادعاءات المجموعة، دون اختيار أولها. */
+  effects: EffectPeriod[];
 };
 
 export type Register = {
@@ -228,6 +260,7 @@ export type Register = {
   company: { id: string; market: string; symbol: string };
   snapshot: { generatedAt: string; contractVersion: number; fixture: string };
   documents: DocumentRecord[];
+  counting: { documents: string; events: string };
   events: EventRecord[];
   claims: ClaimRecord[];
   unclassified: { record: RecordRef; reason: string }[];
@@ -250,17 +283,74 @@ export type ProjectRecord = {
   id: string;
   name: string;
   kind: "project" | "program_target";
-  description: { claimId: string; quote: string }[];
-  capacity:
-    { status: "not_disclosed" } | { status: "management_target_in_quote_only"; claimId: string };
+  description: { claimId: string; quote: string | null; withheld: string | null }[];
+  capacity: FieldStatus;
   executionStatus: { state: string; claimId: string | null };
-  targetDate:
-    { status: "management_target"; year: number; claimId: string } | { status: "not_disclosed" };
-  disclosedCost: { status: "not_disclosed" };
+  timing: FieldStatus;
+  cost: FieldStatus;
   relatedEngineMetrics: { key: string; presentInSnapshot: boolean }[];
   economicDrivers: { status: "not_authored"; reason: string };
   qualification: "WITHHELD";
 };
+
+/**
+ * حالة حقل مشروع (R03): يفرّق بين «مذكور ولم يُستخرج» و«غير مذكور في سجل المحرك».
+ * لا توجد حالة «غير معلن»: لا يُحكم بعدم إفصاح المُصدر دون فحص الأصل.
+ */
+export type FieldStatus =
+  | { status: "stated_in_engine_quote_not_extracted"; claimId: string }
+  | {
+      status: "in_original_per_independent_review_not_extracted";
+      pdfPages: number[];
+      reviewSha: string;
+    }
+  | { status: "not_in_engine_record_original_unchecked" };
+
+/** تاريخ تقويمي صالح YYYY-MM-DD (يرفض 2025-02-30). */
+export const isCivilDate = (d: unknown): d is string => {
+  if (typeof d !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
+  const x = new Date(`${d}T00:00:00.000Z`);
+  return !Number.isNaN(x.getTime()) && x.toISOString().slice(0, 10) === d;
+};
+const isYear = (y: unknown): y is number =>
+  Number.isInteger(y) && (y as number) >= 1900 && (y as number) <= 2100;
+function validateEffect(id: string, e: EffectPeriod) {
+  const bad = (why: string) => {
+    throw Error(`invalid_effect_period:${id}:${why}`);
+  };
+  switch (e.kind) {
+    case "fiscal_year":
+      if (!isYear(e.fiscalYear)) bad("fiscal_year");
+      break;
+    case "as_of":
+    case "event_date":
+      if (!isCivilDate(e.date)) bad(`date:${String(e.date)}`);
+      break;
+    case "reporting_period":
+      if (!isCivilDate(e.start) || !isCivilDate(e.end) || e.start > e.end) bad("reporting_period");
+      break;
+    case "through_year":
+      if (
+        !isYear(e.targetYear) ||
+        (e.baseYear !== null && (!isYear(e.baseYear) || e.baseYear >= e.targetYear))
+      )
+        bad("through_year");
+      break;
+    case "term":
+      if (
+        (e.years === null && e.months === null) ||
+        (e.years !== null && !(Number.isInteger(e.years) && e.years > 0)) ||
+        (e.months !== null && !(Number.isInteger(e.months) && e.months > 0)) ||
+        e.start !== null
+      )
+        bad("term");
+      break;
+    case "not_stated_in_record":
+      break;
+    default:
+      bad("unknown_kind");
+  }
+}
 
 /** مجموعات Company Intelligence / Marefa Data لكل موضوع (من model.ts، دون استيراد التطبيق). */
 const GROUP_OF_TOPIC: Record<Topic, string> = {
@@ -322,9 +412,32 @@ export function buildRegister(
   claimCuration = CLAIM_CURATION,
   documentCuration = DOCUMENT_CURATION,
   projectCuration = PROJECT_CURATION,
+  eventGroups: Record<string, EventGroupCuration> = EVENT_GROUPS,
+  sourceReview: Record<string, SourceFinding> = SOURCE_REVIEW,
 ): Register {
   const companyId = `${s.company.market}:${s.company.symbol}`;
+  // R04: قرارات التنسيق تخص أرامكو؛ لا تُورَّث لشركة أخرى.
+  if (s.company.market !== CURATION_COMPANY.market || s.company.symbol !== CURATION_COMPANY.symbol)
+    throw Error(`curation_company_mismatch:${companyId}`);
+  // R01: بصمتان مختلفتان لنفس الرابط أو المفتاح في B02 = هوية ملتبسة؛ يُرفض بدل اختيار الأول.
+  for (const d of b02.documents) {
+    if (!/^[0-9a-f]{64}$/.test(d.sha256)) throw Error(`b02_invalid_sha256:${d.url}`);
+    for (const o of b02.documents)
+      if ((o.url === d.url || o.key === d.key) && (o.sha256 !== d.sha256 || o.url !== d.url))
+        throw Error(`b02_conflicting_artifact_identity:${d.key}:${d.url}`);
+  }
   const pdfOf = (url: string) => b02.documents.find((d) => d.url === url) ?? null;
+  // R04: تواريخ تقويمية صالحة في القرارات المنسقة والمراجع.
+  const seenIds = new Set<string>();
+  for (const entry of claimCuration) {
+    if (entry.record.section === "disclosures" && !isCivilDate(entry.record.publishedAt))
+      throw Error(`invalid_record_date:${entry.record.title}`);
+    for (const c of entry.claims) {
+      if (seenIds.has(c.id)) throw Error(`duplicate_claim_id:${c.id}`);
+      seenIds.add(c.id);
+      validateEffect(c.id, c.effect);
+    }
+  }
 
   // الوثائق: كل ملف أصلي مرة واحدة، مع كل سجلات المصدر التي تشير إليه.
   const byUrl = new Map<string, DocumentRecord>();
@@ -427,6 +540,22 @@ export function buildRegister(
         c.quoteField === "title" ? (r.kind === "disclosure" ? r.d.title : r.a.title) : text;
       if (c.quote !== null && !fieldText.includes(c.quote))
         throw Error(`quote_not_verbatim:${c.id}`);
+      // R03: نص محرك يخالف الأصل لا يُقتبس؛ يبقى حرفيًا للتتبع فقط.
+      if (c.engineTextConflict || c.engineExcerpt || c.conflictingFragment) {
+        if (
+          !c.engineTextConflict ||
+          !c.engineExcerpt ||
+          !c.conflictingFragment ||
+          !c.engineExcerpt.includes(c.conflictingFragment) ||
+          (c.quote !== null &&
+            (!c.engineExcerpt.includes(c.quote) || c.quote.includes(c.conflictingFragment)))
+        )
+          throw Error(`engine_conflict_curation_invalid:${c.id}`);
+        if (!fieldText.includes(c.engineExcerpt)) throw Error(`quote_not_verbatim:${c.id}`);
+      }
+      const review = sourceReview[c.id] ?? null;
+      if (review?.meaningConflict && !c.engineTextConflict)
+        throw Error(`source_conflict_not_handled:${c.id}`);
       const gaps: GapCode[] = [];
       if (r.kind === "disclosure") gaps.push("engine_record_id_missing");
       gaps.push("document_version_missing");
@@ -440,16 +569,27 @@ export function buildRegister(
         "editorial_review_missing",
       );
       if (!isHttps(src.source_url)) gaps.push("source_url_not_https");
+      gaps.push("engine_text_not_verified_against_original");
+      if (!review) gaps.push("independent_source_review_missing");
+      else {
+        if (review.meaningConflict) gaps.push("engine_text_conflicts_with_original");
+        if (review.locator === "conflict") gaps.push("locator_conflicts_with_independent_review");
+        if (review.locator === "not_located") gaps.push("original_locator_not_found");
+        if (review.derivationInEngineText) gaps.push("derived_figure_in_engine_text");
+        if (review.exactDateUnverified) gaps.push("exact_date_unverified");
+      }
       const warnings: WarningCode[] = [];
       const eventDate = c.effect.kind === "event_date" ? c.effect.date : null;
       if (eventDate && src.filed_at.slice(0, 10) > eventDate)
         warnings.push("evidence_published_after_event");
       if (c.override) warnings.push("classification_override");
-      if (c.quote === null) warnings.push("quote_not_copied_links_marefa_data");
+      if (c.engineTextConflict) warnings.push("engine_excerpt_withheld_conflict");
+      else if (c.quote === null) warnings.push("quote_not_copied_links_marefa_data");
       else if (DISCLOSED_FIGURE.test(c.quote)) warnings.push("quote_contains_disclosed_figure");
       const group = groupOfTopic(c.topic);
       claims.push({
         id: c.id,
+        companyId,
         eventId: c.eventId,
         eventType: c.eventType,
         category: c.category,
@@ -457,6 +597,15 @@ export function buildRegister(
         topic: c.topic,
         crossTopics: c.crossTopics,
         quote: c.quote,
+        quoteOrigin: c.quote === null ? null : "engine_snapshot_text",
+        engineExcerpt:
+          c.engineExcerpt && c.engineTextConflict && c.conflictingFragment
+            ? {
+                text: c.engineExcerpt,
+                conflictingFragment: c.conflictingFragment,
+                conflict: c.engineTextConflict,
+              }
+            : null,
         quoteField: c.quoteField,
         language: "en",
         record: entry.record,
@@ -467,11 +616,13 @@ export function buildRegister(
           filingType: src.filing_type,
           filedAt: src.filed_at,
           page,
+          pageOrigin: "engine_record",
           note: typeof meta["note"] === "string" ? (meta["note"] as string) : null,
           table: typeof meta["table_ref"] === "string" ? (meta["table_ref"] as string) : null,
           pdfSha256: doc?.sha256 ?? null,
         },
         effect: c.effect,
+        sourceReview: review ? { ...review, reviewSha: SOURCE_REVIEW_REF.sha } : null,
         links: {
           intelligence: `/preview/web-v1/companies/${s.company.symbol}/intelligence?topic=${c.topic}`,
           marefaData: `/preview/web-v1/companies/${s.company.symbol}?tab=${c.marefaDataTab ?? group}`,
@@ -483,31 +634,64 @@ export function buildRegister(
     }
   }
 
-  // الأحداث: السجلات المتعددة للحدث نفسه تُجمع ولا تُعدّ مرتين.
+  // مجموعات الأحداث (R04): سجلات منسقة، لا أحداث اقتصادية مثبتة. الدمج تحت eventId واحد يتطلب
+  // قرار مجموعة معلنًا ونوعًا وموضوعًا متطابقين؛ أي تعارض يُرفض بدل اختيار أول ادعاء.
   const events = new Map<string, EventRecord>();
   for (const c of claims) {
+    const g = eventGroups[c.eventId];
+    if (!g) throw Error(`event_group_uncurated:${c.eventId}`);
     const e =
       events.get(c.eventId) ??
       ({
         eventId: c.eventId,
         eventType: c.eventType,
         topic: c.topic,
+        basis: g.basis,
+        economicEventVerified: false,
+        linked: g.linked ?? [],
         records: [],
         claimIds: [],
         firstEvidenceFiledAt: c.evidence.filedAt,
-        effect: c.effect,
+        effects: [],
       } satisfies EventRecord);
+    if (e.eventType !== c.eventType || e.topic !== c.topic)
+      throw Error(`event_group_incompatible:${c.eventId}:${e.eventType}/${c.eventType}`);
+    const prevDate = e.effects.find((x) => x.kind === "event_date");
+    if (
+      c.effect.kind === "event_date" &&
+      prevDate?.kind === "event_date" &&
+      prevDate.date !== c.effect.date
+    )
+      throw Error(`event_group_date_conflict:${c.eventId}`);
     if (!e.records.some((x) => recordLabel(x) === recordLabel(c.record))) e.records.push(c.record);
     e.claimIds.push(c.id);
+    if (!e.effects.some((x) => JSON.stringify(x) === JSON.stringify(c.effect)))
+      e.effects.push(c.effect);
     if (c.evidence.filedAt < e.firstEvidenceFiledAt) e.firstEvidenceFiledAt = c.evidence.filedAt;
     events.set(c.eventId, e);
   }
-  for (const c of claims)
-    if (
-      events.get(c.eventId)!.records.length > 1 &&
-      !c.qualification.warnings.includes("same_event_multiple_records")
-    )
+  for (const e of events.values()) {
+    const n = e.records.length;
+    const ok =
+      e.basis === "single_record"
+        ? n === 1 && e.claimIds.length === 1
+        : e.basis === "one_event_two_records"
+          ? n === 2
+          : e.basis === "composite_of_distinct_milestones"
+            ? n === 1 && e.claimIds.length === 1
+            : n === 1 && e.claimIds.length >= 2;
+    if (!ok) throw Error(`event_group_basis_mismatch:${e.eventId}:${e.basis}`);
+    for (const x of e.linked)
+      if (!eventGroups[x.eventId]?.linked?.some((y) => y.eventId === e.eventId))
+        throw Error(`event_group_link_not_reciprocal:${e.eventId}:${x.eventId}`);
+  }
+  for (const c of claims) {
+    const basis = events.get(c.eventId)!.basis;
+    if (basis === "one_event_two_records")
       c.qualification.warnings.push("same_event_multiple_records");
+    if (basis === "composite_of_distinct_milestones")
+      c.qualification.warnings.push("composite_of_distinct_milestones");
+  }
 
   // سجلات لم تُصنّف: لا تُربط بصمت بموضوع.
   for (const dc of documentCuration) seenRecords.add(recordLabel(dc.record));
@@ -581,36 +765,45 @@ export function buildRegister(
   });
 
   const claimById = new Map(claims.map((c) => [c.id, c]));
-  const capacityStatedIn = (projectId: string, c: ClaimRecord | undefined) => {
-    if (!c || c.category !== "management_plan" || c.quote === null || !/capacity/i.test(c.quote))
-      throw Error(`project_capacity_claim_invalid:${projectId}`);
-    return { status: "management_target_in_quote_only" as const, claimId: c.id };
+  const fieldStatus = (projectId: string, f: FieldSource): FieldStatus => {
+    if (f.from === "not_in_engine_record")
+      return { status: "not_in_engine_record_original_unchecked" };
+    if (f.from === "original_per_review") {
+      if (!f.pdfPages.length) throw Error(`project_field_review_pages_missing:${projectId}`);
+      return {
+        status: "in_original_per_independent_review_not_extracted",
+        pdfPages: f.pdfPages,
+        reviewSha: SOURCE_REVIEW_REF.sha,
+      };
+    }
+    const c = claimById.get(f.claimId);
+    if (!c || c.quote === null || !DISCLOSED_FIGURE.test(c.quote))
+      throw Error(`project_field_claim_invalid:${projectId}:${f.claimId}`);
+    return { status: "stated_in_engine_quote_not_extracted", claimId: c.id };
   };
   const projects: ProjectRecord[] = projectCuration.map((p) => {
     const desc = p.claimIds.map((id) => {
       const c = claimById.get(id);
-      if (!c || c.quote === null) throw Error(`project_claim_missing:${p.id}:${id}`);
-      return { claimId: id, quote: c.quote };
+      if (!c) throw Error(`project_claim_missing:${p.id}:${id}`);
+      if (c.quote === null && !c.engineExcerpt) throw Error(`project_claim_missing:${p.id}:${id}`);
+      return {
+        claimId: id,
+        quote: c.quote,
+        withheld: c.engineExcerpt ? "conflicting_part_of_engine_text_withheld" : null,
+      };
     });
-    const target =
-      p.executionStatus.state === "target" ? claimById.get(p.executionStatus.claimId) : null;
     return {
       id: p.id,
       name: p.name,
       kind: p.kind,
       description: desc,
-      capacity: p.capacityStatedIn
-        ? capacityStatedIn(p.id, claimById.get(p.capacityStatedIn))
-        : { status: "not_disclosed" },
+      capacity: fieldStatus(p.id, p.capacity),
       executionStatus:
-        p.executionStatus.state === "not_disclosed"
-          ? { state: "not_disclosed", claimId: null }
+        p.executionStatus.state === "not_stated_in_record"
+          ? { state: "not_stated_in_record", claimId: null }
           : { state: p.executionStatus.state, claimId: p.executionStatus.claimId },
-      targetDate:
-        target && target.effect.kind === "through_year"
-          ? { status: "management_target", year: target.effect.targetYear, claimId: target.id }
-          : { status: "not_disclosed" },
-      disclosedCost: { status: "not_disclosed" },
+      timing: fieldStatus(p.id, p.timing),
+      cost: fieldStatus(p.id, p.cost),
       relatedEngineMetrics: p.relatedEngineMetrics.map((key) => ({
         key,
         presentInSnapshot: s.metricKeys.has(key),
@@ -648,6 +841,12 @@ export function buildRegister(
       fixture: "tests/fixtures/codex-20261013/2222-page.json.gz",
     },
     documents,
+    counting: {
+      documents:
+        "Document rows: report/edition files plus one exchange historical-report catalogue page; not all are pinned PDFs.",
+      events:
+        "Event rows are curated record groups (see basis), not independently verified unique economic events.",
+    },
     events: eventList,
     claims,
     unclassified,

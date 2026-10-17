@@ -10,6 +10,9 @@
  */
 import type { TOPICS } from "../v1/contract";
 
+/** القرارات هنا تخص أرامكو وحدها؛ بناء السجل لشركة أخرى يُرفض (R04). */
+export const CURATION_COMPANY = { market: "SA", symbol: "2222" } as const;
+
 export type Topic = (typeof TOPICS)[number];
 export type Category = "official_fact" | "management_plan" | "assumption" | "research_opinion";
 export type EventType =
@@ -29,7 +32,10 @@ export type EventType =
   | "capital_increase"
   | "results_publication";
 
-/** فترة الأثر كما يذكرها المصدر فقط. ما لا يذكره المصدر = not_disclosed، ولا يُستنتج. */
+/**
+ * فترة الأثر كما يذكرها سجل المحرك فقط. ما لا يذكره السجل = not_stated_in_record، ولا يُستنتج.
+ * «غير مذكور في السجل» لا يعني «غير معلن» من المُصدر: الأصل لم يُفحص كاملًا (R03).
+ */
 export type EffectPeriod =
   | { kind: "fiscal_year"; fiscalYear: number; note: string }
   | { kind: "as_of"; date: string; note: string }
@@ -37,7 +43,7 @@ export type EffectPeriod =
   | { kind: "through_year"; baseYear: number | null; targetYear: number; note: string }
   | { kind: "term"; years: number | null; months: number | null; start: null; note: string }
   | { kind: "event_date"; date: string; note: string }
-  | { kind: "not_disclosed"; note: string };
+  | { kind: "not_stated_in_record"; note: string };
 
 /** مرجع سجل في لقطة المحرك. للإفصاحات لا يوجد معرف ثابت، فالمفتاح مركّب ومعلَن كفجوة. */
 export type RecordRef =
@@ -53,8 +59,16 @@ export type ClaimCuration = {
   planKind?: "issuer_guidance" | "management_target" | "management_expectation";
   topic: Topic;
   crossTopics: Topic[];
-  /** اقتباس حرفي من النص، أو null حين لا يُقتبس (نتائج مالية → Marefa Data). */
+  /**
+   * مقطع حرفي من نص المحرك (لا من الأصل)، أو null حين لا يُقتبس (نتائج مالية → Marefa Data).
+   * عند تعارض نص المحرك مع الأصل: يُقتبس الجزء غير المتعارض فقط، ولا يحوي conflictingFragment.
+   */
   quote: string | null;
+  /** نص المحرك الكامل عند التعارض؛ يبقى حرفيًا للتتبع ولا يُعرض كادعاء. */
+  engineExcerpt?: string;
+  /** الجزء المتعارض مع الأصل داخل engineExcerpt؛ ممنوع في quote. */
+  conflictingFragment?: string;
+  engineTextConflict?: string;
   quoteField: "body_text" | "title";
   effect: EffectPeriod;
   /** حدث واحد قد يظهر في أكثر من سجل؛ نفس eventId يجمعها دون عدّها مرتين. */
@@ -146,18 +160,23 @@ export const CLAIM_CURATION: { record: RecordRef; claims: ClaimCuration[] }[] = 
         planKind: "management_target",
         topic: "forecasts",
         crossTopics: ["operations"],
-        quote:
+        quote: "Aramco targets growth in sales gas production capacity",
+        conflictingFragment: "more than 80%",
+        engineExcerpt:
           "Aramco targets growth in sales gas production capacity of more than 80% by 2030 compared with 2021 levels",
+        engineTextConflict:
+          "المراجعة المستقلة: الأصل يقول «نحو 80%» مع شروط الطلب والمشاريع قبل قرار الاستثمار؛ نص المحرك يقوّيه إلى «أكثر من 80%» ويُسقط الشروط. يُقتبس الجزء غير المتعارض فقط، ولا يُعدّل المحرك.",
         quoteField: "body_text",
         effect: {
           kind: "through_year",
           baseYear: 2021,
           targetYear: 2030,
-          note: "هدف إدارة مقابل مستوى 2021",
+          note: "هدف إدارة مقابل مستوى 2021 وفق سجل المحرك؛ نسبة الهدف وشروطه قيد التعارض مع الأصل",
         },
         eventId: "evt-strategy-2030",
         projectIds: ["sales-gas-growth-2030"],
-        rationale: "هدف إداري لا إنجاز؛ لا يُحوَّل إلى سعة فعلية أو توقع إنتاج.",
+        rationale:
+          "هدف إداري لا إنجاز؛ لا يُحوَّل إلى سعة فعلية أو توقع إنتاج. مقدار الهدف في نص المحرك محجوب لتعارضه مع الأصل.",
       },
       {
         id: "aramco-msc-12mbd",
@@ -169,7 +188,7 @@ export const CLAIM_CURATION: { record: RecordRef; claims: ClaimCuration[] }[] = 
         quote: "while maintaining maximum sustainable crude capacity at 12 million barrels per day",
         quoteField: "body_text",
         effect: {
-          kind: "not_disclosed",
+          kind: "not_stated_in_record",
           note: "الجملة لا تذكر تاريخًا للحفاظ على السعة؛ عنوان السجل يذكر 2030 ولا يُنسب إليها بالاستنتاج",
         },
         eventId: "evt-strategy-2030",
@@ -359,7 +378,7 @@ export const CLAIM_CURATION: { record: RecordRef; claims: ClaimCuration[] }[] = 
         quote: "The Board declared a fourth-quarter 2025 base dividend",
         quoteField: "body_text",
         effect: {
-          kind: "not_disclosed",
+          kind: "not_stated_in_record",
           note: "تواريخ الاستحقاق والدفع غير معلنة في السجل",
         },
         eventId: "evt-q4-2025-base-dividend",
@@ -382,7 +401,7 @@ export const CLAIM_CURATION: { record: RecordRef; claims: ClaimCuration[] }[] = 
         crossTopics: [],
         quote: "Fourth quarter 2025 base dividend",
         quoteField: "title",
-        effect: { kind: "not_disclosed", note: "لا تاريخ استحقاق أو دفع في السجل" },
+        effect: { kind: "not_stated_in_record", note: "لا تاريخ استحقاق أو دفع في السجل" },
         eventId: "evt-q4-2025-base-dividend",
         projectIds: [],
         marefaDataTab: "shareholders",
@@ -536,13 +555,69 @@ export const CLAIM_CURATION: { record: RecordRef; claims: ClaimCuration[] }[] = 
         eventId,
         projectIds: [],
         rationale:
-          "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق.",
+          "مجموعة سجل مستقلة، لا حدث اقتصادي مستقل مثبت. المراجعة المستقلة: الأصل (PDF 140) يربط الرسملة بأسهم المنحة؛ يُعلن الربط في EVENT_GROUPS ولا يُدمج دون قرار مراجع. المصدر تقرير لاحق.",
       },
     ],
   })),
 ];
 
-/** نموذج المشاريع: ما لا يذكره المصدر يبقى not_disclosed. لا سعة ولا تكلفة ولا موعد مستنتج. */
+/**
+ * مجموعات الأحداث: كل eventId «مجموعة سجلات منسقة»، لا حدث اقتصادي مستقل مثبت (R04).
+ * - single_record: سجل واحد.
+ * - one_event_two_records: الحدث نفسه في إفصاح وإجراء شركة (لا يُعدّ مرتين).
+ * - facets_of_one_note: أوجه منفصلة لإيضاح واحد (واقعة/توقع إدارة/ترتيبات).
+ * - facets_of_one_statement: هدفان في بيان إستراتيجي واحد.
+ * - composite_of_distinct_milestones: سجل واحد يلخص مراحل مشاريع مختلفة؛ ليس حدثًا واحدًا.
+ * linked: علاقة معلنة مع مجموعة أخرى لم يُحسم دمجها؛ لا تُدمج تلقائيًا.
+ */
+export type GroupBasis =
+  | "single_record"
+  | "one_event_two_records"
+  | "facets_of_one_note"
+  | "facets_of_one_statement"
+  | "composite_of_distinct_milestones";
+export type EventGroupCuration = {
+  basis: GroupBasis;
+  linked?: { eventId: string; relation: "possibly_same_corporate_action"; evidence: string }[];
+};
+const BONUS_LINK = (eventId: string) => ({
+  eventId,
+  relation: "possibly_same_corporate_action" as const,
+  evidence:
+    "Independent review: annual report 2025 PDF 140 links the retained-earnings capitalisation to the bonus share issue. Same effective date in the engine. Merge pending reviewer decision.",
+});
+export const EVENT_GROUPS: Record<string, EventGroupCuration> = {
+  "evt-capex-guidance-2026": { basis: "single_record" },
+  "evt-strategy-2030": { basis: "facets_of_one_statement" },
+  "evt-projects-2025": { basis: "composite_of_distinct_milestones" },
+  "evt-jafurah-midstream": { basis: "single_record" },
+  "evt-rig-commitments": { basis: "single_record" },
+  "evt-contingencies-2025": { basis: "facets_of_one_note" },
+  "evt-customer-credit-2025": { basis: "single_record" },
+  "evt-risk-factors-2025": { basis: "single_record" },
+  "evt-q4-2025-base-dividend": { basis: "one_event_two_records" },
+  "evt-buyback-2026": { basis: "one_event_two_records" },
+  "evt-fy2025-results": { basis: "single_record" },
+  "evt-fy2025-dividends-paid": { basis: "single_record" },
+  "evt-petro-rabigh-2025": { basis: "single_record" },
+  "evt-bonus-2023": { basis: "single_record", linked: [BONUS_LINK("evt-capital-increase-2023")] },
+  "evt-capital-increase-2023": { basis: "single_record", linked: [BONUS_LINK("evt-bonus-2023")] },
+  "evt-bonus-2022": { basis: "single_record", linked: [BONUS_LINK("evt-capital-increase-2022")] },
+  "evt-capital-increase-2022": { basis: "single_record", linked: [BONUS_LINK("evt-bonus-2022")] },
+};
+
+/**
+ * حالة حقل في نموذج المشاريع. لا «غير معلن» دون إثبات (R03):
+ * - engine_quote: الرقم مذكور في مقطع المحرك المقتبس، ولم يُستخرج قيمةً.
+ * - original_per_review: المراجع المستقل وجده في الأصل (صفحات PDF)، ولم يُستخرج.
+ * - not_in_engine_record: لا يذكره سجل المحرك؛ الأصل لم يُفحص لهذا الحقل، فلا يُحكم بعدم الإفصاح.
+ */
+export type FieldSource =
+  | { from: "engine_quote"; claimId: string }
+  | { from: "original_per_review"; pdfPages: number[] }
+  | { from: "not_in_engine_record" };
+
+/** نموذج المشاريع: لا سعة ولا تكلفة ولا موعد مستنتج أو مستخرج. */
 export type ProjectCuration = {
   id: string;
   name: string;
@@ -552,13 +627,15 @@ export type ProjectCuration = {
   executionStatus:
     | { state: "commenced_production" | "commenced_operations" | "onstream"; claimId: string }
     | { state: "target"; claimId: string }
-    | { state: "not_disclosed" };
-  /** ادعاء يذكر السعة أو نموها نصًا كهدف إدارة؛ تبقى نصًا في الاقتباس ولا تُستخرج قيمة. */
-  capacityStatedIn?: string;
+    | { state: "not_stated_in_record" };
+  capacity: FieldSource;
+  timing: FieldSource;
+  cost: FieldSource;
   /** مقاييس منشورة ذات صلة في صفحة المحرك (روابط فقط، لا قيم ولا أثر محسوب). */
   relatedEngineMetrics: string[];
 };
 
+const MILESTONE_PAGES = [13, 15, 54];
 export const PROJECT_CURATION: ProjectCuration[] = [
   {
     id: "jafurah",
@@ -566,6 +643,9 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "project",
     claimIds: ["aramco-project-milestones-2025", "aramco-jafurah-midstream-contract"],
     executionStatus: { state: "commenced_production", claimId: "aramco-project-milestones-2025" },
+    capacity: { from: "original_per_review", pdfPages: MILESTONE_PAGES },
+    timing: { from: "original_per_review", pdfPages: MILESTONE_PAGES },
+    cost: { from: "not_in_engine_record" },
     relatedEngineMetrics: ["total_gas_production"],
   },
   {
@@ -574,6 +654,9 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "project",
     claimIds: ["aramco-project-milestones-2025"],
     executionStatus: { state: "commenced_operations", claimId: "aramco-project-milestones-2025" },
+    capacity: { from: "original_per_review", pdfPages: MILESTONE_PAGES },
+    timing: { from: "original_per_review", pdfPages: MILESTONE_PAGES },
+    cost: { from: "not_in_engine_record" },
     relatedEngineMetrics: ["total_gas_production"],
   },
   {
@@ -582,6 +665,9 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "project",
     claimIds: ["aramco-project-milestones-2025"],
     executionStatus: { state: "onstream", claimId: "aramco-project-milestones-2025" },
+    capacity: { from: "original_per_review", pdfPages: MILESTONE_PAGES },
+    timing: { from: "original_per_review", pdfPages: MILESTONE_PAGES },
+    cost: { from: "not_in_engine_record" },
     relatedEngineMetrics: ["total_liquids_production", "total_gas_production"],
   },
   {
@@ -590,7 +676,10 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "program_target",
     claimIds: ["aramco-sales-gas-growth-2030"],
     executionStatus: { state: "target", claimId: "aramco-sales-gas-growth-2030" },
-    capacityStatedIn: "aramco-sales-gas-growth-2030",
+    // نص المحرك محجوب لتعارضه مع الأصل؛ الهدف وسنته من الأصل وفق المراجع، دون استخراج.
+    capacity: { from: "original_per_review", pdfPages: [13, 50, 54] },
+    timing: { from: "original_per_review", pdfPages: [13, 50, 54] },
+    cost: { from: "not_in_engine_record" },
     relatedEngineMetrics: ["total_gas_production"],
   },
   {
@@ -599,7 +688,10 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "program_target",
     claimIds: ["aramco-msc-12mbd"],
     executionStatus: { state: "target", claimId: "aramco-msc-12mbd" },
-    capacityStatedIn: "aramco-msc-12mbd",
+    capacity: { from: "engine_quote", claimId: "aramco-msc-12mbd" },
+    // الجملة لا تذكر سنة؛ لا يُنسب 2030 بالاستنتاج.
+    timing: { from: "not_in_engine_record" },
+    cost: { from: "not_in_engine_record" },
     relatedEngineMetrics: ["total_liquids_production"],
   },
 ];

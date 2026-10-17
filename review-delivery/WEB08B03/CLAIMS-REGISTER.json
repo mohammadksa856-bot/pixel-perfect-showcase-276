@@ -10,6 +10,7 @@
  "claims": [
   {
    "id": "aramco-capex-guidance-2026",
+   "companyId": "SA:2222",
    "eventId": "evt-capex-guidance-2026",
    "eventType": "capital_guidance",
    "category": "management_plan",
@@ -19,6 +20,8 @@
     "financials"
    ],
    "quote": "Aramco stated 2026 capital investment guidance of USD 50 billion to USD 55 billion.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -35,6 +38,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -43,6 +47,13 @@
     "kind": "fiscal_year",
     "fiscalYear": 2026,
     "note": "التوجيه لسنة 2026 كما ورد"
+   },
+   "sourceReview": {
+    "status": "REVIEW",
+    "reviewerPdfPages": [],
+    "locator": "not_located",
+    "note": "Guidance sentence/range not located in the annual report; not a finding of falsity. Needs an exact original or release locator.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
@@ -58,7 +69,9 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "original_locator_not_found"
     ],
     "warnings": [
      "quote_contains_disclosed_figure"
@@ -69,6 +82,7 @@
   },
   {
    "id": "aramco-sales-gas-growth-2030",
+   "companyId": "SA:2222",
    "eventId": "evt-strategy-2030",
    "eventType": "strategy_target",
    "category": "management_plan",
@@ -77,7 +91,13 @@
    "crossTopics": [
     "operations"
    ],
-   "quote": "Aramco targets growth in sales gas production capacity of more than 80% by 2030 compared with 2021 levels",
+   "quote": "Aramco targets growth in sales gas production capacity",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": {
+    "text": "Aramco targets growth in sales gas production capacity of more than 80% by 2030 compared with 2021 levels",
+    "conflictingFragment": "more than 80%",
+    "conflict": "المراجعة المستقلة: الأصل يقول «نحو 80%» مع شروط الطلب والمشاريع قبل قرار الاستثمار؛ نص المحرك يقوّيه إلى «أكثر من 80%» ويُسقط الشروط. يُقتبس الجزء غير المتعارض فقط، ولا يُعدّل المحرك."
+   },
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -94,6 +114,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -102,7 +123,19 @@
     "kind": "through_year",
     "baseYear": 2021,
     "targetYear": 2030,
-    "note": "هدف إدارة مقابل مستوى 2021"
+    "note": "هدف إدارة مقابل مستوى 2021 وفق سجل المحرك؛ نسبة الهدف وشروطه قيد التعارض مع الأصل"
+   },
+   "sourceReview": {
+    "status": "REWORK",
+    "reviewerPdfPages": [
+     13,
+     50,
+     54
+    ],
+    "locator": "engine_none",
+    "meaningConflict": "Engine text says 'more than 80%'; the original states approximately 80% and carries demand and pre-FID project qualifications that the engine text omits.",
+    "note": "Engine excerpt withheld as the claim text; original wording not reproduced here.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
@@ -118,17 +151,20 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "engine_text_conflicts_with_original"
     ],
     "warnings": [
-     "quote_contains_disclosed_figure"
+     "engine_excerpt_withheld_conflict"
     ]
    },
    "override": null,
-   "rationale": "هدف إداري لا إنجاز؛ لا يُحوَّل إلى سعة فعلية أو توقع إنتاج."
+   "rationale": "هدف إداري لا إنجاز؛ لا يُحوَّل إلى سعة فعلية أو توقع إنتاج. مقدار الهدف في نص المحرك محجوب لتعارضه مع الأصل."
   },
   {
    "id": "aramco-msc-12mbd",
+   "companyId": "SA:2222",
    "eventId": "evt-strategy-2030",
    "eventType": "strategy_target",
    "category": "management_plan",
@@ -138,6 +174,8 @@
     "operations"
    ],
    "quote": "while maintaining maximum sustainable crude capacity at 12 million barrels per day",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -154,13 +192,24 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
    },
    "effect": {
-    "kind": "not_disclosed",
+    "kind": "not_stated_in_record",
     "note": "الجملة لا تذكر تاريخًا للحفاظ على السعة؛ عنوان السجل يذكر 2030 ولا يُنسب إليها بالاستنتاج"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     13,
+     26
+    ],
+    "locator": "engine_none",
+    "note": "Maximum sustainable capacity, not actual production; no dated output forecast.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=forecasts",
@@ -176,7 +225,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": [
      "quote_contains_disclosed_figure"
@@ -187,6 +237,7 @@
   },
   {
    "id": "aramco-project-milestones-2025",
+   "companyId": "SA:2222",
    "eventId": "evt-projects-2025",
    "eventType": "project_milestone",
    "category": "official_fact",
@@ -196,6 +247,8 @@
     "business"
    ],
    "quote": "Jafurah commenced production, Tanajib commenced operations, and the Marjan increment came onstream during the period covered by the 2025 report.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -212,6 +265,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -221,6 +275,17 @@
     "start": "2025-01-01",
     "end": "2025-12-31",
     "note": "خلال فترة تقرير 2025؛ التاريخ الدقيق لكل مرحلة غير معلن في السجل"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_COMPOSITE_NOT_APPROVED",
+    "reviewerPdfPages": [
+     13,
+     15,
+     54
+    ],
+    "locator": "engine_none",
+    "note": "Three distinct project milestones summarised in one record. Capacities and timing appear in the original and are not extracted.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=operations",
@@ -236,15 +301,19 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
-    "warnings": []
+    "warnings": [
+     "composite_of_distinct_milestones"
+    ]
    },
    "override": null,
    "rationale": "واقعة منشورة عن حالة التنفيذ؛ لا سعة ولا تكلفة في السجل."
   },
   {
    "id": "aramco-jafurah-midstream-contract",
+   "companyId": "SA:2222",
    "eventId": "evt-jafurah-midstream",
    "eventType": "commercial_contract",
    "category": "official_fact",
@@ -255,6 +324,8 @@
     "risks"
    ],
    "quote": "Aramco retained exclusive use of the Jafurah Field Gas Plant and Riyas NGL Fractionation Plant for 20 years under a quarterly volume-based tariff backed by minimum volume commitments.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -271,6 +342,7 @@
     "filingType": "Annual financial statement notes - dimensional detail",
     "filedAt": "2026-03-10",
     "page": 71,
+    "pageOrigin": "engine_record",
     "note": "34",
     "table": null,
     "pdfSha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4"
@@ -281,6 +353,15 @@
     "months": null,
     "start": null,
     "note": "مدة 20 سنة؛ تاريخ بدايتها غير معلن في السجل"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     71
+    ],
+    "locator": "consistent",
+    "note": "Stand-alone FY2025 statements PDF 71 (same note at annual report PDF 231).",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=business",
@@ -295,7 +376,8 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": []
    },
@@ -304,6 +386,7 @@
   },
   {
    "id": "aramco-rig-purchase-commitments",
+   "companyId": "SA:2222",
    "eventId": "evt-rig-commitments",
    "eventType": "purchase_commitment",
    "category": "official_fact",
@@ -313,6 +396,8 @@
     "operations"
    ],
    "quote": "At year-end 2025, Aramco-related entities had remaining guaranteed commitments for 18 offshore rigs valued at SAR 22.275 billion and 36 onshore rigs valued at SAR 6.789 billion.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -329,6 +414,7 @@
     "filingType": "Annual financial statement notes - dimensional detail",
     "filedAt": "2026-03-10",
     "page": 69,
+    "pageOrigin": "engine_record",
     "note": "32(b)-(c)",
     "table": null,
     "pdfSha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4"
@@ -337,6 +423,16 @@
     "kind": "as_of",
     "date": "2025-12-31",
     "note": "رصيد التزام في نهاية 2025؛ جدول التسليم والدفع غير معلن في السجل"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_WITH_DERIVATION_CAVEAT",
+    "reviewerPdfPages": [
+     69
+    ],
+    "locator": "consistent",
+    "derivationInEngineText": "18 remaining offshore rigs is explicit; '36 onshore rigs' is derived (50 ordered less 14 delivered), not a printed count.",
+    "note": "Stand-alone FY2025 statements PDF 69 (annual report PDF 229). Currency magnitudes agree with source units.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
@@ -351,7 +447,9 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "derived_figure_in_engine_text"
     ],
     "warnings": [
      "quote_contains_disclosed_figure"
@@ -362,6 +460,7 @@
   },
   {
    "id": "aramco-contingencies-ordinary-course",
+   "companyId": "SA:2222",
    "eventId": "evt-contingencies-2025",
    "eventType": "contingency",
    "category": "official_fact",
@@ -369,6 +468,8 @@
    "topic": "risks",
    "crossTopics": [],
    "quote": "Aramco reports contingent assets and liabilities arising from contractor claims, lawsuits and arbitrations in the ordinary course of business.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -385,6 +486,7 @@
     "filingType": "Annual report contingency disclosure",
     "filedAt": "2026-03-09",
     "page": 230,
+    "pageOrigin": "engine_record",
     "note": "33",
     "table": "Contingencies",
     "pdfSha256": null
@@ -393,6 +495,15 @@
     "kind": "as_of",
     "date": "2025-12-31",
     "note": "كما في نهاية 2025"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     230
+    ],
+    "locator": "consistent",
+    "note": "PDF 230 = printed 228, note 33.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
@@ -408,7 +519,8 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": []
    },
@@ -417,6 +529,7 @@
   },
   {
    "id": "aramco-contingencies-management-view",
+   "companyId": "SA:2222",
    "eventId": "evt-contingencies-2025",
    "eventType": "contingency",
    "category": "management_plan",
@@ -424,6 +537,8 @@
    "topic": "risks",
    "crossTopics": [],
    "quote": "Management does not anticipate material adjustments from those matters.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -440,6 +555,7 @@
     "filingType": "Annual report contingency disclosure",
     "filedAt": "2026-03-09",
     "page": 230,
+    "pageOrigin": "engine_record",
     "note": "33",
     "table": "Contingencies",
     "pdfSha256": null
@@ -449,6 +565,15 @@
     "date": "2025-12-31",
     "note": "تقدير الإدارة كما في نهاية 2025"
    },
+   "sourceReview": {
+    "status": "SUPPORTED_MANAGEMENT_ESTIMATE_NOT_APPROVED",
+    "reviewerPdfPages": [
+     230
+    ],
+    "locator": "consistent",
+    "note": "Management expectation, not a verified outcome.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
+   },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
     "marefaData": "/preview/web-v1/companies/2222?tab=risks"
@@ -463,7 +588,8 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": []
    },
@@ -472,6 +598,7 @@
   },
   {
    "id": "aramco-sadara-petro-rabigh-support",
+   "companyId": "SA:2222",
    "eventId": "evt-contingencies-2025",
    "eventType": "contingency",
    "category": "official_fact",
@@ -481,6 +608,8 @@
     "business"
    ],
    "quote": "The note separately describes support and guarantee arrangements involving Sadara and Petro Rabigh, but does not publish one aggregate contingency amount.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -497,6 +626,7 @@
     "filingType": "Annual report contingency disclosure",
     "filedAt": "2026-03-09",
     "page": 230,
+    "pageOrigin": "engine_record",
     "note": "33",
     "table": "Contingencies",
     "pdfSha256": null
@@ -505,6 +635,16 @@
     "kind": "as_of",
     "date": "2025-12-31",
     "note": "كما في نهاية 2025"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     230,
+     231
+    ],
+    "locator": "consistent",
+    "note": "Note 33 spans two pages; no aggregate amount is inferred.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
@@ -520,7 +660,8 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": []
    },
@@ -529,6 +670,7 @@
   },
   {
    "id": "aramco-customer-credit-concentration",
+   "companyId": "SA:2222",
    "eventId": "evt-customer-credit-2025",
    "eventType": "customer_credit_concentration",
    "category": "official_fact",
@@ -536,6 +678,8 @@
    "topic": "risks",
    "crossTopics": [],
    "quote": "Aramco states that its trade receivables arise from a global customer base, limiting geographic concentration of credit risk.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -552,6 +696,7 @@
     "filingType": "Annual report customer credit concentration disclosure",
     "filedAt": "2026-03-09",
     "page": 192,
+    "pageOrigin": "engine_record",
     "note": "3(a)(ii)",
     "table": "Financial risk management - credit risk",
     "pdfSha256": null
@@ -560,6 +705,15 @@
     "kind": "as_of",
     "date": "2025-12-31",
     "note": "كما في نهاية 2025"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     192
+    ],
+    "locator": "consistent",
+    "note": "PDF 192 = printed 190, note 3(a). Numbering basis is PDF pages.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
@@ -575,7 +729,8 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": []
    },
@@ -584,6 +739,7 @@
   },
   {
    "id": "aramco-hydrocarbon-risk-factors",
+   "companyId": "SA:2222",
    "eventId": "evt-risk-factors-2025",
    "eventType": "risk_factor",
    "category": "official_fact",
@@ -593,6 +749,8 @@
     "industry"
    ],
    "quote": "Results are exposed to crude oil and gas prices, global demand, regulation and government production decisions, in addition to operational, project and geopolitical risks.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -609,6 +767,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -617,6 +776,13 @@
     "kind": "as_of",
     "date": "2025-12-31",
     "note": "كما وردت في تقرير 2025"
+   },
+   "sourceReview": {
+    "status": "REVIEW",
+    "reviewerPdfPages": [],
+    "locator": "not_located",
+    "note": "Composite risk summary with no exact original paragraph.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=risks",
@@ -632,7 +798,9 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "original_locator_not_found"
     ],
     "warnings": []
    },
@@ -641,6 +809,7 @@
   },
   {
    "id": "aramco-q4-2025-base-dividend",
+   "companyId": "SA:2222",
    "eventId": "evt-q4-2025-base-dividend",
    "eventType": "dividend_declaration",
    "category": "official_fact",
@@ -648,6 +817,8 @@
    "topic": "dividends_actions",
    "crossTopics": [],
    "quote": "The Board declared a fourth-quarter 2025 base dividend",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -664,13 +835,23 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
    },
    "effect": {
-    "kind": "not_disclosed",
+    "kind": "not_stated_in_record",
     "note": "تواريخ الاستحقاق والدفع غير معلنة في السجل"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     235
+    ],
+    "locator": "engine_none",
+    "note": "Board declaration (note 37), not payment.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -686,7 +867,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": [
      "classification_override",
@@ -698,6 +880,7 @@
   },
   {
    "id": "aramco-q4-2025-base-dividend-action",
+   "companyId": "SA:2222",
    "eventId": "evt-q4-2025-base-dividend",
    "eventType": "dividend_declaration",
    "category": "official_fact",
@@ -705,6 +888,8 @@
    "topic": "dividends_actions",
    "crossTopics": [],
    "quote": "Fourth quarter 2025 base dividend",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -719,13 +904,23 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
    },
    "effect": {
-    "kind": "not_disclosed",
+    "kind": "not_stated_in_record",
     "note": "لا تاريخ استحقاق أو دفع في السجل"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     235
+    ],
+    "locator": "engine_none",
+    "note": "Same declaration as the disclosure record; not a second dividend.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -740,7 +935,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": [
      "same_event_multiple_records"
@@ -751,6 +947,7 @@
   },
   {
    "id": "aramco-buyback-2026",
+   "companyId": "SA:2222",
    "eventId": "evt-buyback-2026",
    "eventType": "buyback_program",
    "category": "official_fact",
@@ -758,6 +955,8 @@
    "topic": "dividends_actions",
    "crossTopics": [],
    "quote": "Aramco announced a share buyback program of up to SAR 11.3 billion, equivalent to USD 3 billion, over 18 months.",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -774,6 +973,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -784,6 +984,16 @@
     "months": 18,
     "start": null,
     "note": "18 شهرًا؛ بداية التنفيذ وما نُفّذ منه غير معلنين في السجل"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     140,
+     246
+    ],
+    "locator": "engine_none",
+    "note": "Approved program, not completed purchases. The original dates the approval and the 18-month term.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -799,7 +1009,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": [
      "quote_contains_disclosed_figure",
@@ -811,6 +1022,7 @@
   },
   {
    "id": "aramco-buyback-2026-action",
+   "companyId": "SA:2222",
    "eventId": "evt-buyback-2026",
    "eventType": "buyback_program",
    "category": "official_fact",
@@ -818,6 +1030,8 @@
    "topic": "dividends_actions",
    "crossTopics": [],
    "quote": "Share buyback program up to SAR 11.3 billion",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -832,6 +1046,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -842,6 +1057,16 @@
     "months": 18,
     "start": null,
     "note": "كما في الإفصاح"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_MEANING_NOT_APPROVED",
+    "reviewerPdfPages": [
+     140,
+     246
+    ],
+    "locator": "engine_none",
+    "note": "Same program; no execution asserted.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -856,7 +1081,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": [
      "quote_contains_disclosed_figure",
@@ -868,6 +1094,7 @@
   },
   {
    "id": "aramco-fy2025-results-publication",
+   "companyId": "SA:2222",
    "eventId": "evt-fy2025-results",
    "eventType": "results_publication",
    "category": "official_fact",
@@ -877,6 +1104,8 @@
     "news"
    ],
    "quote": null,
+   "quoteOrigin": null,
+   "engineExcerpt": null,
    "quoteField": "body_text",
    "language": "en",
    "record": {
@@ -893,6 +1122,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -901,6 +1131,16 @@
     "kind": "fiscal_year",
     "fiscalYear": 2025,
     "note": "نتائج السنة المالية 2025"
+   },
+   "sourceReview": {
+    "status": "REVIEW",
+    "reviewerPdfPages": [
+     34,
+     36
+    ],
+    "locator": "engine_none",
+    "note": "Publication-event metadata; exact publication date needs official release or archive proof.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=financials",
@@ -916,7 +1156,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": [
      "quote_not_copied_links_marefa_data"
@@ -927,6 +1168,7 @@
   },
   {
    "id": "aramco-fy2025-dividends-paid",
+   "companyId": "SA:2222",
    "eventId": "evt-fy2025-dividends-paid",
    "eventType": "dividend_paid",
    "category": "official_fact",
@@ -936,6 +1178,8 @@
     "financials"
    ],
    "quote": "FY 2025 dividends paid (aggregate)",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -950,6 +1194,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": null,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -958,6 +1203,16 @@
     "kind": "fiscal_year",
     "fiscalYear": 2025,
     "note": "مجموع ما دُفع خلال 2025"
+   },
+   "sourceReview": {
+    "status": "SUPPORTED_TITLE_NOT_NUMERIC_APPROVAL",
+    "reviewerPdfPages": [
+     40,
+     235
+    ],
+    "locator": "engine_none",
+    "note": "Concept supported; no amount approved.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -972,7 +1227,8 @@
      "locator_missing",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original"
     ],
     "warnings": []
    },
@@ -981,6 +1237,7 @@
   },
   {
    "id": "aramco-petro-rabigh-stake-2025",
+   "companyId": "SA:2222",
    "eventId": "evt-petro-rabigh-2025",
    "eventType": "acquisition",
    "category": "official_fact",
@@ -990,6 +1247,8 @@
     "business"
    ],
    "quote": "Acquisition of an additional 22.5% stake in Petro Rabigh",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -1004,6 +1263,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": 232,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -1012,6 +1272,16 @@
     "kind": "event_date",
     "date": "2025-10-09",
     "note": "تاريخ السريان في سجل المحرك"
+   },
+   "sourceReview": {
+    "status": "REWORK",
+    "reviewerPdfPages": [
+     233
+    ],
+    "locator": "conflict",
+    "exactDateUnverified": true,
+    "note": "Discussed at PDF 233 (printed 231), not the engine's 232. A completion announcement date is not automatically the legal effective date.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -1026,7 +1296,10 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "locator_conflicts_with_independent_review",
+     "exact_date_unverified"
     ],
     "warnings": [
      "evidence_published_after_event",
@@ -1038,6 +1311,7 @@
   },
   {
    "id": "aramco-bonus-2023",
+   "companyId": "SA:2222",
    "eventId": "evt-bonus-2023",
    "eventType": "bonus_shares",
    "category": "official_fact",
@@ -1047,6 +1321,8 @@
     "ownership"
    ],
    "quote": "2023 bonus share issue",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -1061,6 +1337,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": 139,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -1069,6 +1346,16 @@
     "kind": "event_date",
     "date": "2023-05-08",
     "note": "تاريخ السريان في سجل المحرك"
+   },
+   "sourceReview": {
+    "status": "REWORK",
+    "reviewerPdfPages": [
+     140
+    ],
+    "locator": "conflict",
+    "exactDateUnverified": true,
+    "note": "PDF 140 (printed 138) supports the month; the engine's 139 points elsewhere. Exact day unverified.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -1083,17 +1370,21 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "locator_conflicts_with_independent_review",
+     "exact_date_unverified"
     ],
     "warnings": [
      "evidence_published_after_event"
     ]
    },
    "override": null,
-   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+   "rationale": "مجموعة سجل مستقلة، لا حدث اقتصادي مستقل مثبت. المراجعة المستقلة: الأصل (PDF 140) يربط الرسملة بأسهم المنحة؛ يُعلن الربط في EVENT_GROUPS ولا يُدمج دون قرار مراجع. المصدر تقرير لاحق."
   },
   {
    "id": "aramco-capital-increase-2023",
+   "companyId": "SA:2222",
    "eventId": "evt-capital-increase-2023",
    "eventType": "capital_increase",
    "category": "official_fact",
@@ -1103,6 +1394,8 @@
     "ownership"
    ],
    "quote": "2023 capital increase through retained earnings capitalization",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -1117,6 +1410,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": 139,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -1125,6 +1419,16 @@
     "kind": "event_date",
     "date": "2023-05-08",
     "note": "تاريخ السريان في سجل المحرك"
+   },
+   "sourceReview": {
+    "status": "REWORK",
+    "reviewerPdfPages": [
+     140
+    ],
+    "locator": "conflict",
+    "exactDateUnverified": true,
+    "note": "The original links the capitalisation to the bonus shares. Engine page 139 is wrong; exact day unverified.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -1139,17 +1443,21 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "locator_conflicts_with_independent_review",
+     "exact_date_unverified"
     ],
     "warnings": [
      "evidence_published_after_event"
     ]
    },
    "override": null,
-   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+   "rationale": "مجموعة سجل مستقلة، لا حدث اقتصادي مستقل مثبت. المراجعة المستقلة: الأصل (PDF 140) يربط الرسملة بأسهم المنحة؛ يُعلن الربط في EVENT_GROUPS ولا يُدمج دون قرار مراجع. المصدر تقرير لاحق."
   },
   {
    "id": "aramco-bonus-2022",
+   "companyId": "SA:2222",
    "eventId": "evt-bonus-2022",
    "eventType": "bonus_shares",
    "category": "official_fact",
@@ -1159,6 +1467,8 @@
     "ownership"
    ],
    "quote": "2022 bonus share issue",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -1173,6 +1483,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": 139,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -1181,6 +1492,16 @@
     "kind": "event_date",
     "date": "2022-05-12",
     "note": "تاريخ السريان في سجل المحرك"
+   },
+   "sourceReview": {
+    "status": "REWORK",
+    "reviewerPdfPages": [
+     140
+    ],
+    "locator": "conflict",
+    "exactDateUnverified": true,
+    "note": "Same locator mismatch; the passage supports the month, not the exact effective day.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -1195,17 +1516,21 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "locator_conflicts_with_independent_review",
+     "exact_date_unverified"
     ],
     "warnings": [
      "evidence_published_after_event"
     ]
    },
    "override": null,
-   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+   "rationale": "مجموعة سجل مستقلة، لا حدث اقتصادي مستقل مثبت. المراجعة المستقلة: الأصل (PDF 140) يربط الرسملة بأسهم المنحة؛ يُعلن الربط في EVENT_GROUPS ولا يُدمج دون قرار مراجع. المصدر تقرير لاحق."
   },
   {
    "id": "aramco-capital-increase-2022",
+   "companyId": "SA:2222",
    "eventId": "evt-capital-increase-2022",
    "eventType": "capital_increase",
    "category": "official_fact",
@@ -1215,6 +1540,8 @@
     "ownership"
    ],
    "quote": "2022 capital increase through retained earnings capitalization",
+   "quoteOrigin": "engine_snapshot_text",
+   "engineExcerpt": null,
    "quoteField": "title",
    "language": "en",
    "record": {
@@ -1229,6 +1556,7 @@
     "filingType": "Annual report supplementary metrics and comparative restatement",
     "filedAt": "2026-03-09",
     "page": 139,
+    "pageOrigin": "engine_record",
     "note": null,
     "table": null,
     "pdfSha256": null
@@ -1237,6 +1565,16 @@
     "kind": "event_date",
     "date": "2022-05-12",
     "note": "تاريخ السريان في سجل المحرك"
+   },
+   "sourceReview": {
+    "status": "REWORK",
+    "reviewerPdfPages": [
+     140
+    ],
+    "locator": "conflict",
+    "exactDateUnverified": true,
+    "note": "Same locator mismatch; not a separately proven economic event.",
+    "reviewSha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6"
    },
    "links": {
     "intelligence": "/preview/web-v1/companies/2222/intelligence?topic=dividends_actions",
@@ -1251,14 +1589,17 @@
      "locator_unverified",
      "documented_rights_grant_missing",
      "independent_review_receipt_missing",
-     "editorial_review_missing"
+     "editorial_review_missing",
+     "engine_text_not_verified_against_original",
+     "locator_conflicts_with_independent_review",
+     "exact_date_unverified"
     ],
     "warnings": [
      "evidence_published_after_event"
     ]
    },
    "override": null,
-   "rationale": "حدث مستقل. زيادة رأس المال بالرسملة وإصدار المنحة في التاريخ نفسه قد يكونان حدثًا واحدًا؛ لم يُربطا دون تأكيد (قرار مطلوب في تقرير الفجوات). المصدر تقرير لاحق."
+   "rationale": "مجموعة سجل مستقلة، لا حدث اقتصادي مستقل مثبت. المراجعة المستقلة: الأصل (PDF 140) يربط الرسملة بأسهم المنحة؛ يُعلن الربط في EVENT_GROUPS ولا يُدمج دون قرار مراجع. المصدر تقرير لاحق."
   }
  ]
 }

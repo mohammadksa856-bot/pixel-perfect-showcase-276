@@ -35,12 +35,27 @@ describe("render", () => {
     expect(ar).toMatch(/data-topic="valuation" data-topic-status="no_disclosure_in_sample"/);
   });
 
-  test("projects keep capacity and cost unknown and drivers unauthored", () => {
+  test("projects show field statuses (never 'not disclosed'), drivers unauthored, mobile-stacked table", () => {
     expect(ar.match(/data-project="/g)).toHaveLength(r.projects.length);
     expect((ar.match(/data-not-authored/g) ?? []).length).toBe(r.projects.length);
-    expect(ar.match(/data-capacity-in-quote="/g)).toHaveLength(
-      r.projects.filter((p) => p.capacity.status !== "not_disclosed").length,
+    expect((ar.match(/data-field-status="/g) ?? []).length).toBe(r.projects.length * 3);
+    expect(ar).not.toContain('data-field-status="not_disclosed"');
+    expect(en).toContain("Not in the engine record; original unchecked");
+    // every project cell carries a label so the table stacks into cards on narrow screens
+    expect(en).toMatch(/@media \(max-width:760px\)\{table\.stack thead\{display:none\}/);
+    const row = en.slice(
+      en.indexOf('data-project="jafurah"'),
+      en.indexOf("</tr>", en.indexOf('data-project="jafurah"')),
     );
+    expect(row.match(/<td /g)!.length).toBe(row.match(/data-label="/g)!.length);
+  });
+
+  test("gas target: only the non-conflicting engine text is quoted; the conflict is shown", () => {
+    for (const h of [ar, en])
+      for (const q of h.match(/<blockquote[^>]*>[^<]*<\/blockquote>/g) ?? [])
+        expect(q).not.toMatch(/more than 80%/);
+    expect(en).toContain(">Aramco targets growth in sales gas production capacity</blockquote>");
+    expect(en).toContain("data-excerpt-withheld");
   });
 
   test("hostile text is escaped and non-https source links are not rendered as links", () => {
@@ -50,6 +65,83 @@ describe("render", () => {
     const h = renderWorkspace(hostile, "ar", APP);
     expect(h).not.toContain("<script>alert(1)</script>");
     expect(h).toContain("&lt;script&gt;");
+    expect(h).not.toContain('href="javascript:');
+  });
+});
+
+describe("R05 local reader safety", () => {
+  const evil = '<a href="https://example.invalid" data-injected>SYNTHETIC</a>';
+  test("every effect-period field and free text is escaped", () => {
+    const h0 = structuredClone(r);
+    h0.claims[0]!.effect = { kind: "event_date", date: evil, note: evil };
+    h0.claims[1]!.effect = { kind: "reporting_period", start: evil, end: evil, note: "x" };
+    h0.claims[2]!.effect = { kind: "as_of", date: evil, note: "x" };
+    (h0.claims[3]!.effect as unknown) = { kind: "fiscal_year", fiscalYear: evil, note: "x" };
+    (h0.claims[4]!.effect as unknown) = {
+      kind: "through_year",
+      baseYear: evil,
+      targetYear: evil,
+      note: "x",
+    };
+    (h0.claims[5]!.effect as unknown) = {
+      kind: "term",
+      years: evil,
+      months: null,
+      start: null,
+      note: "x",
+    };
+    for (const t of h0.topicMap)
+      for (const list of [t.claims, t.crossClaims])
+        list.forEach((id, i) => id === h0.claims[6]!.id && (list[i] = evil));
+    h0.claims[6]!.id = evil;
+    (h0.claims[6]!.category as unknown) = evil;
+    (h0.claims[6]!.eventType as unknown) = evil;
+    h0.claims[6]!.evidence.filedAt = evil;
+    h0.claims[6]!.evidence.note = evil;
+    h0.claims[6]!.qualification.gaps.push(evil as never);
+    h0.events[0]!.eventId = evil;
+    h0.documents[0]!.family = evil;
+    h0.projects[0]!.name = evil;
+    for (const l of ["ar", "en"] as const) {
+      const h = renderWorkspace(h0, l, APP);
+      expect(h).not.toContain("data-injected>");
+      expect(h).not.toContain('<a href="https://example.invalid"');
+    }
+  });
+
+  test("unsafe or misleading APP_BASE never produces app links; the page says so", () => {
+    for (const bad of [
+      "javascript:alert(1)//",
+      "data:text/html,x",
+      "https://evil.example",
+      "http://127.0.0.1@evil.example",
+      "http://localhost.evil.example:5173",
+      "http://user:pw@127.0.0.1:5173",
+      "http://127.0.0.1:5173/path",
+      "http://127.0.0.1:5173/?x=1",
+      "//127.0.0.1:5173",
+      "",
+    ]) {
+      const h = renderWorkspace(r, "en", bad);
+      expect(h).not.toContain('href="javascript:');
+      expect(h).not.toContain('href="data:');
+      expect(h).not.toMatch(/href="[^"#?][^"]*\/preview\/web-v1/);
+      expect(h).toContain("data-app-base-rejected");
+      expect(() => createDemoServer(bad)).toThrow(/unsafe_app_base/);
+    }
+    const ok = renderWorkspace(r, "en", "http://localhost:5173");
+    expect(ok).not.toContain("data-app-base-rejected");
+    expect(ok).toContain(
+      'href="http://localhost:5173/preview/web-v1/companies/2222?tab=financials"',
+    );
+  });
+
+  test("a hostile source URL is not linked", () => {
+    const h0 = structuredClone(r);
+    h0.claims[0]!.evidence.url = "https://user:pw@evil.example/x";
+    h0.documents[0]!.artifactUrl = "javascript:alert(1)";
+    const h = renderWorkspace(h0, "en", APP);
+    expect(h).not.toContain('href="https://user:pw@');
     expect(h).not.toContain('href="javascript:');
   });
 });

@@ -285,6 +285,9 @@
    "eventId": "evt-jafurah-midstream",
    "eventType": "commercial_contract",
    "topic": "business",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -298,18 +301,23 @@
     "aramco-jafurah-midstream-contract"
    ],
    "firstEvidenceFiledAt": "2026-03-10",
-   "effect": {
-    "kind": "term",
-    "years": 20,
-    "months": null,
-    "start": null,
-    "note": "مدة 20 سنة؛ تاريخ بدايتها غير معلن في السجل"
-   }
+   "effects": [
+    {
+     "kind": "term",
+     "years": 20,
+     "months": null,
+     "start": null,
+     "note": "مدة 20 سنة؛ تاريخ بدايتها غير معلن في السجل"
+    }
+   ]
   },
   {
    "eventId": "evt-rig-commitments",
    "eventType": "purchase_commitment",
    "topic": "risks",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -323,16 +331,27 @@
     "aramco-rig-purchase-commitments"
    ],
    "firstEvidenceFiledAt": "2026-03-10",
-   "effect": {
-    "kind": "as_of",
-    "date": "2025-12-31",
-    "note": "رصيد التزام في نهاية 2025؛ جدول التسليم والدفع غير معلن في السجل"
-   }
+   "effects": [
+    {
+     "kind": "as_of",
+     "date": "2025-12-31",
+     "note": "رصيد التزام في نهاية 2025؛ جدول التسليم والدفع غير معلن في السجل"
+    }
+   ]
   },
   {
    "eventId": "evt-bonus-2022",
    "eventType": "bonus_shares",
    "topic": "dividends_actions",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [
+    {
+     "eventId": "evt-capital-increase-2022",
+     "relation": "possibly_same_corporate_action",
+     "evidence": "Independent review: annual report 2025 PDF 140 links the retained-earnings capitalisation to the bonus share issue. Same effective date in the engine. Merge pending reviewer decision."
+    }
+   ],
    "records": [
     {
      "section": "corporate_actions",
@@ -344,16 +363,27 @@
     "aramco-bonus-2022"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "event_date",
-    "date": "2022-05-12",
-    "note": "تاريخ السريان في سجل المحرك"
-   }
+   "effects": [
+    {
+     "kind": "event_date",
+     "date": "2022-05-12",
+     "note": "تاريخ السريان في سجل المحرك"
+    }
+   ]
   },
   {
    "eventId": "evt-bonus-2023",
    "eventType": "bonus_shares",
    "topic": "dividends_actions",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [
+    {
+     "eventId": "evt-capital-increase-2023",
+     "relation": "possibly_same_corporate_action",
+     "evidence": "Independent review: annual report 2025 PDF 140 links the retained-earnings capitalisation to the bonus share issue. Same effective date in the engine. Merge pending reviewer decision."
+    }
+   ],
    "records": [
     {
      "section": "corporate_actions",
@@ -365,16 +395,21 @@
     "aramco-bonus-2023"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "event_date",
-    "date": "2023-05-08",
-    "note": "تاريخ السريان في سجل المحرك"
-   }
+   "effects": [
+    {
+     "kind": "event_date",
+     "date": "2023-05-08",
+     "note": "تاريخ السريان في سجل المحرك"
+    }
+   ]
   },
   {
    "eventId": "evt-buyback-2026",
    "eventType": "buyback_program",
    "topic": "dividends_actions",
+   "basis": "one_event_two_records",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -394,18 +429,30 @@
     "aramco-buyback-2026-action"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "term",
-    "years": null,
-    "months": 18,
-    "start": null,
-    "note": "18 شهرًا؛ بداية التنفيذ وما نُفّذ منه غير معلنين في السجل"
-   }
+   "effects": [
+    {
+     "kind": "term",
+     "years": null,
+     "months": 18,
+     "start": null,
+     "note": "18 شهرًا؛ بداية التنفيذ وما نُفّذ منه غير معلنين في السجل"
+    },
+    {
+     "kind": "term",
+     "years": null,
+     "months": 18,
+     "start": null,
+     "note": "كما في الإفصاح"
+    }
+   ]
   },
   {
    "eventId": "evt-capex-guidance-2026",
    "eventType": "capital_guidance",
    "topic": "forecasts",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -419,16 +466,27 @@
     "aramco-capex-guidance-2026"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "fiscal_year",
-    "fiscalYear": 2026,
-    "note": "التوجيه لسنة 2026 كما ورد"
-   }
+   "effects": [
+    {
+     "kind": "fiscal_year",
+     "fiscalYear": 2026,
+     "note": "التوجيه لسنة 2026 كما ورد"
+    }
+   ]
   },
   {
    "eventId": "evt-capital-increase-2022",
    "eventType": "capital_increase",
    "topic": "dividends_actions",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [
+    {
+     "eventId": "evt-bonus-2022",
+     "relation": "possibly_same_corporate_action",
+     "evidence": "Independent review: annual report 2025 PDF 140 links the retained-earnings capitalisation to the bonus share issue. Same effective date in the engine. Merge pending reviewer decision."
+    }
+   ],
    "records": [
     {
      "section": "corporate_actions",
@@ -440,16 +498,27 @@
     "aramco-capital-increase-2022"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "event_date",
-    "date": "2022-05-12",
-    "note": "تاريخ السريان في سجل المحرك"
-   }
+   "effects": [
+    {
+     "kind": "event_date",
+     "date": "2022-05-12",
+     "note": "تاريخ السريان في سجل المحرك"
+    }
+   ]
   },
   {
    "eventId": "evt-capital-increase-2023",
    "eventType": "capital_increase",
    "topic": "dividends_actions",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [
+    {
+     "eventId": "evt-bonus-2023",
+     "relation": "possibly_same_corporate_action",
+     "evidence": "Independent review: annual report 2025 PDF 140 links the retained-earnings capitalisation to the bonus share issue. Same effective date in the engine. Merge pending reviewer decision."
+    }
+   ],
    "records": [
     {
      "section": "corporate_actions",
@@ -461,16 +530,21 @@
     "aramco-capital-increase-2023"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "event_date",
-    "date": "2023-05-08",
-    "note": "تاريخ السريان في سجل المحرك"
-   }
+   "effects": [
+    {
+     "kind": "event_date",
+     "date": "2023-05-08",
+     "note": "تاريخ السريان في سجل المحرك"
+    }
+   ]
   },
   {
    "eventId": "evt-contingencies-2025",
    "eventType": "contingency",
    "topic": "risks",
+   "basis": "facets_of_one_note",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -486,16 +560,26 @@
     "aramco-sadara-petro-rabigh-support"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "as_of",
-    "date": "2025-12-31",
-    "note": "كما في نهاية 2025"
-   }
+   "effects": [
+    {
+     "kind": "as_of",
+     "date": "2025-12-31",
+     "note": "كما في نهاية 2025"
+    },
+    {
+     "kind": "as_of",
+     "date": "2025-12-31",
+     "note": "تقدير الإدارة كما في نهاية 2025"
+    }
+   ]
   },
   {
    "eventId": "evt-customer-credit-2025",
    "eventType": "customer_credit_concentration",
    "topic": "risks",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -509,16 +593,21 @@
     "aramco-customer-credit-concentration"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "as_of",
-    "date": "2025-12-31",
-    "note": "كما في نهاية 2025"
-   }
+   "effects": [
+    {
+     "kind": "as_of",
+     "date": "2025-12-31",
+     "note": "كما في نهاية 2025"
+    }
+   ]
   },
   {
    "eventId": "evt-fy2025-dividends-paid",
    "eventType": "dividend_paid",
    "topic": "dividends_actions",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "corporate_actions",
@@ -530,16 +619,21 @@
     "aramco-fy2025-dividends-paid"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "fiscal_year",
-    "fiscalYear": 2025,
-    "note": "مجموع ما دُفع خلال 2025"
-   }
+   "effects": [
+    {
+     "kind": "fiscal_year",
+     "fiscalYear": 2025,
+     "note": "مجموع ما دُفع خلال 2025"
+    }
+   ]
   },
   {
    "eventId": "evt-fy2025-results",
    "eventType": "results_publication",
    "topic": "financials",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -553,16 +647,21 @@
     "aramco-fy2025-results-publication"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "fiscal_year",
-    "fiscalYear": 2025,
-    "note": "نتائج السنة المالية 2025"
-   }
+   "effects": [
+    {
+     "kind": "fiscal_year",
+     "fiscalYear": 2025,
+     "note": "نتائج السنة المالية 2025"
+    }
+   ]
   },
   {
    "eventId": "evt-petro-rabigh-2025",
    "eventType": "acquisition",
    "topic": "dividends_actions",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "corporate_actions",
@@ -574,16 +673,21 @@
     "aramco-petro-rabigh-stake-2025"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "event_date",
-    "date": "2025-10-09",
-    "note": "تاريخ السريان في سجل المحرك"
-   }
+   "effects": [
+    {
+     "kind": "event_date",
+     "date": "2025-10-09",
+     "note": "تاريخ السريان في سجل المحرك"
+    }
+   ]
   },
   {
    "eventId": "evt-projects-2025",
    "eventType": "project_milestone",
    "topic": "operations",
+   "basis": "composite_of_distinct_milestones",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -597,17 +701,22 @@
     "aramco-project-milestones-2025"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "reporting_period",
-    "start": "2025-01-01",
-    "end": "2025-12-31",
-    "note": "خلال فترة تقرير 2025؛ التاريخ الدقيق لكل مرحلة غير معلن في السجل"
-   }
+   "effects": [
+    {
+     "kind": "reporting_period",
+     "start": "2025-01-01",
+     "end": "2025-12-31",
+     "note": "خلال فترة تقرير 2025؛ التاريخ الدقيق لكل مرحلة غير معلن في السجل"
+    }
+   ]
   },
   {
    "eventId": "evt-q4-2025-base-dividend",
    "eventType": "dividend_declaration",
    "topic": "dividends_actions",
+   "basis": "one_event_two_records",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -627,15 +736,24 @@
     "aramco-q4-2025-base-dividend-action"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "not_disclosed",
-    "note": "تواريخ الاستحقاق والدفع غير معلنة في السجل"
-   }
+   "effects": [
+    {
+     "kind": "not_stated_in_record",
+     "note": "تواريخ الاستحقاق والدفع غير معلنة في السجل"
+    },
+    {
+     "kind": "not_stated_in_record",
+     "note": "لا تاريخ استحقاق أو دفع في السجل"
+    }
+   ]
   },
   {
    "eventId": "evt-risk-factors-2025",
    "eventType": "risk_factor",
    "topic": "risks",
+   "basis": "single_record",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -649,16 +767,21 @@
     "aramco-hydrocarbon-risk-factors"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "as_of",
-    "date": "2025-12-31",
-    "note": "كما وردت في تقرير 2025"
-   }
+   "effects": [
+    {
+     "kind": "as_of",
+     "date": "2025-12-31",
+     "note": "كما وردت في تقرير 2025"
+    }
+   ]
   },
   {
    "eventId": "evt-strategy-2030",
    "eventType": "strategy_target",
    "topic": "forecasts",
+   "basis": "facets_of_one_statement",
+   "economicEventVerified": false,
+   "linked": [],
    "records": [
     {
      "section": "disclosures",
@@ -673,12 +796,18 @@
     "aramco-msc-12mbd"
    ],
    "firstEvidenceFiledAt": "2026-03-09",
-   "effect": {
-    "kind": "through_year",
-    "baseYear": 2021,
-    "targetYear": 2030,
-    "note": "هدف إدارة مقابل مستوى 2021"
-   }
+   "effects": [
+    {
+     "kind": "through_year",
+     "baseYear": 2021,
+     "targetYear": 2030,
+     "note": "هدف إدارة مقابل مستوى 2021 وفق سجل المحرك؛ نسبة الهدف وشروطه قيد التعارض مع الأصل"
+    },
+    {
+     "kind": "not_stated_in_record",
+     "note": "الجملة لا تذكر تاريخًا للحفاظ على السعة؛ عنوان السجل يذكر 2030 ولا يُنسب إليها بالاستنتاج"
+    }
+   ]
   }
  ],
  "unclassified": []

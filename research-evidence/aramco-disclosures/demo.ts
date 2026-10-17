@@ -12,14 +12,15 @@ import {
   loadB02,
   loadSnapshot,
   type ClaimRecord,
+  type ProjectRecord,
   type Register,
 } from "./register";
 import type { Category, EffectPeriod, Topic } from "./curation";
 
 type L = "ar" | "en";
 const T = (ar: string, en: string) => ({ ar, en });
-const esc = (s: string) =>
-  s.replace(
+const esc = (s: unknown) =>
+  String(s).replace(
     /[&<>"']/g,
     (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]!,
   );
@@ -31,6 +32,32 @@ const safeHref = (u: string) => {
     return null;
   }
 };
+
+/**
+ * R05: قاعدة روابط التطبيق المحلي. تُقبل فقط http(s) على loopback دون مسار أو بيانات اعتماد أو
+ * استعلام؛ غير ذلك يُرفض (null) فلا تُبنى روابط منه.
+ */
+export function safeAppBase(appBase: string): string | null {
+  try {
+    const x = new URL(appBase);
+    const loopback = ["127.0.0.1", "localhost", "[::1]"].includes(x.hostname);
+    if (
+      !["http:", "https:"].includes(x.protocol) ||
+      !loopback ||
+      x.username ||
+      x.password ||
+      (x.pathname !== "/" && x.pathname !== "") ||
+      x.search ||
+      x.hash
+    )
+      return null;
+    return x.origin;
+  } catch {
+    return null;
+  }
+}
+const label = (m: Record<string, { ar: string; en: string }>, k: string, l: L) =>
+  esc(m[k]?.[l] ?? k);
 
 const TOPIC_TITLE: Record<Topic, { ar: string; en: string }> = {
   identity: T("هوية الشركة", "Identity"),
@@ -106,6 +133,25 @@ const GAP: Record<string, { ar: string; en: string }> = {
   ),
   editorial_review_missing: T("لا إجازة تحريرية", "No editorial approval"),
   source_url_not_https: T("رابط المصدر غير آمن", "Source URL not HTTPS"),
+  engine_text_not_verified_against_original: T(
+    "نص المحرك لم يُطابَق حرفيًا مع الأصل",
+    "Engine text not verified verbatim against the original",
+  ),
+  independent_source_review_missing: T("لا مراجعة مستقلة للأصل", "No independent source review"),
+  engine_text_conflicts_with_original: T(
+    "نص المحرك يخالف معنى الأصل",
+    "Engine text conflicts with the original meaning",
+  ),
+  locator_conflicts_with_independent_review: T(
+    "صفحة المحرك تخالف صفحة المراجع",
+    "Engine page conflicts with the independent review",
+  ),
+  original_locator_not_found: T("لم يُحدَّد موضع في الأصل", "No locator found in the original"),
+  derived_figure_in_engine_text: T(
+    "رقم مشتق في نص المحرك يُعرض كأنه منشور",
+    "Derived figure presented as published in engine text",
+  ),
+  exact_date_unverified: T("اليوم الدقيق غير مثبت", "Exact day unverified"),
 };
 const WARN: Record<string, { ar: string; en: string }> = {
   evidence_published_after_event: T(
@@ -125,6 +171,35 @@ const WARN: Record<string, { ar: string; en: string }> = {
     "Quote contains a figure from the disclosure text; not extracted as a value",
   ),
   same_event_multiple_records: T("الحدث نفسه في أكثر من سجل", "Same event in several records"),
+  engine_excerpt_withheld_conflict: T(
+    "نص المحرك محجوب عن الاقتباس لتعارضه مع الأصل",
+    "Engine text withheld from quoting: conflicts with the original",
+  ),
+  composite_of_distinct_milestones: T(
+    "سجل واحد يلخص مراحل مشاريع مختلفة",
+    "One record summarising distinct project milestones",
+  ),
+};
+const FIELD: Record<string, { ar: string; en: string }> = {
+  stated_in_engine_quote_not_extracted: T(
+    "مذكور في مقطع المحرك؛ لم يُستخرج قيمةً",
+    "Stated in the engine excerpt; not extracted as a value",
+  ),
+  in_original_per_independent_review_not_extracted: T(
+    "موجود في الأصل وفق المراجعة المستقلة؛ لم يُستخرج",
+    "In the original per the independent review; not extracted",
+  ),
+  not_in_engine_record_original_unchecked: T(
+    "غير مذكور في سجل المحرك؛ الأصل لم يُفحص (ليس «غير معلن»)",
+    'Not in the engine record; original unchecked (not "undisclosed")',
+  ),
+};
+const BASIS: Record<string, { ar: string; en: string }> = {
+  single_record: T("سجل واحد", "Single record"),
+  one_event_two_records: T("حدث واحد في سجلين", "One event, two records"),
+  facets_of_one_note: T("أوجه إيضاح واحد", "Facets of one note"),
+  facets_of_one_statement: T("أوجه بيان واحد", "Facets of one statement"),
+  composite_of_distinct_milestones: T("ملخص مراحل مختلفة", "Composite of distinct milestones"),
 };
 const STATUS: Record<string, { ar: string; en: string }> = {
   commenced_production: T(
@@ -137,7 +212,7 @@ const STATUS: Record<string, { ar: string; en: string }> = {
   ),
   onstream: T("دخل الخدمة (وفق تقرير 2025)", "Came onstream (per the 2025 report)"),
   target: T("هدف إدارة، لا إنجاز", "Management target, not an achievement"),
-  not_disclosed: T("غير معلن", "Not disclosed"),
+  not_stated_in_record: T("غير مذكور في السجل", "Not stated in the record"),
 };
 const EVENT: Record<string, { ar: string; en: string }> = {
   capital_guidance: T("توجيه إنفاق رأسمالي", "Capital spending guidance"),
@@ -157,62 +232,101 @@ const EVENT: Record<string, { ar: string; en: string }> = {
   results_publication: T("نشر النتائج", "Results publication"),
 };
 
+/** R05: كل حقل متغير يُهرَّب، بما فيه التواريخ والسنوات. */
 function effectText(e: EffectPeriod, l: L): string {
   const n = esc(e.note);
   switch (e.kind) {
     case "fiscal_year":
-      return `${l === "ar" ? "السنة المالية" : "FY"} ${e.fiscalYear} · ${n}`;
+      return `${l === "ar" ? "السنة المالية" : "FY"} ${esc(e.fiscalYear)} · ${n}`;
     case "as_of":
-      return `${l === "ar" ? "كما في" : "As of"} <span dir="ltr">${e.date}</span> · ${n}`;
+      return `${l === "ar" ? "كما في" : "As of"} <span dir="ltr">${esc(e.date)}</span> · ${n}`;
     case "reporting_period":
-      return `<span dir="ltr">${e.start} → ${e.end}</span> · ${n}`;
+      return `<span dir="ltr">${esc(e.start)} → ${esc(e.end)}</span> · ${n}`;
     case "through_year":
-      return `${l === "ar" ? "حتى" : "Through"} ${e.targetYear}${e.baseYear ? (l === "ar" ? ` (أساس ${e.baseYear})` : ` (base ${e.baseYear})`) : ""} · ${n}`;
+      return `${l === "ar" ? "حتى" : "Through"} ${esc(e.targetYear)}${e.baseYear ? (l === "ar" ? ` (أساس ${esc(e.baseYear)})` : ` (base ${esc(e.baseYear)})`) : ""} · ${n}`;
     case "term":
-      return `${e.years ? `${e.years} ${l === "ar" ? "سنة" : "years"}` : `${e.months} ${l === "ar" ? "شهرًا" : "months"}`} · ${n}`;
+      return `${e.years ? `${esc(e.years)} ${l === "ar" ? "سنة" : "years"}` : `${esc(e.months)} ${l === "ar" ? "شهرًا" : "months"}`} · ${n}`;
     case "event_date":
-      return `<span dir="ltr">${e.date}</span> · ${n}`;
+      return `<span dir="ltr">${esc(e.date)}</span> · ${n}`;
     default:
-      return `${l === "ar" ? "غير معلن" : "Not disclosed"} · ${n}`;
+      return `${l === "ar" ? "غير مذكور في السجل" : "Not stated in the record"} · ${n}`;
   }
 }
 
-function claimCard(c: ClaimRecord, l: L, appBase: string): string {
-  const t = (x: { ar: string; en: string }) => esc(x[l]);
+function reviewText(c: ClaimRecord, l: L): string {
+  const r = c.sourceReview;
+  if (!r) return l === "ar" ? "لا مراجعة مستقلة" : "No independent review";
+  const pages = r.reviewerPdfPages.length
+    ? `PDF ${r.reviewerPdfPages.map(esc).join(", ")}`
+    : l === "ar"
+      ? "لا موضع محدد"
+      : "no locator";
+  return `<span data-review-status="${esc(r.status)}">${esc(r.status)}</span> · ${pages} · <span lang="en" dir="ltr">${esc(r.meaningConflict ?? r.derivationInEngineText ?? r.note)}</span> <small>(${l === "ar" ? "مراجعة معنى وموضع، لا اعتماد" : "meaning/locator review, not approval"})</small>`;
+}
+
+/** رابط إلى التطبيق المحلي؛ بلا قاعدة آمنة يُعرض نصًا لا رابطًا. */
+function appLink(base: string | null, path: string, text: string, attr: string): string {
+  return base
+    ? `<a href="${esc(base + path)}" ${attr}>${text}</a>`
+    : `<span data-link-disabled ${attr}>${text}</span>`;
+}
+
+function claimCard(c: ClaimRecord, l: L, base: string | null): string {
   const src = safeHref(c.evidence.url);
   const loc = [
-    c.evidence.page !== null ? `${l === "ar" ? "ص" : "p."} ${c.evidence.page}` : null,
+    c.evidence.page !== null
+      ? `${l === "ar" ? "ص (سجل المحرك)" : "p. (engine record)"} ${esc(c.evidence.page)}`
+      : null,
     c.evidence.note ? `${l === "ar" ? "إيضاح" : "note"} ${esc(c.evidence.note)}` : null,
     c.evidence.table ? esc(c.evidence.table) : null,
   ]
     .filter(Boolean)
     .join(" · ");
-  return `<article class="card" data-claim="${esc(c.id)}" data-category="${c.category}" data-status="${c.qualification.status}">
-<header><span class="badge cat-${c.category}">${t(CATEGORY[c.category])}${c.planKind ? ` · ${t(PLAN[c.planKind]!)}` : ""}</span>
+  const conflict = c.engineExcerpt
+    ? `<p data-excerpt-withheld class="warn">${l === "ar" ? "اقتُبس الجزء غير المتعارض فقط: بقية نص المحرك تخالف معنى الأصل وفق المراجعة المستقلة، فحُجبت. لم يُعدَّل المحرك." : "Only the non-conflicting part is quoted: the rest of the engine text conflicts with the original per the independent review and is withheld. The engine is not modified."}</p><p class="warn" lang="ar" dir="rtl">${esc(c.engineExcerpt.conflict)}</p>`
+    : "";
+  const quote =
+    c.quote !== null
+      ? `<blockquote lang="en" dir="ltr" data-quote>${esc(c.quote)}</blockquote><p class="lang">${l === "ar" ? "مقطع حرفي من نص المحرك في اللقطة المجمدة؛ لم يُطابَق حرفيًا مع المستند الأصلي" : "Verbatim excerpt of the frozen engine text; not verified verbatim against the original document"}</p>${conflict}`
+      : `<p data-no-quote>${l === "ar" ? "لا اقتباس: النص يحمل أرقام القوائم المالية، وهي معروضة في Marefa Data." : "No quote: the text carries financial-statement figures, which are shown in Marefa Data."}</p>`;
+  return `<article class="card" id="c-${esc(c.id)}" data-claim="${esc(c.id)}" data-category="${esc(c.category)}" data-status="${esc(c.qualification.status)}">
+<header><span class="badge cat-${esc(c.category)}">${label(CATEGORY, c.category, l)}${c.planKind ? ` · ${label(PLAN, c.planKind, l)}` : ""}</span>
 <span class="badge withheld">WITHHELD · ${l === "ar" ? "غير مؤهل للنشر" : "not eligible for publication"}</span>
-<span class="type">${t(EVENT[c.eventType]!)}</span></header>
-${c.quote !== null ? `<blockquote lang="en" dir="ltr" data-quote>${esc(c.quote)}</blockquote><p class="lang">${l === "ar" ? "اقتباس حرفي بالإنجليزية من نص الإفصاح في المحرك" : "Verbatim quote from the engine disclosure text"}</p>` : `<p data-no-quote>${l === "ar" ? "لا اقتباس: النص يحمل أرقام القوائم المالية، وهي معروضة في Marefa Data." : "No quote: the text carries financial-statement figures, which are shown in Marefa Data."}</p>`}
+<span class="type">${label(EVENT, c.eventType, l)}</span></header>
+${quote}
 <dl>
 <dt>${l === "ar" ? "نُشر المصدر" : "Source published"}</dt><dd dir="ltr">${esc(c.evidence.filedAt)}</dd>
 <dt>${l === "ar" ? "فترة الأثر" : "Effect period"}</dt><dd>${effectText(c.effect, l)}</dd>
-<dt>${l === "ar" ? "المصدر" : "Source"}</dt><dd>${src ? `<a href="${src}" rel="noopener noreferrer" data-source>${esc(c.evidence.filingType)}</a>` : esc(c.evidence.filingType)}${loc ? ` · ${loc}` : ""}${c.evidence.pdfSha256 ? ` · <code title="WEB-08B02">PDF sha256 ${c.evidence.pdfSha256.slice(0, 12)}…</code>` : ""}</dd>
+<dt>${l === "ar" ? "المصدر" : "Source"}</dt><dd>${src ? `<a href="${src}" rel="noopener noreferrer" data-source>${esc(c.evidence.filingType)}</a>` : esc(c.evidence.filingType)}${loc ? ` · ${loc}` : ""}${c.evidence.pdfSha256 ? ` · <code title="WEB-08B02">PDF sha256 ${esc(c.evidence.pdfSha256.slice(0, 12))}…</code>` : ""}</dd>
+<dt>${l === "ar" ? "المراجعة المستقلة للأصل" : "Independent source review"}</dt><dd data-source-review>${reviewText(c, l)}</dd>
 </dl>
-<p class="gaps" data-gaps>${l === "ar" ? "ما ينقص للتأهيل:" : "Missing for qualification:"} ${c.qualification.gaps.map((g) => `<span class="gap">${t(GAP[g]!)}</span>`).join(" ")}</p>
-${c.qualification.warnings.length ? `<p class="warn" data-warnings>${c.qualification.warnings.map((w) => t(WARN[w]!)).join(" · ")}</p>` : ""}
+<p class="gaps" data-gaps>${l === "ar" ? "ما ينقص للتأهيل:" : "Missing for qualification:"} ${c.qualification.gaps.map((g) => `<span class="gap">${label(GAP, g, l)}</span>`).join(" ")}</p>
+${c.qualification.warnings.length ? `<p class="warn" data-warnings>${c.qualification.warnings.map((w) => label(WARN, w, l)).join(" · ")}</p>` : ""}
 ${c.override ? `<p class="warn" data-override>${esc(c.override)}</p>` : ""}
-<nav class="links"><a href="${esc(appBase + c.links.intelligence)}" data-link-intelligence>${l === "ar" ? "تحليل الشركة ←" : "Company Intelligence →"}</a> <a href="${esc(appBase + c.links.marefaData)}" data-link-marefa>${l === "ar" ? "بيانات معرفة ←" : "Marefa Data →"}</a></nav>
+<nav class="links">${appLink(base, c.links.intelligence, l === "ar" ? "تحليل الشركة ←" : "Company Intelligence →", "data-link-intelligence")} ${appLink(base, c.links.marefaData, l === "ar" ? "بيانات معرفة ←" : "Marefa Data →", "data-link-marefa")}</nav>
 </article>`;
+}
+
+function fieldCell(f: ProjectRecord["capacity"], l: L, head: string): string {
+  const detail =
+    f.status === "stated_in_engine_quote_not_extracted"
+      ? ` <small>(${esc(f.claimId)})</small>`
+      : f.status === "in_original_per_independent_review_not_extracted"
+        ? ` <small>(PDF ${f.pdfPages.map(esc).join(", ")})</small>`
+        : "";
+  return `<td data-label="${esc(head)}" data-field-status="${esc(f.status)}">${label(FIELD, f.status, l)}${detail}</td>`;
 }
 
 export function renderWorkspace(r: Register, l: L, appBase: string): string {
   const t = (x: { ar: string; en: string }) => esc(x[l]);
+  const base = safeAppBase(appBase);
   const byTopic = new Map(r.topicMap.map((x) => [x.topic, x]));
   const claimById = new Map(r.claims.map((c) => [c.id, c]));
   const groups = GROUPS.map((g) => {
     const topics = g.topics
       .map((topic) => {
         const m = byTopic.get(topic)!;
-        const cards = m.claims.map((id) => claimCard(claimById.get(id)!, l, appBase)).join("");
+        const cards = m.claims.map((id) => claimCard(claimById.get(id)!, l, base)).join("");
         const cross = m.crossClaims.length
           ? `<p class="cross">${l === "ar" ? "مرتبط أيضًا:" : "Also related:"} ${m.crossClaims.map((id) => `<a href="#c-${esc(id)}">${esc(id)}</a>`).join(" ")}</p>`
           : "";
@@ -223,28 +337,40 @@ export function renderWorkspace(r: Register, l: L, appBase: string): string {
           m.status === "no_disclosure_in_sample"
             ? `<p class="empty" data-empty>${l === "ar" ? "لا إفصاح في العينة لهذا الموضوع؛ لا محتوى مُنشأ لسدّه." : "No disclosure in the sample for this topic; nothing is authored to fill it."}</p>`
             : "";
-        return `<section id="topic-${topic}" data-topic="${topic}" data-topic-status="${m.status}"><h3>${t(TOPIC_TITLE[topic])} <small>(${m.claims.length})</small></h3>${empty}${cards}${cross}${docs}</section>`;
+        return `<section id="topic-${esc(topic)}" data-topic="${esc(topic)}" data-topic-status="${esc(m.status)}"><h3>${label(TOPIC_TITLE, topic, l)} <small>(${m.claims.length})</small></h3>${empty}${cards}${cross}${docs}</section>`;
       })
       .join("");
     return `<section class="group" id="group-${g.id}" data-group="${g.id}"><h2>${t(g.title)}</h2>${topics}</section>`;
   }).join("");
 
+  const H = {
+    project: l === "ar" ? "المشروع" : "Project",
+    status: l === "ar" ? "الحالة" : "Status",
+    capacity: l === "ar" ? "السعة" : "Capacity",
+    timing: l === "ar" ? "التوقيت" : "Timing",
+    cost: l === "ar" ? "التكلفة" : "Cost",
+    metrics: l === "ar" ? "مؤشرات منشورة ذات صلة" : "Related published indicators",
+    drivers: l === "ar" ? "المحركات الاقتصادية" : "Economic drivers",
+  };
   const projects = `<section id="projects" data-projects><h2>${l === "ar" ? "نموذج المشاريع" : "Project model"}</h2>
-<div class="scroll"><table><thead><tr><th>${l === "ar" ? "المشروع" : "Project"}</th><th>${l === "ar" ? "الحالة" : "Status"}</th><th>${l === "ar" ? "السعة" : "Capacity"}</th><th>${l === "ar" ? "الموعد المستهدف" : "Target date"}</th><th>${l === "ar" ? "التكلفة المعلنة" : "Disclosed cost"}</th><th>${l === "ar" ? "مؤشرات منشورة ذات صلة" : "Related published indicators"}</th><th>${l === "ar" ? "المحركات الاقتصادية" : "Economic drivers"}</th></tr></thead><tbody>
+<p class="lang">${l === "ar" ? "لا قيمة مستخرجة في أي حقل. «غير مذكور في سجل المحرك» لا يعني أن المُصدر لم يفصح." : 'No field holds an extracted value. "Not in the engine record" does not mean the issuer did not disclose it.'}</p>
+<table class="stack"><thead><tr>${Object.values(H)
+    .map((h) => `<th>${esc(h)}</th>`)
+    .join("")}</tr></thead><tbody>
 ${r.projects
   .map(
     (
       p,
-    ) => `<tr data-project="${esc(p.id)}"><td><b>${esc(p.name)}</b><br><small>${p.description.map((d) => `<span lang="en" dir="ltr">“${esc(d.quote)}”</span>`).join("<br>")}</small></td>
-<td data-execution-status="${esc(p.executionStatus.state)}">${t(STATUS[p.executionStatus.state] ?? T(p.executionStatus.state, p.executionStatus.state))}</td>
-${p.capacity.status === "management_target_in_quote_only" ? `<td data-capacity-in-quote="${esc(p.capacity.claimId)}">${l === "ar" ? "هدف إدارة مذكور في الاقتباس فقط؛ لا قيمة مستخرجة" : "Management target stated in the quote only; no value extracted"}</td>` : `<td data-unknown>${l === "ar" ? "غير معلنة في المصادر المتاحة" : "Not disclosed in available sources"}</td>`}
-<td>${p.targetDate.status === "management_target" ? `${p.targetDate.year} (${l === "ar" ? "هدف إدارة" : "management target"})` : `<span data-unknown>${l === "ar" ? "غير معلن" : "Not disclosed"}</span>`}</td>
-<td data-unknown>${l === "ar" ? "غير معلنة" : "Not disclosed"}</td>
-<td>${p.relatedEngineMetrics.map((m) => (m.presentInSnapshot ? `<a href="${esc(`${appBase}/preview/web-v1/companies/${r.company.symbol}/intelligence?topic=operations&focus=${m.key}`)}">${esc(m.key)}</a>` : esc(m.key))).join(", ")}</td>
-<td data-not-authored>${l === "ar" ? "غير مؤلَّفة: تحتاج منهجية ومراجعة معتمدتين" : "Not authored: needs an approved methodology and review"}</td></tr>`,
+    ) => `<tr data-project="${esc(p.id)}"><td data-label="${esc(H.project)}"><b>${esc(p.name)}</b><br><small>${p.description.map((d) => `${d.quote !== null ? `<span lang="en" dir="ltr">“${esc(d.quote)}”</span>` : ""}${d.withheld ? ` <span data-excerpt-withheld>(${l === "ar" ? "الجزء المتعارض من نص المحرك محجوب" : "conflicting part of the engine text withheld"})</span>` : ""}`).join("<br>")}</small></td>
+<td data-label="${esc(H.status)}" data-execution-status="${esc(p.executionStatus.state)}">${label(STATUS, p.executionStatus.state, l)}</td>
+${fieldCell(p.capacity, l, H.capacity)}
+${fieldCell(p.timing, l, H.timing)}
+${fieldCell(p.cost, l, H.cost)}
+<td data-label="${esc(H.metrics)}">${p.relatedEngineMetrics.map((m) => (m.presentInSnapshot ? appLink(base, `/preview/web-v1/companies/${encodeURIComponent(r.company.symbol)}/intelligence?topic=operations&focus=${encodeURIComponent(m.key)}`, esc(m.key), "data-metric") : esc(m.key))).join(", ")}</td>
+<td data-label="${esc(H.drivers)}" data-not-authored>${l === "ar" ? "غير مؤلَّفة: تحتاج منهجية ومراجعة معتمدتين" : "Not authored: needs an approved methodology and review"}</td></tr>`,
   )
   .join("")}
-</tbody></table></div></section>`;
+</tbody></table></section>`;
 
   const rg = r.riskGuidance.categories;
   const register = `<section id="risk-guidance" data-risk-guidance><h2>${l === "ar" ? "سجل المخاطر والتوجيهات" : "Risk and guidance register"}</h2>
@@ -255,15 +381,38 @@ ${p.capacity.status === "management_target_in_quote_only" ? `<td data-capacity-i
     )
     .join("")}</div></section>`;
 
-  const events = `<section id="events" data-events><h2>${l === "ar" ? "سجل الأحداث" : "Event register"} <small>(${r.events.length})</small></h2>
-<div class="scroll"><table><thead><tr><th>${l === "ar" ? "الحدث" : "Event"}</th><th>${l === "ar" ? "النوع" : "Type"}</th><th>${l === "ar" ? "أول دليل" : "First evidence"}</th><th>${l === "ar" ? "السجلات" : "Records"}</th><th>${l === "ar" ? "الموضوع" : "Topic"}</th></tr></thead><tbody>
-${r.events.map((e) => `<tr data-event="${esc(e.eventId)}"><td>${esc(e.eventId)}</td><td>${t(EVENT[e.eventType]!)}</td><td dir="ltr">${esc(e.firstEvidenceFiledAt)}</td><td>${e.records.length}</td><td>${t(TOPIC_TITLE[e.topic])}</td></tr>`).join("")}
-</tbody></table></div></section>`;
+  const E = {
+    id: l === "ar" ? "المجموعة" : "Group",
+    type: l === "ar" ? "النوع" : "Type",
+    basis: l === "ar" ? "أساس التجميع" : "Grouping basis",
+    first: l === "ar" ? "أول دليل" : "First evidence",
+    records: l === "ar" ? "السجلات" : "Records",
+    topic: l === "ar" ? "الموضوع" : "Topic",
+    linked: l === "ar" ? "علاقة معلنة" : "Declared link",
+  };
+  const events = `<section id="events" data-events><h2>${l === "ar" ? "سجل مجموعات الأحداث" : "Event-group register"} <small>(${r.events.length})</small></h2>
+<p class="lang">${l === "ar" ? "كل صف مجموعة سجلات منسقة، لا حدث اقتصادي مستقل مثبت." : "Each row is a curated record group, not an independently verified economic event."}</p>
+<table class="stack"><thead><tr>${Object.values(E)
+    .map((h) => `<th>${esc(h)}</th>`)
+    .join("")}</tr></thead><tbody>
+${r.events.map((e) => `<tr data-event="${esc(e.eventId)}" data-basis="${esc(e.basis)}"><td data-label="${esc(E.id)}">${esc(e.eventId)}</td><td data-label="${esc(E.type)}">${label(EVENT, e.eventType, l)}</td><td data-label="${esc(E.basis)}">${label(BASIS, e.basis, l)}</td><td data-label="${esc(E.first)}" dir="ltr">${esc(e.firstEvidenceFiledAt)}</td><td data-label="${esc(E.records)}">${e.records.length}</td><td data-label="${esc(E.topic)}">${label(TOPIC_TITLE, e.topic, l)}</td><td data-label="${esc(E.linked)}">${e.linked.length ? e.linked.map((x) => `<span data-linked="${esc(x.eventId)}">${esc(x.eventId)} — ${l === "ar" ? "قد يكونان إجراءً واحدًا؛ لم يُدمجا دون قرار" : "possibly one corporate action; not merged without a decision"}</span>`).join("<br>") : "—"}</td></tr>`).join("")}
+</tbody></table></section>`;
 
+  const D = {
+    series: l === "ar" ? "السلسلة" : "Series",
+    edition: l === "ar" ? "الإصدار" : "Edition",
+    filed: l === "ar" ? "النشر" : "Filed",
+    sha: "PDF sha256",
+    records: l === "ar" ? "سجلات مصدر في المحرك" : "Engine source records",
+    snap: l === "ar" ? "في اللقطة" : "In snapshot",
+  };
   const documents = `<section id="documents" data-documents><h2>${l === "ar" ? "سجل الوثائق وإصداراتها" : "Document and edition register"} <small>(${r.documents.length})</small></h2>
-<div class="scroll"><table><thead><tr><th>${l === "ar" ? "السلسلة" : "Series"}</th><th>${l === "ar" ? "الإصدار" : "Edition"}</th><th>${l === "ar" ? "النشر" : "Filed"}</th><th>PDF sha256</th><th>${l === "ar" ? "سجلات مصدر في المحرك" : "Engine source records"}</th><th>${l === "ar" ? "في اللقطة" : "In snapshot"}</th></tr></thead><tbody>
-${r.documents.map((d) => `<tr data-document="${esc(d.artifactUrl)}"><td>${esc(d.family)}</td><td>${safeHref(d.artifactUrl) ? `<a href="${safeHref(d.artifactUrl)}" rel="noopener noreferrer">${esc(d.editions.join(", ") || d.artifactUrl.split("/").pop() || "")}</a>` : esc(d.artifactUrl)}</td><td dir="ltr">${esc(d.firstFiledAt)}</td><td>${d.pdfSha256 ? `<code>${d.pdfSha256.slice(0, 12)}…</code> (B02)` : l === "ar" ? "غير مثبتة" : "not pinned"}</td><td>${d.sourceRecords.length}</td><td>${d.inEngineSnapshot ? (l === "ar" ? "نعم" : "yes") : l === "ar" ? "لا (B02 فقط)" : "no (B02 only)"}</td></tr>`).join("")}
-</tbody></table></div></section>`;
+<p class="lang">${l === "ar" ? "صفوف تقارير وإصدارات وصفحة فهرس التداول؛ ليست كلها ملفات PDF مثبتة." : "Report and edition rows plus the exchange catalogue page; not all are pinned PDFs."}</p>
+<table class="stack"><thead><tr>${Object.values(D)
+    .map((h) => `<th>${esc(h)}</th>`)
+    .join("")}</tr></thead><tbody>
+${r.documents.map((d) => `<tr data-document="${esc(d.artifactUrl)}"><td data-label="${esc(D.series)}">${esc(d.family)}</td><td data-label="${esc(D.edition)}">${safeHref(d.artifactUrl) ? `<a href="${safeHref(d.artifactUrl)}" rel="noopener noreferrer">${esc(d.editions.join(", ") || d.artifactUrl.split("/").pop() || "")}</a>` : esc(d.artifactUrl)}</td><td data-label="${esc(D.filed)}" dir="ltr">${esc(d.firstFiledAt)}</td><td data-label="${esc(D.sha)}">${d.pdfSha256 ? `<code>${esc(d.pdfSha256.slice(0, 12))}…</code> (B02)` : l === "ar" ? "غير مثبتة" : "not pinned"}</td><td data-label="${esc(D.records)}">${d.sourceRecords.length}</td><td data-label="${esc(D.snap)}">${d.inEngineSnapshot ? (l === "ar" ? "نعم" : "yes") : l === "ar" ? "لا (B02 فقط)" : "no (B02 only)"}</td></tr>`).join("")}
+</tbody></table></section>`;
 
   const dir = l === "ar" ? "rtl" : "ltr";
   return `<!doctype html><html lang="${l}" dir="${dir}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${l === "ar" ? "أرامكو — مساحة بحث غير معتمدة" : "Aramco — unapproved research workspace"}</title>
@@ -285,21 +434,24 @@ blockquote{margin:.6rem 0;padding:.4rem .8rem;border-inline-start:3px solid var(
 .warn{color:#ffd9a0}
 dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;margin:.4rem 0;font-size:.85rem} dt{color:var(--muted)}
 .links a{margin-inline-end:1rem}
-.scroll{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:.85rem} th,td{border-bottom:1px solid var(--line);padding:.45rem;text-align:start;vertical-align:top}
+table{border-collapse:collapse;width:100%;font-size:.85rem} th,td{border-bottom:1px solid var(--line);padding:.45rem;text-align:start;vertical-align:top;overflow-wrap:normal;word-break:normal}
+@media (max-width:760px){table.stack thead{display:none}table.stack tr{display:block;border:1px solid var(--line);border-radius:.6rem;margin:.6rem 0;padding:.3rem .6rem;background:var(--card)}table.stack td{display:block;border:0;padding:.25rem 0}table.stack td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.75rem}}
+.banner .bad{color:var(--bad)}
 .grid{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))} .cell{background:var(--card);border:1px solid var(--line);border-radius:.75rem;padding:.75rem}
 .n{font-size:1.2rem;font-weight:700} nav.top{display:flex;flex-wrap:wrap;gap:.75rem;margin:.5rem 0}
 </style></head><body><main>
-<aside class="banner" role="note" data-banner><b>${l === "ar" ? "عينة بحثية غير معتمدة — محلية فقط — لا تُنشر" : "Unapproved research sample — local only — not for publication"}</b><br>${l === "ar" ? "كل الادعاءات WITHHELD وفق عقد WEB-08B01. اقتباسات حرفية من إفصاحات المحرك المجمدة (لقطة " : "All claims are WITHHELD under the WEB-08B01 contract. Verbatim quotes from the frozen engine disclosures (snapshot "}<span dir="ltr">${esc(r.snapshot.generatedAt)}</span>)${l === "ar" ? "؛ لا توقعات ولا تقييم ولا رأي بحثي ولا قيم مالية مخزنة." : "; no forecasts, valuation, research opinion or stored financial values."}</aside>
+<aside class="banner" role="note" data-banner><b>${l === "ar" ? "عينة بحثية غير معتمدة — محلية فقط — لا تُنشر" : "Unapproved research sample — local only — not for publication"}</b><br>${l === "ar" ? "كل الادعاءات WITHHELD وفق عقد WEB-08B01. مقاطع حرفية من نص المحرك المجمد، لا من المستندات الأصلية (لقطة " : "All claims are WITHHELD under the WEB-08B01 contract. Verbatim excerpts of the frozen engine text, not of the original documents (snapshot "}<span dir="ltr">${esc(r.snapshot.generatedAt)}</span>)${l === "ar" ? "؛ لا توقعات ولا تقييم ولا رأي بحثي ولا قيم مالية مخزنة." : "; no forecasts, valuation, research opinion or stored financial values."}</aside>
+${base ? "" : `<aside class="banner" role="alert" data-app-base-rejected><b class="bad">${l === "ar" ? "APP_BASE مرفوض: يُقبل http(s) على loopback فقط. روابط التطبيق معطلة." : "APP_BASE rejected: only http(s) on loopback is allowed. App links are disabled."}</b></aside>`}
 <h1>${l === "ar" ? "أرامكو السعودية — الإفصاحات في بنية تحليل الشركة" : "Saudi Aramco — disclosures in the Company Intelligence structure"}</h1>
-<nav class="top" aria-label="sections"><a href="?lang=${l === "ar" ? "en" : "ar"}" data-lang-toggle>${l === "ar" ? "English" : "العربية"}</a><a href="#projects">${l === "ar" ? "المشاريع" : "Projects"}</a><a href="#risk-guidance">${l === "ar" ? "المخاطر والتوجيهات" : "Risks and guidance"}</a><a href="#events">${l === "ar" ? "الأحداث" : "Events"}</a><a href="#documents">${l === "ar" ? "الوثائق" : "Documents"}</a><a href="${esc(appBase)}/preview/web-v1/companies/${esc(r.company.symbol)}?tab=financials" data-marefa-data>${l === "ar" ? "القوائم المالية في Marefa Data" : "Financial statements in Marefa Data"}</a></nav>
+<nav class="top" aria-label="sections"><a href="?lang=${l === "ar" ? "en" : "ar"}" data-lang-toggle>${l === "ar" ? "English" : "العربية"}</a><a href="#projects">${l === "ar" ? "المشاريع" : "Projects"}</a><a href="#risk-guidance">${l === "ar" ? "المخاطر والتوجيهات" : "Risks and guidance"}</a><a href="#events">${l === "ar" ? "الأحداث" : "Events"}</a><a href="#documents">${l === "ar" ? "الوثائق" : "Documents"}</a>${appLink(base, `/preview/web-v1/companies/${encodeURIComponent(r.company.symbol)}?tab=financials`, l === "ar" ? "القوائم المالية في Marefa Data" : "Financial statements in Marefa Data", "data-marefa-data")}</nav>
 ${groups}${projects}${register}${events}${documents}
-</main></body></html>`.replace(
-    /<article class="card" data-claim="([^"]+)"/g,
-    '<article class="card" id="c-$1" data-claim="$1"',
-  );
+</main></body></html>`;
 }
 
 export function createDemoServer(appBase = process.env["APP_BASE"] ?? "http://127.0.0.1:5173") {
+  // R05: إعداد غير آمن يُرفض عند التشغيل بدل إنشاء روابط منه.
+  if (!safeAppBase(appBase))
+    throw Error("unsafe_app_base: only http(s) loopback origins are allowed");
   const register = buildRegister(loadSnapshot(), loadB02());
   return createServer((req, res) => {
     res.setHeader("Cache-Control", "no-store");

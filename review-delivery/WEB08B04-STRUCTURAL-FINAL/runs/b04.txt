@@ -1,0 +1,224 @@
+{"run": "b04", "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449", "started": "2026-10-17T22:34:26.248556+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "research-evidence/aramco-research-pack"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-research-pack\numeric-guard.test.ts:
+(pass) fixture control: the same reference and kind compile with a plain year [40.25ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before " " [1.31ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after " " [0.70ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "," [3.85ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "," [0.75ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "، " [1.00ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "، " [0.47ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before ";" [1.06ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after ";" [0.51ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "؛" [1.15ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "؛" [0.56ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before ":" [1.20ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after ":" [0.48ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before ": " [0.91ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after ": " [0.41ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before " (" [0.73ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after " (" [0.38ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "[" [0.86ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "[" [0.49ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "{" [0.90ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "{" [0.47ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "«" [0.91ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "«" [0.77ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "\"" [1.36ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "\"" [0.64ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "'" [1.12ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "'" [0.43ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "“" [0.76ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "“" [0.54ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "‘" [1.08ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "‘" [0.47ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before ", (" [0.88ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after ", (" [0.60ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before " ; " [0.93ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after " ; " [0.52ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before "،(" [0.94ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after "،(" [0.41ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > before ") ," [0.78ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > after ") ," [0.40ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > Codex C0–C3 in both fields [4.28ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > mixed repeated runs up to 6 bind; longer runs fail closed as detached [3.19ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > a period, dash or slash next to a currency fails closed instead of reading as a year [6.35ms]
+(pass) A punctuation: one local-gap set on both sides, Arabic and Latin > ranges, sentence ends and words between keep plain years [37.68ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > the code list matches its documented source [0.28ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > every non-supported ISO code fails closed before and after, through punctuation [4.06ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > Codex XCG, ZWG, XAU rejected at the numeric guard [5.50ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > supported currencies in any letter case are quantities [0.11ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > common unsupported codes in any case, Arabic names and currency symbols fail closed [0.08ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > Latin unit words match whole words only (BND is not bn, MNT is not mn) [0.04ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > ordinary words and acronyms are not currencies [2.83ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > documented limit: a non-common ISO code in lowercase is not recognised [0.03ms]
+(pass) B ISO 4217: known-unsupported codes fail closed; supported codes are quantities > recognising a currency is not qualification: a matched-looking record still needs evidence [0.50ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+200B anywhere fails closed [2.69ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+200C anywhere fails closed [2.24ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+200D anywhere fails closed [3.16ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+200E anywhere fails closed [4.86ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+200F anywhere fails closed [2.20ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+061C anywhere fails closed [2.19ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+2060 anywhere fails closed [2.17ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+FEFF anywhere fails closed [2.10ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+00AD anywhere fails closed [3.89ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+202A anywhere fails closed [2.25ms]
+(pass) C Unicode: checked on raw text before any masking > format control U+2066 anywhere fails closed [2.25ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+0662 [1.22ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+06F2 [1.09ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+FF12 [1.08ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+1D7DA [1.12ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+0968 [1.08ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+09E8 [1.06ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+00B2 [3.37ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+00BD [1.64ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+216B [1.84ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+2460 [2.04ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII number U+FF12 [1.37ms]
+(pass) C Unicode: checked on raw text before any masking > non-ASCII digit runs are tokenised as ambiguous, not dropped [0.13ms]
+(pass) C Unicode: checked on raw text before any masking > Unicode spaces are ordinary local gaps [0.10ms]
+(pass) C Unicode: checked on raw text before any masking > no normalisation: dates and source codes are left as written [2.86ms]
+(pass) D legitimate text is not corrupted > years, ticker, codes, list markers and civil dates [24.27ms]
+(pass) D legitimate text is not corrupted > a rating grade stays a bare number that needs its evidence [0.07ms]
+(pass) D legitimate text is not corrupted > a financial word far from a number does not block a year [3.13ms]
+(pass) D legitimate text is not corrupted > the frozen draft compiles unchanged, including the Aa3 rating paragraph [2.65ms]
+
+research-evidence\aramco-research-pack\pack.test.ts:
+(pass) withholding: nothing is approved, nothing is unblocked > every paragraph status is derived from its kind and none is approved [0.23ms]
+(pass) withholding: nothing is approved, nothing is unblocked > the 22 B03 claims and the 142 B02 inputs stay withheld [0.99ms]
+(pass) withholding: nothing is approved, nothing is unblocked > every quantitative analysis is BLOCKED and no input is qualified [0.11ms]
+(pass) withholding: nothing is approved, nothing is unblocked > an input that is one of the 142 is labelled as such [0.06ms]
+(pass) no parallel financial store and no numeric leak > no distinctive engine value (financials, ownership, market) appears in any deliverable [38.59ms]
+(pass) no parallel financial store and no numeric leak > figures inside B03 quotes are not re-published by the pack [0.60ms]
+(pass) no parallel financial store and no numeric leak > deliverables hold identities, not values [0.49ms]
+(pass) semantic separation (negative cases) > a management plan must cite a plan claim and never a fact claim [4.27ms]
+(pass) semantic separation (negative cases) > an engine record cannot rest on a management-plan claim [2.38ms]
+(pass) semantic separation (negative cases) > assumptions and scenarios carry no numbers [6.32ms]
+(pass) semantic separation (negative cases) > a number not present in the cited evidence is rejected (no invented figures) [1.83ms]
+(pass) semantic separation (negative cases) > an engine record cannot carry a year after the snapshot; plans may [1.97ms]
+(pass) semantic separation (negative cases) > Arabic-Indic digits, unknown meta numbers, duplicate ids, empty evidence and bad topics are rejected [4.01ms]
+(pass) semantic separation (negative cases) > unresolvable evidence fails closed [3.65ms]
+(pass) periods and sources > analysis input periods are the snapshot's own periods, not invented ones [0.09ms]
+(pass) periods and sources > guidance stays a plan for 2026; the capex analysis does not equate it with actual capex [0.04ms]
+(pass) periods and sources > every cited source URL is https; external reviews are pinned by SHA [0.20ms]
+(pass) periods and sources > projects mirror the accepted B03 project statuses, including no 'not_disclosed' [0.32ms]
+(pass) periods and sources > the gas target is never quoted with the conflicting magnitude [0.04ms]
+(pass) topics, links and gaps > all 18 topics are mapped, none empty; gap-only topics say so [0.23ms]
+(pass) topics, links and gaps > links are relative app routes to Company Intelligence and Marefa Data only [0.33ms]
+(pass) topics, links and gaps > the gap register covers inputs, issuer definitions, sources, coverage and cited claims [0.80ms]
+(pass) deliverables > committed review-delivery/WEB08B04 files equal a fresh deterministic build [1.10ms]
+
+research-evidence\aramco-research-pack\punctuation.test.ts:
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P0 Profit SAR: 2025. [34.05ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P1 Profit USD (2025). [33.00ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P2 صافي الربح (2025) ريال. [28.08ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P3 Profit 2025, USD. [28.00ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P4 Profit $ (2025). [31.72ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P5 Margin 2025 ‰. [25.42ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P6 Profit ¥ 2025. [29.10ms]
+(pass) RR-ENG03-01 P0–P7 are rejected by the intended guard > P7 Profit AED 2025. [26.58ms]
+(pass) local delimiters bind a unit to its number on either side > "SAR:2025" [0.08ms]
+(pass) local delimiters bind a unit to its number on either side > "SAR : 2025"
+(pass) local delimiters bind a unit to its number on either side > "SAR (2025)"
+(pass) local delimiters bind a unit to its number on either side > "SAR [2025]"
+(pass) local delimiters bind a unit to its number on either side > "SAR \"2025\""
+(pass) local delimiters bind a unit to its number on either side > "SAR «2025»"
+(pass) local delimiters bind a unit to its number on either side > "USD: (2025)"
+(pass) local delimiters bind a unit to its number on either side > "$(2025)"
+(pass) local delimiters bind a unit to its number on either side > "€ (2025)"
+(pass) local delimiters bind a unit to its number on either side > "EUR 2025"
+(pass) local delimiters bind a unit to its number on either side > "(2025) GBP"
+(pass) local delimiters bind a unit to its number on either side > "2025 ((ريال"
+(pass) local delimiters bind a unit to its number on either side > "عام 2025 (ريال سعودي)" [0.02ms]
+(pass) local delimiters bind a unit to its number on either side > "(2025)ريال"
+(pass) local delimiters bind a unit to its number on either side > "2025) USD"
+(pass) local delimiters bind a unit to its number on either side > "2025 ) , USD"
+(pass) local delimiters bind a unit to its number on either side > "2025، ريال"
+(pass) local delimiters bind a unit to its number on either side > "2025: SAR"
+(pass) local delimiters bind a unit to its number on either side > "(2025) %"
+(pass) local delimiters bind a unit to its number on either side > "2025, ٪"
+(pass) local delimiters bind a unit to its number on either side > "(2025) مليار ريال"
+(pass) local delimiters bind a unit to its number on either side > "2025 USD"
+(pass) local delimiters bind a unit to its number on either side > "USD (2025)"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "AED (2025)" [0.03ms]
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "AED: 2025"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "JPY 2025" [0.03ms]
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "2025 JPY" [0.01ms]
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "(2025) CHF"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "2025, درهم" [0.01ms]
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "دينار 2025" [0.01ms]
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "₹ (2025)" [0.02ms]
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "2025 ‱"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "(2025) ‰"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "2025‰"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "MXN 2025"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "(2025) ZAR"
+(pass) unsupported currencies and per-mille fail closed, before or after, through punctuation > "TRY: 2025"
+(pass) the binding stays local: no distant words, sentence ends or ranges > "Revenue in SAR rose in 2025." [0.07ms]
+(pass) the binding stays local: no distant words, sentence ends or ranges > "الإيرادات بالريال ارتفعت في 2025."
+(pass) the binding stays local: no distant words, sentence ends or ranges > "SAR ( ( ( (2025" [0.01ms]
+(pass) the binding stays local: no distant words, sentence ends or ranges > "في 2025، ثم ارتفع"
+(pass) the binding stays local: no distant words, sentence ends or ranges > "الفترة 2024-2025."
+(pass) the binding stays local: no distant words, sentence ends or ranges > "FY 2025."
+(pass) the binding stays local: no distant words, sentence ends or ranges > "في 2025م."
+(pass) the binding stays local: no distant words, sentence ends or ranges > "2026 results in SAR"
+(pass) the binding stays local: no distant words, sentence ends or ranges > "AEDX 2025"
+(pass) the binding stays local: no distant words, sentence ends or ranges > "2025 Aedes"
+(pass) the binding stays local: no distant words, sentence ends or ranges > "try 2025 again"
+(pass) the binding stays local: no distant words, sentence ends or ranges > "Top results 2025"
+(pass) the binding stays local: no distant words, sentence ends or ranges > codes, ticker and rating are untouched [0.04ms]
+(pass) the binding stays local: no distant words, sentence ends or ranges > legitimate years with punctuation still pass in an interpretation [56.80ms]
+(pass) the binding stays local: no distant words, sentence ends or ranges > the frozen draft still compiles [9.95ms]
+
+research-evidence\aramco-research-pack\reader.test.ts:
+(pass) render > banner, every paragraph with its non-approved status, every analysis BLOCKED, 18 topics [1.08ms]
+(pass) render > hostile text and labels are escaped [23.64ms]
+(pass) render > unsafe APP_BASE disables app links and the server refuses to start [58.47ms]
+(pass) server > GET / is 200 with CSP, noindex and no-store [17.61ms]
+(pass) server > non-GET is refused and unknown paths are 404 [0.73ms]
+
+research-evidence\aramco-research-pack\residual.test.ts:
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > every form is classified as a quantity, not a bare year [0.13ms]
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > ticker-shaped amounts are quantities too [0.02ms]
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > in an interpretation each form is rejected as a quantity (Arabic and English text) [310.36ms]
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > in an engine record an unsupported prefixed or glued amount is rejected as unsupported [36.22ms]
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > ambiguous glued formats fail closed instead of passing as years [44.15ms]
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > valid years, the ticker, Arabic proclitics, year markers and rating grades still pass [90.83ms]
+(pass) RR-ENG03-01 currency and percent are read before and after the number, with or without a space > a rating grade is a bare number that still needs its evidence [7.13ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > fiscal quarters outside 1..4 are rejected [0.30ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > non-integer or out-of-range fiscal years are rejected [0.09ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > impossible civil dates are rejected for start and end, in every kind [0.13ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > leap days: valid in a leap year, including the century rule [0.03ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > start after end is rejected; year-boundary ranges are kept as given [0.10ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > an instant's optional start is kept as given, but never after its end [0.03ms]
+(pass) RR-ENG02-01 row periods are validated before labelling > incomplete periods are not completed by inference; FY, quarter, YTD and instant stay distinct [0.13ms]
+
+research-evidence\aramco-research-pack\rework.test.ts:
+(pass) ENG-01 per-row identities; conflicts fail closed > mixed units across rows are rejected, not represented by the first row [7.72ms]
+(pass) ENG-01 per-row identities; conflicts fail closed > two rows for the same period with different sources or versions are rejected [6.42ms]
+(pass) ENG-01 per-row identities; conflicts fail closed > a real multi-source metric keeps each row's own source; no single source is implied [0.11ms]
+(pass) ENG-02 full period identity > YTD, quarter, FY and instant rows get distinct labels; YTD is never a quarter [9.95ms]
+(pass) ENG-02 full period identity > rows keep start, end, year, quarter, scope, unit, currency and version [0.20ms]
+(pass) ENG-02 full period identity > an unknown or incomplete period kind fails instead of inventing a period [0.14ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > year- or ticker-shaped amounts are quantities, not exempt years or symbols [16.14ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > a number present in capacity evidence does not support a profit figure, even in a record [15.81ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > grouped and decimal amounts are rejected; the real matched quantities still pass [22.01ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > no interpretation, assumption, scenario or methodology paragraph carries a quantity [0.52ms]
+(pass) ENG-04 strict civil dates and as-of boundary > impossible dates are rejected in any kind [25.77ms]
+(pass) ENG-04 strict civil dates and as-of boundary > an engine record cannot carry a date after the snapshot, even within the snapshot year [16.36ms]
+(pass) LINK-01 links follow the metric's actual placement > the realized crude price links to operations, where the metric is rendered (was competitors) [0.11ms]
+(pass) LINK-01 links follow the metric's actual placement > a metric not rendered in Company Intelligence gets no link and says so [0.05ms]
+(pass) LINK-01 links follow the metric's actual placement > statement rows are focusable only in the financials topic; every focusable link matches a placement [0.21ms]
+(pass) FIN-01..07 research corrections > FIN-01: spare capacity is not computed from total liquids; the perimeter mismatch is stated [0.07ms]
+(pass) FIN-01..07 research corrections > FIN-02/03: no profit identity per barrel or 'spread times utilization' formula is asserted [0.09ms]
+(pass) FIN-01..07 research corrections > FIN-04: Jafurah tariff is not read as capex converted to opex; minimum volumes are conditional [0.04ms]
+(pass) FIN-01..07 research corrections > FIN-05: gas expansion effect on revenue mix is a conditional scenario, not a direction [0.02ms]
+(pass) FIN-01..07 research corrections > FIN-06/07: coverage is not funding proof; policy is not liability; no deterministic ordering; no risk ranking [0.07ms]
+(pass) FIN-01..07 research corrections > the superseded overstatements are gone from every paragraph [0.30ms]
+(pass) FIN-01..07 research corrections > analyses carry the definition gates the review required, and stay BLOCKED [0.13ms]
+
+ 205 pass
+ 0 fail
+ 3142 expect() calls
+Ran 205 tests across 6 files. [1475.00ms]

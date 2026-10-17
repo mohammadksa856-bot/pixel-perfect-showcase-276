@@ -1,0 +1,81 @@
+{"run": "residual-independent", "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449", "started": "2026-10-17T22:34:21.330119+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-STRUCTURAL-FINAL/residual-independent.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-STRUCTURAL-FINAL\residual-independent.test.ts:
+(pass) N0 typed quantity rejected by numeric guard, interpretation [17.57ms]
+(pass) NR0 unsupported quantity rejected by intended evidence guard [12.19ms]
+(pass) N1 typed quantity rejected by numeric guard, interpretation [12.04ms]
+(pass) NR1 unsupported quantity rejected by intended evidence guard [9.70ms]
+(pass) N2 typed quantity rejected by numeric guard, interpretation [10.56ms]
+(pass) NR2 unsupported quantity rejected by intended evidence guard [10.98ms]
+(pass) N3 typed quantity rejected by numeric guard, interpretation [9.10ms]
+(pass) NR3 unsupported quantity rejected by intended evidence guard [9.94ms]
+(pass) N4 typed quantity rejected by numeric guard, interpretation [9.37ms]
+(pass) NR4 unsupported quantity rejected by intended evidence guard [11.41ms]
+(pass) N5 typed quantity rejected by numeric guard, interpretation [9.70ms]
+(pass) NR5 unsupported quantity rejected by intended evidence guard [8.54ms]
+(pass) N6 typed quantity rejected by numeric guard, interpretation [11.79ms]
+(pass) NR6 unsupported quantity rejected by intended evidence guard [9.16ms]
+(pass) N7 typed quantity rejected by numeric guard, interpretation [9.95ms]
+(pass) NR7 unsupported quantity rejected by intended evidence guard [9.51ms]
+(pass) N8 typed quantity rejected by numeric guard, interpretation [10.00ms]
+(pass) NR8 unsupported quantity rejected by intended evidence guard [9.05ms]
+(pass) N9 typed quantity rejected by numeric guard, interpretation [7.90ms]
+(pass) NR9 unsupported quantity rejected by intended evidence guard [9.11ms]
+(pass) N10 typed quantity rejected by numeric guard, interpretation [7.96ms]
+(pass) NR10 unsupported quantity rejected by intended evidence guard [8.69ms]
+(pass) N11 typed quantity rejected by numeric guard, interpretation [7.61ms]
+(pass) NR11 unsupported quantity rejected by intended evidence guard [8.21ms]
+(pass) N12 typed quantity rejected by numeric guard, interpretation [8.51ms]
+(pass) NR12 unsupported quantity rejected by intended evidence guard [8.59ms]
+(pass) P0 ambiguous financial syntax fails closed [8.23ms]
+(pass) P1 ambiguous financial syntax fails closed [10.50ms]
+(pass) P2 ambiguous financial syntax fails closed [8.47ms]
+(pass) P3 ambiguous financial syntax fails closed [9.52ms]
+(pass) P4 ambiguous financial syntax fails closed [12.18ms]
+(pass) P5 ambiguous financial syntax fails closed [7.75ms]
+(pass) P6 ambiguous financial syntax fails closed [10.21ms]
+(pass) P7 ambiguous financial syntax fails closed [9.50ms]
+(pass) ambiguous adjacent form "Profit x2025." [10.24ms]
+(pass) ambiguous adjacent form "Profit 2025k." [9.83ms]
+(pass) ambiguous adjacent form "Profit 2025​USD." [8.08ms]
+(pass) legitimate year or source code السنة 2025. [36.37ms]
+(pass) legitimate year or source code الرمز 2222. [14.54ms]
+(pass) legitimate year or source code WEB-08B03 وB02. [15.84ms]
+(pass) legitimate year or source code الفترة 2024-2025. [12.40ms]
+(pass) legitimate year or source code السنة 2025م. [13.73ms]
+(pass) rating Aa3 remains a number token, not a quantity or ambiguity [0.10ms]
+(pass) existing credit rating and full draft remain buildable [10.40ms]
+(pass) quarter rejects 0 [0.21ms]
+(pass) quarter rejects -1
+(pass) quarter rejects 5
+(pass) quarter rejects 99
+(pass) quarter rejects 1.5
+(pass) quarter rejects NaN
+(pass) quarter rejects Infinity
+(pass) year rejects 0 [0.05ms]
+(pass) year rejects -1
+(pass) year rejects 1899
+(pass) year rejects 2101
+(pass) year rejects 2025.5
+(pass) year rejects NaN
+(pass) year rejects Infinity
+(pass) invalid end 2025-02-29 [0.04ms]
+(pass) invalid end 2100-02-29
+(pass) invalid end 2025-04-31
+(pass) invalid end 2025-13-01
+(pass) invalid end 2025-00-10
+(pass) invalid end 2025-01-00
+(pass) invalid end 2025-1-01
+(pass) invalid start rejected separately [0.03ms]
+(pass) reversed bounds rejected separately [0.04ms]
+(pass) valid leap 2000-02-29 [0.02ms]
+(pass) valid leap 2024-02-29
+(pass) missing quarter stays missing [0.03ms]
+(pass) missing instant end not invented [0.02ms]
+(pass) null start allowed without invention [0.02ms]
+
+ 72 pass
+ 0 fail
+ 72 expect() calls
+Ran 72 tests across 1 file. [497.00ms]

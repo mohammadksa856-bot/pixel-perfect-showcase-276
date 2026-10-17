@@ -1,0 +1,17 @@
+{
+  "probes": [
+    {
+      "probe": "edge-probe",
+      "observations": 34,
+      "all_rejected": true,
+      "tested_sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449"
+    },
+    {
+      "probe": "guard-probe",
+      "observations": 18,
+      "all_rejected": true,
+      "tested_sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449"
+    }
+  ],
+  "note": "Two original probes, not unique additional test counts; full lexical outputs and intended rejection errors in per-run logs."
+}

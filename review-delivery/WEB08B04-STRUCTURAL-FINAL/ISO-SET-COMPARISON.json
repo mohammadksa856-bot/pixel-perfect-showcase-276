@@ -1,0 +1,17 @@
+{
+  "application_sha": "8e896378a763f7cb5632ec5bb2963e5313664301",
+  "tested_delivery_sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+  "source_url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+  "fetched_at_utc": "2026-10-17T22:35:02.8720836Z",
+  "published": "2026-09-17",
+  "response_content_utf8_sha256": "33139b438657d1cee116ba737807ea71d19d6de4b90f799a09c56f0cc6a1b0ff",
+  "official_unique_count": 178,
+  "implementation_count": 178,
+  "implementation_unique_count": 178,
+  "missing": [],
+  "extra": [],
+  "equal": true,
+  "compared": "All unique alphabetic Ccy entries against every literal ISO4217_CODES entry; ordinal case-sensitive membership, no count-only inference.",
+  "reproduction": "Run compare_iso.ps1; HTTPS XML parsed in memory only. Script errors if source cannot be accessed or implementation array is missing.",
+  "original_xml_saved": false
+}

@@ -1,0 +1,334 @@
+{
+  "decision": "REWORK",
+  "scope": "RR-ENG03-01_ONLY",
+  "application_sha": "8e896378a763f7cb5632ec5bb2963e5313664301",
+  "tested_delivery_sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+  "previous_review": "0fe3312c20dd48102515f65b3c5a6fff505b1d01",
+  "runs": [
+    {
+      "run": "additional",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:22.290184+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/additional.test.ts"
+      ],
+      "pass": 14,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/additional.txt"
+    },
+    {
+      "run": "app",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:30.064629+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "tests"
+      ],
+      "pass": 427,
+      "fail": 0,
+      "skip": 14,
+      "artifact": "runs/app.txt"
+    },
+    {
+      "run": "b01",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:28.849081+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "research-evidence/v1"
+      ],
+      "pass": 91,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b01.txt"
+    },
+    {
+      "run": "b02",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:29.570492+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "research-evidence/aramco-qualification"
+      ],
+      "pass": 23,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b02.txt"
+    },
+    {
+      "run": "b03-check",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:47.398090+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "research-evidence/aramco-disclosures/build.ts",
+        "--check"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b03-check.txt"
+    },
+    {
+      "run": "b03-original15",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:24.182270+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/b03-original.test.ts"
+      ],
+      "pass": 15,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b03-original15.txt"
+    },
+    {
+      "run": "b03",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:28.198545+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "research-evidence/aramco-disclosures"
+      ],
+      "pass": 57,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b03.txt"
+    },
+    {
+      "run": "b04-types",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:41.531245+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "research-evidence/aramco-research-pack/tsconfig.json",
+        "--noEmit"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b04-types.txt"
+    },
+    {
+      "run": "b04",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:26.248556+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "research-evidence/aramco-research-pack"
+      ],
+      "pass": 205,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/b04.txt"
+    },
+    {
+      "run": "build",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:47.894325+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "run",
+        "build"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/build.txt"
+    },
+    {
+      "run": "check",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:46.857482+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "research-evidence/aramco-research-pack/build.ts",
+        "--check"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/check.txt"
+    },
+    {
+      "run": "edge-probe",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:24.715516+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/edge-probe.ts"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/edge-probe.txt"
+    },
+    {
+      "run": "final-independent",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:20.049827+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/final-independent.test.ts"
+      ],
+      "pass": 53,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/final-independent.txt"
+    },
+    {
+      "run": "guard-probe",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:25.547018+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/guard-probe.ts"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/guard-probe.txt"
+    },
+    {
+      "run": "independent",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:22.974750+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/adversarial.test.ts"
+      ],
+      "pass": 12,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/independent.txt"
+    },
+    {
+      "run": "lint",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:43.847699+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "node_modules/eslint/bin/eslint.js",
+        "research-evidence/aramco-research-pack"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/lint.txt"
+    },
+    {
+      "run": "mask-probe",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:35:49.996296+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/mask-probe.ts"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/mask-probe.txt"
+    },
+    {
+      "run": "original15",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:23.655075+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/boundaries.test.ts"
+      ],
+      "pass": 15,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/original15.txt"
+    },
+    {
+      "run": "residual-independent",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:21.330119+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/residual-independent.test.ts"
+      ],
+      "pass": 72,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/residual-independent.txt"
+    },
+    {
+      "run": "structural-independent",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:35:48.987091+00:00",
+      "exit": 1,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "test",
+        "./review-delivery/WEB08B04-STRUCTURAL-FINAL/structural-independent.test.ts"
+      ],
+      "pass": 20,
+      "fail": 19,
+      "skip": 0,
+      "artifact": "runs/structural-independent.txt"
+    },
+    {
+      "run": "types",
+      "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+      "started": "2026-10-17T22:34:32.116988+00:00",
+      "exit": 0,
+      "command": [
+        "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "pass": 0,
+      "fail": 0,
+      "skip": 0,
+      "artifact": "runs/types.txt"
+    }
+  ],
+  "FIN01_07": "CLOSED_LIMITED_DRAFT_PRESERVED",
+  "LINK01": "CLOSED_FROZEN_MODEL_PRESERVED",
+  "RR-ENG02-01": "CLOSED_PRESERVED",
+  "blocked_analyses": 7,
+  "withheld_claims": 22,
+  "withheld_inputs": 142,
+  "financially_qualified": 0,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false
+}

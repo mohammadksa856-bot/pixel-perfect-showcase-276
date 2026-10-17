@@ -1,0 +1,80 @@
+{
+  "original_files": {
+    "final-independent.test.ts": {
+      "blob": "6273a2e16d5f9f84923d394d66989bd346107011",
+      "sha256": "f638d2aff4069d250d2c7166a8f415f65a6e9fa34778a37bac672e00839268ff",
+      "byte_exact": true
+    },
+    "edge-probe.ts": {
+      "blob": "e34ac1d89657f0eb9370cf79970f7fa704dd5ede",
+      "sha256": "5752c6fb1557174b132092a1a7a5e479790c77ca705a9156f46b2638ee264ff1",
+      "byte_exact": true
+    },
+    "residual-independent.test.ts": {
+      "blob": "f1f1107e7f3241156c02853ce48d3791e8e72e07",
+      "sha256": "2788f50b5daddee80e2eda8768a22bf93c27d823b0948f9215ec6a18674edca3",
+      "byte_exact": true
+    },
+    "additional.test.ts": {
+      "blob": "87aff9798c20f723b831c9a63fa3100c575e4b49",
+      "sha256": "4ad5bd8a69abe7b81d6229389b84f94e2fffc48b6bad73e890437b04d4ff8b3f",
+      "byte_exact": true
+    },
+    "adversarial.test.ts": {
+      "blob": "4078c3c4f42e9b8883aeee23f9cd559a8be1cdd4",
+      "sha256": "d9701d5667323605e552d7fac58eccbd450c9f940593ec94d3be6ab9f441789a",
+      "byte_exact": true
+    },
+    "boundaries.test.ts": {
+      "blob": "bc8ecb2b50a5f99b9506c711cc6ee06489e4ac84",
+      "sha256": "d63a07b0d3b4c4442466f081579e1250fd1882636cd55fdbaa01bcab2460f97c",
+      "byte_exact": true
+    },
+    "b03-original.test.ts": {
+      "blob": "bc8ecb2b50a5f99b9506c711cc6ee06489e4ac84",
+      "sha256": "d63a07b0d3b4c4442466f081579e1250fd1882636cd55fdbaa01bcab2460f97c",
+      "byte_exact": true
+    },
+    "guard-probe.ts": {
+      "blob": "a470fc164beb286e596748256128cf23dc9682d1",
+      "sha256": "0087aeab6c0531278bc02548eabdf012417bc6b8e2a0b556554c5e7f7c815d22",
+      "byte_exact": true
+    }
+  },
+  "implementation_to_delivery_diff": [
+    "product-tracking/CHANGELOG.jsonl",
+    "review-delivery/WEB08B04/REPORT_AR.md",
+    "review-delivery/WEB08B04/REVIEW-HANDOFF_AR.md",
+    "review-delivery/WEB08B04/RR-ENG03-01-FINAL-CLOSURE_AR.md",
+    "review-delivery/WEB08B04/screenshots/IMAGE_MANIFEST.json",
+    "review-delivery/WEB08B04/test-logs/app-build.txt",
+    "review-delivery/WEB08B04/test-logs/app-unit.txt",
+    "review-delivery/WEB08B04/test-logs/b01-regression.txt",
+    "review-delivery/WEB08B04/test-logs/b02-regression.txt",
+    "review-delivery/WEB08B04/test-logs/b03-build-check.txt",
+    "review-delivery/WEB08B04/test-logs/b03-regression.txt",
+    "review-delivery/WEB08B04/test-logs/b04-tests.txt",
+    "review-delivery/WEB08B04/test-logs/build-check.txt",
+    "review-delivery/WEB08B04/test-logs/codex-b03-acceptance-regression.txt",
+    "review-delivery/WEB08B04/test-logs/codex-b04-additional.txt",
+    "review-delivery/WEB08B04/test-logs/codex-b04-adversarial.txt",
+    "review-delivery/WEB08B04/test-logs/codex-b04-boundaries.txt",
+    "review-delivery/WEB08B04/test-logs/codex-b04-final-independent.txt",
+    "review-delivery/WEB08B04/test-logs/codex-b04-residual-independent.txt",
+    "review-delivery/WEB08B04/test-logs/edge-probe-reasons.txt",
+    "review-delivery/WEB08B04/test-logs/eslint-b04.txt",
+    "review-delivery/WEB08B04/test-logs/holds.txt",
+    "review-delivery/WEB08B04/test-logs/layout-measure.txt",
+    "review-delivery/WEB08B04/test-logs/link-browser-check.json",
+    "review-delivery/WEB08B04/test-logs/punctuation-guard-reasons.txt",
+    "review-delivery/WEB08B04/test-logs/reader-http.txt",
+    "review-delivery/WEB08B04/test-logs/residual-guard-reasons.txt",
+    "review-delivery/WEB08B04/test-logs/scope-and-hashes.txt",
+    "review-delivery/WEB08B04/test-logs/tsc-app.txt",
+    "review-delivery/WEB08B04/test-logs/tsc-b04.txt"
+  ],
+  "delivery_is_documentation_only": true,
+  "protected_reviewer_changes": [],
+  "output_files_unchanged": 8,
+  "private_PDF_database_env_uploads": false
+}

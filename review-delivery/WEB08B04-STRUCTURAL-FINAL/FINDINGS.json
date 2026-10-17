@@ -1,0 +1,71 @@
+{
+  "decision": "REWORK",
+  "application_sha": "8e896378a763f7cb5632ec5bb2963e5313664301",
+  "tested_delivery_sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+  "scope": "RR-ENG03-01_ONLY",
+  "preserved_closed": [
+    "FIN-01–07",
+    "LINK-01",
+    "RR-ENG02-01"
+  ],
+  "prior_original_cases": "PASS unchanged",
+  "ISO4217": {
+    "equal": true,
+    "missing": [],
+    "extra": [],
+    "comparison": "full official SIX set against implementation set; not count-only"
+  },
+  "findings": [
+    {
+      "id": "RR-ENG03-01",
+      "variant": "RAW_FORMAT_CONTROL_LOST_WHEN_ALL_DIGITS_MASKED",
+      "severity": "P1_SCOPE_ACCEPTANCE_BLOCKER_NOT_PRODUCTION_INCIDENT",
+      "status": "OPEN",
+      "locations": [
+        {
+          "file": "research-evidence/aramco-research-pack/pack.ts",
+          "lines": [
+            188,
+            189,
+            190,
+            199
+          ]
+        },
+        {
+          "file": "research-evidence/aramco-research-pack/numeric-guard.ts",
+          "lines": [
+            131,
+            135,
+            136,
+            138,
+            151
+          ]
+        }
+      ],
+      "examples_escaped": [
+        "التاريخ 2025-06-30\\u200B",
+        "WEB-08B03\\u200B",
+        "B02\\u200B",
+        "1. وصف\\u200B"
+      ],
+      "actual": "rawAsciiDigit=true,rawCf=true,analyseNumbers=[],accepted=true,error=null; confirmed ar/en and research_interpretation/reported_record.",
+      "expected": "Raw Cf rejection must survive masking regardless of numeric-token count, consistent with author's declared policy.",
+      "cause": "Raw Cf guard rejects only if raw text has no ASCII digits. Those digits can all be masked; per-token format_control is never emitted when there are zero remaining tokens.",
+      "new_tests": {
+        "total": 39,
+        "passed": 20,
+        "failed": 19
+      },
+      "reproduction": [
+        "bun test ./review-delivery/WEB08B04-STRUCTURAL-FINAL/structural-independent.test.ts",
+        "bun ./review-delivery/WEB08B04-STRUCTURAL-FINAL/mask-probe.ts"
+      ],
+      "fix_owner": "Claude Code; reviewer has not modified author implementation.",
+      "limits": "No assertion of financial qualification, approved/public exposure, or new financial-research finding."
+    }
+  ],
+  "financially_qualified": 0,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "production_release_approval": false
+}

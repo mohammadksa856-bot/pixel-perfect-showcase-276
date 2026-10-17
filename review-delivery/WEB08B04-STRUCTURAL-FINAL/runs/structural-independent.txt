@@ -1,0 +1,67 @@
+{"run": "structural-independent", "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449", "started": "2026-10-17T22:35:48.987091+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-STRUCTURAL-FINAL/structural-independent.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-STRUCTURAL-FINAL\structural-independent.test.ts:
+error: Received value must be a string: null
+(fail) U+200B masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [47.23ms]
+error: Received value must be a string: null
+(fail) U+200B masked numeric text must reject at raw format guard: WEB-08B03 [15.56ms]
+(pass) U+200B no-number control rejects explicitly [12.26ms]
+(pass) U+200B unmasked-year control rejects explicitly [11.07ms]
+error: Received value must be a string: null
+(fail) U+200E masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [14.02ms]
+error: Received value must be a string: null
+(fail) U+200E masked numeric text must reject at raw format guard: WEB-08B03 [15.92ms]
+(pass) U+200E no-number control rejects explicitly [10.68ms]
+(pass) U+200E unmasked-year control rejects explicitly [8.40ms]
+error: Received value must be a string: null
+(fail) U+61C masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [14.69ms]
+error: Received value must be a string: null
+(fail) U+61C masked numeric text must reject at raw format guard: WEB-08B03 [17.50ms]
+(pass) U+61C no-number control rejects explicitly [11.03ms]
+(pass) U+61C unmasked-year control rejects explicitly [10.83ms]
+error: Received value must be a string: null
+(fail) U+2060 masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [15.06ms]
+error: Received value must be a string: null
+(fail) U+2060 masked numeric text must reject at raw format guard: WEB-08B03 [13.07ms]
+(pass) U+2060 no-number control rejects explicitly [11.95ms]
+(pass) U+2060 unmasked-year control rejects explicitly [9.97ms]
+error: Received value must be a string: null
+(fail) U+202E masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [12.32ms]
+error: Received value must be a string: null
+(fail) U+202E masked numeric text must reject at raw format guard: WEB-08B03 [13.21ms]
+(pass) U+202E no-number control rejects explicitly [10.35ms]
+(pass) U+202E unmasked-year control rejects explicitly [10.17ms]
+error: Received value must be a string: null
+(fail) U+FEFF masked numeric text must reject at raw format guard: التاريخ 2025-06-30 [12.25ms]
+error: Received value must be a string: null
+(fail) U+FEFF masked numeric text must reject at raw format guard: WEB-08B03 [12.76ms]
+(pass) U+FEFF no-number control rejects explicitly [8.74ms]
+(pass) U+FEFF unmasked-year control rejects explicitly [10.42ms]
+error: Received value must be a string: null
+(fail) English masked text still rejects: Date 2025-06-30 [12.28ms]
+error: Received value must be a string: null
+(fail) English masked text still rejects: WEB-08B03 [13.39ms]
+error: Received value must be a string: null
+(fail) mask interaction must not discard raw-control rejection: B02 [10.77ms]
+error: Received value must be a string: null
+(fail) mask interaction must not discard raw-control rejection: 1. وصف [11.55ms]
+error: Received value must be a string: null
+(fail) mask interaction must not discard raw-control rejection: 2025-06-30 WEB-08B03 [14.18ms]
+(pass) positive control without Cf: التاريخ 2025-06-30 [15.93ms]
+(pass) positive control without Cf: WEB-08B03 [14.55ms]
+(pass) positive control without Cf: B02 [12.66ms]
+(pass) positive control without Cf: 1. وصف [13.57ms]
+(pass) raw non-ASCII numeric evidence preserved: التاريخ ２０２５-06-30 [10.87ms]
+(pass) raw non-ASCII numeric evidence preserved: WEB-08B０３ [9.38ms]
+(pass) raw non-ASCII numeric evidence preserved: USD ² [11.89ms]
+(pass) masked date plus remaining year triggers numeric format guard [10.30ms]
+error: Received value must be a string: null
+(fail) currency plus mask still cannot suppress raw format guard: USD (2025-06-30) [13.09ms]
+error: Received value must be a string: null
+(fail) currency plus mask still cannot suppress raw format guard: SAR: WEB-08B03 [15.24ms]
+
+ 20 pass
+ 19 fail
+ 39 expect() calls
+Ran 39 tests across 1 file. [555.00ms]

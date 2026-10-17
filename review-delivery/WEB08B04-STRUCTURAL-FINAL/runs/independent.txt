@@ -1,0 +1,21 @@
+{"run": "independent", "sha": "c737e9bf76ebe55c0c8bbff15ce87732b987e449", "started": "2026-10-17T22:34:22.974750+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-STRUCTURAL-FINAL/adversarial.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-STRUCTURAL-FINAL\adversarial.test.ts:
+(pass) R01: mixed units must not be represented by first-row unit [16.71ms]
+(pass) R02: conflicting document versions must not select first source [11.44ms]
+(pass) R03: YTD must not be labelled as a standalone quarter [16.28ms]
+(pass) R04: year-shaped financial amount cannot bypass numeric guard [12.79ms]
+(pass) R05: symbol-shaped financial amount cannot bypass numeric guard [11.09ms]
+(pass) R06: impossible civil date must be rejected [8.06ms]
+(pass) R07: future exact publication date must be rejected [10.77ms]
+(pass) R08: a number in evidence is not semantic support for unrelated profit [8.37ms]
+(pass) R09: thousand-grouped copied amount must be rejected [9.78ms]
+(pass) R10: decimal copied amount must be rejected [8.76ms]
+(pass) R11: seven analyses remain blocked and all 22 claims withheld [37.30ms]
+(pass) R12: hostile text remains escaped in reader [25.96ms]
+
+ 12 pass
+ 0 fail
+ 15 expect() calls
+Ran 12 tests across 1 file. [216.00ms]

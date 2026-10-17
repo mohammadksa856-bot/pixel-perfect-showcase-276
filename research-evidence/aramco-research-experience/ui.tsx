@@ -1200,7 +1200,7 @@ function RelationMatrix() {
       <p className="mb-3 max-w-3xl text-[12.5px] leading-6 text-muted-foreground">
         {t(UI.relationRule)}
       </p>
-      <div className="overflow-x-auto rounded-2xl border border-border/70 bg-card">
+      <div className="relative overflow-x-auto rounded-2xl border border-border/70 bg-card">
         <table className="w-full min-w-[40rem] text-[12.5px]">
           <caption className="sr-only">{t(SUB["projects.relations"]!)}</caption>
           <thead>

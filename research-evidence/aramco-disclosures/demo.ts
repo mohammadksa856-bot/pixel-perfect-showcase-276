@@ -310,9 +310,9 @@ ${c.override ? `<p class="warn" data-override>${esc(c.override)}</p>` : ""}
 function fieldCell(f: ProjectRecord["capacity"], l: L, head: string): string {
   const detail =
     f.status === "stated_in_engine_quote_not_extracted"
-      ? ` <small>(${esc(f.claimId)})</small>`
+      ? ` <small><bdi dir="ltr">(${esc(f.claimId)})</bdi></small>`
       : f.status === "in_original_per_independent_review_not_extracted"
-        ? ` <small>(PDF ${f.pdfPages.map(esc).join(", ")})</small>`
+        ? ` <small><bdi dir="ltr">(PDF ${f.pdfPages.map(esc).join(", ")})</bdi></small>`
         : "";
   return `<td data-label="${esc(head)}" data-field-status="${esc(f.status)}">${label(FIELD, f.status, l)}${detail}</td>`;
 }

@@ -1,0 +1,728 @@
+{
+  "tested_sha": "b1f90a9f4e21ef9f1277c07376c3c7f4d2ad2bcf",
+  "independent_implementation": "Python Decimal comparison; no import of author comparator",
+  "observations": 142,
+  "all_categories_and_reason_sets_match": true,
+  "counts": {
+    "REVIEW_DIFFERENCE": 16,
+    "REQUESTED_PERIOD_NOT_IN_SNAPSHOT": 61,
+    "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION": 13,
+    "PERIOD_DIFFERENCE": 10,
+    "MISSING_IN_SNAPSHOT": 12,
+    "SCOPE_OR_DEFINITION_DIFFERENCE": 9,
+    "NO_APPROVED_METRIC_MAPPING": 21
+  },
+  "checks": [
+    {
+      "audit_row": "OBS-001",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-002",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-003",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-004",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-005",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-006",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-007",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-008",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-009",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-010",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-011",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-012",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-013",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-014",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-015",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-016",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-017",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-018",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-019",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-020",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-021",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-022",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-023",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-024",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-025",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-026",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-027",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-028",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-029",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-030",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-031",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-032",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-033",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-034",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-035",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-036",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-037",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-038",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-039",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-040",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-041",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-042",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-043",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-044",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-045",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-046",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-047",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-048",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-049",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-050",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-051",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-052",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-053",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-054",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-055",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-056",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-057",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-058",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-059",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-060",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-061",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-062",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-063",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-064",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-065",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-066",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-067",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-068",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-069",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-070",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-071",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-072",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-073",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-074",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-075",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-076",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-077",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-078",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-079",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-080",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-081",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-082",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-083",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-084",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-085",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-086",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-087",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-088",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-089",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-090",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-091",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-092",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-093",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-094",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-095",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-096",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-097",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-098",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-099",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-100",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-101",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-102",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-103",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-104",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-105",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-106",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-107",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-108",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-109",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-110",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-111",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-112",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-113",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-114",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-115",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-116",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-117",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-118",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-119",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-120",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-121",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-122",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-123",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-124",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-125",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-126",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-127",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-128",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-129",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-130",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-131",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-132",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-133",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-134",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-135",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-136",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-137",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-138",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-139",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-140",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-141",
+      "category_matches": true,
+      "reason_set_matches": true
+    },
+    {
+      "audit_row": "OBS-142",
+      "category_matches": true,
+      "reason_set_matches": true
+    }
+  ],
+  "source_values_emitted": false
+}

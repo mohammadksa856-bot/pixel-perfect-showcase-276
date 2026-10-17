@@ -1,0 +1,39 @@
+Application SHA: 74c967da01edf518cf77b11c0d9b6ca05316a5ae
+Evidence checkout: 6737b47d86892bd7eb73d337a483a7e2a91766e1
+Run: additional-final
+Command: & 'C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe' test ./review-delivery/WEB08B02C-INDEPENDENT/independent.test.ts
+Exit: 0
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B02C-INDEPENDENT\independent.test.ts:
+(pass) independent positive control maps but does not certify financial review or grants [6.28ms]
+(pass) required fact_id cannot default [1.55ms]
+(pass) required version cannot default [0.97ms]
+(pass) required fact_sha256 cannot default [0.71ms]
+(pass) required document_id cannot default [0.73ms]
+(pass) required document_version cannot default [0.59ms]
+(pass) required artifact_sha256 cannot default [0.66ms]
+(pass) SQLite row ID and source hash cannot be promoted into stable research refs [0.75ms]
+(pass) conflict blocks both fact orderings with no requested-row preference [1.65ms]
+(pass) full identity includes period_start [0.63ms]
+(pass) full identity includes period_kind [0.57ms]
+(pass) full identity includes fiscal_year [0.64ms]
+(pass) full identity includes currency [0.48ms]
+(pass) full identity includes unit [0.49ms]
+(pass) full identity includes scope [0.53ms]
+(pass) FY and quarter sharing end date remain distinct [0.70ms]
+(pass) future conflicting revision does not enter earlier context [0.88ms]
+(pass) withheld explicit replacement still retires an older revision [0.68ms]
+(pass) missing history watermark is not current-only as-of evidence [0.55ms]
+(pass) future source alone cannot map [0.51ms]
+(pass) source withdrawal blocks regardless of good raw row [0.68ms]
+(pass) matching receipt cannot override quarantined raw row [0.83ms]
+(pass) matching row cannot override source-level hold [0.57ms]
+(pass) matching row cannot override context-level hold [0.46ms]
+(pass) frozen inputs are not mutated and raw values are never echoed [1.69ms]
+(pass) resolver clones outputs rather than exposing a mutable acceptance cache [0.93ms]
+
+ 26 pass
+ 0 fail
+ 105 expect() calls
+Ran 26 tests across 1 file. [66.00ms]

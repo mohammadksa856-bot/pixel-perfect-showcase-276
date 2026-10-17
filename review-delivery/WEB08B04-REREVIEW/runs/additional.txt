@@ -1,0 +1,53 @@
+{"run": "additional", "sha": "f46a2925376b59c7686ee4a23c3128506229792b", "started": "2026-10-17T21:03:04.222546+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B04-REREVIEW/additional.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B04-REREVIEW\additional.test.ts:
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) A01 currency prefix: unsupported profit SAR 2025 is not a year [53.82ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) A02 no-space suffix: unsupported profit2025ريال is a quantity [14.86ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) A03 Arabic percent glyph: margin2025٪ is not a year [18.08ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: undefined
+
+(fail) A04 currency symbol prefix: profit $2025 is not a year [16.60ms]
+(pass) A05 newline currency remains rejected [15.38ms]
+(pass) A06 impossible leap day remains rejected [13.64ms]
+(pass) A07 valid historical leap day is accepted without qualification [17.37ms]
+(pass) A08 future exact date rejected [16.36ms]
+(pass) A09 explicit currency conflict rejected even if unit is identical [13.73ms]
+(pass) A10 explicit FY quarter YTD instant have distinct identities at common end [11.95ms]
+(pass) A11 same source but different version fails closed [11.31ms]
+(pass) A12 different fiscal-year sources retained per row not summarized as first source [14.60ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: "2025Q5"
+
+(fail) A13 impossible fiscal quarter rejected not labelled Q5 [0.14ms]
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: "@2025-02-30"
+
+(fail) A14 impossible instant calendar rejected in row label [0.05ms]
+
+ 8 pass
+ 6 fail
+ 16 expect() calls
+Ran 14 tests across 1 file. [270.00ms]

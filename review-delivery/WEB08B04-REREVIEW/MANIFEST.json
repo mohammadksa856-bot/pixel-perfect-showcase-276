@@ -1,0 +1,142 @@
+{
+  "schema": "independent-rereview-code-only/1",
+  "canonical": "LF Git blobs; excludes manifest itself",
+  "files": [
+    {
+      "path": "additional.test.ts",
+      "sha256": "4ad5bd8a69abe7b81d6229389b84f94e2fffc48b6bad73e890437b04d4ff8b3f"
+    },
+    {
+      "path": "adversarial.test.ts",
+      "sha256": "d9701d5667323605e552d7fac58eccbd450c9f940593ec94d3be6ab9f441789a"
+    },
+    {
+      "path": "audit.ts",
+      "sha256": "85ce3d408461876d2a99f29be91d09bf21367ad52726a9b7a3de80d2cf5595b2"
+    },
+    {
+      "path": "b03-original.test.ts",
+      "sha256": "d63a07b0d3b4c4442466f081579e1250fd1882636cd55fdbaa01bcab2460f97c"
+    },
+    {
+      "path": "boundaries.test.ts",
+      "sha256": "d63a07b0d3b4c4442466f081579e1250fd1882636cd55fdbaa01bcab2460f97c"
+    },
+    {
+      "path": "CLOSURE-MATRIX.json",
+      "sha256": "9b62d9d1c922313a17aa36263413b3dc39fba40ac5aab3fda041062011667699"
+    },
+    {
+      "path": "DELIVERY-HASHES.json",
+      "sha256": "5bbf95ef208b9a3b1188a9e07d5f3c31b80f8f6d3b47548fe0cd393c55da3cdd"
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "b3cab8bad539b2fe80563a34632ba84fbf2fbbda9e3660318a4d7bcb2e00e1cc"
+    },
+    {
+      "path": "FINDINGS.json",
+      "sha256": "09f83f92b0cbf3c57099b6c266576c7a2ef537e8063f83dbf4f053bf789c9677"
+    },
+    {
+      "path": "HOLDS.json",
+      "sha256": "4d6dee42d33ffd727b362ad3a7a7bb6a8f746c5c78270848115c8e93807a97b2"
+    },
+    {
+      "path": "HTTP-REVIEW.json",
+      "sha256": "3bb65a73140b6f25ade9b9d16370e38d01f0abefd145fb72cb430acf6149e01b"
+    },
+    {
+      "path": "INDEPENDENT-REVIEW_AR.md",
+      "sha256": "c50cdf129bac1c45b4cd38d3ee433394d7e6fc4462a6336aa08cedc7788d8255"
+    },
+    {
+      "path": "INTEGRITY.json",
+      "sha256": "f20fb342e3843c2fccad7aa10cc2abf52ae169a0135deaad2e36623cb1fec7b9"
+    },
+    {
+      "path": "LINK-AUDIT.json",
+      "sha256": "64f55e1d91bedf7a2f616596874be25853ca14cd3a2d7d913dc14a68d3e43c1a"
+    },
+    {
+      "path": "PARAGRAPH-REAUDIT.json",
+      "sha256": "55b8fc0cee76dee8237eb7692f5d9f1294ec5b736a6e8d9f76dd98cb825234ff"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ceda7e1ff74941da579137c072538c6175fcd1d2af15ab6c0ed77bf0d622fa90"
+    },
+    {
+      "path": "RESULTS.json",
+      "sha256": "5456e1a92f538dcebeba48a65104ef7e54412ce2e0082cb91cb1074d7e35e6a4"
+    },
+    {
+      "path": "run_review.py",
+      "sha256": "fb7fef73f19deebcc9d7e8d28b7cb2c3f0cb715152a649cdf92e5adbf1fa52fa"
+    },
+    {
+      "path": "runs/additional.txt",
+      "sha256": "d353ea587b29f766532148ab572db888dfb9a0abdc0d906a9675182c0a6fe53e"
+    },
+    {
+      "path": "runs/app.txt",
+      "sha256": "b7bedd03bea2f8dbe853542fb289d01cb3bf856e2d0ec48a5e5e33c705d9502f"
+    },
+    {
+      "path": "runs/b01.txt",
+      "sha256": "efa7751cc3382300c90d67b2785b91db32f66b512ad937ab5ac3056e77a92fda"
+    },
+    {
+      "path": "runs/b02.txt",
+      "sha256": "7234dc07c10efd6116c1df1bf82cb772187b432059aa40c56da5c26f9440eefd"
+    },
+    {
+      "path": "runs/b03-check.txt",
+      "sha256": "693c606b492124b4db4a850d3c4905f5e7b4caf3ebb1a848269e37446770684a"
+    },
+    {
+      "path": "runs/b03-original15.txt",
+      "sha256": "a2a533b0bf04f1f71f42b4b824cbad2505bdc22639d5d27b9c14ce66598ea2b5"
+    },
+    {
+      "path": "runs/b03.txt",
+      "sha256": "8934c9c2e1b4860b396906e242dda6d75c0bd05399448badeebae97554528899"
+    },
+    {
+      "path": "runs/b04-types.txt",
+      "sha256": "aafdb0dfbe790d835859e01a1d81572497ab3467fc7d9e6ee89937e167b0b9bd"
+    },
+    {
+      "path": "runs/b04.txt",
+      "sha256": "720ca65bce4dcf4fe247fe85ae3d2a864e082275ea521b66e8fb1cf362bf67fd"
+    },
+    {
+      "path": "runs/build.txt",
+      "sha256": "54b1a0b9ea3011a7d50a57850f108a395b1a5021f70170b05d0ce0bae22db891"
+    },
+    {
+      "path": "runs/check.txt",
+      "sha256": "a63bf835c13b94c6578e7955c24e4c322f73a87d421093bafaad400753484556"
+    },
+    {
+      "path": "runs/independent.txt",
+      "sha256": "26e59c1cb340c0cc0ff212e05c14986a702df19026190efa892058e6830c47bc"
+    },
+    {
+      "path": "runs/lint.txt",
+      "sha256": "02c535c0072e899edb959cc8865ffbd523c52173f73b3ae467ef65db27d172a4"
+    },
+    {
+      "path": "runs/original15.txt",
+      "sha256": "66f1050713eb7ee0b261c917fe95af10e78ba1b80f570efa48434236a3b8b497"
+    },
+    {
+      "path": "runs/types.txt",
+      "sha256": "d8c4e8de6968eb249d52703f4cc1a58f18a7e6e0eaaaf332f2aba0acaea90ed2"
+    },
+    {
+      "path": "UI-REVIEW.json",
+      "sha256": "cf47c93ad82a5b03580efdf355620dc67a8cd29711aec673cda61a52fc298fb2"
+    }
+  ]
+}

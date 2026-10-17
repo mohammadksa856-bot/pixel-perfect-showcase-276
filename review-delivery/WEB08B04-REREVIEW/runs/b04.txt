@@ -1,0 +1,63 @@
+{"run": "b04", "sha": "f46a2925376b59c7686ee4a23c3128506229792b", "started": "2026-10-17T21:02:04.434180+00:00", "exit": 0, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "research-evidence/aramco-research-pack"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-research-pack\pack.test.ts:
+(pass) withholding: nothing is approved, nothing is unblocked > every paragraph status is derived from its kind and none is approved [0.32ms]
+(pass) withholding: nothing is approved, nothing is unblocked > the 22 B03 claims and the 142 B02 inputs stay withheld [0.81ms]
+(pass) withholding: nothing is approved, nothing is unblocked > every quantitative analysis is BLOCKED and no input is qualified [0.16ms]
+(pass) withholding: nothing is approved, nothing is unblocked > an input that is one of the 142 is labelled as such [0.07ms]
+(pass) no parallel financial store and no numeric leak > no distinctive engine value (financials, ownership, market) appears in any deliverable [43.48ms]
+(pass) no parallel financial store and no numeric leak > figures inside B03 quotes are not re-published by the pack [0.76ms]
+(pass) no parallel financial store and no numeric leak > deliverables hold identities, not values [0.54ms]
+(pass) semantic separation (negative cases) > a management plan must cite a plan claim and never a fact claim [4.41ms]
+(pass) semantic separation (negative cases) > an engine record cannot rest on a management-plan claim [0.70ms]
+(pass) semantic separation (negative cases) > assumptions and scenarios carry no numbers [8.67ms]
+(pass) semantic separation (negative cases) > a number not present in the cited evidence is rejected (no invented figures) [2.16ms]
+(pass) semantic separation (negative cases) > an engine record cannot carry a year after the snapshot; plans may [1.10ms]
+(pass) semantic separation (negative cases) > Arabic-Indic digits, unknown meta numbers, duplicate ids, empty evidence and bad topics are rejected [2.61ms]
+(pass) semantic separation (negative cases) > unresolvable evidence fails closed [7.25ms]
+(pass) periods and sources > analysis input periods are the snapshot's own periods, not invented ones [1.77ms]
+(pass) periods and sources > guidance stays a plan for 2026; the capex analysis does not equate it with actual capex [0.10ms]
+(pass) periods and sources > every cited source URL is https; external reviews are pinned by SHA [0.23ms]
+(pass) periods and sources > projects mirror the accepted B03 project statuses, including no 'not_disclosed' [0.31ms]
+(pass) periods and sources > the gas target is never quoted with the conflicting magnitude [0.07ms]
+(pass) topics, links and gaps > all 18 topics are mapped, none empty; gap-only topics say so [0.18ms]
+(pass) topics, links and gaps > links are relative app routes to Company Intelligence and Marefa Data only [0.29ms]
+(pass) topics, links and gaps > the gap register covers inputs, issuer definitions, sources, coverage and cited claims [0.62ms]
+(pass) deliverables > committed review-delivery/WEB08B04 files equal a fresh deterministic build [0.96ms]
+
+research-evidence\aramco-research-pack\reader.test.ts:
+(pass) render > banner, every paragraph with its non-approved status, every analysis BLOCKED, 18 topics [1.18ms]
+(pass) render > hostile text and labels are escaped [27.02ms]
+(pass) render > unsafe APP_BASE disables app links and the server refuses to start [64.15ms]
+(pass) server > GET / is 200 with CSP, noindex and no-store [22.66ms]
+(pass) server > non-GET is refused and unknown paths are 404 [3.15ms]
+
+research-evidence\aramco-research-pack\rework.test.ts:
+(pass) ENG-01 per-row identities; conflicts fail closed > mixed units across rows are rejected, not represented by the first row [9.53ms]
+(pass) ENG-01 per-row identities; conflicts fail closed > two rows for the same period with different sources or versions are rejected [7.30ms]
+(pass) ENG-01 per-row identities; conflicts fail closed > a real multi-source metric keeps each row's own source; no single source is implied [0.16ms]
+(pass) ENG-02 full period identity > YTD, quarter, FY and instant rows get distinct labels; YTD is never a quarter [9.05ms]
+(pass) ENG-02 full period identity > rows keep start, end, year, quarter, scope, unit, currency and version [0.13ms]
+(pass) ENG-02 full period identity > an unknown or incomplete period kind fails instead of inventing a period [0.14ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > year- or ticker-shaped amounts are quantities, not exempt years or symbols [24.24ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > a number present in capacity evidence does not support a profit figure, even in a record [24.52ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > grouped and decimal amounts are rejected; the real matched quantities still pass [20.70ms]
+(pass) ENG-03 numbers are typed by unit; a matching digit is not semantic support > no interpretation, assumption, scenario or methodology paragraph carries a quantity [0.28ms]
+(pass) ENG-04 strict civil dates and as-of boundary > impossible dates are rejected in any kind [30.77ms]
+(pass) ENG-04 strict civil dates and as-of boundary > an engine record cannot carry a date after the snapshot, even within the snapshot year [19.96ms]
+(pass) LINK-01 links follow the metric's actual placement > the realized crude price links to operations, where the metric is rendered (was competitors) [0.11ms]
+(pass) LINK-01 links follow the metric's actual placement > a metric not rendered in Company Intelligence gets no link and says so [0.04ms]
+(pass) LINK-01 links follow the metric's actual placement > statement rows are focusable only in the financials topic; every focusable link matches a placement [0.16ms]
+(pass) FIN-01..07 research corrections > FIN-01: spare capacity is not computed from total liquids; the perimeter mismatch is stated [0.05ms]
+(pass) FIN-01..07 research corrections > FIN-02/03: no profit identity per barrel or 'spread times utilization' formula is asserted [0.05ms]
+(pass) FIN-01..07 research corrections > FIN-04: Jafurah tariff is not read as capex converted to opex; minimum volumes are conditional [0.02ms]
+(pass) FIN-01..07 research corrections > FIN-05: gas expansion effect on revenue mix is a conditional scenario, not a direction [0.03ms]
+(pass) FIN-01..07 research corrections > FIN-06/07: coverage is not funding proof; policy is not liability; no deterministic ordering; no risk ranking [0.05ms]
+(pass) FIN-01..07 research corrections > the superseded overstatements are gone from every paragraph [0.25ms]
+(pass) FIN-01..07 research corrections > analyses carry the definition gates the review required, and stay BLOCKED [0.10ms]
+
+ 50 pass
+ 0 fail
+ 1413 expect() calls
+Ran 50 tests across 3 files. [527.00ms]

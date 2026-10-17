@@ -1,0 +1,20 @@
+{
+ "application_sha":"49eeed82b84d9e071a49b91b1c959e4f13a7b82b",
+ "tested_delivery_sha":"f46a2925376b59c7686ee4a23c3128506229792b",
+ "browser":"Independent Codex in-app Chromium browser, actual UI navigation; not author screenshots",
+ "reader":"http://127.0.0.1:4460/",
+ "app":"http://127.0.0.1:5178/",
+ "setup":{"local_process_only":true,"credentials":"none","live_api":"none","frozen_fixture_gate_label":"claude/web-07-company-experience","actual_review_branch":"review/web08b04-rereview-20261018","no_allowlist_or_platform_setting_changed":true},
+ "reader_counts":{"paragraphs":99,"blockedAnalyses":7,"projects":5,"topics":18,"pendingEnglishTranslations":97,"forms":0,"scripts":0,"unavailableInputRows":28},
+ "link_test":{"registryMetrics":72,"actualBrowserFocused":29,"correctMetricAndTopic":29,"allTargetsVisible":true,"notRenderedCheckedAgainstActualDOM":43,"unexpectedMetricRowFactTargets":0,"outputAndReaderLinksForNotRendered":0,"note":"All29URLs navigated, target [data-focused=true] awaited in expected [data-intel-topic]; exact metric/row/fact key and positive rendered width checked.43keys compared to actual DOM and emitted links/nulls. No financial qualification follows from focus or HTTP200."},
+ "measurements":[
+  {"language":"ar","mode":"desktop","clientWidth":1265,"scrollWidth":1265},
+  {"language":"ar","requestedViewportWidth":405,"contentClientWidth":390,"documentScrollWidth":390,"blockerWidth":348,"blockerScrollWidth":348,"overflowWrap":"anywhere"},
+  {"language":"en","requestedViewportWidth":405,"contentClientWidth":390,"documentScrollWidth":390,"overflowWrap":"anywhere"},
+  {"language":"en","requestedViewportWidth":335,"contentClientWidth":320,"documentScrollWidth":320},
+  {"language":"ar","requestedViewportWidth":335,"contentClientWidth":320,"documentScrollWidth":320,"blockerWidth":278,"blockerScrollWidth":278,"overflowWrap":"anywhere"}
+ ],
+ "keyboard":{"analysisLinkTabNavigation":"PASS","activeTag":"A","computedOutlineStyle":"solid"},
+ "screenshots":"Independently viewed in-session desktop and mobile; not uploaded, no source PDFs or original-document images in delivery.",
+ "not_claimed":["fullEnglishtranslation","screen-reader certification","Vercel deployment","production","financial or editorial approval","live binding","user final visual acceptance"]
+}

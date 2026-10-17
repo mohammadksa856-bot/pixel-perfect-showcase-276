@@ -1,0 +1,51 @@
+{
+  "sha": "f46a2925376b59c7686ee4a23c3128506229792b",
+  "analyses": [
+    {
+      "id": "fa-revenue",
+      "status": "BLOCKED",
+      "definitionGates": []
+    },
+    {
+      "id": "fa-profitability",
+      "status": "BLOCKED",
+      "definitionGates": []
+    },
+    {
+      "id": "fa-cash-flow",
+      "status": "BLOCKED",
+      "definitionGates": []
+    },
+    {
+      "id": "fa-capex",
+      "status": "BLOCKED",
+      "definitionGates": [
+        "OUTPUT_DEFINITION_NOT_BOUND:capex_definition_scope"
+      ]
+    },
+    {
+      "id": "fa-working-capital-debt",
+      "status": "BLOCKED",
+      "definitionGates": [
+        "OUTPUT_DEFINITION_NOT_BOUND:net_debt",
+        "OUTPUT_DEFINITION_NOT_BOUND:net_debt_to_ebitda"
+      ]
+    },
+    {
+      "id": "fa-dividends",
+      "status": "BLOCKED",
+      "definitionGates": [
+        "OUTPUT_DEFINITION_NOT_BOUND:fcf_dividend_coverage"
+      ]
+    },
+    {
+      "id": "fa-returns",
+      "status": "BLOCKED",
+      "definitionGates": []
+    }
+  ],
+  "withheldClaims": 22,
+  "withheldInputs": 142,
+  "financiallyQualified": 0,
+  "publicationAuthorized": false
+}

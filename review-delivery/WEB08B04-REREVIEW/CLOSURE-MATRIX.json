@@ -1,0 +1,29 @@
+{
+ "not_financial_or_editorial_approval":true,
+ "previous_review":"fa3a772daabaaecb44ee2eff842bb88456025f62",
+ "current_application":"49eeed82b84d9e071a49b91b1c959e4f13a7b82b",
+ "closure":[
+  {"id":"FIN-01","result":"CLOSED_LIMITED_DRAFT","paragraphs":["up-spare","dr-volume","up-volumes"],"basis":"Crude-only MSC and total-liquids components explicitly distinguished; no spare-capacity subtraction; gas production not automatically external sales."},
+  {"id":"FIN-02","result":"CLOSED_LIMITED_DRAFT","paragraphs":["up-margin-logic","up-unit-costs"],"basis":"Removed profit/barrel identity; scope,currency,bbl/boe,cash capex vs expense,definition and cost/tax bridge limitations explicit."},
+  {"id":"FIN-03","result":"CLOSED_LIMITED_DRAFT","paragraphs":["dn-earnings-logic","dr-margin"],"basis":"Spread/utilization now drivers not a complete formula; volume/product mix/energy/opex/depreciation matter; unproven trading-margin ranking removed."},
+  {"id":"FIN-04","result":"CLOSED_LIMITED_DRAFT","paragraphs":["in-channels","pj-jafurah-purpose","pj-jafurah-risk-volume","rk-int-operational"],"basis":"Prior original note34 review transferred by SHA; retained assets/control,NCI and group/parent separation preserved; no automatic capex-to-opex conversion or fixed cost from any delay."},
+  {"id":"FIN-05","result":"CLOSED_LIMITED_DRAFT","paragraphs":["dr-capacity","pj-gas-purpose","rk-sc-gas"],"basis":"Capacity paragraph reclassified scenario. Gas share conditional on prices,external sales,internal use,execution and consolidation; no proved direction or measured effect."},
+  {"id":"FIN-06","result":"CLOSED_LIMITED_DRAFT_WITH_TEXT_NOTE","paragraphs":["fa-cash-flow-d1","fa-dividends-d1","fa-dividends-d2","pg-rigs-reading","rk-sc-price"],"basis":"FCF coverage not proof of funding; cash bridge,policy/declaration/payment,unobserved buyback vs nonexistent,guarantee vs capex and timing caveats restored. Question wording note retained separately."},
+  {"id":"FIN-07","result":"CLOSED_LIMITED_DRAFT","paragraphs":["rk-int-geopolitical"],"basis":"Unsupported ranking removed; exposure list no probability or loss estimate."},
+  {"id":"ENG-01","result":"ORIGINAL_CASES_CLOSED_LOCAL_METADATA_ONLY","basis":"Original mixed-unit/source conflict cases pass; same-source different versions rejected; different-year sources retained per row, summary URL null. Missing immutable real identifiers/rights/review remains a withheld binding issue, not invented approval."},
+  {"id":"ENG-02","result":"PARTIAL_RESIDUAL_RR-ENG02-01","basis":"FY/quarter/YTD/instant separated; noYTD=>Q2. Range/calendar validation still missing. Same-label overlapping rows are conservatively rejected, not selected by order."},
+  {"id":"ENG-03","result":"PARTIAL_RESIDUAL_RR-ENG03-01","basis":"Original12tests pass; prefix/adjacent currency and percent glyph forms still bypass as years. Matching numeric unit class not semantic certification."},
+  {"id":"ENG-04","result":"NARRATIVE_CASES_CLOSED_ROW_CALENDAR_RESIDUAL","basis":"Impossible/future narrative dates rejected and leap-day controls pass; periodLabel has separate invalid-calendar hole."},
+  {"id":"LINK-01","result":"CLOSED_FROZEN_MODEL_ONLY","basis":"All29actualbrowserfocusedtargets match metric/topic;43not-rendered have no metric links in output/reader and no focus DOM targets. No qualification or live contract inferred."}
+ ],
+ "seven_analysis_definitions":[
+  {"id":"fa-revenue","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"External/internal/other-sales income and eliminations distinguished, sales not production. Actual reconcile inputs still withheld."},
+  {"id":"fa-profitability","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"Operating income/issuerEBIT/adjusted/net distinct; financial and equity-accounted bridges required; EBITDA not automatic across scopes."},
+  {"id":"fa-cash-flow","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"Positive cash capex outflow vs signed row clarified; no double subtraction; cash position and held-sale/overdraft bridge required; no financing provenance claim."},
+  {"id":"fa-capex","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"Cash capex/additions/intangibles/acquisition/external investments/guidance distinguished; capex_definition_scope gate retained."},
+  {"id":"fa-working-capital-debt","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"Flows vs balances and total liabilities vs debt separated; net-debt and EBITDA scopes/gates explicit. Full opening/closing/lease/cash inputs remain prerequisites."},
+  {"id":"fa-dividends","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"Policy,declared,paid,parent/NCI separate; output-specificfcfcoveragegate; EPS removed from this analysis rather than claimed solved."},
+  {"id":"fa-returns","result":"BOUNDED_DEFINITION_ACCEPTABLE_NOT_RUNNABLE","basis":"ROACE definition versions,attributable earnings vs parent equity,average balances and noninterchangeable periods explicit."}
+ ],
+ "research_limitations":["All99paragraphs independently reread;41changed58unchanged","32interpretations5scenarios; no numeric financial output qualified","Source-review transfer checked against previous independent report, not a new primary-PDF verification or authorized financial certificate","Partial English, source rights, live source identity/version/asof/review remain separate gates"]
+}

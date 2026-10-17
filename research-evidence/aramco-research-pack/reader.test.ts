@@ -23,6 +23,8 @@ describe("render", () => {
     expect(ar).toContain('dir="rtl"');
     expect(en).toContain('dir="ltr"');
     expect(en).toContain("data-translation-pending");
+    // long identifiers in evidence labels must wrap on narrow screens (no horizontal page scroll)
+    expect(ar).toContain("code{overflow-wrap:anywhere;word-break:break-word}");
   });
   test("hostile text and labels are escaped", () => {
     const h0 = structuredClone(pack);

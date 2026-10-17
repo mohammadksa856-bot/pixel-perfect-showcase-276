@@ -134,6 +134,7 @@ h2{font-size:1.25rem;border-bottom:1px solid var(--line);padding-bottom:.4rem;ma
 .card header{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.78rem}
 .badge{border:1px solid var(--line);border-radius:999px;padding:0 .55rem}.st{color:#ffc2c2;border-color:var(--bad)}
 .topics,.muted,small,details{color:var(--muted);font-size:.82rem} .card p{margin:.35rem 0}
+code{overflow-wrap:anywhere;word-break:break-word} details li{overflow-wrap:anywhere}
 table{border-collapse:collapse;width:100%;font-size:.85rem;margin:.5rem 0} th,td{border-bottom:1px solid var(--line);padding:.4rem;text-align:start;vertical-align:top}
 .sub{margin:1rem 0;padding-inline-start:.6rem;border-inline-start:1px dashed var(--line)}
 nav.top{display:flex;flex-wrap:wrap;gap:.8rem;margin:.6rem 0}

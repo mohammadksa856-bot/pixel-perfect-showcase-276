@@ -1,0 +1,139 @@
+{
+  "schema": "engine-research-source-inspection/1",
+  "engine_commit": "e82407fa544722328b4b075076e9d8b947560080",
+  "source_only": true,
+  "database_opened": false,
+  "network_calls": false,
+  "files": {
+    "src/finengine/database.py": {
+      "sha256": "c4bd59486669165e6797ed378254127bf6cc2f2efd9f6decc495d4dc8e882031",
+      "line_count": 2076
+    },
+    "src/finengine/query.py": {
+      "sha256": "a0c4f87c4096c6fa98a7b57769e47a2bda30b68b6393c7cc2916157212a68ea7",
+      "line_count": 1451
+    },
+    "src/finengine/calculation_lineage.py": {
+      "sha256": "51bdb672cc11ab1095a38fcbc9f26f18cacc75b8ab4e0573d1464f838ebe982f",
+      "line_count": 316
+    },
+    "src/finengine/preview_delivery.py": {
+      "sha256": "79b9788d223dc7b7e2aa8338c0c20476ae6a763ef23cb5ed1cffee6f20a06a63",
+      "line_count": 99
+    }
+  },
+  "matrix": [
+    {
+      "requirement": "data_point_identity",
+      "path": "src/finengine/database.py",
+      "line": 180,
+      "marker": "CREATE TABLE IF NOT EXISTS data_points(",
+      "observation": "id is a local SQLite row identity; version is recorded. No global immutable fact reference/digest column declared in this table.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "source_identity",
+      "path": "src/finengine/database.py",
+      "line": 89,
+      "marker": "CREATE TABLE IF NOT EXISTS source_documents(",
+      "observation": "source_key and content_hash exist, but no explicit document revision chain in this table.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "original_artifact",
+      "path": "src/finengine/database.py",
+      "line": 95,
+      "marker": "CREATE TABLE IF NOT EXISTS source_artifacts(",
+      "observation": "artifact_key, byte hash and source/artifact links exist; do not substitute source JSON hash for original bytes.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "revision_publication",
+      "path": "src/finengine/database.py",
+      "line": 1529,
+      "marker": "def _publish_data_point(",
+      "observation": "publication increments version and retires current rows; current flag alone cannot reproduce historical knowledge.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "read_only_facade",
+      "path": "src/finengine/query.py",
+      "line": 20,
+      "marker": "PRAGMA query_only=ON",
+      "observation": "query service is read-only; this audit does not construct it or open any DB.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "artifact_selection",
+      "path": "src/finengine/query.py",
+      "line": 46,
+      "marker": "ORDER BY a.archived_at DESC LIMIT 1",
+      "observation": "source trace picks latest archived artifact; this is not a version-bound as-of document resolver.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "hidden_row_id",
+      "path": "src/finengine/query.py",
+      "line": 111,
+      "marker": "item.pop(\"data_point_id\", None)",
+      "observation": "selected row ID is removed from display payload; do not invent a stable research ID from display position.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "extraction_locator",
+      "path": "src/finengine/query.py",
+      "line": 88,
+      "marker": "SELECT e.raw_label,e.raw_value",
+      "observation": "page/table/extraction path can exist internally. Join selects one matching extraction; not an independent source-review certificate.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "quality_quarantine",
+      "path": "src/finengine/query.py",
+      "line": 137,
+      "marker": "item['quality_status']='quarantined'",
+      "observation": "quality holds null financial values; bridge must never fall back to raw extraction.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "current_only",
+      "path": "src/finengine/query.py",
+      "line": 198,
+      "marker": "WHERE c.market=? AND c.symbol=? AND d.metric_key=? AND d.is_current=1",
+      "observation": "current history API does not expose full retired-revision as-of horizon.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "lineage_identity",
+      "path": "src/finengine/calculation_lineage.py",
+      "line": 25,
+      "marker": "input_version INTEGER NOT NULL",
+      "observation": "lineage records local input IDs/versions; not a global immutable ref graph or financial certification.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "lineage_verification",
+      "path": "src/finengine/calculation_lineage.py",
+      "line": 282,
+      "marker": "def verify(conn, output_id, historical=False",
+      "observation": "lineage replay checks exist; bridge never runs formulas and never equates replay with independent verification.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "source_rights_policy",
+      "path": "src/finengine/database.py",
+      "line": 392,
+      "marker": "rights_status TEXT NOT NULL CHECK",
+      "observation": "source policy statuses/use flags exist; these are not a document-scoped versioned grant receipt reviewed under B01.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    },
+    {
+      "requirement": "preview_accuracy",
+      "path": "src/finengine/preview_delivery.py",
+      "line": 47,
+      "marker": "'independent_numeric':'NOT_VERIFIED'",
+      "observation": "preview explicitly does not assert independent numeric verification.",
+      "real_bridge": "BLOCKED_PENDING_EXACT_EVIDENCE_EXPORT"
+    }
+  ]
+}

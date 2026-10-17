@@ -1,0 +1,5 @@
+{
+  "extends": "../v1/tsconfig.json",
+  "include": ["bridge.ts", "synthetic.ts", "resolver.ts"],
+  "exclude": ["*.test.ts"]
+}

@@ -1,0 +1,14 @@
+# demo HTTP checks @ 6b1b2d5d5acbbbb1ea799299f514a5b27be37f13
+GET /?lang=ar -> 200
+GET /?lang=en -> 200
+GET /nope -> 404
+POST / -> 405
+Cache-Control: no-store
+X-Robots-Tag: noindex, nofollow
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+data-claim cards: 22
+data-status=WITHHELD: 22
+data-topic: 18
+data-project: 5
+data-capacity-in-quote: 2
+bound: 127.0.0.1:4453 (loopback only, per demo.ts)

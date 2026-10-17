@@ -1,4 +1,4 @@
-# demo HTTP checks @ 6b1b2d5d5acbbbb1ea799299f514a5b27be37f13
+# demo HTTP checks @ 1735609abafa85ee6e101ab7e3640496f0e43088
 GET /?lang=ar -> 200
 GET /?lang=en -> 200
 GET /nope -> 404
@@ -9,6 +9,13 @@ Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; base-uri
 data-claim cards: 22
 data-status=WITHHELD: 22
 data-topic: 18
+data-group: 5
 data-project: 5
-data-capacity-in-quote: 2
+data-event (record groups): 17
+data-source-review: 22
+field status not_disclosed: 0
+<script / <form: 0
+quoted 'more than 80%' in blockquotes: 0
+# unsafe APP_BASE refused at startup:
+unsafe_app_base: only http(s) loopback origins are allowed
 bound: 127.0.0.1:4453 (loopback only, per demo.ts)

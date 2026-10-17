@@ -1,151 +1,110 @@
-# WEB-08B03 — حزمة التسليم للمراجعة المستقلة (Codex)
+# WEB-08B03 — حزمة إعادة المراجعة المستقلة (Codex) بعد REWORK R01–R05
 
-- **الحالة:** IMPLEMENTED, TESTED, READY FOR INDEPENDENT REVIEW. **لا ACCEPT.** القرار (ACCEPT أو REWORK) للمراجع على SHA ثابت.
+- **الحالة:** REWORK IMPLEMENTED, TESTED, READY FOR FULL INDEPENDENT RE-REVIEW. **لا ACCEPT.** القرار (ACCEPT أو REWORK) للمراجع على SHA ثابت.
 - **المستودع والفرع:** `mohammadksa856-bot/pixel-perfect-showcase-276`، `claude/web-08b03-aramco-disclosures`.
-- **SHA الكود والمخرجات المختبر:** `6b1b2d5d5acbbbb1ea799299f514a5b27be37f13`.
-- **SHA الحزمة:** commit هذا الملف (يحوي التقرير والصور والسجلات). لا يغيّر كودًا ولا مخرجات بعد `6b1b2d5`. تحقق بـ`git diff --stat 6b1b2d5 <SHA الحزمة>`: يجب أن يقتصر على `review-delivery/WEB08B03/*.md` و`screenshots/` و`test-logs/` و`README_AR.md` و`CHANGELOG.jsonl`.
-- **الأساس:** WEB-08B02 `b1f90a9`. لم يُدمج B02C أو B02D (انظر «الاعتماديات» في `REPORT_AR.md`).
+- **Implementation SHA:** `1735609abafa85ee6e101ab7e3640496f0e43088`.
+- **Delivery SHA:** commit هذا الملف.
+  - لا يغيّر كودًا ولا مخرجات بعد `1735609`.
+  - `git diff --stat 1735609 <Delivery SHA>` يقتصر على: `review-delivery/WEB08B03/*.md` و`screenshots/` و`test-logs/` و`research-evidence/aramco-disclosures/README_AR.md` و`product-tracking/CHANGELOG.jsonl`.
+- **مرجع المراجعة السابقة:** `dcdecad97c3c8babd67931a817e69d0cd7a7d6d6`، حزمة `review-delivery/WEB08B03-INDEPENDENT/`، على `b72ad3a`.
+- **تقرير الإغلاق:** `REWORK-R01-R05-CLOSURE_AR.md`. فيه:
+  - جدول الملاحظات ← الملف ← الإصلاح ← الدليل؛
+  - حالة الحالات الـ15؛
+  - مراجعة الادعاءات الـ22.
 
-## 1. إعادة الإنتاج في جلسة مستقلة
+## 1. إعادة الإنتاج
+
+انظر القسم 6 في `REWORK-R01-R05-CLOSURE_AR.md`. اختصارًا:
+- اختبارات B03: 57 ناجحًا.
+- حالات Codex الأصلية دون تعديل: 15 ناجحة. البصمة blob `bc8ecb2b…`.
+- B01: 91. B02: 23. التطبيق: 427 ناجحًا و14 متجاوزًا و0 فاشل.
+- tsc وESLint: exit 0. `build.ts --check`: مطابقة. البناء المحلي: exit 0.
+
+بصمات المخرجات في `test-logs/scope-and-hashes.txt`:
 
 ```text
-git fetch origin claude/web-08b03-aramco-disclosures
-git checkout 6b1b2d5d5acbbbb1ea799299f514a5b27be37f13
-bun install --frozen-lockfile
-bun test research-evidence/aramco-disclosures                    # 34 pass, 0 fail
-bun research-evidence/aramco-disclosures/build.ts --check        # same ×6, exit 0
-bun x tsc -p research-evidence/aramco-disclosures/tsconfig.json --noEmit   # exit 0
-bun x eslint research-evidence/aramco-disclosures                # exit 0
-bun test research-evidence/v1                                    # B01: 91 pass
-bun test research-evidence/aramco-qualification                  # B02: 23 pass
-bun test tests                                                   # app: 427 pass, 14 skip, 0 fail
-bun x tsc --noEmit -p .                                          # exit 0
-bun research-evidence/aramco-disclosures/demo.ts                 # http://127.0.0.1:4453/?lang=ar | ?lang=en
 cd review-delivery/WEB08B03 && sha256sum -c <(sed -n '/^# deliverable sha256/,$p' test-logs/scope-and-hashes.txt | tail -n +2)
 ```
-
-- السجلات المرجعية في `test-logs/`، وفي رأس كل منها الأمر وSHA.
-- `demo-http.txt` فيه فحوص الخادم: 200 / 404 / 405، ورؤوس CSP وnoindex وno-store، وعدّ البطاقات.
-- `scope-and-hashes.txt` فيه الملفات المتغيرة منذ `b1f90a9` وبصمات المخرجات الست.
-- الصور الاثنتا عشرة في `screenshots/` مع `IMAGE_MANIFEST.json`؛ `application_sha` فيه هو `6b1b2d5`.
-- لا يحتاج أي فحص شبكة أو قاعدة أو محركًا حيًا. المدخلات هي اللقطة المجمدة `tests/fixtures/codex-20261013/2222-page.json.gz` وسجلات B02 الملتزمة.
 
 ## 2. الأعداد المتوقعة
 
 | البند | العدد |
 |---|---|
-| وثائق/إصدارات | 9 (منها FY2024 FS من B02 خارج اللقطة: `inEngineSnapshot=false`) |
-| أحداث | 17، لكل منها ادعاء واحد على الأقل، و0 معرف حدث معلق |
-| ادعاءات | 22، كلها `WITHHELD` و`publicationEligible=false` |
-| سجلات غير مصنفة | 0 من 15 إفصاحًا و8 إجراءات |
-| موضوعات | 18. فيها إفصاح: business, financials, operations, dividends_actions (10), forecasts (3), risks (6), news (وثائق). مرتبط فقط: ownership, industry. والباقي `no_disclosure_in_sample` |
-| الفئات | official_fact 18، management_plan 4، assumption 0، research_opinion 0 |
-| المشاريع | 5 (3 مشاريع + هدفا برامج). التكلفة غير معلنة للكل، والمحركات الاقتصادية غير مؤلَّفة للكل |
-| جسر العقد | 0 من 22 قابل للبناء (`trusted_document_identity` للكل) |
+| صفوف الوثائق | 9: ثمانية تقارير/إصدارات وصفحة فهرس التداول؛ ليست كلها PDF مثبتة |
+| مجموعات الأحداث | 17 مجموعة سجلات منسقة بأساس معلن. `economicEventVerified=false` للكل |
+| الادعاءات | 22، كلها `WITHHELD` و`publicationEligible=false`. لكل ادعاء `sourceReview` |
+| الموضوعات / المجموعات | 18 / 5 |
+| المشاريع | 5. لا قيمة مستخرجة، ولا `not_disclosed` |
+| جسر العقد | 0 من 22 قابل للبناء |
 
-## 3. قائمة المراجعة (مطابقة لنطاق Codex)
+## 3. قائمة إعادة المراجعة
 
-### أ. الإفصاحات والأحداث والمصادر والإصدارات
-- [ ] إصدارات التقارير وثائق لا أحداث: `DOCUMENT_CURATION` واختبار «report editions are documents».
-- [ ] الحدث الواحد في سجلين يُجمع: إعادة الشراء وتوزيع Q4، مع التحذير `same_event_multiple_records`.
-- [ ] السجلات المتزامنة غير المؤكدة لا تُدمج: منحة/زيادة رأس المال في 2022 و2023.
-- [ ] تغيّر `version` لسجل في المحرك، أو حذفه، أو تكراره، يُفشل البناء (`record_not_unique_or_missing`).
-- [ ] بصمة PDF بمطابقة الرابط الحرفية مع B02 فقط، ولا تساوي أي `content_hash`. لا معرفات من الروابط ولا إصدارات مخترعة.
+- [ ] **R01:** حالات F01 وF05، وحالات المؤلف في `describe("R01 …")`: الرابط، والشركة، والمعرف المشتق من الرابط، والإصدار، وتكرار B02.
+- [ ] **R02:** حالات F02 وF03. سنة الهدف لا تصير `fiscalYear`. سنة مستقبلية ليست `actual`. القيد الأول يصف النص بأنه نص المحرك.
+- [ ] **R03:** R10 وR11. `source-review.ts` منقول بدقة من `RESEARCH-SOURCE-REVIEW.json` (22 حالة). صفحات المحرك محفوظة بجانب صفحات المراجع. حالات حقول المشاريع.
+- [ ] **R04:** F04 وF06 وF09، وأساس المجموعات، والعلاقة المتبادلة بين المنحة والرسملة (غير مدموجة)، وتعريف العدّ.
+- [ ] **R05:** F07 وF08، وقيم APP_BASE المضللة العشر، ورفض الخادم عند التشغيل، وCSP وnoindex وno-store.
+- [ ] **N01:** جدول المشاريع على 340 و386 و400 بكسل (`layout-measure.txt` وصور `mobile-*`).
+- [ ] لا تسرب لأرقام محجوبة، ولا قاعدة مالية موازية، ولا هوية اصطناعية في المخرجات.
 
-### ب. تصنيف الادعاءات والتوجيهات والافتراضات
-- [ ] `official_fact` مقابل `management_plan` (`issuer_guidance` / `management_target` / `management_expectation`) في `curation.ts`، مع المبرر لكل قرار.
-- [ ] الالتزامات المحتملة ثلاثة ادعاءات: واقعة، وتوقع الإدارة (خطة)، وترتيبات صدارة/بترورابغ (واقعة).
-- [ ] تجاوز تصنيف المحرك لتوزيع Q4 (`guidance` ← `official_fact`) ظاهر بالتحذير `classification_override`.
-- [ ] لا افتراضات ولا رأي بحثي مؤلَّف (قوائم فارغة في `RISK-GUIDANCE-REGISTER.json`).
+## 4. مصفوفة الادعاءات
 
-### ج. الحجب والمعلومات المستقبلية وتعارض الأدلة
-- [ ] كل خطة إدارة تُعرض «هدف إدارة، لا إنجاز»، والجسر يحوّلها إلى `temporalBasis=issuer_guidance`.
-- [ ] لا تاريخ مستنتج: سعة 12 مليون برميل/يوم بلا سنة (`not_disclosed`)، وبداية عقد جافورة وإعادة الشراء `null`.
-- [ ] الأدلة الاسترجاعية (حدث قبل نشر مصدره) تحمل `evidence_published_after_event`. لا دليل معاصر، والفجوة G7.
-- [ ] لا تعارض أدلة مخفي: كل ادعاء مربوط بسجل واحد محدد؛ السجلان للحدث الواحد ظاهران معًا.
-
-### د. لا تسرب لأرقام محجوبة ولا قاعدة مالية موازية
-- [ ] لا حقل `value` في أي مخرَج (اختبار).
-- [ ] ادعاء نتائج 2025 بلا اقتباس، والتوزيعات المدفوعة بلا رقم؛ كلاهما يُربط بـMarefa Data (`?tab=financials|shareholders`).
-- [ ] الأرقام داخل الاقتباسات الحرفية (7 ادعاءات) نص لا قيم، وتحمل `quote_contains_disclosed_figure`. لا تخص هويات المدخلات الـ142 (B02D).
-- [ ] المؤشرات المرتبطة بالمشاريع روابط إلى مقاييس منشورة في اللقطة، دون قيم أو أثر محسوب.
-
-### هـ. العرض والروابط
-- [ ] loopback فقط، GET فقط، CSP `default-src 'none'` و`form-action 'none'`، noindex، no-store.
-- [ ] `safeHref` يقبل https فقط، و`esc` يهرّب النص العدائي (اختبار).
-- [ ] روابط Company Intelligence وMarefa Data نسبية إلى `APP_BASE` المحلي. لا Preview ولا إضافة إلى قائمة السماح، عمدًا.
-- [ ] الشريط يعلن أن العينة غير معتمدة، ولكل بطاقة `data-status="WITHHELD"`.
-
-### و. إعادة الاختبارات
-- [ ] الأوامر في القسم 1 تعطي الأعداد نفسها، و`build.ts --check` يطابق البصمات.
-
-## 4. مصفوفة الفجوات لكل ادعاء
+| claim | category | reviewer status | engine page → reviewer PDF pages | gaps | disposition |
+|---|---|---|---|---|---|
+| `aramco-capex-guidance-2026` | management_plan/issuer_guidance | REVIEW | — → — | ID VER SHA LOC- RIGHTS FIN EDIT ENG NOLOC | Original locator required; WITHHELD |
+| `aramco-sales-gas-growth-2030` | management_plan/management_target | REWORK | — → 13, 50, 54 | ID VER SHA LOC- RIGHTS FIN EDIT ENG MEANING≠ | Conflicting part withheld from quote; engine text kept for tracing; WITHHELD |
+| `aramco-msc-12mbd` | management_plan/management_target | SUPPORTED_MEANING_NOT_APPROVED | — → 13, 26 | ID VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-project-milestones-2025` | official_fact | SUPPORTED_COMPOSITE_NOT_APPROVED | — → 13, 15, 54 | ID VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-jafurah-midstream-contract` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | 71 → 71 | ID VER LOC? RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-rig-purchase-commitments` | official_fact | SUPPORTED_WITH_DERIVATION_CAVEAT | 69 → 69 | ID VER LOC? RIGHTS FIN EDIT ENG DERIVED | Derived figure flagged; bridge refuses; WITHHELD |
+| `aramco-contingencies-ordinary-course` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | 230 → 230 | ID VER SHA LOC? RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-contingencies-management-view` | management_plan/management_expectation | SUPPORTED_MANAGEMENT_ESTIMATE_NOT_APPROVED | 230 → 230 | ID VER SHA LOC? RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-sadara-petro-rabigh-support` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | 230 → 230, 231 | ID VER SHA LOC? RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-customer-credit-concentration` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | 192 → 192 | ID VER SHA LOC? RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-hydrocarbon-risk-factors` | official_fact | REVIEW | — → — | ID VER SHA LOC- RIGHTS FIN EDIT ENG NOLOC | Original locator required; WITHHELD |
+| `aramco-q4-2025-base-dividend` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | — → 235 | ID VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-q4-2025-base-dividend-action` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | — → 235 | VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-buyback-2026` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | — → 140, 246 | ID VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-buyback-2026-action` | official_fact | SUPPORTED_MEANING_NOT_APPROVED | — → 140, 246 | VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-fy2025-results-publication` | official_fact | REVIEW | — → 34, 36 | ID VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-fy2025-dividends-paid` | official_fact | SUPPORTED_TITLE_NOT_NUMERIC_APPROVAL | — → 40, 235 | VER SHA LOC- RIGHTS FIN EDIT ENG | Meaning noted; not approved; WITHHELD |
+| `aramco-petro-rabigh-stake-2025` | official_fact | REWORK | 232 → 233 | VER SHA LOC? RIGHTS FIN EDIT ENG PAGE≠ DAY? | Engine page kept; conflict recorded; bridge refuses; WITHHELD |
+| `aramco-bonus-2023` | official_fact | REWORK | 139 → 140 | VER SHA LOC? RIGHTS FIN EDIT ENG PAGE≠ DAY? | Engine page kept; conflict recorded; bridge refuses; WITHHELD |
+| `aramco-capital-increase-2023` | official_fact | REWORK | 139 → 140 | VER SHA LOC? RIGHTS FIN EDIT ENG PAGE≠ DAY? | Engine page kept; conflict recorded; bridge refuses; WITHHELD |
+| `aramco-bonus-2022` | official_fact | REWORK | 139 → 140 | VER SHA LOC? RIGHTS FIN EDIT ENG PAGE≠ DAY? | Engine page kept; conflict recorded; bridge refuses; WITHHELD |
+| `aramco-capital-increase-2022` | official_fact | REWORK | 139 → 140 | VER SHA LOC? RIGHTS FIN EDIT ENG PAGE≠ DAY? | Engine page kept; conflict recorded; bridge refuses; WITHHELD |
 
 الرموز:
-- ID = `engine_record_id_missing`
-- VER = `document_version_missing`
-- SHA = `original_artifact_sha256_missing`
-- LOC- = `locator_missing`
-- LOC? = `locator_unverified`
-- RIGHTS = `documented_rights_grant_missing`
-- FIN = `independent_review_receipt_missing`
-- EDIT = `editorial_review_missing`
+- ID = معرف السجل
+- VER = الإصدار
+- SHA = بصمة الأصل
+- LOC- = لا موضع
+- LOC? = الموضع غير مراجَع
+- RIGHTS = منحة حقوق
+- FIN = مراجعة مالية
+- EDIT = إجازة تحريرية
+- ENG = نص المحرك غير مطابق مع الأصل
+- MEANING≠ = تعارض المعنى
+- PAGE≠ = تعارض الموضع
+- NOLOC = لا موضع في الأصل
+- DERIVED = رقم مشتق
+- DAY? = اليوم غير مثبت
 
-التحذيرات:
-- retro = `evidence_published_after_event`
-- override = `classification_override`
-- no-quote = `quote_not_copied_links_marefa_data`
-- figure = `quote_contains_disclosed_figure`
-- multi-rec = `same_event_multiple_records`
+## 5. حدود معروفة
 
-| claim | category | document (filed) | gaps | warnings |
-|---|---|---|---|---|
-| `aramco-capex-guidance-2026` | management_plan/issuer_guidance | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | figure |
-| `aramco-sales-gas-growth-2030` | management_plan/management_target | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | figure |
-| `aramco-msc-12mbd` | management_plan/management_target | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | figure |
-| `aramco-project-milestones-2025` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | — |
-| `aramco-jafurah-midstream-contract` | official_fact | saudi-aramco-fy-2025-full-financials-eng (2026-03-10) | ID VER LOC? RIGHTS FIN EDIT | — |
-| `aramco-rig-purchase-commitments` | official_fact | saudi-aramco-fy-2025-full-financials-eng (2026-03-10) | ID VER LOC? RIGHTS FIN EDIT | figure |
-| `aramco-contingencies-ordinary-course` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC? RIGHTS FIN EDIT | — |
-| `aramco-contingencies-management-view` | management_plan/management_expectation | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC? RIGHTS FIN EDIT | — |
-| `aramco-sadara-petro-rabigh-support` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC? RIGHTS FIN EDIT | — |
-| `aramco-customer-credit-concentration` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC? RIGHTS FIN EDIT | — |
-| `aramco-hydrocarbon-risk-factors` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | — |
-| `aramco-q4-2025-base-dividend` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | override multi-rec |
-| `aramco-q4-2025-base-dividend-action` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC- RIGHTS FIN EDIT | multi-rec |
-| `aramco-buyback-2026` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | figure multi-rec |
-| `aramco-buyback-2026-action` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC- RIGHTS FIN EDIT | figure multi-rec |
-| `aramco-fy2025-results-publication` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | ID VER SHA LOC- RIGHTS FIN EDIT | no-quote |
-| `aramco-fy2025-dividends-paid` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC- RIGHTS FIN EDIT | — |
-| `aramco-petro-rabigh-stake-2025` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC? RIGHTS FIN EDIT | retro figure |
-| `aramco-bonus-2023` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC? RIGHTS FIN EDIT | retro |
-| `aramco-capital-increase-2023` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC? RIGHTS FIN EDIT | retro |
-| `aramco-bonus-2022` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC? RIGHTS FIN EDIT | retro |
-| `aramco-capital-increase-2022` | official_fact | saudi-aramco-ara-2025-english.pdf (2026-03-09) | VER SHA LOC? RIGHTS FIN EDIT | retro |
-
-- كل ادعاء ينقصه، على الأقل: إصدار المستند، ومنحة الحقوق الموثقة، والشهادة المالية المستقلة، والإجازة التحريرية، والموضع (مفقود أو غير مراجَع).
-- الادعاءان من القوائم المالية FY2025 (جافورة والحفارات) لهما بصمة PDF مثبتة من B02، وتنقصهما صفحات مراجعة.
-- الإجراءات (`corporate_actions`) لها مفتاح `action_key` ثابت، فلا تحمل ID.
-
-## 5. حدود معروفة (ليست مطلوبة في B03، ولا تُعامل كمنجزة)
-
-1. لا هوية مستند موثوقة (معرف وإصدار من الناشر، وبصمة الأصل للتقرير السنوي 2025)، فلا ادعاء قابل للبناء في `research-claim/1`.
-2. الربط الحقيقي بالمحرك BLOCKED وفق B02C. B03 يقرأ لقطة مجمدة فقط.
-3. B02D إغلاق إداري: 0 مدخل مؤهل ماليًا، ولا قراءة إنتاج حية، ولا اعتماد مالي أو حقوق نشر.
-4. لا منحة حقوق موثقة، ولا مراجع مالي أو تحريري مخوّل، ولا سجل مراجعات دائم.
-5. المواضع (الصفحات 69، 71، 139، 192، 230، 232 وغيرها) غير مراجَعة بصريًا.
-6. تصنيف الموضوعات وفئات الادعاءات قرارات تحريرية في `curation.ts` تحتاج إقرارًا (القرارات 1–9 في `REPORT_AR.md`).
-7. لا تشغيل متصفح للتطبيق ضمن B03؛ التطبيق لم يتغير (`src` بلا تغيير منذ B02). صور العرض المحلي فقط.
+1. **التحقق من الأصل:** المؤلف لم يطّلع على الأصل (الوكيل يحجب `aramco.com`). نتائج الأصل منقولة من المراجع كطبقة مراجعة، لا كحقائق.
+2. **هوية المستند والحقوق:** لا هوية مستند موثوقة، ولا ربط حي (B02C BLOCKED). B02D إغلاق إداري: 0 مؤهل، ولا حقوق نشر.
+3. **الحقوق والمراجعات:** منح حقوق المصادر الخارجية مفتوحة. إذن المستخدم التجاري محفوظ ولا يُعاد طلبه. المراجعات المالية والتحريرية مفتوحة.
+4. **قرارات المراجع:**
+   - دمج المنحة والرسملة؛
+   - موضع التوجيه الرأسمالي؛
+   - صياغة هدف الغاز من الأصل.
+5. **ما لا ندّعيه:**
+   - رحلة متصفح إلى خادم 5173 (N02)؛
+   - اختيار as-of تاريخيًا (N03).
 
 ## 6. ما لم يُمسّ
 
 - `main`، والإنتاج، وSupabase، والمحرك، وWEB-07، ومعيار 95%.
-- حجب المدخلات الـ142، وعقود B01 وB02 وB02C وB02D.
-- لا DCF ولا توقعات ولا نسب، ولا معلومات غير منشورة، ولا أثر مالي كمي للمشاريع، ولا نشر.
-- لم تُسجَّل `USER_FINAL_ACCEPTANCE` ولا ACCEPT.
-
-## 7. الانتقال المقترح
-
-- بعد قرار Codex: إن كان REWORK، تُصحح البنود على هذا الفرع وتُعاد هذه الحزمة على SHA جديد.
-- إن كان ACCEPT هندسيًا، يبدأ WEB-08B04 (حزمة أبحاث أرامكو الاستثمارية) من فرع مستقل.
-- يبقى كل ادعاء WITHHELD حتى تُستوفى فجواته بأدلة حقيقية، لا بمراجع اصطناعية.
+- عقود B01 وB02C وB02D، والمدخلات الـ142.
+- لا نشر ولا تأهيل. لم يبدأ B04. لم تُسجَّل `USER_FINAL_ACCEPTANCE` ولا ACCEPT.

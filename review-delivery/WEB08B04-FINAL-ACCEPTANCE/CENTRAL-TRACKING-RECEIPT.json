@@ -1,0 +1,35 @@
+{
+  "schema": "central-tracking-public-receipt/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "canonical_local_commit": "5850158e6c5715bb552889be24226c1f35d81c3e",
+  "task_id": "WEB08-B04",
+  "event_sequence": 108,
+  "event_sha256": "6d858de86c42ca1681e254920de57a457b539cc4656b5bc900bd2161afef5fd7",
+  "previous_event107_preserved": "cdbbcf36444fe3820666aba849334ccf932774a8baa06ca9a290534b9e2460df",
+  "event_chain_verified": 108,
+  "review_commit": "68b9f663d989641eb7ef5ea1a2d041c468c8d560",
+  "decision": "REWORK_RR-ENG03-01_ONLY",
+  "P0_P7": "CLOSED",
+  "closed_findings_preserved": [
+    "FIN-01–07",
+    "LINK-01",
+    "RR-ENG02-01"
+  ],
+  "phases": {
+    "IMPLEMENTED": "Claude91fc3ee",
+    "TESTED": "Original72/14/12/15/15PASS byte-exact; new53=34PASS19FAIL; all requested regression groups run separately",
+    "REVIEWED": "REWORK_RR-ENG03-01_ONLY",
+    "MERGED": false,
+    "ACCEPTED": false,
+    "DEPLOYED": false
+  },
+  "blocked_analyses": 7,
+  "withheld_claims": 22,
+  "withheld_inputs": 142,
+  "financially_qualified": 0,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "private_central_history_published": false
+}

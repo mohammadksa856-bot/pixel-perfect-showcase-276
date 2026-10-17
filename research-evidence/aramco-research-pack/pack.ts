@@ -101,8 +101,31 @@ const UNIT_CLASSES: [RegExp, string][] = [
 const SCALE = "scale";
 /** صنف الصيغة الملتبسة: رقم ملاصق لحروف أو رموز غير معروفة. يُرفض بدل اعتباره سنة (fail closed). */
 export const AMBIGUOUS = "ambiguous";
-/** عملة تسبق الرقم مباشرة، بمسافة أو دونها. */
-const CURRENCY_BEFORE = /(?:^|[^\p{L}])(SAR|USD|US\$|ريال|ريالات|دولار|دولارات)\s*$|[$﷼€£]\s*$/iu;
+/**
+ * فاصل محلي بين الوحدة والرقم (RR-ENG03-01): مسافات وأقواس وعلامات ترقيم شائعة، ستة محارف على
+ * الأكثر، بلا كلمات. النقطة والشرطة لا تصل الوحدة بالرقم (نهاية جملة، أو مدى «2024-2025»).
+ */
+const GAP_BEFORE = String.raw`[\s:(\[«"'\u201c]{0,6}`;
+const GAP_AFTER = /^[\s)\]»"'\u201d,:\u060c]{0,6}/u;
+/** عملة مدعومة تسبق الرقم: ملاصقة («SAR2025») أو بفاصل محلي («SAR: 2025»، «USD (2025)»، «$ (2025)»). */
+const CURRENCY_BEFORE = new RegExp(
+  String.raw`(?:^|[^\p{L}])(SAR|USD|US\$|ريال|ريالات|دولار|دولارات)${GAP_BEFORE}$|[$﷼€£]${GAP_BEFORE}$`,
+  "iu",
+);
+/**
+ * عملات ورموز نسبة غير مدعومة في التصنيف. ملاصقتها للرقم، قبله أو بعده بفاصل محلي، تدل على مبلغ أو
+ * نسبة لا يمكن مطابقتها مع الدليل، فتُرفض صيغةً ملتبسة بدل تمرير الرقم سنةً.
+ */
+const UNSUPPORTED_CODES = String.raw`AED|EUR|GBP|JPY|CNY|RMB|INR|KWD|QAR|BHD|OMR|EGP|CHF|CAD|AUD|HKD|SGD|KRW|درهم|دراهم|دينار|يورو|جنيه|ين`;
+const UNSUPPORTED_SYMBOLS = String.raw`[¥₹₩₽₺₪₦฿₣₫₱₴‰‱]`;
+const UNSUPPORTED_BEFORE = new RegExp(
+  String.raw`(?:(?:^|[^\p{L}])(?:${UNSUPPORTED_CODES})|${UNSUPPORTED_SYMBOLS})${GAP_BEFORE}$`,
+  "iu",
+);
+const UNSUPPORTED_AFTER = new RegExp(
+  String.raw`^(?:(?:${UNSUPPORTED_CODES})(?![\p{L}])|${UNSUPPORTED_SYMBOLS})`,
+  "iu",
+);
 /** فواصل لا تجعل الرقم ملتبسًا. */
 const SEP = /[\s.,;:!?()[\]«»"'\u201c\u201d\-\u2013\u2014/\u060c\u061b\u061f]/u;
 /** سوابق عربية تلتصق بالكلمة (و، ب، ل، ك، ف، ال…) ولا تغيّر دلالة الرقم. */
@@ -124,6 +147,7 @@ export function numberTokens(s: string): NumberToken[] {
     const after = clean.slice(m.index! + m[0].length);
     const classes = new Set<string>();
     if (CURRENCY_BEFORE.test(before)) classes.add("currency");
+    else if (UNSUPPORTED_BEFORE.test(before)) classes.add(AMBIGUOUS);
     else {
       // كلمة ملاصقة قبل الرقم: سابقة عربية مقبولة؛ غير ذلك صيغة ملتبسة.
       const glued = /([^\s\d]+)$/u.exec(before)?.[1];
@@ -139,11 +163,13 @@ export function numberTokens(s: string): NumberToken[] {
       after && !SEP.test(after[0]!)
         ? /^[^\s.,;:!?()[\]«»"'\u201c\u201d\u060c\u061b\u061f]+/u.exec(after)![0]
         : null;
-    // الوحدة بعد الرقم: ملاصقة («2025ريال») أو بعد مسافة؛ ملاصق غير معروف صيغة ملتبسة.
-    // تُطابَق على النص التالي لا على كلمة واحدة، لأن بعض الوحدات عبارة («في المئة»، «per cent»).
-    const tail = gluedAfter ? after : /^\s/.test(after) ? after.trimStart() : "";
+    // الوحدة بعد الرقم: ملاصقة («2025ريال») أو بعد فاصل محلي («2025 ريال»، «(2025) ريال»، «2025, USD»)؛
+    // ملاصق غير معروف أو عملة غير مدعومة صيغة ملتبسة. تُطابَق على النص التالي لا على كلمة واحدة،
+    // لأن بعض الوحدات عبارة («في المئة»، «per cent»).
+    const tail = gluedAfter ? after : after.slice(GAP_AFTER.exec(after)![0].length);
     const c1 = classOf(tail);
     if (gluedAfter && !c1 && !YEAR_MARK.test(gluedAfter)) classes.add(AMBIGUOUS);
+    if (!c1 && UNSUPPORTED_AFTER.test(tail)) classes.add(AMBIGUOUS);
     if (c1) classes.add(c1);
     if (c1 === SCALE) {
       const c2 = classOf(tail.replace(/^\S+\s*/, ""));

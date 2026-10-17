@@ -1,0 +1,33 @@
+{
+  "schema": "marefa-b03-research-followup/1",
+  "not_a_financial_or_editorial_approval": true,
+  "no_B03_source_or_engine_record_changed": true,
+  "originals_private": true,
+  "decisions": [
+    {
+      "id": "BONUS_CAPITALISATION",
+      "status": "RELATION_SUPPORTED_MERGE_DEFERRED",
+      "basis": "Existing annual original PDF140 (printed138) visually rechecked; capitalization is linked to bonus grants. Exact contemporary dates/references still not established.",
+      "action": "Keep reciprocal relation and curated-group counting; do not certify two unique economic events or merge engine records.",
+      "annual_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+    },
+    {
+      "id": "CAPITAL_INVESTMENT_GUIDANCE",
+      "status": "OFFICIAL_ALTERNATIVE_SOURCE_LOCATED_NOT_BOUND",
+      "official_web_url": "https://www.aramco.com/en/news-media/news/2026/fourth-quarter-and-full-year-press-release",
+      "official_pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-results-press-release-english.pdf/",
+      "pdf_sha256": "f58a704492098985b4ced50c3cf41228499a6f3e6251173091bf39dc23cdf54d",
+      "pdf_page": 1,
+      "web_publication_date": "2026-03-10",
+      "existing_engine_record_date": "2026-03-09",
+      "action": "Issuer investment guidance found in different original. Do not inherit annual-document identity, backdate knowledge, treat investment guidance as actual capex, or unblock the claim. Trusted immutable binding and authorized review still required."
+    },
+    {
+      "id": "GAS_TARGET",
+      "status": "CONFLICT_CONFIRMED_WITHHOLD_PRESERVED",
+      "basis": "Existing annual original PDF13 visually rechecked; original uses approximation, not greater-than; qualifications identified in the prior review remain part of the full interpretation.",
+      "action": "Retain non-conflicting excerpt plus explicit unresolved conflict. Do not replace the engine text or claim financial qualification.",
+      "annual_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+    }
+  ]
+}

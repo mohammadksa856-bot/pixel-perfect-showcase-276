@@ -1,0 +1,21 @@
+{
+  "schema": "marefa-b03-re-review-findings/1",
+  "engineering_decision": "ACCEPT",
+  "scope": "LOCAL_FROZEN_ENGINEERING_PROTOTYPE_ONLY",
+  "blocking_engineering_findings": [],
+  "R01": {"state": "PASS", "original_cases": 3, "basis": "Contradictory document identity/date and ambiguous artifact hashes now rejected; real resolver remains absent and live integration blocked"},
+  "R02": {"state": "PASS", "original_cases": 3, "basis": "Unsupported authored categories refused; guidance and fiscal-year semantics preserved without fabricated reporting boundaries"},
+  "R03": {"state": "PASS_ENGINEERING_HANDLING_ONLY", "original_cases": 2, "basis": "Original-source conflicts declared and withheld, all22prior dispositions faithfully carried, unknown versus unextracted separated; underlying financial/source claims not certified"},
+  "R04": {"state": "PASS", "original_cases": 3, "basis": "Issuer/date/event-group checks fail closed;17curated groups explicitly not17verified economic events"},
+  "R05": {"state": "PASS", "original_cases": 2, "basis": "Effect fields escaped, unsafe base links refused; local loopback reader stays read-only with CSP"},
+  "controls": {"state": "PASS", "original_cases": 2},
+  "nonblocking_notes": [
+    {"id": "DOC-01", "severity": "P3", "file": "review-delivery/WEB08B03/REPORT_AR.md", "note": "Report retains seven quoted-figure claims; generated result is six after removing the conflicting gas magnitude from its quotation. Closure register and code behavior are correct. Documentation cleanup only; author files untouched."},
+    {"id": "SCOPE-01", "severity": "DEFERRED_NOT_NEW_DEFECT", "note": "No destination5173browser journey, search UI, historical as-of selector, authenticated live evidence resolver or full screen-reader audit claimed."}
+  ],
+  "financial_qualification": "BLOCKED",
+  "editorial_publication": "BLOCKED",
+  "live_integration": "BLOCKED",
+  "production_release": "NOT_AUTHORIZED",
+  "user_final_acceptance": false
+}

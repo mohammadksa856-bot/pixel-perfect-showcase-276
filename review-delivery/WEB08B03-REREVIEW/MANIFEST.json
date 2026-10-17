@@ -1,0 +1,141 @@
+{
+  "schema": "marefa-safe-review-package/1",
+  "hash_mode": "UTF8_GIT_BLOBS_LF",
+  "self_excluded": true,
+  "application_sha": "1735609abafa85ee6e101ab7e3640496f0e43088",
+  "delivery_sha": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
+  "new_diff_code_and_metadata_only": true,
+  "private_PDFs_images_exports_environment_files_included": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2577,
+      "sha256": "7f7bb2f131ffd6c54cdaff4d21d7812c1b759bc344764c465919ae41b84ff461"
+    },
+    {
+      "path": "INDEPENDENT-REVIEW_AR.md",
+      "bytes": 15657,
+      "sha256": "d852b2b37b94d71e95eb25547767544d4737c3aed28a961d629a9528521fdc9f"
+    },
+    {
+      "path": "FINDINGS.json",
+      "bytes": 1976,
+      "sha256": "e875238a24ce6542951747e4ac5194e53d4609d142ebd89bc6659285cb81be25"
+    },
+    {
+      "path": "RESULTS.json",
+      "bytes": 4244,
+      "sha256": "6b8cd7a3bc771c060d71b8bd0a299ac457b6958adf76a691976ed254a56513ce"
+    },
+    {
+      "path": "UI-REVIEW.json",
+      "bytes": 2445,
+      "sha256": "76149e8053a626bd2fddf9afd0bebc2de45bbfb754b43e7fdd55e67181bf56e6"
+    },
+    {
+      "path": "CLAIM-TRANSFER-AUDIT.json",
+      "bytes": 19730,
+      "sha256": "20e082359a716c336ac4f037a52851ab31c848d1edccc9f1027a72260451dc2b"
+    },
+    {
+      "path": "INTEGRITY.json",
+      "bytes": 3189,
+      "sha256": "fca2be42e6165ed332ef5cb2cc756a999c3fc8ba94dd65c964c0978cb0a27ddc"
+    },
+    {
+      "path": "HTTP-PROOF.json",
+      "bytes": 335,
+      "sha256": "55fd5e897381a047aa951dc57c7c6cdf0bd2f5c5403313471abdc93650e9a171"
+    },
+    {
+      "path": "RESEARCH-DECISIONS.json",
+      "bytes": 2148,
+      "sha256": "0512b0af38899452df3966e83c367a8256cc96064e425f0a5ba3b8e6d84c6808"
+    },
+    {
+      "path": "boundaries.test.ts",
+      "bytes": 5954,
+      "sha256": "d63a07b0d3b4c4442466f081579e1250fd1882636cd55fdbaa01bcab2460f97c"
+    },
+    {
+      "path": "source-transfer.test.ts",
+      "bytes": 6363,
+      "sha256": "e2940622ff349d3391cbf8547af7e1a98d63f3f9eed9369af8d74939c3d35ed0"
+    },
+    {
+      "path": "demo-server.ts",
+      "bytes": 502,
+      "sha256": "b81310494ab8ccc726ab04302454428d7935f7e968dfcdeeb28e42689c152a4f"
+    },
+    {
+      "path": "run_review.py",
+      "bytes": 1907,
+      "sha256": "61910658fef8e0be5b25f1b373ad08c6766a2ded0c277653ebf080499132bc6f"
+    },
+    {
+      "path": "collect.py",
+      "bytes": 6858,
+      "sha256": "124755294e142f3d2d29b48f0becbb57a9c88ee3347c991eab0d1ec17200e6c5"
+    },
+    {
+      "path": "finalize.py",
+      "bytes": 3531,
+      "sha256": "0678cb6019db93f5ae824034659b8765d795a25a3ac9d6316c8e7db1ab7e4c70"
+    },
+    {
+      "path": "runs/app.txt",
+      "bytes": 57890,
+      "sha256": "a03df083c020e60aa1c02919809b90290db1c3879295b816b39dff7b79e58e02"
+    },
+    {
+      "path": "runs/b01.txt",
+      "bytes": 11349,
+      "sha256": "825b4a3451cbb474a9298f41fdb3049690bd1e285a83179800c865e5ffbce08b"
+    },
+    {
+      "path": "runs/b02.txt",
+      "bytes": 1604,
+      "sha256": "6b7df6fc2345ae9344d30745b6634de31f52bb5979c71b8aed6cadd9eeb19d91"
+    },
+    {
+      "path": "runs/b03-types.txt",
+      "bytes": 258,
+      "sha256": "5c085c22fecdb2139137767bf6b08cb9748419db355c97a3991b17243a90f8ff"
+    },
+    {
+      "path": "runs/b03.txt",
+      "bytes": 7580,
+      "sha256": "93194aff151784e234d81744dbc62297f69fa3bad2239fe7953918745477c10e"
+    },
+    {
+      "path": "runs/build.txt",
+      "bytes": 59464,
+      "sha256": "9ff7d3384570a49224d69b16872c8055031caf0806d66c2dfe244edc87be0f6c"
+    },
+    {
+      "path": "runs/check.txt",
+      "bytes": 367,
+      "sha256": "a1be323137f3f479c581b91f9cd57fd791d6b5807171b108a8f393a8f69da805"
+    },
+    {
+      "path": "runs/independent.txt",
+      "bytes": 1648,
+      "sha256": "9c3bc902e840ed8a86672f138824b02ba02216a5d01c7ce2cc8b15af18baa2f1"
+    },
+    {
+      "path": "runs/lint.txt",
+      "bytes": 223,
+      "sha256": "b97bd7aa4da078c917bb8d8452465631e1eac61216df0f5f79fec94ece2ee7c9"
+    },
+    {
+      "path": "runs/transfer.txt",
+      "bytes": 1289,
+      "sha256": "c56cab14a5c8798dc6f2c60249415915b33ddf5f478262798ecc9e90d5d4254a"
+    },
+    {
+      "path": "runs/types.txt",
+      "bytes": 194,
+      "sha256": "90fe245c926a737375d07d29810200542bbeebae7b66cef098786499bce3c21d"
+    }
+  ]
+}

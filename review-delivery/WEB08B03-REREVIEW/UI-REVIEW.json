@@ -1,0 +1,85 @@
+{
+  "schema": "marefa-b03-independent-ui-rereview/1",
+  "application_sha": "1735609abafa85ee6e101ab7e3640496f0e43088",
+  "local_url": "http://127.0.0.1:4454/",
+  "method": "Independent in-app browser DOM inspection, actual screenshots, link clicks and keyboard; author screenshots not substituted.",
+  "scenes": [
+    {
+      "language": "ar",
+      "requested_viewport": 1440,
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "groups": 5,
+      "topics": 18,
+      "withheld_cards": 22,
+      "source_reviews": 22,
+      "broken_fragments": 0
+    },
+    {
+      "language": "en",
+      "requested_viewport": 1440,
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "projects": "Visual desktop inspection PASS"
+    },
+    {
+      "language": "en",
+      "requested_viewport": 390,
+      "client_width": 375,
+      "scroll_width": 375,
+      "project_cell_display": "block",
+      "min_project_cell_width": 322,
+      "hidden_cells": 0,
+      "labels": [
+        "Project",
+        "Status",
+        "Capacity",
+        "Timing",
+        "Cost",
+        "Related published indicators",
+        "Economic drivers"
+      ]
+    },
+    {
+      "language": "ar",
+      "requested_viewport": 390,
+      "client_width": 375,
+      "scroll_width": 375,
+      "min_project_cell_width": 322,
+      "latin_locators_in_bdi_ltr": true
+    },
+    {
+      "language": "ar",
+      "requested_viewport": 320,
+      "client_width": 305,
+      "scroll_width": 305,
+      "min_project_cell_width": 252
+    },
+    {
+      "language": "en",
+      "requested_viewport": 320,
+      "client_width": 305,
+      "scroll_width": 305,
+      "min_project_cell_width": 252
+    }
+  ],
+  "keyboard": {
+    "focused_link": "Risks and guidance",
+    "focus_outline": "solid"
+  },
+  "security": {
+    "forms": 0,
+    "scripts": 0,
+    "unsafe_default_links": 0,
+    "gas_conflict_visible": true,
+    "petro_rabigh_conflict_visible": true,
+    "gas_conflicting_magnitude_not_in_quote": true
+  },
+  "limitations": [
+    "Viewport CSS client width excludes scrollbar and was measured directly; no overflow inference from innerWidth alone.",
+    "Screenshots inspected in-session; no new screenshot of unqualified source text uploaded.",
+    "No full screen-reader/WCAG certification claimed.",
+    "No search UI, historical as-of selector, or destination5173browser integration certified; known deferred scope."
+  ],
+  "decision": "PASS_LOCAL_PROTOTYPE_ONLY"
+}

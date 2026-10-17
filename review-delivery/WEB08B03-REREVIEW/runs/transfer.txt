@@ -1,0 +1,17 @@
+{"id": "transfer", "sha": "21847fdbd427af23a2b644aeeea92fa4fe9064b9", "started": "2026-10-17T16:37:51.208113+00:00", "exit": 0, "command": ["<BUN>", "test", "./review-delivery/WEB08B03-REREVIEW/source-transfer.test.ts"]}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B03-REREVIEW\source-transfer.test.ts:
+(pass) All22prior review dispositions preserved; two locators explicitly adapted to their stand-alone PDF [0.20ms]
+(pass) Same22claim identities/versions/topics; gas excerpt preserved for traceability but not substituted as original text [0.18ms]
+(pass) Known meaning/locator/derived conflicts reject even a synthetically complete document identity [0.34ms]
+(pass) All actual22claims remain unconstructible and withheld; no synthetic identity in committed outputs [0.65ms]
+(pass) The142B02inputs stay withheld and no accepted contract/engine-facing/application code changes [71.82ms]
+(pass) Conflicting gas magnitude never appears in a rendered claim quotation; review warning is explicitly retained [3.36ms]
+(pass) Safe base rejects credentials, external lookalikes, paths and query strings; IPv6 loopback allowed [0.12ms]
+(pass) A changed engine record version cannot inherit curated decisions [7.37ms]
+
+ 8 pass
+ 0 fail
+ 239 expect() calls
+Ran 8 tests across 1 file. [276.00ms]

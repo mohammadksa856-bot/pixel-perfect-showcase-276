@@ -1,0 +1,598 @@
+{
+  "schema": "marefa-b03-source-transfer-audit/1",
+  "prior_review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+  "application_sha": "1735609abafa85ee6e101ab7e3640496f0e43088",
+  "all22_dispositions_preserved": true,
+  "document_specific_locator_adaptations": 2,
+  "new_source_verification_claimed_from_transfer": false,
+  "rows": [
+    {
+      "claim_id": "aramco-capex-guidance-2026",
+      "prior_status": "REVIEW",
+      "transferred_status": "REVIEW",
+      "prior_pdf_pages": [],
+      "transferred_pdf_pages": [],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "original_locator_not_found"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-sales-gas-growth-2030",
+      "prior_status": "REWORK",
+      "transferred_status": "REWORK",
+      "prior_pdf_pages": [
+        13,
+        50,
+        54
+      ],
+      "transferred_pdf_pages": [
+        13,
+        50,
+        54
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "engine_text_conflicts_with_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-msc-12mbd",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        13,
+        26
+      ],
+      "transferred_pdf_pages": [
+        13,
+        26
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-project-milestones-2025",
+      "prior_status": "SUPPORTED_COMPOSITE_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_COMPOSITE_NOT_APPROVED",
+      "prior_pdf_pages": [
+        13,
+        15,
+        54
+      ],
+      "transferred_pdf_pages": [
+        13,
+        15,
+        54
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-jafurah-midstream-contract",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        231
+      ],
+      "transferred_pdf_pages": [
+        71
+      ],
+      "locator_basis_adaptation": "Annual PDF231 mapped to the same note in stand-alone FY2025 PDF71; original source URL is the stand-alone document.",
+      "engine_page_preserved": 71,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-rig-purchase-commitments",
+      "prior_status": "SUPPORTED_WITH_DERIVATION_CAVEAT",
+      "transferred_status": "SUPPORTED_WITH_DERIVATION_CAVEAT",
+      "prior_pdf_pages": [
+        229
+      ],
+      "transferred_pdf_pages": [
+        69
+      ],
+      "locator_basis_adaptation": "Annual PDF229 mapped to the same note in stand-alone FY2025 PDF69; original source URL is the stand-alone document.",
+      "engine_page_preserved": 69,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "derived_figure_in_engine_text"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-contingencies-ordinary-course",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        230
+      ],
+      "transferred_pdf_pages": [
+        230
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 230,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-contingencies-management-view",
+      "prior_status": "SUPPORTED_MANAGEMENT_ESTIMATE_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MANAGEMENT_ESTIMATE_NOT_APPROVED",
+      "prior_pdf_pages": [
+        230
+      ],
+      "transferred_pdf_pages": [
+        230
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 230,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-sadara-petro-rabigh-support",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        230,
+        231
+      ],
+      "transferred_pdf_pages": [
+        230,
+        231
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 230,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-customer-credit-concentration",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        192
+      ],
+      "transferred_pdf_pages": [
+        192
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 192,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-hydrocarbon-risk-factors",
+      "prior_status": "REVIEW",
+      "transferred_status": "REVIEW",
+      "prior_pdf_pages": [],
+      "transferred_pdf_pages": [],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "original_locator_not_found"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-q4-2025-base-dividend",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        235
+      ],
+      "transferred_pdf_pages": [
+        235
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-q4-2025-base-dividend-action",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        235
+      ],
+      "transferred_pdf_pages": [
+        235
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-buyback-2026",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        140,
+        246
+      ],
+      "transferred_pdf_pages": [
+        140,
+        246
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-buyback-2026-action",
+      "prior_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "transferred_status": "SUPPORTED_MEANING_NOT_APPROVED",
+      "prior_pdf_pages": [
+        140,
+        246
+      ],
+      "transferred_pdf_pages": [
+        140,
+        246
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-fy2025-results-publication",
+      "prior_status": "REVIEW",
+      "transferred_status": "REVIEW",
+      "prior_pdf_pages": [
+        34,
+        36
+      ],
+      "transferred_pdf_pages": [
+        34,
+        36
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "engine_record_id_missing",
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-fy2025-dividends-paid",
+      "prior_status": "SUPPORTED_TITLE_NOT_NUMERIC_APPROVAL",
+      "transferred_status": "SUPPORTED_TITLE_NOT_NUMERIC_APPROVAL",
+      "prior_pdf_pages": [
+        40,
+        235
+      ],
+      "transferred_pdf_pages": [
+        40,
+        235
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": null,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_missing",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-petro-rabigh-stake-2025",
+      "prior_status": "REWORK",
+      "transferred_status": "REWORK",
+      "prior_pdf_pages": [
+        233
+      ],
+      "transferred_pdf_pages": [
+        233
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 232,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "locator_conflicts_with_independent_review",
+        "exact_date_unverified"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-bonus-2023",
+      "prior_status": "REWORK",
+      "transferred_status": "REWORK",
+      "prior_pdf_pages": [
+        140
+      ],
+      "transferred_pdf_pages": [
+        140
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 139,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "locator_conflicts_with_independent_review",
+        "exact_date_unverified"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-capital-increase-2023",
+      "prior_status": "REWORK",
+      "transferred_status": "REWORK",
+      "prior_pdf_pages": [
+        140
+      ],
+      "transferred_pdf_pages": [
+        140
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 139,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "locator_conflicts_with_independent_review",
+        "exact_date_unverified"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-bonus-2022",
+      "prior_status": "REWORK",
+      "transferred_status": "REWORK",
+      "prior_pdf_pages": [
+        140
+      ],
+      "transferred_pdf_pages": [
+        140
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 139,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "locator_conflicts_with_independent_review",
+        "exact_date_unverified"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    },
+    {
+      "claim_id": "aramco-capital-increase-2022",
+      "prior_status": "REWORK",
+      "transferred_status": "REWORK",
+      "prior_pdf_pages": [
+        140
+      ],
+      "transferred_pdf_pages": [
+        140
+      ],
+      "locator_basis_adaptation": null,
+      "engine_page_preserved": 139,
+      "review_sha": "dcdecad97c3c8babd67931a817e69d0cd7a7d6d6",
+      "gaps": [
+        "document_version_missing",
+        "original_artifact_sha256_missing",
+        "locator_unverified",
+        "documented_rights_grant_missing",
+        "independent_review_receipt_missing",
+        "editorial_review_missing",
+        "engine_text_not_verified_against_original",
+        "locator_conflicts_with_independent_review",
+        "exact_date_unverified"
+      ],
+      "transfer_verdict": "PASS_NOT_NEW_ORIGINAL_VERIFICATION",
+      "financially_qualified": false
+    }
+  ]
+}

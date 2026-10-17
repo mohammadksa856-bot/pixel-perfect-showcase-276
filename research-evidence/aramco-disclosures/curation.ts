@@ -553,6 +553,8 @@ export type ProjectCuration = {
     | { state: "commenced_production" | "commenced_operations" | "onstream"; claimId: string }
     | { state: "target"; claimId: string }
     | { state: "not_disclosed" };
+  /** ادعاء يذكر السعة أو نموها نصًا كهدف إدارة؛ تبقى نصًا في الاقتباس ولا تُستخرج قيمة. */
+  capacityStatedIn?: string;
   /** مقاييس منشورة ذات صلة في صفحة المحرك (روابط فقط، لا قيم ولا أثر محسوب). */
   relatedEngineMetrics: string[];
 };
@@ -588,6 +590,7 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "program_target",
     claimIds: ["aramco-sales-gas-growth-2030"],
     executionStatus: { state: "target", claimId: "aramco-sales-gas-growth-2030" },
+    capacityStatedIn: "aramco-sales-gas-growth-2030",
     relatedEngineMetrics: ["total_gas_production"],
   },
   {
@@ -596,6 +599,7 @@ export const PROJECT_CURATION: ProjectCuration[] = [
     kind: "program_target",
     claimIds: ["aramco-msc-12mbd"],
     executionStatus: { state: "target", claimId: "aramco-msc-12mbd" },
+    capacityStatedIn: "aramco-msc-12mbd",
     relatedEngineMetrics: ["total_liquids_production"],
   },
 ];

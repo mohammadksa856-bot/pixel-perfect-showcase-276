@@ -135,6 +135,30 @@ describe("claims: verbatim, sourced, WITHHELD", () => {
     }
   });
 
+  test("figures inside verbatim quotes are flagged, never parsed; statement figures are not quoted at all", () => {
+    const flagged = r.claims
+      .filter((c) => c.qualification.warnings.includes("quote_contains_disclosed_figure"))
+      .map((c) => c.id)
+      .sort();
+    expect(flagged).toEqual([
+      "aramco-buyback-2026",
+      "aramco-buyback-2026-action",
+      "aramco-capex-guidance-2026",
+      "aramco-msc-12mbd",
+      "aramco-petro-rabigh-stake-2025",
+      "aramco-rig-purchase-commitments",
+      "aramco-sales-gas-growth-2030",
+    ]);
+    for (const id of ["aramco-fy2025-results-publication", "aramco-fy2025-dividends-paid"]) {
+      const c = r.claims.find((x) => x.id === id)!;
+      expect(
+        c.quote === null || !/\d[\d.,]*\s*(%|billion|million)|\b(USD|SAR)\s*\d/i.test(c.quote),
+      ).toBe(true);
+      expect(c.links.marefaData).toMatch(/\?tab=(financials|shareholders)$/);
+    }
+    for (const c of r.claims) expect(Object.keys(c)).not.toContain("value");
+  });
+
   test("topics are the 18 investor topics; categories are the four allowed; plans carry a plan kind", () => {
     for (const c of r.claims) {
       expect(TOPICS).toContain(c.topic);
@@ -210,8 +234,18 @@ describe("topic map, projects and the risk/guidance register", () => {
 
   test("projects: unknown capacity, cost and dates stay unknown; drivers not authored", () => {
     expect(r.projects.map((p) => p.id)).toEqual(PROJECT_CURATION.map((p) => p.id));
+    const capacityInQuote = new Map([
+      ["sales-gas-growth-2030", "aramco-sales-gas-growth-2030"],
+      ["msc-12mbd", "aramco-msc-12mbd"],
+    ]);
     for (const p of r.projects) {
-      expect(p.capacity).toEqual({ status: "not_disclosed" });
+      const claimId = capacityInQuote.get(p.id);
+      // a capacity stated by a management target stays text in its quote, never a value
+      expect(p.capacity).toEqual(
+        claimId
+          ? { status: "management_target_in_quote_only", claimId }
+          : { status: "not_disclosed" },
+      );
       expect(p.disclosedCost).toEqual({ status: "not_disclosed" });
       expect(p.economicDrivers.status).toBe("not_authored");
       expect(p.qualification).toBe("WITHHELD");
@@ -325,6 +359,14 @@ describe("negative cases (synthetic snapshots)", () => {
     const reg = buildRegister(snapshotFrom(x), b02);
     expect(reg.unclassified.map((u) => u.record)).toContainEqual(
       expect.objectContaining({ type: "synthetic_new_type" }),
+    );
+  });
+
+  test("a project capacity may only point at a management-plan quote that states capacity", () => {
+    const bad = structuredClone(PROJECT_CURATION);
+    bad.find((p) => p.id === "jafurah")!.capacityStatedIn = "aramco-project-milestones-2025";
+    expect(() => buildRegister(snap, b02, undefined, undefined, bad)).toThrow(
+      /project_capacity_claim_invalid:jafurah/,
     );
   });
 

@@ -152,7 +152,11 @@ export type WarningCode =
   | "evidence_published_after_event"
   | "classification_override"
   | "quote_not_copied_links_marefa_data"
+  | "quote_contains_disclosed_figure"
   | "same_event_multiple_records";
+
+/** A quantity in the verbatim text (money, percentage, scale). It stays text, never a parsed value. */
+const DISCLOSED_FIGURE = /\d[\d.,]*\s*(%|billion|million)|\b(USD|SAR)\s*\d/i;
 
 export type DocumentRecord = {
   artifactUrl: string;
@@ -247,7 +251,8 @@ export type ProjectRecord = {
   name: string;
   kind: "project" | "program_target";
   description: { claimId: string; quote: string }[];
-  capacity: { status: "not_disclosed" };
+  capacity:
+    { status: "not_disclosed" } | { status: "management_target_in_quote_only"; claimId: string };
   executionStatus: { state: string; claimId: string | null };
   targetDate:
     { status: "management_target"; year: number; claimId: string } | { status: "not_disclosed" };
@@ -436,12 +441,12 @@ export function buildRegister(
       );
       if (!isHttps(src.source_url)) gaps.push("source_url_not_https");
       const warnings: WarningCode[] = [];
-      const eventDate =
-        c.effect.kind === "event_date" ? c.effect.date : c.effect.kind === "as_of" ? null : null;
+      const eventDate = c.effect.kind === "event_date" ? c.effect.date : null;
       if (eventDate && src.filed_at.slice(0, 10) > eventDate)
         warnings.push("evidence_published_after_event");
       if (c.override) warnings.push("classification_override");
       if (c.quote === null) warnings.push("quote_not_copied_links_marefa_data");
+      else if (DISCLOSED_FIGURE.test(c.quote)) warnings.push("quote_contains_disclosed_figure");
       const group = groupOfTopic(c.topic);
       claims.push({
         id: c.id,
@@ -576,6 +581,11 @@ export function buildRegister(
   });
 
   const claimById = new Map(claims.map((c) => [c.id, c]));
+  const capacityStatedIn = (projectId: string, c: ClaimRecord | undefined) => {
+    if (!c || c.category !== "management_plan" || c.quote === null || !/capacity/i.test(c.quote))
+      throw Error(`project_capacity_claim_invalid:${projectId}`);
+    return { status: "management_target_in_quote_only" as const, claimId: c.id };
+  };
   const projects: ProjectRecord[] = projectCuration.map((p) => {
     const desc = p.claimIds.map((id) => {
       const c = claimById.get(id);
@@ -589,7 +599,9 @@ export function buildRegister(
       name: p.name,
       kind: p.kind,
       description: desc,
-      capacity: { status: "not_disclosed" },
+      capacity: p.capacityStatedIn
+        ? capacityStatedIn(p.id, claimById.get(p.capacityStatedIn))
+        : { status: "not_disclosed" },
       executionStatus:
         p.executionStatus.state === "not_disclosed"
           ? { state: "not_disclosed", claimId: null }

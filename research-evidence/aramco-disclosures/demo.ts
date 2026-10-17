@@ -120,6 +120,10 @@ const WARN: Record<string, { ar: string; en: string }> = {
     "لا اقتباس؛ الأرقام في Marefa Data",
     "No quote; figures are in Marefa Data",
   ),
+  quote_contains_disclosed_figure: T(
+    "الاقتباس يتضمن رقمًا من نص الإفصاح؛ لا يُستخرج كقيمة",
+    "Quote contains a figure from the disclosure text; not extracted as a value",
+  ),
   same_event_multiple_records: T("الحدث نفسه في أكثر من سجل", "Same event in several records"),
 };
 const STATUS: Record<string, { ar: string; en: string }> = {
@@ -233,7 +237,7 @@ ${r.projects
       p,
     ) => `<tr data-project="${esc(p.id)}"><td><b>${esc(p.name)}</b><br><small>${p.description.map((d) => `<span lang="en" dir="ltr">“${esc(d.quote)}”</span>`).join("<br>")}</small></td>
 <td data-execution-status="${esc(p.executionStatus.state)}">${t(STATUS[p.executionStatus.state] ?? T(p.executionStatus.state, p.executionStatus.state))}</td>
-<td data-unknown>${l === "ar" ? "غير معلنة في المصادر المتاحة" : "Not disclosed in available sources"}</td>
+${p.capacity.status === "management_target_in_quote_only" ? `<td data-capacity-in-quote="${esc(p.capacity.claimId)}">${l === "ar" ? "هدف إدارة مذكور في الاقتباس فقط؛ لا قيمة مستخرجة" : "Management target stated in the quote only; no value extracted"}</td>` : `<td data-unknown>${l === "ar" ? "غير معلنة في المصادر المتاحة" : "Not disclosed in available sources"}</td>`}
 <td>${p.targetDate.status === "management_target" ? `${p.targetDate.year} (${l === "ar" ? "هدف إدارة" : "management target"})` : `<span data-unknown>${l === "ar" ? "غير معلن" : "Not disclosed"}</span>`}</td>
 <td data-unknown>${l === "ar" ? "غير معلنة" : "Not disclosed"}</td>
 <td>${p.relatedEngineMetrics.map((m) => (m.presentInSnapshot ? `<a href="${esc(`${appBase}/preview/web-v1/companies/${r.company.symbol}/intelligence?topic=operations&focus=${m.key}`)}">${esc(m.key)}</a>` : esc(m.key))).join(", ")}</td>

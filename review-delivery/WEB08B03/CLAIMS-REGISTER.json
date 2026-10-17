@@ -60,7 +60,9 @@
      "independent_review_receipt_missing",
      "editorial_review_missing"
     ],
-    "warnings": []
+    "warnings": [
+     "quote_contains_disclosed_figure"
+    ]
    },
    "override": null,
    "rationale": "توجيه مُصدر لفترة مستقبلية: temporalBasis=issuer_guidance، لا يُعرض كبيان فعلي ولا يُقارن بإنفاق فعلي."
@@ -118,7 +120,9 @@
      "independent_review_receipt_missing",
      "editorial_review_missing"
     ],
-    "warnings": []
+    "warnings": [
+     "quote_contains_disclosed_figure"
+    ]
    },
    "override": null,
    "rationale": "هدف إداري لا إنجاز؛ لا يُحوَّل إلى سعة فعلية أو توقع إنتاج."
@@ -174,7 +178,9 @@
      "independent_review_receipt_missing",
      "editorial_review_missing"
     ],
-    "warnings": []
+    "warnings": [
+     "quote_contains_disclosed_figure"
+    ]
    },
    "override": null,
    "rationale": "خطة إدارة (الحفاظ على سعة)، ليست قياس إنتاج فعلي، ولا تاريخ مستهدف منسوب إليها."
@@ -347,7 +353,9 @@
      "independent_review_receipt_missing",
      "editorial_review_missing"
     ],
-    "warnings": []
+    "warnings": [
+     "quote_contains_disclosed_figure"
+    ]
    },
    "override": null,
    "rationale": "التزام قائم (تعرض)، لا إنفاق رأسمالي فعلي ولا توقع إنفاق."
@@ -794,6 +802,7 @@
      "editorial_review_missing"
     ],
     "warnings": [
+     "quote_contains_disclosed_figure",
      "same_event_multiple_records"
     ]
    },
@@ -850,6 +859,7 @@
      "editorial_review_missing"
     ],
     "warnings": [
+     "quote_contains_disclosed_figure",
      "same_event_multiple_records"
     ]
    },
@@ -1019,7 +1029,8 @@
      "editorial_review_missing"
     ],
     "warnings": [
-     "evidence_published_after_event"
+     "evidence_published_after_event",
+     "quote_contains_disclosed_figure"
     ]
    },
    "override": null,

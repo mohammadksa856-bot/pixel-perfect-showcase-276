@@ -38,6 +38,9 @@ describe("render", () => {
   test("projects keep capacity and cost unknown and drivers unauthored", () => {
     expect(ar.match(/data-project="/g)).toHaveLength(r.projects.length);
     expect((ar.match(/data-not-authored/g) ?? []).length).toBe(r.projects.length);
+    expect(ar.match(/data-capacity-in-quote="/g)).toHaveLength(
+      r.projects.filter((p) => p.capacity.status !== "not_disclosed").length,
+    );
   });
 
   test("hostile text is escaped and non-https source links are not rendered as links", () => {

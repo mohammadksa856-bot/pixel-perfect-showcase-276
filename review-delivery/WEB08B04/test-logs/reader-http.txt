@@ -1,4 +1,4 @@
-# reader HTTP checks @ 2685d944f25b8dc3ef8d63147fded0d81551bef9
+# reader HTTP checks @ 49eeed82b84d9e071a49b91b1c959e4f13a7b82b
 GET /?lang=ar -> 200
 GET /?lang=en -> 200
 GET /nope -> 404
@@ -10,7 +10,7 @@ paragraph cards: 99
 analyses BLOCKED: 7
 projects: 5
 topics: 18
-statuses:  4 METHODOLOGY_PENDING_APPROVAL; 18 OPEN_GAP; 3 UNAPPROVED_ASSUMPTION; 33 UNAPPROVED_INTERPRETATION; 4 UNAPPROVED_SCENARIO; 37 WITHHELD;
+statuses:  4 METHODOLOGY_PENDING_APPROVAL; 18 OPEN_GAP; 3 UNAPPROVED_ASSUMPTION; 32 UNAPPROVED_INTERPRETATION; 5 UNAPPROVED_SCENARIO; 37 WITHHELD;
 <script / <form: 0
 # unsafe APP_BASE refused at startup:
 unsafe_app_base: only http(s) loopback origins are allowed

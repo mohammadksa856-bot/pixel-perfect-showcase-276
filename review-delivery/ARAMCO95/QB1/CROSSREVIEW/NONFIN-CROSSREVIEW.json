@@ -1,0 +1,415 @@
+{
+ "checks": [
+  {
+   "check": "Codex branch head is the delivery commit and its parent the implementation commit",
+   "pass": true,
+   "detail": "7d65277 2dcd818"
+  },
+  {
+   "check": "every file in Codex ARTIFACT-MANIFEST matches its declared SHA-256 at 7d65277",
+   "pass": true,
+   "detail": "16 files; mismatched []"
+  },
+  {
+   "check": "Codex changed only its owned directories since a76286c",
+   "pass": true,
+   "detail": "17 files"
+  },
+  {
+   "check": "Codex's 18 tests re-run independently: 18 run, OK",
+   "pass": true,
+   "detail": "OK"
+  },
+  {
+   "check": "19 field IDs = site facts blocks (topics 1/2/3/16) ∩ enabled engine company_model catalog",
+   "pass": true,
+   "detail": "site 21, outside catalog ['business_description_ar', 'business_segments']"
+  },
+  {
+   "check": "factory category company_profile is #1, weight 8, and holds field group company_model",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "investor topic per record = site topic of its facts block (identity/business/governance/risks)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Data tab per record = site group of its topic",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Overview state: topic-1 identity facts not rendered as a distinct block; topics 2/3/16 rendered (buildOverview)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Investor focus link resolves: TopicSection emits data-fact={key} and Intelligence focuses [data-fact]",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "engine attribute id/version/source_key/effective_at/value equal Codex's engine_reference and original value (committed DB, immutable)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "registered import hash = 42bd5c4 bytes; current bytes differ",
+   "pass": true,
+   "detail": "cb6a94b1c208c4b7"
+  },
+  {
+   "check": "all 19 values identical in both import versions and equal to the engine: the hash difference does not change any value",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "archived annual report SHA-256 = Codex ANN2025 artifact hash",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "printed page = PDF page − 2 holds on sampled pages (p3→01, p37→35, p76→74, p140→138)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "source text on PDF page: legal_name",
+   "pass": true,
+   "detail": "p140; p179"
+  },
+  {
+   "check": "source text on PDF page: listing_date",
+   "pass": true,
+   "detail": "p140; p179"
+  },
+  {
+   "check": "source text on PDF page: legal_form",
+   "pass": true,
+   "detail": "p140"
+  },
+  {
+   "check": "source text on PDF page: founding_date",
+   "pass": true,
+   "detail": "p179"
+  },
+  {
+   "check": "source text on PDF page: reporting_standard",
+   "pass": true,
+   "detail": "p180; p164"
+  },
+  {
+   "check": "source text on PDF page: website",
+   "pass": true,
+   "detail": "p3"
+  },
+  {
+   "check": "source text on PDF page: ceo_name",
+   "pass": true,
+   "detail": "p12; p176"
+  },
+  {
+   "check": "source text on PDF page: chairman_name",
+   "pass": true,
+   "detail": "p10; p176"
+  },
+  {
+   "check": "source text on PDF page: auditor",
+   "pass": true,
+   "detail": "p173"
+  },
+  {
+   "check": "source text on PDF page: geographic_presence",
+   "pass": true,
+   "detail": "p16; p20"
+  },
+  {
+   "check": "source text on PDF page: subsidiaries_count",
+   "pass": true,
+   "detail": "p16"
+  },
+  {
+   "check": "source text on PDF page: employees",
+   "pass": true,
+   "detail": "p76"
+  },
+  {
+   "check": "source text on PDF page: credit_rating",
+   "pass": true,
+   "detail": "p37"
+  },
+  {
+   "check": "source text on PDF page: business_description",
+   "pass": true,
+   "detail": "p8; p9"
+  },
+  {
+   "check": "source text on PDF page: products_services",
+   "pass": true,
+   "detail": "p56; p50"
+  },
+  {
+   "check": "source text on PDF page: headquarters_address — p140 (pdftotext; pypdf drops this line)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ISIN SA14TG012N13 is not in the annual report (Codex correctly sources it elsewhere)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ISIN check digit valid (ISO 6166): structural only, not proof of issuer identity",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "contract freshness: effective 2025-12-31 + 365 days = stale after 2026-12-31",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Codex PRefChem bridge is arithmetically consistent and its balance equals the engine value of FQ01-OBS-072 (source not re-read here)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Codex import analysis reproduced: 173 old facts unchanged, 176 current, 3 added, company_attributes identical",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "every one of the 19 records has exactly one verdict",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "findings": [
+  {
+   "id": "NF-C1",
+   "target": "employees",
+   "finding": "on PDF 16 the employee count carries footnote 4 (refer to Section 3); footnote 6 on that page concerns SABIC Agri-Nutrients/ZPC. The parent-company scope comes from PDF 76 footnote 6 only. The table header is the 2025 column; the source does not say year-end or average, so information_as_of 2025-12-31 is an assumption."
+  },
+  {
+   "id": "NF-C2",
+   "target": "products_services",
+   "finding": "base oils, lubricants and power generation are not on PDF 18 or 66; the direct list is PDF 56 (Downstream activities). Engine items differ in wording from the source: 'retail fuels' (source: retail), 'trading' (supply and trading), 'power' (power generation); 'distribution' is in the source and not in the engine list."
+  },
+  {
+   "id": "NF-C3",
+   "target": "business_description",
+   "finding": "the closest source wording is PDF 8 ('one of the world's largest integrated energy and chemicals companies') and PDF 9 ('Upstream and Downstream, which are supported by Corporate activities'); Codex cites PDF 179/66. 'globally integrated' describes trading (PDF 57), not the company."
+  },
+  {
+   "id": "NF-N1",
+   "target": "headquarters_address",
+   "finding": "pypdf drops the address line on PDF 140, as Codex observed; pdftotext extracts it in full, so a text proof exists with a second extractor in addition to Codex's visual reading. No value impact."
+  },
+  {
+   "id": "FX-1",
+   "target": "FIN-SOURCE-CROSSCHECK (Codex)",
+   "finding": "incorrect: the registered import has a cash/instant 2025-12-31 fact keyed by label 'cash and cash equivalents' (value 243099, page 179, consolidated balance sheet), mapped to cash by src/finengine/mapping.py:11. Codex's script matches on 'metric' only. The 058 lineage is label mapping, not a cash_end fallback. The page-179 locator is still wrong (PDF 176), as in R5."
+  },
+  {
+   "id": "FX-2",
+   "target": "FIN-EVIDENCE-LEDGER (Claude)",
+   "finding": "4 records cite the data point chosen after the engine's _repair_current_fact_versions ran on the isolated copy; the committed DB marks another row current, from the registered import 1a836a30: [('FQ01-OBS-001', 2134, 2322), ('FQ01-OBS-004', 2135, 2323), ('FQ01-OBS-006', 2139, 2325), ('FQ01-OBS-053', 2138, 2329)]. Values are identical. R1 therefore applies to these rows in the committed file, not only to 051/058."
+  }
+ ],
+ "codex_tests_rerun": {
+  "ran": 18,
+  "returncode": 0,
+  "note": "structural/negative-mutation tests; they do not read the PDF or the engine, so they cannot confirm a source value"
+ },
+ "freshness": {
+  "policy": {
+   "cadence_kind": "periodic",
+   "recheck_interval_days": 180,
+   "max_age_before_stale_days": 365,
+   "refresh_trigger": "new annual report published, or a governance/board-change announcement is observed"
+  },
+  "engine_effective_at": "2025-12-31",
+  "stale_after_by_contract": "2026-12-31",
+  "review_date": "2026-10-18",
+  "note": "age alone is within policy on the review date; currentness of names, ratings and URLs after the report is not evidenced; refresh trigger includes board-change announcements"
+ },
+ "financial_conflicts": {
+  "label_keyed_cash_2025": {
+   "label": "cash and cash equivalents",
+   "value": 243099,
+   "scale": 1000000,
+   "currency": "SAR",
+   "unit": "SAR",
+   "period_end": "2025-12-31",
+   "period_kind": "instant",
+   "fiscal_year": 2025,
+   "page": 179,
+   "table": "consolidated balance sheet"
+  },
+  "data_point_drift": [
+   {
+    "record": "FQ01-OBS-001",
+    "ledger_data_point": 2134,
+    "committed_db_current": 2322,
+    "committed_db_source": "1a836a305b8b4a48",
+    "committed_db_version": 2
+   },
+   {
+    "record": "FQ01-OBS-004",
+    "ledger_data_point": 2135,
+    "committed_db_current": 2323,
+    "committed_db_source": "1a836a305b8b4a48",
+    "committed_db_version": 2
+   },
+   {
+    "record": "FQ01-OBS-006",
+    "ledger_data_point": 2139,
+    "committed_db_current": 2325,
+    "committed_db_source": "1a836a305b8b4a48",
+    "committed_db_version": 2
+   },
+   {
+    "record": "FQ01-OBS-053",
+    "ledger_data_point": 2138,
+    "committed_db_current": 2329,
+    "committed_db_source": "1a836a305b8b4a48",
+    "committed_db_version": 2
+   }
+  ],
+  "prefchem_bridge": {
+   "codex_values_sar_millions": {
+    "unit": "SAR_millions",
+    "period_end": "2026-06-30",
+    "balance_cash": 167387,
+    "cashflow_ending_cash": 170853,
+    "cash_held_for_sale": 3466,
+    "equation": "167387 +3466 =170853",
+    "source_pdf_pages": [
+     29,
+     31,
+     42
+    ],
+    "scope": "Consolidated; PRefChem joint operations share classified held for sale",
+    "not_authorization_to_adjust_cash_or_gearing": true
+   },
+   "engine_cash_2026_06_30": 2885,
+   "verifiable_here": false,
+   "why": "the H1-2026 PDF is not accessible in this environment; only the arithmetic and the 167,387 balance equal to the engine row can be checked"
+  }
+ },
+ "verdicts": {
+  "QB1-NF-01": {
+   "field": "legal_name",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-02": {
+   "field": "legal_name_ar",
+   "verdict": "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION",
+   "codex_status": "MATCHED_WEB_CURRENT_ONLY"
+  },
+  "QB1-NF-03": {
+   "field": "isin",
+   "verdict": "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION",
+   "codex_status": "MATCHED_WEB_CURRENT_ONLY"
+  },
+  "QB1-NF-04": {
+   "field": "listing_date",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-05": {
+   "field": "legal_form",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-06": {
+   "field": "founding_date",
+   "verdict": "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION",
+   "codex_status": "DEFINITION_REVIEW_REQUIRED"
+  },
+  "QB1-NF-07": {
+   "field": "headquarters_address",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-08": {
+   "field": "reporting_standard",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-09": {
+   "field": "website",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_NORMALIZED_URL"
+  },
+  "QB1-NF-10": {
+   "field": "investor_relations_url",
+   "verdict": "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION",
+   "codex_status": "MATCHED_WEB_CURRENT_ONLY"
+  },
+  "QB1-NF-11": {
+   "field": "business_description",
+   "verdict": "NEEDS_CORRECTION",
+   "codex_status": "SOURCE_SUPPORTED_PARAPHRASE"
+  },
+  "QB1-NF-12": {
+   "field": "products_services",
+   "verdict": "NEEDS_CORRECTION",
+   "codex_status": "COMPOSITE_REVIEW_REQUIRED"
+  },
+  "QB1-NF-13": {
+   "field": "geographic_presence",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_BOUND_AND_SCOPE"
+  },
+  "QB1-NF-14": {
+   "field": "subsidiaries_count",
+   "verdict": "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION",
+   "codex_status": "DEFINITION_CONFLICT"
+  },
+  "QB1-NF-15": {
+   "field": "ceo_name",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-16": {
+   "field": "chairman_name",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_DIRECT"
+  },
+  "QB1-NF-17": {
+   "field": "auditor",
+   "verdict": "EVIDENCE_OK_ENGINEERING",
+   "codex_status": "MATCHED_WITH_ABBREVIATION"
+  },
+  "QB1-NF-18": {
+   "field": "employees",
+   "verdict": "NEEDS_CORRECTION",
+   "codex_status": "MATCHED_VALUE_SCOPE_REQUIRED"
+  },
+  "QB1-NF-19": {
+   "field": "credit_rating",
+   "verdict": "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION",
+   "codex_status": "MATCHED_ISSUER_REPORTED_ONLY"
+  }
+ },
+ "counts": {
+  "EVIDENCE_OK_ENGINEERING": 10,
+  "NEEDS_CORRECTION": 3,
+  "NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION": 6
+ },
+ "reviewed": {
+  "branch": "codex/aramco95-qb1-nonfinancial",
+  "implementation": "2dcd818c95334fd2ecec770d8e78003dde65d7cd",
+  "delivery": "7d65277df4dc25b9755520b871d0bfcfbf63c281"
+ },
+ "grants": {
+  "accept": false,
+  "qualification": false,
+  "rights": false,
+  "publication": false
+ }
+}

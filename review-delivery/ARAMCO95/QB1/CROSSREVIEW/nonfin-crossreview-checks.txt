@@ -1,0 +1,45 @@
+PASS Codex branch head is the delivery commit and its parent the implementation commit — 7d65277 2dcd818
+PASS every file in Codex ARTIFACT-MANIFEST matches its declared SHA-256 at 7d65277 — 16 files; mismatched []
+PASS Codex changed only its owned directories since a76286c — 17 files
+PASS Codex's 18 tests re-run independently: 18 run, OK — OK
+PASS 19 field IDs = site facts blocks (topics 1/2/3/16) ∩ enabled engine company_model catalog — site 21, outside catalog ['business_description_ar', 'business_segments']
+PASS factory category company_profile is #1, weight 8, and holds field group company_model
+PASS investor topic per record = site topic of its facts block (identity/business/governance/risks)
+PASS Data tab per record = site group of its topic
+PASS Overview state: topic-1 identity facts not rendered as a distinct block; topics 2/3/16 rendered (buildOverview)
+PASS Investor focus link resolves: TopicSection emits data-fact={key} and Intelligence focuses [data-fact]
+PASS engine attribute id/version/source_key/effective_at/value equal Codex's engine_reference and original value (committed DB, immutable)
+PASS registered import hash = 42bd5c4 bytes; current bytes differ — cb6a94b1c208c4b7
+PASS all 19 values identical in both import versions and equal to the engine: the hash difference does not change any value
+PASS archived annual report SHA-256 = Codex ANN2025 artifact hash
+PASS printed page = PDF page − 2 holds on sampled pages (p3→01, p37→35, p76→74, p140→138)
+PASS source text on PDF page: legal_name — p140; p179
+PASS source text on PDF page: listing_date — p140; p179
+PASS source text on PDF page: legal_form — p140
+PASS source text on PDF page: founding_date — p179
+PASS source text on PDF page: reporting_standard — p180; p164
+PASS source text on PDF page: website — p3
+PASS source text on PDF page: ceo_name — p12; p176
+PASS source text on PDF page: chairman_name — p10; p176
+PASS source text on PDF page: auditor — p173
+PASS source text on PDF page: geographic_presence — p16; p20
+PASS source text on PDF page: subsidiaries_count — p16
+PASS source text on PDF page: employees — p76
+PASS source text on PDF page: credit_rating — p37
+PASS source text on PDF page: business_description — p8; p9
+PASS source text on PDF page: products_services — p56; p50
+PASS source text on PDF page: headquarters_address — p140 (pdftotext; pypdf drops this line)
+PASS ISIN SA14TG012N13 is not in the annual report (Codex correctly sources it elsewhere)
+PASS ISIN check digit valid (ISO 6166): structural only, not proof of issuer identity
+FINDING NF-C1 [employees] on PDF 16 the employee count carries footnote 4 (refer to Section 3); footnote 6 on that page concerns SABIC Agri-Nutrients/ZPC. The parent-company scope comes from PDF 76 footnote 6 only. The table header is the 2025 column; the source does not say year-end or average, so information_as_of 2025-12-31 is an assumption.
+FINDING NF-C2 [products_services] base oils, lubricants and power generation are not on PDF 18 or 66; the direct list is PDF 56 (Downstream activities). Engine items differ in wording from the source: 'retail fuels' (source: retail), 'trading' (supply and trading), 'power' (power generation); 'distribution' is in the source and not in the engine list.
+FINDING NF-C3 [business_description] the closest source wording is PDF 8 ('one of the world's largest integrated energy and chemicals companies') and PDF 9 ('Upstream and Downstream, which are supported by Corporate activities'); Codex cites PDF 179/66. 'globally integrated' describes trading (PDF 57), not the company.
+FINDING NF-N1 [headquarters_address] pypdf drops the address line on PDF 140, as Codex observed; pdftotext extracts it in full, so a text proof exists with a second extractor in addition to Codex's visual reading. No value impact.
+PASS contract freshness: effective 2025-12-31 + 365 days = stale after 2026-12-31
+FINDING FX-1 [FIN-SOURCE-CROSSCHECK (Codex)] incorrect: the registered import has a cash/instant 2025-12-31 fact keyed by label 'cash and cash equivalents' (value 243099, page 179, consolidated balance sheet), mapped to cash by src/finengine/mapping.py:11. Codex's script matches on 'metric' only. The 058 lineage is label mapping, not a cash_end fallback. The page-179 locator is still wrong (PDF 176), as in R5.
+FINDING FX-2 [FIN-EVIDENCE-LEDGER (Claude)] 4 records cite the data point chosen after the engine's _repair_current_fact_versions ran on the isolated copy; the committed DB marks another row current, from the registered import 1a836a30: [('FQ01-OBS-001', 2134, 2322), ('FQ01-OBS-004', 2135, 2323), ('FQ01-OBS-006', 2139, 2325), ('FQ01-OBS-053', 2138, 2329)]. Values are identical. R1 therefore applies to these rows in the committed file, not only to 051/058.
+PASS Codex PRefChem bridge is arithmetically consistent and its balance equals the engine value of FQ01-OBS-072 (source not re-read here)
+PASS Codex import analysis reproduced: 173 old facts unchanged, 176 current, 3 added, company_attributes identical
+PASS every one of the 19 records has exactly one verdict
+
+ALL PASS | {'EVIDENCE_OK_ENGINEERING': 10, 'NEEDS_CORRECTION': 3, 'NEEDS_NEWER_SOURCE_OR_APPROVED_DEFINITION': 6} | findings 6

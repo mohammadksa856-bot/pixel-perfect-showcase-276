@@ -1,0 +1,12 @@
+# sabotage probes @ c1fa05adf1396daeaa3ba0a28096acad9212ddee (files restored after each)
+## weakenings (must fail the checks)
+previous is_num restored (OverflowError returns) -> 2fail
+long int silently clamped to a finite value -> 2fail
+non-finite double accepted as a number -> 2fail
+booleans accepted as numbers -> 1fail
+OverflowError re-raised instead of rejected -> 2fail
+## equivalent mutations (no behaviour change expected; listed for transparency)
+overflow mapped to inf (then rejected by the finite test in the same function) -> 0fail
+float() in the computation path (unreachable for long ints: is_num rejects them first) -> 0fail
+ 717 pass
+ 0 fail

@@ -1801,6 +1801,18 @@ describe("event 118: raw numeric lexemes are checked against the decimal precisi
     ],
     ["non-terminating FX quotient", "M01", fx("1", "3"), OK({ revenue_net: 0.333333 })],
     [
+      "exact tie at the 7th decimal rounds half-to-even (0.000001 / 2 = 0.0000005 -> 0)",
+      "M01",
+      fx("0.000001", "2"),
+      OK({ revenue_net: 0 }),
+    ],
+    [
+      "tie whose double falls on the other side is rejected (0.000007 / 2)",
+      "M01",
+      fx("0.000007", "2"),
+      NC("precision_not_guaranteed:revenue_net"),
+    ],
+    [
       "FX rate that loses its digit",
       "M01",
       fx("1", "9007199254740990.5"),
@@ -1974,6 +1986,59 @@ describe("event 118: raw numeric lexemes are checked against the decimal precisi
     // but intermediate loss is still caught on the object path, because the check runs on the computation
     const sum = JSON.parse(capex("4503599627370495.5", "0.75"));
     expect(evaluate("M06", sum)).toEqual(NC("precision_not_guaranteed:capex_cash"));
+  });
+  test("deterministic sweep of 400 raw decimal cases: Python and TypeScript agree, accepted values equal the exact reference", () => {
+    let seed = 118;
+    const rnd = (n: number) => {
+      seed = (seed * 1103515245 + 12345) % 2147483648;
+      return seed % n;
+    };
+    const dec = (intDigits: number, places: number) => {
+      const w =
+        String(1 + rnd(10 ** Math.min(intDigits, 9))) + "0".repeat(Math.max(0, intDigits - 9));
+      return places ? `${w}.${String(rnd(10 ** places)).padStart(places, "0")}` : w;
+    };
+    const sweep: { id: string; t: string; ref: (r: any) => boolean }[] = [];
+    for (let k = 0; k < 200; k++) {
+      const rev = dec(1 + rnd(13), rnd(7));
+      const rate = dec(1, rnd(11));
+      sweep.push({
+        id: "M01",
+        t: fx(rev, rate),
+        ref: (r) => r.values.revenue_net === Number(div6(fixed(rev), fixed(rate))),
+      });
+      const b = dec(1 + rnd(13), rnd(7));
+      const c = dec(1 + rnd(13), rnd(7));
+      sweep.push({
+        id: "M08",
+        t: netDebt(b, c),
+        ref: (r) => {
+          const n = fixed(b) - fixed(c);
+          return (
+            r.values.net_debt === Number(div6(n, fixed("1"))) &&
+            r.values.gearing === Number(div6(n, n + fixed("1")))
+          );
+        },
+      });
+    }
+    const f = join(dir, "sweep.json");
+    writeFileSync(f, JSON.stringify(sweep.map(({ id, t }) => ({ recipe: id, text: t }))));
+    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate-raw", f]);
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    const py = JSON.parse(p.stdout.toString());
+    const tally: Record<string, number> = {};
+    sweep.forEach(({ id, t, ref }, i) => {
+      const ts = evaluateRaw(id, t);
+      expect({ t, py: py[i] }).toEqual({ t, py: ts });
+      const key = ts.status === "CONDITIONALLY_COMPARABLE" ? "accepted" : ts.reason.split(":")[0];
+      tally[key] = (tally[key] ?? 0) + 1;
+      if (ts.status === "CONDITIONALLY_COMPARABLE")
+        expect({ t, exact: ref(ts) }).toEqual({ t, exact: true });
+    });
+    // the sweep exercises both acceptance and the new rejections
+    expect(tally.accepted).toBeGreaterThan(100);
+    expect(tally.precision_not_guaranteed ?? 0).toBeGreaterThan(0);
+    console.log("sweep tally", JSON.stringify(tally));
   });
   test("every generated example gives its recorded result on the raw path, in TypeScript and Python", () => {
     const all = R.flatMap((r) =>

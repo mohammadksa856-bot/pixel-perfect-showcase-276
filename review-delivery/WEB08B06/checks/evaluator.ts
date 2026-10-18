@@ -578,8 +578,12 @@ function run(
       v = finite(v / m.fx.rate);
       x = qDiv(x, exactOf(exact, "fx.rate", m.fx.rate));
     }
-    // values of 1e15 and above carry no sub-unit digits to round, and scaling them could overflow
-    values[o.key] = finite(Math.abs(v) >= 1e15 ? v : Math.round(v * 1e6) / 1e6);
+    // values of 1e15 and above carry no sub-unit digits to round, and scaling them could overflow.
+    // event 118: the double itself is rounded half-to-even exactly, as Python's round(v, 6) does; Math.round(v * 1e6)
+    // rounded half-up after an inexact product and could decide a tie differently from Python
+    values[o.key] = finite(
+      Math.abs(v) >= 1e15 ? v : Number(`${roundHE(qOfDouble(v), OUT_PLACES)}e-${OUT_PLACES}`),
+    );
     // event 118: the reported number, read as printed (shortest round-trip decimal), must equal the exact
     // result at the reported precision; a double too coarse to carry it is rejected, never passed on rounded
     if (roundHE(qOfLex(String(values[o.key])), OUT_PLACES) !== roundHE(x, OUT_PLACES))

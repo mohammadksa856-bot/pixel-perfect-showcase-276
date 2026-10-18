@@ -1,0 +1,17 @@
+[
+  {
+    "id": "B05-R01",
+    "previous_severity": "P1",
+    "state": "CLOSED",
+    "decision": "ACCEPT_WITHIN_SCOPE",
+    "evidence": [
+      "runs/install.txt",
+      "runs/b05.txt",
+      "runs/scan.txt",
+      "NATIVE-HTTP.json",
+      "NATIVE-PROOF.json",
+      "SCOPE-ROUTES-HOLDS.json"
+    ],
+    "reason": "Native Windows original CLI HTTP200,42PASS0FAIL0SKIP,default leak scan305files0hits,51actual routes; no shim/preload/source patch"
+  }
+]

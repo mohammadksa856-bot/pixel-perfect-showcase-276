@@ -1,0 +1,55 @@
+{"run": "b05", "sha": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81", "platform": "Windows-11-10.0.26200-SP0", "os": "Windows", "native_windows": true, "shim": false, "preload": false, "observed_at": "2026-10-18T00:35:10.485061+00:00", "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "research-evidence/aramco-research-experience"], "exit": 0}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-research-experience\access.test.ts:
+(pass) loopback only > the server is bound to 127.0.0.1 [0.03ms]
+(pass) loopback only > it is not reachable on any non-loopback interface address [2071.30ms]
+(pass) loopback only > a non-loopback Host header is refused (DNS rebinding) [16.25ms]
+(pass) loopback only > an unsafe APP_BASE is refused at startup [0.16ms]
+(pass) read-only, one page, no API > only GET and HEAD [4.63ms]
+(pass) read-only, one page, no API > anything but the page, its stylesheet and its named fonts is 404 [8.23ms]
+(pass) read-only, one page, no API > security headers on every response, including errors [4.38ms]
+(pass) read-only, one page, no API > the page is marked as a withheld draft and noindex [3.47ms]
+(pass) design parity: the site's own tokens and fonts, self-hosted > stylesheet is compiled from src/styles.css [0.25ms]
+(pass) the withheld draft is not part of the public app > no app source imports the research pack or this experience [8.01ms]
+(pass) the withheld draft is not part of the public app > no app route serves research pack paragraph text [2.06ms]
+
+research-evidence\aramco-research-experience\experience.test.ts:
+(pass) holds: nothing is unblocked or approved > 7 BLOCKED, 22 WITHHELD claims, 142 WITHHELD inputs, 0 financially qualified [7.42ms]
+(pass) holds: nothing is unblocked or approved > no paragraph status reads as approved [0.67ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > every paragraph is placed in exactly one slot [0.12ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > an unknown paragraph id fails instead of silently disappearing [0.14ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > each paragraph card is rendered exactly once, in Arabic and English [39.32ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > the topic map links to the primary place and never repeats paragraph text [34.36ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > every paragraph has one primary topic; contextual links cover the rest [6.14ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > the four declared gap topics stay gaps and are not filled in [1.11ms]
+(pass) evidence: every reference is shown, as an identity, never as a quote or a value > each evidence drawer lists all of its paragraph's references [7.82ms]
+(pass) evidence: every reference is shown, as an identity, never as a quote or a value > no B03 quote text is rendered (quotes may carry disclosed figures) [39.88ms]
+(pass) evidence: every reference is shown, as an identity, never as a quote or a value > no distinctive engine value appears anywhere in the page [42.35ms]
+(pass) metric links follow the accepted B04 register > register is the accepted 72: 29 FOCUSABLE and 43 NOT_RENDERED [0.13ms]
+(pass) metric links follow the accepted B04 register > a FOCUSABLE metric links to its exact register target; a NOT_RENDERED metric is never clickable [54.53ms]
+(pass) metric links follow the accepted B04 register > every analysis input shows the register's status for its metric [7.98ms]
+(pass) metric links follow the accepted B04 register > with an unsafe APP_BASE, no app link is emitted [67.93ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > risk subsections hold one kind each [1.71ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > every card carries exactly one kind badge matching its kind [0.86ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > management targets are never shown as achieved, and milestones stay withheld [0.47ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > project relations rest only on identities specific to one project [0.16ms]
+(pass) navigation > every in-page link resolves to an element id [3.67ms]
+(pass) navigation > desktop and mobile contents cover every part, subsection and analysis [7.80ms]
+(pass) languages: Arabic is primary; untranslated text is never presented as English > document direction and language [0.37ms]
+(pass) languages: Arabic is primary; untranslated text is never presented as English > in English, only author drafts show English; the rest is Arabic, marked pending, with lang=ar dir=rtl [10.21ms]
+(pass) no script, form, inline style or external resource in the page > static, self-contained markup [5.44ms]
+
+research-evidence\aramco-research-experience\paths.test.ts:
+(pass) file URL to native path > Windows file URLs become drive paths, never /C:/… [0.16ms]
+(pass) file URL to native path > POSIX file URLs stay POSIX paths [0.05ms]
+(pass) file URL to native path > encoded characters are decoded, as a filesystem expects [0.02ms]
+(pass) file URL to native path > the repository root resolves to real files on this system [0.40ms]
+(pass) file URL to native path > the default build directory is a native path under the repository [0.06ms]
+(pass) file URL to native path > path segments split on either separator [0.07ms]
+(pass) no B05 source builds a filesystem path from URL.pathname [1.93ms]
+
+ 42 pass
+ 0 fail
+ 9388 expect() calls
+Ran 42 tests across 3 files. [3.14s]

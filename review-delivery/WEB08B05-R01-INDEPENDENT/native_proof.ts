@@ -1,0 +1,24 @@
+// Independent native render/path proof. No private HTML or financial value copies are persisted.
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {writeFileSync,readdirSync,statSync,readFileSync} from 'node:fs';
+import {join} from 'node:path';
+import {buildCss} from '../../research-evidence/aramco-research-experience/assets';
+import {renderPage} from '../../research-evidence/aramco-research-experience/server';
+import {REPO_ROOT,pathSegments,toNativePath} from '../../research-evidence/aramco-research-experience/paths';
+import {DEFAULT_BUILD_DIR} from '../../research-evidence/aramco-research-experience/public-leak-scan';
+if(process.platform!=='win32')throw Error('Native Windows required');
+const old=JSON.parse(execFileSync('git',['show','b910e1c6d53a5d7d701fd8b6930679d3590abe9f:review-delivery/WEB08B05-INDEPENDENT/AUDIT.json'],{cwd:REPO_ROOT,encoding:'utf8'}));
+const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
+const html={ar:hash(renderPage('ar','http://127.0.0.1:5179')),en:hash(renderPage('en','http://127.0.0.1:5179'))};
+const css=hash(await buildCss());
+const walk=(d:string):string[]=>readdirSync(d).flatMap(f=>{const p=join(d,f);return statSync(p).isDirectory()?walk(p):[p]});
+const src=walk(join(REPO_ROOT,'src')).filter(f=>/\.(ts|tsx|js|json|css)$/.test(f));
+const routes=src.filter(f=>pathSegments(f).includes('routes'));
+if(routes.length<=30)throw Error('Vacuous route walk');
+for(const path of routes)readFileSync(path,'utf8');
+const assertions={nativeDrivePath:/^[A-Z]:\\/i.test(REPO_ROOT),repoRootContainsPackage:statSync(join(REPO_ROOT,'package.json')).isFile(),defaultBuildExists:statSync(DEFAULT_BUILD_DIR).isDirectory(),rootRouteFound:routes.some(f=>pathSegments(f).slice(-3).join('/')==='src/routes/__root.tsx'),encodedSpace:toNativePath(new URL('file:///C:/Test%20Review/%D9%85%D8%B9%D8%B1%D9%81%D8%A9/'),true)==='C:\\Test Review\\معرفة\\',arUnchanged:html.ar===old.html_sha256.ar,enUnchanged:html.en===old.html_sha256.en,cssUnchanged:css===old.css_sha256};
+const result={application_sha:'a722af40dd9ee6f79588a5f21029ceb2755e9acb',delivery_sha:'b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81',platform:process.platform,bun:Bun.version,shim:false,preload:false,sourceFilesRead:src.length,routeFilesActuallyRead:routes.length,assertions,sha256:{...html,css},baseline:'b910e1c:previous review conditional observation;comparison only, not reused native acceptance'};
+writeFileSync(new URL('NATIVE-PROOF.json',import.meta.url),JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result));
+if(Object.values(assertions).some(v=>!v))process.exitCode=1;

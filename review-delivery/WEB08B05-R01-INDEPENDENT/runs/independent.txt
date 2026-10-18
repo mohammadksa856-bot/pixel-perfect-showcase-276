@@ -1,0 +1,16 @@
+{"run": "independent", "sha": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81", "platform": "Windows-11-10.0.26200-SP0", "os": "Windows", "native_windows": true, "shim": false, "preload": false, "observed_at": "2026-10-18T00:35:11.589966+00:00", "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "./review-delivery/WEB08B05-R01-INDEPENDENT/independent.test.ts"], "exit": 0}
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\WEB08B05-R01-INDEPENDENT\independent.test.ts:
+(pass) all 99 texts and resolved evidence unchanged from accepted B04 [5.56ms]
+(pass) each relationship is a project-specific reference, not a generic/composite claim [0.37ms]
+(pass) all inputs individually remain WITHHELD, rather than trusting displayed count [0.84ms]
+(pass) ar: all fragments resolve and no remotely loaded executable/resource [126.24ms]
+(pass) ar: raw B03 quotes absent, including HTML-escaped variants [87.71ms]
+(pass) en: all fragments resolve and no remotely loaded executable/resource [54.26ms]
+(pass) en: raw B03 quotes absent, including HTML-escaped variants [66.25ms]
+
+ 7 pass
+ 0 fail
+ 4186 expect() calls
+Ran 7 tests across 1 file. [609.00ms]

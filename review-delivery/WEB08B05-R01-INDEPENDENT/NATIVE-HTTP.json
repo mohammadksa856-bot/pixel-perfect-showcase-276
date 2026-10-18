@@ -1,0 +1,147 @@
+{
+  "application_sha": "a722af40dd9ee6f79588a5f21029ceb2755e9acb",
+  "delivery_sha": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
+  "native_windows": true,
+  "shim": false,
+  "preload": false,
+  "command": [
+    "C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe",
+    "research-evidence/aramco-research-experience/server.ts"
+  ],
+  "original_cli": true,
+  "port": 4466,
+  "checks": [
+    {
+      "path": "/?lang=ar",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 200,
+      "body_bytes": 915308
+    },
+    {
+      "path": "/?lang=en",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 200,
+      "body_bytes": 925165
+    },
+    {
+      "path": "/assets/experience.css",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 200,
+      "body_bytes": 47803
+    },
+    {
+      "path": "/assets/fonts/cairo-arabic-400-normal.woff2",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 200,
+      "body_bytes": 13292
+    },
+    {
+      "path": "/",
+      "method": "HEAD",
+      "host": "127.0.0.1:4466",
+      "status": 200,
+      "body_bytes": 0
+    },
+    {
+      "path": "/",
+      "method": "POST",
+      "host": "127.0.0.1:4466",
+      "status": 405,
+      "body_bytes": 24
+    },
+    {
+      "path": "/",
+      "method": "PUT",
+      "host": "127.0.0.1:4466",
+      "status": 405,
+      "body_bytes": 24
+    },
+    {
+      "path": "/",
+      "method": "PATCH",
+      "host": "127.0.0.1:4466",
+      "status": 405,
+      "body_bytes": 24
+    },
+    {
+      "path": "/",
+      "method": "DELETE",
+      "host": "127.0.0.1:4466",
+      "status": 405,
+      "body_bytes": 24
+    },
+    {
+      "path": "/",
+      "method": "OPTIONS",
+      "host": "127.0.0.1:4466",
+      "status": 405,
+      "body_bytes": 24
+    },
+    {
+      "path": "/",
+      "method": "GET",
+      "host": "evil.invalid:4466",
+      "status": 421,
+      "body_bytes": 39
+    },
+    {
+      "path": "/",
+      "method": "GET",
+      "host": "127.0.0.1",
+      "status": 421,
+      "body_bytes": 39
+    },
+    {
+      "path": "/",
+      "method": "GET",
+      "host": "127.0.0.1:4467",
+      "status": 421,
+      "body_bytes": 39
+    },
+    {
+      "path": "/",
+      "method": "GET",
+      "host": "localhost.evil.invalid:4466",
+      "status": 421,
+      "body_bytes": 39
+    },
+    {
+      "path": "/api",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 404,
+      "body_bytes": 36
+    },
+    {
+      "path": "/research-evidence/aramco-research-pack/pack.ts",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 404,
+      "body_bytes": 36
+    },
+    {
+      "path": "/assets/fonts/unknown.woff2",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 404,
+      "body_bytes": 36
+    },
+    {
+      "path": "/.env",
+      "method": "GET",
+      "host": "127.0.0.1:4466",
+      "status": 404,
+      "body_bytes": 36
+    }
+  ],
+  "sha256": {
+    "ar": "0f54a79625820a4222869686a3d98bbd0fc943b2bd5d939cbb458337cf8d0be7",
+    "en": "266790f3b0e2c7dbfb27e19586eb1c2d10b3e23b12ffbed92228ff28c5246d3b",
+    "css": "79723a847a1836b6e41e676b1d4dbc199b24a726d63735f5205e6bb239c22df4"
+  },
+  "previous_observer_hashes_are_not_native_acceptance": true
+}

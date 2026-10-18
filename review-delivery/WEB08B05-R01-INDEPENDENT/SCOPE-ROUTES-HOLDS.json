@@ -1,0 +1,291 @@
+{
+  "application_sha": "a722af40dd9ee6f79588a5f21029ceb2755e9acb",
+  "delivery_sha": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
+  "base": "8c279250235f50bd9106b55a6314dce4edc6a08d",
+  "previous_review": "b910e1c6d53a5d7d701fd8b6930679d3590abe9f",
+  "fix_files": [
+    "research-evidence/aramco-research-experience/access.test.ts",
+    "research-evidence/aramco-research-experience/assets.ts",
+    "research-evidence/aramco-research-experience/paths.test.ts",
+    "research-evidence/aramco-research-experience/paths.ts",
+    "research-evidence/aramco-research-experience/public-leak-scan.ts",
+    "research-evidence/aramco-research-experience/tsconfig.json"
+  ],
+  "delivery_files": [
+    "product-tracking/CHANGELOG.jsonl",
+    "review-delivery/WEB08B05/B05-R01-CLOSURE_AR.md",
+    "review-delivery/WEB08B05/REPORT_AR.md",
+    "review-delivery/WEB08B05/REVIEW-HANDOFF_AR.md",
+    "review-delivery/WEB08B05/test-logs/app-build.txt",
+    "review-delivery/WEB08B05/test-logs/app-unit.txt",
+    "review-delivery/WEB08B05/test-logs/b01-tests.txt",
+    "review-delivery/WEB08B05/test-logs/b02-tests.txt",
+    "review-delivery/WEB08B05/test-logs/b03-build-check.txt",
+    "review-delivery/WEB08B05/test-logs/b03-tests.txt",
+    "review-delivery/WEB08B05/test-logs/b04-build-check.txt",
+    "review-delivery/WEB08B05/test-logs/b04-tests.txt",
+    "review-delivery/WEB08B05/test-logs/b05-r01-scope-and-fingerprint.txt",
+    "review-delivery/WEB08B05/test-logs/b05-tests.txt",
+    "review-delivery/WEB08B05/test-logs/eslint-b04.txt",
+    "review-delivery/WEB08B05/test-logs/eslint-b05.txt",
+    "review-delivery/WEB08B05/test-logs/holds.txt",
+    "review-delivery/WEB08B05/test-logs/public-leak-scan.txt",
+    "review-delivery/WEB08B05/test-logs/reader-http.txt",
+    "review-delivery/WEB08B05/test-logs/server-start.txt",
+    "review-delivery/WEB08B05/test-logs/tsc-app.txt",
+    "review-delivery/WEB08B05/test-logs/tsc-b04.txt",
+    "review-delivery/WEB08B05/test-logs/tsc-b05.txt"
+  ],
+  "protected_paths_unchanged": [
+    "src",
+    "supabase",
+    "config",
+    "tests",
+    "package.json",
+    "bun.lock",
+    "vite.config.ts",
+    "research-evidence/aramco-research-pack",
+    "research-evidence/aramco-disclosures",
+    "research-evidence/v1",
+    "research-evidence/aramco-qualification"
+  ],
+  "unchanged_view_and_security_hashes": {
+    "research-evidence/aramco-research-experience/ui.tsx": "f4954242592613e1292b87a53cda52eebaafa7068dc177756fc0431decb4966e",
+    "research-evidence/aramco-research-experience/model.ts": "c984200d31bff32f14391582cae5ad837ebf64606dde8d3f7213f2929a991532",
+    "research-evidence/aramco-research-experience/copy.ts": "80e1b3b9e8511b963a7e60d080717ae8d746b3656d30c2d2f4b2edbf1906a3a4",
+    "research-evidence/aramco-research-experience/components.css": "47e83e9835f499bdd74804f42d1c45b182a970412c079313474f68966b82f92b",
+    "research-evidence/aramco-research-experience/server.ts": "cda92bd20a0632b33f81745fbd9acc43b6b150cbf0a2c58d24c583845a34819d",
+    "research-evidence/aramco-research-experience/experience.test.ts": "91f99f437f0f5a4cf89d08fc35ab06868f432c3603094637b83309fdf10e0d80"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "native_windows": true,
+  "route_files_actually_read": 51,
+  "windows_path_separators_verified": true,
+  "root_route_found": true,
+  "routes": [
+    {
+      "path": "src/routes/__root.tsx",
+      "sha256": "9865181eb44430507a00d1cd4281912d0f93e59c08ca75d1d60845749e646c13"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.boards.tsx",
+      "sha256": "14883a36e0de03631e97b2bca9927c23a1c6e86b28557661836c930024ae2c1b"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.community.tsx",
+      "sha256": "863c446d0dc99029ac300121d89d380293f8b4965c0ada55717fb05bbcaa509e"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.companies.tsx",
+      "sha256": "0f822614d0ccf956a62fe9114cd71128589cdf4629ef7517f942da2aacf25be9"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.faqs.tsx",
+      "sha256": "4f7318051e65911b77b95d0a99296cf38e7c96551835c7acd7753d38ebdd77bf"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.index.tsx",
+      "sha256": "0d6b250aae027c896a2d7e6eadfba665d31ac51597ebbcef12f0559b1aecb911"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.knowledge.tsx",
+      "sha256": "9586d03f9355390c5c905f0c2f937e866d6fac36316775641e809ac774a51e72"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.research.tsx",
+      "sha256": "0061993e0b71e23852738ae7cdf4a48ac9a58b0f7db7f648b6b1df7b42f09442"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.sectors.tsx",
+      "sha256": "bdfdcd3b6727507f1cf8b9819254ec339ac825eb40a27e022dc9b9b76553df8c"
+    },
+    {
+      "path": "src/routes/_authenticated/admin.tsx",
+      "sha256": "fc882873bf126033f045fad7d65afc63f423da6987d2ff8f1a267c0dfb6e522a"
+    },
+    {
+      "path": "src/routes/_authenticated/route.tsx",
+      "sha256": "3c43d5c82f3285aba53cd2d2ffb31a4a4c79a661ddf7b540c8110cac761aa68e"
+    },
+    {
+      "path": "src/routes/about.tsx",
+      "sha256": "9b842b2238ed6400787ef7d43ac4ec20254c53c4642bc8f8c11e6a65dd197e85"
+    },
+    {
+      "path": "src/routes/auth.tsx",
+      "sha256": "9ced0b18598cf2c5b98f4fa1306676703165770f2638837204b016d780d8e790"
+    },
+    {
+      "path": "src/routes/community.$postId.tsx",
+      "sha256": "0bc1ff43a39c5288cd89ed9779ad868ff91d8e2966ab96753026bbdb37f910d3"
+    },
+    {
+      "path": "src/routes/community.index.tsx",
+      "sha256": "703f6a795fca5626002becbe5c09acdae54d6f12bcd2dec8bdeaa60f9b8dea56"
+    },
+    {
+      "path": "src/routes/companies.$slug.tsx",
+      "sha256": "a9c98043e650ff25698ecf530fdf2bcc041f6ba2b4f7f9a099da6e5f8f97cc45"
+    },
+    {
+      "path": "src/routes/companies.index.tsx",
+      "sha256": "59d66a23a0cde2bed6898fea671b21427e09cf3fc43879f1e0b4beb292b24a93"
+    },
+    {
+      "path": "src/routes/contact.tsx",
+      "sha256": "640d55bd9a9a8dc2973cc6e1821a237a57d172a4d055d36e5eccb461af80319e"
+    },
+    {
+      "path": "src/routes/index.tsx",
+      "sha256": "7c9358e2b5ef2b9f11ae939afe766fbf94e89c6ad46fbfd1a38c229b37c6f46f"
+    },
+    {
+      "path": "src/routes/knowledge.$slug.tsx",
+      "sha256": "d6a08f6d1046a04d69b0cf7612df1c1ba4625429cd3a7b654be140c2f4cb4332"
+    },
+    {
+      "path": "src/routes/knowledge.index.tsx",
+      "sha256": "17e53d8905faf4955434585ffd8d2c181eb3f448246e5d7be65cdabbea5a6106"
+    },
+    {
+      "path": "src/routes/markets.$slug.tsx",
+      "sha256": "e524fc031362b7553cceee86fecf840e0c0e46570da5ac3590e29f3cf65bc67a"
+    },
+    {
+      "path": "src/routes/markets.index.tsx",
+      "sha256": "4abbe5ef55cf01bfe4d0450f714c98bf432d6e37b1a2eea6067fffb452fe18d7"
+    },
+    {
+      "path": "src/routes/markets.saudi.tsx",
+      "sha256": "7f712a151c978710c325257c60381072f6c9cf6ee8d7eb54bc4d68ada8ad3e8c"
+    },
+    {
+      "path": "src/routes/markets.us.tsx",
+      "sha256": "3b4db157a0aa5e6e3a19e34b796051250b878b1410a3fff6710f9a84ba671b86"
+    },
+    {
+      "path": "src/routes/preview.companies.$symbol.tsx",
+      "sha256": "07c0cbb7e3c9ae61277e2f6e42b6606f9fad183a68ec787fa91052a7cd1f5430"
+    },
+    {
+      "path": "src/routes/preview.companies.index.tsx",
+      "sha256": "a1f08c3d05f58f93eec4e88804788a8037f97bf2430c0017515f72b46fdaba02"
+    },
+    {
+      "path": "src/routes/preview.web-v1.companies.$symbol.tsx",
+      "sha256": "0185a134c8697bc6416308739d58c9bddd42a2f853aa55913ee414450f94ec85"
+    },
+    {
+      "path": "src/routes/preview.web-v1.companies.$symbol_.intelligence.tsx",
+      "sha256": "b3ca124d19e34d2028120dcf1dc02a59ac8077655a073b9fac46b8c98476692d"
+    },
+    {
+      "path": "src/routes/preview.web-v1.companies.$symbol_.overview.tsx",
+      "sha256": "4745f8ac48231e52bc885d354baa7c2403aa17cf9194537f36c6050f341dbdf2"
+    },
+    {
+      "path": "src/routes/preview.web-v1.companies.index.tsx",
+      "sha256": "ce71c07497ef0ec1fa30664b418d0e09077273af8bfddc466c00e12badba1d6c"
+    },
+    {
+      "path": "src/routes/preview.web-v1.design-system.tsx",
+      "sha256": "c713d443a9e96bb547cb3a480370293cb40c9f5e74eb957d8cc5e2d3bbe0f30c"
+    },
+    {
+      "path": "src/routes/preview.web-v1.index.tsx",
+      "sha256": "48b9a4467b1ff5291b8ae4f46e217252526993563d6e4d5991cf82c8a2ab0deb"
+    },
+    {
+      "path": "src/routes/preview.web-v1.knowledge.$slug.tsx",
+      "sha256": "68f5adbdbc75f62c06fd45ea4277a1cd091ac514322384e4510a0bfa6f9cca0a"
+    },
+    {
+      "path": "src/routes/preview.web-v1.knowledge.index.tsx",
+      "sha256": "67920eb2a0f2998cffaf425b0b39fa050ad774dd2e57707aae9eeed3e6d8902b"
+    },
+    {
+      "path": "src/routes/preview.web-v1.markets.index.tsx",
+      "sha256": "0118f12d932c2a23590df67bbab59de51d654f1a2b297e04edac664c58dd2d2c"
+    },
+    {
+      "path": "src/routes/preview.web-v1.markets.saudi.$board.tsx",
+      "sha256": "ae35fa137f1dad787849b09ea3d2d8204b1447f07aee456f9e45e398ba98b03a"
+    },
+    {
+      "path": "src/routes/preview.web-v1.markets.saudi.index.tsx",
+      "sha256": "5e0f379993f7b13a6b05cf6f1513f89cee9f3328f7c4835bc22b85c25e36ad86"
+    },
+    {
+      "path": "src/routes/preview.web-v1.research.$slug.tsx",
+      "sha256": "dfe3b69526c0cbf9a936cead3bb75b292e4e1e1ef5298563bde2157d852807b2"
+    },
+    {
+      "path": "src/routes/preview.web-v1.research.index.tsx",
+      "sha256": "88c70c7c912f8e03d11411adacaa1e595fa7cfb21d11611e700bcd35453c9c75"
+    },
+    {
+      "path": "src/routes/preview.web-v1.search.tsx",
+      "sha256": "07cb217a321c8b8e54253100de5c3baaf3f93816e034f0cc9e675dee248061db"
+    },
+    {
+      "path": "src/routes/preview.web-v1.sectors.$slug.tsx",
+      "sha256": "a730fb7f3b19c22bc1838874964f2cf46563cdd675c6b2b641c5162d07ecafad"
+    },
+    {
+      "path": "src/routes/preview.web-v1.sectors.index.tsx",
+      "sha256": "894ee4941d378733efbe40b9dea5bdb624b9c3db051d6d7d6fe31c6d3b38be81"
+    },
+    {
+      "path": "src/routes/privacy.tsx",
+      "sha256": "7d370e4586ad8dab07cf27bc412393de17c03ff283d8cb110badef9b5944bbdb"
+    },
+    {
+      "path": "src/routes/research.$slug.tsx",
+      "sha256": "aad9cda8d10db64f30fee4c86a0293534dcbe61596f506dd310d48511fdf3411"
+    },
+    {
+      "path": "src/routes/research.index.tsx",
+      "sha256": "a68e0082f09457314d9aee65456d2d1c91d0e13ab6e11c145855f15578939982"
+    },
+    {
+      "path": "src/routes/search.tsx",
+      "sha256": "5e26e700e2db43080b258b55405b7c144c036b5e01165c13411938ef7c24c3c4"
+    },
+    {
+      "path": "src/routes/sectors.$slug.tsx",
+      "sha256": "667fd917eb7356aeecc972cf69dc1d655c9edd6f358345d935a1776c1b0cb927"
+    },
+    {
+      "path": "src/routes/sectors.index.tsx",
+      "sha256": "263f0cea44ef0a5317474876cf10b9cfc0426430ddbdc761dccf20670da619e2"
+    },
+    {
+      "path": "src/routes/terms.tsx",
+      "sha256": "ab033dbab180e04ac2ae7896a53529138c7ecb576cd435f1ba92a0fa645fb829"
+    },
+    {
+      "path": "src/routes/watchlist.tsx",
+      "sha256": "ca4065edaeccd084a1e1df0b07763d5b1fd067ccebdd87b5db37921ffe57a4b0"
+    }
+  ],
+  "pathname_code_remaining": [
+    {
+      "file": "server.ts",
+      "line": 82,
+      "text": "if (u.pathname === \"/\")"
+    },
+    {
+      "file": "server.ts",
+      "line": 87,
+      "text": "if (u.pathname === \"/assets/experience.css\") return send(\"text/css; charset=utf-8\", css);"
+    },
+    {
+      "file": "server.ts",
+      "line": 88,
+      "text": "const font = /^\\/assets\\/fonts\\/([a-z0-9-]+\\.woff2)$/.exec(u.pathname)?.[1];"
+    }
+  ],
+  "B04_acceptance_preserved": true,
+  "withheld_inputs": 142,
+  "financially_qualified": 0
+}

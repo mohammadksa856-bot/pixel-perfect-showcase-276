@@ -1,28 +1,38 @@
 {
- "schema": "marefa-web08b06-tracking-corrections/1",
+ "schema": "marefa-web08b06-tracking-corrections/2",
+ "supersedes": "marefa-web08b06-tracking-corrections/1 (implementation 5050295): its field event_time_not_later_than treated the git commit timestamp as a provable bound; withdrawn",
  "audited_file": "product-tracking/CHANGELOG.jsonl",
  "audited_at_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
  "audited_file_sha256": "cb751913ad898bb32759ca8d3faafad2d9da2822b1b20073654b8c207504087b",
  "audited_lines": 215,
- "finding": "The ts field of these events is later than the git committer time of the commit that recorded them. An event cannot be recorded before it happens, so these ts values are not event times.",
- "cause": "ts values were typed by the author agent as estimated narrative times; no clock was read when writing them. Git committer time is machine-recorded at commit and is used here only as an upper bound.",
- "correction": "Original lines are kept unchanged. For each affected line: event_time NOT_ESTABLISHED; event_time_not_later_than = recording commit committer time. No replacement timestamp is invented.",
- "forward_rule": "New entries carry ts = recorded_at from the system clock (date -u) at authoring, plus time_source; event_time is given only when evidenced.",
- "central_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json is not in this repository and was not updated by the author; central events 110-113 are referenced, not edited.",
- "affected_count": 165,
- "affected_more_than_24h": 27,
- "affected": [
+ "evidence_status": {
+  "ts": "recorded metadata typed by the author agent as estimated narrative times; no clock was read",
+  "git_commit_timestamp_observed": "git committer timestamp as reported by git; mutable metadata (GIT_COMMITTER_DATE, amend, rebase, clock skew); not a trusted timestamp and not evidence of when an event happened",
+  "event_time": "NOT_ESTABLISHED for every audited event: no independent time evidence exists"
+ },
+ "finding": "Inconsistency between two recorded time fields: for the listed lines, ts is later than the git commit timestamp observed for the commit that recorded the line. This shows the fields disagree; it does not establish the true time of any event or its order relative to any commit.",
+ "not_inferred": "No conclusion that an event happened before, after or at any commit timestamp, in either direction; lines without the inconsistency are not thereby confirmed.",
+ "correction": "Append-only: original lines unchanged; this file and an appended CHANGELOG correction event record the inconsistency. No replacement timestamp is invented.",
+ "forward_rule": "New entries carry ts = recorded_at from the system clock (date -u) at authoring, with time_source; this is also recorded metadata, not independent proof.",
+ "central_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json is not in this repository and was not updated by the author.",
+ "counts": {
+  "ts_later_than_git_commit_timestamp": 165,
+  "of_which_difference_over_24h": 27,
+  "ts_equal_or_earlier_than_git_commit_timestamp": 50,
+  "ts_missing_or_unparseable": 0
+ },
+ "inconsistencies": [
   {
    "line": 3,
    "line_sha256": "4eaa3d029485d435f8055e08aa3802d0e2704b8b28d96a972263b0f7d51e7399",
    "task": "P01-14",
    "event": "report",
    "ts_as_written": "2026-10-12T21:55:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 44,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 44,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 4,
@@ -30,11 +40,11 @@
    "task": "P01-13",
    "event": "blocked",
    "ts_as_written": "2026-10-12T21:55:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 44,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 44,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 5,
@@ -42,11 +52,11 @@
    "task": "P01-13",
    "event": "unblocked",
    "ts_as_written": "2026-10-12T22:05:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 644,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 644,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 6,
@@ -54,11 +64,11 @@
    "task": "P01-13",
    "event": "test_run",
    "ts_as_written": "2026-10-12T22:06:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 704,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 704,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 7,
@@ -66,11 +76,11 @@
    "task": "P01-13",
    "event": "test_run",
    "ts_as_written": "2026-10-12T22:06:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 704,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 704,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 8,
@@ -78,11 +88,11 @@
    "task": "P01-13",
    "event": "report",
    "ts_as_written": "2026-10-12T22:10:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 944,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 944,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 9,
@@ -90,11 +100,11 @@
    "task": "BR-003",
    "event": "batch_report",
    "ts_as_written": "2026-10-12T22:12:00Z",
-   "recording_commit": "3001d242995499a03e663188d9e9f109e22b465b",
-   "recording_commit_committer_time_utc": "2026-10-12T21:54:16Z",
-   "ts_exceeds_recording_by_seconds": 1064,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T21:54:16Z"
+   "git_commit": "3001d242995499a03e663188d9e9f109e22b465b",
+   "git_commit_timestamp_observed": "2026-10-12T21:54:16Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1064,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 12,
@@ -102,11 +112,11 @@
    "task": "P01-15",
    "event": "commit",
    "ts_as_written": "2026-10-12T22:25:00Z",
-   "recording_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
-   "recording_commit_committer_time_utc": "2026-10-12T22:23:35Z",
-   "ts_exceeds_recording_by_seconds": 85,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T22:23:35Z"
+   "git_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+   "git_commit_timestamp_observed": "2026-10-12T22:23:35Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 85,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 13,
@@ -114,11 +124,11 @@
    "task": "P01-15",
    "event": "test_run",
    "ts_as_written": "2026-10-12T22:26:00Z",
-   "recording_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
-   "recording_commit_committer_time_utc": "2026-10-12T22:23:35Z",
-   "ts_exceeds_recording_by_seconds": 145,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T22:23:35Z"
+   "git_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+   "git_commit_timestamp_observed": "2026-10-12T22:23:35Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 145,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 14,
@@ -126,11 +136,11 @@
    "task": "P01-15",
    "event": "test_run",
    "ts_as_written": "2026-10-12T22:26:00Z",
-   "recording_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
-   "recording_commit_committer_time_utc": "2026-10-12T22:23:35Z",
-   "ts_exceeds_recording_by_seconds": 145,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T22:23:35Z"
+   "git_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+   "git_commit_timestamp_observed": "2026-10-12T22:23:35Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 145,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 15,
@@ -138,11 +148,11 @@
    "task": "P01-15",
    "event": "test_run",
    "ts_as_written": "2026-10-12T22:27:00Z",
-   "recording_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
-   "recording_commit_committer_time_utc": "2026-10-12T22:23:35Z",
-   "ts_exceeds_recording_by_seconds": 205,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T22:23:35Z"
+   "git_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+   "git_commit_timestamp_observed": "2026-10-12T22:23:35Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 205,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 16,
@@ -150,11 +160,11 @@
    "task": "P01-15",
    "event": "test_run",
    "ts_as_written": "2026-10-12T22:28:00Z",
-   "recording_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
-   "recording_commit_committer_time_utc": "2026-10-12T22:23:35Z",
-   "ts_exceeds_recording_by_seconds": 265,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T22:23:35Z"
+   "git_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+   "git_commit_timestamp_observed": "2026-10-12T22:23:35Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 265,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 17,
@@ -162,11 +172,11 @@
    "task": "BR-004",
    "event": "batch_report",
    "ts_as_written": "2026-10-12T22:35:00Z",
-   "recording_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
-   "recording_commit_committer_time_utc": "2026-10-12T22:23:35Z",
-   "ts_exceeds_recording_by_seconds": 685,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T22:23:35Z"
+   "git_commit": "dce716abe8f23c5dda105c24a1d31c8b0fe8a97e",
+   "git_commit_timestamp_observed": "2026-10-12T22:23:35Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 685,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 26,
@@ -174,11 +184,11 @@
    "task": "P01-15",
    "event": "test_run",
    "ts_as_written": "2026-10-12T23:05:00Z",
-   "recording_commit": "20a018eac22b4b77db796c13bb61c4a50f9a6c8f",
-   "recording_commit_committer_time_utc": "2026-10-12T23:02:20Z",
-   "ts_exceeds_recording_by_seconds": 160,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T23:02:20Z"
+   "git_commit": "20a018eac22b4b77db796c13bb61c4a50f9a6c8f",
+   "git_commit_timestamp_observed": "2026-10-12T23:02:20Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 160,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 27,
@@ -186,11 +196,11 @@
    "task": "BR-005",
    "event": "batch_report",
    "ts_as_written": "2026-10-12T23:10:00Z",
-   "recording_commit": "20a018eac22b4b77db796c13bb61c4a50f9a6c8f",
-   "recording_commit_committer_time_utc": "2026-10-12T23:02:20Z",
-   "ts_exceeds_recording_by_seconds": 460,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-12T23:02:20Z"
+   "git_commit": "20a018eac22b4b77db796c13bb61c4a50f9a6c8f",
+   "git_commit_timestamp_observed": "2026-10-12T23:02:20Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 460,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 30,
@@ -198,11 +208,11 @@
    "task": "P01-15",
    "event": "commit",
    "ts_as_written": "2026-10-13T00:20:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 23,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 23,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 31,
@@ -210,11 +220,11 @@
    "task": "P02",
    "event": "commit",
    "ts_as_written": "2026-10-13T00:21:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 83,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 83,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 32,
@@ -222,11 +232,11 @@
    "task": "P02",
    "event": "commit",
    "ts_as_written": "2026-10-13T01:05:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 2723,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2723,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 33,
@@ -234,11 +244,11 @@
    "task": "P02",
    "event": "commit",
    "ts_as_written": "2026-10-13T01:10:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3023,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3023,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 34,
@@ -246,11 +256,11 @@
    "task": "P02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:12:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3143,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3143,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 35,
@@ -258,11 +268,11 @@
    "task": "P02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:14:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3263,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3263,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 36,
@@ -270,11 +280,11 @@
    "task": "P01-15",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:15:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3323,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3323,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 37,
@@ -282,11 +292,11 @@
    "task": "P02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:18:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3503,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3503,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 38,
@@ -294,11 +304,11 @@
    "task": "P02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:22:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3743,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3743,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 39,
@@ -306,11 +316,11 @@
    "task": "P02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:22:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3743,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3743,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 40,
@@ -318,11 +328,11 @@
    "task": "P02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T01:26:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 3983,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3983,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 41,
@@ -330,11 +340,11 @@
    "task": "BR-006",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T01:30:00Z",
-   "recording_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
-   "recording_commit_committer_time_utc": "2026-10-13T00:19:37Z",
-   "ts_exceeds_recording_by_seconds": 4223,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T00:19:37Z"
+   "git_commit": "cbcce2a665bfcaf0dea6b8c451269418c2eb7d1d",
+   "git_commit_timestamp_observed": "2026-10-13T00:19:37Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4223,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 42,
@@ -342,11 +352,11 @@
    "task": "P02-ALIGN",
    "event": "received",
    "ts_as_written": "2026-10-13T02:00:00Z",
-   "recording_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
-   "recording_commit_committer_time_utc": "2026-10-13T01:10:05Z",
-   "ts_exceeds_recording_by_seconds": 2995,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T01:10:05Z"
+   "git_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
+   "git_commit_timestamp_observed": "2026-10-13T01:10:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2995,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 43,
@@ -354,11 +364,11 @@
    "task": "P02-ALIGN",
    "event": "test_run",
    "ts_as_written": "2026-10-13T02:10:00Z",
-   "recording_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
-   "recording_commit_committer_time_utc": "2026-10-13T01:10:05Z",
-   "ts_exceeds_recording_by_seconds": 3595,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T01:10:05Z"
+   "git_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
+   "git_commit_timestamp_observed": "2026-10-13T01:10:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3595,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 44,
@@ -366,11 +376,11 @@
    "task": "P02-ALIGN",
    "event": "test_run",
    "ts_as_written": "2026-10-13T02:15:00Z",
-   "recording_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
-   "recording_commit_committer_time_utc": "2026-10-13T01:10:05Z",
-   "ts_exceeds_recording_by_seconds": 3895,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T01:10:05Z"
+   "git_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
+   "git_commit_timestamp_observed": "2026-10-13T01:10:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3895,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 45,
@@ -378,11 +388,11 @@
    "task": "P02-ALIGN",
    "event": "commit",
    "ts_as_written": "2026-10-13T02:45:00Z",
-   "recording_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
-   "recording_commit_committer_time_utc": "2026-10-13T01:10:05Z",
-   "ts_exceeds_recording_by_seconds": 5695,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T01:10:05Z"
+   "git_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
+   "git_commit_timestamp_observed": "2026-10-13T01:10:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 5695,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 46,
@@ -390,11 +400,11 @@
    "task": "P02-ALIGN",
    "event": "test_run",
    "ts_as_written": "2026-10-13T02:55:00Z",
-   "recording_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
-   "recording_commit_committer_time_utc": "2026-10-13T01:10:05Z",
-   "ts_exceeds_recording_by_seconds": 6295,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T01:10:05Z"
+   "git_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
+   "git_commit_timestamp_observed": "2026-10-13T01:10:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6295,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 47,
@@ -402,11 +412,11 @@
    "task": "BR-007",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T03:00:00Z",
-   "recording_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
-   "recording_commit_committer_time_utc": "2026-10-13T01:10:05Z",
-   "ts_exceeds_recording_by_seconds": 6595,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T01:10:05Z"
+   "git_commit": "bc6b450209c5fa7adfd7f4447dfd7fdc4eda4096",
+   "git_commit_timestamp_observed": "2026-10-13T01:10:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6595,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 48,
@@ -414,11 +424,11 @@
    "task": "DATA-02",
    "event": "started",
    "ts_as_written": "2026-10-13T03:30:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 1478,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1478,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 49,
@@ -426,11 +436,11 @@
    "task": "DATA-02",
    "event": "blocked_partial",
    "ts_as_written": "2026-10-13T03:31:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 1538,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1538,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 50,
@@ -438,11 +448,11 @@
    "task": "DATA-02",
    "event": "blocked_partial",
    "ts_as_written": "2026-10-13T03:32:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 1598,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1598,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 51,
@@ -450,11 +460,11 @@
    "task": "DATA-02",
    "event": "corrected",
    "ts_as_written": "2026-10-13T04:20:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 4478,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4478,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 52,
@@ -462,11 +472,11 @@
    "task": "DATA-02",
    "event": "corrected",
    "ts_as_written": "2026-10-13T04:30:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 5078,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 5078,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 53,
@@ -474,11 +484,11 @@
    "task": "DATA-02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T04:50:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 6278,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6278,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 54,
@@ -486,11 +496,11 @@
    "task": "DATA-02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T04:50:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 6278,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6278,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 55,
@@ -498,11 +508,11 @@
    "task": "DATA-02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T04:50:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 6278,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6278,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 56,
@@ -510,11 +520,11 @@
    "task": "DATA-02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T04:50:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 6278,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6278,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 57,
@@ -522,11 +532,11 @@
    "task": "DATA-02",
    "event": "test_run",
    "ts_as_written": "2026-10-13T04:50:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 6278,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6278,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 58,
@@ -534,11 +544,11 @@
    "task": "BR-008",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T05:00:00Z",
-   "recording_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:22Z",
-   "ts_exceeds_recording_by_seconds": 6878,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:22Z"
+   "git_commit": "3bbd420830401804fd72bf0b4704e56eb7dd85c4",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:22Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6878,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 59,
@@ -546,11 +556,11 @@
    "task": "DATA-02",
    "event": "commit",
    "ts_as_written": "2026-10-13T05:05:00Z",
-   "recording_commit": "8c485b32c3b1d2385aba8551a9be573aece9f38e",
-   "recording_commit_committer_time_utc": "2026-10-13T03:05:29Z",
-   "ts_exceeds_recording_by_seconds": 7171,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T03:05:29Z"
+   "git_commit": "8c485b32c3b1d2385aba8551a9be573aece9f38e",
+   "git_commit_timestamp_observed": "2026-10-13T03:05:29Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 7171,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 90,
@@ -558,11 +568,11 @@
    "task": "DATA-02-B04",
    "event": "test_run",
    "ts_as_written": "2026-10-13T16:10:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 2112,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2112,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 91,
@@ -570,11 +580,11 @@
    "task": "DATA-02-B04",
    "event": "test_run",
    "ts_as_written": "2026-10-13T16:10:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 2112,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2112,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 92,
@@ -582,11 +592,11 @@
    "task": "DATA-02-B04",
    "event": "test_run",
    "ts_as_written": "2026-10-13T16:10:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 2112,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2112,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 93,
@@ -594,11 +604,11 @@
    "task": "DATA-02-B04",
    "event": "test_run",
    "ts_as_written": "2026-10-13T16:10:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 2112,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2112,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 94,
@@ -606,11 +616,11 @@
    "task": "DATA-02-B04",
    "event": "test_run",
    "ts_as_written": "2026-10-13T16:10:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 2112,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2112,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 95,
@@ -618,11 +628,11 @@
    "task": "DATA-02-B04",
    "event": "commit",
    "ts_as_written": "2026-10-13T16:15:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 2412,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2412,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 96,
@@ -630,11 +640,11 @@
    "task": "BR-011",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T16:30:00Z",
-   "recording_commit": "8590888441c2c307b00c4983c006fe5627c94003",
-   "recording_commit_committer_time_utc": "2026-10-13T15:34:48Z",
-   "ts_exceeds_recording_by_seconds": 3312,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T15:34:48Z"
+   "git_commit": "8590888441c2c307b00c4983c006fe5627c94003",
+   "git_commit_timestamp_observed": "2026-10-13T15:34:48Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3312,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 97,
@@ -642,11 +652,11 @@
    "task": "DATA-02-REVIEW",
    "event": "received",
    "ts_as_written": "2026-10-13T17:30:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 3894,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3894,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 98,
@@ -654,11 +664,11 @@
    "task": "DATA-02-B05",
    "event": "started",
    "ts_as_written": "2026-10-13T17:35:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 4194,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4194,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 99,
@@ -666,11 +676,11 @@
    "task": "DATA-02-B05",
    "event": "blocked_partial",
    "ts_as_written": "2026-10-13T17:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 4494,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4494,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 100,
@@ -678,11 +688,11 @@
    "task": "DATA-02-B05",
    "event": "corrected",
    "ts_as_written": "2026-10-13T18:30:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 7494,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 7494,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 101,
@@ -690,11 +700,11 @@
    "task": "DATA-02-B05",
    "event": "test_run",
    "ts_as_written": "2026-10-13T19:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11694,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11694,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 102,
@@ -702,11 +712,11 @@
    "task": "DATA-02-B05",
    "event": "test_run",
    "ts_as_written": "2026-10-13T19:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11694,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11694,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 103,
@@ -714,11 +724,11 @@
    "task": "DATA-02-B05",
    "event": "test_run",
    "ts_as_written": "2026-10-13T19:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11694,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11694,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 104,
@@ -726,11 +736,11 @@
    "task": "DATA-02-B05",
    "event": "test_run",
    "ts_as_written": "2026-10-13T19:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11694,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11694,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 105,
@@ -738,11 +748,11 @@
    "task": "DATA-02-B05",
    "event": "test_run",
    "ts_as_written": "2026-10-13T19:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11694,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11694,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 106,
@@ -750,11 +760,11 @@
    "task": "DATA-02-B05",
    "event": "test_run",
    "ts_as_written": "2026-10-13T19:40:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11694,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11694,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 107,
@@ -762,11 +772,11 @@
    "task": "DATA-02-B05",
    "event": "commit",
    "ts_as_written": "2026-10-13T19:45:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 11994,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 11994,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 108,
@@ -774,11 +784,11 @@
    "task": "BR-012",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T20:00:00Z",
-   "recording_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
-   "recording_commit_committer_time_utc": "2026-10-13T16:25:06Z",
-   "ts_exceeds_recording_by_seconds": 12894,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:25:06Z"
+   "git_commit": "d72c03e2b8fee9ee838fdd7939fbc85108d1320c",
+   "git_commit_timestamp_observed": "2026-10-13T16:25:06Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 12894,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 109,
@@ -786,11 +796,11 @@
    "task": "DATA-02-B06",
    "event": "started",
    "ts_as_written": "2026-10-13T20:10:00Z",
-   "recording_commit": "e6719f81afd29b587a018030e5a0e72630340641",
-   "recording_commit_committer_time_utc": "2026-10-13T16:27:19Z",
-   "ts_exceeds_recording_by_seconds": 13361,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:27:19Z"
+   "git_commit": "e6719f81afd29b587a018030e5a0e72630340641",
+   "git_commit_timestamp_observed": "2026-10-13T16:27:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 13361,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 110,
@@ -798,11 +808,11 @@
    "task": "DATA-02-B06",
    "event": "test_run",
    "ts_as_written": "2026-10-13T20:40:00Z",
-   "recording_commit": "e6719f81afd29b587a018030e5a0e72630340641",
-   "recording_commit_committer_time_utc": "2026-10-13T16:27:19Z",
-   "ts_exceeds_recording_by_seconds": 15161,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:27:19Z"
+   "git_commit": "e6719f81afd29b587a018030e5a0e72630340641",
+   "git_commit_timestamp_observed": "2026-10-13T16:27:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 15161,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 111,
@@ -810,11 +820,11 @@
    "task": "DATA-02-B06",
    "event": "test_run",
    "ts_as_written": "2026-10-13T20:41:00Z",
-   "recording_commit": "e6719f81afd29b587a018030e5a0e72630340641",
-   "recording_commit_committer_time_utc": "2026-10-13T16:27:19Z",
-   "ts_exceeds_recording_by_seconds": 15221,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:27:19Z"
+   "git_commit": "e6719f81afd29b587a018030e5a0e72630340641",
+   "git_commit_timestamp_observed": "2026-10-13T16:27:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 15221,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 112,
@@ -822,11 +832,11 @@
    "task": "DATA-02-B06",
    "event": "test_run",
    "ts_as_written": "2026-10-13T20:42:00Z",
-   "recording_commit": "e6719f81afd29b587a018030e5a0e72630340641",
-   "recording_commit_committer_time_utc": "2026-10-13T16:27:19Z",
-   "ts_exceeds_recording_by_seconds": 15281,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:27:19Z"
+   "git_commit": "e6719f81afd29b587a018030e5a0e72630340641",
+   "git_commit_timestamp_observed": "2026-10-13T16:27:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 15281,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 113,
@@ -834,11 +844,11 @@
    "task": "BR-013",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T21:00:00Z",
-   "recording_commit": "e6719f81afd29b587a018030e5a0e72630340641",
-   "recording_commit_committer_time_utc": "2026-10-13T16:27:19Z",
-   "ts_exceeds_recording_by_seconds": 16361,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:27:19Z"
+   "git_commit": "e6719f81afd29b587a018030e5a0e72630340641",
+   "git_commit_timestamp_observed": "2026-10-13T16:27:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 16361,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 114,
@@ -846,11 +856,11 @@
    "task": "DATA-02-LINKS",
    "event": "received",
    "ts_as_written": "2026-10-13T21:30:00Z",
-   "recording_commit": "f32dadb7585e3fb0fc90c168fdfa3c5204b2192d",
-   "recording_commit_committer_time_utc": "2026-10-13T16:28:04Z",
-   "ts_exceeds_recording_by_seconds": 18116,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T16:28:04Z"
+   "git_commit": "f32dadb7585e3fb0fc90c168fdfa3c5204b2192d",
+   "git_commit_timestamp_observed": "2026-10-13T16:28:04Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18116,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 115,
@@ -858,11 +868,11 @@
    "task": "DATA-02-B07",
    "event": "started",
    "ts_as_written": "2026-10-13T21:40:00Z",
-   "recording_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
-   "recording_commit_committer_time_utc": "2026-10-13T17:47:58Z",
-   "ts_exceeds_recording_by_seconds": 13922,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T17:47:58Z"
+   "git_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
+   "git_commit_timestamp_observed": "2026-10-13T17:47:58Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 13922,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 116,
@@ -870,11 +880,11 @@
    "task": "DATA-02-B07",
    "event": "blocked_partial",
    "ts_as_written": "2026-10-13T21:41:00Z",
-   "recording_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
-   "recording_commit_committer_time_utc": "2026-10-13T17:47:58Z",
-   "ts_exceeds_recording_by_seconds": 13982,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T17:47:58Z"
+   "git_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
+   "git_commit_timestamp_observed": "2026-10-13T17:47:58Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 13982,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 117,
@@ -882,11 +892,11 @@
    "task": "DATA-02-B07",
    "event": "test_run",
    "ts_as_written": "2026-10-13T22:40:00Z",
-   "recording_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
-   "recording_commit_committer_time_utc": "2026-10-13T17:47:58Z",
-   "ts_exceeds_recording_by_seconds": 17522,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T17:47:58Z"
+   "git_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
+   "git_commit_timestamp_observed": "2026-10-13T17:47:58Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 17522,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 118,
@@ -894,11 +904,11 @@
    "task": "BR-014",
    "event": "batch_report",
    "ts_as_written": "2026-10-13T23:00:00Z",
-   "recording_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
-   "recording_commit_committer_time_utc": "2026-10-13T17:47:58Z",
-   "ts_exceeds_recording_by_seconds": 18722,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T17:47:58Z"
+   "git_commit": "0bf5c280dd9e18ab3f9d3bd17f6f72d573075066",
+   "git_commit_timestamp_observed": "2026-10-13T17:47:58Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18722,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 119,
@@ -906,11 +916,11 @@
    "task": "DATA-02",
    "event": "priority_hold",
    "ts_as_written": "2026-10-14T00:00:00Z",
-   "recording_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
-   "recording_commit_committer_time_utc": "2026-10-13T18:53:25Z",
-   "ts_exceeds_recording_by_seconds": 18395,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T18:53:25Z"
+   "git_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
+   "git_commit_timestamp_observed": "2026-10-13T18:53:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18395,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 120,
@@ -918,11 +928,11 @@
    "task": "WEB-V1-READINESS",
    "event": "implemented",
    "ts_as_written": "2026-10-14T00:20:00Z",
-   "recording_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
-   "recording_commit_committer_time_utc": "2026-10-13T18:53:25Z",
-   "ts_exceeds_recording_by_seconds": 19595,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T18:53:25Z"
+   "git_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
+   "git_commit_timestamp_observed": "2026-10-13T18:53:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 19595,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 121,
@@ -930,11 +940,11 @@
    "task": "WEB-V1-READINESS",
    "event": "test_run",
    "ts_as_written": "2026-10-14T00:25:00Z",
-   "recording_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
-   "recording_commit_committer_time_utc": "2026-10-13T18:53:25Z",
-   "ts_exceeds_recording_by_seconds": 19895,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T18:53:25Z"
+   "git_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
+   "git_commit_timestamp_observed": "2026-10-13T18:53:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 19895,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 122,
@@ -942,11 +952,11 @@
    "task": "BR-015",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T00:30:00Z",
-   "recording_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
-   "recording_commit_committer_time_utc": "2026-10-13T18:53:25Z",
-   "ts_exceeds_recording_by_seconds": 20195,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T18:53:25Z"
+   "git_commit": "b60ee22bd091a74ca885a317b4ea25d63b495e6d",
+   "git_commit_timestamp_observed": "2026-10-13T18:53:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 20195,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 123,
@@ -954,11 +964,11 @@
    "task": "WEB-01",
    "event": "implemented",
    "ts_as_written": "2026-10-14T01:00:00Z",
-   "recording_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
-   "recording_commit_committer_time_utc": "2026-10-13T19:49:04Z",
-   "ts_exceeds_recording_by_seconds": 18656,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T19:49:04Z"
+   "git_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
+   "git_commit_timestamp_observed": "2026-10-13T19:49:04Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18656,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 124,
@@ -966,11 +976,11 @@
    "task": "WEB-02",
    "event": "implemented",
    "ts_as_written": "2026-10-14T02:30:00Z",
-   "recording_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
-   "recording_commit_committer_time_utc": "2026-10-13T19:49:04Z",
-   "ts_exceeds_recording_by_seconds": 24056,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T19:49:04Z"
+   "git_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
+   "git_commit_timestamp_observed": "2026-10-13T19:49:04Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 24056,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 125,
@@ -978,11 +988,11 @@
    "task": "WEB-02",
    "event": "test_run",
    "ts_as_written": "2026-10-14T02:45:00Z",
-   "recording_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
-   "recording_commit_committer_time_utc": "2026-10-13T19:49:04Z",
-   "ts_exceeds_recording_by_seconds": 24956,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T19:49:04Z"
+   "git_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
+   "git_commit_timestamp_observed": "2026-10-13T19:49:04Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 24956,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 126,
@@ -990,11 +1000,11 @@
    "task": "BR-016",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T03:00:00Z",
-   "recording_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
-   "recording_commit_committer_time_utc": "2026-10-13T19:49:04Z",
-   "ts_exceeds_recording_by_seconds": 25856,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-13T19:49:04Z"
+   "git_commit": "5ee45d13b62f915f3f225cccf0f9ce749fe0ec27",
+   "git_commit_timestamp_observed": "2026-10-13T19:49:04Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 25856,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 127,
@@ -1002,11 +1012,11 @@
    "task": "WEB-03",
    "event": "implemented",
    "ts_as_written": "2026-10-14T16:30:00Z",
-   "recording_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
-   "recording_commit_committer_time_utc": "2026-10-14T16:01:05Z",
-   "ts_exceeds_recording_by_seconds": 1735,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:01:05Z"
+   "git_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
+   "git_commit_timestamp_observed": "2026-10-14T16:01:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1735,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 128,
@@ -1014,11 +1024,11 @@
    "task": "WEB-04",
    "event": "implemented",
    "ts_as_written": "2026-10-14T16:30:00Z",
-   "recording_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
-   "recording_commit_committer_time_utc": "2026-10-14T16:01:05Z",
-   "ts_exceeds_recording_by_seconds": 1735,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:01:05Z"
+   "git_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
+   "git_commit_timestamp_observed": "2026-10-14T16:01:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1735,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 129,
@@ -1026,11 +1036,11 @@
    "task": "WEB-03/04",
    "event": "test_run",
    "ts_as_written": "2026-10-14T16:50:00Z",
-   "recording_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
-   "recording_commit_committer_time_utc": "2026-10-14T16:01:05Z",
-   "ts_exceeds_recording_by_seconds": 2935,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:01:05Z"
+   "git_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
+   "git_commit_timestamp_observed": "2026-10-14T16:01:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2935,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 130,
@@ -1038,11 +1048,11 @@
    "task": "BR-017",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T17:00:00Z",
-   "recording_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
-   "recording_commit_committer_time_utc": "2026-10-14T16:01:05Z",
-   "ts_exceeds_recording_by_seconds": 3535,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:01:05Z"
+   "git_commit": "cb41d33d9733e571dc6dfbd45e21e4d30804fff5",
+   "git_commit_timestamp_observed": "2026-10-14T16:01:05Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3535,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 131,
@@ -1050,11 +1060,11 @@
    "task": "WEB-05A",
    "event": "implemented",
    "ts_as_written": "2026-10-14T19:00:00Z",
-   "recording_commit": "889230e54ecf8650902b8164d08611e17d3b3a13",
-   "recording_commit_committer_time_utc": "2026-10-14T16:55:50Z",
-   "ts_exceeds_recording_by_seconds": 7450,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:55:50Z"
+   "git_commit": "889230e54ecf8650902b8164d08611e17d3b3a13",
+   "git_commit_timestamp_observed": "2026-10-14T16:55:50Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 7450,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 132,
@@ -1062,11 +1072,11 @@
    "task": "WEB-05A",
    "event": "test_run",
    "ts_as_written": "2026-10-14T19:20:00Z",
-   "recording_commit": "889230e54ecf8650902b8164d08611e17d3b3a13",
-   "recording_commit_committer_time_utc": "2026-10-14T16:55:50Z",
-   "ts_exceeds_recording_by_seconds": 8650,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:55:50Z"
+   "git_commit": "889230e54ecf8650902b8164d08611e17d3b3a13",
+   "git_commit_timestamp_observed": "2026-10-14T16:55:50Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 8650,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 133,
@@ -1074,11 +1084,11 @@
    "task": "BR-018",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T19:30:00Z",
-   "recording_commit": "889230e54ecf8650902b8164d08611e17d3b3a13",
-   "recording_commit_committer_time_utc": "2026-10-14T16:55:50Z",
-   "ts_exceeds_recording_by_seconds": 9250,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T16:55:50Z"
+   "git_commit": "889230e54ecf8650902b8164d08611e17d3b3a13",
+   "git_commit_timestamp_observed": "2026-10-14T16:55:50Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 9250,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 134,
@@ -1086,11 +1096,11 @@
    "task": "WEB-03-FIX",
    "event": "implemented",
    "ts_as_written": "2026-10-14T21:30:00Z",
-   "recording_commit": "073c71150ebfa0ab4bbfc3b24065d013643898ae",
-   "recording_commit_committer_time_utc": "2026-10-14T17:32:50Z",
-   "ts_exceeds_recording_by_seconds": 14230,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T17:32:50Z"
+   "git_commit": "073c71150ebfa0ab4bbfc3b24065d013643898ae",
+   "git_commit_timestamp_observed": "2026-10-14T17:32:50Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 14230,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 135,
@@ -1098,11 +1108,11 @@
    "task": "WEB-03-FIX",
    "event": "test_run",
    "ts_as_written": "2026-10-14T21:45:00Z",
-   "recording_commit": "073c71150ebfa0ab4bbfc3b24065d013643898ae",
-   "recording_commit_committer_time_utc": "2026-10-14T17:32:50Z",
-   "ts_exceeds_recording_by_seconds": 15130,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T17:32:50Z"
+   "git_commit": "073c71150ebfa0ab4bbfc3b24065d013643898ae",
+   "git_commit_timestamp_observed": "2026-10-14T17:32:50Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 15130,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 136,
@@ -1110,11 +1120,11 @@
    "task": "BR-019",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T22:00:00Z",
-   "recording_commit": "073c71150ebfa0ab4bbfc3b24065d013643898ae",
-   "recording_commit_committer_time_utc": "2026-10-14T17:32:50Z",
-   "ts_exceeds_recording_by_seconds": 16030,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T17:32:50Z"
+   "git_commit": "073c71150ebfa0ab4bbfc3b24065d013643898ae",
+   "git_commit_timestamp_observed": "2026-10-14T17:32:50Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 16030,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 137,
@@ -1122,11 +1132,11 @@
    "task": "WEB-05A-COPY-FIX",
    "event": "implemented",
    "ts_as_written": "2026-10-14T23:10:00Z",
-   "recording_commit": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
-   "recording_commit_committer_time_utc": "2026-10-14T18:09:36Z",
-   "ts_exceeds_recording_by_seconds": 18024,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T18:09:36Z"
+   "git_commit": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
+   "git_commit_timestamp_observed": "2026-10-14T18:09:36Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18024,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 138,
@@ -1134,11 +1144,11 @@
    "task": "WEB-05A-COPY-FIX",
    "event": "test_run",
    "ts_as_written": "2026-10-14T23:20:00Z",
-   "recording_commit": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
-   "recording_commit_committer_time_utc": "2026-10-14T18:09:36Z",
-   "ts_exceeds_recording_by_seconds": 18624,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T18:09:36Z"
+   "git_commit": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
+   "git_commit_timestamp_observed": "2026-10-14T18:09:36Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18624,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 139,
@@ -1146,11 +1156,11 @@
    "task": "BR-020",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T23:30:00Z",
-   "recording_commit": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
-   "recording_commit_committer_time_utc": "2026-10-14T18:09:36Z",
-   "ts_exceeds_recording_by_seconds": 19224,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T18:09:36Z"
+   "git_commit": "a8a76f2ad0ca0be9a12744584c5e424be0d4e85d",
+   "git_commit_timestamp_observed": "2026-10-14T18:09:36Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 19224,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 140,
@@ -1158,11 +1168,11 @@
    "task": "WEB-03-SOURCE-CONFLICT-FIX",
    "event": "implemented",
    "ts_as_written": "2026-10-15T00:10:00Z",
-   "recording_commit": "67c636824e87e45fe3151615285e538bba671d1c",
-   "recording_commit_committer_time_utc": "2026-10-14T18:45:42Z",
-   "ts_exceeds_recording_by_seconds": 19458,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T18:45:42Z"
+   "git_commit": "67c636824e87e45fe3151615285e538bba671d1c",
+   "git_commit_timestamp_observed": "2026-10-14T18:45:42Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 19458,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 141,
@@ -1170,11 +1180,11 @@
    "task": "WEB-03-SOURCE-CONFLICT-FIX",
    "event": "test_run",
    "ts_as_written": "2026-10-15T00:20:00Z",
-   "recording_commit": "67c636824e87e45fe3151615285e538bba671d1c",
-   "recording_commit_committer_time_utc": "2026-10-14T18:45:42Z",
-   "ts_exceeds_recording_by_seconds": 20058,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T18:45:42Z"
+   "git_commit": "67c636824e87e45fe3151615285e538bba671d1c",
+   "git_commit_timestamp_observed": "2026-10-14T18:45:42Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 20058,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 142,
@@ -1182,11 +1192,11 @@
    "task": "BR-021",
    "event": "batch_report",
    "ts_as_written": "2026-10-15T00:30:00Z",
-   "recording_commit": "67c636824e87e45fe3151615285e538bba671d1c",
-   "recording_commit_committer_time_utc": "2026-10-14T18:45:42Z",
-   "ts_exceeds_recording_by_seconds": 20658,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T18:45:42Z"
+   "git_commit": "67c636824e87e45fe3151615285e538bba671d1c",
+   "git_commit_timestamp_observed": "2026-10-14T18:45:42Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 20658,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 143,
@@ -1194,11 +1204,11 @@
    "task": "WEB-03-SOURCE-CONFLICT-FIX",
    "event": "accepted",
    "ts_as_written": "2026-10-14T20:00:00Z",
-   "recording_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
-   "recording_commit_committer_time_utc": "2026-10-14T19:40:12Z",
-   "ts_exceeds_recording_by_seconds": 1188,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T19:40:12Z"
+   "git_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+   "git_commit_timestamp_observed": "2026-10-14T19:40:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1188,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 144,
@@ -1206,11 +1216,11 @@
    "task": "WEB-05B",
    "event": "implemented",
    "ts_as_written": "2026-10-14T20:10:00Z",
-   "recording_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
-   "recording_commit_committer_time_utc": "2026-10-14T19:40:12Z",
-   "ts_exceeds_recording_by_seconds": 1788,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T19:40:12Z"
+   "git_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+   "git_commit_timestamp_observed": "2026-10-14T19:40:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1788,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 145,
@@ -1218,11 +1228,11 @@
    "task": "WEB-05B",
    "event": "test_run",
    "ts_as_written": "2026-10-14T20:20:00Z",
-   "recording_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
-   "recording_commit_committer_time_utc": "2026-10-14T19:40:12Z",
-   "ts_exceeds_recording_by_seconds": 2388,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T19:40:12Z"
+   "git_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+   "git_commit_timestamp_observed": "2026-10-14T19:40:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2388,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 146,
@@ -1230,11 +1240,11 @@
    "task": "BR-022",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T20:30:00Z",
-   "recording_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
-   "recording_commit_committer_time_utc": "2026-10-14T19:40:12Z",
-   "ts_exceeds_recording_by_seconds": 2988,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T19:40:12Z"
+   "git_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+   "git_commit_timestamp_observed": "2026-10-14T19:40:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2988,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 147,
@@ -1242,11 +1252,11 @@
    "task": "WEB-05A",
    "event": "accepted",
    "ts_as_written": "2026-10-14T20:00:00Z",
-   "recording_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
-   "recording_commit_committer_time_utc": "2026-10-14T19:40:12Z",
-   "ts_exceeds_recording_by_seconds": 1188,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T19:40:12Z"
+   "git_commit": "407d7e8f2f5ebbe8d54108d9ecd75a93099c11ef",
+   "git_commit_timestamp_observed": "2026-10-14T19:40:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1188,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 148,
@@ -1254,11 +1264,11 @@
    "task": "WEB-05C",
    "event": "implemented",
    "ts_as_written": "2026-10-14T21:10:00Z",
-   "recording_commit": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
-   "recording_commit_committer_time_utc": "2026-10-14T20:09:25Z",
-   "ts_exceeds_recording_by_seconds": 3635,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:09:25Z"
+   "git_commit": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
+   "git_commit_timestamp_observed": "2026-10-14T20:09:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3635,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 149,
@@ -1266,11 +1276,11 @@
    "task": "WEB-05C",
    "event": "test_run",
    "ts_as_written": "2026-10-14T21:20:00Z",
-   "recording_commit": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
-   "recording_commit_committer_time_utc": "2026-10-14T20:09:25Z",
-   "ts_exceeds_recording_by_seconds": 4235,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:09:25Z"
+   "git_commit": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
+   "git_commit_timestamp_observed": "2026-10-14T20:09:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4235,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 150,
@@ -1278,11 +1288,11 @@
    "task": "BR-023",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T21:30:00Z",
-   "recording_commit": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
-   "recording_commit_committer_time_utc": "2026-10-14T20:09:25Z",
-   "ts_exceeds_recording_by_seconds": 4835,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:09:25Z"
+   "git_commit": "6d696b9ba6befa691dede0f0216b21c541a6f3a0",
+   "git_commit_timestamp_observed": "2026-10-14T20:09:25Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4835,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 151,
@@ -1290,11 +1300,11 @@
    "task": "WEB-05B",
    "event": "review",
    "ts_as_written": "2026-10-14T22:00:00Z",
-   "recording_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
-   "recording_commit_committer_time_utc": "2026-10-14T20:56:02Z",
-   "ts_exceeds_recording_by_seconds": 3838,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:56:02Z"
+   "git_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
+   "git_commit_timestamp_observed": "2026-10-14T20:56:02Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3838,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 152,
@@ -1302,11 +1312,11 @@
    "task": "WEB-05B-FINAL-FIXES",
    "event": "implemented",
    "ts_as_written": "2026-10-14T22:10:00Z",
-   "recording_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
-   "recording_commit_committer_time_utc": "2026-10-14T20:56:02Z",
-   "ts_exceeds_recording_by_seconds": 4438,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:56:02Z"
+   "git_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
+   "git_commit_timestamp_observed": "2026-10-14T20:56:02Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4438,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 153,
@@ -1314,11 +1324,11 @@
    "task": "WEB-05B-FINAL-FIXES",
    "event": "test_run",
    "ts_as_written": "2026-10-14T22:20:00Z",
-   "recording_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
-   "recording_commit_committer_time_utc": "2026-10-14T20:56:02Z",
-   "ts_exceeds_recording_by_seconds": 5038,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:56:02Z"
+   "git_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
+   "git_commit_timestamp_observed": "2026-10-14T20:56:02Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 5038,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 154,
@@ -1326,11 +1336,11 @@
    "task": "BR-024",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T22:30:00Z",
-   "recording_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
-   "recording_commit_committer_time_utc": "2026-10-14T20:56:02Z",
-   "ts_exceeds_recording_by_seconds": 5638,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T20:56:02Z"
+   "git_commit": "dc2ac11e88bb290543f52586d0ac1dbf6ba01451",
+   "git_commit_timestamp_observed": "2026-10-14T20:56:02Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 5638,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 155,
@@ -1338,11 +1348,11 @@
    "task": "WEB-05C",
    "event": "review",
    "ts_as_written": "2026-10-14T23:00:00Z",
-   "recording_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
-   "recording_commit_committer_time_utc": "2026-10-14T21:32:21Z",
-   "ts_exceeds_recording_by_seconds": 5259,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T21:32:21Z"
+   "git_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+   "git_commit_timestamp_observed": "2026-10-14T21:32:21Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 5259,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 156,
@@ -1350,11 +1360,11 @@
    "task": "WEB-05C-READER-FIXES",
    "event": "implemented",
    "ts_as_written": "2026-10-14T23:20:00Z",
-   "recording_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
-   "recording_commit_committer_time_utc": "2026-10-14T21:32:21Z",
-   "ts_exceeds_recording_by_seconds": 6459,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T21:32:21Z"
+   "git_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+   "git_commit_timestamp_observed": "2026-10-14T21:32:21Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 6459,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 157,
@@ -1362,11 +1372,11 @@
    "task": "WEB-05C-READER-FIXES",
    "event": "test_run",
    "ts_as_written": "2026-10-14T23:30:00Z",
-   "recording_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
-   "recording_commit_committer_time_utc": "2026-10-14T21:32:21Z",
-   "ts_exceeds_recording_by_seconds": 7059,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T21:32:21Z"
+   "git_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+   "git_commit_timestamp_observed": "2026-10-14T21:32:21Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 7059,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 158,
@@ -1374,11 +1384,11 @@
    "task": "BR-025",
    "event": "batch_report",
    "ts_as_written": "2026-10-14T23:40:00Z",
-   "recording_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
-   "recording_commit_committer_time_utc": "2026-10-14T21:32:21Z",
-   "ts_exceeds_recording_by_seconds": 7659,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-14T21:32:21Z"
+   "git_commit": "c3bfd2f18cd145c25ae26aa826f4100c99342f51",
+   "git_commit_timestamp_observed": "2026-10-14T21:32:21Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 7659,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 159,
@@ -1386,11 +1396,11 @@
    "task": "WEB-06-VISUAL-POLISH",
    "event": "implemented",
    "ts_as_written": "2026-10-15T00:40:00Z",
-   "recording_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
-   "recording_commit_committer_time_utc": "2026-10-15T00:08:19Z",
-   "ts_exceeds_recording_by_seconds": 1901,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-15T00:08:19Z"
+   "git_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
+   "git_commit_timestamp_observed": "2026-10-15T00:08:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1901,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 160,
@@ -1398,11 +1408,11 @@
    "task": "WEB-06-VISUAL-POLISH",
    "event": "scope_deferred",
    "ts_as_written": "2026-10-15T00:45:00Z",
-   "recording_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
-   "recording_commit_committer_time_utc": "2026-10-15T00:08:19Z",
-   "ts_exceeds_recording_by_seconds": 2201,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-15T00:08:19Z"
+   "git_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
+   "git_commit_timestamp_observed": "2026-10-15T00:08:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 2201,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 161,
@@ -1410,11 +1420,11 @@
    "task": "WEB-06-VISUAL-POLISH",
    "event": "test_run",
    "ts_as_written": "2026-10-15T01:10:00Z",
-   "recording_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
-   "recording_commit_committer_time_utc": "2026-10-15T00:08:19Z",
-   "ts_exceeds_recording_by_seconds": 3701,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-15T00:08:19Z"
+   "git_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
+   "git_commit_timestamp_observed": "2026-10-15T00:08:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3701,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 162,
@@ -1422,11 +1432,11 @@
    "task": "BR-026",
    "event": "delivery",
    "ts_as_written": "2026-10-15T01:20:00Z",
-   "recording_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
-   "recording_commit_committer_time_utc": "2026-10-15T00:08:19Z",
-   "ts_exceeds_recording_by_seconds": 4301,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-15T00:08:19Z"
+   "git_commit": "e57f00e2c5b4b5923b93c1f6fd1c8ad164d4a968",
+   "git_commit_timestamp_observed": "2026-10-15T00:08:19Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4301,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 163,
@@ -1434,11 +1444,11 @@
    "task": "WEB-06-D11-CONTRAST-FIX",
    "event": "implemented",
    "ts_as_written": "2026-10-15T02:10:00Z",
-   "recording_commit": "1e9eb59c0b3a6bbfcde6a197a3d58ed5b29fff7f",
-   "recording_commit_committer_time_utc": "2026-10-15T01:14:12Z",
-   "ts_exceeds_recording_by_seconds": 3348,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-15T01:14:12Z"
+   "git_commit": "1e9eb59c0b3a6bbfcde6a197a3d58ed5b29fff7f",
+   "git_commit_timestamp_observed": "2026-10-15T01:14:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3348,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 164,
@@ -1446,11 +1456,11 @@
    "task": "BR-027",
    "event": "batch_report",
    "ts_as_written": "2026-10-15T02:30:00Z",
-   "recording_commit": "1e9eb59c0b3a6bbfcde6a197a3d58ed5b29fff7f",
-   "recording_commit_committer_time_utc": "2026-10-15T01:14:12Z",
-   "ts_exceeds_recording_by_seconds": 4548,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-15T01:14:12Z"
+   "git_commit": "1e9eb59c0b3a6bbfcde6a197a3d58ed5b29fff7f",
+   "git_commit_timestamp_observed": "2026-10-15T01:14:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4548,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 168,
@@ -1458,11 +1468,11 @@
    "task": "WEB-07-REWORK",
    "event": "implemented",
    "ts_as_written": "2026-10-16T15:20:00Z",
-   "recording_commit": "53fb331e2f520eab6056ef06e0de78944ea4f433",
-   "recording_commit_committer_time_utc": "2026-10-16T15:08:32Z",
-   "ts_exceeds_recording_by_seconds": 688,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-16T15:08:32Z"
+   "git_commit": "53fb331e2f520eab6056ef06e0de78944ea4f433",
+   "git_commit_timestamp_observed": "2026-10-16T15:08:32Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 688,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 169,
@@ -1470,11 +1480,11 @@
    "task": "WEB-07-REWORK",
    "event": "test_run",
    "ts_as_written": "2026-10-16T15:35:00Z",
-   "recording_commit": "53fb331e2f520eab6056ef06e0de78944ea4f433",
-   "recording_commit_committer_time_utc": "2026-10-16T15:08:32Z",
-   "ts_exceeds_recording_by_seconds": 1588,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-16T15:08:32Z"
+   "git_commit": "53fb331e2f520eab6056ef06e0de78944ea4f433",
+   "git_commit_timestamp_observed": "2026-10-16T15:08:32Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1588,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 170,
@@ -1482,11 +1492,11 @@
    "task": "BR-029",
    "event": "batch_report",
    "ts_as_written": "2026-10-16T15:40:00Z",
-   "recording_commit": "53fb331e2f520eab6056ef06e0de78944ea4f433",
-   "recording_commit_committer_time_utc": "2026-10-16T15:08:32Z",
-   "ts_exceeds_recording_by_seconds": 1888,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-16T15:08:32Z"
+   "git_commit": "53fb331e2f520eab6056ef06e0de78944ea4f433",
+   "git_commit_timestamp_observed": "2026-10-16T15:08:32Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 1888,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 174,
@@ -1494,11 +1504,11 @@
    "task": "WEB-08B03",
    "event": "fix",
    "ts_as_written": "2026-10-17T16:00:00Z",
-   "recording_commit": "546ad81f967b7c88487999e4ff95ba62f4c916c6",
-   "recording_commit_committer_time_utc": "2026-10-17T15:04:44Z",
-   "ts_exceeds_recording_by_seconds": 3316,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T15:04:44Z"
+   "git_commit": "546ad81f967b7c88487999e4ff95ba62f4c916c6",
+   "git_commit_timestamp_observed": "2026-10-17T15:04:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3316,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 175,
@@ -1506,11 +1516,11 @@
    "task": "WEB-08B03",
    "event": "test_run",
    "ts_as_written": "2026-10-17T16:10:00Z",
-   "recording_commit": "546ad81f967b7c88487999e4ff95ba62f4c916c6",
-   "recording_commit_committer_time_utc": "2026-10-17T15:04:44Z",
-   "ts_exceeds_recording_by_seconds": 3916,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T15:04:44Z"
+   "git_commit": "546ad81f967b7c88487999e4ff95ba62f4c916c6",
+   "git_commit_timestamp_observed": "2026-10-17T15:04:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 3916,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 176,
@@ -1518,11 +1528,11 @@
    "task": "WEB-08B03",
    "event": "review_handoff",
    "ts_as_written": "2026-10-17T16:20:00Z",
-   "recording_commit": "546ad81f967b7c88487999e4ff95ba62f4c916c6",
-   "recording_commit_committer_time_utc": "2026-10-17T15:04:44Z",
-   "ts_exceeds_recording_by_seconds": 4516,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T15:04:44Z"
+   "git_commit": "546ad81f967b7c88487999e4ff95ba62f4c916c6",
+   "git_commit_timestamp_observed": "2026-10-17T15:04:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 4516,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 177,
@@ -1530,11 +1540,11 @@
    "task": "WEB-08B03",
    "event": "rework_received",
    "ts_as_written": "2026-10-17T20:00:00Z",
-   "recording_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
-   "recording_commit_committer_time_utc": "2026-10-17T16:24:46Z",
-   "ts_exceeds_recording_by_seconds": 12914,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T16:24:46Z"
+   "git_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
+   "git_commit_timestamp_observed": "2026-10-17T16:24:46Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 12914,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 178,
@@ -1542,11 +1552,11 @@
    "task": "WEB-08B03",
    "event": "rework_fix",
    "ts_as_written": "2026-10-17T21:30:00Z",
-   "recording_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
-   "recording_commit_committer_time_utc": "2026-10-17T16:24:46Z",
-   "ts_exceeds_recording_by_seconds": 18314,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T16:24:46Z"
+   "git_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
+   "git_commit_timestamp_observed": "2026-10-17T16:24:46Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 18314,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 179,
@@ -1554,11 +1564,11 @@
    "task": "WEB-08B03",
    "event": "test_run",
    "ts_as_written": "2026-10-17T21:45:00Z",
-   "recording_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
-   "recording_commit_committer_time_utc": "2026-10-17T16:24:46Z",
-   "ts_exceeds_recording_by_seconds": 19214,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T16:24:46Z"
+   "git_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
+   "git_commit_timestamp_observed": "2026-10-17T16:24:46Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 19214,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 180,
@@ -1566,11 +1576,11 @@
    "task": "WEB-08B03",
    "event": "review_handoff",
    "ts_as_written": "2026-10-17T22:00:00Z",
-   "recording_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
-   "recording_commit_committer_time_utc": "2026-10-17T16:24:46Z",
-   "ts_exceeds_recording_by_seconds": 20114,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T16:24:46Z"
+   "git_commit": "21847fdbd427af23a2b644aeeea92fa4fe9064b9",
+   "git_commit_timestamp_observed": "2026-10-17T16:24:46Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 20114,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 181,
@@ -1578,11 +1588,11 @@
    "task": "WEB-08B03",
    "event": "doc_fix",
    "ts_as_written": "2026-10-18T09:00:00Z",
-   "recording_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
-   "recording_commit_committer_time_utc": "2026-10-17T17:32:34Z",
-   "ts_exceeds_recording_by_seconds": 55646,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T17:32:34Z"
+   "git_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
+   "git_commit_timestamp_observed": "2026-10-17T17:32:34Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 55646,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 182,
@@ -1590,11 +1600,11 @@
    "task": "WEB-08B04",
    "event": "implemented",
    "ts_as_written": "2026-10-18T14:00:00Z",
-   "recording_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
-   "recording_commit_committer_time_utc": "2026-10-17T17:32:34Z",
-   "ts_exceeds_recording_by_seconds": 73646,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T17:32:34Z"
+   "git_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
+   "git_commit_timestamp_observed": "2026-10-17T17:32:34Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 73646,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 183,
@@ -1602,11 +1612,11 @@
    "task": "WEB-08B04",
    "event": "test_run",
    "ts_as_written": "2026-10-18T14:30:00Z",
-   "recording_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
-   "recording_commit_committer_time_utc": "2026-10-17T17:32:34Z",
-   "ts_exceeds_recording_by_seconds": 75446,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T17:32:34Z"
+   "git_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
+   "git_commit_timestamp_observed": "2026-10-17T17:32:34Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 75446,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 184,
@@ -1614,11 +1624,11 @@
    "task": "WEB-08B04",
    "event": "review_handoff",
    "ts_as_written": "2026-10-18T14:45:00Z",
-   "recording_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
-   "recording_commit_committer_time_utc": "2026-10-17T17:32:34Z",
-   "ts_exceeds_recording_by_seconds": 76346,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T17:32:34Z"
+   "git_commit": "3f67e760004790706372520abdb4ea2566c2fe79",
+   "git_commit_timestamp_observed": "2026-10-17T17:32:34Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 76346,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 185,
@@ -1626,11 +1636,11 @@
    "task": "WEB-08B04",
    "event": "rework_received",
    "ts_as_written": "2026-10-18T16:00:00Z",
-   "recording_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
-   "recording_commit_committer_time_utc": "2026-10-17T19:54:57Z",
-   "ts_exceeds_recording_by_seconds": 72303,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T19:54:57Z"
+   "git_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
+   "git_commit_timestamp_observed": "2026-10-17T19:54:57Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 72303,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 186,
@@ -1638,11 +1648,11 @@
    "task": "WEB-08B04",
    "event": "rework_fix",
    "ts_as_written": "2026-10-18T19:00:00Z",
-   "recording_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
-   "recording_commit_committer_time_utc": "2026-10-17T19:54:57Z",
-   "ts_exceeds_recording_by_seconds": 83103,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T19:54:57Z"
+   "git_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
+   "git_commit_timestamp_observed": "2026-10-17T19:54:57Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 83103,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 187,
@@ -1650,11 +1660,11 @@
    "task": "WEB-08B04",
    "event": "test_run",
    "ts_as_written": "2026-10-18T19:40:00Z",
-   "recording_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
-   "recording_commit_committer_time_utc": "2026-10-17T19:54:57Z",
-   "ts_exceeds_recording_by_seconds": 85503,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T19:54:57Z"
+   "git_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
+   "git_commit_timestamp_observed": "2026-10-17T19:54:57Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 85503,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 188,
@@ -1662,11 +1672,11 @@
    "task": "WEB-08B04",
    "event": "review_handoff",
    "ts_as_written": "2026-10-18T19:50:00Z",
-   "recording_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
-   "recording_commit_committer_time_utc": "2026-10-17T19:54:57Z",
-   "ts_exceeds_recording_by_seconds": 86103,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T19:54:57Z"
+   "git_commit": "f46a2925376b59c7686ee4a23c3128506229792b",
+   "git_commit_timestamp_observed": "2026-10-17T19:54:57Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 86103,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 189,
@@ -1674,11 +1684,11 @@
    "task": "WEB-08B04",
    "event": "rework_received",
    "ts_as_written": "2026-10-18T21:30:00Z",
-   "recording_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
-   "recording_commit_committer_time_utc": "2026-10-17T21:25:44Z",
-   "ts_exceeds_recording_by_seconds": 86656,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:25:44Z"
+   "git_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
+   "git_commit_timestamp_observed": "2026-10-17T21:25:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 86656,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 190,
@@ -1686,11 +1696,11 @@
    "task": "WEB-08B04",
    "event": "rework_fix",
    "ts_as_written": "2026-10-18T22:30:00Z",
-   "recording_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
-   "recording_commit_committer_time_utc": "2026-10-17T21:25:44Z",
-   "ts_exceeds_recording_by_seconds": 90256,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:25:44Z"
+   "git_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
+   "git_commit_timestamp_observed": "2026-10-17T21:25:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 90256,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 191,
@@ -1698,11 +1708,11 @@
    "task": "WEB-08B04",
    "event": "test_run",
    "ts_as_written": "2026-10-18T22:50:00Z",
-   "recording_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
-   "recording_commit_committer_time_utc": "2026-10-17T21:25:44Z",
-   "ts_exceeds_recording_by_seconds": 91456,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:25:44Z"
+   "git_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
+   "git_commit_timestamp_observed": "2026-10-17T21:25:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 91456,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 192,
@@ -1710,11 +1720,11 @@
    "task": "WEB-08B04",
    "event": "review_handoff",
    "ts_as_written": "2026-10-18T23:00:00Z",
-   "recording_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
-   "recording_commit_committer_time_utc": "2026-10-17T21:25:44Z",
-   "ts_exceeds_recording_by_seconds": 92056,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:25:44Z"
+   "git_commit": "894fad138ab47e57b63d054aa9c469c8efa6fe47",
+   "git_commit_timestamp_observed": "2026-10-17T21:25:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 92056,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 193,
@@ -1722,11 +1732,11 @@
    "task": "WEB-08B04",
    "event": "rework_received",
    "ts_as_written": "2026-10-19T00:45:00Z",
-   "recording_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
-   "recording_commit_committer_time_utc": "2026-10-17T21:57:43Z",
-   "ts_exceeds_recording_by_seconds": 96437,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:57:43Z"
+   "git_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
+   "git_commit_timestamp_observed": "2026-10-17T21:57:43Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 96437,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 194,
@@ -1734,11 +1744,11 @@
    "task": "WEB-08B04",
    "event": "rework_fix",
    "ts_as_written": "2026-10-19T02:00:00Z",
-   "recording_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
-   "recording_commit_committer_time_utc": "2026-10-17T21:57:43Z",
-   "ts_exceeds_recording_by_seconds": 100937,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:57:43Z"
+   "git_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
+   "git_commit_timestamp_observed": "2026-10-17T21:57:43Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 100937,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 195,
@@ -1746,11 +1756,11 @@
    "task": "WEB-08B04",
    "event": "test_run",
    "ts_as_written": "2026-10-19T02:30:00Z",
-   "recording_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
-   "recording_commit_committer_time_utc": "2026-10-17T21:57:43Z",
-   "ts_exceeds_recording_by_seconds": 102737,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:57:43Z"
+   "git_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
+   "git_commit_timestamp_observed": "2026-10-17T21:57:43Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 102737,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 196,
@@ -1758,11 +1768,11 @@
    "task": "WEB-08B04",
    "event": "review_handoff",
    "ts_as_written": "2026-10-19T02:40:00Z",
-   "recording_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
-   "recording_commit_committer_time_utc": "2026-10-17T21:57:43Z",
-   "ts_exceeds_recording_by_seconds": 103337,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T21:57:43Z"
+   "git_commit": "31aa6c68a9368b44bee629e208eb50e58613d41e",
+   "git_commit_timestamp_observed": "2026-10-17T21:57:43Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 103337,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 197,
@@ -1770,11 +1780,11 @@
    "task": "WEB-08B04",
    "event": "rework_received",
    "ts_as_written": "2026-10-19T04:00:00Z",
-   "recording_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
-   "recording_commit_committer_time_utc": "2026-10-17T22:28:00Z",
-   "ts_exceeds_recording_by_seconds": 106320,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:28:00Z"
+   "git_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+   "git_commit_timestamp_observed": "2026-10-17T22:28:00Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 106320,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 198,
@@ -1782,11 +1792,11 @@
    "task": "WEB-08B04",
    "event": "rework_fix",
    "ts_as_written": "2026-10-19T06:00:00Z",
-   "recording_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
-   "recording_commit_committer_time_utc": "2026-10-17T22:28:00Z",
-   "ts_exceeds_recording_by_seconds": 113520,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:28:00Z"
+   "git_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+   "git_commit_timestamp_observed": "2026-10-17T22:28:00Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 113520,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 199,
@@ -1794,11 +1804,11 @@
    "task": "WEB-08B04",
    "event": "test_run",
    "ts_as_written": "2026-10-19T06:40:00Z",
-   "recording_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
-   "recording_commit_committer_time_utc": "2026-10-17T22:28:00Z",
-   "ts_exceeds_recording_by_seconds": 115920,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:28:00Z"
+   "git_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+   "git_commit_timestamp_observed": "2026-10-17T22:28:00Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 115920,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 200,
@@ -1806,11 +1816,11 @@
    "task": "WEB-08B04",
    "event": "review_handoff",
    "ts_as_written": "2026-10-19T06:50:00Z",
-   "recording_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
-   "recording_commit_committer_time_utc": "2026-10-17T22:28:00Z",
-   "ts_exceeds_recording_by_seconds": 116520,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:28:00Z"
+   "git_commit": "c737e9bf76ebe55c0c8bbff15ce87732b987e449",
+   "git_commit_timestamp_observed": "2026-10-17T22:28:00Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 116520,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 201,
@@ -1818,11 +1828,11 @@
    "task": "WEB-08B04",
    "event": "rework_received",
    "ts_as_written": "2026-10-19T08:00:00Z",
-   "recording_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
-   "recording_commit_committer_time_utc": "2026-10-17T22:50:17Z",
-   "ts_exceeds_recording_by_seconds": 119383,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:50:17Z"
+   "git_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
+   "git_commit_timestamp_observed": "2026-10-17T22:50:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 119383,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 202,
@@ -1830,11 +1840,11 @@
    "task": "WEB-08B04",
    "event": "rework_fix",
    "ts_as_written": "2026-10-19T08:40:00Z",
-   "recording_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
-   "recording_commit_committer_time_utc": "2026-10-17T22:50:17Z",
-   "ts_exceeds_recording_by_seconds": 121783,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:50:17Z"
+   "git_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
+   "git_commit_timestamp_observed": "2026-10-17T22:50:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 121783,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 203,
@@ -1842,11 +1852,11 @@
    "task": "WEB-08B04",
    "event": "test_run",
    "ts_as_written": "2026-10-19T09:10:00Z",
-   "recording_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
-   "recording_commit_committer_time_utc": "2026-10-17T22:50:17Z",
-   "ts_exceeds_recording_by_seconds": 123583,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:50:17Z"
+   "git_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
+   "git_commit_timestamp_observed": "2026-10-17T22:50:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 123583,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 204,
@@ -1854,11 +1864,11 @@
    "task": "WEB-08B04",
    "event": "review_handoff",
    "ts_as_written": "2026-10-19T09:20:00Z",
-   "recording_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
-   "recording_commit_committer_time_utc": "2026-10-17T22:50:17Z",
-   "ts_exceeds_recording_by_seconds": 124183,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T22:50:17Z"
+   "git_commit": "69714002f9279271be447b7bcf5fc12e0eb41a6a",
+   "git_commit_timestamp_observed": "2026-10-17T22:50:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 124183,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 205,
@@ -1866,11 +1876,11 @@
    "task": "WEB-08B05",
    "event": "started",
    "ts_as_written": "2026-10-19T11:00:00Z",
-   "recording_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
-   "recording_commit_committer_time_utc": "2026-10-17T23:40:44Z",
-   "ts_exceeds_recording_by_seconds": 127156,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T23:40:44Z"
+   "git_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
+   "git_commit_timestamp_observed": "2026-10-17T23:40:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 127156,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 206,
@@ -1878,11 +1888,11 @@
    "task": "WEB-08B05",
    "event": "implemented",
    "ts_as_written": "2026-10-19T15:00:00Z",
-   "recording_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
-   "recording_commit_committer_time_utc": "2026-10-17T23:40:44Z",
-   "ts_exceeds_recording_by_seconds": 141556,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T23:40:44Z"
+   "git_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
+   "git_commit_timestamp_observed": "2026-10-17T23:40:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 141556,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 207,
@@ -1890,11 +1900,11 @@
    "task": "WEB-08B05",
    "event": "test_run",
    "ts_as_written": "2026-10-19T16:30:00Z",
-   "recording_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
-   "recording_commit_committer_time_utc": "2026-10-17T23:40:44Z",
-   "ts_exceeds_recording_by_seconds": 146956,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T23:40:44Z"
+   "git_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
+   "git_commit_timestamp_observed": "2026-10-17T23:40:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 146956,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 208,
@@ -1902,11 +1912,11 @@
    "task": "WEB-08B05",
    "event": "review_handoff",
    "ts_as_written": "2026-10-19T16:40:00Z",
-   "recording_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
-   "recording_commit_committer_time_utc": "2026-10-17T23:40:44Z",
-   "ts_exceeds_recording_by_seconds": 147556,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-17T23:40:44Z"
+   "git_commit": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855",
+   "git_commit_timestamp_observed": "2026-10-17T23:40:44Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 147556,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 209,
@@ -1914,11 +1924,11 @@
    "task": "WEB-08B05",
    "event": "rework_received",
    "ts_as_written": "2026-10-20T09:00:00Z",
-   "recording_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
-   "recording_commit_committer_time_utc": "2026-10-18T00:28:12Z",
-   "ts_exceeds_recording_by_seconds": 203508,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T00:28:12Z"
+   "git_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
+   "git_commit_timestamp_observed": "2026-10-18T00:28:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 203508,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 210,
@@ -1926,11 +1936,11 @@
    "task": "WEB-08B05",
    "event": "rework_fix",
    "ts_as_written": "2026-10-20T10:00:00Z",
-   "recording_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
-   "recording_commit_committer_time_utc": "2026-10-18T00:28:12Z",
-   "ts_exceeds_recording_by_seconds": 207108,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T00:28:12Z"
+   "git_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
+   "git_commit_timestamp_observed": "2026-10-18T00:28:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 207108,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 211,
@@ -1938,11 +1948,11 @@
    "task": "WEB-08B05",
    "event": "test_run",
    "ts_as_written": "2026-10-20T10:30:00Z",
-   "recording_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
-   "recording_commit_committer_time_utc": "2026-10-18T00:28:12Z",
-   "ts_exceeds_recording_by_seconds": 208908,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T00:28:12Z"
+   "git_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
+   "git_commit_timestamp_observed": "2026-10-18T00:28:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 208908,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 212,
@@ -1950,11 +1960,11 @@
    "task": "WEB-08B05",
    "event": "review_handoff",
    "ts_as_written": "2026-10-20T10:40:00Z",
-   "recording_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
-   "recording_commit_committer_time_utc": "2026-10-18T00:28:12Z",
-   "ts_exceeds_recording_by_seconds": 209508,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T00:28:12Z"
+   "git_commit": "b9056a3faf8402ce5ffbdd22b2c5f4586cb6fa81",
+   "git_commit_timestamp_observed": "2026-10-18T00:28:12Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 209508,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 213,
@@ -1962,11 +1972,11 @@
    "task": "WEB-08B06",
    "event": "scope_decision_received",
    "ts_as_written": "2026-10-20T16:00:00Z",
-   "recording_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
-   "recording_commit_committer_time_utc": "2026-10-18T01:09:17Z",
-   "ts_exceeds_recording_by_seconds": 226243,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T01:09:17Z"
+   "git_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
+   "git_commit_timestamp_observed": "2026-10-18T01:09:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 226243,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 214,
@@ -1974,11 +1984,11 @@
    "task": "WEB-08B06",
    "event": "decision_pack",
    "ts_as_written": "2026-10-20T18:00:00Z",
-   "recording_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
-   "recording_commit_committer_time_utc": "2026-10-18T01:09:17Z",
-   "ts_exceeds_recording_by_seconds": 233443,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T01:09:17Z"
+   "git_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
+   "git_commit_timestamp_observed": "2026-10-18T01:09:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 233443,
+   "event_time": "NOT_ESTABLISHED"
   },
   {
    "line": 215,
@@ -1986,11 +1996,11 @@
    "task": "WEB-08B06",
    "event": "review_handoff",
    "ts_as_written": "2026-10-20T18:10:00Z",
-   "recording_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
-   "recording_commit_committer_time_utc": "2026-10-18T01:09:17Z",
-   "ts_exceeds_recording_by_seconds": 234043,
-   "event_time": "NOT_ESTABLISHED",
-   "event_time_not_later_than": "2026-10-18T01:09:17Z"
+   "git_commit": "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26",
+   "git_commit_timestamp_observed": "2026-10-18T01:09:17Z",
+   "field_relation": "ts_later_than_git_commit_timestamp",
+   "field_difference_seconds": 234043,
+   "event_time": "NOT_ESTABLISHED"
   }
  ]
 }

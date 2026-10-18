@@ -1,136 +1,29 @@
 {
- "schema": "marefa-web08b06-comparability-recipes/1",
+ "schema": "marefa-web08b06-comparability-recipes/2",
+ "supersedes": "marefa-web08b06-comparability-recipes/1 (implementation 5050295)",
  "status": "METHODOLOGY_PROPOSAL_NOT_APPROVED",
- "rule": "Default NOT_COMPARABLE. A cell is CONDITIONALLY_COMPARABLE only if no generic or metric failure condition holds, a formula case exists for its basis, and every formula item is present. No cell is displayable in B06: display is BLOCKED for every example and every real cell until financial review, rights grants and owner approval.",
- "examples_note": "SYNTHETIC: invented test values, not company data. Expected values were computed by the generator's evaluator and are re-checked by an independent evaluator in checks/decision-pack.test.ts.",
- "fx_convention": "currency units per USD; flows at period-average rate, stocks at closing rate; ratio and physical outputs not converted",
- "aramco_inputs": "Aramco cells use B02 identities, all WITHHELD (142); comparability status never changes their withholding.",
- "item_concepts_note": "Candidate XBRL concepts per item are not listed as verified: Company Facts completeness and concept availability per issuer are UNVERIFIED (R03).",
- "generic_failure_conditions": [
-  {
-   "code": "source_missing",
-   "when": {
-    "op": "empty",
-    "path": "meta.source_ids"
-   },
-   "reason": "No source identifier for the cell."
-  },
-  {
-   "code": "accounting_basis_unknown",
-   "when": {
-    "op": "not_in",
-    "path": "meta.accounting_basis",
-    "values": [
-     "IFRS",
-     "US_GAAP"
-    ]
-   },
-   "reason": "Basis must be IFRS or US_GAAP."
-  },
-  {
-   "code": "consolidation_not_group",
-   "when": {
-    "op": "neq",
-    "path": "meta.consolidation",
-    "value": "consolidated"
-   },
-   "reason": "Only consolidated group figures."
-  },
-  {
-   "code": "period_end_missing",
-   "when": {
-    "op": "missing",
-    "path": "meta.period.end"
-   },
-   "reason": "Period end required."
-  },
-  {
-   "code": "period_kind_not_allowed",
-   "when": {
-    "op": "not_in_recipe",
-    "path": "meta.period.kind",
-    "recipe_key": "allowed_period_kinds"
-   },
-   "reason": "Period kind not allowed for this metric."
-  },
-  {
-   "code": "quarter_not_standalone",
-   "when": {
-    "op": "and",
-    "args": [
-     {
-      "op": "eq",
-      "path": "meta.period.kind",
-      "value": "Q"
-     },
-     {
-      "op": "neq",
-      "path": "meta.period.standalone",
-      "value": true
-     }
-    ]
-   },
-   "reason": "A quarter must be published stand-alone, not derived."
-  },
-  {
-   "code": "not_latest_restated",
-   "when": {
-    "op": "neq",
-    "path": "meta.restated_latest",
-    "value": true
-   },
-   "reason": "Latest restated comparatives required; vintage recorded."
-  },
-  {
-   "code": "fx_missing",
-   "when": {
-    "op": "and",
-    "args": [
-     {
-      "op": "monetary"
-     },
-     {
-      "op": "neq",
-      "path": "meta.currency",
-      "value": "USD"
-     },
-     {
-      "op": "missing",
-      "path": "meta.fx.rate"
-     }
-    ]
-   },
-   "reason": "Non-USD monetary cell needs an FX rate (units per USD)."
-  },
-  {
-   "code": "fx_source_missing",
-   "when": {
-    "op": "and",
-    "args": [
-     {
-      "op": "monetary"
-     },
-     {
-      "op": "neq",
-      "path": "meta.currency",
-      "value": "USD"
-     },
-     {
-      "op": "missing",
-      "path": "meta.fx.source_id"
-     }
-    ]
-   },
-   "reason": "FX rate needs a source identifier and date."
-  },
-  {
-   "code": "fx_rate_type_mismatch",
-   "when": {
-    "op": "fx_type_mismatch"
-   },
-   "reason": "Flows at period-average rate, stocks at closing rate (IAS 21 convention)."
-  }
+ "rule": "Default NOT_COMPARABLE. A cell is CONDITIONALLY_COMPARABLE only if every generic check, every allow-listed definition, every policy requirement and every metric condition passes, every used item is a finite number with its declared definition, no item of an inapplicable reclassification path or forbidden item is supplied, and all guards hold. Nothing is defaulted. Display is BLOCKED for every cell in B06.",
+ "check_order": [
+  "source",
+  "accounting_basis",
+  "consolidation",
+  "restated_latest",
+  "period (kind, real dates, order, duration, stand-alone quarter, TTM components, balance dates)",
+  "currency and FX (supported currency, no FX for USD, rate > 0, source, basis per measure, average window = period / closing date = period end)",
+  "not-reconcilable metric",
+  "definitions (allow-lists)",
+  "policy requirements",
+  "metric conditions",
+  "forbidden items",
+  "dependencies",
+  "items (present, numeric, declared definition)",
+  "reclassification conflicts",
+  "guards",
+  "FX conversion"
  ],
+ "pair_rule": "Two cells compare only if both pass, period kind/start/end are equal, the recipe's homogeneity fields are equal and the policy objects are equal.",
+ "examples_note": "SYNTHETIC: invented test values, not company data. Expected results computed here and re-derived by the independent evaluator in checks/.",
+ "aramco_inputs": "Aramco cells use B02 identities, all WITHHELD (142); comparability never changes withholding.",
  "recipes": [
   {
    "id": "M01",
@@ -144,74 +37,74 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco; consolidated group",
    "definition": {
-    "numerator": "Revenue from contracts with customers and other operating revenue, net of royalties and excise taxes presented within revenue",
+    "numerator": "Reported revenue, less royalties and excise included in revenue by gross presenters",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "revenue",
-     "role": "reported revenue line"
-    },
-    {
-     "item": "royalties_excise_in_revenue",
-     "role": "royalties and excise taxes included in reported revenue (gross presenters only)"
-    }
-   ],
    "ordered_steps": [
-    "Read reported revenue at the group level for the period.",
-    "Read the issuer's presentation of royalties and excise (meta.royalty_presentation).",
-    "If gross presentation, subtract royalties and excise included in revenue.",
-    "Record trading revenue basis (gross/net); unknown basis fails.",
-    "Convert to USD at the period-average rate when the currency is not USD."
+    "Validate source, basis, consolidation, restatement, period and FX.",
+    "Check royalty presentation and trading revenue basis against their allow-lists.",
+    "Gross presenters subtract royalties/excise included in revenue; net presenters must not supply that item.",
+    "Convert at the period-average rate.",
+    "Pairs must share the trading revenue basis (gross and net trading revenue are not reconcilable without volume data)."
    ],
-   "ifrs_vs_us_gaap": "No framework-specific line difference; the presentation of royalties/excise and trading revenue differs by issuer, not by framework.",
+   "ifrs_vs_us_gaap": "Presentation of royalties/excise and trading revenue differs by issuer, not by framework.",
    "basis": {
     "consolidation": "consolidated group",
-    "currency": "USD; SAR at period-average rate",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "FY/H1/stand-alone Q/TTM of four stand-alone quarters"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Any required item missing -> NOT_COMPARABLE (required_item_missing).",
-    "restatements": "Use latest restated comparative; record the filing vintage.",
-    "definition_conflict": "Unknown royalty or trading presentation -> NOT_COMPARABLE."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
-   "failure_conditions": [
-    {
-     "code": "royalty_presentation_unknown",
-     "when": {
-      "op": "not_in",
-      "path": "meta.royalty_presentation",
-      "values": [
-       "gross",
-       "net"
-      ]
-     },
-     "reason": "Royalty/excise presentation must be disclosed."
-    },
-    {
-     "code": "trading_revenue_basis_unknown",
-     "when": {
-      "op": "missing",
-      "path": "meta.trading_revenue_basis"
-     },
-     "reason": "Trading revenue gross/net basis must be disclosed."
-    }
-   ],
+   "required_definitions": {
+    "royalty_presentation": [
+     "gross",
+     "net"
+    ],
+    "trading_revenue_basis": [
+     "gross",
+     "net"
+    ]
+   },
+   "failure_conditions": [],
+   "item_definitions": {
+    "revenue": "reported_revenue_line",
+    "royalties_excise_in_revenue": "royalties_and_excise_included_in_revenue"
+   },
    "outputs": [
     {
      "key": "revenue_net",
-     "selector": [
-      "meta.royalty_presentation"
-     ],
-     "cases": {
-      "gross": "revenue - royalties_excise_in_revenue",
-      "net": "revenue"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "revenue",
+       "sign": 1
+      },
+      {
+       "expr": "royalties_excise_in_revenue",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.royalty_presentation",
+        "value": "gross"
+       }
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [
+    "trading_revenue_basis"
+   ],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass_sar_gross",
@@ -222,6 +115,7 @@
       "currency": "SAR",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -230,15 +124,20 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "fx": {
        "rate": 4,
        "rate_type": "period_average",
-       "source_id": "SYNTH-FX"
+       "source_id": "SYNTH-FX",
+       "window_start": "2030-01-01",
+       "window_end": "2030-12-31"
       },
       "royalty_presentation": "gross",
-      "trading_revenue_basis": "gross"
+      "trading_revenue_basis": "gross",
+      "item_definitions": {
+       "revenue": "reported_revenue_line",
+       "royalties_excise_in_revenue": "royalties_and_excise_included_in_revenue"
+      }
      },
      "items": {
       "revenue": 1000,
@@ -253,7 +152,7 @@
      }
     },
     {
-     "label": "fail_royalty_unknown",
+     "label": "fail_trading_basis_missing",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -261,6 +160,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -269,21 +169,23 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "trading_revenue_basis": "gross"
+      "royalty_presentation": "net",
+      "item_definitions": {
+       "revenue": "reported_revenue_line"
+      }
      },
      "items": {
       "revenue": 1000
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "royalty_presentation_unknown",
+      "reason": "definition_missing:trading_revenue_basis",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M02",
@@ -297,128 +199,192 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco; consolidated group",
    "definition": {
-    "numerator": "Operating profit before finance costs and income taxes, excluding impairments and impairment reversals, with downstream inventory at replacement cost; EBITDA adds depreciation, depletion and amortisation; leases aligned to the IFRS 16 presentation",
+    "numerator": "Operating profit before finance costs and tax, excluding impairments and reversals, downstream inventory at replacement cost (IFRS) or LIFO (US GAAP), leases aligned to IFRS 16; EBITDA adds DD&A",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "operating_profit",
-     "role": "reported operating profit / income before finance costs and tax"
-    },
-    {
-     "item": "impairment_losses",
-     "role": "impairment losses recognised in operating profit"
-    },
-    {
-     "item": "impairment_reversals",
-     "role": "impairment reversals recognised (IFRS only)"
-    },
-    {
-     "item": "inventory_holding_gain",
-     "role": "inventory holding gain (+) or loss (-) disclosed by IFRS/FIFO reporters (CCS/RC adjustment)"
-    },
-    {
-     "item": "lifo_liquidation_gain",
-     "role": "LIFO layer liquidation effect (US GAAP LIFO reporters)"
-    },
-    {
-     "item": "dda",
-     "role": "depreciation, depletion and amortisation including right-of-use depreciation"
-    },
-    {
-     "item": "operating_lease_cost",
-     "role": "ASC 842 operating lease cost (US GAAP)"
-    },
-    {
-     "item": "operating_lease_interest_component",
-     "role": "interest-equivalent portion of ASC 842 operating lease cost (US GAAP), only if disclosed"
-    }
-   ],
    "ordered_steps": [
-    "Start from reported operating profit.",
-    "Add back impairment losses; subtract impairment reversals (IFRS).",
-    "Inventory: IFRS/FIFO reporters subtract the disclosed holding gain; US GAAP LIFO reporters subtract any LIFO liquidation gain; FIFO without disclosure fails.",
-    "EBIT lease alignment (US GAAP): add back the interest-equivalent component of operating lease cost; if not disclosed, EBIT fails.",
-    "EBITDA: add DD&A (IFRS includes right-of-use depreciation); US GAAP adds DD&A plus the full ASC 842 operating lease cost.",
-    "Exploration: full-cost reporters fail; successful-efforts and IFRS 6 policies are recorded as metadata.",
-    "Royalties classified as income tax fail; royalty cost inside operating costs is kept.",
-    "Company 'adjusted' measures are not used (see M04).",
+    "Validate generic fields and definitions.",
+    "Start from operating profit as defined (before finance costs and tax).",
+    "Add impairment losses; subtract reversals (IFRS only).",
+    "IFRS: subtract the disclosed inventory holding gain; US GAAP LIFO: subtract any LIFO liquidation gain.",
+    "US GAAP EBIT: add the disclosed interest-equivalent part of operating lease cost; EBITDA: add DD&A and the full operating lease cost.",
+    "Items that belong to another basis are rejected, not ignored.",
     "Convert at the period-average rate."
    ],
-   "ifrs_vs_us_gaap": "IAS 36 permits impairment reversal, US GAAP does not; IAS 2 prohibits LIFO; IFRS 16 single lessee model vs ASC 842 operating lease cost in operating expenses; IFRS 6 policy continuity vs successful efforts / full cost (Reg S-X 4-10).",
+   "ifrs_vs_us_gaap": "IAS 36 reversal vs none under US GAAP; IAS 2 bans LIFO; IFRS 16 vs ASC 842 operating lease cost; IFRS 6 vs successful efforts/full cost.",
    "basis": {
     "consolidation": "consolidated group",
-    "currency": "USD; SAR at period-average rate",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "FY/H1/stand-alone Q/TTM"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Required item for the selected case missing -> NOT_COMPARABLE; a disclosed zero is a value, an absent line is missing.",
-    "restatements": "Latest restated comparative only.",
-    "definition_conflict": "Operating profit definition including finance income must be recorded; inconsistent definition -> NOT_COMPARABLE."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
+   },
+   "required_definitions": {
+    "inventory_method": [
+     "replacement_cost_disclosed",
+     "LIFO"
+    ],
+    "e_and_e_method": [
+     "successful_efforts",
+     "ifrs6_successful_efforts_like"
+    ],
+    "royalty_classification": [
+     "operating_cost",
+     "revenue_deduction"
+    ],
+    "operating_profit_definition": [
+     "before_finance_costs_and_tax"
+    ]
    },
    "failure_conditions": [
     {
-     "code": "full_cost_method",
+     "code": "inventory_method_inconsistent_with_basis",
      "when": {
-      "op": "eq",
-      "path": "meta.e_and_e_method",
-      "value": "full_cost"
+      "op": "and",
+      "args": [
+       {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       },
+       {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "LIFO"
+       }
+      ]
      },
-     "reason": "Full-cost capitalisation not reconcilable to successful efforts without well-level data."
-    },
-    {
-     "code": "e_and_e_method_unknown",
-     "when": {
-      "op": "missing",
-      "path": "meta.e_and_e_method"
-     },
-     "reason": "Exploration accounting method must be recorded."
-    },
-    {
-     "code": "royalty_as_income_tax",
-     "when": {
-      "op": "eq",
-      "path": "meta.royalty_classification",
-      "value": "income_tax"
-     },
-     "reason": "Royalty classified as income tax distorts EBIT."
-    },
-    {
-     "code": "operating_profit_includes_finance_income_unrecorded",
-     "when": {
-      "op": "missing",
-      "path": "meta.operating_profit_definition"
-     },
-     "reason": "Operating profit definition must be recorded."
+     "reason": "LIFO is not permitted under IFRS."
     }
    ],
+   "item_definitions": {
+    "operating_profit": "operating_profit_before_finance_costs_and_tax",
+    "impairment_losses": "impairment_losses_in_operating_profit",
+    "impairment_reversals": "impairment_reversals_in_operating_profit",
+    "inventory_holding_gain": "inventory_holding_gain_pre_tax",
+    "lifo_liquidation_gain": "lifo_liquidation_effect_pre_tax",
+    "dda": "depreciation_depletion_amortisation_incl_rou",
+    "operating_lease_cost": "asc842_operating_lease_cost",
+    "operating_lease_interest_component": "asc842_operating_lease_interest_equivalent"
+   },
    "outputs": [
     {
      "key": "ebit_norm",
-     "selector": [
-      "meta.accounting_basis",
-      "meta.inventory_method"
-     ],
-     "cases": {
-      "IFRS|replacement_cost_disclosed": "operating_profit + impairment_losses - impairment_reversals - inventory_holding_gain",
-      "US_GAAP|LIFO": "operating_profit + impairment_losses - lifo_liquidation_gain + operating_lease_interest_component"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "operating_profit",
+       "sign": 1
+      },
+      {
+       "expr": "impairment_losses",
+       "sign": 1
+      },
+      {
+       "expr": "impairment_reversals",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "inventory_holding_gain",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "replacement_cost_disclosed"
+       }
+      },
+      {
+       "expr": "lifo_liquidation_gain",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "LIFO"
+       }
+      },
+      {
+       "expr": "operating_lease_interest_component",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      }
+     ]
     },
     {
      "key": "ebitda_norm",
-     "selector": [
-      "meta.accounting_basis",
-      "meta.inventory_method"
-     ],
-     "cases": {
-      "IFRS|replacement_cost_disclosed": "operating_profit + impairment_losses - impairment_reversals - inventory_holding_gain + dda",
-      "US_GAAP|LIFO": "operating_profit + impairment_losses - lifo_liquidation_gain + dda + operating_lease_cost"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "operating_profit",
+       "sign": 1
+      },
+      {
+       "expr": "impairment_losses",
+       "sign": 1
+      },
+      {
+       "expr": "impairment_reversals",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "inventory_holding_gain",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "replacement_cost_disclosed"
+       }
+      },
+      {
+       "expr": "lifo_liquidation_gain",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "LIFO"
+       }
+      },
+      {
+       "expr": "dda",
+       "sign": 1
+      },
+      {
+       "expr": "operating_lease_cost",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass_us_gaap_lifo",
@@ -429,6 +395,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -437,12 +404,19 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "inventory_method": "LIFO",
       "e_and_e_method": "successful_efforts",
       "royalty_classification": "operating_cost",
-      "operating_profit_definition": "before_finance_costs_and_tax"
+      "operating_profit_definition": "before_finance_costs_and_tax",
+      "item_definitions": {
+       "operating_profit": "operating_profit_before_finance_costs_and_tax",
+       "impairment_losses": "impairment_losses_in_operating_profit",
+       "lifo_liquidation_gain": "lifo_liquidation_effect_pre_tax",
+       "operating_lease_interest_component": "asc842_operating_lease_interest_equivalent",
+       "dda": "depreciation_depletion_amortisation_incl_rou",
+       "operating_lease_cost": "asc842_operating_lease_cost"
+      }
      },
      "items": {
       "operating_profit": 500,
@@ -462,7 +436,7 @@
      }
     },
     {
-     "label": "fail_ifrs_fifo_no_holding_gain",
+     "label": "fail_royalty_classification_missing",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -470,6 +444,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -478,27 +453,33 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "inventory_method": "FIFO",
-      "e_and_e_method": "ifrs6_successful_efforts_like",
-      "royalty_classification": "operating_cost",
-      "operating_profit_definition": "before_finance_costs_and_tax"
+      "inventory_method": "replacement_cost_disclosed",
+      "e_and_e_method": "successful_efforts",
+      "operating_profit_definition": "before_finance_costs_and_tax",
+      "item_definitions": {
+       "operating_profit": "operating_profit_before_finance_costs_and_tax",
+       "impairment_losses": "impairment_losses_in_operating_profit",
+       "impairment_reversals": "impairment_reversals_in_operating_profit",
+       "inventory_holding_gain": "inventory_holding_gain_pre_tax",
+       "dda": "depreciation_depletion_amortisation_incl_rou"
+      }
      },
      "items": {
       "operating_profit": 500,
       "impairment_losses": 40,
       "impairment_reversals": 0,
+      "inventory_holding_gain": 0,
       "dda": 120
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "no_recipe_for_case",
+      "reason": "definition_missing:royalty_classification",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M03",
@@ -512,72 +493,110 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Profit attributable to owners of the parent, after tax, excluding after-tax impairment reversals (IFRS) and after-tax inventory holding effects (IFRS/FIFO)",
+    "numerator": "Profit attributable to owners of the parent, excluding after-tax impairment reversals (IFRS) and after-tax inventory holding/LIFO liquidation effects",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "profit_attributable_to_parent",
-     "role": "reported"
-    },
-    {
-     "item": "impairment_reversals_after_tax",
-     "role": "IFRS"
-    },
-    {
-     "item": "inventory_holding_gain_after_tax",
-     "role": "IFRS/FIFO reporters"
-    },
-    {
-     "item": "lifo_liquidation_gain_after_tax",
-     "role": "US GAAP LIFO"
-    }
-   ],
    "ordered_steps": [
-    "Read profit attributable to parent (not total profit).",
-    "IFRS: subtract after-tax impairment reversals and after-tax holding gain.",
-    "US GAAP LIFO: subtract after-tax LIFO liquidation gain.",
-    "Government take is disclosed, not adjusted.",
-    "Convert at period-average rate."
+    "Validate generic fields and definitions.",
+    "Use parent-share profit only.",
+    "Subtract the after-tax effects disclosed; no tax-rate assumption.",
+    "Convert at the period-average rate."
    ],
-   "ifrs_vs_us_gaap": "Impairment reversal and inventory method as in M02; non-controlling interests excluded on both frameworks.",
+   "ifrs_vs_us_gaap": "Impairment reversal and inventory method as in M02.",
    "basis": {
-    "consolidation": "consolidated group, parent share",
-    "currency": "USD; SAR at period-average rate",
+    "consolidation": "consolidated group",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "FY/H1/stand-alone Q/TTM"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "After-tax effects not disclosed -> NOT_COMPARABLE (no tax-rate assumption).",
-    "restatements": "Latest restated.",
-    "definition_conflict": "Total profit instead of parent share -> NOT_COMPARABLE."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
+   },
+   "required_definitions": {
+    "profit_scope": [
+     "attributable_to_parent"
+    ],
+    "inventory_method": [
+     "replacement_cost_disclosed",
+     "LIFO"
+    ]
    },
    "failure_conditions": [
     {
-     "code": "parent_share_not_identified",
+     "code": "inventory_method_inconsistent_with_basis",
      "when": {
-      "op": "neq",
-      "path": "meta.profit_scope",
-      "value": "attributable_to_parent"
+      "op": "and",
+      "args": [
+       {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       },
+       {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "LIFO"
+       }
+      ]
      },
-     "reason": "Parent-share profit required."
+     "reason": "LIFO is not permitted under IFRS."
     }
    ],
+   "item_definitions": {
+    "profit_attributable_to_parent": "profit_attributable_to_owners_of_parent",
+    "impairment_reversals_after_tax": "impairment_reversals_after_tax",
+    "inventory_holding_gain_after_tax": "inventory_holding_gain_after_tax",
+    "lifo_liquidation_gain_after_tax": "lifo_liquidation_effect_after_tax"
+   },
    "outputs": [
     {
      "key": "net_income_norm",
-     "selector": [
-      "meta.accounting_basis",
-      "meta.inventory_method"
-     ],
-     "cases": {
-      "IFRS|replacement_cost_disclosed": "profit_attributable_to_parent - impairment_reversals_after_tax - inventory_holding_gain_after_tax",
-      "US_GAAP|LIFO": "profit_attributable_to_parent - lifo_liquidation_gain_after_tax"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "profit_attributable_to_parent",
+       "sign": 1
+      },
+      {
+       "expr": "impairment_reversals_after_tax",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "inventory_holding_gain_after_tax",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "replacement_cost_disclosed"
+       }
+      },
+      {
+       "expr": "lifo_liquidation_gain_after_tax",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.inventory_method",
+        "value": "LIFO"
+       }
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass_ifrs",
@@ -588,6 +607,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -596,10 +616,14 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "inventory_method": "replacement_cost_disclosed",
-      "profit_scope": "attributable_to_parent"
+      "profit_scope": "attributable_to_parent",
+      "item_definitions": {
+       "profit_attributable_to_parent": "profit_attributable_to_owners_of_parent",
+       "impairment_reversals_after_tax": "impairment_reversals_after_tax",
+       "inventory_holding_gain_after_tax": "inventory_holding_gain_after_tax"
+      }
      },
      "items": {
       "profit_attributable_to_parent": 300,
@@ -623,6 +647,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -631,10 +656,14 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "inventory_method": "replacement_cost_disclosed",
-      "profit_scope": "total"
+      "profit_scope": "total",
+      "item_definitions": {
+       "profit_attributable_to_parent": "profit_attributable_to_owners_of_parent",
+       "impairment_reversals_after_tax": "impairment_reversals_after_tax",
+       "inventory_holding_gain_after_tax": "inventory_holding_gain_after_tax"
+      }
      },
      "items": {
       "profit_attributable_to_parent": 300,
@@ -643,12 +672,12 @@
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "parent_share_not_identified",
+      "reason": "definition_not_accepted:profit_scope",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M04",
@@ -662,20 +691,12 @@
     "Q",
     "TTM"
    ],
-   "scope": "All",
    "definition": {
-    "numerator": "Issuer-defined non-GAAP/APM earnings (e.g. adjusted earnings, underlying RC profit, adjusted net income, earnings excluding identified items)",
+    "numerator": "Issuer-defined APM earnings",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "company_adjusted_earnings",
-     "role": "issuer APM"
-    }
-   ],
    "ordered_steps": [
-    "Not reconciled: issuer definitions, thresholds and FX treatment differ.",
-    "Use M02/M03, rebuilt from IFRS/US GAAP lines, instead."
+    "Not reconciled; use M02/M03."
    ],
    "ifrs_vs_us_gaap": "APMs are outside both frameworks.",
    "basis": {
@@ -685,20 +706,29 @@
     "period": "n/a"
    },
    "handling": {
-    "missing_values": "n/a",
-    "restatements": "n/a",
-    "definition_conflict": "Always a conflict across issuers."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
+   "required_definitions": {},
    "failure_conditions": [
     {
      "code": "issuer_defined_measure",
      "when": {
       "op": "always"
      },
-     "reason": "Issuer-defined adjustments are not comparable across companies."
+     "reason": "Issuer-defined adjustments are not comparable."
     }
    ],
+   "item_definitions": {},
    "outputs": [],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "not_reconcilable",
    "examples": [
     {
      "label": "fail_any",
@@ -709,6 +739,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -717,12 +748,10 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
-      "input_status": "SYNTHETIC"
+      "input_status": "SYNTHETIC",
+      "item_definitions": {}
      },
-     "items": {
-      "company_adjusted_earnings": 100
-     },
+     "items": {},
      "expected": {
       "status": "NOT_COMPARABLE",
       "reason": "issuer_defined_measure",
@@ -730,12 +759,12 @@
      }
     }
    ],
-   "notes": "not_reconcilable"
+   "pair_examples": []
   },
   {
    "id": "M05",
    "key": "cfo",
-   "name": "Cash flow from operations, normalised",
+   "name": "Cash flow from operations, normalised to one placement policy",
    "proposed_rating": "CONDITIONALLY_COMPARABLE",
    "measure_type": "flow",
    "allowed_period_kinds": [
@@ -744,76 +773,185 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Net cash from operating activities with lease payments treated as operating and interest paid treated as operating on both frameworks",
+    "numerator": "Reported CFO moved to the uniform placement policy (see notes)",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "cfo",
-     "role": "reported net cash from operating activities"
-    },
-    {
-     "item": "lease_principal_payments",
-     "role": "IFRS 16 lease principal in financing"
-    },
-    {
-     "item": "interest_paid",
-     "role": "interest paid when classified in financing (IFRS option)"
-    },
-    {
-     "item": "finance_lease_principal_payments",
-     "role": "US GAAP finance lease principal"
-    }
-   ],
    "ordered_steps": [
-    "Read reported CFO.",
-    "IFRS: subtract lease principal payments (moves leases to operating as ASC 842 operating leases).",
-    "IFRS with interest paid in financing: also subtract interest paid.",
-    "US GAAP: subtract finance lease principal payments.",
-    "Dividends received classification must be recorded; unknown fails.",
-    "Convert at period-average rate."
+    "Validate generic fields; classifications must be in their allow-lists and consistent with the framework.",
+    "IFRS: subtract lease principal payments; US GAAP: subtract finance lease principal payments.",
+    "If interest paid sits in financing (IFRS), subtract it.",
+    "If dividends received sit in investing (IFRS), add the disclosed amount; if they already sit in operating, the reclassification item must not be supplied (double count).",
+    "If dividends paid sit in operating (IFRS), add them back.",
+    "Interest received outside operating -> NOT_COMPARABLE (no recipe).",
+    "Convert at the period-average rate."
    ],
-   "ifrs_vs_us_gaap": "IAS 7 permits interest/dividend classification choices; ASC 230 fixes interest paid in operating; IFRS 16 vs ASC 842 lease cash flows.",
+   "ifrs_vs_us_gaap": "IAS 7 classification choices vs ASC 230; IFRS 16 vs ASC 842 lease cash flows.",
    "basis": {
     "consolidation": "consolidated group",
-    "currency": "USD; SAR at period-average rate",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "FY/H1/stand-alone Q/TTM"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Lease or interest line required by the case missing -> NOT_COMPARABLE.",
-    "restatements": "Latest restated.",
-    "definition_conflict": "Zakat/tax timing recorded as metadata; not adjusted."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
+   },
+   "required_definitions": {
+    "interest_paid_classification": [
+     "operating",
+     "financing"
+    ],
+    "dividends_received_classification": [
+     "operating",
+     "investing"
+    ],
+    "dividends_paid_classification": [
+     "financing",
+     "operating"
+    ],
+    "interest_received_classification": [
+     "operating"
+    ]
    },
    "failure_conditions": [
     {
-     "code": "dividends_received_classification_unknown",
+     "code": "interest_paid_classification_inconsistent_with_basis",
      "when": {
-      "op": "missing",
-      "path": "meta.dividends_received_classification"
+      "op": "and",
+      "args": [
+       {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       },
+       {
+        "op": "eq",
+        "path": "meta.interest_paid_classification",
+        "value": "financing"
+       }
+      ]
      },
-     "reason": "Classification of dividends received must be recorded."
+     "reason": "US GAAP classifies interest paid in operating activities."
+    },
+    {
+     "code": "dividends_paid_classification_inconsistent_with_basis",
+     "when": {
+      "op": "and",
+      "args": [
+       {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       },
+       {
+        "op": "eq",
+        "path": "meta.dividends_paid_classification",
+        "value": "operating"
+       }
+      ]
+     },
+     "reason": "US GAAP classifies dividends paid in financing activities."
+    },
+    {
+     "code": "dividends_received_investing_under_us_gaap_not_reconcilable",
+     "when": {
+      "op": "and",
+      "args": [
+       {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       },
+       {
+        "op": "eq",
+        "path": "meta.dividends_received_classification",
+        "value": "investing"
+       }
+      ]
+     },
+     "reason": "US GAAP investing distributions are returns of investment, not dividends from earnings; no reconciliation recipe."
     }
    ],
+   "item_definitions": {
+    "cfo": "net_cash_from_operating_activities_as_reported",
+    "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+    "finance_lease_principal_payments": "asc842_finance_lease_principal_payments",
+    "interest_paid_in_financing": "interest_paid_classified_in_financing",
+    "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
+    "dividends_paid_in_operating": "dividends_paid_parent_and_nci_classified_in_operating"
+   },
    "outputs": [
     {
      "key": "cfo_norm",
-     "selector": [
-      "meta.accounting_basis",
-      "meta.interest_paid_classification"
-     ],
-     "cases": {
-      "IFRS|operating": "cfo - lease_principal_payments",
-      "IFRS|financing": "cfo - lease_principal_payments - interest_paid",
-      "US_GAAP|operating": "cfo - finance_lease_principal_payments"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "cfo",
+       "sign": 1
+      },
+      {
+       "expr": "lease_principal_payments",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "finance_lease_principal_payments",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "interest_paid_in_financing",
+       "sign": -1,
+       "when": {
+        "op": "eq",
+        "path": "meta.interest_paid_classification",
+        "value": "financing"
+       }
+      },
+      {
+       "expr": "dividends_received_in_investing",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.dividends_received_classification",
+        "value": "investing"
+       }
+      },
+      {
+       "expr": "dividends_paid_in_operating",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.dividends_paid_classification",
+        "value": "operating"
+       }
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [
+    "dividends_paid_parent",
+    "dividends_paid_nci"
+   ],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "Uniform placement policy: dividends received from associates, joint ventures and other investments are placed in operating cash flow for every company; dividends paid (to parent shareholders and to NCI) and lease principal are placed in financing; interest paid in operating. Basis: IAS 7 permits operating or investing for dividends received and operating or financing for dividends paid; ASC 230 fixes interest paid in operating and dividends paid in financing (standards text not opened in this environment: UNVERIFIED reference). Disclosures used: the cash-flow statement lines named in item_definitions.",
    "examples": [
     {
-     "label": "pass_ifrs_financing",
+     "label": "pass_ifrs_investing_dividends",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -821,6 +959,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -829,15 +968,23 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "interest_paid_classification": "financing",
-      "dividends_received_classification": "operating"
+      "dividends_received_classification": "investing",
+      "dividends_paid_classification": "financing",
+      "interest_received_classification": "operating",
+      "item_definitions": {
+       "cfo": "net_cash_from_operating_activities_as_reported",
+       "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+       "interest_paid_in_financing": "interest_paid_classified_in_financing",
+       "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
+      }
      },
      "items": {
-      "cfo": 800,
+      "cfo": 770,
       "lease_principal_payments": 50,
-      "interest_paid": 30
+      "interest_paid_in_financing": 30,
+      "dividends_received_in_investing": 30
      },
      "expected": {
       "status": "CONDITIONALLY_COMPARABLE",
@@ -848,7 +995,7 @@
      }
     },
     {
-     "label": "fail_dividend_class_unknown",
+     "label": "fail_dividends_received_classification_missing",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -856,6 +1003,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -864,9 +1012,14 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "interest_paid_classification": "operating"
+      "interest_paid_classification": "operating",
+      "dividends_paid_classification": "financing",
+      "interest_received_classification": "operating",
+      "item_definitions": {
+       "cfo": "net_cash_from_operating_activities_as_reported",
+       "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+      }
      },
      "items": {
       "cfo": 800,
@@ -874,12 +1027,248 @@
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "dividends_received_classification_unknown",
+      "reason": "definition_missing:dividends_received_classification",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": [
+    {
+     "label": "same_economics_reconciled",
+     "a": {
+      "label": "company_x_dividends_received_in_investing",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-X",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "investing",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
+       }
+      },
+      "items": {
+       "cfo": 770,
+       "lease_principal_payments": 50,
+       "dividends_received_in_investing": 30
+      }
+     },
+     "b": {
+      "label": "company_y_dividends_received_in_operating",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+       }
+      },
+      "items": {
+       "cfo": 800,
+       "lease_principal_payments": 50
+      }
+     },
+     "expected": {
+      "status": "CONDITIONALLY_COMPARABLE",
+      "values": {
+       "a": {
+        "cfo_norm": 750.0
+       },
+       "b": {
+        "cfo_norm": 750.0
+       }
+      },
+      "display": "BLOCKED"
+     }
+    },
+    {
+     "label": "evidence_missing",
+     "a": {
+      "label": "company_x_without_disclosed_amount",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-X",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "investing",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+       }
+      },
+      "items": {
+       "cfo": 770,
+       "lease_principal_payments": 50
+      }
+     },
+     "b": {
+      "label": "company_y_dividends_received_in_operating",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+       }
+      },
+      "items": {
+       "cfo": 800,
+       "lease_principal_payments": 50
+      }
+     },
+     "expected": {
+      "status": "NOT_COMPARABLE",
+      "reason": "a:required_item_missing:dividends_received_in_investing",
+      "display": "BLOCKED"
+     }
+    },
+    {
+     "label": "double_count_rejected",
+     "a": {
+      "label": "company_x_dividends_received_in_investing",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-X",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "investing",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
+       }
+      },
+      "items": {
+       "cfo": 770,
+       "lease_principal_payments": 50,
+       "dividends_received_in_investing": 30
+      }
+     },
+     "b": {
+      "label": "company_y_double_count",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
+       }
+      },
+      "items": {
+       "cfo": 800,
+       "lease_principal_payments": 50,
+       "dividends_received_in_investing": 30
+      }
+     },
+     "expected": {
+      "status": "NOT_COMPARABLE",
+      "reason": "b:reclassification_item_conflict:dividends_received_in_investing",
+      "display": "BLOCKED"
+     }
+    }
+   ]
   },
   {
    "id": "M06",
@@ -893,68 +1282,72 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Cash payments for property, plant and equipment and for capitalised exploration/intangible assets; excludes acquisitions of businesses and investments in associates/joint ventures",
+    "numerator": "Cash payments for PP&E and capitalised exploration/intangibles; acquisitions of businesses and investments in associates/JVs excluded",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "payments_for_ppe",
-     "role": "investing cash flow"
-    },
-    {
-     "item": "payments_for_exploration_intangibles",
-     "role": "investing cash flow, zero only if disclosed as zero"
-    }
-   ],
    "ordered_steps": [
-    "Read cash payments for PP&E and capitalised exploration/intangibles.",
-    "Do not use issuer 'capex' definitions that include acquisitions or equity investments.",
-    "If the line combines acquisitions with PP&E, fail.",
-    "Convert at period-average rate."
+    "Validate generic fields.",
+    "Acquisitions and equity investments must be separately disclosed lines (allow-list: separately_disclosed); combined, unknown or missing -> NOT_COMPARABLE.",
+    "Full-cost reporters are not accepted.",
+    "Capex = PP&E payments + exploration/intangible payments.",
+    "Convert at the period-average rate."
    ],
-   "ifrs_vs_us_gaap": "Capitalised exploration differs with the E&E policy (IFRS 6 vs successful efforts); full-cost reporters fail as in M02.",
+   "ifrs_vs_us_gaap": "Capitalised exploration differs with IFRS 6 vs successful efforts/full cost.",
    "basis": {
     "consolidation": "consolidated group",
-    "currency": "USD; SAR at period-average rate",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "FY/H1/stand-alone Q/TTM"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Missing line -> NOT_COMPARABLE.",
-    "restatements": "Latest restated.",
-    "definition_conflict": "Combined acquisition line -> NOT_COMPARABLE."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
-   "failure_conditions": [
-    {
-     "code": "capex_line_includes_acquisitions",
-     "when": {
-      "op": "eq",
-      "path": "meta.capex_line_includes_acquisitions",
-      "value": true
-     },
-     "reason": "Acquisitions must be separable."
-    },
-    {
-     "code": "full_cost_method",
-     "when": {
-      "op": "eq",
-      "path": "meta.e_and_e_method",
-      "value": "full_cost"
-     },
-     "reason": "Full-cost capitalisation not reconcilable."
-    }
-   ],
+   "required_definitions": {
+    "capex_acquisitions_classification": [
+     "separately_disclosed"
+    ],
+    "investments_classification": [
+     "separately_disclosed"
+    ],
+    "e_and_e_method": [
+     "successful_efforts",
+     "ifrs6_successful_efforts_like"
+    ]
+   },
+   "failure_conditions": [],
+   "item_definitions": {
+    "payments_for_ppe": "cash_payments_for_ppe",
+    "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+   },
    "outputs": [
     {
      "key": "capex_cash",
-     "selector": [],
-     "cases": {
-      "": "payments_for_ppe + payments_for_exploration_intangibles"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "payments_for_ppe",
+       "sign": 1
+      },
+      {
+       "expr": "payments_for_exploration_intangibles",
+       "sign": 1
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [
+    "payments_for_acquisitions",
+    "payments_for_equity_investments"
+   ],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass",
@@ -965,6 +1358,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -973,10 +1367,14 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "capex_line_includes_acquisitions": false,
-      "e_and_e_method": "successful_efforts"
+      "capex_acquisitions_classification": "separately_disclosed",
+      "investments_classification": "separately_disclosed",
+      "e_and_e_method": "successful_efforts",
+      "item_definitions": {
+       "payments_for_ppe": "cash_payments_for_ppe",
+       "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+      }
      },
      "items": {
       "payments_for_ppe": 400,
@@ -991,7 +1389,7 @@
      }
     },
     {
-     "label": "fail_combined_line",
+     "label": "fail_acquisitions_classification_missing",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -999,6 +1397,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1007,10 +1406,13 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "capex_line_includes_acquisitions": true,
-      "e_and_e_method": "successful_efforts"
+      "investments_classification": "separately_disclosed",
+      "e_and_e_method": "successful_efforts",
+      "item_definitions": {
+       "payments_for_ppe": "cash_payments_for_ppe",
+       "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+      }
      },
      "items": {
       "payments_for_ppe": 400,
@@ -1018,17 +1420,17 @@
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "capex_line_includes_acquisitions",
+      "reason": "definition_missing:capex_acquisitions_classification",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M07",
    "key": "fcf",
-   "name": "Free cash flow, rebuilt",
+   "name": "Free cash flow, rebuilt from normalised CFO",
    "proposed_rating": "CONDITIONALLY_COMPARABLE",
    "measure_type": "flow",
    "allowed_period_kinds": [
@@ -1037,98 +1439,57 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "M05 normalised CFO minus M06 cash capex; issuer-reported FCF is not used",
+    "numerator": "M05 normalised CFO minus M06 cash capex; issuer FCF and raw CFO are never used",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "cfo",
-     "role": "M05"
-    },
-    {
-     "item": "lease_principal_payments",
-     "role": "M05"
-    },
-    {
-     "item": "interest_paid",
-     "role": "M05"
-    },
-    {
-     "item": "finance_lease_principal_payments",
-     "role": "M05"
-    },
-    {
-     "item": "payments_for_ppe",
-     "role": "M06"
-    },
-    {
-     "item": "payments_for_exploration_intangibles",
-     "role": "M06"
-    }
-   ],
    "ordered_steps": [
-    "Apply M05 to obtain normalised CFO.",
-    "Apply M06 to obtain cash capex.",
-    "FCF = normalised CFO - cash capex.",
-    "Acquisitions, divestments and equity investments are excluded and shown separately.",
-    "Convert at period-average rate."
+    "Evaluate M05 on the same cell; any M05 failure is the FCF failure.",
+    "Evaluate M06 on the same cell; any M06 failure is the FCF failure.",
+    "FCF = cfo_norm - capex_cash (both before FX conversion).",
+    "Convert at the period-average rate."
    ],
    "ifrs_vs_us_gaap": "Inherits M05 and M06.",
    "basis": {
     "consolidation": "consolidated group",
-    "currency": "USD; SAR at period-average rate",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "FY/H1/stand-alone Q/TTM"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Any M05/M06 failure -> NOT_COMPARABLE with that code.",
-    "restatements": "Latest restated.",
-    "definition_conflict": "Issuer FCF definitions (e.g. CFO minus capex as defined by the issuer) are recorded, not used."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
-   "failure_conditions": [
-    {
-     "code": "dividends_received_classification_unknown",
-     "when": {
-      "op": "missing",
-      "path": "meta.dividends_received_classification"
-     },
-     "reason": "Inherited from M05."
-    },
-    {
-     "code": "capex_line_includes_acquisitions",
-     "when": {
-      "op": "eq",
-      "path": "meta.capex_line_includes_acquisitions",
-      "value": true
-     },
-     "reason": "Inherited from M06."
-    },
-    {
-     "code": "full_cost_method",
-     "when": {
-      "op": "eq",
-      "path": "meta.e_and_e_method",
-      "value": "full_cost"
-     },
-     "reason": "Inherited from M06."
-    }
-   ],
+   "required_definitions": {},
+   "failure_conditions": [],
+   "item_definitions": {},
    "outputs": [
     {
      "key": "fcf_rebuilt",
-     "selector": [
-      "meta.accounting_basis",
-      "meta.interest_paid_classification"
-     ],
-     "cases": {
-      "IFRS|operating": "cfo - lease_principal_payments - payments_for_ppe - payments_for_exploration_intangibles",
-      "IFRS|financing": "cfo - lease_principal_payments - interest_paid - payments_for_ppe - payments_for_exploration_intangibles",
-      "US_GAAP|operating": "cfo - finance_lease_principal_payments - payments_for_ppe - payments_for_exploration_intangibles"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "ref:M05.cfo_norm",
+       "sign": 1
+      },
+      {
+       "expr": "ref:M06.capex_cash",
+       "sign": -1
+      }
+     ]
     }
    ],
+   "depends_on": [
+    "M05",
+    "M06"
+   ],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass_us_gaap",
@@ -1139,6 +1500,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1147,12 +1509,20 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "interest_paid_classification": "operating",
       "dividends_received_classification": "operating",
-      "capex_line_includes_acquisitions": false,
-      "e_and_e_method": "successful_efforts"
+      "dividends_paid_classification": "financing",
+      "interest_received_classification": "operating",
+      "capex_acquisitions_classification": "separately_disclosed",
+      "investments_classification": "separately_disclosed",
+      "e_and_e_method": "successful_efforts",
+      "item_definitions": {
+       "cfo": "net_cash_from_operating_activities_as_reported",
+       "finance_lease_principal_payments": "asc842_finance_lease_principal_payments",
+       "payments_for_ppe": "cash_payments_for_ppe",
+       "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+      }
      },
      "items": {
       "cfo": 900,
@@ -1169,14 +1539,15 @@
      }
     },
     {
-     "label": "fail_missing_lease_line",
+     "label": "fail_investments_classification_combined",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
-      "accounting_basis": "IFRS",
+      "accounting_basis": "US_GAAP",
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1185,26 +1556,221 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "interest_paid_classification": "operating",
       "dividends_received_classification": "operating",
-      "capex_line_includes_acquisitions": false,
-      "e_and_e_method": "successful_efforts"
+      "dividends_paid_classification": "financing",
+      "interest_received_classification": "operating",
+      "capex_acquisitions_classification": "separately_disclosed",
+      "investments_classification": "combined_with_capex",
+      "e_and_e_method": "successful_efforts",
+      "item_definitions": {
+       "cfo": "net_cash_from_operating_activities_as_reported",
+       "finance_lease_principal_payments": "asc842_finance_lease_principal_payments",
+       "payments_for_ppe": "cash_payments_for_ppe",
+       "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+      }
      },
      "items": {
       "cfo": 900,
+      "finance_lease_principal_payments": 10,
       "payments_for_ppe": 400,
       "payments_for_exploration_intangibles": 0
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "required_item_missing",
+      "reason": "definition_not_accepted:investments_classification",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": [
+    {
+     "label": "fcf_same_economics_reconciled",
+     "a": {
+      "label": "fcf_company_x_dividends_received_in_investing",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-X",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "investing",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts"
+      },
+      "items": {
+       "cfo": 770,
+       "lease_principal_payments": 50,
+       "dividends_received_in_investing": 30,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "b": {
+      "label": "fcf_company_y_dividends_received_in_operating",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts"
+      },
+      "items": {
+       "cfo": 800,
+       "lease_principal_payments": 50,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "expected": {
+      "status": "CONDITIONALLY_COMPARABLE",
+      "values": {
+       "a": {
+        "fcf_rebuilt": 330.0
+       },
+       "b": {
+        "fcf_rebuilt": 330.0
+       }
+      },
+      "display": "BLOCKED"
+     }
+    },
+    {
+     "label": "fcf_evidence_missing",
+     "a": {
+      "label": "fcf_company_x_without_disclosed_amount",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-X",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "investing",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts"
+      },
+      "items": {
+       "cfo": 770,
+       "lease_principal_payments": 50,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "b": {
+      "label": "fcf_company_y_dividends_received_in_operating",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "item_definitions": {
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts"
+      },
+      "items": {
+       "cfo": 800,
+       "lease_principal_payments": 50,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "expected": {
+      "status": "NOT_COMPARABLE",
+      "reason": "a:required_item_missing:dividends_received_in_investing",
+      "display": "BLOCKED"
+     }
+    }
+   ]
   },
   {
    "id": "M08",
@@ -1217,60 +1783,42 @@
     "H1",
     "Q"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Net debt = borrowings + all lease liabilities - cash and cash equivalents (other investments not deducted)",
-    "denominator": "Gearing denominator = net debt + total equity (including non-controlling interests)"
+    "numerator": "Net debt = borrowings + all lease liabilities - cash and cash equivalents",
+    "denominator": "Gearing = net debt / (net debt + total equity incl. NCI)"
    },
-   "inputs": [
-    {
-     "item": "borrowings",
-     "role": "current + non-current borrowings excluding leases"
-    },
-    {
-     "item": "lease_liabilities",
-     "role": "IFRS 16 lease liabilities"
-    },
-    {
-     "item": "finance_lease_liabilities",
-     "role": "US GAAP"
-    },
-    {
-     "item": "operating_lease_liabilities",
-     "role": "US GAAP"
-    },
-    {
-     "item": "cash_and_equivalents",
-     "role": "cash and cash equivalents only"
-    },
-    {
-     "item": "total_equity",
-     "role": "including NCI"
-    }
-   ],
    "ordered_steps": [
-    "Read balances at period end.",
+    "Validate generic fields; the balance date is the period end.",
+    "Cash definition must be cash and cash equivalents only.",
+    "Hybrids: has_hybrids must be stated; when true, hybrids must be inside borrowings.",
     "Include all lease liabilities on both frameworks.",
-    "Deduct cash and cash equivalents only; issuer-specific netting of investments (e.g. Aramco 'certain investments') is not applied.",
-    "Hybrid instruments: classification must be recorded; unknown fails.",
-    "Convert balances at the closing rate.",
-    "Gearing = net debt / (net debt + total equity)."
+    "Gearing denominator must be positive.",
+    "Convert balances at the closing rate dated the period end."
    ],
-   "ifrs_vs_us_gaap": "ASC 842 operating lease liabilities are on balance sheet but outside debt in issuer measures; included here for parity with IFRS 16.",
+   "ifrs_vs_us_gaap": "ASC 842 operating lease liabilities included for parity with IFRS 16.",
    "basis": {
     "consolidation": "consolidated group",
-    "currency": "USD; SAR at closing rate",
-    "unit": "currency; gearing dimensionless",
-    "period": "period-end balance"
+    "currency": "USD; SAR converted at the closing rate with source and date",
+    "unit": "currency",
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Missing lease or cash line -> NOT_COMPARABLE.",
-    "restatements": "Latest restated balance.",
-    "definition_conflict": "Issuer gearing definitions recorded, not used."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
+   },
+   "required_definitions": {
+    "cash_definition": [
+     "cash_and_cash_equivalents"
+    ],
+    "has_hybrids": [
+     true,
+     false
+    ]
    },
    "failure_conditions": [
     {
-     "code": "hybrid_classification_unknown",
+     "code": "hybrid_classification_not_accepted",
      "when": {
       "op": "and",
       "args": [
@@ -1280,37 +1828,163 @@
         "value": true
        },
        {
-        "op": "missing",
-        "path": "meta.hybrid_classification"
+        "op": "not_in",
+        "path": "meta.hybrid_classification",
+        "values": [
+         "inside_borrowings"
+        ]
        }
       ]
      },
-     "reason": "Hybrid debt/equity classification must be recorded."
+     "reason": "Hybrids must be inside borrowings."
     }
    ],
+   "item_definitions": {
+    "borrowings": "borrowings_excluding_leases",
+    "lease_liabilities": "ifrs16_lease_liabilities",
+    "finance_lease_liabilities": "asc842_finance_lease_liabilities",
+    "operating_lease_liabilities": "asc842_operating_lease_liabilities",
+    "cash_and_equivalents": "cash_and_cash_equivalents",
+    "total_equity": "total_equity_incl_nci"
+   },
    "outputs": [
     {
      "key": "net_debt",
-     "selector": [
-      "meta.accounting_basis"
-     ],
-     "cases": {
-      "IFRS": "borrowings + lease_liabilities - cash_and_equivalents",
-      "US_GAAP": "borrowings + finance_lease_liabilities + operating_lease_liabilities - cash_and_equivalents"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "borrowings",
+       "sign": 1
+      },
+      {
+       "expr": "lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "finance_lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "operating_lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "cash_and_equivalents",
+       "sign": -1
+      }
+     ]
     },
     {
      "key": "gearing",
-     "ratio": true,
-     "selector": [
-      "meta.accounting_basis"
+     "kind": "ratio",
+     "numerator": [
+      {
+       "expr": "borrowings",
+       "sign": 1
+      },
+      {
+       "expr": "lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "finance_lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "operating_lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "cash_and_equivalents",
+       "sign": -1
+      }
      ],
-     "cases": {
-      "IFRS": "(borrowings + lease_liabilities - cash_and_equivalents) / (borrowings + lease_liabilities - cash_and_equivalents + total_equity)",
-      "US_GAAP": "(borrowings + finance_lease_liabilities + operating_lease_liabilities - cash_and_equivalents) / (borrowings + finance_lease_liabilities + operating_lease_liabilities - cash_and_equivalents + total_equity)"
-     }
+     "denominator": [
+      {
+       "expr": "borrowings",
+       "sign": 1
+      },
+      {
+       "expr": "lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       }
+      },
+      {
+       "expr": "finance_lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "operating_lease_liabilities",
+       "sign": 1,
+       "when": {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "US_GAAP"
+       }
+      },
+      {
+       "expr": "cash_and_equivalents",
+       "sign": -1
+      },
+      {
+       "expr": "total_equity",
+       "sign": 1
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [
+    {
+     "output": "gearing",
+     "part": "denominator",
+     "code": "denominator_not_positive"
+    }
+   ],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass_sar_closing",
@@ -1321,6 +1995,7 @@
       "currency": "SAR",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1329,14 +2004,21 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "fx": {
        "rate": 4,
        "rate_type": "closing",
-       "source_id": "SYNTH-FX"
+       "source_id": "SYNTH-FX",
+       "rate_date": "2030-12-31"
       },
-      "has_hybrids": false
+      "has_hybrids": false,
+      "cash_definition": "cash_and_cash_equivalents",
+      "item_definitions": {
+       "borrowings": "borrowings_excluding_leases",
+       "lease_liabilities": "ifrs16_lease_liabilities",
+       "cash_and_equivalents": "cash_and_cash_equivalents",
+       "total_equity": "total_equity_incl_nci"
+      }
      },
      "items": {
       "borrowings": 400,
@@ -1354,7 +2036,7 @@
      }
     },
     {
-     "label": "fail_average_rate_for_stock",
+     "label": "fail_closing_rate_undated",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -1362,6 +2044,7 @@
       "currency": "SAR",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1370,14 +2053,20 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "fx": {
        "rate": 4,
-       "rate_type": "period_average",
+       "rate_type": "closing",
        "source_id": "SYNTH-FX"
       },
-      "has_hybrids": false
+      "has_hybrids": false,
+      "cash_definition": "cash_and_cash_equivalents",
+      "item_definitions": {
+       "borrowings": "borrowings_excluding_leases",
+       "lease_liabilities": "ifrs16_lease_liabilities",
+       "cash_and_equivalents": "cash_and_cash_equivalents",
+       "total_equity": "total_equity_incl_nci"
+      }
      },
      "items": {
       "borrowings": 400,
@@ -1387,12 +2076,12 @@
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "fx_rate_type_mismatch",
+      "reason": "fx_date_mismatch",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M09",
@@ -1404,80 +2093,93 @@
     "FY",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Total profit (incl. NCI) + finance costs - disclosed tax effect of finance costs",
-    "denominator": "Average of opening and closing (total equity + borrowings + lease liabilities)"
+    "numerator": "Total profit + finance costs - disclosed tax effect of finance costs",
+    "denominator": "Average of opening and closing (equity + borrowings incl. leases)"
    },
-   "inputs": [
-    {
-     "item": "profit_total",
-     "role": "profit for the period incl. NCI"
-    },
-    {
-     "item": "finance_costs",
-     "role": "finance costs"
-    },
-    {
-     "item": "finance_costs_tax_effect",
-     "role": "disclosed tax effect; no assumed rate"
-    },
-    {
-     "item": "equity_open",
-     "role": ""
-    },
-    {
-     "item": "equity_close",
-     "role": ""
-    },
-    {
-     "item": "borrowings_open",
-     "role": "incl. lease liabilities"
-    },
-    {
-     "item": "borrowings_close",
-     "role": "incl. lease liabilities"
-    }
-   ],
    "ordered_steps": [
-    "Numerator: total profit + finance costs - disclosed tax effect of finance costs.",
-    "If the tax effect is not disclosed, fail (no statutory-rate assumption).",
-    "Denominator: simple average of opening and closing capital employed.",
-    "Issuer ROACE/ROCE are recorded, not used.",
-    "Ratio; inputs in one currency per company."
+    "Validate generic fields; opening balance date = day before period start, closing = period end.",
+    "No assumed tax rate.",
+    "Denominator must be positive."
    ],
-   "ifrs_vs_us_gaap": "Lease liabilities included on both frameworks; impairment reversal differences flow through profit (see M03).",
+   "ifrs_vs_us_gaap": "Leases included on both frameworks.",
    "basis": {
     "consolidation": "consolidated group",
     "currency": "dimensionless",
     "unit": "ratio",
-    "period": "FY or TTM; balances at both ends of the period"
+    "period": "FY/TTM with dated opening and closing balances"
    },
    "handling": {
-    "missing_values": "Opening balance missing -> NOT_COMPARABLE.",
-    "restatements": "Restated opening balances used.",
-    "definition_conflict": "Equity-accounted capital inclusion recorded; issuer formulas not mixed."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
-   "failure_conditions": [
-    {
-     "code": "capital_employed_scope_unrecorded",
-     "when": {
-      "op": "missing",
-      "path": "meta.capital_employed_scope"
-     },
-     "reason": "Whether equity-accounted investments are inside capital employed must be recorded."
-    }
-   ],
+   "required_definitions": {
+    "capital_employed_scope": [
+     "total_equity_plus_borrowings_incl_leases"
+    ]
+   },
+   "failure_conditions": [],
+   "item_definitions": {
+    "profit_total": "profit_for_period_incl_nci",
+    "finance_costs": "finance_costs",
+    "finance_costs_tax_effect": "disclosed_tax_effect_of_finance_costs",
+    "equity_open": "total_equity_opening",
+    "equity_close": "total_equity_closing",
+    "borrowings_open": "borrowings_incl_leases_opening",
+    "borrowings_close": "borrowings_incl_leases_closing"
+   },
    "outputs": [
     {
      "key": "roace",
-     "ratio": true,
-     "selector": [],
-     "cases": {
-      "": "(profit_total + finance_costs - finance_costs_tax_effect) / ((equity_open + borrowings_open + equity_close + borrowings_close) / 2)"
-     }
+     "kind": "ratio",
+     "numerator": [
+      {
+       "expr": "profit_total",
+       "sign": 1
+      },
+      {
+       "expr": "finance_costs",
+       "sign": 1
+      },
+      {
+       "expr": "finance_costs_tax_effect",
+       "sign": -1
+      }
+     ],
+     "denominator": [
+      {
+       "expr": "equity_open / 2",
+       "sign": 1
+      },
+      {
+       "expr": "borrowings_open / 2",
+       "sign": 1
+      },
+      {
+       "expr": "equity_close / 2",
+       "sign": 1
+      },
+      {
+       "expr": "borrowings_close / 2",
+       "sign": 1
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [
+    {
+     "output": "roace",
+     "part": "denominator",
+     "code": "denominator_not_positive"
+    }
+   ],
+   "policy_requirements": {},
+   "requires_balance_dates": true,
+   "notes": "",
    "examples": [
     {
      "label": "pass",
@@ -1488,6 +2190,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1496,9 +2199,19 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "capital_employed_scope": "total_equity_plus_borrowings_incl_leases"
+      "capital_employed_scope": "total_equity_plus_borrowings_incl_leases",
+      "opening_balance_date": "2029-12-31",
+      "closing_balance_date": "2030-12-31",
+      "item_definitions": {
+       "profit_total": "profit_for_period_incl_nci",
+       "finance_costs": "finance_costs",
+       "finance_costs_tax_effect": "disclosed_tax_effect_of_finance_costs",
+       "equity_open": "total_equity_opening",
+       "borrowings_open": "borrowings_incl_leases_opening",
+       "equity_close": "total_equity_closing",
+       "borrowings_close": "borrowings_incl_leases_closing"
+      }
      },
      "items": {
       "profit_total": 200,
@@ -1518,7 +2231,7 @@
      }
     },
     {
-     "label": "fail_no_tax_effect",
+     "label": "fail_opening_balance_undated",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -1526,6 +2239,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1534,13 +2248,23 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "capital_employed_scope": "total_equity_plus_borrowings_incl_leases"
+      "capital_employed_scope": "total_equity_plus_borrowings_incl_leases",
+      "closing_balance_date": "2030-12-31",
+      "item_definitions": {
+       "profit_total": "profit_for_period_incl_nci",
+       "finance_costs": "finance_costs",
+       "finance_costs_tax_effect": "disclosed_tax_effect_of_finance_costs",
+       "equity_open": "total_equity_opening",
+       "borrowings_open": "borrowings_incl_leases_opening",
+       "equity_close": "total_equity_closing",
+       "borrowings_close": "borrowings_incl_leases_closing"
+      }
      },
      "items": {
       "profit_total": 200,
       "finance_costs": 50,
+      "finance_costs_tax_effect": 10,
       "equity_open": 900,
       "borrowings_open": 300,
       "equity_close": 1100,
@@ -1548,16 +2272,16 @@
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "required_item_missing",
+      "reason": "balance_dates_inconsistent",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M10",
-   "key": "dividends_cash",
+   "key": "dividends_paid",
    "name": "Cash dividends paid to parent shareholders",
    "proposed_rating": "CONDITIONALLY_COMPARABLE",
    "measure_type": "flow",
@@ -1567,95 +2291,98 @@
     "Q",
     "TTM"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Cash dividends paid to owners of the parent in the period (cash-flow statement), split into regular and performance-linked/special; excludes dividends to non-controlling interests and share buybacks",
+    "numerator": "Cash dividends paid to owners of the parent in the period, split into regular and performance-linked/special",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "dividends_paid_parent",
-     "role": "cash paid to parent shareholders"
-    },
-    {
-     "item": "performance_linked_paid",
-     "role": "performance-linked or special portion paid, zero only if disclosed as zero"
-    }
-   ],
    "ordered_steps": [
-    "Verify each issuer's definition first: cash paid vs declared, parent vs NCI, regular vs performance-linked/special, scrip vs cash.",
-    "Use cash paid in the period, not declared or proposed.",
-    "Exclude dividends to non-controlling interests (separate line).",
-    "Separate performance-linked/special; if not separable, fail.",
-    "Share buybacks are reported separately, never added.",
-    "Convert at period-average rate."
+    "Validate generic fields and the dividend definitions (cash paid, parent scope, separable performance-linked part, buybacks separate).",
+    "Dividends paid to NCI, dividends received and buybacks are not inputs here; supplying them rejects the cell (no mixing).",
+    "Performance-linked part must be disclosed (zero only if disclosed) and not exceed the total.",
+    "Convert at the period-average rate."
    ],
-   "ifrs_vs_us_gaap": "IAS 7 permits dividends paid in operating or financing; ASC 230 financing. Classification does not change the amount; recorded as metadata.",
+   "ifrs_vs_us_gaap": "Classification of dividends paid (IAS 7 / ASC 230) does not change the paid amount; recorded via M05.",
    "basis": {
-    "consolidation": "parent shareholders",
-    "currency": "USD; SAR at period-average rate",
+    "consolidation": "consolidated group",
+    "currency": "USD; SAR converted at the period-average rate with source and date",
     "unit": "currency",
-    "period": "payment date within period"
+    "period": "validated kind, real dates, order and duration"
    },
    "handling": {
-    "missing_values": "Missing split -> NOT_COMPARABLE.",
-    "restatements": "n/a for cash paid; record vintage.",
-    "definition_conflict": "Declared-basis or NCI-inclusive figures -> NOT_COMPARABLE."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
-   "failure_conditions": [
-    {
-     "code": "dividend_basis_not_cash_paid",
-     "when": {
-      "op": "neq",
-      "path": "meta.dividend_basis",
-      "value": "cash_paid"
-     },
-     "reason": "Cash paid in period required."
-    },
-    {
-     "code": "dividends_include_nci",
-     "when": {
-      "op": "neq",
-      "path": "meta.dividends_include_nci",
-      "value": false
-     },
-     "reason": "NCI dividends must be excluded."
-    },
-    {
-     "code": "performance_linked_not_separable",
-     "when": {
-      "op": "neq",
-      "path": "meta.performance_linked_separable",
-      "value": true
-     },
-     "reason": "Performance-linked/special portion must be separable."
-    },
-    {
-     "code": "buybacks_combined",
-     "when": {
-      "op": "neq",
-      "path": "meta.buybacks_separate",
-      "value": true
-     },
-     "reason": "Buybacks must be separate."
-    }
-   ],
+   "required_definitions": {
+    "dividend_basis": [
+     "cash_paid"
+    ],
+    "dividends_paid_scope": [
+     "owners_of_parent"
+    ],
+    "performance_linked_separable": [
+     true
+    ],
+    "buybacks_separate": [
+     true
+    ]
+   },
+   "failure_conditions": [],
+   "item_definitions": {
+    "dividends_paid_parent": "cash_dividends_paid_to_owners_of_parent",
+    "performance_linked_paid": "performance_linked_or_special_dividends_paid_to_owners_of_parent"
+   },
    "outputs": [
     {
      "key": "regular_dividends_paid",
-     "selector": [],
-     "cases": {
-      "": "dividends_paid_parent - performance_linked_paid"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "dividends_paid_parent",
+       "sign": 1
+      },
+      {
+       "expr": "performance_linked_paid",
+       "sign": -1
+      }
+     ]
     },
     {
      "key": "performance_linked_dividends_paid",
-     "selector": [],
-     "cases": {
-      "": "performance_linked_paid"
-     }
+     "kind": "monetary",
+     "terms": [
+      {
+       "expr": "performance_linked_paid",
+       "sign": 1
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [
+    "dividends_paid_nci",
+    "dividends_received_in_investing",
+    "dividends_received_in_operating",
+    "share_buybacks"
+   ],
+   "pair_homogeneous_fields": [],
+   "guards": [
+    {
+     "output": "regular_dividends_paid",
+     "part": "value",
+     "code": "performance_linked_exceeds_total",
+     "min": 0
+    },
+    {
+     "output": "performance_linked_dividends_paid",
+     "part": "value",
+     "code": "performance_linked_negative",
+     "min": 0
+    }
+   ],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass",
@@ -1666,6 +2393,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1674,12 +2402,15 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "dividend_basis": "cash_paid",
-      "dividends_include_nci": false,
+      "dividends_paid_scope": "owners_of_parent",
       "performance_linked_separable": true,
-      "buybacks_separate": true
+      "buybacks_separate": true,
+      "item_definitions": {
+       "dividends_paid_parent": "cash_dividends_paid_to_owners_of_parent",
+       "performance_linked_paid": "performance_linked_or_special_dividends_paid_to_owners_of_parent"
+      }
      },
      "items": {
       "dividends_paid_parent": 250,
@@ -1695,7 +2426,7 @@
      }
     },
     {
-     "label": "fail_declared_basis",
+     "label": "fail_received_mixed_in",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -1703,6 +2434,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1711,25 +2443,29 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "dividend_basis": "declared",
-      "dividends_include_nci": false,
+      "dividend_basis": "cash_paid",
+      "dividends_paid_scope": "owners_of_parent",
       "performance_linked_separable": true,
-      "buybacks_separate": true
+      "buybacks_separate": true,
+      "item_definitions": {
+       "dividends_paid_parent": "cash_dividends_paid_to_owners_of_parent",
+       "performance_linked_paid": "performance_linked_or_special_dividends_paid_to_owners_of_parent"
+      }
      },
      "items": {
       "dividends_paid_parent": 250,
-      "performance_linked_paid": 50
+      "performance_linked_paid": 50,
+      "dividends_received_in_investing": 30
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "dividend_basis_not_cash_paid",
+      "reason": "item_not_allowed:dividends_received_in_investing",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": "Not COMPARABLE by default: a dividends line exists for every issuer but definitions differ."
+   "pair_examples": []
   },
   {
    "id": "M11",
@@ -1742,58 +2478,37 @@
     "H1",
     "Q"
    ],
-   "scope": "Tier A/B/C candidates and Aramco",
    "definition": {
-    "numerator": "Liquids (kbd) + gas volume (scf/d) / policy gas factor (scf per boe); liquids and gas also shown separately",
+    "numerator": "Liquids (kbd) + gas (mmscfd) x 1000 / policy factor (scf per boe)",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "liquids_kbd",
-     "role": "crude, condensate, NGL; net entitlement"
-    },
-    {
-     "item": "gas_mmscfd",
-     "role": "gas, net entitlement, millions of scf per day"
-    }
-   ],
    "ordered_steps": [
-    "Read liquids and gas from the issuer's reported volumes, not issuer boe totals.",
-    "Basis must be net entitlement (D6 pending); working interest or unknown fails.",
-    "Equity-affiliate inclusion must match the policy.",
-    "boe = liquids + gas / factor; factor is a policy parameter (D6), not issuer-specific.",
-    "Physical unit; no FX."
+    "Validate generic fields (no FX).",
+    "Production basis must be net entitlement; affiliate inclusion must be stated and equal the policy.",
+    "The gas factor is a policy parameter (D6), required and positive; no issuer factor or default."
    ],
-   "ifrs_vs_us_gaap": "Not a framework issue; SEC vs PRMS entitlement definitions recorded.",
+   "ifrs_vs_us_gaap": "Not a framework issue.",
    "basis": {
-    "consolidation": "net entitlement incl./excl. affiliates per policy",
+    "consolidation": "net entitlement per policy",
     "currency": "n/a",
     "unit": "thousand boe/d",
     "period": "period average"
    },
    "handling": {
-    "missing_values": "Gas or liquids missing -> NOT_COMPARABLE.",
-    "restatements": "Latest restated.",
-    "definition_conflict": "Issuer boe totals with own factors are recorded, not used."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
+   },
+   "required_definitions": {
+    "production_basis": [
+     "net_entitlement"
+    ],
+    "includes_equity_affiliates": [
+     true,
+     false
+    ]
    },
    "failure_conditions": [
-    {
-     "code": "production_basis_not_net_entitlement",
-     "when": {
-      "op": "neq",
-      "path": "meta.production_basis",
-      "value": "net_entitlement"
-     },
-     "reason": "Net entitlement required (pending D6)."
-    },
-    {
-     "code": "gas_factor_policy_missing",
-     "when": {
-      "op": "missing",
-      "path": "policy.gas_scf_per_boe"
-     },
-     "reason": "Policy gas factor (D6) required."
-    },
     {
      "code": "affiliate_inclusion_mismatch",
      "when": {
@@ -1801,19 +2516,39 @@
       "path": "meta.includes_equity_affiliates",
       "other": "policy.include_equity_affiliates"
      },
-     "reason": "Affiliate inclusion must match policy."
+     "reason": "Must equal policy."
     }
    ],
+   "item_definitions": {
+    "liquids_kbd": "liquids_net_entitlement_kbd",
+    "gas_mmscfd": "gas_net_entitlement_mmscfd"
+   },
    "outputs": [
     {
      "key": "production_kboed",
-     "physical": true,
-     "selector": [],
-     "cases": {
-      "": "liquids_kbd + gas_mmscfd * 1000 / policy_gas_scf_per_boe"
-     }
+     "kind": "physical",
+     "terms": [
+      {
+       "expr": "liquids_kbd",
+       "sign": 1
+      },
+      {
+       "expr": "gas_mmscfd * 1000 / policy_gas_scf_per_boe",
+       "sign": 1
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {
+    "gas_scf_per_boe": "positive_number",
+    "include_equity_affiliates": "boolean"
+   },
+   "requires_balance_dates": false,
+   "notes": "Synthetic factor in examples only; the policy value is decision D6.",
    "examples": [
     {
      "label": "pass",
@@ -1824,6 +2559,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1832,14 +2568,21 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "production_basis": "net_entitlement",
-      "includes_equity_affiliates": false
+      "includes_equity_affiliates": false,
+      "item_definitions": {
+       "liquids_kbd": "liquids_net_entitlement_kbd",
+       "gas_mmscfd": "gas_net_entitlement_mmscfd"
+      }
      },
      "items": {
       "liquids_kbd": 100,
       "gas_mmscfd": 600
+     },
+     "policy": {
+      "gas_scf_per_boe": 6000,
+      "include_equity_affiliates": false
      },
      "expected": {
       "status": "CONDITIONALLY_COMPARABLE",
@@ -1847,14 +2590,10 @@
        "production_kboed": 200.0
       },
       "display": "BLOCKED"
-     },
-     "policy": {
-      "gas_scf_per_boe": 6000,
-      "include_equity_affiliates": false
      }
     },
     {
-     "label": "fail_working_interest",
+     "label": "fail_policy_factor_missing",
      "synthetic": "SYNTHETIC: invented test values, not company data",
      "meta": {
       "company": "SYNTH-A",
@@ -1862,6 +2601,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1870,27 +2610,29 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
-      "production_basis": "working_interest",
-      "includes_equity_affiliates": false
+      "production_basis": "net_entitlement",
+      "includes_equity_affiliates": false,
+      "item_definitions": {
+       "liquids_kbd": "liquids_net_entitlement_kbd",
+       "gas_mmscfd": "gas_net_entitlement_mmscfd"
+      }
      },
      "items": {
       "liquids_kbd": 100,
       "gas_mmscfd": 600
      },
+     "policy": {
+      "include_equity_affiliates": false
+     },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "production_basis_not_net_entitlement",
+      "reason": "policy_missing:gas_scf_per_boe",
       "display": "BLOCKED"
-     },
-     "policy": {
-      "gas_scf_per_boe": 6000,
-      "include_equity_affiliates": false
      }
     }
    ],
-   "notes": "Synthetic factor in examples only; the policy value is decision D6."
+   "pair_examples": []
   },
   {
    "id": "M12",
@@ -1901,20 +2643,12 @@
    "allowed_period_kinds": [
     "FY"
    ],
-   "scope": "Aramco vs SEC filers",
    "definition": {
     "numerator": "Proved reserves",
-    "denominator": "Annual production (reserve life)"
+    "denominator": "Production"
    },
-   "inputs": [
-    {
-     "item": "proved_reserves",
-     "role": "issuer reported"
-    }
-   ],
    "ordered_steps": [
-    "Not reconciled for Aramco: SPE-PRMS (Kingdom-fields and concession-term bases) vs SEC 12-month average price and entitlement rules.",
-    "Among SEC filers conditionally comparable; outside the Aramco comparison scope of B06."
+    "Not reconciled for Aramco (PRMS concession basis vs SEC)."
    ],
    "ifrs_vs_us_gaap": "SEC Reg S-X 4-10 vs SPE-PRMS.",
    "basis": {
@@ -1924,20 +2658,29 @@
     "period": "year end"
    },
    "handling": {
-    "missing_values": "n/a",
-    "restatements": "n/a",
-    "definition_conflict": "Always for Aramco vs SEC."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
+   "required_definitions": {},
    "failure_conditions": [
     {
      "code": "reserves_basis_prms_vs_sec",
      "when": {
       "op": "always"
      },
-     "reason": "PRMS concession basis vs SEC pricing and entitlement."
+     "reason": "PRMS vs SEC."
     }
    ],
+   "item_definitions": {},
    "outputs": [],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "not_reconcilable",
    "examples": [
     {
      "label": "fail_any",
@@ -1948,6 +2691,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -1956,12 +2700,10 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
-      "input_status": "SYNTHETIC"
+      "input_status": "SYNTHETIC",
+      "item_definitions": {}
      },
-     "items": {
-      "proved_reserves": 1000
-     },
+     "items": {},
      "expected": {
       "status": "NOT_COMPARABLE",
       "reason": "reserves_basis_prms_vs_sec",
@@ -1969,12 +2711,12 @@
      }
     }
    ],
-   "notes": "not_reconcilable"
+   "pair_examples": []
   },
   {
    "id": "M13",
    "key": "refining_capacity",
-   "name": "Crude distillation capacity and throughput, net equity share",
+   "name": "Crude distillation capacity, net equity share",
    "proposed_rating": "CONDITIONALLY_COMPARABLE",
    "measure_type": "physical",
    "allowed_period_kinds": [
@@ -1982,64 +2724,57 @@
     "H1",
     "Q"
    ],
-   "scope": "Tier A/B candidates and Aramco",
    "definition": {
-    "numerator": "Net (equity-share) crude distillation capacity or throughput",
+    "numerator": "Net equity-share crude distillation capacity",
     "denominator": null
    },
-   "inputs": [
-    {
-     "item": "net_distillation_capacity_kbd",
-     "role": "equity share"
-    }
-   ],
    "ordered_steps": [
-    "Use crude distillation only.",
-    "Net equity share for all companies; gross including JVs fails.",
-    "Capacity and throughput are separate outputs; mixing fails."
+    "Validate generic fields (no FX).",
+    "Capacity basis net equity share; type crude distillation."
    ],
    "ifrs_vs_us_gaap": "Not a framework issue.",
    "basis": {
     "consolidation": "equity share",
     "currency": "n/a",
     "unit": "kbd",
-    "period": "period end (capacity) or average (throughput)"
+    "period": "period end"
    },
    "handling": {
-    "missing_values": "Missing -> NOT_COMPARABLE.",
-    "restatements": "Latest.",
-    "definition_conflict": "Gross-including-JV figures recorded, not used."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
-   "failure_conditions": [
-    {
-     "code": "capacity_basis_not_net",
-     "when": {
-      "op": "neq",
-      "path": "meta.capacity_basis",
-      "value": "net_equity_share"
-     },
-     "reason": "Net equity share required."
-    },
-    {
-     "code": "capacity_type_not_distillation",
-     "when": {
-      "op": "neq",
-      "path": "meta.capacity_type",
-      "value": "crude_distillation"
-     },
-     "reason": "Crude distillation only."
-    }
-   ],
+   "required_definitions": {
+    "capacity_basis": [
+     "net_equity_share"
+    ],
+    "capacity_type": [
+     "crude_distillation"
+    ]
+   },
+   "failure_conditions": [],
+   "item_definitions": {
+    "net_distillation_capacity_kbd": "net_equity_share_crude_distillation_capacity_kbd"
+   },
    "outputs": [
     {
      "key": "net_distillation_capacity_kbd",
-     "physical": true,
-     "selector": [],
-     "cases": {
-      "": "net_distillation_capacity_kbd"
-     }
+     "kind": "physical",
+     "terms": [
+      {
+       "expr": "net_distillation_capacity_kbd",
+       "sign": 1
+      }
+     ]
     }
    ],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "",
    "examples": [
     {
      "label": "pass",
@@ -2050,6 +2785,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -2058,10 +2794,12 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "capacity_basis": "net_equity_share",
-      "capacity_type": "crude_distillation"
+      "capacity_type": "crude_distillation",
+      "item_definitions": {
+       "net_distillation_capacity_kbd": "net_equity_share_crude_distillation_capacity_kbd"
+      }
      },
      "items": {
       "net_distillation_capacity_kbd": 1500
@@ -2083,6 +2821,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -2091,22 +2830,24 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
       "input_status": "SYNTHETIC",
       "capacity_basis": "gross_including_jv",
-      "capacity_type": "crude_distillation"
+      "capacity_type": "crude_distillation",
+      "item_definitions": {
+       "net_distillation_capacity_kbd": "net_equity_share_crude_distillation_capacity_kbd"
+      }
      },
      "items": {
       "net_distillation_capacity_kbd": 1500
      },
      "expected": {
       "status": "NOT_COMPARABLE",
-      "reason": "capacity_basis_not_net",
+      "reason": "definition_not_accepted:capacity_basis",
       "display": "BLOCKED"
      }
     }
    ],
-   "notes": ""
+   "pair_examples": []
   },
   {
    "id": "M14",
@@ -2117,21 +2858,14 @@
    "allowed_period_kinds": [
     "FY"
    ],
-   "scope": "All",
    "definition": {
-    "numerator": "Production cost",
-    "denominator": "boe produced"
+    "numerator": "Unit production / lifting cost per boe",
+    "denominator": "see reason"
    },
-   "inputs": [
-    {
-     "item": "unit_cost",
-     "role": "issuer reported"
-    }
-   ],
    "ordered_steps": [
-    "Not reconciled: no common definition of included costs (royalties, transport, DD&A, overhead); ASC 932 supplementary data exists for SEC filers only."
+    "Not reconciled."
    ],
-   "ifrs_vs_us_gaap": "ASC 932 disclosures for SEC filers; none for Aramco.",
+   "ifrs_vs_us_gaap": "n/a",
    "basis": {
     "consolidation": "n/a",
     "currency": "n/a",
@@ -2139,20 +2873,29 @@
     "period": "n/a"
    },
    "handling": {
-    "missing_values": "n/a",
-    "restatements": "n/a",
-    "definition_conflict": "Always."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
+   "required_definitions": {},
    "failure_conditions": [
     {
      "code": "no_common_cost_definition",
      "when": {
       "op": "always"
      },
-     "reason": "No common lifting-cost definition."
+     "reason": "no common cost definition"
     }
    ],
+   "item_definitions": {},
    "outputs": [],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "not_reconcilable",
    "examples": [
     {
      "label": "fail_any",
@@ -2163,6 +2906,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -2171,12 +2915,10 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
-      "input_status": "SYNTHETIC"
+      "input_status": "SYNTHETIC",
+      "item_definitions": {}
      },
-     "items": {
-      "unit_cost": 5
-     },
+     "items": {},
      "expected": {
       "status": "NOT_COMPARABLE",
       "reason": "no_common_cost_definition",
@@ -2184,7 +2926,7 @@
      }
     }
    ],
-   "notes": "not_reconcilable"
+   "pair_examples": []
   },
   {
    "id": "M15",
@@ -2195,98 +2937,12 @@
    "allowed_period_kinds": [
     "FY"
    ],
-   "scope": "All",
    "definition": {
-    "numerator": "Scope 1+2 emissions",
-    "denominator": "boe produced"
+    "numerator": "Upstream carbon intensity",
+    "denominator": "see reason"
    },
-   "inputs": [
-    {
-     "item": "carbon_intensity",
-     "role": "issuer reported"
-    }
-   ],
    "ordered_steps": [
-    "Not reconciled: operated vs equity boundary, Scope 2 method, gases, denominator and assurance level differ."
-   ],
-   "ifrs_vs_us_gaap": "Not a financial framework issue.",
-   "basis": {
-    "consolidation": "n/a",
-    "currency": "n/a",
-    "unit": "n/a",
-    "period": "n/a"
-   },
-   "handling": {
-    "missing_values": "n/a",
-    "restatements": "Method changes (e.g. Scope 2 basis) break series.",
-    "definition_conflict": "Always."
-   },
-   "failure_conditions": [
-    {
-     "code": "boundary_method_mismatch",
-     "when": {
-      "op": "always"
-     },
-     "reason": "Boundary, Scope 2 method and denominator differ."
-    }
-   ],
-   "outputs": [],
-   "examples": [
-    {
-     "label": "fail_any",
-     "synthetic": "SYNTHETIC: invented test values, not company data",
-     "meta": {
-      "company": "SYNTH-A",
-      "accounting_basis": "IFRS",
-      "currency": "USD",
-      "period": {
-       "kind": "FY",
-       "end": "2030-12-31",
-       "standalone": true
-      },
-      "consolidation": "consolidated",
-      "restated_latest": true,
-      "source_ids": [
-       "SYNTH-SRC-1"
-      ],
-      "definition_version": "synthetic/1",
-      "input_status": "SYNTHETIC"
-     },
-     "items": {
-      "carbon_intensity": 10
-     },
-     "expected": {
-      "status": "NOT_COMPARABLE",
-      "reason": "boundary_method_mismatch",
-      "display": "BLOCKED"
-     }
-    }
-   ],
-   "notes": "not_reconcilable"
-  },
-  {
-   "id": "M16",
-   "key": "valuation_multiples",
-   "name": "Valuation multiples (EV/EBITDA, P/E, yield)",
-   "proposed_rating": "OUT_OF_SCOPE_B06",
-   "measure_type": "ratio",
-   "allowed_period_kinds": [
-    "FY",
-    "TTM"
-   ],
-   "scope": "None in B06",
-   "definition": {
-    "numerator": "Market value (licensed price data)",
-    "denominator": "M02/M03/M10 outputs"
-   },
-   "inputs": [
-    {
-     "item": "price",
-     "role": "licensed market data"
-    }
-   ],
-   "ordered_steps": [
-    "Out of scope: requires licensed price and share-count data (D9); B07 not started."
+    "Not reconciled."
    ],
    "ifrs_vs_us_gaap": "n/a",
    "basis": {
@@ -2296,20 +2952,29 @@
     "period": "n/a"
    },
    "handling": {
-    "missing_values": "n/a",
-    "restatements": "n/a",
-    "definition_conflict": "n/a"
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
+   "required_definitions": {},
    "failure_conditions": [
     {
-     "code": "out_of_scope_b06",
+     "code": "boundary_method_mismatch",
      "when": {
       "op": "always"
      },
-     "reason": "Needs licensed price data; outside B06."
+     "reason": "boundary method mismatch"
     }
    ],
+   "item_definitions": {},
    "outputs": [],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "not_reconcilable",
    "examples": [
     {
      "label": "fail_any",
@@ -2320,6 +2985,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -2328,12 +2994,90 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
-      "input_status": "SYNTHETIC"
+      "input_status": "SYNTHETIC",
+      "item_definitions": {}
      },
-     "items": {
-      "price": 1
+     "items": {},
+     "expected": {
+      "status": "NOT_COMPARABLE",
+      "reason": "boundary_method_mismatch",
+      "display": "BLOCKED"
+     }
+    }
+   ],
+   "pair_examples": []
+  },
+  {
+   "id": "M16",
+   "key": "valuation_multiples",
+   "name": "Valuation multiples",
+   "proposed_rating": "OUT_OF_SCOPE_B06",
+   "measure_type": "ratio",
+   "allowed_period_kinds": [
+    "FY",
+    "TTM"
+   ],
+   "definition": {
+    "numerator": "Licensed market value",
+    "denominator": "M02/M03/M10"
+   },
+   "ordered_steps": [
+    "Out of scope (D9); B07 not started."
+   ],
+   "ifrs_vs_us_gaap": "n/a",
+   "basis": {
+    "consolidation": "n/a",
+    "currency": "n/a",
+    "unit": "n/a",
+    "period": "n/a"
+   },
+   "handling": {
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
+   },
+   "required_definitions": {},
+   "failure_conditions": [
+    {
+     "code": "out_of_scope_b06",
+     "when": {
+      "op": "always"
      },
+     "reason": "Outside B06."
+    }
+   ],
+   "item_definitions": {},
+   "outputs": [],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "out_of_scope",
+   "examples": [
+    {
+     "label": "fail_any",
+     "synthetic": "SYNTHETIC: invented test values, not company data",
+     "meta": {
+      "company": "SYNTH-A",
+      "accounting_basis": "IFRS",
+      "currency": "USD",
+      "period": {
+       "kind": "FY",
+       "start": "2030-01-01",
+       "end": "2030-12-31",
+       "standalone": true
+      },
+      "consolidation": "consolidated",
+      "restated_latest": true,
+      "source_ids": [
+       "SYNTH-SRC-1"
+      ],
+      "input_status": "SYNTHETIC",
+      "item_definitions": {}
+     },
+     "items": {},
      "expected": {
       "status": "OUT_OF_SCOPE_B06",
       "reason": "out_of_scope_b06",
@@ -2341,7 +3085,7 @@
      }
     }
    ],
-   "notes": "out_of_scope"
+   "pair_examples": []
   },
   {
    "id": "M17",
@@ -2352,20 +3096,12 @@
    "allowed_period_kinds": [
     "FY"
    ],
-   "scope": "Pending",
    "definition": {
-    "numerator": "Company production or sales",
-    "denominator": "Market total from an industry dataset with confirmed rights"
+    "numerator": "Market share",
+    "denominator": "see reason"
    },
-   "inputs": [
-    {
-     "item": "company_volume",
-     "role": ""
-    }
-   ],
    "ordered_steps": [
-    "Not computed: no denominator dataset with confirmed public-display rights (D2).",
-    "Becomes reconcilable only after a dataset decision; recipe to be issued then."
+    "Not reconciled."
    ],
    "ifrs_vs_us_gaap": "n/a",
    "basis": {
@@ -2375,20 +3111,29 @@
     "period": "n/a"
    },
    "handling": {
-    "missing_values": "n/a",
-    "restatements": "Dataset vintages must match.",
-    "definition_conflict": "Mixed commodities or value-chain stages forbidden."
+    "missing_values": "A used item that is absent, null, non-numeric or without its declared definition -> NOT_COMPARABLE; no default or zero is substituted.",
+    "restatements": "Only the latest restated comparative (restated_latest = true); the filing vintage is recorded.",
+    "definition_conflict": "Every required definition is an allow-list; a missing or unlisted value -> NOT_COMPARABLE with the field name."
    },
+   "required_definitions": {},
    "failure_conditions": [
     {
      "code": "denominator_rights_unresolved",
      "when": {
       "op": "always"
      },
-     "reason": "No market-total dataset with confirmed rights."
+     "reason": "denominator rights unresolved"
     }
    ],
+   "item_definitions": {},
    "outputs": [],
+   "depends_on": [],
+   "forbidden_items": [],
+   "pair_homogeneous_fields": [],
+   "guards": [],
+   "policy_requirements": {},
+   "requires_balance_dates": false,
+   "notes": "not_reconcilable",
    "examples": [
     {
      "label": "fail_any",
@@ -2399,6 +3144,7 @@
       "currency": "USD",
       "period": {
        "kind": "FY",
+       "start": "2030-01-01",
        "end": "2030-12-31",
        "standalone": true
       },
@@ -2407,12 +3153,10 @@
       "source_ids": [
        "SYNTH-SRC-1"
       ],
-      "definition_version": "synthetic/1",
-      "input_status": "SYNTHETIC"
+      "input_status": "SYNTHETIC",
+      "item_definitions": {}
      },
-     "items": {
-      "company_volume": 1
-     },
+     "items": {},
      "expected": {
       "status": "NOT_COMPARABLE",
       "reason": "denominator_rights_unresolved",
@@ -2420,7 +3164,7 @@
      }
     }
    ],
-   "notes": "not_reconcilable"
+   "pair_examples": []
   }
  ]
 }

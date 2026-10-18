@@ -1,4 +1,4 @@
-"""PEER-CANDIDATES.json (R03), DECISION-REGISTER.json, TRACKING-EVENT-CORRECTIONS.json (R05)."""
+"""PEER-CANDIDATES.json (R03) and DECISION-REGISTER.json (R04). Usage: registers.py <outdir>."""
 import json, sys, subprocess, hashlib, datetime, re
 
 outdir = sys.argv[1]
@@ -136,40 +136,5 @@ dump("DECISION-REGISTER.json", {
  ],
 })
 
-# ---- R05: tracking timestamps ----
-base = sys.argv[2]  # commit whose CHANGELOG is audited (previous delivery)
-out = subprocess.check_output(["git", "blame", "--line-porcelain", base, "--", "product-tracking/CHANGELOG.jsonl"], text=True)
-rows, cur = [], {}
-for l in out.splitlines():
-    if re.match(r"^[0-9a-f]{40} ", l):
-        parts = l.split(); cur = {"commit": parts[0], "line": int(parts[2])}
-    elif l.startswith("committer-time "):
-        cur["ct"] = int(l.split()[1])
-    elif l.startswith("\t"):
-        cur["text"] = l[1:]; rows.append(cur)
-aff = []
-for r in rows:
-    ev = json.loads(r["text"])
-    ct = datetime.datetime.fromtimestamp(r["ct"], datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    if ev.get("ts") and ev["ts"] > ct:
-        d = datetime.datetime.strptime(ev["ts"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc) - datetime.datetime.fromtimestamp(r["ct"], datetime.timezone.utc)
-        aff.append({"line": r["line"], "line_sha256": hashlib.sha256(r["text"].encode()).hexdigest(),
-                    "task": ev.get("task"), "event": ev.get("event"), "ts_as_written": ev["ts"],
-                    "recording_commit": r["commit"], "recording_commit_committer_time_utc": ct,
-                    "ts_exceeds_recording_by_seconds": int(d.total_seconds()),
-                    "event_time": "NOT_ESTABLISHED", "event_time_not_later_than": ct})
-blob = subprocess.check_output(["git", "show", f"{base}:product-tracking/CHANGELOG.jsonl"])
-dump("TRACKING-EVENT-CORRECTIONS.json", {
- "schema": "marefa-web08b06-tracking-corrections/1",
- "audited_file": "product-tracking/CHANGELOG.jsonl", "audited_at_commit": base,
- "audited_file_sha256": hashlib.sha256(blob).hexdigest(), "audited_lines": len(rows),
- "finding": "The ts field of these events is later than the git committer time of the commit that recorded them. An event cannot be recorded before it happens, so these ts values are not event times.",
- "cause": "ts values were typed by the author agent as estimated narrative times; no clock was read when writing them. Git committer time is machine-recorded at commit and is used here only as an upper bound.",
- "correction": "Original lines are kept unchanged. For each affected line: event_time NOT_ESTABLISHED; event_time_not_later_than = recording commit committer time. No replacement timestamp is invented.",
- "forward_rule": "New entries carry ts = recorded_at from the system clock (date -u) at authoring, plus time_source; event_time is given only when evidenced.",
- "central_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json is not in this repository and was not updated by the author; central events 110-113 are referenced, not edited.",
- "affected_count": len(aff),
- "affected_more_than_24h": sum(1 for a in aff if a["ts_exceeds_recording_by_seconds"] > 86400),
- "affected": aff,
-})
-print(len(PEERS), len(aff))
+# R05 tracking audit moved to tools/tracking_audit.py (R05-A).
+print(len(PEERS))

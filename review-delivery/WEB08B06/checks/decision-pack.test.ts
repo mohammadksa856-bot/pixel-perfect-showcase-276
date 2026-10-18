@@ -1,23 +1,20 @@
 /**
- * WEB-08B06 / B06-0 — حتمية حزمة القرار (R01–R05). لا شبكة، ولا بيانات حقيقية.
- * يعيد مقيّم مستقل (هنا) اشتقاق نتائج أمثلة الوصفات الاصطناعية التي حسبها مولّد Python.
+ * WEB-08B06 / B06-0 — حتمية حزمة القرار: R01 وR03 وR04 (مغلقة) وعدم التراجع عنها، وفحص البيانات الشخصية.
+ * R02 في comparability.test.ts، وR05 في tracking.test.ts. لا شبكة، ولا بيانات حقيقية.
  */
 /* eslint-disable @typescript-eslint/no-explicit-any -- the checks walk untyped JSON documents */
 import { describe, expect, test } from "bun:test";
-import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const DIR = fileURLToPath(new URL("../", import.meta.url));
 const ROOT = fileURLToPath(new URL("../../../", import.meta.url));
-const PREVIOUS_DELIVERY = "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26";
+const CLOSED_AT = "50502951288ac32de6285e4bed0185f4460c548c"; // implementation reviewed when R01, R03, R04 closed
 const read = (f: string) => JSON.parse(readFileSync(join(DIR, f), "utf8"));
 const rights = read("SOURCE-RIGHTS-MATRIX.json");
-const recipes = read("COMPARABILITY-RECIPES.json");
 const peers = read("PEER-CANDIDATES.json");
 const decisions = read("DECISION-REGISTER.json");
-const corrections = read("TRACKING-EVENT-CORRECTIONS.json");
 const report = readFileSync(join(DIR, "WEB-08B06-INDUSTRY-PEERS-RIGHTS-DECISION_AR.md"), "utf8");
 const git = (...args: string[]) => {
   const r = Bun.spawnSync(["git", ...args], { cwd: ROOT });
@@ -87,200 +84,6 @@ describe("R01 source rights", () => {
     expect(spot.third_party_components.join(" ")).toMatch(/Refinitiv/);
     const aramco = S.find((s) => s.id === "SRC-ARAMCO-FIN");
     expect(aramco.notes).toMatch(/not an established violation/);
-  });
-});
-
-/* ---------- independent evaluator for COMPARABILITY-RECIPES.json ---------- */
-const get = (o: any, path: string) =>
-  path.split(".").reduce((c, p) => (c && typeof c === "object" && p in c ? c[p] : undefined), o);
-function holds(c: any, ctx: any, r: any): boolean {
-  switch (c.op) {
-    case "always":
-      return true;
-    case "monetary":
-      return r.measure_type === "flow" || r.measure_type === "stock";
-    case "and":
-      return c.args.every((a: any) => holds(a, ctx, r));
-    case "missing":
-      return get(ctx, c.path) === undefined || get(ctx, c.path) === null;
-    case "empty": {
-      const v = get(ctx, c.path);
-      return !v || (Array.isArray(v) && v.length === 0);
-    }
-    case "eq":
-      return get(ctx, c.path) === c.value;
-    case "neq":
-      return get(ctx, c.path) !== c.value;
-    case "neq_path":
-      return get(ctx, c.path) !== get(ctx, c.other);
-    case "not_in":
-      return !c.values.includes(get(ctx, c.path));
-    case "not_in_recipe":
-      return !r[c.recipe_key].includes(get(ctx, c.path));
-    case "fx_type_mismatch": {
-      if (!["flow", "stock"].includes(r.measure_type) || get(ctx, "meta.currency") === "USD")
-        return false;
-      return (
-        get(ctx, "meta.fx.rate_type") !== (r.measure_type === "flow" ? "period_average" : "closing")
-      );
-    }
-  }
-  throw Error(`unknown op ${c.op}`);
-}
-function calc(expr: string, env: Record<string, number>): number {
-  const toks = expr.match(/\d+(?:\.\d+)?|[a-z_]+|[()+\-*/]/g)!;
-  let i = 0;
-  const atom = (): number => {
-    const t = toks[i++];
-    if (t === "(") {
-      const v = add();
-      i++;
-      return v;
-    }
-    if (/^\d/.test(t)) return Number(t);
-    if (!(t in env)) throw Error(`missing:${t}`);
-    return env[t];
-  };
-  const mul = (): number => {
-    let v = atom();
-    while (toks[i] === "*" || toks[i] === "/") v = toks[i++] === "*" ? v * atom() : v / atom();
-    return v;
-  };
-  const add = (): number => {
-    let v = mul();
-    while (toks[i] === "+" || toks[i] === "-") v = toks[i++] === "+" ? v + mul() : v - mul();
-    return v;
-  };
-  return add();
-}
-function evaluate(r: any, e: any) {
-  if (r.proposed_rating === "OUT_OF_SCOPE_B06")
-    return { status: "OUT_OF_SCOPE_B06", reason: "out_of_scope_b06" };
-  const ctx = { meta: e.meta, policy: e.policy ?? {} };
-  for (const c of [...recipes.generic_failure_conditions, ...r.failure_conditions])
-    if (holds(c.when, ctx, r)) return { status: "NOT_COMPARABLE", reason: c.code };
-  const values: Record<string, number> = {};
-  for (const o of r.outputs) {
-    const key = o.selector.map((s: string) => String(get(ctx, s))).join("|");
-    const expr = o.cases[key];
-    if (expr === undefined) return { status: "NOT_COMPARABLE", reason: "no_recipe_for_case" };
-    const env: Record<string, number> = { ...e.items };
-    for (const [k, v] of Object.entries<number>(e.policy ?? {})) env[`policy_${k}`] = v;
-    let v: number;
-    try {
-      v = calc(expr, env);
-    } catch {
-      return { status: "NOT_COMPARABLE", reason: "required_item_missing" };
-    }
-    if (!o.ratio && !o.physical && e.meta.currency !== "USD") v = v / e.meta.fx.rate;
-    values[o.key] = Math.round(v * 1e6) / 1e6;
-  }
-  return { status: "CONDITIONALLY_COMPARABLE", values };
-}
-
-describe("R02 comparability recipes", () => {
-  const R = recipes.recipes as any[];
-  test("17 metrics, each with a complete recipe or a reason it is not comparable", () => {
-    expect(R.map((r) => r.id)).toEqual(
-      Array.from({ length: 17 }, (_, i) => `M${String(i + 1).padStart(2, "0")}`),
-    );
-    for (const r of R) {
-      expect(["CONDITIONALLY_COMPARABLE", "NOT_COMPARABLE", "OUT_OF_SCOPE_B06"]).toContain(
-        r.proposed_rating,
-      );
-      expect(r.definition.numerator.length).toBeGreaterThan(10);
-      expect(r.inputs.length).toBeGreaterThan(0);
-      expect(r.ordered_steps.length).toBeGreaterThan(0);
-      expect(r.ifrs_vs_us_gaap.length).toBeGreaterThan(2);
-      expect(Object.keys(r.basis).sort()).toEqual(["consolidation", "currency", "period", "unit"]);
-      expect(Object.keys(r.handling).sort()).toEqual([
-        "definition_conflict",
-        "missing_values",
-        "restatements",
-      ]);
-      expect(r.failure_conditions.length).toBeGreaterThan(0);
-      if (r.proposed_rating === "CONDITIONALLY_COMPARABLE") {
-        expect(r.outputs.length).toBeGreaterThan(0);
-        expect(r.examples.some((e: any) => e.expected.status === "CONDITIONALLY_COMPARABLE")).toBe(
-          true,
-        );
-        expect(r.examples.some((e: any) => e.expected.status === "NOT_COMPARABLE")).toBe(true);
-      } else {
-        expect(r.outputs).toEqual([]);
-        expect(r.failure_conditions.some((c: any) => c.when.op === "always")).toBe(true);
-      }
-    }
-  });
-  test("no metric is COMPARABLE by default; dividends need definition checks", () => {
-    expect(R.some((r) => r.proposed_rating === "COMPARABLE")).toBe(false);
-    const div = R.find((r) => r.key === "dividends_cash");
-    const codes = div.failure_conditions.map((c: any) => c.code);
-    for (const c of [
-      "dividend_basis_not_cash_paid",
-      "dividends_include_nci",
-      "performance_linked_not_separable",
-      "buybacks_combined",
-    ])
-      expect(codes).toContain(c);
-    expect(R.find((r) => r.key === "valuation_multiples").proposed_rating).toBe("OUT_OF_SCOPE_B06");
-  });
-  test("an independent evaluator reproduces every synthetic example", () => {
-    for (const r of R)
-      for (const e of r.examples) {
-        expect(e.synthetic).toMatch(/^SYNTHETIC/);
-        expect(e.expected.display).toBe("BLOCKED");
-        const got = evaluate(r, e) as any;
-        expect({ id: r.id, label: e.label, status: got.status }).toEqual({
-          id: r.id,
-          label: e.label,
-          status: e.expected.status,
-        });
-        if (e.expected.reason) expect(got.reason).toBe(e.expected.reason);
-        if (e.expected.values) expect(got.values).toEqual(e.expected.values);
-      }
-  });
-  test("negative conditions fail closed: dropping any formula item or breaking a condition returns NOT_COMPARABLE", () => {
-    let probes = 0;
-    for (const r of R.filter((x) => x.proposed_rating === "CONDITIONALLY_COMPARABLE")) {
-      const pass = r.examples.find((e: any) => e.expected.status === "CONDITIONALLY_COMPARABLE");
-      for (const item of Object.keys(pass.items)) {
-        const items = { ...pass.items };
-        delete items[item];
-        const got = evaluate(r, { ...pass, items }) as any;
-        // an item not used by the selected case may be dropped without effect; every used item must fail closed
-        if (got.status !== "CONDITIONALLY_COMPARABLE") {
-          expect(got).toEqual({ status: "NOT_COMPARABLE", reason: "required_item_missing" });
-          probes++;
-        }
-      }
-      for (const [mutation, reason] of [
-        [{ source_ids: [] }, "source_missing"],
-        [{ accounting_basis: "LOCAL_GAAP" }, "accounting_basis_unknown"],
-        [{ consolidation: "parent_only" }, "consolidation_not_group"],
-        [{ restated_latest: false }, "not_latest_restated"],
-        [{ period: { kind: "Q", end: "2030-03-31", standalone: false } }, "quarter_not_standalone"],
-      ] as const) {
-        const got = evaluate(r, { ...pass, meta: { ...pass.meta, ...mutation } }) as any;
-        const want =
-          reason === "quarter_not_standalone" && !r.allowed_period_kinds.includes("Q")
-            ? "period_kind_not_allowed"
-            : reason;
-        expect({ id: r.id, got }).toEqual({
-          id: r.id,
-          got: { status: "NOT_COMPARABLE", reason: want },
-        });
-        probes++;
-      }
-      if (["flow", "stock"].includes(r.measure_type)) {
-        const got = evaluate(r, {
-          ...pass,
-          meta: { ...pass.meta, currency: "SAR", fx: undefined },
-        }) as any;
-        expect(got).toEqual({ status: "NOT_COMPARABLE", reason: "fx_missing" });
-        probes++;
-      }
-    }
-    expect(probes).toBeGreaterThan(90);
   });
 });
 
@@ -366,33 +169,19 @@ describe("R04 execution gate", () => {
   });
 });
 
-describe("R05 tracking history", () => {
-  const prev = git("show", `${PREVIOUS_DELIVERY}:product-tracking/CHANGELOG.jsonl`);
-  const head = readFileSync(join(ROOT, "product-tracking/CHANGELOG.jsonl"));
-  test("historical events are preserved byte for byte; corrections are appended", () => {
-    expect(head.subarray(0, prev.length).equals(Buffer.from(prev))).toBe(true);
-    const added = head
-      .subarray(prev.length)
-      .toString()
-      .trim()
-      .split("\n")
-      .map((l) => JSON.parse(l));
-    expect(added.some((e) => e.event === "tracking_correction")).toBe(true);
-    for (const e of added) {
-      expect(e.time_source).toBe("system clock (date -u) at authoring");
-      expect(e.ts).toBe(e.recorded_at);
-    }
-  });
-  test("each correction points at an exact original line", () => {
-    expect(corrections.audited_file_sha256).toBe(createHash("sha256").update(prev).digest("hex"));
-    const lines = prev.toString().split("\n");
-    expect(corrections.affected.length).toBe(corrections.affected_count);
-    for (const a of corrections.affected) {
-      const text = lines[a.line - 1];
-      expect(createHash("sha256").update(text).digest("hex")).toBe(a.line_sha256);
-      expect(JSON.parse(text).ts).toBe(a.ts_as_written);
-      expect(a.event_time).toBe("NOT_ESTABLISHED");
-      expect(a.ts_as_written > a.event_time_not_later_than).toBe(true);
+describe("no regression in closed R01, R03, R04", () => {
+  test("their files are byte-identical to the reviewed implementation", () => {
+    for (const f of [
+      "SOURCE-RIGHTS-MATRIX.json",
+      "PEER-CANDIDATES.json",
+      "DECISION-REGISTER.json",
+      "WEB-08B06-INDUSTRY-PEERS-RIGHTS-DECISION_AR.md",
+    ]) {
+      const before = git("show", `${CLOSED_AT}:review-delivery/WEB08B06/${f}`);
+      expect({ f, same: readFileSync(join(DIR, f)).equals(Buffer.from(before)) }).toEqual({
+        f,
+        same: true,
+      });
     }
   });
 });

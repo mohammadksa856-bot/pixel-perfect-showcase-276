@@ -2,9 +2,20 @@
  "schema": "marefa-web08b06-recipes-compatibility-map/1",
  "purpose": "Lets an independent test suite written against an earlier recipes schema be pointed at the current one without hiding its original results. It maps fields and reason codes; it does not change, rerun or reinterpret any Codex test. Codex reported (event 115, review 08af19f, not available here) 79 original checks: 33 reached (11 pass, 22 schema mismatches), 46 not executed; those numbers are Codex's and are not reproduced or altered by the author.",
  "versions": [
-  {"schema": "marefa-web08b06-comparability-recipes/1", "implementation": "5050295"},
-  {"schema": "marefa-web08b06-comparability-recipes/2", "implementation": "a267e0c", "why": "R02-A/R02-B: blacklist guards failed open; allow-lists, real-date periods, dated FX, item definitions, CFO placement policy, composed FCF"},
-  {"schema": "marefa-web08b06-comparability-recipes/3", "implementation": "this delivery", "why": "R02-C lease semantics (reported vs derived CFO, lease placement per issuer, single deduction), R02-D input-shape validation, R02-E finite arithmetic"}
+  {
+   "schema": "marefa-web08b06-comparability-recipes/1",
+   "implementation": "5050295"
+  },
+  {
+   "schema": "marefa-web08b06-comparability-recipes/2",
+   "implementation": "a267e0c",
+   "why": "R02-A/R02-B: blacklist guards failed open; allow-lists, real-date periods, dated FX, item definitions, CFO placement policy, composed FCF"
+  },
+  {
+   "schema": "marefa-web08b06-comparability-recipes/3",
+   "implementation": "this delivery",
+   "why": "R02-C lease semantics (reported vs derived CFO, lease placement per issuer, single deduction), R02-D input-shape validation, R02-E finite arithmetic"
+  }
  ],
  "document_fields": {
   "v1_to_v2": {
@@ -82,5 +93,16 @@
   "For a v1/v2 example, add meta.period.start, FX window/date, meta.item_definitions from the recipe, and the allow-listed definitions the case is about; do not add fields that would make a must-fail case pass.",
   "Map expected reason codes with reason_codes above; codes now carry the field or item after a colon.",
   "For M05/M07 compare cfo_after_lease_payments (not reported_cfo) and fcf_rebuilt; reported_cfo is the published figure and is expected to differ between classifications."
- ]
+ ],
+ "precision_policy_event_117": {
+  "rule": "Every numeric input (items, FX rate, positive policy factors) and every intermediate and final value must lie within the IEEE-754 safe-integer range |v| <= 9007199254740991 (Number.MAX_SAFE_INTEGER); otherwise NOT_COMPARABLE. Inputs: unsafe_integer_precision:<item> | :fx.rate | :policy.<key>; intermediates and results: unsafe_integer_precision. Non-finite values keep non_finite_result; values beyond the double range keep item_not_numeric / fx_rate_invalid / policy_invalid (event 116).",
+  "python": "json.loads keeps integers exact; the bound is compared on the original int before any float conversion (safe_input), so no rounding happens before the check.",
+  "typescript": "JSON.parse has already rounded the source text. The bound still rejects every integer text above the safe range, because any such text parses to at least 2**53; fractional digits lost inside the range cannot be detected after parsing (a raw-text check would be needed, not implemented).",
+  "not_used": "No BigInt or Decimal in either evaluator; exact integers are used only in test references.",
+  "reason_code_changes_from_event_116": {
+   "inputs above the safe range but within the double range (e.g. 1e300, 9007199254740992, 9007199254740993)": "previously accepted, or non_finite_result after overflow -> now unsafe_integer_precision:<input>",
+   "sums/products/conversions of safe inputs exceeding the safe range": "previously accepted (possibly rounded) -> now unsafe_integer_precision",
+   "division overflow from safe inputs (e.g. by 1e-300)": "unchanged: non_finite_result"
+  }
+ }
 }

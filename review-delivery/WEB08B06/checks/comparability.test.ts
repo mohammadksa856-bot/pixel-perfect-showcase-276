@@ -1114,7 +1114,7 @@ add(
       payments_for_exploration_intangibles: 1e308,
     }),
   ),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:payments_for_ppe"),
 );
 add(
   "R02-E subtraction overflow (CFO)",
@@ -1122,13 +1122,13 @@ add(
   edit2(publish({ basis: "IFRS" }), (e) =>
     Object.assign(e.items, { cfo: 1e308, lease_principal_payments: -1e308 }),
   ),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:cfo"),
 );
 add(
   "R02-E multiplication overflow",
   "M11",
   mutate("M11", (e) => (e.items.gas_mmscfd = 1e306)),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:gas_mmscfd"),
 );
 add(
   "R02-E division overflow",
@@ -1151,7 +1151,7 @@ add(
       borrowings_close: 0,
     }),
   ),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:profit_total"),
 );
 add(
   "R02-E FX conversion overflow",
@@ -1161,7 +1161,7 @@ add(
     e.items.revenue = 1e300;
     e.items.royalties_excise_in_revenue = 0;
   }),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:revenue"),
 );
 add(
   "R02-E FCF overflow from finite CFO and capex",
@@ -1169,21 +1169,21 @@ add(
   edit2(publish({ basis: "IFRS" }, ECON, true), (e) =>
     Object.assign(e.items, { cfo: 1e308, payments_for_ppe: -1e308 }),
   ),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:cfo"),
 );
 add(
   "R02-E gearing overflow",
   "M08",
   mutate("M08", (e) => Object.assign(e.items, { borrowings: 1e308, lease_liabilities: 1e308 })),
-  NC("non_finite_result"),
+  NC("unsafe_integer_precision:borrowings"),
 );
 add(
-  "R02-E large finite value is accepted unchanged",
+  "R02-E large finite value beyond the safe range is rejected (event 117)",
   "M06",
   mutate("M06", (e) =>
     Object.assign(e.items, { payments_for_ppe: 1e300, payments_for_exploration_intangibles: 0 }),
   ),
-  { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 1e300 } },
+  NC("unsafe_integer_precision:payments_for_ppe"),
 );
 function edit2(e: any, f: (x: any) => void) {
   f(e);
@@ -1338,22 +1338,22 @@ describe("R02-E long integers: Python and TypeScript reject alike, without excep
     [
       "largest finite double written as an integer",
       ppe(MAX, { payments_for_exploration_intangibles: 0 }),
-      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: Number(MAX) } },
+      NC("unsafe_integer_precision:payments_for_ppe"),
     ],
     [
       "largest finite double as exponent form",
       ppe("1.7976931348623157e308", { payments_for_exploration_intangibles: 0 }),
-      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 1.7976931348623157e308 } },
+      NC("unsafe_integer_precision:payments_for_ppe"),
     ],
     [
       "two largest doubles overflow when added",
       ppe(MAX, { payments_for_exploration_intangibles: Number(MAX) }),
-      NC("non_finite_result"),
+      NC("unsafe_integer_precision:payments_for_ppe"),
     ],
     [
-      "integer above 2^53 is read as its nearest double by both",
+      "integer above 2^53 is rejected, not read as its nearest double (event 117)",
       ppe("9007199254740993", { payments_for_exploration_intangibles: 0 }),
-      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 9007199254740992 } },
+      NC("unsafe_integer_precision:payments_for_ppe"),
     ],
     [
       "ordinary integers stay accepted",
@@ -1435,5 +1435,192 @@ print(json.dumps(res))
       "required_item_missing:payments_for_ppe",
       "item_not_numeric:payments_for_ppe",
     ]);
+  });
+});
+
+/* ---------- event 117: integer precision (safe-integer policy) ---------- */
+describe("event 117: inputs or intermediates outside the IEEE-754 safe-integer range are rejected", () => {
+  const SAFE = "9007199254740991"; // Number.MAX_SAFE_INTEGER
+  const PREV = "c1fa05adf1396daeaa3ba0a28096acad9212ddee";
+  const rawCase = (id: string, f: (e: any) => void, literals: Record<string, string>) => {
+    const e = passOf(id);
+    f(e);
+    let t = JSON.stringify({ recipe: id, a: e });
+    for (const [k, lit] of Object.entries(literals)) t = t.replace(`"__${k}__"`, lit);
+    return t;
+  };
+  // Codex's finding rebuilt (its own case file is not available here): net debt 1 and gearing 50% in exact
+  // arithmetic, read as 0 and 0% once both large integers round to the same double.
+  const netDebt = (b: string, c: string) =>
+    rawCase(
+      "M08",
+      (e) => {
+        e.meta.currency = "USD";
+        delete e.meta.fx;
+        Object.assign(e.items, {
+          borrowings: "__B__",
+          lease_liabilities: 0,
+          cash_and_equivalents: "__C__",
+          total_equity: 1,
+        });
+      },
+      { B: b, C: c },
+    );
+  const capex = (a: string, b: string) =>
+    rawCase(
+      "M06",
+      (e) =>
+        Object.assign(e.items, {
+          payments_for_ppe: "__A__",
+          payments_for_exploration_intangibles: "__B__",
+        }),
+      { A: a, B: b },
+    );
+  const OK = (values: Record<string, number>) => ({ status: "CONDITIONALLY_COMPARABLE", values });
+  const CASES17: [string, string, any][] = [
+    ["boundary 9007199254740991 accepted", capex(SAFE, "0"), OK({ capex_cash: 9007199254740991 })],
+    [
+      "9007199254740992 rejected",
+      capex("9007199254740992", "0"),
+      NC("unsafe_integer_precision:payments_for_ppe"),
+    ],
+    [
+      "9007199254740993 rejected (would round to its neighbour)",
+      capex("9007199254740993", "0"),
+      NC("unsafe_integer_precision:payments_for_ppe"),
+    ],
+    ["-9007199254740991 accepted", capex(`-${SAFE}`, "0"), OK({ capex_cash: -9007199254740991 })],
+    [
+      "-9007199254740993 rejected",
+      capex("-9007199254740993", "0"),
+      NC("unsafe_integer_precision:payments_for_ppe"),
+    ],
+    [
+      "first of two distinct integers sharing one double rejected",
+      capex("18014398509481985", "0"),
+      NC("unsafe_integer_precision:payments_for_ppe"),
+    ],
+    [
+      "second of two distinct integers sharing one double rejected",
+      capex("18014398509481984", "0"),
+      NC("unsafe_integer_precision:payments_for_ppe"),
+    ],
+    [
+      "net debt that rounds to 0 is rejected",
+      netDebt("9007199254740993", "9007199254740992"),
+      NC("unsafe_integer_precision:borrowings"),
+    ],
+    [
+      "negative counterpart rejected",
+      netDebt("-9007199254740992", "-9007199254740993"),
+      NC("unsafe_integer_precision:borrowings"),
+    ],
+    [
+      "net debt of 1 from safe inputs is exact and accepted",
+      netDebt(SAFE, "9007199254740990"),
+      OK({ net_debt: 1, gearing: 0.5 }),
+    ],
+    ["ordinary values stay accepted", capex("400", "20"), OK({ capex_cash: 420 })],
+    ["small fractional values stay accepted", capex("0.25", "0.5"), OK({ capex_cash: 0.75 })],
+    [
+      "beyond the double range: item_not_numeric, no OverflowError",
+      capex("9".repeat(400), "0"),
+      NC("item_not_numeric:payments_for_ppe"),
+    ],
+    [
+      "intermediate sum above the safe range rejected",
+      capex(SAFE, "2"),
+      NC("unsafe_integer_precision"),
+    ],
+    [
+      "intermediate product above the safe range rejected",
+      rawCase("M11", (e) => (e.items.gas_mmscfd = "__G__"), { G: "10000000000000" }),
+      NC("unsafe_integer_precision"),
+    ],
+    [
+      "FX conversion result above the safe range rejected",
+      rawCase(
+        "M01",
+        (e) =>
+          Object.assign(e.items, { revenue: "__R__", royalties_excise_in_revenue: 0 }) &&
+          (e.meta.fx.rate = 0.5),
+        { R: "9000000000000000" },
+      ),
+      NC("unsafe_integer_precision"),
+    ],
+    [
+      "FX rate beyond the safe range rejected",
+      rawCase("M01", (e) => (e.meta.fx.rate = "__X__"), { X: "9007199254740993" }),
+      NC("unsafe_integer_precision:fx.rate"),
+    ],
+    [
+      "policy factor beyond the safe range rejected",
+      rawCase("M11", (e) => (e.policy.gas_scf_per_boe = "__P__"), { P: "9007199254740993" }),
+      NC("unsafe_integer_precision:policy.gas_scf_per_boe"),
+    ],
+  ];
+  const dir = mkdtempSync(join(tmpdir(), "b06-precision-"));
+  const file = join(dir, "cases.json");
+  writeFileSync(file, `[${CASES17.map(([, t]) => t).join(",")}]`);
+  const ROOT = join(DIR, "../..");
+  const show = (path: string, to: string) => {
+    const r = Bun.spawnSync(["git", "show", `${PREV}:review-delivery/WEB08B06/${path}`], {
+      cwd: ROOT,
+    });
+    writeFileSync(to, r.stdout);
+    return to;
+  };
+
+  for (const [name, text, want] of CASES17)
+    test(`TypeScript: ${name}`, () => {
+      const c = JSON.parse(text);
+      expect(evaluate(c.recipe, c.a)).toEqual(want);
+    });
+  test("Python returns the same decision and reason for every case", () => {
+    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate", file]);
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    const out = JSON.parse(p.stdout.toString());
+    CASES17.forEach(([name, , want], i) =>
+      expect({ name, py: out[i] }).toEqual({ name, py: want }),
+    );
+  });
+  test("exact reference: the rounded result differs from the true value, so agreement alone proves nothing", async () => {
+    // test-only exact integers (BigInt), not part of either evaluator
+    const exactNetDebt = BigInt("9007199254740993") - BigInt("9007199254740992");
+    expect(exactNetDebt).toBe(1n);
+    const exactGearing = Number(exactNetDebt) / (Number(exactNetDebt) + 1);
+    expect(exactGearing).toBe(0.5);
+    const text = CASES17.find(([n]) => n === "net debt that rounds to 0 is rejected")![1];
+    // previous implementation, Python and TypeScript: both accept and agree on the wrong answer
+    writeFileSync(join(dir, "one.json"), `[${text}]`);
+    const py = Bun.spawnSync([
+      "python3",
+      show("tools/recipes.py", join(dir, "old.py")),
+      "--evaluate",
+      join(dir, "one.json"),
+    ]);
+    const oldPyRes = JSON.parse(py.stdout.toString())[0];
+    const oldTs = await import(show("checks/evaluator.ts", join(dir, "old-evaluator.ts")));
+    const c = JSON.parse(text);
+    const oldTsRes = oldTs.makeEvaluator(doc).evaluate(c.recipe, c.a);
+    const wrong = { status: "CONDITIONALLY_COMPARABLE", values: { net_debt: 0, gearing: 0 } };
+    expect({ python: oldPyRes, typescript: oldTsRes }).toEqual({
+      python: wrong,
+      typescript: wrong,
+    });
+    expect(wrong.values.net_debt).not.toBe(Number(exactNetDebt));
+    expect(wrong.values.gearing).not.toBe(exactGearing);
+    // current implementation: both reject with the same reason
+    expect(evaluate(c.recipe, c.a)).toEqual(NC("unsafe_integer_precision:borrowings"));
+  });
+  test("accepted results equal the exact reference (no silent rounding inside the safe range)", () => {
+    const text = CASES17.find(
+      ([n]) => n === "net debt of 1 from safe inputs is exact and accepted",
+    )![1];
+    const c = JSON.parse(text);
+    const exact = BigInt(SAFE) - BigInt("9007199254740990");
+    expect(evaluate(c.recipe, c.a)).toEqual(
+      OK({ net_debt: Number(exact), gearing: Number(exact) / (Number(exact) + 1) }),
+    );
   });
 });

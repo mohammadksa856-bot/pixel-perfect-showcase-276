@@ -283,9 +283,17 @@ def check_shape(e):
     d = m.get("item_definitions")
     if "item_definitions" in m and (not isinstance(d, dict) or not all(isinstance(v, str) for v in d.values())): fail("input_malformed:meta.item_definitions")
 
+MAX_SAFE = 9007199254740991  # Number.MAX_SAFE_INTEGER (2**53 - 1)
+
+def safe_input(v, code):
+    """Event 117 precision policy: a numeric input is used only if its magnitude is within the IEEE-754
+    safe-integer range. Compared on the original value (a Python int stays exact) before any float conversion."""
+    if abs(v) > MAX_SAFE: fail(code)
+
 def finite(v):
-    """R02-E: every intermediate and final value must stay finite."""
+    """R02-E: every intermediate and final value must stay finite; event 117: and within the safe-integer range."""
     if not math.isfinite(v): fail("non_finite_result")
+    if abs(v) > MAX_SAFE: fail("unsafe_integer_precision")
     return v
 
 def check_period(r, m):
@@ -318,6 +326,7 @@ def check_fx(r, m, s, e):
         return
     if not isinstance(fx, dict): fail("fx_missing")
     if not is_num(fx.get("rate")) or fx["rate"] <= 0: fail("fx_rate_invalid")
+    safe_input(fx["rate"], "unsafe_integer_precision:fx.rate")
     if not isinstance(fx.get("source_id"), str) or not fx["source_id"]: fail("fx_source_missing")
     want = "period_average" if r["measure_type"] == "flow" else "closing"
     if fx.get("rate_type") != want: fail("fx_rate_type_mismatch")
@@ -341,6 +350,7 @@ def terms_value(terms, r, e, refs, env_used):
             items = e["items"]
             if ident not in items or items[ident] is None: fail(f"required_item_missing:{ident}")
             if not is_num(items[ident]): fail(f"item_not_numeric:{ident}")
+            safe_input(items[ident], f"unsafe_integer_precision:{ident}")
             d = (e["meta"].get("item_definitions") or {}).get(ident)
             if d is None: fail(f"item_definition_missing:{ident}")
             if d != r["item_definitions"][ident]: fail(f"item_definition_mismatch:{ident}")
@@ -408,6 +418,7 @@ def _evaluate(r, e, top=True):
         v = e.get("policy", {}).get(k)
         if v is None: fail(f"policy_missing:{k}")
         if (kind == "positive_number" and (not is_num(v) or v <= 0)) or (kind == "boolean" and not isinstance(v, bool)): fail(f"policy_invalid:{k}")
+        if kind == "positive_number": safe_input(v, f"unsafe_integer_precision:policy.{k}")
     for c in r["failure_conditions"]:
         if holds(c["when"], ctx): fail(c["code"])
     for it in r["forbidden_items"] + [x for dep in r["depends_on"] for x in BY[dep]["forbidden_items"]]:

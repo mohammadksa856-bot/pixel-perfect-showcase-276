@@ -28,7 +28,20 @@ const fail = (code: string): never => {
 const isObject = (v: unknown): v is Record<string, unknown> =>
   v !== null && typeof v === "object" && !Array.isArray(v);
 /** R02-E: every intermediate and final value must stay finite. */
-const finite = (v: number): number => (Number.isFinite(v) ? v : fail("non_finite_result"));
+const finite = (v: number): number =>
+  !Number.isFinite(v)
+    ? fail("non_finite_result")
+    : Math.abs(v) > Number.MAX_SAFE_INTEGER
+      ? fail("unsafe_integer_precision")
+      : v;
+/**
+ * Event 117 precision policy: a numeric input is used only within the IEEE-754 safe-integer range. JSON.parse has
+ * already rounded the source text, but every integer text above MAX_SAFE_INTEGER parses to at least 2**53, so the
+ * bound still catches it; fractional digits lost inside the range cannot be detected after parsing.
+ */
+const safeInput = (v: number, code: string) => {
+  if (Math.abs(v) > Number.MAX_SAFE_INTEGER) fail(code);
+};
 
 /** R02-D: structure is validated before any property is read; malformed data is NOT_COMPARABLE, not an exception. */
 function checkShape(e: unknown) {
@@ -151,6 +164,7 @@ function checkFx(r: any, m: any, s: number, e: number) {
   }
   if (fx === null || typeof fx !== "object" || Array.isArray(fx)) fail("fx_missing");
   if (!isNum(fx.rate) || fx.rate <= 0) fail("fx_rate_invalid");
+  safeInput(fx.rate, "unsafe_integer_precision:fx.rate");
   if (typeof fx.source_id !== "string" || !fx.source_id) fail("fx_source_missing");
   const want = r.measure_type === "flow" ? "period_average" : "closing";
   if (fx.rate_type !== want) fail("fx_rate_type_mismatch");
@@ -192,6 +206,7 @@ function termsValue(
       const v = e.items[id];
       if (!(id in e.items) || v === null) fail(`required_item_missing:${id}`);
       if (!isNum(v)) fail(`item_not_numeric:${id}`);
+      safeInput(v as number, `unsafe_integer_precision:${id}`);
       const d = e.meta.item_definitions?.[id];
       if (absent(d)) fail(`item_definition_missing:${id}`);
       if (d !== r.item_definitions[id]) fail(`item_definition_mismatch:${id}`);
@@ -244,6 +259,7 @@ function run(
       (kind === "boolean" && typeof v !== "boolean")
     )
       fail(`policy_invalid:${k}`);
+    if (kind === "positive_number") safeInput(v, `unsafe_integer_precision:policy.${k}`);
   }
   for (const c of r.failure_conditions) if (holds(c.when, ctx)) fail(c.code);
   for (const it of [

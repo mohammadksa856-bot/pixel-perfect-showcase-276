@@ -13,7 +13,7 @@ import { makeEvaluator } from "./evaluator";
 
 const DIR = fileURLToPath(new URL("../", import.meta.url));
 const doc = JSON.parse(readFileSync(join(DIR, "COMPARABILITY-RECIPES.json"), "utf8"));
-const { recipes, evaluate, evaluatePair } = makeEvaluator(doc);
+const { recipes, evaluate, evaluateRaw, evaluatePair } = makeEvaluator(doc);
 const R = doc.recipes as any[];
 const clone = <T>(x: T): T => structuredClone(x);
 const passOf = (id: string) =>
@@ -1622,5 +1622,366 @@ describe("event 117: inputs or intermediates outside the IEEE-754 safe-integer r
     expect(evaluate(c.recipe, c.a)).toEqual(
       OK({ net_debt: Number(exact), gearing: Number(exact) / (Number(exact) + 1) }),
     );
+  });
+});
+
+/* ---------- event 118: decimal precision at raw input (lexemes kept until checked) ---------- */
+describe("event 118: raw numeric lexemes are checked against the decimal precision policy", () => {
+  const PREV = "b3111cedbeb93d7bb7961822e2a95d85ff11b499";
+  const OK = (values: Record<string, number>) => ({ status: "CONDITIONALLY_COMPARABLE", values });
+  // an example as raw JSON text: each "__K__" placeholder is replaced by a literal lexeme
+  const text = (id: string, f: (e: any) => void, literals: Record<string, string>) => {
+    const e = passOf(id);
+    f(e);
+    let t = JSON.stringify(e);
+    for (const [k, lit] of Object.entries(literals)) t = t.replace(`"__${k}__"`, lit);
+    return t;
+  };
+  const netDebt = (b: string, c: string) =>
+    text(
+      "M08",
+      (e) => {
+        e.meta.currency = "USD";
+        delete e.meta.fx;
+        Object.assign(e.items, {
+          borrowings: "__B__",
+          lease_liabilities: 0,
+          cash_and_equivalents: "__C__",
+          total_equity: 1,
+        });
+      },
+      { B: b, C: c },
+    );
+  const capex = (a: string, b: string) =>
+    text(
+      "M06",
+      (e) =>
+        Object.assign(e.items, {
+          payments_for_ppe: "__A__",
+          payments_for_exploration_intangibles: "__B__",
+        }),
+      { A: a, B: b },
+    );
+  const fx = (revenue: string, rate: string) =>
+    text(
+      "M01",
+      (e) => {
+        Object.assign(e.items, { revenue: "__R__", royalties_excise_in_revenue: 0 });
+        e.meta.fx.rate = "__X__";
+      },
+      { R: revenue, X: rate },
+    );
+  const gas = (factor: string) =>
+    text("M11", (e) => (e.policy.gas_scf_per_boe = "__P__"), { P: factor });
+  const ppe = (literal: string) => capex("400", "20").replace("400", literal);
+  const CODEX = netDebt("9007199254740990.9", "9007199254740990");
+  const BAD = NC("input_malformed:json");
+  const CASES18: [string, string, string, any][] = [
+    // Codex's case and fractions near MAX_SAFE_INTEGER
+    [
+      "Codex case: borrowings 9007199254740990.9",
+      "M08",
+      CODEX,
+      NC("unsafe_decimal_precision:borrowings"),
+    ],
+    [
+      "negative counterpart of the Codex case",
+      "M08",
+      netDebt("-9007199254740990.9", "-9007199254740991"),
+      NC("unsafe_decimal_precision:borrowings"),
+    ],
+    [
+      "positive fraction near MAX_SAFE that loses its digit",
+      "M06",
+      capex("9007199254740990.5", "0"),
+      NC("unsafe_decimal_precision:payments_for_ppe"),
+    ],
+    [
+      "negative fraction near MAX_SAFE that loses its digit",
+      "M06",
+      capex("-9007199254740990.5", "0"),
+      NC("unsafe_decimal_precision:payments_for_ppe"),
+    ],
+    [
+      "lost fraction in a later item is named",
+      "M06",
+      capex("1", "9007199254740990.9"),
+      NC("unsafe_decimal_precision:payments_for_exploration_intangibles"),
+    ],
+    [
+      "positive fraction that a double holds exactly (2^52 - 0.5)",
+      "M06",
+      capex("4503599627370495.5", "0"),
+      OK({ capex_cash: 4503599627370495.5 }),
+    ],
+    [
+      "negative fraction that a double holds exactly",
+      "M06",
+      capex("-4503599627370495.5", "0"),
+      OK({ capex_cash: -4503599627370495.5 }),
+    ],
+    // exponent notation and written places
+    ["exponent form 1.25e2 + 1e2", "M06", capex("1.25e2", "1e2"), OK({ capex_cash: 225 })],
+    ["exponent form 12.5E-1 + 0.75", "M06", capex("12.5E-1", "0.75"), OK({ capex_cash: 2 })],
+    [
+      "exponent 1e-7 has 7 places",
+      "M06",
+      capex("1e-7", "0"),
+      NC("decimal_places_exceed_policy:payments_for_ppe"),
+    ],
+    [
+      "0.0000001 has 7 places",
+      "M06",
+      capex("0.0000001", "0"),
+      NC("decimal_places_exceed_policy:payments_for_ppe"),
+    ],
+    [
+      "trailing zeros are not places (1.0000000)",
+      "M06",
+      capex("1.0000000", "0"),
+      OK({ capex_cash: 1 }),
+    ],
+    ["six places accepted (0.000001)", "M06", capex("0.000001", "0"), OK({ capex_cash: 0.000001 })],
+    [
+      "exponent with 30 digits beyond the double range",
+      "M06",
+      capex("1e999999999999999999999999999999", "0"),
+      NC("item_not_numeric:payments_for_ppe"),
+    ],
+    [
+      "exponent with 30 negative digits",
+      "M06",
+      capex("1e-999999999999999999999999999999", "0"),
+      NC("decimal_places_exceed_policy:payments_for_ppe"),
+    ],
+    // ordinary decimals stay accepted
+    ["0.1 + 0.2", "M06", capex("0.1", "0.2"), OK({ capex_cash: 0.3 })],
+    ["1.25 + 0.1", "M06", capex("1.25", "0.1"), OK({ capex_cash: 1.35 })],
+    [
+      "large amount with cents",
+      "M06",
+      capex("123456789012.35", "0"),
+      OK({ capex_cash: 123456789012.35 }),
+    ],
+    ["-0.0 is zero", "M06", capex("-0.0", "0"), OK({ capex_cash: 0 })],
+    // small net debt from subtracting large amounts, and gearing built on it
+    [
+      "small net debt from two large amounts (1000000.9 - 1000000)",
+      "M08",
+      netDebt("1000000.9", "1000000"),
+      OK({ net_debt: 0.9, gearing: 0.473684 }),
+    ],
+    [
+      "net debt whose double difference is wrong at 6 places is rejected",
+      "M08",
+      netDebt("123456789012.35", "123456789011.5"),
+      NC("precision_not_guaranteed:net_debt"),
+    ],
+    // intermediates that lose precision although every input is safe
+    [
+      "sum too fine for its double (4503599627370495.5 + 0.75)",
+      "M06",
+      capex("4503599627370495.5", "0.75"),
+      NC("precision_not_guaranteed:capex_cash"),
+    ],
+    // FX rates and policy factors
+    ["ordinary FX rate 3.75", "M01", fx("375", "3.75"), OK({ revenue_net: 100 })],
+    ["FX rate with 10 places", "M01", fx("1000", "3.7512345678"), OK({ revenue_net: 266.578904 })],
+    [
+      "FX rate with 11 places",
+      "M01",
+      fx("1000", "3.75123456789"),
+      NC("decimal_places_exceed_policy:fx.rate"),
+    ],
+    ["non-terminating FX quotient", "M01", fx("1", "3"), OK({ revenue_net: 0.333333 })],
+    [
+      "FX rate that loses its digit",
+      "M01",
+      fx("1", "9007199254740990.5"),
+      NC("unsafe_decimal_precision:fx.rate"),
+    ],
+    ["ordinary policy factor 5.8", "M11", gas("5.8"), OK({ production_kboed: 103548.275862 })],
+    [
+      "policy factor with 7 places",
+      "M11",
+      gas("5.8000001"),
+      NC("decimal_places_exceed_policy:policy.gas_scf_per_boe"),
+    ],
+    [
+      "policy factor that loses its digit",
+      "M11",
+      gas("9007199254740990.5"),
+      NC("unsafe_decimal_precision:policy.gas_scf_per_boe"),
+    ],
+    // nesting, strings, duplicates, malformed text
+    [
+      "number written inside a string stays a string",
+      "M06",
+      capex('"9007199254740990.9"', "0"),
+      NC("item_not_numeric:payments_for_ppe"),
+    ],
+    [
+      "nested numbers outside the inputs are not inputs",
+      "M06",
+      capex("400", "20").replace(
+        '"meta":{',
+        '"meta":{"notes":{"deep":[9007199254740990.9,{"x":1e-9,"s":"0.1234567"}]},',
+      ),
+      OK({ capex_cash: 420 }),
+    ],
+    [
+      "item given as a nested object",
+      "M06",
+      ppe('{"value":9007199254740990.9}'),
+      NC("item_not_numeric:payments_for_ppe"),
+    ],
+    [
+      "repeated key: the last value is used, as JSON.parse and json.loads do",
+      "M06",
+      capex("400", "20").replace(
+        '"payments_for_ppe":400',
+        '"payments_for_ppe":9007199254740990.9,"payments_for_ppe":400',
+      ),
+      OK({ capex_cash: 420 }),
+    ],
+    [
+      "repeated key: a lossy last value is rejected",
+      "M06",
+      capex("400", "20").replace(
+        '"payments_for_ppe":400',
+        '"payments_for_ppe":400,"payments_for_ppe":9007199254740990.9',
+      ),
+      NC("unsafe_decimal_precision:payments_for_ppe"),
+    ],
+    ["5000-digit integer", "M06", ppe("9".repeat(5000)), NC("item_not_numeric:payments_for_ppe")],
+    [
+      "escaped strings are read as JSON.parse reads them",
+      "M06",
+      capex("400", "20").replace(
+        '"source_ids":[',
+        String.raw`"source_ids":["\u0053\"\\\/\n\ud83d\ude00",`,
+      ),
+      OK({ capex_cash: 420 }),
+    ],
+    ["NaN is not JSON", "M06", ppe("NaN"), BAD],
+    ["Infinity is not JSON", "M06", ppe("Infinity"), BAD],
+    ["trailing comma", "M06", capex("400", "20").replace(/}$/, ",}"), BAD],
+    ["leading zero", "M06", ppe("0400"), BAD],
+    ["bare dot", "M06", ppe("400."), BAD],
+    ["comment", "M06", `/* x */${capex("400", "20")}`, BAD],
+    ["truncated text", "M06", capex("400", "20").slice(0, -1), BAD],
+    ["nesting beyond 64 levels", "M06", ppe(`${"[".repeat(70)}${"]".repeat(70)}`), BAD],
+    ["nesting of 100000 levels", "M06", `${"[".repeat(100000)}${"]".repeat(100000)}`, BAD],
+    ["top level is not an object", "M06", "[1.5]", NC("input_malformed:example")],
+  ];
+  const dir = mkdtempSync(join(tmpdir(), "b06-decimal-"));
+  const rawFile = join(dir, "raw.json");
+  writeFileSync(rawFile, JSON.stringify(CASES18.map(([, recipe, t]) => ({ recipe, text: t }))));
+  const ROOT = join(DIR, "../..");
+  const show = (path: string, to: string) => {
+    const r = Bun.spawnSync(["git", "show", `${PREV}:review-delivery/WEB08B06/${path}`], {
+      cwd: ROOT,
+    });
+    writeFileSync(to, r.stdout);
+    return to;
+  };
+  /** test-only exact decimal reference: value * 10**12 as BigInt (inputs here have at most 10 places) */
+  const fixed = (s: string) => {
+    const [w, f = ""] = s.split(".");
+    return BigInt(w + f.padEnd(12, "0"));
+  };
+  /** num / den rounded half-to-even at 6 places, as a decimal string */
+  const div6 = (num: bigint, den: bigint) => {
+    const n = num * 1_000_000n;
+    let k = n / den;
+    const twice = 2n * (n - k * den);
+    if (twice > den || (twice === den && k % 2n)) k += 1n;
+    return `${k / 1_000_000n}.${String(k % 1_000_000n).padStart(6, "0")}`;
+  };
+
+  for (const [name, id, t, want] of CASES18)
+    test(`TypeScript raw: ${name}`, () => expect(evaluateRaw(id, t)).toEqual(want));
+  test("Python raw path returns the same decision and reason for every case, with no exception", () => {
+    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate-raw", rawFile]);
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    const out = JSON.parse(p.stdout.toString());
+    expect(out.length).toBe(CASES18.length);
+    CASES18.forEach(([name, , , want], i) =>
+      expect({ name, py: out[i] }).toEqual({ name, py: want }),
+    );
+  });
+  test("independent exact reference for the accepted values", () => {
+    const one = fixed("1");
+    const nd = fixed("1000000.9") - fixed("1000000");
+    expect([div6(nd, one), div6(nd, nd + one)]).toEqual(["0.900000", "0.473684"]);
+    expect(div6(fixed("1000"), fixed("3.7512345678"))).toBe("266.578904");
+    expect(div6(fixed("1"), fixed("3"))).toBe("0.333333");
+    const num = fixed("100") * fixed("5.8") + fixed("600") * fixed("1000");
+    expect(div6(num, fixed("5.8") * one)).toBe("103548.275862");
+    expect(div6(fixed("0.1") + fixed("0.2"), one)).toBe("0.300000");
+    // the two rejected computations really are wrong in doubles at the reported precision
+    expect(div6(fixed("123456789012.35") - fixed("123456789011.5"), one)).toBe("0.850000");
+    expect(Math.round((123456789012.35 - 123456789011.5) * 1e6) / 1e6).not.toBe(0.85);
+    expect(div6(fixed("4503599627370495.5") + fixed("0.75"), one)).toBe("4503599627370496.250000");
+    expect(4503599627370495.5 + 0.75).toBe(4503599627370496);
+  });
+  test("previous implementation (b3111ce) accepts the Codex case as 1 and 50%; the exact answer is 0.9 and 47.368421%", async () => {
+    const ref = fixed("9007199254740990.9") - fixed("9007199254740990");
+    expect([div6(ref, fixed("1")), div6(ref, ref + fixed("1"))]).toEqual(["0.900000", "0.473684"]);
+    writeFileSync(join(dir, "codex.json"), `[{"recipe":"M08","a":${CODEX}}]`);
+    const py = Bun.spawnSync([
+      "python3",
+      show("tools/recipes.py", join(dir, "old.py")),
+      "--evaluate",
+      join(dir, "codex.json"),
+    ]);
+    const oldTs = await import(show("checks/evaluator.ts", join(dir, "old-evaluator.ts")));
+    const wrong = OK({ net_debt: 1, gearing: 0.5 });
+    expect({
+      python: JSON.parse(py.stdout.toString())[0],
+      typescript: oldTs.makeEvaluator(doc).evaluate("M08", JSON.parse(CODEX)),
+    }).toEqual({ python: wrong, typescript: wrong });
+    expect(wrong.values.net_debt).not.toBe(0.9);
+    expect(wrong.values.gearing).not.toBe(0.473684);
+    // current implementation, raw path: both reject (Python result checked in the parity test above)
+    expect(evaluateRaw("M08", CODEX)).toEqual(NC("unsafe_decimal_precision:borrowings"));
+  });
+  test("trust boundary: the pre-parsed object path cannot see digits lost by an earlier parser", () => {
+    // JSON.parse already turned 9007199254740990.9 into 9007199254740991; the object path verifies the
+    // computation on that double, not the lost lexeme. This is why external data must enter through evaluateRaw.
+    expect(JSON.parse(CODEX).items.borrowings).toBe(9007199254740991);
+    expect(evaluate("M08", JSON.parse(CODEX))).toEqual(OK({ net_debt: 1, gearing: 0.5 }));
+    writeFileSync(join(dir, "codex-parsed.json"), `[{"recipe":"M08","a":${CODEX}}]`);
+    const p = Bun.spawnSync([
+      "python3",
+      join(DIR, "tools/recipes.py"),
+      "--evaluate",
+      join(dir, "codex-parsed.json"),
+    ]);
+    expect(JSON.parse(p.stdout.toString())[0]).toEqual(OK({ net_debt: 1, gearing: 0.5 }));
+    // but intermediate loss is still caught on the object path, because the check runs on the computation
+    const sum = JSON.parse(capex("4503599627370495.5", "0.75"));
+    expect(evaluate("M06", sum)).toEqual(NC("precision_not_guaranteed:capex_cash"));
+  });
+  test("every generated example gives its recorded result on the raw path, in TypeScript and Python", () => {
+    const all = R.flatMap((r) =>
+      r.examples.map((e: any) => ({ recipe: r.id, text: JSON.stringify(e), want: e.expected })),
+    );
+    const strip = ({ display: _d, ...rest }: any) => rest;
+    for (const c of all)
+      expect({ c: c.text, ts: evaluateRaw(c.recipe, c.text) }).toEqual({
+        c: c.text,
+        ts: strip(c.want),
+      });
+    const f = join(dir, "examples.json");
+    writeFileSync(f, JSON.stringify(all.map(({ recipe, text: t }) => ({ recipe, text: t }))));
+    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate-raw", f]);
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    expect(JSON.parse(p.stdout.toString())).toEqual(all.map((c) => strip(c.want)));
+  });
+  test("raw path and object path agree on every accepted case (no extra rounding on the raw path)", () => {
+    for (const [name, id, t, want] of CASES18)
+      if (want.status === "CONDITIONALLY_COMPARABLE")
+        expect({ name, obj: evaluate(id, JSON.parse(t)) }).toEqual({ name, obj: want });
   });
 });

@@ -7,6 +7,7 @@ value is defaulted. Synthetic examples only; this evaluator is mirrored by an in
 evaluator in checks/decision-pack.test.ts.
 """
 import datetime, json, math, re, sys
+from fractions import Fraction
 
 SY = "SYNTHETIC: invented test values, not company data"
 CURRENCIES = ["USD", "SAR"]
@@ -296,6 +297,104 @@ def finite(v):
     if abs(v) > MAX_SAFE: fail("unsafe_integer_precision")
     return v
 
+# ---- event 118: decimal precision policy ----------------------------------------------------------------
+# Allowed decimal places per input type in the raw lexeme; results are reported and verified at OUT_PLACES.
+PLACES = {"items": 6, "policy": 6, "fx.rate": 10}
+OUT_PLACES = 6
+
+def round_he(q, places):
+    """Exact Fraction rounded half-to-even at `places` decimals (test- and verification-side only)."""
+    scale = 10 ** places; n = q * scale
+    f = n.numerator // n.denominator; rem = n - f
+    if rem > Fraction(1, 2) or (rem == Fraction(1, 2) and f % 2): f += 1
+    return Fraction(f, scale)
+
+def calc_exact(expr, env):
+    """Same grammar as calc(), on exact Fractions; only run after the double path succeeded."""
+    toks = TOK.findall(expr); i = [0]
+    def nxt(): t = toks[i[0]]; i[0] += 1; return t
+    def peek(): return toks[i[0]] if i[0] < len(toks) else None
+    def atom():
+        t = nxt()
+        if t == "(": v = add(); nxt(); return v
+        return Fraction(t) if t[0].isdigit() else env[t]
+    def mul():
+        v = atom()
+        while peek() in ("*", "/"):
+            v = v * atom() if nxt() == "*" else v / atom()
+        return v
+    def add():
+        v = mul()
+        while peek() in ("+", "-"):
+            v = v + mul() if nxt() == "+" else v - mul()
+        return v
+    return add()
+
+class Lex(str):
+    """A JSON number kept as its source text (json.loads parse_int / parse_float hook); never a float."""
+
+NUM = re.compile(r"(-?)(0|[1-9]\d*)(?:\.(\d+))?(?:[eE]([-+]?\d+))?")
+MAX_DEPTH = 64
+
+def lex_parts(s):
+    """Source text of a JSON number -> (sign, coefficient digits, exponent), value = sign * int(digits) * 10**exponent,
+    trailing zeros of the coefficient moved into the exponent. Integer arithmetic on the digits only; an exponent
+    written with more than 9 digits is clamped to +-10**9, which keeps every decision below unchanged."""
+    g = NUM.fullmatch(s).groups()
+    ex = (g[3] or "0").lstrip("+")
+    neg_ex = ex.startswith("-"); ex = ex.lstrip("-").lstrip("0") or "0"
+    ex = (10 ** 9 if len(ex) > 9 else int(ex)) * (-1 if neg_ex else 1)
+    frac = g[2] or ""
+    digits = (g[1] + frac).lstrip("0")
+    if not digits: return 1, "", 0
+    kept = digits.rstrip("0")
+    return (-1 if g[0] else 1), kept, ex - len(frac) + len(digits) - len(kept)
+
+def as_json_double(s):
+    """The value JSON.parse gives the same text (correctly rounded; +-inf beyond the double range)."""
+    return float(s)
+
+def intake(text):
+    """Raw JSON text -> (example, exact values). Numeric lexemes are kept as text (Lex) and checked against the
+    precision policy before any double exists; numbers written inside strings stay strings."""
+    def no_constant(_): fail("input_malformed:json")  # NaN / Infinity are not JSON
+    try: doc = json.loads(text, parse_float=Lex, parse_int=Lex, parse_constant=no_constant)
+    except (json.JSONDecodeError, RecursionError): fail("input_malformed:json")
+    stack = [(doc, 1)]  # depth bound, checked iteratively before anything is read
+    while stack:
+        o, dep = stack.pop()
+        if isinstance(o, (dict, list)):
+            if dep > MAX_DEPTH: fail("input_malformed:json")
+            stack.extend((v, dep + 1) for v in (o.values() if isinstance(o, dict) else o))
+    exact = {}
+    def take(box, key, label, exact_key, places):
+        v = box[key]
+        if not isinstance(v, Lex): return
+        sign, coef, ex = lex_parts(v)
+        written = max(0, -ex) if coef else 0
+        if written > places: fail(f"decimal_places_exceed_policy:{label}")
+        box[key] = as_json_double(v)
+        if coef and ex + len(coef) - 1 >= 16: return  # |x| >= 1e16: the evaluator rejects it (event 116/117 codes)
+        x = sign * Fraction(int(coef or "0") * 10 ** max(ex, 0), 10 ** max(-ex, 0))
+        if abs(x) > MAX_SAFE: return  # evaluator: unsafe_integer_precision
+        # the double must still name the written value at its written precision (else digits were lost)
+        if round_he(Fraction(box[key]), written) != x: fail(f"unsafe_decimal_precision:{label}")
+        exact[exact_key] = x
+    if isinstance(doc, dict):
+        if isinstance(doc.get("items"), dict):
+            for k in list(doc["items"]): take(doc["items"], k, k, f"items.{k}", PLACES["items"])
+        if isinstance(doc.get("policy"), dict):
+            for k in list(doc["policy"]): take(doc["policy"], k, f"policy.{k}", f"policy.{k}", PLACES["policy"])
+        m = doc.get("meta")
+        if isinstance(m, dict) and isinstance(m.get("fx"), dict) and "rate" in m["fx"]:
+            take(m["fx"], "rate", "fx.rate", "fx.rate", PLACES["fx.rate"])
+    def plain(o):  # any other number becomes what json.loads would have made it (short integers exact)
+        if isinstance(o, dict): return {k: plain(v) for k, v in o.items()}
+        if isinstance(o, list): return [plain(v) for v in o]
+        if isinstance(o, Lex): return int(o) if re.fullmatch(r"-?\d{1,400}", o) else as_json_double(o)
+        return o
+    return plain(doc), exact
+
 def check_period(r, m):
     p = m.get("period")
     if not isinstance(p, dict): fail("period_missing")
@@ -334,17 +433,26 @@ def check_fx(r, m, s, e):
         if date(fx.get("window_start")) != s or date(fx.get("window_end")) != e: fail("fx_window_mismatch")
     elif date(fx.get("rate_date")) != e: fail("fx_date_mismatch")
 
-def terms_value(terms, r, e, refs, env_used):
-    total = 0.0
+def exact_of(exact, key, v):
+    """Exact input: from the raw lexeme when the raw intake supplied it, else the double read as printed (its
+    shortest round-trip decimal, the same reading the output check uses)."""
+    if exact is not None and key in exact: return exact[key]
+    d = as_double(v)
+    if d is None: fail("non_finite_result")
+    return Fraction(repr(d))
+
+def terms_value(terms, r, e, refs, env_used, exact=None, refs_x=None, out_x=None):
+    total = 0.0; total_x = Fraction(0)
     for t in terms:
         if "when" in t and not holds(t["when"], {"meta": e["meta"], "policy": e.get("policy", {})}): continue
         expr = t["expr"]
         if expr.startswith("ref:"):
-            total = finite(total + t["sign"] * refs[expr[4:]]); continue
-        env = {}
+            total = finite(total + t["sign"] * refs[expr[4:]]); total_x += t["sign"] * refs_x[expr[4:]]; continue
+        env, env_x = {}, {}
         for ident in re.findall(r"[a-z_]+", expr):
             if ident.startswith("policy_"):
                 env[ident] = as_double(e.get("policy", {})[ident[7:]])
+                env_x[ident] = exact_of(exact, f"policy.{ident[7:]}", e.get("policy", {})[ident[7:]])
                 continue
             env_used.add(ident)
             items = e["items"]
@@ -355,7 +463,10 @@ def terms_value(terms, r, e, refs, env_used):
             if d is None: fail(f"item_definition_missing:{ident}")
             if d != r["item_definitions"][ident]: fail(f"item_definition_mismatch:{ident}")
             env[ident] = as_double(items[ident])
+            env_x[ident] = exact_of(exact, f"items.{ident}", items[ident])
         total = finite(total + t["sign"] * calc(expr, env))
+        total_x += t["sign"] * calc_exact(expr, env_x)
+    if out_x is not None: out_x.append(total_x)
     return total
 
 TOK = re.compile(r"\s*(\d+(?:\.\d+)?|[a-z_]+|[()+\-*/])")
@@ -390,13 +501,22 @@ def all_term_items(r):
     return out
 
 def evaluate(r, e, depth=0):
-    """Return {"status", "reason"} or {"status", "values"}; raw (pre-FX) values for dependants."""
+    """Pre-parsed object path. Trust boundary: a number already rounded by an earlier parser cannot be detected
+    here; only the computation is verified exactly. External data must enter through evaluate_raw."""
     try:
         return _evaluate(r, e)
     except NC as x:
         return {"status": "NOT_COMPARABLE", "reason": str(x)}
 
-def _evaluate(r, e, top=True):
+def evaluate_raw(r, text):
+    """Raw JSON text path (event 118): numeric lexemes are validated before any double exists."""
+    try:
+        e, exact = intake(text)
+        return _evaluate(r, e, exact=exact)
+    except NC as x:
+        return {"status": "NOT_COMPARABLE", "reason": str(x)}
+
+def _evaluate(r, e, top=True, exact=None):
     if r["proposed_rating"] == "OUT_OF_SCOPE_B06": return {"status": "OUT_OF_SCOPE_B06", "reason": "out_of_scope_b06"}
     check_shape(e)
     m, ctx = e["meta"], {"meta": e["meta"], "policy": e.get("policy", {})}
@@ -428,32 +548,34 @@ def _evaluate(r, e, top=True):
         for dep in r["depends_on"]: known |= set(BY[dep]["item_definitions"])
         for it in sorted(e["items"]):
             if it not in known: fail(f"item_not_recognised:{it}")
-    refs = {}
+    refs, refs_x = {}, {}
     for dep in r["depends_on"]:
-        res = _evaluate_raw(BY[dep], e)
-        for k, v in res.items(): refs[f"{dep}.{k}"] = v
-    used, raw = set(), {}
+        res = _evaluate(BY[dep], e, top=False, exact=exact)
+        for k, v in res["_raw"].items(): refs[f"{dep}.{k}"] = v
+        for k, v in res["_exact"].items(): refs_x[f"{dep}.{k}"] = v
+    used, raw, raw_x = set(), {}, {}
     for o in r["outputs"]:
+        xs = []
         if o["kind"] == "ratio":
-            num = terms_value(o["numerator"], r, e, refs, used); den = terms_value(o["denominator"], r, e, refs, used)
+            num = terms_value(o["numerator"], r, e, refs, used, exact, refs_x, xs); den = terms_value(o["denominator"], r, e, refs, used, exact, refs_x, xs)
             if den <= 0: fail("denominator_not_positive")
-            raw[o["key"]] = finite(num / den)
+            raw[o["key"]] = finite(num / den); raw_x[o["key"]] = xs[0] / xs[1]
         else:
-            raw[o["key"]] = terms_value(o["terms"], r, e, refs, used)
+            raw[o["key"]] = terms_value(o["terms"], r, e, refs, used, exact, refs_x, xs); raw_x[o["key"]] = xs[0]
     for it in sorted(all_term_items(r) - used):
         if it in e["items"]: fail(f"reclassification_item_conflict:{it}")
     for g in r["guards"]:
         if g["part"] == "value" and raw[g["output"]] < g["min"]: fail(g["code"])
     vals = {}
     for o in r["outputs"]:
-        v = raw[o["key"]]
-        if o["kind"] == "monetary" and m["currency"] != "USD": v = finite(v / as_double(m["fx"]["rate"]))
+        v, x = raw[o["key"]], raw_x[o["key"]]
+        if o["kind"] == "monetary" and m["currency"] != "USD":
+            v = finite(v / as_double(m["fx"]["rate"])); x = x / exact_of(exact, "fx.rate", m["fx"]["rate"])
         vals[o["key"]] = finite(v if abs(v) >= 1e15 else round(v, 6))
-    return {"status": "CONDITIONALLY_COMPARABLE", "values": vals, "_raw": raw}
-
-def _evaluate_raw(r, e):
-    res = _evaluate(r, e, top=False)
-    return res["_raw"]
+        # event 118: the reported number, read as printed (shortest round-trip decimal), must equal the exact
+        # result at the reported precision; a double too coarse to carry it is rejected, never passed on rounded
+        if round_he(Fraction(repr(vals[o["key"]])), OUT_PLACES) != round_he(x, OUT_PLACES): fail(f"precision_not_guaranteed:{o['key']}")
+    return {"status": "CONDITIONALLY_COMPARABLE", "values": vals, "_raw": raw, "_exact": raw_x}
 
 def evaluate_pair(r, a, b):
     ra, rb = evaluate(r, a), evaluate(r, b)
@@ -572,7 +694,7 @@ for r in R:
     r["examples"] = EX[r["id"]]
     for e in r["examples"]:
         res = evaluate(r, e)
-        e["expected"] = {k: v for k, v in res.items() if k != "_raw"}
+        e["expected"] = {k: v for k, v in res.items() if k not in ("_raw", "_exact")}
         e["expected"]["display"] = "BLOCKED"
     for p in r["pair_examples"]:
         p["expected"] = evaluate_pair(r, p["a"], p["b"])
@@ -596,7 +718,15 @@ if len(sys.argv) == 3 and sys.argv[1] == "--evaluate":
     for c in json.load(open(sys.argv[2])):
         r = BY[c["recipe"]]
         x = evaluate_pair(r, c["a"], c["b"]) if "b" in c else evaluate(r, c["a"])
-        res.append({k: v for k, v in x.items() if k != "_raw"})
+        res.append({k: v for k, v in x.items() if k not in ("_raw", "_exact")})
+    print(json.dumps(res, allow_nan=False))
+    sys.exit(0)
+if len(sys.argv) == 3 and sys.argv[1] == "--evaluate-raw":
+    # raw mode for checks/: [{"recipe": id, "text": raw JSON of one example}] -> results, nothing written
+    res = []
+    for c in json.load(open(sys.argv[2])):
+        x = evaluate_raw(BY[c["recipe"]], c["text"])
+        res.append({k: v for k, v in x.items() if k not in ("_raw", "_exact")})
     print(json.dumps(res, allow_nan=False))
     sys.exit(0)
 

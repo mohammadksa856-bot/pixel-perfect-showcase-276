@@ -1,0 +1,183 @@
+{
+ "checks": [
+  {
+   "check": "remote branch: 0c0de9e <- 656b70d <- 7d65277",
+   "pass": true,
+   "detail": "0c0de9e 656b70d 7d65277"
+  },
+  {
+   "check": "delta touches only Codex's NONFINANCIAL/ and INDEPENDENT-SOURCE-CHECKS/; no Claude FINANCIAL file",
+   "pass": true,
+   "detail": "19 files"
+  },
+  {
+   "check": "every file in the new ARTIFACT-MANIFEST matches its SHA-256 at 0c0de9e",
+   "pass": true,
+   "detail": "26 files; mismatched []"
+  },
+  {
+   "check": "exactly the three corrected records changed; same 19 field IDs",
+   "pass": true,
+   "detail": "['business_description', 'employees', 'products_services']"
+  },
+  {
+   "check": "the ten evidence-ok records are byte-identical (canonical JSON) to 7d65277",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the six pending records are byte-identical; none raised",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "PENDING-DECISIONS: six records, all PENDING_*, none closed by the preparer, no engine change authorised",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "in the three changed records, engine value, engine reference and approval are unchanged",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "employees: PDF16 carries footnote 4 (cross-reference to Section 3), and footnote 6 on PDF16 is about SABIC Agri-Nutrients / ZPC",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "employees: PDF76 footnote 6 sets the Company-only scope; footnote 2 (employees and contractors) belongs to the safety rows, not the count",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "employees: 2025 column, no year-end or average claimed (information_as_of null, measurement_basis NOT_STATED, period FY2025)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "employees: no source wording establishes year-end or average for the count",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "products_services: PDF56 is the primary locator and holds the direct Downstream list (with distribution)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "products_services: every item mapping's source term is on its cited page",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "products_services: wording differences flagged (retail fuels, trading, power not DIRECT_TERM; NGL an expansion)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "products_services: distribution documented as absent from the engine list, engine list not modified",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "products_services: still a composite needing review",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "business_description: locators PDF 8 and 9, text present",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "business_description: SOURCE_SUPPORTED_PARAPHRASE and PARAPHRASE_NOT_DIRECT_QUOTATION; engine sentence is not on PDF 8/9 verbatim",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "printed page = PDF page − 2 for the new locators (8→6, 9→7, 56→54)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FX-1: previous claim marked incorrect; label fact equals the registered import; mapping.py:11 hash equals b70254e; no cash_end fallback",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FX-1: the old traceability sentence is gone, the 179 locator error is kept",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FX-2 addendum agrees with the corrected financial ledger bb02da3 (committed id, runtime id) for 001/004/006/053",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Codex suites here: 18/18 original, 14/14 new structural, 11/12 source tests pass; 1 NOT_RUN for a missing private PDF, not counted as PASS",
+   "pass": true,
+   "detail": "43 PASS, 1 NOT_RUN (asset unavailable), 0 other"
+  }
+ ],
+ "codex_suites": {
+  "original_structural": {
+   "run": 18,
+   "passed": 18
+  },
+  "new_structural": {
+   "run": 14,
+   "passed": 14
+  },
+  "source_reader": {
+   "total": 12,
+   "passed": 11,
+   "not_run": {
+    "test_FX3_original_H1_hash_and_note": "private H1-2026 PDF (web08b02-private-20261017/H1-Q2-2026.pdf) not available here"
+   }
+  },
+  "claimed_by_codex": "44 PASS",
+  "result_here": "43 PASS, 1 NOT_RUN (asset unavailable), 0 other"
+ },
+ "decision": "EVIDENCE_ACCEPT",
+ "scope_of_decision": "the NONFIN remediation delta 7d65277 -> 0c0de9e only; not qualification, rights, publication, or any owner definition",
+ "classification": {
+  "evidence_sound_engineering": [
+   "legal_name",
+   "listing_date",
+   "legal_form",
+   "headquarters_address",
+   "reporting_standard",
+   "website",
+   "ceo_name",
+   "chairman_name",
+   "auditor",
+   "geographic_presence"
+  ],
+  "correction_sound_definition_approval_continues": {
+   "employees": "value and Company-only scope evidenced; whether a parent-only count fits the catalog field 'employees' is a definition decision",
+   "products_services": "composite with item mapping; wording differences need editorial or owner approval",
+   "business_description": "source-supported paraphrase; the engine sentence needs editorial approval"
+  },
+  "pending_source_freshness_or_owner_decision": {
+   "legal_name_ar": "PENDING_SOURCE_CAPTURE_AND_DEFINITION",
+   "isin": "PENDING_PRIMARY_ARTIFACT",
+   "investor_relations_url": "PENDING_PRIMARY_ARTIFACT",
+   "founding_date": "PENDING_OWNER_DEFINITION",
+   "subsidiaries_count": "PENDING_SCOPE_DEFINITION_OR_SUBSIDIARY_ONLY_DISCLOSURE",
+   "credit_rating": "PENDING_DATED_AGENCY_EVIDENCE_AND_CURRENTNESS"
+  }
+ },
+ "not_decided_here": [
+  "founding_date definition (owner)",
+  "subsidiaries_count definition (owner)",
+  "any FINANCIAL_ACCEPT",
+  "rights and publication"
+ ],
+ "reviewed": {
+  "previous_delivery": "7d65277df4dc25b9755520b871d0bfcfbf63c281",
+  "implementation": "656b70dd78872c60be95744da3c5975cd7a25400",
+  "delivery": "0c0de9e95babcfcd55d852c4e65c81d9ca0943be"
+ }
+}

@@ -1,0 +1,26 @@
+PASS remote branch: 0c0de9e <- 656b70d <- 7d65277 — 0c0de9e 656b70d 7d65277
+PASS delta touches only Codex's NONFINANCIAL/ and INDEPENDENT-SOURCE-CHECKS/; no Claude FINANCIAL file — 19 files
+PASS every file in the new ARTIFACT-MANIFEST matches its SHA-256 at 0c0de9e — 26 files; mismatched []
+PASS exactly the three corrected records changed; same 19 field IDs — ['business_description', 'employees', 'products_services']
+PASS the ten evidence-ok records are byte-identical (canonical JSON) to 7d65277
+PASS the six pending records are byte-identical; none raised
+PASS PENDING-DECISIONS: six records, all PENDING_*, none closed by the preparer, no engine change authorised
+PASS in the three changed records, engine value, engine reference and approval are unchanged
+PASS employees: PDF16 carries footnote 4 (cross-reference to Section 3), and footnote 6 on PDF16 is about SABIC Agri-Nutrients / ZPC
+PASS employees: PDF76 footnote 6 sets the Company-only scope; footnote 2 (employees and contractors) belongs to the safety rows, not the count
+PASS employees: 2025 column, no year-end or average claimed (information_as_of null, measurement_basis NOT_STATED, period FY2025)
+PASS employees: no source wording establishes year-end or average for the count
+PASS products_services: PDF56 is the primary locator and holds the direct Downstream list (with distribution)
+PASS products_services: every item mapping's source term is on its cited page — []
+PASS products_services: wording differences flagged (retail fuels, trading, power not DIRECT_TERM; NGL an expansion)
+PASS products_services: distribution documented as absent from the engine list, engine list not modified
+PASS products_services: still a composite needing review
+PASS business_description: locators PDF 8 and 9, text present
+PASS business_description: SOURCE_SUPPORTED_PARAPHRASE and PARAPHRASE_NOT_DIRECT_QUOTATION; engine sentence is not on PDF 8/9 verbatim
+PASS printed page = PDF page − 2 for the new locators (8→6, 9→7, 56→54)
+PASS FX-1: previous claim marked incorrect; label fact equals the registered import; mapping.py:11 hash equals b70254e; no cash_end fallback
+PASS FX-1: the old traceability sentence is gone, the 179 locator error is kept
+PASS FX-2 addendum agrees with the corrected financial ledger bb02da3 (committed id, runtime id) for 001/004/006/053
+PASS Codex suites here: 18/18 original, 14/14 new structural, 11/12 source tests pass; 1 NOT_RUN for a missing private PDF, not counted as PASS — 43 PASS, 1 NOT_RUN (asset unavailable), 0 other
+
+ALL PASS | decision EVIDENCE_ACCEPT

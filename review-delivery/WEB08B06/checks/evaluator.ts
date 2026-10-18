@@ -64,7 +64,11 @@ const q = (n: bigint, d = 1n): Q => {
 };
 const qAdd = (a: Q, b: Q) => q(a.n * b.d + b.n * a.d, a.d * b.d);
 const qMul = (a: Q, b: Q) => q(a.n * b.n, a.d * b.d);
-const qDiv = (a: Q, b: Q) => q(a.n * b.d, a.d * b.n);
+/** Callers check the divisor first (R02-F); reaching zero here is a programming error, not data. */
+const qDiv = (a: Q, b: Q) => {
+  if (b.n === 0n) throw Error("internal: exact division by zero reached unchecked");
+  return q(a.n * b.d, a.d * b.n);
+};
 const qScale = (a: Q, k: number) => q(a.n * BigInt(k), a.d);
 /** Exact value of a finite double: doubling is exact for a non-integer double, at most 1074 times. */
 function qOfDouble(v: number): Q {
@@ -367,8 +371,12 @@ function calcExact(expr: string, env: Record<string, Q>): Q {
   };
   const mul = (): Q => {
     let v = atom();
-    while (toks[i] === "*" || toks[i] === "/")
-      v = toks[i++] === "*" ? qMul(v, atom()) : qDiv(v, atom());
+    while (toks[i] === "*" || toks[i] === "/") {
+      const op = toks[i++];
+      const w = atom();
+      if (op === "/" && w.n === 0n) fail("non_finite_result"); // R02-F: exact zero divisor, same code as calc()
+      v = op === "*" ? qMul(v, w) : qDiv(v, w);
+    }
     return v;
   };
   const add = (): Q => {
@@ -559,7 +567,10 @@ function run(
     if (o.kind === "ratio") {
       const num = termsValue(o.numerator, r, e, refs, used, exact, refsX, xs);
       const den = termsValue(o.denominator, r, e, refs, used, exact, refsX, xs);
-      if (den <= 0) fail("denominator_not_positive");
+      // R02-F: the sign of the denominator is decided on its exact value, before any division; a double that
+      // disagrees with it (e.g. 0.1 + 0.2 - 0.3 = 5.55e-17) cannot carry the ratio
+      if (xs[1].n <= 0n) fail("denominator_not_positive");
+      if (den <= 0) fail(`precision_not_guaranteed:${o.key}`);
       raw[o.key] = finite(num / den);
       rawX[o.key] = qDiv(xs[0], xs[1]);
     } else {
@@ -575,8 +586,10 @@ function run(
     let v = raw[o.key];
     let x = rawX[o.key];
     if (o.kind === "monetary" && m.currency !== "USD") {
+      const rateX = exactOf(exact, "fx.rate", m.fx.rate);
+      if (rateX.n <= 0n) fail("fx_rate_invalid"); // R02-F: exact rate checked before dividing
       v = finite(v / m.fx.rate);
-      x = qDiv(x, exactOf(exact, "fx.rate", m.fx.rate));
+      x = qDiv(x, rateX);
     }
     // values of 1e15 and above carry no sub-unit digits to round, and scaling them could overflow.
     // event 118: the double itself is rounded half-to-even exactly, as Python's round(v, 6) does; Math.round(v * 1e6)
@@ -618,9 +631,25 @@ export function makeEvaluator(doc: any) {
       throw x;
     }
   };
-  const evaluatePair = (id: string, a: any, b: any): any => {
-    const ra = evaluate(id, a);
-    const rb = evaluate(id, b);
+  /** Pre-parsed pair path; same trust boundary as evaluate. */
+  const evaluatePair = (id: string, a: any, b: any): any =>
+    pairOf(id, a, b, evaluate(id, a), evaluate(id, b));
+  /** Raw pair path (event 119): both sides enter through the raw intake. */
+  const evaluatePairRaw = (id: string, textA: string, textB: string): any => {
+    const side = (text: string): [any, Result] => {
+      let e: any;
+      const res = guarded(id, () => {
+        const [doc, exact] = intake(text);
+        e = doc;
+        return run(recipes, recipes[id], doc, true, exact);
+      });
+      return [e, res];
+    };
+    const [a, ra] = side(textA);
+    const [b, rb] = side(textB);
+    return pairOf(id, a, b, ra, rb);
+  };
+  const pairOf = (id: string, a: any, b: any, ra: Result, rb: Result): any => {
     for (const [side, res] of [
       ["a", ra],
       ["b", rb],
@@ -641,5 +670,5 @@ export function makeEvaluator(doc: any) {
       values: { a: (ra as any).values, b: (rb as any).values },
     };
   };
-  return { recipes, evaluate, evaluateRaw, evaluatePair };
+  return { recipes, evaluate, evaluateRaw, evaluatePair, evaluatePairRaw };
 }

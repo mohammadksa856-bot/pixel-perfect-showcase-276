@@ -9,6 +9,17 @@ evaluator in checks/decision-pack.test.ts.
 import datetime, json, math, re, sys
 from fractions import Fraction
 
+# event 119 (R02-G): the only CLI forms. Pre-parsed example files are not accepted: a file is evaluated only
+# through --evaluate-raw, which checks every numeric lexeme before a double exists. Checked before any work.
+USAGE = ("usage: recipes.py <out.json>                generate COMPARABILITY-RECIPES.json\n"
+         "       recipes.py --evaluate-raw <cases.json> evaluate raw JSON texts: [{\"recipe\", \"text\", \"b_text\"?}]")
+ARGS = sys.argv[1:]
+if ARGS[:1] == ["--evaluate"] or (ARGS[:1] and ARGS[0].startswith("--evaluate=")):
+    sys.exit("recipes.py: --evaluate was removed (event 119): it read pre-parsed JSON whose numbers may already have "
+             "lost precision. Use --evaluate-raw <cases.json> with raw example text.\n" + USAGE)
+if not ((len(ARGS) == 1 and not ARGS[0].startswith("-")) or (len(ARGS) == 2 and ARGS[0] == "--evaluate-raw")):
+    sys.exit(USAGE)
+
 SY = "SYNTHETIC: invented test values, not company data"
 CURRENCIES = ["USD", "SAR"]
 DURATION = {"FY": (364, 371), "TTM": (364, 371), "H1": (181, 184), "Q": (89, 92)}
@@ -321,7 +332,9 @@ def calc_exact(expr, env):
     def mul():
         v = atom()
         while peek() in ("*", "/"):
-            v = v * atom() if nxt() == "*" else v / atom()
+            op = nxt(); w = atom()
+            if op == "/" and w == 0: fail("non_finite_result")  # R02-F: exact zero divisor, same code as calc()
+            v = v * w if op == "*" else v / w
         return v
     def add():
         v = mul()
@@ -558,7 +571,10 @@ def _evaluate(r, e, top=True, exact=None):
         xs = []
         if o["kind"] == "ratio":
             num = terms_value(o["numerator"], r, e, refs, used, exact, refs_x, xs); den = terms_value(o["denominator"], r, e, refs, used, exact, refs_x, xs)
-            if den <= 0: fail("denominator_not_positive")
+            # R02-F: the sign of the denominator is decided on its exact value, before any division; a double
+            # that disagrees with it (e.g. 0.1 + 0.2 - 0.3 = 5.55e-17) cannot carry the ratio
+            if xs[1] <= 0: fail("denominator_not_positive")
+            if den <= 0: fail(f"precision_not_guaranteed:{o['key']}")
             raw[o["key"]] = finite(num / den); raw_x[o["key"]] = xs[0] / xs[1]
         else:
             raw[o["key"]] = terms_value(o["terms"], r, e, refs, used, exact, refs_x, xs); raw_x[o["key"]] = xs[0]
@@ -570,7 +586,9 @@ def _evaluate(r, e, top=True, exact=None):
     for o in r["outputs"]:
         v, x = raw[o["key"]], raw_x[o["key"]]
         if o["kind"] == "monetary" and m["currency"] != "USD":
-            v = finite(v / as_double(m["fx"]["rate"])); x = x / exact_of(exact, "fx.rate", m["fx"]["rate"])
+            rate_x = exact_of(exact, "fx.rate", m["fx"]["rate"])
+            if rate_x <= 0: fail("fx_rate_invalid")  # R02-F: exact rate checked before dividing
+            v = finite(v / as_double(m["fx"]["rate"])); x = x / rate_x
         vals[o["key"]] = finite(v if abs(v) >= 1e15 else round(v, 6))
         # event 118: the reported number, read as printed (shortest round-trip decimal), must equal the exact
         # result at the reported precision; a double too coarse to carry it is rejected, never passed on rounded
@@ -578,7 +596,24 @@ def _evaluate(r, e, top=True, exact=None):
     return {"status": "CONDITIONALLY_COMPARABLE", "values": vals, "_raw": raw, "_exact": raw_x}
 
 def evaluate_pair(r, a, b):
-    ra, rb = evaluate(r, a), evaluate(r, b)
+    """Pre-parsed pair path; same trust boundary as evaluate()."""
+    return _pair(r, a, b, evaluate(r, a), evaluate(r, b))
+
+def evaluate_pair_raw(r, text_a, text_b):
+    """Raw pair path (event 119): both sides enter through the raw intake."""
+    def side(text):
+        try:
+            e, exact = intake(text)
+        except NC as x:
+            return None, {"status": "NOT_COMPARABLE", "reason": str(x)}
+        try:
+            return e, _evaluate(r, e, exact=exact)
+        except NC as x:
+            return e, {"status": "NOT_COMPARABLE", "reason": str(x)}
+    (a, ra), (b, rb) = side(text_a), side(text_b)
+    return _pair(r, a, b, ra, rb)
+
+def _pair(r, a, b, ra, rb):
     for side, res in (("a", ra), ("b", rb)):
         if res["status"] != "CONDITIONALLY_COMPARABLE": return {"status": res["status"], "reason": f"{side}:{res['reason']}"}
     pa, pb = a["meta"]["period"], b["meta"]["period"]
@@ -712,20 +747,29 @@ assert "cfo_norm" not in json.dumps(BY["M07"]["outputs"]) and "reported_cfo" not
 assert BY["M05"]["pair_examples"][2]["expected"]["reason"] == "a:required_item_missing:dividends_received_in_investing"
 assert BY["M05"]["pair_examples"][3]["expected"]["reason"] == "b:reclassification_item_conflict:dividends_received_in_investing"
 
-if len(sys.argv) == 3 and sys.argv[1] == "--evaluate":
-    # parity mode for checks/: [{"recipe": id, "a": example, "b"?: example}] -> results, nothing written
+def raw_cases(path):
+    """--evaluate-raw input: a JSON array of {"recipe", "text", "b_text"?}, where text / b_text are the raw JSON
+    texts of the examples. Anything else (a pre-parsed example, an extra flag-like key) is a caller fault."""
+    try:
+        with open(path, encoding="utf-8") as f: cases = json.load(f, parse_constant=lambda c: sys.exit(f"recipes.py: {c} is not JSON"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as x:
+        sys.exit(f"recipes.py: cannot read {path}: {x}")
+    if not isinstance(cases, list): sys.exit("recipes.py: --evaluate-raw expects a JSON array of cases")
+    for i, c in enumerate(cases):
+        if not isinstance(c, dict): sys.exit(f"recipes.py: case {i} is not an object")
+        extra = sorted(set(c) - {"recipe", "text", "b_text"})
+        if extra: sys.exit(f"recipes.py: case {i}: key(s) {extra} not accepted; give each example as raw JSON text in \"text\" / \"b_text\"")
+        if not isinstance(c.get("recipe"), str) or c["recipe"] not in BY: sys.exit(f"recipes.py: case {i}: unknown recipe {c.get('recipe')!r}")
+        for k in ("text", "b_text"):
+            if (k == "text" or k in c) and not isinstance(c.get(k), str): sys.exit(f"recipes.py: case {i}: \"{k}\" must be a string of raw JSON")
+    return cases
+
+if ARGS[0] == "--evaluate-raw":
+    # the only file-evaluation mode: [{"recipe": id, "text": raw JSON, "b_text"?: raw JSON}] -> results, nothing written
     res = []
-    for c in json.load(open(sys.argv[2])):
+    for c in raw_cases(ARGS[1]):
         r = BY[c["recipe"]]
-        x = evaluate_pair(r, c["a"], c["b"]) if "b" in c else evaluate(r, c["a"])
-        res.append({k: v for k, v in x.items() if k not in ("_raw", "_exact")})
-    print(json.dumps(res, allow_nan=False))
-    sys.exit(0)
-if len(sys.argv) == 3 and sys.argv[1] == "--evaluate-raw":
-    # raw mode for checks/: [{"recipe": id, "text": raw JSON of one example}] -> results, nothing written
-    res = []
-    for c in json.load(open(sys.argv[2])):
-        x = evaluate_raw(BY[c["recipe"]], c["text"])
+        x = evaluate_pair_raw(r, c["text"], c["b_text"]) if "b_text" in c else evaluate_raw(r, c["text"])
         res.append({k: v for k, v in x.items() if k not in ("_raw", "_exact")})
     print(json.dumps(res, allow_nan=False))
     sys.exit(0)
@@ -741,6 +785,6 @@ out = {
  "aramco_inputs": "Aramco cells use B02 identities, all WITHHELD (142); comparability never changes withholding.",
  "recipes": R,
 }
-json.dump(out, open(sys.argv[1], "w"), ensure_ascii=False, indent=1, allow_nan=False)
-open(sys.argv[1], "a").write("\n")
+json.dump(out, open(ARGS[0], "w"), ensure_ascii=False, indent=1, allow_nan=False)
+open(ARGS[0], "a").write("\n")
 print(len(R), sum(len(r["examples"]) for r in R), sum(len(r["pair_examples"]) for r in R))

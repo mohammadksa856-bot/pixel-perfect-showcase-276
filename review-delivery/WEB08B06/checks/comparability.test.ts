@@ -5,7 +5,7 @@
  */
 /* eslint-disable @typescript-eslint/no-explicit-any -- cases are untyped JSON documents */
 import { describe, expect, test } from "bun:test";
-import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -13,7 +13,7 @@ import { makeEvaluator } from "./evaluator";
 
 const DIR = fileURLToPath(new URL("../", import.meta.url));
 const doc = JSON.parse(readFileSync(join(DIR, "COMPARABILITY-RECIPES.json"), "utf8"));
-const { recipes, evaluate, evaluateRaw, evaluatePair } = makeEvaluator(doc);
+const { recipes, evaluate, evaluateRaw, evaluatePair, evaluatePairRaw } = makeEvaluator(doc);
 const R = doc.recipes as any[];
 const clone = <T>(x: T): T => structuredClone(x);
 const passOf = (id: string) =>
@@ -21,6 +21,25 @@ const passOf = (id: string) =>
 const pairOf = (id: string, label: string) =>
   clone(recipes[id].pair_examples.find((p: any) => p.label === label));
 const NC = (reason: string) => ({ status: "NOT_COMPARABLE", reason });
+/**
+ * Python's internal object path (evaluate / evaluate_pair), called in-process for parity on values JSON cannot
+ * carry (NaN, Infinity). Event 119: the recipes.py CLI no longer accepts pre-parsed files, so this test-only call
+ * imports the module instead; it is not an entry point for external data.
+ */
+const PY_OBJECTS = `
+import contextlib, io, json, os, runpy, sys, tempfile
+script, cases = sys.argv[1], sys.argv[2]
+sys.argv = [script, os.path.join(tempfile.mkdtemp(), "recipes.json")]
+with contextlib.redirect_stdout(io.StringIO()): g = runpy.run_path(script)
+res = []
+for c in json.load(open(cases)):
+    r = g["BY"][c["recipe"]]
+    x = g["evaluate_pair"](r, c["a"], c["b"]) if "b" in c else g["evaluate"](r, c["a"])
+    res.append({k: v for k, v in x.items() if k not in ("_raw", "_exact")})
+print(json.dumps(res, allow_nan=False))
+`;
+const pyObjects = (file: string) =>
+  Bun.spawnSync(["python3", "-c", PY_OBJECTS, join(DIR, "tools/recipes.py"), file]);
 
 type Case = { name: string; recipe: string; a: any; b?: any; expect: any };
 const CASES: Case[] = [];
@@ -1304,7 +1323,7 @@ describe("R02-A / R02-B regression cases (behaviour, not examples)", () => {
       (_k, v) => (typeof v === "number" && !Number.isFinite(v) ? `__NONFINITE_${v}__` : v),
     ).replace(/"__NONFINITE_(Infinity|-Infinity|NaN)__"/g, "$1");
     writeFileSync(file, body);
-    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate", file]);
+    const p = pyObjects(file);
     expect(p.exitCode).toBe(0);
     const py = JSON.parse(p.stdout.toString());
     expect(py.length).toBe(CASES.length);
@@ -1400,7 +1419,7 @@ describe("R02-E long integers: Python and TypeScript reject alike, without excep
       expect(evaluate(c.recipe, c.a)).toEqual(want);
     });
   test("Python returns the same result for every raw case, with no exception", () => {
-    const p = py(join(DIR, "tools/recipes.py"));
+    const p = pyObjects(file);
     expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
     const out = JSON.parse(p.stdout.toString());
     RAW.forEach(([name, , want], i) => expect({ name, py: out[i] }).toEqual({ name, py: want }));
@@ -1577,7 +1596,7 @@ describe("event 117: inputs or intermediates outside the IEEE-754 safe-integer r
       expect(evaluate(c.recipe, c.a)).toEqual(want);
     });
   test("Python returns the same decision and reason for every case", () => {
-    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate", file]);
+    const p = pyObjects(file);
     expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
     const out = JSON.parse(p.stdout.toString());
     CASES17.forEach(([name, , want], i) =>
@@ -1976,13 +1995,17 @@ describe("event 118: raw numeric lexemes are checked against the decimal precisi
     expect(JSON.parse(CODEX).items.borrowings).toBe(9007199254740991);
     expect(evaluate("M08", JSON.parse(CODEX))).toEqual(OK({ net_debt: 1, gearing: 0.5 }));
     writeFileSync(join(dir, "codex-parsed.json"), `[{"recipe":"M08","a":${CODEX}}]`);
-    const p = Bun.spawnSync([
+    // event 119: the internal object path still has this limit, but no CLI reaches it any more
+    const p = pyObjects(join(dir, "codex-parsed.json"));
+    expect(JSON.parse(p.stdout.toString())[0]).toEqual(OK({ net_debt: 1, gearing: 0.5 }));
+    const cli = Bun.spawnSync([
       "python3",
       join(DIR, "tools/recipes.py"),
       "--evaluate",
       join(dir, "codex-parsed.json"),
     ]);
-    expect(JSON.parse(p.stdout.toString())[0]).toEqual(OK({ net_debt: 1, gearing: 0.5 }));
+    expect({ exit: cli.exitCode, out: cli.stdout.toString() }).toEqual({ exit: 1, out: "" });
+    expect(cli.stderr.toString()).toContain("--evaluate-raw");
     // but intermediate loss is still caught on the object path, because the check runs on the computation
     const sum = JSON.parse(capex("4503599627370495.5", "0.75"));
     expect(evaluate("M06", sum)).toEqual(NC("precision_not_guaranteed:capex_cash"));
@@ -2060,5 +2083,344 @@ describe("event 118: raw numeric lexemes are checked against the decimal precisi
     for (const [name, id, t, want] of CASES18)
       if (want.status === "CONDITIONALLY_COMPARABLE")
         expect({ name, obj: evaluate(id, JSON.parse(t)) }).toEqual({ name, obj: want });
+  });
+});
+
+/* ---------- event 119: R02-F exact zero denominators, R02-G raw-only CLI ---------- */
+describe("event 119 R02-F: a denominator is checked on its exact value before any division", () => {
+  const PREV = "18e0e8a872098ef91b7433cf8d08566f3b89322c";
+  const OK = (values: Record<string, number>) => ({ status: "CONDITIONALLY_COMPARABLE", values });
+  const DEN = NC("denominator_not_positive");
+  const text = (id: string, f: (e: any) => void, literals: Record<string, string>) => {
+    const e = passOf(id);
+    f(e);
+    let t = JSON.stringify(e);
+    for (const [k, lit] of Object.entries(literals)) t = t.replace(`"__${k}__"`, lit);
+    return t;
+  };
+  // gearing = (b + l - c) / (b + l - c + e)
+  const gearing = (b: string, l: string, c: string, eq: string) =>
+    text(
+      "M08",
+      (e) => {
+        e.meta.currency = "USD";
+        delete e.meta.fx;
+        Object.assign(e.items, {
+          borrowings: "__B__",
+          lease_liabilities: "__L__",
+          cash_and_equivalents: "__C__",
+          total_equity: "__E__",
+        });
+      },
+      { B: b, L: l, C: c, E: eq },
+    );
+  // ROACE denominator = (equity_open + borrowings_open + equity_close + borrowings_close) / 2, each term / 2
+  const roace = (eo: string, bo: string, ec: string, bc: string) =>
+    text(
+      "M09",
+      (e) =>
+        Object.assign(e.items, {
+          equity_open: "__EO__",
+          borrowings_open: "__BO__",
+          equity_close: "__EC__",
+          borrowings_close: "__BC__",
+        }),
+      { EO: eo, BO: bo, EC: ec, BC: bc },
+    );
+  const gas = (factor: string) =>
+    text("M11", (e) => (e.policy.gas_scf_per_boe = "__P__"), { P: factor });
+  const rate = (r: string) => text("M01", (e) => (e.meta.fx.rate = "__X__"), { X: r });
+  const ZERO_SUM = gearing("0.1", "0.2", "0", "-0.3");
+  const CASES19: [string, string, string, any][] = [
+    ["gearing: zero denominator written directly", "M08", gearing("0", "0", "0", "0"), DEN],
+    ["gearing: exact zero after addition (double 5.55e-17 > 0)", "M08", ZERO_SUM, DEN],
+    ["gearing: exact zero after subtracting cash", "M08", gearing("0.1", "0.2", "0.3", "0"), DEN],
+    [
+      "gearing: exact zero whose double is negative",
+      "M08",
+      gearing("0.3", "0", "0.1", "-0.2"),
+      DEN,
+    ],
+    ["gearing: negative inputs summing to zero", "M08", gearing("-0.1", "-0.2", "0", "0.3"), DEN],
+    ["gearing: exact denominator -0.000001", "M08", gearing("0.1", "0.2", "0", "-0.300001"), DEN],
+    [
+      "gearing: exact denominator +0.000001 accepted",
+      "M08",
+      gearing("0.000001", "0", "0", "0"),
+      OK({ net_debt: 0.000001, gearing: 1 }),
+    ],
+    [
+      "gearing: exact denominator +0.000001 that the double cannot carry",
+      "M08",
+      gearing("0.1", "0.2", "0", "-0.299999"),
+      NC("precision_not_guaranteed:gearing"),
+    ],
+    [
+      "gearing: scientific notation summing to zero",
+      "M08",
+      gearing("1e-1", "2E-1", "0", "-3.0e-1"),
+      DEN,
+    ],
+    [
+      "gearing: 6-place fractions summing to zero",
+      "M08",
+      gearing("0.000001", "0.000002", "0", "-0.000003"),
+      DEN,
+    ],
+    [
+      "gearing: large amounts cancelling exactly",
+      "M08",
+      gearing("1000000.1", "0", "0", "-1000000.1"),
+      DEN,
+    ],
+    [
+      "gearing: zero numerator over a positive denominator",
+      "M08",
+      gearing("0.1", "0.2", "0.3", "1"),
+      OK({ net_debt: 0, gearing: 0 }),
+    ],
+    ["ROACE: average capital employed exactly zero", "M09", roace("0.1", "0.2", "-0.3", "0"), DEN],
+    ["ROACE: all balances zero", "M09", roace("0", "0", "0", "0"), DEN],
+    ["ROACE: negative balances summing to zero", "M09", roace("-0.1", "0.3", "-0.2", "0"), DEN],
+    ["policy divisor zero", "M11", gas("0"), NC("policy_invalid:gas_scf_per_boe")],
+    ["policy divisor 0.0", "M11", gas("0.0"), NC("policy_invalid:gas_scf_per_boe")],
+    ["policy divisor 0e3", "M11", gas("0e3"), NC("policy_invalid:gas_scf_per_boe")],
+    ["policy divisor -0", "M11", gas("-0"), NC("policy_invalid:gas_scf_per_boe")],
+    ["FX rate zero", "M01", rate("0"), NC("fx_rate_invalid")],
+    ["FX rate 0.0000000000", "M01", rate("0.0000000000"), NC("fx_rate_invalid")],
+    ["FX rate -0", "M01", rate("-0"), NC("fx_rate_invalid")],
+  ];
+  const dir = mkdtempSync(join(tmpdir(), "b06-zero-den-"));
+  const rawFile = join(dir, "raw.json");
+  writeFileSync(rawFile, JSON.stringify(CASES19.map(([, recipe, t]) => ({ recipe, text: t }))));
+  const objFile = join(dir, "obj.json");
+  writeFileSync(
+    objFile,
+    `[${CASES19.map(([, recipe, t]) => `{"recipe":"${recipe}","a":${t}}`).join(",")}]`,
+  );
+  const show = (path: string, to: string) => {
+    const r = Bun.spawnSync(["git", "show", `${PREV}:review-delivery/WEB08B06/${path}`], {
+      cwd: join(DIR, "../.."),
+    });
+    writeFileSync(to, r.stdout);
+    return to;
+  };
+
+  for (const [name, id, t, want] of CASES19) {
+    test(`TypeScript raw: ${name}`, () => expect(evaluateRaw(id, t)).toEqual(want));
+    test(`TypeScript object: ${name}`, () => expect(evaluate(id, JSON.parse(t))).toEqual(want));
+  }
+  test("Python raw path: same result for every case, no ZeroDivisionError", () => {
+    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate-raw", rawFile]);
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    const out = JSON.parse(p.stdout.toString());
+    CASES19.forEach(([name, , , want], i) =>
+      expect({ name, py: out[i] }).toEqual({ name, py: want }),
+    );
+  });
+  test("Python internal object path: same result for every case, no ZeroDivisionError", () => {
+    const p = pyObjects(objFile);
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    const out = JSON.parse(p.stdout.toString());
+    CASES19.forEach(([name, , , want], i) =>
+      expect({ name, py: out[i] }).toEqual({ name, py: want }),
+    );
+  });
+  test("exact reference: the zero-sum denominators are exactly zero although their doubles are not", () => {
+    const dec = (s: string) => {
+      const [w, f = ""] = s.split(".");
+      return BigInt(w + f.padEnd(6, "0"));
+    };
+    expect(dec("0.1") + dec("0.2") - dec("0") + dec("-0.3")).toBe(0n);
+    expect(0.1 + 0.2 - 0 + -0.3).toBeGreaterThan(0);
+    expect(dec("0.3") + dec("0") - dec("0.1") + dec("-0.2")).toBe(0n);
+    expect(0.3 + 0 - 0.1 + -0.2).toBeLessThan(0);
+    expect((dec("0.1") + dec("0.2") + dec("-0.3") + dec("0")) / 2n).toBe(0n);
+    expect(0.1 / 2 + 0.2 / 2 + -0.3 / 2 + 0 / 2).not.toBe(0);
+  });
+  test("previous implementation (18e0e8a): Python raises ZeroDivisionError and TypeScript throws, on the same text", async () => {
+    writeFileSync(join(dir, "one.json"), JSON.stringify([{ recipe: "M08", text: ZERO_SUM }]));
+    const p = Bun.spawnSync([
+      "python3",
+      show("tools/recipes.py", join(dir, "old.py")),
+      "--evaluate-raw",
+      join(dir, "one.json"),
+    ]);
+    expect(p.exitCode).not.toBe(0);
+    expect(p.stderr.toString()).toContain("ZeroDivisionError");
+    const old = (
+      await import(show("checks/evaluator.ts", join(dir, "old-evaluator.ts")))
+    ).makeEvaluator(doc);
+    expect(() => old.evaluateRaw("M08", ZERO_SUM)).toThrow(/invalid divisor|[Dd]ivision by zero/);
+    // current implementation: controlled NOT_COMPARABLE in both
+    expect(evaluateRaw("M08", ZERO_SUM)).toEqual(DEN);
+  });
+  test("an unchecked exact division is a programming error, not data: it throws instead of returning a result", () => {
+    const src = readFileSync(join(DIR, "checks/evaluator.ts"), "utf8");
+    expect(src).toContain('throw Error("internal: exact division by zero reached unchecked")');
+    // and data never reaches it: no case above throws
+    for (const [, id, t] of CASES19) expect(() => evaluateRaw(id, t)).not.toThrow();
+  });
+});
+
+describe("event 119 R02-G: external JSON files are evaluated only through the raw path", () => {
+  const SCRIPT = join(DIR, "tools/recipes.py");
+  const recipesSha = () =>
+    Bun.spawnSync(["sha256sum", join(DIR, "COMPARABILITY-RECIPES.json")]).stdout.toString();
+  const codexText = (() => {
+    const e = passOf("M08");
+    e.meta.currency = "USD";
+    delete e.meta.fx;
+    Object.assign(e.items, {
+      borrowings: "__B__",
+      lease_liabilities: 0,
+      cash_and_equivalents: 9007199254740990,
+      total_equity: 1,
+    });
+    return JSON.stringify(e).replace('"__B__"', "9007199254740990.9");
+  })();
+  const ordinary = JSON.stringify(passOf("M06"));
+  const run = (cwd: string, args: string[]) => {
+    const p = Bun.spawnSync(["python3", SCRIPT, ...args], { cwd });
+    return { exit: p.exitCode, out: p.stdout.toString(), err: p.stderr.toString() };
+  };
+  const fresh = () => mkdtempSync(join(tmpdir(), "b06-cli-"));
+  const put = (dir: string, name: string, body: string) => {
+    writeFileSync(join(dir, name), body);
+    return join(dir, name);
+  };
+
+  test("the legacy --evaluate is refused for the Codex fraction file and for an ordinary file, pointing to --evaluate-raw", () => {
+    for (const a of [codexText, ordinary]) {
+      const d = fresh();
+      const f = put(d, "cases.json", `[{"recipe":"M08","a":${a}}]`);
+      const r = run(d, ["--evaluate", f]);
+      expect({ exit: r.exit, out: r.out }).toEqual({ exit: 1, out: "" });
+      expect(r.err).toContain("--evaluate was removed");
+      expect(r.err).toContain("--evaluate-raw");
+    }
+  });
+  test("--evaluate-raw rejects the Codex fraction and accepts ordinary numbers", () => {
+    const d = fresh();
+    const f = put(
+      d,
+      "cases.json",
+      JSON.stringify([
+        { recipe: "M08", text: codexText },
+        { recipe: "M06", text: ordinary },
+        { recipe: "M06", text: ordinary.slice(0, -1) },
+        { recipe: "M06", text: `${"[".repeat(70)}${"]".repeat(70)}` },
+      ]),
+    );
+    const r = run(d, ["--evaluate-raw", f]);
+    expect({ exit: r.exit, err: r.err }).toEqual({ exit: 0, err: "" });
+    expect(JSON.parse(r.out)).toEqual([
+      NC("unsafe_decimal_precision:borrowings"),
+      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 420 } },
+      NC("input_malformed:json"),
+      NC("input_malformed:json"),
+    ]);
+  });
+  test("no other argument form evaluates or writes anything", () => {
+    const before = recipesSha();
+    const d0 = fresh();
+    const f = put(d0, "cases.json", `[{"recipe":"M08","a":${codexText}}]`);
+    const forms = [
+      [],
+      ["--evaluate", f],
+      [`--evaluate=${f}`],
+      ["--EVALUATE", f],
+      ["--trusted", f],
+      ["--evaluate-raw", "--trusted", f],
+      ["--evaluate-raw", f, "--trusted"],
+      ["--evaluate-raw"],
+      ["-e", f],
+      ["--evaluate", f, "--evaluate-raw"],
+    ];
+    for (const args of forms) {
+      const d = fresh();
+      const r = run(d, args);
+      expect({ args, exit: r.exit, out: r.out }).toEqual({ args, exit: 1, out: "" });
+      expect({ args, written: readdirSync(d) }).toEqual({ args, written: [] });
+    }
+    expect(recipesSha()).toBe(before);
+  });
+  test("--evaluate-raw refuses wrapper files that smuggle pre-parsed examples or extra switches", () => {
+    const bad: [string, string][] = [
+      ["pre-parsed example under a", `[{"recipe":"M08","a":${codexText}}]`],
+      ["text given as an object", `[{"recipe":"M08","text":${codexText}}]`],
+      [
+        "b given pre-parsed beside raw text",
+        JSON.stringify([{ recipe: "M06", text: ordinary, b: JSON.parse(ordinary) }]),
+      ],
+      ["b_text not a string", JSON.stringify([{ recipe: "M06", text: ordinary, b_text: 1 }])],
+      ["extra trusted key", JSON.stringify([{ recipe: "M06", text: ordinary, trusted: true }])],
+      ["unknown recipe", JSON.stringify([{ recipe: "MX", text: ordinary }])],
+      ["not an array", JSON.stringify({ recipe: "M06", text: ordinary })],
+      ["wrapper is not JSON", "[{"],
+      ["wrapper uses NaN", '[{"recipe":"M06","text":"{}","n":NaN}]'],
+    ];
+    for (const [name, body] of bad) {
+      const d = fresh();
+      const r = run(d, ["--evaluate-raw", put(d, "cases.json", body)]);
+      expect({ name, exit: r.exit, out: r.out }).toEqual({ name, exit: 1, out: "" });
+    }
+  });
+  test("pairs: every pair example gives its recorded result through the raw pair path, in TypeScript and Python", () => {
+    const all = R.flatMap((r) =>
+      r.pair_examples.map((p: any) => ({
+        recipe: r.id,
+        text: JSON.stringify(p.a),
+        b_text: JSON.stringify(p.b),
+        want: (({ display: _d, ...rest }) => rest)(p.expected),
+      })),
+    );
+    expect(all.length).toBe(7);
+    for (const c of all) expect(evaluatePairRaw(c.recipe, c.text, c.b_text)).toEqual(c.want);
+    const d = fresh();
+    const f = put(d, "pairs.json", JSON.stringify(all.map(({ want: _w, ...c }) => c)));
+    const r = run(d, ["--evaluate-raw", f]);
+    expect({ exit: r.exit, err: r.err }).toEqual({ exit: 0, err: "" });
+    expect(JSON.parse(r.out)).toEqual(all.map((c) => c.want));
+  });
+  test("raw pair path rejects a side whose lexeme lost precision, naming the side", () => {
+    const want = NC("a:unsafe_decimal_precision:borrowings");
+    expect(evaluatePairRaw("M08", codexText, codexText)).toEqual(want);
+    const d = fresh();
+    const f = put(
+      d,
+      "p.json",
+      JSON.stringify([{ recipe: "M08", text: codexText, b_text: codexText }]),
+    );
+    expect(JSON.parse(run(d, ["--evaluate-raw", f]).out)).toEqual([want]);
+  });
+  test("no consumer outside the B06-0 package uses the evaluators or the removed CLI", () => {
+    const g = Bun.spawnSync(
+      [
+        "git",
+        "grep",
+        "-l",
+        "-e",
+        "--evaluate",
+        "-e",
+        "recipes\\.py",
+        "-e",
+        "checks/evaluator",
+        "-e",
+        "makeEvaluator",
+      ],
+      { cwd: join(DIR, "../..") },
+    );
+    const users = g.stdout
+      .toString()
+      .split("\n")
+      .filter(
+        (p) =>
+          p &&
+          !p.startsWith("review-delivery/WEB08B06/") &&
+          p !== "product-tracking/CHANGELOG.jsonl",
+      );
+    expect(users).toEqual([]);
+    // inside the package the tests are the only caller; any --evaluate call is refused (tests above)
   });
 });

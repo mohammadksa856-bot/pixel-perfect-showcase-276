@@ -86,7 +86,7 @@
  "evaluator_interface": {
   "v1": "evaluate(recipe, example) -> {status, reason} | {status, values}; examples[].expected compared",
   "v2/v3": "evaluate(recipe_id, example) and evaluate_pair(recipe_id, a, b); values are keyed by output key; pair values {a: {...}, b: {...}}; an unknown recipe id throws (caller fault); malformed data never throws",
-  "reference implementations": "tools/recipes.py (generator, --evaluate <cases.json> for batch parity) and checks/evaluator.ts (independent); both must agree on every case"
+  "reference implementations": "tools/recipes.py (generator; batch parity was --evaluate <cases.json>, removed in event 119: files now go through --evaluate-raw only) and checks/evaluator.ts (independent); both must agree on every case"
  },
  "how_to_point_an_earlier_suite_at_v3": [
   "Keep the original assertions and results as recorded; run them against v3 separately and report mismatches as schema mismatches, not as passes.",
@@ -125,8 +125,23 @@
   "no_silent_rounding": "No input is rounded to fit the policy and no result is passed on rounded beyond the stated 6 decimals; a value that cannot be guaranteed is NOT_COMPARABLE with one of the codes above.",
   "verification_only": "Exact rationals (Python fractions.Fraction; TypeScript BigInt numerator/denominator) are used only to verify; reported values are still computed in doubles by the unchanged formulas. No new financial engine.",
   "trust_boundary": "evaluate(recipe, example) on an already parsed object cannot see digits an earlier parser (JSON.parse, json.loads to float) has already lost: it reads each double as its shortest printed decimal and still verifies every intermediate and result exactly. External data must enter through evaluate_raw / evaluateRaw; the object path is for data built in code (generator, tests).",
-  "interfaces": "python tools/recipes.py --evaluate-raw <file>: [{recipe, text}] -> results; checks/evaluator.ts makeEvaluator(doc).evaluateRaw(id, text). evaluate / evaluate_pair / --evaluate unchanged in signature.",
+  "interfaces": "python tools/recipes.py --evaluate-raw <file>: [{recipe, text}] -> results; checks/evaluator.ts makeEvaluator(doc).evaluateRaw(id, text). evaluate / evaluate_pair unchanged in signature (--evaluate CLI removed in event 119, see cli_trust_boundary_event_119).",
   "typescript_display_rounding": "checks/evaluator.ts now rounds the reported double half-to-even exactly at 6 places (as Python round(v, 6) does) instead of Math.round(v * 1e6) / 1e6, which rounded half-up after an inexact product and decided exact ties (e.g. 0.000001 / 2) differently from Python. Values of 1e15 and above are still reported unrounded.",
   "reason_code_changes_from_event_117": "none for existing cases: all 738 earlier tests pass with unchanged expectations; the new codes appear only for raw-path inputs or for results the exact check rejects. COMPARABILITY-RECIPES.json is unchanged."
+ },
+ "zero_denominator_event_119": {
+  "rule": "R02-F: the sign of every ratio denominator is decided on its exact value (fractions.Fraction / BigInt rational), before any division. Exact <= 0 -> denominator_not_positive, even when the double looks positive (0.1 + 0.2 - 0.3 = 5.55e-17). Exact > 0 but double <= 0 -> precision_not_guaranteed:<output>.",
+  "other_divisions": "Division inside an expression (M09 '/ 2', M11 '/ policy_gas_scf_per_boe') checks the exact divisor too: zero -> non_finite_result, the code the double path already used. FX conversion checks the exact rate: <= 0 -> fx_rate_invalid. Policy factors and FX rates of 0 are rejected earlier by policy_invalid / fx_rate_invalid (unchanged).",
+  "errors_vs_data": "Invalid data is NOT_COMPARABLE. An exact division by zero that reaches the arithmetic unchecked is a programming error: Python's ZeroDivisionError, TypeScript's explicit 'internal: exact division by zero reached unchecked'; neither is caught as data. No except Exception.",
+  "reason_codes": "no new code; denominator_not_positive and precision_not_guaranteed:<output> reused. Previously such inputs raised ZeroDivisionError (Python, 18e0e8a) or a BigInt RangeError (TypeScript, 18e0e8a)."
+ },
+ "cli_trust_boundary_event_119": {
+  "rule": "R02-G: the only file-evaluation entry point is python tools/recipes.py --evaluate-raw <cases.json>. Every numeric lexeme is checked before a double exists. No flag bypasses it.",
+  "cli_forms": "recipes.py <out.json> (generator) and recipes.py --evaluate-raw <cases.json>. Anything else, including the removed --evaluate, --evaluate=..., unknown switches, missing or extra arguments, exits 1 with a usage message before any work and writes nothing.",
+  "evaluate_raw_input": "A JSON array of {recipe, text, b_text?}; text / b_text are raw JSON texts of examples (b_text evaluates a pair through the raw pair path evaluate_pair_raw / evaluatePairRaw). A pre-parsed example (a, b), any other key, a non-string text, an unknown recipe or a non-array file exits 1.",
+  "removed": "--evaluate <cases.json> ([{recipe, a, b?}] parsed with json.load). It read numbers already rounded to doubles, so a file could reach CONDITIONALLY_COMPARABLE without raw verification. It exits 1 and names --evaluate-raw.",
+  "internal_object_path": "evaluate / evaluate_pair (Python) and evaluate / evaluatePair (TypeScript) stay as library functions for examples built in code (the generator) and for tests that need values JSON cannot carry (NaN, Infinity); the tests call the Python function in-process. They are not a gateway for external data: no CLI reaches them.",
+  "consumers": "No consumer outside review-delivery/WEB08B06 uses either evaluator or the CLI (git grep, checked in comparability.test.ts); no CI workflow calls it.",
+  "test_changes": "Four earlier parity tests that called --evaluate now call the same Python evaluate() in-process, with unchanged expectations. The event-118 trust-boundary test now also asserts that the CLI refuses --evaluate."
  }
 }

@@ -1,566 +1,1619 @@
 {
- "schema": "marefa-web08b06-source-rights-matrix/0",
- "status": "DECISION_INPUT_NOT_A_GRANT",
- "accessed": "2026-10-18",
- "evidence_method": "Direct page fetches were blocked by this environment's network policy; terms were read only as search-index excerpts of the official pages. No page was opened in full; every cell needs legal confirmation against the live page.",
- "use_values": {
-  "CANDIDATE_PERMITTED": "terms excerpt appears to permit, with the listed conditions",
-  "RESTRICTED_LICENCE_OR_CONSENT": "needs a licence or written consent",
-  "PROHIBITED_WITHOUT_WRITTEN_CONSENT": "terms excerpt forbids without written consent",
-  "UNKNOWN_LEGAL_REVIEW": "terms unclear or not found; legal review required"
+ "schema": "marefa-web08b06-source-rights-matrix/1",
+ "supersedes": "marefa-web08b06-source-rights-matrix/0 (delivery 17b870c)",
+ "status": "DECISION_INPUT_NOT_A_GRANT_NOT_LEGAL_ADVICE",
+ "evidence_method": "Direct fetch of every terms page was blocked by this environment's network policy. Excerpts come from the search index of the official page and were not checked against the live page. No legal conclusion is drawn from site terms.",
+ "status_rules": {
+  "proposed_legal_status": "UNKNOWN by default; PENDING_VERIFICATION when an official-page excerpt mentions the use; never PERMITTED/RESTRICTED/PROHIBITED until terms.official_text_verified is true with verified_at, and then only after legal review.",
+  "excerpt_reading": "What the excerpt appears to say; informational, never a legal status or a grant.",
+  "b01_grant": "research-evidence/v1/contract.ts GrantSchema; unknown until a rights_reviewer records a grant. Not set from this file.",
+  "licence_scope": "Per product. A licence of one product (e.g. IEA reports CC BY 4.0) is never applied to another (e.g. IEA datasets)."
  },
- "b01_mapping": "research-evidence/v1/contract.ts GrantSchema: status permitted|restricted|unknown, uses internal_research|public_display|derive, reviewerId with role rights_reviewer. Every source here maps to status=unknown until a rights reviewer records a grant.",
+ "uses": [
+  "internal_research",
+  "commercial_public_display",
+  "redistribution",
+  "derivation",
+  "automated_access"
+ ],
  "sources": [
   {
-   "id": "SRC-EDGAR",
-   "provider": "US SEC (EDGAR, XBRL company facts)",
-   "data_type": "10-K/20-F filings and tagged financial facts of SEC filers (XOM, CVX, COP; 20-F: Shell, TotalEnergies, BP, Equinor, Petrobras)",
-   "frequency": "quarterly/annual",
-   "data_url": "https://www.sec.gov/os/accessing-edgar-data",
-   "terms_urls": [
-    "https://www.sec.gov/about/privacy-information",
-    "https://www.sec.gov/os/accessing-edgar-data"
+   "id": "SRC-SEC-XBRL-FACTS",
+   "provider": "US SEC",
+   "product": "EDGAR XBRL financial data APIs (companyfacts / companyconcept / frames, data.sec.gov)",
+   "dataset_version": "live API; per-filing accession",
+   "content_types": [
+    "issuer_financial_facts"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "CANDIDATE_PERMITTED",
-    "redistribution": "CANDIDATE_PERMITTED",
-    "derive": "CANDIDATE_PERMITTED"
+   "third_party_components": [
+    "facts are authored by the filing issuers"
+   ],
+   "data_url": "https://www.sec.gov/os/accessing-edgar-data",
+   "terms": {
+    "urls": [
+     "https://www.sec.gov/about/privacy-information",
+     "https://www.sec.gov/os/accessing-edgar-data"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "sec.gov information is public and may be copied or distributed without SEC permission, citing SEC; no SEC seal/logos; fair access: max 10 requests/s with a declared User-Agent (organisation + contact)."
    },
-   "conditions": "cite SEC; no SEC seal/logo; fair access: <=10 req/s and declared User-Agent with organisation contact; company-authored narrative text: reproduction UNKNOWN",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "PRIMARY_PEER_FINANCIAL_FACTS_CANDIDATE",
-   "notes": "Excerpt may be from an older page version; legal must confirm that issuer-authored figures obtained from EDGAR may be displayed and derived on a commercial site."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "cite SEC; no seal/logo; fair-access rate and User-Agent; excerpt may be from an older page version",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "PEER_FINANCIAL_FACTS_CANDIDATE",
+   "notes": "Excerpt concerns SEC website information; whether issuer-authored figures may be displayed and derived commercially needs legal confirmation. Company Facts completeness per issuer and concept is UNVERIFIED (R03)."
   },
   {
-   "id": "SRC-EIA",
-   "provider": "US EIA (data, API)",
-   "data_type": "Production, consumption, inventories, international statistics, STEO",
-   "frequency": "weekly/monthly/annual",
-   "data_url": "https://www.eia.gov/opendata",
-   "terms_urls": [
-    "https://www.eia.gov/about/copyrights_reuse.php"
+   "id": "SRC-SEC-FILING-DOCS",
+   "provider": "US SEC (issuer filings on EDGAR)",
+   "product": "10-K / 20-F filing documents (full text, narrative, exhibits)",
+   "dataset_version": "per accession number",
+   "content_types": [
+    "issuer_narrative",
+    "issuer_financial_statements_documents"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "CANDIDATE_PERMITTED",
-    "redistribution": "CANDIDATE_PERMITTED",
-    "derive": "CANDIDATE_PERMITTED"
+   "third_party_components": [
+    "issuer copyright in narrative and exhibits"
+   ],
+   "data_url": "https://www.sec.gov/edgar/search/",
+   "terms": {
+    "urls": [
+     "https://www.sec.gov/about/privacy-information"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Same sec.gov statement; issuer-authored narrative is not addressed by the excerpt."
    },
-   "conditions": "attribution with publication date; third-party material excluded; EIA logo is a trademark; API key under API terms",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "PRIMARY_INDUSTRY_DATASET_CANDIDATE",
-   "notes": "Public domain applies to EIA's own products only."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "fair access as above",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "CITATION_AND_LOCATOR_ONLY",
+   "notes": "No reproduction of narrative text; links and locators only."
+  },
+  {
+   "id": "SRC-EIA-OPENDATA",
+   "provider": "US EIA",
+   "product": "EIA open data (API v2 and bulk datasets, EIA-produced series)",
+   "dataset_version": "series-level; release date per series",
+   "content_types": [
+    "statistical_data"
+   ],
+   "third_party_components": [],
+   "data_url": "https://www.eia.gov/opendata",
+   "terms": {
+    "urls": [
+     "https://www.eia.gov/about/copyrights_reuse.php"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "US government publications are public domain; EIA data, files, reports may be used and distributed; attribution with publication date; third-party material excluded; EIA logo is a trademark; API key under API terms."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "attribution with date; exclude third-party series; API terms",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "INDUSTRY_DATASET_CANDIDATE",
+   "notes": "Only EIA-produced series; see SRC-EIA-SPOT."
   },
   {
    "id": "SRC-EIA-SPOT",
-   "provider": "US EIA Brent/WTI spot price series (sourced from Refinitiv/LSEG)",
-   "data_type": "Daily crude spot prices",
-   "frequency": "daily",
+   "provider": "US EIA (republished third-party data)",
+   "product": "Brent and WTI spot price series",
+   "dataset_version": "series-level",
+   "content_types": [
+    "prices",
+    "third_party_data"
+   ],
+   "third_party_components": [
+    "Refinitiv / LSEG (per EIA STEO handbook and table definitions)"
+   ],
    "data_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
-   "terms_urls": [
-    "https://www.eia.gov/analysis/handbook/pdf/STEO_Crude_Oil_Price.pdf",
-    "https://www.eia.gov/dnav/pet/tbldefs/pet_pri_spt_tbldef2.asp"
+   "terms": {
+    "urls": [
+     "https://www.eia.gov/analysis/handbook/pdf/STEO_Crude_Oil_Price.pdf",
+     "https://www.eia.gov/dnav/pet/tbldefs/pet_pri_spt_tbldef2.asp"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "EIA purchases the underlying Brent/WTI spot series from Refinitiv and republishes them with permission."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "third-party licensor terms govern",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED_PENDING_LEGAL_REVIEW",
+   "notes": "The EIA public-domain statement does not by itself cover these series."
+  },
+  {
+   "id": "SRC-IEA-ESDB",
+   "provider": "IEA",
+   "product": "Energy Statistics Data Browser",
+   "dataset_version": "NOT_ESTABLISHED",
+   "content_types": [
+    "statistical_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "UNKNOWN_LEGAL_REVIEW",
-    "redistribution": "UNKNOWN_LEGAL_REVIEW",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
-   },
-   "conditions": "EIA republishes these series with permission from Refinitiv; public-domain statement may not cover them",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED_UNTIL_LEGAL_REVIEW",
-   "notes": "Do not treat as public domain."
-  },
-  {
-   "id": "SRC-OPEC-ASB",
-   "provider": "OPEC Annual Statistical Bulletin",
-   "data_type": "Reserves, production, exports, refining by country",
-   "frequency": "annual",
-   "data_url": "https://publications.opec.org/asb",
-   "terms_urls": [
-    "https://www.opec.org/terms-and-conditions.html",
-    "https://www.opec.org/assets/assetdb/asb-2025.pdf"
-   ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
-   },
-   "conditions": "non-commercial/educational use with acknowledgement; commercial use and whole-publication copying need written permission",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "PERMISSION_REQUEST_CANDIDATE",
-   "notes": "Marefa is commercial."
-  },
-  {
-   "id": "SRC-OPEC-MOMR",
-   "provider": "OPEC Monthly Oil Market Report",
-   "data_type": "Supply/demand balances, OPEC production (secondary sources)",
-   "frequency": "monthly",
-   "data_url": "https://www.opec.org",
-   "terms_urls": [],
-   "terms_evidence": "TERMS_NOT_FOUND",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "UNKNOWN_LEGAL_REVIEW",
-    "redistribution": "UNKNOWN_LEGAL_REVIEW",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
-   },
-   "conditions": "current notice not found; only a 2009 secondary item seen",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED_UNTIL_TERMS_FOUND",
-   "notes": ""
-  },
-  {
-   "id": "SRC-JODI",
-   "provider": "JODI Oil/Gas World Database (IEF)",
-   "data_type": "Monthly oil and gas flows by country",
-   "frequency": "monthly",
-   "data_url": "https://www.jodidata.org/oil/database/data-downloads.aspx",
-   "terms_urls": [
-    "https://www.jodidata.org/terms-of-use.aspx"
-   ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "UNKNOWN_LEGAL_REVIEW",
-    "redistribution": "UNKNOWN_LEGAL_REVIEW",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
-   },
-   "conditions": "citation format required; 'all rights reserved'; governed by Saudi law; no reuse grant found",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "LEGAL_REVIEW_CANDIDATE",
-   "notes": "Free access is not a licence."
-  },
-  {
-   "id": "SRC-IEA-CC",
-   "provider": "IEA reports, text and standalone charts",
-   "data_type": "Reports, figures",
-   "frequency": "varies",
-   "data_url": "https://www.iea.org",
-   "terms_urls": [
-    "https://www.iea.org/terms"
-   ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "CANDIDATE_PERMITTED",
-    "redistribution": "CANDIDATE_PERMITTED",
-    "derive": "CANDIDATE_PERMITTED"
-   },
-   "conditions": "CC BY 4.0 with attribution; datasets, data explorers and WEO annexes excluded",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "CONTEXT_TEXT_CANDIDATE",
-   "notes": ""
-  },
-  {
-   "id": "SRC-IEA-DATA",
-   "provider": "IEA free datasets (e.g. WEO free dataset)",
-   "data_type": "Scenario data",
-   "frequency": "annual",
+   "third_party_components": [],
    "data_url": "https://www.iea.org/data-and-statistics",
-   "terms_urls": [
-    "https://www.iea.org/terms"
-   ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "RESTRICTED_LICENCE_OR_CONSENT",
-    "derive": "RESTRICTED_LICENCE_OR_CONSENT"
+   "terms": {
+    "urls": [
+     "https://www.iea.org/terms"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": null,
+    "excerpt_channel": null,
+    "excerpt_summary": null
    },
-   "conditions": "CC BY-NC-SA 4.0; commercial use needs IEA consent",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "PERMISSION_REQUEST_CANDIDATE",
+   "codex_reported": "Codex review 30fc720 (not accessible here) reports CC BY 4.0 for this product; to be confirmed against the product's own licence line.",
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "redistribution": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "derivation": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": null,
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "INDUSTRY_DATASET_CANDIDATE_PENDING_VERIFICATION",
+   "notes": "No excerpt seen in this environment; a search found IEA data-product pages labelled 'Terms of Use for Non-CC Material' (other products)."
+  },
+  {
+   "id": "SRC-IEA-WEO2025-FREE",
+   "provider": "IEA",
+   "product": "World Energy Outlook 2025 Free Dataset",
+   "dataset_version": "WEO 2025 edition",
+   "content_types": [
+    "scenario_data"
+   ],
+   "third_party_components": [],
+   "data_url": "https://www.iea.org/data-and-statistics/data-product/world-energy-outlook-2025-free-dataset",
+   "terms": {
+    "urls": [
+     "https://www.iea.org/terms"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Free WEO datasets are under CC BY-NC-SA 4.0; commercial use requires IEA consent (compliance@iea.org)."
+   },
+   "codex_reported": "Codex review 30fc720 reports CC BY-NC-SA 4.0.",
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "non-commercial, share-alike, attribution",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "PERMISSION_REQUEST_CANDIDATE",
    "notes": ""
   },
   {
    "id": "SRC-IEA-PAID",
-   "provider": "IEA paid products (OMR, Oil Information)",
-   "data_type": "Monthly oil market, balances",
-   "frequency": "monthly/annual",
-   "data_url": "https://www.iea.org/data-and-statistics/data-product/oil-market-report-omr",
-   "terms_urls": [
-    "https://www.iea.org/terms"
+   "provider": "IEA",
+   "product": "Paid data products (e.g. Oil Market Report, Oil Information, World Energy Balances)",
+   "dataset_version": "per product and edition",
+   "content_types": [
+    "statistical_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "RESTRICTED_LICENCE_OR_CONSENT",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "RESTRICTED_LICENCE_OR_CONSENT"
+   "third_party_components": [],
+   "data_url": "https://www.iea.org/data-and-statistics/data-product/oil-market-report-omr",
+   "terms": {
+    "urls": [
+     "https://www.iea.org/terms"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Per-product licences (limited-user and enterprise tiers); work for third parties not permitted under standard terms; derived products need an agreement and fee."
    },
-   "conditions": "per-user licence; derived products need agreement and fee",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED_NO_PURCHASE",
-   "notes": ""
+   "codex_reported": "Codex review 30fc720: governed by individual contracts.",
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "individual contract per product",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED_NO_PURCHASE",
+   "notes": "Each paid product follows its own contract; none held."
+  },
+  {
+   "id": "SRC-IEA-REPORTS",
+   "provider": "IEA",
+   "product": "Reports, articles and standalone charts (text content)",
+   "dataset_version": "per publication",
+   "content_types": [
+    "text_reports",
+    "charts"
+   ],
+   "third_party_components": [],
+   "data_url": "https://www.iea.org/reports",
+   "terms": {
+    "urls": [
+     "https://www.iea.org/terms"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Text, reports and standalone figures are CC BY 4.0 unless an exception applies; datasets, data explorers and WEO annexes are excluded from that grant."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "attribution; exceptions per item",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "CONTEXT_TEXT_CANDIDATE",
+   "notes": "Does not extend to any IEA dataset."
+  },
+  {
+   "id": "SRC-OPEC-ASB2025",
+   "provider": "OPEC",
+   "product": "Annual Statistical Bulletin",
+   "dataset_version": "2025 edition (asb-2025.pdf)",
+   "content_types": [
+    "statistical_data"
+   ],
+   "third_party_components": [],
+   "data_url": "https://www.opec.org/assets/assetdb/asb-2025.pdf",
+   "terms": {
+    "urls": [
+     "https://www.opec.org/terms-and-conditions.html",
+     "https://www.opec.org/assets/assetdb/asb-2025.pdf"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "May be used/reproduced for educational and other non-commercial purposes with full acknowledgement; whole-publication copying and other use need written permission; no logo/IP use without authorisation."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "non-commercial with acknowledgement",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "PERMISSION_REQUEST_CANDIDATE",
+   "notes": "Marefa is commercial."
+  },
+  {
+   "id": "SRC-OPEC-MOMR",
+   "provider": "OPEC",
+   "product": "Monthly Oil Market Report",
+   "dataset_version": "NOT_ESTABLISHED",
+   "content_types": [
+    "statistical_data",
+    "third_party_data"
+   ],
+   "third_party_components": [
+    "secondary-source production estimates"
+   ],
+   "data_url": "https://www.opec.org",
+   "terms": {
+    "urls": [],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": null,
+    "excerpt_channel": null,
+    "excerpt_summary": null
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "redistribution": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "derivation": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": null,
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED_PENDING_TERMS",
+   "notes": "Current notice not found; a 2009 secondary item is not evidence."
+  },
+  {
+   "id": "SRC-JODI-OIL",
+   "provider": "JODI (IEF)",
+   "product": "JODI Oil World Database",
+   "dataset_version": "monthly release; NOT_ESTABLISHED",
+   "content_types": [
+    "statistical_data",
+    "third_party_data"
+   ],
+   "third_party_components": [
+    "national submissions via partner organisations"
+   ],
+   "data_url": "https://www.jodidata.org/oil/database/data-downloads.aspx",
+   "terms": {
+    "urls": [
+     "https://www.jodidata.org/terms-of-use.aspx"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Intellectual property protected, all rights reserved, Saudi law; citation format requested in user guide; no reuse grant seen."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "citation",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "LEGAL_REVIEW_CANDIDATE",
+   "notes": "Free access is not a licence."
+  },
+  {
+   "id": "SRC-JODI-GAS",
+   "provider": "JODI (IEF)",
+   "product": "JODI Gas World Database",
+   "dataset_version": "monthly release; NOT_ESTABLISHED",
+   "content_types": [
+    "statistical_data",
+    "third_party_data"
+   ],
+   "third_party_components": [
+    "national submissions"
+   ],
+   "data_url": "https://www.jodidata.org/gas/",
+   "terms": {
+    "urls": [
+     "https://www.jodidata.org/terms-of-use.aspx"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Same site terms as JODI Oil; no product-specific grant seen."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "citation",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "LEGAL_REVIEW_CANDIDATE",
+   "notes": "Listed separately; no licence inherited from JODI Oil."
   },
   {
    "id": "SRC-EI-SR",
-   "provider": "Energy Institute Statistical Review of World Energy",
-   "data_type": "Reserves, production, consumption, prices by country",
-   "frequency": "annual",
-   "data_url": "https://www.energyinst.org/statistical-review",
-   "terms_urls": [
-    "https://www.energyinst.org/statistical-review/about",
-    "https://www.energyinst.org/terms"
+   "provider": "Energy Institute",
+   "product": "Statistical Review of World Energy",
+   "dataset_version": "edition NOT_ESTABLISHED",
+   "content_types": [
+    "statistical_data",
+    "third_party_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [
+    "series sourced from S&P Global and others"
+   ],
+   "data_url": "https://www.energyinst.org/statistical-review",
+   "terms": {
+    "urls": [
+     "https://www.energyinst.org/statistical-review/about",
+     "https://www.energyinst.org/terms"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Quotation with attribution welcome; extensive reproduction of tables/charts needs EI permission; S&P Global-sourced data strictly prohibited from redistribution without S&P authorisation."
    },
-   "conditions": "short quotes with attribution; extensive table/chart reproduction needs EI permission; S&P Global-sourced series strictly prohibited",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "PERMISSION_REQUEST_CANDIDATE",
-   "notes": "A third-party CC BY listing is not EI's own terms."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "attribution; per-series third-party restrictions",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "PERMISSION_REQUEST_CANDIDATE",
+   "notes": "A third-party CC BY listing is not EI's terms."
   },
   {
-   "id": "SRC-ARAMCO-WEB",
-   "provider": "Saudi Aramco website and reports (aramco.com)",
-   "data_type": "Annual/interim reports, non-IFRS definitions, ESG data",
-   "frequency": "quarterly/annual",
-   "data_url": "https://www.aramco.com/en/investors",
-   "terms_urls": [
-    "https://www.aramco.com/en/terms-and-conditions"
+   "id": "SRC-ARAMCO-FIN",
+   "provider": "Saudi Aramco",
+   "product": "Financial statements and results publications (aramco.com)",
+   "dataset_version": "per report (e.g. FY2025)",
+   "content_types": [
+    "issuer_financial_facts",
+    "issuer_financial_statements_documents"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://www.aramco.com/en/investors",
+   "terms": {
+    "urls": [
+     "https://www.aramco.com/en/terms-and-conditions"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "No part of the site or content may be copied, reproduced, republished, posted, publicly displayed or distributed without Aramco's express prior written consent."
    },
-   "conditions": "no copying, republication or public display without express prior written consent",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "ESCALATION_REQUIRED",
-   "notes": "Material to the existing product: current preview pages and the engine snapshot derive from Aramco documents."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "site terms; regulatory disclosure regime not assessed",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "D4_LEGAL_REVIEW",
+   "notes": "High rights risk requiring legal review (D4); not an established violation. Whether site terms bind facts disclosed under listing obligations is a legal question, not answered here."
+  },
+  {
+   "id": "SRC-ARAMCO-NARR",
+   "provider": "Saudi Aramco",
+   "product": "Annual report narrative, ESG reports and website text",
+   "dataset_version": "per report",
+   "content_types": [
+    "issuer_narrative",
+    "esg_data"
+   ],
+   "third_party_components": [],
+   "data_url": "https://www.aramco.com/en/sustainability",
+   "terms": {
+    "urls": [
+     "https://www.aramco.com/en/terms-and-conditions"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Same site terms as SRC-ARAMCO-FIN."
+   },
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "site terms",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "CITATION_AND_LOCATOR_ONLY",
+   "notes": "No reproduction of narrative."
   },
   {
    "id": "SRC-XOM-WEB",
-   "provider": "ExxonMobil website",
-   "data_type": "Reports, site content",
-   "frequency": "quarterly/annual",
-   "data_url": "https://corporate.exxonmobil.com",
-   "terms_urls": [
-    "https://corporate.exxonmobil.com/global-legal-pages/terms-and-conditions"
+   "provider": "ExxonMobil",
+   "product": "Corporate website content",
+   "dataset_version": "n/a",
+   "content_types": [
+    "issuer_narrative"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "RESTRICTED_LICENCE_OR_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://corporate.exxonmobil.com",
+   "terms": {
+    "urls": [
+     "https://corporate.exxonmobil.com/global-legal-pages/terms-and-conditions"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Distribution only of whole unaltered pages/documents; other uses need a written agreement."
    },
-   "conditions": "distribution only of whole unaltered pages/documents; other uses need written agreement",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "USE_EDGAR_INSTEAD",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "NOT_USED_PREFER_SEC",
    "notes": ""
   },
   {
    "id": "SRC-CVX-WEB",
-   "provider": "Chevron website",
-   "data_type": "Reports, site content",
-   "frequency": "quarterly/annual",
-   "data_url": "https://www.chevron.com",
-   "terms_urls": [
-    "https://www.chevron.com/terms-of-use"
+   "provider": "Chevron",
+   "product": "Corporate website content",
+   "dataset_version": "n/a",
+   "content_types": [
+    "issuer_narrative"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "UNKNOWN_LEGAL_REVIEW",
-    "redistribution": "UNKNOWN_LEGAL_REVIEW",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://www.chevron.com",
+   "terms": {
+    "urls": [
+     "https://www.chevron.com/terms-of-use"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Rights reserved for text and data mining, scraping, computation and AI training."
    },
-   "conditions": "text and data mining, scraping and AI training rights reserved",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "USE_EDGAR_INSTEAD",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "NOT_USED_PREFER_SEC",
    "notes": "No automated collection."
   },
   {
    "id": "SRC-SHELL-WEB",
-   "provider": "Shell website",
-   "data_type": "Reports, site content",
-   "frequency": "quarterly/annual",
-   "data_url": "https://www.shell.com/investors",
-   "terms_urls": [
-    "https://www.shell.com/terms-and-conditions"
+   "provider": "Shell",
+   "product": "Corporate website content",
+   "dataset_version": "n/a",
+   "content_types": [
+    "issuer_narrative"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://www.shell.com/investors",
+   "terms": {
+    "urls": [
+     "https://www.shell.com/terms-and-conditions"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "One printed copy for personal reference; other copying restricted."
    },
-   "conditions": "one printed copy for personal reference",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "USE_EDGAR_INSTEAD",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "NOT_USED_PREFER_SEC",
    "notes": ""
   },
   {
    "id": "SRC-TTE-WEB",
-   "provider": "TotalEnergies website",
-   "data_type": "Reports, site content",
-   "frequency": "quarterly/annual",
-   "data_url": "https://totalenergies.com/investors",
-   "terms_urls": [
-    "https://totalenergies.com/legal"
+   "provider": "TotalEnergies",
+   "product": "Corporate website content",
+   "dataset_version": "n/a",
+   "content_types": [
+    "issuer_narrative"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://totalenergies.com/investors",
+   "terms": {
+    "urls": [
+     "https://totalenergies.com/legal"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Personal and private use with source citation; other uses need prior express authorisation."
    },
-   "conditions": "personal and private use with source citation; other uses need prior express authorisation",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "USE_EDGAR_INSTEAD",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "NOT_USED_PREFER_SEC",
    "notes": ""
   },
   {
    "id": "SRC-BP-WEB",
-   "provider": "BP website",
-   "data_type": "Reports, site content",
-   "frequency": "quarterly/annual",
-   "data_url": "https://www.bp.com/en/global/corporate/investors.html",
-   "terms_urls": [
-    "https://www.bp.com/legal-notice"
+   "provider": "BP",
+   "product": "Corporate website content",
+   "dataset_version": "n/a",
+   "content_types": [
+    "issuer_narrative"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "UNKNOWN_LEGAL_REVIEW",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://www.bp.com",
+   "terms": {
+    "urls": [
+     "https://www.bp.com/legal-notice"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "'All other use is strictly prohibited.'"
    },
-   "conditions": "'all other use is strictly prohibited'",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "USE_EDGAR_INSTEAD",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "NOT_USED_PREFER_SEC",
    "notes": ""
   },
   {
    "id": "SRC-EQNR-WEB",
-   "provider": "Equinor website",
-   "data_type": "Reports, site content",
-   "frequency": "quarterly/annual",
-   "data_url": "https://www.equinor.com/investors",
-   "terms_urls": [
-    "https://www.equinor.com/about-us/terms-and-conditions"
+   "provider": "Equinor",
+   "product": "Corporate website content",
+   "dataset_version": "n/a",
+   "content_types": [
+    "issuer_narrative"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "third_party_components": [],
+   "data_url": "https://www.equinor.com/investors",
+   "terms": {
+    "urls": [
+     "https://www.equinor.com/about-us/terms-and-conditions"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Personal non-commercial extracts; otherwise written approval, except where mandatory law permits."
    },
-   "conditions": "personal non-commercial extracts; otherwise written approval",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "USE_EDGAR_INSTEAD",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "UNCLEAR",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "NOT_USED_PREFER_SEC",
    "notes": ""
   },
   {
    "id": "SRC-TADAWUL-WEB",
-   "provider": "Saudi Exchange website and index data",
-   "data_type": "Prices, indices, issuer disclosures",
-   "frequency": "real-time/delayed/EOD",
-   "data_url": "https://www.saudiexchange.sa",
-   "terms_urls": [
-    "https://www.saudiexchange.sa/wps/portal/saudiexchange/hidden/legal_notice?locale=en"
+   "provider": "Saudi Exchange",
+   "product": "Website content and index data",
+   "dataset_version": "n/a",
+   "content_types": [
+    "prices",
+    "indices",
+    "issuer_disclosures"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "PROHIBITED_WITHOUT_WRITTEN_CONSENT"
+   "third_party_components": [],
+   "data_url": "https://www.saudiexchange.sa",
+   "terms": {
+    "urls": [
+     "https://www.saudiexchange.sa/wps/portal/saudiexchange/hidden/legal_notice?locale=en"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Personal use only; reproduction or storage needs prior written consent; index data may not be reproduced or used for products/indices."
    },
-   "conditions": "personal use only; index data may not be reproduced or used to create products or indices",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED",
    "notes": ""
   },
   {
-   "id": "SRC-TADAWUL-LIC",
-   "provider": "Saudi Exchange market data licence",
-   "data_type": "Real-time, delayed, end-of-day, historic",
-   "frequency": "real-time to EOD",
-   "data_url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/trading/market-services/market-information-services/market-data",
-   "terms_urls": [
-    "https://www.saudiexchange.sa/wps/portal/saudiexchange/rules-guidance/fees?locale=en"
+   "id": "SRC-TADAWUL-MDL",
+   "provider": "Saudi Exchange",
+   "product": "Market data licence (real-time, delayed, end-of-day, historic)",
+   "dataset_version": "fee schedule NOT_ESTABLISHED",
+   "content_types": [
+    "prices"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "RESTRICTED_LICENCE_OR_CONSENT",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "RESTRICTED_LICENCE_OR_CONSENT",
-    "derive": "RESTRICTED_LICENCE_OR_CONSENT"
+   "third_party_components": [],
+   "data_url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/trading/market-services/market-information-services/market-data",
+   "terms": {
+    "urls": [
+     "https://www.saudiexchange.sa/wps/portal/saudiexchange/rules-guidance/fees?locale=en"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Distribution licences with annual fees."
    },
-   "conditions": "distribution licence or a licensed vendor whose terms allow public display; no purchase in B06",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED_NO_PURCHASE",
-   "notes": "Needed for any valuation multiple; outside B06 (B07 not started)."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "licence",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED_NO_PURCHASE",
+   "notes": "Valuation multiples are out of B06 scope (D9)."
   },
   {
    "id": "SRC-GASTAT",
-   "provider": "GASTAT (stats.gov.sa)",
-   "data_type": "National statistics",
-   "frequency": "monthly/quarterly/annual",
-   "data_url": "https://www.stats.gov.sa",
-   "terms_urls": [
-    "https://www.stats.gov.sa/en/use-policy"
+   "provider": "GASTAT",
+   "product": "Official statistics (stats.gov.sa)",
+   "dataset_version": "indicator-level",
+   "content_types": [
+    "statistical_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "CANDIDATE_PERMITTED",
-    "redistribution": "CANDIDATE_PERMITTED",
-    "derive": "CANDIDATE_PERMITTED"
+   "third_party_components": [],
+   "data_url": "https://www.stats.gov.sa",
+   "terms": {
+    "urls": [
+     "https://www.stats.gov.sa/en/use-policy"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Copy, distribute, re-use, build upon or derive for commercial or non-commercial purposes, citing GASTAT; logos excluded; indicator pages may override."
    },
-   "conditions": "cite GASTAT; logos excluded; indicator-level policies may override",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "SAUDI_MACRO_CONTEXT_CANDIDATE",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "cite GASTAT; check indicator policy",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "SAUDI_CONTEXT_CANDIDATE",
    "notes": ""
   },
   {
    "id": "SRC-SA-ODP",
    "provider": "Saudi National Open Data Platform",
-   "data_type": "Government datasets (incl. ministry datasets published there)",
-   "frequency": "varies",
-   "data_url": "https://od.data.gov.sa",
-   "terms_urls": [
-    "https://od.data.gov.sa/en/policies/open-data-license"
+   "product": "Datasets published on od.data.gov.sa",
+   "dataset_version": "dataset-level",
+   "content_types": [
+    "statistical_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "CANDIDATE_PERMITTED",
-    "redistribution": "CANDIDATE_PERMITTED",
-    "derive": "CANDIDATE_PERMITTED"
+   "third_party_components": [
+    "publishing agencies"
+   ],
+   "data_url": "https://od.data.gov.sa",
+   "terms": {
+    "urls": [
+     "https://od.data.gov.sa/en/policies/open-data-license"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Saudi Open Data License v1.0 unless stated otherwise: sharing and derivatives with attribution, licence copy, intact notices, no political/illegal/discriminatory use."
    },
-   "conditions": "Saudi Open Data License v1.0: attribution, licence copy, intact notices, no political/illegal/discriminatory use; commercial wording not seen",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "SAUDI_SECTOR_CANDIDATE",
-   "notes": "Confirm licence per dataset."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": "per-dataset licence check",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "SAUDI_SECTOR_CANDIDATE",
+   "notes": "Commercial-use wording not seen."
   },
   {
    "id": "SRC-MOE-WEB",
-   "provider": "Saudi Ministry of Energy website",
-   "data_type": "Energy statistics",
-   "frequency": "varies",
+   "provider": "Saudi Ministry of Energy",
+   "product": "Website statistics",
+   "dataset_version": "NOT_ESTABLISHED",
+   "content_types": [
+    "statistical_data"
+   ],
+   "third_party_components": [],
    "data_url": "https://www.moenergy.gov.sa",
-   "terms_urls": [],
-   "terms_evidence": "TERMS_NOT_FOUND",
-   "uses_from_terms": {
-    "internal_research": "UNKNOWN_LEGAL_REVIEW",
-    "public_display": "UNKNOWN_LEGAL_REVIEW",
-    "redistribution": "UNKNOWN_LEGAL_REVIEW",
-    "derive": "UNKNOWN_LEGAL_REVIEW"
+   "terms": {
+    "urls": [],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": null,
+    "excerpt_channel": null,
+    "excerpt_summary": null
    },
-   "conditions": "no terms found",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "LEGAL_REVIEW_CANDIDATE",
-   "notes": ""
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "redistribution": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "derivation": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    },
+    "automated_access": {
+     "excerpt_reading": "NOT_STATED",
+     "proposed_legal_status": "UNKNOWN"
+    }
+   },
+   "conditions_seen_in_excerpt": null,
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "LEGAL_REVIEW_CANDIDATE",
+   "notes": "No terms found."
   },
   {
    "id": "SRC-SODIR",
-   "provider": "Norwegian Offshore Directorate (Sodir) FactPages",
-   "data_type": "Field, licence, production data for Norway",
-   "frequency": "daily/monthly",
-   "data_url": "https://factpages.sodir.no",
-   "terms_urls": [
-    "https://www.sodir.no/en/facts/about-us/open-data/",
-    "https://data.norge.no/nlod/en/2.0"
+   "provider": "Norwegian Offshore Directorate (Sodir)",
+   "product": "FactPages and open data",
+   "dataset_version": "daily sync",
+   "content_types": [
+    "statistical_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "CANDIDATE_PERMITTED",
-    "public_display": "CANDIDATE_PERMITTED",
-    "redistribution": "CANDIDATE_PERMITTED",
-    "derive": "CANDIDATE_PERMITTED"
+   "third_party_components": [
+    "third-party reports, core images, logs excluded"
+   ],
+   "data_url": "https://factpages.sodir.no",
+   "terms": {
+    "urls": [
+     "https://www.sodir.no/en/facts/about-us/open-data/",
+     "https://data.norge.no/nlod/en/2.0"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Content may be used under NLOD 2.0 (copy, use, distribute, commercial allowed, with attribution); third-party material excluded."
    },
-   "conditions": "NLOD 2.0 attribution; third-party reports, core images and logs excluded",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EQUINOR_OPERATING_CONTEXT_CANDIDATE",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_PERMITTED_WITH_CONDITIONS",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "NLOD attribution",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EQUINOR_OPERATING_CONTEXT_CANDIDATE",
    "notes": ""
   },
   {
    "id": "SRC-CONSENSUS",
-   "provider": "Consensus providers (LSEG I/B/E/S, S&P Capital IQ, Bloomberg, FactSet)",
-   "data_type": "Analyst estimates, consensus",
-   "frequency": "daily",
-   "data_url": "",
-   "terms_urls": [
-    "https://www.bloomberg.com/notices/tos/",
-    "https://www.lseg.com/en/data-analytics/market-data/data-redistribution"
+   "provider": "LSEG / S&P Capital IQ / Bloomberg / FactSet",
+   "product": "Analyst estimates and consensus",
+   "dataset_version": "n/a",
+   "content_types": [
+    "third_party_data"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_OFFICIAL",
-   "uses_from_terms": {
-    "internal_research": "RESTRICTED_LICENCE_OR_CONSENT",
-    "public_display": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "RESTRICTED_LICENCE_OR_CONSENT"
+   "third_party_components": [
+    "contributing brokers"
+   ],
+   "data_url": "",
+   "terms": {
+    "urls": [
+     "https://www.bloomberg.com/notices/tos/",
+     "https://www.lseg.com/en/data-analytics/market-data/data-redistribution"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Subscription only; redistribution/republication needs prior written consent or a separate order form; Capital IQ public terms not found."
    },
-   "conditions": "subscription and separate display/redistribution order form; Capital IQ terms not found",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED_NO_PURCHASE",
-   "notes": "Outside B06."
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "contract",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED_NO_PURCHASE",
+   "notes": ""
   },
   {
    "id": "SRC-BENCH-PRICE",
-   "provider": "Platts (Dated Brent) / ICE (Brent futures)",
-   "data_type": "Benchmark assessments and settlements",
-   "frequency": "daily",
-   "data_url": "",
-   "terms_urls": [
-    "https://www.theice.com/publicdocs/futures/ICE_Futures_Europe_Market_Data_Policy.pdf"
+   "provider": "S&P Global Platts / ICE",
+   "product": "Benchmark price assessments and futures settlements",
+   "dataset_version": "n/a",
+   "content_types": [
+    "prices"
    ],
-   "terms_evidence": "SEARCH_EXCERPT_SECONDARY",
-   "uses_from_terms": {
-    "internal_research": "RESTRICTED_LICENCE_OR_CONSENT",
-    "public_display": "RESTRICTED_LICENCE_OR_CONSENT",
-    "redistribution": "PROHIBITED_WITHOUT_WRITTEN_CONSENT",
-    "derive": "RESTRICTED_LICENCE_OR_CONSENT"
+   "third_party_components": [],
+   "data_url": "",
+   "terms": {
+    "urls": [
+     "https://www.theice.com/publicdocs/futures/ICE_Futures_Europe_Market_Data_Policy.pdf"
+    ],
+    "official_text_verified": false,
+    "verified_at": null,
+    "excerpt_observed_at": "2026-10-18",
+    "excerpt_channel": "search-index excerpt of the official page (direct fetch blocked)",
+    "excerpt_summary": "Use-case licences; derived-data licences/addenda; only insubstantial static excerpts."
    },
-   "conditions": "subscription; derived-data addendum/licence; insubstantial static excerpts only",
-   "b01_grant_status": "unknown",
-   "b01_grant_reason": "no rights_reviewer grant exists; excerpt reading is not a grant",
-   "proposed_role_in_b06": "EXCLUDED_NO_PURCHASE",
+   "codex_reported": null,
+   "licence_scope": "this product only; not inherited by or from any other product of the provider",
+   "uses": {
+    "internal_research": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "commercial_public_display": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "redistribution": {
+     "excerpt_reading": "APPEARS_PROHIBITED_WITHOUT_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "derivation": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    },
+    "automated_access": {
+     "excerpt_reading": "APPEARS_RESTRICTED_LICENCE_OR_CONSENT",
+     "proposed_legal_status": "PENDING_VERIFICATION"
+    }
+   },
+   "conditions_seen_in_excerpt": "contract",
+   "b01_grant": {
+    "status": "unknown",
+    "uses_granted": [],
+    "rights_reviewer": null,
+    "reason": "no rights_reviewer grant exists; an excerpt is not a grant"
+   },
+   "proposed_role": "EXCLUDED_NO_PURCHASE",
    "notes": ""
   }
  ]

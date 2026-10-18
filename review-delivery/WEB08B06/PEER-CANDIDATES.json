@@ -1,0 +1,520 @@
+{
+ "schema": "marefa-web08b06-peer-candidates/1",
+ "status": "CANDIDATES_ONLY_NO_APPROVED_PEER_LIST",
+ "rule": "Tiers A/B/C are proposals. No candidate becomes a peer without an owner decision (D1) recorded with its date and reference; approved stays false in this package.",
+ "dimension_rules": {
+  "ownership": "Who holds the shares (holder and reported stake).",
+  "control": "Whether a holder controls the entity (IFRS 10 / ASC 810 assessment); a majority holding is recorded, not assumed to be control.",
+  "consolidation": "How an entity appears in Aramco's accounts: consolidated subsidiary, equity-accounted investee, or neither.",
+  "commercial_relationship": "Supply, offtake or JV operating relationships; recorded, never by itself an exclusion criterion."
+ },
+ "aramco_relationship_rules": {
+  "CONSOLIDATED_SUBSIDIARY": "Excluded from whole-company peer comparison (its figures are inside Aramco's). May be used in a segment-specific analysis with the overlap disclosed.",
+  "EQUITY_ACCOUNTED": "Not automatically excluded and not treated as a subsidiary; listed for owner decision with the overlap (share of profit) disclosed.",
+  "COMMERCIAL_ONLY": "Recorded; no exclusion on this ground alone.",
+  "NOT_ESTABLISHED": "Verification from Aramco notes required before any use."
+ },
+ "aramco_relationship_candidates": [
+  {
+   "name": "SABIC",
+   "relationship_proposed": "CONSOLIDATED_SUBSIDIARY",
+   "evidence": "UNVERIFIED; confirm from Aramco consolidation notes"
+  },
+  {
+   "name": "Petro Rabigh",
+   "relationship_proposed": "NOT_ESTABLISHED",
+   "evidence": "INTERNAL_ACCEPTED note B04_PETRO_RABIGH_CONTROL (fa3a772): an acquired percentage does not by itself establish control or the consolidation basis"
+  },
+  {
+   "name": "Luberef",
+   "relationship_proposed": "CONSOLIDATED_SUBSIDIARY",
+   "evidence": "UNVERIFIED"
+  },
+  {
+   "name": "Motiva",
+   "relationship_proposed": "CONSOLIDATED_SUBSIDIARY",
+   "evidence": "UNVERIFIED"
+  },
+  {
+   "name": "S-Oil",
+   "relationship_proposed": "NOT_ESTABLISHED",
+   "evidence": "UNVERIFIED; may be consolidated or equity-accounted"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "XOM",
+   "name": "Exxon Mobil Corporation",
+   "tier_proposed": "A",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "NYSE: XOM",
+   "ownership": {
+    "state_holder": null,
+    "evidence": "UNVERIFIED (widely held)"
+   },
+   "control": {
+    "state_control": false,
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "Upstream",
+    "Energy Products",
+    "Chemical Products",
+    "Specialty Products"
+   ],
+   "integration": "integrated",
+   "accounting": "US GAAP, USD",
+   "filing": "10-K, SEC CIK 34088",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/34088/000003408826000045/xom-20251231.htm",
+    "period": "FY2025",
+    "version": "000003408826000045",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Integrated upstream-refining-chemicals; listed peer of similar scope.",
+   "comparability_differences": [
+    "US GAAP (LIFO, no impairment reversal)",
+    "diversified fiscal regimes",
+    "no state control"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "CVX",
+   "name": "Chevron Corporation",
+   "tier_proposed": "A",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "NYSE: CVX",
+   "ownership": {
+    "state_holder": null,
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": false,
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "Upstream",
+    "Downstream"
+   ],
+   "integration": "integrated",
+   "accounting": "US GAAP, USD; LIFO",
+   "filing": "10-K, SEC CIK 93410",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/93410/000009341026000078/cvx-20251231.htm",
+    "period": "FY2025",
+    "version": "000009341026000078",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Two-segment structure closest in form to Aramco's.",
+   "comparability_differences": [
+    "US GAAP",
+    "Hess acquisition changes the historical base"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "SHEL",
+   "name": "Shell plc",
+   "tier_proposed": "A",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "LSE / Euronext Amsterdam: SHEL; NYSE ADS (UNVERIFIED)",
+   "ownership": {
+    "state_holder": null,
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": false,
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "Integrated Gas",
+    "Upstream",
+    "Marketing",
+    "Chemicals and Products",
+    "Renewables and Energy Solutions",
+    "Corporate"
+   ],
+   "integration": "integrated, large LNG",
+   "accounting": "IFRS (adoption wording UNVERIFIED), USD",
+   "filing": "Annual Report; 20-F, SEC CIK 1306965",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm",
+    "period": "FY2025",
+    "version": "000162828026017024",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Integrated IFRS reporter.",
+   "comparability_differences": [
+    "LNG weight",
+    "CCS-based adjusted earnings",
+    "own gas factor"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "TTE",
+   "name": "TotalEnergies SE",
+   "tier_proposed": "A",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "Euronext Paris: TTE; NYSE (UNVERIFIED)",
+   "ownership": {
+    "state_holder": null,
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": false,
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "Exploration & Production",
+    "Integrated LNG",
+    "Integrated Power",
+    "Refining & Chemicals",
+    "Marketing & Services"
+   ],
+   "integration": "integrated with power",
+   "accounting": "IFRS (IASB and EU), USD; FIFO with replacement-cost adjusted results",
+   "filing": "URD (AMF); 20-F, SEC CIK 879764",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/879764/000110465926035876/tot-20251231x20f.htm",
+    "period": "FY2025",
+    "version": "000110465926035876",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Integrated IFRS reporter.",
+   "comparability_differences": [
+    "large power segment",
+    "own adjusted net income definition"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "BP",
+   "name": "BP p.l.c.",
+   "tier_proposed": "A",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "LSE: BP.; NYSE ADS (UNVERIFIED)",
+   "ownership": {
+    "state_holder": null,
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": false,
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "gas & low carbon energy",
+    "oil production & operations",
+    "customers & products"
+   ],
+   "integration": "integrated",
+   "accounting": "IFRS, USD; successful efforts",
+   "filing": "Annual Report and Form 20-F, SEC CIK 313807",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/0000313807/000031380726000006/bp-20251231.htm",
+    "period": "FY2025",
+    "version": "000031380726000006",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Integrated IFRS reporter.",
+   "comparability_differences": [
+    "underlying RC profit",
+    "segment reorganisations between years"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "EQNR",
+   "name": "Equinor ASA",
+   "tier_proposed": "B",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "Oslo Børs and NYSE: EQNR",
+   "ownership": {
+    "state_holder": "Kingdom of Norway (Ministry of Trade, Industry and Fisheries)",
+    "stake_reported": "67.0% (excerpt)",
+    "evidence": "EXCERPT_OFFICIAL"
+   },
+   "control": {
+    "state_control": "UNVERIFIED (majority holding reported; control assessment not made)",
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "E&P Norway",
+    "E&P International",
+    "E&P USA",
+    "MMP",
+    "REN",
+    "Other",
+    "Power (from Q1 2026, 2025 restated)"
+   ],
+   "integration": "upstream-led with midstream and marketing; refining limited (UNVERIFIED)",
+   "accounting": "IFRS (wording UNVERIFIED), USD presentation (UNVERIFIED)",
+   "filing": "20-F / Norwegian statutory annual report, SEC CIK 1140625",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/1140625/000114062526000013/eqnr-20251231.htm",
+    "period": "FY2025",
+    "version": "000114062526000013",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": "The 78% marginal rate (22% ordinary + 71.8% special tax, cash-flow based since 2022) applies to petroleum activities on the Norwegian continental shelf under the petroleum tax regime. It is not the group's effective tax rate and does not apply to all group profit (EXCERPT_OFFICIAL norskpetroleum.no; group effect UNVERIFIED).",
+   "selection_rationale": "State-owned issuer with a concentrated national resource base.",
+   "comparability_differences": [
+    "limited downstream",
+    "segment change in 2026",
+    "Norwegian petroleum tax on NCS activities"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "PTR",
+   "name": "PetroChina Company Limited",
+   "tier_proposed": "B",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "HKEX 857; A-shares (UNVERIFIED)",
+   "ownership": {
+    "state_holder": "CNPC (UNVERIFIED)",
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": "UNVERIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "Oil, Gas & New Energy",
+    "Refining, Chemicals & New Materials",
+    "Marketing",
+    "Natural Gas Sales"
+   ],
+   "integration": "integrated",
+   "accounting": "UNVERIFIED",
+   "filing": "HKEX filings; SEC filing status UNVERIFIED",
+   "data_availability": {
+    "latest_filing_url": null,
+    "period": null,
+    "version": null,
+    "filing_index_evidence": "NO_SEC_ROUTE_IDENTIFIED",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Structural analogue: listed integrated national oil company.",
+   "comparability_differences": [
+    "domestic price regulation",
+    "no confirmed EDGAR route"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "PBR",
+   "name": "Petróleo Brasileiro S.A. (Petrobras)",
+   "tier_proposed": "B",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "B3 and NYSE (UNVERIFIED)",
+   "ownership": {
+    "state_holder": "Federal Government of Brazil (UNVERIFIED)",
+    "evidence": "20-F describes itself as partially state-owned (EXCERPT_OFFICIAL)"
+   },
+   "control": {
+    "state_control": "UNVERIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "to be confirmed from 20-F (excerpts inconsistent)"
+   ],
+   "integration": "upstream-led with domestic refining",
+   "accounting": "IFRS (UNVERIFIED)",
+   "filing": "20-F, SEC",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/1119639/000129281426002168/pbrform20f_2025.htm",
+    "period": "FY2025",
+    "version": "000129281426002168",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "State-owned, large offshore upstream.",
+   "comparability_differences": [
+    "domestic pricing policy",
+    "intervention risk"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "COP",
+   "name": "ConocoPhillips",
+   "tier_proposed": "C",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "NYSE: COP",
+   "ownership": {
+    "state_holder": null,
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": false,
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "UNVERIFIED"
+   ],
+   "integration": "upstream only",
+   "accounting": "US GAAP; successful efforts",
+   "filing": "10-K, SEC CIK 1163165",
+   "data_availability": {
+    "latest_filing_url": "https://www.sec.gov/Archives/edgar/data/1163165/000116316526000009/cop-20251231.htm",
+    "period": "FY2025",
+    "version": "000116316526000009",
+    "filing_index_evidence": "Codex review 30fc720 (not accessible from this environment) reports nine SEC filing indices and iXBRL observed within its check; this does not establish Company Facts completeness or availability of every concept needed (R03).",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Contrast benchmark for the Upstream segment only.",
+   "comparability_differences": [
+    "no downstream"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "ADNOCGAS",
+   "name": "ADNOC Gas plc",
+   "tier_proposed": "C",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "ADX: ADNOCGAS",
+   "ownership": {
+    "state_holder": "ADNOC via XRG; TAQA minority (EXCERPT_OFFICIAL)",
+    "evidence": "EXCERPT_OFFICIAL"
+   },
+   "control": {
+    "state_control": "UNVERIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [
+    "UNVERIFIED"
+   ],
+   "integration": "gas processing",
+   "accounting": "UNVERIFIED",
+   "filing": "ADX disclosures",
+   "data_availability": {
+    "latest_filing_url": null,
+    "period": null,
+    "version": null,
+    "filing_index_evidence": "NO_SEC_ROUTE_IDENTIFIED",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Gulf gas-processing contrast.",
+   "comparability_differences": [
+    "gas processing only",
+    "small free float",
+    "no EDGAR route"
+   ],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  },
+  {
+   "id": "ENI",
+   "name": "Eni S.p.A.",
+   "tier_proposed": "NOT_ASSESSED",
+   "status": "CANDIDATE_PENDING_OWNER_DECISION",
+   "approved": false,
+   "listing": "UNVERIFIED",
+   "ownership": {
+    "state_holder": "UNVERIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "control": {
+    "state_control": "UNVERIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "relationship_to_aramco": {
+    "type": "NONE_IDENTIFIED",
+    "evidence": "UNVERIFIED"
+   },
+   "segments_reported": [],
+   "integration": "UNVERIFIED",
+   "accounting": "UNVERIFIED",
+   "filing": "UNVERIFIED",
+   "data_availability": {
+    "latest_filing_url": null,
+    "period": null,
+    "version": null,
+    "filing_index_evidence": "NO_SEC_ROUTE_IDENTIFIED",
+    "company_facts_completeness": "UNVERIFIED",
+    "concept_coverage": "UNVERIFIED"
+   },
+   "fiscal_regime_note": null,
+   "selection_rationale": "Not assessed: no excerpt found.",
+   "comparability_differences": [],
+   "evidence_label": "EXCERPT_OFFICIAL unless stated; not opened directly"
+  }
+ ]
+}

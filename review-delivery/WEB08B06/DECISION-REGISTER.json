@@ -1,0 +1,149 @@
+{
+ "schema": "marefa-web08b06-decision-register/1",
+ "status": "NO_DECISION_APPROVED",
+ "execution_gate": [
+  "Codex independent review of B06-0",
+  "Codex ACCEPT of the B06-0 decision pack",
+  "owner decisions required for the batch",
+  "explicit implementation assignment for the batch",
+  "start of that batch"
+ ],
+ "gate_rule": "Each step is separate. ACCEPT of B06-0 does not authorise B06-1. No implicit authorisation.",
+ "verified_facts_scope": "verified_facts lists only INTERNAL_ACCEPTED repository facts; no external fact is verified in this package.",
+ "decisions": [
+  {
+   "id": "D1",
+   "title": "Peer universe and tiers",
+   "verified_facts": [
+    "Engine peers fixture for SA:2222 returns peer_count 0, reason no_other_peer_with_comparable_facts (tests/fixtures/engine-b70254e_peers_SA-2222_default.json)"
+   ],
+   "unverified_facts": [
+    "segments, accounting bases, filings and ownership of all candidates (EXCERPT_OFFICIAL)",
+    "Aramco relationship of SABIC, Petro Rabigh, Luberef, Motiva, S-Oil"
+   ],
+   "recommendation": "A: XOM, CVX, SHEL, TTE, BP; B: EQNR (PTR, PBR low priority); C: COP, ADNOCGAS contrast only; ENI not assessed",
+   "owner_approval": "PENDING",
+   "legal_approval": "NOT_REQUIRED",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": false,
+   "notes": ""
+  },
+  {
+   "id": "D2",
+   "title": "Sources for implementation",
+   "verified_facts": [
+    "WEB08A candidate sources list rights as unreviewed (review-delivery/WEB08A/SOURCES-AND-DERIVATIONS.json)"
+   ],
+   "unverified_facts": [
+    "all terms in SOURCE-RIGHTS-MATRIX.json (excerpts only)"
+   ],
+   "recommendation": "SEC XBRL financial data for peer facts; EIA open data (EIA-produced series) for industry; GASTAT and Open Data Platform for Saudi context; others after permission or legal review",
+   "owner_approval": "PENDING",
+   "legal_approval": "PENDING",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": false,
+   "notes": ""
+  },
+  {
+   "id": "D3",
+   "title": "Rights reviewer role and legal review of D2 sources",
+   "verified_facts": [
+    "B01 GrantSchema requires a rights_reviewer grant (research-evidence/v1/contract.ts)"
+   ],
+   "unverified_facts": [],
+   "recommendation": "Name a rights_reviewer and commission legal review before any rights-dependent batch",
+   "owner_approval": "PENDING",
+   "legal_approval": "PENDING",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": true,
+   "notes": ""
+  },
+  {
+   "id": "D4",
+   "title": "Aramco site terms vs display of Aramco-derived data",
+   "verified_facts": [],
+   "unverified_facts": [
+    "aramco.com terms excerpt: no public display without express prior written consent"
+   ],
+   "recommendation": "High rights risk requiring legal review or a consent request; not an established violation by Marefa",
+   "owner_approval": "PENDING",
+   "legal_approval": "PENDING",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": true,
+   "notes": "Affects the existing product beyond B06; legal question includes the effect of listing disclosure obligations."
+  },
+  {
+   "id": "D5",
+   "title": "Currency policy",
+   "verified_facts": [],
+   "unverified_facts": [
+    "SAMA peg statement (older excerpt)",
+    "IAS 21 convention (secondary)"
+   ],
+   "recommendation": "Flows at period-average rate, stocks at closing rate, rate source and date per cell",
+   "owner_approval": "PENDING",
+   "legal_approval": "NOT_REQUIRED",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": false,
+   "notes": ""
+  },
+  {
+   "id": "D6",
+   "title": "Gas conversion factor and production basis",
+   "verified_facts": [],
+   "unverified_facts": [
+    "issuer gas factors (only Shell excerpt seen)"
+   ],
+   "recommendation": "One declared factor applied to reported gas volumes; net entitlement; liquids and gas separate",
+   "owner_approval": "PENDING",
+   "legal_approval": "NOT_REQUIRED",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": false,
+   "notes": ""
+  },
+  {
+   "id": "D7",
+   "title": "Aramco reserves basis",
+   "verified_facts": [],
+   "unverified_facts": [
+    "PRMS bases in Aramco legal section (excerpt)"
+   ],
+   "recommendation": "Concession basis with disclosure; NOT_COMPARABLE with SEC reserves",
+   "owner_approval": "PENDING",
+   "legal_approval": "NOT_REQUIRED",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": false,
+   "notes": ""
+  },
+  {
+   "id": "D8",
+   "title": "Access to sec.gov",
+   "verified_facts": [
+    "Direct fetch of sec.gov blocked in this environment (observed 2026-10-18)"
+   ],
+   "unverified_facts": [
+    "SEC fair-access requirements (excerpt)"
+   ],
+   "recommendation": "Allow sec.gov/data.sec.gov for the environment or have Codex run ingestion; owner sets organisation User-Agent and contact",
+   "owner_approval": "PENDING",
+   "legal_approval": "PENDING",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": true,
+   "notes": ""
+  },
+  {
+   "id": "D9",
+   "title": "Valuation multiples and consensus",
+   "verified_facts": [],
+   "unverified_facts": [
+    "Tadawul, consensus and benchmark-price licences (excerpts)"
+   ],
+   "recommendation": "Out of B06; no licence or purchase; B07 not started",
+   "owner_approval": "PENDING",
+   "legal_approval": "PENDING",
+   "implementation_authorization": false,
+   "presentable_to_owner_now": true,
+   "notes": ""
+  }
+ ]
+}

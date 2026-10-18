@@ -1313,3 +1313,127 @@ describe("R02-A / R02-B regression cases (behaviour, not examples)", () => {
     );
   });
 });
+
+/* ---------- event 116: long integers in valid JSON (Python arbitrary-precision ints) ---------- */
+describe("R02-E long integers: Python and TypeScript reject alike, without exceptions", () => {
+  const MAX =
+    "179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368"; // int(sys.float_info.max)
+  const BIG = "9".repeat(400);
+  // raw JSON texts: the literal is placed in the text, so each implementation parses it itself
+  const raw = (id: string, f: (e: any) => void, literal: string) => {
+    const e = passOf(id);
+    f(e);
+    return JSON.stringify({ recipe: id, a: e }).replace('"__LITERAL__"', literal);
+  };
+  const ppe = (lit: string, extra: Record<string, unknown> = {}) =>
+    raw("M06", (e) => Object.assign(e.items, { payments_for_ppe: "__LITERAL__", ...extra }), lit);
+  const RAW: [string, string, any][] = [
+    ["400-digit positive integer", ppe(BIG), NC("item_not_numeric:payments_for_ppe")],
+    ["400-digit negative integer", ppe(`-${BIG}`), NC("item_not_numeric:payments_for_ppe")],
+    [
+      "309-digit integer just above the double range",
+      ppe(`2${"0".repeat(308)}`),
+      NC("item_not_numeric:payments_for_ppe"),
+    ],
+    [
+      "largest finite double written as an integer",
+      ppe(MAX, { payments_for_exploration_intangibles: 0 }),
+      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: Number(MAX) } },
+    ],
+    [
+      "largest finite double as exponent form",
+      ppe("1.7976931348623157e308", { payments_for_exploration_intangibles: 0 }),
+      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 1.7976931348623157e308 } },
+    ],
+    [
+      "two largest doubles overflow when added",
+      ppe(MAX, { payments_for_exploration_intangibles: Number(MAX) }),
+      NC("non_finite_result"),
+    ],
+    [
+      "integer above 2^53 is read as its nearest double by both",
+      ppe("9007199254740993", { payments_for_exploration_intangibles: 0 }),
+      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 9007199254740992 } },
+    ],
+    [
+      "ordinary integers stay accepted",
+      ppe("400", { payments_for_exploration_intangibles: 20 }),
+      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 420 } },
+    ],
+    ["null item", ppe("null"), NC("required_item_missing:payments_for_ppe")],
+    [
+      "400-digit FX rate",
+      raw("M01", (e) => (e.meta.fx.rate = "__LITERAL__"), BIG),
+      NC("fx_rate_invalid"),
+    ],
+    [
+      "400-digit policy factor",
+      raw("M11", (e) => (e.policy.gas_scf_per_boe = "__LITERAL__"), BIG),
+      NC("policy_invalid:gas_scf_per_boe"),
+    ],
+    [
+      "400-digit CFO feeding FCF",
+      raw("M07", (e) => (e.items.cfo = "__LITERAL__"), BIG),
+      NC("item_not_numeric:cfo"),
+    ],
+    [
+      "missing item",
+      raw(
+        "M06",
+        (e) => {
+          delete e.items.payments_for_ppe;
+          e.items.payments_for_exploration_intangibles = "__LITERAL__";
+        },
+        "20",
+      ),
+      NC("required_item_missing:payments_for_ppe"),
+    ],
+  ];
+  const dir = mkdtempSync(join(tmpdir(), "b06-bigint-"));
+  const file = join(dir, "cases.json");
+  writeFileSync(file, `[${RAW.map(([, t]) => t).join(",")}]`);
+  const py = (script: string) => Bun.spawnSync(["python3", script, "--evaluate", file]);
+
+  for (const [name, text, want] of RAW)
+    test(`TypeScript: ${name}`, () => {
+      const c = JSON.parse(text);
+      expect(evaluate(c.recipe, c.a)).toEqual(want);
+    });
+  test("Python returns the same result for every raw case, with no exception", () => {
+    const p = py(join(DIR, "tools/recipes.py"));
+    expect({ exit: p.exitCode, stderr: p.stderr.toString() }).toEqual({ exit: 0, stderr: "" });
+    const out = JSON.parse(p.stdout.toString());
+    RAW.forEach(([name, , want], i) => expect({ name, py: out[i] }).toEqual({ name, py: want }));
+  });
+  test("the previous implementation (8635c27) raises OverflowError on the same input", () => {
+    const old = join(dir, "recipes-8635c27.py");
+    const src = Bun.spawnSync(
+      ["git", "show", "8635c27:review-delivery/WEB08B06/tools/recipes.py"],
+      { cwd: join(DIR, "../..") },
+    );
+    writeFileSync(old, src.stdout);
+    const p = py(old);
+    expect(p.exitCode).not.toBe(0);
+    expect(p.stderr.toString()).toContain("OverflowError");
+  });
+  test("Python direct calls (non-JSON values: NaN, Infinity, huge ints, None) return NOT_COMPARABLE", () => {
+    const script = `
+import json, runpy, sys, io, contextlib
+sys.argv = ["x", ${JSON.stringify(join(dir, "out.json"))}]
+with contextlib.redirect_stdout(io.StringIO()): g = runpy.run_path(${JSON.stringify(join(DIR, "tools/recipes.py"))})
+base = next(e for e in g["BY"]["M06"]["examples"] if e["label"] == "pass")
+res = []
+for v in [float("nan"), float("inf"), float("-inf"), 10**400, -(10**400), None, 2**1024]:
+    e = json.loads(json.dumps({k: base[k] for k in ("meta", "items")})); e["items"]["payments_for_ppe"] = v
+    res.append(g["evaluate"](g["BY"]["M06"], e).get("reason"))
+print(json.dumps(res))
+`;
+    const p = Bun.spawnSync(["python3", "-c", script]);
+    expect(p.stderr.toString()).toBe("");
+    expect(JSON.parse(p.stdout.toString())).toEqual([
+      ...Array(5).fill("item_not_numeric:payments_for_ppe"),
+      "required_item_missing:payments_for_ppe",
+      "item_not_numeric:payments_for_ppe",
+    ]);
+  });
+});

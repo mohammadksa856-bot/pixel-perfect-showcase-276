@@ -250,7 +250,17 @@ def holds(c, ctx):
     if op == "not_in": return get(ctx, c["path"]) not in c["values"]
     raise ValueError(op)
 
-def is_num(v): return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)
+def as_double(v):
+    """R02-E (event 116): the IEEE-754 double of a JSON number, as JSON.parse reads it, or None when v is not a
+    number or its double is not finite. Python ints are arbitrary precision: one too large for a double is rejected
+    here instead of raising OverflowError (previously math.isfinite(v) on such an int raised)."""
+    if isinstance(v, bool) or not isinstance(v, (int, float)): return None
+    if isinstance(v, int):
+        try: v = float(v)
+        except OverflowError: return None
+    return v if math.isfinite(v) else None
+
+def is_num(v): return as_double(v) is not None
 def date(s):
     if not isinstance(s, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", s): return None
     try: return datetime.date.fromisoformat(s)
@@ -325,7 +335,7 @@ def terms_value(terms, r, e, refs, env_used):
         env = {}
         for ident in re.findall(r"[a-z_]+", expr):
             if ident.startswith("policy_"):
-                env[ident] = e.get("policy", {})[ident[7:]]
+                env[ident] = as_double(e.get("policy", {})[ident[7:]])
                 continue
             env_used.add(ident)
             items = e["items"]
@@ -334,7 +344,7 @@ def terms_value(terms, r, e, refs, env_used):
             d = (e["meta"].get("item_definitions") or {}).get(ident)
             if d is None: fail(f"item_definition_missing:{ident}")
             if d != r["item_definitions"][ident]: fail(f"item_definition_mismatch:{ident}")
-            env[ident] = float(items[ident])
+            env[ident] = as_double(items[ident])
         total = finite(total + t["sign"] * calc(expr, env))
     return total
 
@@ -426,7 +436,7 @@ def _evaluate(r, e, top=True):
     vals = {}
     for o in r["outputs"]:
         v = raw[o["key"]]
-        if o["kind"] == "monetary" and m["currency"] != "USD": v = finite(v / m["fx"]["rate"])
+        if o["kind"] == "monetary" and m["currency"] != "USD": v = finite(v / as_double(m["fx"]["rate"]))
         vals[o["key"]] = finite(v if abs(v) >= 1e15 else round(v, 6))
     return {"status": "CONDITIONALLY_COMPARABLE", "values": vals, "_raw": raw}
 

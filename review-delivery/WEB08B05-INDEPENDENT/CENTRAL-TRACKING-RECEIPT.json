@@ -1,0 +1,41 @@
+{
+  "schema": "central-tracking-public-receipt/1",
+  "canonical_board": "docs/PROJECT_EXECUTION_BOARD_ROOT_20261011_v1.json",
+  "canonical_local_commit": "d52f7381949298ab0a049cd726abbef27afec61e",
+  "task_id": "WEB08-B05",
+  "event_sequence": 111,
+  "event_sha256": "180823604caaf46841cd3f480ba87afd0cd64b1dc007977703ab78dcd7708b20",
+  "previous_event110_preserved": "5cf6667f2fbdef45b189649ef74ac0bedda77aa85c6e9cdaea36b1f8f6a2fcf3",
+  "event_chain_verified": 111,
+  "review_commit": "25fe237",
+  "decision": "REWORK",
+  "open_engineering_findings": ["B05-R01"],
+  "engineering_acceptance": false,
+  "B04_acceptance_preserved": true,
+  "phase_status": {
+    "IMPLEMENTED": "Claude8fb84fb, delivery3681aa0",
+    "TESTED": "OriginalB05 24PASS2FAIL1ERROR; separate independent7PASS; regressions andbuildPASS;app14SKIP;conditionalHTTP/UIseparate",
+    "REVIEWED": "REWORK_B05_R01_NATIVE_WINDOWS_PATHS_ONLY",
+    "MERGED": false,
+    "ACCEPTED": false,
+    "DEPLOYED": false
+  },
+  "central_tracking_tests": {
+    "canonical_commit": "d52f7381949298ab0a049cd726abbef27afec61e",
+    "command": "python -m unittest discover -s tests -p test_project_tracking.py -v",
+    "passed": 10,
+    "failed": 0,
+    "scope": "Separate central tracking repository, not B05 application test totals",
+    "environment_limits": ["pytest unavailable, not an application failure", "Initial unittest attempt blocked creating sandbox temporary directories; rerun outside sandbox passed10"]
+  },
+  "blocked_analyses": 7,
+  "withheld_claims": 22,
+  "withheld_inputs": 142,
+  "financially_qualified": 0,
+  "financial_approval": false,
+  "editorial_approval": false,
+  "source_rights_approval": false,
+  "USER_FINAL_ACCEPTANCE": false,
+  "PRODUCTION_RELEASE_APPROVAL": false,
+  "private_central_history_published": false
+}

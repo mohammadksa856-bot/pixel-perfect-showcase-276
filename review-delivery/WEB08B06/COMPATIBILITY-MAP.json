@@ -126,6 +126,7 @@
   "verification_only": "Exact rationals (Python fractions.Fraction; TypeScript BigInt numerator/denominator) are used only to verify; reported values are still computed in doubles by the unchanged formulas. No new financial engine.",
   "trust_boundary": "evaluate(recipe, example) on an already parsed object cannot see digits an earlier parser (JSON.parse, json.loads to float) has already lost: it reads each double as its shortest printed decimal and still verifies every intermediate and result exactly. External data must enter through evaluate_raw / evaluateRaw; the object path is for data built in code (generator, tests).",
   "interfaces": "python tools/recipes.py --evaluate-raw <file>: [{recipe, text}] -> results; checks/evaluator.ts makeEvaluator(doc).evaluateRaw(id, text). evaluate / evaluate_pair / --evaluate unchanged in signature.",
+  "typescript_display_rounding": "checks/evaluator.ts now rounds the reported double half-to-even exactly at 6 places (as Python round(v, 6) does) instead of Math.round(v * 1e6) / 1e6, which rounded half-up after an inexact product and decided exact ties (e.g. 0.000001 / 2) differently from Python. Values of 1e15 and above are still reported unrounded.",
   "reason_code_changes_from_event_117": "none for existing cases: all 738 earlier tests pass with unchanged expectations; the new codes appear only for raw-path inputs or for results the exact check rejects. COMPARABILITY-RECIPES.json is unchanged."
  }
 }

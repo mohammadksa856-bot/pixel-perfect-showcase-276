@@ -1,0 +1,15 @@
+# scope @ 18e0e8a872098ef91b7433cf8d08566f3b89322c
+   product-tracking/CHANGELOG.jsonl                   |   1 +
+   review-delivery/WEB08B06/COMPATIBILITY-MAP.json    |  23 ++
+   .../WEB08B06/checks/comparability.test.ts          | 440 ++++++++++++++++++++-
+   review-delivery/WEB08B06/checks/evaluator.ts       | 327 ++++++++++++++-
+   review-delivery/WEB08B06/tools/recipes.py          | 174 ++++++--
+   5 files changed, 929 insertions(+), 36 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+COMPARABILITY-RECIPES.json changed since b3111ce: 0
+closed R01/R03/R04/R05-A files changed since b3111ce: 0
+earlier closure reports and logs changed since c8e036b: 0
+earlier test lines removed or changed in comparability.test.ts since b3111ce (only the import line naming evaluateRaw expected):
+  -const { recipes, evaluate, evaluatePair } = makeEvaluator(doc);
+except Exception / bare except in recipes.py: 0
+catch-all in evaluator.ts other than NotComparable rethrow: 2 catch block(s)

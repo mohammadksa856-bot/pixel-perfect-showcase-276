@@ -1,0 +1,110 @@
+# before/after @ 18e0e8a872098ef91b7433cf8d08566f3b89322c: previous b3111ce (Python --evaluate, TypeScript evaluate after JSON.parse) vs current raw path (evaluate_raw / evaluateRaw) and object path; exact reference written from the decimal inputs (net_debt = B - C, gearing = net_debt / (net_debt + equity 1), FX = revenue / rate), half-to-even at 6 places; BigInt-checked cases are in comparability.test.ts
+## Codex: borrowings 9007199254740990.9, cash 9007199254740990, equity 1
+  exact reference      : net_debt 0.9, gearing 0.473684 (47.368421%)
+  before Python  (b3111ce): ACCEPT {"net_debt":1,"gearing":0.5}
+  before TS      (b3111ce): ACCEPT {"net_debt":1,"gearing":0.5}
+  after  Python raw       : NC unsafe_decimal_precision:borrowings
+  after  TS raw           : NC unsafe_decimal_precision:borrowings
+  after  Python object    : ACCEPT {"net_debt":1,"gearing":0.5}
+  after  TS object        : ACCEPT {"net_debt":1,"gearing":0.5}
+  Python == TS (raw)      : true
+## negative counterpart
+  exact reference      : net_debt 0.1, gearing 0.090909
+  before Python  (b3111ce): ACCEPT {"net_debt":0,"gearing":0}
+  before TS      (b3111ce): ACCEPT {"net_debt":0,"gearing":0}
+  after  Python raw       : NC unsafe_decimal_precision:borrowings
+  after  TS raw           : NC unsafe_decimal_precision:borrowings
+  after  Python object    : ACCEPT {"net_debt":0,"gearing":0}
+  after  TS object        : ACCEPT {"net_debt":0,"gearing":0}
+  Python == TS (raw)      : true
+## 9007199254740990.5 + 0
+  exact reference      : capex 9007199254740990.5
+  before Python  (b3111ce): ACCEPT {"capex_cash":9007199254740990}
+  before TS      (b3111ce): ACCEPT {"capex_cash":9007199254740990}
+  after  Python raw       : NC unsafe_decimal_precision:payments_for_ppe
+  after  TS raw           : NC unsafe_decimal_precision:payments_for_ppe
+  after  Python object    : ACCEPT {"capex_cash":9007199254740990}
+  after  TS object        : ACCEPT {"capex_cash":9007199254740990}
+  Python == TS (raw)      : true
+## 4503599627370495.5 + 0.75 (intermediate)
+  exact reference      : capex 4503599627370496.25
+  before Python  (b3111ce): ACCEPT {"capex_cash":4503599627370496}
+  before TS      (b3111ce): ACCEPT {"capex_cash":4503599627370496}
+  after  Python raw       : NC precision_not_guaranteed:capex_cash
+  after  TS raw           : NC precision_not_guaranteed:capex_cash
+  after  Python object    : NC precision_not_guaranteed:capex_cash
+  after  TS object        : NC precision_not_guaranteed:capex_cash
+  Python == TS (raw)      : true
+## 123456789012.35 - 123456789011.5 (small net debt)
+  exact reference      : net_debt 0.85, gearing 0.459459
+  before Python  (b3111ce): ACCEPT {"net_debt":0.850006,"gearing":0.459461}
+  before TS      (b3111ce): ACCEPT {"net_debt":0.850006,"gearing":0.459461}
+  after  Python raw       : NC precision_not_guaranteed:net_debt
+  after  TS raw           : NC precision_not_guaranteed:net_debt
+  after  Python object    : NC precision_not_guaranteed:net_debt
+  after  TS object        : NC precision_not_guaranteed:net_debt
+  Python == TS (raw)      : true
+## 1000000.9 - 1000000
+  exact reference      : net_debt 0.9, gearing 0.473684
+  before Python  (b3111ce): ACCEPT {"net_debt":0.9,"gearing":0.473684}
+  before TS      (b3111ce): ACCEPT {"net_debt":0.9,"gearing":0.473684}
+  after  Python raw       : ACCEPT {"net_debt":0.9,"gearing":0.473684}
+  after  TS raw           : ACCEPT {"net_debt":0.9,"gearing":0.473684}
+  after  Python object    : ACCEPT {"net_debt":0.9,"gearing":0.473684}
+  after  TS object        : ACCEPT {"net_debt":0.9,"gearing":0.473684}
+  Python == TS (raw)      : true
+## 0.1 + 0.2
+  exact reference      : capex 0.3
+  before Python  (b3111ce): ACCEPT {"capex_cash":0.3}
+  before TS      (b3111ce): ACCEPT {"capex_cash":0.3}
+  after  Python raw       : ACCEPT {"capex_cash":0.3}
+  after  TS raw           : ACCEPT {"capex_cash":0.3}
+  after  Python object    : ACCEPT {"capex_cash":0.3}
+  after  TS object        : ACCEPT {"capex_cash":0.3}
+  Python == TS (raw)      : true
+## 1.25e2 + 1e2
+  exact reference      : capex 225
+  before Python  (b3111ce): ACCEPT {"capex_cash":225}
+  before TS      (b3111ce): ACCEPT {"capex_cash":225}
+  after  Python raw       : ACCEPT {"capex_cash":225}
+  after  TS raw           : ACCEPT {"capex_cash":225}
+  after  Python object    : ACCEPT {"capex_cash":225}
+  after  TS object        : ACCEPT {"capex_cash":225}
+  Python == TS (raw)      : true
+## 1e-7 (7 places)
+  exact reference      : capex 0.0000001 (beyond 6 places)
+  before Python  (b3111ce): ACCEPT {"capex_cash":0}
+  before TS      (b3111ce): ACCEPT {"capex_cash":0}
+  after  Python raw       : NC decimal_places_exceed_policy:payments_for_ppe
+  after  TS raw           : NC decimal_places_exceed_policy:payments_for_ppe
+  after  Python object    : ACCEPT {"capex_cash":0}
+  after  TS object        : ACCEPT {"capex_cash":0}
+  Python == TS (raw)      : true
+## FX 375 / 3.75
+  exact reference      : revenue_net 100
+  before Python  (b3111ce): ACCEPT {"revenue_net":100}
+  before TS      (b3111ce): ACCEPT {"revenue_net":100}
+  after  Python raw       : ACCEPT {"revenue_net":100}
+  after  TS raw           : ACCEPT {"revenue_net":100}
+  after  Python object    : ACCEPT {"revenue_net":100}
+  after  TS object        : ACCEPT {"revenue_net":100}
+  Python == TS (raw)      : true
+## FX 1000 / 3.7512345678
+  exact reference      : revenue_net 266.578904
+  before Python  (b3111ce): ACCEPT {"revenue_net":266.578904}
+  before TS      (b3111ce): ACCEPT {"revenue_net":266.578904}
+  after  Python raw       : ACCEPT {"revenue_net":266.578904}
+  after  TS raw           : ACCEPT {"revenue_net":266.578904}
+  after  Python object    : ACCEPT {"revenue_net":266.578904}
+  after  TS object        : ACCEPT {"revenue_net":266.578904}
+  Python == TS (raw)      : true
+## policy 5.8
+  exact reference      : production 103548.275862
+  before Python  (b3111ce): ACCEPT {"production_kboed":103548.275862}
+  before TS      (b3111ce): ACCEPT {"production_kboed":103548.275862}
+  after  Python raw       : ACCEPT {"production_kboed":103548.275862}
+  after  TS raw           : ACCEPT {"production_kboed":103548.275862}
+  after  Python object    : ACCEPT {"production_kboed":103548.275862}
+  after  TS object        : ACCEPT {"production_kboed":103548.275862}
+  Python == TS (raw)      : true
+exit=0

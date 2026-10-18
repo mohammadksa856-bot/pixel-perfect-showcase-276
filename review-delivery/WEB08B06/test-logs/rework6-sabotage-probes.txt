@@ -1,0 +1,20 @@
+# sabotage probes @ 18e0e8a872098ef91b7433cf8d08566f3b89322c (files restored after each; a probe whose text is not found is reported, not run)
+# Python results are compared in a few parity tests, so a Python weakening shows as few failing tests
+python: written-places check removed -> 1fail
+python: lexeme round-trip check removed -> 2fail
+python: exact output check removed -> 2fail
+python: raw intake reverted to float parsing (lexemes lost before the check) -> 2fail
+python: exact inputs ignore the raw lexeme -> 2fail
+python: nesting bound removed -> 1fail
+python: half-even replaced by half-up in the exact rounding -> 1fail
+typescript: written-places check removed -> 5fail
+typescript: lexeme round-trip check removed -> 10fail
+typescript: exact output check removed -> 6fail
+typescript: raw intake goes through JSON.parse first (lexemes lost before the check) -> 23fail
+typescript: exact inputs ignore the raw lexeme -> 2fail
+typescript: nesting bound removed -> 2fail
+typescript: control characters accepted in strings -> 1fail
+typescript: half-even replaced by half-up in the exact rounding -> 2fail
+typescript: display rounding reverted to Math.round (b3111ce) -> 4fail
+ 796 pass
+ 0 fail

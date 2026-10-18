@@ -1,0 +1,522 @@
+{
+ "original_document": {
+  "key": "FY2024",
+  "sha256_per_b02": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+  "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+  "accessible_here": false
+ },
+ "comparative_document": {
+  "key": "ARA2025",
+  "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+  "accessible_here": true
+ },
+ "rows": [
+  {
+   "metric": "capex",
+   "kind": "fy",
+   "comparative_in_ara2025": -188890,
+   "comparative_source": {
+    "pdf_page": 178,
+    "also_summary_page": null
+   },
+   "engine_current": {
+    "data_point_id": 2326,
+    "version": 2,
+    "value_sar_millions": 188890,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-007",
+    "pdf_page": 16,
+    "printed_page": 13,
+    "line": "Capital expenditures",
+    "comparison": "REVIEW_DIFFERENCE",
+    "reasons": [
+     "source_url_differs",
+     "numeric_or_sign_difference"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": [
+     "2db3fec8 v1"
+    ]
+   },
+   "status": "SIGN_CONVENTION_SUSPECTED_UNRESOLVED"
+  },
+  {
+   "metric": "cash",
+   "kind": "instant",
+   "comparative_in_ara2025": 216642,
+   "comparative_source": {
+    "pdf_page": 176,
+    "also_summary_page": null
+   },
+   "engine_current": {
+    "data_point_id": 2330,
+    "version": 2,
+    "value_sar_millions": 216642,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2079,
+     "value_sar_millions": 216642,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 0,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-051",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "line": "Cash and cash equivalents",
+    "comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+    "reasons": [
+     "requested_period_end_missing"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": []
+   },
+   "status": "ENGINE_ORIGINAL_YEAR_IMPORT_EQUALS_COMPARATIVE_SECONDARY"
+  },
+  {
+   "metric": "financing_cash_flow",
+   "kind": "fy",
+   "comparative_in_ara2025": -488358,
+   "comparative_source": {
+    "pdf_page": 178,
+    "also_summary_page": 132
+   },
+   "engine_current": null,
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": null,
+   "status": "NOT_COMPARED"
+  },
+  {
+   "metric": "income_before_income_taxes_and_zakat",
+   "kind": "fy",
+   "comparative_in_ara2025": 782010,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2076,
+    "version": 1,
+    "value_sar_millions": 782010,
+    "import_file": "data/imports/aramco-2024-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2076,
+     "value_sar_millions": 782010,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 1,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": null,
+   "status": "ENGINE_ORIGINAL_YEAR_IMPORT_EQUALS_COMPARATIVE_SECONDARY"
+  },
+  {
+   "metric": "income_taxes_and_zakat",
+   "kind": "fy",
+   "comparative_in_ara2025": -383588,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2077,
+    "version": 1,
+    "value_sar_millions": -383588,
+    "import_file": "data/imports/aramco-2024-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2077,
+     "value_sar_millions": -383588,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 1,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": null,
+   "status": "ENGINE_ORIGINAL_YEAR_IMPORT_EQUALS_COMPARATIVE_SECONDARY"
+  },
+  {
+   "metric": "investing_cash_flow",
+   "kind": "fy",
+   "comparative_in_ara2025": -2861,
+   "comparative_source": {
+    "pdf_page": 178,
+    "also_summary_page": 132
+   },
+   "engine_current": null,
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": null,
+   "status": "NOT_COMPARED"
+  },
+  {
+   "metric": "net_income",
+   "kind": "fy",
+   "comparative_in_ara2025": 398422,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2323,
+    "version": 2,
+    "value_sar_millions": 398422,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-004",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "line": "Net income",
+    "comparison": "REVIEW_DIFFERENCE",
+    "reasons": [
+     "source_url_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": [
+     "2db3fec8 v1"
+    ]
+   },
+   "status": "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY"
+  },
+  {
+   "metric": "net_income_parent",
+   "kind": "fy",
+   "comparative_in_ara2025": null,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": null
+   },
+   "engine_current": {
+    "data_point_id": 2078,
+    "version": 1,
+    "value_sar_millions": 393891,
+    "import_file": "data/imports/aramco-2024-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2078,
+     "value_sar_millions": 393891,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 1,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-005",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "line": "Net income attributable to Shareholders’ equity",
+    "comparison": "REVIEW_DIFFERENCE",
+    "reasons": [
+     "source_url_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": [
+     "7d174a46 v1"
+    ]
+   },
+   "status": "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY"
+  },
+  {
+   "metric": "operating_cash_flow",
+   "kind": "fy",
+   "comparative_in_ara2025": 508888,
+   "comparative_source": {
+    "pdf_page": 178,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2325,
+    "version": 2,
+    "value_sar_millions": 508888,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-006",
+    "pdf_page": 16,
+    "printed_page": 13,
+    "line": "Net cash provided by operating activities",
+    "comparison": "REVIEW_DIFFERENCE",
+    "reasons": [
+     "source_url_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": [
+     "2db3fec8 v1"
+    ]
+   },
+   "status": "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY"
+  },
+  {
+   "metric": "operating_costs",
+   "kind": "fy",
+   "comparative_in_ara2025": -1027049,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2074,
+    "version": 1,
+    "value_sar_millions": -1027049,
+    "import_file": "data/imports/aramco-2024-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2074,
+     "value_sar_millions": -1027049,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 1,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": null,
+   "status": "ENGINE_ORIGINAL_YEAR_IMPORT_EQUALS_COMPARATIVE_SECONDARY"
+  },
+  {
+   "metric": "operating_income",
+   "kind": "fy",
+   "comparative_in_ara2025": 774625,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2324,
+    "version": 2,
+    "value_sar_millions": 774625,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2075,
+     "value_sar_millions": 774625,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 0,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-003",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "line": "Operating income",
+    "comparison": "REVIEW_DIFFERENCE",
+    "reasons": [
+     "source_url_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": [
+     "1a836a30 v2"
+    ]
+   },
+   "status": "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY"
+  },
+  {
+   "metric": "other_income_related_to_sales",
+   "kind": "fy",
+   "comparative_in_ara2025": 164375,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2072,
+    "version": 1,
+    "value_sar_millions": 164375,
+    "import_file": "data/imports/aramco-2024-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2072,
+     "value_sar_millions": 164375,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 1,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": null,
+   "status": "ENGINE_ORIGINAL_YEAR_IMPORT_EQUALS_COMPARATIVE_SECONDARY"
+  },
+  {
+   "metric": "revenue",
+   "kind": "fy",
+   "comparative_in_ara2025": 1637299,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2322,
+    "version": 2,
+    "value_sar_millions": 1637299,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-001",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "line": "Revenue",
+    "comparison": "REVIEW_DIFFERENCE",
+    "reasons": [
+     "source_url_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": [
+     "2db3fec8 v1"
+    ]
+   },
+   "status": "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY"
+  },
+  {
+   "metric": "revenue_and_other_income_related_to_sales",
+   "kind": "fy",
+   "comparative_in_ara2025": 1801674,
+   "comparative_source": {
+    "pdf_page": 174,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2073,
+    "version": 1,
+    "value_sar_millions": 1801674,
+    "import_file": "data/imports/aramco-2024-annual-metrics.json"
+   },
+   "engine_original_year_rows": [
+    {
+     "data_point_id": 2073,
+     "value_sar_millions": 1801674,
+     "source": "7d174a46cdf64631",
+     "filed_at": "2025-03-04",
+     "is_current": 1,
+     "form": "Annual report supplementary metrics"
+    }
+   ],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-002",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "line": "Revenue and other income related to sales",
+    "comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+    "reasons": [
+     "requested_period_end_missing"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": []
+   },
+   "status": "ENGINE_ORIGINAL_YEAR_IMPORT_EQUALS_COMPARATIVE_SECONDARY"
+  },
+  {
+   "metric": "total_assets",
+   "kind": "instant",
+   "comparative_in_ara2025": 2423630,
+   "comparative_source": {
+    "pdf_page": 176,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2327,
+    "version": 2,
+    "value_sar_millions": 2423630,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-052",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "line": "Total assets",
+    "comparison": "PERIOD_DIFFERENCE",
+    "reasons": [
+     "full_period_identity_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": []
+   },
+   "status": "NOT_COMPARED"
+  },
+  {
+   "metric": "total_equity",
+   "kind": "instant",
+   "comparative_in_ara2025": 1651355,
+   "comparative_source": {
+    "pdf_page": 176,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2329,
+    "version": 2,
+    "value_sar_millions": 1651355,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-053",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "comparison": "PERIOD_DIFFERENCE",
+    "reasons": [
+     "full_period_identity_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": []
+   },
+   "status": "NOT_COMPARED"
+  },
+  {
+   "metric": "total_liabilities",
+   "kind": "instant",
+   "comparative_in_ara2025": 772275,
+   "comparative_source": {
+    "pdf_page": 176,
+    "also_summary_page": 132
+   },
+   "engine_current": {
+    "data_point_id": 2328,
+    "version": 2,
+    "value_sar_millions": 772275,
+    "import_file": "data/imports/aramco-2025-annual-metrics.json"
+   },
+   "engine_original_year_rows": [],
+   "b02_original_fy2024_statements": {
+    "audit_row": "OBS-055",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "line": "Total liabilities",
+    "comparison": "PERIOD_DIFFERENCE",
+    "reasons": [
+     "full_period_identity_differs"
+    ],
+    "source_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "compared_engine_rows": []
+   },
+   "status": "NOT_COMPARED"
+  }
+ ],
+ "definition_notes": [
+  "total equity: the summary labels it 'Net assets (total equity)'; the balance sheet shows an unlabelled subtotal after non-controlling interests; same value 1,651,355",
+  "capex: the cash-flow statement prints (188,890) as an outflow; the engine stores 188,890 positive"
+ ],
+ "method": "B02 compared its visual reading of the original FY2024 statements with the engine snapshot; the snapshot rows equal the ARA2025 comparatives read here. A value is therefore unchanged only by that chain, which is secondary evidence"
+}

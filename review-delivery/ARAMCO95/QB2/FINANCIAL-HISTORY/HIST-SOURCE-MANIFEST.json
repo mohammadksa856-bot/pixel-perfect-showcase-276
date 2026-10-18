@@ -1,0 +1,72 @@
+{
+ "schema": "marefa-aramco-qb2a-source-manifest/1",
+ "documents": [
+  {
+   "key": "ARA2025",
+   "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+   "archived_in_engine_index": true,
+   "archived_at": "2026-09-03T23:44:32.917041+00:00",
+   "byte_size": 17683967,
+   "present_here": true,
+   "role": "read here: historical highlights PDF 132, statements PDF 174/176/178",
+   "sha256_verified_here": true
+  },
+  {
+   "key": "ARA2024",
+   "sha256": "2626b292eb4fd236ba9bbf0930794350d99146d161a30f993d731f36113dd1f6",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
+   "archived_in_engine_index": true,
+   "archived_at": "2026-09-03T23:44:28.546824+00:00",
+   "byte_size": 16710149,
+   "present_here": false,
+   "role": "original FY2024 report (engine import 7d174a46 cites it); not present here"
+  },
+  {
+   "key": "ARA2023",
+   "sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "archived_in_engine_index": true,
+   "archived_at": "2026-09-03T23:44:26.880341+00:00",
+   "byte_size": 19060666,
+   "present_here": false,
+   "role": "FY2023 and comparative FY2022 (engine imports 030f5c24, b00613fa cite it); not present here"
+  },
+  {
+   "key": "ARA2022",
+   "sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "archived_in_engine_index": true,
+   "archived_at": "2026-09-03T23:44:25.271369+00:00",
+   "byte_size": 9983397,
+   "present_here": false,
+   "role": "FY2022, and FY2021/FY2020/FY2019 historical highlights (engine imports cite it); not present here"
+  },
+  {
+   "key": "FY2024-FS",
+   "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+   "archived_in_engine_index": false,
+   "present_here": false,
+   "role": "original audited FY2024 statements; B02 private copy, visual observations only (no values in the register)"
+  },
+  {
+   "key": "ARA2021 / FY2021 audited statements",
+   "sha256": null,
+   "source_url": null,
+   "archived_in_engine_index": false,
+   "present_here": false,
+   "role": "original FY2021 report; not archived anywhere in reach"
+  },
+  {
+   "key": "interim reports Q3-2023, Q1/H1/Q3-2024, Q1/H1/Q3-2025 and Q4 three-month disclosures",
+   "sha256": null,
+   "source_url": null,
+   "archived_in_engine_index": false,
+   "present_here": false,
+   "role": "required for the 10 historical quarters; none archived; URLs are not guessed here"
+  }
+ ],
+ "access": "aramco.com and saudiexchange.sa are denied by this environment's network policy (000/403 on 2026-10-18)",
+ "rule": "an import-file hash is never used as a disclosure hash; a JSON import never replaces a disclosure"
+}

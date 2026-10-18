@@ -1,0 +1,3619 @@
+{
+ "schema": "marefa-aramco-qb2a-hist-ledger/1",
+ "company_id": "sa:2222",
+ "annual": [
+  {
+   "id": "QB2-A-revenue-FY2021",
+   "metric": "revenue",
+   "statement": "income_statement",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1346930,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Revenue",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1893,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "1346930000000",
+    "value_sar_millions": 1346930,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2021-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-FY2022",
+   "metric": "revenue",
+   "statement": "income_statement",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 2006955,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Revenue",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1960,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "2006955000000",
+    "value_sar_millions": 2006955,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2022-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-FY2023",
+   "metric": "revenue",
+   "statement": "income_statement",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1653281,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Revenue",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2041,
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "1653281000000",
+    "value_sar_millions": 1653281,
+    "filed_at": "2024-03-10",
+    "form": "Annual report",
+    "import_file": "data/imports/aramco-2023-fy.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-other_income_related_to_sales-FY2021",
+   "metric": "other_income_related_to_sales",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 154828,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Other income related to sales",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1866,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "154828000000",
+    "value_sar_millions": 154828,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-other_income_related_to_sales-FY2022",
+   "metric": "other_income_related_to_sales",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 259418,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Other income related to sales",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1930,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "259418000000",
+    "value_sar_millions": 259418,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-other_income_related_to_sales-FY2023",
+   "metric": "other_income_related_to_sales",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 203092,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Other income related to sales",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2000,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "203092000000",
+    "value_sar_millions": 203092,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue_and_other_income_related_to_sales-FY2021",
+   "metric": "revenue_and_other_income_related_to_sales",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1501758,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Revenue and other income related to sales",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1867,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "1501758000000",
+    "value_sar_millions": 1501758,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue_and_other_income_related_to_sales-FY2022",
+   "metric": "revenue_and_other_income_related_to_sales",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 2266373,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Revenue and other income related to sales",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1931,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "2266373000000",
+    "value_sar_millions": 2266373,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue_and_other_income_related_to_sales-FY2023",
+   "metric": "revenue_and_other_income_related_to_sales",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1856373,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Revenue and other income related to sales",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2001,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "1856373000000",
+    "value_sar_millions": 1856373,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_costs-FY2021",
+   "metric": "operating_costs",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": -729840,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Operating costs",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1868,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "-729840000000",
+    "value_sar_millions": -729840,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_costs-FY2022",
+   "metric": "operating_costs",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": -1122296,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Operating costs",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1932,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "-1122296000000",
+    "value_sar_millions": -1122296,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_costs-FY2023",
+   "metric": "operating_costs",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": -988086,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Operating costs",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2002,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "-988086000000",
+    "value_sar_millions": -988086,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_income-FY2021",
+   "metric": "operating_income",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 771918,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Operating income",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1869,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "771918000000",
+    "value_sar_millions": 771918,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_income-FY2022",
+   "metric": "operating_income",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1144077,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Operating income",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1933,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "1144077000000",
+    "value_sar_millions": 1144077,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_income-FY2023",
+   "metric": "operating_income",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 868287,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Operating income",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2003,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "868287000000",
+    "value_sar_millions": 868287,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-income_before_income_taxes_and_zakat-FY2021",
+   "metric": "income_before_income_taxes_and_zakat",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 769521,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Income before income taxes and zakat",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1870,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "769521000000",
+    "value_sar_millions": 769521,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-income_before_income_taxes_and_zakat-FY2022",
+   "metric": "income_before_income_taxes_and_zakat",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1152962,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Income before income taxes and zakat",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1934,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "1152962000000",
+    "value_sar_millions": 1152962,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-income_before_income_taxes_and_zakat-FY2023",
+   "metric": "income_before_income_taxes_and_zakat",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 888067,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Income before income taxes and zakat",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2004,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "888067000000",
+    "value_sar_millions": 888067,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-income_taxes_and_zakat-FY2021",
+   "metric": "income_taxes_and_zakat",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": -357125,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Income taxes and zakat",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1871,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "-357125000000",
+    "value_sar_millions": -357125,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-income_taxes_and_zakat-FY2022",
+   "metric": "income_taxes_and_zakat",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": -548957,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Income taxes and zakat",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1935,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "-548957000000",
+    "value_sar_millions": -548957,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-income_taxes_and_zakat-FY2023",
+   "metric": "income_taxes_and_zakat",
+   "statement": "income_statement",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": -433303,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Income taxes and zakat",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2005,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "-433303000000",
+    "value_sar_millions": -433303,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-FY2021",
+   "metric": "net_income",
+   "statement": "income_statement",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 412396,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net income",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1894,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "412396000000",
+    "value_sar_millions": 412396,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2021-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-FY2022",
+   "metric": "net_income",
+   "statement": "income_statement",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 604005,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net income",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1961,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "604005000000",
+    "value_sar_millions": 604005,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2022-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-FY2023",
+   "metric": "net_income",
+   "statement": "income_statement",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 454764,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net income",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2042,
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "454764000000",
+    "value_sar_millions": 454764,
+    "filed_at": "2024-03-10",
+    "form": "Annual report",
+    "import_file": "data/imports/aramco-2023-fy.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_assets-FY2021",
+   "metric": "total_assets",
+   "statement": "balance_sheet",
+   "core_metric": false,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 2162690,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Total assets",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1897,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "2162690000000",
+    "value_sar_millions": 2162690,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2021-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_assets-FY2022",
+   "metric": "total_assets",
+   "statement": "balance_sheet",
+   "core_metric": false,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 2492924,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Total assets",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1964,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "2492924000000",
+    "value_sar_millions": 2492924,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2022-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_assets-FY2023",
+   "metric": "total_assets",
+   "statement": "balance_sheet",
+   "core_metric": false,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 2477940,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Total assets",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2008,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "2477940000000",
+    "value_sar_millions": 2477940,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_liabilities-FY2021",
+   "metric": "total_liabilities",
+   "statement": "balance_sheet",
+   "core_metric": false,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 882022,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Total liabilities",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1898,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "882022000000",
+    "value_sar_millions": 882022,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2021-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_liabilities-FY2022",
+   "metric": "total_liabilities",
+   "statement": "balance_sheet",
+   "core_metric": false,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 826777,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Total liabilities",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1965,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "826777000000",
+    "value_sar_millions": 826777,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2022-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_liabilities-FY2023",
+   "metric": "total_liabilities",
+   "statement": "balance_sheet",
+   "core_metric": false,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 740848,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Total liabilities",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2009,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "740848000000",
+    "value_sar_millions": 740848,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-FY2021",
+   "metric": "total_equity",
+   "statement": "balance_sheet",
+   "core_metric": true,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1280668,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net assets (total equity)",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1899,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "1280668000000",
+    "value_sar_millions": 1280668,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2021-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-FY2022",
+   "metric": "total_equity",
+   "statement": "balance_sheet",
+   "core_metric": true,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1666147,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net assets (total equity)",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1966,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "1666147000000",
+    "value_sar_millions": 1666147,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2022-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-FY2023",
+   "metric": "total_equity",
+   "statement": "balance_sheet",
+   "core_metric": true,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 1737092,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net assets (total equity)",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2010,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "1737092000000",
+    "value_sar_millions": 1737092,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-FY2021",
+   "metric": "operating_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": 522601,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash provided by operating activities",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1895,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "522601000000",
+    "value_sar_millions": 522601,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2021-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-FY2022",
+   "metric": "operating_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": 698152,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash provided by operating activities",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 1962,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "698152000000",
+    "value_sar_millions": 698152,
+    "filed_at": "2023-03-12",
+    "form": "Annual report historical highlights",
+    "import_file": "data/imports/aramco-2022-fy-historical.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report historical highlights",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-FY2023",
+   "metric": "operating_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": true,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 537814,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash provided by operating activities",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": {
+    "data_point_id": 2043,
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "537814000000",
+    "value_sar_millions": 537814,
+    "filed_at": "2024-03-10",
+    "form": "Annual report",
+    "import_file": "data/imports/aramco-2023-fy.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-investing_cash_flow-FY2021",
+   "metric": "investing_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": -135741,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash used in investing activities",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": null,
+   "engine_equal": false,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-investing_cash_flow-FY2022",
+   "metric": "investing_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": -389009,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash used in investing activities",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": null,
+   "engine_equal": false,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-investing_cash_flow-FY2023",
+   "metric": "investing_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": -54019,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash used in investing activities",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": null,
+   "engine_equal": false,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-financing_cash_flow-FY2021",
+   "metric": "financing_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": -294513,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash used in financing activities",
+    "column": "Year ended / as at December 31, 2021"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2021 statements; it shows FY2021 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": null,
+   "engine_equal": false,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-financing_cash_flow-FY2022",
+   "metric": "financing_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": -382675,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash used in financing activities",
+    "column": "Year ended / as at December 31, 2022"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2022 statements; it shows FY2022 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": null,
+   "engine_equal": false,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-financing_cash_flow-FY2023",
+   "metric": "financing_cash_flow",
+   "statement": "cash_flow",
+   "core_metric": false,
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": -510869,
+   "sign_as_printed": "negative (parentheses)",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "printed_page": 130,
+    "table": "Historical financial highlights",
+    "line": "Net cash used in financing activities",
+    "column": "Year ended / as at December 31, 2023"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
+   "evidence_limit": "a summary in the 2025 annual report, not the audited FY2023 statements; it shows FY2023 as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+   "engine": null,
+   "engine_equal": false,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-FY2023",
+   "metric": "cash",
+   "statement": "balance_sheet",
+   "core_metric": true,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023
+   },
+   "unit": "SAR millions",
+   "value_in_source": 198973,
+   "sign_as_printed": "positive",
+   "source": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 178,
+    "printed_page": 176,
+    "table": "Consolidated statement of cash flows",
+    "line": "Cash and cash equivalents at beginning of the year",
+    "column": "comparative (year ended December 31, 2024)"
+   },
+   "evidence_class": "ISSUER_ANNUAL_REPORT_2025_CASH_FLOW_OPENING_BALANCE",
+   "evidence_limit": "the opening cash of FY2024 in the cash-flow statement, a different identity from balance-sheet cash at 2023-12-31; they agree only when no cash sits in assets held for sale. The FY2023 balance sheet is needed to confirm",
+   "engine": {
+    "data_point_id": 2007,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "198973000000",
+    "value_sar_millions": 198973,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": true,
+   "engine_status": "ENGINE_EQUAL",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-FY2021",
+   "metric": "cash",
+   "statement": "balance_sheet",
+   "core_metric": true,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021
+   },
+   "unit": "SAR millions",
+   "value_in_source": null,
+   "source": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "evidence_limit": "cash at 2021-12-31 is not in the 2025 annual report; the FY2021 or FY2022 statements are needed",
+   "engine": {
+    "data_point_id": 1873,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "299579000000",
+    "value_sar_millions": 299579,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2021-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": null,
+   "engine_status": "ENGINE_VALUE_WITHOUT_ACCESSIBLE_DISCLOSURE",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-FY2022",
+   "metric": "cash",
+   "statement": "balance_sheet",
+   "core_metric": true,
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022
+   },
+   "unit": "SAR millions",
+   "value_in_source": null,
+   "source": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "evidence_limit": "cash at 2022-12-31 is not in the 2025 annual report; the FY2022 or FY2023 statements are needed",
+   "engine": {
+    "data_point_id": 1937,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "226047000000",
+    "value_sar_millions": 226047,
+    "filed_at": "2023-03-12",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2022-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "0451f1531bb03cf6504ac711df2ca6474e1623edd178af903a83605cab66f353",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_equal": null,
+   "engine_status": "ENGINE_VALUE_WITHOUT_ACCESSIBLE_DISCLOSURE",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  }
+ ],
+ "quarters": [
+  {
+   "id": "QB2-A-revenue-Q3-2023",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2023-07-01",
+    "end": "2023-09-30",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2023 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q3-2023",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2023-07-01",
+    "end": "2023-09-30",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2023 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q3-2023",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2023-07-01",
+    "end": "2023-09-30",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2023 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q3-2023",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-09-30",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2023-09-30 from the Q3 2023 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q3-2023",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-09-30",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2023-09-30 from the Q3 2023 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q4-2023",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2023-10-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2023 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q4-2023",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2023-10-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2023 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q4-2023",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2023-10-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2023 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q4-2023",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": true,
+   "year_end_evidence": {
+    "ledger_id": "QB2-A-cash-FY2023",
+    "value_sar_millions": 198973,
+    "evidence_class": "ISSUER_ANNUAL_REPORT_2025_CASH_FLOW_OPENING_BALANCE"
+   },
+   "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE",
+   "needed": "none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document",
+   "engine": {
+    "data_point_id": 2007,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "198973000000",
+    "value_sar_millions": 198973,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_status": "ENGINE_PRESENT",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q4-2023",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": true,
+   "year_end_evidence": {
+    "ledger_id": "QB2-A-total_equity-FY2023",
+    "value_sar_millions": 1737092,
+    "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE",
+   "needed": "none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document",
+   "engine": {
+    "data_point_id": 2010,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "1737092000000",
+    "value_sar_millions": 1737092,
+    "filed_at": "2024-03-10",
+    "form": "Annual report supplementary metrics",
+    "import_file": "data/imports/aramco-2023-annual-metrics.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+     "filing_type": "Annual report supplementary metrics",
+     "archive_index_sha256": "4ae156d697ffb78a78c781dda39dd5259dd1c30317233b7565c8622f14875c21",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_status": "ENGINE_PRESENT",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q1-2024",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-01-01",
+    "end": "2024-03-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q1 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q1-2024",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-01-01",
+    "end": "2024-03-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q1 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q1-2024",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-01-01",
+    "end": "2024-03-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q1 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q1-2024",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-03-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2024-03-31 from the Q1 2024 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q1-2024",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-03-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2024-03-31 from the Q1 2024 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q2-2024",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-04-01",
+    "end": "2024-06-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q2 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q2-2024",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-04-01",
+    "end": "2024-06-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q2 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q2-2024",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-04-01",
+    "end": "2024-06-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q2 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q2-2024",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-06-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2024-06-30 from the Q2 2024 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q2-2024",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-06-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2024-06-30 from the Q2 2024 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q3-2024",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-07-01",
+    "end": "2024-09-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q3-2024",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-07-01",
+    "end": "2024-09-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q3-2024",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-07-01",
+    "end": "2024-09-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2024 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q3-2024",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-09-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2024-09-30 from the Q3 2024 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q3-2024",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-09-30",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2024-09-30 from the Q3 2024 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q4-2024",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-10-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2024 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q4-2024",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-10-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2024 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q4-2024",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2024-10-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2024 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q4-2024",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": true,
+   "year_end_evidence": {
+    "ledger": "QB1/FINANCIAL/FIN-EVIDENCE-LEDGER.json",
+    "record": "FQ01-OBS-051",
+    "evidence_class": "ARA2025 balance sheet PDF 176 (QB1-A, accepted as evidence)"
+   },
+   "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE",
+   "needed": "none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document",
+   "engine": {
+    "data_point_id": 2330,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "216642000000",
+    "value_sar_millions": 216642,
+    "filed_at": "2026-03-09",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "import_file": "data/imports/aramco-2025-annual-metrics.json",
+    "import_hash_matches": false,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+     "filing_type": "Annual report supplementary metrics and comparative restatement",
+     "archive_index_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "present_here": true
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_status": "ENGINE_PRESENT",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q4-2024",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": true,
+   "year_end_evidence": {
+    "ledger": "QB1/FINANCIAL/FIN-EVIDENCE-LEDGER.json",
+    "record": "FQ01-OBS-053",
+    "evidence_class": "ARA2025 balance sheet PDF 176 (QB1-A, accepted as evidence)"
+   },
+   "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE",
+   "needed": "none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document",
+   "engine": {
+    "data_point_id": 2329,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "1651355000000",
+    "value_sar_millions": 1651355,
+    "filed_at": "2026-03-09",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "import_file": "data/imports/aramco-2025-annual-metrics.json",
+    "import_hash_matches": false,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+     "filing_type": "Annual report supplementary metrics and comparative restatement",
+     "archive_index_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "present_here": true
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_status": "ENGINE_PRESENT",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q1-2025",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-01-01",
+    "end": "2025-03-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q1 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q1-2025",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-01-01",
+    "end": "2025-03-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q1 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q1-2025",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-01-01",
+    "end": "2025-03-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q1 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q1-2025",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-03-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2025-03-31 from the Q1 2025 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q1-2025",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-03-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 1
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2025-03-31 from the Q1 2025 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q2-2025",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-04-01",
+    "end": "2025-06-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q2 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q2-2025",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-04-01",
+    "end": "2025-06-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q2 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q2-2025",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-04-01",
+    "end": "2025-06-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q2 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q2-2025",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-06-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2025-06-30 from the Q2 2025 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q2-2025",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-06-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 2
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2025-06-30 from the Q2 2025 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q3-2025",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-07-01",
+    "end": "2025-09-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q3-2025",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-07-01",
+    "end": "2025-09-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q3-2025",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-07-01",
+    "end": "2025-09-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "Q3 2025 interim report (three-month column)",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q3-2025",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-09-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2025-09-30 from the Q3 2025 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q3-2025",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-09-30",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 3
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "balance sheet at 2025-09-30 from the Q3 2025 interim report",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-revenue-Q4-2025",
+   "metric": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-10-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2025 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-net_income-Q4-2025",
+   "metric": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-10-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2025 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-operating_cash_flow-Q4-2025",
+   "metric": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2025-10-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": false,
+   "year_end_evidence": null,
+   "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+   "needed": "issuer disclosure of the three-month period Q4 2025 (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula",
+   "engine": null,
+   "engine_status": "ENGINE_MISSING",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-cash-Q4-2025",
+   "metric": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": true,
+   "year_end_evidence": {
+    "ledger": "QB1/FINANCIAL/FIN-EVIDENCE-LEDGER.json",
+    "record": "FQ01-OBS-058",
+    "evidence_class": "ARA2025 balance sheet PDF 176 (QB1-A, accepted as evidence)"
+   },
+   "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE",
+   "needed": "none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document",
+   "engine": {
+    "data_point_id": 2191,
+    "version": 1,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "243099000000",
+    "value_sar_millions": 243099,
+    "filed_at": "2026-03-09",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "import_file": "data/imports/aramco-2025-annual-metrics.json",
+    "import_hash_matches": false,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+     "filing_type": "Annual report supplementary metrics and comparative restatement",
+     "archive_index_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "present_here": true
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_status": "ENGINE_PRESENT",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  },
+  {
+   "id": "QB2-A-total_equity-Q4-2025",
+   "metric": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": 4
+   },
+   "value_in_source": null,
+   "source": null,
+   "same_instant_as_year_end": true,
+   "year_end_evidence": {
+    "ledger": "QB1/FINANCIAL/FIN-EVIDENCE-LEDGER.json",
+    "record": "FQ01-OBS-060",
+    "evidence_class": "ARA2025 balance sheet PDF 176 (QB1-A, accepted as evidence)"
+   },
+   "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE",
+   "needed": "none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document",
+   "engine": {
+    "data_point_id": 2692,
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "1721744000000",
+    "value_sar_millions": 1721744,
+    "filed_at": "2026-03-10",
+    "form": "Annual financial report comparative",
+    "import_file": "data/imports/aramco-2025-fy.json",
+    "import_hash_matches": true,
+    "import_cites": {
+     "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+     "filing_type": "Annual financial report comparative",
+     "archive_index_sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+     "present_here": false
+    },
+    "note": "engine value from a JSON import; recorded beside the disclosure, never as its proof"
+   },
+   "engine_status": "ENGINE_PRESENT",
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false
+   }
+  }
+ ],
+ "summary_vs_statements_2024_2025": [
+  {
+   "metric": "revenue",
+   "summary_2025_2024": [
+    1559342,
+    1637299
+   ],
+   "statement_page": 174,
+   "statement_line": "Revenue",
+   "statement_2025_2024": [
+    1559342,
+    1637299
+   ],
+   "equal": true
+  },
+  {
+   "metric": "other_income_related_to_sales",
+   "summary_2025_2024": [
+    111862,
+    164375
+   ],
+   "statement_page": 174,
+   "statement_line": "Other income related to sales",
+   "statement_2025_2024": [
+    111862,
+    164375
+   ],
+   "equal": true
+  },
+  {
+   "metric": "revenue_and_other_income_related_to_sales",
+   "summary_2025_2024": [
+    1671204,
+    1801674
+   ],
+   "statement_page": 174,
+   "statement_line": "Revenue and other income related to sales",
+   "statement_2025_2024": [
+    1671204,
+    1801674
+   ],
+   "equal": true
+  },
+  {
+   "metric": "operating_costs",
+   "summary_2025_2024": [
+    -964382,
+    -1027049
+   ],
+   "statement_page": 174,
+   "statement_line": "not a single statement line (sum of cost lines)",
+   "statement_2025_2024": null,
+   "equal": null
+  },
+  {
+   "metric": "operating_income",
+   "summary_2025_2024": [
+    706822,
+    774625
+   ],
+   "statement_page": 174,
+   "statement_line": "Operating income",
+   "statement_2025_2024": [
+    706822,
+    774625
+   ],
+   "equal": true
+  },
+  {
+   "metric": "income_before_income_taxes_and_zakat",
+   "summary_2025_2024": [
+    702860,
+    782010
+   ],
+   "statement_page": 174,
+   "statement_line": "Income before income taxes and zakat",
+   "statement_2025_2024": [
+    702860,
+    782010
+   ],
+   "equal": true
+  },
+  {
+   "metric": "income_taxes_and_zakat",
+   "summary_2025_2024": [
+    -352650,
+    -383588
+   ],
+   "statement_page": 174,
+   "statement_line": "Income taxes and zakat",
+   "statement_2025_2024": [
+    -352650,
+    -383588
+   ],
+   "equal": true
+  },
+  {
+   "metric": "net_income",
+   "summary_2025_2024": [
+    350210,
+    398422
+   ],
+   "statement_page": 174,
+   "statement_line": "Net income",
+   "statement_2025_2024": [
+    350210,
+    398422
+   ],
+   "equal": true
+  },
+  {
+   "metric": "total_assets",
+   "summary_2025_2024": [
+    2551964,
+    2423630
+   ],
+   "statement_page": 176,
+   "statement_line": "Total assets",
+   "statement_2025_2024": [
+    2551964,
+    2423630
+   ],
+   "equal": true
+  },
+  {
+   "metric": "total_liabilities",
+   "summary_2025_2024": [
+    830220,
+    772275
+   ],
+   "statement_page": 176,
+   "statement_line": "Total liabilities",
+   "statement_2025_2024": [
+    830220,
+    772275
+   ],
+   "equal": true
+  },
+  {
+   "metric": "total_equity",
+   "summary_2025_2024": [
+    1721744,
+    1651355
+   ],
+   "statement_page": 176,
+   "statement_line": "unlabelled subtotal after Non-controlling interests",
+   "statement_2025_2024": [
+    1721744,
+    1651355
+   ],
+   "equal": true
+  },
+  {
+   "metric": "operating_cash_flow",
+   "summary_2025_2024": [
+    510798,
+    508888
+   ],
+   "statement_page": 178,
+   "statement_line": "Net cash provided by operating activities",
+   "statement_2025_2024": [
+    510798,
+    508888
+   ],
+   "equal": true
+  },
+  {
+   "metric": "investing_cash_flow",
+   "summary_2025_2024": [
+    -203902,
+    -2861
+   ],
+   "statement_page": 178,
+   "statement_line": "Net cash used in investing activities",
+   "statement_2025_2024": [
+    -203902,
+    -2861
+   ],
+   "equal": true
+  },
+  {
+   "metric": "financing_cash_flow",
+   "summary_2025_2024": [
+    -280439,
+    -488358
+   ],
+   "statement_page": 178,
+   "statement_line": "Net cash used in financing activities",
+   "statement_2025_2024": [
+    -280439,
+    -488358
+   ],
+   "equal": true
+  }
+ ],
+ "counts": {
+  "annual_core": 15,
+  "annual_core_with_disclosure": 13,
+  "annual_supplementary": 30,
+  "quarter_values": 50,
+  "quarter_values_with_disclosure": 6,
+  "engine_equal": 37,
+  "engine_differs": 0,
+  "engine_missing": 6
+ }
+}

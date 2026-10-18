@@ -1,0 +1,35 @@
+{
+ "schema": "marefa-aramco-qb2a-gaps/1",
+ "items": [
+  {
+   "scope": "FY2021-FY2023 annual values (12 core values with summary evidence)",
+   "missing_for_entry": "binding each engine row to a disclosure hash and page (engine task; the rows exist)",
+   "missing_for_qualification": "the audited statements of each year (ARA2022/ARA2023 archived in the engine index but not present here; FY2021 original not archived), a named financial reviewer, rights, D4"
+  },
+  {
+   "scope": "cash 2021-12-31, 2022-12-31",
+   "missing_for_entry": "a disclosure: not in ARA2025",
+   "missing_for_qualification": "FY2022/FY2023 statements"
+  },
+  {
+   "scope": "cash 2023-12-31",
+   "missing_for_entry": "balance-sheet identity (only the cash-flow opening balance is seen)",
+   "missing_for_qualification": "FY2023 or FY2024 balance sheet"
+  },
+  {
+   "scope": "investing and financing cash flows FY2021-FY2023",
+   "missing_for_entry": "the engine has no rows for these metrics in any year",
+   "missing_for_qualification": "engine ingestion, then the audited statements"
+  },
+  {
+   "scope": "10 quarters Q3-2023..Q4-2025 (30 flows, 20 balances)",
+   "missing_for_entry": "interim reports and Q4 three-month disclosures; the engine holds no quarter before 2026",
+   "missing_for_qualification": "the same documents archived with hashes, engine ingestion, reviewer; Q4 flows by subtraction only with an approved formula"
+  },
+  {
+   "scope": "FY2024 original vs comparative",
+   "missing_for_entry": "none",
+   "missing_for_qualification": "a direct read of the original FY2024 statements (B02 private) for total assets/liabilities/equity and capex sign"
+  }
+ ]
+}

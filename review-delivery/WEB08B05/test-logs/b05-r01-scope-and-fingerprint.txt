@@ -1,0 +1,32 @@
+# B05-R01 fix commit a722af4 (parent 3681aa0 = B05 delivery on 8fb84fb): files changed 3681aa0..a722af4
+   .../aramco-research-experience/access.test.ts      | 15 +++---
+   .../aramco-research-experience/assets.ts           |  4 +-
+   .../aramco-research-experience/paths.test.ts       | 61 ++++++++++++++++++++++
+   .../aramco-research-experience/paths.ts            | 16 ++++++
+   .../aramco-research-experience/public-leak-scan.ts |  7 ++-
+   .../aramco-research-experience/tsconfig.json       | 10 +++-
+   6 files changed, 102 insertions(+), 11 deletions(-)
+# outside research-evidence/aramco-research-experience/: 0
+# implementation diff 8fb84fb..a722af4 restricted to the B05 folder:
+   .../aramco-research-experience/access.test.ts      | 15 +++---
+   .../aramco-research-experience/assets.ts           |  4 +-
+   .../aramco-research-experience/paths.test.ts       | 61 ++++++++++++++++++++++
+   .../aramco-research-experience/paths.ts            | 16 ++++++
+   .../aramco-research-experience/public-leak-scan.ts |  7 ++-
+   .../aramco-research-experience/tsconfig.json       | 10 +++-
+   6 files changed, 102 insertions(+), 11 deletions(-)
+# src/ supabase/ tests/ package.json bun.lock vite.config.ts research-evidence/{v1,aramco-qualification,aramco-disclosures,aramco-research-pack} changed 8fb84fb..a722af4: 0
+# remaining .pathname uses in the B05 folder at a722af4 (all are comments, the defect demo in paths.test.ts, or the HTTP request path u.pathname in server.ts):
+  research-evidence/aramco-research-experience/paths.test.ts:14:    // the B05-R01 defect: URL.pathname is not a path
+  research-evidence/aramco-research-experience/paths.test.ts:15:    expect(new URL("file:///C:/Users/dev/pixel/src/").pathname).toBe("/C:/Users/dev/pixel/src/");
+  research-evidence/aramco-research-experience/paths.test.ts:49:test("no B05 source builds a filesystem path from URL.pathname", () => {
+  research-evidence/aramco-research-experience/paths.test.ts:57:    // `u.pathname` in server.ts is the HTTP request path, not a filesystem path
+  research-evidence/aramco-research-experience/paths.test.ts:58:    const hits = [...code.matchAll(/(\w+)\)?\.pathname\b/g)].filter((m) => m[1] !== "u");
+  research-evidence/aramco-research-experience/paths.ts:3: * `URL.pathname` ليس مسارًا: على Windows يعطي `/C:/...`، فيفشل Tailwind والقراءة والتجوال.
+  research-evidence/aramco-research-experience/server.ts:82:    if (u.pathname === "/")
+  research-evidence/aramco-research-experience/server.ts:87:    if (u.pathname === "/assets/experience.css") return send("text/css; charset=utf-8", css);
+  research-evidence/aramco-research-experience/server.ts:88:    const font = /^\/assets\/fonts\/([a-z0-9-]+\.woff2)$/.exec(u.pathname)?.[1];
+# rendered output fingerprints (sha256 of compiled CSS, AR page, EN page)
+8fb84fb: {"css":"79723a847a1836b6e41e676b1d4dbc199b24a726d63735f5205e6bb239c22df4","ar":"0f54a79625820a4222869686a3d98bbd0fc943b2bd5d939cbb458337cf8d0be7","en":"266790f3b0e2c7dbfb27e19586eb1c2d10b3e23b12ffbed92228ff28c5246d3b"}
+a722af4: {"css":"79723a847a1836b6e41e676b1d4dbc199b24a726d63735f5205e6bb239c22df4","ar":"0f54a79625820a4222869686a3d98bbd0fc943b2bd5d939cbb458337cf8d0be7","en":"266790f3b0e2c7dbfb27e19586eb1c2d10b3e23b12ffbed92228ff28c5246d3b"}
+# identical: UI, screenshots, a11y and link-browser logs from 8fb84fb remain valid for a722af4

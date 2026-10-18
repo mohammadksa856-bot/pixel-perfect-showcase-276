@@ -10,6 +10,10 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { compilePack } from "../aramco-research-pack/pack";
+import { REPO_ROOT } from "./paths";
+
+/** مجلد بناء التطبيق الافتراضي كمسار نظام (عبر fileURLToPath، لا مسار URL). */
+export const DEFAULT_BUILD_DIR = join(REPO_ROOT, ".vercel", "output");
 
 export function leakNeedles(): string[] {
   const pack = compilePack();
@@ -50,8 +54,7 @@ export function scan(dir: string) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const dir =
-    process.argv[2] ?? join(new URL("../../", import.meta.url).pathname, ".vercel/output");
+  const dir = process.argv[2] ?? DEFAULT_BUILD_DIR;
   const r = scan(dir);
   console.log(
     JSON.stringify({ dir: r.dir, files: r.files, needles: r.needles, hits: r.hits.length }),

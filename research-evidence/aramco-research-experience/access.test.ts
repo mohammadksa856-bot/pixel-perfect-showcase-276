@@ -6,6 +6,7 @@ import { request } from "node:http";
 import { networkInterfaces } from "node:os";
 import { join } from "node:path";
 import { buildCss } from "./assets";
+import { REPO_ROOT, pathSegments } from "./paths";
 import { createExperienceServer, HOST, SECURITY_HEADERS } from "./server";
 
 let server: Awaited<ReturnType<typeof createExperienceServer>>;
@@ -138,10 +139,14 @@ describe("the withheld draft is not part of the public app", () => {
       const p = join(dir, f);
       return statSync(p).isDirectory() ? walk(p) : [p];
     });
-  const root = new URL("../../", import.meta.url).pathname;
-  const src = walk(join(root, "src")).filter((f) => /\.(ts|tsx|js|json|css)$/.test(f));
+  const src = walk(join(REPO_ROOT, "src")).filter((f) => /\.(ts|tsx|js|json|css)$/.test(f));
+  const routeFiles = src.filter((f) => pathSegments(f).includes("routes"));
   test("no app source imports the research pack or this experience", () => {
     expect(src.length).toBeGreaterThan(50);
+    // the walk must find real files, not pass on an empty or wrong root
+    expect(src.some((f) => pathSegments(f).slice(-3).join("/") === "src/routes/__root.tsx")).toBe(
+      true,
+    );
     for (const f of src) {
       const t = readFileSync(f, "utf8");
       expect({ f, hit: /aramco-research-(pack|experience)|research-evidence\//.test(t) }).toEqual({
@@ -151,10 +156,8 @@ describe("the withheld draft is not part of the public app", () => {
     }
   });
   test("no app route serves research pack paragraph text", () => {
-    const routes = src
-      .filter((f) => f.includes("/routes/"))
-      .map((f) => readFileSync(f, "utf8"))
-      .join("\n");
+    expect(routeFiles.length).toBeGreaterThan(30);
+    const routes = routeFiles.map((f) => readFileSync(f, "utf8")).join("\n");
     expect(routes).not.toContain("research-experience");
     expect(routes).not.toContain("السعة القصوى المستدامة هدف للنفط الخام وحده");
   });

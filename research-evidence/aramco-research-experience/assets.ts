@@ -6,6 +6,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { compile } from "@tailwindcss/node";
 import { Scanner } from "@tailwindcss/oxide";
+import { toNativePath } from "./paths";
 
 const ROOT = new URL("../../", import.meta.url);
 const HERE = new URL("./", import.meta.url);
@@ -56,7 +57,7 @@ export async function buildCss(): Promise<string> {
     "\n" +
     readFileSync(new URL("components.css", HERE), "utf8");
   const compiler = await compile(input, {
-    base: new URL("src/", ROOT).pathname,
+    base: toNativePath(new URL("src/", ROOT)),
     onDependency: () => {},
   });
   const scanner = new Scanner({ sources: compiler.sources.map((s) => ({ ...s })) });
@@ -66,4 +67,3 @@ export async function buildCss(): Promise<string> {
 }
 
 export const fontPath = (name: string) => new URL(name, FONT_DIR);
-export const HERE_PATH = HERE.pathname;

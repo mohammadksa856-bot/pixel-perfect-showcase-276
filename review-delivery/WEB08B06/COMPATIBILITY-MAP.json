@@ -1,0 +1,86 @@
+{
+ "schema": "marefa-web08b06-recipes-compatibility-map/1",
+ "purpose": "Lets an independent test suite written against an earlier recipes schema be pointed at the current one without hiding its original results. It maps fields and reason codes; it does not change, rerun or reinterpret any Codex test. Codex reported (event 115, review 08af19f, not available here) 79 original checks: 33 reached (11 pass, 22 schema mismatches), 46 not executed; those numbers are Codex's and are not reproduced or altered by the author.",
+ "versions": [
+  {"schema": "marefa-web08b06-comparability-recipes/1", "implementation": "5050295"},
+  {"schema": "marefa-web08b06-comparability-recipes/2", "implementation": "a267e0c", "why": "R02-A/R02-B: blacklist guards failed open; allow-lists, real-date periods, dated FX, item definitions, CFO placement policy, composed FCF"},
+  {"schema": "marefa-web08b06-comparability-recipes/3", "implementation": "this delivery", "why": "R02-C lease semantics (reported vs derived CFO, lease placement per issuer, single deduction), R02-D input-shape validation, R02-E finite arithmetic"}
+ ],
+ "document_fields": {
+  "v1_to_v2": {
+   "generic_failure_conditions": "removed; generic checks are a fixed ordered list (see check_order) implemented by the evaluator, not data",
+   "recipes[].failure_conditions (eq/neq/missing/monetary ops)": "kept for metric-specific rules only, ops reduced to always/and/eq/neq_path/not_in; definitional checks moved to required_definitions",
+   "recipes[].required_definitions": "new: {meta_field: [allowed values]}; missing -> definition_missing:<f>, unlisted -> definition_not_accepted:<f>",
+   "recipes[].item_definitions": "new: {item: definition_id}; each used item needs meta.item_definitions[item] equal to it",
+   "recipes[].outputs[].selector / cases": "replaced by outputs[].terms [{expr, sign, when?}] (ratio outputs: numerator/denominator term lists)",
+   "recipes[].forbidden_items, depends_on, guards, policy_requirements, requires_balance_dates, pair_homogeneous_fields, pair_examples": "new",
+   "examples[].meta.period.start": "now required (period validated by kind, real dates, order, duration)",
+   "examples[].meta.fx.window_start / window_end (flows) or rate_date (stocks)": "now required for non-USD monetary cells",
+   "examples[].meta.capex_line_includes_acquisitions": "no longer read; replaced by capex_acquisitions_classification and investments_classification (allow-list: separately_disclosed)"
+  },
+  "v2_to_v3": {
+   "recipes[].required_definitions_by_basis": "new: {IFRS|US_GAAP: {meta_field: [allowed]}}; M05 records where each lease cash flow sits in the published statement",
+   "M05 outputs": "cfo_norm (v2) replaced by two outputs: reported_cfo (role reported_not_comparable: the published figure, converted only) and cfo_after_lease_payments (role derived_comparable: all lease payments and interest deducted once)",
+   "M05 item_definitions": "lease_principal_payments -> ifrs16_lease_principal_payments_classified_in_financing; finance_lease_principal_payments -> asc842_finance_lease_principal_payments_classified_in_financing; interest_paid_in_financing -> interest_paid_incl_lease_interest_classified_in_financing",
+   "M05 meta (IFRS)": "new required: lease_principal_classification [financing], lease_interest_classification [operating|financing] (must equal interest_paid_classification)",
+   "M05 meta (US_GAAP)": "new required: operating_lease_payments_classification [operating], finance_lease_principal_classification [financing], finance_lease_interest_classification [operating]",
+   "M06 meta": "new required: capex_lease_treatment [excludes_lease_payments_and_rou_additions]",
+   "M07 outputs[0].terms": "ref:M05.cfo_norm -> ref:M05.cfo_after_lease_payments (never reported_cfo); no lease term in FCF",
+   "items": "any item not defined by the recipe or its dependencies -> item_not_recognised:<item>; forbidden items of dependencies apply to the dependant"
+  }
+ },
+ "reason_codes": {
+  "v1 -> v2/v3": {
+   "source_missing": "source_missing",
+   "accounting_basis_unknown": "accounting_basis_unknown",
+   "consolidation_not_group": "consolidation_not_group",
+   "period_end_missing": "period_date_invalid (end or start missing/invalid) | period_missing (no period object)",
+   "period_kind_not_allowed": "period_kind_not_allowed",
+   "quarter_not_standalone": "quarter_not_standalone",
+   "not_latest_restated": "not_latest_restated",
+   "fx_missing": "fx_missing",
+   "fx_source_missing": "fx_source_missing",
+   "fx_rate_type_mismatch": "fx_rate_type_mismatch (plus new fx_window_mismatch, fx_date_mismatch, fx_rate_invalid, fx_unexpected_for_usd, currency_not_supported)",
+   "required_item_missing": "required_item_missing:<item> (plus item_not_numeric:<item>, item_definition_missing:<item>, item_definition_mismatch:<item>)",
+   "no_recipe_for_case": "definition_not_accepted:<field> or a basis-consistency code (e.g. inventory_method_inconsistent_with_basis)",
+   "royalty_presentation_unknown": "definition_missing|definition_not_accepted:royalty_presentation",
+   "trading_revenue_basis_unknown": "definition_missing|definition_not_accepted:trading_revenue_basis",
+   "full_cost_method / e_and_e_method_unknown": "definition_not_accepted|definition_missing:e_and_e_method",
+   "royalty_as_income_tax": "definition_not_accepted:royalty_classification",
+   "operating_profit_includes_finance_income_unrecorded": "definition_missing:operating_profit_definition",
+   "parent_share_not_identified": "definition_not_accepted|definition_missing:profit_scope",
+   "dividends_received_classification_unknown": "definition_missing:dividends_received_classification",
+   "capex_line_includes_acquisitions": "definition_missing|definition_not_accepted:capex_acquisitions_classification (and :investments_classification)",
+   "hybrid_classification_unknown": "hybrid_classification_not_accepted (has_hybrids itself: definition_missing:has_hybrids)",
+   "capital_employed_scope_unrecorded": "definition_missing|definition_not_accepted:capital_employed_scope",
+   "dividend_basis_not_cash_paid": "definition_not_accepted:dividend_basis",
+   "dividends_include_nci": "definition_not_accepted:dividends_paid_scope | item_not_allowed:dividends_paid_nci",
+   "performance_linked_not_separable": "definition_not_accepted:performance_linked_separable",
+   "buybacks_combined": "definition_not_accepted:buybacks_separate | item_not_allowed:share_buybacks",
+   "production_basis_not_net_entitlement": "definition_not_accepted:production_basis",
+   "gas_factor_policy_missing": "policy_missing:gas_scf_per_boe (policy_invalid:gas_scf_per_boe when not a positive finite number)",
+   "affiliate_inclusion_mismatch": "affiliate_inclusion_mismatch",
+   "capacity_basis_not_net / capacity_type_not_distillation": "definition_not_accepted:capacity_basis / :capacity_type",
+   "always-failing metric codes (issuer_defined_measure, reserves_basis_prms_vs_sec, no_common_cost_definition, boundary_method_mismatch, denominator_rights_unresolved, out_of_scope_b06)": "unchanged"
+  },
+  "new in v3": {
+   "input_malformed:example|meta|items|policy|meta.period|meta.fx|meta.item_definitions": "R02-D: wrong type, null or missing structure; checked before any property is read",
+   "non_finite_result": "R02-E: any intermediate or final value (sum, difference, product, quotient, FX conversion, rounding) not finite; division by zero",
+   "item_not_recognised:<item>": "item outside the recipe and its dependencies (prevents an unlisted second deduction)",
+   "lease_interest_classification_differs_from_interest_paid": "R02-C: IFRS lease interest placed apart from other interest paid",
+   "definition_missing|definition_not_accepted:<lease field>": "R02-C: lease placement not recorded or without a recipe",
+   "definition_missing|definition_not_accepted:capex_lease_treatment": "R02-C: capex must exclude lease payments and right-of-use additions"
+  }
+ },
+ "evaluator_interface": {
+  "v1": "evaluate(recipe, example) -> {status, reason} | {status, values}; examples[].expected compared",
+  "v2/v3": "evaluate(recipe_id, example) and evaluate_pair(recipe_id, a, b); values are keyed by output key; pair values {a: {...}, b: {...}}; an unknown recipe id throws (caller fault); malformed data never throws",
+  "reference implementations": "tools/recipes.py (generator, --evaluate <cases.json> for batch parity) and checks/evaluator.ts (independent); both must agree on every case"
+ },
+ "how_to_point_an_earlier_suite_at_v3": [
+  "Keep the original assertions and results as recorded; run them against v3 separately and report mismatches as schema mismatches, not as passes.",
+  "For a v1/v2 example, add meta.period.start, FX window/date, meta.item_definitions from the recipe, and the allow-listed definitions the case is about; do not add fields that would make a must-fail case pass.",
+  "Map expected reason codes with reason_codes above; codes now carry the field or item after a colon.",
+  "For M05/M07 compare cfo_after_lease_payments (not reported_cfo) and fcf_rebuilt; reported_cfo is the published figure and is expected to differ between classifications."
+ ]
+}

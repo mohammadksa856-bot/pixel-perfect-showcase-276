@@ -14,6 +14,7 @@ const DIR = fileURLToPath(new URL("../", import.meta.url));
 const ROOT = fileURLToPath(new URL("../../../", import.meta.url));
 const AUDITED = "17b870cf4e1bf6fc8ff4d0afb9f9d3b5b675fb26";
 const PREVIOUS_DELIVERY = "c054ff78dd117226336512289f6fc064a7659ea3";
+const LAST_DELIVERY = "cc5c92c8e3197c01880041c024c7584844d7d664";
 const corrections = JSON.parse(readFileSync(join(DIR, "TRACKING-EVENT-CORRECTIONS.json"), "utf8"));
 const sh = (cmd: string[], cwd: string, env: Record<string, string> = {}) => {
   const r = Bun.spawnSync(cmd, { cwd, env: { ...process.env, ...env } });
@@ -29,7 +30,7 @@ const keys = (o: any): string[] =>
 describe("R05 history is append-only", () => {
   const head = readFileSync(join(ROOT, "product-tracking/CHANGELOG.jsonl"));
   test("events up to the audited and the previous delivery are preserved byte for byte", () => {
-    for (const c of [AUDITED, PREVIOUS_DELIVERY]) {
+    for (const c of [AUDITED, PREVIOUS_DELIVERY, LAST_DELIVERY]) {
       const prev = sh(["git", "show", `${c}:product-tracking/CHANGELOG.jsonl`], ROOT);
       expect({ c, prefix: head.subarray(0, prev.length).equals(Buffer.from(prev)) }).toEqual({
         c,

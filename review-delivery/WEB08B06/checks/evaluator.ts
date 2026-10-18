@@ -1,5 +1,5 @@
 /**
- * WEB-08B06 / B06-0 — مقيّم مستقل لـCOMPARABILITY-RECIPES.json (recipes/2).
+ * WEB-08B06 / B06-0 — مقيّم مستقل لـCOMPARABILITY-RECIPES.json (recipes/3).
  * مكتوب منفصلًا عن مولّد Python (tools/recipes.py)، ويُقارن به في comparability.test.ts.
  * يفشل مغلقًا: أي نقص أو التباس أو عدم تجانس يعيد NOT_COMPARABLE بكود محدد، ولا قيمة افتراضية.
  */
@@ -25,6 +25,28 @@ class NotComparable extends Error {}
 const fail = (code: string): never => {
   throw new NotComparable(code);
 };
+const isObject = (v: unknown): v is Record<string, unknown> =>
+  v !== null && typeof v === "object" && !Array.isArray(v);
+/** R02-E: every intermediate and final value must stay finite. */
+const finite = (v: number): number => (Number.isFinite(v) ? v : fail("non_finite_result"));
+
+/** R02-D: structure is validated before any property is read; malformed data is NOT_COMPARABLE, not an exception. */
+function checkShape(e: unknown) {
+  if (!isObject(e)) fail("input_malformed:example");
+  const x = e as any;
+  if (!isObject(x.meta)) fail("input_malformed:meta");
+  if (!isObject(x.items)) fail("input_malformed:items");
+  if ("policy" in x && !isObject(x.policy)) fail("input_malformed:policy");
+  const m = x.meta;
+  if ("period" in m && !isObject(m.period)) fail("input_malformed:meta.period");
+  if ("fx" in m && !isObject(m.fx)) fail("input_malformed:meta.fx");
+  if (
+    "item_definitions" in m &&
+    (!isObject(m.item_definitions) ||
+      !Object.values(m.item_definitions).every((v) => typeof v === "string"))
+  )
+    fail("input_malformed:meta.item_definitions");
+}
 const get = (o: any, path: string) =>
   path
     .split(".")
@@ -70,12 +92,18 @@ function calc(expr: string, env: Record<string, number>): number {
   };
   const mul = (): number => {
     let v = atom();
-    while (toks[i] === "*" || toks[i] === "/") v = toks[i++] === "*" ? v * atom() : v / atom();
+    while (toks[i] === "*" || toks[i] === "/") {
+      const op = toks[i++];
+      const w = atom();
+      if (op === "/" && w === 0) fail("non_finite_result");
+      v = finite(op === "*" ? v * w : v / w);
+    }
     return v;
   };
   const add = (): number => {
     let v = mul();
-    while (toks[i] === "+" || toks[i] === "-") v = toks[i++] === "+" ? v + mul() : v - mul();
+    while (toks[i] === "+" || toks[i] === "-")
+      v = finite(toks[i++] === "+" ? v + mul() : v - mul());
     return v;
   };
   return add();
@@ -151,7 +179,7 @@ function termsValue(
   for (const t of terms) {
     if (t.when && !holds(t.when, { meta: e.meta, policy: e.policy ?? {} })) continue;
     if (t.expr.startsWith("ref:")) {
-      total += t.sign * refs[t.expr.slice(4)];
+      total = finite(total + t.sign * refs[t.expr.slice(4)]);
       continue;
     }
     const env: Record<string, number> = {};
@@ -169,7 +197,7 @@ function termsValue(
       if (d !== r.item_definitions[id]) fail(`item_definition_mismatch:${id}`);
       env[id] = v as number;
     }
-    total += t.sign * calc(t.expr, env);
+    total = finite(total + t.sign * calc(t.expr, env));
   }
   return total;
 }
@@ -178,9 +206,11 @@ function run(
   recipes: Record<string, any>,
   r: any,
   e: any,
+  top = true,
 ): Result & { raw?: Record<string, number> } {
   if (r.proposed_rating === "OUT_OF_SCOPE_B06")
     return { status: "OUT_OF_SCOPE_B06", reason: "out_of_scope_b06" };
+  checkShape(e);
   const m = e.meta;
   const ctx = { meta: m, policy: e.policy ?? {} };
   if (
@@ -200,6 +230,12 @@ function run(
     if (!(f in m) || absent(m[f])) fail(`definition_missing:${f}`);
     if (!allowed.includes(m[f])) fail(`definition_not_accepted:${f}`);
   }
+  for (const [f, allowed] of Object.entries<any[]>(
+    r.required_definitions_by_basis[m.accounting_basis] ?? {},
+  )) {
+    if (!(f in m) || absent(m[f])) fail(`definition_missing:${f}`);
+    if (!allowed.includes(m[f])) fail(`definition_not_accepted:${f}`);
+  }
   for (const [k, kind] of Object.entries<string>(r.policy_requirements)) {
     const v = e.policy?.[k];
     if (absent(v)) fail(`policy_missing:${k}`);
@@ -210,10 +246,22 @@ function run(
       fail(`policy_invalid:${k}`);
   }
   for (const c of r.failure_conditions) if (holds(c.when, ctx)) fail(c.code);
-  for (const it of r.forbidden_items) if (it in e.items) fail(`item_not_allowed:${it}`);
+  for (const it of [
+    ...r.forbidden_items,
+    ...r.depends_on.flatMap((d: string) => recipes[d].forbidden_items),
+  ])
+    if (it in e.items) fail(`item_not_allowed:${it}`);
+  if (top) {
+    // a dependency sees the dependant's full item set; recognition is checked once, against the union
+    const known = new Set(Object.keys(r.item_definitions));
+    for (const dep of r.depends_on)
+      for (const k of Object.keys(recipes[dep].item_definitions)) known.add(k);
+    for (const it of Object.keys(e.items).sort())
+      if (!known.has(it)) fail(`item_not_recognised:${it}`);
+  }
   const refs: Record<string, number> = {};
   for (const dep of r.depends_on) {
-    const res = run(recipes, recipes[dep], e) as any;
+    const res = run(recipes, recipes[dep], e, false) as any;
     for (const [k, v] of Object.entries<number>(res.raw)) refs[`${dep}.${k}`] = v;
   }
   const used = new Set<string>();
@@ -223,7 +271,7 @@ function run(
       const num = termsValue(o.numerator, r, e, refs, used);
       const den = termsValue(o.denominator, r, e, refs, used);
       if (den <= 0) fail("denominator_not_positive");
-      raw[o.key] = num / den;
+      raw[o.key] = finite(num / den);
     } else raw[o.key] = termsValue(o.terms, r, e, refs, used);
   }
   for (const it of [...termItems(r)].filter((x) => !used.has(x)).sort())
@@ -232,8 +280,9 @@ function run(
   const values: Record<string, number> = {};
   for (const o of r.outputs) {
     let v = raw[o.key];
-    if (o.kind === "monetary" && m.currency !== "USD") v = v / m.fx.rate;
-    values[o.key] = Math.round(v * 1e6) / 1e6;
+    if (o.kind === "monetary" && m.currency !== "USD") v = finite(v / m.fx.rate);
+    // values of 1e15 and above carry no sub-unit digits to round, and scaling them could overflow
+    values[o.key] = finite(Math.abs(v) >= 1e15 ? v : Math.round(v * 1e6) / 1e6);
   }
   return { status: "CONDITIONALLY_COMPARABLE", values, raw };
 }
@@ -241,6 +290,8 @@ function run(
 export function makeEvaluator(doc: any) {
   const recipes: Record<string, any> = Object.fromEntries(doc.recipes.map((r: any) => [r.id, r]));
   const evaluate = (id: string, e: any): Result => {
+    // an unknown recipe id is a caller fault, not data: it throws instead of returning NOT_COMPARABLE
+    if (!(id in recipes)) throw Error(`unknown recipe ${id}`);
     try {
       const res = run(recipes, recipes[id], e) as any;
       delete res.raw;

@@ -535,130 +535,368 @@ add(
   NC("accounting_basis_unknown"),
 );
 
-/* ---------- R02-B dividends received, CFO and FCF ---------- */
+/* ---------- R02-B / R02-C: one economy, many published classifications ---------- */
+// The comparable measure is defined from the economy itself, independently of the recipe:
+// operating cash after ALL lease payments and all interest, with dividends received in and dividends paid out.
+type Econ = {
+  operating: number;
+  divRec: number;
+  leasePrincipal: number;
+  leaseInterest: number;
+  otherInterest: number;
+  divPaid: number;
+  ppe: number;
+  expl: number;
+};
+const ECON: Econ = {
+  operating: 900,
+  divRec: 30,
+  leasePrincipal: 50,
+  leaseInterest: 10,
+  otherInterest: 20,
+  divPaid: 100,
+  ppe: 400,
+  expl: 20,
+};
+const targetCfo = (k: Econ) =>
+  k.operating + k.divRec - k.leasePrincipal - k.leaseInterest - k.otherInterest;
+const targetFcf = (k: Econ) => targetCfo(k) - k.ppe - k.expl;
+type Variant = {
+  basis: "IFRS" | "US_GAAP";
+  interest?: string;
+  divRec?: string;
+  divPaid?: string;
+  usLeases?: "operating" | "finance";
+};
+const LEASE_FIELDS = [
+  "lease_principal_classification",
+  "lease_interest_classification",
+  "operating_lease_payments_classification",
+  "finance_lease_principal_classification",
+  "finance_lease_interest_classification",
+];
+/** Publish the economy as an issuer would under the given classifications (reported CFO and the disclosed move lines). */
+function publish(v: Variant, k: Econ = ECON, withCapex = false) {
+  const interest = v.interest ?? "operating";
+  const divRec = v.divRec ?? "operating";
+  const divPaid = v.divPaid ?? "financing";
+  const items: Record<string, number> = {};
+  let cfo =
+    k.operating +
+    (divRec === "operating" ? k.divRec : 0) -
+    (divPaid === "operating" ? k.divPaid : 0);
+  const e = passOf("M05");
+  for (const f of LEASE_FIELDS) delete e.meta[f];
+  Object.assign(e.meta, {
+    accounting_basis: v.basis,
+    interest_paid_classification: interest,
+    dividends_received_classification: divRec,
+    dividends_paid_classification: divPaid,
+  });
+  if (v.basis === "IFRS") {
+    if (interest === "operating") cfo -= k.leaseInterest + k.otherInterest;
+    else items.interest_paid_in_financing = k.leaseInterest + k.otherInterest;
+    items.lease_principal_payments = k.leasePrincipal;
+    Object.assign(e.meta, {
+      lease_principal_classification: "financing",
+      lease_interest_classification: interest,
+    });
+  } else {
+    cfo -= k.leaseInterest + k.otherInterest;
+    if (v.usLeases === "finance") items.finance_lease_principal_payments = k.leasePrincipal;
+    else {
+      cfo -= k.leasePrincipal;
+      items.finance_lease_principal_payments = 0;
+    }
+    Object.assign(e.meta, {
+      operating_lease_payments_classification: "operating",
+      finance_lease_principal_classification: "financing",
+      finance_lease_interest_classification: "operating",
+    });
+  }
+  if (divRec === "investing") items.dividends_received_in_investing = k.divRec;
+  if (divPaid === "operating") items.dividends_paid_in_operating = k.divPaid;
+  items.cfo = cfo;
+  if (withCapex) {
+    Object.assign(e.meta, {
+      capex_acquisitions_classification: "separately_disclosed",
+      investments_classification: "separately_disclosed",
+      e_and_e_method: "successful_efforts",
+      capex_lease_treatment: "excludes_lease_payments_and_rou_additions",
+    });
+    Object.assign(items, { payments_for_ppe: k.ppe, payments_for_exploration_intangibles: k.expl });
+  }
+  e.items = items;
+  const defs = { ...recipes.M05.item_definitions, ...recipes.M06.item_definitions };
+  e.meta.item_definitions = Object.fromEntries(Object.keys(items).map((x) => [x, defs[x]]));
+  e.label = `${v.basis} interest=${interest} divRec=${divRec} divPaid=${divPaid}${v.basis === "US_GAAP" ? ` leases=${v.usLeases ?? "operating"}` : ""}`;
+  return e;
+}
+const VARIANTS: Variant[] = [
+  ...["operating", "financing"].flatMap((interest) =>
+    ["operating", "investing"].flatMap((divRec) =>
+      ["financing", "operating"].map((divPaid) => ({
+        basis: "IFRS" as const,
+        interest,
+        divRec,
+        divPaid,
+      })),
+    ),
+  ),
+  { basis: "US_GAAP", usLeases: "operating" },
+  { basis: "US_GAAP", usLeases: "finance" },
+];
+const BASE = publish({ basis: "IFRS" });
+for (const v of VARIANTS) {
+  const e = publish(v);
+  add(`R02-C CFO ${e.label}`, "M05", e, {
+    status: "CONDITIONALLY_COMPARABLE",
+    values: { reported_cfo: e.items.cfo, cfo_after_lease_payments: targetCfo(ECON) },
+  });
+  add(
+    `R02-C CFO pair vs base: ${e.label}`,
+    "M05",
+    BASE,
+    {
+      status: "CONDITIONALLY_COMPARABLE",
+      values: {
+        a: { reported_cfo: BASE.items.cfo, cfo_after_lease_payments: targetCfo(ECON) },
+        b: { reported_cfo: e.items.cfo, cfo_after_lease_payments: targetCfo(ECON) },
+      },
+    },
+    e,
+  );
+  add(`R02-C FCF ${e.label}`, "M07", publish(v, ECON, true), {
+    status: "CONDITIONALLY_COMPARABLE",
+    values: { fcf_rebuilt: targetFcf(ECON) },
+  });
+  // lease cash deducted exactly once: five more of lease principal lowers the measure and FCF by five, not ten
+  const more = { ...ECON, leasePrincipal: ECON.leasePrincipal + 5 };
+  add(`R02-C lease deducted once (CFO) ${e.label}`, "M05", publish(v, more), {
+    status: "CONDITIONALLY_COMPARABLE",
+    values: {
+      reported_cfo: publish(v, more).items.cfo,
+      cfo_after_lease_payments: targetCfo(ECON) - 5,
+    },
+  });
+  add(`R02-C lease deducted once (FCF) ${e.label}`, "M07", publish(v, more, true), {
+    status: "CONDITIONALLY_COMPARABLE",
+    values: { fcf_rebuilt: targetFcf(ECON) - 5 },
+  });
+}
 {
-  const X = pairOf("M05", "same_economics_reconciled").a;
-  const Y = pairOf("M05", "same_economics_reconciled").b;
+  const ifrs = () => publish({ basis: "IFRS" });
+  const us = () => publish({ basis: "US_GAAP" });
+  const edit = (e: any, f: (x: any) => void) => (f(e), e);
+  const defOf = (item: string) => recipes.M05.item_definitions[item];
   add(
-    "CFO: same economics, investing vs operating dividends received",
+    "R02-C IFRS lease principal classification missing",
     "M05",
-    X,
-    { status: "CONDITIONALLY_COMPARABLE", values: { a: { cfo_norm: 750 }, b: { cfo_norm: 750 } } },
-    Y,
+    edit(ifrs(), (e) => delete e.meta.lease_principal_classification),
+    NC("definition_missing:lease_principal_classification"),
   );
   add(
-    "CFO: investing classification without disclosed amount",
+    "R02-C IFRS lease principal in operating has no recipe",
     "M05",
-    pairOf("M05", "evidence_missing").a,
-    NC("a:required_item_missing:dividends_received_in_investing"),
-    Y,
+    edit(ifrs(), (e) => (e.meta.lease_principal_classification = "operating")),
+    NC("definition_not_accepted:lease_principal_classification"),
   );
   add(
-    "CFO: operating classification plus reclassification item (double count)",
+    "R02-C IFRS lease interest classification missing",
     "M05",
-    X,
-    NC("b:reclassification_item_conflict:dividends_received_in_investing"),
-    pairOf("M05", "double_count_rejected").b,
+    edit(ifrs(), (e) => delete e.meta.lease_interest_classification),
+    NC("definition_missing:lease_interest_classification"),
   );
-  const Z = clone(Y);
-  Z.meta.company = "SYNTH-Z";
-  Z.meta.dividends_paid_classification = "operating";
-  Z.items.cfo = 700;
-  Z.items.dividends_paid_in_operating = 100;
-  Z.meta.item_definitions.dividends_paid_in_operating =
-    recipes.M05.item_definitions.dividends_paid_in_operating;
   add(
-    "CFO: dividends paid in operating are added back",
+    "R02-C IFRS lease interest placed apart from other interest",
     "M05",
-    Z,
-    { status: "CONDITIONALLY_COMPARABLE", values: { a: { cfo_norm: 750 }, b: { cfo_norm: 750 } } },
-    Y,
+    edit(ifrs(), (e) => (e.meta.lease_interest_classification = "financing")),
+    NC("lease_interest_classification_differs_from_interest_paid"),
   );
-  const Z2 = clone(Z);
-  delete Z2.items.dividends_paid_in_operating;
   add(
-    "CFO: dividends paid in operating without amount",
+    "R02-C IFRS lease principal amount not disclosed",
     "M05",
-    Z2,
-    NC("a:required_item_missing:dividends_paid_in_operating"),
-    Y,
+    edit(ifrs(), (e) => delete e.items.lease_principal_payments),
+    NC("required_item_missing:lease_principal_payments"),
   );
-  const Y2 = clone(Y);
-  Y2.items.dividends_paid_in_operating = 100;
-  Y2.meta.item_definitions.dividends_paid_in_operating =
-    recipes.M05.item_definitions.dividends_paid_in_operating;
   add(
-    "CFO: financing classification plus add-back item (double count)",
+    "R02-C US GAAP operating-lease placement missing",
     "M05",
-    Y2,
+    edit(us(), (e) => delete e.meta.operating_lease_payments_classification),
+    NC("definition_missing:operating_lease_payments_classification"),
+  );
+  add(
+    "R02-C US GAAP finance-lease principal not in financing",
+    "M05",
+    edit(us(), (e) => (e.meta.finance_lease_principal_classification = "operating")),
+    NC("definition_not_accepted:finance_lease_principal_classification"),
+  );
+  add(
+    "R02-C US GAAP finance-lease interest placement missing",
+    "M05",
+    edit(us(), (e) => delete e.meta.finance_lease_interest_classification),
+    NC("definition_missing:finance_lease_interest_classification"),
+  );
+  add(
+    "R02-C US GAAP finance-lease principal amount not disclosed (no zero default)",
+    "M05",
+    edit(us(), (e) => delete e.items.finance_lease_principal_payments),
+    NC("required_item_missing:finance_lease_principal_payments"),
+  );
+  add(
+    "R02-C double deduction: US-only lease line on an IFRS issuer",
+    "M05",
+    edit(ifrs(), (e) => {
+      e.items.finance_lease_principal_payments = 50;
+      e.meta.item_definitions.finance_lease_principal_payments = defOf(
+        "finance_lease_principal_payments",
+      );
+    }),
+    NC("reclassification_item_conflict:finance_lease_principal_payments"),
+  );
+  add(
+    "R02-C double deduction: IFRS lease line on a US GAAP issuer",
+    "M05",
+    edit(us(), (e) => {
+      e.items.lease_principal_payments = 50;
+      e.meta.item_definitions.lease_principal_payments = defOf("lease_principal_payments");
+    }),
+    NC("reclassification_item_conflict:lease_principal_payments"),
+  );
+  add(
+    "R02-C double deduction: interest move line while interest is operating",
+    "M05",
+    edit(ifrs(), (e) => {
+      e.items.interest_paid_in_financing = 30;
+      e.meta.item_definitions.interest_paid_in_financing = defOf("interest_paid_in_financing");
+    }),
+    NC("reclassification_item_conflict:interest_paid_in_financing"),
+  );
+  add(
+    "R02-C double deduction: separate lease-interest line is not recognised",
+    "M05",
+    edit(ifrs(), (e) => {
+      e.items.lease_interest_paid = 10;
+      e.meta.item_definitions.lease_interest_paid = "lease_interest";
+    }),
+    NC("item_not_recognised:lease_interest_paid"),
+  );
+  add(
+    "R02-C FCF capex lease treatment missing",
+    "M07",
+    edit(publish({ basis: "IFRS" }, ECON, true), (e) => delete e.meta.capex_lease_treatment),
+    NC("definition_missing:capex_lease_treatment"),
+  );
+  add(
+    "R02-C FCF capex including right-of-use additions",
+    "M07",
+    edit(
+      publish({ basis: "IFRS" }, ECON, true),
+      (e) => (e.meta.capex_lease_treatment = "includes_rou_additions"),
+    ),
+    NC("definition_not_accepted:capex_lease_treatment"),
+  );
+  add(
+    "R02-C FCF with a lease line on the capex side is not recognised",
+    "M07",
+    edit(publish({ basis: "IFRS" }, ECON, true), (e) => {
+      e.items.lease_payments_in_capex = 50;
+      e.meta.item_definitions.lease_payments_in_capex = "lease";
+    }),
+    NC("item_not_recognised:lease_payments_in_capex"),
+  );
+
+  // R02-B: dividends received / paid, parent / NCI
+  const X = publish({ basis: "IFRS", divRec: "investing" });
+  add(
+    "R02-B dividends received in investing without disclosed amount",
+    "M05",
+    edit(clone(X), (e) => delete e.items.dividends_received_in_investing),
+    NC("required_item_missing:dividends_received_in_investing"),
+  );
+  add(
+    "R02-B dividends received move line while already operating",
+    "M05",
+    edit(publish({ basis: "IFRS" }), (e) => {
+      e.items.dividends_received_in_investing = 30;
+      e.meta.item_definitions.dividends_received_in_investing = defOf(
+        "dividends_received_in_investing",
+      );
+    }),
+    NC("reclassification_item_conflict:dividends_received_in_investing"),
+  );
+  add(
+    "R02-B dividends paid in operating without amount",
+    "M05",
+    edit(
+      publish({ basis: "IFRS", divPaid: "operating" }),
+      (e) => delete e.items.dividends_paid_in_operating,
+    ),
+    NC("required_item_missing:dividends_paid_in_operating"),
+  );
+  add(
+    "R02-B dividends paid add-back while already financing",
+    "M05",
+    edit(publish({ basis: "IFRS" }), (e) => {
+      e.items.dividends_paid_in_operating = 100;
+      e.meta.item_definitions.dividends_paid_in_operating = defOf("dividends_paid_in_operating");
+    }),
     NC("reclassification_item_conflict:dividends_paid_in_operating"),
   );
   add(
-    "CFO: dividends paid to parent are not a CFO input",
+    "R02-B dividends paid to parent are not a CFO input",
     "M05",
-    mutate("M05", (e) => (e.items.dividends_paid_parent = 10)),
+    edit(publish({ basis: "IFRS" }), (e) => (e.items.dividends_paid_parent = 10)),
     NC("item_not_allowed:dividends_paid_parent"),
   );
   add(
-    "CFO: dividends paid to NCI are not a CFO input",
+    "R02-B dividends paid to NCI are not a CFO input",
     "M05",
-    mutate("M05", (e) => (e.items.dividends_paid_nci = 10)),
+    edit(publish({ basis: "IFRS" }), (e) => (e.items.dividends_paid_nci = 10)),
     NC("item_not_allowed:dividends_paid_nci"),
   );
   add(
-    "CFO: US GAAP investing distributions",
+    "R02-B dividends paid to NCI are not an FCF input either",
+    "M07",
+    edit(publish({ basis: "IFRS" }, ECON, true), (e) => (e.items.dividends_paid_nci = 10)),
+    NC("item_not_allowed:dividends_paid_nci"),
+  );
+  add(
+    "R02-B US GAAP investing distributions",
     "M05",
-    withMeta("M05", { accounting_basis: "US_GAAP", interest_paid_classification: "operating" }),
+    edit(us(), (e) => {
+      e.meta.dividends_received_classification = "investing";
+      e.items.dividends_received_in_investing = 30;
+      e.meta.item_definitions.dividends_received_in_investing = defOf(
+        "dividends_received_in_investing",
+      );
+    }),
     NC("dividends_received_investing_under_us_gaap_not_reconcilable"),
   );
   add(
-    "CFO: US GAAP interest paid in financing",
+    "R02-B US GAAP interest paid in financing",
     "M05",
-    withMeta("M05", { accounting_basis: "US_GAAP" }),
+    edit(us(), (e) => (e.meta.interest_paid_classification = "financing")),
     NC("interest_paid_classification_inconsistent_with_basis"),
   );
   add(
-    "CFO: interest received outside operating",
+    "R02-B US GAAP dividends paid in operating",
     "M05",
-    withMeta("M05", { interest_received_classification: "investing" }),
+    edit(us(), (e) => (e.meta.dividends_paid_classification = "operating")),
+    NC("dividends_paid_classification_inconsistent_with_basis"),
+  );
+  add(
+    "R02-B interest received outside operating",
+    "M05",
+    edit(ifrs(), (e) => (e.meta.interest_received_classification = "investing")),
     NC("definition_not_accepted:interest_received_classification"),
   );
   add(
-    "CFO: mixed dividends received classification",
+    "R02-B mixed dividends received classification",
     "M05",
-    withMeta("M05", { dividends_received_classification: "partly_operating" }),
+    edit(ifrs(), (e) => (e.meta.dividends_received_classification = "partly_operating")),
     NC("definition_not_accepted:dividends_received_classification"),
   );
-
-  const FX_ = pairOf("M07", "fcf_same_economics_reconciled");
-  add(
-    "FCF: built on normalised CFO for both companies",
-    "M07",
-    FX_.a,
-    {
-      status: "CONDITIONALLY_COMPARABLE",
-      values: { a: { fcf_rebuilt: 330 }, b: { fcf_rebuilt: 330 } },
-    },
-    FX_.b,
-  );
-  add(
-    "FCF: rejected when CFO reconciliation evidence is missing",
-    "M07",
-    pairOf("M07", "fcf_evidence_missing").a,
-    NC("a:required_item_missing:dividends_received_in_investing"),
-    FX_.b,
-  );
-  const FD = clone(FX_.b);
-  FD.items.dividends_received_in_investing = 30;
-  FD.meta.item_definitions.dividends_received_in_investing =
-    recipes.M05.item_definitions.dividends_received_in_investing;
-  add(
-    "FCF: double count propagates from CFO",
-    "M07",
-    FD,
-    NC("reclassification_item_conflict:dividends_received_in_investing"),
-  );
-
   add(
     "M10: NCI dividends mixed into parent dividends",
     "M10",
@@ -700,6 +938,258 @@ add(
   );
 }
 
+/* ---------- R02-D: null and malformed inputs return NOT_COMPARABLE, never an exception ---------- */
+for (const id of ["M01", "M07", "M08", "M11"]) {
+  const bad: [string, unknown][] = [
+    ["null", null],
+    ["array", []],
+    ["string", "x"],
+    ["number", 7],
+  ];
+  for (const [n, v] of bad) add(`R02-D ${id} example ${n}`, id, v, NC("input_malformed:example"));
+  for (const [n, v] of bad)
+    add(
+      `R02-D ${id} meta ${n}`,
+      id,
+      mutate(id, (e) => (e.meta = v)),
+      NC("input_malformed:meta"),
+    );
+  for (const [n, v] of bad)
+    add(
+      `R02-D ${id} items ${n}`,
+      id,
+      mutate(id, (e) => (e.items = v)),
+      NC("input_malformed:items"),
+    );
+  add(
+    `R02-D ${id} meta missing`,
+    id,
+    mutate(id, (e) => delete e.meta),
+    NC("input_malformed:meta"),
+  );
+  add(
+    `R02-D ${id} items missing`,
+    id,
+    mutate(id, (e) => delete e.items),
+    NC("input_malformed:items"),
+  );
+  for (const [n, v] of bad)
+    add(
+      `R02-D ${id} policy ${n}`,
+      id,
+      mutate(id, (e) => (e.policy = v)),
+      NC("input_malformed:policy"),
+    );
+  for (const [n, v] of bad)
+    add(
+      `R02-D ${id} meta.period ${n}`,
+      id,
+      mutate(id, (e) => (e.meta.period = v)),
+      NC("input_malformed:meta.period"),
+    );
+  for (const [n, v] of bad)
+    add(
+      `R02-D ${id} meta.fx ${n}`,
+      id,
+      mutate(id, (e) => (e.meta.fx = v)),
+      NC("input_malformed:meta.fx"),
+    );
+  for (const [n, v] of [...bad, ["non-string value", { x: 1 }]] as [string, unknown][])
+    add(
+      `R02-D ${id} meta.item_definitions ${n}`,
+      id,
+      mutate(id, (e) => (e.meta.item_definitions = v)),
+      NC("input_malformed:meta.item_definitions"),
+    );
+  for (const [n, v] of [
+    ["null", null],
+    ["string", "SRC"],
+    ["list with null", [null]],
+    ["list with number", [1]],
+  ] as [string, unknown][])
+    add(
+      `R02-D ${id} meta.source_ids ${n}`,
+      id,
+      withMeta(id, { source_ids: v }),
+      NC("source_missing"),
+    );
+  const first = Object.keys(passOf(id).items)[0];
+  for (const [n, v] of [
+    ["object", {}],
+    ["array", [1]],
+    ["boolean", true],
+  ] as [string, unknown][])
+    add(
+      `R02-D ${id} item ${first} ${n}`,
+      id,
+      mutate(id, (e) => (e.items[first] = v)),
+      NC(`item_not_numeric:${first}`),
+    );
+}
+add(
+  "R02-D period without kind object fields",
+  "M03",
+  mutate("M03", (e) => (e.meta.period = {})),
+  NC("period_kind_not_allowed"),
+);
+add(
+  "R02-D TTM components null",
+  "M03",
+  withMeta("M03", {
+    period: { kind: "TTM", start: "2030-01-01", end: "2030-12-31", ttm_quarter_ends: null },
+  }),
+  NC("ttm_components_invalid"),
+);
+add(
+  "R02-D TTM components containing null",
+  "M03",
+  withMeta("M03", {
+    period: {
+      kind: "TTM",
+      start: "2030-01-01",
+      end: "2030-12-31",
+      ttm_quarter_ends: [null, "2030-06-30", "2030-09-30", "2030-12-31"],
+    },
+  }),
+  NC("ttm_components_invalid"),
+);
+add(
+  "R02-D FX rate null",
+  "M01",
+  mutate("M01", (e) => (e.meta.fx.rate = null)),
+  NC("fx_rate_invalid"),
+);
+add(
+  "R02-D FX source object",
+  "M01",
+  mutate("M01", (e) => (e.meta.fx.source_id = {})),
+  NC("fx_source_missing"),
+);
+add(
+  "R02-D definition given as object",
+  "M03",
+  withMeta("M03", { profit_scope: {} }),
+  NC("definition_not_accepted:profit_scope"),
+);
+add("R02-D pair with a null side", "M03", null, NC("a:input_malformed:example"), passOf("M03"));
+add(
+  "R02-D pair with malformed meta on b",
+  "M03",
+  passOf("M03"),
+  NC("b:input_malformed:meta"),
+  mutate("M03", (e) => (e.meta = [])),
+);
+
+/* ---------- R02-E: non-finite inputs and overflow ---------- */
+for (const [n, v] of [
+  ["Infinity", Infinity],
+  ["-Infinity", -Infinity],
+  ["NaN", NaN],
+] as [string, number][]) {
+  add(
+    `R02-E M06 input ${n}`,
+    "M06",
+    mutate("M06", (e) => (e.items.payments_for_ppe = v)),
+    NC("item_not_numeric:payments_for_ppe"),
+  );
+  add(
+    `R02-E M01 FX rate ${n}`,
+    "M01",
+    mutate("M01", (e) => (e.meta.fx.rate = v)),
+    NC("fx_rate_invalid"),
+  );
+  add(
+    `R02-E M11 policy factor ${n}`,
+    "M11",
+    mutate("M11", (e) => (e.policy.gas_scf_per_boe = v)),
+    NC("policy_invalid:gas_scf_per_boe"),
+  );
+}
+add(
+  "R02-E addition overflow",
+  "M06",
+  mutate("M06", (e) =>
+    Object.assign(e.items, {
+      payments_for_ppe: 1e308,
+      payments_for_exploration_intangibles: 1e308,
+    }),
+  ),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E subtraction overflow (CFO)",
+  "M05",
+  edit2(publish({ basis: "IFRS" }), (e) =>
+    Object.assign(e.items, { cfo: 1e308, lease_principal_payments: -1e308 }),
+  ),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E multiplication overflow",
+  "M11",
+  mutate("M11", (e) => (e.items.gas_mmscfd = 1e306)),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E division overflow",
+  "M11",
+  mutate("M11", (e) => {
+    e.policy.gas_scf_per_boe = 1e-300;
+    e.items.gas_mmscfd = 1e10;
+  }),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E ratio overflow",
+  "M09",
+  mutate("M09", (e) =>
+    Object.assign(e.items, {
+      profit_total: 1e308,
+      equity_open: 1e-300,
+      borrowings_open: 0,
+      equity_close: 1e-300,
+      borrowings_close: 0,
+    }),
+  ),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E FX conversion overflow",
+  "M01",
+  mutate("M01", (e) => {
+    e.meta.fx.rate = 1e-10;
+    e.items.revenue = 1e300;
+    e.items.royalties_excise_in_revenue = 0;
+  }),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E FCF overflow from finite CFO and capex",
+  "M07",
+  edit2(publish({ basis: "IFRS" }, ECON, true), (e) =>
+    Object.assign(e.items, { cfo: 1e308, payments_for_ppe: -1e308 }),
+  ),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E gearing overflow",
+  "M08",
+  mutate("M08", (e) => Object.assign(e.items, { borrowings: 1e308, lease_liabilities: 1e308 })),
+  NC("non_finite_result"),
+);
+add(
+  "R02-E large finite value is accepted unchanged",
+  "M06",
+  mutate("M06", (e) =>
+    Object.assign(e.items, { payments_for_ppe: 1e300, payments_for_exploration_intangibles: 0 }),
+  ),
+  { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 1e300 } },
+);
+function edit2(e: any, f: (x: any) => void) {
+  f(e);
+  return e;
+}
+
 const run = (c: Case) => (c.b ? evaluatePair(c.recipe, c.a, c.b) : evaluate(c.recipe, c.a));
 
 describe("R02 recipes are complete", () => {
@@ -707,7 +1197,16 @@ describe("R02 recipes are complete", () => {
     expect(R.map((r) => r.id)).toEqual(
       Array.from({ length: 17 }, (_, i) => `M${String(i + 1).padStart(2, "0")}`),
     );
-    expect(doc.schema).toBe("marefa-web08b06-comparability-recipes/2");
+    expect(doc.schema).toBe("marefa-web08b06-comparability-recipes/3");
+    // FCF is built on the derived after-lease measure only, with no lease term of its own (leases deducted once, in M05)
+    expect(recipes.M07.outputs[0].terms.map((t: any) => t.expr)).toEqual([
+      "ref:M05.cfo_after_lease_payments",
+      "ref:M06.capex_cash",
+    ]);
+    expect(recipes.M05.outputs.map((o: any) => [o.key, o.role])).toEqual([
+      ["reported_cfo", "reported_not_comparable"],
+      ["cfo_after_lease_payments", "derived_comparable"],
+    ]);
     for (const r of R) {
       expect(["CONDITIONALLY_COMPARABLE", "NOT_COMPARABLE", "OUT_OF_SCOPE_B06"]).toContain(
         r.proposed_rating,
@@ -765,6 +1264,33 @@ describe("R02-A / R02-B regression cases (behaviour, not examples)", () => {
     expect(new Set(CASES.map((c) => c.name)).size).toBe(CASES.length);
   });
   for (const c of CASES) test(c.name, () => expect(run(c)).toEqual(c.expect));
+  test("compatibility map documents the v3 changes and every new reason code exists in both evaluators", () => {
+    const map = JSON.parse(readFileSync(join(DIR, "COMPATIBILITY-MAP.json"), "utf8"));
+    const ts = readFileSync(join(DIR, "checks/evaluator.ts"), "utf8");
+    const py = readFileSync(join(DIR, "tools/recipes.py"), "utf8");
+    expect(map.versions.map((v: any) => v.schema)).toContain(doc.schema);
+    for (const code of ["input_malformed", "non_finite_result", "item_not_recognised"]) {
+      expect(ts).toContain(code);
+      expect(py).toContain(code);
+    }
+    expect(JSON.stringify(doc)).toContain(
+      "lease_interest_classification_differs_from_interest_paid",
+    );
+    expect(map.document_fields.v2_to_v3["M05 outputs"]).toMatch(
+      /reported_cfo.*cfo_after_lease_payments/,
+    );
+  });
+  test("R02-D: a caller fault (unknown recipe id) still throws; it is not turned into a data result", () => {
+    expect(() => evaluate("M99", passOf("M03"))).toThrow("unknown recipe M99");
+  });
+  test("R02-E: every result survives JSON round-trip unchanged (no Infinity silently written as null)", () => {
+    for (const c of CASES) {
+      const res = run(c);
+      expect(JSON.parse(JSON.stringify(res))).toEqual(res);
+      const nums = JSON.stringify(res).match(/-?\d[\d.e+-]*/g) ?? [];
+      for (const n of nums) expect(Number.isFinite(Number(n))).toBe(true);
+    }
+  });
   test("every pass example still passes (cases are not vacuous)", () => {
     for (const r of COND)
       expect(evaluate(r.id, passOf(r.id)).status).toBe("CONDITIONALLY_COMPARABLE");
@@ -772,10 +1298,12 @@ describe("R02-A / R02-B regression cases (behaviour, not examples)", () => {
   test("the Python generator's evaluator returns the same result for every case", () => {
     const dir = mkdtempSync(join(tmpdir(), "b06-parity-"));
     const file = join(dir, "cases.json");
-    writeFileSync(
-      file,
-      JSON.stringify(CASES.map(({ recipe, a, b }) => ({ recipe, a, ...(b ? { b } : {}) }))),
-    );
+    // non-finite numbers are written as the bare JSON extensions Python reads (Infinity, -Infinity, NaN), not as null
+    const body = JSON.stringify(
+      CASES.map(({ recipe, a, b }) => ({ recipe, a, ...(b !== undefined ? { b } : {}) })),
+      (_k, v) => (typeof v === "number" && !Number.isFinite(v) ? `__NONFINITE_${v}__` : v),
+    ).replace(/"__NONFINITE_(Infinity|-Infinity|NaN)__"/g, "$1");
+    writeFileSync(file, body);
     const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate", file]);
     expect(p.exitCode).toBe(0);
     const py = JSON.parse(p.stdout.toString());

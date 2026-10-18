@@ -16,7 +16,7 @@ DURATION = {"FY": (364, 371), "TTM": (364, 371), "H1": (181, 184), "Q": (89, 92)
 def recipe(id, key, name, rating, measure, kinds, definition, steps, gaap, basis, handling,
            required_definitions=None, conditions=None, item_definitions=None, outputs=None,
            depends_on=None, forbidden_items=None, pair_homogeneous=None, guards=None, notes="",
-           policy_requirements=None, balance_dates=False):
+           policy_requirements=None, balance_dates=False, required_definitions_by_basis=None):
     return dict(id=id, key=key, name=name, proposed_rating=rating, measure_type=measure,
                 allowed_period_kinds=kinds, definition=definition, ordered_steps=steps,
                 ifrs_vs_us_gaap=gaap, basis=basis, handling=handling,
@@ -24,7 +24,8 @@ def recipe(id, key, name, rating, measure, kinds, definition, steps, gaap, basis
                 item_definitions=item_definitions or {}, outputs=outputs or [], depends_on=depends_on or [],
                 forbidden_items=forbidden_items or [], pair_homogeneous_fields=pair_homogeneous or [],
                 guards=guards or [], policy_requirements=policy_requirements or {},
-                requires_balance_dates=balance_dates, notes=notes, examples=[], pair_examples=[])
+                requires_balance_dates=balance_dates, required_definitions_by_basis=required_definitions_by_basis or {},
+                notes=notes, examples=[], pair_examples=[])
 
 def T(expr, when=None, sign=1):
     t = {"expr": expr, "sign": sign}
@@ -93,53 +94,69 @@ R.append(recipe("M04", "company_adjusted_earnings", "Company-defined adjusted ea
 
 CFO_DEFS = {"interest_paid_classification": ["operating", "financing"], "dividends_received_classification": ["operating", "investing"],
             "dividends_paid_classification": ["financing", "operating"], "interest_received_classification": ["operating"]}
+# Where each lease cash flow sits in the issuer's published cash-flow statement (recorded per company, never assumed).
+CFO_LEASE_DEFS = {
+  "IFRS": {"lease_principal_classification": ["financing"], "lease_interest_classification": ["operating", "financing"]},
+  "US_GAAP": {"operating_lease_payments_classification": ["operating"], "finance_lease_principal_classification": ["financing"],
+              "finance_lease_interest_classification": ["operating"]}}
 CFO_CONDS = [
   {"code": "interest_paid_classification_inconsistent_with_basis", "when": AND(USG, EQ("meta.interest_paid_classification", "financing")), "reason": "US GAAP classifies interest paid in operating activities."},
   {"code": "dividends_paid_classification_inconsistent_with_basis", "when": AND(USG, EQ("meta.dividends_paid_classification", "operating")), "reason": "US GAAP classifies dividends paid in financing activities."},
-  {"code": "dividends_received_investing_under_us_gaap_not_reconcilable", "when": AND(USG, EQ("meta.dividends_received_classification", "investing")), "reason": "US GAAP investing distributions are returns of investment, not dividends from earnings; no reconciliation recipe."}]
-CFO_ITEMS = {"cfo": "net_cash_from_operating_activities_as_reported", "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
-             "finance_lease_principal_payments": "asc842_finance_lease_principal_payments", "interest_paid_in_financing": "interest_paid_classified_in_financing",
+  {"code": "dividends_received_investing_under_us_gaap_not_reconcilable", "when": AND(USG, EQ("meta.dividends_received_classification", "investing")), "reason": "US GAAP investing distributions are returns of investment, not dividends from earnings; no reconciliation recipe."},
+  {"code": "lease_interest_classification_differs_from_interest_paid", "when": AND(IFRS, {"op": "neq_path", "path": "meta.lease_interest_classification", "other": "meta.interest_paid_classification"}), "reason": "interest_paid_in_financing is defined to include lease interest; a split placement has no recipe."}]
+CFO_ITEMS = {"cfo": "net_cash_from_operating_activities_as_reported",
+             "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+             "finance_lease_principal_payments": "asc842_finance_lease_principal_payments_classified_in_financing",
+             "interest_paid_in_financing": "interest_paid_incl_lease_interest_classified_in_financing",
              "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
              "dividends_paid_in_operating": "dividends_paid_parent_and_nci_classified_in_operating"}
-CFO_TERMS = [T("cfo"), T("lease_principal_payments", IFRS, -1), T("finance_lease_principal_payments", USG, -1),
+CFO_AFTER_LEASES = [T("cfo"), T("lease_principal_payments", IFRS, -1), T("finance_lease_principal_payments", USG, -1),
              T("interest_paid_in_financing", EQ("meta.interest_paid_classification", "financing"), -1),
              T("dividends_received_in_investing", EQ("meta.dividends_received_classification", "investing")),
              T("dividends_paid_in_operating", EQ("meta.dividends_paid_classification", "operating"))]
-CFO_POLICY = ("Uniform placement policy: dividends received from associates, joint ventures and other investments are placed in operating cash flow for every company; "
-              "dividends paid (to parent shareholders and to NCI) and lease principal are placed in financing; interest paid in operating. "
-              "Basis: IAS 7 permits operating or investing for dividends received and operating or financing for dividends paid; ASC 230 fixes interest paid in operating and dividends paid in financing "
+CFO_POLICY = ("reported_cfo is the published IFRS/US GAAP figure, converted only; it is not comparable across frameworks and FCF never uses it. "
+              "cfo_after_lease_payments is a derived research measure, not the published accounting CFO: operating cash flow with ALL lease payments (principal and interest) and all interest paid deducted, "
+              "dividends received from investments included, dividends paid (parent and NCI) excluded. This target matches what ASC 842 operating-lease reporters already publish, so IFRS 16 and US GAAP finance-lease principal is moved in from financing; each cash flow is deducted exactly once "
+              "(the published classification decides whether a move is needed; a move item supplied when the classification does not require it is rejected). "
+              "Basis: IAS 7 permits operating or financing for interest paid and dividends paid, operating or investing for dividends received; IFRS 16 places lease principal in financing; ASC 842 places operating-lease payments and finance-lease interest in operating and finance-lease principal in financing "
               "(standards text not opened in this environment: UNVERIFIED reference). Disclosures used: the cash-flow statement lines named in item_definitions.")
 
-R.append(recipe("M05", "cfo", "Cash flow from operations, normalised to one placement policy", "CONDITIONALLY_COMPARABLE", "flow", ["FY", "H1", "Q", "TTM"],
-  {"numerator": "Reported CFO moved to the uniform placement policy (see notes)", "denominator": None},
-  ["Validate generic fields; classifications must be in their allow-lists and consistent with the framework.",
-   "IFRS: subtract lease principal payments; US GAAP: subtract finance lease principal payments.",
-   "If interest paid sits in financing (IFRS), subtract it.", "If dividends received sit in investing (IFRS), add the disclosed amount; if they already sit in operating, the reclassification item must not be supplied (double count).",
-   "If dividends paid sit in operating (IFRS), add them back.", "Interest received outside operating -> NOT_COMPARABLE (no recipe).", "Convert at the period-average rate."],
-  "IAS 7 classification choices vs ASC 230; IFRS 16 vs ASC 842 lease cash flows.", MON("period-average"), HANDLING,
-  required_definitions=CFO_DEFS, conditions=CFO_CONDS, item_definitions=CFO_ITEMS,
-  outputs=[{"key": "cfo_norm", "kind": "monetary", "terms": CFO_TERMS}],
+R.append(recipe("M05", "cfo", "Operating cash flow: reported, and after lease payments (derived research measure)", "CONDITIONALLY_COMPARABLE", "flow", ["FY", "H1", "Q", "TTM"],
+  {"numerator": "reported_cfo = published CFO. cfo_after_lease_payments = published CFO, minus lease principal (and interest) published in financing, plus dividends received published in investing, plus dividends paid published in operating", "denominator": None},
+  ["Validate generic fields; classifications of interest, dividends and every lease cash flow must be recorded, in their allow-lists and consistent with the framework.",
+   "reported_cfo: the published figure, converted only.",
+   "cfo_after_lease_payments, IFRS: subtract lease principal (financing); if interest paid (incl. lease interest) sits in financing, subtract it; lease interest must sit with other interest paid.",
+   "cfo_after_lease_payments, US GAAP: operating-lease payments and finance-lease interest are already in operating; subtract finance-lease principal (financing).",
+   "If dividends received sit in investing (IFRS), add the disclosed amount; if dividends paid sit in operating (IFRS), add them back.",
+   "A move item supplied when the published classification does not require it, or an unrecognised item, rejects the cell (no double deduction).",
+   "Interest received outside operating -> NOT_COMPARABLE (no recipe).", "Convert at the period-average rate."],
+  "IAS 7 classification choices vs ASC 230; IFRS 16 (principal financing) vs ASC 842 (operating lease payments operating, finance lease principal financing).", MON("period-average"), HANDLING,
+  required_definitions=CFO_DEFS, required_definitions_by_basis=CFO_LEASE_DEFS, conditions=CFO_CONDS, item_definitions=CFO_ITEMS,
+  outputs=[{"key": "reported_cfo", "kind": "monetary", "role": "reported_not_comparable", "terms": [T("cfo")]},
+           {"key": "cfo_after_lease_payments", "kind": "monetary", "role": "derived_comparable", "terms": CFO_AFTER_LEASES}],
   forbidden_items=["dividends_paid_parent", "dividends_paid_nci"], notes=CFO_POLICY))
 
 CAPEX_DEFS = {"capex_acquisitions_classification": ["separately_disclosed"], "investments_classification": ["separately_disclosed"],
+              "capex_lease_treatment": ["excludes_lease_payments_and_rou_additions"],
               "e_and_e_method": ["successful_efforts", "ifrs6_successful_efforts_like"]}
 R.append(recipe("M06", "capex", "Capital expenditure, cash basis", "CONDITIONALLY_COMPARABLE", "flow", ["FY", "H1", "Q", "TTM"],
   {"numerator": "Cash payments for PP&E and capitalised exploration/intangibles; acquisitions of businesses and investments in associates/JVs excluded", "denominator": None},
   ["Validate generic fields.", "Acquisitions and equity investments must be separately disclosed lines (allow-list: separately_disclosed); combined, unknown or missing -> NOT_COMPARABLE.",
-   "Full-cost reporters are not accepted.", "Capex = PP&E payments + exploration/intangible payments.", "Convert at the period-average rate."],
+   "Full-cost reporters are not accepted.", "The capex lines must exclude lease payments and non-cash right-of-use additions (leases are deducted once, in M05).",
+   "Capex = PP&E payments + exploration/intangible payments.", "Convert at the period-average rate."],
   "Capitalised exploration differs with IFRS 6 vs successful efforts/full cost.", MON("period-average"), HANDLING,
   required_definitions=CAPEX_DEFS,
   item_definitions={"payments_for_ppe": "cash_payments_for_ppe", "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"},
   outputs=[{"key": "capex_cash", "kind": "monetary", "terms": [T("payments_for_ppe"), T("payments_for_exploration_intangibles")]}],
   forbidden_items=["payments_for_acquisitions", "payments_for_equity_investments"]))
 
-R.append(recipe("M07", "fcf", "Free cash flow, rebuilt from normalised CFO", "CONDITIONALLY_COMPARABLE", "flow", ["FY", "H1", "Q", "TTM"],
-  {"numerator": "M05 normalised CFO minus M06 cash capex; issuer FCF and raw CFO are never used", "denominator": None},
+R.append(recipe("M07", "fcf", "Free cash flow after lease payments, rebuilt", "CONDITIONALLY_COMPARABLE", "flow", ["FY", "H1", "Q", "TTM"],
+  {"numerator": "M05 cfo_after_lease_payments minus M06 cash capex; issuer FCF and reported_cfo are never used; leases are deducted once (inside M05), not again here", "denominator": None},
   ["Evaluate M05 on the same cell; any M05 failure is the FCF failure.", "Evaluate M06 on the same cell; any M06 failure is the FCF failure.",
-   "FCF = cfo_norm - capex_cash (both before FX conversion).", "Convert at the period-average rate."],
+   "FCF = cfo_after_lease_payments - capex_cash (both before FX conversion); no lease term here, M06 excludes lease payments.", "Convert at the period-average rate."],
   "Inherits M05 and M06.", MON("period-average"), HANDLING,
   depends_on=["M05", "M06"],
-  outputs=[{"key": "fcf_rebuilt", "kind": "monetary", "terms": [T("ref:M05.cfo_norm"), T("ref:M06.capex_cash", None, -1)]}]))
+  outputs=[{"key": "fcf_rebuilt", "kind": "monetary", "terms": [T("ref:M05.cfo_after_lease_payments"), T("ref:M06.capex_cash", None, -1)]}]))
 
 NETDEBT = [T("borrowings"), T("lease_liabilities", IFRS), T("finance_lease_liabilities", USG), T("operating_lease_liabilities", USG), T("cash_and_equivalents", None, -1)]
 R.append(recipe("M08", "net_debt_gearing", "Net debt and gearing", "CONDITIONALLY_COMPARABLE", "stock", ["FY", "H1", "Q"],
@@ -244,6 +261,23 @@ class NC(Exception):
 
 def fail(code): raise NC(code)
 
+def check_shape(e):
+    """R02-D: structure is validated before any property is read; malformed data is NOT_COMPARABLE, not an exception."""
+    if not isinstance(e, dict): fail("input_malformed:example")
+    if not isinstance(e.get("meta"), dict): fail("input_malformed:meta")
+    if not isinstance(e.get("items"), dict): fail("input_malformed:items")
+    if "policy" in e and not isinstance(e["policy"], dict): fail("input_malformed:policy")
+    m = e["meta"]
+    if "period" in m and not isinstance(m["period"], dict): fail("input_malformed:meta.period")
+    if "fx" in m and not isinstance(m["fx"], dict): fail("input_malformed:meta.fx")
+    d = m.get("item_definitions")
+    if "item_definitions" in m and (not isinstance(d, dict) or not all(isinstance(v, str) for v in d.values())): fail("input_malformed:meta.item_definitions")
+
+def finite(v):
+    """R02-E: every intermediate and final value must stay finite."""
+    if not math.isfinite(v): fail("non_finite_result")
+    return v
+
 def check_period(r, m):
     p = m.get("period")
     if not isinstance(p, dict): fail("period_missing")
@@ -287,7 +321,7 @@ def terms_value(terms, r, e, refs, env_used):
         if "when" in t and not holds(t["when"], {"meta": e["meta"], "policy": e.get("policy", {})}): continue
         expr = t["expr"]
         if expr.startswith("ref:"):
-            total += t["sign"] * refs[expr[4:]]; continue
+            total = finite(total + t["sign"] * refs[expr[4:]]); continue
         env = {}
         for ident in re.findall(r"[a-z_]+", expr):
             if ident.startswith("policy_"):
@@ -301,7 +335,7 @@ def terms_value(terms, r, e, refs, env_used):
             if d is None: fail(f"item_definition_missing:{ident}")
             if d != r["item_definitions"][ident]: fail(f"item_definition_mismatch:{ident}")
             env[ident] = float(items[ident])
-        total += t["sign"] * calc(expr, env)
+        total = finite(total + t["sign"] * calc(expr, env))
     return total
 
 TOK = re.compile(r"\s*(\d+(?:\.\d+)?|[a-z_]+|[()+\-*/])")
@@ -316,12 +350,14 @@ def calc(expr, env):
     def mul():
         v = atom()
         while peek() in ("*", "/"):
-            v = v * atom() if nxt() == "*" else v / atom()
+            op, w = nxt(), atom()
+            if op == "/" and w == 0: fail("non_finite_result")
+            v = finite(v * w if op == "*" else v / w)
         return v
     def add():
         v = mul()
         while peek() in ("+", "-"):
-            v = v + mul() if nxt() == "+" else v - mul()
+            v = finite(v + mul() if nxt() == "+" else v - mul())
         return v
     return add()
 
@@ -340,8 +376,9 @@ def evaluate(r, e, depth=0):
     except NC as x:
         return {"status": "NOT_COMPARABLE", "reason": str(x)}
 
-def _evaluate(r, e):
+def _evaluate(r, e, top=True):
     if r["proposed_rating"] == "OUT_OF_SCOPE_B06": return {"status": "OUT_OF_SCOPE_B06", "reason": "out_of_scope_b06"}
+    check_shape(e)
     m, ctx = e["meta"], {"meta": e["meta"], "policy": e.get("policy", {})}
     if not isinstance(m.get("source_ids"), list) or not m["source_ids"] or not all(isinstance(x, str) and x for x in m["source_ids"]): fail("source_missing")
     if m.get("accounting_basis") not in ("IFRS", "US_GAAP"): fail("accounting_basis_unknown")
@@ -354,14 +391,22 @@ def _evaluate(r, e):
     for f, allowed in r["required_definitions"].items():
         if f not in m or m[f] is None: fail(f"definition_missing:{f}")
         if m[f] not in allowed or isinstance(m[f], bool) != any(isinstance(a, bool) for a in allowed): fail(f"definition_not_accepted:{f}")
+    for f, allowed in r["required_definitions_by_basis"].get(m["accounting_basis"], {}).items():
+        if f not in m or m[f] is None: fail(f"definition_missing:{f}")
+        if m[f] not in allowed or isinstance(m[f], bool) != any(isinstance(a, bool) for a in allowed): fail(f"definition_not_accepted:{f}")
     for k, kind in r["policy_requirements"].items():
         v = e.get("policy", {}).get(k)
         if v is None: fail(f"policy_missing:{k}")
         if (kind == "positive_number" and (not is_num(v) or v <= 0)) or (kind == "boolean" and not isinstance(v, bool)): fail(f"policy_invalid:{k}")
     for c in r["failure_conditions"]:
         if holds(c["when"], ctx): fail(c["code"])
-    for it in r["forbidden_items"]:
+    for it in r["forbidden_items"] + [x for dep in r["depends_on"] for x in BY[dep]["forbidden_items"]]:
         if it in e["items"]: fail(f"item_not_allowed:{it}")
+    if top:  # a dependency sees the dependant's full item set; recognition is checked once, against the union
+        known = set(r["item_definitions"])
+        for dep in r["depends_on"]: known |= set(BY[dep]["item_definitions"])
+        for it in sorted(e["items"]):
+            if it not in known: fail(f"item_not_recognised:{it}")
     refs = {}
     for dep in r["depends_on"]:
         res = _evaluate_raw(BY[dep], e)
@@ -371,7 +416,7 @@ def _evaluate(r, e):
         if o["kind"] == "ratio":
             num = terms_value(o["numerator"], r, e, refs, used); den = terms_value(o["denominator"], r, e, refs, used)
             if den <= 0: fail("denominator_not_positive")
-            raw[o["key"]] = num / den
+            raw[o["key"]] = finite(num / den)
         else:
             raw[o["key"]] = terms_value(o["terms"], r, e, refs, used)
     for it in sorted(all_term_items(r) - used):
@@ -381,12 +426,12 @@ def _evaluate(r, e):
     vals = {}
     for o in r["outputs"]:
         v = raw[o["key"]]
-        if o["kind"] == "monetary" and m["currency"] != "USD": v = v / m["fx"]["rate"]
-        vals[o["key"]] = round(v, 6)
+        if o["kind"] == "monetary" and m["currency"] != "USD": v = finite(v / m["fx"]["rate"])
+        vals[o["key"]] = finite(v if abs(v) >= 1e15 else round(v, 6))
     return {"status": "CONDITIONALLY_COMPARABLE", "values": vals, "_raw": raw}
 
 def _evaluate_raw(r, e):
-    res = _evaluate(r, e)
+    res = _evaluate(r, e, top=False)
     return res["_raw"]
 
 def evaluate_pair(r, a, b):
@@ -421,8 +466,12 @@ def ex(r, label, m, items, policy=None, item_definitions=None):
 
 SAR_AVG = {"rate": 4, "rate_type": "period_average", "source_id": "SYNTH-FX", "window_start": "2030-01-01", "window_end": "2030-12-31"}
 SAR_CLOSE = {"rate": 4, "rate_type": "closing", "source_id": "SYNTH-FX", "rate_date": "2030-12-31"}
-CFO_META = dict(interest_paid_classification="operating", dividends_received_classification="operating", dividends_paid_classification="financing", interest_received_classification="operating")
-CAPEX_META = dict(capex_acquisitions_classification="separately_disclosed", investments_classification="separately_disclosed", e_and_e_method="successful_efforts")
+CFO_META = dict(interest_paid_classification="operating", dividends_received_classification="operating", dividends_paid_classification="financing", interest_received_classification="operating",
+                lease_principal_classification="financing", lease_interest_classification="operating")
+CFO_META_US = dict(interest_paid_classification="operating", dividends_received_classification="operating", dividends_paid_classification="financing", interest_received_classification="operating",
+                   operating_lease_payments_classification="operating", finance_lease_principal_classification="financing", finance_lease_interest_classification="operating")
+CAPEX_META = dict(capex_acquisitions_classification="separately_disclosed", investments_classification="separately_disclosed", e_and_e_method="successful_efforts",
+                  capex_lease_treatment="excludes_lease_payments_and_rou_additions")
 EX = {
  "M01": [ex(BY["M01"], "pass_sar_gross", meta(currency="SAR", fx=SAR_AVG, royalty_presentation="gross", trading_revenue_basis="gross"), {"revenue": 1000, "royalties_excise_in_revenue": 200}),
          ex(BY["M01"], "fail_trading_basis_missing", meta(royalty_presentation="net"), {"revenue": 1000})],
@@ -433,13 +482,13 @@ EX = {
  "M03": [ex(BY["M03"], "pass_ifrs", meta(inventory_method="replacement_cost_disclosed", profit_scope="attributable_to_parent"), {"profit_attributable_to_parent": 300, "impairment_reversals_after_tax": 20, "inventory_holding_gain_after_tax": -10}),
          ex(BY["M03"], "fail_total_profit", meta(inventory_method="replacement_cost_disclosed", profit_scope="total"), {"profit_attributable_to_parent": 300, "impairment_reversals_after_tax": 0, "inventory_holding_gain_after_tax": 0})],
  "M04": [ex(BY["M04"], "fail_any", meta(), {})],
- "M05": [ex(BY["M05"], "pass_ifrs_investing_dividends", meta(**{**CFO_META, "dividends_received_classification": "investing", "interest_paid_classification": "financing"}),
+ "M05": [ex(BY["M05"], "pass_ifrs_investing_dividends", meta(**{**CFO_META, "dividends_received_classification": "investing", "interest_paid_classification": "financing", "lease_interest_classification": "financing"}),
             {"cfo": 770, "lease_principal_payments": 50, "interest_paid_in_financing": 30, "dividends_received_in_investing": 30}),
          ex(BY["M05"], "fail_dividends_received_classification_missing", meta(**{k: v for k, v in CFO_META.items() if k != "dividends_received_classification"}), {"cfo": 800, "lease_principal_payments": 50})],
  "M06": [ex(BY["M06"], "pass", meta(**CAPEX_META), {"payments_for_ppe": 400, "payments_for_exploration_intangibles": 20}),
          ex(BY["M06"], "fail_acquisitions_classification_missing", meta(**{k: v for k, v in CAPEX_META.items() if k != "capex_acquisitions_classification"}), {"payments_for_ppe": 400, "payments_for_exploration_intangibles": 20})],
- "M07": [ex(BY["M07"], "pass_us_gaap", meta(accounting_basis="US_GAAP", **CFO_META, **CAPEX_META), {"cfo": 900, "finance_lease_principal_payments": 10, "payments_for_ppe": 400, "payments_for_exploration_intangibles": 0}),
-         ex(BY["M07"], "fail_investments_classification_combined", meta(accounting_basis="US_GAAP", **CFO_META, **{**CAPEX_META, "investments_classification": "combined_with_capex"}),
+ "M07": [ex(BY["M07"], "pass_us_gaap", meta(accounting_basis="US_GAAP", **CFO_META_US, **CAPEX_META), {"cfo": 900, "finance_lease_principal_payments": 10, "payments_for_ppe": 400, "payments_for_exploration_intangibles": 0}),
+         ex(BY["M07"], "fail_investments_classification_combined", meta(accounting_basis="US_GAAP", **CFO_META_US, **{**CAPEX_META, "investments_classification": "combined_with_capex"}),
             {"cfo": 900, "finance_lease_principal_payments": 10, "payments_for_ppe": 400, "payments_for_exploration_intangibles": 0})],
  "M08": [ex(BY["M08"], "pass_sar_closing", meta(currency="SAR", fx=SAR_CLOSE, has_hybrids=False, cash_definition="cash_and_cash_equivalents"), {"borrowings": 400, "lease_liabilities": 100, "cash_and_equivalents": 300, "total_equity": 1800}),
          ex(BY["M08"], "fail_closing_rate_undated", meta(currency="SAR", fx={k: v for k, v in SAR_CLOSE.items() if k != "rate_date"}, has_hybrids=False, cash_definition="cash_and_cash_equivalents"),
@@ -459,16 +508,44 @@ EX = {
  "M14": [ex(BY["M14"], "fail_any", meta(), {})], "M15": [ex(BY["M15"], "fail_any", meta(), {})],
  "M16": [ex(BY["M16"], "fail_any", meta(), {})], "M17": [ex(BY["M17"], "fail_any", meta(), {})],
 }
-# R02-B: same economics, different IAS 7 classification
-X = ex(BY["M05"], "company_x_dividends_received_in_investing", meta(company="SYNTH-X", **{**CFO_META, "dividends_received_classification": "investing"}), {"cfo": 770, "lease_principal_payments": 50, "dividends_received_in_investing": 30})
-Y = ex(BY["M05"], "company_y_dividends_received_in_operating", meta(company="SYNTH-Y", **CFO_META), {"cfo": 800, "lease_principal_payments": 50})
-X_NO = ex(BY["M05"], "company_x_without_disclosed_amount", meta(company="SYNTH-X", **{**CFO_META, "dividends_received_classification": "investing"}), {"cfo": 770, "lease_principal_payments": 50})
-Y_DBL = ex(BY["M05"], "company_y_double_count", meta(company="SYNTH-Y", **CFO_META), {"cfo": 800, "lease_principal_payments": 50, "dividends_received_in_investing": 30})
+# R02-B / R02-C: one synthetic economy, published under different classifications. Reported figures are
+# derived from the economy below, never typed; the comparable measure must come out equal for every variant.
+ECON = {"operating_cash_before_listed_flows": 900, "dividends_received": 30, "lease_principal": 50, "lease_interest": 10,
+        "other_interest_paid": 20, "dividends_paid": 100}
+def published(label, basis, interest="operating", div_rec="operating", div_paid="financing", us_leases="operating"):
+    """Build a published cash-flow view of ECON under the given classifications."""
+    k = ECON; it = {}
+    cfo = k["operating_cash_before_listed_flows"]
+    cfo += k["dividends_received"] if div_rec == "operating" else 0
+    cfo -= k["dividends_paid"] if div_paid == "operating" else 0
+    if basis == "IFRS":
+        cfo -= (k["lease_interest"] + k["other_interest_paid"]) if interest == "operating" else 0
+        it["lease_principal_payments"] = k["lease_principal"]
+        if interest == "financing": it["interest_paid_in_financing"] = k["lease_interest"] + k["other_interest_paid"]
+        m = {**CFO_META, "interest_paid_classification": interest, "lease_interest_classification": interest}
+    else:
+        cfo -= k["lease_interest"] + k["other_interest_paid"]
+        if us_leases == "operating": cfo -= k["lease_principal"]; it["finance_lease_principal_payments"] = 0
+        else: it["finance_lease_principal_payments"] = k["lease_principal"]
+        m = dict(CFO_META_US)
+    if div_rec == "investing": it["dividends_received_in_investing"] = k["dividends_received"]
+    if div_paid == "operating": it["dividends_paid_in_operating"] = k["dividends_paid"]
+    m.update(dividends_received_classification=div_rec, dividends_paid_classification=div_paid)
+    it["cfo"] = cfo
+    return ex(BY["M05"], label, meta(company="SYNTH-" + label.upper(), accounting_basis=basis, **m), it)
+X = published("x_ifrs_dividends_received_in_investing", "IFRS", div_rec="investing")
+Y = published("y_ifrs_dividends_received_in_operating", "IFRS")
+U = published("u_us_gaap_operating_leases", "US_GAAP")
+X_NO = json.loads(json.dumps(X)); X_NO["label"] = "x_without_disclosed_amount"; del X_NO["items"]["dividends_received_in_investing"]; del X_NO["meta"]["item_definitions"]["dividends_received_in_investing"]
+Y_DBL = json.loads(json.dumps(Y)); Y_DBL["label"] = "y_double_count"; Y_DBL["items"]["dividends_received_in_investing"] = ECON["dividends_received"]
+Y_DBL["meta"]["item_definitions"]["dividends_received_in_investing"] = BY["M05"]["item_definitions"]["dividends_received_in_investing"]
 def fcf(e):
     f = json.loads(json.dumps(e)); f["meta"].update(CAPEX_META); f["items"].update({"payments_for_ppe": 400, "payments_for_exploration_intangibles": 20})
     f["meta"]["item_definitions"] = defs_for(BY["M07"], f["items"]); f["label"] = "fcf_" + e["label"]; return f
-BY["M05"]["pair_examples"] = [{"label": "same_economics_reconciled", "a": X, "b": Y}, {"label": "evidence_missing", "a": X_NO, "b": Y}, {"label": "double_count_rejected", "a": X, "b": Y_DBL}]
-BY["M07"]["pair_examples"] = [{"label": "fcf_same_economics_reconciled", "a": fcf(X), "b": fcf(Y)}, {"label": "fcf_evidence_missing", "a": fcf(X_NO), "b": fcf(Y)}]
+BY["M05"]["pair_examples"] = [{"label": "same_economics_reconciled", "a": X, "b": Y}, {"label": "ifrs_vs_us_gaap_leases_reconciled", "a": Y, "b": U},
+                              {"label": "evidence_missing", "a": X_NO, "b": Y}, {"label": "double_count_rejected", "a": X, "b": Y_DBL}]
+BY["M07"]["pair_examples"] = [{"label": "fcf_same_economics_reconciled", "a": fcf(X), "b": fcf(Y)}, {"label": "fcf_ifrs_vs_us_gaap_leases_reconciled", "a": fcf(Y), "b": fcf(U)},
+                              {"label": "fcf_evidence_missing", "a": fcf(X_NO), "b": fcf(Y)}]
 
 for r in R:
     r["examples"] = EX[r["id"]]
@@ -484,10 +561,13 @@ for r in R:
 for r in R:
     for e in r["examples"]:
         assert (e["expected"]["status"] == "CONDITIONALLY_COMPARABLE") == e["label"].startswith("pass"), (r["id"], e["label"], e["expected"])
-assert BY["M05"]["pair_examples"][0]["expected"]["values"]["a"] == BY["M05"]["pair_examples"][0]["expected"]["values"]["b"]
-assert BY["M07"]["pair_examples"][0]["expected"]["values"]["a"] == BY["M07"]["pair_examples"][0]["expected"]["values"]["b"]
-assert BY["M05"]["pair_examples"][1]["expected"]["reason"] == "a:required_item_missing:dividends_received_in_investing"
-assert BY["M05"]["pair_examples"][2]["expected"]["reason"] == "b:reclassification_item_conflict:dividends_received_in_investing"
+for p in BY["M05"]["pair_examples"][:2]:
+    v = p["expected"]["values"]; assert v["a"]["cfo_after_lease_payments"] == v["b"]["cfo_after_lease_payments"], p["label"]
+for p in BY["M07"]["pair_examples"][:2]:
+    v = p["expected"]["values"]; assert v["a"] == v["b"], p["label"]
+assert "cfo_norm" not in json.dumps(BY["M07"]["outputs"]) and "reported_cfo" not in json.dumps(BY["M07"]["outputs"])
+assert BY["M05"]["pair_examples"][2]["expected"]["reason"] == "a:required_item_missing:dividends_received_in_investing"
+assert BY["M05"]["pair_examples"][3]["expected"]["reason"] == "b:reclassification_item_conflict:dividends_received_in_investing"
 
 if len(sys.argv) == 3 and sys.argv[1] == "--evaluate":
     # parity mode for checks/: [{"recipe": id, "a": example, "b"?: example}] -> results, nothing written
@@ -496,20 +576,20 @@ if len(sys.argv) == 3 and sys.argv[1] == "--evaluate":
         r = BY[c["recipe"]]
         x = evaluate_pair(r, c["a"], c["b"]) if "b" in c else evaluate(r, c["a"])
         res.append({k: v for k, v in x.items() if k != "_raw"})
-    print(json.dumps(res))
+    print(json.dumps(res, allow_nan=False))
     sys.exit(0)
 
 out = {
- "schema": "marefa-web08b06-comparability-recipes/2",
- "supersedes": "marefa-web08b06-comparability-recipes/1 (implementation 5050295)",
+ "schema": "marefa-web08b06-comparability-recipes/3",
+ "supersedes": "marefa-web08b06-comparability-recipes/2 (implementation a267e0c); field changes in COMPATIBILITY-MAP.json",
  "status": "METHODOLOGY_PROPOSAL_NOT_APPROVED",
  "rule": "Default NOT_COMPARABLE. A cell is CONDITIONALLY_COMPARABLE only if every generic check, every allow-listed definition, every policy requirement and every metric condition passes, every used item is a finite number with its declared definition, no item of an inapplicable reclassification path or forbidden item is supplied, and all guards hold. Nothing is defaulted. Display is BLOCKED for every cell in B06.",
- "check_order": ["source", "accounting_basis", "consolidation", "restated_latest", "period (kind, real dates, order, duration, stand-alone quarter, TTM components, balance dates)", "currency and FX (supported currency, no FX for USD, rate > 0, source, basis per measure, average window = period / closing date = period end)", "not-reconcilable metric", "definitions (allow-lists)", "policy requirements", "metric conditions", "forbidden items", "dependencies", "items (present, numeric, declared definition)", "reclassification conflicts", "guards", "FX conversion"],
+ "check_order": ["input shape (example, meta, items, policy, meta.period, meta.fx, meta.item_definitions)", "source", "accounting_basis", "consolidation", "restated_latest", "period (kind, real dates, order, duration, stand-alone quarter, TTM components, balance dates)", "currency and FX (supported currency, no FX for USD, rate > 0, source, basis per measure, average window = period / closing date = period end)", "not-reconcilable metric", "definitions (allow-lists)", "definitions by accounting basis", "policy requirements", "metric conditions", "forbidden items", "unrecognised items", "dependencies", "items (present, finite number, declared definition)", "computation with every intermediate value finite", "reclassification conflicts", "guards", "FX conversion and rounding (finite)"],
  "pair_rule": "Two cells compare only if both pass, period kind/start/end are equal, the recipe's homogeneity fields are equal and the policy objects are equal.",
  "examples_note": SY + ". Expected results computed here and re-derived by the independent evaluator in checks/.",
  "aramco_inputs": "Aramco cells use B02 identities, all WITHHELD (142); comparability never changes withholding.",
  "recipes": R,
 }
-json.dump(out, open(sys.argv[1], "w"), ensure_ascii=False, indent=1)
+json.dump(out, open(sys.argv[1], "w"), ensure_ascii=False, indent=1, allow_nan=False)
 open(sys.argv[1], "a").write("\n")
 print(len(R), sum(len(r["examples"]) for r in R), sum(len(r["pair_examples"]) for r in R))

@@ -1,9 +1,10 @@
 {
- "schema": "marefa-web08b06-comparability-recipes/2",
- "supersedes": "marefa-web08b06-comparability-recipes/1 (implementation 5050295)",
+ "schema": "marefa-web08b06-comparability-recipes/3",
+ "supersedes": "marefa-web08b06-comparability-recipes/2 (implementation a267e0c); field changes in COMPATIBILITY-MAP.json",
  "status": "METHODOLOGY_PROPOSAL_NOT_APPROVED",
  "rule": "Default NOT_COMPARABLE. A cell is CONDITIONALLY_COMPARABLE only if every generic check, every allow-listed definition, every policy requirement and every metric condition passes, every used item is a finite number with its declared definition, no item of an inapplicable reclassification path or forbidden item is supplied, and all guards hold. Nothing is defaulted. Display is BLOCKED for every cell in B06.",
  "check_order": [
+  "input shape (example, meta, items, policy, meta.period, meta.fx, meta.item_definitions)",
   "source",
   "accounting_basis",
   "consolidation",
@@ -12,14 +13,17 @@
   "currency and FX (supported currency, no FX for USD, rate > 0, source, basis per measure, average window = period / closing date = period end)",
   "not-reconcilable metric",
   "definitions (allow-lists)",
+  "definitions by accounting basis",
   "policy requirements",
   "metric conditions",
   "forbidden items",
+  "unrecognised items",
   "dependencies",
-  "items (present, numeric, declared definition)",
+  "items (present, finite number, declared definition)",
+  "computation with every intermediate value finite",
   "reclassification conflicts",
   "guards",
-  "FX conversion"
+  "FX conversion and rounding (finite)"
  ],
  "pair_rule": "Two cells compare only if both pass, period kind/start/end are equal, the recipe's homogeneity fields are equal and the policy objects are equal.",
  "examples_note": "SYNTHETIC: invented test values, not company data. Expected results computed here and re-derived by the independent evaluator in checks/.",
@@ -104,6 +108,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -384,6 +389,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -596,6 +602,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -728,6 +735,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "not_reconcilable",
    "examples": [
     {
@@ -764,7 +772,7 @@
   {
    "id": "M05",
    "key": "cfo",
-   "name": "Cash flow from operations, normalised to one placement policy",
+   "name": "Operating cash flow: reported, and after lease payments (derived research measure)",
    "proposed_rating": "CONDITIONALLY_COMPARABLE",
    "measure_type": "flow",
    "allowed_period_kinds": [
@@ -774,19 +782,20 @@
     "TTM"
    ],
    "definition": {
-    "numerator": "Reported CFO moved to the uniform placement policy (see notes)",
+    "numerator": "reported_cfo = published CFO. cfo_after_lease_payments = published CFO, minus lease principal (and interest) published in financing, plus dividends received published in investing, plus dividends paid published in operating",
     "denominator": null
    },
    "ordered_steps": [
-    "Validate generic fields; classifications must be in their allow-lists and consistent with the framework.",
-    "IFRS: subtract lease principal payments; US GAAP: subtract finance lease principal payments.",
-    "If interest paid sits in financing (IFRS), subtract it.",
-    "If dividends received sit in investing (IFRS), add the disclosed amount; if they already sit in operating, the reclassification item must not be supplied (double count).",
-    "If dividends paid sit in operating (IFRS), add them back.",
+    "Validate generic fields; classifications of interest, dividends and every lease cash flow must be recorded, in their allow-lists and consistent with the framework.",
+    "reported_cfo: the published figure, converted only.",
+    "cfo_after_lease_payments, IFRS: subtract lease principal (financing); if interest paid (incl. lease interest) sits in financing, subtract it; lease interest must sit with other interest paid.",
+    "cfo_after_lease_payments, US GAAP: operating-lease payments and finance-lease interest are already in operating; subtract finance-lease principal (financing).",
+    "If dividends received sit in investing (IFRS), add the disclosed amount; if dividends paid sit in operating (IFRS), add them back.",
+    "A move item supplied when the published classification does not require it, or an unrecognised item, rejects the cell (no double deduction).",
     "Interest received outside operating -> NOT_COMPARABLE (no recipe).",
     "Convert at the period-average rate."
    ],
-   "ifrs_vs_us_gaap": "IAS 7 classification choices vs ASC 230; IFRS 16 vs ASC 842 lease cash flows.",
+   "ifrs_vs_us_gaap": "IAS 7 classification choices vs ASC 230; IFRS 16 (principal financing) vs ASC 842 (operating lease payments operating, finance lease principal financing).",
    "basis": {
     "consolidation": "consolidated group",
     "currency": "USD; SAR converted at the period-average rate with source and date",
@@ -872,20 +881,51 @@
       ]
      },
      "reason": "US GAAP investing distributions are returns of investment, not dividends from earnings; no reconciliation recipe."
+    },
+    {
+     "code": "lease_interest_classification_differs_from_interest_paid",
+     "when": {
+      "op": "and",
+      "args": [
+       {
+        "op": "eq",
+        "path": "meta.accounting_basis",
+        "value": "IFRS"
+       },
+       {
+        "op": "neq_path",
+        "path": "meta.lease_interest_classification",
+        "other": "meta.interest_paid_classification"
+       }
+      ]
+     },
+     "reason": "interest_paid_in_financing is defined to include lease interest; a split placement has no recipe."
     }
    ],
    "item_definitions": {
     "cfo": "net_cash_from_operating_activities_as_reported",
-    "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
-    "finance_lease_principal_payments": "asc842_finance_lease_principal_payments",
-    "interest_paid_in_financing": "interest_paid_classified_in_financing",
+    "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+    "finance_lease_principal_payments": "asc842_finance_lease_principal_payments_classified_in_financing",
+    "interest_paid_in_financing": "interest_paid_incl_lease_interest_classified_in_financing",
     "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
     "dividends_paid_in_operating": "dividends_paid_parent_and_nci_classified_in_operating"
    },
    "outputs": [
     {
-     "key": "cfo_norm",
+     "key": "reported_cfo",
      "kind": "monetary",
+     "role": "reported_not_comparable",
+     "terms": [
+      {
+       "expr": "cfo",
+       "sign": 1
+      }
+     ]
+    },
+    {
+     "key": "cfo_after_lease_payments",
+     "kind": "monetary",
+     "role": "derived_comparable",
      "terms": [
       {
        "expr": "cfo",
@@ -948,7 +988,29 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
-   "notes": "Uniform placement policy: dividends received from associates, joint ventures and other investments are placed in operating cash flow for every company; dividends paid (to parent shareholders and to NCI) and lease principal are placed in financing; interest paid in operating. Basis: IAS 7 permits operating or investing for dividends received and operating or financing for dividends paid; ASC 230 fixes interest paid in operating and dividends paid in financing (standards text not opened in this environment: UNVERIFIED reference). Disclosures used: the cash-flow statement lines named in item_definitions.",
+   "required_definitions_by_basis": {
+    "IFRS": {
+     "lease_principal_classification": [
+      "financing"
+     ],
+     "lease_interest_classification": [
+      "operating",
+      "financing"
+     ]
+    },
+    "US_GAAP": {
+     "operating_lease_payments_classification": [
+      "operating"
+     ],
+     "finance_lease_principal_classification": [
+      "financing"
+     ],
+     "finance_lease_interest_classification": [
+      "operating"
+     ]
+    }
+   },
+   "notes": "reported_cfo is the published IFRS/US GAAP figure, converted only; it is not comparable across frameworks and FCF never uses it. cfo_after_lease_payments is a derived research measure, not the published accounting CFO: operating cash flow with ALL lease payments (principal and interest) and all interest paid deducted, dividends received from investments included, dividends paid (parent and NCI) excluded. This target matches what ASC 842 operating-lease reporters already publish, so IFRS 16 and US GAAP finance-lease principal is moved in from financing; each cash flow is deducted exactly once (the published classification decides whether a move is needed; a move item supplied when the classification does not require it is rejected). Basis: IAS 7 permits operating or financing for interest paid and dividends paid, operating or investing for dividends received; IFRS 16 places lease principal in financing; ASC 842 places operating-lease payments and finance-lease interest in operating and finance-lease principal in financing (standards text not opened in this environment: UNVERIFIED reference). Disclosures used: the cash-flow statement lines named in item_definitions.",
    "examples": [
     {
      "label": "pass_ifrs_investing_dividends",
@@ -973,10 +1035,12 @@
       "dividends_received_classification": "investing",
       "dividends_paid_classification": "financing",
       "interest_received_classification": "operating",
+      "lease_principal_classification": "financing",
+      "lease_interest_classification": "financing",
       "item_definitions": {
        "cfo": "net_cash_from_operating_activities_as_reported",
-       "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
-       "interest_paid_in_financing": "interest_paid_classified_in_financing",
+       "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+       "interest_paid_in_financing": "interest_paid_incl_lease_interest_classified_in_financing",
        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
       }
      },
@@ -989,7 +1053,8 @@
      "expected": {
       "status": "CONDITIONALLY_COMPARABLE",
       "values": {
-       "cfo_norm": 720.0
+       "reported_cfo": 770.0,
+       "cfo_after_lease_payments": 720.0
       },
       "display": "BLOCKED"
      }
@@ -1016,9 +1081,11 @@
       "interest_paid_classification": "operating",
       "dividends_paid_classification": "financing",
       "interest_received_classification": "operating",
+      "lease_principal_classification": "financing",
+      "lease_interest_classification": "operating",
       "item_definitions": {
        "cfo": "net_cash_from_operating_activities_as_reported",
-       "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+       "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing"
       }
      },
      "items": {
@@ -1036,10 +1103,10 @@
     {
      "label": "same_economics_reconciled",
      "a": {
-      "label": "company_x_dividends_received_in_investing",
+      "label": "x_ifrs_dividends_received_in_investing",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-X",
+       "company": "SYNTH-X_IFRS_DIVIDENDS_RECEIVED_IN_INVESTING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1058,23 +1125,25 @@
        "dividends_received_classification": "investing",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
-        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
        }
       },
       "items": {
-       "cfo": 770,
        "lease_principal_payments": 50,
-       "dividends_received_in_investing": 30
+       "dividends_received_in_investing": 30,
+       "cfo": 870
       }
      },
      "b": {
-      "label": "company_y_dividends_received_in_operating",
+      "label": "y_ifrs_dividends_received_in_operating",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-Y",
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1093,24 +1162,116 @@
        "dividends_received_classification": "operating",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
        }
       },
       "items": {
-       "cfo": 800,
-       "lease_principal_payments": 50
+       "lease_principal_payments": 50,
+       "cfo": 900
       }
      },
      "expected": {
       "status": "CONDITIONALLY_COMPARABLE",
       "values": {
        "a": {
-        "cfo_norm": 750.0
+        "reported_cfo": 870.0,
+        "cfo_after_lease_payments": 850.0
        },
        "b": {
-        "cfo_norm": 750.0
+        "reported_cfo": 900.0,
+        "cfo_after_lease_payments": 850.0
+       }
+      },
+      "display": "BLOCKED"
+     }
+    },
+    {
+     "label": "ifrs_vs_us_gaap_leases_reconciled",
+     "a": {
+      "label": "y_ifrs_dividends_received_in_operating",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
+       "item_definitions": {
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
+       }
+      },
+      "items": {
+       "lease_principal_payments": 50,
+       "cfo": 900
+      }
+     },
+     "b": {
+      "label": "u_us_gaap_operating_leases",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-U_US_GAAP_OPERATING_LEASES",
+       "accounting_basis": "US_GAAP",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "operating_lease_payments_classification": "operating",
+       "finance_lease_principal_classification": "financing",
+       "finance_lease_interest_classification": "operating",
+       "item_definitions": {
+        "finance_lease_principal_payments": "asc842_finance_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
+       }
+      },
+      "items": {
+       "finance_lease_principal_payments": 0,
+       "cfo": 850
+      }
+     },
+     "expected": {
+      "status": "CONDITIONALLY_COMPARABLE",
+      "values": {
+       "a": {
+        "reported_cfo": 900.0,
+        "cfo_after_lease_payments": 850.0
+       },
+       "b": {
+        "reported_cfo": 850.0,
+        "cfo_after_lease_payments": 850.0
        }
       },
       "display": "BLOCKED"
@@ -1119,10 +1280,10 @@
     {
      "label": "evidence_missing",
      "a": {
-      "label": "company_x_without_disclosed_amount",
+      "label": "x_without_disclosed_amount",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-X",
+       "company": "SYNTH-X_IFRS_DIVIDENDS_RECEIVED_IN_INVESTING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1141,21 +1302,23 @@
        "dividends_received_classification": "investing",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
        }
       },
       "items": {
-       "cfo": 770,
-       "lease_principal_payments": 50
+       "lease_principal_payments": 50,
+       "cfo": 870
       }
      },
      "b": {
-      "label": "company_y_dividends_received_in_operating",
+      "label": "y_ifrs_dividends_received_in_operating",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-Y",
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1174,14 +1337,16 @@
        "dividends_received_classification": "operating",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing"
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
        }
       },
       "items": {
-       "cfo": 800,
-       "lease_principal_payments": 50
+       "lease_principal_payments": 50,
+       "cfo": 900
       }
      },
      "expected": {
@@ -1193,10 +1358,10 @@
     {
      "label": "double_count_rejected",
      "a": {
-      "label": "company_x_dividends_received_in_investing",
+      "label": "x_ifrs_dividends_received_in_investing",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-X",
+       "company": "SYNTH-X_IFRS_DIVIDENDS_RECEIVED_IN_INVESTING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1215,23 +1380,25 @@
        "dividends_received_classification": "investing",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
-        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
+        "cfo": "net_cash_from_operating_activities_as_reported"
        }
       },
       "items": {
-       "cfo": 770,
        "lease_principal_payments": 50,
-       "dividends_received_in_investing": 30
+       "dividends_received_in_investing": 30,
+       "cfo": 870
       }
      },
      "b": {
-      "label": "company_y_double_count",
+      "label": "y_double_count",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-Y",
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1250,15 +1417,17 @@
        "dividends_received_classification": "operating",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
         "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
         "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing"
        }
       },
       "items": {
-       "cfo": 800,
        "lease_principal_payments": 50,
+       "cfo": 900,
        "dividends_received_in_investing": 30
       }
      },
@@ -1290,6 +1459,7 @@
     "Validate generic fields.",
     "Acquisitions and equity investments must be separately disclosed lines (allow-list: separately_disclosed); combined, unknown or missing -> NOT_COMPARABLE.",
     "Full-cost reporters are not accepted.",
+    "The capex lines must exclude lease payments and non-cash right-of-use additions (leases are deducted once, in M05).",
     "Capex = PP&E payments + exploration/intangible payments.",
     "Convert at the period-average rate."
    ],
@@ -1311,6 +1481,9 @@
     ],
     "investments_classification": [
      "separately_disclosed"
+    ],
+    "capex_lease_treatment": [
+     "excludes_lease_payments_and_rou_additions"
     ],
     "e_and_e_method": [
      "successful_efforts",
@@ -1347,6 +1520,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -1371,6 +1545,7 @@
       "capex_acquisitions_classification": "separately_disclosed",
       "investments_classification": "separately_disclosed",
       "e_and_e_method": "successful_efforts",
+      "capex_lease_treatment": "excludes_lease_payments_and_rou_additions",
       "item_definitions": {
        "payments_for_ppe": "cash_payments_for_ppe",
        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
@@ -1409,6 +1584,7 @@
       "input_status": "SYNTHETIC",
       "investments_classification": "separately_disclosed",
       "e_and_e_method": "successful_efforts",
+      "capex_lease_treatment": "excludes_lease_payments_and_rou_additions",
       "item_definitions": {
        "payments_for_ppe": "cash_payments_for_ppe",
        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
@@ -1430,7 +1606,7 @@
   {
    "id": "M07",
    "key": "fcf",
-   "name": "Free cash flow, rebuilt from normalised CFO",
+   "name": "Free cash flow after lease payments, rebuilt",
    "proposed_rating": "CONDITIONALLY_COMPARABLE",
    "measure_type": "flow",
    "allowed_period_kinds": [
@@ -1440,13 +1616,13 @@
     "TTM"
    ],
    "definition": {
-    "numerator": "M05 normalised CFO minus M06 cash capex; issuer FCF and raw CFO are never used",
+    "numerator": "M05 cfo_after_lease_payments minus M06 cash capex; issuer FCF and reported_cfo are never used; leases are deducted once (inside M05), not again here",
     "denominator": null
    },
    "ordered_steps": [
     "Evaluate M05 on the same cell; any M05 failure is the FCF failure.",
     "Evaluate M06 on the same cell; any M06 failure is the FCF failure.",
-    "FCF = cfo_norm - capex_cash (both before FX conversion).",
+    "FCF = cfo_after_lease_payments - capex_cash (both before FX conversion); no lease term here, M06 excludes lease payments.",
     "Convert at the period-average rate."
    ],
    "ifrs_vs_us_gaap": "Inherits M05 and M06.",
@@ -1470,7 +1646,7 @@
      "kind": "monetary",
      "terms": [
       {
-       "expr": "ref:M05.cfo_norm",
+       "expr": "ref:M05.cfo_after_lease_payments",
        "sign": 1
       },
       {
@@ -1489,6 +1665,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -1514,12 +1691,16 @@
       "dividends_received_classification": "operating",
       "dividends_paid_classification": "financing",
       "interest_received_classification": "operating",
+      "operating_lease_payments_classification": "operating",
+      "finance_lease_principal_classification": "financing",
+      "finance_lease_interest_classification": "operating",
       "capex_acquisitions_classification": "separately_disclosed",
       "investments_classification": "separately_disclosed",
       "e_and_e_method": "successful_efforts",
+      "capex_lease_treatment": "excludes_lease_payments_and_rou_additions",
       "item_definitions": {
        "cfo": "net_cash_from_operating_activities_as_reported",
-       "finance_lease_principal_payments": "asc842_finance_lease_principal_payments",
+       "finance_lease_principal_payments": "asc842_finance_lease_principal_payments_classified_in_financing",
        "payments_for_ppe": "cash_payments_for_ppe",
        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
       }
@@ -1561,12 +1742,16 @@
       "dividends_received_classification": "operating",
       "dividends_paid_classification": "financing",
       "interest_received_classification": "operating",
+      "operating_lease_payments_classification": "operating",
+      "finance_lease_principal_classification": "financing",
+      "finance_lease_interest_classification": "operating",
       "capex_acquisitions_classification": "separately_disclosed",
       "investments_classification": "combined_with_capex",
       "e_and_e_method": "successful_efforts",
+      "capex_lease_treatment": "excludes_lease_payments_and_rou_additions",
       "item_definitions": {
        "cfo": "net_cash_from_operating_activities_as_reported",
-       "finance_lease_principal_payments": "asc842_finance_lease_principal_payments",
+       "finance_lease_principal_payments": "asc842_finance_lease_principal_payments_classified_in_financing",
        "payments_for_ppe": "cash_payments_for_ppe",
        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
       }
@@ -1588,10 +1773,10 @@
     {
      "label": "fcf_same_economics_reconciled",
      "a": {
-      "label": "fcf_company_x_dividends_received_in_investing",
+      "label": "fcf_x_ifrs_dividends_received_in_investing",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-X",
+       "company": "SYNTH-X_IFRS_DIVIDENDS_RECEIVED_IN_INVESTING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1610,30 +1795,33 @@
        "dividends_received_classification": "investing",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
         "dividends_received_in_investing": "dividends_received_from_investments_classified_in_investing",
+        "cfo": "net_cash_from_operating_activities_as_reported",
         "payments_for_ppe": "cash_payments_for_ppe",
         "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
        },
        "capex_acquisitions_classification": "separately_disclosed",
        "investments_classification": "separately_disclosed",
-       "e_and_e_method": "successful_efforts"
+       "e_and_e_method": "successful_efforts",
+       "capex_lease_treatment": "excludes_lease_payments_and_rou_additions"
       },
       "items": {
-       "cfo": 770,
        "lease_principal_payments": 50,
        "dividends_received_in_investing": 30,
+       "cfo": 870,
        "payments_for_ppe": 400,
        "payments_for_exploration_intangibles": 20
       }
      },
      "b": {
-      "label": "fcf_company_y_dividends_received_in_operating",
+      "label": "fcf_y_ifrs_dividends_received_in_operating",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-Y",
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1652,19 +1840,22 @@
        "dividends_received_classification": "operating",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
         "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
         "payments_for_ppe": "cash_payments_for_ppe",
         "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
        },
        "capex_acquisitions_classification": "separately_disclosed",
        "investments_classification": "separately_disclosed",
-       "e_and_e_method": "successful_efforts"
+       "e_and_e_method": "successful_efforts",
+       "capex_lease_treatment": "excludes_lease_payments_and_rou_additions"
       },
       "items": {
-       "cfo": 800,
        "lease_principal_payments": 50,
+       "cfo": 900,
        "payments_for_ppe": 400,
        "payments_for_exploration_intangibles": 20
       }
@@ -1673,62 +1864,22 @@
       "status": "CONDITIONALLY_COMPARABLE",
       "values": {
        "a": {
-        "fcf_rebuilt": 330.0
+        "fcf_rebuilt": 430.0
        },
        "b": {
-        "fcf_rebuilt": 330.0
+        "fcf_rebuilt": 430.0
        }
       },
       "display": "BLOCKED"
      }
     },
     {
-     "label": "fcf_evidence_missing",
+     "label": "fcf_ifrs_vs_us_gaap_leases_reconciled",
      "a": {
-      "label": "fcf_company_x_without_disclosed_amount",
+      "label": "fcf_y_ifrs_dividends_received_in_operating",
       "synthetic": "SYNTHETIC: invented test values, not company data",
       "meta": {
-       "company": "SYNTH-X",
-       "accounting_basis": "IFRS",
-       "currency": "USD",
-       "period": {
-        "kind": "FY",
-        "start": "2030-01-01",
-        "end": "2030-12-31",
-        "standalone": true
-       },
-       "consolidation": "consolidated",
-       "restated_latest": true,
-       "source_ids": [
-        "SYNTH-SRC-1"
-       ],
-       "input_status": "SYNTHETIC",
-       "interest_paid_classification": "operating",
-       "dividends_received_classification": "investing",
-       "dividends_paid_classification": "financing",
-       "interest_received_classification": "operating",
-       "item_definitions": {
-        "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
-        "payments_for_ppe": "cash_payments_for_ppe",
-        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
-       },
-       "capex_acquisitions_classification": "separately_disclosed",
-       "investments_classification": "separately_disclosed",
-       "e_and_e_method": "successful_efforts"
-      },
-      "items": {
-       "cfo": 770,
-       "lease_principal_payments": 50,
-       "payments_for_ppe": 400,
-       "payments_for_exploration_intangibles": 20
-      }
-     },
-     "b": {
-      "label": "fcf_company_y_dividends_received_in_operating",
-      "synthetic": "SYNTHETIC: invented test values, not company data",
-      "meta": {
-       "company": "SYNTH-Y",
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
        "accounting_basis": "IFRS",
        "currency": "USD",
        "period": {
@@ -1747,19 +1898,167 @@
        "dividends_received_classification": "operating",
        "dividends_paid_classification": "financing",
        "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
        "item_definitions": {
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
         "cfo": "net_cash_from_operating_activities_as_reported",
-        "lease_principal_payments": "ifrs16_lease_principal_payments_in_financing",
         "payments_for_ppe": "cash_payments_for_ppe",
         "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
        },
        "capex_acquisitions_classification": "separately_disclosed",
        "investments_classification": "separately_disclosed",
-       "e_and_e_method": "successful_efforts"
+       "e_and_e_method": "successful_efforts",
+       "capex_lease_treatment": "excludes_lease_payments_and_rou_additions"
       },
       "items": {
-       "cfo": 800,
        "lease_principal_payments": 50,
+       "cfo": 900,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "b": {
+      "label": "fcf_u_us_gaap_operating_leases",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-U_US_GAAP_OPERATING_LEASES",
+       "accounting_basis": "US_GAAP",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "operating_lease_payments_classification": "operating",
+       "finance_lease_principal_classification": "financing",
+       "finance_lease_interest_classification": "operating",
+       "item_definitions": {
+        "finance_lease_principal_payments": "asc842_finance_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts",
+       "capex_lease_treatment": "excludes_lease_payments_and_rou_additions"
+      },
+      "items": {
+       "finance_lease_principal_payments": 0,
+       "cfo": 850,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "expected": {
+      "status": "CONDITIONALLY_COMPARABLE",
+      "values": {
+       "a": {
+        "fcf_rebuilt": 430.0
+       },
+       "b": {
+        "fcf_rebuilt": 430.0
+       }
+      },
+      "display": "BLOCKED"
+     }
+    },
+    {
+     "label": "fcf_evidence_missing",
+     "a": {
+      "label": "fcf_x_without_disclosed_amount",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-X_IFRS_DIVIDENDS_RECEIVED_IN_INVESTING",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "investing",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
+       "item_definitions": {
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts",
+       "capex_lease_treatment": "excludes_lease_payments_and_rou_additions"
+      },
+      "items": {
+       "lease_principal_payments": 50,
+       "cfo": 870,
+       "payments_for_ppe": 400,
+       "payments_for_exploration_intangibles": 20
+      }
+     },
+     "b": {
+      "label": "fcf_y_ifrs_dividends_received_in_operating",
+      "synthetic": "SYNTHETIC: invented test values, not company data",
+      "meta": {
+       "company": "SYNTH-Y_IFRS_DIVIDENDS_RECEIVED_IN_OPERATING",
+       "accounting_basis": "IFRS",
+       "currency": "USD",
+       "period": {
+        "kind": "FY",
+        "start": "2030-01-01",
+        "end": "2030-12-31",
+        "standalone": true
+       },
+       "consolidation": "consolidated",
+       "restated_latest": true,
+       "source_ids": [
+        "SYNTH-SRC-1"
+       ],
+       "input_status": "SYNTHETIC",
+       "interest_paid_classification": "operating",
+       "dividends_received_classification": "operating",
+       "dividends_paid_classification": "financing",
+       "interest_received_classification": "operating",
+       "lease_principal_classification": "financing",
+       "lease_interest_classification": "operating",
+       "item_definitions": {
+        "lease_principal_payments": "ifrs16_lease_principal_payments_classified_in_financing",
+        "cfo": "net_cash_from_operating_activities_as_reported",
+        "payments_for_ppe": "cash_payments_for_ppe",
+        "payments_for_exploration_intangibles": "cash_payments_for_capitalised_exploration_and_intangibles"
+       },
+       "capex_acquisitions_classification": "separately_disclosed",
+       "investments_classification": "separately_disclosed",
+       "e_and_e_method": "successful_efforts",
+       "capex_lease_treatment": "excludes_lease_payments_and_rou_additions"
+      },
+      "items": {
+       "lease_principal_payments": 50,
+       "cfo": 900,
        "payments_for_ppe": 400,
        "payments_for_exploration_intangibles": 20
       }
@@ -1984,6 +2283,7 @@
    ],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -2179,6 +2479,7 @@
    ],
    "policy_requirements": {},
    "requires_balance_dates": true,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -2382,6 +2683,7 @@
    ],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -2548,6 +2850,7 @@
     "include_equity_affiliates": "boolean"
    },
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "Synthetic factor in examples only; the policy value is decision D6.",
    "examples": [
     {
@@ -2680,6 +2983,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "not_reconcilable",
    "examples": [
     {
@@ -2774,6 +3078,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "",
    "examples": [
     {
@@ -2895,6 +3200,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "not_reconcilable",
    "examples": [
     {
@@ -2974,6 +3280,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "not_reconcilable",
    "examples": [
     {
@@ -3054,6 +3361,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "out_of_scope",
    "examples": [
     {
@@ -3133,6 +3441,7 @@
    "guards": [],
    "policy_requirements": {},
    "requires_balance_dates": false,
+   "required_definitions_by_basis": {},
    "notes": "not_reconcilable",
    "examples": [
     {

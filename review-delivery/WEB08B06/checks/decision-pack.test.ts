@@ -186,6 +186,39 @@ describe("no regression in closed R01, R03, R04", () => {
   });
 });
 
+describe("no unneeded change to closed or non-executable delivery files", () => {
+  const PREVIOUS_DELIVERY = "cc5c92c8e3197c01880041c024c7584844d7d664";
+  test("earlier closure reports, logs, R05-A outputs and unrelated tools are byte-identical to the previous delivery", () => {
+    const listed = git(
+      "ls-tree",
+      "-r",
+      "--name-only",
+      PREVIOUS_DELIVERY,
+      "review-delivery/WEB08B06/test-logs",
+    )
+      .toString()
+      .trim()
+      .split("\n");
+    const files = [
+      ...listed.map((f) => f.replace("review-delivery/WEB08B06/", "")),
+      "B06-0-R01-R05-CLOSURE_AR.md",
+      "B06-0-R02A-R02B-R05A-CLOSURE_AR.md",
+      "TRACKING-EVENT-CORRECTIONS.json",
+      "tools/tracking_audit.py",
+      "tools/registers.py",
+      "tools/matrix.py",
+    ];
+    expect(files.length).toBeGreaterThan(15);
+    for (const f of files) {
+      const before = git("show", `${PREVIOUS_DELIVERY}:review-delivery/WEB08B06/${f}`);
+      expect({ f, same: readFileSync(join(DIR, f)).equals(Buffer.from(before)) }).toEqual({
+        f,
+        same: true,
+      });
+    }
+  });
+});
+
 describe("no personal data or secrets in the package", () => {
   const files = (d: string): string[] =>
     readdirSync(d).flatMap((f) =>

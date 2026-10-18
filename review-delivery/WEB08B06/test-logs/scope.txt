@@ -1,0 +1,16 @@
+# scope @ 50502951288ac32de6285e4bed0185f4460c548c
+files changed 17b870c..50502951288ac32de6285e4bed0185f4460c548c:
+   product-tracking/CHANGELOG.jsonl                   |    2 +
+   .../WEB08B06/COMPARABILITY-RECIPES.json            | 2426 ++++++++++++++++++++
+   review-delivery/WEB08B06/DECISION-REGISTER.json    |  149 ++
+   review-delivery/WEB08B06/PEER-CANDIDATES.json      |  520 +++++
+   review-delivery/WEB08B06/SOURCE-RIGHTS-MATRIX.json | 1987 ++++++++++++----
+   .../WEB08B06/TRACKING-EVENT-CORRECTIONS.json       | 1996 ++++++++++++++++
+   .../WEB-08B06-INDUSTRY-PEERS-RIGHTS-DECISION_AR.md |   58 +-
+   .../WEB08B06/checks/decision-pack.test.ts          |  425 ++++
+   review-delivery/WEB08B06/tools/matrix.py           |  183 ++
+   review-delivery/WEB08B06/tools/recipes.py          |  420 ++++
+   review-delivery/WEB08B06/tools/registers.py        |  175 ++
+   11 files changed, 7853 insertions(+), 488 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+CHANGELOG prefix preserved vs 17b870c: True 46903 49106

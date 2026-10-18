@@ -1,0 +1,813 @@
+{
+ "meta": {
+  "company_id": "sa:2222",
+  "contract": "engine b70254e config/factory/18-category-contract.json 1.0.0 (sha256 a229596a...)",
+  "measured_at": "2026-10-18T18:03:31.274163+00:00",
+  "engine_total_score": "56.56374569234910209031614016",
+  "readiness_state": "not_ready",
+  "sector_pack": null,
+  "blocking_reasons": [
+   "weighted_coverage_95",
+   "category_threshold:company_profile",
+   "category_threshold:financial_statements",
+   "hard_gate_failed:financial_statements:1",
+   "category_threshold:profitability",
+   "category_threshold:liquidity_solvency",
+   "category_threshold:efficiency",
+   "category_threshold:growth",
+   "category_threshold:valuation",
+   "category_threshold:market_data",
+   "hard_gate_failed:market_data:1",
+   "category_threshold:dividends",
+   "category_threshold:segments",
+   "category_threshold:ownership",
+   "category_threshold:corporate_actions",
+   "category_threshold:announcements",
+   "category_threshold:operational_kpis",
+   "category_threshold:sector_specific_fields",
+   "hard_gate_evaluator_required:sector_specific_fields",
+   "category_threshold:calculated_smart_metrics",
+   "hard_gate_failed:sources_lineage_freshness:2"
+  ],
+  "class_legend": {
+   "A": "issuer document or archive (extraction or mapping)",
+   "B": "computed from engine inputs (no network)",
+   "C": "licensed or authorised feed / rights decision",
+   "D": "candidate for a reviewed exclusion under the contract's own rules (needs approval)",
+   "H": "needs FY2016 audited history and FY2026 results (10-year CAGR)"
+  },
+  "classification_note": "Classes are a planning classification for review, not a contract decision."
+ },
+ "categories": [
+  {
+   "category_key": "company_profile",
+   "weight": 8.0,
+   "threshold": 0.85,
+   "field_groups_contract": [
+    "company_model",
+    "governance_profile",
+    "industry_context"
+   ],
+   "field_groups_measured": [
+    "company_model",
+    "governance_profile",
+    "industry_context"
+   ],
+   "engine_score": 0.5517241379310345,
+   "weighted_score": 4.413793103448276,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "company_profile:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "hero, description, business facts, governance facts",
+    "investor": "topics 1-3, 10",
+    "data": "business tab"
+   },
+   "to_close": "Extract governance_profile (15) and industry_context (6) from the archived FY2025 annual report (requires_review); add business_model, investor_contact_email, lei; render the 13 present-but-unrendered profile fields.",
+   "expected": 58,
+   "engine_present": 32,
+   "missing": 26,
+   "shown": 19,
+   "withheld": 0,
+   "present_not_rendered": 13,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 24,
+    "B": 0,
+    "C": 1,
+    "D": 1,
+    "H": 0
+   },
+   "site_shown_coverage": 0.3275862068965517
+  },
+  {
+   "category_key": "financial_statements",
+   "weight": 14.0,
+   "threshold": 0.95,
+   "field_groups_contract": [
+    "income_statement",
+    "balance_sheet",
+    "cash_flow",
+    "financial_notes"
+   ],
+   "field_groups_measured": [
+    "income_statement",
+    "balance_sheet",
+    "cash_flow",
+    "financial_notes"
+   ],
+   "engine_score": 0.7874015748031497,
+   "weighted_score": 11.023622047244094,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "financial_statements:1",
+     "status": "failed"
+    },
+    {
+     "id": "financial_statements:2",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "6 key figures",
+    "investor": "topic 5 statements and key figures",
+    "data": "statement explorer FY2021-FY2025, Q1-Q2 2026, H1 2026"
+   },
+   "to_close": "Ingest B02's 142 inputs with immutable engine references; add 10 quarterly periods (Q1 2023-Q4 2025) for gate financial_statements:1; map the 49 missing statement and note lines (zakat, cash equivalents, G&A, interest...); render the 169 present-but-unrendered lines in the explorer.",
+   "expected": 254,
+   "engine_present": 200,
+   "missing": 54,
+   "shown": 26,
+   "withheld": 5,
+   "present_not_rendered": 169,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 49,
+    "B": 3,
+    "C": 0,
+    "D": 2,
+    "H": 0
+   },
+   "site_shown_coverage": 0.10236220472440945
+  },
+  {
+   "category_key": "profitability",
+   "weight": 6.0,
+   "threshold": 0.85,
+   "field_groups_contract": [
+    "profitability"
+   ],
+   "field_groups_measured": [
+    "profitability"
+   ],
+   "engine_score": 0.6521739130434783,
+   "weighted_score": 3.9130434782608696,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "profitability:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "-",
+    "investor": "topic 7 (ROACE shown; margins and returns withheld)",
+    "data": "explorer ratio rows (withheld)"
+   },
+   "to_close": "Compute 8 ratios (ROIC, ROCE, gross margin needs cost_of_revenue definition...) from qualified inputs; release withheld ratios only after lineage reproduces inputs.",
+   "expected": 23,
+   "engine_present": 15,
+   "missing": 8,
+   "shown": 1,
+   "withheld": 9,
+   "present_not_rendered": 5,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 8,
+    "C": 0,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.043478260869565216
+  },
+  {
+   "category_key": "liquidity_solvency",
+   "weight": 5.0,
+   "threshold": 0.9,
+   "field_groups_contract": [
+    "liquidity_solvency"
+   ],
+   "field_groups_measured": [
+    "liquidity_solvency"
+   ],
+   "engine_score": 0.85,
+   "weighted_score": 4.25,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "liquidity_solvency:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "-",
+    "investor": "topic 7 (withheld)",
+    "data": "explorer (withheld)"
+   },
+   "to_close": "Compute 3 coverage ratios; render the 12 present ratios once lineage is reproduced.",
+   "expected": 20,
+   "engine_present": 17,
+   "missing": 3,
+   "shown": 0,
+   "withheld": 5,
+   "present_not_rendered": 12,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 3,
+    "C": 0,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.0
+  },
+  {
+   "category_key": "efficiency",
+   "weight": 4.0,
+   "threshold": 0.85,
+   "field_groups_contract": [
+    "efficiency"
+   ],
+   "field_groups_measured": [
+    "efficiency"
+   ],
+   "engine_score": 0.5294117647058824,
+   "weighted_score": 2.1176470588235294,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "efficiency:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "-",
+    "investor": "topic 7 (withheld)",
+    "data": "explorer (withheld)"
+   },
+   "to_close": "Compute 8 turnover/days ratios from inventory, payables and revenue.",
+   "expected": 17,
+   "engine_present": 9,
+   "missing": 8,
+   "shown": 0,
+   "withheld": 3,
+   "present_not_rendered": 6,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 8,
+    "C": 0,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.0
+  },
+  {
+   "category_key": "growth",
+   "weight": 5.0,
+   "threshold": 0.8,
+   "field_groups_contract": [
+    "growth"
+   ],
+   "field_groups_measured": [
+    "growth"
+   ],
+   "engine_score": 0.42857142857142855,
+   "weighted_score": 2.142857142857143,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "growth:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "-",
+    "investor": "topic 7 (withheld)",
+    "data": "explorer (withheld)"
+   },
+   "to_close": "Compute 20 growth series from the qualified quarterly history (needs the 12 quarters).",
+   "expected": 35,
+   "engine_present": 15,
+   "missing": 20,
+   "shown": 0,
+   "withheld": 6,
+   "present_not_rendered": 9,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 20,
+    "C": 0,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.0
+  },
+  {
+   "category_key": "per_share",
+   "weight": 3.0,
+   "threshold": 0.9,
+   "field_groups_contract": [
+    "per_share"
+   ],
+   "field_groups_measured": [
+    "per_share"
+   ],
+   "engine_score": 1.0,
+   "weighted_score": 3.0,
+   "status": "complete",
+   "hard_gates": [
+    {
+     "id": "per_share:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "dividend per share",
+    "investor": "topics 5, 9 (EPS withheld)",
+    "data": "explorer DPS row; EPS withheld"
+   },
+   "to_close": "Already 13/13 in the engine; release EPS (quarantined) and render the other 12 per-share fields.",
+   "expected": 13,
+   "engine_present": 13,
+   "missing": 0,
+   "shown": 1,
+   "withheld": 0,
+   "present_not_rendered": 12,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.07692307692307693
+  },
+  {
+   "category_key": "valuation",
+   "weight": 6.0,
+   "threshold": 0.8,
+   "field_groups_contract": [
+    "valuation",
+    "consensus"
+   ],
+   "field_groups_measured": [
+    "valuation",
+    "consensus"
+   ],
+   "engine_score": 0.4838709677419355,
+   "weighted_score": 2.903225806451613,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "valuation:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "'not available' block",
+    "investor": "topic 15 not available",
+    "data": "market tab: not available"
+   },
+   "to_close": "6 fields from the dated close (cfo_yield, EV/FCF...); 10 need a price-history or consensus licence (D9).",
+   "expected": 31,
+   "engine_present": 15,
+   "missing": 16,
+   "shown": 0,
+   "withheld": 0,
+   "present_not_rendered": 15,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 6,
+    "C": 10,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.0
+  },
+  {
+   "category_key": "market_data",
+   "weight": 5.0,
+   "threshold": 0.85,
+   "field_groups_contract": [
+    "market_data"
+   ],
+   "field_groups_measured": [
+    "market_data"
+   ],
+   "engine_score": 0.2692307692307692,
+   "weighted_score": 1.3461538461538463,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "market_data:1",
+     "status": "failed"
+    }
+   ],
+   "pages": {
+    "overview": "last close 2026-09-03 (not live)",
+    "investor": "topic 12 last close + partial history",
+    "data": "market tab"
+   },
+   "to_close": "Authorised exchange feed (D9 / rights matrix) for 19 fields and the 5-trading-day freshness gate; no scraping of the excluded Tadawul site.",
+   "expected": 26,
+   "engine_present": 7,
+   "missing": 19,
+   "shown": 1,
+   "withheld": 0,
+   "present_not_rendered": 6,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 0,
+    "C": 19,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.038461538461538464
+  },
+  {
+   "category_key": "dividends",
+   "weight": 5.0,
+   "threshold": 0.9,
+   "field_groups_contract": [
+    "dividends"
+   ],
+   "field_groups_measured": [
+    "dividends"
+   ],
+   "engine_score": 0.2,
+   "weighted_score": 1.0,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "dividends:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "DPS and dividends paid; payout and CAGR withheld",
+    "investor": "topic 9",
+    "data": "shareholders tab"
+   },
+   "to_close": "Compute 15 dividend metrics from DPS history and B03's dividend records; special_dividend by reviewed event_not_observed.",
+   "expected": 20,
+   "engine_present": 4,
+   "missing": 16,
+   "shown": 0,
+   "withheld": 1,
+   "present_not_rendered": 3,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 15,
+    "C": 0,
+    "D": 1,
+    "H": 0
+   },
+   "site_shown_coverage": 0.0
+  },
+  {
+   "category_key": "segments",
+   "weight": 4.0,
+   "threshold": 0.75,
+   "field_groups_contract": [
+    "segments",
+    "commercial_pipeline"
+   ],
+   "field_groups_measured": [
+    "segments",
+    "commercial_pipeline"
+   ],
+   "engine_score": 0.5333333333333333,
+   "weighted_score": 2.1333333333333333,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "segments:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "revenue by product and geography (FY2025)",
+    "investor": "topic 2 segment tables",
+    "data": "business tab"
+   },
+   "to_close": "Map the dimensional revenue rows already shown on the site to refined_products_revenue / chemicals_revenue (mapping, not re-extraction); extract segment assets, liabilities, impairment, operating income; commercial-pipeline fields by reviewed not_applicable.",
+   "expected": 45,
+   "engine_present": 24,
+   "missing": 21,
+   "shown": 4,
+   "withheld": 0,
+   "present_not_rendered": 20,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 13,
+    "B": 0,
+    "C": 0,
+    "D": 8,
+    "H": 0
+   },
+   "site_shown_coverage": 0.08888888888888889
+  },
+  {
+   "category_key": "ownership",
+   "weight": 5.0,
+   "threshold": 0.85,
+   "field_groups_contract": [
+    "ownership"
+   ],
+   "field_groups_measured": [
+    "ownership"
+   ],
+   "engine_score": 0.3333333333333333,
+   "weighted_score": 1.6666666666666667,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "ownership:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "top 4 holder groups (2025-12-31)",
+    "investor": "topic 4",
+    "data": "shareholders tab"
+   },
+   "to_close": "Insider, strategic and concentration fields from the annual report (6); foreign/QFI/retail counts need an authorised Tadawul ownership source (6).",
+   "expected": 18,
+   "engine_present": 6,
+   "missing": 12,
+   "shown": 3,
+   "withheld": 0,
+   "present_not_rendered": 3,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 6,
+    "B": 0,
+    "C": 6,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.16666666666666666
+  },
+  {
+   "category_key": "corporate_actions",
+   "weight": 4.0,
+   "threshold": 0.9,
+   "field_groups_contract": [
+    "corporate_actions"
+   ],
+   "field_groups_measured": [
+    "corporate_actions"
+   ],
+   "engine_score": 0.2857142857142857,
+   "weighted_score": 1.1428571428571428,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "corporate_actions:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "latest 4 of 8 actions",
+    "investor": "topic 9 action list",
+    "data": "shareholders tab"
+   },
+   "to_close": "Bind B03's 11 dividend/bonus/buyback records with announcement ids; event fields that never occurred (stock_split, merger...) by reviewed event_not_observed (12).",
+   "expected": 21,
+   "engine_present": 6,
+   "missing": 15,
+   "shown": 5,
+   "withheld": 0,
+   "present_not_rendered": 1,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 3,
+    "B": 0,
+    "C": 0,
+    "D": 12,
+    "H": 0
+   },
+   "site_shown_coverage": 0.23809523809523808
+  },
+  {
+   "category_key": "announcements",
+   "weight": 5.0,
+   "threshold": 0.8,
+   "field_groups_contract": [
+    "disclosures"
+   ],
+   "field_groups_measured": [
+    "disclosures"
+   ],
+   "engine_score": 0.2857142857142857,
+   "weighted_score": 1.4285714285714286,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "announcements:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "latest 5 of 40 documents",
+    "investor": "topic 18 (15 of 40 visible)",
+    "data": "risks tab"
+   },
+   "to_close": "Add disclosure schema fields (id, date, titles AR/EN, category, flags) to the 15 engine disclosures and B03's 9 documents; trailing-180-day polling.",
+   "expected": 28,
+   "engine_present": 8,
+   "missing": 20,
+   "shown": 8,
+   "withheld": 0,
+   "present_not_rendered": 0,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 18,
+    "B": 0,
+    "C": 0,
+    "D": 2,
+    "H": 0
+   },
+   "site_shown_coverage": 0.2857142857142857
+  },
+  {
+   "category_key": "operational_kpis",
+   "weight": 7.0,
+   "threshold": 0.85,
+   "field_groups_contract": [
+    "oil_gas_operations",
+    "chemical_operations",
+    "telecommunications",
+    "utilities",
+    "mining",
+    "retail",
+    "healthcare",
+    "transportation_logistics",
+    "industrial_construction",
+    "technology",
+    "food_agriculture",
+    "asset_management"
+   ],
+   "field_groups_measured": [
+    "oil_gas_operations"
+   ],
+   "engine_score": 0.6739130434782609,
+   "weighted_score": 4.717391304347826,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "operational_kpis:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "7 operating indicators + ESG",
+    "investor": "topics 8, 17",
+    "data": "business and risks tabs"
+   },
+   "to_close": "Extract 12 oil and gas KPIs (crude, condensate, NGL production, refinery throughput, realised gas price...) from the annual report and quarterly reports; 3 by reviewed not_disclosed.",
+   "expected": 46,
+   "engine_present": 31,
+   "missing": 15,
+   "shown": 15,
+   "withheld": 1,
+   "present_not_rendered": 15,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 12,
+    "B": 0,
+    "C": 0,
+    "D": 3,
+    "H": 0
+   },
+   "site_shown_coverage": 0.32608695652173914
+  },
+  {
+   "category_key": "sector_specific_fields",
+   "weight": 7.0,
+   "threshold": 0.9,
+   "field_groups_contract": [
+    "banking",
+    "insurance",
+    "real_estate",
+    "segments"
+   ],
+   "field_groups_measured": [
+    "segments"
+   ],
+   "engine_score": 0.71875,
+   "weighted_score": 5.03125,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "sector_specific_fields:1",
+     "status": "not_evaluated"
+    }
+   ],
+   "pages": {
+    "overview": "segment tables (shared with segments)",
+    "investor": "topic 2",
+    "data": "business tab"
+   },
+   "to_close": "Same 9 segment fields as above (shared group); an approved oil and gas sector pack so gate sector_specific_fields:1 can be evaluated.",
+   "expected": 32,
+   "engine_present": 23,
+   "missing": 9,
+   "shown": 4,
+   "withheld": 0,
+   "present_not_rendered": 19,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 9,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "H": 0
+   },
+   "site_shown_coverage": 0.125
+  },
+  {
+   "category_key": "calculated_smart_metrics",
+   "weight": 5.0,
+   "threshold": 0.9,
+   "field_groups_contract": [
+    "investor_analytics"
+   ],
+   "field_groups_measured": [
+    "investor_analytics"
+   ],
+   "engine_score": 0.4666666666666667,
+   "weighted_score": 2.3333333333333335,
+   "status": "partial",
+   "hard_gates": [
+    {
+     "id": "calculated_smart_metrics:1",
+     "status": "passed"
+    }
+   ],
+   "pages": {
+    "overview": "-",
+    "investor": "topic 7 CAGRs (withheld)",
+    "data": "explorer (withheld)"
+   },
+   "to_close": "Compute Beneish M and 10-year CAGRs once FY2016 audited data and FY2026 results exist; 8 price-based fields need the market feed.",
+   "expected": 30,
+   "engine_present": 14,
+   "missing": 16,
+   "shown": 0,
+   "withheld": 3,
+   "present_not_rendered": 11,
+   "qualified_approved": 0,
+   "missing_by_class": {
+    "A": 0,
+    "B": 2,
+    "C": 8,
+    "D": 0,
+    "H": 6
+   },
+   "site_shown_coverage": 0.0
+  },
+  {
+   "category_key": "sources_lineage_freshness",
+   "weight": 2.0,
+   "threshold": 1.0,
+   "field_groups_contract": [
+    "*cross_cutting*"
+   ],
+   "field_groups_measured": [],
+   "engine_score": 1.0,
+   "weighted_score": 2.0,
+   "status": "complete",
+   "hard_gates": [
+    {
+     "id": "sources_lineage_freshness:1",
+     "status": "passed"
+    },
+    {
+     "id": "sources_lineage_freshness:2",
+     "status": "failed"
+    }
+   ],
+   "pages": {
+    "overview": "source links per cell; no freshness state",
+    "investor": "proof per cell",
+    "data": "coverage tab: contract only, 'not assessed'"
+   },
+   "to_close": "Refresh evidence for the 10 stale categories (gate :2); keep the five-field provenance on every new fact.",
+   "expected": null,
+   "engine_present": null,
+   "missing": null,
+   "shown": null,
+   "withheld": null,
+   "present_not_rendered": null,
+   "qualified_approved": 0,
+   "evidence": {
+    "source_documents": 25,
+    "documents_with_url_hash_filing_and_retrieval_time": 25,
+    "facts_with_page_or_table_reference": 626,
+    "strict_five_field_provenance_certified": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+# scope @ b3111cedbeb93d7bb7961822e2a95d85ff11b499
+   product-tracking/CHANGELOG.jsonl                   |   1 +
+   review-delivery/WEB08B06/COMPATIBILITY-MAP.json    |  30 ++-
+   .../WEB08B06/checks/comparability.test.ts          | 215 +++++++++++++++++++--
+   review-delivery/WEB08B06/checks/evaluator.ts       |  18 +-
+   review-delivery/WEB08B06/tools/recipes.py          |  13 +-
+   5 files changed, 257 insertions(+), 20 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+COMPARABILITY-RECIPES.json changed since c1fa05a: 0
+closed R01/R03/R04/R05-A files changed since c1fa05a: 0
+earlier closure reports and logs changed since 1f140dd: 0
+except Exception / bare except in recipes.py: 0

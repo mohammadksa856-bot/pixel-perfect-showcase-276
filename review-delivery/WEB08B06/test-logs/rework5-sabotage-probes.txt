@@ -1,0 +1,9 @@
+# sabotage probes @ b3111cedbeb93d7bb7961822e2a95d85ff11b499 (files restored after each)
+python: input bound removed -> 3fail
+python: intermediate bound removed -> 1fail
+typescript: input bound removed -> 23fail
+typescript: intermediate bound removed -> 3fail
+typescript: bound loosened to 2**53 -> 9fail
+python: bound checked after float conversion (equivalent for integers: rounding is monotonic and 2**53 is exact) -> 0fail
+ 738 pass
+ 0 fail

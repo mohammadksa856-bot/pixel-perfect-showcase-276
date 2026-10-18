@@ -2174,6 +2174,12 @@ describe("event 119 R02-F: a denominator is checked on its exact value before an
       DEN,
     ],
     [
+      "gearing: exact denominator +0.000001 whose double is 0 (exact and double disagree)",
+      "M08",
+      gearing("7563464692.609525", "5284209856.297924", "5531056621.794364", "-7316617927.113084"),
+      NC("precision_not_guaranteed:gearing"),
+    ],
+    [
       "gearing: zero numerator over a positive denominator",
       "M08",
       gearing("0.1", "0.2", "0.3", "1"),
@@ -2341,6 +2347,11 @@ describe("event 119 R02-G: external JSON files are evaluated only through the ra
       const d = fresh();
       const r = run(d, args);
       expect({ args, exit: r.exit, out: r.out }).toEqual({ args, exit: 1, out: "" });
+      expect({
+        args,
+        clean: r.err.startsWith("usage:") || r.err.startsWith("recipes.py:"),
+      }).toEqual({ args, clean: true });
+      expect(r.err).not.toContain("Traceback");
       expect({ args, written: readdirSync(d) }).toEqual({ args, written: [] });
     }
     expect(recipesSha()).toBe(before);
@@ -2364,6 +2375,12 @@ describe("event 119 R02-G: external JSON files are evaluated only through the ra
       const d = fresh();
       const r = run(d, ["--evaluate-raw", put(d, "cases.json", body)]);
       expect({ name, exit: r.exit, out: r.out }).toEqual({ name, exit: 1, out: "" });
+      // a controlled refusal with a message, not a crash
+      expect({
+        name,
+        err: r.err.startsWith("recipes.py:"),
+        tb: r.err.includes("Traceback"),
+      }).toEqual({ name, err: true, tb: false });
     }
   });
   test("pairs: every pair example gives its recorded result through the raw pair path, in TypeScript and Python", () => {

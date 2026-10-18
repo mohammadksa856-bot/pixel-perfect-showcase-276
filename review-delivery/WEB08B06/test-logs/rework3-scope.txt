@@ -1,0 +1,16 @@
+# scope @ 8635c27ecf7c882395613f96129b17e391f00226
+files changed cc5c92c..8635c27ecf7c882395613f96129b17e391f00226:
+   product-tracking/CHANGELOG.jsonl                   |   1 +
+   .../WEB08B06/COMPARABILITY-RECIPES.json            | 485 +++++++++++---
+   review-delivery/WEB08B06/COMPATIBILITY-MAP.json    |  86 +++
+   .../WEB08B06/checks/comparability.test.ts          | 696 ++++++++++++++++++---
+   .../WEB08B06/checks/decision-pack.test.ts          |  33 +
+   review-delivery/WEB08B06/checks/evaluator.ts       |  71 ++-
+   review-delivery/WEB08B06/checks/tracking.test.ts   |   3 +-
+   review-delivery/WEB08B06/tools/recipes.py          | 188 ++++--
+   8 files changed, 1326 insertions(+), 237 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+closed R01/R03/R04 files changed since 5050295: 0
+closed R05-A files changed since a267e0c: 0
+earlier closure reports and logs changed since cc5c92c: 0
+CHANGELOG prefix vs cc5c92c preserved: True

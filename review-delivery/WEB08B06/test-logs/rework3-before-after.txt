@@ -1,0 +1,41 @@
+# cases of implementation evaluated by the evaluator of a267e0c (recipes/2)
+cases: 672
+
+[R02-B]
+  rejected as expected: 12   e.g. ['R02-B dividends received in investing without disclosed amount', 'R02-B dividends received move line while already operating', 'R02-B dividends paid in operating without amount', 'R02-B dividends paid add-back while already financing']
+
+[R02-C]
+  rejected (expected pass under the new contract): 50   e.g. ['R02-C CFO IFRS interest=operating divRec=operating divPaid=financing', 'R02-C CFO pair vs base: IFRS interest=operating divRec=operating divPaid=financing', 'R02-C FCF IFRS interest=operating divRec=operating divPaid=financing', 'R02-C lease deducted once (CFO) IFRS interest=operating divRec=operating divPaid=financing']
+  rejected as expected: 16   e.g. ['R02-C IFRS lease principal classification missing', 'R02-C IFRS lease principal in operating has no recipe', 'R02-C IFRS lease interest classification missing', 'R02-C IFRS lease interest placed apart from other interest']
+
+[R02-D]
+  accepted although it must be rejected: 12   e.g. ['R02-D M01 policy null', 'R02-D M01 policy array', 'R02-D M01 policy string', 'R02-D M01 policy number']
+  exception (unhandled): 62   e.g. ['R02-D M01 example null', 'R02-D M01 example array', 'R02-D M01 example string', 'R02-D M01 example number']
+  rejected as expected: 86   e.g. ['R02-D M01 items array', 'R02-D M01 items string', 'R02-D M01 meta.period null', 'R02-D M01 meta.period array']
+
+[R02-E]
+  accepted although it must be rejected: 6   e.g. ['R02-E addition overflow', 'R02-E multiplication overflow', 'R02-E division overflow', 'R02-E ratio overflow']
+  passed (value not compared: output keys changed): 1   e.g. ['R02-E large finite value is accepted unchanged']
+  rejected as expected: 11   e.g. ['R02-E M06 input Infinity', 'R02-E M01 FX rate Infinity', 'R02-E M11 policy factor Infinity', 'R02-E M06 input -Infinity']
+
+[earlier R02-A/B families]
+  accepted although it must be rejected: 4   e.g. ['M06 capex_lease_treatment missing', 'M06 capex_lease_treatment null', 'M06 capex_lease_treatment unlisted', 'M06 capex_lease_treatment wrong type']
+  rejected as expected: 412   e.g. ['M06 acquisitions classification missing', 'M06 acquisitions combined with PP&E', 'M06 investments classification missing', 'M06 investments not separable']
+
+note: R02-C must-pass cases are rejected by a267e0c only because item-definition ids were renamed in recipes/3; the next section removes that effect.
+
+# R02-C/R02-B cases re-evaluated by the a267e0c evaluator after mapping renamed item-definition ids back to their recipes/2 ids
+# (isolates behaviour from the renaming; values compared on the shared arithmetic)
+cases: 78; must-pass cases also passing under a267e0c: 50
+accepted by a267e0c although they must be rejected: 11
+  - R02-C IFRS lease principal classification missing
+  - R02-C IFRS lease principal in operating has no recipe
+  - R02-C IFRS lease interest classification missing
+  - R02-C IFRS lease interest placed apart from other interest
+  - R02-C US GAAP operating-lease placement missing
+  - R02-C US GAAP finance-lease principal not in financing
+  - R02-C US GAAP finance-lease interest placement missing
+  - R02-C double deduction: separate lease-interest line is not recognised
+  - R02-C FCF capex lease treatment missing
+  - R02-C FCF capex including right-of-use additions
+  - R02-C FCF with a lease line on the capex side is not recognised

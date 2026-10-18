@@ -1,0 +1,13 @@
+# sabotage probes @ 8635c27ecf7c882395613f96129b17e391f00226 (each planted weakening must fail the checks; files restored after each)
+FCF deducts lease principal a second time -> 20fail
+FCF built on reported CFO -> 21fail
+lease placements no longer required -> 7fail
+IFRS lease principal not moved -> 52fail
+evaluator: input shape check removed -> 128fail
+evaluator: finite check removed -> 10fail
+evaluator: unrecognised items accepted -> 3fail
+python evaluator: finite check removed (parity) -> 1fail
+evaluator: unknown recipe id no longer a fault -> 1fail
+closed R05-A output touched -> 1fail
+ 701 pass
+ 0 fail

@@ -2,6 +2,11 @@
   "schema": "independent-review-manifest/1",
   "files": [
     {
+      "path": "CENTRAL-TRACKING-RECEIPT.json",
+      "sha256": "316c81a423430093b09ff3d0c5ec1addec75dbedbee66ffbe526bf62547d55ed",
+      "bytes": 1970
+    },
+    {
       "path": "finalize.py",
       "sha256": "3c70549595ef8ae5093c10f3df6f68bce293c6b0a0d8f280c479835d13f63add",
       "bytes": 3346
@@ -150,6 +155,11 @@
       "path": "scope_audit.py",
       "sha256": "d07a63525d1af2f7d0f0e7b1a072a70f0ca50dff750d07d79b68b72ba7498456",
       "bytes": 3832
+    },
+    {
+      "path": "verify_manifest.py",
+      "sha256": "94d343f3d6fb084561c8ff52cc74dafe253d09d3f84d24714f8671814d36b9df",
+      "bytes": 894
     }
   ]
 }

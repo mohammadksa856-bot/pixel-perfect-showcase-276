@@ -6,11 +6,29 @@
    "type": "source_hash_mismatch",
    "status": "OPEN",
    "records": [
+    "FQ01-OBS-001",
+    "FQ01-OBS-004",
+    "FQ01-OBS-006",
     "FQ01-OBS-051",
+    "FQ01-OBS-053",
     "FQ01-OBS-058"
    ],
    "handoff_note": "the same import is the engine source of the 19 company_model attributes (Codex non-financial scope); recorded here only as information",
-   "finding": "data/imports/aramco-2025-annual-metrics.json is registered in the engine under its version at commit 42bd5c4 (2026-09-04); on 2026-09-15 (6a64063) three unrelated facts were added and the file was never re-registered.",
+   "finding": "data/imports/aramco-2025-annual-metrics.json is registered in the engine under its version at commit 42bd5c4 (2026-09-04); on 2026-09-15 (6a64063) three unrelated facts were added and the file was never re-registered. In the committed DB this import is the current source of 001/004/006/051/053/058; when the engine opens the DB its current-version repair moves 001/004/006/053 to aramco-2024-fy-comparative.json (hash matches), so the mismatch is a committed-state issue for those four and a both-states issue for 051/058.",
+   "by_state": {
+    "committed": [
+     "FQ01-OBS-001",
+     "FQ01-OBS-004",
+     "FQ01-OBS-006",
+     "FQ01-OBS-051",
+     "FQ01-OBS-053",
+     "FQ01-OBS-058"
+    ],
+    "runtime_repaired": [
+     "FQ01-OBS-051",
+     "FQ01-OBS-058"
+    ]
+   },
    "cause": "import-file version difference (file updated after ingestion). Not a change of source content, not a regenerated file, not a document-link error: the cash and attribute lines are identical in both versions.",
    "evidence": {
     "import_file": "data/imports/aramco-2025-annual-metrics.json",
@@ -73,9 +91,55 @@
     "FQ01-OBS-072"
    ],
    "finding": "at 2025-12-31 balance-sheet cash equals cash-flow ending cash (243,099 on PDF 176 and 178), and note 35 lists EP and ETP, not PRefChem, as held for sale; the PRefChem held-for-sale classification is a 2026 event",
-   "needed": "H1-2026 interim report (sha256 4773cfe4…): balance sheet PDF 29, cash flows PDF 31, note 16(a) PDF 42, to rebuild balance-sheet cash vs ending cash including cash held for sale",
+   "independent_evidence": {
+    "reported_by": "Codex",
+    "commit": "7d65277df4dc25b9755520b871d0bfcfbf63c281",
+    "file": "review-delivery/ARAMCO95/QB1/INDEPENDENT-SOURCE-CHECKS/FIN-SOURCE-CROSSCHECK.json",
+    "later_review_not_accessible_here": "3a10d2b3fd8c92b72c9bb79f647e092783a27462 (local to Codex, not on the remote)",
+    "document": {
+     "key": "H1-Q2-2026",
+     "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+     "sha256_equals_b02_register": true
+    },
+    "unit": "SAR_millions",
+    "period_end": "2026-06-30",
+    "components": [
+     {
+      "name": "balance-sheet cash and cash equivalents",
+      "sar_millions": 167387,
+      "pdf_page": 29,
+      "statement": "condensed consolidated balance sheet",
+      "definition": "consolidated cash and cash equivalents excluding cash held in the PRefChem disposal group",
+      "engine_row_equals": "FQ01-OBS-072 (data point 2885)"
+     },
+     {
+      "name": "PRefChem cash and cash equivalents classified as held for sale",
+      "sar_millions": 3466,
+      "pdf_page": 42,
+      "statement": "note 16(a)",
+      "definition": "Aramco's share of PRefChem (joint operation) cash presented within assets held for sale; B02 OBS-138, comparison NO_APPROVED_METRIC_MAPPING"
+     },
+     {
+      "name": "cash and cash equivalents at end of the period (cash flows)",
+      "sar_millions": 170853,
+      "pdf_page": 31,
+      "statement": "condensed consolidated statement of cash flows",
+      "definition": "ending cash in the cash-flow statement, which includes the held-for-sale cash; a different identity from balance-sheet cash (cash_end, not cash)"
+     }
+    ],
+    "equation": "167387 +3466 =170853",
+    "confirmed_here": [
+     "arithmetic 167,387 + 3,466 = 170,853",
+     "167,387 equals the engine value of FQ01-OBS-072",
+     "B02 reviewed pages 29, 31 and 42 of the same document hash",
+     "the engine holds no cash_end row for 2026-06-30, so 170,853 is not in the engine"
+    ],
+    "not_confirmed_here": "the H1-2026 PDF was not read here; the three source values rest on Codex's review",
+    "scope": "cash identities only; not applied to total equity, net debt or any other metric"
+   },
+   "needed": "an authorised financial reviewer's re-read of H1-2026 PDF 29/31/42, and an approved mapping for cash held for sale (B02 OBS-138)",
    "not_rebuilt_here": true,
-   "blocks": "review of FQ01-OBS-072 only"
+   "blocks": "review of FQ01-OBS-072 only; its other blockers (R6, R7, R8 and the B02 reasons) stay open"
   },
   {
    "id": "R4-equity-specific-evidence",
@@ -96,10 +160,102 @@
    "type": "locator",
    "status": "OPEN",
    "records": [
+    "FQ01-OBS-001",
+    "FQ01-OBS-004",
+    "FQ01-OBS-006",
+    "FQ01-OBS-021",
+    "FQ01-OBS-024",
+    "FQ01-OBS-026",
     "FQ01-OBS-051",
-    "FQ01-OBS-058"
+    "FQ01-OBS-053",
+    "FQ01-OBS-058",
+    "FQ01-OBS-065",
+    "FQ01-OBS-067"
    ],
-   "finding": "the import cites pages 179/180/181 for the balance sheet and cash flows; in the archived PDF they are PDF 176 and 178 (printed 174 and 176)",
+   "finding": "import page claims that differ from the verified page; per record in locator_check. Annual report: the registered annual-metrics import cites 177/179/180/181 where the statements are on PDF 174/176/178. Q1-2026 import: every statement page is one lower than the B02 reviewed page (income 22 vs 23, balance sheet 24 vs 25, cash flows 26 vs 27); the Q2 import carries no page.",
+   "per_record": {
+    "FQ01-OBS-001": {
+     "import_claimed_page": 177,
+     "offset": 3,
+     "verified_page": 174,
+     "verified_by": "read here (pdftotext; pypdf in qb1_fin_check.py)"
+    },
+    "FQ01-OBS-004": {
+     "import_claimed_page": 177,
+     "offset": 3,
+     "verified_page": 174,
+     "verified_by": "read here (pdftotext; pypdf in qb1_fin_check.py)"
+    },
+    "FQ01-OBS-006": {
+     "import_claimed_page": 181,
+     "offset": 3,
+     "verified_page": 178,
+     "verified_by": "read here (pdftotext; pypdf in qb1_fin_check.py)"
+    },
+    "FQ01-OBS-021": {
+     "import_claimed_page": 22,
+     "offset": -1,
+     "verified_page": 23,
+     "verified_by": "B02 REVIEWED-LOCATORS (author visual inspection); the PDF is not accessible here, so this is secondary evidence"
+    },
+    "FQ01-OBS-024": {
+     "import_claimed_page": 22,
+     "offset": -1,
+     "verified_page": 23,
+     "verified_by": "B02 REVIEWED-LOCATORS (author visual inspection); the PDF is not accessible here, so this is secondary evidence"
+    },
+    "FQ01-OBS-026": {
+     "import_claimed_page": 26,
+     "offset": -1,
+     "verified_page": 27,
+     "verified_by": "B02 REVIEWED-LOCATORS (author visual inspection); the PDF is not accessible here, so this is secondary evidence"
+    },
+    "FQ01-OBS-051": {
+     "import_claimed_page": 179,
+     "offset": 3,
+     "verified_page": 176,
+     "verified_by": "read here (pdftotext; pypdf in qb1_fin_check.py)"
+    },
+    "FQ01-OBS-053": {
+     "import_claimed_page": 180,
+     "offset": 4,
+     "verified_page": 176,
+     "verified_by": "read here (pdftotext; pypdf in qb1_fin_check.py)"
+    },
+    "FQ01-OBS-058": {
+     "import_claimed_page": 179,
+     "offset": 3,
+     "verified_page": 176,
+     "verified_by": "read here (pdftotext; pypdf in qb1_fin_check.py)"
+    },
+    "FQ01-OBS-065": {
+     "import_claimed_page": 24,
+     "offset": -1,
+     "verified_page": 25,
+     "verified_by": "B02 REVIEWED-LOCATORS (author visual inspection); the PDF is not accessible here, so this is secondary evidence"
+    },
+    "FQ01-OBS-067": {
+     "import_claimed_page": 24,
+     "offset": -1,
+     "verified_page": 25,
+     "verified_by": "B02 REVIEWED-LOCATORS (author visual inspection); the PDF is not accessible here, so this is secondary evidence"
+    }
+   },
+   "import_page_absent": [
+    "FQ01-OBS-011",
+    "FQ01-OBS-014",
+    "FQ01-OBS-016",
+    "FQ01-OBS-031",
+    "FQ01-OBS-034",
+    "FQ01-OBS-036",
+    "FQ01-OBS-041",
+    "FQ01-OBS-044",
+    "FQ01-OBS-046",
+    "FQ01-OBS-060",
+    "FQ01-OBS-072",
+    "FQ01-OBS-074"
+   ],
+   "rule": "the import file and the engine are not edited; amounts are unaffected",
    "needed": "engine locator correction (separate engine task)",
    "blocks": "qualification"
   },
@@ -201,6 +357,69 @@
     }
    ],
    "previous_version": "a76286c review-delivery/ARAMCO95/FIN-QUAL-BATCH-01.json"
+  },
+  {
+   "batch": "FIN-CORR-01",
+   "authorised_by": "owner decision (cross-review remediation)",
+   "previous_delivery": "92109b7ebf54b4e8b921a9e8cbb97c43a2b50ae2",
+   "cross_review": "0d57c73",
+   "codex_financial_review": "3a10d2b3fd8c92b72c9bb79f647e092783a27462 (not accessible here; its FIN-2 and FIN-3 points are taken from the owner's brief and Codex's committed 7d65277)",
+   "changes": [
+    {
+     "id": "FIN-1",
+     "records": [
+      "FQ01-OBS-001",
+      "FQ01-OBS-004",
+      "FQ01-OBS-006",
+      "FQ01-OBS-053"
+     ],
+     "what": "engine_data_point_id, version and source now from the committed DB opened immutable; the runtime-repaired row is kept in engine_runtime_repaired; R1 extended",
+     "from_to": {
+      "FQ01-OBS-001": [
+       2134,
+       2322
+      ],
+      "FQ01-OBS-004": [
+       2135,
+       2323
+      ],
+      "FQ01-OBS-006": [
+       2139,
+       2325
+      ],
+      "FQ01-OBS-053": [
+       2138,
+       2329
+      ]
+     },
+     "values_changed": false
+    },
+    {
+     "id": "FIN-2",
+     "records": [
+      "FQ01-OBS-065"
+     ],
+     "what": "import page 24 vs B02 reviewed page 25 recorded in locator_check and R5; the same one-page offset found on 021/024/026/067 is recorded too",
+     "values_changed": false
+    },
+    {
+     "id": "FIN-3",
+     "records": [
+      "FQ01-OBS-072"
+     ],
+     "what": "PRefChem bridge components, definitions and pages added to R3 as Codex's evidence, not re-read here",
+     "values_changed": false
+    },
+    {
+     "id": "FIN-4",
+     "records": [
+      "FQ01-OBS-058"
+     ],
+     "what": "lineage recorded: import fact keyed by label 'cash and cash equivalents' -> engine canonicalize -> cash; no cash_end fallback; the claim to the contrary is Codex's (FX-1) and is sent to Codex as a correction",
+     "values_changed": false
+    }
+   ],
+   "not_regenerated": "FIN-QUAL-BATCH-01.json (planning, a76286c) keeps its engine block from the runtime-repaired copy; the ledger is authoritative for engine references"
   }
  ]
 }

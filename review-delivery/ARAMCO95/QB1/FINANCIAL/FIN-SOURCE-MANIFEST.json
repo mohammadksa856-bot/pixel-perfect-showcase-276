@@ -129,6 +129,44 @@
  ],
  "engine_import_files": [
   {
+   "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+   "import_file": "data/imports/aramco-2025-annual-metrics.json",
+   "registered_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+   "current_file_hash": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
+   "hash_matches": false,
+   "registered_at": "2026-09-06 19:20:16",
+   "filing_type": "Annual report supplementary metrics and comparative restatement",
+   "filed_at": "2026-03-09",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+   "registered_hash_found_in_history": {
+    "commit": "42bd5c4",
+    "date": "2026-09-04",
+    "sha256": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f"
+   },
+   "history": [
+    {
+     "commit": "6a64063",
+     "date": "2026-09-15",
+     "sha256": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af"
+    },
+    {
+     "commit": "42bd5c4",
+     "date": "2026-09-04",
+     "sha256": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f"
+    },
+    {
+     "commit": "12406b8",
+     "date": "2026-09-03",
+     "sha256": "3e45120f68cbcb160498f132387e7e786497e102bfcba65b10cd65416756c696"
+    },
+    {
+     "commit": "5acce15",
+     "date": "2026-09-02",
+     "sha256": "01d9408787821496dafd6742ff87df4c36fcd700ab10f862198872f21680e151"
+    }
+   ]
+  },
+  {
    "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
    "import_file": "data/imports/aramco-2024-fy-comparative.json",
    "registered_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
@@ -227,44 +265,6 @@
      "commit": "5acce15",
      "date": "2026-09-02",
      "sha256": "9c7c9cf08a34bc6ea0c19a539da4e7ff8b56e67373677b7917e56f786e75f6e2"
-    }
-   ]
-  },
-  {
-   "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
-   "import_file": "data/imports/aramco-2025-annual-metrics.json",
-   "registered_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
-   "current_file_hash": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
-   "hash_matches": false,
-   "registered_at": "2026-09-06 19:20:16",
-   "filing_type": "Annual report supplementary metrics and comparative restatement",
-   "filed_at": "2026-03-09",
-   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
-   "registered_hash_found_in_history": {
-    "commit": "42bd5c4",
-    "date": "2026-09-04",
-    "sha256": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f"
-   },
-   "history": [
-    {
-     "commit": "6a64063",
-     "date": "2026-09-15",
-     "sha256": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af"
-    },
-    {
-     "commit": "42bd5c4",
-     "date": "2026-09-04",
-     "sha256": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f"
-    },
-    {
-     "commit": "12406b8",
-     "date": "2026-09-03",
-     "sha256": "3e45120f68cbcb160498f132387e7e786497e102bfcba65b10cd65416756c696"
-    },
-    {
-     "commit": "5acce15",
-     "date": "2026-09-02",
-     "sha256": "01d9408787821496dafd6742ff87df4c36fcd700ab10f862198872f21680e151"
     }
    ]
   }

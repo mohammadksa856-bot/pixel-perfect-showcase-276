@@ -1,0 +1,196 @@
+# the 427 regression cases evaluated by the evaluator of implementation 5050295 (recipes/1), for comparison
+# regression cases evaluated with the evaluator at implementation 5050295 (recipes/1)
+cases: 427; expected NOT_COMPARABLE: 424
+accepted (CONDITIONALLY_COMPARABLE) by 5050295 although they must be rejected: 192
+  - M06 acquisitions classification missing
+  - M06 acquisitions combined with PP&E
+  - M06 investments classification missing
+  - M06 investments not separable
+  - M06 legacy flag alone is not evidence
+  - M06 acquisition payments supplied as capex input
+  - M06 equity investments supplied as capex input
+  - M07 acquisitions classification missing
+  - M07 acquisitions combined with PP&E
+  - M07 investments classification missing
+  - M07 investments not separable
+  - M07 legacy flag alone is not evidence
+  - M07 acquisition payments supplied as capex input
+  - M07 equity investments supplied as capex input
+  - M01 trading_revenue_basis unlisted
+  - M01 trading_revenue_basis wrong type
+  - M02 e_and_e_method unlisted
+  - M02 e_and_e_method wrong type
+  - M02 royalty_classification missing
+  - M02 royalty_classification null
+  - M02 royalty_classification unlisted
+  - M02 royalty_classification wrong type
+  - M02 operating_profit_definition unlisted
+  - M02 operating_profit_definition wrong type
+  - M06 capex_acquisitions_classification missing
+  - M06 capex_acquisitions_classification null
+  - M06 capex_acquisitions_classification unlisted
+  - M06 capex_acquisitions_classification wrong type
+  - M06 investments_classification missing
+  - M06 investments_classification null
+  - M06 investments_classification unlisted
+  - M06 investments_classification wrong type
+  - M06 e_and_e_method missing
+  - M06 e_and_e_method null
+  - M06 e_and_e_method unlisted
+  - M06 e_and_e_method wrong type
+  - M08 cash_definition missing
+  - M08 cash_definition null
+  - M08 cash_definition unlisted
+  - M08 cash_definition wrong type
+  - M08 has_hybrids missing
+  - M08 has_hybrids null
+  - M08 has_hybrids unlisted
+  - M09 capital_employed_scope unlisted
+  - M09 capital_employed_scope wrong type
+  - M01 revenue definition missing
+  - M01 revenue definition differs
+  - M01 revenue as text
+  - M01 royalties_excise_in_revenue definition missing
+  - M01 royalties_excise_in_revenue definition differs
+  - M01 royalties_excise_in_revenue as text
+  - M02 operating_profit definition missing
+  - M02 operating_profit definition differs
+  - M02 operating_profit as text
+  - M02 impairment_losses definition missing
+  - M02 impairment_losses definition differs
+  - M02 impairment_losses as text
+  - M02 lifo_liquidation_gain definition missing
+  - M02 lifo_liquidation_gain definition differs
+  - M02 lifo_liquidation_gain as text
+  - M02 operating_lease_interest_component definition missing
+  - M02 operating_lease_interest_component definition differs
+  - M02 operating_lease_interest_component as text
+  - M02 dda definition missing
+  - M02 dda definition differs
+  - M02 dda as text
+  - M02 operating_lease_cost definition missing
+  - M02 operating_lease_cost definition differs
+  - M02 operating_lease_cost as text
+  - M03 profit_attributable_to_parent definition missing
+  - M03 profit_attributable_to_parent definition differs
+  - M03 profit_attributable_to_parent as text
+  - M03 impairment_reversals_after_tax definition missing
+  - M03 impairment_reversals_after_tax definition differs
+  - M03 impairment_reversals_after_tax as text
+  - M03 inventory_holding_gain_after_tax definition missing
+  - M03 inventory_holding_gain_after_tax definition differs
+  - M03 inventory_holding_gain_after_tax as text
+  - M06 payments_for_ppe definition missing
+  - M06 payments_for_ppe definition differs
+  - M06 payments_for_ppe as text
+  - M06 payments_for_exploration_intangibles definition missing
+  - M06 payments_for_exploration_intangibles definition differs
+  - M06 payments_for_exploration_intangibles as text
+  - M07 cfo definition missing
+  - M07 cfo definition differs
+  - M07 cfo as text
+  - M07 finance_lease_principal_payments definition missing
+  - M07 finance_lease_principal_payments definition differs
+  - M07 finance_lease_principal_payments as text
+  - M07 payments_for_ppe definition missing
+  - M07 payments_for_ppe definition differs
+  - M07 payments_for_ppe as text
+  - M07 payments_for_exploration_intangibles definition missing
+  - M07 payments_for_exploration_intangibles definition differs
+  - M07 payments_for_exploration_intangibles as text
+  - M08 borrowings definition missing
+  - M08 borrowings definition differs
+  - M08 borrowings as text
+  - M08 lease_liabilities definition missing
+  - M08 lease_liabilities definition differs
+  - M08 lease_liabilities as text
+  - M08 cash_and_equivalents definition missing
+  - M08 cash_and_equivalents definition differs
+  - M08 cash_and_equivalents as text
+  - M08 total_equity definition missing
+  - M08 total_equity definition differs
+  - M08 total_equity as text
+  - M09 profit_total definition missing
+  - M09 profit_total definition differs
+  - M09 profit_total as text
+  - M09 finance_costs definition missing
+  - M09 finance_costs definition differs
+  - M09 finance_costs as text
+  - M09 finance_costs_tax_effect definition missing
+  - M09 finance_costs_tax_effect definition differs
+  - M09 finance_costs_tax_effect as text
+  - M09 equity_open definition missing
+  - M09 equity_open definition differs
+  - M09 equity_open as text
+  - M09 borrowings_open definition missing
+  - M09 borrowings_open definition differs
+  - M09 borrowings_open as text
+  - M09 equity_close definition missing
+  - M09 equity_close definition differs
+  - M09 equity_close as text
+  - M09 borrowings_close definition missing
+  - M09 borrowings_close definition differs
+  - M09 borrowings_close as text
+  - M11 liquids_kbd definition missing
+  - M11 liquids_kbd definition differs
+  - M11 liquids_kbd as text
+  - M11 gas_mmscfd definition missing
+  - M11 gas_mmscfd definition differs
+  - M11 gas_mmscfd as text
+  - M13 net_distillation_capacity_kbd definition missing
+  - M13 net_distillation_capacity_kbd definition differs
+  - M13 net_distillation_capacity_kbd as text
+  - M08 hybrids present, classified as equity
+  - M08 gearing denominator not positive
+  - M02 IFRS-only item supplied on the US GAAP path
+  - M01 impossible calendar date
+  - M01 start missing
+  - M01 date as number
+  - M01 date with time part
+  - M01 start after end
+  - M01 FY lasting six months
+  - M01 H1 lasting a year
+  - M08 impossible calendar date
+  - M08 start missing
+  - M08 date as number
+  - M08 date with time part
+  - M08 start after end
+  - M08 FY lasting six months
+  - M08 H1 lasting a year
+  - M13 impossible calendar date
+  - M13 start missing
+  - M13 date as number
+  - M13 date with time part
+  - M13 start after end
+  - M13 FY lasting six months
+  - M13 H1 lasting a year
+  - M01 TTM without components
+  - M01 TTM with three quarters
+  - M01 TTM non-consecutive quarters
+  - M01 TTM last quarter not period end
+  - M09 opening balance date wrong
+  - M09 closing balance date wrong
+  - pair with different fiscal years
+  - pair FY vs TTM of equal dates
+  - pair with gross vs net trading revenue
+  - pair with different policy factors
+  - M01 FX rate negative
+  - M01 FX source empty
+  - M01 average without window
+  - M01 average window of another period
+  - M01 average window undated (single date only)
+  - M01 USD cell carrying an FX object
+  - M01 unsupported currency
+  - M08 FX rate negative
+  - M08 FX source empty
+  - M08 closing rate undated
+  - M08 closing rate of another date
+  - M08 USD cell carrying an FX object
+  - M08 unsupported currency
+  - generic: source list of empty strings
+  - CFO: investing classification without disclosed amount
+  - CFO: operating classification plus reclassification item (double count)
+  - CFO: dividends paid in operating without amount
+  - CFO: financing classification plus add-back item (double count)
+  - FCF: rejected when CFO reconciliation evidence is missing
+  - FCF: double count propagates from CFO

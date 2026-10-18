@@ -1,0 +1,17 @@
+# scope @ a267e0c127ffda40cb485ab76d75dba5751a7c1a
+files changed c054ff7..a267e0c127ffda40cb485ab76d75dba5751a7c1a:
+   product-tracking/CHANGELOG.jsonl                   |    2 +
+   .../WEB08B06/B06-0-R01-R05-CLOSURE_AR.md           |   10 +-
+   .../WEB08B06/COMPARABILITY-RECIPES.json            | 2740 +++++++++++++-------
+   .../WEB08B06/TRACKING-EVENT-CORRECTIONS.json       | 1678 ++++++------
+   .../WEB08B06/checks/comparability.test.ts          |  787 ++++++
+   .../WEB08B06/checks/decision-pack.test.ts          |  243 +-
+   review-delivery/WEB08B06/checks/evaluator.ts       |  277 ++
+   review-delivery/WEB08B06/checks/tracking.test.ts   |  177 ++
+   review-delivery/WEB08B06/tools/recipes.py          |  871 ++++---
+   review-delivery/WEB08B06/tools/registers.py        |   41 +-
+   review-delivery/WEB08B06/tools/tracking_audit.py   |   69 +
+   11 files changed, 4406 insertions(+), 2489 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+closed R01/R03/R04 files changed since 5050295: 0
+CHANGELOG prefix vs c054ff7 preserved: True

@@ -1,0 +1,13 @@
+# sabotage probes @ a267e0c127ffda40cb485ab76d75dba5751a7c1a (each planted weakening must fail the checks; files restored after each)
+acquisitions combined accepted in M06 allow-list -> 3fail
+CFO reclassification of dividends received removed -> 13fail
+M10 mixing guard removed -> 5fail
+FCF decoupled from normalised CFO -> 34fail
+evaluator: FX window check disabled -> 4fail
+evaluator: period duration check disabled -> 9fail
+python evaluator: closing-date check disabled (parity) -> 1fail
+commit time reintroduced as a bound -> 1fail
+closed R01 file touched -> 1fail
+closed R03 candidate approved -> 2fail
+ 452 pass
+ 0 fail

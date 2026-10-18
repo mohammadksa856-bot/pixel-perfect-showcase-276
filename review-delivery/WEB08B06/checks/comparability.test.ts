@@ -2443,3 +2443,132 @@ describe("event 119 R02-G: external JSON files are evaluated only through the ra
     // inside the package the tests are the only caller; any --evaluate call is refused (tests above)
   });
 });
+
+/* ---------- event 120: unparsable --evaluate-raw wrapper files are refused without a traceback ---------- */
+describe("event 120 R02-G: the --evaluate-raw wrapper is read and parsed with controlled failures", () => {
+  const PREV = "ebae2aab26e4a75e7580422aa8d02feda4ee4a11";
+  const SCRIPT = join(DIR, "tools/recipes.py");
+  const fresh = () => mkdtempSync(join(tmpdir(), "b06-wrap-"));
+  const put = (d: string, name: string, body: string | Uint8Array) => {
+    writeFileSync(join(d, name), body);
+    return join(d, name);
+  };
+  const cli = (script: string, args: string[]) => {
+    const d = fresh();
+    const p = Bun.spawnSync(["python3", script, ...args], { cwd: d });
+    return {
+      exit: p.exitCode,
+      out: p.stdout.toString(),
+      err: p.stderr.toString(),
+      written: readdirSync(d),
+    };
+  };
+  const ordinary = JSON.stringify(passOf("M06"));
+  const codex = (() => {
+    const e = passOf("M08");
+    e.meta.currency = "USD";
+    delete e.meta.fx;
+    Object.assign(e.items, {
+      borrowings: "__B__",
+      lease_liabilities: 0,
+      cash_and_equivalents: 9007199254740990,
+      total_equity: 1,
+    });
+    return JSON.stringify(e).replace('"__B__"', "9007199254740990.9");
+  })();
+  const src = fresh();
+  const BAD: [string, string, RegExp][] = [
+    [
+      "4301-digit integer in a valid array",
+      put(src, "int4301.json", `[${"9".repeat(4301)}]`),
+      /not valid JSON/,
+    ],
+    [
+      "10000-digit integer beside a valid case",
+      put(
+        src,
+        "int10000.json",
+        `[{"recipe":"M06","text":${JSON.stringify(ordinary)}},${"1".repeat(10000)}]`,
+      ),
+      /not valid JSON/,
+    ],
+    [
+      "nesting of 100000 levels",
+      put(src, "deep.json", `${"[".repeat(100000)}${"]".repeat(100000)}`),
+      /nests too deeply/,
+    ],
+    ["truncated JSON", put(src, "trunc.json", '[{"recipe":"M06"'), /not valid JSON/],
+    ["trailing comma", put(src, "comma.json", "[1,]"), /not valid JSON/],
+    ["empty file", put(src, "empty.json", ""), /not valid JSON/],
+    [
+      "invalid UTF-8",
+      put(src, "bad-utf8.json", new Uint8Array([0x5b, 0x22, 0xff, 0xfe, 0x22, 0x5d])),
+      /cannot read/,
+    ],
+    ["missing file", join(src, "does-not-exist.json"), /cannot read/],
+    ["directory instead of a file", src, /cannot read/],
+  ];
+
+  for (const [name, file, msg] of BAD)
+    test(`refused without traceback: ${name}`, () => {
+      const r = cli(SCRIPT, ["--evaluate-raw", file]);
+      expect({ exit: r.exit === 0, out: r.out, written: r.written }).toEqual({
+        exit: false,
+        out: "",
+        written: [],
+      });
+      expect(r.err).toMatch(/^recipes\.py: /);
+      expect(r.err).toMatch(msg);
+      expect(r.err).not.toContain("Traceback");
+    });
+  test("previous implementation (ebae2aa) fails on the two new cases with a traceback", () => {
+    const old = put(
+      fresh(),
+      "old.py",
+      Bun.spawnSync(["git", "show", `${PREV}:review-delivery/WEB08B06/tools/recipes.py`], {
+        cwd: join(DIR, "../.."),
+      }).stdout,
+    );
+    const big = cli(old, ["--evaluate-raw", BAD[0][1]]);
+    expect(big.err).toContain("Traceback");
+    expect(big.err).toContain("ValueError");
+    const deep = cli(old, ["--evaluate-raw", BAD[2][1]]);
+    expect(deep.err).toContain("Traceback");
+    expect(deep.err).toContain("RecursionError");
+  });
+  test("a valid wrapper of raw texts is evaluated: ordinary case accepted, Codex fraction rejected", () => {
+    const f = put(
+      fresh(),
+      "ok.json",
+      JSON.stringify([
+        { recipe: "M06", text: ordinary },
+        { recipe: "M08", text: codex },
+      ]),
+    );
+    const r = cli(SCRIPT, ["--evaluate-raw", f]);
+    expect({ exit: r.exit, err: r.err, written: r.written }).toEqual({
+      exit: 0,
+      err: "",
+      written: [],
+    });
+    expect(JSON.parse(r.out)).toEqual([
+      { status: "CONDITIONALLY_COMPARABLE", values: { capex_cash: 420 } },
+      NC("unsafe_decimal_precision:borrowings"),
+    ]);
+  });
+  test("the legacy --evaluate is still refused", () => {
+    const f = put(fresh(), "legacy.json", `[{"recipe":"M08","a":${codex}}]`);
+    const r = cli(SCRIPT, ["--evaluate", f]);
+    expect({ exit: r.exit, out: r.out, written: r.written }).toEqual({
+      exit: 1,
+      out: "",
+      written: [],
+    });
+    expect(r.err).toContain("--evaluate-raw");
+    expect(r.err).not.toContain("Traceback");
+  });
+  test("Python's own limits stay in force (no set_int_max_str_digits, no recursion-limit change)", () => {
+    const py = readFileSync(SCRIPT, "utf8");
+    expect(py).not.toMatch(/set_int_max_str_digits|setrecursionlimit|except Exception|except:/);
+  });
+});

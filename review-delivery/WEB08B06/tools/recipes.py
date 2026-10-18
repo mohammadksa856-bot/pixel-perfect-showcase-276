@@ -751,9 +751,17 @@ def raw_cases(path):
     """--evaluate-raw input: a JSON array of {"recipe", "text", "b_text"?}, where text / b_text are the raw JSON
     texts of the examples. Anything else (a pre-parsed example, an extra flag-like key) is a caller fault."""
     try:
-        with open(path, encoding="utf-8") as f: cases = json.load(f, parse_constant=lambda c: sys.exit(f"recipes.py: {c} is not JSON"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as x:
+        with open(path, encoding="utf-8") as f: text = f.read()
+    except (OSError, UnicodeDecodeError) as x:
         sys.exit(f"recipes.py: cannot read {path}: {x}")
+    # event 120: parsing failures of the user's file only (malformed JSON, an integer beyond Python's digit
+    # limit, nesting beyond the parser's recursion limit); Python's limits stay in force
+    try:
+        cases = json.loads(text, parse_constant=lambda c: sys.exit(f"recipes.py: {c} is not JSON"))
+    except ValueError as x:  # json.JSONDecodeError and the int-digit limit
+        sys.exit(f"recipes.py: {path} is not valid JSON: {x}")
+    except RecursionError:
+        sys.exit(f"recipes.py: {path} nests too deeply to parse")
     if not isinstance(cases, list): sys.exit("recipes.py: --evaluate-raw expects a JSON array of cases")
     for i, c in enumerate(cases):
         if not isinstance(c, dict): sys.exit(f"recipes.py: case {i} is not an object")

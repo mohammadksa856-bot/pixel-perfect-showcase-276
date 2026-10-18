@@ -2369,6 +2369,8 @@ describe("event 119 R02-G: external JSON files are evaluated only through the ra
       ["unknown recipe", JSON.stringify([{ recipe: "MX", text: ordinary }])],
       ["not an array", JSON.stringify({ recipe: "M06", text: ordinary })],
       ["wrapper is not JSON", "[{"],
+      ["wrapper is a number", "5"],
+      ["wrapper is null", "null"],
       ["wrapper uses NaN", '[{"recipe":"M06","text":"{}","n":NaN}]'],
     ];
     for (const [name, body] of bad) {

@@ -33,10 +33,14 @@ COMPARISON_AR = {
     "REQUESTED_PERIOD_NOT_IN_SNAPSHOT": "الفترة غير موجودة في لقطة صفحة الموقع؛ لم تُقارن رقميًا",
     "PERIOD_DIFFERENCE": "هوية الفترة مختلفة (رصيد instant بـperiod_start فارغ)؛ لم تُقارن رقميًا",
 }
+# QB1-A correction: notes are keyed by metric as well as period. Before, ("instant", "2024-12-31") and
+# ("instant", "2026-06-30") attached the cash comparative and the PRefChem cash-bridge notes to total equity too.
 RECON = {
+    ("revenue", "fy", "2024-12-31"): None, ("net_income", "fy", "2024-12-31"): None, ("operating_cash_flow", "fy", "2024-12-31"): None,
     ("fy", "2024-12-31"): "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
-    ("instant", "2024-12-31"): "قيمة المحرك من مقارنات التقرير السنوي 2025 ('comparative restatement'). نفس تسوية FY2024.",
-    ("instant", "2026-06-30"): "عند الرصيد H1-2026 يُعرض نقد PRefChem ضمن مجموعة الأصول المحتفظ بها للبيع (B02: H1 PDF29 و31 وNote 16(a) PDF42). يلزم جسر بين نقد الميزانية ونقد نهاية التدفقات، لا تعديل تلقائي.",
+    ("cash", "instant", "2024-12-31"): "قيمة المحرك من مقارنات التقرير السنوي 2025 ('comparative restatement'). نفس تسوية FY2024.",
+    ("total_equity", "instant", "2024-12-31"): "قيمة المحرك من مقارنات FY2025 (aramco-2024-fy-comparative). يلزم ربطها بميزانية FY2024 الأصلية (المنشورة 2025-03-04) وتسجيل أي إعادة عرض لحقوق الملكية أو حقوق غير المسيطرين.",
+    ("cash", "instant", "2026-06-30"): "عند الرصيد H1-2026 يُعرض نقد PRefChem ضمن مجموعة الأصول المحتفظ بها للبيع (B02: H1 PDF29 و31 وNote 16(a) PDF42). يلزم جسر بين نقد الميزانية ونقد نهاية التدفقات، لا تعديل تلقائي.",
 }
 COMMON_MISSING = [
     "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
@@ -70,7 +74,7 @@ for r in reg["results"]:
         "source_match": {"b02_comparison": r["comparison"], "meaning_ar": COMPARISON_AR.get(r["comparison"], r["comparison"]),
                          "b02_check": r["source_check"], "verified_by_this_batch": False,
                          "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"},
-        "reconciliation_ar": RECON.get((i["kind"], i["end"])),
+        "reconciliation_ar": RECON.get((i["metric"], i["kind"], i["end"])) or (RECON.get((i["kind"], i["end"])) if i["kind"] == "fy" else None),
         "missing_evidence_ar": COMMON_MISSING + ([f"B02: {x}" for x in r["reasons"]] if r["reasons"] else []),
         "target_display": m["pages"],
         "qualification": {"state": "WITHHELD", "b02_reasons": r["qualification"]["reasons"], "publication_authorized": False,
@@ -86,6 +90,11 @@ out = {"schema": "marefa-aramco-fin-qual-batch/1", "batch": "FIN-QUAL-BATCH-01",
        "counts": {m: sum(1 for x in rows if x["metric"] == m) for m in METRICS},
        "inputs": {"b02_register": "review-delivery/WEB08B02/QUALIFIED-WITHHELD-INPUT-REGISTER-v4.json", "b02_documents": "review-delivery/WEB08B02/FINANCIAL-EVIDENCE-REGISTER.json",
                   "engine": "engine b70254e data/financial.sqlite3 (isolated copy, data_points is_current=1, no dimensions)"},
-       "rows": rows, "engine_periods_outside_batch": outside}
+       "rows": rows, "engine_periods_outside_batch": outside,
+       "correction_log": [{"event": "QB1-A (central event 123)", "change": "reconciliation notes keyed by metric and period, not period alone",
+                           "removed": [{"row": "FQ01-OBS-074", "metric": "total_equity", "note": "PRefChem held-for-sale cash bridge (H1-2026)"},
+                                       {"row": "FQ01-OBS-053", "metric": "total_equity", "note": "cash comparative-restatement note (2024-12-31)"}],
+                           "added": [{"row": "FQ01-OBS-053", "note": "equity-specific FY2024 comparative reconciliation"}],
+                           "previous_version": "a76286c review-delivery/ARAMCO95/FIN-QUAL-BATCH-01.json"}]}
 json.dump(out, open(f"{H}/FIN-QUAL-BATCH-01.json", "w"), ensure_ascii=False, indent=1)
 print(out["rows_in_batch"], out["counts"], "outside", len(outside))

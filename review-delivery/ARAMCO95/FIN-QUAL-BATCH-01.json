@@ -1,0 +1,2161 @@
+{
+ "schema": "marefa-aramco-fin-qual-batch/1",
+ "batch": "FIN-QUAL-BATCH-01",
+ "company_id": "sa:2222",
+ "status": "PREPARED_FOR_REVIEW_ALL_WITHHELD",
+ "approved": 0,
+ "qualified": 0,
+ "rows_in_batch": 23,
+ "counts": {
+  "revenue": 5,
+  "net_income": 5,
+  "operating_cash_flow": 5,
+  "cash": 4,
+  "total_equity": 4
+ },
+ "inputs": {
+  "b02_register": "review-delivery/WEB08B02/QUALIFIED-WITHHELD-INPUT-REGISTER-v4.json",
+  "b02_documents": "review-delivery/WEB08B02/FINANCIAL-EVIDENCE-REGISTER.json",
+  "engine": "engine b70254e data/financial.sqlite3 (isolated copy, data_points is_current=1, no dimensions)"
+ },
+ "rows": [
+  {
+   "id": "FQ01-OBS-001",
+   "b02_audit_row": "OBS-001",
+   "metric": "revenue",
+   "metric_ar": "الإيرادات",
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2024",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "table": "income",
+    "line_label": "Revenue",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "engine": {
+    "value_sar": "1637299000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_file": "data\\imports\\aramco-2024-fy-comparative.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REVIEW_DIFFERENCE",
+    "meaning_ar": "اختلاف إسناد: قيمة المحرك مسندة إلى مستند آخر (مقارنات FY2025) لا إلى مستند الفترة الأصلي",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: source_url_differs"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-004",
+   "b02_audit_row": "OBS-004",
+   "metric": "net_income",
+   "metric_ar": "صافي الدخل",
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2024",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "table": "income",
+    "line_label": "Net income",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "engine": {
+    "value_sar": "398422000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_file": "data\\imports\\aramco-2024-fy-comparative.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REVIEW_DIFFERENCE",
+    "meaning_ar": "اختلاف إسناد: قيمة المحرك مسندة إلى مستند آخر (مقارنات FY2025) لا إلى مستند الفترة الأصلي",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: source_url_differs"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-006",
+   "b02_audit_row": "OBS-006",
+   "metric": "operating_cash_flow",
+   "metric_ar": "التدفق النقدي التشغيلي",
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2024",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 16,
+    "printed_page": 13,
+    "table": "cash_flow",
+    "line_label": "Net cash provided by operating activities",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "engine": {
+    "value_sar": "508888000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_file": "data\\imports\\aramco-2024-fy-comparative.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REVIEW_DIFFERENCE",
+    "meaning_ar": "اختلاف إسناد: قيمة المحرك مسندة إلى مستند آخر (مقارنات FY2025) لا إلى مستند الفترة الأصلي",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: source_url_differs"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-011",
+   "b02_audit_row": "OBS-011",
+   "metric": "revenue",
+   "metric_ar": "الإيرادات",
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2025",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 14,
+    "printed_page": 12,
+    "table": "income",
+    "line_label": "Revenue",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "engine": {
+    "value_sar": "1559342000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_file": "data\\imports\\aramco-2025-fy.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-014",
+   "b02_audit_row": "OBS-014",
+   "metric": "net_income",
+   "metric_ar": "صافي الدخل",
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2025",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 14,
+    "printed_page": 12,
+    "table": "income",
+    "line_label": "Net income",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "engine": {
+    "value_sar": "350210000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_file": "data\\imports\\aramco-2025-fy.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-016",
+   "b02_audit_row": "OBS-016",
+   "metric": "operating_cash_flow",
+   "metric_ar": "التدفق النقدي التشغيلي",
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2025",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 18,
+    "printed_page": 16,
+    "table": "cash_flow",
+    "line_label": "Net cash provided by operating activities",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "engine": {
+    "value_sar": "510798000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_file": "data\\imports\\aramco-2025-fy.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-021",
+   "b02_audit_row": "OBS-021",
+   "metric": "revenue",
+   "metric_ar": "الإيرادات",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "source": {
+    "document": "Q1-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 23,
+    "printed_page": 23,
+    "table": "income",
+    "line_label": "Revenue",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "engine": {
+    "value_sar": "433101000000",
+    "form": "Q1 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "filed_at": "2026-05-11",
+    "content_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_file": "data\\imports\\aramco-2026-q1.json",
+    "page_or_table": [
+     [
+      22,
+      "condensed consolidated statement of income"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-024",
+   "b02_audit_row": "OBS-024",
+   "metric": "net_income",
+   "metric_ar": "صافي الدخل",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "source": {
+    "document": "Q1-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 23,
+    "printed_page": 23,
+    "table": "income",
+    "line_label": "Net income",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "engine": {
+    "value_sar": "122008000000",
+    "form": "Q1 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "filed_at": "2026-05-11",
+    "content_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_file": "data\\imports\\aramco-2026-q1.json",
+    "page_or_table": [
+     [
+      22,
+      "condensed consolidated statement of income"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-026",
+   "b02_audit_row": "OBS-026",
+   "metric": "operating_cash_flow",
+   "metric_ar": "التدفق النقدي التشغيلي",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "source": {
+    "document": "Q1-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "cash_flow",
+    "line_label": "Net cash provided by operating activities",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "engine": {
+    "value_sar": "115242000000",
+    "form": "Q1 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "filed_at": "2026-05-11",
+    "content_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_file": "data\\imports\\aramco-2026-q1.json",
+    "page_or_table": [
+     [
+      26,
+      "condensed consolidated statement of cash flows"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-031",
+   "b02_audit_row": "OBS-031",
+   "metric": "revenue",
+   "metric_ar": "الإيرادات",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line_label": "Revenue",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "engine": {
+    "value_sar": "450772000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-034",
+   "b02_audit_row": "OBS-034",
+   "metric": "net_income",
+   "metric_ar": "صافي الدخل",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line_label": "Net income",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "engine": {
+    "value_sar": "122599000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-036",
+   "b02_audit_row": "OBS-036",
+   "metric": "operating_cash_flow",
+   "metric_ar": "التدفق النقدي التشغيلي",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 31,
+    "printed_page": 31,
+    "table": "cash_flow",
+    "line_label": "Net cash provided by operating activities",
+    "column": "SAR / current period"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "engine": {
+    "value_sar": "95365000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-041",
+   "b02_audit_row": "OBS-041",
+   "metric": "revenue",
+   "metric_ar": "الإيرادات",
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line_label": "Revenue",
+    "column": "SAR / six months current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "engine": {
+    "value_sar": "883873000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-044",
+   "b02_audit_row": "OBS-044",
+   "metric": "net_income",
+   "metric_ar": "صافي الدخل",
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line_label": "Net income",
+    "column": "SAR / six months current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "engine": {
+    "value_sar": "244607000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-046",
+   "b02_audit_row": "OBS-046",
+   "metric": "operating_cash_flow",
+   "metric_ar": "التدفق النقدي التشغيلي",
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 31,
+    "printed_page": 31,
+    "table": "cash_flow",
+    "line_label": "Net cash provided by operating activities",
+    "column": "SAR / six months current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "engine": {
+    "value_sar": "210607000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+    "meaning_ar": "تطابق رقمي بين قيمة اللقطة وسطر المصدر بفحص بصري من B02 (المؤلف)؛ ليس اعتمادًا ماليًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-051",
+   "b02_audit_row": "OBS-051",
+   "metric": "cash",
+   "metric_ar": "النقد وما في حكمه",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2024",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "table": "balance_sheet",
+    "line_label": "Cash and cash equivalents",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "engine": {
+    "value_sar": "216642000000",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "filed_at": "2026-03-09",
+    "content_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "import_file": "data\\imports\\aramco-2025-annual-metrics.json",
+    "page_or_table": [
+     [
+      179,
+      "2025 annual report comparative"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+    "meaning_ar": "الفترة غير موجودة في لقطة صفحة الموقع؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "قيمة المحرك من مقارنات التقرير السنوي 2025 ('comparative restatement'). نفس تسوية FY2024.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: requested_period_end_missing"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-053",
+   "b02_audit_row": "OBS-053",
+   "metric": "total_equity",
+   "metric_ar": "إجمالي حقوق الملكية",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2024",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "table": "balance_sheet",
+    "line_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "engine": {
+    "value_sar": "1651355000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_file": "data\\imports\\aramco-2024-fy-comparative.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "PERIOD_DIFFERENCE",
+    "meaning_ar": "هوية الفترة مختلفة (رصيد instant بـperiod_start فارغ)؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "قيمة المحرك من مقارنات التقرير السنوي 2025 ('comparative restatement'). نفس تسوية FY2024.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: full_period_identity_differs"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-058",
+   "b02_audit_row": "OBS-058",
+   "metric": "cash",
+   "metric_ar": "النقد وما في حكمه",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2025",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 16,
+    "printed_page": 14,
+    "table": "balance_sheet",
+    "line_label": "Cash and cash equivalents",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "engine": {
+    "value_sar": "243099000000",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+    "filed_at": "2026-03-09",
+    "content_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "import_file": "data\\imports\\aramco-2025-annual-metrics.json",
+    "page_or_table": [
+     [
+      179,
+      "consolidated balance sheet"
+     ],
+     [
+      181,
+      "consolidated statement of cash flows"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+    "meaning_ar": "الفترة غير موجودة في لقطة صفحة الموقع؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: requested_period_end_missing"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-060",
+   "b02_audit_row": "OBS-060",
+   "metric": "total_equity",
+   "metric_ar": "إجمالي حقوق الملكية",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "FY2025",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 16,
+    "printed_page": 14,
+    "table": "balance_sheet",
+    "line_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "engine": {
+    "value_sar": "1721744000000",
+    "form": "Annual financial report comparative",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "filed_at": "2026-03-10",
+    "content_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_file": "data\\imports\\aramco-2025-fy.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "PERIOD_DIFFERENCE",
+    "meaning_ar": "هوية الفترة مختلفة (رصيد instant بـperiod_start فارغ)؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: full_period_identity_differs"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-065",
+   "b02_audit_row": "OBS-065",
+   "metric": "cash",
+   "metric_ar": "النقد وما في حكمه",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "Q1-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 25,
+    "printed_page": 25,
+    "table": "balance_sheet",
+    "line_label": "Cash and cash equivalents",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "engine": {
+    "value_sar": "230813000000",
+    "form": "Q1 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "filed_at": "2026-05-11",
+    "content_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_file": "data\\imports\\aramco-2026-q1.json",
+    "page_or_table": [
+     [
+      24,
+      "condensed consolidated balance sheet"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+    "meaning_ar": "الفترة غير موجودة في لقطة صفحة الموقع؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: requested_period_end_missing"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-067",
+   "b02_audit_row": "OBS-067",
+   "metric": "total_equity",
+   "metric_ar": "إجمالي حقوق الملكية",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "Q1-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 25,
+    "printed_page": 25,
+    "table": "balance_sheet",
+    "line_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "engine": {
+    "value_sar": "1758311000000",
+    "form": "Q1 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "filed_at": "2026-05-11",
+    "content_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_file": "data\\imports\\aramco-2026-q1.json",
+    "page_or_table": [
+     [
+      24,
+      "condensed consolidated balance sheet"
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+    "meaning_ar": "الفترة غير موجودة في لقطة صفحة الموقع؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": null,
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: requested_period_end_missing"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-072",
+   "b02_audit_row": "OBS-072",
+   "metric": "cash",
+   "metric_ar": "النقد وما في حكمه",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 29,
+    "printed_page": 29,
+    "table": "balance_sheet",
+    "line_label": "Cash and cash equivalents",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "engine": {
+    "value_sar": "167387000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "PERIOD_DIFFERENCE",
+    "meaning_ar": "هوية الفترة مختلفة (رصيد instant بـperiod_start فارغ)؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "عند الرصيد H1-2026 يُعرض نقد PRefChem ضمن مجموعة الأصول المحتفظ بها للبيع (B02: H1 PDF29 و31 وNote 16(a) PDF42). يلزم جسر بين نقد الميزانية ونقد نهاية التدفقات، لا تعديل تلقائي.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: full_period_identity_differs"
+   ],
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  },
+  {
+   "id": "FQ01-OBS-074",
+   "b02_audit_row": "OBS-074",
+   "metric": "total_equity",
+   "metric_ar": "إجمالي حقوق الملكية",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "source": {
+    "document": "H1-Q2-2026",
+    "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 29,
+    "printed_page": 29,
+    "table": "balance_sheet",
+    "line_label": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "column": "SAR / reporting date current year"
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_in_engine": "SAR (units, not millions)",
+   "scope": "consolidated",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia; consolidated",
+   "definition_ar": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "engine": {
+    "value_sar": "1795831000000",
+    "form": "Q2 interim report",
+    "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "filed_at": "2026-08-04",
+    "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_file": "data\\imports\\aramco-2026-q2.json",
+    "page_or_table": [
+     [
+      null,
+      null
+     ]
+    ],
+    "is_calculated": 0
+   },
+   "engine_absent_reason": null,
+   "source_match": {
+    "b02_comparison": "PERIOD_DIFFERENCE",
+    "meaning_ar": "هوية الفترة مختلفة (رصيد instant بـperiod_start فارغ)؛ لم تُقارن رقميًا",
+    "b02_check": "AUTHOR_VISUAL_NOT_FORMAL_FINANCIAL_APPROVAL",
+    "verified_by_this_batch": false,
+    "why_not": "aramco.com is denied by this environment's network policy; the source PDFs are private to B02 and not in Git"
+   },
+   "reconciliation_ar": "عند الرصيد H1-2026 يُعرض نقد PRefChem ضمن مجموعة الأصول المحتفظ بها للبيع (B02: H1 PDF29 و31 وNote 16(a) PDF42). يلزم جسر بين نقد الميزانية ونقد نهاية التدفقات، لا تعديل تلقائي.",
+   "missing_evidence_ar": [
+    "ربط الحقيقة في المحرك ببصمة ملف PDF الأصلي: البصمة الحالية لملف استيراد JSON (data/imports)، لا لمستند أرامكو",
+    "محدد الصفحة والجدول في المحرك: غائب لأغلب هذه الصفوف",
+    "معرف حقيقة ثابت وبصمة مراجعة وتصدير مرجعي غير قابل للتغيير (B02C/B02D)",
+    "إيصال مراجعة مالية من مراجع مالي مخوَّل (غير موجود؛ فحص B02 بصري من المؤلف)",
+    "منح حقوق موثق للعرض (D4)؛ الحالي 'USER_ASSERTED_NOT_DOCUMENTED'",
+    "قراءة حية من المحرك (اللقطة مجمدة 2026-10-13)",
+    "B02: full_period_identity_differs"
+   ],
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   },
+   "qualification": {
+    "state": "WITHHELD",
+    "b02_reasons": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ],
+    "publication_authorized": false,
+    "next_step_ar": "مراجع مالي مخوَّل يطابق القيمة بالصفحة المذكورة في PDF المبصوم، ويثبت التعريف والتسوية، ويوقع إيصالًا. ثم ربط المحرك بالبصمة والصفحة، ثم قرار الحقوق D4. لا يُرفع الحجب بمجرد تطابق الرقم."
+   }
+  }
+ ],
+ "engine_periods_outside_batch": [
+  {
+   "metric": "cash",
+   "kind": "instant",
+   "end": "2021-12-31",
+   "engine_value_sar": "299579000000",
+   "form": "Annual report supplementary metrics",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "cash",
+   "kind": "instant",
+   "end": "2022-12-31",
+   "engine_value_sar": "226047000000",
+   "form": "Annual report supplementary metrics",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "cash",
+   "kind": "instant",
+   "end": "2023-12-31",
+   "engine_value_sar": "198973000000",
+   "form": "Annual report supplementary metrics",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "net_income",
+   "kind": "fy",
+   "end": "2019-12-31",
+   "engine_value_sar": "330693000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "net_income",
+   "kind": "fy",
+   "end": "2020-12-31",
+   "engine_value_sar": "183763000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "net_income",
+   "kind": "fy",
+   "end": "2021-12-31",
+   "engine_value_sar": "412396000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "net_income",
+   "kind": "fy",
+   "end": "2022-12-31",
+   "engine_value_sar": "604005000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "net_income",
+   "kind": "fy",
+   "end": "2023-12-31",
+   "engine_value_sar": "454764000000",
+   "form": "Annual report",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "operating_cash_flow",
+   "kind": "fy",
+   "end": "2019-12-31",
+   "engine_value_sar": "416529000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "operating_cash_flow",
+   "kind": "fy",
+   "end": "2020-12-31",
+   "engine_value_sar": "285297000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "operating_cash_flow",
+   "kind": "fy",
+   "end": "2021-12-31",
+   "engine_value_sar": "522601000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "operating_cash_flow",
+   "kind": "fy",
+   "end": "2022-12-31",
+   "engine_value_sar": "698152000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "operating_cash_flow",
+   "kind": "fy",
+   "end": "2023-12-31",
+   "engine_value_sar": "537814000000",
+   "form": "Annual report",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "revenue",
+   "kind": "fy",
+   "end": "2019-12-31",
+   "engine_value_sar": "1105696000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "revenue",
+   "kind": "fy",
+   "end": "2020-12-31",
+   "engine_value_sar": "768109000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "revenue",
+   "kind": "fy",
+   "end": "2021-12-31",
+   "engine_value_sar": "1346930000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "revenue",
+   "kind": "fy",
+   "end": "2022-12-31",
+   "engine_value_sar": "2006955000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "revenue",
+   "kind": "fy",
+   "end": "2023-12-31",
+   "engine_value_sar": "1653281000000",
+   "form": "Annual report",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "total_equity",
+   "kind": "instant",
+   "end": "2019-12-31",
+   "engine_value_sar": "1046235000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "total_equity",
+   "kind": "instant",
+   "end": "2020-12-31",
+   "engine_value_sar": "1101094000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "total_equity",
+   "kind": "instant",
+   "end": "2021-12-31",
+   "engine_value_sar": "1280668000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "total_equity",
+   "kind": "instant",
+   "end": "2022-12-31",
+   "engine_value_sar": "1666147000000",
+   "form": "Annual report historical highlights",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2022-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  },
+  {
+   "metric": "total_equity",
+   "kind": "instant",
+   "end": "2023-12-31",
+   "engine_value_sar": "1737092000000",
+   "form": "Annual report supplementary metrics",
+   "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2023-english.pdf",
+   "reason_ar": "لا مستند مدقق مبصوم لهذه الفترة في أدلة B02؛ مصدر المحرك ملخص تاريخي/مقاييس تقرير سنوي. الدفعة القادمة: القوائم المدققة FY2021–FY2023."
+  }
+ ]
+}

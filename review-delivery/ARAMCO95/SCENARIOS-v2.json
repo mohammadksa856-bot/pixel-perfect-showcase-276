@@ -1,0 +1,450 @@
+{
+ "note": "Conditional scenarios, not data approval. Classes and exclusion verdicts are a planning classification for review; no exclusion or licence is accepted.",
+ "codex_reported_case": {
+  "source": "Codex review aa2fd59 (local to Codex; not read here)",
+  "fields": 199,
+  "licensed_class_C": 36,
+  "weighted": 95.01925,
+  "status": "conditional; not reproduced because Codex's classification file is not available"
+ },
+ "scenarios": {
+  "V1 issuer documents + computation, no licence, no exclusion": {
+   "reached": 86.32122,
+   "max": 86.32122,
+   "weighted_95": false,
+   "thresholds_failing": [
+    "valuation",
+    "market_data",
+    "ownership",
+    "corporate_actions",
+    "calculated_smart_metrics"
+   ],
+   "thresholds_failing_at_max": [
+    "valuation",
+    "market_data",
+    "ownership",
+    "corporate_actions",
+    "calculated_smart_metrics"
+   ],
+   "added": 192,
+   "added_by_class": {
+    "A": 127,
+    "B": 65,
+    "C": 0
+   },
+   "exclusions": 0
+  },
+  "V2 V1 + licensed/authorised feeds": {
+   "reached": 94.88182,
+   "max": 94.88182,
+   "weighted_95": false,
+   "thresholds_failing": [
+    "corporate_actions",
+    "calculated_smart_metrics"
+   ],
+   "thresholds_failing_at_max": [
+    "corporate_actions",
+    "calculated_smart_metrics"
+   ],
+   "added": 235,
+   "added_by_class": {
+    "A": 127,
+    "B": 65,
+    "C": 43
+   },
+   "exclusions": 0
+  },
+  "V3 V1 + rule-eligible exclusions only": {
+   "reached": 89.41853,
+   "max": 89.41853,
+   "weighted_95": false,
+   "thresholds_failing": [
+    "valuation",
+    "market_data",
+    "ownership",
+    "calculated_smart_metrics"
+   ],
+   "thresholds_failing_at_max": [
+    "valuation",
+    "market_data",
+    "ownership",
+    "calculated_smart_metrics"
+   ],
+   "added": 192,
+   "added_by_class": {
+    "A": 127,
+    "B": 65,
+    "C": 0
+   },
+   "exclusions": 19
+  },
+  "V4 V2 + rule-eligible exclusions only": {
+   "reached": 95.09431,
+   "max": 98.3342,
+   "weighted_95": true,
+   "thresholds_failing": [],
+   "thresholds_failing_at_max": [],
+   "added": 205,
+   "added_by_class": {
+    "A": 104,
+    "B": 58,
+    "C": 43
+   },
+   "exclusions": 19
+  },
+  "V5 V2 + rule-eligible + evidence-dependent exclusions": {
+   "reached": 95.03499,
+   "max": 99.61207,
+   "weighted_95": true,
+   "thresholds_failing": [],
+   "thresholds_failing_at_max": [],
+   "added": 196,
+   "added_by_class": {
+    "A": 96,
+    "B": 57,
+    "C": 43
+   },
+   "exclusions": 32
+  },
+  "V6 V2 + every candidate (incl. pack flag and review)": {
+   "reached": 95.08706,
+   "max": 100.0,
+   "weighted_95": true,
+   "thresholds_failing": [],
+   "thresholds_failing_at_max": [],
+   "added": 194,
+   "added_by_class": {
+    "A": 94,
+    "B": 57,
+    "C": 43
+   },
+   "exclusions": 34
+  }
+ },
+ "minimum_licensed": {
+  "V4 rule-eligible exclusions": {
+   "reached": 95.46772,
+   "licensed_needed": 29,
+   "licensed_fields": [
+    "institutional_ownership",
+    "foreign_ownership",
+    "retail_ownership",
+    "retail_shareholders_count",
+    "total_return_1y",
+    "total_return_3y",
+    "total_return_5y",
+    "simple_moving_average_50d",
+    "simple_moving_average_200d",
+    "revenue_estimate",
+    "ebitda_estimate",
+    "ebit_estimate",
+    "net_income_estimate",
+    "price_adjusted_close",
+    "previous_close",
+    "free_float_market_cap",
+    "free_float_shares",
+    "beta_1y",
+    "beta_5y",
+    "volatility_30d",
+    "average_volume_30d",
+    "fifty_two_week_high",
+    "fifty_two_week_low",
+    "percent_from_52w_high",
+    "percent_from_52w_low",
+    "market_return_1m",
+    "market_return_3m",
+    "market_return_6m",
+    "market_return_ytd"
+   ],
+   "total_added": 221,
+   "thresholds_failing": [],
+   "exclusions": 19
+  },
+  "V5 rule-eligible + evidence-dependent": {
+   "reached": 96.74559,
+   "licensed_needed": 29,
+   "licensed_fields": [
+    "institutional_ownership",
+    "foreign_ownership",
+    "retail_ownership",
+    "retail_shareholders_count",
+    "total_return_1y",
+    "total_return_3y",
+    "total_return_5y",
+    "simple_moving_average_50d",
+    "simple_moving_average_200d",
+    "revenue_estimate",
+    "ebitda_estimate",
+    "ebit_estimate",
+    "net_income_estimate",
+    "price_adjusted_close",
+    "previous_close",
+    "free_float_market_cap",
+    "free_float_shares",
+    "beta_1y",
+    "beta_5y",
+    "volatility_30d",
+    "average_volume_30d",
+    "fifty_two_week_high",
+    "fifty_two_week_low",
+    "percent_from_52w_high",
+    "percent_from_52w_low",
+    "market_return_1m",
+    "market_return_3m",
+    "market_return_6m",
+    "market_return_ytd"
+   ],
+   "total_added": 221,
+   "thresholds_failing": [],
+   "exclusions": 32
+  },
+  "V6 every candidate": {
+   "reached": 97.1311,
+   "licensed_needed": 29,
+   "licensed_fields": [
+    "institutional_ownership",
+    "foreign_ownership",
+    "retail_ownership",
+    "retail_shareholders_count",
+    "total_return_1y",
+    "total_return_3y",
+    "total_return_5y",
+    "simple_moving_average_50d",
+    "simple_moving_average_200d",
+    "revenue_estimate",
+    "ebitda_estimate",
+    "ebit_estimate",
+    "net_income_estimate",
+    "price_adjusted_close",
+    "previous_close",
+    "free_float_market_cap",
+    "free_float_shares",
+    "beta_1y",
+    "beta_5y",
+    "volatility_30d",
+    "average_volume_30d",
+    "fifty_two_week_high",
+    "fifty_two_week_low",
+    "percent_from_52w_high",
+    "percent_from_52w_low",
+    "market_return_1m",
+    "market_return_3m",
+    "market_return_6m",
+    "market_return_ytd"
+   ],
+   "total_added": 221,
+   "thresholds_failing": [],
+   "exclusions": 34
+  }
+ },
+ "exclusion_candidates": {
+  "stock_split": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "reverse_split": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "spin_off": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "merger": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "delisting": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "symbol_change": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "tender_offer": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "suspension": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "rights_issue": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "rights_offering_date": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "capital_reduction": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "treasury_share_sale": {
+   "verdict": "eligible_by_rule",
+   "rule": "event_not_observed (corporate_actions: 'an individual action type with no historical occurrence')",
+   "evidence_needed": "issuer history proving no occurrence since listing; treasury_share_sale and capital_reduction need a check of the treasury-share programme",
+   "group": "corporate_actions"
+  },
+  "cik": {
+   "verdict": "needs_company_pack_flag",
+   "rule": "company_profile not_applicable determined_by company_pack_flag",
+   "evidence_needed": "a company-pack flag 'not an SEC registrant'; no company pack exists",
+   "group": "company_model"
+  },
+  "discontinued_operations_income": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "financial_statements event_not_observed (field_level_structural_flag)",
+   "evidence_needed": "statements showing no discontinued operation in the period (check held-for-sale PRefChem)",
+   "group": "income_statement"
+  },
+  "gross_profit": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "financial_statements unavailable: not_disclosed",
+   "evidence_needed": "archived statements showing no gross-profit line; no derivation by Marefa",
+   "group": "income_statement"
+  },
+  "book_to_bill_ratio": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "contract_renewal_profile": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "contracted_sales_value": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "contracted_sales_volume": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "minimum_volume_commitments": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "sales_contract_count": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "sales_order_backlog": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "take_or_pay_commitments": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "segments unavailable: not_disclosed (field-level not_applicable is not offered by this category)",
+   "evidence_needed": "archived annual report searched; reviewer and evidence note",
+   "group": "commercial_pipeline"
+  },
+  "special_dividend": {
+   "verdict": "needs_review",
+   "rule": "dividends event_not_observed (company_history)",
+   "evidence_needed": "decide whether performance-linked dividends are special dividends; not assumed",
+   "group": "dividends"
+  },
+  "production_entitlement": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "operational_kpis unavailable: not_disclosed",
+   "evidence_needed": "archived annual report searched; reviewer",
+   "group": "oil_gas_operations"
+  },
+  "finding_development_cost_per_boe": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "operational_kpis unavailable: not_disclosed",
+   "evidence_needed": "archived annual report searched; reviewer",
+   "group": "oil_gas_operations"
+  },
+  "reserve_replacement_ratio": {
+   "verdict": "eligible_if_evidenced",
+   "rule": "operational_kpis unavailable: not_disclosed",
+   "evidence_needed": "archived annual report searched; reviewer",
+   "group": "oil_gas_operations"
+  },
+  "dividend_cagr_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  },
+  "eps_cagr_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  },
+  "free_cash_flow_cagr_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  },
+  "net_income_cagr_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  },
+  "operating_cash_flow_cagr_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  },
+  "revenue_cagr_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  },
+  "total_return_10y": {
+   "verdict": "eligible_by_rule",
+   "rule": "calculated_smart_metrics not_applicable determined_by input_window_length ('a 10-year CAGR' needing longer history than the company has listed)",
+   "evidence_needed": "listing date 2019-12-11 from the archived prospectus or exchange record",
+   "group": "investor_analytics"
+  }
+ },
+ "not_eligible": {
+  "litigation": "announcements allows only retrieval_blocked / pending_extraction or a sector_pack_flag; must be populated from disclosures",
+  "regulatory_action": "same rule as litigation; must be populated"
+ }
+}

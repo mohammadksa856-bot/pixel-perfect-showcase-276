@@ -1,0 +1,15 @@
+# scope @ 17590717cb5afad6b0206c46926a1c474a019fdf
+   product-tracking/CHANGELOG.jsonl                   |   1 +
+   review-delivery/WEB08B06/COMPATIBILITY-MAP.json    |   1 +
+   .../WEB08B06/checks/comparability.test.ts          | 129 +++++++++++++++++++++
+   review-delivery/WEB08B06/tools/recipes.py          |  12 +-
+   4 files changed, 141 insertions(+), 2 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+COMPARABILITY-RECIPES.json changed since ebae2aa: 0
+closed R01/R03/R04/R05-A files changed since ebae2aa: 0
+earlier closure reports and logs changed since 35da7b5: 0
+lines removed or changed in comparability.test.ts since ebae2aa (none expected; tests were only added):
+except Exception / bare except in recipes.py: 0
+CLI entry points in tools/: matrix.py recipes.py registers.py tracking_audit.py (matrix/registers/tracking_audit only write their own outputs; none evaluates)
+consumers outside the package (git grep --evaluate|recipes.py|checks/evaluator|makeEvaluator, CHANGELOG text excluded): 0
+CI workflows: 0

@@ -1,0 +1,2129 @@
+{
+ "schema": "marefa-aramco-qb1-fin-ledger/1",
+ "company_id": "sa:2222",
+ "records": [
+  {
+   "record_id": "FQ01-OBS-001",
+   "company_id": "sa:2222",
+   "metric_name": "الإيرادات",
+   "engine_metric_key": "revenue",
+   "engine_data_point_id": 2134,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "revenue"
+   },
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2024",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2024",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2024-full-financials-english.pdf",
+    "sha256_per_b02": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "table": "income",
+    "line": "Revenue",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 1637299,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "1637299000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2024-fy-comparative.json",
+    "import_registered_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_current_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 174,
+    "printed_page": 172,
+    "statement": "Consolidated statement of income",
+    "line": "Revenue",
+    "column": "SAR millions, comparative (prior year) column",
+    "source_value_sar_millions": 1637299,
+    "engine_value_sar_millions": 1637299,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "compared with the FY2025 comparative column only; the original FY2024 statements (B02 FY2024) are not accessible, so a restatement cannot be ruled out"
+   },
+   "fy2024_original_check": {
+    "original_period_value_in_engine": [],
+    "status": "NO_ORIGINAL_PERIOD_VALUE_AVAILABLE",
+    "evidence_kind": null,
+    "b02_note": "B02 compared against the FY2024 statements and recorded REVIEW_DIFFERENCE / source_url_differs (attribution), without a value difference"
+   },
+   "b02_comparison": "REVIEW_DIFFERENCE",
+   "reconciliation": "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R2-fy2024-comparative-vs-original"
+   ],
+   "evidence_status": "MATCHED_COMPARATIVE_ONLY_RESTATEMENT_UNCHECKED",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-004",
+   "company_id": "sa:2222",
+   "metric_name": "صافي الدخل",
+   "engine_metric_key": "net_income",
+   "engine_data_point_id": 2135,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "net_income"
+   },
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2024",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2024",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2024-full-financials-english.pdf",
+    "sha256_per_b02": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 12,
+    "printed_page": 9,
+    "table": "income",
+    "line": "Net income",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 398422,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "398422000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2024-fy-comparative.json",
+    "import_registered_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_current_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 174,
+    "printed_page": 172,
+    "statement": "Consolidated statement of income",
+    "line": "Net income",
+    "column": "SAR millions, comparative (prior year) column",
+    "source_value_sar_millions": 398422,
+    "engine_value_sar_millions": 398422,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "compared with the FY2025 comparative column only; the original FY2024 statements (B02 FY2024) are not accessible, so a restatement cannot be ruled out"
+   },
+   "fy2024_original_check": {
+    "original_period_value_in_engine": [],
+    "status": "NO_ORIGINAL_PERIOD_VALUE_AVAILABLE",
+    "evidence_kind": null,
+    "b02_note": "B02 compared against the FY2024 statements and recorded REVIEW_DIFFERENCE / source_url_differs (attribution), without a value difference"
+   },
+   "b02_comparison": "REVIEW_DIFFERENCE",
+   "reconciliation": "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R2-fy2024-comparative-vs-original"
+   ],
+   "evidence_status": "MATCHED_COMPARATIVE_ONLY_RESTATEMENT_UNCHECKED",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-006",
+   "company_id": "sa:2222",
+   "metric_name": "التدفق النقدي التشغيلي",
+   "engine_metric_key": "operating_cash_flow",
+   "engine_data_point_id": 2139,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "cash_flow",
+    "field_key": "operating_cash_flow"
+   },
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2024",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2024",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2024-full-financials-english.pdf",
+    "sha256_per_b02": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 16,
+    "printed_page": 13,
+    "table": "cash_flow",
+    "line": "Net cash provided by operating activities",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 508888,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "508888000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2024-fy-comparative.json",
+    "import_registered_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_current_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 178,
+    "printed_page": 176,
+    "statement": "Consolidated statement of cash flows",
+    "line": "Net cash provided by operating activities",
+    "column": "SAR millions, comparative (prior year) column",
+    "source_value_sar_millions": 508888,
+    "engine_value_sar_millions": 508888,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "compared with the FY2025 comparative column only; the original FY2024 statements (B02 FY2024) are not accessible, so a restatement cannot be ruled out"
+   },
+   "fy2024_original_check": {
+    "original_period_value_in_engine": [],
+    "status": "NO_ORIGINAL_PERIOD_VALUE_AVAILABLE",
+    "evidence_kind": null,
+    "b02_note": "B02 compared against the FY2024 statements and recorded REVIEW_DIFFERENCE / source_url_differs (attribution), without a value difference"
+   },
+   "b02_comparison": "REVIEW_DIFFERENCE",
+   "reconciliation": "قيمة المحرك من مقارنات FY2025 (إعادة عرض محتملة). يلزم ربط نسختي FY2024 (الأصل المنشور 2025-03-04 والمقارن في FY2025) وتسجيل أي إعادة عرض، واعتماد الأحدث إن طُبقت قاعدة restated_latest، دون استبدال تلقائي.",
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R2-fy2024-comparative-vs-original"
+   ],
+   "evidence_status": "MATCHED_COMPARATIVE_ONLY_RESTATEMENT_UNCHECKED",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-011",
+   "company_id": "sa:2222",
+   "metric_name": "الإيرادات",
+   "engine_metric_key": "revenue",
+   "engine_data_point_id": 2688,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "revenue"
+   },
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2025",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2025",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sha256_per_b02": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 14,
+    "printed_page": 12,
+    "table": "income",
+    "line": "Revenue",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 1559342,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "1559342000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2025-fy.json",
+    "import_registered_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_current_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 174,
+    "printed_page": 172,
+    "statement": "Consolidated statement of income",
+    "line": "Revenue",
+    "column": "SAR millions, current year",
+    "source_value_sar_millions": 1559342,
+    "engine_value_sar_millions": 1559342,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "designated document (B02 FY2025) not accessible; compared with the same consolidated statements in the annual report"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure"
+   ],
+   "evidence_status": "SOURCE_MATCHED_ALTERNATIVE_OFFICIAL_DOCUMENT",
+   "ready_for_financial_review": true,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-014",
+   "company_id": "sa:2222",
+   "metric_name": "صافي الدخل",
+   "engine_metric_key": "net_income",
+   "engine_data_point_id": 2689,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "net_income"
+   },
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2025",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2025",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sha256_per_b02": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 14,
+    "printed_page": 12,
+    "table": "income",
+    "line": "Net income",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 350210,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "350210000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2025-fy.json",
+    "import_registered_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_current_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 174,
+    "printed_page": 172,
+    "statement": "Consolidated statement of income",
+    "line": "Net income",
+    "column": "SAR millions, current year",
+    "source_value_sar_millions": 350210,
+    "engine_value_sar_millions": 350210,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "designated document (B02 FY2025) not accessible; compared with the same consolidated statements in the annual report"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure"
+   ],
+   "evidence_status": "SOURCE_MATCHED_ALTERNATIVE_OFFICIAL_DOCUMENT",
+   "ready_for_financial_review": true,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-016",
+   "company_id": "sa:2222",
+   "metric_name": "التدفق النقدي التشغيلي",
+   "engine_metric_key": "operating_cash_flow",
+   "engine_data_point_id": 2693,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "cash_flow",
+    "field_key": "operating_cash_flow"
+   },
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2025",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2025",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sha256_per_b02": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 18,
+    "printed_page": 16,
+    "table": "cash_flow",
+    "line": "Net cash provided by operating activities",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 510798,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "510798000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2025-fy.json",
+    "import_registered_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_current_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 178,
+    "printed_page": 176,
+    "statement": "Consolidated statement of cash flows",
+    "line": "Net cash provided by operating activities",
+    "column": "SAR millions, current year",
+    "source_value_sar_millions": 510798,
+    "engine_value_sar_millions": 510798,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "designated document (B02 FY2025) not accessible; compared with the same consolidated statements in the annual report"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure"
+   ],
+   "evidence_status": "SOURCE_MATCHED_ALTERNATIVE_OFFICIAL_DOCUMENT",
+   "ready_for_financial_review": true,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-021",
+   "company_id": "sa:2222",
+   "metric_name": "الإيرادات",
+   "engine_metric_key": "revenue",
+   "engine_data_point_id": 2856,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "revenue"
+   },
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "Q1-2026",
+    "title": "Saudi Aramco — Q1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-q1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 23,
+    "printed_page": 23,
+    "table": "income",
+    "line": "Revenue",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "433101000000",
+    "form": "Q1 interim report",
+    "filed_at": "2026-05-11",
+    "import_file": "data/imports/aramco-2026-q1.json",
+    "import_registered_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_current_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-024",
+   "company_id": "sa:2222",
+   "metric_name": "صافي الدخل",
+   "engine_metric_key": "net_income",
+   "engine_data_point_id": 2857,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "net_income"
+   },
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "Q1-2026",
+    "title": "Saudi Aramco — Q1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-q1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 23,
+    "printed_page": 23,
+    "table": "income",
+    "line": "Net income",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "122008000000",
+    "form": "Q1 interim report",
+    "filed_at": "2026-05-11",
+    "import_file": "data/imports/aramco-2026-q1.json",
+    "import_registered_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_current_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-026",
+   "company_id": "sa:2222",
+   "metric_name": "التدفق النقدي التشغيلي",
+   "engine_metric_key": "operating_cash_flow",
+   "engine_data_point_id": 2862,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "cash_flow",
+    "field_key": "operating_cash_flow"
+   },
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "Q1-2026",
+    "title": "Saudi Aramco — Q1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-q1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "cash_flow",
+    "line": "Net cash provided by operating activities",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "115242000000",
+    "form": "Q1 interim report",
+    "filed_at": "2026-05-11",
+    "import_file": "data/imports/aramco-2026-q1.json",
+    "import_registered_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_current_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-031",
+   "company_id": "sa:2222",
+   "metric_name": "الإيرادات",
+   "engine_metric_key": "revenue",
+   "engine_data_point_id": 2878,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "revenue"
+   },
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line": "Revenue",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "450772000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-034",
+   "company_id": "sa:2222",
+   "metric_name": "صافي الدخل",
+   "engine_metric_key": "net_income",
+   "engine_data_point_id": 2880,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "net_income"
+   },
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line": "Net income",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "122599000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-036",
+   "company_id": "sa:2222",
+   "metric_name": "التدفق النقدي التشغيلي",
+   "engine_metric_key": "operating_cash_flow",
+   "engine_data_point_id": 2886,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "cash_flow",
+    "field_key": "operating_cash_flow"
+   },
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 31,
+    "printed_page": 31,
+    "table": "cash_flow",
+    "line": "Net cash provided by operating activities",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "95365000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-041",
+   "company_id": "sa:2222",
+   "metric_name": "الإيرادات",
+   "engine_metric_key": "revenue",
+   "engine_data_point_id": 2879,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "revenue"
+   },
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line": "Revenue",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "883873000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: الإيرادات (سنوي)",
+    "investor": "الموضوع 5: آخر سنة، والربع، ومنذ بداية العام",
+    "data": "المستكشف: صف revenue سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-044",
+   "company_id": "sa:2222",
+   "metric_name": "صافي الدخل",
+   "engine_metric_key": "net_income",
+   "engine_data_point_id": 2881,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "income_statement",
+    "field_key": "net_income"
+   },
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "printed_page": 27,
+    "table": "income",
+    "line": "Net income",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "244607000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: صافي الدخل (سنوي)",
+    "investor": "الموضوع 5",
+    "data": "المستكشف: صف net_income سنوي وربعي وتراكمي"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-046",
+   "company_id": "sa:2222",
+   "metric_name": "التدفق النقدي التشغيلي",
+   "engine_metric_key": "operating_cash_flow",
+   "engine_data_point_id": 2887,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "cash_flow",
+    "field_key": "operating_cash_flow"
+   },
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 31,
+    "printed_page": 31,
+    "table": "cash_flow",
+    "line": "Net cash provided by operating activities",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "210607000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "NUMERICAL_SOURCE_MATCH_NOT_QUALIFICATION",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "stable_fact_id_missing",
+     "fact_revision_digest_missing",
+     "document_id_missing",
+     "document_version_missing",
+     "original_artifact_sha256_missing",
+     "source_locator_missing",
+     "publication_time_precision_missing",
+     "documented_rights_grant_missing",
+     "independent_review_receipt_missing",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم (ليس ضمن الأرقام الرئيسية)",
+    "investor": "الموضوع 5: مجموعة التدفقات",
+    "data": "المستكشف: صف operating_cash_flow"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-051",
+   "company_id": "sa:2222",
+   "metric_name": "النقد وما في حكمه",
+   "engine_metric_key": "cash",
+   "engine_data_point_id": 2330,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "cash"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2024",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2024",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2024-full-financials-english.pdf",
+    "sha256_per_b02": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "table": "balance_sheet",
+    "line": "Cash and cash equivalents",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 216642,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "216642000000",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "filed_at": "2026-03-09",
+    "import_file": "data/imports/aramco-2025-annual-metrics.json",
+    "import_registered_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "import_current_hash": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
+    "import_hash_matches": false,
+    "import_claimed_page": 179,
+    "import_claimed_table": "2025 annual report comparative",
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 176,
+    "printed_page": 174,
+    "statement": "Consolidated balance sheet",
+    "line": "Cash and cash equivalents",
+    "column": "SAR millions, comparative (prior year) column",
+    "source_value_sar_millions": 216642,
+    "engine_value_sar_millions": 216642,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "compared with the FY2025 comparative column only; the original FY2024 statements (B02 FY2024) are not accessible, so a restatement cannot be ruled out"
+   },
+   "fy2024_original_check": {
+    "original_period_value_in_engine": [
+     {
+      "value_decimal": "216642000000",
+      "form": "Annual report supplementary metrics",
+      "filed_at": "2025-03-04",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/annual-reports/saudi-aramco-ara-2024-english.pdf",
+      "is_current": 0,
+      "version": 1
+     }
+    ],
+    "status": "ORIGINAL_EQUALS_COMPARATIVE_SECONDARY_EVIDENCE",
+    "evidence_kind": "engine import of the FY2024 annual report (not the PDF; the FY2024 PDFs are not accessible here)",
+    "b02_note": "B02 compared against the FY2024 statements and recorded REVIEW_DIFFERENCE / source_url_differs (attribution), without a value difference"
+   },
+   "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+   "reconciliation": "قيمة المحرك من مقارنات التقرير السنوي 2025 ('comparative restatement'). نفس تسوية FY2024.",
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R1-import-version-hash-mismatch",
+    "R2-fy2024-comparative-vs-original",
+    "R6-instant-period-identity",
+    "R5-engine-page-locator-offset"
+   ],
+   "evidence_status": "MATCHED_COMPARATIVE_ONLY_RESTATEMENT_UNCHECKED",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-053",
+   "company_id": "sa:2222",
+   "metric_name": "إجمالي حقوق الملكية",
+   "engine_metric_key": "total_equity",
+   "engine_data_point_id": 2138,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "total_equity"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2024",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2024",
+    "published": "2025-03-04",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2024/fy/saudi-aramco-fy-2024-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2024-full-financials-english.pdf",
+    "sha256_per_b02": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "printed_page": 11,
+    "table": "balance_sheet",
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 1651355,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "1651355000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2024-fy-comparative.json",
+    "import_registered_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_current_hash": "2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 176,
+    "printed_page": 174,
+    "statement": "Consolidated balance sheet",
+    "line": "unlabelled subtotal after 'Non-controlling interests'",
+    "column": "SAR millions, comparative (prior year) column",
+    "source_value_sar_millions": 1651355,
+    "engine_value_sar_millions": 1651355,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "compared with the FY2025 comparative column only; the original FY2024 statements (B02 FY2024) are not accessible, so a restatement cannot be ruled out"
+   },
+   "fy2024_original_check": {
+    "original_period_value_in_engine": [],
+    "status": "NO_ORIGINAL_PERIOD_VALUE_AVAILABLE",
+    "evidence_kind": null,
+    "b02_note": "B02 compared against the FY2024 statements and recorded REVIEW_DIFFERENCE / source_url_differs (attribution), without a value difference"
+   },
+   "b02_comparison": "PERIOD_DIFFERENCE",
+   "reconciliation": "قيمة المحرك من مقارنات FY2025 (aramco-2024-fy-comparative). يلزم ربطها بميزانية FY2024 الأصلية (المنشورة 2025-03-04) وتسجيل أي إعادة عرض لحقوق الملكية أو حقوق غير المسيطرين.",
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R2-fy2024-comparative-vs-original",
+    "R4-equity-specific-evidence",
+    "R6-instant-period-identity"
+   ],
+   "evidence_status": "MATCHED_COMPARATIVE_ONLY_RESTATEMENT_UNCHECKED",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-058",
+   "company_id": "sa:2222",
+   "metric_name": "النقد وما في حكمه",
+   "engine_metric_key": "cash",
+   "engine_data_point_id": 2191,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "cash"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2025",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2025",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sha256_per_b02": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 16,
+    "printed_page": 14,
+    "table": "balance_sheet",
+    "line": "Cash and cash equivalents",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 243099,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "243099000000",
+    "form": "Annual report supplementary metrics and comparative restatement",
+    "filed_at": "2026-03-09",
+    "import_file": "data/imports/aramco-2025-annual-metrics.json",
+    "import_registered_hash": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "import_current_hash": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
+    "import_hash_matches": false,
+    "import_claimed_page": 179,
+    "import_claimed_table": "consolidated balance sheet",
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 176,
+    "printed_page": 174,
+    "statement": "Consolidated balance sheet",
+    "line": "Cash and cash equivalents",
+    "column": "SAR millions, current year",
+    "source_value_sar_millions": 243099,
+    "engine_value_sar_millions": 243099,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "designated document (B02 FY2025) not accessible; compared with the same consolidated statements in the annual report"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R1-import-version-hash-mismatch",
+    "R6-instant-period-identity",
+    "R5-engine-page-locator-offset"
+   ],
+   "evidence_status": "SOURCE_MATCHED_ALTERNATIVE_OFFICIAL_DOCUMENT",
+   "ready_for_financial_review": true,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-060",
+   "company_id": "sa:2222",
+   "metric_name": "إجمالي حقوق الملكية",
+   "engine_metric_key": "total_equity",
+   "engine_data_point_id": 2692,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "total_equity"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "FY2025",
+    "title": "Saudi Aramco — Consolidated financial statements for the year ended December 31, 2025",
+    "published": "2026-03-10",
+    "assurance": "AUDITED_ANNUAL",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-fy-2025-full-financials-english.pdf",
+    "pdf_file": "saudi-aramco-fy-2025-full-financials-english.pdf",
+    "sha256_per_b02": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 16,
+    "printed_page": 14,
+    "table": "balance_sheet",
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": {
+    "sar_millions": 1721744,
+    "document": "archived FY2025 annual report"
+   },
+   "engine": {
+    "value_sar": "1721744000000",
+    "form": "Annual financial report comparative",
+    "filed_at": "2026-03-10",
+    "import_file": "data/imports/aramco-2025-fy.json",
+    "import_registered_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_current_hash": "9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": true,
+    "against": "archived FY2025 annual report (alternative official Aramco document)",
+    "document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 176,
+    "printed_page": 174,
+    "statement": "Consolidated balance sheet",
+    "line": "unlabelled subtotal after 'Non-controlling interests'",
+    "column": "SAR millions, current year",
+    "source_value_sar_millions": 1721744,
+    "engine_value_sar_millions": 1721744,
+    "equal": true,
+    "exact_engine_value_divisible_by_million": true,
+    "limitation": "designated document (B02 FY2025) not accessible; compared with the same consolidated statements in the annual report"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "PERIOD_DIFFERENCE",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R4-equity-specific-evidence",
+    "R6-instant-period-identity"
+   ],
+   "evidence_status": "SOURCE_MATCHED_ALTERNATIVE_OFFICIAL_DOCUMENT",
+   "ready_for_financial_review": true,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-065",
+   "company_id": "sa:2222",
+   "metric_name": "النقد وما في حكمه",
+   "engine_metric_key": "cash",
+   "engine_data_point_id": 2861,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "cash"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "Q1-2026",
+    "title": "Saudi Aramco — Q1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-q1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 25,
+    "printed_page": 25,
+    "table": "balance_sheet",
+    "line": "Cash and cash equivalents",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "230813000000",
+    "form": "Q1 interim report",
+    "filed_at": "2026-05-11",
+    "import_file": "data/imports/aramco-2026-q1.json",
+    "import_registered_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_current_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_hash_matches": true,
+    "import_claimed_page": 24,
+    "import_claimed_table": "condensed consolidated balance sheet",
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R6-instant-period-identity",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-067",
+   "company_id": "sa:2222",
+   "metric_name": "إجمالي حقوق الملكية",
+   "engine_metric_key": "total_equity",
+   "engine_data_point_id": 2860,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "total_equity"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "Q1-2026",
+    "title": "Saudi Aramco — Q1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-05-11",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/q1/saudi-aramco-q1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-q1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 25,
+    "printed_page": 25,
+    "table": "balance_sheet",
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "1758311000000",
+    "form": "Q1 interim report",
+    "filed_at": "2026-05-11",
+    "import_file": "data/imports/aramco-2026-q1.json",
+    "import_registered_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_current_hash": "57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "REQUESTED_PERIOD_NOT_IN_SNAPSHOT",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R4-equity-specific-evidence",
+    "R6-instant-period-identity",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-072",
+   "company_id": "sa:2222",
+   "metric_name": "النقد وما في حكمه",
+   "engine_metric_key": "cash",
+   "engine_data_point_id": 2885,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "cash"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 29,
+    "printed_page": 29,
+    "table": "balance_sheet",
+    "line": "Cash and cash equivalents",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "167387000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "PERIOD_DIFFERENCE",
+   "reconciliation": "عند الرصيد H1-2026 يُعرض نقد PRefChem ضمن مجموعة الأصول المحتفظ بها للبيع (B02: H1 PDF29 و31 وNote 16(a) PDF42). يلزم جسر بين نقد الميزانية ونقد نهاية التدفقات، لا تعديل تلقائي.",
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R3-prefchem-cash-bridge-h1-2026",
+    "R6-instant-period-identity",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "غير معروض اليوم",
+    "investor": "الموضوع 5: الميزانية (آخر رصيد فقط)",
+    "data": "غير معروض: صف cash ليس ضمن صفوف المستكشف، ويُعرض cash_end لـFY2025 فقط"
+   }
+  },
+  {
+   "record_id": "FQ01-OBS-074",
+   "company_id": "sa:2222",
+   "metric_name": "إجمالي حقوق الملكية",
+   "engine_metric_key": "total_equity",
+   "engine_data_point_id": 2884,
+   "contract": {
+    "category": "financial_statements",
+    "field_group": "balance_sheet",
+    "field_key": "total_equity"
+   },
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "unit": "SAR",
+   "currency": "SAR",
+   "scale_note": "engine stores SAR units; Aramco statements print SAR millions",
+   "definition": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+   "basis": "IFRS as endorsed in the Kingdom of Saudi Arabia and SOCPA pronouncements; consolidated",
+   "designated_disclosure": {
+    "key": "H1-Q2-2026",
+    "title": "Saudi Aramco — H1 2026 interim report (condensed consolidated interim financial statements)",
+    "published": "2026-08-04",
+    "assurance": "UNAUDITED_INTERIM_WITH_AUDITOR_REVIEW",
+    "pdf_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+    "pdf_file": "saudi-aramco-h1-2026-interim-report-english.pdf",
+    "sha256_per_b02": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 29,
+    "printed_page": 29,
+    "table": "balance_sheet",
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "accessible_here": false,
+    "sha256_verified_here": false
+   },
+   "value_in_source": null,
+   "engine": {
+    "value_sar": "1795831000000",
+    "form": "Q2 interim report",
+    "filed_at": "2026-08-04",
+    "import_file": "data/imports/aramco-2026-q2.json",
+    "import_registered_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_current_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "import_hash_matches": true,
+    "import_claimed_page": null,
+    "import_claimed_table": null,
+    "note": "the import hash identifies a JSON import file, not an Aramco disclosure; it is never used as the disclosure hash"
+   },
+   "comparison_with_source": {
+    "performed": false,
+    "reason": "no Aramco PDF for this period is accessible: aramco.com is denied by this environment's network policy, and neither the engine archive nor this repository holds it"
+   },
+   "fy2024_original_check": null,
+   "b02_comparison": "PERIOD_DIFFERENCE",
+   "reconciliation": null,
+   "issues": [
+    "R7-engine-hash-is-import-not-disclosure",
+    "R4-equity-specific-evidence",
+    "R6-instant-period-identity",
+    "R8-designated-document-not-accessible"
+   ],
+   "evidence_status": "SOURCE_DOCUMENT_NOT_ACCESSIBLE",
+   "ready_for_financial_review": false,
+   "qualification": {
+    "state": "WITHHELD",
+    "publication_authorized": false,
+    "blockers": [
+     "exact_engine_reference_unresolved",
+     "rights_evidence_pending",
+     "financial_review_pending"
+    ]
+   },
+   "target_display": {
+    "overview": "رقم رئيسي: إجمالي حقوق الملكية",
+    "investor": "الموضوع 5: الميزانية",
+    "data": "المستكشف: صف total_equity لخمس سنوات"
+   }
+  }
+ ]
+}

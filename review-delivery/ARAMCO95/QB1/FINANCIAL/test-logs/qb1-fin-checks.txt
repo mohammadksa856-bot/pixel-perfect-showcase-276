@@ -1,0 +1,30 @@
+PASS 23 records, unique ids, same set as FIN-QUAL-BATCH-01
+PASS metric counts 5/5/5/4/4 — {'revenue': 5, 'net_income': 5, 'operating_cash_flow': 5, 'cash': 4, 'total_equity': 4}
+PASS every record WITHHELD and not authorised for publication
+PASS no record claims qualification
+PASS no import-file hash used as a disclosure hash
+PASS designated documents not claimed as verified here
+PASS archived annual report sha256 recomputed
+PASS FQ01-OBS-001 revenue 2024-12-31: pypdf finds 1,637,299 on PDF 174 (Consolidated statement of income)
+PASS FQ01-OBS-004 net_income 2024-12-31: pypdf finds 398,422 on PDF 174 (Consolidated statement of income)
+PASS FQ01-OBS-006 operating_cash_flow 2024-12-31: pypdf finds 508,888 on PDF 178 (Consolidated statement of cash flows)
+PASS FQ01-OBS-011 revenue 2025-12-31: pypdf finds 1,559,342 on PDF 174 (Consolidated statement of income)
+PASS FQ01-OBS-014 net_income 2025-12-31: pypdf finds 350,210 on PDF 174 (Consolidated statement of income)
+PASS FQ01-OBS-016 operating_cash_flow 2025-12-31: pypdf finds 510,798 on PDF 178 (Consolidated statement of cash flows)
+PASS FQ01-OBS-051 cash 2024-12-31: pypdf finds 216,642 on PDF 176 (Consolidated balance sheet)
+PASS FQ01-OBS-053 total_equity 2024-12-31: pypdf finds 1,651,355 on PDF 176 (Consolidated balance sheet)
+PASS FQ01-OBS-058 cash 2025-12-31: pypdf finds 243,099 on PDF 176 (Consolidated balance sheet)
+PASS FQ01-OBS-060 total_equity 2025-12-31: pypdf finds 1,721,744 on PDF 176 (Consolidated balance sheet)
+PASS ready_for_financial_review only for FY2025 rows matched in the source
+PASS rows without an accessible PDF have no comparison and say why
+PASS 051/058: registered hash reproduced from the committed history, current file hash recomputed, neither edited
+PASS 051/058 records still carry the registered (not the current) hash and stay WITHHELD
+PASS equity records carry no cash-bridge or PRefChem note
+PASS the PRefChem bridge sits on FQ01-OBS-072 only
+PASS correction of the equity notes is logged
+PASS engine DB unchanged (sha256 prefix 2a749d7c8a051f27)
+PASS engine working tree has no tracked changes
+PASS holds unchanged 7/7, 22/22, 142, 0 — {"paragraphs": 99, "analyses_blocked": "7/7", "b03_claims_withheld": "22/22", "b02_inputs_withheld": 142, "b02_qualified_for_research": 0, "b02_approved_for_display": 0, "approved_paragraph_statuses": 0}
+PASS only financial-scope files changed since a76286c (no NONFINANCIAL, no CHANGELOG, no product or engine code)
+
+ALL PASS

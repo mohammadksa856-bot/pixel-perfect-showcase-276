@@ -1,0 +1,161 @@
+{
+  "schema": "marefa-qb1-nonfinancial-source-manifest/1",
+  "prepared_at": "2026-10-18T19:25:54.661806+00:00",
+  "sources": [
+    {
+      "source_id": "ANN2025",
+      "id_namespace": "LOCAL_LEDGER_NOT_ISSUER_DOCUMENT_ID",
+      "kind": "official_annual_report",
+      "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "byte_size": 17683967,
+      "pages": 246,
+      "language": "en",
+      "publication_date": null,
+      "publication_date_precision": "NOT_ESTABLISHED_INDEPENDENTLY",
+      "financial_statements_approval_date": "2026-03-09",
+      "engine_filed_at_claim": "2026-03-09",
+      "reporting_period_end": "2025-12-31",
+      "inspection": "Original bytes hash verified; selected full pages rendered/read locally",
+      "original_redistribution_authorized": false,
+      "rights_status": "UNRESOLVED_NO_GRANT_ISSUED"
+    },
+    {
+      "source_id": "FAQ",
+      "id_namespace": "LOCAL_LEDGER_NOT_ISSUER_DOCUMENT_ID",
+      "kind": "official_live_web",
+      "url": "https://www.aramco.com/ar/investors/investor-faq",
+      "locator": "الأسئلة المتعلقة بالإدراج في تداول: ISIN والاسم الكامل",
+      "observed_date": "2026-10-18",
+      "observation_precision": "day",
+      "publication_date": null,
+      "artifact_sha256": null,
+      "byte_size": null,
+      "archive_status": "NO_ORIGINAL_RESPONSE_BYTES_CAPTURED",
+      "inspection": "Official issuer FAQ; live response observed2026-10-18",
+      "rights_status": "UNRESOLVED_NO_GRANT_ISSUED"
+    },
+    {
+      "source_id": "CONTACTS",
+      "id_namespace": "LOCAL_LEDGER_NOT_ISSUER_DOCUMENT_ID",
+      "kind": "official_live_web",
+      "url": "https://www.aramco.com/en/global-contacts",
+      "locator": "Aramco Global > Dhahran",
+      "observed_date": "2026-10-18",
+      "observation_precision": "day",
+      "publication_date": null,
+      "artifact_sha256": null,
+      "byte_size": null,
+      "archive_status": "NO_ORIGINAL_RESPONSE_BYTES_CAPTURED",
+      "inspection": "Official issuer contacts; no personal contact data copied",
+      "rights_status": "UNRESOLVED_NO_GRANT_ISSUED"
+    },
+    {
+      "source_id": "INVESTORS",
+      "id_namespace": "LOCAL_LEDGER_NOT_ISSUER_DOCUMENT_ID",
+      "kind": "official_live_web",
+      "url": "https://www.aramco.com/en/investors",
+      "locator": "Investor overview page heading and canonical URL",
+      "observed_date": "2026-10-18",
+      "observation_precision": "day",
+      "publication_date": null,
+      "artifact_sha256": null,
+      "byte_size": null,
+      "archive_status": "NO_ORIGINAL_RESPONSE_BYTES_CAPTURED",
+      "inspection": "Official investors landing page opened",
+      "rights_status": "UNRESOLVED_NO_GRANT_ISSUED"
+    },
+    {
+      "source_id": "HOME",
+      "id_namespace": "LOCAL_LEDGER_NOT_ISSUER_DOCUMENT_ID",
+      "kind": "official_live_web",
+      "url": "https://www.aramco.com/en",
+      "locator": "Official website page and canonical URL",
+      "observed_date": "2026-10-18",
+      "observation_precision": "day",
+      "publication_date": null,
+      "artifact_sha256": null,
+      "byte_size": null,
+      "archive_status": "NO_ORIGINAL_RESPONSE_BYTES_CAPTURED",
+      "inspection": "Official home page opened",
+      "rights_status": "UNRESOLVED_NO_GRANT_ISSUED"
+    }
+  ],
+  "source_values_not_qualification": true,
+  "source_pdfs_and_rendered_pages_in_git": false,
+  "primary_annual_hash": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+  "engine_database_sha256_before_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+  "proof_assets": [
+    {
+      "pdf_page": 10,
+      "render_sha256": "b8deb5a266dec0b3585c94f3591c841c47a4d7a54d600d15049df343a6c18b58",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 12,
+      "render_sha256": "f2cd7b675e079bebb5f3af0db9dd137508b8533fef2d8a884c97e94ffa0798ec",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 16,
+      "render_sha256": "95f30e7bc39f1e4f5f52cf578b8369e83da3511be3e1dae7a2a8aa482516a450",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 18,
+      "render_sha256": "3620b7eb26c82eaedeeeeafa60e54e6865e69ab93cfc840abe53baa6b20d7754",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 37,
+      "render_sha256": "410bcdd128e59a0f9eb3771d23d87e6c61899610c57a9e6ee410a1020d9e5daa",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 76,
+      "render_sha256": "7bed83ccd286a6ddc6f6af9948576fb6a4aaed122dc02b5470858a0d8b127682",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 140,
+      "render_sha256": "484c18b0ba28446d545d66d98b86ace66184fb9883ba761e748d88eabd160e90",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 173,
+      "render_sha256": "8955083fe027afc2e83aa54e519ccc6ee5d2f28e1cae81f35ceefce2b78f0be4",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 176,
+      "render_sha256": "916ec90eea6ebdc11abdcbf28fd213c028c91fcdb63c767866052f3521ed1683",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 179,
+      "render_sha256": "1658c9ce7aadbb4d91f8666b093ee5360570c984045feb13e41fd312d4d99be8",
+      "render_is_original_artifact": false,
+      "committed": false
+    },
+    {
+      "pdf_page": 180,
+      "render_sha256": "a7308c5173760cc0fab4213bb43f2ee5388e5c39a72a274a12b900fe7b18ab07",
+      "render_is_original_artifact": false,
+      "committed": false
+    }
+  ],
+  "tool_limitations": [
+    "Web annual fetch failed due file length; verified pre-existing local original instead",
+    "Live HTML opened via web tool; no raw HTML-byte hash claimed",
+    "PDF widget annotation warnings did not prevent visual rendering; no form editing performed"
+  ]
+}

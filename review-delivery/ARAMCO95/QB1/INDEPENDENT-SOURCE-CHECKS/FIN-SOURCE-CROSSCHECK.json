@@ -1,0 +1,150 @@
+{
+  "status": "SOURCE_CROSSCHECK_PREPARED_NOT_FINANCIAL_APPROVAL",
+  "observed_at": "2026-10-18T19:21:24.175486+00:00",
+  "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+  "source_artifacts": [
+    {
+      "kind": "original_annual_PDF",
+      "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "bytes": 17683967,
+      "official_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf"
+    },
+    {
+      "kind": "original_H1_PDF",
+      "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "bytes": 2477784,
+      "official_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf"
+    }
+  ],
+  "import_hash_analysis": {
+    "recorded_import_sha256": "1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "matching_git_commit": "42bd5c4ede985323ce634a8d1b96697b3016c129",
+    "matching_git_blob": "e47bc13165c6c5d94f4449abd5097fe877bd89d6",
+    "current_import_sha256": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
+    "raw_bytes_differ": true,
+    "not_a_line_ending_only_difference": true,
+    "old_fact_count": 173,
+    "current_fact_count": 176,
+    "unchanged_old_facts": 173,
+    "removed_facts": 0,
+    "changed_shared_facts": 0,
+    "added_facts": [
+      {
+        "metric": "segment_impairment",
+        "period_end": "2025-12-31",
+        "period_kind": "fy"
+      },
+      {
+        "metric": "segment_impairment",
+        "period_end": "2025-12-31",
+        "period_kind": "fy"
+      },
+      {
+        "metric": "short_term_investments_net",
+        "period_end": "2025-12-31",
+        "period_kind": "fy"
+      }
+    ],
+    "company_attributes_unchanged": true,
+    "cash_related_old_facts": [
+      {
+        "metric": "cash_end",
+        "value": 243099,
+        "scale": 1000000,
+        "currency": "SAR",
+        "unit": "SAR",
+        "period_start": "2025-01-01",
+        "period_end": "2025-12-31",
+        "period_kind": "fy",
+        "fiscal_year": 2025,
+        "page": 181,
+        "table": "consolidated statement of cash flows"
+      },
+      {
+        "metric": "cash",
+        "value": 216642,
+        "scale": 1000000,
+        "currency": "SAR",
+        "unit": "SAR",
+        "period_end": "2024-12-31",
+        "period_kind": "instant",
+        "fiscal_year": 2024,
+        "page": 179,
+        "table": "2025 annual report comparative"
+      }
+    ]
+  },
+  "engine_cash_rows": [
+    {
+      "metric_key": "cash",
+      "period_kind": "instant",
+      "period_start": "",
+      "period_end": "2024-12-31",
+      "scope": "consolidated",
+      "value_decimal": "216642000000",
+      "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+      "is_calculated": 0,
+      "calculation": null,
+      "version": 2
+    },
+    {
+      "metric_key": "cash",
+      "period_kind": "instant",
+      "period_start": "",
+      "period_end": "2025-12-31",
+      "scope": "consolidated",
+      "value_decimal": "243099000000",
+      "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+      "is_calculated": 0,
+      "calculation": null,
+      "version": 1
+    }
+  ],
+  "traceability_limits": [
+    "Recorded JSON hash is now resolved to historical bytes, not a PDF hash",
+    "2025 cash instant row has no matching original cash/instant JSON entry; cash_end/fy exists, but its transformation to this row is not reconstructed or certified here",
+    "Do not change source_key to newer JSON hash: it would erase historical identity"
+  ],
+  "source_locator_check": {
+    "import_cash2024_pdf_page_claim": 179,
+    "actual_annual_balance_pdf_page": 176,
+    "actual_annual_balance_printed_page": 174,
+    "page179_actual": "Note1 General information, not cash row",
+    "comparison_columns": {
+      "current_year": 2025,
+      "comparative_year": 2024
+    },
+    "two_values_match_source": true
+  },
+  "prefchem_bridge": {
+    "unit": "SAR_millions",
+    "period_end": "2026-06-30",
+    "balance_cash": 167387,
+    "cashflow_ending_cash": 170853,
+    "cash_held_for_sale": 3466,
+    "equation": "167387 +3466 =170853",
+    "source_pdf_pages": [
+      29,
+      31,
+      42
+    ],
+    "scope": "Consolidated; PRefChem joint operations share classified held for sale",
+    "not_authorization_to_adjust_cash_or_gearing": true
+  },
+  "followup_for_claude": [
+    "Preserve original/comparative document editions and actual locators",
+    "Reconstruct cash instant lineage instead of treating is_calculated=0 as proof",
+    "Do not attach cash-only bridge as equity adjustment",
+    "Financially authorized review and rights remain separate"
+  ],
+  "holds": {
+    "analyses_blocked": 7,
+    "claims_withheld": 22,
+    "inputs_withheld": 142,
+    "financially_qualified": 0
+  },
+  "financial_approval": false,
+  "rights_grant": false,
+  "engine_database_sha256_before_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+  "protected_files_written": 0
+}

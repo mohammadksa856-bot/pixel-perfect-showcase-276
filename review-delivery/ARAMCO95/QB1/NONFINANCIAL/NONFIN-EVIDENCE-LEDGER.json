@@ -1,0 +1,2011 @@
+{
+  "schema": "marefa-qb1-nonfinancial-evidence/1",
+  "planning_commit": "a76286cea94ff9aac6e70535e8db90bac5908a72",
+  "preparation_status": "PREPARED_FOR_CROSS_REVIEW_NOT_ACCEPTED",
+  "prepared_at": "2026-10-18T19:25:54.661806+00:00",
+  "records_count": 19,
+  "scope_basis": {
+    "rendered_text_keys": [
+      "legal_name",
+      "legal_name_ar",
+      "isin",
+      "listing_date",
+      "legal_form",
+      "founding_date",
+      "headquarters_address",
+      "reporting_standard",
+      "website",
+      "investor_relations_url",
+      "business_description_ar",
+      "business_description",
+      "products_services",
+      "business_segments",
+      "geographic_presence",
+      "subsidiaries_count",
+      "ceo_name",
+      "chairman_name",
+      "auditor",
+      "employees",
+      "credit_rating"
+    ],
+    "included": [
+      "legal_name",
+      "legal_name_ar",
+      "isin",
+      "listing_date",
+      "legal_form",
+      "founding_date",
+      "headquarters_address",
+      "reporting_standard",
+      "website",
+      "investor_relations_url",
+      "business_description",
+      "products_services",
+      "geographic_presence",
+      "subsidiaries_count",
+      "ceo_name",
+      "chairman_name",
+      "auditor",
+      "employees",
+      "credit_rating"
+    ],
+    "excluded_not_catalog_fields": [
+      "business_description_ar",
+      "business_segments"
+    ],
+    "selection": "Exact intersection of existing rendered TextFact keys with original enabled company_model catalog; no facts added to reach19"
+  },
+  "snapshot_fixture_sha256": "3e014175fe89b25e94e42d0732c8f8dcbb66e180b5edd9548d6936769533fe70",
+  "holds": {
+    "analyses_blocked": 7,
+    "claims_withheld": 22,
+    "inputs_withheld": 142,
+    "financially_qualified": 0
+  },
+  "records": [
+    {
+      "record_id": "QB1-NF-01",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "legal_name",
+      "company_id": "sa:2222",
+      "original_engine_value": "Saudi Arabian Oil Company",
+      "source_observation_value": "Saudi Arabian Oil Company",
+      "definition_ar": "الاسم القانوني الإنجليزي، لا اسم العلامة التجارية.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 3,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 140,
+            "printed_page": 138,
+            "section": "Additional legal information > Aramco"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 179,
+            "printed_page": 177,
+            "section": "Note1 General information"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=legal_name",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "الاسم الرسمي ظاهر في المعلومات القانونية والإيضاح1؛ لا تاريخ بدء للاسم مثبت هنا.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-02",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "legal_name_ar",
+      "company_id": "sa:2222",
+      "original_engine_value": "شركة الزيت العربية السعودية",
+      "source_observation_value": "شركة الزيت العربية السعودية",
+      "definition_ar": "الاسم الكامل العربي كما يسميه المُصدر، لا الاسم المختصر.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 4,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "FAQ"
+        ],
+        "locators": [
+          {
+            "source_id": "FAQ",
+            "heading": "الأسئلة المتعلقة بالإدراج في تداول: ISIN والاسم الكامل"
+          }
+        ],
+        "status": "MATCHED_WEB_CURRENT_ONLY",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": null
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": null,
+        "information_as_of": null,
+        "as_of_basis": "Live web observation only; no backdating to2025",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "OBSERVED_WEB_CURRENT_PUBLICATION_TIME_UNKNOWN",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=legal_name_ar",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "FAQ يؤيد الاسم؛ تاريخ نشر الصفحة ونسختها التاريخية غير مثبتين.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-03",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "isin",
+      "company_id": "sa:2222",
+      "original_engine_value": "SA14TG012N13",
+      "source_observation_value": "SA14TG012N13",
+      "definition_ar": "معرف السهم الدولي؛ لا رمز تداول2222.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 6,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "FAQ"
+        ],
+        "locators": [
+          {
+            "source_id": "FAQ",
+            "heading": "الأسئلة المتعلقة بالإدراج في تداول: ISIN والاسم الكامل"
+          }
+        ],
+        "status": "MATCHED_WEB_CURRENT_ONLY",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": null
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": null,
+        "information_as_of": null,
+        "as_of_basis": "Live web observation only; no backdating to2025",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "OBSERVED_WEB_CURRENT_PUBLICATION_TIME_UNKNOWN",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=isin",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "FAQ الرسمي يؤيد ISIN؛ لا يُنسب تلقائيًا إلى لقطةFY2025.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-04",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "listing_date",
+      "company_id": "sa:2222",
+      "original_engine_value": "2019-12-11",
+      "source_observation_value": "2019-12-11",
+      "definition_ar": "تاريخ إدراج الأسهم العادية في السوق السعودية.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 11,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 140,
+            "printed_page": 138,
+            "section": "Additional legal information > Aramco"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 179,
+            "printed_page": 177,
+            "section": "Note1 General information"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": "2019-12-11",
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=listing_date",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "يُفصل الإدراج عن تأسيس الكيان وعن بداية النشاط.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-05",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "legal_form",
+      "company_id": "sa:2222",
+      "original_engine_value": "Saudi joint stock company",
+      "source_observation_value": "Saudi joint stock company",
+      "definition_ar": "الشكل النظامي بعد التحول إلى شركة مساهمة سعودية.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 25,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 140,
+            "printed_page": 138,
+            "section": "Additional legal information > Aramco"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 179,
+            "printed_page": 177,
+            "section": "Note1 General information"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": "2018-01-01",
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=legal_form",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "التحول نافذ2018-01-01؛ لا يُخلط بتاريخ السجل التجاري2018-03-28.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-06",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "founding_date",
+      "company_id": "sa:2222",
+      "original_engine_value": "1933",
+      "source_observation_value": {
+        "history_origin": "1933-05-29",
+        "legal_entity_formed": "1988-11-13"
+      },
+      "definition_ar": "سنة بداية التاريخ التشغيلي؛ ليست تاريخ تأسيس الكيان القانوني الحالي.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 24,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 140,
+            "printed_page": 138,
+            "section": "Additional legal information > Aramco"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 179,
+            "printed_page": 177,
+            "section": "Note1 General information"
+          }
+        ],
+        "status": "DEFINITION_REVIEW_REQUIRED",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=founding_date",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "قيمة1933 مؤيدة للتاريخ السابق للشركة؛ يلزم تثبيت معنى founding_date وعدم تحويلها إلى incorporation_date.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-07",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "headquarters_address",
+      "company_id": "sa:2222",
+      "original_engine_value": "P.O. Box 5000, Dhahran 31311, Kingdom of Saudi Arabia",
+      "source_observation_value": "P.O. Box 5000, Dhahran 31311, Kingdom of Saudi Arabia",
+      "definition_ar": "عنوان المقر المسجل/البريدي؛ لا عنوان مكتب المراجع.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 19,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025",
+          "CONTACTS"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 140,
+            "printed_page": 138,
+            "section": "Additional legal information > Aramco"
+          },
+          {
+            "source_id": "CONTACTS",
+            "heading": "Aramco Global > Dhahran"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=headquarters_address",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "العنوان مقروء بصريًا فيPDF140 رغم سقوط جزء منه في استخراج النص؛ موقع جهات الاتصال يؤيده حاليًا.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-08",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "reporting_standard",
+      "company_id": "sa:2222",
+      "original_engine_value": "IFRS Accounting Standards endorsed in the Kingdom of Saudi Arabia and other standards and pronouncements endorsed by SOCPA",
+      "source_observation_value": "IFRS endorsed in the Kingdom and other SOCPA standards and pronouncements",
+      "definition_ar": "أساس إعداد القوائم الموحدة للسنة2025؛ لا شهادة امتثال لكل بيانات الموقع.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 29,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 164,
+            "printed_page": 162,
+            "section": "Independent auditor opinion"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 180,
+            "printed_page": 178,
+            "section": "Note2(a) Basis of preparation"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=reporting_standard",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "الإيضاح2(a) ورأي المراجع يحددان الأساس؛ التقرير يذكر أيضًا الامتثال لـIFRS الصادرة عنIASB.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-09",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "website",
+      "company_id": "sa:2222",
+      "original_engine_value": "https://www.aramco.com",
+      "source_observation_value": "www.aramco.com/en",
+      "definition_ar": "نطاق الموقع الرسمي؛ الاختلاف بينwww والجذر ومسار اللغة تطبيع عنوان.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 20,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025",
+          "HOME"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 3,
+            "printed_page": 1,
+            "section": "Contents and online report URL"
+          },
+          {
+            "source_id": "HOME",
+            "heading": "Official website page and canonical URL"
+          }
+        ],
+        "status": "MATCHED_NORMALIZED_URL",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=website",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "النطاق مثبت بالتقرير وفتح الصفحة الرسمية؛ ليس رابطًا مؤرخًا صالحًا لكل الأزمنة.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-10",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "investor_relations_url",
+      "company_id": "sa:2222",
+      "original_engine_value": "https://www.aramco.com/en/investors",
+      "source_observation_value": "https://www.aramco.com/en/investors",
+      "definition_ar": "صفحة المستثمرين الرسمية، لا تقرير مالي بعينه.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 1,
+        "key": "identity",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 21,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "INVESTORS"
+        ],
+        "locators": [
+          {
+            "source_id": "INVESTORS",
+            "heading": "Investor overview page heading and canonical URL"
+          }
+        ],
+        "status": "MATCHED_WEB_CURRENT_ONLY",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": null
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": null,
+        "information_as_of": null,
+        "as_of_basis": "Live web observation only; no backdating to2025",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "OBSERVED_WEB_CURRENT_PUBLICATION_TIME_UNKNOWN",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "NOT_RENDERED_AS_DISTINCT_FIELD",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=identity&focus=investor_relations_url",
+          "topic": 1
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "صفحة المستثمرين فُتحت فعليًا؛ نشرها وتاريخ صلاحيتها في2025 غير مثبتين.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-11",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "business_description",
+      "company_id": "sa:2222",
+      "original_engine_value": "A globally integrated energy and chemicals company with Upstream and Downstream businesses, supported by corporate technology and services.",
+      "source_observation_value": "Upstream and Downstream supported by Corporate functions",
+      "definition_ar": "ملخص عرض للنشاط والتكامل، وليس اقتباسًا حرفيًا أو عدد قطاعات بديلًا للإيضاحات.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 2,
+        "key": "business",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 16,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 179,
+            "printed_page": 177,
+            "section": "Note1 General information"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 66,
+            "printed_page": 64,
+            "section": "Corporate"
+          }
+        ],
+        "status": "SOURCE_SUPPORTED_PARAPHRASE",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=business_description",
+          "topic": 2
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "نص المحرك صياغة مركبة؛ يثبت المصدر المعنى العام لا الجملة الحرفية. يحتاج مراجعة تحريرية.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-12",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "products_services",
+      "company_id": "sa:2222",
+      "original_engine_value": [
+        "crude oil",
+        "condensate",
+        "natural gas",
+        "natural gas liquids",
+        "refined products",
+        "chemicals",
+        "base oils",
+        "lubricants",
+        "retail fuels",
+        "trading",
+        "power"
+      ],
+      "source_observation_value": [
+        "upstream hydrocarbons",
+        "refined products",
+        "chemicals",
+        "base oils",
+        "lubricants",
+        "retail",
+        "supply and trading",
+        "power generation"
+      ],
+      "definition_ar": "قائمة أنشطة/منتجات مركبة؛ تشمل أنشطة وأعمالًا تابعة واستثمارات، لا قائمة مبيعات مستقلة لكل منتج.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 2,
+        "key": "business",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 33,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 18,
+            "printed_page": 16,
+            "section": "Integrated value chain"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 50,
+            "printed_page": 48,
+            "section": "Upstream"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 56,
+            "printed_page": 54,
+            "section": "Downstream"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 66,
+            "printed_page": 64,
+            "section": "Corporate"
+          }
+        ],
+        "status": "COMPOSITE_REVIEW_REQUIRED",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=products_services",
+          "topic": 2
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "السرد والرسوم يؤيدان الأنشطة؛ لا تفترض تساوي نطاق كل بند أو اكتمال القائمة. لا أرقام مبيعات مشتقة.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-13",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "geographic_presence",
+      "company_id": "sa:2222",
+      "original_engine_value": "More than 50 countries",
+      "source_observation_value": {
+        "bound": "more_than",
+        "value": 50,
+        "unit": "countries_of_operations"
+      },
+      "definition_ar": "عدد بلدان العمليات بحد أدنى معلن؛ لا عدد الشركات أو الأسواق المصدّر إليها.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 2,
+        "key": "business",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 34,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 16,
+            "printed_page": 14,
+            "section": "Business model inputs and scope footnotes"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 20,
+            "printed_page": 18,
+            "section": "Countries of operations map"
+          }
+        ],
+        "status": "MATCHED_BOUND_AND_SCOPE",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": "2025-12-31",
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=geographic_presence",
+          "topic": 2
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "+50 لا تعني50 بالضبط؛ خريطة العمليات مؤرخة كما في2025-12-31.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-14",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "subsidiaries_count",
+      "company_id": "sa:2222",
+      "original_engine_value": {
+        "includes": "subsidiaries, joint arrangements and associates",
+        "minimum": 400
+      },
+      "source_observation_value": {
+        "bound": "more_than",
+        "value": 400,
+        "includes": [
+          "subsidiaries",
+          "joint arrangements",
+          "associates"
+        ]
+      },
+      "definition_ar": "المفتاح يوحي بعدد الشركات التابعة وحدها، بينما المصدر يجمع ثلاثة أنواع علاقات.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 2,
+        "key": "business",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 35,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 16,
+            "printed_page": 14,
+            "section": "Business model inputs and scope footnotes"
+          }
+        ],
+        "status": "DEFINITION_CONFLICT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=business&focus=subsidiaries_count",
+          "topic": 2
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=business",
+          "tab": "business",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "لا يصلح+400 كعدد مستقل للتابعات. قيمة المحركminimum400 لا تحفظ صراحة حد>400 ولا يجوز احتسابها قيمة دقيقة.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-15",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "ceo_name",
+      "company_id": "sa:2222",
+      "original_engine_value": "Amin H. Nasser",
+      "source_observation_value": "Amin H. Nasser",
+      "definition_ar": "اسم الرئيس وكبير الإداريين التنفيذيين ضمن سياق التقرير؛ لا تاريخ تعيين جديد.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 3,
+        "key": "governance",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 31,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 12,
+            "printed_page": 10,
+            "section": "President & CEO message"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 176,
+            "printed_page": 174,
+            "section": "Consolidated balance sheet/signatures"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=governance&focus=ceo_name",
+          "topic": 3
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=shareholders",
+          "tab": "shareholders",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "الاسم والصفة مثبتان؛ لا دليل هنا على استمرار المنصب بعد تاريخ التقرير.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-16",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "chairman_name",
+      "company_id": "sa:2222",
+      "original_engine_value": "Yasir O. Al-Rumayyan",
+      "source_observation_value": "Yasir O. Al-Rumayyan",
+      "definition_ar": "اسم رئيس مجلس الإدارة ضمن سياق التقرير؛ لا جميع مناصبه الأخرى.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 3,
+        "key": "governance",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 32,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 10,
+            "printed_page": 8,
+            "section": "Chairman message"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 176,
+            "printed_page": 174,
+            "section": "Consolidated balance sheet/signatures"
+          }
+        ],
+        "status": "MATCHED_DIRECT",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=governance&focus=chairman_name",
+          "topic": 3
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=shareholders",
+          "tab": "shareholders",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "الاسم والصفة مثبتان؛ صلاحية حالية بعد التقرير تحتاج رصدًا منفصلًا.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-17",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "auditor",
+      "company_id": "sa:2222",
+      "original_engine_value": "PricewaterhouseCoopers (PwC), Omar Al Sagga",
+      "source_observation_value": {
+        "firm": "PricewaterhouseCoopers",
+        "signatory": "Omar M. Al Sagga",
+        "licence": "369",
+        "report_date": "2026-03-09"
+      },
+      "definition_ar": "مراجع القوائم الموحدة2025 وموقع تقرير المراجعة، لا مراجع كل معلومات التقرير غير المالية.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 3,
+        "key": "governance",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 27,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 164,
+            "printed_page": 162,
+            "section": "Independent auditor opinion"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 173,
+            "printed_page": 171,
+            "section": "Independent auditor signature"
+          }
+        ],
+        "status": "MATCHED_WITH_ABBREVIATION",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=governance&focus=auditor",
+          "topic": 3
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=shareholders",
+          "tab": "shareholders",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "المحرك يختصر اسم الموقع دون الحرفM؛ لا تُمدد مهمة مراجعة2025 تلقائيًا إلى سنوات لاحقة.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-18",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "employees",
+      "company_id": "sa:2222",
+      "original_engine_value": 76664,
+      "source_observation_value": {
+        "value": 76664,
+        "scope": "Saudi Arabian Oil Company (the Company)",
+        "year": 2025
+      },
+      "definition_ar": "عدد موظفي الشركة الأم وفق حاشية6؛ ليس إجمالي موظفي المجموعة أو المقاولين.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 3,
+        "key": "governance",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 26,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 16,
+            "printed_page": 14,
+            "section": "Business model inputs and scope footnotes"
+          },
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 76,
+            "printed_page": 74,
+            "section": "Safe operations and people development, employee table and footnote6"
+          }
+        ],
+        "status": "MATCHED_VALUE_SCOPE_REQUIRED",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": "2025-12-31",
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=governance&focus=employees",
+          "topic": 3
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=shareholders",
+          "tab": "shareholders",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "الحاشية6 تستثني تعميم نطاق مؤشرات السلامة؛ لا تستخدم consolidated كحد هذا العدد دون دليل.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    },
+    {
+      "record_id": "QB1-NF-19",
+      "record_id_namespace": "LOCAL_WORKPAPER_NOT_ENGINE_FACT_ID",
+      "original_field_id": "credit_rating",
+      "company_id": "sa:2222",
+      "original_engine_value": {
+        "fitch": {
+          "long_term": "A+",
+          "outlook": "Stable",
+          "short_term": "F1+"
+        },
+        "moodys": {
+          "long_term": "Aa3",
+          "outlook": "Stable",
+          "short_term": "P-1"
+        }
+      },
+      "source_observation_value": {
+        "moodys": {
+          "long_term": "Aa3",
+          "outlook": "Stable",
+          "short_term": "P-1"
+        },
+        "fitch": {
+          "long_term": "A+",
+          "outlook": "Stable",
+          "short_term": "F1+"
+        }
+      },
+      "definition_ar": "تصنيفات المُصدر كما نقلها التقرير عن الوكالتين، لا تقييم استثماري من معرفة.",
+      "factory_category": {
+        "key": "company_profile",
+        "ordinal": 1,
+        "weight": 8,
+        "field_group": "company_model"
+      },
+      "investor_topic": {
+        "ordinal": 16,
+        "key": "risks",
+        "not_factory_category": true
+      },
+      "engine_reference": {
+        "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "attribute_id": 28,
+        "attribute_version": 1,
+        "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+        "effective_at": "2025-12-31",
+        "original_artifact_sha256_in_engine": null
+      },
+      "evidence": {
+        "source_ids": [
+          "ANN2025"
+        ],
+        "locators": [
+          {
+            "source_id": "ANN2025",
+            "pdf_page": 37,
+            "printed_page": 35,
+            "section": "High investment-grade rating table"
+          }
+        ],
+        "status": "MATCHED_ISSUER_REPORTED_ONLY",
+        "preparer_source_check": true,
+        "site_presence_is_source_proof": false,
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+      },
+      "dates": {
+        "engine_effective_at": "2025-12-31",
+        "source_reporting_period_end": "2025-12-31",
+        "information_as_of": null,
+        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "known_event_or_valid_from": null,
+        "valid_until": null,
+        "valid_until_reason": "No evidence establishing termination or continuing validity",
+        "source_publication_date": null,
+        "observed_date": "2026-10-18"
+      },
+      "freshness": {
+        "contract_max_age_days": 365,
+        "state": "HISTORICAL_CONTEXT_CURRENTNESS_NOT_CERTIFIED",
+        "historical_age_alone_invalidates_value": false,
+        "independent_source_retrieval_does_not_rewrite_publication_date": true
+      },
+      "display": {
+        "overview": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/overview",
+          "component": "buildOverview: description/businessFacts/governance/risks; identity not copied as a separate overview block"
+        },
+        "investor": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222/intelligence?topic=risks&focus=credit_rating",
+          "topic": 16
+        },
+        "data": {
+          "state": "RENDERED_IN_FROZEN_MODEL",
+          "route": "/preview/web-v1/companies/2222?tab=risks",
+          "tab": "risks",
+          "exact_field_focus_supported": false
+        },
+        "verification_scope": "CODE_AND_FROZEN_MODEL_MAPPING_ONLY_NOT_BROWSER_OR_LIVE_QUALIFIED"
+      },
+      "approval": {
+        "prepared_by": "Codex",
+        "independent_cross_review": "PENDING_NOT_SELF_ACCEPTED",
+        "financial_approval": false,
+        "rights_grant": "UNKNOWN_NO_GRANT_ISSUED",
+        "publication_authorized": false,
+        "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
+      },
+      "issues": [
+        "لم تُفتح إعلانات الوكالتين الأصلية أو تراخيص بياناتهما؛ لا ادعاء أحدث تصنيف في2026.",
+        "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+      ],
+      "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
+    }
+  ]
+}

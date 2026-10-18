@@ -1,0 +1,872 @@
+{
+  "schema": "qb1-fy2026-independent-original-observations/1",
+  "observed_at_utc": "2026-10-18T21:45:55.799175+00:00",
+  "source_claude_delivery": "bb02da38ffa56e8a8d97de7b7288abbfe0eb9f2b",
+  "source_claude_ledger_sha256": "2b34417ff9ba81fe277cb3297367a31d69ae0f1ea68bc82a225da4a8364cfb8b",
+  "engine_sha": "b70254e463c18e893fd042a82ecdad78209384d6",
+  "database_read_mode": "ro&immutable=1",
+  "database_sha256_before_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+  "records": [
+    {
+      "record_id": "FQ01-OBS-021",
+      "engine_metric_key": "revenue",
+      "engine_reference": {
+        "id": 2856,
+        "version": 1,
+        "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-01-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "433101000000",
+      "period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 1
+      },
+      "source_period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 1
+      },
+      "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "433101",
+      "source_document": "Q1-2026",
+      "source_document_sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+      "pdf_page": 23,
+      "printed_page": 23,
+      "source_line": "Revenue",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": 22,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-024",
+      "engine_metric_key": "net_income",
+      "engine_reference": {
+        "id": 2857,
+        "version": 1,
+        "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-01-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "122008000000",
+      "period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 1
+      },
+      "source_period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 1
+      },
+      "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "122008",
+      "source_document": "Q1-2026",
+      "source_document_sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+      "pdf_page": 23,
+      "printed_page": 23,
+      "source_line": "Net income",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": 22,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-026",
+      "engine_metric_key": "operating_cash_flow",
+      "engine_reference": {
+        "id": 2862,
+        "version": 1,
+        "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-01-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "115242000000",
+      "period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 1
+      },
+      "source_period": {
+        "kind": "quarter",
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 1
+      },
+      "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "115242",
+      "source_document": "Q1-2026",
+      "source_document_sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+      "pdf_page": 27,
+      "printed_page": 27,
+      "source_line": "Net cash provided by operating activities",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": 26,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-031",
+      "engine_metric_key": "revenue",
+      "engine_reference": {
+        "id": 2878,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-04-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "450772000000",
+      "period": {
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "source_period": {
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "450772",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 27,
+      "printed_page": 27,
+      "source_line": "Revenue",
+      "source_column": "Q2 SAR 2026, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-034",
+      "engine_metric_key": "net_income",
+      "engine_reference": {
+        "id": 2880,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-04-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "122599000000",
+      "period": {
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "source_period": {
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "122599",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 27,
+      "printed_page": 27,
+      "source_line": "Net income",
+      "source_column": "Q2 SAR 2026, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-036",
+      "engine_metric_key": "operating_cash_flow",
+      "engine_reference": {
+        "id": 2886,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-04-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "95365000000",
+      "period": {
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "source_period": {
+        "kind": "quarter",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "95365",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 31,
+      "printed_page": 31,
+      "source_line": "Net cash provided by operating activities",
+      "source_column": "Q2 SAR 2026, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-041",
+      "engine_metric_key": "revenue",
+      "engine_reference": {
+        "id": 2879,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-01-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "883873000000",
+      "period": {
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "source_period": {
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "definition": "سطر Revenue في قائمة الدخل الموحدة (IFRS المعتمدة في المملكة). لا يشمل 'Other income related to sales'؛ المجموع 'Revenue and other income related to sales' مقياس منفصل في B02.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "883873",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 27,
+      "printed_page": 27,
+      "source_line": "Revenue",
+      "source_column": "H1 SAR 2026, third numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-044",
+      "engine_metric_key": "net_income",
+      "engine_reference": {
+        "id": 2881,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-01-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "244607000000",
+      "period": {
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "source_period": {
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "definition": "صافي دخل المجموعة الموحد شاملًا حقوق غير المسيطرين. المنسوب للمساهمين (net_income_parent) مقياس مستقل ولا يُستبدل به.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "244607",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 27,
+      "printed_page": 27,
+      "source_line": "Net income",
+      "source_column": "H1 SAR 2026, third numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-046",
+      "engine_metric_key": "operating_cash_flow",
+      "engine_reference": {
+        "id": 2887,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": "2026-01-01"
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "210607000000",
+      "period": {
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "source_period": {
+        "kind": "ytd",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": 2
+      },
+      "definition": "صافي النقد من الأنشطة التشغيلية في قائمة التدفقات الموحدة. التصنيف التشغيلي للفوائد والتوزيعات المستلمة كما يعرضه المُصدر، دون إعادة تصنيف.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "210607",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 31,
+      "printed_page": 31,
+      "source_line": "Net cash provided by operating activities",
+      "source_column": "H1 SAR 2026, third numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-065",
+      "engine_metric_key": "cash",
+      "engine_reference": {
+        "id": 2861,
+        "version": 1,
+        "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": ""
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "230813000000",
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "source_period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "definition": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "230813",
+      "source_document": "Q1-2026",
+      "source_document_sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+      "pdf_page": 25,
+      "printed_page": 25,
+      "source_line": "Cash and cash equivalents",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": 24,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-067",
+      "engine_metric_key": "total_equity",
+      "engine_reference": {
+        "id": 2860,
+        "version": 1,
+        "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": ""
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "1758311000000",
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "source_period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-03-31",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "definition": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "1758311",
+      "source_document": "Q1-2026",
+      "source_document_sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+      "pdf_page": 25,
+      "printed_page": 25,
+      "source_line": "Unlabelled total equity subtotal, including NCI",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": 24,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-072",
+      "engine_metric_key": "cash",
+      "engine_reference": {
+        "id": 2885,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": ""
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "167387000000",
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "source_period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "definition": "رصيد النقد وما في حكمه في الميزانية الموحدة في تاريخ الرصيد. لا يشمل الاستثمارات قصيرة الأجل، ولا نقد PRefChem المحتفظ به للبيع. نقد نهاية التدفقات (cash_end) مقياس مختلف.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "167387",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 29,
+      "printed_page": 29,
+      "source_line": "Cash and cash equivalents",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    },
+    {
+      "record_id": "FQ01-OBS-074",
+      "engine_metric_key": "total_equity",
+      "engine_reference": {
+        "id": 2884,
+        "version": 1,
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "scope": "consolidated",
+        "is_calculated": 0,
+        "period_start": ""
+      },
+      "period_adapter": "Engine empty-string start for instant maps to null; no invented start date",
+      "engine_value_sar": "1795831000000",
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "source_period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2026-06-30",
+        "fiscal_year": 2026,
+        "fiscal_quarter": null
+      },
+      "definition": "مجموع حقوق الملكية شاملًا حقوق غير المسيطرين، وهو مجموع فرعي غير معنون في الميزانية الموحدة. حقوق المساهمين (parent_equity) مقياس مستقل.",
+      "currency": "SAR",
+      "source_scale": "millions",
+      "source_value_sar_millions": "1795831",
+      "source_document": "H1-Q2-2026",
+      "source_document_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+      "pdf_page": 29,
+      "printed_page": 29,
+      "source_line": "Unlabelled total equity subtotal, including NCI",
+      "source_column": "Current period SAR, first numeric financial column",
+      "scope": "CONSOLIDATED_GROUP_INCLUDING_NCI_NOT_PARENT",
+      "verification": "ORIGINAL_PDF_VISUAL_AND_TWO_TEXT_EXTRACTORS_MATCH_ENGINE",
+      "source_value_directly_printed": true,
+      "quarterly_derivation_used": false,
+      "comparison_to_claude": {
+        "value_agrees": true,
+        "period_agrees": true,
+        "designated_page_agrees": true,
+        "original_access_gap_closed_here": true,
+        "import_claimed_page": null,
+        "engine_import_locator_not_corrected": true
+      },
+      "evidence_gap_status": "ORIGINAL_SOURCE_VALUE_AND_LOCATOR_CHECKED_PENDING_CROSS_REVIEW",
+      "qualification": "WITHHELD",
+      "financial_acceptance": false,
+      "publication_authorized": false,
+      "remaining_conditions": [
+        "financially_authorized_review",
+        "rights_evidence",
+        "versioned_B02C_evidence_receipt",
+        "precise_publication_time_and_as_of_controls",
+        "R1-R8_resolution_as_applicable"
+      ]
+    }
+  ],
+  "quarter_consistency_checks": [
+    {
+      "metric": "revenue",
+      "q1": "433101",
+      "h1": "883873",
+      "direct_q2": "450772",
+      "exact_h1_minus_q1": "450772",
+      "status": "PASS",
+      "publish_derived_fact": false,
+      "limitation": "Consistency check at source display precision, not financial qualification"
+    },
+    {
+      "metric": "net_income",
+      "q1": "122008",
+      "h1": "244607",
+      "direct_q2": "122599",
+      "exact_h1_minus_q1": "122599",
+      "status": "PASS",
+      "publish_derived_fact": false,
+      "limitation": "Consistency check at source display precision, not financial qualification"
+    },
+    {
+      "metric": "operating_cash_flow",
+      "q1": "115242",
+      "h1": "210607",
+      "direct_q2": "95365",
+      "exact_h1_minus_q1": "95365",
+      "status": "PASS",
+      "publish_derived_fact": false,
+      "limitation": "Consistency check at source display precision, not financial qualification"
+    }
+  ],
+  "prefchem_bridge": {
+    "record_id": "FQ01-OBS-072",
+    "unit": "SAR_millions",
+    "period_end": "2026-06-30",
+    "balance_cash": 167387,
+    "balance_pdf_page": 29,
+    "cash_end": 170853,
+    "cashflow_pdf_page": 31,
+    "held_for_sale_cash": 3466,
+    "note_pdf_page": 42,
+    "note": "16(a)",
+    "original_pdf_sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "equation": "167387 + 3466 = 170853",
+    "cash_and_cash_end_interchangeable": false,
+    "scope": "Share in PRefChem joint operations cash classified held for sale; not an equity adjustment",
+    "transaction_not_assumed_completed": true,
+    "financial_acceptance": false
+  },
+  "record_counts": {
+    "total": 13,
+    "q1": 5,
+    "q2": 3,
+    "h1_or_june_instant": 5,
+    "value_mismatches": 0,
+    "original_source_access_subgaps_checked": 13,
+    "financially_qualified": 0
+  },
+  "holds": {
+    "analyses_blocked": 7,
+    "claims_withheld": 22,
+    "inputs_withheld": 142,
+    "financially_qualified": 0
+  },
+  "R1_R8": "OPEN_NO_GLOBAL_CLOSURE",
+  "self_acceptance": false,
+  "authority": "Source cross-check only; no financial, editorial, rights or publication approval"
+}

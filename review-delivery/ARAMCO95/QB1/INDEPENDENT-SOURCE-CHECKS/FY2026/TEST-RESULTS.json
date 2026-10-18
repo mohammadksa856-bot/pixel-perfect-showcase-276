@@ -1,0 +1,100 @@
+{
+  "schema": "qb1-source-closure-test-receipts/1",
+  "preparer_checks_not_independent_acceptance": true,
+  "baseline_commit": "0c0de9e95babcfcd55d852c4e65c81d9ca0943be",
+  "runs": [
+    {
+      "run_id": "original-source-read",
+      "started_at_utc": "2026-10-18T21:45:53.806622+00:00",
+      "ended_at_utc": "2026-10-18T21:45:55.943874+00:00",
+      "scope": "13 original-source observations +3 exact quarter consistency checks +PRefChem bridge; not unit-test count",
+      "command": [
+        "python",
+        "review-delivery/ARAMCO95/QB1/INDEPENDENT-SOURCE-CHECKS/FY2026/check_original_sources.py"
+      ],
+      "exit_code": 0,
+      "tests_run": null,
+      "passed": null,
+      "skipped": 0,
+      "log": "original-source-read.txt",
+      "source_file_sha256": "ce7dd0d815c36230320e7d50ca17280bb7a4dac63f32ece297c3f987cb962a06"
+    },
+    {
+      "run_id": "pending-source-update",
+      "started_at_utc": "2026-10-18T21:45:55.943874+00:00",
+      "ended_at_utc": "2026-10-18T21:45:56.294066+00:00",
+      "scope": "Original annual note and scope; six pending records retained",
+      "command": [
+        "python",
+        "review-delivery/ARAMCO95/QB1/NONFINANCIAL/SOURCE-CLOSURE/update_pending.py"
+      ],
+      "exit_code": 0,
+      "tests_run": null,
+      "passed": null,
+      "skipped": 0,
+      "log": "pending-source-update.txt",
+      "source_file_sha256": "6065cc20ef600ef8dbaf13d8e23aec0c2afde1a0a2b3d209ab8ebef61efd6757"
+    },
+    {
+      "run_id": "source-closure-tests",
+      "started_at_utc": "2026-10-18T21:45:56.294066+00:00",
+      "ended_at_utc": "2026-10-18T21:45:56.659465+00:00",
+      "scope": "Source observation gates and negative identity/unit/period/qualification cases",
+      "command": [
+        "python",
+        "review-delivery/ARAMCO95/QB1/INDEPENDENT-SOURCE-CHECKS/FY2026/test_source_closure.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 13,
+      "passed": 13,
+      "skipped": 0,
+      "log": "source-closure-tests.txt",
+      "source_file_sha256": "f0cdba75cbc12c658f02590f9cfd990908c5eae0d789e36804da423ce84154a3"
+    },
+    {
+      "run_id": "original-nonfin-regression",
+      "started_at_utc": "2026-10-18T21:45:56.659465+00:00",
+      "ended_at_utc": "2026-10-18T21:45:56.783107+00:00",
+      "scope": "Accepted original structural tests, unchanged",
+      "command": [
+        "python",
+        "review-delivery/ARAMCO95/QB1/NONFINANCIAL/test_evidence.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 18,
+      "passed": 18,
+      "skipped": 0,
+      "log": "original-nonfin-regression.txt",
+      "source_file_sha256": "9bca6d4d706f9daaed2a53910a445958a02b2e5e452ec23c776fb06333490573"
+    },
+    {
+      "run_id": "remediation-regression",
+      "started_at_utc": "2026-10-18T21:45:56.784120+00:00",
+      "ended_at_utc": "2026-10-18T21:45:59.426824+00:00",
+      "scope": "Accepted remediation and private original PDF checks, unchanged",
+      "command": [
+        "python",
+        "review-delivery/ARAMCO95/QB1/NONFINANCIAL/test_remediation.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 26,
+      "passed": 26,
+      "skipped": 0,
+      "log": "remediation-regression.txt",
+      "source_file_sha256": "85906a97061123aaa4ba1c8228782aeacb617d6f341d4e907d6e2a491c64a031"
+    }
+  ],
+  "initial_harness_attempts": [
+    {
+      "status": "FAIL_HARNESS_FIXED",
+      "reason": "YTD fiscal_quarter=2 was incorrectly treated as quarter start in new checking script; source/engine unaffected"
+    },
+    {
+      "status": "FAIL_HARNESS_FIXED",
+      "reason": "Engine instant empty-string start vs ledger null; now explicitly recorded and normalized without inventing dates"
+    }
+  ],
+  "product_build": "NOT_RUN_NO_PRODUCT_CODE_CHANGED",
+  "browser": "NOT_RUN_NO_UI_CHANGED",
+  "no_claude_financial_files_changed": true
+}

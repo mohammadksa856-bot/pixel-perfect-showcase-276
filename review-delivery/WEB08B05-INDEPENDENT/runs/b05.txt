@@ -1,0 +1,86 @@
+{"run": "b05", "sha": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855", "started": "2026-10-18T00:07:37.553206+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "test", "research-evidence/aramco-research-experience"]}
+bun test v1.4.3 (c6da4a4d3)
+
+research-evidence\aramco-research-experience\access.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+132 |   });
+133 | });
+134 | 
+135 | describe("the withheld draft is not part of the public app", () => {
+136 |   const walk = (dir: string): string[] =>
+137 |     readdirSync(dir).flatMap((f) => {
+          ^
+error: ENOENT: no such file or directory, scandir '\C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\src'
+      at walk (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\research-evidence\aramco-research-experience\access.test.ts:137:5)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\research-evidence\aramco-research-experience\access.test.ts:142:15)
+-------------------------------
+
+947 | 		 */
+948 | 		const finishWithoutResolve = (message, log) => {
+949 | 			/**
+950 | 			 * @type {ErrorWithDetail}
+951 | 			 */
+952 | 			const error = new Error(`Can't ${message}`);
+                           ^
+error: Can't resolve 'tailwindcss' in '/C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web08b05-independent-20261018/src/'
+ details: "resolve 'tailwindcss' in '/C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web08b05-independent-20261018/src/'\n  Parsed request is a module\n  No description file found in /C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web08b05-independent-20261018/src/ or above\n  resolve as module\n    /C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web08b05-independent-20261018/src/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web08b05-independent-20261018/src/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web08b05-independent-20261018/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/Documents/Codex/2026-08-31/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/Documents/Codex/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/Documents/node_modules doesn't exist or is not a directory\n    /C:/Users/Mohammed856/node_modules doesn't exist or is not a directory\n    /C:/Users/node_modules doesn't exist or is not a directory\n    /C:/node_modules doesn't exist or is not a directory\n    /node_modules doesn't exist or is not a directory",
+
+      at finishWithoutResolve (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web06-polish-review-20261015\node_modules\enhanced-resolve\lib\Resolver.js:952:22)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web06-polish-review-20261015\node_modules\enhanced-resolve\lib\Resolver.js:1132:5)
+      at <anonymous> (file:///C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web06-polish-review-20261015/node_modules/tapable/lib/HookCodeFactory.js:15:10)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web06-polish-review-20261015\node_modules\enhanced-resolve\lib\Resolver.js:1132:5)
+      at <anonymous> (file:///C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web06-polish-review-20261015/node_modules/tapable/lib/HookCodeFactory.js:16:10)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web06-polish-review-20261015\node_modules\enhanced-resolve\lib\Resolver.js:1132:5)
+      at <anonymous> (file:///C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web06-polish-review-20261015/node_modules/tapable/lib/HookCodeFactory.js:15:10)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web06-polish-review-20261015\node_modules\enhanced-resolve\lib\Resolver.js:1132:5)
+      at <anonymous> (file:///C:/Users/Mohammed856/Documents/Codex/2026-08-31/referenced-chatgpt-conversation-this-is-an/web06-polish-review-20261015/node_modules/tapable/lib/HookCodeFactory.js:15:10)
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web06-polish-review-20261015\node_modules\enhanced-resolve\lib\Resolver.js:1132:5)
+(fail) (unnamed) [8.21ms]
+12 | let port = 0;
+13 | beforeAll(async () => {
+14 |   server = await createExperienceServer("http://127.0.0.1:5173");
+15 |   port = await server.listenLocal(0);
+16 | });
+17 | afterAll(() => server.close());
+                    ^
+TypeError: undefined is not an object (evaluating 'server.close')
+      at <anonymous> (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\research-evidence\aramco-research-experience\access.test.ts:17:16)
+(fail) (unnamed) [0.17ms]
+
+research-evidence\aramco-research-experience\experience.test.ts:
+(pass) holds: nothing is unblocked or approved > 7 BLOCKED, 22 WITHHELD claims, 142 WITHHELD inputs, 0 financially qualified [15.07ms]
+(pass) holds: nothing is unblocked or approved > no paragraph status reads as approved [1.71ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > every paragraph is placed in exactly one slot [0.43ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > an unknown paragraph id fails instead of silently disappearing [0.92ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > each paragraph card is rendered exactly once, in Arabic and English [51.28ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > the topic map links to the primary place and never repeats paragraph text [37.30ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > every paragraph has one primary topic; contextual links cover the rest [6.35ms]
+(pass) each paragraph has one primary place; nothing is lost or repeated > the four declared gap topics stay gaps and are not filled in [1.85ms]
+(pass) evidence: every reference is shown, as an identity, never as a quote or a value > each evidence drawer lists all of its paragraph's references [12.07ms]
+(pass) evidence: every reference is shown, as an identity, never as a quote or a value > no B03 quote text is rendered (quotes may carry disclosed figures) [31.77ms]
+(pass) evidence: every reference is shown, as an identity, never as a quote or a value > no distinctive engine value appears anywhere in the page [34.97ms]
+(pass) metric links follow the accepted B04 register > register is the accepted 72: 29 FOCUSABLE and 43 NOT_RENDERED [0.18ms]
+(pass) metric links follow the accepted B04 register > a FOCUSABLE metric links to its exact register target; a NOT_RENDERED metric is never clickable [47.48ms]
+(pass) metric links follow the accepted B04 register > every analysis input shows the register's status for its metric [8.04ms]
+(pass) metric links follow the accepted B04 register > with an unsafe APP_BASE, no app link is emitted [55.71ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > risk subsections hold one kind each [3.57ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > every card carries exactly one kind badge matching its kind [1.23ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > management targets are never shown as achieved, and milestones stay withheld [0.68ms]
+(pass) kinds are never mixed: records, guidance, interpretation, assumptions, scenarios, gaps > project relations rest only on identities specific to one project [0.82ms]
+(pass) navigation > every in-page link resolves to an element id [5.06ms]
+(pass) navigation > desktop and mobile contents cover every part, subsection and analysis [5.43ms]
+(pass) languages: Arabic is primary; untranslated text is never presented as English > document direction and language [0.35ms]
+(pass) languages: Arabic is primary; untranslated text is never presented as English > in English, only author drafts show English; the rest is Arabic, marked pending, with lang=ar dir=rtl [11.13ms]
+(pass) no script, form, inline style or external resource in the page > static, self-contained markup [3.92ms]
+
+2 tests failed:
+(fail) (unnamed) [8.21ms]
+(fail) (unnamed) [0.17ms]
+
+ 24 pass
+ 2 fail
+ 1 error
+ 9114 expect() calls
+Ran 26 tests across 2 files. [883.00ms]

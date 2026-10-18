@@ -1,0 +1,13 @@
+{"run": "public-leak", "sha": "3681aa0d084f31fc6bc6e05faa4c75db13b7b855", "started": "2026-10-18T00:08:22.649152+00:00", "exit": 1, "command": ["C:/Users/Mohammed856/Documents/Codex/2026-08-31/marefa-unified-20261012/output/br005-runtime/bun/bun-windows-x64-baseline/bun.exe", "research-evidence/aramco-research-experience/public-leak-scan.ts"]}
+28 |     "marefa-aramco-research-pack",
+29 |   ];
+30 | }
+31 | 
+32 | export function scan(dir: string) {
+33 |   if (!existsSync(dir)) throw Error(`build_output_missing:${dir}`);
+                                   ^
+error: build_output_missing:\C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\.vercel\output
+      at scan (C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\research-evidence\aramco-research-experience\public-leak-scan.ts:33:31)
+      at C:\Users\Mohammed856\Documents\Codex\2026-08-31\referenced-chatgpt-conversation-this-is-an\web08b05-independent-20261018\research-evidence\aramco-research-experience\public-leak-scan.ts:55:13
+
+Bun v1.4.3 (Windows x64)

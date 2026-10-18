@@ -1,0 +1,37 @@
+[
+  {
+    "id": "B05-R01",
+    "severity": "P1",
+    "decision": "REWORK",
+    "title": "File URL pathname used as Windows filesystem path prevents local reader startup and access-suite execution",
+    "locations": [
+      {
+        "file": "research-evidence/aramco-research-experience/assets.ts",
+        "line": 59
+      },
+      {
+        "file": "research-evidence/aramco-research-experience/access.test.ts",
+        "line": 141
+      },
+      {
+        "file": "research-evidence/aramco-research-experience/public-leak-scan.ts",
+        "line": 54
+      }
+    ],
+    "reproduction": [
+      "bun research-evidence/aramco-research-experience/server.ts",
+      "bun test research-evidence/aramco-research-experience",
+      "bun research-evidence/aramco-research-experience/public-leak-scan.ts"
+    ],
+    "expected": "Native local reader starts with installed dependencies; access cases execute; default build scan resolves output",
+    "actual": "startup exit1;B05 24pass2fail1error;default scan exit1,explicit scan succeeds",
+    "cause": "URL.pathname returns /C:/... instead of native Windows path; same problem in test root and default scanner root",
+    "requested_fix": "Portable URL-to-native-path conversion and original unmodified assertions rerun on new SHA; no research or quality-policy changes",
+    "evidence": [
+      "runs/native-start.txt",
+      "runs/b05.txt",
+      "runs/public-leak.txt",
+      "runs/public-leak-explicit.txt"
+    ]
+  }
+]

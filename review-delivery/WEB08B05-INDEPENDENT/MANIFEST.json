@@ -1,0 +1,150 @@
+{
+  "schema": "independent-review-manifest/1",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "sha256": "0d1fc4868f38d86b2cc59d5dfc65712e8ff385b529404ac73496122947a96d0a",
+      "bytes": 11724
+    },
+    {
+      "path": "audit.py",
+      "sha256": "33b3a13ae44f06fa1bbf7f9a9b55137696f971b2bcbb6d32a1d8216e925e4cf6",
+      "bytes": 3899
+    },
+    {
+      "path": "BROWSER-OBSERVATIONS.json",
+      "sha256": "37467179a62df6a49c0c70644f8a2ecac2c7d4436d2c1a1408757fdb8edbcd7d",
+      "bytes": 2145
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "1237bccbf5e37da9119a23b9ac3fef9c7c0fb60afb1196448a4b2869b963796d",
+      "bytes": 4220
+    },
+    {
+      "path": "FINDINGS.json",
+      "sha256": "ef4ce292c1c2fce09cf61ffb6e0e2c46f5bb35b59b628294cb1e0b95dc517a4a",
+      "bytes": 1503
+    },
+    {
+      "path": "INDEPENDENT-REVIEW_AR.md",
+      "sha256": "cbf46d283bdeb19e2ab03898b2c4817597ac64f4a4616f3443920f4bd301c8ca",
+      "bytes": 9943
+    },
+    {
+      "path": "independent.test.ts",
+      "sha256": "e050ed93cf0217936daf89dbef6a8b8f3c31c95a3ddbc78eb1e427e629ec3c21",
+      "bytes": 2828
+    },
+    {
+      "path": "observe-server.ts",
+      "sha256": "d184698a3f305afb94f181768ac538d55f87d4120c34468b6cb6a6f029b06f60",
+      "bytes": 579
+    },
+    {
+      "path": "README.md",
+      "sha256": "50e8b6fab538d34937073becc794f10b9dac02fd9bd38567316999cbf992d20c",
+      "bytes": 1948
+    },
+    {
+      "path": "RESULTS.json",
+      "sha256": "2ebf7e4dc7b528c90f5920eb9bdad52c4877bcd9a517de66bed587706e181106",
+      "bytes": 9692
+    },
+    {
+      "path": "run_review.py",
+      "sha256": "18b2a29e94f0984dcf1ab998c9d628ab58971bded184c305c39ec92d6141434a",
+      "bytes": 2355
+    },
+    {
+      "path": "runs/app.txt",
+      "sha256": "f7c9c5903f9698990e6982613ef68565014e59e653f944f0849677ec9882a18c",
+      "bytes": 57937
+    },
+    {
+      "path": "runs/b01.txt",
+      "sha256": "6d4e89c36286835dead5007caab535be1e71555d2921be82c86ece2333dbc0b5",
+      "bytes": 11463
+    },
+    {
+      "path": "runs/b02.txt",
+      "sha256": "b904ed006406ddd82fb32c84c3463bc8840bbe6f3a7b58a4ce3cb2ce4aa14420",
+      "bytes": 1719
+    },
+    {
+      "path": "runs/b03-check.txt",
+      "sha256": "44f282827f798703deffa3856fcc2a5f561d87beef2d027a8ef2aaa23530253f",
+      "bytes": 496
+    },
+    {
+      "path": "runs/b03.txt",
+      "sha256": "f99ee0fea71fde0add23b483b30b4d6e53e38794e9583c06e9c37b6fbed08254",
+      "bytes": 7701
+    },
+    {
+      "path": "runs/b04-types.txt",
+      "sha256": "d1e6b89e17df79b0be80e59d7a13bf5da0f9e4ca43727f5b910f0bb863ec019d",
+      "bytes": 385
+    },
+    {
+      "path": "runs/b04.txt",
+      "sha256": "4d51bb226f5724633b4f4a848c4404008edefcb99bf69e711f8982bed993e1da",
+      "bytes": 31237
+    },
+    {
+      "path": "runs/b05-types.txt",
+      "sha256": "330babc33ae508110e164950f3d90a9442febda50c9f141470f29c6a70d87c07",
+      "bytes": 391
+    },
+    {
+      "path": "runs/b05.txt",
+      "sha256": "399cc761701a399dc35af50f4c42ac94801c4e13f8311140b30cc29fcd8e638b",
+      "bytes": 9468
+    },
+    {
+      "path": "runs/build.txt",
+      "sha256": "acc1785753d5fa99464cbd12ef59614da4db98a6e733e09397243a631e9e31b0",
+      "bytes": 59269
+    },
+    {
+      "path": "runs/check.txt",
+      "sha256": "25a738b596a76f15280453d35cbd2f836134e3c64dc17b882fad382dd3f5da81",
+      "bytes": 529
+    },
+    {
+      "path": "runs/independent.txt",
+      "sha256": "5fefdb42216d880a4bc157d5ab8385ace5c284de62700de612fc4029236caf1f",
+      "bytes": 1106
+    },
+    {
+      "path": "runs/lint.txt",
+      "sha256": "ea677953649918516f27b0fe6ce53b1badef03dfae451e971ca35b5aa7fa7d63",
+      "bytes": 398
+    },
+    {
+      "path": "runs/native-start.txt",
+      "sha256": "2b1f62b65874e2cccbaee5ae58b3d795e37c00fb7ebfaabd75e5d72895d7824a",
+      "bytes": 4336
+    },
+    {
+      "path": "runs/public-leak-explicit.txt",
+      "sha256": "940ef76eee4ba34335fd1cec889aa023aaabdb5e95a0cc620cb7d680578dadbb",
+      "bytes": 433
+    },
+    {
+      "path": "runs/public-leak.txt",
+      "sha256": "e3602c0f4b95006ec847747dc6212d5d2d3933c37fc421ba644a15e20d44a5c7",
+      "bytes": 1160
+    },
+    {
+      "path": "runs/types.txt",
+      "sha256": "afe38f63190d898d055399ba89b13074b1671bccf9f472c134f32b9cd446223d",
+      "bytes": 319
+    },
+    {
+      "path": "windows-review-adapter.ts",
+      "sha256": "f7d55ea127c7996922d565413ddec9df05df2d2e7d2f603e16706fdc0742fd54",
+      "bytes": 1403
+    }
+  ]
+}

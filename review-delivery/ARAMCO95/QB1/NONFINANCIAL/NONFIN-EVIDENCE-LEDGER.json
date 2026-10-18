@@ -2,7 +2,7 @@
   "schema": "marefa-qb1-nonfinancial-evidence/1",
   "planning_commit": "a76286cea94ff9aac6e70535e8db90bac5908a72",
   "preparation_status": "PREPARED_FOR_CROSS_REVIEW_NOT_ACCEPTED",
-  "prepared_at": "2026-10-18T19:25:54.661806+00:00",
+  "prepared_at": "2026-10-18T20:26:40.474467+00:00",
   "records_count": 19,
   "scope_basis": {
     "rendered_text_keys": [
@@ -1074,21 +1074,22 @@
         "locators": [
           {
             "source_id": "ANN2025",
-            "pdf_page": 179,
-            "printed_page": 177,
-            "section": "Note1 General information"
+            "pdf_page": 8,
+            "printed_page": 6,
+            "section": "At a glance: integrated energy and chemicals company"
           },
           {
             "source_id": "ANN2025",
-            "pdf_page": 66,
-            "printed_page": 64,
-            "section": "Corporate"
+            "pdf_page": 9,
+            "printed_page": 7,
+            "section": "Our integrated operations: Upstream/Downstream supported by Corporate"
           }
         ],
         "status": "SOURCE_SUPPORTED_PARAPHRASE",
         "preparer_source_check": true,
         "site_presence_is_source_proof": false,
-        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "representation": "PARAPHRASE_NOT_DIRECT_QUOTATION"
       },
       "dates": {
         "engine_effective_at": "2025-12-31",
@@ -1135,7 +1136,7 @@
         "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
       },
       "issues": [
-        "نص المحرك صياغة مركبة؛ يثبت المصدر المعنى العام لا الجملة الحرفية. يحتاج مراجعة تحريرية.",
+        "أقرب نص عن تكامل الشركة فيPDF8 وعن القطاعين ودعمCorporate فيPDF9. globally integrated ليست اقتباسًا عن الشركة منPDF57؛ نص المحرك إعادة صياغة يحتاج مراجعة تحريرية.",
         "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
       ],
       "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
@@ -1158,16 +1159,90 @@
         "trading",
         "power"
       ],
-      "source_observation_value": [
-        "upstream hydrocarbons",
-        "refined products",
-        "chemicals",
-        "base oils",
-        "lubricants",
-        "retail",
-        "supply and trading",
-        "power generation"
-      ],
+      "source_observation_value": {
+        "direct_downstream_terms": [
+          "refining",
+          "chemicals",
+          "supply and trading",
+          "distribution",
+          "retail",
+          "base oils",
+          "lubricants",
+          "power generation"
+        ],
+        "primary_pdf_page": 56,
+        "supporting_upstream_pdf_page": 50,
+        "item_mapping": [
+          {
+            "engine_item": "crude oil",
+            "source_term": "crude oil",
+            "pdf_page": 50,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "condensate",
+            "source_term": "condensate",
+            "pdf_page": 50,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "natural gas",
+            "source_term": "natural gas",
+            "pdf_page": 50,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "natural gas liquids",
+            "source_term": "NGL",
+            "pdf_page": 50,
+            "relation": "EXPANSION_OF_ABBREVIATION"
+          },
+          {
+            "engine_item": "refined products",
+            "source_term": "refined products",
+            "pdf_page": 56,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "chemicals",
+            "source_term": "chemicals",
+            "pdf_page": 56,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "base oils",
+            "source_term": "base oils",
+            "pdf_page": 56,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "lubricants",
+            "source_term": "lubricants",
+            "pdf_page": 56,
+            "relation": "DIRECT_TERM"
+          },
+          {
+            "engine_item": "retail fuels",
+            "source_term": "retail",
+            "pdf_page": 56,
+            "relation": "ENGINE_PARAPHRASE_NOT_LITERAL"
+          },
+          {
+            "engine_item": "trading",
+            "source_term": "supply and trading",
+            "pdf_page": 56,
+            "relation": "ENGINE_SHORTENING_NOT_LITERAL"
+          },
+          {
+            "engine_item": "power",
+            "source_term": "power generation",
+            "pdf_page": 56,
+            "relation": "ENGINE_SHORTENING_NOT_LITERAL"
+          }
+        ],
+        "source_term_absent_from_engine": "distribution",
+        "engine_list_modified": false
+      },
       "definition_ar": "قائمة أنشطة/منتجات مركبة؛ تشمل أنشطة وأعمالًا تابعة واستثمارات، لا قائمة مبيعات مستقلة لكل منتج.",
       "factory_category": {
         "key": "company_profile",
@@ -1197,31 +1272,36 @@
             "source_id": "ANN2025",
             "pdf_page": 18,
             "printed_page": 16,
-            "section": "Integrated value chain"
+            "section": "Integrated value chain",
+            "role": "supporting_context"
           },
           {
             "source_id": "ANN2025",
             "pdf_page": 50,
             "printed_page": 48,
-            "section": "Upstream"
+            "section": "Upstream",
+            "role": "upstream_products"
           },
           {
             "source_id": "ANN2025",
             "pdf_page": 56,
             "printed_page": 54,
-            "section": "Downstream"
+            "section": "Downstream",
+            "role": "primary_downstream_list"
           },
           {
             "source_id": "ANN2025",
             "pdf_page": 66,
             "printed_page": 64,
-            "section": "Corporate"
+            "section": "Corporate",
+            "role": "supporting_context"
           }
         ],
         "status": "COMPOSITE_REVIEW_REQUIRED",
         "preparer_source_check": true,
         "site_presence_is_source_proof": false,
-        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+        "original_artifact_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "representation": "COMPOSITE_WITH_ITEM_LEVEL_DIRECT_AND_PARAPHRASE_MAPPING"
       },
       "dates": {
         "engine_effective_at": "2025-12-31",
@@ -1268,7 +1348,7 @@
         "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
       },
       "issues": [
-        "السرد والرسوم يؤيدان الأنشطة؛ لا تفترض تساوي نطاق كل بند أو اكتمال القائمة. لا أرقام مبيعات مشتقة.",
+        "PDF56 موجود في التسليم السابق أيضًا؛ التصحيح يثبته موضعًا رئيسيًا مع مطابقة البنود. distribution واردة في المصدر وغير موجودة في قائمة المحرك؛ لا تُضاف للمحرك أو تُعرض كتغطية مكتملة. retail fuels/trading/power ليست نقلًا حرفيًا للمصطلحات المقابلة.",
         "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
       ],
       "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"
@@ -1796,9 +1876,11 @@
       "source_observation_value": {
         "value": 76664,
         "scope": "Saudi Arabian Oil Company (the Company)",
-        "year": 2025
+        "year": 2025,
+        "period": "FY2025",
+        "measurement_basis": "NOT_STATED"
       },
-      "definition_ar": "عدد موظفي الشركة الأم وفق حاشية6؛ ليس إجمالي موظفي المجموعة أو المقاولين.",
+      "definition_ar": "عدد موظفي الشركة الأم في عمود2025؛ PDF16 حاشية4 تحيل إلىالاستدامة وPDF76 حاشية6 تحدد نطاق الشركة الأم، لا المجموعة أو المقاولين.",
       "factory_category": {
         "key": "company_profile",
         "ordinal": 1,
@@ -1827,13 +1909,17 @@
             "source_id": "ANN2025",
             "pdf_page": 16,
             "printed_page": 14,
-            "section": "Business model inputs and scope footnotes"
+            "section": "Business model inputs and scope footnotes",
+            "footnote": 4,
+            "role": "cross_reference_to_sustainability"
           },
           {
             "source_id": "ANN2025",
             "pdf_page": 76,
             "printed_page": 74,
-            "section": "Safe operations and people development, employee table and footnote6"
+            "section": "Safe operations and people development, employee table and footnote6",
+            "footnote": 6,
+            "role": "employee_scope_company_only"
           }
         ],
         "status": "MATCHED_VALUE_SCOPE_REQUIRED",
@@ -1844,13 +1930,15 @@
       "dates": {
         "engine_effective_at": "2025-12-31",
         "source_reporting_period_end": "2025-12-31",
-        "information_as_of": "2025-12-31",
-        "as_of_basis": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+        "information_as_of": null,
+        "as_of_basis": "2025 column only; neither year-end nor average measurement specified",
         "known_event_or_valid_from": null,
         "valid_until": null,
         "valid_until_reason": "No evidence establishing termination or continuing validity",
         "source_publication_date": null,
-        "observed_date": "2026-10-18"
+        "observed_date": "2026-10-18",
+        "period": "FY2025",
+        "measurement_basis": "NOT_STATED"
       },
       "freshness": {
         "contract_max_age_days": 365,
@@ -1886,7 +1974,7 @@
         "qualification": "WITHHELD_PENDING_CROSS_REVIEW_AND_REQUIRED_AUTHORITY"
       },
       "issues": [
-        "الحاشية6 تستثني تعميم نطاق مؤشرات السلامة؛ لا تستخدم consolidated كحد هذا العدد دون دليل.",
+        "PDF16 حاشية4 إحالة وليست تعريف النطاق؛ حاشيتها6 عن طاقة الكيماويات. فيPDF76 حاشية6 للموظفين، وحاشية1 لمؤشرات السلامة أوسع نطاقًا. لم يُحدد هل العدد نهاية السنة أو متوسطًا، ولا يُختلق تاريخ رصيد.",
         "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
       ],
       "next_action": "Cross-review definition, scope, source/date and rights; no engine write or publication from this workpaper"

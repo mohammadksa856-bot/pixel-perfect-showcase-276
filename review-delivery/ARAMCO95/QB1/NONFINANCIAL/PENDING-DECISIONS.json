@@ -1,0 +1,70 @@
+{
+  "schema": "qb1-nonfin-pending-decisions/1",
+  "cross_review_sha": "0d57c73a37250d4265016b6c003d25bbe15a6153",
+  "owner_authorized_remediation_only": true,
+  "self_acceptance": false,
+  "records": [
+    {
+      "field_id": "legal_name_ar",
+      "state": "PENDING_SOURCE_CAPTURE_AND_DEFINITION",
+      "available": "Issuer Arabic FAQ observed again; full company name and separate short name are presented. No raw HTML bytes captured by the web tool.",
+      "source_url": "https://www.aramco.com/ar/investors/investor-faq",
+      "smallest_evidence": "Authorized timestamped original response or official registry/exchange artifact with SHA-256 and exact name locator, available privately to the cross-reviewer.",
+      "smallest_decision": "Specify legal_name_ar as legal full name, keeping the trading short name/parenthetical alias distinct; do not silently normalize a different source field company_name_ar.",
+      "decision_owner": "Product owner for field semantics; cross-reviewer for evidence; rights authority separately",
+      "engine_change_authorized": false
+    },
+    {
+      "field_id": "isin",
+      "state": "PENDING_PRIMARY_ARTIFACT",
+      "available": "Issuer FAQ again displays SA14TG012N13 linked to company ticker2222. No raw original HTML bytes or independently archived edition.",
+      "source_url": "https://www.aramco.com/ar/investors/investor-faq",
+      "smallest_evidence": "Timestamped hashed exchange/depository or issuer FAQ original artifact explicitly linking the security/issuer to the ISIN, with reviewer access.",
+      "smallest_decision": "No numerical decision required; a valid check digit and matching internal registry do not establish official security identity.",
+      "decision_owner": "Source cross-reviewer; rights authority separately",
+      "engine_change_authorized": false
+    },
+    {
+      "field_id": "investor_relations_url",
+      "state": "PENDING_PRIMARY_ARTIFACT",
+      "available": "Official investor overview opened again. A tool-rendered observation does not supply an original response SHA-256 or historical validity.",
+      "source_url": "https://www.aramco.com/en/investors",
+      "smallest_evidence": "Successful original response with final canonical/redirect URL, retrieval time, content hash and private reviewer access; no invented publication date.",
+      "smallest_decision": "Treat as observed-current navigation link, not a backdated FY2025 fact, after evidence review.",
+      "decision_owner": "Source cross-reviewer; product owner if historical-link policy is needed",
+      "engine_change_authorized": false
+    },
+    {
+      "field_id": "founding_date",
+      "state": "PENDING_OWNER_DEFINITION",
+      "available": "Original ANN2025 PDF179 note1 distinguishes predecessor concession1933-05-29 from legal entity formation1988-11-13; the engine retains original founding_date1933.",
+      "smallest_evidence": "Existing hashed annual note1 supports both distinct events; no new date should be guessed.",
+      "smallest_decision": "Choose a historical-origin/concession label for1933, or use the separate legal incorporation field1988-11-13. Do not present1933 as current legal-entity incorporation.",
+      "decision_owner": "Product owner for field/display meaning; specialist reviewer for legal identity",
+      "engine_change_authorized": false
+    },
+    {
+      "field_id": "subsidiaries_count",
+      "state": "PENDING_SCOPE_DEFINITION_OR_SUBSIDIARY_ONLY_DISCLOSURE",
+      "available": "ANN2025 PDF16 more than400 includes subsidiaries, joint arrangements and associates, domestic and foreign. It is not an exact count of subsidiaries.",
+      "smallest_evidence": "A dated subsidiary-only total with defined consolidation scope from an official source, or an explicitly approved separate aggregate-entities field preserving >400.",
+      "smallest_decision": "Do not populate subsidiary count from this aggregate. If no subsidiary-only count is disclosed, retain NOT_AVAILABLE/not_disclosed rather than inventing400 or granting structural N/A.",
+      "decision_owner": "Product owner for semantics; accounting/source reviewer for consolidation scope",
+      "engine_change_authorized": false
+    },
+    {
+      "field_id": "credit_rating",
+      "state": "PENDING_DATED_AGENCY_EVIDENCE_AND_CURRENTNESS",
+      "available": "ANN2025 PDF37 issuer-reported Moody's Aa3/P-1 Stable and Fitch A+/F1+ Stable. No dated original agency action for this issuer was retrieved in this remediation.",
+      "source_url": "https://www.aramco.com/en/investors/bond-information",
+      "smallest_evidence": "Original dated action from each agency naming Saudi Arabian Oil Company, issuer/instrument and long/short-term/outlook, with later-actions/as-of check and permitted reviewer access.",
+      "smallest_decision": "Historical issuer-reported label may be reviewed within annual-report context only. Current rating requires source/date validation and separate reuse-rights review; a sovereign rating or bond issue date is not a substitute.",
+      "decision_owner": "Specialist credit/source reviewer; owner for historical/current display; rights authority separately",
+      "engine_change_authorized": false
+    }
+  ],
+  "none_closed_by_preparer": true,
+  "financially_qualified": 0,
+  "rights_granted": false,
+  "publication_authorized": false
+}

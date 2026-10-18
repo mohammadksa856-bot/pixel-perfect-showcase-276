@@ -1,6 +1,6 @@
 {
   "status": "SOURCE_CROSSCHECK_PREPARED_NOT_FINANCIAL_APPROVAL",
-  "observed_at": "2026-10-18T19:21:24.175486+00:00",
+  "observed_at": "2026-10-18T20:30:22.524974+00:00",
   "engine_commit": "b70254e463c18e893fd042a82ecdad78209384d6",
   "source_artifacts": [
     {
@@ -47,6 +47,18 @@
     ],
     "company_attributes_unchanged": true,
     "cash_related_old_facts": [
+      {
+        "label": "cash and cash equivalents",
+        "value": 243099,
+        "scale": 1000000,
+        "currency": "SAR",
+        "unit": "SAR",
+        "period_end": "2025-12-31",
+        "period_kind": "instant",
+        "fiscal_year": 2025,
+        "page": 179,
+        "table": "consolidated balance sheet"
+      },
       {
         "metric": "cash_end",
         "value": 243099,
@@ -102,9 +114,115 @@
   ],
   "traceability_limits": [
     "Recorded JSON hash is now resolved to historical bytes, not a PDF hash",
-    "2025 cash instant row has no matching original cash/instant JSON entry; cash_end/fy exists, but its transformation to this row is not reconstructed or certified here",
+    "FY2025 cash instant exists as label in the historical JSON and maps to cash; it is not a cash_end/FY fallback. The inherited page179 still needs source-locator correction. This does not supply a B02C qualified evidence receipt.",
     "Do not change source_key to newer JSON hash: it would erase historical identity"
   ],
+  "fx1_correction": {
+    "previous_claim": "No matching original FY2025 cash/instant entry",
+    "previous_claim_incorrect": true,
+    "matching_original_fact": {
+      "label": "cash and cash equivalents",
+      "value": 243099,
+      "scale": 1000000,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_end": "2025-12-31",
+      "period_kind": "instant",
+      "fiscal_year": 2025,
+      "page": 179,
+      "table": "consolidated balance sheet"
+    },
+    "mapping_source": "src/finengine/mapping.py",
+    "mapping_line": 11,
+    "mapping_sha256": "b32500845aaf75af8b1e0d39e64f5d16d0a416763c01031308c6ce2ef1d98f1f",
+    "mapped_metric": "cash",
+    "cash_end_fallback_used": false,
+    "independent_qualification": false
+  },
+  "fx2_shared_identity_discrepancies": {
+    "committed_engine": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "committed_database_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "memory_read_adapter": "Only SQLite journal-format header bytes18/19 set to rollback mode in private in-memory copy to support deserialize; original Git bytes and source DB unchanged; query_only enabled",
+    "rows": [
+      {
+        "record_id": "FQ01-OBS-001",
+        "committed_current": {
+          "id": 2322,
+          "version": 2,
+          "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+          "is_current": 1
+        },
+        "claude_reported_post_repair_reference": {
+          "id": 2134,
+          "version": 1,
+          "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+          "is_current": 0
+        },
+        "is_current_field_context": "is_current above is observed in committed database, not a reproduction of engine repair",
+        "values_equal": true,
+        "post_repair_execution_independently_reproduced": false,
+        "fix_owner": "Claude financial package; no financial files changed here"
+      },
+      {
+        "record_id": "FQ01-OBS-004",
+        "committed_current": {
+          "id": 2323,
+          "version": 2,
+          "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+          "is_current": 1
+        },
+        "claude_reported_post_repair_reference": {
+          "id": 2135,
+          "version": 1,
+          "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+          "is_current": 0
+        },
+        "is_current_field_context": "is_current above is observed in committed database, not a reproduction of engine repair",
+        "values_equal": true,
+        "post_repair_execution_independently_reproduced": false,
+        "fix_owner": "Claude financial package; no financial files changed here"
+      },
+      {
+        "record_id": "FQ01-OBS-006",
+        "committed_current": {
+          "id": 2325,
+          "version": 2,
+          "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+          "is_current": 1
+        },
+        "claude_reported_post_repair_reference": {
+          "id": 2139,
+          "version": 1,
+          "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+          "is_current": 0
+        },
+        "is_current_field_context": "is_current above is observed in committed database, not a reproduction of engine repair",
+        "values_equal": true,
+        "post_repair_execution_independently_reproduced": false,
+        "fix_owner": "Claude financial package; no financial files changed here"
+      },
+      {
+        "record_id": "FQ01-OBS-053",
+        "committed_current": {
+          "id": 2329,
+          "version": 2,
+          "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+          "is_current": 1
+        },
+        "claude_reported_post_repair_reference": {
+          "id": 2138,
+          "version": 1,
+          "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+          "is_current": 0
+        },
+        "is_current_field_context": "is_current above is observed in committed database, not a reproduction of engine repair",
+        "values_equal": true,
+        "post_repair_execution_independently_reproduced": false,
+        "fix_owner": "Claude financial package; no financial files changed here"
+      }
+    ],
+    "scope": "Read committed DB and referenced rows only; engine repair was not executed and financial package remains Claude-owned"
+  },
   "source_locator_check": {
     "import_cash2024_pdf_page_claim": 179,
     "actual_annual_balance_pdf_page": 176,
@@ -133,7 +251,8 @@
   },
   "followup_for_claude": [
     "Preserve original/comparative document editions and actual locators",
-    "Reconstruct cash instant lineage instead of treating is_calculated=0 as proof",
+    "FX-1 corrected: preserve the label-to-cash dictionary mapping and do not use cash_end/FY fallback",
+    "FX-2: Claude owns correction of the four committed-versus-post-repair financial identities; no financial files changed here",
     "Do not attach cash-only bridge as equity adjustment",
     "Financially authorized review and rights remain separate"
   ],

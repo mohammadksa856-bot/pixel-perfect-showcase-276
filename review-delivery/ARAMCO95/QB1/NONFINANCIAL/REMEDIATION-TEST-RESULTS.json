@@ -1,0 +1,23 @@
+{
+  "suites": [
+    {
+      "suite": "test_evidence.py",
+      "scope": "original structural suite, unchanged",
+      "exit_code": 0,
+      "tests_run": 18,
+      "passed": 18,
+      "skipped": 0,
+      "preparer_not_acceptance": true
+    },
+    {
+      "suite": "test_remediation.py",
+      "scope": "change regression and separate original-source reader",
+      "exit_code": 0,
+      "tests_run": 26,
+      "passed": 26,
+      "skipped": 0,
+      "preparer_not_acceptance": true
+    }
+  ],
+  "independent_acceptance": false
+}

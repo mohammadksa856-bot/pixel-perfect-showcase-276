@@ -1,0 +1,373 @@
+{
+  "schema": "qb1-nonfin-cross-review-correction/1",
+  "prepared_at": "2026-10-18T20:30:22.852039+00:00",
+  "prior_delivery": "7d65277df4dc25b9755520b871d0bfcfbf63c281",
+  "review_sha": "0d57c73a37250d4265016b6c003d25bbe15a6153",
+  "owner_authorization": "NONFIN cross-review remediation only; no acceptance or publication",
+  "changed_records": [
+    "business_description",
+    "products_services",
+    "employees"
+  ],
+  "corrections": [
+    {
+      "field_id": "business_description",
+      "old_record_sha256": "8ca51e05c52c5f4f3146a5cfaad0dd66b1dd7955721da34424f1040adfeee571",
+      "new_record_sha256": "2da1b606e1fe9425aee34513d8a688a81ca49b44b08db5bad0b3bac384bf89a7",
+      "changes": [
+        {
+          "path": "/evidence/locators",
+          "old": [
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 179,
+              "printed_page": 177,
+              "section": "Note1 General information"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 66,
+              "printed_page": 64,
+              "section": "Corporate"
+            }
+          ],
+          "new": [
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 8,
+              "printed_page": 6,
+              "section": "At a glance: integrated energy and chemicals company"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 9,
+              "printed_page": 7,
+              "section": "Our integrated operations: Upstream/Downstream supported by Corporate"
+            }
+          ]
+        },
+        {
+          "path": "/evidence/representation",
+          "old": null,
+          "new": "PARAPHRASE_NOT_DIRECT_QUOTATION"
+        },
+        {
+          "path": "/issues",
+          "old": [
+            "نص المحرك صياغة مركبة؛ يثبت المصدر المعنى العام لا الجملة الحرفية. يحتاج مراجعة تحريرية.",
+            "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+          ],
+          "new": [
+            "أقرب نص عن تكامل الشركة فيPDF8 وعن القطاعين ودعمCorporate فيPDF9. globally integrated ليست اقتباسًا عن الشركة منPDF57؛ نص المحرك إعادة صياغة يحتاج مراجعة تحريرية.",
+            "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+          ]
+        }
+      ],
+      "state": "CORRECTED_PENDING_CLAUDE_CHANGE_ONLY_REVIEW"
+    },
+    {
+      "field_id": "products_services",
+      "old_record_sha256": "06223ed6eafc966a11de4a5622850dd6dc16639f2b21953ce96d1ac1a5ea3e10",
+      "new_record_sha256": "55d840692ae3e7d9acfbd5e8b5b04940e2de80e47dd5ee88a93ebc110c6d3f2b",
+      "changes": [
+        {
+          "path": "/evidence/locators",
+          "old": [
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 18,
+              "printed_page": 16,
+              "section": "Integrated value chain"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 50,
+              "printed_page": 48,
+              "section": "Upstream"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 56,
+              "printed_page": 54,
+              "section": "Downstream"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 66,
+              "printed_page": 64,
+              "section": "Corporate"
+            }
+          ],
+          "new": [
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 18,
+              "printed_page": 16,
+              "section": "Integrated value chain",
+              "role": "supporting_context"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 50,
+              "printed_page": 48,
+              "section": "Upstream",
+              "role": "upstream_products"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 56,
+              "printed_page": 54,
+              "section": "Downstream",
+              "role": "primary_downstream_list"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 66,
+              "printed_page": 64,
+              "section": "Corporate",
+              "role": "supporting_context"
+            }
+          ]
+        },
+        {
+          "path": "/evidence/representation",
+          "old": null,
+          "new": "COMPOSITE_WITH_ITEM_LEVEL_DIRECT_AND_PARAPHRASE_MAPPING"
+        },
+        {
+          "path": "/issues",
+          "old": [
+            "السرد والرسوم يؤيدان الأنشطة؛ لا تفترض تساوي نطاق كل بند أو اكتمال القائمة. لا أرقام مبيعات مشتقة.",
+            "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+          ],
+          "new": [
+            "PDF56 موجود في التسليم السابق أيضًا؛ التصحيح يثبته موضعًا رئيسيًا مع مطابقة البنود. distribution واردة في المصدر وغير موجودة في قائمة المحرك؛ لا تُضاف للمحرك أو تُعرض كتغطية مكتملة. retail fuels/trading/power ليست نقلًا حرفيًا للمصطلحات المقابلة.",
+            "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+          ]
+        },
+        {
+          "path": "/source_observation_value",
+          "old": [
+            "upstream hydrocarbons",
+            "refined products",
+            "chemicals",
+            "base oils",
+            "lubricants",
+            "retail",
+            "supply and trading",
+            "power generation"
+          ],
+          "new": {
+            "direct_downstream_terms": [
+              "refining",
+              "chemicals",
+              "supply and trading",
+              "distribution",
+              "retail",
+              "base oils",
+              "lubricants",
+              "power generation"
+            ],
+            "primary_pdf_page": 56,
+            "supporting_upstream_pdf_page": 50,
+            "item_mapping": [
+              {
+                "engine_item": "crude oil",
+                "source_term": "crude oil",
+                "pdf_page": 50,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "condensate",
+                "source_term": "condensate",
+                "pdf_page": 50,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "natural gas",
+                "source_term": "natural gas",
+                "pdf_page": 50,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "natural gas liquids",
+                "source_term": "NGL",
+                "pdf_page": 50,
+                "relation": "EXPANSION_OF_ABBREVIATION"
+              },
+              {
+                "engine_item": "refined products",
+                "source_term": "refined products",
+                "pdf_page": 56,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "chemicals",
+                "source_term": "chemicals",
+                "pdf_page": 56,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "base oils",
+                "source_term": "base oils",
+                "pdf_page": 56,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "lubricants",
+                "source_term": "lubricants",
+                "pdf_page": 56,
+                "relation": "DIRECT_TERM"
+              },
+              {
+                "engine_item": "retail fuels",
+                "source_term": "retail",
+                "pdf_page": 56,
+                "relation": "ENGINE_PARAPHRASE_NOT_LITERAL"
+              },
+              {
+                "engine_item": "trading",
+                "source_term": "supply and trading",
+                "pdf_page": 56,
+                "relation": "ENGINE_SHORTENING_NOT_LITERAL"
+              },
+              {
+                "engine_item": "power",
+                "source_term": "power generation",
+                "pdf_page": 56,
+                "relation": "ENGINE_SHORTENING_NOT_LITERAL"
+              }
+            ],
+            "source_term_absent_from_engine": "distribution",
+            "engine_list_modified": false
+          }
+        }
+      ],
+      "state": "CORRECTED_PENDING_CLAUDE_CHANGE_ONLY_REVIEW"
+    },
+    {
+      "field_id": "employees",
+      "old_record_sha256": "eb201e0e9e2dde3e9648010c5df9bca3dd73516e4f8c3ba7a5fe4b8baec86b51",
+      "new_record_sha256": "33b9bb3627181c90d9e6ec299a0535a93a03724ba7f95934ed2b9abecff9fac3",
+      "changes": [
+        {
+          "path": "/dates/as_of_basis",
+          "old": "FY2025 report context; no blanket December31 date imposed on names/ratings/URLs",
+          "new": "2025 column only; neither year-end nor average measurement specified"
+        },
+        {
+          "path": "/dates/information_as_of",
+          "old": "2025-12-31",
+          "new": null
+        },
+        {
+          "path": "/dates/measurement_basis",
+          "old": null,
+          "new": "NOT_STATED"
+        },
+        {
+          "path": "/dates/period",
+          "old": null,
+          "new": "FY2025"
+        },
+        {
+          "path": "/definition_ar",
+          "old": "عدد موظفي الشركة الأم وفق حاشية6؛ ليس إجمالي موظفي المجموعة أو المقاولين.",
+          "new": "عدد موظفي الشركة الأم في عمود2025؛ PDF16 حاشية4 تحيل إلىالاستدامة وPDF76 حاشية6 تحدد نطاق الشركة الأم، لا المجموعة أو المقاولين."
+        },
+        {
+          "path": "/evidence/locators",
+          "old": [
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 16,
+              "printed_page": 14,
+              "section": "Business model inputs and scope footnotes"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 76,
+              "printed_page": 74,
+              "section": "Safe operations and people development, employee table and footnote6"
+            }
+          ],
+          "new": [
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 16,
+              "printed_page": 14,
+              "section": "Business model inputs and scope footnotes",
+              "footnote": 4,
+              "role": "cross_reference_to_sustainability"
+            },
+            {
+              "source_id": "ANN2025",
+              "pdf_page": 76,
+              "printed_page": 74,
+              "section": "Safe operations and people development, employee table and footnote6",
+              "footnote": 6,
+              "role": "employee_scope_company_only"
+            }
+          ]
+        },
+        {
+          "path": "/issues",
+          "old": [
+            "الحاشية6 تستثني تعميم نطاق مؤشرات السلامة؛ لا تستخدم consolidated كحد هذا العدد دون دليل.",
+            "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+          ],
+          "new": [
+            "PDF16 حاشية4 إحالة وليست تعريف النطاق؛ حاشيتها6 عن طاقة الكيماويات. فيPDF76 حاشية6 للموظفين، وحاشية1 لمؤشرات السلامة أوسع نطاقًا. لم يُحدد هل العدد نهاية السنة أو متوسطًا، ولا يُختلق تاريخ رصيد.",
+            "Engine source hash is an import JSON digest, not this annual PDF digest; use independent locators, not an inherited page number."
+          ]
+        },
+        {
+          "path": "/source_observation_value/measurement_basis",
+          "old": null,
+          "new": "NOT_STATED"
+        },
+        {
+          "path": "/source_observation_value/period",
+          "old": null,
+          "new": "FY2025"
+        }
+      ],
+      "state": "CORRECTED_PENDING_CLAUDE_CHANGE_ONLY_REVIEW"
+    }
+  ],
+  "unchanged_records_sha256": {
+    "legal_name": "99cc3b18f1fcc671e7e9eccef56c6eca8c28391ef839c69dee1c2167aded9f34",
+    "legal_name_ar": "76a4dbdaa1b998670a03d48cadf69b9e13ee5b17f2f93bb3a9079af0512ad978",
+    "isin": "ff23aa58f2d772f9ba4c3215ea0b46dcd2a39c8cd9b3e4f58985e787bc2e5347",
+    "listing_date": "7701949150697978330e683fc67b7f2960cdc6a39f444fcccf6404290553e2ce",
+    "legal_form": "72eb54817f8398c5d0d39228dbf1c1d4f34d4d4ef87453c2ff8eebf704621389",
+    "founding_date": "1fbe9ed84c49bc333009a1df0564caf23ef2d2dfe98fd6723d671733b2edc418",
+    "headquarters_address": "6ea958cebf8de2456813d69e3100b978b5cdbb91fe70ba6c43cab6cb2ee8e694",
+    "reporting_standard": "01918cea3a7d4d84607409d11f6224c892d568daccb82b90c112c93f027887f4",
+    "website": "677071592e2db08cc79ef877139db646226c99e5a01b460ea02c45db9cae30d2",
+    "investor_relations_url": "55a5ca1f64d2852156cc52e9d65f42de99e327c9745780e51114ac7e4017fcc4",
+    "geographic_presence": "7cea9815cd4e4072784c23bd87e95ce001e8a12e6a99e46003f4142ca7b1c30e",
+    "subsidiaries_count": "139747fb09eb3864c6450a6d3dcd5cbcc9060d1b29a0781320b8029c0aca42dc",
+    "ceo_name": "e6cb8940c9999abb1b607abc788f17266ec601912ff9040b2e35779e52dade1a",
+    "chairman_name": "8070062f63463de883558552533e0e67fe5be7d1ed81497c7159a3ac521b24db",
+    "auditor": "d8eb1a8f3fd9d5b3c6e7874f2879b31bf529ff16cb3945ebe3bfbcffd818e5b7",
+    "credit_rating": "7a54cfb09de93a18ab5f76b0a76ceba2244d181f052b713a70e4c3dc1c0a56c6"
+  },
+  "prior_artifacts_preserved_in_git": true,
+  "claude_financial_files_changed": false,
+  "central_board_or_changelog_changed": false,
+  "self_acceptance": false,
+  "rights_granted": false,
+  "publication_authorized": false,
+  "holds": {
+    "blocked": 7,
+    "claims_withheld": 22,
+    "inputs_withheld": 142,
+    "financially_qualified": 0
+  },
+  "financial_notes_changes": [
+    "FX-1: label cash instant exists; prior claim explicitly superseded",
+    "FX-2: record four committed versus reported repaired identities; Claude owns financial correction",
+    "FX-3: preserve bridge and both PDF hashes"
+  ]
+}

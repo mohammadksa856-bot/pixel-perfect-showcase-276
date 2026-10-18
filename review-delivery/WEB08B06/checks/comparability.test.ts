@@ -1784,6 +1784,12 @@ describe("event 118: raw numeric lexemes are checked against the decimal precisi
       capex("4503599627370495.5", "0.75"),
       NC("precision_not_guaranteed:capex_cash"),
     ],
+    [
+      "amount whose double prints shorter than written (8999999999.000019 prints .00002)",
+      "M06",
+      capex("8999999999.000019", "0"),
+      NC("precision_not_guaranteed:capex_cash"),
+    ],
     // FX rates and policy factors
     ["ordinary FX rate 3.75", "M01", fx("375", "3.75"), OK({ revenue_net: 100 })],
     ["FX rate with 10 places", "M01", fx("1000", "3.7512345678"), OK({ revenue_net: 266.578904 })],
@@ -1862,6 +1868,12 @@ describe("event 118: raw numeric lexemes are checked against the decimal precisi
         String.raw`"source_ids":["\u0053\"\\\/\n\ud83d\ude00",`,
       ),
       OK({ capex_cash: 420 }),
+    ],
+    [
+      "raw control character inside a string",
+      "M06",
+      capex("400", "20").replace('"source_ids":[', '"source_ids":["a\tb",'),
+      BAD,
     ],
     ["NaN is not JSON", "M06", ppe("NaN"), BAD],
     ["Infinity is not JSON", "M06", ppe("Infinity"), BAD],

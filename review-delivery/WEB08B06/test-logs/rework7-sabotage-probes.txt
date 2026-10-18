@@ -1,0 +1,41 @@
+# sabotage probes @ ebae2aab26e4a75e7580422aa8d02feda4ee4a11 (files restored after each; a probe whose text is not found is reported, not run)
+# Python results are compared in a few parity tests, so a Python weakening shows as few failing tests
+# EQUIVALENT = guard unreachable by any data (reason given); listed for transparency, not counted as detected
+## event 119 R02-F
+python: exact denominator check removed (back to the double check only) -> 4fail
+python: exact check loosened to < 0 (zero passes) -> 3fail
+python: exact/double sign disagreement reported as denominator_not_positive -> 2fail
+typescript: exact denominator check removed -> 30fail
+typescript: exact check loosened to < 0 -> 26fail
+typescript: exact/double sign disagreement reported as denominator_not_positive -> 2fail
+typescript: internal guard in qDiv removed -> 1fail
+EQUIVALENT python: exact divisor check in calc_exact removed (divisors are the literal 2 or a policy factor already validated > 0, whose exact value is > 0) -> 0fail
+EQUIVALENT python: exact FX rate check removed (the double rate is validated > 0; its exact value, lexeme or printed form, has the same sign) -> 0fail
+EQUIVALENT typescript: exact divisor check in calcExact removed (same reason) -> 0fail
+EQUIVALENT typescript: exact FX rate check removed (same reason) -> 0fail
+## event 119 R02-G
+python: explicit refusal of --evaluate removed (falls to usage) -> 1fail
+python: argument-form check loosened -> 1fail
+EQUIVALENT python: legacy --evaluate branch restored behind the argument checks (unreachable: both argument checks exit first; removing either is caught above) -> 0fail
+python: wrapper key check removed -> 1fail
+python: wrapper text-type check removed -> 1fail
+python: wrapper array check removed -> 1fail
+## event 118 (kept)
+python: written-places check removed -> 1fail
+python: lexeme round-trip check removed -> 4fail
+python: exact output check removed -> 4fail
+python: raw intake reverted to float parsing -> 4fail
+python: exact inputs ignore the raw lexeme -> 2fail
+python: nesting bound removed -> 2fail
+python: half-even replaced by half-up -> 1fail
+typescript: written-places check removed -> 5fail
+typescript: lexeme round-trip check removed -> 11fail
+typescript: exact output check removed -> 8fail
+typescript: raw intake goes through JSON.parse first -> 24fail
+typescript: exact inputs ignore the raw lexeme -> 2fail
+typescript: nesting bound removed -> 2fail
+typescript: control characters accepted in strings -> 1fail
+typescript: half-even replaced by half-up -> 2fail
+typescript: display rounding reverted to Math.round -> 4fail
+ 854 pass
+ 0 fail

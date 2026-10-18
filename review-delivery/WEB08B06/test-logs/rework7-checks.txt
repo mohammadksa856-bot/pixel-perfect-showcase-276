@@ -1,0 +1,11 @@
+# bun test review-delivery/WEB08B06/checks @ ebae2aab26e4a75e7580422aa8d02feda4ee4a11
+bun test v1.4.2 (744846f84)
+
+review-delivery/WEB08B06/checks/comparability.test.ts:
+sweep tally {"unsafe_decimal_precision":40,"accepted":243,"precision_not_guaranteed":35,"denominator_not_positive":82}
+
+ 854 pass
+ 0 fail
+ 4992 expect() calls
+Ran 854 tests across 3 files. [3.39s]
+exit=0

@@ -1,0 +1,23 @@
+# scope @ ebae2aab26e4a75e7580422aa8d02feda4ee4a11
+   product-tracking/CHANGELOG.jsonl                   |   1 +
+   review-delivery/WEB08B06/COMPATIBILITY-MAP.json    |  19 +-
+   .../WEB08B06/checks/comparability.test.ts          | 395 ++++++++++++++++++++-
+   review-delivery/WEB08B06/checks/evaluator.ts       |  47 ++-
+   review-delivery/WEB08B06/tools/recipes.py          |  80 ++++-
+   5 files changed, 506 insertions(+), 36 deletions(-)
+outside review-delivery/WEB08B06 and CHANGELOG since 16fd764: 0
+COMPARABILITY-RECIPES.json changed since 18e0e8a: 0
+closed R01/R03/R04/R05-A files changed since 18e0e8a: 0
+earlier closure reports and logs changed since d729cbb: 0
+lines removed or changed in comparability.test.ts since 18e0e8a (only how Python's object path is called, plus the event-118 CLI line):
+  -import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+  -const { recipes, evaluate, evaluateRaw, evaluatePair } = makeEvaluator(doc);
+  -    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate", file]);
+  -    const p = py(join(DIR, "tools/recipes.py"));
+  -    const p = Bun.spawnSync(["python3", join(DIR, "tools/recipes.py"), "--evaluate", file]);
+  -    const p = Bun.spawnSync([
+  -    expect(JSON.parse(p.stdout.toString())[0]).toEqual(OK({ net_debt: 1, gearing: 0.5 }));
+except Exception / bare except in recipes.py: 0
+CLI entry points in tools/: matrix.py recipes.py registers.py tracking_audit.py (matrix/registers/tracking_audit only write their own outputs; none evaluates)
+consumers outside the package (git grep --evaluate|recipes.py|checks/evaluator|makeEvaluator, CHANGELOG text excluded): 0
+CI workflows: 0

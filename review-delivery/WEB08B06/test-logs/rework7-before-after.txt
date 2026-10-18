@@ -1,0 +1,53 @@
+# before/after @ ebae2aab26e4a75e7580422aa8d02feda4ee4a11 on committed sources (git show b3111ce, 18e0e8a, and cd7c2ca, whose tools/ and checks/evaluator.ts are identical to ebae2aab26e4a75e7580422aa8d02feda4ee4a11); one Python process per case; exact reference from the decimal inputs (gearing denominator = b + l - c + e; ROACE denominator = sum of balances / 2)
+# R02-F: exact zero denominators
+## gearing 0.1 + 0.2 - 0 + (-0.3): exact denominator 0, double 5.55e-17
+  exact reference           : no valid ratio (denominator exactly 0)
+  b3111ce Python (--evaluate): ACCEPT {"net_debt":0.3,"gearing":5404319552844596}
+  b3111ce TS     (evaluate)  : ACCEPT {"net_debt":0.3,"gearing":5404319552844596}
+  18e0e8a Python (--evaluate-raw): EXIT 1: ZeroDivisionError: Fraction(1, 0)
+  18e0e8a TS     (evaluateRaw)   : THROWS RangeError: 0 is an invalid divisor value.
+  now     Python (--evaluate-raw): NC denominator_not_positive
+  now     TS     (evaluateRaw)   : NC denominator_not_positive
+  now     TS     (object path)   : NC denominator_not_positive
+## gearing 0.1 + 0.2 - 0.3 + 0: exact 0/0
+  exact reference           : no valid ratio (denominator exactly 0)
+  b3111ce Python (--evaluate): ACCEPT {"net_debt":0,"gearing":1}
+  b3111ce TS     (evaluate)  : ACCEPT {"net_debt":0,"gearing":1}
+  18e0e8a Python (--evaluate-raw): EXIT 1: ZeroDivisionError: Fraction(1, 0)
+  18e0e8a TS     (evaluateRaw)   : THROWS RangeError: 0 is an invalid divisor value.
+  now     Python (--evaluate-raw): NC denominator_not_positive
+  now     TS     (evaluateRaw)   : NC denominator_not_positive
+  now     TS     (object path)   : NC denominator_not_positive
+## gearing 0.3 - 0.1 + (-0.2): exact 0, double negative
+  exact reference           : no valid ratio (denominator exactly 0)
+  b3111ce Python (--evaluate): NC denominator_not_positive
+  b3111ce TS     (evaluate)  : NC denominator_not_positive
+  18e0e8a Python (--evaluate-raw): NC denominator_not_positive
+  18e0e8a TS     (evaluateRaw)   : NC denominator_not_positive
+  now     Python (--evaluate-raw): NC denominator_not_positive
+  now     TS     (evaluateRaw)   : NC denominator_not_positive
+  now     TS     (object path)   : NC denominator_not_positive
+## gearing exact denominator +0.000001
+  exact reference           : net_debt 0.000001, gearing 1
+  b3111ce Python (--evaluate): ACCEPT {"net_debt":0.000001,"gearing":1}
+  b3111ce TS     (evaluate)  : ACCEPT {"net_debt":0.000001,"gearing":1}
+  18e0e8a Python (--evaluate-raw): ACCEPT {"net_debt":0.000001,"gearing":1}
+  18e0e8a TS     (evaluateRaw)   : ACCEPT {"net_debt":0.000001,"gearing":1}
+  now     Python (--evaluate-raw): ACCEPT {"net_debt":0.000001,"gearing":1}
+  now     TS     (evaluateRaw)   : ACCEPT {"net_debt":0.000001,"gearing":1}
+  now     TS     (object path)   : ACCEPT {"net_debt":0.000001,"gearing":1}
+## ROACE balances 0.1, 0.2, -0.3, 0: average capital employed exactly 0
+  exact reference           : no valid ratio (denominator exactly 0)
+  b3111ce Python (--evaluate): NC unsafe_integer_precision
+  b3111ce TS     (evaluate)  : NC unsafe_integer_precision
+  18e0e8a Python (--evaluate-raw): NC unsafe_integer_precision
+  18e0e8a TS     (evaluateRaw)   : NC unsafe_integer_precision
+  now     Python (--evaluate-raw): NC denominator_not_positive
+  now     TS     (evaluateRaw)   : NC denominator_not_positive
+  now     TS     (object path)   : NC denominator_not_positive
+
+# R02-G: legacy CLI with the Codex fraction file (borrowings 9007199254740990.9, cash 9007199254740990, equity 1; exact 0.9 / 0.473684)
+  18e0e8a recipes.py --evaluate     : ACCEPT {"net_debt":1,"gearing":0.5}
+  now     recipes.py --evaluate     : EXIT 1: recipes.py: --evaluate was removed (event 119): it read pre-parsed JSON whose numbers may already have lost pr
+  now     recipes.py --evaluate-raw : NC unsafe_decimal_precision:borrowings
+  now     recipes.py --evaluate-raw with the pre-parsed file: EXIT 1: recipes.py: case 0: key(s) ['a'] not accepted; give each example as raw JSON text in "text" / "b_text"

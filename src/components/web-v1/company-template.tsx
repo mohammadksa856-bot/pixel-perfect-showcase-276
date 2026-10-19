@@ -194,47 +194,8 @@ export function CompanyHero({ p }: { p: CompanyPreview }) {
             </Link>
           </div>
         </div>
-        {p.evidence ? <QaEvidencePanel evidence={p.evidence} /> : null}
       </PreviewContainer>
     </section>
-  );
-}
-
-/**
- * W0: لوحة المراجع في بيئة QA الخاصة فقط (تظهر حين يوجد p.evidence، ولا يوجد خارج QA).
- * لا تعرض أي مبلغ: المفتاح والمستند والصفحة والحالة. الحالة تبقى WITHHELD ولا تغيّر أي خلية.
- */
-export function QaEvidencePanel({
-  evidence,
-}: {
-  evidence: NonNullable<CompanyPreview["evidence"]>;
-}) {
-  return (
-    <aside
-      className="mt-6 rounded-xl border border-dashed border-night-foreground/30 p-4 text-[12px] text-night-foreground/80"
-      data-qa-evidence
-      dir="ltr"
-    >
-      <p className="font-semibold">QA reviewer evidence — WITHHELD, not for display</p>
-      <ul className="mt-2 space-y-1">
-        {evidence.bound.map((b) => (
-          <li
-            key={b.evidence.record}
-            data-qa-evidence-bound={b.evidence.record}
-            data-qa-evidence-metric={b.key.metric}
-          >
-            {b.evidence.record} · {b.key.metric} · {b.key.periodKind} {b.key.periodEnd} · v
-            {b.key.version} · {b.evidence.document} {b.evidence.sha256.slice(0, 12)}… p.
-            {b.evidence.pdfPage} · {b.qualification}
-          </li>
-        ))}
-        {evidence.rejected.map((r) => (
-          <li key={r.record} data-qa-evidence-rejected={r.record}>
-            {r.record} · rejected: {r.reason}
-          </li>
-        ))}
-      </ul>
-    </aside>
   );
 }
 

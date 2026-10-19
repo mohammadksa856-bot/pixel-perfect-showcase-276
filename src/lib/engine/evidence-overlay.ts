@@ -2,17 +2,31 @@ import type { EngineMetricRow, EnginePage } from "./company-preview";
 
 /**
  * W0 (QA خاص): ربط أدلة مراجعة بقيم الحمولة الحالية دون تغيير المحرك أو الـfixture أو حالة أي خلية.
- * الربط بالمفتاح الكامل فقط (الشركة، المقياس، نوع الفترة، نهايتها، الإصدار، المصدر، المبلغ)، ولا بديل:
- * أي اختلاف أو تعارض في الحمولة يرفض الربط. لا تُعرض القيمة من هنا ولا تُرفع حالة WITHHELD.
+ * الربط بالهوية المالية الكاملة فقط: الشركة، المقياس، نوع الفترة وبدايتها ونهايتها وسنتها وربعها، العملة،
+ * الوحدة والمقياس، النطاق والأبعاد، الإصدار، مفتاح المصدر وبصمته ورابطه، نوع الإيداع وتاريخه، والمبلغ.
+ * لا بديل ولا تحويل: أي اختلاف أو حقل ناقص أو تعارض في الحمولة يرفض الربط. لا تُرفع حالة WITHHELD.
+ * هذه الوحدة لا تُستدعى إلا من مسار المراجع المحمي على الخادم (qa-evidence.server.ts).
  */
 export type EvidenceKey = {
   companyId: string;
   metric: string;
   periodKind: "fy" | "instant" | "quarter" | "ytd";
+  periodStart: string | null;
   periodEnd: string;
+  fiscalYear: number;
+  fiscalQuarter: number | null;
+  currency: string;
+  unit: string;
+  scale: string;
+  scope: string;
+  dimensions: Record<string, string>;
   version: number;
   sourceKey: string;
-  valueSar: string;
+  sourceContentHash: string;
+  sourceUrl: string;
+  filingType: string;
+  filedAt: string;
+  amount: string;
 };
 
 export type EvidenceRef = {
@@ -26,7 +40,7 @@ export type EvidenceRef = {
 };
 
 export type EvidenceOverlay = {
-  schema: "marefa-qa-evidence-overlay/1";
+  schema: "marefa-qa-evidence-overlay/2";
   scope: "QA_PRIVATE";
   fixture: { companyId: string; generatedAt: string; contractVersion: number };
   entries: { key: EvidenceKey; evidence: EvidenceRef }[];
@@ -47,7 +61,46 @@ export type EvidenceAttachment = {
   rejected: EvidenceRejection[];
 };
 
-type Row = EngineMetricRow & { version?: number | null; source_key?: string | null };
+type Row = EngineMetricRow & {
+  version?: number | null;
+  source_key?: string | null;
+  source_url?: string | null;
+  filed_at?: string | null;
+  period_start?: string | null;
+  fiscal_year?: number | null;
+  fiscal_quarter?: number | null;
+  currency?: string | null;
+  unit?: string | null;
+  scope?: string | null;
+  dimensions?: Record<string, unknown> | null;
+  is_calculated?: number | boolean | null;
+  provenance?: {
+    source?: { content_hash?: string | null; filing_type?: string | null } | null;
+    extraction?: { scale?: string | null } | null;
+  } | null;
+};
+
+const KEY_FIELDS: (keyof EvidenceKey)[] = [
+  "companyId",
+  "metric",
+  "periodKind",
+  "periodStart",
+  "periodEnd",
+  "fiscalYear",
+  "fiscalQuarter",
+  "currency",
+  "unit",
+  "scale",
+  "scope",
+  "dimensions",
+  "version",
+  "sourceKey",
+  "sourceContentHash",
+  "sourceUrl",
+  "filingType",
+  "filedAt",
+  "amount",
+];
 
 const HISTORY: Record<EvidenceKey["periodKind"], string> = {
   fy: "annual",
@@ -61,6 +114,39 @@ const SNAPSHOT: Record<EvidenceKey["periodKind"], string> = {
   quarter: "quarter",
   ytd: "ytd",
 };
+
+/** ترتيب ثابت للأبعاد حتى لا يغيّر ترتيب المفاتيح نتيجة المقارنة. */
+const canon = (d: Record<string, unknown> | null | undefined) =>
+  JSON.stringify(Object.entries(d ?? {}).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)));
+
+/** هوية الصف المالية الكاملة كما في الحمولة، بالحقول نفسها لمفتاح الدليل. */
+export function rowIdentity(
+  page: EnginePage,
+  metric: string,
+  r: Row,
+): Omit<EvidenceKey, "dimensions"> & { dimensions: string } {
+  return {
+    companyId: (page.company as { company_id?: string }).company_id ?? "",
+    metric,
+    periodKind: r.period_kind as EvidenceKey["periodKind"],
+    periodStart: r.period_start || null,
+    periodEnd: r.period_end ?? "",
+    fiscalYear: r.fiscal_year as number,
+    fiscalQuarter: r.fiscal_quarter ?? null,
+    currency: r.currency ?? "",
+    unit: r.unit ?? "",
+    scale: r.provenance?.extraction?.scale ?? "",
+    scope: r.scope ?? "",
+    dimensions: canon(r.dimensions),
+    version: r.version as number,
+    sourceKey: r.source_key ?? "",
+    sourceContentHash: r.provenance?.source?.content_hash ?? "",
+    sourceUrl: r.source_url ?? "",
+    filingType: r.provenance?.source?.filing_type ?? "",
+    filedAt: r.filed_at ?? "",
+    amount: r.value as string,
+  };
+}
 
 /** كل صفوف الحمولة لهذا المقياس والفترة، من سجل الفترات ومن ملخص آخر فترة. */
 export function payloadRows(page: EnginePage, key: EvidenceKey): Row[] {
@@ -79,19 +165,30 @@ export function payloadRows(page: EnginePage, key: EvidenceKey): Row[] {
   );
 }
 
+function keyComplete(key: EvidenceKey): boolean {
+  const k = key as Record<string, unknown>;
+  if (Object.keys(k).length !== KEY_FIELDS.length) return false;
+  return KEY_FIELDS.every((f) => {
+    const v = k[f];
+    if (f === "periodStart" || f === "fiscalQuarter") return v !== undefined;
+    if (f === "dimensions") return !!v && typeof v === "object" && !Array.isArray(v);
+    return v !== undefined && v !== null && v !== "";
+  });
+}
+
 function bindOne(page: EnginePage, key: EvidenceKey): string | null {
+  if (!keyComplete(key)) return "key_incomplete";
   const company = (page.company as { company_id?: string }).company_id;
   if (company !== key.companyId) return "company_mismatch";
   const rows = payloadRows(page, key);
   if (!rows.length) return "no_row_for_metric_and_period";
-  const ids = new Set(rows.map((r) => `${r.version}|${r.source_key}|${r.value}`));
+  if (rows.some((r) => r.is_calculated)) return "calculated_row";
+  const ids = new Set(rows.map((r) => JSON.stringify(rowIdentity(page, key.metric, r))));
   if (ids.size > 1) return "payload_rows_disagree";
-  const r = rows[0]!;
-  const diff = [
-    r.version !== key.version && "version",
-    r.source_key !== key.sourceKey && "source_key",
-    r.value !== key.valueSar && "value",
-  ].filter(Boolean);
+  const id = rowIdentity(page, key.metric, rows[0]!);
+  const want = { ...key, dimensions: canon(key.dimensions) };
+  // مساواة صارمة لكل حقل: لا تحويل عملة ولا وحدة ولا مقياس، ولا قبول لبداية فترة أو نطاق مختلف.
+  const diff = KEY_FIELDS.filter((f) => id[f] !== want[f]);
   return diff.length ? `key_mismatch:${diff.join(",")}` : null;
 }
 
@@ -104,7 +201,7 @@ export function bindEvidenceOverlay(
   const fx = overlay.fixture;
   const pageCompany = (page.company as { company_id?: string }).company_id;
   const fixtureOk =
-    overlay.schema === "marefa-qa-evidence-overlay/1" &&
+    overlay.schema === "marefa-qa-evidence-overlay/2" &&
     overlay.scope === "QA_PRIVATE" &&
     pageCompany === fx.companyId &&
     (page as { generated_at?: string }).generated_at === fx.generatedAt &&

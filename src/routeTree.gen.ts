@@ -46,6 +46,7 @@ import { Route as PreviewCompaniesSymbolRouteImport } from './routes/preview.com
 import { Route as PreviewWebV1IndexRouteImport } from './routes/preview.web-v1.index'
 import { Route as PreviewWebV1DesignSystemRouteImport } from './routes/preview.web-v1.design-system'
 import { Route as PreviewWebV1SearchRouteImport } from './routes/preview.web-v1.search'
+import { Route as PreviewQaEvidenceSymbolRouteImport } from './routes/preview.qa.evidence.$symbol'
 import { Route as PreviewWebV1CompaniesIndexRouteImport } from './routes/preview.web-v1.companies.index'
 import { Route as PreviewWebV1CompaniesSymbolRouteImport } from './routes/preview.web-v1.companies.$symbol'
 import { Route as PreviewWebV1KnowledgeIndexRouteImport } from './routes/preview.web-v1.knowledge.index'
@@ -251,6 +252,11 @@ const PreviewWebV1SearchRoute = PreviewWebV1SearchRouteImport.update({
   path: '/preview/web-v1/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PreviewQaEvidenceSymbolRoute = PreviewQaEvidenceSymbolRouteImport.update({
+  id: '/preview/qa/evidence/$symbol',
+  path: '/preview/qa/evidence/$symbol',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PreviewWebV1CompaniesIndexRoute =
   PreviewWebV1CompaniesIndexRouteImport.update({
     id: '/preview/web-v1/companies/',
@@ -366,6 +372,7 @@ export interface FileRoutesByFullPath {
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/preview/companies/': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1/': typeof PreviewWebV1IndexRoute
+  '/preview/qa/evidence/$symbol': typeof PreviewQaEvidenceSymbolRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
   '/preview/web-v1/knowledge/$slug': typeof PreviewWebV1KnowledgeSlugRoute
   '/preview/web-v1/research/$slug': typeof PreviewWebV1ResearchSlugRoute
@@ -416,6 +423,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/preview/companies': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1': typeof PreviewWebV1IndexRoute
+  '/preview/qa/evidence/$symbol': typeof PreviewQaEvidenceSymbolRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
   '/preview/web-v1/knowledge/$slug': typeof PreviewWebV1KnowledgeSlugRoute
   '/preview/web-v1/research/$slug': typeof PreviewWebV1ResearchSlugRoute
@@ -469,6 +477,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/preview/companies/': typeof PreviewCompaniesIndexRoute
   '/preview/web-v1/': typeof PreviewWebV1IndexRoute
+  '/preview/qa/evidence/$symbol': typeof PreviewQaEvidenceSymbolRoute
   '/preview/web-v1/companies/$symbol': typeof PreviewWebV1CompaniesSymbolRoute
   '/preview/web-v1/knowledge/$slug': typeof PreviewWebV1KnowledgeSlugRoute
   '/preview/web-v1/research/$slug': typeof PreviewWebV1ResearchSlugRoute
@@ -522,6 +531,7 @@ export interface FileRouteTypes {
     | '/admin/'
     | '/preview/companies/'
     | '/preview/web-v1/'
+    | '/preview/qa/evidence/$symbol'
     | '/preview/web-v1/companies/$symbol'
     | '/preview/web-v1/knowledge/$slug'
     | '/preview/web-v1/research/$slug'
@@ -572,6 +582,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/preview/companies'
     | '/preview/web-v1'
+    | '/preview/qa/evidence/$symbol'
     | '/preview/web-v1/companies/$symbol'
     | '/preview/web-v1/knowledge/$slug'
     | '/preview/web-v1/research/$slug'
@@ -624,6 +635,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/'
     | '/preview/companies/'
     | '/preview/web-v1/'
+    | '/preview/qa/evidence/$symbol'
     | '/preview/web-v1/companies/$symbol'
     | '/preview/web-v1/knowledge/$slug'
     | '/preview/web-v1/research/$slug'
@@ -668,6 +680,7 @@ export interface RootRouteChildren {
   PreviewWebV1SearchRoute: typeof PreviewWebV1SearchRoute
   PreviewCompaniesIndexRoute: typeof PreviewCompaniesIndexRoute
   PreviewWebV1IndexRoute: typeof PreviewWebV1IndexRoute
+  PreviewQaEvidenceSymbolRoute: typeof PreviewQaEvidenceSymbolRoute
   PreviewWebV1CompaniesSymbolRoute: typeof PreviewWebV1CompaniesSymbolRoute
   PreviewWebV1KnowledgeSlugRoute: typeof PreviewWebV1KnowledgeSlugRoute
   PreviewWebV1ResearchSlugRoute: typeof PreviewWebV1ResearchSlugRoute
@@ -944,6 +957,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PreviewWebV1SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/preview/qa/evidence/$symbol': {
+      id: '/preview/qa/evidence/$symbol'
+      path: '/preview/qa/evidence/$symbol'
+      fullPath: '/preview/qa/evidence/$symbol'
+      preLoaderRoute: typeof PreviewQaEvidenceSymbolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/preview/web-v1/companies/': {
       id: '/preview/web-v1/companies/'
       path: '/preview/web-v1/companies'
@@ -1103,6 +1123,7 @@ const rootRouteChildren: RootRouteChildren = {
   PreviewWebV1SearchRoute: PreviewWebV1SearchRoute,
   PreviewCompaniesIndexRoute: PreviewCompaniesIndexRoute,
   PreviewWebV1IndexRoute: PreviewWebV1IndexRoute,
+  PreviewQaEvidenceSymbolRoute: PreviewQaEvidenceSymbolRoute,
   PreviewWebV1CompaniesSymbolRoute: PreviewWebV1CompaniesSymbolRoute,
   PreviewWebV1KnowledgeSlugRoute: PreviewWebV1KnowledgeSlugRoute,
   PreviewWebV1ResearchSlugRoute: PreviewWebV1ResearchSlugRoute,

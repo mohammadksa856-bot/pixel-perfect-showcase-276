@@ -9,7 +9,6 @@ import {
   type Readiness,
 } from "./readiness";
 import { buildStatements, keyFigures, type KeyFigure, type StatementView } from "./statements";
-import type { EvidenceAttachment } from "./evidence-overlay";
 
 /**
  * معاينة صفحة الشركة من محرك البيانات (P02).
@@ -305,8 +304,6 @@ export type CompanyPreview = {
   counts: { shown: number; withheld: number };
   /** تنبيهات على مستوى الشركة عن طبيعة المصدر (مثلًا: ملف إدخال دون المستند الأصلي). */
   dataNotices: LocalizedText[];
-  /** W0: أدلة مراجعة لبيئة QA الخاصة فقط. لا تغيّر أي خلية ولا ترفع WITHHELD؛ غائبة خارج QA. */
-  evidence?: EvidenceAttachment;
 };
 
 // ───────────────────────── قواعد

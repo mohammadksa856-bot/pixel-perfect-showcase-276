@@ -1,0 +1,9 @@
+PASS engine copy serves all four synthetic rows
+PASS patched engine serves quarter_position with 2025-09-30
+PASS flag off: disabled
+PASS no_approvals: ok, zero value cells, no synthetic value
+PASS json_words_only: ok, zero value cells, no synthetic value
+PASS signed_by_untrusted_key: ok, zero value cells, no synthetic value
+PASS unreadable_file: ok, zero value cells, no synthetic value
+PASS fixtures flag outside the review policy: disabled
+PASS original engine unchanged

@@ -1,0 +1,51 @@
+# PROPOSAL ONLY: not installed. Copy to .github/workflows/projection-kernel.yml in a separate, approved change.
+# Supersedes SELECTIVE-A-PR/CI-PROPOSAL.yml: adds .gitattributes, the generator, the fixtures, the baseline and the
+# trust store to the path filters, and a Windows job (Git for Windows checks out with core.autocrlf=true).
+# Scope: the Financial Projection kernel and its synthetic tests only; no full `bun test` (archived suites) and no
+# `eslint .` (783 inherited findings). Before adopting: pin each action to a full commit SHA.
+name: projection-kernel
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - "src/lib/engine/**"
+      - "src/lib/engine/publication-baseline.json"
+      - "src/lib/engine/publication-trust.json"
+      - "src/lib/web-v1/design-fixtures.server.ts"
+      - "src/lib/web-v1/design-review-policy.ts"
+      - "tests/financial-projection.test.ts"
+      - "tests/fixtures/synthetic-projection/**"
+permissions:
+  contents: read
+jobs:
+  kernel:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4 # pin to SHA; on windows-latest this checks out with core.autocrlf=true
+      - uses: oven-sh/setup-bun@v2 # pin to SHA
+      - run: bun install --frozen-lockfile
+      - name: tests before any generator run (sha pins must hold right after checkout)
+        run: bun test tests/financial-projection.test.ts
+      - name: pinned files are LF
+        run: "! grep -l $'\\r' tests/fixtures/synthetic-projection/*.json src/lib/engine/publication-baseline.json"
+      - run: npx tsc --noEmit -p .
+      - run: >
+          npx eslint src/lib/engine src/lib/bidi.ts src/lib/web-v1/design-fixtures.server.ts
+          src/lib/web-v1/design-review-policy.ts tests/financial-projection.test.ts
+          tests/fixtures/synthetic-projection/generate.ts
+      - name: generator reproduces fixtures and baseline byte for byte (twice)
+        run: |
+          for i in 1 2; do
+            bun tests/fixtures/synthetic-projection/generate.ts
+            git diff --exit-code -- tests/fixtures/synthetic-projection src/lib/engine/publication-baseline.json
+          done
+      - name: trust store stays empty
+        run: test "$(bun -e 'console.log(require("./src/lib/engine/publication-trust.json").authorities.length)')" = "0"

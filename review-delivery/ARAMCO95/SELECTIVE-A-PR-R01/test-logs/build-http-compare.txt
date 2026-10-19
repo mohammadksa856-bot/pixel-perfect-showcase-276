@@ -1,0 +1,5 @@
+# vite build (default env), main c4882ea vs candidate c43f6ba
+output files 154 154 same set: True
+differing after normalization: ['public/assets/styles.css', 'server/_tanstack-start-manifest_v.mjs', 'server/index.mjs']
+kernel/fixture strings in candidate .output: {'applyPublicationGate': 0, 'marefa-publication-trust': 0, 'publication-baseline': 0, 'buildCompanyPreview': 0, 'FINENGINE_API': 0, 'MAREFA_': 0, '4242': 0, 'example.invalid': 0, 'Synthetic Projection': 0}
+# vite dev HTTP, 15 routes: identical status/size/normalized sha: True {'/about': 200, '/privacy': 200, '/terms': 200, '/contact': 200, '/markets': 200, '/companies': 500, '/research': 500, '/knowledge': 500, '/sectors': 500, '/search': 200, '/': 500, '/preview/web-v1': 404, '/preview/companies/2222': 404, '/preview/web-v1/companies/2222': 404, '/api/does-not-exist': 404}

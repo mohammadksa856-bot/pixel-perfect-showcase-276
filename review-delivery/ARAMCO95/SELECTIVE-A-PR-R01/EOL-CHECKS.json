@@ -1,0 +1,364 @@
+{
+  "main": "c4882ea02c60ec950e92932d61cb1f1a7b4e743e",
+  "before": "43d1f5d649142f63ad18aec00af218b9795d640c",
+  "candidate": "c43f6ba0fa5523b67bf2c18ba6808a3fb95eb855",
+  "windows_emulation": "core.autocrlf=true",
+  "before_commit_crlf": {
+    "files": {
+      "tests/fixtures/synthetic-projection/9901-page.json": {
+        "cr": 4728,
+        "sha256": "22edc11b79bec054c15b829dd2f51835741ec384dab977c83a06a443d21ac96b"
+      },
+      "tests/fixtures/synthetic-projection/9902-page.json": {
+        "cr": 3600,
+        "sha256": "a287105ff94813a59fa519d5ef38b4a55999961ca8567fa8c14052588fdd1ee1"
+      },
+      "tests/fixtures/synthetic-projection/9903-page.json": {
+        "cr": 3318,
+        "sha256": "1d6a27270787c7720b272a581bc642cef886a6b044f26675b37b3c3d1aa6d4ab"
+      },
+      "src/lib/engine/publication-baseline.json": {
+        "cr": 235,
+        "sha256": "5449159ffab7639b28b4f10596e94a91ba74e0785c3c88a0bad7915d320fe526"
+      }
+    },
+    "suite": {
+      "pass": 33,
+      "fail": 1,
+      "failing": [
+        "S0 synthetic fixtures and the baseline built from them > the committed baseline is exactly the identities of these sha-pinned fixtures"
+      ]
+    }
+  },
+  "candidate_pins": {
+    "9901": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093",
+    "9902": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81",
+    "9903": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+  },
+  "autocrlf_true": {
+    "files_after_checkout": {
+      "tests/fixtures/synthetic-projection/9901-page.json": {
+        "cr": 0,
+        "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+      },
+      "tests/fixtures/synthetic-projection/9902-page.json": {
+        "cr": 0,
+        "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+      },
+      "tests/fixtures/synthetic-projection/9903-page.json": {
+        "cr": 0,
+        "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+      },
+      "src/lib/engine/publication-baseline.json": {
+        "cr": 0,
+        "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+      }
+    },
+    "other_files_cr": {
+      "src/lib/engine/statements.ts": 544,
+      "tests/financial-projection.test.ts": 894
+    },
+    "suite_before_generator": {
+      "pass": 34,
+      "fail": 0,
+      "failing": []
+    },
+    "generator_runs": [
+      {
+        "exit": 0,
+        "git_status": [],
+        "files": {
+          "tests/fixtures/synthetic-projection/9901-page.json": {
+            "cr": 0,
+            "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+          },
+          "tests/fixtures/synthetic-projection/9902-page.json": {
+            "cr": 0,
+            "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+          },
+          "tests/fixtures/synthetic-projection/9903-page.json": {
+            "cr": 0,
+            "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+          },
+          "src/lib/engine/publication-baseline.json": {
+            "cr": 0,
+            "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+          }
+        }
+      },
+      {
+        "exit": 0,
+        "git_status": [],
+        "files": {
+          "tests/fixtures/synthetic-projection/9901-page.json": {
+            "cr": 0,
+            "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+          },
+          "tests/fixtures/synthetic-projection/9902-page.json": {
+            "cr": 0,
+            "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+          },
+          "tests/fixtures/synthetic-projection/9903-page.json": {
+            "cr": 0,
+            "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+          },
+          "src/lib/engine/publication-baseline.json": {
+            "cr": 0,
+            "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+          }
+        }
+      }
+    ],
+    "pins_match_checkout": true,
+    "suite_after_generator": {
+      "pass": 34,
+      "fail": 0,
+      "failing": []
+    }
+  },
+  "autocrlf_false": {
+    "files_after_checkout": {
+      "tests/fixtures/synthetic-projection/9901-page.json": {
+        "cr": 0,
+        "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+      },
+      "tests/fixtures/synthetic-projection/9902-page.json": {
+        "cr": 0,
+        "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+      },
+      "tests/fixtures/synthetic-projection/9903-page.json": {
+        "cr": 0,
+        "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+      },
+      "src/lib/engine/publication-baseline.json": {
+        "cr": 0,
+        "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+      }
+    },
+    "other_files_cr": {
+      "src/lib/engine/statements.ts": 0,
+      "tests/financial-projection.test.ts": 0
+    },
+    "suite_before_generator": {
+      "pass": 34,
+      "fail": 0,
+      "failing": []
+    },
+    "generator_runs": [
+      {
+        "exit": 0,
+        "git_status": [],
+        "files": {
+          "tests/fixtures/synthetic-projection/9901-page.json": {
+            "cr": 0,
+            "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+          },
+          "tests/fixtures/synthetic-projection/9902-page.json": {
+            "cr": 0,
+            "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+          },
+          "tests/fixtures/synthetic-projection/9903-page.json": {
+            "cr": 0,
+            "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+          },
+          "src/lib/engine/publication-baseline.json": {
+            "cr": 0,
+            "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+          }
+        }
+      },
+      {
+        "exit": 0,
+        "git_status": [],
+        "files": {
+          "tests/fixtures/synthetic-projection/9901-page.json": {
+            "cr": 0,
+            "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+          },
+          "tests/fixtures/synthetic-projection/9902-page.json": {
+            "cr": 0,
+            "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+          },
+          "tests/fixtures/synthetic-projection/9903-page.json": {
+            "cr": 0,
+            "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+          },
+          "src/lib/engine/publication-baseline.json": {
+            "cr": 0,
+            "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+          }
+        }
+      }
+    ],
+    "pins_match_checkout": true,
+    "suite_after_generator": {
+      "pass": 34,
+      "fail": 0,
+      "failing": []
+    }
+  },
+  "autocrlf_input": {
+    "files_after_checkout": {
+      "tests/fixtures/synthetic-projection/9901-page.json": {
+        "cr": 0,
+        "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+      },
+      "tests/fixtures/synthetic-projection/9902-page.json": {
+        "cr": 0,
+        "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+      },
+      "tests/fixtures/synthetic-projection/9903-page.json": {
+        "cr": 0,
+        "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+      },
+      "src/lib/engine/publication-baseline.json": {
+        "cr": 0,
+        "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+      }
+    },
+    "other_files_cr": {
+      "src/lib/engine/statements.ts": 0,
+      "tests/financial-projection.test.ts": 0
+    },
+    "suite_before_generator": {
+      "pass": 34,
+      "fail": 0,
+      "failing": []
+    },
+    "generator_runs": [
+      {
+        "exit": 0,
+        "git_status": [],
+        "files": {
+          "tests/fixtures/synthetic-projection/9901-page.json": {
+            "cr": 0,
+            "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+          },
+          "tests/fixtures/synthetic-projection/9902-page.json": {
+            "cr": 0,
+            "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+          },
+          "tests/fixtures/synthetic-projection/9903-page.json": {
+            "cr": 0,
+            "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+          },
+          "src/lib/engine/publication-baseline.json": {
+            "cr": 0,
+            "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+          }
+        }
+      },
+      {
+        "exit": 0,
+        "git_status": [],
+        "files": {
+          "tests/fixtures/synthetic-projection/9901-page.json": {
+            "cr": 0,
+            "sha256": "7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093"
+          },
+          "tests/fixtures/synthetic-projection/9902-page.json": {
+            "cr": 0,
+            "sha256": "323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81"
+          },
+          "tests/fixtures/synthetic-projection/9903-page.json": {
+            "cr": 0,
+            "sha256": "0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302"
+          },
+          "src/lib/engine/publication-baseline.json": {
+            "cr": 0,
+            "sha256": "a2ed6c7ed36cf554755ab4770060a555ee593cdbc00b149e6583e14c56caea65"
+          }
+        }
+      }
+    ],
+    "pins_match_checkout": true,
+    "suite_after_generator": {
+      "pass": 34,
+      "fail": 0,
+      "failing": []
+    }
+  },
+  "gitattributes_matches": {
+    "main_paths": [],
+    "candidate_paths": [
+      "src/lib/engine/publication-baseline.json: eol: lf",
+      "tests/fixtures/synthetic-projection/9901-page.json: eol: lf",
+      "tests/fixtures/synthetic-projection/9902-page.json: eol: lf",
+      "tests/fixtures/synthetic-projection/9903-page.json: eol: lf"
+    ]
+  },
+  "checks": [
+    {
+      "check": "previous commit reproduces A-PR-R01 on a CRLF checkout",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=true: pinned files LF and identical to LF checkout right after checkout",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=true: baseline pins equal the checked-out fixture hashes",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=true: 34/34 before any generator run",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=true: generator twice, byte-identical, git status clean",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=true: 34/34 after generator",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=false: pinned files LF and identical to LF checkout right after checkout",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=false: baseline pins equal the checked-out fixture hashes",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=false: 34/34 before any generator run",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=false: generator twice, byte-identical, git status clean",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=false: 34/34 after generator",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=input: pinned files LF and identical to LF checkout right after checkout",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=input: baseline pins equal the checked-out fixture hashes",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=input: 34/34 before any generator run",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=input: generator twice, byte-identical, git status clean",
+      "pass": true
+    },
+    {
+      "check": "autocrlf=input: 34/34 after generator",
+      "pass": true
+    },
+    {
+      "check": "CRLF emulation active (other text files are CRLF under autocrlf=true)",
+      "pass": true
+    },
+    {
+      "check": ".gitattributes matches no path of main and exactly the four pinned files of the candidate",
+      "pass": true
+    }
+  ]
+}

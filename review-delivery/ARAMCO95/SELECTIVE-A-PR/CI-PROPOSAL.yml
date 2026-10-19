@@ -1,0 +1,35 @@
+# PROPOSAL ONLY: not installed. Copy to .github/workflows/projection-kernel.yml in a separate, approved change.
+# Scope: the Financial Projection kernel and its synthetic tests only. It does not run `bun test` on the whole
+# repository (so archived review suites can never enter CI) and does not run `eslint .` (783 inherited findings).
+# Before adopting: pin each action to a full commit SHA, and confirm the Bun version matches the lockfile.
+name: projection-kernel
+on:
+  pull_request:
+    paths:
+      - "src/lib/engine/**"
+      - "src/lib/web-v1/design-fixtures.server.ts"
+      - "src/lib/web-v1/design-review-policy.ts"
+      - "tests/financial-projection.test.ts"
+      - "tests/fixtures/synthetic-projection/**"
+permissions:
+  contents: read
+jobs:
+  kernel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4 # pin to SHA
+      - uses: oven-sh/setup-bun@v2 # pin to SHA
+      - run: bun install --frozen-lockfile
+      - run: bun test tests/financial-projection.test.ts
+      - run: npx tsc --noEmit -p .
+      - run: >
+          npx eslint src/lib/engine src/lib/bidi.ts src/lib/web-v1/design-fixtures.server.ts
+          src/lib/web-v1/design-review-policy.ts tests/financial-projection.test.ts
+          tests/fixtures/synthetic-projection/generate.ts
+      - name: synthetic fixtures and baseline are reproducible
+        run: |
+          bun tests/fixtures/synthetic-projection/generate.ts
+          git diff --exit-code -- tests/fixtures/synthetic-projection src/lib/engine/publication-baseline.json
+      - name: trust store stays empty
+        run: test "$(bun -e 'console.log(require("./src/lib/engine/publication-trust.json").authorities.length)')" = "0"

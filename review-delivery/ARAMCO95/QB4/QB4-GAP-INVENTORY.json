@@ -1,0 +1,2399 @@
+{
+  "schema": "marefa-qb4-gap-inventory/1",
+  "engine_commit": "b70254e",
+  "contract_version": "1.0.0",
+  "total_score_now": "56.56374569234910209031614016",
+  "target_score": "95.00",
+  "categories": {
+    "company_profile": {
+      "weight": "8",
+      "score": "0.5517241379310344827586206897",
+      "weighted_score": "4.413793103448275862068965518",
+      "populated": 32,
+      "expected": 58,
+      "threshold": "0.85",
+      "threshold_passed": false
+    },
+    "financial_statements": {
+      "weight": "14",
+      "score": "0.7874015748031496062992125984",
+      "weighted_score": "11.02362204724409448818897638",
+      "populated": 200,
+      "expected": 254,
+      "threshold": "0.95",
+      "threshold_passed": false
+    },
+    "profitability": {
+      "weight": "6",
+      "score": "0.6521739130434782608695652174",
+      "weighted_score": "3.913043478260869565217391304",
+      "populated": 15,
+      "expected": 23,
+      "threshold": "0.85",
+      "threshold_passed": false
+    },
+    "liquidity_solvency": {
+      "weight": "5",
+      "score": "0.85",
+      "weighted_score": "4.25",
+      "populated": 17,
+      "expected": 20,
+      "threshold": "0.9",
+      "threshold_passed": false
+    },
+    "efficiency": {
+      "weight": "4",
+      "score": "0.5294117647058823529411764706",
+      "weighted_score": "2.117647058823529411764705882",
+      "populated": 9,
+      "expected": 17,
+      "threshold": "0.85",
+      "threshold_passed": false
+    },
+    "growth": {
+      "weight": "5",
+      "score": "0.4285714285714285714285714286",
+      "weighted_score": "2.142857142857142857142857143",
+      "populated": 15,
+      "expected": 35,
+      "threshold": "0.8",
+      "threshold_passed": false
+    },
+    "per_share": {
+      "weight": "3",
+      "score": "1",
+      "weighted_score": "3",
+      "populated": 13,
+      "expected": 13,
+      "threshold": "0.9",
+      "threshold_passed": true
+    },
+    "valuation": {
+      "weight": "6",
+      "score": "0.4838709677419354838709677419",
+      "weighted_score": "2.903225806451612903225806451",
+      "populated": 15,
+      "expected": 31,
+      "threshold": "0.8",
+      "threshold_passed": false
+    },
+    "market_data": {
+      "weight": "5",
+      "score": "0.2692307692307692307692307692",
+      "weighted_score": "1.346153846153846153846153846",
+      "populated": 7,
+      "expected": 26,
+      "threshold": "0.85",
+      "threshold_passed": false
+    },
+    "dividends": {
+      "weight": "5",
+      "score": "0.2",
+      "weighted_score": "1.0",
+      "populated": 4,
+      "expected": 20,
+      "threshold": "0.9",
+      "threshold_passed": false
+    },
+    "segments": {
+      "weight": "4",
+      "score": "0.5333333333333333333333333333",
+      "weighted_score": "2.133333333333333333333333333",
+      "populated": 24,
+      "expected": 45,
+      "threshold": "0.75",
+      "threshold_passed": false
+    },
+    "ownership": {
+      "weight": "5",
+      "score": "0.3333333333333333333333333333",
+      "weighted_score": "1.666666666666666666666666666",
+      "populated": 6,
+      "expected": 18,
+      "threshold": "0.85",
+      "threshold_passed": false
+    },
+    "corporate_actions": {
+      "weight": "4",
+      "score": "0.2857142857142857142857142857",
+      "weighted_score": "1.142857142857142857142857143",
+      "populated": 6,
+      "expected": 21,
+      "threshold": "0.9",
+      "threshold_passed": false
+    },
+    "announcements": {
+      "weight": "5",
+      "score": "0.2857142857142857142857142857",
+      "weighted_score": "1.428571428571428571428571428",
+      "populated": 8,
+      "expected": 28,
+      "threshold": "0.8",
+      "threshold_passed": false
+    },
+    "operational_kpis": {
+      "weight": "7",
+      "score": "0.6739130434782608695652173913",
+      "weighted_score": "4.717391304347826086956521739",
+      "populated": 31,
+      "expected": 46,
+      "threshold": "0.85",
+      "threshold_passed": false
+    },
+    "sector_specific_fields": {
+      "weight": "7",
+      "score": "0.71875",
+      "weighted_score": "5.03125",
+      "populated": 23,
+      "expected": 32,
+      "threshold": "0.9",
+      "threshold_passed": false
+    },
+    "calculated_smart_metrics": {
+      "weight": "5",
+      "score": "0.4666666666666666666666666667",
+      "weighted_score": "2.333333333333333333333333334",
+      "populated": 14,
+      "expected": 30,
+      "threshold": "0.9",
+      "threshold_passed": false
+    },
+    "sources_lineage_freshness": {
+      "weight": "2",
+      "score": "1",
+      "weighted_score": "2",
+      "populated": null,
+      "expected": null,
+      "threshold": "1.0",
+      "threshold_passed": true
+    }
+  },
+  "missing_entries": 278,
+  "distinct_missing_keys": 269,
+  "missing": [
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "business_model",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "cik",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "investor_contact_email",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "lei",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "sharia_status",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "audit_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_committees",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_meetings_held",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_of_directors",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_size",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_term_end",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "compensation_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "compensation_policy",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "corporate_secretary",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "executive_management_team",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "governance_framework",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "independent_directors",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "internal_control_assessment",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "nomination_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "sustainability_risk_hse_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "competitive_environment",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_drivers",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_growth",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_overview",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_size",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "regulatory_environment",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "adjusted_ebit",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "adjusted_ebitda",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "continuing_operations_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "cost_of_revenue",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "discontinued_operations_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "gain_loss_asset_sales",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "general_and_administrative_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "gross_profit",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "interest_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_nonoperating_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_nonoperating_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "selling_and_distribution_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "accumulated_other_comprehensive_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "cash_equivalents",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "cash_restricted",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "current_portion_long_term_debt",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "current_tax_assets",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "employee_benefits_current",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "investments_joint_ventures",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "long_term_securities",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "marketable_securities",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "other_receivables",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "prepayments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "zakat_payable",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "capital_increase_proceeds",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "discretionary_cash_flow",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "foreign_exchange_effect",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "intangible_asset_purchases",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "joint_venture_investments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "loans_to_affiliates",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "net_income_cash_flow",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "operating_profit_before_working_capital_changes",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "other_financing_cash_flow",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "owner_earnings",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "ppe_purchases",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "proceeds_investments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "purchases_investments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "securities_purchases",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "securities_sales",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "short_term_investments_net",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "zakat_paid",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "benefit_obligation_by_geography",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "borrowings_by_currency",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "contingencies",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "contract_assets",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "contract_liabilities",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "customer_concentration",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "remaining_performance_obligations",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "revenue_by_customer_type",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "unsecured_borrowings",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "variable_lease_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "weighted_average_borrowing_rate",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "economic_profit_proxy",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "gross_margin",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "incremental_roic",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "margin_expansion",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "nopat",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "return_on_capital",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "return_on_capital_employed",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "return_on_invested_capital",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "liquidity_solvency",
+      "field_group": "liquidity_solvency",
+      "field_key": "cfo_interest_coverage",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "liquidity_solvency",
+      "field_group": "liquidity_solvency",
+      "field_key": "debt_service_coverage_proxy",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "liquidity_solvency",
+      "field_group": "liquidity_solvency",
+      "field_key": "fixed_charge_coverage",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "cash_conversion_cycle",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "days_inventory",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "days_payables",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "fixed_asset_turnover",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "inventory_to_revenue",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "inventory_turnover",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "payables_turnover",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "working_capital_turnover",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "book_value_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "ebitda_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "ebitda_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "ebitda_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "eps_cagr_5y",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "eps_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "eps_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "free_cash_flow_per_share_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "free_cash_flow_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "free_cash_flow_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "gross_profit_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "gross_profit_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "net_income_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "net_income_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "operating_cash_flow_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "operating_cash_flow_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "operating_income_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "revenue_per_share_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "revenue_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "revenue_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "cfo_yield",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "enterprise_value_to_fcf",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "enterprise_value_to_invested_capital",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "forward_price_to_earnings",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "historical_pb_percentile",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "historical_pe_percentile",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "market_cap_to_equity",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "market_cap_to_net_income",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "peg_ratio",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "shareholder_yield",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "ebit_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "ebitda_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "eps_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "net_income_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "revenue_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "selling_general_administrative_expense_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "average_volume_30d",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "beta_1y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "beta_5y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "fifty_two_week_high",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "fifty_two_week_low",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "free_float_market_cap",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "free_float_shares",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_1m",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_1y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_3m",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_3y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_5y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_6m",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_ytd",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "percent_from_52w_high",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "percent_from_52w_low",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "previous_close",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "price_adjusted_close",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "volatility_30d",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_cagr_5y",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_installments_count",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_payment_frequency",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_per_share_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_stability_score",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_yield_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "fcf_payout_ratio_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "forward_dividend_per_share",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "forward_dividend_run_rate",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "ordinary_dividend",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "payout_ratio_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "special_dividend",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "total_dividend_declared",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "total_dividend_paid_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "trailing_twelve_month_dividend",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "years_consecutive_dividend_payments",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "chemicals_revenue",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "downstream_operating_income",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "lng_revenue",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "refined_products_revenue",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_assets",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_impairment",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_investments_associates",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_liabilities",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "upstream_operating_income",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "average_selling_price_by_product",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "book_to_bill_ratio",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "committed_offtake_volume",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "contract_renewal_profile",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "contracted_sales_value",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "contracted_sales_volume",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "minimum_volume_commitments",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_contract_count",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_order_backlog",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_volume_by_geography",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_volume_by_product",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "take_or_pay_commitments",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "foreign_investor_limit",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "foreign_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "insider_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "institutional_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "institutional_shareholders_count",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "major_holder_change",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "ownership_concentration",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "retail_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "retail_shareholders_count",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "strategic_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "top_10_shareholder_concentration",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "top_5_shareholder_concentration",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "capital_reduction",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "delisting",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "dividend_eligibility",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "dividend_ex_date",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "dividend_payment",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "merger",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "reverse_split",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "rights_issue",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "rights_offering_date",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "spin_off",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "stock_split",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "suspension",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "symbol_change",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "tender_offer",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "treasury_share_sale",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_body",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_category",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_date",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_id",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_source_url",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_title_ar",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_title_en",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "board_change",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "contract_award",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "contract_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "dividend_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "earnings_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "governance_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "litigation",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "management_change",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "materiality_tag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "merger_acquisition_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "regulatory_action",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "related_financial_period",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "related_party_transaction",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "average_realized_gas_price",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "average_realized_refined_product_price",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "chemicals_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "chemicals_sales",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "condensate_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "crude_oil_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "finding_development_cost_per_boe",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "lifting_volume",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "natural_gas_liquids_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "natural_gas_sales",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "production_entitlement",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "refinery_throughput",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "refinery_utilization",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "reserve_replacement_ratio",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "spare_capacity",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "chemicals_revenue",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "downstream_operating_income",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "lng_revenue",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "refined_products_revenue",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_assets",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_impairment",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_investments_associates",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_liabilities",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "upstream_operating_income",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "beneish_m_score",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "dividend_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "eps_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "free_cash_flow_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "net_income_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "operating_cash_flow_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "price_to_sma_200d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "price_to_sma_50d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "return_on_tangible_assets",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "revenue_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "simple_moving_average_200d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "simple_moving_average_50d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_1y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_3y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_5y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended"
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "schema": "marefa-qb4-identities/1",
+  "state": "CANDIDATE_NOT_INGESTED",
+  "values": 18,
+  "new_keys": 16,
+  "history_values_on_new_keys": 2,
+  "identities": [
+    {
+      "kind": "fact",
+      "company_id": "sa:2222",
+      "metric_key": "short_term_investments_net",
+      "period_kind": "fy",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "-1457000000",
+      "printed": "(1,457)",
+      "pdf_page": 178,
+      "printed_row": "Net (purchases) maturities of short-term investments",
+      "classification": "new_key",
+      "edition": "ARA2025",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "WITHHELD",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "fact",
+      "company_id": "sa:2222",
+      "metric_key": "short_term_investments_net",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "171157000000",
+      "printed": "171,157",
+      "pdf_page": 178,
+      "printed_row": "Net (purchases) maturities of short-term investments",
+      "classification": "new_key_history",
+      "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "WITHHELD",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "fact",
+      "company_id": "sa:2222",
+      "metric_key": "dividend_installments_count",
+      "period_kind": "fy",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "",
+      "unit": "count",
+      "value": "4",
+      "printed": "4",
+      "pdf_page": 235,
+      "printed_row": "Dividends declared and paid each quarter: March, June, September, December",
+      "classification": "new_key",
+      "edition": "ARA2025",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "WITHHELD",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "fact",
+      "company_id": "sa:2222",
+      "metric_key": "dividend_installments_count",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "",
+      "unit": "count",
+      "value": "4",
+      "printed": "4",
+      "pdf_page": 235,
+      "printed_row": "Dividends declared and paid each quarter: March, June, September, December",
+      "classification": "new_key_history",
+      "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "WITHHELD",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "business_model",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "business_lines": [
+          "Upstream",
+          "Downstream"
+        ],
+        "corporate_functions": [
+          "Technical Services",
+          "Law",
+          "Finance",
+          "Technology & Innovation",
+          "Strategy & Corporate Development",
+          "Human Resources & Corporate Services"
+        ]
+      },
+      "pdf_pages": [
+        110
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "board_of_directors",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": [
+        {
+          "name": "Yasir O. Al-Rumayyan",
+          "board_role": "Chairman"
+        },
+        {
+          "name": "Ibrahim A. Al-Assaf",
+          "board_role": "Deputy Chairman"
+        },
+        {
+          "name": "Mohammed A. Al-Jadaan",
+          "board_role": "Director"
+        },
+        {
+          "name": "Faisal F. Alibrahim",
+          "board_role": "Director"
+        },
+        {
+          "name": "Khalid H. Al-Dabbagh",
+          "board_role": "Director"
+        },
+        {
+          "name": "Amin H. Nasser",
+          "board_role": "Director"
+        },
+        {
+          "name": "Robert W. Dudley",
+          "board_role": "Director"
+        },
+        {
+          "name": "Lynn L. Elsenhans",
+          "board_role": "Director"
+        },
+        {
+          "name": "Stuart T. Gulliver",
+          "board_role": "Director"
+        },
+        {
+          "name": "Andrew N. Liveris",
+          "board_role": "Director"
+        },
+        {
+          "name": "Mark A. Weinberger",
+          "board_role": "Director"
+        }
+      ],
+      "pdf_pages": [
+        117
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "board_size",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": 11,
+      "pdf_pages": [
+        114
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "independent_directors",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "count": 5,
+        "directors": [
+          "Andrew N. Liveris",
+          "Lynn L. Elsenhans",
+          "Robert W. Dudley",
+          "Mark A. Weinberger",
+          "Stuart T. Gulliver"
+        ]
+      },
+      "pdf_pages": [
+        115,
+        117
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "board_committees",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": [
+        "Audit Committee",
+        "Sustainability, Risk and HSE Committee",
+        "Nomination Committee",
+        "Compensation Committee"
+      ],
+      "pdf_pages": [
+        114
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "audit_committee",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "chair": "Stuart T. Gulliver",
+        "members": [
+          "Stuart T. Gulliver",
+          "Faisal F. Alibrahim",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans",
+          "Andrew N. Liveris"
+        ],
+        "meetings_2025": 4,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-05-08",
+          "2025-08-03",
+          "2025-11-02"
+        ]
+      },
+      "pdf_pages": [
+        118
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "sustainability_risk_hse_committee",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "chair": "Robert W. Dudley",
+        "members": [
+          "Robert W. Dudley",
+          "Faisal F. Alibrahim",
+          "Amin H. Nasser",
+          "Stuart T. Gulliver",
+          "Mark A. Weinberger"
+        ],
+        "meetings_2025": 4,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-05-08",
+          "2025-08-03",
+          "2025-11-02"
+        ]
+      },
+      "pdf_pages": [
+        120
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "nomination_committee",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "chair": "Andrew N. Liveris",
+        "members": [
+          "Andrew N. Liveris",
+          "Yasir O. Al-Rumayyan",
+          "Mohammed A. Al-Jadaan",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans"
+        ],
+        "meetings_2025": 2,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-11-02"
+        ]
+      },
+      "pdf_pages": [
+        121
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "compensation_committee",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "chair": "Mark A. Weinberger",
+        "members": [
+          "Mark A. Weinberger",
+          "Yasir O. Al-Rumayyan",
+          "Ibrahim A. Al-Assaf",
+          "Mohammed A. Al-Jadaan",
+          "Robert W. Dudley"
+        ],
+        "meetings_2025": 3,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-11-02",
+          "2025-12-10"
+        ]
+      },
+      "pdf_pages": [
+        122
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "corporate_secretary",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "name": "Nabeel A. Al Mansour",
+        "title": "Executive Vice President, General Counsel & Corporate Secretary"
+      },
+      "pdf_pages": [
+        112
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "executive_management_team",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": [
+        {
+          "name": "Amin H. Nasser",
+          "title": "President & Chief Executive Officer"
+        },
+        {
+          "name": "Nasir K. Al-Naimi",
+          "title": "Upstream President"
+        },
+        {
+          "name": "Mohammed Y. Al Qahtani",
+          "title": "Downstream President"
+        },
+        {
+          "name": "Ziad T. Al Murshed",
+          "title": "Executive Vice President & Chief Financial Officer"
+        },
+        {
+          "name": "Wail A. Al Jaafari",
+          "title": "Executive Vice President, Technical Services"
+        },
+        {
+          "name": "Nabeel A. Al Mansour",
+          "title": "Executive Vice President, General Counsel & Corporate Secretary"
+        },
+        {
+          "name": "Nabeel A. Al-Jama'",
+          "title": "Executive Vice President of Human Resources & Corporate Services"
+        },
+        {
+          "name": "Ashraf A. Al Ghazzawi",
+          "title": "Executive Vice President of Strategy & Corporate Development"
+        },
+        {
+          "name": "Ahmad O. Al Khowaiter",
+          "title": "Executive Vice President of Technology & Innovation"
+        }
+      ],
+      "pdf_pages": [
+        110,
+        111,
+        112,
+        113
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "board_meetings_held",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "year": 2025,
+        "count": 5,
+        "dates": [
+          "2025-03-03",
+          "2025-05-09",
+          "2025-08-04",
+          "2025-11-03",
+          "2025-12-11"
+        ],
+        "proxy_attendance": 0
+      },
+      "pdf_pages": [
+        117
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "board_term_end",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": "2027-06-30",
+      "pdf_pages": [
+        114
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    },
+    {
+      "kind": "company_attribute",
+      "company_id": "sa:2222",
+      "attribute_key": "internal_control_assessment",
+      "language": "en",
+      "as_of": "2026-03-09",
+      "value": {
+        "assessor": "Audit Committee",
+        "year": 2025,
+        "opinion": "effective and adequate",
+        "scope": "internal and financial control systems and risk management systems"
+      },
+      "pdf_pages": [
+        119
+      ],
+      "classification": "new_key",
+      "prior_pack": "agrees",
+      "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "source_review": "PENDING",
+      "financial_qualification": "NOT_APPLICABLE",
+      "rights": "UNKNOWN_NO_GRANT"
+    }
+  ]
+}

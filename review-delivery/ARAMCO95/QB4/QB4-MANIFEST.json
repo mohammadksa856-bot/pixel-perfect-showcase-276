@@ -1,0 +1,502 @@
+{
+  "company_id": "sa:2222",
+  "market": "SA",
+  "symbol": "2222",
+  "filing_type": "Annual report 2025 - QB4 coverage candidate (governance, dividends, cash flow)",
+  "filed_at": "2026-03-09",
+  "filed_at_basis": "same filing date as the engine's ARA2025 manifests",
+  "filed_at_note": "ARA2025 PDF sha256 78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227; candidate, source review pending, not for ingestion",
+  "period_end": "2025-12-31",
+  "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+  "facts": [
+    {
+      "metric": "short_term_investments_net",
+      "source_label": "Net (purchases) maturities of short-term investments",
+      "value": "-1457",
+      "unit": "SAR",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2025,
+      "page": 178,
+      "table": "consolidated statement of cash flows",
+      "cell": "2025 column: (1,457)",
+      "currency": "SAR",
+      "scale": 1000000
+    },
+    {
+      "metric": "short_term_investments_net",
+      "source_label": "Net (purchases) maturities of short-term investments",
+      "value": "171157",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 178,
+      "table": "consolidated statement of cash flows",
+      "cell": "2024 column: 171,157",
+      "currency": "SAR",
+      "scale": 1000000
+    },
+    {
+      "metric": "dividend_installments_count",
+      "source_label": "Dividends declared and paid each quarter: March, June, September, December",
+      "value": "4",
+      "unit": "count",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2025,
+      "page": 235,
+      "table": "Note 37 Dividends",
+      "cell": "2025 column: 4"
+    },
+    {
+      "metric": "dividend_installments_count",
+      "source_label": "Dividends declared and paid each quarter: March, June, September, December",
+      "value": "4",
+      "unit": "count",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 235,
+      "table": "Note 37 Dividends",
+      "cell": "2024 column: 4"
+    }
+  ],
+  "company_attributes": [
+    {
+      "attribute_key": "business_model",
+      "value": {
+        "business_lines": [
+          "Upstream",
+          "Downstream"
+        ],
+        "corporate_functions": [
+          "Technical Services",
+          "Law",
+          "Finance",
+          "Technology & Innovation",
+          "Strategy & Corporate Development",
+          "Human Resources & Corporate Services"
+        ]
+      },
+      "category": "business_model",
+      "metadata": {
+        "pdf_pages": [
+          110
+        ],
+        "anchors": [
+          "Aramco is organized into two business lines that include Upstream and Downstream, and six Corporate functions that include Technical Services, Law, Finance, Technology & Innovation, Strategy & Corporate Development, and Human Resources & Corporate Services"
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "board_of_directors",
+      "value": [
+        {
+          "name": "Yasir O. Al-Rumayyan",
+          "board_role": "Chairman"
+        },
+        {
+          "name": "Ibrahim A. Al-Assaf",
+          "board_role": "Deputy Chairman"
+        },
+        {
+          "name": "Mohammed A. Al-Jadaan",
+          "board_role": "Director"
+        },
+        {
+          "name": "Faisal F. Alibrahim",
+          "board_role": "Director"
+        },
+        {
+          "name": "Khalid H. Al-Dabbagh",
+          "board_role": "Director"
+        },
+        {
+          "name": "Amin H. Nasser",
+          "board_role": "Director"
+        },
+        {
+          "name": "Robert W. Dudley",
+          "board_role": "Director"
+        },
+        {
+          "name": "Lynn L. Elsenhans",
+          "board_role": "Director"
+        },
+        {
+          "name": "Stuart T. Gulliver",
+          "board_role": "Director"
+        },
+        {
+          "name": "Andrew N. Liveris",
+          "board_role": "Director"
+        },
+        {
+          "name": "Mark A. Weinberger",
+          "board_role": "Director"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          117
+        ],
+        "anchors": [
+          "H.E. Yasir O. Al-Rumayyan, Chairman",
+          "H.E. Dr. Ibrahim A. Al-Assaf, Deputy Chairman",
+          "The table presents a record of attendance at these meetings for each Board member."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "board_size",
+      "value": 11,
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          114
+        ],
+        "anchors": [
+          "The Company is supervised by a Board consisting of 11 Directors."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "independent_directors",
+      "value": {
+        "count": 5,
+        "directors": [
+          "Andrew N. Liveris",
+          "Lynn L. Elsenhans",
+          "Robert W. Dudley",
+          "Mark A. Weinberger",
+          "Stuart T. Gulliver"
+        ]
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          115,
+          117
+        ],
+        "anchors": [
+          "the Board has determined that the following five Board members are independent Directors: Mr. Liveris, Ms. Elsenhans, Mr. Dudley, Mr. Weinberger, and Mr. Gulliver."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "board_committees",
+      "value": [
+        "Audit Committee",
+        "Sustainability, Risk and HSE Committee",
+        "Nomination Committee",
+        "Compensation Committee"
+      ],
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          114
+        ],
+        "anchors": [
+          "Currently, the Board has four Committees: Audit; Sustainability, Risk and HSE; Nomination; and Compensation."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "audit_committee",
+      "value": {
+        "chair": "Stuart T. Gulliver",
+        "members": [
+          "Stuart T. Gulliver",
+          "Faisal F. Alibrahim",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans",
+          "Andrew N. Liveris"
+        ],
+        "meetings_2025": 4,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-05-08",
+          "2025-08-03",
+          "2025-11-02"
+        ]
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          118
+        ],
+        "anchors": [
+          "The Audit Committee is chaired by Mr. Stuart T. Gulliver",
+          "The Audit Committee met four times in 2025: March 2, May 8, August 3, and November 2."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "sustainability_risk_hse_committee",
+      "value": {
+        "chair": "Robert W. Dudley",
+        "members": [
+          "Robert W. Dudley",
+          "Faisal F. Alibrahim",
+          "Amin H. Nasser",
+          "Stuart T. Gulliver",
+          "Mark A. Weinberger"
+        ],
+        "meetings_2025": 4,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-05-08",
+          "2025-08-03",
+          "2025-11-02"
+        ]
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          120
+        ],
+        "anchors": [
+          "chaired by Mr. Robert W. Dudley",
+          "held four meetings in 2025: March 2, May 8, August 3, and November 2."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "nomination_committee",
+      "value": {
+        "chair": "Andrew N. Liveris",
+        "members": [
+          "Andrew N. Liveris",
+          "Yasir O. Al-Rumayyan",
+          "Mohammed A. Al-Jadaan",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans"
+        ],
+        "meetings_2025": 2,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-11-02"
+        ]
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          121
+        ],
+        "anchors": [
+          "chaired by Mr. Andrew N. Liveris",
+          "held two meetings in 2025: March 2 and November 2."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "compensation_committee",
+      "value": {
+        "chair": "Mark A. Weinberger",
+        "members": [
+          "Mark A. Weinberger",
+          "Yasir O. Al-Rumayyan",
+          "Ibrahim A. Al-Assaf",
+          "Mohammed A. Al-Jadaan",
+          "Robert W. Dudley"
+        ],
+        "meetings_2025": 3,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-11-02",
+          "2025-12-10"
+        ]
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          122
+        ],
+        "anchors": [
+          "chaired by Mr. Mark A. Weinberger",
+          "held three meetings in 2025: March 2, November 2, and December 10."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "corporate_secretary",
+      "value": {
+        "name": "Nabeel A. Al Mansour",
+        "title": "Executive Vice President, General Counsel & Corporate Secretary"
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          112
+        ],
+        "anchors": [
+          "Mr. Nabeel A. Al Mansour Executive Vice President, General Counsel & Corporate Secretary",
+          "Nabeel A. Al Mansour was appointed as General Counsel & Corporate Secretary in May 2016"
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "executive_management_team",
+      "value": [
+        {
+          "name": "Amin H. Nasser",
+          "title": "President & Chief Executive Officer"
+        },
+        {
+          "name": "Nasir K. Al-Naimi",
+          "title": "Upstream President"
+        },
+        {
+          "name": "Mohammed Y. Al Qahtani",
+          "title": "Downstream President"
+        },
+        {
+          "name": "Ziad T. Al Murshed",
+          "title": "Executive Vice President & Chief Financial Officer"
+        },
+        {
+          "name": "Wail A. Al Jaafari",
+          "title": "Executive Vice President, Technical Services"
+        },
+        {
+          "name": "Nabeel A. Al Mansour",
+          "title": "Executive Vice President, General Counsel & Corporate Secretary"
+        },
+        {
+          "name": "Nabeel A. Al-Jama'",
+          "title": "Executive Vice President of Human Resources & Corporate Services"
+        },
+        {
+          "name": "Ashraf A. Al Ghazzawi",
+          "title": "Executive Vice President of Strategy & Corporate Development"
+        },
+        {
+          "name": "Ahmad O. Al Khowaiter",
+          "title": "Executive Vice President of Technology & Innovation"
+        }
+      ],
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          110,
+          111,
+          112,
+          113
+        ],
+        "anchors": [
+          "Nasir K. Al-Naimi was appointed as Upstream President of Aramco in July 2023",
+          "Mohammed Y. Al Qahtani was appointed as Downstream President of Aramco in July 2023",
+          "Ziad T. Al Murshed was appointed as Executive Vice President & Chief Financial Officer in May 2022",
+          "Wail A. Al Jaafari was appointed as Executive Vice President of Technical Services in October 2023",
+          "Nabeel A. Al-Jama' was appointed as Executive Vice President of Human Resources & Corporate Services in July 2020",
+          "Ashraf A. Al Ghazzawi was appointed as Executive Vice President of Strategy & Corporate Development in April 2023",
+          "Ahmad O. Al Khowaiter was appointed as Executive Vice President of Technology & Innovation in April 2023"
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "board_meetings_held",
+      "value": {
+        "year": 2025,
+        "count": 5,
+        "dates": [
+          "2025-03-03",
+          "2025-05-09",
+          "2025-08-04",
+          "2025-11-03",
+          "2025-12-11"
+        ],
+        "proxy_attendance": 0
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          117
+        ],
+        "anchors": [
+          "In 2025 there were five Board meetings held on the following dates: March 3, May 9, August 4, November 3, and December 11.",
+          "There were no meeting attendances by proxy during 2025."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "board_term_end",
+      "value": "2027-06-30",
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          114
+        ],
+        "anchors": [
+          "Each Director was elected for a term of three years until June 30, 2027"
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    },
+    {
+      "attribute_key": "internal_control_assessment",
+      "value": {
+        "assessor": "Audit Committee",
+        "year": 2025,
+        "opinion": "effective and adequate",
+        "scope": "internal and financial control systems and risk management systems"
+      },
+      "category": "governance",
+      "metadata": {
+        "pdf_pages": [
+          119
+        ],
+        "anchors": [
+          "the Audit Committee is of the opinion that the Company's internal and financial control systems and risk management systems are effective and adequate."
+        ],
+        "method": "page_anchor_check",
+        "batch": "QB4",
+        "state": "CANDIDATE_NOT_INGESTED"
+      }
+    }
+  ]
+}

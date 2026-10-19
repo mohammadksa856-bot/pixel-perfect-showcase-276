@@ -1,0 +1,838 @@
+{
+  "schema": "marefa-qb4-checks/1",
+  "checks": [
+    {
+      "check": "source_document_hash",
+      "status": "PASS",
+      "detail": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+    },
+    {
+      "check": "gap_measured_by_engine_evaluator",
+      "status": "PASS",
+      "detail": {
+        "contract_version": "1.0.0",
+        "categories": 18,
+        "total_score_now": "56.56374569234910209031614016",
+        "distinct_missing_keys": 269
+      }
+    },
+    {
+      "check": "batch_size_within_limit",
+      "status": "PASS",
+      "detail": {
+        "values": 18,
+        "limit": 25
+      }
+    },
+    {
+      "check": "every_batch_key_is_missing_now",
+      "status": "PASS",
+      "detail": {
+        "business_model": [
+          "company_profile"
+        ],
+        "board_of_directors": [
+          "company_profile"
+        ],
+        "board_size": [
+          "company_profile"
+        ],
+        "independent_directors": [
+          "company_profile"
+        ],
+        "board_committees": [
+          "company_profile"
+        ],
+        "audit_committee": [
+          "company_profile"
+        ],
+        "sustainability_risk_hse_committee": [
+          "company_profile"
+        ],
+        "nomination_committee": [
+          "company_profile"
+        ],
+        "compensation_committee": [
+          "company_profile"
+        ],
+        "corporate_secretary": [
+          "company_profile"
+        ],
+        "executive_management_team": [
+          "company_profile"
+        ],
+        "board_meetings_held": [
+          "company_profile"
+        ],
+        "board_term_end": [
+          "company_profile"
+        ],
+        "internal_control_assessment": [
+          "company_profile"
+        ],
+        "dividend_installments_count": [
+          "dividends"
+        ],
+        "short_term_investments_net": [
+          "financial_statements"
+        ]
+      }
+    },
+    {
+      "check": "attributes_anchored_on_cited_pages",
+      "status": "PASS",
+      "detail": [
+        {
+          "key": "business_model",
+          "pages": [
+            110
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "board_of_directors",
+          "pages": [
+            117
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "board_size",
+          "pages": [
+            114
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "independent_directors",
+          "pages": [
+            115,
+            117
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "board_committees",
+          "pages": [
+            114
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "audit_committee",
+          "pages": [
+            118
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "sustainability_risk_hse_committee",
+          "pages": [
+            120
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "nomination_committee",
+          "pages": [
+            121
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "compensation_committee",
+          "pages": [
+            122
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "corporate_secretary",
+          "pages": [
+            112
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "executive_management_team",
+          "pages": [
+            110,
+            111,
+            112,
+            113
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "profiles_on_pages": 9,
+          "profiles_ok": true,
+          "ok": true
+        },
+        {
+          "key": "board_meetings_held",
+          "pages": [
+            117
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "board_term_end",
+          "pages": [
+            114
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        },
+        {
+          "key": "internal_control_assessment",
+          "pages": [
+            119
+          ],
+          "missing_anchors": [],
+          "missing_leaves": [],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "facts_printed_on_cited_rows",
+      "status": "PASS",
+      "detail": [
+        {
+          "metric": "short_term_investments_net",
+          "fy": 2025,
+          "page": 178,
+          "row_found": true,
+          "cells": [
+            "(1,457)",
+            "171,157",
+            "(389)",
+            "45,642"
+          ],
+          "ok": true
+        },
+        {
+          "metric": "short_term_investments_net",
+          "fy": 2024,
+          "page": 178,
+          "row_found": true,
+          "cells": [
+            "(1,457)",
+            "171,157",
+            "(389)",
+            "45,642"
+          ],
+          "ok": true
+        },
+        {
+          "metric": "dividend_installments_count",
+          "fy": 2025,
+          "page": 235,
+          "row_found": true,
+          "quarter_rows": [
+            "March",
+            "June",
+            "September",
+            "December"
+          ],
+          "sum": "320447",
+          "printed_total": "320447",
+          "ok": true
+        },
+        {
+          "metric": "dividend_installments_count",
+          "fy": 2024,
+          "page": 235,
+          "row_found": true,
+          "quarter_rows": [
+            "March",
+            "June",
+            "September",
+            "December"
+          ],
+          "sum": "465918",
+          "printed_total": "465918",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "cash_flow_column_and_sign_reconcile_to_investing_subtotal",
+      "status": "PASS",
+      "detail": {
+        "2025": {
+          "sum": "-203902",
+          "printed": "(203,902)"
+        },
+        "2024": {
+          "sum": "-2861",
+          "printed": "(2,861)"
+        }
+      }
+    },
+    {
+      "check": "no_duplicate_in_engine_same_key_or_same_line",
+      "status": "PASS",
+      "detail": {
+        "short_term_investments_net:2025": {
+          "existing_rows_same_key": [],
+          "same_amount_under_other_key": []
+        },
+        "short_term_investments_net:2024": {
+          "existing_rows_same_key": [],
+          "same_amount_under_other_key": []
+        },
+        "dividend_installments_count:2025": {
+          "existing_rows_same_key": [],
+          "same_amount_under_other_key": []
+        },
+        "dividend_installments_count:2024": {
+          "existing_rows_same_key": [],
+          "same_amount_under_other_key": []
+        },
+        "business_model": {
+          "existing_rows_same_key": []
+        },
+        "board_of_directors": {
+          "existing_rows_same_key": []
+        },
+        "board_size": {
+          "existing_rows_same_key": []
+        },
+        "independent_directors": {
+          "existing_rows_same_key": []
+        },
+        "board_committees": {
+          "existing_rows_same_key": []
+        },
+        "audit_committee": {
+          "existing_rows_same_key": []
+        },
+        "sustainability_risk_hse_committee": {
+          "existing_rows_same_key": []
+        },
+        "nomination_committee": {
+          "existing_rows_same_key": []
+        },
+        "compensation_committee": {
+          "existing_rows_same_key": []
+        },
+        "corporate_secretary": {
+          "existing_rows_same_key": []
+        },
+        "executive_management_team": {
+          "existing_rows_same_key": []
+        },
+        "board_meetings_held": {
+          "existing_rows_same_key": []
+        },
+        "board_term_end": {
+          "existing_rows_same_key": []
+        },
+        "internal_control_assessment": {
+          "existing_rows_same_key": []
+        }
+      }
+    },
+    {
+      "check": "catalog_storage_domain_and_metric_contracts",
+      "status": "PASS",
+      "detail": {
+        "business_model": {
+          "catalog": {
+            "field_key": "business_model",
+            "category": "company_model",
+            "storage_domain": "company_profile",
+            "value_type": "text",
+            "default_unit": "text",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "board_of_directors": {
+          "catalog": {
+            "field_key": "board_of_directors",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "board_size": {
+          "catalog": {
+            "field_key": "board_size",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "independent_directors": {
+          "catalog": {
+            "field_key": "independent_directors",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "board_committees": {
+          "catalog": {
+            "field_key": "board_committees",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "audit_committee": {
+          "catalog": {
+            "field_key": "audit_committee",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "sustainability_risk_hse_committee": {
+          "catalog": {
+            "field_key": "sustainability_risk_hse_committee",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "nomination_committee": {
+          "catalog": {
+            "field_key": "nomination_committee",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "compensation_committee": {
+          "catalog": {
+            "field_key": "compensation_committee",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "corporate_secretary": {
+          "catalog": {
+            "field_key": "corporate_secretary",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "executive_management_team": {
+          "catalog": {
+            "field_key": "executive_management_team",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "board_meetings_held": {
+          "catalog": {
+            "field_key": "board_meetings_held",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "board_term_end": {
+          "catalog": {
+            "field_key": "board_term_end",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "internal_control_assessment": {
+          "catalog": {
+            "field_key": "internal_control_assessment",
+            "category": "governance_profile",
+            "storage_domain": "company_profile",
+            "value_type": "json",
+            "default_unit": "json",
+            "requirement": "recommended"
+          },
+          "ok": true
+        },
+        "short_term_investments_net:2025": {
+          "catalog": {
+            "field_key": "short_term_investments_net",
+            "category": "cash_flow",
+            "storage_domain": "data_points",
+            "value_type": "decimal",
+            "default_unit": "currency",
+            "requirement": "recommended"
+          },
+          "metric_contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        "short_term_investments_net:2024": {
+          "catalog": {
+            "field_key": "short_term_investments_net",
+            "category": "cash_flow",
+            "storage_domain": "data_points",
+            "value_type": "decimal",
+            "default_unit": "currency",
+            "requirement": "recommended"
+          },
+          "metric_contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        "dividend_installments_count:2025": {
+          "catalog": {
+            "field_key": "dividend_installments_count",
+            "category": "dividends",
+            "storage_domain": "data_points",
+            "value_type": "decimal",
+            "default_unit": "count",
+            "requirement": "recommended"
+          },
+          "metric_contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\",\"instant\",\"as_of\"]",
+            "unit_family": "count"
+          },
+          "ok": true
+        },
+        "dividend_installments_count:2024": {
+          "catalog": {
+            "field_key": "dividend_installments_count",
+            "category": "dividends",
+            "storage_domain": "data_points",
+            "value_type": "decimal",
+            "default_unit": "count",
+            "requirement": "recommended"
+          },
+          "metric_contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\",\"instant\",\"as_of\"]",
+            "unit_family": "count"
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "check": "prior_pack_comparison",
+      "status": "PASS",
+      "detail": {
+        "governance_pack": {
+          "path": "data/imports/aramco-2025-governance-risk.json",
+          "attributes": 20,
+          "filing_in_engine_db": false,
+          "comparison": {
+            "business_model": "agrees",
+            "board_of_directors": "agrees",
+            "board_size": "agrees",
+            "independent_directors": "agrees",
+            "board_committees": "agrees",
+            "audit_committee": "agrees",
+            "sustainability_risk_hse_committee": "agrees",
+            "nomination_committee": "agrees",
+            "compensation_committee": "agrees",
+            "corporate_secretary": "agrees",
+            "executive_management_team": "agrees",
+            "board_meetings_held": "agrees",
+            "board_term_end": "agrees",
+            "internal_control_assessment": "agrees"
+          }
+        },
+        "annual_metrics_short_term_investments_net": {
+          "path": "data/imports/aramco-2025-annual-metrics.json",
+          "prior_facts": [
+            {
+              "metric": "short_term_investments_net",
+              "value": 1457,
+              "scale": 1000000,
+              "currency": "SAR",
+              "unit": "SAR",
+              "period_start": "2025-01-01",
+              "period_end": "2025-12-31",
+              "period_kind": "fy",
+              "fiscal_year": 2025,
+              "page": 181,
+              "table": "net maturities of short-term investments"
+            }
+          ],
+          "in_engine_db": false,
+          "finding": "prior pack holds +1,457 labelled 'net maturities'; the statement prints (1,457) on the 'Net (purchases) maturities' row, an outflow (net purchases) in 2025"
+        }
+      }
+    },
+    {
+      "check": "no_future_periods_or_targets",
+      "status": "PASS",
+      "detail": [
+        "business_model",
+        "board_of_directors",
+        "board_size",
+        "independent_directors",
+        "board_committees",
+        "audit_committee",
+        "sustainability_risk_hse_committee",
+        "nomination_committee",
+        "compensation_committee",
+        "corporate_secretary",
+        "executive_management_team",
+        "board_meetings_held",
+        "board_term_end",
+        "internal_control_assessment",
+        "dividend_installments_count",
+        "short_term_investments_net"
+      ]
+    },
+    {
+      "check": "no_narrative_keys_in_batch",
+      "status": "PASS",
+      "detail": [
+        "compensation_policy",
+        "competitive_environment",
+        "governance_framework",
+        "industry_drivers",
+        "industry_growth",
+        "industry_overview",
+        "industry_size",
+        "regulatory_environment"
+      ]
+    },
+    {
+      "check": "engine_manifest_verifier",
+      "status": "PASS",
+      "detail": {
+        "checks": 0,
+        "passed": 0,
+        "warnings": 0,
+        "failures": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "check": "text_value_probe_documents_representation_blocker",
+      "status": "PASS",
+      "detail": {
+        "returncode": 1,
+        "stage": "extraction"
+      }
+    },
+    {
+      "check": "simulation_readback_values_and_signs",
+      "status": "PASS",
+      "detail": {
+        "short_term_investments_net:2025": {
+          "rows": [
+            [
+              "-1457000000",
+              "SAR",
+              "SAR",
+              "2025-01-01",
+              "2025-12-31"
+            ]
+          ],
+          "ok": true
+        },
+        "short_term_investments_net:2024": {
+          "rows": [
+            [
+              "171157000000",
+              "SAR",
+              "SAR",
+              "2024-01-01",
+              "2024-12-31"
+            ]
+          ],
+          "ok": true
+        },
+        "dividend_installments_count:2025": {
+          "rows": [
+            [
+              "4",
+              "count",
+              "SAR",
+              "2025-01-01",
+              "2025-12-31"
+            ]
+          ],
+          "ok": true
+        },
+        "dividend_installments_count:2024": {
+          "rows": [
+            [
+              "4",
+              "count",
+              "SAR",
+              "2024-01-01",
+              "2024-12-31"
+            ]
+          ],
+          "ok": true
+        },
+        "business_model": {
+          "ok": true
+        },
+        "board_of_directors": {
+          "ok": true
+        },
+        "board_size": {
+          "ok": true
+        },
+        "independent_directors": {
+          "ok": true
+        },
+        "board_committees": {
+          "ok": true
+        },
+        "audit_committee": {
+          "ok": true
+        },
+        "sustainability_risk_hse_committee": {
+          "ok": true
+        },
+        "nomination_committee": {
+          "ok": true
+        },
+        "compensation_committee": {
+          "ok": true
+        },
+        "corporate_secretary": {
+          "ok": true
+        },
+        "executive_management_team": {
+          "ok": true
+        },
+        "board_meetings_held": {
+          "ok": true
+        },
+        "board_term_end": {
+          "ok": true
+        },
+        "internal_control_assessment": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "check": "simulation_fills_every_batch_key",
+      "status": "PASS",
+      "detail": {
+        "not_filled": []
+      }
+    },
+    {
+      "check": "coverage_effect_computed_by_engine_evaluator",
+      "status": "PASS",
+      "detail": {
+        "approved": "56.56374569234910209031614016",
+        "projected": "58.79989828534394325241225745",
+        "filled_from_batch": 16,
+        "engine_derived": []
+      }
+    },
+    {
+      "check": "every_missing_key_classified",
+      "status": "PASS",
+      "detail": {
+        "not_applicable_candidate": 1,
+        "not_identified_in_ARA2025": 43,
+        "narrative_needs_content_rule": 8,
+        "combined_or_segment_only_line": 3,
+        "engine_non_projectable_presentation_field": 7,
+        "alias_of_existing_key_needs_definition_decision": 3,
+        "qualitative_disclosure_without_amount": 2,
+        "derived_needs_rule": 66,
+        "derived_needs_rule_and_market_data": 9,
+        "external_consensus_feed_required": 7,
+        "external_market_feed_required": 19,
+        "engine_representation_blocker": 1,
+        "period_basis_ambiguity": 1,
+        "see_QB3": 45,
+        "shareholder_registry_source_required": 11,
+        "classification_decision_on_existing_row": 1,
+        "event_feed_required": 35
+      }
+    },
+    {
+      "check": "original_engine_unchanged",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "porcelain": "",
+          "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+          "db_size": 30420992,
+          "db_mtime_ns": 1791841581643458367
+        },
+        "after": {
+          "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+          "porcelain": "",
+          "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+          "db_size": 30420992,
+          "db_mtime_ns": 1791841581643458367
+        }
+      }
+    }
+  ]
+}

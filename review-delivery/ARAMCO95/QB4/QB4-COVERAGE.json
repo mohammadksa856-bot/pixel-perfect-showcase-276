@@ -1,0 +1,162 @@
+{
+  "schema": "marefa-qb4-coverage/1",
+  "measured_by": "finengine factory-contract-readiness SA 2222 (engine b70254e) on disposable copies",
+  "approved_score": {
+    "total_score": "56.56374569234910209031614016",
+    "basis": "current engine data at b70254e; nothing in QB4 is accepted"
+  },
+  "projected_score_if_batch_accepted_and_ingested": {
+    "total_score": "58.79989828534394325241225745",
+    "basis": "simulation only; not an approved score"
+  },
+  "delta_total_score": "2.23615259299484116209611729",
+  "target_score": "95.00",
+  "new_keys_filled": 16,
+  "history_values_on_new_keys": 2,
+  "source_values": 18,
+  "keys_filled_from_batch": [
+    "audit_committee",
+    "board_committees",
+    "board_meetings_held",
+    "board_of_directors",
+    "board_size",
+    "board_term_end",
+    "business_model",
+    "compensation_committee",
+    "corporate_secretary",
+    "dividend_installments_count",
+    "executive_management_team",
+    "independent_directors",
+    "internal_control_assessment",
+    "nomination_committee",
+    "short_term_investments_net",
+    "sustainability_risk_hse_committee"
+  ],
+  "keys_filled_by_engine_derivation": [],
+  "categories": {
+    "company_profile": {
+      "before": {
+        "weight": "8",
+        "score": "0.5517241379310344827586206897",
+        "weighted_score": "4.413793103448275862068965518",
+        "populated": 32,
+        "expected": 58,
+        "threshold": "0.85",
+        "threshold_passed": false
+      },
+      "after": {
+        "weight": "8",
+        "score": "0.7931034482758620689655172414",
+        "weighted_score": "6.344827586206896551724137931",
+        "populated": 46,
+        "expected": 58,
+        "threshold": "0.85",
+        "threshold_passed": false
+      },
+      "newly_populated": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "corporate_secretary",
+        "executive_management_team",
+        "independent_directors",
+        "internal_control_assessment",
+        "nomination_committee",
+        "sustainability_risk_hse_committee"
+      ]
+    },
+    "financial_statements": {
+      "before": {
+        "weight": "14",
+        "score": "0.7874015748031496062992125984",
+        "weighted_score": "11.02362204724409448818897638",
+        "populated": 200,
+        "expected": 254,
+        "threshold": "0.95",
+        "threshold_passed": false
+      },
+      "after": {
+        "weight": "14",
+        "score": "0.7913385826771653543307086614",
+        "weighted_score": "11.07874015748031496062992126",
+        "populated": 201,
+        "expected": 254,
+        "threshold": "0.95",
+        "threshold_passed": false
+      },
+      "newly_populated": [
+        "short_term_investments_net"
+      ]
+    },
+    "dividends": {
+      "before": {
+        "weight": "5",
+        "score": "0.2",
+        "weighted_score": "1.0",
+        "populated": 4,
+        "expected": 20,
+        "threshold": "0.9",
+        "threshold_passed": false
+      },
+      "after": {
+        "weight": "5",
+        "score": "0.25",
+        "weighted_score": "1.25",
+        "populated": 5,
+        "expected": 20,
+        "threshold": "0.9",
+        "threshold_passed": false
+      },
+      "newly_populated": [
+        "dividend_installments_count"
+      ]
+    }
+  },
+  "unchanged_categories": [
+    "announcements",
+    "calculated_smart_metrics",
+    "corporate_actions",
+    "efficiency",
+    "growth",
+    "liquidity_solvency",
+    "market_data",
+    "operational_kpis",
+    "ownership",
+    "per_share",
+    "profitability",
+    "sector_specific_fields",
+    "segments",
+    "sources_lineage_freshness",
+    "valuation"
+  ],
+  "threshold_status_after": {
+    "company_profile": false,
+    "financial_statements": false,
+    "profitability": false,
+    "liquidity_solvency": false,
+    "efficiency": false,
+    "growth": false,
+    "per_share": true,
+    "valuation": false,
+    "market_data": false,
+    "dividends": false,
+    "segments": false,
+    "ownership": false,
+    "corporate_actions": false,
+    "announcements": false,
+    "operational_kpis": false,
+    "sector_specific_fields": false,
+    "calculated_smart_metrics": false,
+    "sources_lineage_freshness": true
+  },
+  "readiness_state_after": "not_ready",
+  "context_prior_governance_pack_alone": {
+    "total_score": "59.50093781057570307553781504",
+    "note": "includes 6 narrative paraphrases that QB4 does not carry"
+  }
+}

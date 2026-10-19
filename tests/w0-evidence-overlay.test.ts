@@ -1,6 +1,7 @@
 import { expect, test, mock } from "bun:test";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -20,10 +21,9 @@ const { frozenDesignPreview } = await import("../src/lib/web-v1/design-fixtures.
 const { buildOverview } = await import("../src/lib/web-v1/company-experience");
 const { QaEvidencePanel } = await import("../src/components/web-v1/company-template");
 
-const OVERLAY_PATH = new URL(
-  "../review-delivery/ARAMCO95/W0/evidence-overlay.json",
-  import.meta.url,
-).pathname;
+const OVERLAY_PATH = fileURLToPath(
+  new URL("../review-delivery/ARAMCO95/W0/evidence-overlay.json", import.meta.url),
+);
 const overlay = JSON.parse(readFileSync(OVERLAY_PATH, "utf8")) as EvidenceOverlay;
 const page = () => structuredClone(fixturePages["2222"]) as EnginePage;
 const RECORDS = ["FQ01-OBS-011", "FQ01-OBS-014", "FQ01-OBS-016", "FQ01-OBS-060"];
@@ -154,7 +154,7 @@ test("the overlay file is not part of the product source tree", () => {
     readdirSync(d).flatMap((f) =>
       statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)],
     );
-  const src = new URL("../src", import.meta.url).pathname;
+  const src = fileURLToPath(new URL("../src", import.meta.url));
   expect(walk(src).filter((f) => f.endsWith("evidence-overlay.json"))).toEqual([]);
   expect(walk(src).some((f) => readFileSync(f, "utf8").includes("ARAMCO95/W0"))).toBe(false);
 });

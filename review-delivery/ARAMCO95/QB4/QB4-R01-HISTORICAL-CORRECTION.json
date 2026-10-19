@@ -1,0 +1,39 @@
+{
+  "schema": "marefa-historical-correction/1",
+  "id": "QB4-R01-N1",
+  "state": "PROPOSED_NOT_APPLIED",
+  "engine_commit": "b70254e",
+  "target_file": "data/imports/aramco-2025-annual-metrics.json",
+  "target_file_sha256": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
+  "corrected_file_sha256": "8b6e5c1c8c1209a9fd7b0140f11725ccb67eccbec6599bc129fdc9a735ba3e23",
+  "fact_index": 91,
+  "fact": {
+    "metric": "short_term_investments_net",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "period_kind": "fy",
+    "fiscal_year": 2025,
+    "scale": 1000000,
+    "unit": "SAR"
+  },
+  "field": "value",
+  "from": 1457,
+  "to": -1457,
+  "amount_sar": "-1457000000",
+  "evidence": {
+    "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 178,
+    "row": "Net (purchases) maturities of short-term investments",
+    "printed_2025": "(1,457)",
+    "meaning": "net purchases of short-term investments in 2025, a cash outflow"
+  },
+  "definition_basis": "cash-flow flow in currency; engine precedents store net inflows as positive; the same pack keeps the printed sign for every other line of this statement",
+  "not_changed_here": {
+    "page": "181 (the statement is on PDF 178; every cash-flow fact of this pack carries 181)",
+    "table": "'net maturities of short-term investments' (label of the row's meaning, not of the table)",
+    "reason": "outside this correction; reported for a separate decision"
+  },
+  "engine_database": "unchanged; the key has no row in the b70254e database",
+  "patch": "aramco-2025-annual-metrics.short_term_investments_net.patch",
+  "patch_sha256": "fa8723edcd2b9ce1a369d7291b251f2833600d25a8246a9a824cb08b801cf47f"
+}

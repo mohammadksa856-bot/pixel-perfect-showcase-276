@@ -1,0 +1,239 @@
+PASS single_target_fact_in_prior_pack
+PASS source_document_hash
+PASS definition_catalog_and_contract
+PASS definition_engine_precedents_signed_net_cash_flow
+PASS same_pack_keeps_printed_sign_for_every_other_line_of_the_statement
+PASS pdf178_prints_an_outflow
+PASS investing_subtotal_reconciles_only_with_negative_sign
+PASS patch_changes_exactly_one_value
+PASS patch_applies_to_b70254e_export_only
+PASS engine_db_holds_no_row_for_the_key
+PASS original_engine_unchanged
+11/11 PASS
+
+[
+ {
+  "check": "single_target_fact_in_prior_pack",
+  "status": "PASS",
+  "detail": {
+   "index": [
+    91
+   ],
+   "fact": {
+    "metric": "short_term_investments_net",
+    "value": 1457,
+    "scale": 1000000,
+    "currency": "SAR",
+    "unit": "SAR",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "period_kind": "fy",
+    "fiscal_year": 2025,
+    "page": 181,
+    "table": "net maturities of short-term investments"
+   }
+  }
+ },
+ {
+  "check": "source_document_hash",
+  "status": "PASS",
+  "detail": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+ },
+ {
+  "check": "definition_catalog_and_contract",
+  "status": "PASS",
+  "detail": {
+   "catalog": {
+    "field_key": "short_term_investments_net",
+    "category": "cash_flow",
+    "storage_domain": "data_points",
+    "period_behavior": "flow",
+    "default_unit": "currency",
+    "value_type": "decimal"
+   },
+   "metric_contract": {
+    "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+    "unit_family": "monetary"
+   },
+   "metric_definition": {
+    "metric_key": "short_term_investments_net",
+    "value_type": "decimal",
+    "default_unit": "currency",
+    "aggregation": "sum"
+   }
+  }
+ },
+ {
+  "check": "definition_engine_precedents_signed_net_cash_flow",
+  "status": "PASS",
+  "detail": {
+   "precedents": [
+    {
+     "file": "mobily-2025-deep-financial-notes.json",
+     "source_label": "Net proceeds from short term Murabaha",
+     "value": "1171574"
+    },
+    {
+     "file": "sabic-2024-fy-comparative.json",
+     "source_label": "Short-term investments net",
+     "value": "2160060"
+    },
+    {
+     "file": "stc-2025-fy.json",
+     "source_label": "Proceeds related to short-term murabahas, net",
+     "value": "13471805"
+    }
+   ],
+   "reading": "net inflows from short-term investments are stored as positive amounts"
+  }
+ },
+ {
+  "check": "same_pack_keeps_printed_sign_for_every_other_line_of_the_statement",
+  "status": "PASS",
+  "detail": {
+   "taxes_paid": {
+    "pack": -342422,
+    "printed": "(342,422)",
+    "same_sign_and_amount": true
+   },
+   "operating_cash_flow": {
+    "pack": 510798,
+    "printed": "510,798",
+    "same_sign_and_amount": true
+   },
+   "acquisitions": {
+    "pack": -408,
+    "printed": "(408)",
+    "same_sign_and_amount": true
+   },
+   "proceeds_asset_sales": {
+    "pack": 6779,
+    "printed": "6,779",
+    "same_sign_and_amount": true
+   },
+   "distributions_joint_ventures_associates": {
+    "pack": 3030,
+    "printed": "3,030",
+    "same_sign_and_amount": true
+   },
+   "dividends_from_investments": {
+    "pack": 491,
+    "printed": "491",
+    "same_sign_and_amount": true
+   },
+   "interest_received": {
+    "pack": 14142,
+    "printed": "14,142",
+    "same_sign_and_amount": true
+   },
+   "investing_cash_flow": {
+    "pack": -203902,
+    "printed": "(203,902)",
+    "same_sign_and_amount": true
+   },
+   "dividends_noncontrolling": {
+    "pack": -12206,
+    "printed": "(12,206)",
+    "same_sign_and_amount": true
+   },
+   "proceeds_noncontrolling_sale": {
+    "pack": 41802,
+    "printed": "41,802",
+    "same_sign_and_amount": true
+   },
+   "short_term_borrowings_net": {
+    "pack": 6573,
+    "printed": "6,573",
+    "same_sign_and_amount": true
+   },
+   "debt_issued": {
+    "pack": 51552,
+    "printed": "51,552",
+    "same_sign_and_amount": true
+   },
+   "debt_repaid": {
+    "pack": -16683,
+    "printed": "(16,683)",
+    "same_sign_and_amount": true
+   },
+   "lease_payments": {
+    "pack": -13498,
+    "printed": "(13,498)",
+    "same_sign_and_amount": true
+   },
+   "interest_paid": {
+    "pack": -18382,
+    "printed": "(18,382)",
+    "same_sign_and_amount": true
+   },
+   "financing_cash_flow": {
+    "pack": -280439,
+    "printed": "(280,439)",
+    "same_sign_and_amount": true
+   }
+  }
+ },
+ {
+  "check": "pdf178_prints_an_outflow",
+  "status": "PASS",
+  "detail": {
+   "row": "Net (purchases) maturities of short-term investments",
+   "printed_2025": "(1,457)"
+  }
+ },
+ {
+  "check": "investing_subtotal_reconciles_only_with_negative_sign",
+  "status": "PASS",
+  "detail": {
+   "other_lines": "-202445",
+   "with_-1457": "-203902",
+   "with_+1457": "-200988",
+   "printed_subtotal": "-203902"
+  }
+ },
+ {
+  "check": "patch_changes_exactly_one_value",
+  "status": "PASS",
+  "detail": {
+   "changed_fact_index": [
+    91
+   ],
+   "before": 1457,
+   "after": -1457
+  }
+ },
+ {
+  "check": "patch_applies_to_b70254e_export_only",
+  "status": "PASS",
+  "detail": {
+   "stderr": ""
+  }
+ },
+ {
+  "check": "engine_db_holds_no_row_for_the_key",
+  "status": "PASS",
+  "detail": {
+   "rows": 0
+  }
+ },
+ {
+  "check": "original_engine_unchanged",
+  "status": "PASS",
+  "detail": {
+   "before": {
+    "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "porcelain": "",
+    "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "db_size": 30420992,
+    "db_mtime_ns": 1791841581643458367
+   },
+   "after": {
+    "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "porcelain": "",
+    "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "db_size": 30420992,
+    "db_mtime_ns": 1791841581643458367
+   }
+  }
+ }
+]

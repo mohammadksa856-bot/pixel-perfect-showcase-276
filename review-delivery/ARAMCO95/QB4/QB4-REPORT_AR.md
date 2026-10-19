@@ -63,7 +63,7 @@
 | business_model | خطّا عمل (Upstream وDownstream) وست وظائف مؤسسية | 110 |
 | board_of_directors | 11 عضوًا مع الرئيس ونائبه | 117 |
 | board_size | 11 | 114 |
-| independent_directors | 5 بالأسماء | 115 و117 |
+| independent_directors | 5 بالأسماء؛ تاريخ المعلومة 2026-03-10 من حاشية PDF 115 (QB4-R01) | 115 و117 |
 | board_committees | أربع لجان | 114 |
 | audit_committee | الرئيس والأعضاء، 4 اجتماعات بتواريخها | 118 |
 | sustainability_risk_hse_committee | كذلك، 4 اجتماعات | 120 |

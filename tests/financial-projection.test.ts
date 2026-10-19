@@ -690,6 +690,16 @@ describe("M6 quarter table: Q1–Q3 from quarter_position, Q4 from annual_positi
     expect(cash.section).toBe("balance");
     expect(q.periods.filter((x) => x.end === "2025-12-31").length).toBe(1);
   });
+  test("only the fiscal year end of annual_position becomes Q4; any other date there is ignored", () => {
+    const p = q4Page();
+    fin(p).history.annual_position.periods.push({
+      period_end: "2025-11-30",
+      metrics: { cash: [bal({ value: "777077000000", period_end: "2025-11-30" })] },
+    });
+    const q = quarterView(p);
+    expect(q.periods.some((x) => x.end === "2025-11-30")).toBe(false);
+    expect(has(q, "777077")).toBe(false);
+  });
   test("a year-end date inside quarter_position is ignored, so Q4 is never duplicated or contradicted", () => {
     const q = quarterView(
       q4Page([

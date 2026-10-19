@@ -1,0 +1,111 @@
+{
+  "original_engine_before": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+  "engine_page_has_synthetic": {
+    "revenue": true,
+    "net_income": true,
+    "cash": true,
+    "total_equity": true
+  },
+  "engine_quarter_position_ends": [
+    "2026-06-30",
+    "2026-03-31",
+    "2025-09-30"
+  ],
+  "no_ledger": {
+    "/preview/web-v1/companies/2222/overview": {
+      "status": 200,
+      "bytes": 255291,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222/intelligence": {
+      "status": 200,
+      "bytes": 541213,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222": {
+      "status": 200,
+      "bytes": 191680,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222?tab=financials": {
+      "status": 200,
+      "bytes": 385635,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    }
+  },
+  "ledger_two_rows": {
+    "/preview/web-v1/companies/2222/overview": {
+      "status": 200,
+      "bytes": 256221,
+      "revenue": true,
+      "net_income": false,
+      "cash": true,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222/intelligence": {
+      "status": 200,
+      "bytes": 542143,
+      "revenue": true,
+      "net_income": false,
+      "cash": true,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222": {
+      "status": 200,
+      "bytes": 192610,
+      "revenue": true,
+      "net_income": false,
+      "cash": true,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222?tab=financials": {
+      "status": 200,
+      "bytes": 386565,
+      "revenue": true,
+      "net_income": false,
+      "cash": true,
+      "total_equity": false
+    }
+  },
+  "original_engine_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+  "original_engine_unchanged": true,
+  "temp_removed": true,
+  "checks": [
+    {
+      "check": "engine copy holds all four synthetic rows",
+      "pass": true
+    },
+    {
+      "check": "engine quarter_position has 2025-09-30",
+      "pass": true
+    },
+    {
+      "check": "no ledger: no synthetic value on any page",
+      "pass": true
+    },
+    {
+      "check": "ledger: unauthorised net_income/total_equity on no page",
+      "pass": true
+    },
+    {
+      "check": "ledger: authorised revenue and 30 Sep cash reach the Data financials tab",
+      "pass": true
+    },
+    {
+      "check": "original engine unchanged",
+      "pass": true
+    }
+  ]
+}

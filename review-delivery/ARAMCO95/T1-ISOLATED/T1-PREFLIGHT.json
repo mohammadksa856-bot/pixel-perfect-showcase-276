@@ -1,9 +1,8 @@
 {
   "schema": "marefa-t1-preflight/1",
-  "at_utc": "2026-10-19T16:22:44+00:00",
+  "at_utc": "2026-10-19T16:40:14+00:00",
   "result": "BLOCKED",
   "blocked_by": [
-    "independent_source_accept_receipt",
     "owner_authorization_for_isolated_ingestion"
   ],
   "manifest_sha256": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
@@ -92,10 +91,8 @@
     },
     {
       "check": "independent_source_accept_receipt",
-      "status": "BLOCK",
-      "detail": [
-        "no T1-SOURCE-REVIEW-RECEIPT.json"
-      ]
+      "status": "PASS",
+      "detail": "accepted by OpenAI ChatGPT (GPT-6; AI source reviewer, explicitly appointed by the project owner)"
     },
     {
       "check": "owner_authorization_for_isolated_ingestion",

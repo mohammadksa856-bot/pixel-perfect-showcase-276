@@ -1,0 +1,25 @@
+{
+  "schema": "marefa-t1-source-receipt-record/1",
+  "receipt_file": "T1-SOURCE-REVIEW-RECEIPT.json (private: git-ignored, not in the public repository)",
+  "receipt_sha256": "49e3f053b4f33d653081029235431a7c61642ceb8961ce011486bcc420f47ed5",
+  "review_report_sha256": "5b816e01da9ee8b5ddf9c9e3f7484b35a1cbd395dac7a6d69a95af972b8fe379",
+  "decision": "SOURCE_ACCEPT",
+  "scope": "five T1 identities only",
+  "reviewer": "OpenAI ChatGPT (GPT-6; AI source reviewer, explicitly appointed by the project owner)",
+  "reviewer_type": "AI_NOT_HUMAN",
+  "reviewer_appointment": "Project owner's explicit appointment, stated in the owner's handoff message to this session on 2026-10-19",
+  "human_signature": false,
+  "reviewed_at_utc": "2026-10-19T16:29:20+00:00",
+  "document_sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+  "manifest_sha256": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+  "manifest_sha256_matches_repo": true,
+  "gate": "preflight.receipt_problems at 124afa6 rules: no problems",
+  "policy_check": "No human-reviewer or signature requirement found in AGENTS.md, the engine README/docs or the 18-category contract; the T1 gate requires an independent reviewer who is not a preparer (Claude/Codex). An AI reviewer explicitly appointed by the owner meets the gate as written.",
+  "not_granted": [
+    "FINANCIAL_ACCEPT",
+    "publication or redistribution rights (UNKNOWN_NO_GRANT)",
+    "owner ingestion authorization",
+    "hold changes 7/22/142/0"
+  ],
+  "retention": "The receipt exists only in this session's container and the owner's copy; restore it byte-identical (hash above) before running preflight in a new session."
+}

@@ -11,10 +11,11 @@
     "2026-03-31",
     "2025-09-30"
   ],
-  "no_ledger": {
+  "untrusted_signed_records": 6,
+  "no_approvals": {
     "/preview/web-v1/companies/2222/overview": {
       "status": 200,
-      "bytes": 255291,
+      "bytes": 143489,
       "revenue": false,
       "net_income": false,
       "cash": false,
@@ -22,7 +23,7 @@
     },
     "/preview/web-v1/companies/2222/intelligence": {
       "status": 200,
-      "bytes": 541213,
+      "bytes": 211737,
       "revenue": false,
       "net_income": false,
       "cash": false,
@@ -30,7 +31,7 @@
     },
     "/preview/web-v1/companies/2222": {
       "status": 200,
-      "bytes": 191680,
+      "bytes": 107921,
       "revenue": false,
       "net_income": false,
       "cash": false,
@@ -38,44 +39,112 @@
     },
     "/preview/web-v1/companies/2222?tab=financials": {
       "status": 200,
-      "bytes": 385635,
+      "bytes": 93097,
       "revenue": false,
       "net_income": false,
       "cash": false,
       "total_equity": false
     }
   },
-  "ledger_two_rows": {
+  "json_words_only": {
     "/preview/web-v1/companies/2222/overview": {
       "status": 200,
-      "bytes": 256221,
-      "revenue": true,
+      "bytes": 143489,
+      "revenue": false,
       "net_income": false,
-      "cash": true,
+      "cash": false,
       "total_equity": false
     },
     "/preview/web-v1/companies/2222/intelligence": {
       "status": 200,
-      "bytes": 542143,
-      "revenue": true,
+      "bytes": 211737,
+      "revenue": false,
       "net_income": false,
-      "cash": true,
+      "cash": false,
       "total_equity": false
     },
     "/preview/web-v1/companies/2222": {
       "status": 200,
-      "bytes": 192610,
-      "revenue": true,
+      "bytes": 107921,
+      "revenue": false,
       "net_income": false,
-      "cash": true,
+      "cash": false,
       "total_equity": false
     },
     "/preview/web-v1/companies/2222?tab=financials": {
       "status": 200,
-      "bytes": 386565,
-      "revenue": true,
+      "bytes": 93097,
+      "revenue": false,
       "net_income": false,
-      "cash": true,
+      "cash": false,
+      "total_equity": false
+    }
+  },
+  "signed_by_untrusted_key": {
+    "/preview/web-v1/companies/2222/overview": {
+      "status": 200,
+      "bytes": 143489,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222/intelligence": {
+      "status": 200,
+      "bytes": 211737,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222": {
+      "status": 200,
+      "bytes": 107921,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222?tab=financials": {
+      "status": 200,
+      "bytes": 93097,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    }
+  },
+  "unreadable_file": {
+    "/preview/web-v1/companies/2222/overview": {
+      "status": 200,
+      "bytes": 143489,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222/intelligence": {
+      "status": 200,
+      "bytes": 211737,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222": {
+      "status": 200,
+      "bytes": 107921,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
+      "total_equity": false
+    },
+    "/preview/web-v1/companies/2222?tab=financials": {
+      "status": 200,
+      "bytes": 93097,
+      "revenue": false,
+      "net_income": false,
+      "cash": false,
       "total_equity": false
     }
   },
@@ -92,15 +161,23 @@
       "pass": true
     },
     {
-      "check": "no ledger: no synthetic value on any page",
+      "check": "six signed records produced by the untrusted key",
       "pass": true
     },
     {
-      "check": "ledger: unauthorised net_income/total_equity on no page",
+      "check": "no_approvals: every page 200, no synthetic value on any page",
       "pass": true
     },
     {
-      "check": "ledger: authorised revenue and 30 Sep cash reach the Data financials tab",
+      "check": "json_words_only: every page 200, no synthetic value on any page",
+      "pass": true
+    },
+    {
+      "check": "signed_by_untrusted_key: every page 200, no synthetic value on any page",
+      "pass": true
+    },
+    {
+      "check": "unreadable_file: every page 200, no synthetic value on any page",
       "pass": true
     },
     {

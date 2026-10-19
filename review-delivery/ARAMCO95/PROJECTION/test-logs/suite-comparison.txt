@@ -1,12 +1,15 @@
 # bun test, full suite
-## base 27a7785 (W0-SEC delivery, review-delivery/ARAMCO95/W0/SECURITY/suite-comparison.txt): 2056 pass, 6 fail
-## this branch
- 2071 pass
+## base 27a7785 (W0-SEC delivery): 2056 pass, 6 fail
+## reviewed delivery 825ce31: 2071 pass, 6 fail
+## this remediation
+ 2087 pass
  6 fail
+Ran 2107 tests across 73 files. [17.94s]
+## the 6 failures (identical to 27a7785 and 825ce31; inherited, outside this change): 3 failing tests + 3 files that cannot load
 (fail) calculated output without lineage is not reported
 (fail) quarantined missing row cannot mask an eligible zero
 (fail) wrong per-share currency is not a valid unit
-Ran 2091 tests across 73 files.
-error: Cannot find module '../work/review/research-evidence/v1/synthetic' from '/home/user/pixel-perfect-showcase-276/review-delivery/WEB08B01/independent-first-review/independent.test.ts'
-error: Cannot find module '../work/review/research-evidence/v1/synthetic' from '/home/user/pixel-perfect-showcase-276/review-delivery/WEB08B01/independent-second-review/rereview-edge.test.ts'
-error: Cannot find module '../work/review/research-evidence/v1/synthetic' from '/home/user/pixel-perfect-showcase-276/review-delivery/WEB08B01/independent-third-review/final-additional.test.ts'
+error: Cannot find module '../work/review/research-evidence/v1/synthetic' from review-delivery/WEB08B01/independent-first-review/independent.test.ts'
+error: Cannot find module '../work/review/research-evidence/v1/synthetic' from review-delivery/WEB08B01/independent-second-review/rereview-edge.test.ts'
+error: Cannot find module '../work/review/research-evidence/v1/synthetic' from review-delivery/WEB08B01/independent-third-review/final-additional.test.ts'
+## W0 (tests/w0-evidence-overlay.test.ts): 17 pass, 0 fail

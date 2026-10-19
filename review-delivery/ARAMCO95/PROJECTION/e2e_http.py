@@ -4,8 +4,9 @@
    (committed blob), migrated by Database(); synthetic Q3-2025 rows for sa:2222 synced through sync-manifests.
 2. The patched engine API serves that copy on 127.0.0.1 with a local key.
 3. The site dev server (live engine mode, no fixtures) points at it on 127.0.0.1; plain unauthenticated GETs of
-   Overview, Investor, Data and the financials tab, first with no ledger, then with a test ledger authorising
-   exactly two synthetic rows (revenue and the 30 September cash balance).
+   Overview, Investor, Data and the financials tab under four approval files: none, JSON words only, records
+   correctly signed by an ephemeral key absent from the committed trust store, and an unreadable file. With the
+   committed (empty) trust store no synthetic value may appear in any case.
 Nothing is written outside a temporary directory; the original engine is hashed before and after.
 Usage (repo root): python3 review-delivery/ARAMCO95/PROJECTION/e2e_http.py
 """
@@ -110,30 +111,33 @@ def main():
         fin = engine_page["sections"]["financials"]
         out["engine_page_has_synthetic"] = {k: v in body for k, v in MARKS.items()}
         out["engine_quarter_position_ends"] = [p["period_end"] for p in fin["history"]["quarter_position"]["periods"]]
-        # Test ledger: identities read from the engine's own rows; only revenue and cash are authorised.
-        def row(section, metric):
-            for p in fin["history"][section]["periods"]:
-                for r in p["metrics"].get(metric, []):
-                    if r["value"] == MARKS[metric]:
-                        return r
-            raise KeyError(metric)
-        def entry(metric, r):
-            return {"kind": "fact", "identity": {"company_id": "sa:2222", "metric": metric, "period_kind": r["period_kind"],
-                    "period_start": r.get("period_start") or None, "period_end": r["period_end"], "scope": r.get("scope") or "consolidated",
-                    "dimensions": r.get("dimensions") or {}, "currency": r.get("currency"), "unit": r.get("unit"),
-                    "version": r["version"], "source_key": r["source_key"], "value": r["value"]},
-                    "source_accept": {"state": "SOURCE_ACCEPT", "receipt_sha256": "b" * 64, "reviewer": "SYNTHETIC-TEST"},
-                    "financial_accept": {"state": "FINANCIAL_ACCEPT", "by": "SYNTHETIC-TEST", "at": "2026-10-01T00:00:00Z"},
-                    "publication": {"state": "PUBLICATION_AUTHORIZED", "rights_basis": "SYNTHETIC-TEST", "by": "SYNTHETIC-TEST",
-                                    "at": "2026-10-01T00:00:00Z", "expires_at": "2027-01-01T00:00:00Z"}}
-        ledger = tmp / "ledger.json"
-        ledger.write_text(json.dumps({"schema": "marefa-publication-ledger/1", "entries": [
-            entry("revenue", row("quarter", "revenue")), entry("cash", row("quarter_position", "cash"))]}))
+        # Approval files, none of which may expose a value: (a) JSON words only, unsigned; (b) records correctly
+        # signed for revenue and the 30 September cash by an ephemeral key absent from the committed trust store;
+        # (c) an unreadable file. The site's trust store is empty, so live values are withheld in every case.
+        page_file = tmp / "engine-page.json"
+        page_file.write_text(body)
+        words = tmp / "words.json"
+        words.write_text(json.dumps({"schema": "marefa-publication-approvals/1", "approvals": [
+            {"decision": d, "decision_ref": "WORDS-ONLY", "authority_id": "anyone", "subject": {"kind": "fact", "key": "x"},
+             "issued_at": "2026-10-01T00:00:00Z", "signature": ""}
+            for d in ("SOURCE_ACCEPT", "FINANCIAL_ACCEPT", "PUBLICATION_AUTHORIZED")],
+            "source_accept": "SOURCE_ACCEPT", "financial_accept": "FINANCIAL_ACCEPT", "publication": "PUBLICATION_AUTHORIZED"}))
+        signed = tmp / "signed-untrusted.json"
+        r = subprocess.run(["bun", str(HERE / "sign_untrusted.ts"), str(page_file), str(signed),
+                            f"quarter:revenue:{MARKS['revenue']}", f"quarter_position:cash:{MARKS['cash']}"],
+                           cwd=REPO, capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr[-2000:]
+        out["untrusted_signed_records"] = int(r.stdout.strip())
+        garbage = tmp / "garbage.json"
+        garbage.write_text("{not json")
+        scenarios = (("no_approvals", {}), ("json_words_only", {"MAREFA_PUBLICATION_APPROVALS_PATH": str(words)}),
+                     ("signed_by_untrusted_key", {"MAREFA_PUBLICATION_APPROVALS_PATH": str(signed)}),
+                     ("unreadable_file", {"MAREFA_PUBLICATION_APPROVALS_PATH": str(garbage)}))
 
         site_env = {k: v for k, v in os.environ.items() if not k.startswith(("MAREFA_", "VERCEL_"))}
         site_env.update(ENGINE_PREVIEW_ENABLED="true", WEB_V1_PREVIEW_ENABLED="true",
                         FINENGINE_API_URL=f"http://127.0.0.1:{eport}", FINENGINE_API_KEY=KEY)
-        for label, extra in (("no_ledger", {}), ("ledger_two_rows", {"MAREFA_PUBLICATION_LEDGER_PATH": str(ledger)})):
+        for label, extra in scenarios:
             sport = port()
             p = subprocess.Popen(["npx", "vite", "dev", "--host", "127.0.0.1", "--port", str(sport), "--strictPort"],
                                  cwd=REPO, env=site_env | extra, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -158,16 +162,16 @@ def main():
     checks = []
     checks.append(("engine copy holds all four synthetic rows", all(out["engine_page_has_synthetic"].values())))
     checks.append(("engine quarter_position has 2025-09-30", "2025-09-30" in out["engine_quarter_position_ends"]))
-    checks.append(("no ledger: no synthetic value on any page", all(not any(v[k] for k in MARKS) and v["status"] == 200 for v in out["no_ledger"].values())))
-    checks.append(("ledger: unauthorised net_income/total_equity on no page", all(not v["net_income"] and not v["total_equity"] for v in out["ledger_two_rows"].values())))
-    fin_tab = out["ledger_two_rows"]["/preview/web-v1/companies/2222?tab=financials"]
-    checks.append(("ledger: authorised revenue and 30 Sep cash reach the Data financials tab", fin_tab["revenue"] and fin_tab["cash"]))
+    checks.append(("six signed records produced by the untrusted key", out["untrusted_signed_records"] == 6))
+    for label, _ in scenarios:
+        checks.append((f"{label}: every page 200, no synthetic value on any page",
+                       all(not any(v[k] for k in MARKS) and v["status"] == 200 for v in out[label].values())))
     checks.append(("original engine unchanged", out["original_engine_unchanged"]))
     out["checks"] = [{"check": c, "pass": bool(ok)} for c, ok in checks]
     (HERE / "E2E-HTTP-RESULTS.json").write_text(json.dumps(out, indent=2) + "\n")
     for c, ok in checks:
         print("PASS" if ok else "FAIL", c)
-    print(json.dumps({k: out[k] for k in ("no_ledger", "ledger_two_rows")}, indent=1))
+    print(json.dumps({k: out[k] for k, _ in scenarios}, indent=1))
     return 0 if all(ok for _, ok in checks) else 1
 
 

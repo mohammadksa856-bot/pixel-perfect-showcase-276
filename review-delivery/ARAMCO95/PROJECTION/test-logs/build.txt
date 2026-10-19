@@ -1,1 +1,9 @@
-vite build: exit 0; static bundle hits for gate/baseline strings: 0; server bundle: 1
+vite build: exit 0 (.vercel/output)
+string                              static  server
+marefa-publication-trust            0       1
+marefa-publication-approvals        0       1
+MAREFA_PUBLICATION_APPROVALS_PATH   0       1
+publication-baseline                0       1
+applyPublicationGate                0       3
+fact/2                              0       1
+tsc --noEmit: 0 errors · eslint (changed files): 0 problems · prettier --check (changed files): clean

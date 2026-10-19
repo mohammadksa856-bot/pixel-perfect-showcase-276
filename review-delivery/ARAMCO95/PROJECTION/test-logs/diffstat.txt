@@ -1,15 +1,10 @@
- .../ARAMCO95/PROJECTION/build_baseline.ts          |  46 ++
- review-delivery/ARAMCO95/PROJECTION/e2e_http.py    | 175 +++++++
- .../ARAMCO95/PROJECTION/engine/apply_proposal.py   |  83 +++
- .../PROJECTION/engine/quarter-position.patch       |  85 ++++
- .../PROJECTION/engine/test_engine_proposal.py      | 176 +++++++
- .../ARAMCO95/PROJECTION/snapshot_previews.ts       |  20 +
- src/lib/engine/company-preview.server.ts           |  12 +-
- src/lib/engine/company-preview.ts                  |  11 +-
- src/lib/engine/peer-comparison.server.ts           |   5 +-
- src/lib/engine/publication-baseline.json           | 548 ++++++++++++++++++++
- src/lib/engine/publication-gate.server.ts          | 359 +++++++++++++
- src/lib/engine/statements.ts                       |  30 +-
- src/lib/web-v1/design-fixtures.server.ts           |   7 +-
- tests/financial-projection.test.ts                 | 554 +++++++++++++++++++++
- 14 files changed, 2102 insertions(+), 9 deletions(-)
+# git diff --stat 825ce31..a7153db (implementation of the remediation)
+ .../ARAMCO95/PROJECTION/build_baseline.ts          |   10 +-
+ src/lib/engine/company-preview.server.ts           |   22 +-
+ src/lib/engine/peer-comparison.server.ts           |    8 +-
+ src/lib/engine/publication-gate.server.ts          |  681 +++++++-----
+ src/lib/engine/publication-trust.json              |    5 +
+ src/lib/engine/statements.ts                       |   83 +-
+ src/lib/web-v1/design-fixtures.server.ts           |   10 +-
+ tests/financial-projection.test.ts                 | 1114 ++++++++++++--------
+ 8 files changed, 1204 insertions(+), 729 deletions(-)

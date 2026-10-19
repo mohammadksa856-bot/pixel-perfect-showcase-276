@@ -1,0 +1,143 @@
+{
+ "identities": [
+  4090,
+  4090,
+  true
+ ],
+ "old_counts": {
+  "EXISTS_NEEDS_SOURCE_LINK": 239,
+  "UNAVAILABLE_OR_NOT_CURRENTLY_QUALIFIABLE": 2941,
+  "ABSENT_NEEDS_INPUT": 761,
+  "EXISTS_NEEDS_IDENTITY_OR_VERSION_REVIEW": 24,
+  "POTENTIAL_DERIVATION_NEEDS_APPROVED_RULE": 125
+ },
+ "new_counts": {
+  "EXISTS_NEEDS_SOURCE_LINK": 142,
+  "UNAVAILABLE_OR_NOT_CURRENTLY_QUALIFIABLE": 2941,
+  "ABSENT_NEEDS_INPUT": 761,
+  "EXISTS_WITHOUT_MATCHING_SOURCE_OBSERVATION": 97,
+  "EXISTS_NEEDS_IDENTITY_OR_VERSION_REVIEW": 24,
+  "POTENTIAL_DERIVATION_NEEDS_APPROVED_RULE": 125
+ },
+ "legacy_counts_equal_old": true,
+ "split": {
+  "original_count": 239,
+  "with_matching_observation": 142,
+  "without_matching_observation": 97,
+  "latter_not_ready_for_source_link": true,
+  "not_evidence_or_financial_acceptance": true
+ },
+ "moved": {
+  "('EXISTS_NEEDS_SOURCE_LINK', 'EXISTS_WITHOUT_MATCHING_SOURCE_OBSERVATION')": 97
+ },
+ "moved_all_null_source": true,
+ "remaining_link_all_have_source": true,
+ "remaining_link_exact": {
+  "EXACT_VALUE_AND_UNIT": 142
+ },
+ "absent": [
+  761,
+  761,
+  true,
+  true
+ ],
+ "entries_differing_beyond_class_or_proposal": [],
+ "q4_pairs": [
+  102,
+  102
+ ],
+ "states": {
+  "NO_MIXED_BASIS_DETECTED_NOT_APPROVED": 100,
+  "BLOCKED_MIXED_BASIS": 2
+ },
+ "blocked": [
+  [
+   "depreciation_amortization",
+   "2025-12-31",
+   "BLOCKED_MIXED_BASIS",
+   null,
+   {
+    "input_values": [
+     "-93091000000",
+     "-77601000000"
+    ],
+    "raw_subtraction_not_q4_value": "-15490000000",
+    "not_for_ingestion": true,
+    "usable_value": false
+   },
+   "-15490000000"
+  ],
+  [
+   "depreciation_amortization_cash_flow",
+   "2025-12-31",
+   "BLOCKED_MIXED_BASIS",
+   null,
+   {
+    "input_values": [
+     "93091000000",
+     "77601000000"
+    ],
+    "raw_subtraction_not_q4_value": "15490000000",
+    "not_for_ingestion": true,
+    "usable_value": false
+   },
+   "15490000000"
+  ]
+ ],
+ "others_value_unchanged": [
+  100,
+  true,
+  true
+ ],
+ "others_proposal_fields_unchanged": true,
+ "blocked_rest_unchanged": true,
+ "approved_any": false,
+ "unblocked_with_within_year_signals": [
+  [
+   "selling_general_administrative_expense",
+   "2024-12-31",
+   [
+    [
+     "fy",
+     "2024-12-31"
+    ]
+   ]
+  ],
+  [
+   "depreciation_amortization",
+   "2024-12-31",
+   [
+    [
+     "fy",
+     "2024-12-31"
+    ]
+   ]
+  ],
+  [
+   "depreciation_amortization_cash_flow",
+   "2024-12-31",
+   [
+    [
+     "fy",
+     "2024-12-31"
+    ]
+   ]
+  ]
+ ],
+ "totals": [
+  4090,
+  4090
+ ],
+ "derivation_proposals": 125,
+ "q4review": [
+  102,
+  {
+   "NO_MIXED_BASIS_DETECTED_NOT_APPROVED": 100,
+   "BLOCKED_MIXED_BASIS": 2
+  }
+ ],
+ "identical_EDITION-RECONCILIATIONS.json": true,
+ "identical_ENGINE-REFERENCE-REGISTER.json": true,
+ "only_documented_changes_QUARTERLY-PERIOD-LEDGER.json": true,
+ "only_documented_changes_ANNUAL-PERIOD-LEDGER.json": true
+}

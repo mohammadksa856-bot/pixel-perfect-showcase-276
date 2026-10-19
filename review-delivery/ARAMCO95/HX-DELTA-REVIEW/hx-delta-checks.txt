@@ -1,0 +1,54 @@
+## hashes of exported code (compare FILE-HASHES.json at 8562f91)
+40253da55abc5221e60672bed89cfc59bce98a31dd4b03bb312c74de563e3411  syn/synthetic_test.py
+9c794c6ac035de8ba8c68d40df3660bd7e4fca8f61585a3ab6d4faa89318c6c2  syn/code/build_ledgers.py
+5f0cd693792bfc00e3bafad5713f740615156e820854cc9188f08130c5157682  syn/code/semantic_compatibility.py
+## engine DB
+2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867  /home/user/mohammadksa856-bot/-market-agnostic-financial-data-engine-1/data/financial.sqlite3
+## run old generator
+, "score_before_reference": "56.56374569 presence-only historical baseline, not rerun", "score_after": null, "weighted_score_delta": null, "financially_qualified": 0, "holds": [7, 22, 142, 0], "engine_database_sha256_before_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867"}
+
+## run new generator
+, "score_before_reference": "56.56374569 presence-only historical baseline, not rerun", "score_after": null, "weighted_score_delta": null, "financially_qualified": 0, "holds": [7, 22, 142, 0], "engine_database_sha256_before_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867"}
+
+## harness check: old generator reproduces the published b90fbc9 outputs
+INTAKE-MATRIX.json old==published: True
+DERIVATION-PROPOSALS.json old==published: True
+EDITION-RECONCILIATIONS.json old==published: True
+ENGINE-REFERENCE-REGISTER.json old==published: True
+QUARTERLY-PERIOD-LEDGER.json old==published: True
+ANNUAL-PERIOD-LEDGER.json old==published: True
+## delta old -> new
+identities : (4090, 4090, True)
+old_counts : {'EXISTS_NEEDS_SOURCE_LINK': 239, 'UNAVAILABLE_OR_NOT_CURRENTLY_QUALIFIABLE': 2941, 'ABSENT_NEEDS_INPUT': 761, 'EXISTS_NEEDS_IDENTITY_OR_VERSION_REVIEW': 24, 'POTENTIAL_DERIVATION_NEEDS_APPROVED_RULE': 125}
+new_counts : {'EXISTS_NEEDS_SOURCE_LINK': 142, 'UNAVAILABLE_OR_NOT_CURRENTLY_QUALIFIABLE': 2941, 'ABSENT_NEEDS_INPUT': 761, 'EXISTS_WITHOUT_MATCHING_SOURCE_OBSERVATION': 97, 'EXISTS_NEEDS_IDENTITY_OR_VERSION_REVIEW': 24, 'POTENTIAL_DERIVATION_NEEDS_APPROVED_RULE': 125}
+legacy_counts_equal_old : True
+split : {'original_count': 239, 'with_matching_observation': 142, 'without_matching_observation': 97, 'latter_not_ready_for_source_link': True, 'not_evidence_or_financial_acceptance': True}
+moved : Counter({('EXISTS_NEEDS_SOURCE_LINK', 'EXISTS_WITHOUT_MATCHING_SOURCE_OBSERVATION'): 97})
+moved_all_null_source : True
+remaining_link_all_have_source : True
+remaining_link_exact : Counter({'EXACT_VALUE_AND_UNIT': 142})
+absent : (761, 761, True, True)
+entries_differing_beyond_class_or_proposal : []
+q4_pairs : (102, 102)
+states : Counter({'NO_MIXED_BASIS_DETECTED_NOT_APPROVED': 100, 'BLOCKED_MIXED_BASIS': 2})
+blocked : [('depreciation_amortization', '2025-12-31', 'BLOCKED_MIXED_BASIS', None, {'input_values': ['-93091000000', '-77601000000'], 'raw_subtraction_not_q4_value': '-15490000000', 'not_for_ingestion': True, 'usable_value': False}, '-15490000000'), ('depreciation_amortization_cash_flow', '2025-12-31', 'BLOCKED_MIXED_BASIS', None, {'input_values': ['93091000000', '77601000000'], 'raw_subtraction_not_q4_value': '15490000000', 'not_for_ingestion': True, 'usable_value': False}, '15490000000')]
+others_value_unchanged : (100, True, True)
+others_proposal_fields_unchanged : True
+blocked_rest_unchanged : True
+approved_any : False
+unblocked_with_within_year_signals : [('selling_general_administrative_expense', '2024-12-31', [('fy', '2024-12-31')]), ('depreciation_amortization', '2024-12-31', [('fy', '2024-12-31')]), ('depreciation_amortization_cash_flow', '2024-12-31', [('fy', '2024-12-31')])]
+totals : (4090, 4090)
+derivation_proposals : 125
+q4review : (102, {'NO_MIXED_BASIS_DETECTED_NOT_APPROVED': 100, 'BLOCKED_MIXED_BASIS': 2})
+identical_EDITION-RECONCILIATIONS.json : True
+identical_ENGINE-REFERENCE-REGISTER.json : True
+only_documented_changes_QUARTERLY-PERIOD-LEDGER.json : True
+only_documented_changes_ANNUAL-PERIOD-LEDGER.json : True
+## Codex synthetic tests (unchanged)
+Ran 6 tests in 0.009s
+
+OK
+## independent mutation tests
+Ran 10 tests in 0.571s
+
+OK

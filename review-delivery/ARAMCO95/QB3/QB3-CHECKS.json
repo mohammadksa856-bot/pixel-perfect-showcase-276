@@ -1,0 +1,526 @@
+{
+  "schema": "marefa-qb3-checks/1",
+  "all_pass": true,
+  "checks": [
+    {
+      "check": "source_document_hash",
+      "status": "PASS",
+      "detail": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227"
+    },
+    {
+      "check": "source_cells_on_cited_pages",
+      "status": "PASS",
+      "detail": [
+        {
+          "metric": "upstream_revenue",
+          "pdf_page": 52,
+          "printed_2025": "1,033,726",
+          "printed_2024": "1,141,156",
+          "found": true
+        },
+        {
+          "metric": "upstream_adjusted_ebit",
+          "pdf_page": 52,
+          "printed_2025": "732,938",
+          "printed_2024": "801,047",
+          "found": true
+        },
+        {
+          "metric": "upstream_capex",
+          "pdf_page": 52,
+          "printed_2025": "141,635",
+          "printed_2024": "147,135",
+          "found": true
+        },
+        {
+          "metric": "downstream_revenue",
+          "pdf_page": 58,
+          "printed_2025": "1,006,618",
+          "printed_2024": "1,063,258",
+          "found": true
+        },
+        {
+          "metric": "downstream_adjusted_ebit",
+          "pdf_page": 58,
+          "printed_2025": "37,610",
+          "printed_2024": "8,859",
+          "found": true
+        },
+        {
+          "metric": "downstream_capex",
+          "pdf_page": 58,
+          "printed_2025": "43,831",
+          "printed_2024": "38,989",
+          "found": true
+        },
+        {
+          "metric": "corporate_adjusted_ebit",
+          "pdf_page": 66,
+          "printed_2025": "(18,118)",
+          "printed_2024": "(21,796)",
+          "found": true
+        },
+        {
+          "metric": "corporate_capex",
+          "pdf_page": 66,
+          "printed_2025": "4,978",
+          "printed_2024": "2,766",
+          "found": true
+        },
+        {
+          "metric": "upstream_capex_per_boe",
+          "pdf_page": 50,
+          "printed_2025": "8.0",
+          "printed_2024": "8.3",
+          "found": true
+        },
+        {
+          "metric": "lifting_cost_per_boe",
+          "pdf_page": 50,
+          "printed_2025": "3.51",
+          "printed_2024": "3.53",
+          "found": true
+        },
+        {
+          "metric": "downstream_crude_utilization",
+          "pdf_page": 53,
+          "printed_2025": "53",
+          "printed_2024": "53",
+          "found": true
+        }
+      ]
+    },
+    {
+      "check": "same_line_as_existing_fy2025_engine_rows",
+      "status": "PASS",
+      "detail": [
+        {
+          "metric": "upstream_revenue",
+          "engine_fy2025": [
+            {
+              "value_decimal": "1033726000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Upstream\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "1033726000000",
+          "match": true
+        },
+        {
+          "metric": "upstream_adjusted_ebit",
+          "engine_fy2025": [
+            {
+              "value_decimal": "732938000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Upstream\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "732938000000",
+          "match": true
+        },
+        {
+          "metric": "upstream_capex",
+          "engine_fy2025": [
+            {
+              "value_decimal": "141635000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Upstream\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "141635000000",
+          "match": true
+        },
+        {
+          "metric": "downstream_revenue",
+          "engine_fy2025": [
+            {
+              "value_decimal": "1006618000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Downstream\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "1006618000000",
+          "match": true
+        },
+        {
+          "metric": "downstream_adjusted_ebit",
+          "engine_fy2025": [
+            {
+              "value_decimal": "37610000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Downstream\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "37610000000",
+          "match": true
+        },
+        {
+          "metric": "downstream_capex",
+          "engine_fy2025": [
+            {
+              "value_decimal": "43831000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Downstream\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "43831000000",
+          "match": true
+        },
+        {
+          "metric": "corporate_adjusted_ebit",
+          "engine_fy2025": [
+            {
+              "value_decimal": "-18118000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Corporate\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "-18118000000",
+          "match": true
+        },
+        {
+          "metric": "corporate_capex",
+          "engine_fy2025": [
+            {
+              "value_decimal": "4978000000",
+              "unit": "SAR",
+              "scope": "segment",
+              "dimensions_json": "{\"segment\":\"Corporate\"}"
+            }
+          ],
+          "printed_fy2025_scaled": "4978000000",
+          "match": true
+        },
+        {
+          "metric": "upstream_capex_per_boe",
+          "engine_fy2025": [
+            {
+              "value_decimal": "8.0",
+              "unit": "USD/boe",
+              "scope": "consolidated",
+              "dimensions_json": "{}"
+            }
+          ],
+          "printed_fy2025_scaled": "8.0",
+          "match": true
+        },
+        {
+          "metric": "lifting_cost_per_boe",
+          "engine_fy2025": [
+            {
+              "value_decimal": "3.51",
+              "unit": "USD/boe",
+              "scope": "consolidated",
+              "dimensions_json": "{}"
+            }
+          ],
+          "printed_fy2025_scaled": "3.51",
+          "match": true
+        },
+        {
+          "metric": "downstream_crude_utilization",
+          "engine_fy2025": [
+            {
+              "value_decimal": "53",
+              "unit": "percent",
+              "scope": "consolidated",
+              "dimensions_json": "{}"
+            }
+          ],
+          "printed_fy2025_scaled": "53",
+          "match": true
+        }
+      ]
+    },
+    {
+      "check": "no_duplicate_fy2024_identity_in_engine",
+      "status": "PASS",
+      "detail": [
+        {
+          "metric": "upstream_revenue",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "upstream_adjusted_ebit",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "upstream_capex",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "downstream_revenue",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "downstream_adjusted_ebit",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "downstream_capex",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "corporate_adjusted_ebit",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "corporate_capex",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "upstream_capex_per_boe",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "lifting_cost_per_boe",
+          "existing_fy2024_rows": []
+        },
+        {
+          "metric": "downstream_crude_utilization",
+          "existing_fy2024_rows": []
+        }
+      ]
+    },
+    {
+      "check": "metric_contracts_allow_fy_and_segment",
+      "status": "PASS",
+      "detail": [
+        {
+          "metric": "upstream_revenue",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "upstream_adjusted_ebit",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "upstream_capex",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "downstream_revenue",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "downstream_adjusted_ebit",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "downstream_capex",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "corporate_adjusted_ebit",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "corporate_capex",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"origin\"]",
+            "unit_family": "monetary"
+          },
+          "ok": true
+        },
+        {
+          "metric": "upstream_capex_per_boe",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"measure\",\"basis\"]",
+            "unit_family": "physical_or_scalar"
+          },
+          "ok": true
+        },
+        {
+          "metric": "lifting_cost_per_boe",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"measure\",\"basis\"]",
+            "unit_family": "physical_or_scalar"
+          },
+          "ok": true
+        },
+        {
+          "metric": "downstream_crude_utilization",
+          "contract": {
+            "allowed_period_kinds_json": "[\"quarter\",\"ytd\",\"fy\",\"ttm\"]",
+            "allowed_dimensions_json": "[\"segment\",\"geography\",\"product\",\"measure\",\"basis\"]",
+            "unit_family": "physical_or_scalar"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "segment_capex_2024_sums_to_consolidated_note4",
+      "status": "PASS",
+      "detail": {
+        "note4_line_found": true,
+        "sum": "188890",
+        "consolidated": "188,890"
+      }
+    },
+    {
+      "check": "adjusted_ebit_2024_equals_engine_ebit_plus_printed_adjusting_items",
+      "status": "PASS",
+      "detail": {
+        "engine_ebit_2024_millions": {
+          "upstream_ebit": "801047",
+          "downstream_ebit": "-10998",
+          "corporate_ebit": "-21830"
+        },
+        "adjusting_items_2024": {
+          "upstream": "0",
+          "downstream": "19857",
+          "corporate": "34"
+        },
+        "equal": {
+          "upstream": true,
+          "downstream": true,
+          "corporate": true
+        },
+        "adjusting_lines_found": {
+          "downstream": true,
+          "corporate": true,
+          "upstream": true
+        }
+      }
+    },
+    {
+      "check": "no_future_periods",
+      "status": "PASS",
+      "detail": "all FY2024, filed with ARA2025 (2026-03-09)"
+    },
+    {
+      "check": "no_capacity_or_target_fields",
+      "status": "PASS",
+      "detail": [
+        "upstream_revenue",
+        "upstream_adjusted_ebit",
+        "upstream_capex",
+        "downstream_revenue",
+        "downstream_adjusted_ebit",
+        "downstream_capex",
+        "corporate_adjusted_ebit",
+        "corporate_capex",
+        "upstream_capex_per_boe",
+        "lifting_cost_per_boe",
+        "downstream_crude_utilization"
+      ]
+    },
+    {
+      "check": "engine_manifest_verifier",
+      "status": "PASS",
+      "detail": {
+        "checks": 0,
+        "passed": 0,
+        "warnings": 0,
+        "failures": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "check": "metric_keys_are_engine_metric_definitions",
+      "status": "PASS",
+      "detail": {
+        "upstream_revenue": true,
+        "upstream_adjusted_ebit": true,
+        "upstream_capex": true,
+        "downstream_revenue": true,
+        "downstream_adjusted_ebit": true,
+        "downstream_capex": true,
+        "corporate_adjusted_ebit": true,
+        "corporate_capex": true,
+        "upstream_capex_per_boe": true,
+        "lifting_cost_per_boe": true,
+        "downstream_crude_utilization": true
+      }
+    },
+    {
+      "check": "coverage_expectation_computed",
+      "status": "PASS",
+      "detail": {
+        "operational_kpis": {
+          "populated": 31,
+          "expected": 46,
+          "score_now": "0.6739130434782608695652173913",
+          "threshold": "0.85",
+          "batch_fields_that_are_missing_now": [],
+          "expected_score_after_batch": "0.6739130434782608695652173913"
+        },
+        "sector_specific_fields": {
+          "populated": 23,
+          "expected": 32,
+          "score_now": "0.71875",
+          "threshold": "0.9",
+          "batch_fields_that_are_missing_now": [],
+          "expected_score_after_batch": "0.71875"
+        },
+        "segments": {
+          "populated": 24,
+          "expected": 45,
+          "score_now": "0.5333333333333333333333333333",
+          "threshold": "0.75",
+          "batch_fields_that_are_missing_now": [],
+          "expected_score_after_batch": "0.5333333333333333333333333333"
+        }
+      }
+    },
+    {
+      "check": "availability_candidates_unsigned",
+      "status": "PASS",
+      "detail": "21 candidates"
+    },
+    {
+      "check": "original_engine_unchanged",
+      "status": "PASS",
+      "detail": {
+        "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867"
+      }
+    }
+  ]
+}

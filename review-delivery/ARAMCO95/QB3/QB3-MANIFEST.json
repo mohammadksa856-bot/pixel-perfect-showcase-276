@@ -1,0 +1,205 @@
+{
+  "company_id": "sa:2222",
+  "filing_type": "Annual report 2025 comparative (FY2024) - QB3 candidate",
+  "filed_at": "2026-03-09",
+  "filed_at_basis": "same filing date as the engine's ARA2025 manifests",
+  "filed_at_note": "ARA2025 PDF sha256 78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227; FY2024 comparatives; candidate, source review pending",
+  "period_end": "2024-12-31",
+  "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+  "facts": [
+    {
+      "metric": "upstream_revenue",
+      "value": 1141156,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 52,
+      "table": "upstream financial results",
+      "row": "(including inter-segment revenue)",
+      "cell": "2024 column: 1,141,156",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Upstream"
+      }
+    },
+    {
+      "metric": "upstream_adjusted_ebit",
+      "value": 801047,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 52,
+      "table": "upstream financial results",
+      "row": "Adjusted EBIT",
+      "cell": "2024 column: 801,047",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Upstream"
+      }
+    },
+    {
+      "metric": "upstream_capex",
+      "value": 147135,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 52,
+      "table": "upstream financial results",
+      "row": "Capital expenditures – cash basis",
+      "cell": "2024 column: 147,135",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Upstream"
+      }
+    },
+    {
+      "metric": "downstream_revenue",
+      "value": 1063258,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 58,
+      "table": "downstream financial results",
+      "row": "(including inter-segment revenue)",
+      "cell": "2024 column: 1,063,258",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Downstream"
+      }
+    },
+    {
+      "metric": "downstream_adjusted_ebit",
+      "value": 8859,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 58,
+      "table": "downstream financial results",
+      "row": "Adjusted EBIT",
+      "cell": "2024 column: 8,859",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Downstream"
+      }
+    },
+    {
+      "metric": "downstream_capex",
+      "value": 38989,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 58,
+      "table": "downstream financial results",
+      "row": "Capital expenditures – cash basis",
+      "cell": "2024 column: 38,989",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Downstream"
+      }
+    },
+    {
+      "metric": "corporate_adjusted_ebit",
+      "value": -21796,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 66,
+      "table": "corporate financial results",
+      "row": "Adjusted EBIT",
+      "cell": "2024 column: (21,796)",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Corporate"
+      }
+    },
+    {
+      "metric": "corporate_capex",
+      "value": 2766,
+      "currency": "SAR",
+      "unit": "SAR",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 66,
+      "table": "corporate financial results",
+      "row": "Capital expenditures – cash basis",
+      "cell": "2024 column: 2,766",
+      "scale": 1000000,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Corporate"
+      }
+    },
+    {
+      "metric": "upstream_capex_per_boe",
+      "value": 8.3,
+      "currency": "USD",
+      "unit": "USD/boe",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 50,
+      "table": "upstream performance",
+      "row": "upstream capital expenditures averaged",
+      "cell": "2024 column: 8.3"
+    },
+    {
+      "metric": "lifting_cost_per_boe",
+      "value": 3.53,
+      "currency": "USD",
+      "unit": "USD/boe",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 50,
+      "table": "upstream performance",
+      "row": "Average upstream lifting costs",
+      "cell": "2024 column: 3.53"
+    },
+    {
+      "metric": "downstream_crude_utilization",
+      "value": 53.0,
+      "currency": "",
+      "unit": "percent",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "period_kind": "fy",
+      "fiscal_year": 2024,
+      "page": 53,
+      "table": "upstream crude placement",
+      "row": "Downstream business was the largest customer of the upstream crude oil production",
+      "cell": "2024 column: 53"
+    }
+  ]
+}

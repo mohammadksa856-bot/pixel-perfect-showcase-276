@@ -1,0 +1,377 @@
+{
+  "schema": "marefa-qb3-availability-candidates/1",
+  "company_id": "sa:2222",
+  "state": "CANDIDATES_ONLY_NOT_ASSESSMENTS",
+  "note": "assessed_by is empty on purpose: an independent reviewer must check every filing before any of these becomes an engine assessment; they lower the denominator only once accepted",
+  "candidates": [
+    {
+      "field_key": "segment_assets",
+      "categories": [
+        "sector_specific_fields",
+        "segments"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "A_structural_in_segment_note",
+      "reason": "Note 4 (PDF 196-197) reports no segment assets; only non-current assets by geography",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: Segment assets, Total assets",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "segment_liabilities",
+      "categories": [
+        "sector_specific_fields",
+        "segments"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "A_structural_in_segment_note",
+      "reason": "Note 4 reports no segment liabilities",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: segment liabilities",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "segment_investments_associates",
+      "categories": [
+        "sector_specific_fields",
+        "segments"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "A_structural_in_segment_note",
+      "reason": "Investments in JVs and associates are disclosed by entity (Note 7, PDF 200), not by segment; Note 4 shows only share of results (a flow)",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: Investments in joint ventures and associates",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "refined_products_revenue",
+      "categories": [
+        "sector_specific_fields",
+        "segments"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "Note 24 (PDF 226) discloses only the combined line 'Refined and chemical products'",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: refined_products_revenue",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "chemicals_revenue",
+      "categories": [
+        "sector_specific_fields",
+        "segments"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "Note 24 discloses only the combined line 'Refined and chemical products'",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: chemicals_revenue",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "lng_revenue",
+      "categories": [
+        "sector_specific_fields",
+        "segments"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no LNG revenue line in Note 24",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: lng_revenue",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "crude_oil_production",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "PDF 52 discloses total liquids only (crude oil, NGL and condensate combined)",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: crude_oil_production",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "condensate_production",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "PDF 52 discloses total liquids only",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: condensate_production",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "natural_gas_liquids_production",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "PDF 52 discloses total liquids only",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: natural_gas_liquids_production",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "natural_gas_sales",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "sales gas appears only as capacity growth targets and 2030 expectations, not as an actual volume",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: natural_gas_sales",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "refinery_throughput",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "capacities (gross 7.8, net 4.2 mmbpd) are disclosed, not throughput",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: refinery_throughput",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "refinery_utilization",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no utilization rate of refineries; downstream_crude_utilization (share of crude used) is a different measure",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: refinery_utilization",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "chemicals_production",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "only net chemicals production capacity (59.3 mtpa) is disclosed, not production",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: chemicals_production",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "chemicals_sales",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no chemicals sales volume",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: chemicals_sales",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "average_realized_gas_price",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no realized gas price",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: average_realized_gas_price",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "average_realized_refined_product_price",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no realized refined product price",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: average_realized_refined_product_price",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "lifting_volume",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no lifting volume",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: lifting_volume",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "production_entitlement",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no entitlement volume (Concession reserves are disclosed, not entitlement production)",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: production_entitlement",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "finding_development_cost_per_boe",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no F&D cost per boe",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: finding_development_cost_per_boe",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "reserve_replacement_ratio",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "no reserve replacement ratio",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: reserve_replacement_ratio",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "field_key": "spare_capacity",
+      "categories": [
+        "operational_kpis"
+      ],
+      "proposed_status": "unavailable",
+      "proposed_reason_code": "not_disclosed",
+      "tier": "B_not_in_annual_report_check_interims",
+      "reason": "MSC 12.0 mmbpd is disclosed but crude production is not, so spare capacity is neither printed nor derivable",
+      "evidence_source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+      "evidence_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "evidence_note": "ARA2025 full text (247 pages) searched with pdftotext; only this original is available here; terms: spare_capacity",
+      "assessed_by": null,
+      "state": "CANDIDATE_PENDING_INDEPENDENT_REVIEW"
+    }
+  ],
+  "definition_decisions_not_candidates": [
+    {
+      "field_key": "upstream_operating_income",
+      "issue": "Aramco reports segment EBIT (already in the engine as upstream_ebit); entering it as operating income would duplicate under another definition"
+    },
+    {
+      "field_key": "downstream_operating_income",
+      "issue": "as above (downstream_ebit)"
+    },
+    {
+      "field_key": "segment_impairment",
+      "issue": "Note 4 prints 'Impairment and held for sale remeasurement losses' combined; footnote 1 shows HFS remeasurement inside Downstream; not the field's definition without a decision"
+    }
+  ],
+  "projected_if_tier_A_accepted": {
+    "operational_kpis": {
+      "expected_after": 46,
+      "score_if_accepted": "0.6739130434782608695652173913",
+      "threshold": "0.85"
+    },
+    "sector_specific_fields": {
+      "expected_after": 29,
+      "score_if_accepted": "0.7931034482758620689655172414",
+      "threshold": "0.9"
+    },
+    "segments": {
+      "expected_after": 42,
+      "score_if_accepted": "0.5714285714285714285714285714",
+      "threshold": "0.75"
+    }
+  },
+  "projected_if_all_accepted": {
+    "operational_kpis": {
+      "expected_after": 31,
+      "score_if_accepted": "1",
+      "threshold": "0.85"
+    },
+    "sector_specific_fields": {
+      "expected_after": 26,
+      "score_if_accepted": "0.8846153846153846153846153846",
+      "threshold": "0.9"
+    },
+    "segments": {
+      "expected_after": 39,
+      "score_if_accepted": "0.6153846153846153846153846154",
+      "threshold": "0.75"
+    }
+  }
+}

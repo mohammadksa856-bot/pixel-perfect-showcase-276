@@ -1,0 +1,6 @@
+PASS overview (SSR + hydrate) /preview/web-v1/companies/2222/overview dom[data-qa-evidence]=0 markers=[]
+PASS investor (client nav) /preview/web-v1/companies/2222/intelligence dom[data-qa-evidence]=0 markers=[]
+PASS data (client nav) /preview/web-v1/companies/2222?tab=business dom[data-qa-evidence]=0 markers=[]
+PASS evidence route from the page without a session -> 401
+PASS 229 network responses, leaks []
+ALL PASS

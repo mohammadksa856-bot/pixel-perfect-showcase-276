@@ -1,0 +1,9 @@
+FAIL overview /preview/web-v1/companies/2222/overview -> 200, bytes 264586, evidence markers ["FQ01-OBS-011","FQ01-OBS-014","FQ01-OBS-016","FQ01-OBS-060","QA_PRIVATE","data-qa-evidence"]
+FAIL investor /preview/web-v1/companies/2222/intelligence -> 200, bytes 557663, evidence markers ["FQ01-OBS-011","FQ01-OBS-014","FQ01-OBS-016","FQ01-OBS-060","QA_PRIVATE","data-qa-evidence"]
+FAIL data /preview/web-v1/companies/2222 -> 200, bytes 201646, evidence markers ["FQ01-OBS-011","FQ01-OBS-014","FQ01-OBS-016","FQ01-OBS-060","QA_PRIVATE","data-qa-evidence"]
+FAIL data_financials /preview/web-v1/companies/2222?tab=financials -> 200, bytes 404857, evidence markers ["FQ01-OBS-011","FQ01-OBS-014","FQ01-OBS-016","FQ01-OBS-060","QA_PRIVATE","data-qa-evidence"]
+FAIL evidence_no_auth -> 404 (want 401), body <html 404 page>, markers []
+FAIL evidence_basic -> 404 (want 401), body <html 404 page>, markers []
+FAIL evidence_not_jwt -> 404 (want 401), body <html 404 page>, markers []
+FAIL evidence_forged_jwt -> 404 (want 401), body <html 404 page>, markers []
+FAILED 8

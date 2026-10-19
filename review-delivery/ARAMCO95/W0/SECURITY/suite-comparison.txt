@@ -1,0 +1,15 @@
+# bun test, full suite. base = 72859f7, after = e44aa4a
+## base
+ 2048 pass
+ 6 fail
+(fail) calculated output without lineage is not reported [0.54ms]
+(fail) quarantined missing row cannot mask an eligible zero [0.38ms]
+(fail) wrong per-share currency is not a valid unit [1.89ms]
+Ran 2068 tests across 72 files. [14.75s]
+## after
+ 2056 pass
+ 6 fail
+(fail) calculated output without lineage is not reported [0.72ms]
+(fail) quarantined missing row cannot mask an eligible zero [0.29ms]
+(fail) wrong per-share currency is not a valid unit [1.94ms]
+Ran 2076 tests across 72 files. [15.29s]

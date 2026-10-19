@@ -1,0 +1,9 @@
+PASS overview /preview/web-v1/companies/2222/overview -> 200, bytes 260351, evidence markers []
+PASS investor /preview/web-v1/companies/2222/intelligence -> 200, bytes 553428, evidence markers []
+PASS data /preview/web-v1/companies/2222 -> 200, bytes 197411, evidence markers []
+PASS data_financials /preview/web-v1/companies/2222?tab=financials -> 200, bytes 400622, evidence markers []
+PASS evidence_no_auth -> 401 (want 401), body {"error":"unauthenticated"}, markers []
+PASS evidence_basic -> 401 (want 401), body {"error":"unauthenticated"}, markers []
+PASS evidence_not_jwt -> 401 (want 401), body {"error":"unauthenticated"}, markers []
+PASS evidence_forged_jwt -> 401 (want 401), body {"error":"unauthenticated"}, markers []
+ALL PASS

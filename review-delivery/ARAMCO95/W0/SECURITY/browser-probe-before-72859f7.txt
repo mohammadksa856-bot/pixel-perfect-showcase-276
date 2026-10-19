@@ -1,0 +1,6 @@
+FAIL overview (SSR + hydrate) /preview/web-v1/companies/2222/overview dom[data-qa-evidence]=1 markers=["FQ01-OBS-0","data-qa-evidence"]
+FAIL investor (client nav) /preview/web-v1/companies/2222/intelligence dom[data-qa-evidence]=1 markers=["FQ01-OBS-0","data-qa-evidence"]
+FAIL data (client nav) /preview/web-v1/companies/2222?tab=business dom[data-qa-evidence]=1 markers=["FQ01-OBS-0","data-qa-evidence"]
+FAIL evidence route from the page without a session -> 404
+FAIL 245 network responses, leaks ["http://127.0.0.1:5198/preview/web-v1/companies/2222/overview contains FQ01-OBS-0","http://127.0.0.1:5198/preview/web-v1/companies/2222/overview contains QA_PRIVATE","http://127.0.0.1:5198/preview/web-v1/companies/2222/overview contains data-qa-evidence","http://12
+FAILED 5

@@ -1,0 +1,21 @@
+{
+  "purpose": "Remove Claude access blocker only; republish existing sanitized review artifacts, no new implementation",
+  "remote_branch": "codex/aramco95-history-extraction-20261019",
+  "implementation_sha": "e9016647f6cf62c5804396c9dadab7b473df03be",
+  "original_local_implementation": "81bde4a2fa31dbe0a2d0d1ccd34cf1e8dafbd9d7",
+  "original_local_delivery": "e1ac24d31525617d66947c823220d3fa0b27de64",
+  "safe_origin_delivery": "30113daba481479e9f1a787b2adf2b0134f0323a",
+  "code_export_byte_identical": true,
+  "review_entrypoint": "review-delivery/ARAMCO95/HX-SAFE-REVIEW/README_AR.md",
+  "generator": "review-delivery/ARAMCO95/HX-SAFE-REVIEW/code/build_ledgers.py",
+  "semantic_guard": "review-delivery/ARAMCO95/HX-SAFE-REVIEW/code/semantic_compatibility.py",
+  "tests": "review-delivery/ARAMCO95/HX-SAFE-REVIEW/synthetic_test.py",
+  "test_results": "review-delivery/ARAMCO95/HX-SAFE-REVIEW/PUBLIC-TEST-RESULTS.json",
+  "full_source_suite": "Prior47 preparer receipt remains local. Six shared synthetic checks are not a substitute for original-source independent review.",
+  "old_historical_json": "Unchanged inherited b90fbc9 records; not corrected output and not a new rights grant",
+  "corrected_full_numeric_ledgers": "EXCLUDED_RETAIN_LOCAL",
+  "self_acceptance": false,
+  "holds": "7/22/142/0",
+  "engine_or_site_changes": false,
+  "merge_or_production_deployment": false
+}

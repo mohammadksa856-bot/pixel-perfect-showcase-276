@@ -1,7 +1,12 @@
-test_authorization_scope_expiry_and_target_block (__main__.Gate.test_authorization_scope_expiry_and_target_block) ... PASS  original_engine_untouched
-test_gate_opens_only_with_both (__main__.Gate.test_gate_opens_only_with_both) ... PASS  original_engine_untouched
-test_missing_both_blocks (__main__.Gate.test_missing_both_blocks) ... PASS  original_engine_untouched
-test_preparer_receipt_blocks (__main__.Gate.test_preparer_receipt_blocks) ... PASS  original_engine_untouched
-test_receipt_for_other_manifest_or_incomplete_checks_blocks (__main__.Gate.test_receipt_for_other_manifest_or_incomplete_checks_blocks) ... PASS  original_engine_untouched
-Ran 5 tests in 110.717s
+test_authorization_scope_expiry_and_target_block (__main__.EndToEnd.test_authorization_scope_expiry_and_target_block) ... ok
+test_gate_opens_only_with_both (__main__.EndToEnd.test_gate_opens_only_with_both) ... ok
+test_kind_mix_blocks_end_to_end (__main__.EndToEnd.test_kind_mix_blocks_end_to_end) ... ok
+test_missing_both_blocks (__main__.EndToEnd.test_missing_both_blocks) ... ok
+test_balance_and_flow_column_checks_are_not_interchangeable (__main__.ReceiptRules.test_balance_and_flow_column_checks_are_not_interchangeable) ... ok
+test_flows_need_three_month_column_balances_need_balance_column (__main__.ReceiptRules.test_flows_need_three_month_column_balances_need_balance_column) ... ok
+test_identity_kinds_are_as_expected (__main__.ReceiptRules.test_identity_kinds_are_as_expected) ... ok
+test_other_source_conditions_unchanged (__main__.ReceiptRules.test_other_source_conditions_unchanged) ... ok
+test_receipt_period_kind_must_match_identity (__main__.ReceiptRules.test_receipt_period_kind_must_match_identity) ... ok
+test_valid_receipt_has_no_problems (__main__.ReceiptRules.test_valid_receipt_has_no_problems) ... ok
+Ran 10 tests in 74.219s
 OK

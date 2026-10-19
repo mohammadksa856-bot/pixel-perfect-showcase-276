@@ -107,6 +107,71 @@ class PageChecks(unittest.TestCase):
         self.assertFalse(qb4.fact_on_page(f, LAYOUT)["ok"])
 
 
+DELIVERY_BEFORE_R01 = "68e4459d0a16abd50bbab6e7d65d99e9e933fb48"
+
+
+def at_delivery(name):
+    return json.loads(subprocess.run(["git", "-C", str(HERE), "show", f"{DELIVERY_BEFORE_R01}:./{name}"],
+                                     capture_output=True, check=True).stdout)
+
+
+class R01(unittest.TestCase):
+    """QB4-R01: the independent-directors fact is dated by the PDF 115 footnote; nothing else moves."""
+
+    def test_date_proved_from_footnote(self):
+        a = ATTR["independent_directors"]
+        self.assertEqual(qb4.as_of_from_footnote(a, RAW), "2026-03-10")
+        self.assertEqual(qb4.attribute_on_pages(a, RAW)["as_of"], "2026-03-10")
+
+    def test_wrong_footnote_page_or_date_fails(self):
+        a = copy.deepcopy(ATTR["independent_directors"])
+        a["as_of_page"] = 117
+        self.assertIsNone(qb4.as_of_from_footnote(a, RAW))
+        a = copy.deepcopy(ATTR["independent_directors"])
+        a["as_of"] = "2026-03-09"
+        self.assertFalse(qb4.attribute_on_pages(a, RAW)["ok"])
+        a["as_of_anchor"] = "1. All Board statistics are as of March 9, 2026."
+        self.assertIsNone(qb4.as_of_from_footnote(a, RAW))
+
+    def test_identity_separates_fact_date_from_document_date(self):
+        i = next(x for x in J("QB4-IDENTITIES.json")["identities"] if x.get("attribute_key") == "independent_directors")
+        self.assertEqual(i["as_of"], "2026-03-10")
+        self.assertIn("March 10, 2026", i["as_of_basis"])
+        self.assertIsNone(i["document_filed_at"])   # not invented
+        self.assertEqual(J("QB4-MANIFEST.json")["filed_at"], "2026-03-09")  # manifest field unchanged
+
+    def test_nothing_else_changed_since_delivery(self):
+        old, new = at_delivery("QB4-IDENTITIES.json"), J("QB4-IDENTITIES.json")
+        self.assertEqual({k: v for k, v in old.items() if k != "identities"}, {k: v for k, v in new.items() if k != "identities"})
+        moved = {"as_of", "as_of_basis", "document_filed_at", "document_filed_at_note"}
+        for a, b in zip(old["identities"], new["identities"]):
+            if b.get("attribute_key") == "independent_directors":
+                self.assertEqual({k: v for k, v in a.items() if k not in moved}, {k: v for k, v in b.items() if k not in moved})
+            else:
+                self.assertEqual(a, b)
+        om, nm = at_delivery("QB4-MANIFEST.json"), J("QB4-MANIFEST.json")
+        self.assertEqual(om["facts"], nm["facts"])
+        for a, b in zip(om["company_attributes"], nm["company_attributes"]):
+            self.assertEqual(a["value"], b["value"])
+            if a["attribute_key"] != "independent_directors":
+                self.assertEqual(a, b)
+
+    def test_projected_coverage_unchanged(self):
+        self.assertEqual(J("QB4-COVERAGE.json"), at_delivery("QB4-COVERAGE.json"))
+        self.assertEqual(J("QB4-COVERAGE.json")["projected_score_if_batch_accepted_and_ingested"]["total_score"],
+                         "58.79989828534394325241225745")
+
+    def test_historical_correction_record(self):
+        r = J("QB4-R01-HISTORICAL-CORRECTION.json")
+        self.assertEqual((r["from"], r["to"], r["state"]), (1457, -1457, "PROPOSED_NOT_APPLIED"))
+        lines = (HERE / r["patch"]).read_text().splitlines()
+        minus = [x for x in lines if x.startswith("-") and not x.startswith("---")]
+        plus = [x for x in lines if x.startswith("+") and not x.startswith("+++")]
+        self.assertEqual(len(minus), 1)
+        self.assertEqual(len(plus), 1)
+        self.assertEqual(minus[0].replace('"value":1457,', '"value":-1457,')[1:], plus[0][1:])
+
+
 class Classification(unittest.TestCase):
     def test_fixed_reasons(self):
         c = lambda f, cat="financial_statements": qb4.classify(f, cat, set())[0]  # noqa: E731

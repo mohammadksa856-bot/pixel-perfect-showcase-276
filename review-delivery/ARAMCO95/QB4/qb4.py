@@ -72,7 +72,9 @@ ATTRS = [
          value={"count": 5, "directors": ["Andrew N. Liveris", "Lynn L. Elsenhans", "Robert W. Dudley",
                                           "Mark A. Weinberger", "Stuart T. Gulliver"]},
          anchors=["the Board has determined that the following five Board members are independent Directors: "
-                  "Mr. Liveris, Ms. Elsenhans, Mr. Dudley, Mr. Weinberger, and Mr. Gulliver."]),
+                  "Mr. Liveris, Ms. Elsenhans, Mr. Dudley, Mr. Weinberger, and Mr. Gulliver."],
+         # QB4-R01: the date of the fact is the board-statistics date in the page's footnote, not the filing date.
+         as_of="2026-03-10", as_of_page=115, as_of_anchor="1. All Board statistics are as of March 10, 2026."),
     dict(key="board_committees", category="governance", pages=[114],
          value=["Audit Committee", "Sustainability, Risk and HSE Committee", "Nomination Committee", "Compensation Committee"],
          anchors=["Currently, the Board has four Committees: Audit; Sustainability, Risk and HSE; Nomination; and Compensation."]),
@@ -186,8 +188,26 @@ def attribute_on_pages(a: dict, raw: list[str]) -> dict:
     if "profiles" in a:
         out["profiles_on_pages"] = sum(len(re.findall(r"\bExperience\b", raw[p - 1])) for p in a["pages"])
         out["profiles_ok"] = out["profiles_on_pages"] == a["profiles"] == len(a["value"])
-    out["ok"] = not missing_anchors and not missing_leaves and out.get("profiles_ok", True)
+    if "as_of" in a:
+        out["as_of"] = as_of_from_footnote(a, raw)
+        out["as_of_ok"] = out["as_of"] == a["as_of"]
+    out["ok"] = not missing_anchors and not missing_leaves and out.get("profiles_ok", True) and out.get("as_of_ok", True)
     return out
+
+
+MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August",
+                                      "September", "October", "November", "December"], 1)}
+
+
+def as_of_from_footnote(a: dict, raw: list[str]) -> str | None:
+    """Pure: the ISO date read from the footnote on its page; None if the footnote is not there or names no date."""
+    if a["as_of_page"] not in a["pages"] or norm(a["as_of_anchor"]) not in norm(raw[a["as_of_page"] - 1]):
+        return None
+    m = re.search(r"as of (" + "|".join(MONTHS) + r") (\d{1,2}), (\d{4})", a["as_of_anchor"])
+    if not m:
+        return None
+    from datetime import date
+    return date(int(m.group(3)), MONTHS[m.group(1)], int(m.group(2))).isoformat()
 
 
 def fact_on_page(f: dict, layout: list[str]) -> dict:
@@ -471,11 +491,17 @@ def main() -> int:
                                "source_review": "PENDING", "financial_qualification": "WITHHELD", "rights": "UNKNOWN_NO_GRANT"})
         mattrs = []
         for a in ATTRS:
-            mattrs.append({"attribute_key": a["key"], "value": a["value"], "category": a["category"],
-                           "metadata": {"pdf_pages": a["pages"], "anchors": a["anchors"], "method": "page_anchor_check",
-                                        "batch": "QB4", "state": "CANDIDATE_NOT_INGESTED"}})
+            meta = {"pdf_pages": a["pages"], "anchors": a["anchors"], "method": "page_anchor_check",
+                    "batch": "QB4", "state": "CANDIDATE_NOT_INGESTED"}
+            if "as_of" in a:
+                meta.update(as_of=a["as_of"], as_of_basis=f"PDF {a['as_of_page']} footnote: {a['as_of_anchor']}")
+            mattrs.append({"attribute_key": a["key"], "value": a["value"], "category": a["category"], "metadata": meta})
+            dated = {"as_of": a["as_of"], "as_of_basis": f"PDF {a['as_of_page']} footnote: {a['as_of_anchor']}",
+                     "document_filed_at": None,
+                     "document_filed_at_note": f"no independent evidence of the publication date; the manifest keeps the engine's existing ARA2025 filed_at {FILED_AT}"} \
+                if "as_of" in a else {"as_of": FILED_AT}
             identities.append({"kind": "company_attribute", "company_id": CID, "attribute_key": a["key"], "language": "en",
-                               "as_of": FILED_AT, "value": a["value"], "pdf_pages": a["pages"], "classification": "new_key",
+                               **dated, "value": a["value"], "pdf_pages": a["pages"], "classification": "new_key",
                                "prior_pack": comparison[a["key"]] if isinstance(comparison[a["key"]], str) else "differs",
                                "source_document_sha256": ARA_SHA, "source_url": ARA_URL,
                                "source_review": "PENDING", "financial_qualification": "NOT_APPLICABLE", "rights": "UNKNOWN_NO_GRANT"})

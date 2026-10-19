@@ -1,0 +1,12 @@
+# bun test, full suite
+## base 27a7785 (W0-SEC delivery, review-delivery/ARAMCO95/W0/SECURITY/suite-comparison.txt): 2056 pass, 6 fail
+## this branch
+ 2071 pass
+ 6 fail
+(fail) calculated output without lineage is not reported
+(fail) quarantined missing row cannot mask an eligible zero
+(fail) wrong per-share currency is not a valid unit
+Ran 2091 tests across 73 files.
+error: Cannot find module '../work/review/research-evidence/v1/synthetic' from '/home/user/pixel-perfect-showcase-276/review-delivery/WEB08B01/independent-first-review/independent.test.ts'
+error: Cannot find module '../work/review/research-evidence/v1/synthetic' from '/home/user/pixel-perfect-showcase-276/review-delivery/WEB08B01/independent-second-review/rereview-edge.test.ts'
+error: Cannot find module '../work/review/research-evidence/v1/synthetic' from '/home/user/pixel-perfect-showcase-276/review-delivery/WEB08B01/independent-third-review/final-additional.test.ts'

@@ -129,4 +129,4 @@
 | الكود | `publication-gate.server.ts`، و`publication-baseline.json`، و`statements.ts`، و`company-preview.ts` (نوع اختياري)، و`company-preview.server.ts`، و`peer-comparison.server.ts`، و`design-fixtures.server.ts` |
 | الاختبارات | `tests/financial-projection.test.ts`، و`engine/test_engine_proposal.py`، و`e2e_http.py` |
 | الأدوات | `build_baseline.ts`، و`snapshot_previews.ts`، و`engine/apply_proposal.py`، و`engine/quarter-position.patch` |
-| النتائج | `E2E-HTTP-RESULTS.json`، و`logs/` (فيها `diffstat.txt` ونتائج كل الاختبارات والبناء ومقارنة المجموعة) |
+| النتائج | `E2E-HTTP-RESULTS.json`، و`test-logs/` (فيها `diffstat.txt` ونتائج كل الاختبارات والبناء ومقارنة المجموعة) |

@@ -1,0 +1,219 @@
+{
+  "main": "c4882ea02c60ec950e92932d61cb1f1a7b4e743e",
+  "candidate": "43d1f5d649142f63ad18aec00af218b9795d640c",
+  "accepted": "6445adf5814e0afa1cb272fd2fc7c8eabf5e0902",
+  "files": [
+    {
+      "path": "src/design-fixtures.d.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/bidi.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/company-preview.server.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/company-preview.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/peer-comparison.server.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/peer-comparison.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/publication-baseline.json",
+      "state": "changed"
+    },
+    {
+      "path": "src/lib/engine/publication-gate.server.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/publication-trust.json",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/readiness.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/engine/statements.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/web-v1/catalog.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/web-v1/company-experience.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/web-v1/design-fixtures.server.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/web-v1/design-review-policy.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/web-v1/display-labels.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "src/lib/web-v1/model.ts",
+      "state": "byte_identical_to_accepted"
+    },
+    {
+      "path": "tests/financial-projection.test.ts",
+      "state": "changed"
+    },
+    {
+      "path": "tests/fixtures/synthetic-projection/9901-page.json",
+      "state": "new"
+    },
+    {
+      "path": "tests/fixtures/synthetic-projection/9902-page.json",
+      "state": "new"
+    },
+    {
+      "path": "tests/fixtures/synthetic-projection/9903-page.json",
+      "state": "new"
+    },
+    {
+      "path": "tests/fixtures/synthetic-projection/generate.ts",
+      "state": "new"
+    }
+  ],
+  "commits": [
+    "43d1f5d649142f63ad18aec00af218b9795d640c",
+    "3f9dd291c3be80f2565fda2bf6f27ec10b573341"
+  ],
+  "fixture_audit_vocabulary_allowed": [
+    "Banks",
+    "Insurance"
+  ],
+  "fixture_audit": {
+    "real_tokens_checked": 846,
+    "hits": [],
+    "urls": [
+      "https://example.invalid/synthetic/${symbol}/${filing}.pdf`;",
+      "https://example.invalid/synthetic/9901/fy-2021.pdf",
+      "https://example.invalid/synthetic/9901/fy-2022.pdf",
+      "https://example.invalid/synthetic/9901/fy-2023.pdf",
+      "https://example.invalid/synthetic/9901/fy-2024.pdf"
+    ],
+    "url_hosts": [
+      "example.invalid"
+    ]
+  },
+  "secret_hits": [],
+  "regeneration_identical": true,
+  "mutations": {
+    "candidate": {
+      "none": {
+        "pass": 34,
+        "fail": 0
+      },
+      "M-a live mode uses the frozen baseline": {
+        "pass": 29,
+        "fail": 5
+      },
+      "M-b signatures not verified": {
+        "pass": 33,
+        "fail": 1
+      },
+      "M-c a fiscal year end accepted from quarter_position": {
+        "pass": 32,
+        "fail": 2
+      },
+      "M-d any annual_position date accepted as Q4": {
+        "pass": 33,
+        "fail": 1
+      }
+    },
+    "accepted": {
+      "none": {
+        "pass": 31,
+        "fail": 0
+      },
+      "M-a live mode uses the frozen baseline": {
+        "pass": 26,
+        "fail": 5
+      },
+      "M-b signatures not verified": {
+        "pass": 30,
+        "fail": 1
+      },
+      "M-c a fiscal year end accepted from quarter_position": {
+        "pass": 29,
+        "fail": 2
+      },
+      "M-d any annual_position date accepted as Q4": {
+        "pass": 31,
+        "fail": 0
+      }
+    }
+  },
+  "rollback": {
+    "merge_tree_equals_candidate": true,
+    "revert_tree_equals_main": true
+  },
+  "checks": [
+    {
+      "check": "kernel byte-identical; only baseline and test changed; new files are the synthetic fixtures and generator",
+      "pass": true
+    },
+    {
+      "check": "only src/lib, the module declaration and tests",
+      "pass": true
+    },
+    {
+      "check": "no existing main file modified",
+      "pass": true
+    },
+    {
+      "check": "real engine page fixtures absent from every candidate commit",
+      "pass": true
+    },
+    {
+      "check": "no real value, key, URL, hash or name in the synthetic fixtures or the new baseline",
+      "pass": true
+    },
+    {
+      "check": "only example.invalid URLs",
+      "pass": true
+    },
+    {
+      "check": "no secret or private pattern in candidate files, history or messages",
+      "pass": true
+    },
+    {
+      "check": "generate.ts reproduces the committed fixtures and baseline byte for byte",
+      "pass": true
+    },
+    {
+      "check": "unmutated suites pass",
+      "pass": true
+    },
+    {
+      "check": "every mutation is caught by the candidate suite",
+      "pass": true
+    },
+    {
+      "check": "candidate catches at least what the accepted suite caught",
+      "pass": true
+    },
+    {
+      "check": "rollback rehearsal restores main's tree",
+      "pass": true
+    }
+  ]
+}

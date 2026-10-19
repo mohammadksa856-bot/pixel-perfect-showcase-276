@@ -1,0 +1,8 @@
+# vite build, default env (no preview flags), worktrees of main c4882ea and candidate 43d1f5d
+main build exit 0; candidate build exit 0; 154 output files each, same set after removing hashed chunk names
+kernel and fixture strings in .output (client and server) for both: applyPublicationGate, marefa-publication-trust,
+publication-baseline, buildCompanyPreview, FINENGINE_API, MAREFA_, ENGINE_PREVIEW_ENABLED, 4242, example.invalid,
+"Synthetic Projection": 0
+content differences after normalization (hashed names, mtime/etag/size/date): only
+  public/assets/styles.css: +.ordinal rule (Tailwind scans src/; the word in the kernel; no element uses it)
+  server/index.mjs and server/_tanstack-start-manifest_v.mjs: references to the renamed CSS file

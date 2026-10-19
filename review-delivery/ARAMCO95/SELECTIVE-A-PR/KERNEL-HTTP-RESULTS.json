@@ -1,0 +1,106 @@
+{
+  "engine_page_has_synthetic": {
+    "revenue": true,
+    "net_income": true,
+    "cash": true,
+    "total_equity": true
+  },
+  "engine_quarter_position_ends": [
+    "2026-06-30",
+    "2026-03-31",
+    "2025-09-30"
+  ],
+  "flag_off": {
+    "state": "disabled",
+    "value_cells": 0,
+    "cells": 0,
+    "revenue": false,
+    "net_income": false,
+    "cash": false,
+    "total_equity": false
+  },
+  "no_approvals": {
+    "state": "ok",
+    "value_cells": 0,
+    "cells": 0,
+    "revenue": false,
+    "net_income": false,
+    "cash": false,
+    "total_equity": false
+  },
+  "json_words_only": {
+    "state": "ok",
+    "value_cells": 0,
+    "cells": 0,
+    "revenue": false,
+    "net_income": false,
+    "cash": false,
+    "total_equity": false
+  },
+  "signed_by_untrusted_key": {
+    "state": "ok",
+    "value_cells": 0,
+    "cells": 0,
+    "revenue": false,
+    "net_income": false,
+    "cash": false,
+    "total_equity": false
+  },
+  "unreadable_file": {
+    "state": "ok",
+    "value_cells": 0,
+    "cells": 0,
+    "revenue": false,
+    "net_income": false,
+    "cash": false,
+    "total_equity": false
+  },
+  "frozen_fixture_request_outside_review_policy": {
+    "state": "disabled",
+    "value_cells": 0,
+    "cells": 0,
+    "revenue": false,
+    "net_income": false,
+    "cash": false,
+    "total_equity": false
+  },
+  "original_engine_unchanged": true,
+  "checks": [
+    {
+      "check": "engine copy serves all four synthetic rows",
+      "pass": true
+    },
+    {
+      "check": "patched engine serves quarter_position with 2025-09-30",
+      "pass": true
+    },
+    {
+      "check": "flag off: disabled",
+      "pass": true
+    },
+    {
+      "check": "no_approvals: ok, zero value cells, no synthetic value",
+      "pass": true
+    },
+    {
+      "check": "json_words_only: ok, zero value cells, no synthetic value",
+      "pass": true
+    },
+    {
+      "check": "signed_by_untrusted_key: ok, zero value cells, no synthetic value",
+      "pass": true
+    },
+    {
+      "check": "unreadable_file: ok, zero value cells, no synthetic value",
+      "pass": true
+    },
+    {
+      "check": "fixtures flag outside the review policy: disabled",
+      "pass": true
+    },
+    {
+      "check": "original engine unchanged",
+      "pass": true
+    }
+  ]
+}

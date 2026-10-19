@@ -1,0 +1,92 @@
+{
+  "schema": "aramco-history-preparer-test-receipts/1",
+  "baseline_sha": "46c7debecf2b055e82c40106f893169c614a7959",
+  "runs": [
+    {
+      "script": "extract_history.py",
+      "started_at_utc": "2026-10-19T10:48:37.554033+00:00",
+      "ended_at_utc": "2026-10-19T10:48:48.027376+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "passed": null,
+      "skipped": 0,
+      "log": "extract_history.py.txt",
+      "source_sha256": "1dd4d32e63a3a0200e7925ab832afae3124870193caab0e1458b339509f14cdc"
+    },
+    {
+      "script": "build_ledgers.py",
+      "started_at_utc": "2026-10-19T10:48:48.027376+00:00",
+      "ended_at_utc": "2026-10-19T10:48:49.239677+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "passed": null,
+      "skipped": 0,
+      "log": "build_ledgers.py.txt",
+      "source_sha256": "f77c23033ac3062df7734452358d159a50c267b1e5e72f7630892e9cb98e260b"
+    },
+    {
+      "script": "test_history.py",
+      "started_at_utc": "2026-10-19T10:48:49.242465+00:00",
+      "ended_at_utc": "2026-10-19T10:49:04.253621+00:00",
+      "exit_code": 0,
+      "tests_run": 33,
+      "passed": 33,
+      "skipped": 0,
+      "log": "test_history.py.txt",
+      "source_sha256": "6bf7e14c3ccf362207b3937945ddb6f5d64f31459ee5c91b57175edfa1bbada1"
+    }
+  ],
+  "deterministic_regeneration": {
+    "files": {
+      "EXTRACTED-OBSERVATIONS.json": "0da3e648af0ec23b3910ac4c2041d924c5eed9f069ccce649d164dc1e2ed5e4b",
+      "SOURCE-MANIFEST.json": "ebcd50e5b383c8664208a4816a7acb99f4f64cc5fcc4c7c77c4d570db0ae78a0",
+      "CONTRACT-FIELD-SCOPE.json": "26fb32742c649537c9dc0c97016910d5be330150b34d11223d9b163d80b44b40",
+      "UNMAPPED-SOURCE-ROWS.json": "649a3ae5a8597be219c53cbd23ade3dced0650611cecba781502def5a281ea31",
+      "ANNUAL-PERIOD-LEDGER.json": "35872f5e7b31e69a506400ab20c0d7aa519f68a45c3787471ce52ff67644ad77",
+      "QUARTERLY-PERIOD-LEDGER.json": "88dbfbcdc5209804de149561cfc858530e49dbd1aa3836b67bf05bc79d766d8c",
+      "INTAKE-MATRIX.json": "b94d790ec23f3811bd9df3c6534ef01853cc2022ff83443f91cbdde3ee47b0cf",
+      "EDITION-RECONCILIATIONS.json": "92b2c97d8a1cdbab063b41818134399697009859beec3908d0695f7c92f9b259",
+      "DERIVATION-PROPOSALS.json": "b40e12dff53c9749bc8bc8d76bd91775aa1887991f6420d25abbe5d46477a893",
+      "ENGINE-REFERENCE-REGISTER.json": "2587b7463d4af09729676ded0c8b78a61876c1e89cd7c62f185752ecc28b6560"
+    },
+    "all10_byte_identical": true
+  },
+  "syntax_check": "ALL_PACKAGE_PYTHON_AST_PASS",
+  "holds_check": "7/22/142/0",
+  "protected_paths_unchanged": true,
+  "source_observations": 2276,
+  "primary_statement_pages": 42,
+  "source_docs_in_extraction": 14,
+  "setup_failures_before_final_runs": [
+    {
+      "status": "CAUGHT_AND_FIXED_BEFORE_DELIVERY",
+      "reason": "Duplicate wording across employee benefit asset/liability and dividends reconciliation/investing cash; duplicate guard rejected initial build instead of selecting first row"
+    },
+    {
+      "status": "CAUGHT_AND_FIXED_BEFORE_DELIVERY",
+      "reason": "Two required balance cells contained trailingU2011 layout artifact; only exact visually reviewed doc/page/tokens were allowed; no global Unicode deletion"
+    }
+  ],
+  "prior_preparer_test_runs": [
+    {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Earlier33-case suite subset before reference/mapping/Unicode tests added"
+    },
+    {
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "Reference/endpoint guards added; before final two conservative mapping/Unicode tests"
+    }
+  ],
+  "no_aggregation_of_runs": true,
+  "product_build": "NOT_RUN_NO_PRODUCT_CHANGES",
+  "browser": "NOT_RUN_NO_UI_CHANGES",
+  "independent_review": "NOT_PERFORMED_ON_NEW_PACKAGE",
+  "financial_acceptance": false,
+  "rights_grant": false,
+  "self_acceptance": false,
+  "engine_database_sha256_before_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867"
+}

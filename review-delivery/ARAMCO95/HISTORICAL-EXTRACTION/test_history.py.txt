@@ -1,0 +1,38 @@
+test_different_currency_rejected (__main__.ProposalTests.test_different_currency_rejected) ... ok
+test_different_scope_rejected (__main__.ProposalTests.test_different_scope_rejected) ... ok
+test_different_unit_rejected (__main__.ProposalTests.test_different_unit_rejected) ... ok
+test_different_year_rejected (__main__.ProposalTests.test_different_year_rejected) ... ok
+test_exact_proposal_not_approval (__main__.ProposalTests.test_exact_proposal_not_approval) ... ok
+test_invalid_calendar_rejected (__main__.ProposalTests.test_invalid_calendar_rejected) ... ok
+test_missing_artifact_edition_rejected (__main__.ProposalTests.test_missing_artifact_edition_rejected) ... ok
+test_missing_inputs_rejected (__main__.ProposalTests.test_missing_inputs_rejected) ... ok
+test_mixed_metric_rejected (__main__.ProposalTests.test_mixed_metric_rejected) ... ok
+test_nonadditive_and_unapproved_metrics_rejected (__main__.ProposalTests.test_nonadditive_and_unapproved_metrics_rejected) ... ok
+test_nonfinite_rejected (__main__.ProposalTests.test_nonfinite_rejected) ... ok
+test_quarter_not_ytd_rejected (__main__.ProposalTests.test_quarter_not_ytd_rejected) ... ok
+test_actual_engine_reference_rows_read_only (__main__.SourceTests.test_actual_engine_reference_rows_read_only) ... ok
+test_ambiguous_combined_rows_not_canonicalized_by_guessing (__main__.SourceTests.test_ambiguous_combined_rows_not_canonicalized_by_guessing) ... ok
+test_assets_liabilities_subtotals (__main__.SourceTests.test_assets_liabilities_subtotals) ... ok
+test_cash_flow_bridge_without_balance_substitution (__main__.SourceTests.test_cash_flow_bridge_without_balance_substitution) ... ok
+test_cash_vs_cash_end_and_prefchem (__main__.SourceTests.test_cash_vs_cash_end_and_prefchem) ... ok
+test_catalog_contract_byte_unchanged (__main__.SourceTests.test_catalog_contract_byte_unchanged) ... ok
+test_duplicate_labels_do_not_merge_asset_liability_or_cash_reversal (__main__.SourceTests.test_duplicate_labels_do_not_merge_asset_liability_or_cash_reversal) ... ok
+test_engine_class_counts_and_dedup (__main__.SourceTests.test_engine_class_counts_and_dedup) ... ok
+test_eps_not_millions_and_sign_preserved (__main__.SourceTests.test_eps_not_millions_and_sign_preserved) ... ok
+test_group_parent_income_and_equity_separate (__main__.SourceTests.test_group_parent_income_and_equity_separate) ... ok
+test_income_identities (__main__.SourceTests.test_income_identities) ... ok
+test_no_qualified_derivatives_or_gates (__main__.SourceTests.test_no_qualified_derivatives_or_gates) ... ok
+test_no_synthetic_fact_ids_or_approvals (__main__.SourceTests.test_no_synthetic_fact_ids_or_approvals) ... ok
+test_original_hashes (__main__.SourceTests.test_original_hashes) ... ok
+test_original_vs_later_editions_are_not_silently_merged (__main__.SourceTests.test_original_vs_later_editions_are_not_silently_merged) ... ok
+test_periods_five_and_twelve_contiguous (__main__.SourceTests.test_periods_five_and_twelve_contiguous) ... ok
+test_q4_opening_uses_q3_closing_not_annual_opening (__main__.SourceTests.test_q4_opening_uses_q3_closing_not_annual_opening) ... ok
+test_required_fields_complete_inventory_not_gate_pass (__main__.SourceTests.test_required_fields_complete_inventory_not_gate_pass) ... ok
+test_row_column_reextract_exact_bbox (__main__.SourceTests.test_row_column_reextract_exact_bbox) ... ok
+test_source_cells_second_extractor_presence (__main__.SourceTests.test_source_cells_second_extractor_presence) ... ok
+test_unicode_layout_artifact_not_globally_removed (__main__.SourceTests.test_unicode_layout_artifact_not_globally_removed) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 14.608s
+
+OK

@@ -1,0 +1,44 @@
+{
+  "schema": "aramco-history-delivery/1",
+  "branch": "codex/aramco95-history-extraction-20261019",
+  "implementation_sha": "2faeda9e240ddad6d57dd2b70d4b64cc24b35be3",
+  "delivery_sha": "Resolve commit containing this receipt; no circular self-hash",
+  "status": "READY_FOR_INDEPENDENT_REVIEW_NOT_ACCEPTED",
+  "annual_periods": 5,
+  "consecutive_calendar_quarters": 12,
+  "source_observations": 2276,
+  "potential_new_direct_field_period_cells": 761,
+  "required_new_direct_cells": 162,
+  "possible_new_distinct_existing_catalog_keys": 68,
+  "new_metric_definitions_created": 0,
+  "engine_present_unique_cells_in_target_grid": 270,
+  "tests": {
+    "final_preparer_unit_tests_passed": 33,
+    "failed": 0,
+    "skipped": 0,
+    "regenerated_json_files_byte_identical": 10,
+    "independent_review_performed": false,
+    "product_build_run": false,
+    "browser_run": false
+  },
+  "five_annual_gate_passed": false,
+  "twelve_quarter_gate_passed": false,
+  "actually_ingested_rows": 0,
+  "score_after": null,
+  "holds": [
+    7,
+    22,
+    142,
+    0
+  ],
+  "financially_qualified": 0,
+  "protected_paths_changed": false,
+  "claude_W0_modified": false,
+  "merged": false,
+  "deployed": false,
+  "next": [
+    "Independent source-and-definition review on this fixed implementation SHA",
+    "Approve period/version/sign and Q4/FCF/endpoint policy through authorized review",
+    "Separate future authorization for staged engine intake; no implicit approval here"
+  ]
+}

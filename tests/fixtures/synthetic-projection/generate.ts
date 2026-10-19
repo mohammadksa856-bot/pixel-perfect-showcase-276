@@ -429,7 +429,7 @@ let rows = 0;
 const incomplete: string[] = [];
 for (const [i, issuer] of ISSUERS.entries()) {
   const p = page(i);
-  const text = await format(JSON.stringify(p), { parser: "json" });
+  const text = await format(JSON.stringify(p), { parser: "json", endOfLine: "lf" });
   writeFileSync(new URL(`${issuer.symbol}-page.json`, dir), text);
   shas[issuer.symbol] = createHash("sha256").update(text).digest("hex");
   const fin = p.sections.financials as Record<
@@ -478,7 +478,7 @@ const baseline = {
 };
 writeFileSync(
   new URL("../../../src/lib/engine/publication-baseline.json", import.meta.url),
-  await format(JSON.stringify(baseline), { parser: "json" }),
+  await format(JSON.stringify(baseline), { parser: "json", endOfLine: "lf" }),
 );
 console.log(
   JSON.stringify({ fixtures: shas, rows, unique: keys.size, incomplete: incomplete.length }),

@@ -1,0 +1,3 @@
+# Byte-pinned test data: the publication baseline pins these files by sha256, so they stay LF on every checkout.
+tests/fixtures/synthetic-projection/*.json text eol=lf
+src/lib/engine/publication-baseline.json text eol=lf

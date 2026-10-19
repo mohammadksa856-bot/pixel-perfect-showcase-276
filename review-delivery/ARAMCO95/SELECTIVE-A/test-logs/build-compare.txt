@@ -1,0 +1,12 @@
+# vite build, default env, main c4882ea vs integration 6445adf (Cloudflare preset of main's vite.config, unchanged)
+main build exit 0; integration build exit 0
+client assets: 56 vs 56 files
+kernel strings in .output (client and server): applyPublicationGate, marefa-publication-trust, publication-baseline, buildCompanyPreview, FINENGINE_API, MAREFA_, ENGINE_PREVIEW_ENABLED, fixture markers: 0 in both
+content differences after removing hashed file names and build timestamps: one CSS utility class added:
+662a663
+> .ordinal{--tw-ordinal:ordinal;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)
+(Tailwind scans src/ for class names; the word 'ordinal' in the kernel generates an unused .ordinal rule; no element uses it)
+
+Normalized comparison of every output file (hashed chunk names and build timestamps removed; mtime/etag/size of the
+public-asset manifest ignored): same set of 171 files; only public/assets/styles-*.css (+175 bytes, the .ordinal rule)
+and server/index.mjs (asset manifest: etags of renamed files and of the CSS) differ. JS chunk sizes are identical.

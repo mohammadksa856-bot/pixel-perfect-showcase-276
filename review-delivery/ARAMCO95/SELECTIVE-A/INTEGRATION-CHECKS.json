@@ -1,0 +1,128 @@
+{
+  "main": "c4882ea02c60ec950e92932d61cb1f1a7b4e743e",
+  "integration": "6445adf5814e0afa1cb272fd2fc7c8eabf5e0902",
+  "files": [
+    {
+      "path": "src/design-fixtures.d.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/bidi.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/company-preview.server.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/company-preview.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/peer-comparison.server.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/peer-comparison.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/publication-baseline.json",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/publication-gate.server.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/publication-trust.json",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/readiness.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/engine/statements.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/web-v1/catalog.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/web-v1/company-experience.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/web-v1/design-fixtures.server.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/web-v1/design-review-policy.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/web-v1/display-labels.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "src/lib/web-v1/model.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "tests/financial-projection.test.ts",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "tests/fixtures/codex-20261013/1120-page.json.gz",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "tests/fixtures/codex-20261013/2222-page.json.gz",
+      "byte_identical_to_accepted": true
+    },
+    {
+      "path": "tests/fixtures/codex-20261013/8010-page.json.gz",
+      "byte_identical_to_accepted": true
+    }
+  ],
+  "outside_allowed_dirs": [],
+  "touches_main_files": [],
+  "commits_in_range": [
+    "6445adf5814e0afa1cb272fd2fc7c8eabf5e0902"
+  ],
+  "secret_or_private_hits": [],
+  "rollback": {
+    "merge_tree_equals_integration_tree": true,
+    "reverted_tree_equals_main_tree": true,
+    "method": "git merge --no-ff, then git revert -m 1 (no reset, no force-push)"
+  },
+  "rehearsal_branch_removed": true,
+  "checks": [
+    {
+      "check": "every file byte-identical to the accepted delivery",
+      "pass": true
+    },
+    {
+      "check": "only src/lib, the module declaration and tests",
+      "pass": true
+    },
+    {
+      "check": "no existing main file modified",
+      "pass": true
+    },
+    {
+      "check": "no secret or private data in files or history",
+      "pass": true
+    },
+    {
+      "check": "rollback rehearsal restores main's tree",
+      "pass": true
+    },
+    {
+      "check": "rehearsal branch removed",
+      "pass": true
+    }
+  ]
+}

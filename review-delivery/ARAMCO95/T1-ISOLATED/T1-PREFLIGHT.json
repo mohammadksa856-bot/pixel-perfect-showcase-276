@@ -1,10 +1,8 @@
 {
   "schema": "marefa-t1-preflight/1",
-  "at_utc": "2026-10-19T16:40:14+00:00",
-  "result": "BLOCKED",
-  "blocked_by": [
-    "owner_authorization_for_isolated_ingestion"
-  ],
+  "at_utc": "2026-10-19T16:43:27+00:00",
+  "result": "PASS",
+  "blocked_by": [],
   "manifest_sha256": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
   "engine_commit": "b70254e",
   "original_engine_db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
@@ -96,10 +94,8 @@
     },
     {
       "check": "owner_authorization_for_isolated_ingestion",
-      "status": "BLOCK",
-      "detail": [
-        "no T1-AUTHORIZATION.json"
-      ]
+      "status": "PASS",
+      "detail": "approved by Project owner, Marefa Investment (owner authorization message in Claude Code session session_01CfTpoii6QDStyTPdotmEdY)"
     }
   ]
 }

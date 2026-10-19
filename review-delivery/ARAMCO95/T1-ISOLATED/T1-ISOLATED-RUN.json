@@ -1,0 +1,593 @@
+{
+  "schema": "marefa-t1-isolated-run/1",
+  "mode": "T1",
+  "started_utc": "2026-10-19T16:43:28+00:00",
+  "original_before": {
+    "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "db_size": 30420992,
+    "db_mtime_ns": 1791841581643458367
+  },
+  "copy": {
+    "pristine_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "note": "git-archive blob of b70254e, never the original file"
+  },
+  "qualification_before": {
+    "understanding": {
+      "total_score": "64.75045643370339249187312743",
+      "readiness_state": "not_ready",
+      "hard_gates": {
+        "weighted_coverage_95": {
+          "passed": false,
+          "actual": "64.75045643370339249187312743",
+          "required": "95"
+        },
+        "five_annual_periods": {
+          "passed": true,
+          "actual": 7,
+          "required": 5
+        },
+        "twelve_quarters_when_available": {
+          "passed": false,
+          "actual": 2,
+          "required": 12
+        },
+        "required_core_fields": {
+          "passed": true,
+          "actual": 28,
+          "required": 28
+        },
+        "no_critical_exceptions": {
+          "passed": true,
+          "actual": 0,
+          "required": 0
+        },
+        "no_synthetic_sources": {
+          "passed": true,
+          "actual": 0,
+          "required": 0
+        },
+        "source_provenance": {
+          "passed": true,
+          "actual": 25,
+          "required": 1
+        }
+      },
+      "financial_statements": null
+    },
+    "factory_contract": {
+      "total_score": "56.56374569234910209031614016",
+      "readiness_state": "not_ready",
+      "coverage_thresholds_passed": false,
+      "all_hard_gates_passed": false,
+      "financial_statements": {
+        "score": "0.7874015748031496062992125984",
+        "weighted_score": "11.02362204724409448818897638",
+        "status": "partial"
+      },
+      "blocking_reasons": [
+        "weighted_coverage_95",
+        "category_threshold:company_profile",
+        "category_threshold:financial_statements",
+        "hard_gate_failed:financial_statements:1",
+        "category_threshold:profitability",
+        "category_threshold:liquidity_solvency",
+        "category_threshold:efficiency",
+        "category_threshold:growth",
+        "category_threshold:valuation",
+        "category_threshold:market_data",
+        "hard_gate_failed:market_data:1",
+        "category_threshold:dividends",
+        "category_threshold:segments",
+        "category_threshold:ownership",
+        "category_threshold:corporate_actions",
+        "category_threshold:announcements",
+        "category_threshold:operational_kpis",
+        "category_threshold:sector_specific_fields",
+        "hard_gate_evaluator_required:sector_specific_fields",
+        "category_threshold:calculated_smart_metrics",
+        "hard_gate_failed:sources_lineage_freshness:2"
+      ]
+    }
+  },
+  "ingestion": {
+    "preflight_clone": {
+      "status": "ready",
+      "published_manifests": 1,
+      "integrity": "ok"
+    },
+    "verification": {
+      "checks": 1,
+      "passed": 1,
+      "warnings": 0,
+      "failures": 0,
+      "unmapped_labels": 0
+    },
+    "counts": {
+      "inserted": 11,
+      "restated": 0,
+      "duplicate": 0
+    },
+    "published_manifests": 1,
+    "integrity": "ok",
+    "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+    "manifest_sha256": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857"
+  },
+  "retrieval": {
+    "all_ok": true,
+    "rows": [
+      {
+        "identity": [
+          "cash",
+          "instant",
+          null,
+          "2025-09-30"
+        ],
+        "current_rows": 1,
+        "ok": true,
+        "row": {
+          "id": 4412,
+          "metric_key": "cash",
+          "period_kind": "instant",
+          "period_start": "",
+          "period_end": "2025-09-30",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "scope": "consolidated",
+          "dimensions_json": "{}",
+          "unit": "SAR",
+          "currency": "SAR",
+          "value_decimal": "193873000000",
+          "version": 1,
+          "is_current": 1,
+          "is_calculated": 0,
+          "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+          "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+          "form": "Q3 interim report",
+          "quality_score": "1",
+          "published_at": "2026-10-19 16:43:38"
+        }
+      },
+      {
+        "identity": [
+          "net_income",
+          "quarter",
+          "2025-07-01",
+          "2025-09-30"
+        ],
+        "current_rows": 1,
+        "ok": true,
+        "row": {
+          "id": 4411,
+          "metric_key": "net_income",
+          "period_kind": "quarter",
+          "period_start": "2025-07-01",
+          "period_end": "2025-09-30",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "scope": "consolidated",
+          "dimensions_json": "{}",
+          "unit": "SAR",
+          "currency": "SAR",
+          "value_decimal": "101015000000",
+          "version": 1,
+          "is_current": 1,
+          "is_calculated": 0,
+          "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+          "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+          "form": "Q3 interim report",
+          "quality_score": "1",
+          "published_at": "2026-10-19 16:43:38"
+        }
+      },
+      {
+        "identity": [
+          "operating_cash_flow",
+          "quarter",
+          "2025-07-01",
+          "2025-09-30"
+        ],
+        "current_rows": 1,
+        "ok": true,
+        "row": {
+          "id": 4414,
+          "metric_key": "operating_cash_flow",
+          "period_kind": "quarter",
+          "period_start": "2025-07-01",
+          "period_end": "2025-09-30",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "scope": "consolidated",
+          "dimensions_json": "{}",
+          "unit": "SAR",
+          "currency": "SAR",
+          "value_decimal": "135445000000",
+          "version": 1,
+          "is_current": 1,
+          "is_calculated": 0,
+          "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+          "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+          "form": "Q3 interim report",
+          "quality_score": "1",
+          "published_at": "2026-10-19 16:43:38"
+        }
+      },
+      {
+        "identity": [
+          "revenue",
+          "quarter",
+          "2025-07-01",
+          "2025-09-30"
+        ],
+        "current_rows": 1,
+        "ok": true,
+        "row": {
+          "id": 4410,
+          "metric_key": "revenue",
+          "period_kind": "quarter",
+          "period_start": "2025-07-01",
+          "period_end": "2025-09-30",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "scope": "consolidated",
+          "dimensions_json": "{}",
+          "unit": "SAR",
+          "currency": "SAR",
+          "value_decimal": "386165000000",
+          "version": 1,
+          "is_current": 1,
+          "is_calculated": 0,
+          "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+          "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+          "form": "Q3 interim report",
+          "quality_score": "1",
+          "published_at": "2026-10-19 16:43:38"
+        }
+      },
+      {
+        "identity": [
+          "total_equity",
+          "instant",
+          null,
+          "2025-09-30"
+        ],
+        "current_rows": 1,
+        "ok": true,
+        "row": {
+          "id": 4413,
+          "metric_key": "total_equity",
+          "period_kind": "instant",
+          "period_start": "",
+          "period_end": "2025-09-30",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "scope": "consolidated",
+          "dimensions_json": "{}",
+          "unit": "SAR",
+          "currency": "SAR",
+          "value_decimal": "1691628000000",
+          "version": 1,
+          "is_current": 1,
+          "is_calculated": 0,
+          "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+          "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+          "form": "Q3 interim report",
+          "quality_score": "1",
+          "published_at": "2026-10-19 16:43:38"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "source_key": "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+        "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+        "filing_type": "Q3 interim report",
+        "filed_at": "2025-11-04",
+        "status": "published",
+        "content_hash": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857"
+      },
+      {
+        "source_key": "file:ade8f226d54bfd17df99a0b1bbfa6453c67187a47b92efdf090622791ebf2a85",
+        "source_url": "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/reports-publications/historical-reports?locale=en",
+        "filing_type": "Saudi Exchange historical price snapshot",
+        "filed_at": "2026-09-04",
+        "status": "published",
+        "content_hash": "ade8f226d54bfd17df99a0b1bbfa6453c67187a47b92efdf090622791ebf2a85"
+      },
+      {
+        "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+        "source_url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2026/h1/saudi-aramco-h1-2026-interim-report-english.pdf",
+        "filing_type": "Q2 interim report",
+        "filed_at": "2026-08-04",
+        "status": "published",
+        "content_hash": "471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae"
+      }
+    ],
+    "ingested_values": 5
+  },
+  "sync_replay_idempotent": {
+    "inserted": 0,
+    "restated": 0,
+    "duplicate": 0
+  },
+  "api_page": {
+    "status": 200,
+    "unauthenticated_status": 401,
+    "bytes": 874915,
+    "t1_rows": [
+      {
+        "identity": [
+          "cash",
+          "instant",
+          null,
+          "2025-09-30"
+        ],
+        "payload_rows": 0,
+        "values": [],
+        "versions": [],
+        "source_keys": [],
+        "quality": []
+      },
+      {
+        "identity": [
+          "net_income",
+          "quarter",
+          "2025-07-01",
+          "2025-09-30"
+        ],
+        "payload_rows": 1,
+        "values": [
+          "101015000000"
+        ],
+        "versions": [
+          1
+        ],
+        "source_keys": [
+          "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857"
+        ],
+        "quality": [
+          "None"
+        ]
+      },
+      {
+        "identity": [
+          "operating_cash_flow",
+          "quarter",
+          "2025-07-01",
+          "2025-09-30"
+        ],
+        "payload_rows": 1,
+        "values": [
+          "135445000000"
+        ],
+        "versions": [
+          1
+        ],
+        "source_keys": [
+          "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857"
+        ],
+        "quality": [
+          "None"
+        ]
+      },
+      {
+        "identity": [
+          "revenue",
+          "quarter",
+          "2025-07-01",
+          "2025-09-30"
+        ],
+        "payload_rows": 1,
+        "values": [
+          "386165000000"
+        ],
+        "versions": [
+          1
+        ],
+        "source_keys": [
+          "file:3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857"
+        ],
+        "quality": [
+          "None"
+        ]
+      },
+      {
+        "identity": [
+          "total_equity",
+          "instant",
+          null,
+          "2025-09-30"
+        ],
+        "payload_rows": 0,
+        "values": [],
+        "versions": [],
+        "source_keys": [],
+        "quality": []
+      }
+    ]
+  },
+  "company_preview": {
+    "contract_problems": [],
+    "cells": [
+      {
+        "mode": "annual",
+        "metric": "revenue",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      },
+      {
+        "mode": "annual",
+        "metric": "net_income",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      },
+      {
+        "mode": "annual",
+        "metric": "total_equity",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      },
+      {
+        "mode": "annual",
+        "metric": "operating_cash_flow",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      },
+      {
+        "mode": "quarter",
+        "metric": "revenue",
+        "period_present": true,
+        "state": "value",
+        "value": 386165000000,
+        "reason": null
+      },
+      {
+        "mode": "quarter",
+        "metric": "net_income",
+        "period_present": true,
+        "state": "value",
+        "value": 101015000000,
+        "reason": null
+      },
+      {
+        "mode": "quarter",
+        "metric": "operating_cash_flow",
+        "period_present": true,
+        "state": "value",
+        "value": 135445000000,
+        "reason": null
+      },
+      {
+        "mode": "ytd",
+        "metric": "revenue",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      },
+      {
+        "mode": "ytd",
+        "metric": "net_income",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      },
+      {
+        "mode": "ytd",
+        "metric": "operating_cash_flow",
+        "period_present": false,
+        "state": "no_column",
+        "value": null,
+        "reason": null
+      }
+    ],
+    "counts": {
+      "shown": 47,
+      "withheld": 31
+    },
+    "evidence_field_present": false
+  },
+  "qualification_after": {
+    "understanding": {
+      "total_score": "71.40634920634920634920634921",
+      "readiness_state": "not_ready",
+      "hard_gates": {
+        "weighted_coverage_95": {
+          "passed": false,
+          "actual": "71.40634920634920634920634921",
+          "required": "95"
+        },
+        "five_annual_periods": {
+          "passed": true,
+          "actual": 7,
+          "required": 5
+        },
+        "twelve_quarters_when_available": {
+          "passed": false,
+          "actual": 3,
+          "required": 12
+        },
+        "required_core_fields": {
+          "passed": true,
+          "actual": 28,
+          "required": 28
+        },
+        "no_critical_exceptions": {
+          "passed": true,
+          "actual": 0,
+          "required": 0
+        },
+        "no_synthetic_sources": {
+          "passed": true,
+          "actual": 0,
+          "required": 0
+        },
+        "source_provenance": {
+          "passed": true,
+          "actual": 26,
+          "required": 1
+        }
+      },
+      "financial_statements": null
+    },
+    "factory_contract": {
+      "total_score": "56.56374569234910209031614016",
+      "readiness_state": "not_ready",
+      "coverage_thresholds_passed": false,
+      "all_hard_gates_passed": false,
+      "financial_statements": {
+        "score": "0.7874015748031496062992125984",
+        "weighted_score": "11.02362204724409448818897638",
+        "status": "partial"
+      },
+      "blocking_reasons": [
+        "weighted_coverage_95",
+        "category_threshold:company_profile",
+        "category_threshold:financial_statements",
+        "hard_gate_failed:financial_statements:1",
+        "category_threshold:profitability",
+        "category_threshold:liquidity_solvency",
+        "category_threshold:efficiency",
+        "category_threshold:growth",
+        "category_threshold:valuation",
+        "category_threshold:market_data",
+        "hard_gate_failed:market_data:1",
+        "category_threshold:dividends",
+        "category_threshold:segments",
+        "category_threshold:ownership",
+        "category_threshold:corporate_actions",
+        "category_threshold:announcements",
+        "category_threshold:operational_kpis",
+        "category_threshold:sector_specific_fields",
+        "hard_gate_evaluator_required:sector_specific_fields",
+        "category_threshold:calculated_smart_metrics",
+        "hard_gate_failed:sources_lineage_freshness:2"
+      ]
+    }
+  },
+  "financially_qualified": 0,
+  "publication_authorized": false,
+  "rollback": {
+    "method": "byte restore from pristine snapshot",
+    "copy_sha256_after": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "equals_pristine": true,
+    "identity_rows_after": 0
+  },
+  "original_after": {
+    "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "db_size": 30420992,
+    "db_mtime_ns": 1791841581643458367
+  },
+  "original_unchanged": true,
+  "workdir_removed": true
+}

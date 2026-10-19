@@ -1,0 +1,21 @@
+PASS remote branch: a2291a8 <- 6133ac8 <- 0c0de9e — a2291a8 6133ac8 0c0de9e
+PASS delta stays in Codex's folders; no Claude FINANCIAL, QB2 or product file — 20 files; FY2026 15, NONFINANCIAL/SOURCE-CLOSURE (not reviewed here) 5
+PASS IMPLEMENTATION-MANIFEST hashes match the bytes at a2291a8 — 17 files; mismatched []
+PASS register cites my ledger bb02da3 by commit and by SHA-256
+PASS the 13 records are exactly my 2026 rows (no new or substituted record) — []
+PASS all 13 agree with bb02da3: value, metric, period, engine row/version/source, document hash, PDF/printed page, import page, WITHHELD — {}
+PASS engine references equal the committed DB (immutable) — []
+PASS periods: Q1 Jan–Mar, Q2 Apr–Jun, H1 YTD Jan–Jun; balances instant with null start; flows never instant — []
+PASS instant start: engine stores '' and the register maps it to null without inventing a date (R6 stays open)
+PASS counts: 5 Q1 (3 flows, 2 balances), 3 Q2 flows, 3 H1 YTD flows, 2 June balances
+PASS H1 − Q1 = Q2 for revenue, net income and OCF (recomputed here), used as a consistency check only
+PASS PRefChem: 167,387 + 3,466 = 170,853 at 2026-06-30 (PDF 29/42/31), equal to my R3 and to the engine row of 072
+PASS PRefChem: cash and cash_end kept separate; 072 stays engine 'cash'; no bridge on equity rows
+PASS document hashes: Q1 e3f8215a…, H1 4773cfe4… equal B02 and the engine archive index; no import hash used as a PDF hash
+PASS pages are B02-reviewed pages (Q1 23/25/27, H1 27/29/31; bridge note 42)
+PASS Q1 import pages stay one lower (22/24/26) and uncorrected; Q2 import carries no page — consistent with my R5
+PASS lineage: every 2026 row comes from the matching interim import (57c929d7 Q1, 471042c9 H1), not the mismatched annual import
+PASS no self-acceptance, no rights, R1–R8 not closed, holds 7/22/142/0
+PASS Codex structural suites here: test_source_closure 13/13, test_evidence 18/18, test_remediation 25/26 with the H1-PDF test NOT_RUN — {"test_source_closure.py": {"run": 13, "passed": 13, "tail": "OK"}, "test_evidence.py": {"run": 18, "passed": 18}, "test_remediation.py": {"run": 26, "passed": 25, "not_run": ["test_FX3_original_H1_hash_and_note"]}}
+
+ALL PASS | decision EVIDENCE_ACCEPT | map rows 66 {'PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW': 4, 'R1': 6, 'R2': 5, 'R5': 11, 'R7': 66, 'PAGE_PAYLOAD_EXPOSURE': 25, 'R6': 8, 'R4': 4, 'R3': 1, 'AUDITED_STATEMENTS_NEEDED': 43, 'ENGINE_ENTRY': 6} | batch ['FQ01-OBS-011', 'FQ01-OBS-014', 'FQ01-OBS-016', 'FQ01-OBS-060']

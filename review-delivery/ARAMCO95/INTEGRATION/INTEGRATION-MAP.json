@@ -1,0 +1,2726 @@
+{
+ "schema": "marefa-aramco-integration-map/1",
+ "rows": [
+  {
+   "record": "FQ01-OBS-001",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2322,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "1637299000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "value_sar": "1637299000000"
+   },
+   "evidence": {
+    "document": "FY2024",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 12,
+    "line": "Revenue",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 174
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW (decide which state is the reference)",
+    "R1",
+    "R2",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-004",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2323,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "398422000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "value_sar": "398422000000"
+   },
+   "evidence": {
+    "document": "FY2024",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 12,
+    "line": "Net income",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 174
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW (decide which state is the reference)",
+    "R1",
+    "R2",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-006",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2325,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "508888000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "value_sar": "508888000000"
+   },
+   "evidence": {
+    "document": "FY2024",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 16,
+    "line": "Net cash provided by operating activities",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 178
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW (decide which state is the reference)",
+    "R1",
+    "R2",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-011",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2688,
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "1559342000000"
+   },
+   "page_payload_fixture": {
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "1559342000000"
+   },
+   "evidence": {
+    "document": "FY2025",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 14,
+    "line": "Revenue",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 174
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "key figure (latest period)",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-014",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2689,
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "350210000000"
+   },
+   "page_payload_fixture": {
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "350210000000"
+   },
+   "evidence": {
+    "document": "FY2025",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 14,
+    "line": "Net income",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 174
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "key figure (latest period)",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-016",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2693,
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "510798000000"
+   },
+   "page_payload_fixture": {
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "510798000000"
+   },
+   "evidence": {
+    "document": "FY2025",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 18,
+    "line": "Net cash provided by operating activities",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 178
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-021",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "engine_committed": {
+    "data_point_id": 2856,
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "433101000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "433101000000"
+   },
+   "evidence": {
+    "document": "Q1-2026",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 23,
+    "line": "Revenue"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-024",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "engine_committed": {
+    "data_point_id": 2857,
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "122008000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "122008000000"
+   },
+   "evidence": {
+    "document": "Q1-2026",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 23,
+    "line": "Net income"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-026",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 1
+   },
+   "engine_committed": {
+    "data_point_id": 2862,
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "115242000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "115242000000"
+   },
+   "evidence": {
+    "document": "Q1-2026",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 27,
+    "line": "Net cash provided by operating activities"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-031",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "engine_committed": {
+    "data_point_id": 2878,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "450772000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "450772000000"
+   },
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "line": "Revenue"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-034",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "engine_committed": {
+    "data_point_id": 2880,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "122599000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "122599000000"
+   },
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "line": "Net income"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-036",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "quarter",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "engine_committed": {
+    "data_point_id": 2886,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "95365000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "95365000000"
+   },
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 31,
+    "line": "Net cash provided by operating activities"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-041",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "engine_committed": {
+    "data_point_id": 2879,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "883873000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "line": "Revenue"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-044",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "engine_committed": {
+    "data_point_id": 2881,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "244607000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 27,
+    "line": "Net income"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-046",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "ytd",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": 2
+   },
+   "engine_committed": {
+    "data_point_id": 2887,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "210607000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 31,
+    "line": "Net cash provided by operating activities"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'interim' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (quarterly) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-051",
+   "field_id": "cash",
+   "metric_key": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2330,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "216642000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "FY2024",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "line": "Cash and cash equivalents",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 176
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R1",
+    "R2",
+    "R6",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=cash",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-053",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2024-12-31",
+    "fiscal_year": 2024,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2329,
+    "version": 2,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "1651355000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
+    "value_sar": "1651355000000"
+   },
+   "evidence": {
+    "document": "FY2024",
+    "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 176
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW (decide which state is the reference)",
+    "R1",
+    "R2",
+    "R4",
+    "R6",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-058",
+   "field_id": "cash",
+   "metric_key": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2191,
+    "version": 1,
+    "source_key": "file:1a836a305b8b4a48887468de1ae0a9f8e4c7a5dfde4f4cdcef01cfd12f498a5f",
+    "value_sar": "243099000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "FY2025",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 16,
+    "line": "Cash and cash equivalents",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 176
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R1",
+    "R6",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=cash",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-060",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2025-12-31",
+    "fiscal_year": 2025,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2692,
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "1721744000000"
+   },
+   "page_payload_fixture": {
+    "version": 2,
+    "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "value_sar": "1721744000000"
+   },
+   "evidence": {
+    "document": "FY2025",
+    "sha256": "5a3db2a93fb91a484184a65be49d2043b730d30c8e7b986b26e1d552aa54b8f4",
+    "pdf_page": 16,
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)",
+    "read_here": {
+     "document": "ARA2025",
+     "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+     "pdf_page": 176
+    }
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers)",
+   "needs": [
+    "R4",
+    "R6",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "key figure (latest period)",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-065",
+   "field_id": "cash",
+   "metric_key": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2861,
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "230813000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "Q1-2026",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 25,
+    "line": "Cash and cash equivalents"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R6",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=cash",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-067",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-03-31",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2860,
+    "version": 1,
+    "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
+    "value_sar": "1758311000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "Q1-2026",
+    "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+    "pdf_page": 25,
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R4",
+    "R6",
+    "R5",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-072",
+   "field_id": "cash",
+   "metric_key": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2885,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "167387000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 29,
+    "line": "Cash and cash equivalents"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R3",
+    "R6",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=cash",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "FQ01-OBS-074",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2026-06-30",
+    "fiscal_year": 2026,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2884,
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "1795831000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "H1-Q2-2026",
+    "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+    "pdf_page": 29,
+    "line": "Equity subtotal including non-controlling interests (unlabelled subtotal)"
+   },
+   "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R4",
+    "R6",
+    "R7"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-cash-FY2023",
+   "field_id": "cash",
+   "metric_key": "cash",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2007,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "198973000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 178,
+    "line": "Cash and cash equivalents at beginning of the year",
+    "class": "ISSUER_ANNUAL_REPORT_2025_CASH_FLOW_OPENING_BALANCE"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=cash",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-financing_cash_flow-FY2021",
+   "field_id": "financing_cash_flow",
+   "metric_key": "financing_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": null,
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash used in financing activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "ENGINE_ENTRY",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-financing_cash_flow-FY2022",
+   "field_id": "financing_cash_flow",
+   "metric_key": "financing_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": null,
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash used in financing activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "ENGINE_ENTRY",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-financing_cash_flow-FY2023",
+   "field_id": "financing_cash_flow",
+   "metric_key": "financing_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": null,
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash used in financing activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "ENGINE_ENTRY",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=financing_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-income_before_income_taxes_and_zakat-FY2021",
+   "field_id": "income_before_income_taxes_and_zakat",
+   "metric_key": "income_before_income_taxes_and_zakat",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1870,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "769521000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Income before income taxes and zakat",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_before_income_taxes_and_zakat",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-income_before_income_taxes_and_zakat-FY2022",
+   "field_id": "income_before_income_taxes_and_zakat",
+   "metric_key": "income_before_income_taxes_and_zakat",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1934,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "1152962000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Income before income taxes and zakat",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_before_income_taxes_and_zakat",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-income_before_income_taxes_and_zakat-FY2023",
+   "field_id": "income_before_income_taxes_and_zakat",
+   "metric_key": "income_before_income_taxes_and_zakat",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2004,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "888067000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Income before income taxes and zakat",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_before_income_taxes_and_zakat",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-income_taxes_and_zakat-FY2021",
+   "field_id": "income_taxes_and_zakat",
+   "metric_key": "income_taxes_and_zakat",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1871,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "-357125000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Income taxes and zakat",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_taxes_and_zakat",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-income_taxes_and_zakat-FY2022",
+   "field_id": "income_taxes_and_zakat",
+   "metric_key": "income_taxes_and_zakat",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1935,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "-548957000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Income taxes and zakat",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_taxes_and_zakat",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-income_taxes_and_zakat-FY2023",
+   "field_id": "income_taxes_and_zakat",
+   "metric_key": "income_taxes_and_zakat",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2005,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "-433303000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Income taxes and zakat",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=income_taxes_and_zakat",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-investing_cash_flow-FY2021",
+   "field_id": "investing_cash_flow",
+   "metric_key": "investing_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": null,
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash used in investing activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "ENGINE_ENTRY",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-investing_cash_flow-FY2022",
+   "field_id": "investing_cash_flow",
+   "metric_key": "investing_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": null,
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash used in investing activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "ENGINE_ENTRY",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-investing_cash_flow-FY2023",
+   "field_id": "investing_cash_flow",
+   "metric_key": "investing_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": null,
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash used in investing activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "ENGINE_ENTRY",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=investing_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-net_income-FY2021",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1894,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "412396000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "412396000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net income",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-net_income-FY2022",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1961,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "604005000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "604005000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net income",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-net_income-FY2023",
+   "field_id": "net_income",
+   "metric_key": "net_income",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2042,
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "454764000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "454764000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net income",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=net_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-operating_cash_flow-FY2021",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1895,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "522601000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "522601000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash provided by operating activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-operating_cash_flow-FY2022",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1962,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "698152000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "698152000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash provided by operating activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-operating_cash_flow-FY2023",
+   "field_id": "operating_cash_flow",
+   "metric_key": "operating_cash_flow",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2043,
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "537814000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "537814000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net cash provided by operating activities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'cash_flow' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_cash_flow",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-operating_costs-FY2021",
+   "field_id": "operating_costs",
+   "metric_key": "operating_costs",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1868,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "-729840000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Operating costs",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-operating_costs-FY2022",
+   "field_id": "operating_costs",
+   "metric_key": "operating_costs",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1932,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "-1122296000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Operating costs",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-operating_costs-FY2023",
+   "field_id": "operating_costs",
+   "metric_key": "operating_costs",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2002,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "-988086000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Operating costs",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-operating_income-FY2021",
+   "field_id": "operating_income",
+   "metric_key": "operating_income",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1869,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "771918000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "771918000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Operating income",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-operating_income-FY2022",
+   "field_id": "operating_income",
+   "metric_key": "operating_income",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1933,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "1144077000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "1144077000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Operating income",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-operating_income-FY2023",
+   "field_id": "operating_income",
+   "metric_key": "operating_income",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2003,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "868287000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "868287000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Operating income",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=operating_income",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-other_income_related_to_sales-FY2021",
+   "field_id": "other_income_related_to_sales",
+   "metric_key": "other_income_related_to_sales",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1866,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "154828000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Other income related to sales",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-other_income_related_to_sales-FY2022",
+   "field_id": "other_income_related_to_sales",
+   "metric_key": "other_income_related_to_sales",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1930,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "259418000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Other income related to sales",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-other_income_related_to_sales-FY2023",
+   "field_id": "other_income_related_to_sales",
+   "metric_key": "other_income_related_to_sales",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2000,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "203092000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Other income related to sales",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-revenue-FY2021",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1893,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "1346930000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "1346930000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Revenue",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-revenue-FY2022",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1960,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "2006955000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "2006955000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Revenue",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-revenue-FY2023",
+   "field_id": "revenue",
+   "metric_key": "revenue",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2041,
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "1653281000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
+    "value_sar": "1653281000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Revenue",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'income' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=revenue",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-revenue_and_other_income_related_to_sales-FY2021",
+   "field_id": "revenue_and_other_income_related_to_sales",
+   "metric_key": "revenue_and_other_income_related_to_sales",
+   "period": {
+    "kind": "fy",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1867,
+    "version": 1,
+    "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
+    "value_sar": "1501758000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Revenue and other income related to sales",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-revenue_and_other_income_related_to_sales-FY2022",
+   "field_id": "revenue_and_other_income_related_to_sales",
+   "metric_key": "revenue_and_other_income_related_to_sales",
+   "period": {
+    "kind": "fy",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1931,
+    "version": 1,
+    "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
+    "value_sar": "2266373000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Revenue and other income related to sales",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-revenue_and_other_income_related_to_sales-FY2023",
+   "field_id": "revenue_and_other_income_related_to_sales",
+   "metric_key": "revenue_and_other_income_related_to_sales",
+   "period": {
+    "kind": "fy",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2001,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "1856373000000"
+   },
+   "page_payload_fixture": null,
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Revenue and other income related to sales",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "not consumed",
+    "data": "not consumed"
+   }
+  },
+  {
+   "record": "QB2-A-total_assets-FY2021",
+   "field_id": "total_assets",
+   "metric_key": "total_assets",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1897,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "2162690000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "2162690000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Total assets",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_assets-FY2022",
+   "field_id": "total_assets",
+   "metric_key": "total_assets",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1964,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "2492924000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "2492924000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Total assets",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_assets-FY2023",
+   "field_id": "total_assets",
+   "metric_key": "total_assets",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2008,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "2477940000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "2477940000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Total assets",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_assets",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_equity-FY2021",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1899,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "1280668000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "1280668000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net assets (total equity)",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_equity-FY2022",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1966,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "1666147000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "1666147000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net assets (total equity)",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_equity-FY2023",
+   "field_id": "total_equity",
+   "metric_key": "total_equity",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2010,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "1737092000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "1737092000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Net assets (total equity)",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_equity",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_liabilities-FY2021",
+   "field_id": "total_liabilities",
+   "metric_key": "total_liabilities",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2021-12-31",
+    "fiscal_year": 2021,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1898,
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "882022000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
+    "value_sar": "882022000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Total liabilities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liabilities",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_liabilities-FY2022",
+   "field_id": "total_liabilities",
+   "metric_key": "total_liabilities",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2022-12-31",
+    "fiscal_year": 2022,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 1965,
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "826777000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
+    "value_sar": "826777000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Total liabilities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liabilities",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  },
+  {
+   "record": "QB2-A-total_liabilities-FY2023",
+   "field_id": "total_liabilities",
+   "metric_key": "total_liabilities",
+   "period": {
+    "kind": "instant",
+    "start": null,
+    "end": "2023-12-31",
+    "fiscal_year": 2023,
+    "fiscal_quarter": null
+   },
+   "engine_committed": {
+    "data_point_id": 2009,
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "740848000000"
+   },
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
+    "value_sar": "740848000000"
+   },
+   "evidence": {
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 132,
+    "line": "Total liabilities",
+    "class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY"
+   },
+   "evidence_review": "PREPARED (QB2-A b501019), cross-review pending",
+   "needs": [
+    "R7",
+    "AUDITED_STATEMENTS_NEEDED"
+   ],
+   "qualification": "WITHHELD",
+   "rights": "UNKNOWN_NO_GRANT_ISSUED",
+   "consumption": {
+    "overview": "not consumed",
+    "investor": "topic 5 financials, block 'balance' — /preview/web-v1/companies/2222/intelligence?topic=financials&focus=total_liabilities",
+    "data": "Data › financials tab, statements explorer (annual) — /preview/web-v1/companies/2222?tab=financials"
+   }
+  }
+ ],
+ "need_counts": {
+  "PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW": 4,
+  "R1": 6,
+  "R2": 5,
+  "R5": 11,
+  "R7": 66,
+  "PAGE_PAYLOAD_EXPOSURE": 25,
+  "R6": 8,
+  "R4": 4,
+  "R3": 1,
+  "AUDITED_STATEMENTS_NEEDED": 43,
+  "ENGINE_ENTRY": 6
+ },
+ "single_source": {
+  "finding": "Overview, Investor and Data all render from one CompanyPreview built by buildCompanyPreview() from one engine /page payload (or the frozen fixture); none keeps its own copy of values",
+  "evidence_binding": "attach evidence once, in that payload path, keyed by (metric, period_kind, period_end, version, source_key) and guarded by value equality; all three pages then read the same record"
+ },
+ "smallest_local_batch": {
+  "records": [
+   "FQ01-OBS-011",
+   "FQ01-OBS-014",
+   "FQ01-OBS-016",
+   "FQ01-OBS-060"
+  ],
+  "why": "FY2025 values read here in ARA2025, accepted by both reviewers, already in the engine and in the page payload with the same row, and consumed by all three pages (revenue, net income and total equity as Overview key figures; topic 5; Data statements). Cash 2025 (058) is left out: the payload does not return balance-sheet cash",
+  "excludes": "values that need engine entry or payload exposure, and anything whose state reference is undecided",
+  "test": "local only, frozen fixture + evidence overlay; each value shows document hash and page, stays WITHHELD, and the three pages show one identical record; a changed value, version or source_key drops the binding (fail-closed)",
+  "holds_unchanged": "7/22/142/0; no publication"
+ }
+}

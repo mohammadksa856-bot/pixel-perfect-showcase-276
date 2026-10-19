@@ -1,0 +1,108 @@
+{
+  "schema": "marefa-t1-preflight/1",
+  "at_utc": "2026-10-19T15:49:13+00:00",
+  "result": "BLOCKED",
+  "blocked_by": [
+    "independent_source_accept_receipt",
+    "owner_authorization_for_isolated_ingestion"
+  ],
+  "manifest_sha256": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857",
+  "engine_commit": "b70254e",
+  "original_engine_db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+  "rights_note": "Original rights UNKNOWN_NO_GRANT: an isolated trial is not publication; publication stays unauthorised.",
+  "ingested": 0,
+  "checks": [
+    {
+      "check": "original_engine_untouched",
+      "status": "PASS",
+      "detail": {
+        "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+        "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+        "tracked_changes": ""
+      }
+    },
+    {
+      "check": "scope_exactly_five_t1_identities",
+      "status": "PASS",
+      "detail": {
+        "facts": 5,
+        "identities": [
+          "('cash', 'instant', None, '2025-09-30')",
+          "('net_income', 'quarter', '2025-07-01', '2025-09-30')",
+          "('operating_cash_flow', 'quarter', '2025-07-01', '2025-09-30')",
+          "('revenue', 'quarter', '2025-07-01', '2025-09-30')",
+          "('total_equity', 'instant', None, '2025-09-30')"
+        ],
+        "extra_top_level_keys": []
+      }
+    },
+    {
+      "check": "full_financial_identity_units_and_source_hash",
+      "status": "PASS",
+      "detail": {
+        "source_document_sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+        "manifest_sha256": "3e2491305f261fded9c27bdd4871753c622917c3a4550acd95a35ebebb309857"
+      }
+    },
+    {
+      "check": "engine_label_mapping",
+      "status": "PASS",
+      "detail": [
+        [
+          "revenue",
+          "revenue"
+        ],
+        [
+          "net income",
+          "net_income"
+        ],
+        [
+          "cash and cash equivalents",
+          "cash"
+        ],
+        [
+          "total equity",
+          "total_equity"
+        ],
+        [
+          "net cash from operating activities",
+          "operating_cash_flow"
+        ]
+      ]
+    },
+    {
+      "check": "engine_manifest_verifier",
+      "status": "PASS",
+      "detail": {
+        "checks": 1,
+        "passed": 1,
+        "warnings": 0,
+        "failures": 0,
+        "unmapped": 0
+      }
+    },
+    {
+      "check": "no_existing_row_with_same_identity",
+      "status": "PASS",
+      "detail": {
+        "same_identity_rows_any_version": [],
+        "manifest_source_key_registered": 0,
+        "same_metric_and_end_other_identity": []
+      }
+    },
+    {
+      "check": "independent_source_accept_receipt",
+      "status": "BLOCK",
+      "detail": [
+        "no T1-SOURCE-REVIEW-RECEIPT.json"
+      ]
+    },
+    {
+      "check": "owner_authorization_for_isolated_ingestion",
+      "status": "BLOCK",
+      "detail": [
+        "no T1-AUTHORIZATION.json"
+      ]
+    }
+  ]
+}

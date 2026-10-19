@@ -2,7 +2,11 @@
 // T1 identity would render. Local only; no fixture, no W0 overlay, no change to any trust rule.
 // Usage: bun review-delivery/ARAMCO95/T1-ISOLATED/preview_check.ts <page.json> <out.json>
 import { readFileSync, writeFileSync } from "node:fs";
-import { buildCompanyPreview, contractProblems, type EnginePage } from "../../../src/lib/engine/company-preview";
+import {
+  buildCompanyPreview,
+  contractProblems,
+  type EnginePage,
+} from "../../../src/lib/engine/company-preview";
 
 const [pagePath, outPath] = process.argv.slice(2);
 const page = JSON.parse(readFileSync(pagePath!, "utf8")) as EnginePage;

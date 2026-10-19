@@ -1,0 +1,32 @@
+PASS remote branch: b90fbc9 <- 2faeda9 <- 46c7deb — b90fbc9 2faeda9 46c7deb
+PASS delta only in HISTORICAL-EXTRACTION; no Claude QB1/QB2/W0/INTEGRATION, product or engine file — 25 files
+PASS IMPLEMENTATION-MANIFEST hashes match the bytes at b90fbc9 — 22 entries; mismatched []
+PASS 2,276 observations with unique ids
+PASS every observation carries source, page, column, bbox, printed cell, scale, edition role and value nature — 0 incomplete
+PASS period identities: FY Jan–Dec, quarter = three months ending at quarter end, YTD from Jan 1 to Jun/Sep, instant with null start — 0 bad
+PASS instants are BALANCE only and BALANCE only on instants — {(False, 'FLOW'): 1373, (False, 'PER_SHARE_NOT_ADDITIVE'): 40, (True, 'BALANCE'): 783, (False, 'CASHFLOW_ENDPOINT_NOT_ADDITIVE'): 80}
+PASS normalized value = original × scale exactly, sign unchanged — 0 mismatches
+PASS document hash on every observation equals SOURCE-MANIFEST — 0 mismatches
+PASS no two observations share the same document/page/cell box
+PASS 5 annual periods FY2021–FY2025 and 12 contiguous quarters Q3-2023 → Q2-2026 — [2021, 2022, 2023, 2024, 2025] [(2023, 3), (2023, 4), (2024, 1), (2024, 2), (2024, 3), (2024, 4), (2025, 1), (2025, 2), (2025, 3), (2025, 4), (2026, 1), (2026, 2)]
+PASS 18 required fields; 17/18 direct (current-period edition) for each year and each non-Q4 quarter, the missing one is free_cash_flow — {2021: 17, 2022: 17, 2023: 17, 2024: 17, 2025: 17} {'Q3-2023': 17, 'Q1-2024': 17, 'Q2-2024': 17, 'Q3-2024': 17, 'Q1-2025': 17, 'Q2-2025': 17, 'Q3-2025': 17, 'Q1-2026': 17, 'Q2-2026': 17}
+PASS 4,090 unique field/period identities; class counts reproduce 239/24/761/125/2,941 and sum to 4,090 — {'EXISTS_NEEDS_SOURCE_LINK': 239, 'UNAVAILABLE_OR_NOT_CURRENTLY_QUALIFIABLE': 2941, 'ABSENT_NEEDS_INPUT': 761, 'EXISTS_NEEDS_IDENTITY_OR_VERSION_REVIEW': 24, 'POTENTIAL_DERIVATION_NEEDS_APPROVED_RULE': 125}
+PASS counts are field/period identities: no new metric keys, 0 new engine rows, 0 points awarded, score not recomputed
+PASS 761 ABSENT_NEEDS_INPUT: engine has no current row (committed DB, immutable) and each cites an observation of the same field/period — 0 bad; distinct fields 68
+FINDING HX-F1 [P2] EXISTS_NEEDS_SOURCE_LINK (239) mixes 142 engine cells with an exact-match source observation (linkable now) and 97 engine cells with no extracted source cell (NOT_EXTRACTED_OR_NOT_CANONICALLY_MAPPED). The latter cannot be linked from this package; the class overstates what is ready for source linking. The class total and the 4,090 sum are unaffected.
+PASS of the 239, those with an observation match the engine value and unit exactly — 142 linkable
+PASS 125 rule needs = 102 FY − YTD9 proposals + 6 endpoint rules + 17 FCF — 102/6/17
+PASS FY − YTD9 proposals: inputs are FY and nine-month YTD of the same year, FLOW only, arithmetic exact, none approved — arith [] basis [] nature []
+PASS no subtraction for EPS, shares, balances or cash endpoints; cash_end/cash_beginning are endpoint rules with no value
+PASS 656 edition comparisons, 11 with differing values, no automatic choice
+FINDING HX-F2 [P1] 2 Q4-2025 proposals subtract a nine-month value in the pre-reclassification presentation from an FY value in the new one: depreciation_amortization = ARA2025 -93,091 − Q3-2025 -77,601 = -15,490; depreciation_amortization_cash_flow = ARA2025 93,091 − Q3-2025 77,601 = 15,490. Q1/H1-2025 D&A differ between the 2025 originals and the 2026 comparatives (22,898→22,823; 49,418→45,877), and ARA2025 PDF 184 states the impairment reclassification; the 2025 nine-month input is therefore on the old basis. The semantic guard is null and the proposal is emitted, contrary to the package's own rule against mixing editions.
+PASS EPS differences kept as two editions (2021 1.98/1.80, 2022 2.72/2.47), not subtracted and not chosen
+PASS FY2024 reclassification kept: SG&A 89,235→88,931, D&A 103,209→91,679, impairment 11,834 shown separately in ARA2025
+PASS 128 aggregated/net rows kept with field_id null; none of their labels also appears as a mapped observation on the same page
+PASS group/parent, cash/cash_end and revenue/revenue+other income never share a source cell
+PASS ENGINE-REFERENCE-REGISTER rows exist in the committed DB with the same value — 294 rows; 0 mismatched
+PASS independent source check here: ARA2025 observations — cell box holds the printed value (pdfplumber), value on the page (pypdf), label on the value's line (layout); overlapping-glyph cells set aside for visual review — 129 confirmed, 2 visual-review, 0 mismatches []
+CODEX SUITE: 30 ok; 2 not run / error: ['test_row_column_reextract_exact_bbox', 'test_source_cells_second_extractor_presence'] | FAILED (errors=21)
+TRIAL T1: [('revenue', 27, '386165000000'), ('net_income', 27, '101015000000'), ('cash', 29, '193873000000'), ('total_equity', 29, '1691628000000'), ('operating_cash_flow', 31, '135445000000')] | T2: 12 | sample docs: [('ARA2025', [174, 178]), ('FY2021-FS', [10, 12, 14]), ('FY2022-FS', [10, 12, 14]), ('FY2023-FS', [12, 14, 16]), ('FY2024-FS', [12, 14, 16]), ('H1-2025', [28, 32]), ('H1-Q2-2026', [27, 31]), ('Q1-2025', [19, 23]), ('Q1-2026', [23, 27]), ('Q3-2025', [27, 29, 31])]
+
+ALL PASS | findings ['HX-F1', 'HX-F2'] | decision {'engineering': 'TARGETED_REWORK', 'source': 'SOURCE_REVIEW_PENDING (except the 131 ARA2025 observations, source-checked here)'}

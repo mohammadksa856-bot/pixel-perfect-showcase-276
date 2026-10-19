@@ -1,0 +1,528 @@
+{
+ "schema": "marefa-aramco-intake-trial-set/1",
+ "state": "PROPOSED_NOT_EXECUTED",
+ "target": "isolated engine copy, after authorisation",
+ "why_not_ara2025": "ARA2025 has 0 ABSENT cells: the engine already holds FY2025",
+ "T1_minimal": {
+  "rows": [
+   {
+    "field_id": "revenue",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:035d3064d657711af2670feda4e3f36da22041979b245aed5d70a38cec373fd5",
+    "value_sar": "386165000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 27,
+     "column": 0,
+     "printed_cell": "386,165",
+     "label": "Revenue"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "net_income",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:3fb2662518da569195df0074dd6e52ef8d1bfb827b51da904381950f138dc0b3",
+    "value_sar": "101015000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 27,
+     "column": 0,
+     "printed_cell": "101,015",
+     "label": "Net income"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "cash",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:7c15eca51b288dcbf5445e9048f89fbafd23d5f52acee1ddf47e788ddedaf5f5",
+    "value_sar": "193873000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "193,873",
+     "label": "Cash and cash equivalents"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "total_equity",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:14574b2c90a56e384c301a6f8c2a7479652b9a680403723360b86178f9df5aef",
+    "value_sar": "1691628000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "1,691,628",
+     "label": "UNLABELLED_PRINTED_SUBTOTAL_BY_SECTION"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "operating_cash_flow",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:3700a8d2db3f5a6b338029ae52ddb27f1691d8fc48d6c7fb07abba1640895f8b",
+    "value_sar": "135445000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 31,
+     "column": 0,
+     "printed_cell": "135,445",
+     "label": "Net cash provided by operating activities"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   }
+  ],
+  "selection": "Q3-2025, the five core fields, one document, three pages"
+ },
+ "T2_same_quarter_extension": {
+  "rows": [
+   {
+    "field_id": "operating_income",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:10cc90b5556067ea60f3aa44497cb366c3e91ba0de55db27fd0adad1cc7af48e",
+    "value_sar": "193520000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 27,
+     "column": 0,
+     "printed_cell": "193,520",
+     "label": "Operating income"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "net_income_parent",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:e54097c95ecb83448a048f5da491b26eb259865f079597186f2405bcd994afdf",
+    "value_sar": "97264000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 27,
+     "column": 0,
+     "printed_cell": "97,264",
+     "label": "Shareholders' equity"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "basic_eps",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:5ad188c4228b61eec5a40f1ccf8a796bea645fa9e3551d2159338fcc3652a3c6",
+    "value_sar": "0.40",
+    "unit": "SAR/share",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 27,
+     "column": 0,
+     "printed_cell": "0.40",
+     "label": "Earnings per share (basic and diluted)"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "current_assets",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:a2c50ddaf4af5dd0c5b9f7a6d78b943e9e4854a98b96b8ee4b2aeb317afb1ff1",
+    "value_sar": "585574000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "585,574",
+     "label": "UNLABELLED_PRINTED_SUBTOTAL_BY_SECTION"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "total_assets",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:9b65f8af2dec613b96a12deaa8c2b6f0f77abf139882e10f109450af16ad0e77",
+    "value_sar": "2516431000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "2,516,431‑",
+     "label": "Total assets"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "current_liabilities",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:7cfd60b3cbf5d7421e835525af3d0e7e54f3d1c7840a8643070b4a537a29a758",
+    "value_sar": "293224000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "293,224",
+     "label": "UNLABELLED_PRINTED_SUBTOTAL_BY_SECTION"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "total_liabilities",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:8c0fa414ae4044361edd8deb717db033f0414867ef0ef23124cdc59eec9df95a",
+    "value_sar": "824803000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "824,803",
+     "label": "Total liabilities"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "total_liabilities_equity",
+    "period": {
+     "kind": "instant",
+     "start": null,
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": null
+    },
+    "observation_id": "workpaper:56ea79825119cf8b3d599807558632d1158f74d3aae80669806f8b63efaf7be0",
+    "value_sar": "2516431000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 29,
+     "column": 0,
+     "printed_cell": "2,516,431",
+     "label": "Total equity and liabilities"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "capex",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:a5692772bf848372eb2c26d6a1bb1b8e91a3cf798379242297fc8656bb30fb35",
+    "value_sar": "-47081000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 31,
+     "column": 0,
+     "printed_cell": "(47,081)",
+     "label": "Capital expenditures"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": "SIGN_POLICY_DECISION (engine stores capex positive; source prints an outflow)"
+   },
+   {
+    "field_id": "investing_cash_flow",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:a4e27369e866acbffaad99970c5409e762b2fe2c2d2bdd4eb605a3ad892bc7cb",
+    "value_sar": "-38353000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 31,
+     "column": 0,
+     "printed_cell": "(38,353)",
+     "label": "Net cash (used in) provided by investing activities"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "financing_cash_flow",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:b2530cf5913af28190b8e167ce5d112df1941382d3fe847ab162ca483e2b8d10",
+    "value_sar": "-82337000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 31,
+     "column": 0,
+     "printed_cell": "(82,337)",
+     "label": "Net cash used in financing activities"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   },
+   {
+    "field_id": "cash_end",
+    "period": {
+     "kind": "quarter",
+     "start": "2025-07-01",
+     "end": "2025-09-30",
+     "fiscal_year": 2025,
+     "fiscal_quarter": 3
+    },
+    "observation_id": "workpaper:b08d668f147a2b28151e986280bf9b7ecda1f5c95e3468144e9e8f369f8e2236",
+    "value_sar": "193873000000",
+    "unit": "SAR",
+    "source": {
+     "document": "Q3-2025",
+     "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+     "pdf_page": 31,
+     "column": 0,
+     "printed_cell": "193,873",
+     "label": "Cash and cash equivalents at end of the period"
+    },
+    "engine_present": false,
+    "source_review": "PENDING (original private; not read here)",
+    "hold": null
+   }
+  ],
+  "selection": "remaining required Q3-2025 cells; capex held for the sign policy; FCF not included (no approved formula)"
+ },
+ "preconditions": [
+  "SOURCE_REVIEW of the Q3-2025 interim pages 27/29/31 by a reviewer with the original",
+  "authorisation for an isolated engine copy",
+  "no Q4 derivation, no FY2021–FY2023 values, no edition choice in this trial"
+ ],
+ "source_review_sample": [
+  {
+   "document": "ARA2025",
+   "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+   "pdf_pages": [
+    174,
+    178
+   ],
+   "accessible_here": true
+  },
+  {
+   "document": "FY2021-FS",
+   "sha256": "7593cc3753fd66dfb7ee4f8f9de41deeb26422e61d0a3fddc6f8047d0c84302e",
+   "pdf_pages": [
+    10,
+    12,
+    14
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "FY2022-FS",
+   "sha256": "21aeb1011c29c3f9eb8e1491cc698a971c825db105c1cf8a55ce2105a0a764fc",
+   "pdf_pages": [
+    10,
+    12,
+    14
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "FY2023-FS",
+   "sha256": "a7e1d27c606ada4dacc9aff4e4911aefe3e08c44449276958d023f5a60e2a27e",
+   "pdf_pages": [
+    12,
+    14,
+    16
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "FY2024-FS",
+   "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+   "pdf_pages": [
+    12,
+    14,
+    16
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "H1-2025",
+   "sha256": "d4273a259faeba76a446173597b493466f85b48df784f3bbb1bfc3551dff4e69",
+   "pdf_pages": [
+    28,
+    32
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "H1-Q2-2026",
+   "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
+   "pdf_pages": [
+    27,
+    31
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "Q1-2025",
+   "sha256": "fc7faf858d2850d36c1e21a76c092ab5f647fa73de6c9beb3b0dab5f0716a9d6",
+   "pdf_pages": [
+    19,
+    23
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "Q1-2026",
+   "sha256": "e3f8215a49ca2568df65c178ef0b681fdd6c43aa20558032424bc9e033c46191",
+   "pdf_pages": [
+    23,
+    27
+   ],
+   "accessible_here": false
+  },
+  {
+   "document": "Q3-2025",
+   "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+   "pdf_pages": [
+    27,
+    29,
+    31
+   ],
+   "accessible_here": false
+  }
+ ],
+ "qualification": "WITHHELD",
+ "holds": "7/22/142/0 unchanged"
+}

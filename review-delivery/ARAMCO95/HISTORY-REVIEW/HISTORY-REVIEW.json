@@ -1,0 +1,243 @@
+{
+ "checks": [
+  {
+   "check": "remote branch: b90fbc9 <- 2faeda9 <- 46c7deb",
+   "pass": true,
+   "detail": "b90fbc9 2faeda9 46c7deb"
+  },
+  {
+   "check": "delta only in HISTORICAL-EXTRACTION; no Claude QB1/QB2/W0/INTEGRATION, product or engine file",
+   "pass": true,
+   "detail": "25 files"
+  },
+  {
+   "check": "IMPLEMENTATION-MANIFEST hashes match the bytes at b90fbc9",
+   "pass": true,
+   "detail": "22 entries; mismatched []"
+  },
+  {
+   "check": "2,276 observations with unique ids",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "every observation carries source, page, column, bbox, printed cell, scale, edition role and value nature",
+   "pass": true,
+   "detail": "0 incomplete"
+  },
+  {
+   "check": "period identities: FY Jan–Dec, quarter = three months ending at quarter end, YTD from Jan 1 to Jun/Sep, instant with null start",
+   "pass": true,
+   "detail": "0 bad"
+  },
+  {
+   "check": "instants are BALANCE only and BALANCE only on instants",
+   "pass": true,
+   "detail": "{(False, 'FLOW'): 1373, (False, 'PER_SHARE_NOT_ADDITIVE'): 40, (True, 'BALANCE'): 783, (False, 'CASHFLOW_ENDPOINT_NOT_ADDITIVE'): 80}"
+  },
+  {
+   "check": "normalized value = original × scale exactly, sign unchanged",
+   "pass": true,
+   "detail": "0 mismatches"
+  },
+  {
+   "check": "document hash on every observation equals SOURCE-MANIFEST",
+   "pass": true,
+   "detail": "0 mismatches"
+  },
+  {
+   "check": "no two observations share the same document/page/cell box",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "5 annual periods FY2021–FY2025 and 12 contiguous quarters Q3-2023 → Q2-2026",
+   "pass": true,
+   "detail": "[2021, 2022, 2023, 2024, 2025] [(2023, 3), (2023, 4), (2024, 1), (2024, 2), (2024, 3), (2024, 4), (2025, 1), (2025, 2), (2025, 3), (2025, 4), (2026, 1), (2026, 2)]"
+  },
+  {
+   "check": "18 required fields; 17/18 direct (current-period edition) for each year and each non-Q4 quarter, the missing one is free_cash_flow",
+   "pass": true,
+   "detail": "{2021: 17, 2022: 17, 2023: 17, 2024: 17, 2025: 17} {'Q3-2023': 17, 'Q1-2024': 17, 'Q2-2024': 17, 'Q3-2024': 17, 'Q1-2025': 17, 'Q2-2025': 17, 'Q3-2025': 17, 'Q1-2026': 17, 'Q2-2026': 17}"
+  },
+  {
+   "check": "4,090 unique field/period identities; class counts reproduce 239/24/761/125/2,941 and sum to 4,090",
+   "pass": true,
+   "detail": "{'EXISTS_NEEDS_SOURCE_LINK': 239, 'UNAVAILABLE_OR_NOT_CURRENTLY_QUALIFIABLE': 2941, 'ABSENT_NEEDS_INPUT': 761, 'EXISTS_NEEDS_IDENTITY_OR_VERSION_REVIEW': 24, 'POTENTIAL_DERIVATION_NEEDS_APPROVED_RULE': 125}"
+  },
+  {
+   "check": "counts are field/period identities: no new metric keys, 0 new engine rows, 0 points awarded, score not recomputed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "761 ABSENT_NEEDS_INPUT: engine has no current row (committed DB, immutable) and each cites an observation of the same field/period",
+   "pass": true,
+   "detail": "0 bad; distinct fields 68"
+  },
+  {
+   "check": "of the 239, those with an observation match the engine value and unit exactly",
+   "pass": true,
+   "detail": "142 linkable"
+  },
+  {
+   "check": "125 rule needs = 102 FY − YTD9 proposals + 6 endpoint rules + 17 FCF",
+   "pass": true,
+   "detail": "102/6/17"
+  },
+  {
+   "check": "FY − YTD9 proposals: inputs are FY and nine-month YTD of the same year, FLOW only, arithmetic exact, none approved",
+   "pass": true,
+   "detail": "arith [] basis [] nature []"
+  },
+  {
+   "check": "no subtraction for EPS, shares, balances or cash endpoints; cash_end/cash_beginning are endpoint rules with no value",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "656 edition comparisons, 11 with differing values, no automatic choice",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "EPS differences kept as two editions (2021 1.98/1.80, 2022 2.72/2.47), not subtracted and not chosen",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FY2024 reclassification kept: SG&A 89,235→88,931, D&A 103,209→91,679, impairment 11,834 shown separately in ARA2025",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "128 aggregated/net rows kept with field_id null; none of their labels also appears as a mapped observation on the same page",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "group/parent, cash/cash_end and revenue/revenue+other income never share a source cell",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ENGINE-REFERENCE-REGISTER rows exist in the committed DB with the same value",
+   "pass": true,
+   "detail": "294 rows; 0 mismatched"
+  },
+  {
+   "check": "independent source check here: ARA2025 observations — cell box holds the printed value (pdfplumber), value on the page (pypdf), label on the value's line (layout); overlapping-glyph cells set aside for visual review",
+   "pass": true,
+   "detail": "129 confirmed, 2 visual-review, 0 mismatches []"
+  }
+ ],
+ "findings": [
+  {
+   "id": "HX-F1",
+   "severity": "P2",
+   "finding": "EXISTS_NEEDS_SOURCE_LINK (239) mixes 142 engine cells with an exact-match source observation (linkable now) and 97 engine cells with no extracted source cell (NOT_EXTRACTED_OR_NOT_CANONICALLY_MAPPED). The latter cannot be linked from this package; the class overstates what is ready for source linking. The class total and the 4,090 sum are unaffected.",
+   "reproduction": "INTAKE-MATRIX.json entries: classification == EXISTS_NEEDS_SOURCE_LINK and source_observation_id is null → 97 rows"
+  },
+  {
+   "id": "HX-F2",
+   "severity": "P1",
+   "finding": "2 Q4-2025 proposals subtract a nine-month value in the pre-reclassification presentation from an FY value in the new one: depreciation_amortization = ARA2025 -93,091 − Q3-2025 -77,601 = -15,490; depreciation_amortization_cash_flow = ARA2025 93,091 − Q3-2025 77,601 = 15,490. Q1/H1-2025 D&A differ between the 2025 originals and the 2026 comparatives (22,898→22,823; 49,418→45,877), and ARA2025 PDF 184 states the impairment reclassification; the 2025 nine-month input is therefore on the old basis. The semantic guard is null and the proposal is emitted, contrary to the package's own rule against mixing editions.",
+   "reproduction": "DERIVATION-PROPOSALS.json: field_id in (depreciation_amortization, depreciation_amortization_cash_flow), period.end 2025-12-31; inputs ARA2025 fy and Q3-2025 ytd; EDITION-RECONCILIATIONS.json: same fields, quarter/ytd 2025, VALUES_DIFFER"
+  }
+ ],
+ "mixed_basis_proposals": [
+  {
+   "field": "depreciation_amortization",
+   "q4": "2025-12-31",
+   "proposed": "-15490000000",
+   "fy_input": [
+    "ARA2025",
+    "-93091000000"
+   ],
+   "ytd9_input": [
+    "Q3-2025",
+    "-77601000000"
+   ]
+  },
+  {
+   "field": "depreciation_amortization_cash_flow",
+   "q4": "2025-12-31",
+   "proposed": "15490000000",
+   "fy_input": [
+    "ARA2025",
+    "93091000000"
+   ],
+   "ytd9_input": [
+    "Q3-2025",
+    "77601000000"
+   ]
+  }
+ ],
+ "ara2025_overlapping_glyph_cells": [
+  {
+   "field": "cash_beginning",
+   "end": "2025-12-31",
+   "pdf_page": 178,
+   "printed": "216,642",
+   "crop": "22166,,644527",
+   "state": "SOURCE_REVIEW_PENDING (visual)"
+  },
+  {
+   "field": "cash_beginning",
+   "end": "2024-12-31",
+   "pdf_page": 178,
+   "printed": "198,973",
+   "crop": "19187,,696739",
+   "state": "SOURCE_REVIEW_PENDING (visual)"
+  }
+ ],
+ "ara2025_source_check": {
+  "observations": 131,
+  "mismatches": []
+ },
+ "codex_suite": {
+  "ran": 32,
+  "passed": [
+   "test_actual_engine_reference_rows_read_only",
+   "test_ambiguous_combined_rows_not_canonicalized_by_guessing",
+   "test_assets_liabilities_subtotals",
+   "test_cash_flow_bridge_without_balance_substitution",
+   "test_cash_vs_cash_end_and_prefchem",
+   "test_catalog_contract_byte_unchanged",
+   "test_different_currency_rejected",
+   "test_different_scope_rejected",
+   "test_different_unit_rejected",
+   "test_different_year_rejected",
+   "test_duplicate_labels_do_not_merge_asset_liability_or_cash_reversal",
+   "test_engine_class_counts_and_dedup",
+   "test_eps_not_millions_and_sign_preserved",
+   "test_exact_proposal_not_approval",
+   "test_group_parent_income_and_equity_separate",
+   "test_income_identities",
+   "test_invalid_calendar_rejected",
+   "test_missing_artifact_edition_rejected",
+   "test_missing_inputs_rejected",
+   "test_mixed_metric_rejected",
+   "test_no_qualified_derivatives_or_gates",
+   "test_no_synthetic_fact_ids_or_approvals",
+   "test_nonadditive_and_unapproved_metrics_rejected",
+   "test_nonfinite_rejected",
+   "test_original_vs_later_editions_are_not_silently_merged",
+   "test_periods_five_and_twelve_contiguous",
+   "test_q4_opening_uses_q3_closing_not_annual_opening",
+   "test_quarter_not_ytd_rejected",
+   "test_required_fields_complete_inventory_not_gate_pass",
+   "test_unicode_layout_artifact_not_globally_removed"
+  ],
+  "not_run_or_failed": [
+   "test_row_column_reextract_exact_bbox",
+   "test_source_cells_second_extractor_presence"
+  ],
+  "tail": "FAILED (errors=21)",
+  "reason": "private originals (aramco95-history-private-20261019, web08b02-private-20261017) absent here; such tests are NOT_RUN, not PASS"
+ },
+ "decision": {
+  "engineering": "TARGETED_REWORK",
+  "source": "SOURCE_REVIEW_PENDING (except ARA2025: 129 of 131 observations source-checked here; 2 overlapping-glyph cells pending visual review)"
+ }
+}

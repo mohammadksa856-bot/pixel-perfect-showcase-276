@@ -26,6 +26,17 @@ PASS FY2024: revenue, net income, operating income, OCF, parent net income show 
 PASS FY2024: capex flagged, not resolved; balance-sheet totals not compared
 PASS FY2024 original document is not claimed accessible
 PASS manifest: only ARA2025 present and verified here
+PASS QB2-R01: cash 2023-12-31 is a PROXY (value 198,973 unchanged), FY2023 counts 4 exact + 1 proxy, Q4-2023 cash marked proxy and still needing evidence
+PASS QB2-R01 regression: re-labelling the proxy as exact, in the fact or in the Q4 reuse, is caught
+PASS QB2-R01: Codex's direct observation (FY2024 statements PDF 14, 198,973) recorded as pending, not re-read here, not self-accepted
+PASS QB2-R02: no NO_VALUE_DIFFERENCE with a null comparative
+PASS QB2-R02: parent net income comparative 393,891 read here (pypdf finds it on ARA2025 PDF 174), original operand recorded, Codex's PDF 12 observation pending
+PASS QB2-R02 regression: a null comparative under NO_VALUE_DIFFERENCE is caught
+PASS populations separated: 42 summary cells = 36 engine-equal + 6 absent; 43 source observations; 65 slots / 63 identities / 4 QB1-inherited / 59 new; 17 exact slots / 16 identities; 1 proxy in 2 slots
+PASS FY2024/FY2025 matrix counts labelled as this batch only, QB1 evidence acknowledged
+PASS presentation note: ARA2025 PDF 184 states the 2024 impairment reclassification (pypdf), and the restatement check says equal totals do not rule it out
+PASS correction logged against b5010191 and review 46c7deb, values unchanged
+PASS no value changed since b5010191
 PASS every record WITHHELD, none authorised
 PASS engine DB unchanged (sha256 prefix 2a749d7c8a051f27)
 PASS engine working tree has no tracked changes

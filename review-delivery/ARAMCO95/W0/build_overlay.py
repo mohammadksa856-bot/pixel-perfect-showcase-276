@@ -1,0 +1,33 @@
+"""W0 private QA: build evidence-overlay.json for the four FY2025 values of the smallest integration batch.
+Reads INTEGRATION-MAP.json (2fa628c) and the accepted QB1 ledger (bb02da3) from git, and the frozen fixture. The key is the full
+payload identity (company, metric, period kind/end, version, source_key, amount); the script refuses to write if the payload row,
+the committed engine row and the ledger disagree. Writes nothing outside this folder.
+
+Usage: python3 build_overlay.py"""
+import gzip, json, os, subprocess
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(HERE, "../../.."))
+show = lambda c, p: subprocess.run(["git", "-C", ROOT, "show", f"{c}:{p}"], capture_output=True, check=True).stdout
+MAP = json.loads(show("2fa628c", "review-delivery/ARAMCO95/INTEGRATION/INTEGRATION-MAP.json"))
+LED = {r["record_id"]: r for r in json.loads(show("bb02da3", "review-delivery/ARAMCO95/QB1/FINANCIAL/FIN-EVIDENCE-LEDGER.json"))["records"]}
+fx = json.loads(gzip.decompress(open(os.path.join(ROOT, "tests/fixtures/codex-20261013/2222-page.json.gz"), "rb").read()))
+batch = MAP["smallest_local_batch"]["records"]
+assert batch == ["FQ01-OBS-011", "FQ01-OBS-014", "FQ01-OBS-016", "FQ01-OBS-060"], batch
+rows = {r["record"]: r for r in MAP["rows"]}
+entries = []
+for rid in batch:
+    r, l = rows[rid], LED[rid]
+    pl, en = r["page_payload_fixture"], r["engine_committed"]
+    assert pl and pl["consistent_rows"] and (pl["version"], pl["source_key"], pl["value_sar"]) == (en["version"], en["source_key"], en["value_sar"]) == (
+        l["engine"]["version"], l["engine"]["source_key"], l["engine"]["value_sar"]), rid
+    c = l["comparison_with_source"]
+    assert c["performed"] and c["equal"] and c["document_sha256"] == "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227", rid
+    entries.append({"key": {"companyId": "sa:2222", "metric": r["metric_key"], "periodKind": r["period"]["kind"], "periodEnd": r["period"]["end"],
+                            "version": pl["version"], "sourceKey": pl["source_key"], "valueSar": pl["value_sar"]},
+                    "evidence": {"record": rid, "document": "ARA2025", "sha256": c["document_sha256"], "pdfPage": c["pdf_page"], "printedPage": c["printed_page"],
+                                 "line": c["line"], "review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); not FINANCIAL_ACCEPT"}})
+overlay = {"schema": "marefa-qa-evidence-overlay/1", "scope": "QA_PRIVATE",
+           "fixture": {"companyId": fx["company"]["company_id"], "generatedAt": fx["generated_at"], "contractVersion": fx["contract_version"]},
+           "entries": entries}
+json.dump(overlay, open(os.path.join(HERE, "evidence-overlay.json"), "w"), ensure_ascii=False, indent=1)
+print(json.dumps([(e["evidence"]["record"], e["key"]["metric"], e["key"]["periodEnd"], e["key"]["version"], e["key"]["sourceKey"][5:13], e["evidence"]["pdfPage"]) for e in entries]))

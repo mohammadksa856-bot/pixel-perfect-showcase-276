@@ -27,7 +27,7 @@ export async function fetchCompanyPreview(
   if (env["MAREFA_DESIGN_FIXTURES"] === "true") {
     if (!designReviewFixturesEnabled(env)) return { state: "disabled" };
     const { frozenDesignPreview } = await import("../web-v1/design-fixtures.server");
-    return frozenDesignPreview(input);
+    return frozenDesignPreview(input, env);
   }
   const base = env["FINENGINE_API_URL"]?.replace(/\/+$/, "");
   const apiKey = env["FINENGINE_API_KEY"];

@@ -1,10 +1,15 @@
+import { readFileSync } from "node:fs";
 import pages from "virtual:marefa-design-fixtures";
+import { bindEvidenceOverlay, type EvidenceOverlay } from "../engine/evidence-overlay";
 import { buildCompanyPreview, contractProblems, type EnginePage } from "../engine/company-preview";
 import { normalizeFactoryCoverage } from "../engine/readiness";
 import type { PreviewResult } from "../engine/company-preview.server";
 
 /** Explicit development source, not a network-error fallback. Never imports a production key. */
-export function frozenDesignPreview(input: { market: string; symbol: string }): PreviewResult {
+export function frozenDesignPreview(
+  input: { market: string; symbol: string },
+  env: Record<string, string | undefined> = {},
+): PreviewResult {
   if (input.market.toUpperCase() !== "SA" || !pages[input.symbol]) return { state: "not_found" };
   const raw = structuredClone(pages[input.symbol]);
   if (contractProblems(raw).length)
@@ -25,6 +30,12 @@ export function frozenDesignPreview(input: { market: string; symbol: string }): 
   }
   withholdDerived(raw);
   const preview = buildCompanyPreview(raw as EnginePage);
+  // W0: ملف أدلة QA خاص يُقرأ من مسار محلي صريح فقط، خارج حزمة المنتج. يُربط بالحمولة الخام نفسها.
+  const overlayPath = env["MAREFA_QA_EVIDENCE_OVERLAY_PATH"];
+  if (overlayPath) {
+    const overlay = JSON.parse(readFileSync(overlayPath, "utf8")) as EvidenceOverlay;
+    preview.evidence = bindEvidenceOverlay(raw as EnginePage, overlay);
+  }
   preview.factory = normalizeFactoryCoverage(undefined);
   preview.readiness = {
     investorTopics: {

@@ -1,10 +1,10 @@
 // Builds src/lib/engine/publication-baseline.json: the identity hashes (no values) of every financial row in the
-// accepted frozen fixtures, using the gate's own factIdentity/factKey. The fixtures are the sha-pinned files of
+// accepted frozen fixtures, using the gate's frozenRowKey. The fixtures are the sha-pinned files of
 // build/design-fixtures.ts; their hashes are checked first. Usage: bun review-delivery/ARAMCO95/PROJECTION/build_baseline.ts
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
-import { factIdentity, factKey } from "../../../src/lib/engine/publication-gate.server";
+import { frozenRowKey } from "../../../src/lib/engine/publication-gate.server";
 
 const SHA: Record<string, string> = {
   "2222": "e98863c41faf85069a4562b0d330a77f49863979bc3fb78502912ced5d95c936",
@@ -28,9 +28,9 @@ for (const [symbol, sha] of Object.entries(SHA)) {
     for (const [metric, list] of Object.entries((c?.metrics ?? {}) as Record<string, any[]>))
       for (const r of list) {
         rows++;
-        const id = factIdentity(cid, metric, r);
-        if (!id) incomplete.push(`${cid}:${metric}:${r.period_end}`);
-        else keys.add(factKey(id));
+        const key = frozenRowKey(cid, metric, r);
+        if (!key) incomplete.push(`${cid}:${metric}:${r.period_end}`);
+        else keys.add(key);
       }
 }
 const out = {

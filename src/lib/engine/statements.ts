@@ -357,28 +357,68 @@ function buildView(
 }
 
 /**
- * أرصدة نهاية الأرباع (مقترح العقد): تُقبل أعمدةً لجدول الأرباع فقط، بهوية instant (checkRow بنوع "instant").
- * لا تتحول إلى تدفقات، ولا تمس آخر رصيد (fin.instant) ولا أرصدة نهاية السنة (annual_position):
- * أي فترة تقع في نهاية السنة المالية أو ليست نهاية شهر ربعي تُستبعد هنا، حتى لو أرسلها المحرك.
+ * تقويم السنة المالية: نهاية السنة "MM-DD" صالحة فقط إن كان اليوم نهاية ذلك الشهر (فبراير: 28 أو 29).
+ * يعيد شهر نهاية السنة، أو null (فشل مغلق: لا فصل ممكن بين أرصدة الأرباع وأرصدة نهاية السنة).
  */
-function quarterPositions(
-  x:
-    { periods?: { period_end: string; metrics?: Record<string, EngineMetricRow[]> }[] } | undefined,
+export function fiscalYearEndMonth(fiscalYearEnd: string | null | undefined): number | null {
+  const m = /^(\d{2})-(\d{2})$/.exec(fiscalYearEnd ?? "");
+  if (!m) return null;
+  const [mo, d] = [Number(m[1]), Number(m[2])];
+  if (mo < 1 || mo > 12) return null;
+  const last = new Date(Date.UTC(2001, mo, 0)).getUTCDate(); // سنة غير كبيسة
+  return d === last || (mo === 2 && d === 29) ? mo : null;
+}
+
+/**
+ * يصنّف تاريخًا حسب تقويم الشركة: "fy_end" نهاية السنة المالية، "quarter_end" نهاية ربع آخر، أو null.
+ * التاريخ يجب أن يكون تاريخًا تقويميًا حقيقيًا وفي آخر يوم من شهره الفعلي (29 فبراير في السنة الكبيسة).
+ */
+export function fiscalDateKind(date: string, fyMonth: number): "fy_end" | "quarter_end" | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+  if (!m) return null;
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  if (mo < 1 || mo > 12 || d !== new Date(Date.UTC(y, mo, 0)).getUTCDate()) return null;
+  if (mo === fyMonth) return "fy_end";
+  return [3, 6, 9].some((k) => ((fyMonth + k - 1) % 12) + 1 === mo) ? "quarter_end" : null;
+}
+
+type PeriodList =
+  { periods?: { period_end: string; metrics?: Record<string, EngineMetricRow[]> }[] } | undefined;
+const monthIndex = (date: string) => Number(date.slice(0, 4)) * 12 + Number(date.slice(5, 7));
+
+/**
+ * أرصدة جدول الأرباع (مقترح العقد quarter_position)، بهوية instant (checkRow بنوع "instant"):
+ * - نهايات Q1–Q3 من quarter_position فقط؛ أي تاريخ في نهاية السنة المالية أو ليس نهاية ربع يُستبعد منه.
+ * - رصيد Q4 من annual_position (رصيد نهاية السنة نفسه)، مصدر واحد فلا ازدواج، ضمن نطاق أعمدة الأرباع.
+ * لا تدفقات سنوية (history.annual لا يدخل)، ولا يمس آخر رصيد (fin.instant). بلا quarter_position لا تغيير.
+ */
+function quarterBalanceSources(
+  quarterPositions: PeriodList,
+  annualPositions: PeriodList,
+  quarterFlows: PeriodList,
   fiscalYearEnd: string | null | undefined,
 ): PeriodSource[] {
-  const fye = /^\d{2}-\d{2}$/.test(fiscalYearEnd ?? "") ? fiscalYearEnd! : null;
-  if (!fye) return []; // بلا نهاية سنة مالية معروفة لا يمكن الفصل عن أرصدة نهاية السنة: فشل مغلق.
-  const fyMonth = Number(fye.slice(0, 2));
-  const quarterMonths = new Set([3, 6, 9, 12].map((k) => ((fyMonth + k - 1) % 12) + 1));
-  return (x?.periods ?? [])
-    .filter((p) => {
-      const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p.period_end);
-      if (!m) return false;
-      const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
-      const monthEnd = new Date(Date.UTC(y, mo, 0)).getUTCDate();
-      return quarterMonths.has(mo) && d === monthEnd && p.period_end.slice(5) !== fye;
-    })
+  const fyMonth = fiscalYearEndMonth(fiscalYearEnd);
+  if (!fyMonth || !quarterPositions) return [];
+  const q = (quarterPositions.periods ?? [])
+    .filter((p) => fiscalDateKind(p.period_end, fyMonth) === "quarter_end")
     .map((p) => ({ end: p.period_end, metrics: p.metrics ?? {}, expected: "instant" }));
+  const ends = [
+    ...q.map((p) => p.end),
+    ...(quarterFlows?.periods ?? []).map((p) => p.period_end),
+  ].filter((e) => fiscalDateKind(e, fyMonth) !== null);
+  if (!ends.length) return q;
+  const lo = Math.min(...ends.map(monthIndex)) - 3;
+  const hi = Math.max(...ends.map(monthIndex));
+  const q4 = (annualPositions?.periods ?? [])
+    .filter(
+      (p) =>
+        fiscalDateKind(p.period_end, fyMonth) === "fy_end" &&
+        monthIndex(p.period_end) >= lo &&
+        monthIndex(p.period_end) <= hi,
+    )
+    .map((p) => ({ end: p.period_end, metrics: p.metrics ?? {}, expected: "instant" }));
+  return [...q, ...q4];
 }
 
 export function buildStatements(page: EnginePage, kind: CompanyKind): StatementView[] {
@@ -406,7 +446,12 @@ export function buildStatements(page: EnginePage, kind: CompanyKind): StatementV
     kind,
     [
       hist(h?.quarter, "quarter"),
-      quarterPositions(h?.quarter_position, page.company?.fiscal_year_end),
+      quarterBalanceSources(
+        h?.quarter_position,
+        h?.annual_position,
+        h?.quarter,
+        page.company?.fiscal_year_end,
+      ),
     ],
     h?.quarter?.reason ?? null,
     currency,

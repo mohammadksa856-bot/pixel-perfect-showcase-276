@@ -2,7 +2,7 @@
 // المفتاح والعنوان لا يغادران الخادم، والقيم المحجوبة لا تُسلسل إلى العميل.
 import { buildCompanyPreview, contractProblems, type CompanyPreview } from "./company-preview";
 import { designReviewFixturesEnabled } from "../web-v1/design-review-policy";
-import { applyPublicationGate, loadLedger } from "./publication-gate.server";
+import { applyPublicationGate, loadApprovals } from "./publication-gate.server";
 
 type Env = Record<string, string | undefined>;
 
@@ -61,11 +61,17 @@ export async function fetchCompanyPreview(
   const problems = contractProblems(page);
   if (problems.length)
     return { state: "engine_unavailable", reason: `contract_mismatch:${problems.join(",")}` };
-  // Publication gate before the model is built and serialised: rows outside the accepted baseline need a ledger
-  // entry with SOURCE_ACCEPT, FINANCIAL_ACCEPT and PUBLICATION_AUTHORIZED, otherwise they never leave the server.
-  const gated = applyPublicationGate(
-    page as Parameters<typeof buildCompanyPreview>[0],
-    loadLedger(env),
-  );
-  return { state: "ok", preview: buildCompanyPreview(gated.page) };
+  // Publication gate before the model is built and serialised. Live engine rows never use the frozen baseline:
+  // each needs verified SOURCE_ACCEPT, FINANCIAL_ACCEPT and PUBLICATION_AUTHORIZED decisions signed by an authority
+  // in the committed trust store, otherwise it never leaves the server. Any failure here fails closed.
+  try {
+    const gated = applyPublicationGate(
+      page as Parameters<typeof buildCompanyPreview>[0],
+      loadApprovals(env),
+      { mode: "live_engine" },
+    );
+    return { state: "ok", preview: buildCompanyPreview(gated.page) };
+  } catch {
+    return { state: "engine_unavailable", reason: "preview_build_failed" };
+  }
 }

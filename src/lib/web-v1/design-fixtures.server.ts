@@ -2,16 +2,18 @@ import pages from "virtual:marefa-design-fixtures";
 import { buildCompanyPreview, contractProblems, type EnginePage } from "../engine/company-preview";
 import { normalizeFactoryCoverage } from "../engine/readiness";
 import type { PreviewResult } from "../engine/company-preview.server";
-import { applyPublicationGate, loadLedger } from "../engine/publication-gate.server";
+import { applyPublicationGate, loadApprovals } from "../engine/publication-gate.server";
 
 /** Explicit development source, not a network-error fallback. Never imports a production key. */
 export function frozenDesignPreview(input: { market: string; symbol: string }): PreviewResult {
   if (input.market.toUpperCase() !== "SA" || !pages[input.symbol]) return { state: "not_found" };
   if (contractProblems(pages[input.symbol]).length)
     return { state: "engine_unavailable", reason: "design_fixture_contract_mismatch" };
-  // Publication gate before anything is built: the pinned fixture is the accepted baseline, so this keeps it as is
-  // and only an explicit WITHHELD ledger entry can remove a row.
-  const raw = applyPublicationGate(pages[input.symbol] as EnginePage, loadLedger()).page;
+  // Publication gate before anything is built. Only this frozen design-fixture path may use the accepted baseline
+  // (identities of the sha-pinned fixtures); an explicit WITHHELD decision still removes a row.
+  const raw = applyPublicationGate(pages[input.symbol] as EnginePage, loadApprovals(), {
+    mode: "frozen_design_fixture",
+  }).page;
   // Even a historical boolean lineage claim is insufficient for financial acceptance here.
   function withholdDerived(value: unknown): void {
     if (!value || typeof value !== "object") return;

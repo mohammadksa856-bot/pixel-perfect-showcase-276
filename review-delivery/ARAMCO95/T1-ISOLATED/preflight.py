@@ -21,8 +21,12 @@ from t1_common import (AUTHORIZATION, COMPANY_ID, ENGINE_COMMIT, ENGINE_DB_SHA25
                        ro_uri, sha256_file, workdir)
 
 PREPARERS = {"claude", "codex"}  # preparers of this evidence cannot be the independent source reviewer
-FIELD_CHECKS = ("document_sha256_matches", "page_and_row_match", "column_is_three_months_ended_2025_09_30",
-                "printed_value_matches", "unit_is_sar_millions", "consolidated")
+FIELD_CHECKS = ("document_sha256_matches", "page_and_row_match", "printed_value_matches", "unit_is_sar_millions",
+                "consolidated")
+# The column check depends on the period kind: a flow is the standalone three-month column, a balance is the column
+# as at 30 September. Each identity must carry its own kind's check, and must not carry the other kind's check.
+COLUMN_CHECKS = {"quarter": "column_is_three_months_ended_2025_09_30",
+                 "instant": "column_is_balance_as_at_2025_09_30"}
 EXTRA_CHECKS = {"total_equity": "group_total_including_non_controlling_interests",
                 "net_income": "group_net_income_not_attributable_share"}
 
@@ -34,6 +38,35 @@ def check(results: list, name: str, ok: bool, detail) -> bool:
 
 def ident(metric, kind, start, end):
     return (metric, kind, start or None, end)
+
+
+def receipt_problems(receipt: dict | None, ids: list[dict], msha: str) -> list[str]:
+    """Every reason the independent source receipt does not cover this exact manifest; empty means it does."""
+    problems: list[str] = []
+    if not receipt:
+        return ["no T1-SOURCE-REVIEW-RECEIPT.json"]
+    if receipt.get("decision") != "SOURCE_ACCEPT":
+        problems.append("decision is not SOURCE_ACCEPT")
+    if str(receipt.get("reviewer", "")).strip().lower() in PREPARERS | {""}:
+        problems.append("reviewer missing or a preparer")
+    if receipt.get("document_sha256") != Q3_2025_SHA256 or receipt.get("manifest_sha256") != msha:
+        problems.append("receipt does not cover this document hash and this exact manifest")
+    fields = receipt.get("fields", [])
+    per = {r.get("metric_key"): r for r in fields}
+    if len(per) != len(fields) or set(per) != {i["metric_key"] for i in ids}:
+        problems.append("receipt fields must cover each T1 metric exactly once")
+    for i in ids:
+        m, kind = i["metric_key"], i["period_kind"]
+        got = per.get(m, {})
+        need = FIELD_CHECKS + (COLUMN_CHECKS[kind],) + ((EXTRA_CHECKS[m],) if m in EXTRA_CHECKS else ())
+        if got.get("period_kind") != kind:
+            problems.append(f"{m}: receipt period_kind {got.get('period_kind')!r} is not {kind!r}")
+        wrong = [c for k, c in COLUMN_CHECKS.items() if k != kind and got.get(c) is not None]
+        if wrong:
+            problems.append(f"{m}: {kind} identity carries the other kind's column check {wrong}")
+        if not all(got.get(c) is True for c in need):
+            problems.append(f"{m}: not every source check is true")
+    return problems
 
 
 def main() -> int:
@@ -108,21 +141,7 @@ def main() -> int:
                "same_metric_and_end_other_identity": nearby})
 
         receipt = load(SOURCE_RECEIPT) if SOURCE_RECEIPT.is_file() else None
-        problems = []
-        if not receipt:
-            problems.append("no T1-SOURCE-REVIEW-RECEIPT.json")
-        else:
-            if receipt.get("decision") != "SOURCE_ACCEPT":
-                problems.append("decision is not SOURCE_ACCEPT")
-            if str(receipt.get("reviewer", "")).strip().lower() in PREPARERS | {""}:
-                problems.append("reviewer missing or a preparer")
-            if receipt.get("document_sha256") != Q3_2025_SHA256 or receipt.get("manifest_sha256") != msha:
-                problems.append("receipt does not cover this document hash and this exact manifest")
-            per = {r.get("metric_key"): r for r in receipt.get("fields", [])}
-            for i in ids:
-                need = FIELD_CHECKS + ((EXTRA_CHECKS[i["metric_key"]],) if i["metric_key"] in EXTRA_CHECKS else ())
-                if not all(per.get(i["metric_key"], {}).get(c) is True for c in need):
-                    problems.append(f"{i['metric_key']}: not every source check is true")
+        problems = receipt_problems(receipt, ids, msha)
         check(results, "independent_source_accept_receipt", not problems, problems or "accepted by " + receipt["reviewer"])
 
         auth = load(AUTHORIZATION) if AUTHORIZATION.is_file() else None

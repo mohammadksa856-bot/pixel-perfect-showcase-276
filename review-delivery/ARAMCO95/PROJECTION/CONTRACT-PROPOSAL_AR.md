@@ -70,9 +70,15 @@
 - `period_history(..., quarter_ends_only=True)`:
   - تعيد صفوف `instant` في نهايات الأرباع المالية، **دون نهاية السنة المالية**، فتلك في `annual_position`.
   - الخياران `annual_only` و`quarter_ends_only` متنافيان.
-- `_quarter_end_days(fiscal_year_end)`:
-  - تحسب نهايات الأرباع الثلاثة من نهاية السنة المالية. لنهاية فبراير يُقبل اليومان 28 و29.
+- `_fiscal_quarter_end_months(fiscal_year_end)` (صُحّح في QP-02):
+  - تحسب أشهر نهايات الأرباع الثلاثة من شهر نهاية السنة المالية.
+  - نهاية السنة يجب أن تكون آخر يوم في شهرها؛ `02-28` و`02-29` كلاهما نهاية فبراير.
   - نهاية سنة غير صالحة تعيد قائمة فارغة، فتكون السلسلة `unavailable`.
+- `_fiscal_quarter_end(period_end, months)`:
+  - يقبل التاريخ فقط إن كان تاريخًا تقويميًا حقيقيًا بصيغة `YYYY-MM-DD`، وفي آخر يوم من شهر ربعي في سنته نفسها.
+  - في فبراير: 29 في السنة الكبيسة، و28 في غيرها.
+  - لا مقارنة لنص `MM-DD` ولا قائمة ثابتة.
+- **ترتيب التطبيق:** يجري التحقق على كل التواريخ المرشحة، ولا يشمل إلا المقاييس المطلوبة، ثم يُطبَّق حد عدد الفترات. فلا يأخذ تاريخ مستحيل أو فترة بلا مقياس مطلوب مكان فترة صحيحة.
 - `company_page`:
   - مفتاح جديد `sections.financials.history.quarter_position`: 12 فترة.
   - المقاييس: `cash`، `cash_and_cash_equivalents`، `current_assets`، `total_assets`، `current_liabilities`، `total_liabilities`، `total_debt`، `net_debt`، `parent_equity`، `equity_parent`، `total_equity`، `shares_outstanding`.

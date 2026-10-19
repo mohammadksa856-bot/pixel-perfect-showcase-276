@@ -148,13 +148,18 @@ class EngineProposal(unittest.TestCase):
         self.assertEqual([p["period_end"] for p in ap], ["2025-12-31"])           # year-end stays separate
         self.assertNotIn("2025-12-31", [p["period_end"] for p in fin["history"]["quarter_position"]["periods"]])
 
-    def test_quarter_end_days(self):
+    def test_fiscal_quarter_end_months_and_dates(self):
         code = ("import json\nfrom finengine.query import FinancialQueryService as Q\n"
-                "print(json.dumps([Q._quarter_end_days(x) for x in ['12-31','03-31','06-30','05-31','11-30','bad',None,'12-30']]))")
+                "fy=['12-31','03-31','06-30','05-31','11-30','02-28','02-29','bad',None,'12-30','06-31','2-28','13-31']\n"
+                "d=[('2024-02-29',(2,5,8)),('2023-02-29',(2,5,8)),('2024-02-28',(2,5,8)),('2023-02-28',(2,5,8)),\n"
+                "   ('2025-12-31',(3,6,9)),('2025-09-30',(3,6,9)),('2025-09-31',(3,6,9)),('2025-9-30',(3,6,9)),(None,(3,6,9))]\n"
+                "print(json.dumps([[Q._fiscal_quarter_end_months(x) for x in fy],\n"
+                "                  [str(Q._fiscal_quarter_end(a,m)) for a,m in d]]))")
         r = subprocess.run([sys.executable, "-c", code], cwd=self.prop, env=env(self.prop), capture_output=True, text=True)
-        self.assertEqual(json.loads(r.stdout), [
-            ["03-31", "06-30", "09-30"], ["06-30", "09-30", "12-31"], ["09-30", "12-31", "03-31"],
-            ["08-31", "11-30", "02-28", "02-29"], ["02-28", "02-29", "05-31", "08-31"], [], [], []])
+        months, dates = json.loads(r.stdout)
+        self.assertEqual(months, [[3, 6, 9], [6, 9, 12], [9, 12, 3], [8, 11, 2], [2, 5, 8], [5, 8, 11], [5, 8, 11],
+                                  [], [], [], [], [], []])
+        self.assertEqual(dates, ["2024-02-29", "None", "None", "2023-02-28", "None", "2025-09-30", "None", "None", "None"])
 
     def test_exclusive_flags(self):
         code = ("from finengine.query import FinancialQueryService as Q\nimport sys\nq=Q(sys.argv[1])\n"

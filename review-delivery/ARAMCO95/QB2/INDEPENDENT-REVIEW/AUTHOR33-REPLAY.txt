@@ -1,0 +1,35 @@
+PASS archived annual report sha256 recomputed
+PASS PDF 132 is 'Historical financial highlights', printed page 130 (pypdf)
+PASS ids unique
+PASS 15 core annual values = 5 metrics x FY2021-FY2023
+PASS 50 quarterly values = 5 metrics x Q3-2023..Q4-2025
+PASS every value with a source cites the ARA2025 hash, a page and a line; no other document is used — 43 values
+PASS pypdf finds every sourced value on its cited page — []
+PASS regression: a value altered by one million is not found on its page
+PASS no value without a source: gap records carry no value
+PASS cash FY2021/FY2022 recorded as gaps, cash FY2023 only as the cash-flow opening balance (PDF 178)
+PASS every summary value is labelled as a later-report summary, not an audited statement
+PASS 2024/2025 summary columns appear on the statement pages (pypdf), 13 of 14 lines comparable — []
+PASS engine references equal the committed DB's current rows (annual and quarterly) — []
+PASS regression: a wrong engine row id is caught
+PASS engine status consistent: equal when values agree, missing for investing/financing
+PASS no value differences between the 2025 report summary and the engine for FY2021-FY2023
+PASS engine holds no quarter before 2026 for the five metrics
+PASS no import-file hash used as a disclosure hash
+PASS engine import citations: the cited annual reports are not present here and are not claimed as read
+PASS Q4 balances (6) reuse year-end evidence; the other 44 quarterly values have none
+PASS Q4 flows are not derived by subtraction
+PASS period matrix: gate not met, nothing counts as audited period or gate quarter now
+PASS Q1/Q2-2026 left to Codex
+PASS FY2024: B02 observations copied as committed (comparison and reasons)
+PASS FY2024: revenue, net income, operating income, OCF, parent net income show no value difference (secondary)
+PASS FY2024: capex flagged, not resolved; balance-sheet totals not compared
+PASS FY2024 original document is not claimed accessible
+PASS manifest: only ARA2025 present and verified here
+PASS every record WITHHELD, none authorised
+PASS engine DB unchanged (sha256 prefix 2a749d7c8a051f27)
+PASS engine working tree has no tracked changes
+PASS holds unchanged 7/7, 22/22, 142, 0
+PASS only QB2-A files changed since 1ec8ccd (no QB1, NONFINANCIAL, CHANGELOG, product or engine code)
+
+ALL PASS

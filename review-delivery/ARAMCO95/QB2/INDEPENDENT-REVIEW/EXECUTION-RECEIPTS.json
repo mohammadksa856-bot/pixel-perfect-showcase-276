@@ -1,0 +1,65 @@
+{
+  "schema": "qb2-independent-execution-receipts/1",
+  "observed_at_utc": "2026-10-19T10:11:10.448782+00:00",
+  "application_sha": "1800f4c63f313eac2bb82546e6ccbdd2b9a38f6f",
+  "delivery_sha": "b5010191d4b16cce9c5f885080667bb173e2d9cd",
+  "decision": "TARGETED_REWORK",
+  "runs": [
+    {
+      "id": "AUTHOR33_UNMODIFIED",
+      "scope": "Author33original assertions at clean fixedDelivery before review files added",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "log": "AUTHOR33-REPLAY.txt",
+      "file_sha256": "abbf62ce4e4adcf5c662ba41f7a9a135ce4933c686ddc576200b9c1820ed351b"
+    },
+    {
+      "id": "INDEPENDENT_ROW_PERIOD_EVIDENCE",
+      "scope": "42row/column checks,42engine identity/absence checks,17originalFY2024 and counts/withholding/scope",
+      "passed": 115,
+      "failed": 3,
+      "skipped": 0,
+      "log": "INDEPENDENT-CHECKS.txt"
+    },
+    {
+      "id": "MINIMAL_METADATA_REPRO",
+      "scope": "Repeat3failed assertions for2findings; not3additionaldistinct defects",
+      "exit_code": 1,
+      "assertions_failed": 3,
+      "log": "MINIMAL-REPRO.txt"
+    },
+    {
+      "id": "RECOVERED_SOURCE_HASH_AND_IDENTITY",
+      "scope": "New private source recovery, not self-acceptance or financial qualification",
+      "documents_checked": 17,
+      "failed": 0,
+      "source": "GATE-SOURCE-INVENTORY.json"
+    }
+  ],
+  "review_harness_setup_failure": {
+    "scope": "New Codex recovery inventory only",
+    "original_attempt": "Issuer name check restricted to first3pages failed on image-only covers",
+    "correction": "Inspect first12pages for issuer identity; original files and financial values unchanged"
+  },
+  "network_failures": [
+    {
+      "scope": "Original issuer report-index HTML only",
+      "reason": "Timeout; no original HTML digest or link-discovery success claimed"
+    }
+  ],
+  "no_product_build_or_browser": "NOT_RUN_NO_PRODUCT_CHANGES",
+  "new_recovery_self_accepted": false,
+  "author_files_byte_unchanged": true,
+  "engine_tracked_files_unchanged": true,
+  "engine_read_mode": "immutable read-only",
+  "holds": [
+    7,
+    22,
+    142,
+    0
+  ],
+  "financially_qualified": 0,
+  "no_merge": true,
+  "no_deploy": true
+}

@@ -1,0 +1,1808 @@
+{
+  "schema": "qb2-independent-review/1",
+  "application_sha": "1800f4c63f313eac2bb82546e6ccbdd2b9a38f6f",
+  "delivery_sha": "b5010191d4b16cce9c5f885080667bb173e2d9cd",
+  "observed_at_utc": "2026-10-19T10:06:05.750355+00:00",
+  "checks": [
+    {
+      "name": "original ARA2025 hash",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "original FY2024 hash",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "summary header/scale/year column order",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "14 distinct source rows",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-other_income_related_to_sales-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-other_income_related_to_sales-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-other_income_related_to_sales-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-other_income_related_to_sales-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-other_income_related_to_sales-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-other_income_related_to_sales-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue_and_other_income_related_to_sales-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue_and_other_income_related_to_sales-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue_and_other_income_related_to_sales-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue_and_other_income_related_to_sales-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue_and_other_income_related_to_sales-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-revenue_and_other_income_related_to_sales-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_costs-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_costs-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_costs-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_costs-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_costs-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_costs-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_income-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_income-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_income-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_income-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_income-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_income-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_before_income_taxes_and_zakat-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_before_income_taxes_and_zakat-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_before_income_taxes_and_zakat-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_before_income_taxes_and_zakat-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_before_income_taxes_and_zakat-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_before_income_taxes_and_zakat-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_taxes_and_zakat-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_taxes_and_zakat-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_taxes_and_zakat-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_taxes_and_zakat-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_taxes_and_zakat-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-income_taxes_and_zakat-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-net_income-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-net_income-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-net_income-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-net_income-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-net_income-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-net_income-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_assets-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_assets-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_assets-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_assets-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_assets-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_assets-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_liabilities-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_liabilities-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_liabilities-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_liabilities-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_liabilities-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_liabilities-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_equity-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_equity-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_equity-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_equity-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_equity-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-total_equity-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_cash_flow-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_cash_flow-FY2021 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_cash_flow-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_cash_flow-FY2022 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_cash_flow-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-operating_cash_flow-FY2023 engine full identity/value/scale",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-investing_cash_flow-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-investing_cash_flow-FY2021 correctly records missing engine metric",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-investing_cash_flow-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-investing_cash_flow-FY2022 correctly records missing engine metric",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-investing_cash_flow-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-investing_cash_flow-FY2023 correctly records missing engine metric",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-financing_cash_flow-FY2021 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-financing_cash_flow-FY2021 correctly records missing engine metric",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-financing_cash_flow-FY2022 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-financing_cash_flow-FY2022 correctly records missing engine metric",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-financing_cash_flow-FY2023 source row/year/unit/period",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "QB2-A-financing_cash_flow-FY2023 correctly records missing engine metric",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "42 source records distinct",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "42 =36 matched summary +6 absent",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "198973 is printed FY2024 opening cash in FY2025 comparison",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "NEW original FY2024 balance directly presents comparative cash2023",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 capex direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 cash direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 financing_cash_flow direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 income_before_income_taxes_and_zakat direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 income_taxes_and_zakat direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 investing_cash_flow direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 net_income direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 net_income_parent direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 operating_cash_flow direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 operating_costs direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 operating_income direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 other_income_related_to_sales direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 revenue direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 revenue_and_other_income_related_to_sales direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 total_assets direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 total_equity direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 total_liabilities direct original vs comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CAPEX same signed outflow in both original and comparative",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "37 includes one opening cash proxy",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "65 presentation slots are63 unique financial identities",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "R01 proxy excluded from exact FY2023 core coverage",
+      "status": "FAIL",
+      "detail": "Delivery says5; four exact core fields plus cashflow-opening proxy, not five exact balance/income identities"
+    },
+    {
+      "name": "R01 Q4 cash proxy still requires balance identity evidence",
+      "status": "FAIL",
+      "detail": "Delivery says no evidence needed for value while the referenced record explicitly withholds balance identity"
+    },
+    {
+      "name": "R02 no equality claim without recorded comparative operand",
+      "status": "FAIL",
+      "detail": "Delivery claims no difference but comparative operand is null; independent direct value393891 is new evidence, not present in that row"
+    },
+    {
+      "name": "all author records remain withheld",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "DB bytes unchanged",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "implementation to delivery is7 report/data/log files only",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "passed": 115,
+  "failed": 3,
+  "skipped": 0,
+  "counts": {
+    "source_summary": 42,
+    "source_summary_engine_equal": 36,
+    "source_summary_engine_missing": 6,
+    "extra_opening_cash_proxy": 1,
+    "source_observations_including_proxy": 43,
+    "matches_including_proxy": 37,
+    "core_target_slots": 65,
+    "unique_core_identities_within_QB2": 63,
+    "q4_balance_reuse_slots": 6,
+    "q4_2023_duplicate_slots_inside_QB2": 2,
+    "q4_2024_2025_slots_already_in_QB1": 4,
+    "new_target_identities_relative_to_QB1": 59,
+    "exact_annual_core_evidence_from_reviewed_summary": 12,
+    "annual_cash_proxy_not_exact_identity": 1,
+    "exact_core_evidence_display_slots_including_prior_QB1": 17,
+    "exact_unique_core_evidence_identities": 16,
+    "new_exact_core_evidence_identities_not_in_QB1": 12,
+    "basis": "17 exact slots =12 summary core +1 repeat2023equity +4priorQB1 balance links; proxy cash excluded. 17-1 duplicate2023equity=16 unique; subtract4priorQB1=12new"
+  },
+  "summary_observations": [
+    {
+      "record_id": "QB2-A-revenue-FY2021",
+      "source_line": "Revenue",
+      "year": 2021,
+      "source_value_sar_millions": 1346930,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1893,
+        "version": 1,
+        "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+      }
+    },
+    {
+      "record_id": "QB2-A-revenue-FY2022",
+      "source_line": "Revenue",
+      "year": 2022,
+      "source_value_sar_millions": 2006955,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1960,
+        "version": 1,
+        "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+      }
+    },
+    {
+      "record_id": "QB2-A-revenue-FY2023",
+      "source_line": "Revenue",
+      "year": 2023,
+      "source_value_sar_millions": 1653281,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2041,
+        "version": 1,
+        "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f"
+      }
+    },
+    {
+      "record_id": "QB2-A-other_income_related_to_sales-FY2021",
+      "source_line": "Other income related to sales",
+      "year": 2021,
+      "source_value_sar_millions": 154828,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1866,
+        "version": 1,
+        "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+      }
+    },
+    {
+      "record_id": "QB2-A-other_income_related_to_sales-FY2022",
+      "source_line": "Other income related to sales",
+      "year": 2022,
+      "source_value_sar_millions": 259418,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1930,
+        "version": 1,
+        "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+      }
+    },
+    {
+      "record_id": "QB2-A-other_income_related_to_sales-FY2023",
+      "source_line": "Other income related to sales",
+      "year": 2023,
+      "source_value_sar_millions": 203092,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2000,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-revenue_and_other_income_related_to_sales-FY2021",
+      "source_line": "Revenue and other income related to sales",
+      "year": 2021,
+      "source_value_sar_millions": 1501758,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1867,
+        "version": 1,
+        "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+      }
+    },
+    {
+      "record_id": "QB2-A-revenue_and_other_income_related_to_sales-FY2022",
+      "source_line": "Revenue and other income related to sales",
+      "year": 2022,
+      "source_value_sar_millions": 2266373,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1931,
+        "version": 1,
+        "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+      }
+    },
+    {
+      "record_id": "QB2-A-revenue_and_other_income_related_to_sales-FY2023",
+      "source_line": "Revenue and other income related to sales",
+      "year": 2023,
+      "source_value_sar_millions": 1856373,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2001,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_costs-FY2021",
+      "source_line": "Operating costs",
+      "year": 2021,
+      "source_value_sar_millions": -729840,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1868,
+        "version": 1,
+        "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_costs-FY2022",
+      "source_line": "Operating costs",
+      "year": 2022,
+      "source_value_sar_millions": -1122296,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1932,
+        "version": 1,
+        "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_costs-FY2023",
+      "source_line": "Operating costs",
+      "year": 2023,
+      "source_value_sar_millions": -988086,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2002,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_income-FY2021",
+      "source_line": "Operating income",
+      "year": 2021,
+      "source_value_sar_millions": 771918,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1869,
+        "version": 1,
+        "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_income-FY2022",
+      "source_line": "Operating income",
+      "year": 2022,
+      "source_value_sar_millions": 1144077,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1933,
+        "version": 1,
+        "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_income-FY2023",
+      "source_line": "Operating income",
+      "year": 2023,
+      "source_value_sar_millions": 868287,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2003,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-income_before_income_taxes_and_zakat-FY2021",
+      "source_line": "Income before income taxes and zakat",
+      "year": 2021,
+      "source_value_sar_millions": 769521,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1870,
+        "version": 1,
+        "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+      }
+    },
+    {
+      "record_id": "QB2-A-income_before_income_taxes_and_zakat-FY2022",
+      "source_line": "Income before income taxes and zakat",
+      "year": 2022,
+      "source_value_sar_millions": 1152962,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1934,
+        "version": 1,
+        "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+      }
+    },
+    {
+      "record_id": "QB2-A-income_before_income_taxes_and_zakat-FY2023",
+      "source_line": "Income before income taxes and zakat",
+      "year": 2023,
+      "source_value_sar_millions": 888067,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2004,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-income_taxes_and_zakat-FY2021",
+      "source_line": "Income taxes and zakat",
+      "year": 2021,
+      "source_value_sar_millions": -357125,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1871,
+        "version": 1,
+        "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35"
+      }
+    },
+    {
+      "record_id": "QB2-A-income_taxes_and_zakat-FY2022",
+      "source_line": "Income taxes and zakat",
+      "year": 2022,
+      "source_value_sar_millions": -548957,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1935,
+        "version": 1,
+        "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9"
+      }
+    },
+    {
+      "record_id": "QB2-A-income_taxes_and_zakat-FY2023",
+      "source_line": "Income taxes and zakat",
+      "year": 2023,
+      "source_value_sar_millions": -433303,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2005,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-net_income-FY2021",
+      "source_line": "Net income",
+      "year": 2021,
+      "source_value_sar_millions": 412396,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1894,
+        "version": 1,
+        "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+      }
+    },
+    {
+      "record_id": "QB2-A-net_income-FY2022",
+      "source_line": "Net income",
+      "year": 2022,
+      "source_value_sar_millions": 604005,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1961,
+        "version": 1,
+        "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+      }
+    },
+    {
+      "record_id": "QB2-A-net_income-FY2023",
+      "source_line": "Net income",
+      "year": 2023,
+      "source_value_sar_millions": 454764,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2042,
+        "version": 1,
+        "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_assets-FY2021",
+      "source_line": "Total assets",
+      "year": 2021,
+      "source_value_sar_millions": 2162690,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1897,
+        "version": 1,
+        "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_assets-FY2022",
+      "source_line": "Total assets",
+      "year": 2022,
+      "source_value_sar_millions": 2492924,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1964,
+        "version": 1,
+        "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_assets-FY2023",
+      "source_line": "Total assets",
+      "year": 2023,
+      "source_value_sar_millions": 2477940,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2008,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_liabilities-FY2021",
+      "source_line": "Total liabilities",
+      "year": 2021,
+      "source_value_sar_millions": 882022,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1898,
+        "version": 1,
+        "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_liabilities-FY2022",
+      "source_line": "Total liabilities",
+      "year": 2022,
+      "source_value_sar_millions": 826777,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1965,
+        "version": 1,
+        "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_liabilities-FY2023",
+      "source_line": "Total liabilities",
+      "year": 2023,
+      "source_value_sar_millions": 740848,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2009,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_equity-FY2021",
+      "source_line": "Net assets (total equity)",
+      "year": 2021,
+      "source_value_sar_millions": 1280668,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1899,
+        "version": 1,
+        "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_equity-FY2022",
+      "source_line": "Net assets (total equity)",
+      "year": 2022,
+      "source_value_sar_millions": 1666147,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1966,
+        "version": 1,
+        "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+      }
+    },
+    {
+      "record_id": "QB2-A-total_equity-FY2023",
+      "source_line": "Net assets (total equity)",
+      "year": 2023,
+      "source_value_sar_millions": 1737092,
+      "period": {
+        "kind": "instant",
+        "start": null,
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2010,
+        "version": 1,
+        "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_cash_flow-FY2021",
+      "source_line": "Net cash provided by operating activities",
+      "year": 2021,
+      "source_value_sar_millions": 522601,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1895,
+        "version": 1,
+        "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_cash_flow-FY2022",
+      "source_line": "Net cash provided by operating activities",
+      "year": 2022,
+      "source_value_sar_millions": 698152,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 1962,
+        "version": 1,
+        "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a"
+      }
+    },
+    {
+      "record_id": "QB2-A-operating_cash_flow-FY2023",
+      "source_line": "Net cash provided by operating activities",
+      "year": 2023,
+      "source_value_sar_millions": 537814,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": true,
+      "engine_reference": {
+        "id": 2043,
+        "version": 1,
+        "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f"
+      }
+    },
+    {
+      "record_id": "QB2-A-investing_cash_flow-FY2021",
+      "source_line": "Net cash used in investing activities",
+      "year": 2021,
+      "source_value_sar_millions": -135741,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": null
+    },
+    {
+      "record_id": "QB2-A-investing_cash_flow-FY2022",
+      "source_line": "Net cash used in investing activities",
+      "year": 2022,
+      "source_value_sar_millions": -389009,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": null
+    },
+    {
+      "record_id": "QB2-A-investing_cash_flow-FY2023",
+      "source_line": "Net cash used in investing activities",
+      "year": 2023,
+      "source_value_sar_millions": -54019,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": null
+    },
+    {
+      "record_id": "QB2-A-financing_cash_flow-FY2021",
+      "source_line": "Net cash used in financing activities",
+      "year": 2021,
+      "source_value_sar_millions": -294513,
+      "period": {
+        "kind": "fy",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "fiscal_year": 2021
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": null
+    },
+    {
+      "record_id": "QB2-A-financing_cash_flow-FY2022",
+      "source_line": "Net cash used in financing activities",
+      "year": 2022,
+      "source_value_sar_millions": -382675,
+      "period": {
+        "kind": "fy",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "fiscal_year": 2022
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": null
+    },
+    {
+      "record_id": "QB2-A-financing_cash_flow-FY2023",
+      "source_line": "Net cash used in financing activities",
+      "year": 2023,
+      "source_value_sar_millions": -510869,
+      "period": {
+        "kind": "fy",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "fiscal_year": 2023
+      },
+      "source_pdf_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+      "pdf_page": 132,
+      "printed_page": 130,
+      "source_class": "LATER_REPORT_SUMMARY_NOT_ORIGINAL_YEAR_STATEMENTS",
+      "source_comparison": "MATCH",
+      "financially_qualified": false,
+      "engine_match": null
+    }
+  ],
+  "original_fy2024_new_crosschecks": [
+    {
+      "metric": "capex",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 16,
+      "original_printed_page": 13,
+      "source_line": "Capital expenditures",
+      "original_value_sar_millions": -188890,
+      "comparative_in_ara2025": -188890,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "cash",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 14,
+      "original_printed_page": 11,
+      "source_line": "Cash and cash equivalents",
+      "original_value_sar_millions": 216642,
+      "comparative_in_ara2025": 216642,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "financing_cash_flow",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 16,
+      "original_printed_page": 13,
+      "source_line": "Net cash used in financing activities",
+      "original_value_sar_millions": -488358,
+      "comparative_in_ara2025": -488358,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "income_before_income_taxes_and_zakat",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Income before income taxes and zakat",
+      "original_value_sar_millions": 782010,
+      "comparative_in_ara2025": 782010,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "income_taxes_and_zakat",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Income taxes and zakat",
+      "original_value_sar_millions": -383588,
+      "comparative_in_ara2025": -383588,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "investing_cash_flow",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 16,
+      "original_printed_page": 13,
+      "source_line": "Net cash used in investing activities",
+      "original_value_sar_millions": -2861,
+      "comparative_in_ara2025": -2861,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "net_income",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Net income",
+      "original_value_sar_millions": 398422,
+      "comparative_in_ara2025": 398422,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "net_income_parent",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Shareholders' equity",
+      "original_value_sar_millions": 393891,
+      "comparative_in_ara2025": 393891,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "operating_cash_flow",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 16,
+      "original_printed_page": 13,
+      "source_line": "Net cash provided by operating activities",
+      "original_value_sar_millions": 508888,
+      "comparative_in_ara2025": 508888,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "operating_costs",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Operating costs",
+      "original_value_sar_millions": -1027049,
+      "comparative_in_ara2025": -1027049,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "operating_income",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Operating income",
+      "original_value_sar_millions": 774625,
+      "comparative_in_ara2025": 774625,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "other_income_related_to_sales",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Other income related to sales",
+      "original_value_sar_millions": 164375,
+      "comparative_in_ara2025": 164375,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "revenue",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Revenue",
+      "original_value_sar_millions": 1637299,
+      "comparative_in_ara2025": 1637299,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "revenue_and_other_income_related_to_sales",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 12,
+      "original_printed_page": 9,
+      "source_line": "Revenue and other income related to sales",
+      "original_value_sar_millions": 1801674,
+      "comparative_in_ara2025": 1801674,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "total_assets",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 14,
+      "original_printed_page": 11,
+      "source_line": "Total assets",
+      "original_value_sar_millions": 2423630,
+      "comparative_in_ara2025": 2423630,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "total_equity",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 14,
+      "original_printed_page": 11,
+      "source_line": "1,651,355",
+      "original_value_sar_millions": 1651355,
+      "comparative_in_ara2025": 1651355,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    },
+    {
+      "metric": "total_liabilities",
+      "original_pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+      "original_pdf_page": 14,
+      "original_printed_page": 11,
+      "source_line": "Total liabilities",
+      "original_value_sar_millions": 772275,
+      "comparative_in_ara2025": 772275,
+      "comparison": "EQUAL_AT_PRINTED_PRECISION",
+      "newly_recovered_evidence_status": "PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE"
+    }
+  ],
+  "new_original_cash2023": {
+    "pdf_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "pdf_page": 14,
+    "column": "SAR comparative2023",
+    "value": 198973,
+    "unit": "SAR_millions",
+    "state": "NEW_SOURCE_OBSERVATION_PENDING_CROSS_REVIEW_NOT_SELF_ACCEPTED"
+  },
+  "holds": [
+    7,
+    22,
+    142,
+    0
+  ],
+  "financially_qualified": 0,
+  "author_files_changed": false,
+  "decision": "TARGETED_REWORK",
+  "scope": "R01 exact-vs-proxy counts/needed flag; R02 null parent comparative evidence;42summary values passed"
+}

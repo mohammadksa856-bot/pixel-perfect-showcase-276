@@ -1,0 +1,55 @@
+{
+  "schema": "qb2-independent-findings/1",
+  "application_sha": "1800f4c63f313eac2bb82546e6ccbdd2b9a38f6f",
+  "delivery_sha": "b5010191d4b16cce9c5f885080667bb173e2d9cd",
+  "decision": "TARGETED_REWORK",
+  "findings": [
+    {
+      "id": "QB2-R01",
+      "priority": "P2",
+      "file": "review-delivery/ARAMCO95/tools/qb2_hist_build.py",
+      "line": 220,
+      "related_lines": [112, 119, 152, 232],
+      "affected_records": ["QB2-A-cash-FY2023", "QB2-A-cash-Q4-2023"],
+      "observed": "FY2023 is counted5/5 and Q4 cash needed says none for the value, although the cited record admits cash-flow opening is a different identity with balance-sheet evidence still needed.",
+      "expected": "Keep four exact core fields plus one explicit proxy/pending identity; propagate the unresolved source identity into Q4 reuse. Alternatively link independently reviewed direct balance evidence, with original document edition/hash/page, without relying on the opening value alone.",
+      "reproduction": "python review-delivery/ARAMCO95/QB2/INDEPENDENT-REVIEW/reproduce_findings.py (first two FAIL lines)",
+      "not_a_numeric_error": true,
+      "new_evidence_not_self_accepted": "Direct FY2024 original balance PDF14 comparative2023 also prints198973; this separate new recovery worksheet is pending cross-review and is not already present in Claude delivery."
+    },
+    {
+      "id": "QB2-R02",
+      "priority": "P2",
+      "file": "review-delivery/ARAMCO95/tools/qb2_hist_build.py",
+      "line": 178,
+      "related_artifact": "review-delivery/ARAMCO95/QB2/FINANCIAL-HISTORY/FY2024-RESTATEMENT-CHECK.json:198",
+      "affected_records": ["net_income_parent"],
+      "observed": "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY is emitted while comparative_in_ara2025 is null. The builder infers status from an inherited reason without recording the comparative operand.",
+      "expected": "Record exact parent-net-income comparative operand/row/source, or label the observation inherited and not yet compared. Do not infer equality with a null operand.",
+      "reproduction": "python review-delivery/ARAMCO95/QB2/INDEPENDENT-REVIEW/reproduce_findings.py (third FAIL line)",
+      "not_a_numeric_error": true,
+      "new_evidence_not_self_accepted": "New original PDF12 parent allocation393891 and annual2025 PDF174 comparative393891 agree at display precision, but these independently prepared observations require cross-review; not a financial certificate."
+    }
+  ],
+  "nonblocking_notes": [
+    {
+      "id": "QB2-N01",
+      "note": "42summary values =36engine matches+6engine absent.37matches includes one extra198973opening-cash proxy, so43source observations, not43summary cells. No arithmetic discrepancy after separating populations."
+    },
+    {
+      "id": "QB2-N02",
+      "note": "65presentation slots=63unique metric/full-period identities insideQB2 (two2023year-end balances repeated inQ4). Four additionalQ4 balance slots2024/2025 already belong toQB1;59target identities are new relative toQB1. Keep raw/unique/inherited populations distinct."
+    },
+    {
+      "id": "QB2-N03",
+      "note": "FY2024/2025 matrix core-evidence counts0 are local-batch-only, not a valid statement that QB1 has no evidence. Explicitly label scope; preserve earlier acceptances."
+    },
+    {
+      "id": "QB2-N04",
+      "note": "Author's page-membership test accepts a value anywhere on a page; it does not prove row/column identity. Independent42row/year/unit checks passed; enhance future checks without rewriting these original33tests."
+    }
+  ],
+  "holds": [7, 22, 142, 0],
+  "financial_acceptance": false,
+  "new_recovery_evidence_self_accepted": false
+}

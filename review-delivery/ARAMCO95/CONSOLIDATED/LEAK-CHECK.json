@@ -1,0 +1,75 @@
+{
+  "contract_problems": [],
+  "gate_summary": {
+    "mode": "live_engine",
+    "baseline_rows": 0,
+    "approved_rows": 0,
+    "withheld_rows": 397,
+    "reasons": {
+      "no_verified_source_accept": 396,
+      "identity_contradictory": 1
+    },
+    "approvals": {
+      "records": 0,
+      "verified": 0,
+      "rejected": 0,
+      "state": "absent"
+    }
+  },
+  "markers": [
+    {
+      "id": "short_term_investments_net:2025",
+      "needle": "\"-1457000000\"",
+      "in_engine_page": true,
+      "in_served_preview": false
+    },
+    {
+      "id": "short_term_investments_net:2024",
+      "needle": "\"171157000000\"",
+      "in_engine_page": false,
+      "in_served_preview": false
+    },
+    {
+      "id": "dividend_installments_count:2025",
+      "needle": "\"dividend_installments_count\"",
+      "in_engine_page": true,
+      "in_served_preview": false
+    },
+    {
+      "id": "dividend_installments_count:2024",
+      "needle": "\"dividend_installments_count\"",
+      "in_engine_page": true,
+      "in_served_preview": false
+    },
+    {
+      "id": "corporate_secretary",
+      "needle": "Nabeel A. Al Mansour",
+      "in_engine_page": true,
+      "in_served_preview": false
+    },
+    {
+      "id": "board_term_end",
+      "needle": "2027-06-30",
+      "in_engine_page": true,
+      "in_served_preview": false
+    },
+    {
+      "id": "audit_committee",
+      "needle": "\"meetings_2025\"",
+      "in_engine_page": true,
+      "in_served_preview": false
+    },
+    {
+      "id": "independent_directors",
+      "needle": "Mark A. Weinberger",
+      "in_engine_page": true,
+      "in_served_preview": false
+    }
+  ],
+  "setup": {
+    "engine_copy": "S2_QB4_only (disposable)",
+    "site_code": "Financial Projection candidate 6c88655638c14550f8fad36e09228bcb483d06d3",
+    "trust_store": "committed, empty",
+    "approvals": null
+  }
+}

@@ -1,0 +1,3081 @@
+{
+  "schema": "marefa-aramco95-evidence-register/1",
+  "company_id": "sa:2222",
+  "engine_commit": "b70254e",
+  "states_vocabulary": [
+    "EVIDENCE_ACCEPT",
+    "PENDING_EVIDENCE_REVIEW",
+    "DATA_CORRECTION_PROPOSED",
+    "FINANCIAL_ACCEPT_PENDING",
+    "PUBLICATION_RIGHTS_PENDING",
+    "INGESTION_AUTHORIZATION_PENDING"
+  ],
+  "counts_by_batch_and_evidence_state": {
+    "T1": {
+      "EVIDENCE_ACCEPT": 5
+    },
+    "QB3": {
+      "EVIDENCE_ACCEPT": 11
+    },
+    "QB4": {
+      "EVIDENCE_ACCEPT": 18
+    },
+    "LEGACY_GOVERNANCE": {
+      "PENDING_EVIDENCE_REVIEW": 33
+    },
+    "CORRECTION": {
+      "EVIDENCE_ACCEPT": 1
+    }
+  },
+  "active_identities": 53,
+  "records": [
+    {
+      "record_id": "fact:c0548539090192d9",
+      "batch": "T1",
+      "kind": "fact",
+      "metric_key": "revenue",
+      "period_kind": "quarter",
+      "period_start": "2025-07-01",
+      "period_end": "2025-09-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 3,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "386165000000",
+      "version": {
+        "edition": "Q3-2025 interim report",
+        "candidate_manifest": "T1-MANIFEST.json"
+      },
+      "source": {
+        "document": "Q3-2025 interim report",
+        "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+        "pdf_page": 27,
+        "printed_cell": "386,165",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "T1 filed_at 2025-11-04 is observed_not_certified"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "SOURCE_ACCEPT receipt 49e3f053… (owner-appointed AI reviewer; private receipt, record in T1-SOURCE-RECEIPT-RECORD.json)",
+      "note": "isolated ingestion trial (engineering accepted, rolled back); excluded from future batches"
+    },
+    {
+      "record_id": "fact:5450c8cbccdd1e62",
+      "batch": "T1",
+      "kind": "fact",
+      "metric_key": "net_income",
+      "period_kind": "quarter",
+      "period_start": "2025-07-01",
+      "period_end": "2025-09-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 3,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "101015000000",
+      "version": {
+        "edition": "Q3-2025 interim report",
+        "candidate_manifest": "T1-MANIFEST.json"
+      },
+      "source": {
+        "document": "Q3-2025 interim report",
+        "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+        "pdf_page": 27,
+        "printed_cell": "101,015",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "T1 filed_at 2025-11-04 is observed_not_certified"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "SOURCE_ACCEPT receipt 49e3f053… (owner-appointed AI reviewer; private receipt, record in T1-SOURCE-RECEIPT-RECORD.json)",
+      "note": "isolated ingestion trial (engineering accepted, rolled back); excluded from future batches"
+    },
+    {
+      "record_id": "fact:e207f875888222cc",
+      "batch": "T1",
+      "kind": "fact",
+      "metric_key": "cash",
+      "period_kind": "instant",
+      "period_start": null,
+      "period_end": "2025-09-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 3,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "193873000000",
+      "version": {
+        "edition": "Q3-2025 interim report",
+        "candidate_manifest": "T1-MANIFEST.json"
+      },
+      "source": {
+        "document": "Q3-2025 interim report",
+        "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+        "pdf_page": 29,
+        "printed_cell": "193,873",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "T1 filed_at 2025-11-04 is observed_not_certified"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "SOURCE_ACCEPT receipt 49e3f053… (owner-appointed AI reviewer; private receipt, record in T1-SOURCE-RECEIPT-RECORD.json)",
+      "note": "isolated ingestion trial (engineering accepted, rolled back); excluded from future batches"
+    },
+    {
+      "record_id": "fact:8ec1d54772ba785e",
+      "batch": "T1",
+      "kind": "fact",
+      "metric_key": "total_equity",
+      "period_kind": "instant",
+      "period_start": null,
+      "period_end": "2025-09-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 3,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "1691628000000",
+      "version": {
+        "edition": "Q3-2025 interim report",
+        "candidate_manifest": "T1-MANIFEST.json"
+      },
+      "source": {
+        "document": "Q3-2025 interim report",
+        "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+        "pdf_page": 29,
+        "printed_cell": "1,691,628",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "T1 filed_at 2025-11-04 is observed_not_certified"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "SOURCE_ACCEPT receipt 49e3f053… (owner-appointed AI reviewer; private receipt, record in T1-SOURCE-RECEIPT-RECORD.json)",
+      "note": "isolated ingestion trial (engineering accepted, rolled back); excluded from future batches"
+    },
+    {
+      "record_id": "fact:64f702d97763d3c4",
+      "batch": "T1",
+      "kind": "fact",
+      "metric_key": "operating_cash_flow",
+      "period_kind": "quarter",
+      "period_start": "2025-07-01",
+      "period_end": "2025-09-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 3,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "135445000000",
+      "version": {
+        "edition": "Q3-2025 interim report",
+        "candidate_manifest": "T1-MANIFEST.json"
+      },
+      "source": {
+        "document": "Q3-2025 interim report",
+        "sha256": "f23cba61a0d743d4359050e6d915e8809e86e506432d740f01bd18eee2a7e6d2",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/q3/saudi-aramco-q3-2025-interim-report-english.pdf",
+        "pdf_page": 31,
+        "printed_cell": "135,445",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "T1 filed_at 2025-11-04 is observed_not_certified"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "SOURCE_ACCEPT receipt 49e3f053… (owner-appointed AI reviewer; private receipt, record in T1-SOURCE-RECEIPT-RECORD.json)",
+      "note": "isolated ingestion trial (engineering accepted, rolled back); excluded from future batches"
+    },
+    {
+      "record_id": "fact:ab9d7aac10aa4bd9",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "upstream_revenue",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Upstream"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "1141156000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 52,
+        "printed_row": "(including inter-segment revenue)",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:11667f00166210b0",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "upstream_adjusted_ebit",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Upstream"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "801047000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 52,
+        "printed_row": "Adjusted EBIT",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:d11b6cd3b646d883",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "upstream_capex",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Upstream"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "147135000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 52,
+        "printed_row": "Capital expenditures – cash basis",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:16a6b7fcd20fe71f",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "downstream_revenue",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Downstream"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "1063258000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 58,
+        "printed_row": "(including inter-segment revenue)",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:868910ca872bee8d",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "downstream_adjusted_ebit",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Downstream"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "8859000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 58,
+        "printed_row": "Adjusted EBIT",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:f59ea84bfed80283",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "downstream_capex",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Downstream"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "38989000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 58,
+        "printed_row": "Capital expenditures – cash basis",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:f9a3fc704f989709",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "corporate_adjusted_ebit",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Corporate"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "-21796000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 66,
+        "printed_row": "Adjusted EBIT",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:25321b2fe7efd136",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "corporate_capex",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "segment",
+      "dimensions": {
+        "segment": "Corporate"
+      },
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "2766000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 66,
+        "printed_row": "Capital expenditures – cash basis",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:3f460c7de2794605",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "upstream_capex_per_boe",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "USD",
+      "unit": "USD/boe",
+      "value": "8.3",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 50,
+        "printed_row": "upstream capital expenditures averaged",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:da43a3bfc02916d7",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "lifting_cost_per_boe",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "USD",
+      "unit": "USD/boe",
+      "value": "3.53",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 50,
+        "printed_row": "Average upstream lifting costs",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "record_id": "fact:8e2a0d07a052e8fe",
+      "batch": "QB3",
+      "kind": "fact",
+      "metric_key": "downstream_crude_utilization",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "",
+      "unit": "percent",
+      "value": "53",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB3-MANIFEST.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 53,
+        "printed_row": "Downstream business was the largest customer of the upstream crude oil production",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 11 FY2024 values"
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_page": 178,
+        "printed_row": "Net (purchases) maturities of short-term investments"
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "fact:c9bd93c9d10287f0",
+      "kind": "fact",
+      "metric_key": "short_term_investments_net",
+      "period_kind": "fy",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "-1457000000",
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_page": 178,
+        "printed_row": "Net (purchases) maturities of short-term investments"
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "fact:5f35ef2b64ca912c",
+      "kind": "fact",
+      "metric_key": "short_term_investments_net",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "171157000000",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_page": 235,
+        "printed_row": "Dividends declared and paid each quarter: March, June, September, December"
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "fact:a9b93943643b0d22",
+      "kind": "fact",
+      "metric_key": "dividend_installments_count",
+      "period_kind": "fy",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "",
+      "unit": "count",
+      "value": "4",
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_page": 235,
+        "printed_row": "Dividends declared and paid each quarter: March, June, September, December"
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "fact:56860f63c841be5b",
+      "kind": "fact",
+      "metric_key": "dividend_installments_count",
+      "period_kind": "fy",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "",
+      "unit": "count",
+      "value": "4",
+      "version": {
+        "edition": "ARA2025 comparative (FY2024 as presented in the 2025 annual report)",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          110
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:business_model:en",
+      "kind": "company_attribute",
+      "attribute_key": "business_model",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "business_lines": [
+          "Upstream",
+          "Downstream"
+        ],
+        "corporate_functions": [
+          "Technical Services",
+          "Law",
+          "Finance",
+          "Technology & Innovation",
+          "Strategy & Corporate Development",
+          "Human Resources & Corporate Services"
+        ]
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          117
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:board_of_directors:en",
+      "kind": "company_attribute",
+      "attribute_key": "board_of_directors",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        {
+          "name": "Yasir O. Al-Rumayyan",
+          "board_role": "Chairman"
+        },
+        {
+          "name": "Ibrahim A. Al-Assaf",
+          "board_role": "Deputy Chairman"
+        },
+        {
+          "name": "Mohammed A. Al-Jadaan",
+          "board_role": "Director"
+        },
+        {
+          "name": "Faisal F. Alibrahim",
+          "board_role": "Director"
+        },
+        {
+          "name": "Khalid H. Al-Dabbagh",
+          "board_role": "Director"
+        },
+        {
+          "name": "Amin H. Nasser",
+          "board_role": "Director"
+        },
+        {
+          "name": "Robert W. Dudley",
+          "board_role": "Director"
+        },
+        {
+          "name": "Lynn L. Elsenhans",
+          "board_role": "Director"
+        },
+        {
+          "name": "Stuart T. Gulliver",
+          "board_role": "Director"
+        },
+        {
+          "name": "Andrew N. Liveris",
+          "board_role": "Director"
+        },
+        {
+          "name": "Mark A. Weinberger",
+          "board_role": "Director"
+        }
+      ],
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          114
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:board_size:en",
+      "kind": "company_attribute",
+      "attribute_key": "board_size",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": 11,
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          115,
+          117
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:independent_directors:en",
+      "kind": "company_attribute",
+      "attribute_key": "independent_directors",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "count": 5,
+        "directors": [
+          "Andrew N. Liveris",
+          "Lynn L. Elsenhans",
+          "Robert W. Dudley",
+          "Mark A. Weinberger",
+          "Stuart T. Gulliver"
+        ]
+      },
+      "fact_date": {
+        "as_of": "2026-03-10",
+        "basis": "PDF 115 footnote: 1. All Board statistics are as of March 10, 2026."
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          114
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:board_committees:en",
+      "kind": "company_attribute",
+      "attribute_key": "board_committees",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        "Audit Committee",
+        "Sustainability, Risk and HSE Committee",
+        "Nomination Committee",
+        "Compensation Committee"
+      ],
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          118
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:audit_committee:en",
+      "kind": "company_attribute",
+      "attribute_key": "audit_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Stuart T. Gulliver",
+        "members": [
+          "Stuart T. Gulliver",
+          "Faisal F. Alibrahim",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans",
+          "Andrew N. Liveris"
+        ],
+        "meetings_2025": 4,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-05-08",
+          "2025-08-03",
+          "2025-11-02"
+        ]
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          120
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:sustainability_risk_hse_committee:en",
+      "kind": "company_attribute",
+      "attribute_key": "sustainability_risk_hse_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Robert W. Dudley",
+        "members": [
+          "Robert W. Dudley",
+          "Faisal F. Alibrahim",
+          "Amin H. Nasser",
+          "Stuart T. Gulliver",
+          "Mark A. Weinberger"
+        ],
+        "meetings_2025": 4,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-05-08",
+          "2025-08-03",
+          "2025-11-02"
+        ]
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          121
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:nomination_committee:en",
+      "kind": "company_attribute",
+      "attribute_key": "nomination_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Andrew N. Liveris",
+        "members": [
+          "Andrew N. Liveris",
+          "Yasir O. Al-Rumayyan",
+          "Mohammed A. Al-Jadaan",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans"
+        ],
+        "meetings_2025": 2,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-11-02"
+        ]
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          122
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:compensation_committee:en",
+      "kind": "company_attribute",
+      "attribute_key": "compensation_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Mark A. Weinberger",
+        "members": [
+          "Mark A. Weinberger",
+          "Yasir O. Al-Rumayyan",
+          "Ibrahim A. Al-Assaf",
+          "Mohammed A. Al-Jadaan",
+          "Robert W. Dudley"
+        ],
+        "meetings_2025": 3,
+        "meeting_dates_2025": [
+          "2025-03-02",
+          "2025-11-02",
+          "2025-12-10"
+        ]
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          112
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:corporate_secretary:en",
+      "kind": "company_attribute",
+      "attribute_key": "corporate_secretary",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "name": "Nabeel A. Al Mansour",
+        "title": "Executive Vice President, General Counsel & Corporate Secretary"
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          110,
+          111,
+          112,
+          113
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:executive_management_team:en",
+      "kind": "company_attribute",
+      "attribute_key": "executive_management_team",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        {
+          "name": "Amin H. Nasser",
+          "title": "President & Chief Executive Officer"
+        },
+        {
+          "name": "Nasir K. Al-Naimi",
+          "title": "Upstream President"
+        },
+        {
+          "name": "Mohammed Y. Al Qahtani",
+          "title": "Downstream President"
+        },
+        {
+          "name": "Ziad T. Al Murshed",
+          "title": "Executive Vice President & Chief Financial Officer"
+        },
+        {
+          "name": "Wail A. Al Jaafari",
+          "title": "Executive Vice President, Technical Services"
+        },
+        {
+          "name": "Nabeel A. Al Mansour",
+          "title": "Executive Vice President, General Counsel & Corporate Secretary"
+        },
+        {
+          "name": "Nabeel A. Al-Jama'",
+          "title": "Executive Vice President of Human Resources & Corporate Services"
+        },
+        {
+          "name": "Ashraf A. Al Ghazzawi",
+          "title": "Executive Vice President of Strategy & Corporate Development"
+        },
+        {
+          "name": "Ahmad O. Al Khowaiter",
+          "title": "Executive Vice President of Technology & Innovation"
+        }
+      ],
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          117
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:board_meetings_held:en",
+      "kind": "company_attribute",
+      "attribute_key": "board_meetings_held",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "year": 2025,
+        "count": 5,
+        "dates": [
+          "2025-03-03",
+          "2025-05-09",
+          "2025-08-04",
+          "2025-11-03",
+          "2025-12-11"
+        ],
+        "proxy_attendance": 0
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          114
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:board_term_end:en",
+      "kind": "company_attribute",
+      "attribute_key": "board_term_end",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": "2027-06-30",
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "batch": "QB4",
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "original_in_repository": false,
+        "pdf_pages": [
+          119
+        ]
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "evidence_basis": "independent Codex review: EVIDENCE_ACCEPT for the 18 values; QB4-R01 closed",
+      "record_id": "attribute:sa:2222:internal_control_assessment:en",
+      "kind": "company_attribute",
+      "attribute_key": "internal_control_assessment",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "assessor": "Audit Committee",
+        "year": 2025,
+        "opinion": "effective and adequate",
+        "scope": "internal and financial control systems and risk management systems"
+      },
+      "fact_date": {
+        "as_of": null,
+        "basis": "no fact date beyond the report's own period (FY2025); the identity's as_of field carries the manifest filed_at"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "QB4-MANIFEST.json"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      }
+    },
+    {
+      "record_id": "attribute:sa:2222:business_model:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "business_model",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "business_lines": [
+          "Upstream",
+          "Downstream"
+        ],
+        "corporate_functions": [
+          "Technical Services",
+          "Law",
+          "Finance",
+          "Technology & Innovation",
+          "Strategy & Corporate Development",
+          "Human Resources & Corporate Services"
+        ],
+        "management_structure": "Each business line is headed by a President and each corporate function by an Executive Vice President; all report directly to the President & CEO."
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 110,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:business_model:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:board_of_directors:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "board_of_directors",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        {
+          "name": "Yasir O. Al-Rumayyan",
+          "role": "Chairman",
+          "classification": "non-executive"
+        },
+        {
+          "name": "Ibrahim A. Al-Assaf",
+          "role": "Deputy Chairman",
+          "classification": "non-executive"
+        },
+        {
+          "name": "Mohammed A. Al-Jadaan",
+          "role": "Director",
+          "classification": "non-executive"
+        },
+        {
+          "name": "Faisal F. Alibrahim",
+          "role": "Director",
+          "classification": "non-executive"
+        },
+        {
+          "name": "Khalid H. Al-Dabbagh",
+          "role": "Director",
+          "classification": "non-executive"
+        },
+        {
+          "name": "Amin H. Nasser",
+          "role": "Director, President & CEO",
+          "classification": "executive"
+        },
+        {
+          "name": "Robert W. Dudley",
+          "role": "Director",
+          "classification": "independent non-executive"
+        },
+        {
+          "name": "Lynn L. Elsenhans",
+          "role": "Director",
+          "classification": "independent non-executive"
+        },
+        {
+          "name": "Stuart T. Gulliver",
+          "role": "Director",
+          "classification": "independent non-executive"
+        },
+        {
+          "name": "Andrew N. Liveris",
+          "role": "Director",
+          "classification": "independent non-executive"
+        },
+        {
+          "name": "Mark A. Weinberger",
+          "role": "Director",
+          "classification": "independent non-executive"
+        }
+      ],
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": [
+          102,
+          103,
+          104,
+          105,
+          117
+        ],
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:board_of_directors:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:board_size:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "board_size",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": 11,
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 114,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:board_size:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:independent_directors:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "independent_directors",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        "Andrew N. Liveris",
+        "Lynn L. Elsenhans",
+        "Robert W. Dudley",
+        "Mark A. Weinberger",
+        "Stuart T. Gulliver"
+      ],
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 115,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:independent_directors:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:board_committees:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "board_committees",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        "Audit Committee",
+        "Sustainability, Risk and HSE Committee",
+        "Nomination Committee",
+        "Compensation Committee"
+      ],
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 114,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:board_committees:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:audit_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "audit_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Stuart T. Gulliver",
+        "members": [
+          "Stuart T. Gulliver",
+          "Faisal F. Alibrahim",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans",
+          "Andrew N. Liveris"
+        ],
+        "meetings_2025": 4,
+        "scope": [
+          "financial reporting",
+          "internal controls",
+          "internal audit",
+          "external auditor independence",
+          "legal and regulatory compliance"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 118,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:audit_committee:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:sustainability_risk_hse_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "sustainability_risk_hse_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Robert W. Dudley",
+        "members": [
+          "Robert W. Dudley",
+          "Faisal F. Alibrahim",
+          "Amin H. Nasser",
+          "Stuart T. Gulliver",
+          "Mark A. Weinberger"
+        ],
+        "meetings_2025": 4,
+        "scope": [
+          "ESG oversight",
+          "strategic and operational risk",
+          "risk appetite",
+          "HSE performance"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 120,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:sustainability_risk_hse_committee:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:nomination_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "nomination_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Andrew N. Liveris",
+        "members": [
+          "Andrew N. Liveris",
+          "Yasir O. Al-Rumayyan",
+          "Mohammed A. Al-Jadaan",
+          "Khalid H. Al-Dabbagh",
+          "Lynn L. Elsenhans"
+        ],
+        "meetings_2025": 2,
+        "scope": [
+          "board nominations",
+          "board evaluation",
+          "committee composition",
+          "executive appointments",
+          "succession planning"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 121,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:nomination_committee:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:compensation_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "compensation_committee",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "chair": "Mark A. Weinberger",
+        "members": [
+          "Mark A. Weinberger",
+          "Yasir O. Al-Rumayyan",
+          "Ibrahim A. Al-Assaf",
+          "Mohammed A. Al-Jadaan",
+          "Robert W. Dudley"
+        ],
+        "meetings_2025": 3,
+        "scope": [
+          "compensation policy",
+          "director and senior executive plans",
+          "employee compensation plans",
+          "variable pay targets"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 122,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:compensation_committee:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:corporate_secretary:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "corporate_secretary",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "name": "Nabeel A. Al Mansour",
+        "title": "Executive Vice President, General Counsel & Corporate Secretary"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 112,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:corporate_secretary:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:executive_management_team:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "executive_management_team",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        {
+          "name": "Amin H. Nasser",
+          "role": "President & Chief Executive Officer"
+        },
+        {
+          "name": "Nasir K. Al-Naimi",
+          "role": "Upstream President"
+        },
+        {
+          "name": "Mohammed Y. Al Qahtani",
+          "role": "Downstream President"
+        },
+        {
+          "name": "Ziad T. Al Murshed",
+          "role": "Executive Vice President & Chief Financial Officer"
+        },
+        {
+          "name": "Wail A. Al Jaafari",
+          "role": "Executive Vice President, Technical Services"
+        },
+        {
+          "name": "Nabeel A. Al Mansour",
+          "role": "Executive Vice President, General Counsel & Corporate Secretary"
+        },
+        {
+          "name": "Nabeel A. Al-Jama'",
+          "role": "Executive Vice President, Human Resources & Corporate Services"
+        },
+        {
+          "name": "Ashraf A. Al Ghazzawi",
+          "role": "Executive Vice President, Strategy & Corporate Development"
+        },
+        {
+          "name": "Ahmad O. Al Khowaiter",
+          "role": "Executive Vice President, Technology & Innovation"
+        }
+      ],
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": [
+          110,
+          111,
+          112,
+          113
+        ],
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:executive_management_team:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:board_meetings_held:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "board_meetings_held",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "year": 2025,
+        "count": 5,
+        "proxy_attendance": 0
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 117,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:board_meetings_held:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:board_term_end:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "board_term_end",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": "2027-06-30",
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 114,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:board_term_end:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:compensation_policy:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "compensation_policy",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "shareholder_approved": true,
+        "objective": "Promote sustainable, long-term performance while attracting, retaining and motivating required talent.",
+        "executive_components": [
+          "base pay",
+          "short-term incentive",
+          "long-term incentive",
+          "benefits"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": [
+          123,
+          124
+        ],
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:internal_control_assessment:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "internal_control_assessment",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "assessment": "effective and adequate",
+        "assessor": "Audit Committee",
+        "year": 2025
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 119,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "attribute:sa:2222:internal_control_assessment:en"
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:governance_framework:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "governance_framework",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "basis": [
+          "Corporate Governance Regulations",
+          "Company governance policies and procedures",
+          "Code of Business Conduct"
+        ],
+        "covered_topics": [
+          "health, safety and environment",
+          "competition and antitrust",
+          "anti-bribery and anti-corruption",
+          "conflicts of interest",
+          "disclosure controls",
+          "insider trading",
+          "related-party transactions",
+          "data privacy",
+          "international trade controls"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 127,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:industry_overview:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "industry_overview",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": "The integrated oil, gas and petrochemical industry combines market volatility, hazardous operations and uncertain project outcomes.",
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 82,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:industry_drivers:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "industry_drivers",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": [
+        "global supply and demand",
+        "OPEC and sovereign production decisions",
+        "geopolitical events and trade routes",
+        "alternative-energy prices and availability",
+        "transport electrification",
+        "environmental regulation",
+        "U.S. dollar fluctuations"
+      ],
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 84,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:regulatory_environment:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "regulatory_environment",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": "Environmental and other laws affecting crude oil, related products and the energy industry can alter demand, prices, project economics and compliance costs.",
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 84,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "attribute:sa:2222:competitive_environment:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "company_attribute",
+      "attribute_key": "competitive_environment",
+      "language": "en",
+      "scope": "company",
+      "unit": "json",
+      "value": {
+        "crude_oil_competitors": "National and international oil companies",
+        "downstream_competitors": "Refining and petrochemical plants in or near served markets and other international producers",
+        "competition_factors": [
+          "price",
+          "reliability",
+          "quantity",
+          "quality",
+          "geographic location",
+          "operating efficiency",
+          "production cost"
+        ]
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 85,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not accepted: the pack was never reviewed as a whole; agreement with QB4 is not acceptance"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:00:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Crude oil supply, demand and price exposure",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Crude oil supply, demand and price exposure",
+        "body_text_sha256": "7217e1fe8c3053efe0c1afc7a076aea3079b587325219b863c52489f7ebe8a81"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 84,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:01:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Asian demand and political concentration",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Asian demand and political concentration",
+        "body_text_sha256": "a967e6b0ae226e378342ddd4ccbc5ec0f70e173537d7cb9ec48ac17f11d8bc4d"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 85,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:02:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Climate transition and net-zero execution",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Climate transition and net-zero execution",
+        "body_text_sha256": "763eba591a0877ba99f01c0dcc9739adeb0d15a132d3b96dc32163902b5172a2"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 85,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:03:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Global crude, refining and petrochemical competition",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Global crude, refining and petrochemical competition",
+        "body_text_sha256": "9df470fd2ee77006c050aa50f80d4d9a42b25439f9afcc21825953653683c202"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 85,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:04:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Operational incidents and critical-asset concentration",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Operational incidents and critical-asset concentration",
+        "body_text_sha256": "15fa8b314d560b386ec83d3fd339dfc9f028daa4856646fd312c28e2f89d3abf"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 86,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:05:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Capital-project delivery and return risk",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Capital-project delivery and return risk",
+        "body_text_sha256": "436948c13057a5c4a08f93dd2721d1fbe9944365a6531c39f9c9f9abb19cfe2b"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 87,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:06:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Insurance coverage limitations",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Insurance coverage limitations",
+        "body_text_sha256": "1c957758b0f2a4575ecc68c4b8490b1603994aaf669eb698be50ab27aeefa549"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 88,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:07:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Terrorism and armed-conflict exposure",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Terrorism and armed-conflict exposure",
+        "body_text_sha256": "c377b27fd9e61a75727a1776386e5afd481cf96f6e4b2b7ae0d136cd2b268e01"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 88,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:08:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Hydrocarbon reserve-estimation uncertainty",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Hydrocarbon reserve-estimation uncertainty",
+        "body_text_sha256": "a70f81211273b6a91a2255b1e912964cb3aec34200c6e678ecf7b2b3e0f45494"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 88,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:09:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "IT systems and cybersecurity exposure",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "IT systems and cybersecurity exposure",
+        "body_text_sha256": "22c91ce14278c8e62aa6178c1bac2ea79b02a98a0e4d05653fd173b26377cbcb"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 90,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:litigation:10:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "litigation",
+      "title": "Antitrust, climate and trade litigation exposure",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Antitrust, climate and trade litigation exposure",
+        "body_text_sha256": "125a3944a3fd4a3ee0b00a9c36d2c7fe0c8bda33508238cfefaf6ad532af2c35"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 91,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:11:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "risk_factor",
+      "title": "Government licences, permits and concession dependency",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Government licences, permits and concession dependency",
+        "body_text_sha256": "5901b541a0d6307128942978d37f8b55e92adba5e8288a5720d4d16e9248299f"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 92,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "disclosure:sa:2222:liquidity_risk:12:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "kind": "disclosure",
+      "disclosure_type": "liquidity_risk",
+      "title": "Liquidity management and contractual maturities",
+      "period_end": "2025-12-31",
+      "scope": "company",
+      "unit": "text",
+      "value": {
+        "title": "Liquidity management and contractual maturities",
+        "body_text_sha256": "24d18e4cbc81c3e74b767b3ab8c2e7d59bdd8d19151f1492f5f8d54dfe4f521c"
+      },
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-governance-risk.json"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "url": "https://www.aramco.com/-/media/publications/corporate-reports/reports-and-presentations/2025/fy/saudi-aramco-ara-2025-english.pdf",
+        "pdf_page": 193,
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "PENDING_EVIDENCE_REVIEW",
+        "data_correction": null,
+        "financial_qualification": "NOT_APPLICABLE",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": null
+      },
+      "evidence_basis": "not reviewed; body text kept in the engine pack, only its hash here"
+    },
+    {
+      "record_id": "fact:c9bd93c9d10287f0:legacy-annual-metrics-correction",
+      "batch": "CORRECTION",
+      "kind": "fact_correction",
+      "metric_key": "short_term_investments_net",
+      "period_kind": "fy",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "dimensions": {},
+      "currency": "SAR",
+      "unit": "SAR",
+      "value": "-1457000000",
+      "version": {
+        "edition": "ARA2025",
+        "candidate_manifest": "engine b70254e:data/imports/aramco-2025-annual-metrics.json (fact 91)"
+      },
+      "source": {
+        "document": "ARA2025",
+        "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+        "pdf_page": 178,
+        "printed_row": "Net (purchases) maturities of short-term investments",
+        "original_in_repository": false
+      },
+      "date_provenance": {
+        "state": "UNVERIFIED",
+        "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+      },
+      "states": {
+        "evidence_review": "EVIDENCE_ACCEPT",
+        "data_correction": "DATA_CORRECTION_PROPOSED",
+        "financial_qualification": "FINANCIAL_ACCEPT_PENDING",
+        "publication_rights": "PUBLICATION_RIGHTS_PENDING",
+        "ingestion": "INGESTION_AUTHORIZATION_PENDING",
+        "superseded_by": "fact:c9bd93c9d10287f0"
+      },
+      "evidence_basis": "Codex accepted the −1,457 sign (QB4-R01 note); the correction applies to the legacy file, the identity is carried once, by QB4",
+      "correction_package": "CORRECTION-PACKAGE/"
+    }
+  ]
+}

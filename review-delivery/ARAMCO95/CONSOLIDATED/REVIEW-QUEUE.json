@@ -1,0 +1,732 @@
+{
+  "schema": "marefa-aramco95-review-queue/1",
+  "items": [
+    {
+      "record_id": "fact:c0548539090192d9",
+      "batch": "T1",
+      "key": "revenue",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "fact:5450c8cbccdd1e62",
+      "batch": "T1",
+      "key": "net_income",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "fact:e207f875888222cc",
+      "batch": "T1",
+      "key": "cash",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "fact:8ec1d54772ba785e",
+      "batch": "T1",
+      "key": "total_equity",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "fact:64f702d97763d3c4",
+      "batch": "T1",
+      "key": "operating_cash_flow",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "fact:ab9d7aac10aa4bd9",
+      "batch": "QB3",
+      "key": "upstream_revenue",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:11667f00166210b0",
+      "batch": "QB3",
+      "key": "upstream_adjusted_ebit",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:d11b6cd3b646d883",
+      "batch": "QB3",
+      "key": "upstream_capex",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:16a6b7fcd20fe71f",
+      "batch": "QB3",
+      "key": "downstream_revenue",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:868910ca872bee8d",
+      "batch": "QB3",
+      "key": "downstream_adjusted_ebit",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:f59ea84bfed80283",
+      "batch": "QB3",
+      "key": "downstream_capex",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:f9a3fc704f989709",
+      "batch": "QB3",
+      "key": "corporate_adjusted_ebit",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:25321b2fe7efd136",
+      "batch": "QB3",
+      "key": "corporate_capex",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:3f460c7de2794605",
+      "batch": "QB3",
+      "key": "upstream_capex_per_boe",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:da43a3bfc02916d7",
+      "batch": "QB3",
+      "key": "lifting_cost_per_boe",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:8e2a0d07a052e8fe",
+      "batch": "QB3",
+      "key": "downstream_crude_utilization",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:c9bd93c9d10287f0",
+      "batch": "QB4",
+      "key": "short_term_investments_net",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:5f35ef2b64ca912c",
+      "batch": "QB4",
+      "key": "short_term_investments_net",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:a9b93943643b0d22",
+      "batch": "QB4",
+      "key": "dividend_installments_count",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:56860f63c841be5b",
+      "batch": "QB4",
+      "key": "dividend_installments_count",
+      "needs": [
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:business_model:en",
+      "batch": "QB4",
+      "key": "business_model",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:board_of_directors:en",
+      "batch": "QB4",
+      "key": "board_of_directors",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:board_size:en",
+      "batch": "QB4",
+      "key": "board_size",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:independent_directors:en",
+      "batch": "QB4",
+      "key": "independent_directors",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:board_committees:en",
+      "batch": "QB4",
+      "key": "board_committees",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:audit_committee:en",
+      "batch": "QB4",
+      "key": "audit_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:sustainability_risk_hse_committee:en",
+      "batch": "QB4",
+      "key": "sustainability_risk_hse_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:nomination_committee:en",
+      "batch": "QB4",
+      "key": "nomination_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:compensation_committee:en",
+      "batch": "QB4",
+      "key": "compensation_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:corporate_secretary:en",
+      "batch": "QB4",
+      "key": "corporate_secretary",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:executive_management_team:en",
+      "batch": "QB4",
+      "key": "executive_management_team",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:board_meetings_held:en",
+      "batch": "QB4",
+      "key": "board_meetings_held",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:board_term_end:en",
+      "batch": "QB4",
+      "key": "board_term_end",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:internal_control_assessment:en",
+      "batch": "QB4",
+      "key": "internal_control_assessment",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:business_model:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "business_model",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:board_of_directors:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "board_of_directors",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:board_size:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "board_size",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:independent_directors:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "independent_directors",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:board_committees:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "board_committees",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:audit_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "audit_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:sustainability_risk_hse_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "sustainability_risk_hse_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:nomination_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "nomination_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:compensation_committee:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "compensation_committee",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:corporate_secretary:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "corporate_secretary",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:executive_management_team:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "executive_management_team",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:board_meetings_held:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "board_meetings_held",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:board_term_end:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "board_term_end",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:compensation_policy:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "compensation_policy",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization",
+        "content rule for narrative fields"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:internal_control_assessment:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "internal_control_assessment",
+      "needs": [
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    },
+    {
+      "record_id": "attribute:sa:2222:governance_framework:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "governance_framework",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization",
+        "content rule for narrative fields"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:industry_overview:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "industry_overview",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization",
+        "content rule for narrative fields"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:industry_drivers:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "industry_drivers",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization",
+        "content rule for narrative fields"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:regulatory_environment:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "regulatory_environment",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization",
+        "content rule for narrative fields"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "attribute:sa:2222:competitive_environment:en:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "competitive_environment",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization",
+        "content rule for narrative fields"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:00:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:01:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:02:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:03:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:04:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:05:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:06:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:07:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:08:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:09:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:litigation:10:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "litigation",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:risk_factor:11:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "risk_factor",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "disclosure:sa:2222:liquidity_risk:12:legacy-governance-pack",
+      "batch": "LEGACY_GOVERNANCE",
+      "key": "liquidity_risk",
+      "needs": [
+        "evidence review",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": false
+    },
+    {
+      "record_id": "fact:c9bd93c9d10287f0:legacy-annual-metrics-correction",
+      "batch": "CORRECTION",
+      "key": "short_term_investments_net",
+      "needs": [
+        "authorization to apply the correction to the legacy file",
+        "FINANCIAL_ACCEPT",
+        "publication rights decision",
+        "ingestion authorization"
+      ],
+      "excluded_from_future_batches": true
+    }
+  ]
+}

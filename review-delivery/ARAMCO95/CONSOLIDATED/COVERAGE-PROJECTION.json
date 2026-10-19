@@ -1,0 +1,351 @@
+{
+  "schema": "marefa-aramco95-coverage-projection/1",
+  "measured_by": "finengine factory-contract-readiness SA 2222 at b70254e, on disposable copies",
+  "approved_score": {
+    "total_score": "56.56374569234910209031614016",
+    "basis": "engine data at b70254e; nothing below is approved or ingested"
+  },
+  "target_score": "95.00",
+  "scenarios": {
+    "S0_current": {
+      "steps": [],
+      "projected_total_score": "56.56374569234910209031614016",
+      "delta": "0E-26",
+      "keys_filled": [],
+      "categories_changed": {},
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S1_QB3_only": {
+      "steps": [
+        "QB3"
+      ],
+      "projected_total_score": "56.56374569234910209031614016",
+      "delta": "0E-26",
+      "keys_filled": [],
+      "categories_changed": {},
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S2_QB4_only": {
+      "steps": [
+        "QB4"
+      ],
+      "projected_total_score": "58.79989828534394325241225745",
+      "delta": "2.23615259299484116209611729",
+      "keys_filled": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "corporate_secretary",
+        "dividend_installments_count",
+        "executive_management_team",
+        "independent_directors",
+        "internal_control_assessment",
+        "nomination_committee",
+        "short_term_investments_net",
+        "sustainability_risk_hse_committee"
+      ],
+      "categories_changed": {
+        "company_profile": {
+          "before": "0.5517241379310344827586206897",
+          "after": "0.7931034482758620689655172414",
+          "populated": "32->46/58"
+        },
+        "financial_statements": {
+          "before": "0.7874015748031496062992125984",
+          "after": "0.7913385826771653543307086614",
+          "populated": "200->201/254"
+        },
+        "dividends": {
+          "before": "0.2",
+          "after": "0.25",
+          "populated": "4->5/20"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S3_legacy_governance_only": {
+      "steps": [
+        "LEGACY_GOVERNANCE"
+      ],
+      "projected_total_score": "59.50093781057570307553781504",
+      "delta": "2.93719211822660098522167488",
+      "keys_filled": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "compensation_policy",
+        "competitive_environment",
+        "corporate_secretary",
+        "executive_management_team",
+        "governance_framework",
+        "independent_directors",
+        "industry_drivers",
+        "industry_overview",
+        "internal_control_assessment",
+        "litigation",
+        "nomination_committee",
+        "regulatory_environment",
+        "sustainability_risk_hse_committee"
+      ],
+      "categories_changed": {
+        "company_profile": {
+          "before": "0.5517241379310344827586206897",
+          "after": "0.8965517241379310344827586207",
+          "populated": "32->52/58"
+        },
+        "announcements": {
+          "before": "0.2857142857142857142857142857",
+          "after": "0.3214285714285714285714285714",
+          "populated": "8->9/28"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S4_QB4_attributes_only": {
+      "steps": [
+        "QB4_ATTRIBUTES_ONLY"
+      ],
+      "projected_total_score": "58.49478017510772277997131257",
+      "delta": "1.93103448275862068965517241",
+      "keys_filled": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "corporate_secretary",
+        "executive_management_team",
+        "independent_directors",
+        "internal_control_assessment",
+        "nomination_committee",
+        "sustainability_risk_hse_committee"
+      ],
+      "categories_changed": {
+        "company_profile": {
+          "before": "0.5517241379310344827586206897",
+          "after": "0.7931034482758620689655172414",
+          "populated": "32->46/58"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S5_QB4_facts_only": {
+      "steps": [
+        "QB4_FACTS_ONLY"
+      ],
+      "projected_total_score": "56.86886380258532256275708504",
+      "delta": "0.30511811023622047244094488",
+      "keys_filled": [
+        "dividend_installments_count",
+        "short_term_investments_net"
+      ],
+      "categories_changed": {
+        "financial_statements": {
+          "before": "0.7874015748031496062992125984",
+          "after": "0.7913385826771653543307086614",
+          "populated": "200->201/254"
+        },
+        "dividends": {
+          "before": "0.2",
+          "after": "0.25",
+          "populated": "4->5/20"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S6_accepted_combined_QB3_QB4": {
+      "steps": [
+        "QB3",
+        "QB4"
+      ],
+      "projected_total_score": "58.79989828534394325241225745",
+      "delta": "2.23615259299484116209611729",
+      "keys_filled": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "corporate_secretary",
+        "dividend_installments_count",
+        "executive_management_team",
+        "independent_directors",
+        "internal_control_assessment",
+        "nomination_committee",
+        "short_term_investments_net",
+        "sustainability_risk_hse_committee"
+      ],
+      "categories_changed": {
+        "company_profile": {
+          "before": "0.5517241379310344827586206897",
+          "after": "0.7931034482758620689655172414",
+          "populated": "32->46/58"
+        },
+        "financial_statements": {
+          "before": "0.7874015748031496062992125984",
+          "after": "0.7913385826771653543307086614",
+          "populated": "200->201/254"
+        },
+        "dividends": {
+          "before": "0.2",
+          "after": "0.25",
+          "populated": "4->5/20"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S7_combined_without_duplicates_QB3_QB4_legacy_remainder": {
+      "steps": [
+        "QB3",
+        "QB4",
+        "LEGACY_REMAINDER"
+      ],
+      "projected_total_score": "59.80605592081192354797875992",
+      "delta": "3.24231022846282145766261976",
+      "keys_filled": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "compensation_policy",
+        "competitive_environment",
+        "corporate_secretary",
+        "dividend_installments_count",
+        "executive_management_team",
+        "governance_framework",
+        "independent_directors",
+        "industry_drivers",
+        "industry_overview",
+        "internal_control_assessment",
+        "litigation",
+        "nomination_committee",
+        "regulatory_environment",
+        "short_term_investments_net",
+        "sustainability_risk_hse_committee"
+      ],
+      "categories_changed": {
+        "company_profile": {
+          "before": "0.5517241379310344827586206897",
+          "after": "0.8965517241379310344827586207",
+          "populated": "32->52/58"
+        },
+        "financial_statements": {
+          "before": "0.7874015748031496062992125984",
+          "after": "0.7913385826771653543307086614",
+          "populated": "200->201/254"
+        },
+        "dividends": {
+          "before": "0.2",
+          "after": "0.25",
+          "populated": "4->5/20"
+        },
+        "announcements": {
+          "before": "0.2857142857142857142857142857",
+          "after": "0.3214285714285714285714285714",
+          "populated": "8->9/28"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S8_correction_fact_only": {
+      "steps": [
+        "CORRECTION_FACT_ONLY"
+      ],
+      "projected_total_score": "56.61886380258532256275708504",
+      "delta": "0.05511811023622047244094488",
+      "keys_filled": [
+        "short_term_investments_net"
+      ],
+      "categories_changed": {
+        "financial_statements": {
+          "before": "0.7874015748031496062992125984",
+          "after": "0.7913385826771653543307086614",
+          "populated": "200->201/254"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    },
+    "S9_correction_on_top_of_S6": {
+      "steps": [
+        "QB3",
+        "QB4",
+        "CORRECTION_FACT_ONLY"
+      ],
+      "projected_total_score": "58.79989828534394325241225745",
+      "delta": "2.23615259299484116209611729",
+      "keys_filled": [
+        "audit_committee",
+        "board_committees",
+        "board_meetings_held",
+        "board_of_directors",
+        "board_size",
+        "board_term_end",
+        "business_model",
+        "compensation_committee",
+        "corporate_secretary",
+        "dividend_installments_count",
+        "executive_management_team",
+        "independent_directors",
+        "internal_control_assessment",
+        "nomination_committee",
+        "short_term_investments_net",
+        "sustainability_risk_hse_committee"
+      ],
+      "categories_changed": {
+        "company_profile": {
+          "before": "0.5517241379310344827586206897",
+          "after": "0.7931034482758620689655172414",
+          "populated": "32->46/58"
+        },
+        "financial_statements": {
+          "before": "0.7874015748031496062992125984",
+          "after": "0.7913385826771653543307086614",
+          "populated": "200->201/254"
+        },
+        "dividends": {
+          "before": "0.2",
+          "after": "0.25",
+          "populated": "4->5/20"
+        }
+      },
+      "status": "SIMULATED_NOT_APPROVED"
+    }
+  },
+  "duplicate_carrier_effect": {
+    "rows_for_identity": [
+      [
+        1,
+        0,
+        "-1457000000",
+        "file:ac94b5bc54eb3a3f6a7d14d694c8ee6faad73fbfb639405b4d98ca2a0f052093"
+      ],
+      [
+        2,
+        1,
+        "-1457000000",
+        "file:55393cccb1125f264e0e5d73066d2482336b63201f7b48f49bcd97f436a037fb"
+      ]
+    ],
+    "reading": "a second carrier of the same identity adds an engine version without adding coverage"
+  }
+}

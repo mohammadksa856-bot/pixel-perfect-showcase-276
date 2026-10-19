@@ -1,0 +1,39 @@
+{
+  "schema": "marefa-data-correction/1",
+  "id": "ARAMCO95-CORR-STIN-2025",
+  "state": "DATA_CORRECTION_PROPOSED",
+  "supersedes": "QB4-R01-N1 (value only)",
+  "engine_commit": "b70254e",
+  "target_file": "data/imports/aramco-2025-annual-metrics.json",
+  "target_file_sha256": "cb6a94b1c208c4b7a9dcae0af94126d99455e338a69018a9f9c7a3cf456431af",
+  "corrected_file_sha256": "74d910b6849b4b26c34434fa7140fdf19da4ec313e60c1507d8646fa4fa8809a",
+  "fact_index": 91,
+  "changes": {
+    "value": [
+      1457,
+      -1457
+    ],
+    "page": [
+      181,
+      178
+    ],
+    "table": [
+      "net maturities of short-term investments",
+      "consolidated statement of cash flows"
+    ]
+  },
+  "evidence": {
+    "source_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdf_page": 178,
+    "printed_page": 176,
+    "row": "Net (purchases) maturities of short-term investments",
+    "printed_2025": "(1,457)",
+    "pdf_178_is_the_statement": true,
+    "pdf_181_has_the_row": false
+  },
+  "identity_rule": "the corrected fact has the same identity as QB4's short_term_investments_net FY2025; a future batch carries one of them, never both",
+  "not_changed": "the other cash-flow facts of this pack also carry page 181; not part of this correction",
+  "application": "not applied to the engine repository, its imports or its database; needs a later authorization",
+  "patch": "aramco-2025-annual-metrics.short_term_investments_net.v2.patch",
+  "patch_sha256": "7e1a9104b9f7d443ad68aa977456f946f7603573a589e01a86f4f09e2d904aa9"
+}

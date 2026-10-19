@@ -1,0 +1,155 @@
+PASS correction_package
+PASS register_counts
+PASS no_duplicate_active_identity
+PASS no_financial_or_publication_decision_granted
+PASS date_provenance_unverified_for_every_record
+PASS legacy_comparison
+PASS coverage_scenarios_consistent
+PASS leak_check_financial_values_withheld_in_served_preview
+PASS leak_check_attributes_reported
+PASS original_engine_unchanged
+10/10 PASS
+
+[
+ {
+  "check": "correction_package",
+  "status": "PASS",
+  "detail": {
+   "changed_fields": [
+    "page",
+    "table",
+    "value"
+   ],
+   "other_facts_unchanged": true,
+   "patch_applies": true,
+   "pdf178": true,
+   "pdf181": false
+  }
+ },
+ {
+  "check": "register_counts",
+  "status": "PASS",
+  "detail": {
+   "T1": {
+    "EVIDENCE_ACCEPT": 5
+   },
+   "QB3": {
+    "EVIDENCE_ACCEPT": 11
+   },
+   "QB4": {
+    "EVIDENCE_ACCEPT": 18
+   },
+   "LEGACY_GOVERNANCE": {
+    "PENDING_EVIDENCE_REVIEW": 33
+   },
+   "CORRECTION": {
+    "EVIDENCE_ACCEPT": 1
+   }
+  }
+ },
+ {
+  "check": "no_duplicate_active_identity",
+  "status": "PASS",
+  "detail": {
+   "active_records": 53,
+   "duplicates": []
+  }
+ },
+ {
+  "check": "no_financial_or_publication_decision_granted",
+  "status": "PASS",
+  "detail": "all pending"
+ },
+ {
+  "check": "date_provenance_unverified_for_every_record",
+  "status": "PASS",
+  "detail": {
+   "state": "UNVERIFIED",
+   "note": "filed_at 2026-03-09 is the engine manifests' field for ARA2025; it is not evidence of the report's publication or historical availability date"
+  }
+ },
+ {
+  "check": "legacy_comparison",
+  "status": "PASS",
+  "detail": {
+   "legacy_attributes": 20,
+   "shared_with_qb4": 14,
+   "legacy_only": 6,
+   "legacy_disclosures": 13
+  }
+ },
+ {
+  "check": "coverage_scenarios_consistent",
+  "status": "PASS",
+  "detail": {
+   "S0_current": "0E-26",
+   "S1_QB3_only": "0E-26",
+   "S2_QB4_only": "2.23615259299484116209611729",
+   "S3_legacy_governance_only": "2.93719211822660098522167488",
+   "S4_QB4_attributes_only": "1.93103448275862068965517241",
+   "S5_QB4_facts_only": "0.30511811023622047244094488",
+   "S6_accepted_combined_QB3_QB4": "2.23615259299484116209611729",
+   "S7_combined_without_duplicates_QB3_QB4_legacy_remainder": "3.24231022846282145766261976",
+   "S8_correction_fact_only": "0.05511811023622047244094488",
+   "S9_correction_on_top_of_S6": "2.23615259299484116209611729"
+  }
+ },
+ {
+  "check": "leak_check_financial_values_withheld_in_served_preview",
+  "status": "PASS",
+  "detail": [
+   {
+    "id": "short_term_investments_net:2025",
+    "needle": "\"-1457000000\"",
+    "in_engine_page": true,
+    "in_served_preview": false
+   },
+   {
+    "id": "short_term_investments_net:2024",
+    "needle": "\"171157000000\"",
+    "in_engine_page": false,
+    "in_served_preview": false
+   },
+   {
+    "id": "dividend_installments_count:2025",
+    "needle": "\"dividend_installments_count\"",
+    "in_engine_page": true,
+    "in_served_preview": false
+   },
+   {
+    "id": "dividend_installments_count:2024",
+    "needle": "\"dividend_installments_count\"",
+    "in_engine_page": true,
+    "in_served_preview": false
+   }
+  ]
+ },
+ {
+  "check": "leak_check_attributes_reported",
+  "status": "PASS",
+  "detail": {
+   "attributes_in_served_preview": [],
+   "note": "the publication gate covers financial facts only; company attributes reach the preview only through its fixed key list"
+  }
+ },
+ {
+  "check": "original_engine_unchanged",
+  "status": "PASS",
+  "detail": {
+   "before": {
+    "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "porcelain": "",
+    "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "db_size": 30420992,
+    "db_mtime_ns": 1791841581643458367
+   },
+   "after": {
+    "head": "b70254e463c18e893fd042a82ecdad78209384d6",
+    "porcelain": "",
+    "db_sha256": "2a749d7c8a051f2716128afac208a4a7e45679f2534fe81d29587f5490005867",
+    "db_size": 30420992,
+    "db_mtime_ns": 1791841581643458367
+   }
+  }
+ }
+]

@@ -21,7 +21,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
-    "value_sar": "1637299000000"
+    "value_sar": "1637299000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2024",
@@ -70,7 +71,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
-    "value_sar": "398422000000"
+    "value_sar": "398422000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2024",
@@ -119,7 +121,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
-    "value_sar": "508888000000"
+    "value_sar": "508888000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2024",
@@ -168,7 +171,8 @@
    "page_payload_fixture": {
     "version": 2,
     "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
-    "value_sar": "1559342000000"
+    "value_sar": "1559342000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2025",
@@ -213,7 +217,8 @@
    "page_payload_fixture": {
     "version": 2,
     "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
-    "value_sar": "350210000000"
+    "value_sar": "350210000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2025",
@@ -258,7 +263,8 @@
    "page_payload_fixture": {
     "version": 2,
     "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
-    "value_sar": "510798000000"
+    "value_sar": "510798000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2025",
@@ -303,7 +309,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
-    "value_sar": "433101000000"
+    "value_sar": "433101000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "Q1-2026",
@@ -344,7 +351,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
-    "value_sar": "122008000000"
+    "value_sar": "122008000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "Q1-2026",
@@ -385,7 +393,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:57c929d725ae81e467a3c7512b7839334c0397169a719b93682829fe7e7729a8",
-    "value_sar": "115242000000"
+    "value_sar": "115242000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "Q1-2026",
@@ -426,7 +435,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
-    "value_sar": "450772000000"
+    "value_sar": "450772000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "H1-Q2-2026",
@@ -466,7 +476,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
-    "value_sar": "122599000000"
+    "value_sar": "122599000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "H1-Q2-2026",
@@ -506,7 +517,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
-    "value_sar": "95365000000"
+    "value_sar": "95365000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "H1-Q2-2026",
@@ -543,7 +555,12 @@
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
     "value_sar": "883873000000"
    },
-   "page_payload_fixture": null,
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "883873000000",
+    "consistent_rows": true
+   },
    "evidence": {
     "document": "H1-Q2-2026",
     "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
@@ -552,7 +569,6 @@
    },
    "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
    "needs": [
-    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
     "R7"
    ],
    "qualification": "WITHHELD",
@@ -580,7 +596,12 @@
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
     "value_sar": "244607000000"
    },
-   "page_payload_fixture": null,
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "244607000000",
+    "consistent_rows": true
+   },
    "evidence": {
     "document": "H1-Q2-2026",
     "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
@@ -589,7 +610,6 @@
    },
    "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
    "needs": [
-    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
     "R7"
    ],
    "qualification": "WITHHELD",
@@ -617,7 +637,12 @@
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
     "value_sar": "210607000000"
    },
-   "page_payload_fixture": null,
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "210607000000",
+    "consistent_rows": true
+   },
    "evidence": {
     "document": "H1-Q2-2026",
     "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
@@ -626,7 +651,6 @@
    },
    "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
    "needs": [
-    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
     "R7"
    ],
    "qualification": "WITHHELD",
@@ -703,7 +727,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:2db3fec862b11532059c5cf5a122822867153026961f9c0fa13904fc84aee005",
-    "value_sar": "1651355000000"
+    "value_sar": "1651355000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2024",
@@ -799,7 +824,8 @@
    "page_payload_fixture": {
     "version": 2,
     "source_key": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
-    "value_sar": "1721744000000"
+    "value_sar": "1721744000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "FY2025",
@@ -922,7 +948,12 @@
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
     "value_sar": "167387000000"
    },
-   "page_payload_fixture": null,
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "167387000000",
+    "consistent_rows": true
+   },
    "evidence": {
     "document": "H1-Q2-2026",
     "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
@@ -931,7 +962,6 @@
    },
    "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
    "needs": [
-    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
     "R3",
     "R6",
     "R7"
@@ -961,7 +991,12 @@
     "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
     "value_sar": "1795831000000"
    },
-   "page_payload_fixture": null,
+   "page_payload_fixture": {
+    "version": 1,
+    "source_key": "file:471042c9df6dcbab2e557c592b34851435d72948470e6de9ccdcf19ba943b1ae",
+    "value_sar": "1795831000000",
+    "consistent_rows": true
+   },
    "evidence": {
     "document": "H1-Q2-2026",
     "sha256": "4773cfe444de7e9734a65a59d8e1dd301229d9aa05164729e2b8f983d81cfb41",
@@ -970,7 +1005,6 @@
    },
    "evidence_review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); original PDF matched by Codex FY2026, accepted here",
    "needs": [
-    "PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)",
     "R4",
     "R6",
     "R7"
@@ -1480,7 +1514,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
-    "value_sar": "412396000000"
+    "value_sar": "412396000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1522,7 +1557,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
-    "value_sar": "604005000000"
+    "value_sar": "604005000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1564,7 +1600,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
-    "value_sar": "454764000000"
+    "value_sar": "454764000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1606,7 +1643,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
-    "value_sar": "522601000000"
+    "value_sar": "522601000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1648,7 +1686,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
-    "value_sar": "698152000000"
+    "value_sar": "698152000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1690,7 +1729,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
-    "value_sar": "537814000000"
+    "value_sar": "537814000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1849,7 +1889,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:ca6a5d64f28958ad243fb2ceeb530c705c99ec11289bb82e226c4efce03b0f35",
-    "value_sar": "771918000000"
+    "value_sar": "771918000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1891,7 +1932,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:3116309fea8c6e474851db4598d5548b5405a8d77c3a895ce0b62e56c9cf83e9",
-    "value_sar": "1144077000000"
+    "value_sar": "1144077000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -1933,7 +1975,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
-    "value_sar": "868287000000"
+    "value_sar": "868287000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2092,7 +2135,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
-    "value_sar": "1346930000000"
+    "value_sar": "1346930000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2134,7 +2178,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
-    "value_sar": "2006955000000"
+    "value_sar": "2006955000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2176,7 +2221,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:030f5c2407c52df1dc0e6bbba4d0c47e12254158902f1258b25753f68a54b60f",
-    "value_sar": "1653281000000"
+    "value_sar": "1653281000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2335,7 +2381,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
-    "value_sar": "2162690000000"
+    "value_sar": "2162690000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2377,7 +2424,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
-    "value_sar": "2492924000000"
+    "value_sar": "2492924000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2419,7 +2467,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
-    "value_sar": "2477940000000"
+    "value_sar": "2477940000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2461,7 +2510,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
-    "value_sar": "1280668000000"
+    "value_sar": "1280668000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2503,7 +2553,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
-    "value_sar": "1666147000000"
+    "value_sar": "1666147000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2545,7 +2596,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
-    "value_sar": "1737092000000"
+    "value_sar": "1737092000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2587,7 +2639,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:8af6fd163b384f5202498cba604692bbd8deaa86b311da1b5f600851416c8def",
-    "value_sar": "882022000000"
+    "value_sar": "882022000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2629,7 +2682,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:d5be2d6ca67cfe9d00d0ddf34c11ea8521840def0ec19264d5ed82455c8d914a",
-    "value_sar": "826777000000"
+    "value_sar": "826777000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2671,7 +2725,8 @@
    "page_payload_fixture": {
     "version": 1,
     "source_key": "file:b00613fac8362c34700b5fb902bb0da383378bbd246e84909dd2df63d4b06dc8",
-    "value_sar": "740848000000"
+    "value_sar": "740848000000",
+    "consistent_rows": true
    },
    "evidence": {
     "document": "ARA2025",
@@ -2700,13 +2755,21 @@
   "R2": 5,
   "R5": 11,
   "R7": 66,
-  "PAGE_PAYLOAD_EXPOSURE": 25,
+  "PAGE_PAYLOAD_EXPOSURE": 20,
   "R6": 8,
   "R4": 4,
   "R3": 1,
   "AUDITED_STATEMENTS_NEEDED": 43,
   "ENGINE_ENTRY": 6
  },
+ "corrections": [
+  {
+   "id": "MAP-CORR-01",
+   "previous": "548dcbd",
+   "what": "payload lookup now includes the snapshot sections (annual, quarter, ytd, instant), not only history; H1 YTD and the 2026-06-30 balances are in the payload",
+   "values_changed": false
+  }
+ ],
  "single_source": {
   "finding": "Overview, Investor and Data all render from one CompanyPreview built by buildCompanyPreview() from one engine /page payload (or the frozen fixture); none keeps its own copy of values",
   "evidence_binding": "attach evidence once, in that payload path, keyed by (metric, period_kind, period_end, version, source_key) and guarded by value equality; all three pages then read the same record"

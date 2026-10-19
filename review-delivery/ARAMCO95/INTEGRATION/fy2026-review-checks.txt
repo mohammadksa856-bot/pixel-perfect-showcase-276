@@ -18,4 +18,4 @@ PASS lineage: every 2026 row comes from the matching interim import (57c929d7 Q1
 PASS no self-acceptance, no rights, R1–R8 not closed, holds 7/22/142/0
 PASS Codex structural suites here: test_source_closure 13/13, test_evidence 18/18, test_remediation 25/26 with the H1-PDF test NOT_RUN — {"test_source_closure.py": {"run": 13, "passed": 13, "tail": "OK"}, "test_evidence.py": {"run": 18, "passed": 18}, "test_remediation.py": {"run": 26, "passed": 25, "not_run": ["test_FX3_original_H1_hash_and_note"]}}
 
-ALL PASS | decision EVIDENCE_ACCEPT | map rows 66 {'PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW': 4, 'R1': 6, 'R2': 5, 'R5': 11, 'R7': 66, 'PAGE_PAYLOAD_EXPOSURE': 25, 'R6': 8, 'R4': 4, 'R3': 1, 'AUDITED_STATEMENTS_NEEDED': 43, 'ENGINE_ENTRY': 6} | batch ['FQ01-OBS-011', 'FQ01-OBS-014', 'FQ01-OBS-016', 'FQ01-OBS-060']
+ALL PASS | decision EVIDENCE_ACCEPT | map rows 66 {'PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW': 4, 'R1': 6, 'R2': 5, 'R5': 11, 'R7': 66, 'PAGE_PAYLOAD_EXPOSURE': 20, 'R6': 8, 'R4': 4, 'R3': 1, 'AUDITED_STATEMENTS_NEEDED': 43, 'ENGINE_ENTRY': 6} | batch ['FQ01-OBS-011', 'FQ01-OBS-014', 'FQ01-OBS-016', 'FQ01-OBS-060']

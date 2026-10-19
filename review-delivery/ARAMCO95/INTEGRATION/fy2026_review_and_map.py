@@ -138,12 +138,16 @@ q2 = {r["id"]: r for r in json.loads(show(QB2, "review-delivery/ARAMCO95/QB2/FIN
 fx = json.loads(gzip.decompress(open(os.path.join(ROOT, "tests/fixtures/codex-20261013/2222-page.json.gz"), "rb").read()))
 hist = fx["sections"]["financials"]["history"]
 SECTION = {"fy": "annual", "instant": "annual_position", "quarter": "quarter", "ytd": "quarter"}
+SNAP = {"fy": "annual", "instant": "instant", "quarter": "quarter", "ytd": "ytd"}
 def in_payload(m, kind, end):
-    for p in hist.get(SECTION[kind], {}).get("periods", []):
-        if p["period_end"] == end:
-            for row in p["metrics"].get(m, []):
-                if row["period_kind"] == kind: return {"version": row["version"], "source_key": row["source_key"], "value_sar": row["value"]}
-    return None
+    """A row the page payload returns for this identity: history periods first, then the latest-period snapshot section."""
+    rows = [row for p in hist.get(SECTION[kind], {}).get("periods", []) if p["period_end"] == end for row in p["metrics"].get(m, [])]
+    rows += [row for row in (fx["sections"]["financials"].get(SNAP[kind]) or {}).get("metrics", {}).get(m, []) if row.get("period_end") == end]
+    rows = [r for r in rows if r["period_kind"] == kind]
+    if not rows: return None
+    ids = {(r["version"], r["source_key"], r["value"]) for r in rows}
+    r = rows[0]
+    return {"version": r["version"], "source_key": r["source_key"], "value_sar": r["value"], "consistent_rows": len(ids) == 1}
 src = {f: open(os.path.join(ROOT, f), encoding="utf8").read() for f in ("src/lib/engine/company-preview.ts", "src/lib/engine/statements.ts")}
 grab = lambda name, text: re.findall(r'"([a-z_]+)"', re.search(name + r"[^=]*=\s*(\{[\s\S]*?\n\};|\[[\s\S]*?\];)", text).group(1).split("bank:")[0])
 INCOME, BALANCE, CASHF, INTERIM = grab("export const INCOME", src["src/lib/engine/company-preview.ts"]), grab("export const BALANCE", src["src/lib/engine/company-preview.ts"]), \
@@ -165,6 +169,7 @@ def add(rec_id, m, period, engine, evidence, accepted, issues):
     elif not pl: need.append("PAGE_PAYLOAD_EXPOSURE (engine has the row; /page does not return this period kind)")
     elif (pl["source_key"], pl["version"]) != (engine["source_key"], engine["version"]): need.append("PAYLOAD_SERVES_RUNTIME_REPAIRED_ROW (decide which state is the reference)")
     if pl and engine and pl["value_sar"] != engine["value_sar"]: need.append("VALUE_MISMATCH")
+    if pl and not pl["consistent_rows"]: need.append("PAYLOAD_ROWS_DISAGREE")
     need += [i for i in issues]
     rows.append({"record": rec_id, "field_id": m, "metric_key": m, "period": {k: period.get(k) for k in ("kind", "start", "end", "fiscal_year", "fiscal_quarter")},
                  "engine_committed": eng_row, "page_payload_fixture": pl, "evidence": evidence, "evidence_review": accepted,
@@ -189,6 +194,7 @@ for r in rows:
 batch = [r["record"] for r in rows if r["record"].startswith("FQ01") and r["period"]["end"] == "2025-12-31" and r["page_payload_fixture"]
          and all(n.split(" ")[0] in ("R4", "R6", "R7") for n in r["needs"])]
 integration = {"schema": "marefa-aramco-integration-map/1", "rows": rows, "need_counts": need_counts,
+    "corrections": [{"id": "MAP-CORR-01", "previous": "548dcbd", "what": "payload lookup now includes the snapshot sections (annual, quarter, ytd, instant), not only history; H1 YTD and the 2026-06-30 balances are in the payload", "values_changed": False}],
     "single_source": {"finding": "Overview, Investor and Data all render from one CompanyPreview built by buildCompanyPreview() from one engine /page payload (or the frozen fixture); none keeps its own copy of values",
                       "evidence_binding": "attach evidence once, in that payload path, keyed by (metric, period_kind, period_end, version, source_key) and guarded by value equality; all three pages then read the same record"},
     "smallest_local_batch": {"records": batch, "why": "FY2025 values read here in ARA2025, accepted by both reviewers, already in the engine and in the page payload with the same row, and consumed by all three pages (revenue, net income and total equity as Overview key figures; topic 5; Data statements). Cash 2025 (058) is left out: the payload does not return balance-sheet cash",

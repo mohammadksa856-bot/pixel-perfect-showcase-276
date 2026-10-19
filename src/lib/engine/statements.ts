@@ -356,6 +356,31 @@ function buildView(
   };
 }
 
+/**
+ * أرصدة نهاية الأرباع (مقترح العقد): تُقبل أعمدةً لجدول الأرباع فقط، بهوية instant (checkRow بنوع "instant").
+ * لا تتحول إلى تدفقات، ولا تمس آخر رصيد (fin.instant) ولا أرصدة نهاية السنة (annual_position):
+ * أي فترة تقع في نهاية السنة المالية أو ليست نهاية شهر ربعي تُستبعد هنا، حتى لو أرسلها المحرك.
+ */
+function quarterPositions(
+  x:
+    { periods?: { period_end: string; metrics?: Record<string, EngineMetricRow[]> }[] } | undefined,
+  fiscalYearEnd: string | null | undefined,
+): PeriodSource[] {
+  const fye = /^\d{2}-\d{2}$/.test(fiscalYearEnd ?? "") ? fiscalYearEnd! : null;
+  if (!fye) return []; // بلا نهاية سنة مالية معروفة لا يمكن الفصل عن أرصدة نهاية السنة: فشل مغلق.
+  const fyMonth = Number(fye.slice(0, 2));
+  const quarterMonths = new Set([3, 6, 9, 12].map((k) => ((fyMonth + k - 1) % 12) + 1));
+  return (x?.periods ?? [])
+    .filter((p) => {
+      const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p.period_end);
+      if (!m) return false;
+      const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+      const monthEnd = new Date(Date.UTC(y, mo, 0)).getUTCDate();
+      return quarterMonths.has(mo) && d === monthEnd && p.period_end.slice(5) !== fye;
+    })
+    .map((p) => ({ end: p.period_end, metrics: p.metrics ?? {}, expected: "instant" }));
+}
+
 export function buildStatements(page: EnginePage, kind: CompanyKind): StatementView[] {
   const fin = page.sections.financials;
   const h = fin.history;
@@ -379,7 +404,10 @@ export function buildStatements(page: EnginePage, kind: CompanyKind): StatementV
   const quarter = buildView(
     "quarter",
     kind,
-    [hist(h?.quarter, "quarter")],
+    [
+      hist(h?.quarter, "quarter"),
+      quarterPositions(h?.quarter_position, page.company?.fiscal_year_end),
+    ],
     h?.quarter?.reason ?? null,
     currency,
   );

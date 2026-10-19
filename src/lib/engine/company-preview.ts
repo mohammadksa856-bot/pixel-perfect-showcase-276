@@ -114,7 +114,16 @@ export type EnginePage = {
       ytd: Snapshot;
       ttm: Snapshot;
       instant: Snapshot;
-      history: { annual: History; annual_position: History; quarter: History };
+      history: {
+        annual: History;
+        annual_position: History;
+        quarter: History;
+        /**
+         * مقترح العقد (ARAMCO95 PROJECTION): أرصدة نهاية الأرباع التاريخية، period_kind=instant،
+         * دون نهاية السنة المالية (تلك في annual_position). اختيارية: المحرك الحالي لا يرسلها.
+         */
+        quarter_position?: History;
+      };
     };
     market: { latest: Record<string, unknown> | null; history: unknown[] };
     ownership: Record<string, unknown>[];

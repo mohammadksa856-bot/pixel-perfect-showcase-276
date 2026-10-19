@@ -2,6 +2,7 @@
 // المفتاح والعنوان لا يغادران الخادم، والقيم المحجوبة لا تُسلسل إلى العميل.
 import { buildCompanyPreview, contractProblems, type CompanyPreview } from "./company-preview";
 import { designReviewFixturesEnabled } from "../web-v1/design-review-policy";
+import { applyPublicationGate, loadLedger } from "./publication-gate.server";
 
 type Env = Record<string, string | undefined>;
 
@@ -60,8 +61,11 @@ export async function fetchCompanyPreview(
   const problems = contractProblems(page);
   if (problems.length)
     return { state: "engine_unavailable", reason: `contract_mismatch:${problems.join(",")}` };
-  return {
-    state: "ok",
-    preview: buildCompanyPreview(page as Parameters<typeof buildCompanyPreview>[0]),
-  };
+  // Publication gate before the model is built and serialised: rows outside the accepted baseline need a ledger
+  // entry with SOURCE_ACCEPT, FINANCIAL_ACCEPT and PUBLICATION_AUTHORIZED, otherwise they never leave the server.
+  const gated = applyPublicationGate(
+    page as Parameters<typeof buildCompanyPreview>[0],
+    loadLedger(env),
+  );
+  return { state: "ok", preview: buildCompanyPreview(gated.page) };
 }

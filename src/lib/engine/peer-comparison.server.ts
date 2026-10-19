@@ -6,6 +6,7 @@ import {
   type EnginePeerResponse,
   type PeerTable,
 } from "./peer-comparison";
+import { applyPeerGate, loadLedger } from "./publication-gate.server";
 
 type Env = Record<string, string | undefined>;
 
@@ -69,5 +70,7 @@ export async function fetchPeerTable(
     apiKey,
     fetchImpl,
   )) as EnginePeerResponse | null;
-  return buildPeerTable(peers, kind);
+  // No accepted baseline exists for peer values: each needs an eligible ledger entry, otherwise it is emptied
+  // on the server and the table shows it as withheld.
+  return buildPeerTable(peers ? applyPeerGate(peers, loadLedger(env)).resp : null, kind);
 }

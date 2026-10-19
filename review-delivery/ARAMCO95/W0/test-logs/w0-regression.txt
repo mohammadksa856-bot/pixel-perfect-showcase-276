@@ -1,0 +1,10 @@
+full suite (bun test, 2026-10-19T10:32:42Z):
+2048 pass, 14 skip, 6 fail, 3 errors; 2068 tests across 72 files (base 2fa628c: 2039 pass, 6 fail, same 3 errors; +9 = the W0 tests)
+named failures (identical on base 2fa628c):
+(fail) calculated output without lineage is not reported
+(fail) quarantined missing row cannot mask an eligible zero
+(fail) wrong per-share currency is not a valid unit
+plus 3 module errors in review-delivery/WEB08B01 (missing ../work/review/research-evidence/v1/synthetic), also on base
+tsc --noEmit: exit 0
+eslint (changed files): 0 errors, 1 pre-existing warning (company-template.tsx:33)
+vite build: exit 0

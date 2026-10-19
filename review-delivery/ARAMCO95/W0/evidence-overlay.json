@@ -1,0 +1,91 @@
+{
+ "schema": "marefa-qa-evidence-overlay/1",
+ "scope": "QA_PRIVATE",
+ "fixture": {
+  "companyId": "sa:2222",
+  "generatedAt": "2026-10-13T00:06:16+00:00",
+  "contractVersion": 5
+ },
+ "entries": [
+  {
+   "key": {
+    "companyId": "sa:2222",
+    "metric": "revenue",
+    "periodKind": "fy",
+    "periodEnd": "2025-12-31",
+    "version": 2,
+    "sourceKey": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "valueSar": "1559342000000"
+   },
+   "evidence": {
+    "record": "FQ01-OBS-011",
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdfPage": 174,
+    "printedPage": 172,
+    "line": "Revenue",
+    "review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); not FINANCIAL_ACCEPT"
+   }
+  },
+  {
+   "key": {
+    "companyId": "sa:2222",
+    "metric": "net_income",
+    "periodKind": "fy",
+    "periodEnd": "2025-12-31",
+    "version": 2,
+    "sourceKey": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "valueSar": "350210000000"
+   },
+   "evidence": {
+    "record": "FQ01-OBS-014",
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdfPage": 174,
+    "printedPage": 172,
+    "line": "Net income",
+    "review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); not FINANCIAL_ACCEPT"
+   }
+  },
+  {
+   "key": {
+    "companyId": "sa:2222",
+    "metric": "operating_cash_flow",
+    "periodKind": "fy",
+    "periodEnd": "2025-12-31",
+    "version": 2,
+    "sourceKey": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "valueSar": "510798000000"
+   },
+   "evidence": {
+    "record": "FQ01-OBS-016",
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdfPage": 178,
+    "printedPage": 176,
+    "line": "Net cash provided by operating activities",
+    "review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); not FINANCIAL_ACCEPT"
+   }
+  },
+  {
+   "key": {
+    "companyId": "sa:2222",
+    "metric": "total_equity",
+    "periodKind": "instant",
+    "periodEnd": "2025-12-31",
+    "version": 2,
+    "sourceKey": "file:9b47228a1a81033d8ee008f183ca57bc4c1c304c3b61a7324c89ebf31240b626",
+    "valueSar": "1721744000000"
+   },
+   "evidence": {
+    "record": "FQ01-OBS-060",
+    "document": "ARA2025",
+    "sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "pdfPage": 176,
+    "printedPage": 174,
+    "line": "unlabelled subtotal after 'Non-controlling interests'",
+    "review": "EVIDENCE_ACCEPT (QB1-A, both reviewers); not FINANCIAL_ACCEPT"
+   }
+  }
+ ]
+}

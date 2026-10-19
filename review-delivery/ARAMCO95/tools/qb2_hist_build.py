@@ -106,6 +106,7 @@ for l in lines:
                       "source": SRC(l["label"], f"Year ended / as at December 31, {y}"),
                       "evidence_class": "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY",
                       "evidence_limit": f"a summary in the 2025 annual report, not the audited FY{y} statements; it shows FY{y} as presented in 2026 and cannot by itself rule out a later restatement or count as an audited annual period",
+                      "identity_match": "EXACT",
                       "engine": e, "engine_equal": (e is not None and e["value_sar_millions"] == v),
                       "engine_status": "ENGINE_EQUAL" if e and e["value_sar_millions"] == v else "ENGINE_DIFFERS" if e else "ENGINE_MISSING",
                       "qualification": {"state": "WITHHELD", "publication_authorized": False}})
@@ -116,6 +117,11 @@ facts.append({"id": "QB2-A-cash-FY2023", "metric": "cash", "statement": "balance
                                                        "line": "Cash and cash equivalents at beginning of the year", "column": "comparative (year ended December 31, 2024)"},
               "evidence_class": "ISSUER_ANNUAL_REPORT_2025_CASH_FLOW_OPENING_BALANCE",
               "evidence_limit": "the opening cash of FY2024 in the cash-flow statement, a different identity from balance-sheet cash at 2023-12-31; they agree only when no cash sits in assets held for sale. The FY2023 balance sheet is needed to confirm",
+              "identity_match": "PROXY", "status": "PROXY_PENDING_BALANCE_SHEET_EVIDENCE",
+              "pending_direct_evidence": {"reported_by": "Codex", "review_commit": "46c7debecf2b055e82c40106f893169c614a7959", "finding": "QB2-R01",
+                                          "document": "FY2024 audited statements", "sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+                                          "pdf_page": 14, "printed_page": 11, "line": "Cash and cash equivalents", "column": "SAR 2023 (comparative)", "value_sar_millions": 198973,
+                                          "re_read_here": False, "self_accepted": False, "state": "PENDING_INDEPENDENT_REVIEW"},
               "engine": cash23_e, "engine_equal": cash23_e is not None and cash23_e["value_sar_millions"] == cash_open_2024,
               "engine_status": "ENGINE_EQUAL" if cash23_e and cash23_e["value_sar_millions"] == cash_open_2024 else "ENGINE_DIFFERS",
               "qualification": {"state": "WITHHELD", "publication_authorized": False}})
@@ -123,7 +129,7 @@ for y in (2021, 2022):
     e = engine("cash", "instant", f"{y}-12-31")
     facts.append({"id": f"QB2-A-cash-FY{y}", "metric": "cash", "statement": "balance_sheet", "core_metric": True,
                   "period": {"kind": "instant", "start": None, "end": f"{y}-12-31", "fiscal_year": y}, "unit": "SAR millions", "value_in_source": None,
-                  "source": None, "evidence_class": "NO_ACCESSIBLE_DISCLOSURE",
+                  "source": None, "evidence_class": "NO_ACCESSIBLE_DISCLOSURE", "identity_match": None,
                   "evidence_limit": f"cash at {y}-12-31 is not in the 2025 annual report; the FY{y} or FY{y + 1} statements are needed",
                   "engine": e, "engine_equal": None, "engine_status": "ENGINE_VALUE_WITHOUT_ACCESSIBLE_DISCLOSURE" if e else "ENGINE_MISSING",
                   "qualification": {"state": "WITHHELD", "publication_authorized": False}})
@@ -141,15 +147,18 @@ for y, q in QS:
         reuse = None
         if same_instant:
             if y == 2023: reuse = annual.get((m, end)) and {"ledger_id": annual[(m, end)]["id"], "value_sar_millions": annual[(m, end)]["value_in_source"],
-                                                            "evidence_class": annual[(m, end)]["evidence_class"]}
+                                                            "evidence_class": annual[(m, end)]["evidence_class"], "identity_match": annual[(m, end)]["identity_match"]}
             else: reuse = {"ledger": "QB1/FINANCIAL/FIN-EVIDENCE-LEDGER.json", "record": {("cash", 2024): "FQ01-OBS-051", ("total_equity", 2024): "FQ01-OBS-053",
                                                                                             ("cash", 2025): "FQ01-OBS-058", ("total_equity", 2025): "FQ01-OBS-060"}[(m, y)],
-                           "evidence_class": "ARA2025 balance sheet PDF 176 (QB1-A, accepted as evidence)"}
+                           "evidence_class": "ARA2025 balance sheet PDF 176 (QB1-A, accepted as evidence)", "identity_match": "EXACT", "inherited_from_qb1": True}
         quarters.append({"id": f"QB2-A-{m}-Q{q}-{y}", "metric": m, "period": {"kind": "instant" if inst else "quarter", "start": None if inst else f"{y}-{QSTART[q]}", "end": end,
                                                                               "fiscal_year": y, "fiscal_quarter": q},
                          "value_in_source": None, "source": None, "same_instant_as_year_end": same_instant, "year_end_evidence": reuse,
-                         "evidence_class": "YEAR_END_INSTANT_EVIDENCED_ELSEWHERE" if reuse else "NO_ACCESSIBLE_DISCLOSURE",
+                         "evidence_class": ("YEAR_END_INSTANT_EVIDENCED_ELSEWHERE" if reuse and reuse["identity_match"] == "EXACT" else
+                                            "YEAR_END_INSTANT_PROXY_ONLY" if reuse else "NO_ACCESSIBLE_DISCLOSURE"),
                          "needed": ("none for the value (same instant as the year-end balance); the quarter's own interim or annual statement is still the qualifying document"
+                                    if reuse and reuse["identity_match"] == "EXACT" else
+                                    "balance-sheet cash at 2023-12-31: only the FY2024 cash-flow opening balance is seen (proxy); Codex's direct FY2024 statements PDF 14 observation is pending review"
                                     if reuse else f"{'Q' + str(q) + ' ' + str(y) + ' interim report (three-month column)' if q < 4 else 'issuer disclosure of the three-month period Q4 ' + str(y) + ' (results announcement or interim note); FY minus nine months is a derivation that needs an approved formula'}"
                                     if not inst else f"balance sheet at {end} from the Q{q} {y} interim report"),
                          "engine": e, "engine_status": "ENGINE_PRESENT" if e else "ENGINE_MISSING",
@@ -161,6 +170,12 @@ b02doc = next(d for d in json.load(open(os.path.join(B02, "FINANCIAL-EVIDENCE-RE
 comp24 = {l["metric"]: l["values"][2024] for l in lines}
 capex = next(ln for ln in page_text(178).splitlines() if ln.strip().startswith("Capital expenditures"))
 comp24["capex"] = nums(capex)[-3]; comp24["cash"] = 216642           # columns: SAR 2025, SAR 2024, USD 2025, USD 2024
+t174 = page_text(174).splitlines()
+i = next(k for k, x in enumerate(t174) if x.strip().startswith("Net income attributable to"))
+sh = next(x for x in t174[i + 1:i + 3] if x.strip().startswith("Shareholders"))
+comp24["net_income_parent"] = nums(sh)[-3]                            # "Shareholders' equity" under "Net income attributable to"
+CODEX_PENDING = {"net_income_parent": {"reported_by": "Codex", "review_commit": "46c7debecf2b055e82c40106f893169c614a7959", "finding": "QB2-R02", "document": "FY2024 audited statements",
+                                       "pdf_page": 12, "value_sar_millions": 393891, "re_read_here": False, "self_accepted": False, "state": "PENDING_INDEPENDENT_REVIEW"}}
 ORIG = """SELECT id, value_decimal, substr(source_key,6) sk, version, is_current, filed_at, form FROM data_points WHERE company_id='sa:2222' AND metric_key=? AND period_kind=?
           AND period_end='2024-12-31' AND filed_at < '2026-01-01' AND (dimensions_json IS NULL OR dimensions_json IN ('','{}','null'))"""
 check24 = []
@@ -175,7 +190,8 @@ for m in sorted(set(comp24) | {k for k in b02 if k in comp24 or k in ("operating
     c = comp24.get(m)
     orig_vals = {int(o["value_decimal"]) // 1_000_000 for o in orig}
     if b02r and b02r["reasons"] == ["source_url_differs"]:
-        status = "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY"
+        # equality needs both operands: never inferred from an inherited reason when the comparative is missing
+        status = "NO_VALUE_DIFFERENCE_SEEN_IN_ORIGINAL_SECONDARY" if c is not None else "INHERITED_OBSERVATION_NOT_COMPARED"
     elif b02r and "numeric_or_sign_difference" in b02r["reasons"]:
         status = "SIGN_CONVENTION_SUSPECTED_UNRESOLVED" if cur and c is not None and abs(int(cur["value_sar_millions"])) == abs(c) else "NUMERIC_DIFFERENCE_UNRESOLVED"
     elif orig and c is not None:
@@ -183,7 +199,10 @@ for m in sorted(set(comp24) | {k for k in b02 if k in comp24 or k in ("operating
     else:
         status = "NOT_COMPARED"
     check24.append({"metric": m, "kind": kind, "comparative_in_ara2025": c, "comparative_source": {"pdf_page": 178 if m in ("capex", "operating_cash_flow", "investing_cash_flow", "financing_cash_flow") else 176 if kind == "instant" else 174,
-                                                                                                 "also_summary_page": HP if m in comp24 and m not in ("capex", "cash") else None},
+                                                                                                 "line": "Net income attributable to / Shareholders' equity" if m == "net_income_parent" else None,
+                                                                                                 "also_summary_page": HP if m in comp24 and m not in ("capex", "cash", "net_income_parent") else None},
+                    "original_operand": ({"value_sar_millions": next(iter(orig_vals)), "source": "engine original-year import (B02 compared it with the original statements)"} if len(orig_vals) == 1 else None),
+                    "pending_independent_observation": CODEX_PENDING.get(m),
                     "engine_current": cur and {k: cur[k] for k in ("data_point_id", "version", "value_sar_millions", "import_file")},
                     "engine_original_year_rows": [{"data_point_id": o["id"], "value_sar_millions": int(o["value_decimal"]) // 1_000_000, "source": o["sk"][:16], "filed_at": o["filed_at"],
                                                    "is_current": o["is_current"], "form": o["form"]} for o in orig],
@@ -192,7 +211,8 @@ restatement = {"original_document": {"key": "FY2024", "sha256_per_b02": b02doc["
                "comparative_document": {"key": "ARA2025", "sha256": ARA_SHA, "accessible_here": True},
                "rows": check24,
                "definition_notes": ["total equity: the summary labels it 'Net assets (total equity)'; the balance sheet shows an unlabelled subtotal after non-controlling interests; same value 1,651,355",
-                                    "capex: the cash-flow statement prints (188,890) as an outflow; the engine stores 188,890 positive"],
+                                    "capex: the cash-flow statement prints (188,890) as an outflow; the engine stores 188,890 positive",
+                                    "presentation: equal totals do not rule out presentation changes. ARA2025 PDF 184 (read here) states that 2024 impairment losses previously within depreciation and amortization were reclassified; Codex (46c7deb, QB2-N05) reports the component changes, pending review"],
                "method": "B02 compared its visual reading of the original FY2024 statements with the engine snapshot; the snapshot rows equal the ARA2025 comparatives read here. A value is therefore unchanged only by that chain, which is secondary evidence"}
 
 # ---------- sources, period matrix, gaps ----------
@@ -217,10 +237,14 @@ manifest = {"schema": "marefa-aramco-qb2a-source-manifest/1", "documents": [
 core_annual = [f for f in facts if f["core_metric"]]
 matrix = {"gate": "financial_statements hard gate: >= 5 audited annual periods and >= 12 trailing quarterly periods (contract 1.0.0)",
           "annual": [{"fiscal_year": y, "audited_statements_accessible_here": y == 2025,
-                      "core_values_with_disclosure_evidence": sum(1 for f in core_annual if f["period"]["fiscal_year"] == y and f["value_in_source"] is not None),
+                      "scope_of_counts": "this QB2 batch only" + ("; QB1-A holds the accepted evidence for this year" if y in (2024, 2025) else ""),
+                      "core_exact_identity_matches": sum(1 for f in core_annual if f["period"]["fiscal_year"] == y and f.get("identity_match") == "EXACT"),
+                      "core_proxy_observations": sum(1 for f in core_annual if f["period"]["fiscal_year"] == y and f.get("identity_match") == "PROXY"),
                       "core_values_total": 5, "evidence": ("QB1-A, ARA2025 statements" if y in (2024, 2025) else "ARA2025 historical summary (PDF 132) and cash-flow opening balance (PDF 178)"),
                       "counts_as_audited_period_now": False} for y in (2021, 2022, 2023, 2024, 2025)],
-          "quarters": [{"quarter": f"Q{q}-{y}", "values_with_disclosure_evidence": sum(1 for x in quarters if x["period"]["fiscal_year"] == y and x["period"]["fiscal_quarter"] == q and x["year_end_evidence"]),
+          "quarters": [{"quarter": f"Q{q}-{y}",
+                        "values_with_exact_identity_evidence": sum(1 for x in quarters if x["period"]["fiscal_year"] == y and x["period"]["fiscal_quarter"] == q and x["year_end_evidence"] and x["year_end_evidence"]["identity_match"] == "EXACT"),
+                        "values_with_proxy_only": sum(1 for x in quarters if x["period"]["fiscal_year"] == y and x["period"]["fiscal_quarter"] == q and x["year_end_evidence"] and x["year_end_evidence"]["identity_match"] == "PROXY"),
                         "values_total": 5, "engine_values": sum(1 for x in quarters if x["period"]["fiscal_year"] == y and x["period"]["fiscal_quarter"] == q and x["engine"]),
                         "counts_toward_gate_now": False} for y, q in QS],
           "out_of_scope": {"Q1-2026, Q2-2026": "Codex (original 2026 verification)"},
@@ -229,12 +253,32 @@ gaps = {"schema": "marefa-aramco-qb2a-gaps/1", "items": [
     {"scope": "FY2021-FY2023 annual values (12 core values with summary evidence)", "missing_for_entry": "binding each engine row to a disclosure hash and page (engine task; the rows exist)",
      "missing_for_qualification": "the audited statements of each year (ARA2022/ARA2023 archived in the engine index but not present here; FY2021 original not archived), a named financial reviewer, rights, D4"},
     {"scope": "cash 2021-12-31, 2022-12-31", "missing_for_entry": "a disclosure: not in ARA2025", "missing_for_qualification": "FY2022/FY2023 statements"},
-    {"scope": "cash 2023-12-31", "missing_for_entry": "balance-sheet identity (only the cash-flow opening balance is seen)", "missing_for_qualification": "FY2023 or FY2024 balance sheet"},
+    {"scope": "cash 2023-12-31 (and Q4-2023)", "missing_for_entry": "balance-sheet identity (only the cash-flow opening balance is seen here)",
+     "missing_for_qualification": "independent review of Codex's direct observation (FY2024 statements PDF 14, SAR 2023 column, 198,973; 46c7deb), or the FY2023 balance sheet"},
     {"scope": "investing and financing cash flows FY2021-FY2023", "missing_for_entry": "the engine has no rows for these metrics in any year", "missing_for_qualification": "engine ingestion, then the audited statements"},
     {"scope": "10 quarters Q3-2023..Q4-2025 (30 flows, 20 balances)", "missing_for_entry": "interim reports and Q4 three-month disclosures; the engine holds no quarter before 2026",
      "missing_for_qualification": "the same documents archived with hashes, engine ingestion, reviewer; Q4 flows by subtraction only with an approved formula"},
     {"scope": "FY2024 original vs comparative", "missing_for_entry": "none", "missing_for_qualification": "a direct read of the original FY2024 statements (B02 private) for total assets/liabilities/equity and capex sign"}]}
+summary_cells = [f for f in facts if f["source"] and f["source"]["pdf_page"] == HP]
+slots = core_annual + quarters
+def ident(x): return (x["metric"], x["period"]["kind"], x["period"]["end"])
+ex_slots = [x for x in slots if (x.get("identity_match") == "EXACT") or (x.get("year_end_evidence") and x["year_end_evidence"]["identity_match"] == "EXACT")]
+px_slots = [x for x in slots if (x.get("identity_match") == "PROXY") or (x.get("year_end_evidence") and x["year_end_evidence"]["identity_match"] == "PROXY")]
+inherited = [x for x in quarters if x.get("year_end_evidence") and x["year_end_evidence"].get("inherited_from_qb1")]
+populations = {"summary_cells": len(summary_cells), "summary_cells_engine_equal": sum(1 for f in summary_cells if f["engine_status"] == "ENGINE_EQUAL"),
+               "summary_cells_engine_absent": sum(1 for f in summary_cells if f["engine_status"] == "ENGINE_MISSING"),
+               "extra_observations": len([f for f in facts if f["source"] and f["source"]["pdf_page"] != HP]), "source_observations": len([f for f in facts if f["source"]]),
+               "presentation_slots": len(slots), "unique_identities": len({ident(x) for x in slots}), "qb1_inherited_slots": len(inherited),
+               "new_target_identities": len({ident(x) for x in slots} - {ident(x) for x in inherited}),
+               "slots_with_exact_identity_evidence": len(ex_slots), "unique_identities_with_exact_evidence": len({ident(x) for x in ex_slots}),
+               "of_which_inherited_from_qb1": len({ident(x) for x in inherited}), "proxy_slots": len(px_slots), "proxy_identities": len({ident(x) for x in px_slots})}
 ledger = {"schema": "marefa-aramco-qb2a-hist-ledger/1", "company_id": "sa:2222", "annual": facts, "quarters": quarters, "summary_vs_statements_2024_2025": cross,
+          "populations": populations,
+          "corrections": [{"batch": "QB2-CORR-01", "previous_delivery": "b5010191d4b16cce9c5f885080667bb173e2d9cd", "review": "46c7debecf2b055e82c40106f893169c614a7959",
+                           "QB2-R01": "cash 2023-12-31 is a proxy (cash-flow opening balance): identity_match PROXY, not counted as an exact identity in FY2023 or Q4-2023; Codex's direct observation recorded as pending, not self-accepted; value unchanged",
+                           "QB2-R02": "net_income_parent comparative now read here (ARA2025 PDF 174, 393,891); a null comparative yields INHERITED_OBSERVATION_NOT_COMPARED, never NO_VALUE_DIFFERENCE; Codex's original PDF 12 observation recorded as pending",
+                           "counts": "summary cells, extra observations, presentation slots, unique identities and QB1-inherited slots reported as separate populations (QB2-N01..N03)",
+                           "values_changed": False}],
           "counts": {"annual_core": len(core_annual), "annual_core_with_disclosure": sum(1 for f in core_annual if f["value_in_source"] is not None),
                      "annual_supplementary": sum(1 for f in facts if not f["core_metric"]), "quarter_values": len(quarters),
                      "quarter_values_with_disclosure": sum(1 for x in quarters if x["year_end_evidence"]), "engine_equal": sum(1 for f in facts if f["engine_equal"]),

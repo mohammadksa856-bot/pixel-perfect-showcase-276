@@ -100,6 +100,47 @@ check("FY2024: capex flagged, not resolved; balance-sheet totals not compared",
 check("FY2024 original document is not claimed accessible", F["original_document"]["accessible_here"] is False)
 check("manifest: only ARA2025 present and verified here", [d["key"] for d in M["documents"] if d.get("present_here")] == ["ARA2025"])
 
+# ---------- QB2-CORR-01 (review 46c7deb) ----------
+def proxy_counted_as_exact(facts, quarters, matrix):
+    """True when a PROXY observation is counted as an exact identity anywhere (fact, Q4 reuse or matrix)."""
+    px = {f["id"] for f in facts if f.get("identity_match") == "PROXY"}
+    if any(f.get("identity_match") == "EXACT" and f["evidence_class"] != "ISSUER_ANNUAL_REPORT_2025_HISTORICAL_SUMMARY" for f in facts): return True
+    if any(q["year_end_evidence"] and q["year_end_evidence"].get("ledger_id") in px and (q["year_end_evidence"]["identity_match"] != "PROXY" or q["needed"].startswith("none")) for q in quarters): return True
+    fy = {a["fiscal_year"]: a for a in matrix["annual"]}
+    exact = {y: sum(1 for f in facts if f["core_metric"] and f["period"]["fiscal_year"] == y and f.get("identity_match") == "EXACT") for y in fy}
+    return any(fy[y]["core_exact_identity_matches"] != exact[y] for y in fy)
+c23 = next(f for f in A if f["id"] == "QB2-A-cash-FY2023")
+check("QB2-R01: cash 2023-12-31 is a PROXY (value 198,973 unchanged), FY2023 counts 4 exact + 1 proxy, Q4-2023 cash marked proxy and still needing evidence",
+      c23["identity_match"] == "PROXY" and c23["value_in_source"] == 198973 and not proxy_counted_as_exact(A, QS, P)
+      and next(a for a in P["annual"] if a["fiscal_year"] == 2023)[("core_exact_identity_matches")] == 4 and next(a for a in P["annual"] if a["fiscal_year"] == 2023)["core_proxy_observations"] == 1)
+m1 = copy.deepcopy(A); next(f for f in m1 if f["id"] == "QB2-A-cash-FY2023")["identity_match"] = "EXACT"
+m2 = copy.deepcopy(QS); q = next(x for x in m2 if x["id"] == "QB2-A-cash-Q4-2023"); q["year_end_evidence"]["identity_match"] = "EXACT"; q["needed"] = "none for the value"
+check("QB2-R01 regression: re-labelling the proxy as exact, in the fact or in the Q4 reuse, is caught", proxy_counted_as_exact(m1, QS, P) and proxy_counted_as_exact(A, m2, P))
+pend = c23["pending_direct_evidence"]
+check("QB2-R01: Codex's direct observation (FY2024 statements PDF 14, 198,973) recorded as pending, not re-read here, not self-accepted",
+      pend["pdf_page"] == 14 and pend["value_sar_millions"] == 198973 and pend["re_read_here"] is False and pend["self_accepted"] is False and pend["state"].startswith("PENDING"))
+def null_equality(rows):
+    return [r["metric"] for r in rows if r["status"].startswith("NO_VALUE_DIFFERENCE") and r["comparative_in_ara2025"] is None]
+check("QB2-R02: no NO_VALUE_DIFFERENCE with a null comparative", not null_equality(F["rows"]))
+np_ = rows["net_income_parent"]
+check("QB2-R02: parent net income comparative 393,891 read here (pypdf finds it on ARA2025 PDF 174), original operand recorded, Codex's PDF 12 observation pending",
+      np_["comparative_in_ara2025"] == 393891 and 393891 in n174 and np_["comparative_source"]["pdf_page"] == 174
+      and np_["original_operand"]["value_sar_millions"] == 393891 and np_["pending_independent_observation"]["re_read_here"] is False)
+m3 = copy.deepcopy(F["rows"]); next(r for r in m3 if r["metric"] == "net_income_parent")["comparative_in_ara2025"] = None
+check("QB2-R02 regression: a null comparative under NO_VALUE_DIFFERENCE is caught", null_equality(m3) == ["net_income_parent"])
+pop = L["populations"]
+check("populations separated: 42 summary cells = 36 engine-equal + 6 absent; 43 source observations; 65 slots / 63 identities / 4 QB1-inherited / 59 new; 17 exact slots / 16 identities; 1 proxy in 2 slots",
+      (pop["summary_cells"], pop["summary_cells_engine_equal"], pop["summary_cells_engine_absent"], pop["source_observations"]) == (42, 36, 6, 43)
+      and (pop["presentation_slots"], pop["unique_identities"], pop["qb1_inherited_slots"], pop["new_target_identities"]) == (65, 63, 4, 59)
+      and (pop["slots_with_exact_identity_evidence"], pop["unique_identities_with_exact_evidence"], pop["proxy_slots"], pop["proxy_identities"]) == (17, 16, 2, 1))
+check("FY2024/FY2025 matrix counts labelled as this batch only, QB1 evidence acknowledged", all("QB1-A holds" in a["scope_of_counts"] for a in P["annual"] if a["fiscal_year"] in (2024, 2025)))
+p184 = (rd.pages[183].extract_text() or "").replace("\n", " ")
+check("presentation note: ARA2025 PDF 184 states the 2024 impairment reclassification (pypdf), and the restatement check says equal totals do not rule it out",
+      "reclassified" in p184 and "Impairment losses for 2024" in " ".join(p184.split()) and any("do not rule out presentation" in n for n in F["definition_notes"]))
+check("correction logged against b5010191 and review 46c7deb, values unchanged", L["corrections"][0]["previous_delivery"].startswith("b5010191") and L["corrections"][0]["values_changed"] is False)
+old = {f["id"]: f["value_in_source"] for f in json.loads(subprocess.run(["git", "-C", ROOT, "show", "b5010191:review-delivery/ARAMCO95/QB2/FINANCIAL-HISTORY/HIST-FIN-LEDGER.json"], capture_output=True, check=True).stdout)["annual"]}
+check("no value changed since b5010191", all(old[f["id"]] == f["value_in_source"] for f in A) and len(old) == len(A))
+
 check("every record WITHHELD, none authorised", all(x["qualification"]["state"] == "WITHHELD" and not x["qualification"]["publication_authorized"] for x in A + QS))
 check("engine DB unchanged (sha256 prefix 2a749d7c8a051f27)", sha(open(os.path.join(E, "data/financial.sqlite3"), "rb").read()).startswith("2a749d7c8a051f27"))
 st = subprocess.run(["git", "-C", E, "status", "--porcelain", "--untracked-files=no"], capture_output=True, text=True).stdout.strip()

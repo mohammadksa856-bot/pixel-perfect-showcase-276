@@ -1,9 +1,16 @@
 {
   "schema": "qb2-independent-execution-receipts/1",
-  "observed_at_utc": "2026-10-19T10:11:10.448782+00:00",
+  "observed_at_utc": "2026-10-19T10:13:16.101544+00:00",
   "application_sha": "1800f4c63f313eac2bb82546e6ccbdd2b9a38f6f",
   "delivery_sha": "b5010191d4b16cce9c5f885080667bb173e2d9cd",
   "decision": "TARGETED_REWORK",
+  "prior_independent_run": {
+    "review_commit": "5aaa093f2d8c112a0d8b940cac76fe86069b3d4f",
+    "passed": 115,
+    "failed": 3,
+    "skipped": 0,
+    "scope": "Before three component-presentation checks were added; retained in Git, not summed with current run"
+  },
   "runs": [
     {
       "id": "AUTHOR33_UNMODIFIED",
@@ -17,7 +24,7 @@
     {
       "id": "INDEPENDENT_ROW_PERIOD_EVIDENCE",
       "scope": "42row/column checks,42engine identity/absence checks,17originalFY2024 and counts/withholding/scope",
-      "passed": 115,
+      "passed": 118,
       "failed": 3,
       "skipped": 0,
       "log": "INDEPENDENT-CHECKS.txt"

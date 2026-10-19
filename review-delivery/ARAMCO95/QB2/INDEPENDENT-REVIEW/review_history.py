@@ -126,6 +126,26 @@ def run():
                 newly_recovered_evidence_status='PENDING_CROSS_REVIEW_NOT_FINANCIAL_ACCEPTANCE'))
         cap=next(x for x in comparisons if x['metric']=='capex')
         check('CAPEX same signed outflow in both original and comparative',cap['original_value_sar_millions']==cap['comparative_in_ara2025']==-188890)
+        # Unchanged totals do not prove unchanged presentation: inspect the component reclassification.
+        old_components={}
+        new_components={}
+        for label in ['Selling, administrative and general','Depreciation and amortization']:
+            old_components[label]=numbers(next(l for l in original_income.splitlines() if l.startswith(label)))[0]
+            new_components[label]=numbers(next(l for l in source24.splitlines() if l.startswith(label)))[1]
+        impairment=numbers(next(l for l in source24.splitlines() if l.startswith('Impairment and held for sale')))[1]
+        check('FY2024 presentation components differ despite unchanged totals',
+              old_components=={'Selling, administrative and general':-89235,'Depreciation and amortization':-103209} and
+              new_components=={'Selling, administrative and general':-88931,'Depreciation and amortization':-91679} and impairment==-11834)
+        check('FY2024 component reclassification preserves combined subtotal',sum(old_components.values())==sum(new_components.values())+impairment)
+        note=document.pages[183].extract_text()
+        check('FY2025 PDF184 explicitly explains2024impairment reclassification',
+              'reclassified to conform' in note and 'previously recognized within depreciation and amortization' in note)
+        presentation=dict(original_document_sha256=FY24_HASH,original_pdf_page=12,comparative_document_sha256=ANNUAL_HASH,
+            comparative_pdf_page=174,explanatory_note_pdf_page=184,original_components=old_components,
+            comparative_components=new_components,new_separate_impairment_line=impairment,
+            original_combined_subtotal=sum(old_components.values()),comparative_combined_subtotal=sum(new_components.values())+impairment,
+            interpretation='Observed presentation reclassification; unchanged aggregate totals do not rule out changed component presentation. No inferred earnings restatement.',
+            new_evidence_self_accepted=False)
         core=[r for r in annual if r['core_metric']]
         slots=core+quarters
         unique={identity(x) for x in slots}
@@ -166,6 +186,7 @@ def run():
              original_fy2024_new_crosschecks=comparisons,new_original_cash2023=dict(pdf_sha256=FY24_HASH,
                 pdf_page=14,column='SAR comparative2023',value=198973,unit='SAR_millions',
                 state='NEW_SOURCE_OBSERVATION_PENDING_CROSS_REVIEW_NOT_SELF_ACCEPTED'),
+             original_fy2024_presentation_reclassification=presentation,
              holds=[7,22,142,0],financially_qualified=0,author_files_changed=False,
              decision='TARGETED_REWORK',scope='R01 exact-vs-proxy counts/needed flag; R02 null parent comparative evidence;42summary values passed')
     (HERE/'INDEPENDENT-RESULTS.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')

@@ -2,7 +2,7 @@
   "schema": "qb2-independent-review/1",
   "application_sha": "1800f4c63f313eac2bb82546e6ccbdd2b9a38f6f",
   "delivery_sha": "b5010191d4b16cce9c5f885080667bb173e2d9cd",
-  "observed_at_utc": "2026-10-19T10:06:05.750355+00:00",
+  "observed_at_utc": "2026-10-19T10:13:15.606008+00:00",
   "checks": [
     {
       "name": "original ARA2025 hash",
@@ -555,6 +555,21 @@
       "detail": null
     },
     {
+      "name": "FY2024 presentation components differ despite unchanged totals",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2024 component reclassification preserves combined subtotal",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FY2025 PDF184 explicitly explains2024impairment reclassification",
+      "status": "PASS",
+      "detail": null
+    },
+    {
       "name": "37 includes one opening cash proxy",
       "status": "PASS",
       "detail": null
@@ -595,7 +610,7 @@
       "detail": null
     }
   ],
-  "passed": 115,
+  "passed": 118,
   "failed": 3,
   "skipped": 0,
   "counts": {
@@ -1794,6 +1809,26 @@
     "value": 198973,
     "unit": "SAR_millions",
     "state": "NEW_SOURCE_OBSERVATION_PENDING_CROSS_REVIEW_NOT_SELF_ACCEPTED"
+  },
+  "original_fy2024_presentation_reclassification": {
+    "original_document_sha256": "b8a29772c1570738a9b4e481efc5af795a523fe79090107a9556589db28685c0",
+    "original_pdf_page": 12,
+    "comparative_document_sha256": "78bb678e8e45f5c58fa1b2402ab5a29c5ad10adfda8ba5e7ee5f4d1ad76cd227",
+    "comparative_pdf_page": 174,
+    "explanatory_note_pdf_page": 184,
+    "original_components": {
+      "Selling, administrative and general": -89235,
+      "Depreciation and amortization": -103209
+    },
+    "comparative_components": {
+      "Selling, administrative and general": -88931,
+      "Depreciation and amortization": -91679
+    },
+    "new_separate_impairment_line": -11834,
+    "original_combined_subtotal": -192444,
+    "comparative_combined_subtotal": -192444,
+    "interpretation": "Observed presentation reclassification; unchanged aggregate totals do not rule out changed component presentation. No inferred earnings restatement.",
+    "new_evidence_self_accepted": false
   },
   "holds": [
     7,

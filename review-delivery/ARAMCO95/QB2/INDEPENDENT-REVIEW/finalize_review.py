@@ -24,6 +24,8 @@ assert len(changed)==9 and all(x.startswith(('review-delivery/ARAMCO95/QB2/FINAN
 inventory=json.loads((HERE/'GATE-SOURCE-INVENTORY.json').read_text(encoding='utf8'))
 receipt=dict(schema='qb2-independent-execution-receipts/1',observed_at_utc=datetime.now(timezone.utc).isoformat(),
  application_sha=implementation,delivery_sha=delivery,decision='TARGETED_REWORK',
+ prior_independent_run=dict(review_commit='5aaa093f2d8c112a0d8b940cac76fe86069b3d4f',passed=115,failed=3,skipped=0,
+                           scope='Before three component-presentation checks were added; retained in Git, not summed with current run'),
  runs=[dict(id='AUTHOR33_UNMODIFIED',scope='Author33original assertions at clean fixedDelivery before review files added',passed=33,failed=0,skipped=0,
             log='AUTHOR33-REPLAY.txt',file_sha256=hashlib.sha256((ROOT/'review-delivery/ARAMCO95/tools/qb2_hist_check.py').read_bytes()).hexdigest()),
        dict(id='INDEPENDENT_ROW_PERIOD_EVIDENCE',scope='42row/column checks,42engine identity/absence checks,17originalFY2024 and counts/withholding/scope',

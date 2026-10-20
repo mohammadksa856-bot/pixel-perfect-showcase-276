@@ -115,9 +115,6 @@ jobs:
           tests/financial-projection.test.ts tests/fixtures/synthetic-projection/generate.ts
           .github/scripts/aramco95-kernel-checks.ts
 
-      - name: Build (no secrets)
-        run: bunx vite build
-
       - name: Generator run 1 changes no file
         run: |
           rm -f kernel-test.log
@@ -139,3 +136,7 @@ jobs:
 
       - name: No secret, private record or real data in the test data
         run: bun .github/scripts/aramco95-kernel-checks.ts scan
+
+      # Last: the build regenerates src/routeTree.gen.ts (LF), which a CRLF checkout reports as modified.
+      - name: Build (no secrets)
+        run: bunx vite build

@@ -1,0 +1,139 @@
+{
+  "old_ref": "bc378a4",
+  "new_ref": "HEAD",
+  "scenarios": [
+    {
+      "scenario": "PR edits vite.config.ts only (not in the old filters)",
+      "event": "pull_request",
+      "branch": "main",
+      "files": [
+        "vite.config.ts"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "PR edits the server entry src/server.ts only",
+      "event": "pull_request",
+      "branch": "main",
+      "files": [
+        "src/server.ts"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "PR adds a route that consumes the kernel",
+      "event": "pull_request",
+      "branch": "main",
+      "files": [
+        "src/routes/company.$symbol.tsx"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "PR edits README.md only",
+      "event": "pull_request",
+      "branch": "main",
+      "files": [
+        "README.md"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "PR to PR #4's branch edits vite.config.ts",
+      "event": "pull_request",
+      "branch": "claude/aramco95-selective-integration-a-pr",
+      "files": [
+        "vite.config.ts"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "PR #5 itself (its real diff)",
+      "event": "pull_request",
+      "branch": "claude/aramco95-selective-integration-a-pr",
+      "files": [
+        ".github/scripts/aramco95-kernel-checks.ts",
+        ".github/workflows/aramco95-kernel.yml"
+      ],
+      "old_runs": true,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "PR #4 + CI to main (real diff main..new)",
+      "event": "pull_request",
+      "branch": "main",
+      "files": [
+        ".gitattributes",
+        ".github/scripts/aramco95-kernel-checks.ts",
+        ".github/workflows/aramco95-kernel.yml",
+        "src/design-fixtures.d.ts",
+        "src/lib/bidi.ts",
+        "src/lib/engine/company-preview.server.ts"
+      ],
+      "old_runs": true,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "push to main edits vite.config.ts",
+      "event": "push",
+      "branch": "main",
+      "files": [
+        "vite.config.ts"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "push to main edits README.md",
+      "event": "push",
+      "branch": "main",
+      "files": [
+        "README.md"
+      ],
+      "old_runs": false,
+      "new_runs": true,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "push to a feature branch edits the kernel",
+      "event": "push",
+      "branch": "feature/x",
+      "files": [
+        "src/lib/engine/statements.ts"
+      ],
+      "old_runs": false,
+      "new_runs": false,
+      "new_as_expected": true
+    },
+    {
+      "scenario": "manual run",
+      "event": "workflow_dispatch",
+      "branch": "main",
+      "files": [],
+      "old_runs": true,
+      "new_runs": true,
+      "new_as_expected": true
+    }
+  ],
+  "checks": {
+    "new on-block has no paths filter": true,
+    "new on-block has no pull_request branch filter": true,
+    "push is limited to main": true,
+    "workflow_dispatch kept": true,
+    "every scenario behaves as expected under the new triggers": true,
+    "at least one scenario the old filters skipped now runs": true
+  }
+}

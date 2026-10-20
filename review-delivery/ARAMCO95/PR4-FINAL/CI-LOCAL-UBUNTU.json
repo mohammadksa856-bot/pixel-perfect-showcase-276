@@ -1,0 +1,95 @@
+{
+  "sha": "929e019baf382460c6dd8d38d9a9323eafba9afb",
+  "core.autocrlf": "false",
+  "emulated_os": "Linux",
+  "cr_bytes_after_checkout": {
+    "src/lib/engine/statements.ts": 0,
+    "tests/fixtures/synthetic-projection/9901-page.json": 0,
+    "src/lib/engine/publication-baseline.json": 0
+  },
+  "steps": [
+    {
+      "step": "Windows checkout uses core.autocrlf=true",
+      "result": "skipped (if)"
+    },
+    {
+      "step": "actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+      "result": "emulated"
+    },
+    {
+      "step": "Windows checkout really converted other text files to CRLF",
+      "result": "skipped (if)"
+    },
+    {
+      "step": "oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6",
+      "result": "emulated"
+    },
+    {
+      "step": "bun install --frozen-lockfile",
+      "result": "pass",
+      "seconds": 0.3,
+      "tail": "-alert-dialog@1.1.23\n+ @radix-ui/react-aspect-ratio@1.1.15\n+ @radix-ui/react-avatar@1.2.6\n+ @radix-ui/react-checkbox@1.3.11\n+ @radix-ui/react-collapsible@1.1.20\n+ @radix-ui/react-context-menu@2.3.7\n+ @radix-ui/react-dialog@1.1.23\n+ @radix-ui/react-dropdown-menu@2.1.24\n+ @radix-ui/react-hover-card@1.1.23\n+ @radix-ui/react-label@2.1.15\n+ @radix-ui/react-menubar@1.1.24\n+ @radix-ui/react-navigation-menu@1.2.22\n+ @radix-ui/react-popover@1.1.23\n+ @radix-ui/react-progress@1.1.16\n+ @radix-ui/react-radio-group@1.4.7\n+ @radix-ui/react-scroll-area@1.2.18\n+ @radix-ui/react-select@2.3.7\n+ @radix-ui/react-separator@1.1.15\n+ @radix-ui/react-slider@1.4.7\n+ @radix-ui/react-slot@1.3.3\n+ @radix-ui/react-switch@1.3.7\n+ @radix-ui/react-tabs@1.1.21\n+ @radix-ui/react-toggle@1.1.18\n+ @radix-ui/react-toggle-group@1.1.19\n+ @radix-ui/react-tooltip@1.2.16\n+ @supabase/supabase-js@2.111.0\n+ @tailwindcss/vite@4.3.3\n+ @tanstack/react-query@5.101.4\n+ @tanstack/react-router@1.170.18\n+ @tanstack/react-start@1.168.32\n+ @tanstack/router-plugin@1.168.23\n+ class-variance-authority@0.7.1\n+ clsx@2.1.1\n+ cmdk@1.1.1\n+ date-fns@4.4.0\n+ embla-carousel-react@8.6.0\n+ input-otp@1.4.2\n+ lucide-react@0.575.0\n+ react@19.2.8\n+ react-day-picker@9.14.0\n+ react-dom@19.2.8\n+ react-hook-form@7.83.0\n+ react-resizable-panels@4.12.2\n+ recharts@2.15.4\n+ sonner@2.0.7\n+ tailwind-merge@3.6.0\n+ tailwindcss@4.3.3\n+ tw-animate-css@1.4.0\n+ vaul@1.1.2\n+ vite-tsconfig-paths@6.1.1\n+ zod@3.25.76\n\n421 packages installed [330.00ms]\n[0.04ms] \".env\"\n"
+    },
+    {
+      "step": "Pinned test data is LF and matches its sha256 pins (before any generation)",
+      "result": "pass",
+      "seconds": 0.0,
+      "tail": "PASS tests/fixtures/synthetic-projection/9901-page.json has no CR byte\nPASS tests/fixtures/synthetic-projection/9901-page.json sha256 = pinned\nPASS tests/fixtures/synthetic-projection/9902-page.json has no CR byte\nPASS tests/fixtures/synthetic-projection/9902-page.json sha256 = pinned\nPASS tests/fixtures/synthetic-projection/9903-page.json has no CR byte\nPASS tests/fixtures/synthetic-projection/9903-page.json sha256 = pinned\nPASS src/lib/engine/publication-baseline.json has no CR byte\nPASS src/lib/engine/publication-baseline.json sha256 = pinned\nPASS baseline pins 9901 to the checked-out fixture\nPASS baseline pins 9902 to the checked-out fixture\nPASS baseline pins 9903 to the checked-out fixture\n"
+    },
+    {
+      "step": "Kernel tests (before any generation), exactly 34 passing",
+      "result": "pass",
+      "seconds": 0.3,
+      "tail": "bun test v1.4.2 (744846f84)\n\n 34 pass\n 0 fail\n 925 expect() calls\nRan 34 tests across 1 file. [300.00ms]\n"
+    },
+    {
+      "step": "TypeScript",
+      "result": "pass",
+      "seconds": 9.0,
+      "tail": ""
+    },
+    {
+      "step": "ESLint on the kernel files",
+      "result": "pass",
+      "seconds": 2.8,
+      "tail": ""
+    },
+    {
+      "step": "Generator run 1 changes no file",
+      "result": "pass",
+      "seconds": 0.5,
+      "tail": "{\"fixtures\":{\"9901\":\"7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093\",\"9902\":\"323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81\",\"9903\":\"0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302\"},\"rows\":228,\"unique\":208,\"incomplete\":0}\n"
+    },
+    {
+      "step": "Generator run 2 changes no file",
+      "result": "pass",
+      "seconds": 0.4,
+      "tail": "{\"fixtures\":{\"9901\":\"7a3a5f9606d2b9d3052f57f2c682e811eecf391674e87ad7551242bff52ce093\",\"9902\":\"323e4d242d88d71497757e70a12714f69f1110eaaa6341edd076291fe6c66c81\",\"9903\":\"0a48c331b72503b3bee65fdaa48e997a868d05f966ff3cad5f65040ac28f9302\"},\"rows\":228,\"unique\":208,\"incomplete\":0}\n"
+    },
+    {
+      "step": "Pins still hold after generation",
+      "result": "pass",
+      "seconds": 0.0,
+      "tail": "PASS tests/fixtures/synthetic-projection/9901-page.json has no CR byte\nPASS tests/fixtures/synthetic-projection/9901-page.json sha256 = pinned\nPASS tests/fixtures/synthetic-projection/9902-page.json has no CR byte\nPASS tests/fixtures/synthetic-projection/9902-page.json sha256 = pinned\nPASS tests/fixtures/synthetic-projection/9903-page.json has no CR byte\nPASS tests/fixtures/synthetic-projection/9903-page.json sha256 = pinned\nPASS src/lib/engine/publication-baseline.json has no CR byte\nPASS src/lib/engine/publication-baseline.json sha256 = pinned\nPASS baseline pins 9901 to the checked-out fixture\nPASS baseline pins 9902 to the checked-out fixture\nPASS baseline pins 9903 to the checked-out fixture\n"
+    },
+    {
+      "step": "Publication trust store is empty",
+      "result": "pass",
+      "seconds": 0.0,
+      "tail": "PASS trust store schema is marefa-publication-trust/1\nPASS trust store authorities is an empty array\nPASS trust store carries no key material\n"
+    },
+    {
+      "step": "No secret, private record or real data in the test data",
+      "result": "pass",
+      "seconds": 0.0,
+      "tail": "erved hosts\nPASS tests/fixtures/synthetic-projection/generate.ts: no secret or private record\nPASS tests/fixtures/synthetic-projection/generate.ts: URLs only on reserved hosts\nPASS tests/financial-projection.test.ts: no secret or private record\nPASS tests/financial-projection.test.ts: URLs only on reserved hosts\nPASS src/lib/engine/publication-trust.json: no secret or private record\nPASS src/lib/engine/publication-trust.json: URLs only on reserved hosts\nPASS tests/fixtures/synthetic-projection/9901-page.json: every value is a synthetic marker\nPASS tests/fixtures/synthetic-projection/9901-page.json: issuer is a synthetic SA 99xx symbol\nPASS tests/fixtures/synthetic-projection/9901-page.json: every name says Synthetic\nPASS tests/fixtures/synthetic-projection/9901-page.json: no ISIN\nPASS tests/fixtures/synthetic-projection/9902-page.json: every value is a synthetic marker\nPASS tests/fixtures/synthetic-projection/9902-page.json: issuer is a synthetic SA 99xx symbol\nPASS tests/fixtures/synthetic-projection/9902-page.json: every name says Synthetic\nPASS tests/fixtures/synthetic-projection/9902-page.json: no ISIN\nPASS tests/fixtures/synthetic-projection/9903-page.json: every value is a synthetic marker\nPASS tests/fixtures/synthetic-projection/9903-page.json: issuer is a synthetic SA 99xx symbol\nPASS tests/fixtures/synthetic-projection/9903-page.json: every name says Synthetic\nPASS tests/fixtures/synthetic-projection/9903-page.json: no ISIN\nPASS baseline holds hashes only, no values\n"
+    },
+    {
+      "step": "Build (no secrets)",
+      "result": "pass",
+      "seconds": 6.2,
+      "tail": "5.57 kB \u2502 gzip:  14.75 kB\n.output/server/_libs/tailwind-merge.mjs                       88.13 kB \u2502 gzip:  15.66 kB\n.output/server/_libs/supabase__postgrest-js.mjs              105.41 kB \u2502 gzip:  21.66 kB\n.output/server/_libs/@radix-ui/react-alert-dialog+[...].mjs  115.60 kB \u2502 gzip:  26.03 kB\n.output/server/_libs/@supabase/storage-js+[...].mjs          119.50 kB \u2502 gzip:  22.34 kB\n.output/server/_libs/lodash.mjs                              161.80 kB \u2502 gzip:  29.44 kB\n.output/server/_libs/supabase__auth-js.mjs                   312.34 kB \u2502 gzip:  63.66 kB\n.output/server/_libs/recharts+[...].mjs                      499.01 kB \u2502 gzip:  93.84 kB\n.output/server/_libs/@tanstack/react-router+[...].mjs        658.05 kB \u2502 gzip: 138.55 kB\n\n\u001b[32m\u2713 built in 735ms\u001b[39m\n[info] [nitro] Using auto generated worker name: `user-ci-wt`\n[info] Generated .output/server/wrangler.json\n[info] Generated .wrangler/deploy/config.json\n[info] Generated .output/public/_headers\n[info] Generated .output/nitro.json\n[success] [nitro] You can preview this build using `npx vite preview`\n[success] [nitro] You can deploy this build using `npx nitro deploy --prebuilt`\n\u001b[33mThe plugin \"vite-tsconfig-paths\" is detected. Vite now supports tsconfig paths resolution natively via the \u001b[1mresolve.tsconfigPaths\u001b[22m option. You can remove the plugin and set \u001b[1mresolve.tsconfigPaths: true\u001b[22m in your Vite config instead.\u001b[39m\n[warn] `inlineDynamicImports` option is ignored because the `codeSplitting` option is specified.\n"
+    }
+  ],
+  "all_pass": true
+}

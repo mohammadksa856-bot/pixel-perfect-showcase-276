@@ -79,9 +79,12 @@ jobs:
 
       - name: Windows checkout really converted other text files to CRLF
         if: runner.os == 'Windows'
+        # git reports the working-tree line ending itself; Git for Windows' grep strips CR before matching.
         run: |
+          git config --show-origin core.autocrlf
+          git ls-files --eol src/lib/engine/statements.ts src/lib/engine/publication-baseline.json
           test "$(git config core.autocrlf)" = "true"
-          grep -q $'\r' src/lib/engine/statements.ts
+          git ls-files --eol src/lib/engine/statements.ts | grep -q 'w/crlf'
 
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:

@@ -101,9 +101,13 @@ jobs:
       - name: TypeScript
         run: bunx tsc --noEmit -p .
 
+      # On the Windows checkout every source file is CRLF; Ubuntu enforces the committed LF formatting, and the
+      # byte-pinned files are checked separately, so Windows lints the code without judging line endings.
       - name: ESLint on the kernel files
+        env:
+          EOL_RULE: ${{ runner.os == 'Windows' && '{"prettier/prettier":["error",{"endOfLine":"auto"}]}' || '{}' }}
         run: >
-          bunx eslint
+          bunx eslint --rule "$EOL_RULE"
           src/design-fixtures.d.ts src/lib/bidi.ts src/lib/engine
           src/lib/web-v1/design-review-policy.ts src/lib/web-v1/design-fixtures.server.ts
           src/lib/web-v1/company-experience.ts src/lib/web-v1/catalog.ts src/lib/web-v1/model.ts

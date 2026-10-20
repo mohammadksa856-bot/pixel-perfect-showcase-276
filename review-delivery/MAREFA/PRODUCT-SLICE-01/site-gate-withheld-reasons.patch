@@ -1,0 +1,458 @@
+diff --git a/sign_local.ts b/sign_local.ts
+new file mode 100644
+index 0000000..e4916d0
+--- /dev/null
++++ b/sign_local.ts
+@@ -0,0 +1,37 @@
++// Local integration helper (never committed): an ephemeral test authority signs decisions for chosen synthetic
++// engine rows. usage: bun sign_local.ts <page.json> <trust-out.json> <approvals-out.json>
++import { generateKeyPairSync, sign } from "node:crypto";
++import { readFileSync, writeFileSync } from "node:fs";
++import { APPROVALS_SCHEMA, approvalPayload, strictIdentity, strictKey, type Decision } from "./src/lib/engine/publication-gate.server";
++
++const [pagePath, trustOut, approvalsOut] = process.argv.slice(2);
++const page = JSON.parse(readFileSync(pagePath!, "utf8"));
++const { privateKey, publicKey } = generateKeyPairSync("ed25519");
++const FULL: Decision[] = ["SOURCE_ACCEPT", "FINANCIAL_ACCEPT", "PUBLICATION_AUTHORIZED"];
++const plan: [string, string, string, Decision[]][] = [
++  ["annual", "revenue", "2025-12-31", FULL],
++  ["annual", "net_income", "2025-12-31", FULL],
++  ["annual", "operating_cash_flow", "2025-12-31", FULL],
++  ["instant", "total_assets", "2025-12-31", FULL],
++  ["instant", "total_equity", "2025-12-31", FULL],
++  ["annual", "capex", "2025-12-31", ["SOURCE_ACCEPT", "FINANCIAL_ACCEPT"]],
++  ["instant", "total_liabilities", "2025-12-31", ["WITHHELD"]],
++];
++const approvals = [];
++for (const [section, metric, end, decisions] of plan) {
++  const r = page.sections.financials[section].metrics[metric].find((x: { period_end: string }) => x.period_end === end);
++  const id = strictIdentity(page.company.company_id, metric, r);
++  if (typeof id === "string") throw new Error(`${metric}: ${id}`);
++  for (const decision of decisions) {
++    const a = { decision, decision_ref: `SLICE-LOCAL-${decision}`, authority_id: "slice-local-test-authority",
++      subject: { kind: "fact" as const, key: strictKey(id) }, issued_at: "2026-10-01T00:00:00Z", expires_at: "2027-01-01T00:00:00Z" };
++    approvals.push({ ...a, signature: sign(null, Buffer.from(approvalPayload(a)), privateKey).toString("base64") });
++  }
++}
++writeFileSync(trustOut!, JSON.stringify({ schema: "marefa-publication-trust/1",
++  note: "LOCAL INTEGRATION TEST ONLY — ephemeral key, never committed.",
++  authorities: [{ authority_id: "slice-local-test-authority",
++    public_key_spki_der_b64: publicKey.export({ type: "spki", format: "der" }).toString("base64"),
++    decisions: ["SOURCE_ACCEPT", "FINANCIAL_ACCEPT", "PUBLICATION_AUTHORIZED", "WITHHELD"] }] }, null, 2));
++writeFileSync(approvalsOut!, JSON.stringify({ schema: APPROVALS_SCHEMA, approvals }));
++console.log("signed", approvals.length);
+diff --git a/src/components/engine-preview.tsx b/src/components/engine-preview.tsx
+index b353edc..975d901 100644
+--- a/src/components/engine-preview.tsx
++++ b/src/components/engine-preview.tsx
+@@ -18,6 +18,7 @@ import type { PeerTable } from "@/lib/engine/peer-comparison";
+ import type { Readiness, ReadinessState } from "@/lib/engine/readiness";
+ import { iso } from "@/lib/bidi";
+ import { safeSourceUrl } from "@/lib/engine/peer-comparison";
++import { PUBLICATION_WITHHELD_TEXT } from "@/lib/engine/company-preview";
+ import { LanguageMark } from "@/components/web-v1/display-label";
+ 
+ /**
+@@ -82,6 +83,7 @@ const WITHHELD: Record<WithheldReason, LocalizedText> = {
+     ar: "محسوبة، ولم يُعِد المحرك إنتاج مدخلاتها",
+     en: "Calculated; the engine has not reproduced its inputs",
+   },
++  ...PUBLICATION_WITHHELD_TEXT,
+ };
+ 
+ const PEER_REASONS: Record<string, LocalizedText> = {
+@@ -164,6 +166,18 @@ function ProofBadge({ cell }: { cell: ValueCell }) {
+   );
+ }
+ 
++/** تاريخ إفصاح المصدر: يبيّن حداثة القيمة دون ادعاء تحديث لحظي. */
++function SourceDate({ cell }: { cell: ValueCell }) {
++  const { t } = useI18n();
++  if (!cell.proof.filedAt) return null;
++  return (
++    <span className="text-muted-foreground" data-source-date>
++      {t({ ar: "إفصاح المصدر: ", en: "Source filed: " })}
++      <span dir="ltr">{cell.proof.filedAt}</span>
++    </span>
++  );
++}
++
+ function MetricTable({ group }: { group: MetricGroup }) {
+   const { t } = useI18n();
+   return (
+@@ -183,6 +197,7 @@ function MetricTable({ group }: { group: MetricGroup }) {
+                 <span>{t(c.period.label)}</span>
+                 <ProofBadge cell={c} />
+                 <SourceLink href={c.proof.sourceUrl} />
++                <SourceDate cell={c} />
+               </div>
+               {c.proof.formula && (
+                 <div
+@@ -222,6 +237,7 @@ function MetricTable({ group }: { group: MetricGroup }) {
+                   <div className="flex flex-wrap items-center gap-2">
+                     <ProofBadge cell={c} />
+                     <SourceLink href={c.proof.sourceUrl} />
++                    <SourceDate cell={c} />
+                   </div>
+                   {c.proof.formula && (
+                     <div className="mt-1 font-mono text-[10px] text-muted-foreground" dir="ltr">
+diff --git a/src/components/web-v1/financial-explorer.tsx b/src/components/web-v1/financial-explorer.tsx
+index 7a289db..08f258c 100644
+--- a/src/components/web-v1/financial-explorer.tsx
++++ b/src/components/web-v1/financial-explorer.tsx
+@@ -3,7 +3,12 @@ import { ExternalLink, EyeOff } from "lucide-react";
+ import { useI18n, type LocalizedText } from "@/lib/i18n";
+ import { iso } from "@/lib/bidi";
+ import { cn } from "@/lib/utils";
+-import { AMOUNT_UNITS, type CompanyKind, type WithheldReason } from "@/lib/engine/company-preview";
++import {
++  AMOUNT_UNITS,
++  PUBLICATION_WITHHELD_TEXT,
++  type CompanyKind,
++  type WithheldReason,
++} from "@/lib/engine/company-preview";
+ import type {
+   KeyFigure,
+   StatementMode,
+@@ -56,6 +61,7 @@ const UNAVAILABLE: Record<string, LocalizedText> = {
+ };
+ const NO_PERIODS: LocalizedText = { ar: "لا توجد فترات.", en: "No periods." };
+ export const WITHHELD_TEXT: Record<WithheldReason, LocalizedText> = {
++  ...PUBLICATION_WITHHELD_TEXT,
+   period_end_mismatch: {
+     ar: "تاريخ نهاية الفترة لا يطابق العمود",
+     en: "Period end does not match the column",
+diff --git a/src/lib/engine/company-preview.ts b/src/lib/engine/company-preview.ts
+index c936f08..6c1aea7 100644
+--- a/src/lib/engine/company-preview.ts
++++ b/src/lib/engine/company-preview.ts
+@@ -49,6 +49,8 @@ export type EngineMetricRow = {
+   calculation?: string | null;
+   quality_status?: string | null;
+   quality_reasons?: string[] | null;
++  /** يضعه بوابة النشر على الخادم: الصف بلا قيمة، ويحمل سبب الحجب فقط. */
++  publication_withheld?: string | null;
+   provenance?: {
+     source?: {
+       source_url?: string | null;
+@@ -94,6 +96,7 @@ type Capability = { status: string; count: number; reason: string | null };
+ 
+ export type EnginePage = {
+   contract_version: number;
++  generated_at?: string | null;
+   placeholder_policy?: string;
+   company: {
+     market: string;
+@@ -200,6 +203,8 @@ export type ValueCell = {
+     formula: string | null;
+     sourceUrl: string;
+     filingType: string | null;
++    /** تاريخ إفصاح المصدر كما يسجله المحرك. */
++    filedAt: string | null;
+     document: DocumentKind;
+     /** وجود المصدر ليس تحققًا مستقلًا من صحة الرقم. */
+     independentlyVerified: false;
+@@ -223,7 +228,46 @@ export type WithheldReason =
+   /** WEB-03: مرشحان مقبولان (من مصدر واحد أو مصدرين) للمقياس والفترة والنطاق نفسها بقيمتين مختلفتين. */
+   | "source_conflict"
+   /** WEB-03: للمقياس قيمة في المحرك لكنها لم تجتز شروط الجدول، فلا تُعرض في البطاقة. */
+-  | "not_in_statement_table";
++  | "not_in_statement_table"
++  /** بوابة النشر: الصف لم يجتز قرارات المصدر والاعتماد المالي والتصريح بالنشر الموقّعة. */
++  | "publication_identity_incomplete"
++  | "publication_no_source_accept"
++  | "publication_no_financial_accept"
++  | "publication_not_authorized"
++  | "publication_withheld_explicit";
++
++/** نصوص أسباب حجب بوابة النشر، مشتركة بين صفحة المعاينة ومستكشف القوائم. */
++export const PUBLICATION_WITHHELD_TEXT = {
++  publication_identity_incomplete: {
++    ar: "محجوبة: هوية القيمة ناقصة فلا يمكن ربطها بقرار نشر",
++    en: "Withheld: the value's identity is incomplete, so no publication decision can apply",
++  },
++  publication_no_source_accept: {
++    ar: "محجوبة: لا يوجد قرار موقّع بقبول المصدر (SOURCE_ACCEPT)",
++    en: "Withheld: no signed source acceptance (SOURCE_ACCEPT)",
++  },
++  publication_no_financial_accept: {
++    ar: "محجوبة: لا يوجد اعتماد مالي موقّع (FINANCIAL_ACCEPT)",
++    en: "Withheld: no signed financial acceptance (FINANCIAL_ACCEPT)",
++  },
++  publication_not_authorized: {
++    ar: "محجوبة: لا يوجد تصريح نشر موقّع (PUBLICATION_AUTHORIZED)",
++    en: "Withheld: no signed publication authorization (PUBLICATION_AUTHORIZED)",
++  },
++  publication_withheld_explicit: {
++    ar: "محجوبة بقرار صريح (WITHHELD)",
++    en: "Withheld by an explicit decision (WITHHELD)",
++  },
++} satisfies Partial<Record<WithheldReason, LocalizedText>>;
++
++const PUBLICATION_REASONS: Record<string, WithheldReason> = {
++  identity_incomplete: "publication_identity_incomplete",
++  identity_contradictory: "publication_identity_incomplete",
++  no_verified_source_accept: "publication_no_source_accept",
++  no_verified_financial_accept: "publication_no_financial_accept",
++  no_verified_publication_authorization: "publication_not_authorized",
++  explicit_withheld: "publication_withheld_explicit",
++};
+ 
+ export type MetricGroup = {
+   id: string;
+@@ -299,6 +343,8 @@ export type CompanyPreview = {
+     currency: string | null;
+     fiscalYearEnd: string | null;
+     latestFiling: string | null;
++    /** وقت قراءة المحرك للبيانات (generated_at)، لا وقت تحديث المصدر. */
++    engineReadAt: string | null;
+   };
+   kind: CompanyKind;
+   /** نموذجان منفصلان: موضوعات المستثمر، والفئات التشغيلية. */
+@@ -621,6 +667,9 @@ export function checkRow(
+   row: EngineMetricRow,
+   expectedPeriod: string,
+ ): ValueCell | WithheldReason {
++  // An unknown gate reason still withholds: the stub never carries a value.
++  if (row.publication_withheld)
++    return PUBLICATION_REASONS[row.publication_withheld] ?? "publication_not_authorized";
+   if (qualityFlagged(row)) return "quality_flagged";
+   if (row.period_kind !== expectedPeriod || !row.period_end) return "period_kind_mismatch";
+   const value = Number(row.value);
+@@ -657,6 +706,7 @@ export function checkRow(
+       formula: calculated ? formula : null,
+       sourceUrl,
+       filingType: row.provenance?.source?.filing_type ?? null,
++      filedAt: row.provenance?.source?.filed_at ?? null,
+       document: !contentType
+         ? "not_stated"
+         : contentType.includes("json")
+@@ -1396,6 +1446,7 @@ export function buildCompanyPreview(page: EnginePage): CompanyPreview {
+       currency: page.company.currency,
+       fiscalYearEnd: page.company.fiscal_year_end,
+       latestFiling: page.company.latest_filing,
++      engineReadAt: page.generated_at ?? null,
+     },
+     kind,
+     readiness: {
+diff --git a/src/lib/engine/publication-gate.server.ts b/src/lib/engine/publication-gate.server.ts
+index 57531a3..db32efb 100644
+--- a/src/lib/engine/publication-gate.server.ts
++++ b/src/lib/engine/publication-gate.server.ts
+@@ -429,6 +429,29 @@ export function applyPublicationGate(
+         withhold("malformed_container");
+         continue;
+       }
++      // Live mode keeps a rejected row as a stub: its period, unit and the gate reason, never its value or
++      // provenance, so the page can say why a figure is withheld.
++      const stubs: Obj[] = [];
++      const stub = (r: unknown, reason: GateReason) => {
++        if (opts.mode !== "live_engine" || !isObj(r)) return;
++        const keep = [
++          "display_name",
++          "unit",
++          "currency",
++          "period_start",
++          "period_end",
++          "period_kind",
++          "fiscal_year",
++          "fiscal_quarter",
++          "scope",
++          "dimensions",
++        ];
++        stubs.push({
++          ...Object.fromEntries(keep.filter((k) => k in r).map((k) => [k, r[k]])),
++          value: null,
++          publication_withheld: reason,
++        });
++      };
+       const kept = rows.filter((r) => {
+         if (opts.mode === "frozen_design_fixture") {
+           const key = isStr(company) ? frozenRowKey(company, metric, r) : null;
+@@ -440,18 +463,20 @@ export function applyPublicationGate(
+           summary.baseline_rows++;
+           return true;
+         }
++        const reject = (reason: GateReason) => (withhold(reason), stub(r, reason), false);
+         const id = strictIdentity(company, metric, r);
+-        if (typeof id === "string") return (withhold(id), false);
++        if (typeof id === "string") return reject(id);
+         const key = strictKey(id);
+-        if (ver.withheld.has(key)) return (withhold("explicit_withheld"), false);
++        if (ver.withheld.has(key)) return reject("explicit_withheld");
+         const got = ver.byKey.get(key) ?? new Set<Decision>();
+-        if (!got.has("SOURCE_ACCEPT")) return (withhold("no_verified_source_accept"), false);
+-        if (!got.has("FINANCIAL_ACCEPT")) return (withhold("no_verified_financial_accept"), false);
++        if (!got.has("SOURCE_ACCEPT")) return reject("no_verified_source_accept");
++        if (!got.has("FINANCIAL_ACCEPT")) return reject("no_verified_financial_accept");
+         if (!got.has("PUBLICATION_AUTHORIZED"))
+-          return (withhold("no_verified_publication_authorization"), false);
++          return reject("no_verified_publication_authorization");
+         summary.approved_rows++;
+         return true;
+       });
++      kept.push(...stubs);
+       if (kept.length) metrics[metric] = kept;
+       else delete metrics[metric];
+     }
+diff --git a/src/routes/preview.companies.$symbol.tsx b/src/routes/preview.companies.$symbol.tsx
+index 7940249..d2fb2d5 100644
+--- a/src/routes/preview.companies.$symbol.tsx
++++ b/src/routes/preview.companies.$symbol.tsx
+@@ -108,6 +108,19 @@ function PreviewPage() {
+               </div>
+             ))}
+           </div>
++          <p className="mt-4 text-[12px] text-night-foreground/70" data-freshness>
++            {t({
++              ar: "حالة التحديث: آخر إفصاح في المحرك ",
++              en: "Update status: latest filing in the engine ",
++            })}
++            <span dir="ltr">{c.latestFiling ?? "—"}</span>
++            {t({ ar: " · قرأ المحرك البيانات في ", en: " · engine read at " })}
++            <span dir="ltr">{c.engineReadAt ?? "—"}</span>
++            {t({
++              ar: " · ليست بيانات لحظية.",
++              en: " · not real-time data.",
++            })}
++          </p>
+           <p className="mt-4 max-w-3xl text-[12px] leading-6 text-night-foreground/60">
+             {t({
+               ar: "كل رقم يظهر بفترته ووحدته ومصدره وطريقة إثباته (منشور أو محسوب بمعادلة مسجّلة). الرابط يبيّن المصدر ولا يعني تحققًا مستقلًا. القيم التي لا تجتاز الفحص تُحجب ويُذكر سببها، ولا تُستبدل بتقديرات.",
+diff --git a/tests/publication-withheld-reasons.test.ts b/tests/publication-withheld-reasons.test.ts
+new file mode 100644
+index 0000000..329831b
+--- /dev/null
++++ b/tests/publication-withheld-reasons.test.ts
+@@ -0,0 +1,131 @@
++import { describe, expect, test } from "bun:test";
++import { generateKeyPairSync, sign } from "node:crypto";
++import {
++  APPROVALS_SCHEMA,
++  applyPublicationGate,
++  approvalPayload,
++  strictIdentity,
++  strictKey,
++  type Decision,
++  type TrustStore,
++} from "../src/lib/engine/publication-gate.server";
++import { checkRow, type EngineMetricRow } from "../src/lib/engine/company-preview";
++
++const company = "sa:9901";
++const row = (value: string, end: string) => ({
++  display_name: "Revenue",
++  value,
++  value_type: "decimal",
++  currency: "SAR",
++  unit: "SAR",
++  period_start: `${end.slice(0, 4)}-01-01`,
++  period_end: end,
++  period_kind: "fy",
++  scope: "consolidated",
++  dimensions: {},
++  version: 1,
++  source_key: `file:synthetic-${end}`,
++  source_url: "https://example.invalid/synthetic.pdf",
++  provenance: {
++    source: { source_url: "https://example.invalid/synthetic.pdf", filed_at: "2026-03-01" },
++  },
++});
++const page = () => ({
++  contract_version: 4,
++  company: { company_id: company, market: "SA", symbol: "9901", name: "Synthetic" },
++  sections: {
++    financials: {
++      annual: { metrics: { revenue: [row("4242", "2025-12-31"), row("4142", "2024-12-31")] } },
++    },
++  },
++});
++
++const { privateKey, publicKey } = generateKeyPairSync("ed25519");
++const trust: TrustStore = {
++  schema: "marefa-publication-trust/1",
++  authorities: [
++    {
++      authority_id: "test-authority",
++      public_key_spki_der_b64: publicKey.export({ type: "spki", format: "der" }).toString("base64"),
++      decisions: ["SOURCE_ACCEPT", "FINANCIAL_ACCEPT", "PUBLICATION_AUTHORIZED", "WITHHELD"],
++    } as TrustStore["authorities"][number],
++  ],
++};
++const approve = (end: string, decisions: Decision[]) => {
++  const id = strictIdentity(company, "revenue", row(end === "2025-12-31" ? "4242" : "4142", end));
++  if (typeof id === "string") throw new Error(id);
++  return decisions.map((decision) => {
++    const a = {
++      decision,
++      decision_ref: `TEST-${decision}`,
++      authority_id: "test-authority",
++      subject: { kind: "fact" as const, key: strictKey(id) },
++      issued_at: "2026-10-01T00:00:00Z",
++      expires_at: "2027-01-01T00:00:00Z",
++    };
++    return {
++      ...a,
++      signature: sign(null, Buffer.from(approvalPayload(a)), privateKey).toString("base64"),
++    };
++  });
++};
++const now = new Date("2026-10-20T00:00:00Z");
++
++describe("publication gate keeps the reason, never the value, of a withheld row", () => {
++  test("approved row passes; unapproved row becomes a value-less stub with its reason", () => {
++    const approvals = {
++      schema: APPROVALS_SCHEMA,
++      approvals: [
++        ...approve("2025-12-31", ["SOURCE_ACCEPT", "FINANCIAL_ACCEPT", "PUBLICATION_AUTHORIZED"]),
++        ...approve("2024-12-31", ["SOURCE_ACCEPT", "FINANCIAL_ACCEPT"]),
++      ],
++    };
++    const { page: gated, summary } = applyPublicationGate(page() as never, approvals, {
++      mode: "live_engine",
++      now,
++      trust,
++    });
++    const rows = (gated as never as ReturnType<typeof page>).sections.financials.annual.metrics
++      .revenue as Record<string, unknown>[];
++    expect(summary.approved_rows).toBe(1);
++    expect(summary.reasons).toEqual({ no_verified_publication_authorization: 1 });
++    expect(rows.find((r) => r["period_end"] === "2025-12-31")?.["value"]).toBe("4242");
++    const stub = rows.find((r) => r["period_end"] === "2024-12-31")!;
++    expect(stub).toMatchObject({
++      value: null,
++      publication_withheld: "no_verified_publication_authorization",
++      unit: "SAR",
++    });
++    expect(JSON.stringify(stub)).not.toContain("4142");
++    expect("provenance" in stub || "source_url" in stub || "source_key" in stub).toBe(false);
++    expect(checkRow("revenue", stub as EngineMetricRow, "fy")).toBe("publication_not_authorized");
++  });
++
++  test("with no decisions every row is a stub and nothing numeric survives", () => {
++    const { page: gated } = applyPublicationGate(page() as never, null, {
++      mode: "live_engine",
++      now,
++      trust,
++    });
++    const text = JSON.stringify(gated);
++    expect(text).not.toContain("4242");
++    expect(text).not.toContain("4142");
++    const rows = (gated as never as ReturnType<typeof page>).sections.financials.annual.metrics
++      .revenue;
++    expect(rows.map((r) => checkRow("revenue", r as EngineMetricRow, "fy"))).toEqual([
++      "publication_no_source_accept",
++      "publication_no_source_accept",
++    ]);
++  });
++
++  test("the frozen design mode still drops rows instead of stubbing them", () => {
++    const { page: gated } = applyPublicationGate(page() as never, null, {
++      mode: "frozen_design_fixture",
++      now,
++      trust,
++    });
++    expect((gated as never as ReturnType<typeof page>).sections.financials.annual.metrics).toEqual(
++      {},
++    );
++  });
++});

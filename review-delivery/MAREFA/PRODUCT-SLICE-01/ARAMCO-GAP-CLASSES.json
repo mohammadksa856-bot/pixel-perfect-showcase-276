@@ -1,0 +1,2562 @@
+{
+  "filled_on_copy_points": "5.21",
+  "summary": {
+    "A": {
+      "entries": 97,
+      "keys": 88,
+      "points": "10.10"
+    },
+    "B": {
+      "entries": 14,
+      "keys": 14,
+      "points": "1.99"
+    },
+    "C": {
+      "entries": 13,
+      "keys": 13,
+      "points": "2.11"
+    },
+    "D": {
+      "entries": 90,
+      "keys": 90,
+      "points": "18.63"
+    },
+    "E": {
+      "entries": 39,
+      "keys": 39,
+      "points": "5.40"
+    }
+  },
+  "gaps": [
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "business_model",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "cik",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "SEC identifier; not a US registrant"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "investor_contact_email",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "lei",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "GLEIF registry lookup"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "company_model",
+      "field_key": "sharia_status",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "external Sharia screening provider"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "audit_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_committees",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_meetings_held",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_of_directors",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_size",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "board_term_end",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "compensation_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "compensation_policy",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "corporate_secretary",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "executive_management_team",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "governance_framework",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "independent_directors",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "internal_control_assessment",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "nomination_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "governance_profile",
+      "field_key": "sustainability_risk_hse_committee",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "competitive_environment",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_drivers",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_growth",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_overview",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "industry_size",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "company_profile",
+      "field_group": "industry_context",
+      "field_key": "regulatory_environment",
+      "points_per_field": "0.1379",
+      "storage_domain": "company_profile",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "qualitative fact in archived annual report; needs extraction and evidence"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "adjusted_ebit",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "Aramco reports no adjusted EBIT at group level"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "adjusted_ebitda",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "no adjusted EBITDA at group level"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "continuing_operations_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "equals net income; no discontinued operations"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "cost_of_revenue",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "costs presented by nature; no cost of revenue line"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "discontinued_operations_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "no discontinued operations"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "gain_loss_asset_sales",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "general_and_administrative_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "reported only as combined selling, administrative and general"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "gross_profit",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "no gross profit subtotal in Aramco's statements"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "interest_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_nonoperating_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "other_nonoperating_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "income_statement",
+      "field_key": "selling_and_distribution_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "reported only as combined selling, administrative and general"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "accumulated_other_comprehensive_income",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "cash_equivalents",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "cash_restricted",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "current_portion_long_term_debt",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "current_tax_assets",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "employee_benefits_current",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "investments_joint_ventures",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "long_term_securities",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "marketable_securities",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "other_receivables",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "prepayments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "balance_sheet",
+      "field_key": "zakat_payable",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "capital_increase_proceeds",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "no capital increase in the period"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "discretionary_cash_flow",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs reviewed definition"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "foreign_exchange_effect",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "intangible_asset_purchases",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "joint_venture_investments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "loans_to_affiliates",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "net_income_cash_flow",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "operating_profit_before_working_capital_changes",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "other_financing_cash_flow",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "owner_earnings",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs maintenance-capex definition"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "ppe_purchases",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "proceeds_investments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "purchases_investments",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "securities_purchases",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "securities_sales",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "short_term_investments_net",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "cash_flow",
+      "field_key": "zakat_paid",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "benefit_obligation_by_geography",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "borrowings_by_currency",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "contingencies",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "contract_assets",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "contract_liabilities",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "customer_concentration",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "remaining_performance_obligations",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "revenue_by_customer_type",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "unsecured_borrowings",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "variable_lease_expense",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "financial_statements",
+      "field_group": "financial_notes",
+      "field_key": "weighted_average_borrowing_rate",
+      "points_per_field": "0.0551",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "economic_profit_proxy",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "profitability",
+      "field_group": "profitability",
+      "field_key": "gross_margin",
+      "points_per_field": "0.2609",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs gross profit"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "cash_conversion_cycle",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs days inventory and days payables"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "days_inventory",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs cost of revenue"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "days_payables",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs cost of revenue"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "inventory_turnover",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs cost of revenue"
+    },
+    {
+      "category": "efficiency",
+      "field_group": "efficiency",
+      "field_key": "payables_turnover",
+      "points_per_field": "0.2353",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs cost of revenue"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "book_value_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs prior-year equity attributable to parent"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "ebitda_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs 2024 depreciation & amortization"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "ebitda_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs quarterly EBIT and D&A"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "ebitda_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "eps_cagr_5y",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs FY2020 diluted EPS"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "eps_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs quarterly diluted EPS"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "eps_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "free_cash_flow_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "gross_profit_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs gross profit"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "gross_profit_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "needs gross profit"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "net_income_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "operating_cash_flow_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "operating_income_qoq",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs quarterly operating income"
+    },
+    {
+      "category": "growth",
+      "field_group": "growth",
+      "field_key": "revenue_ttm_growth",
+      "points_per_field": "0.1429",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "forward_price_to_earnings",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "historical_pb_percentile",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "historical_pe_percentile",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "valuation",
+      "field_key": "peg_ratio",
+      "points_per_field": "0.1935",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "ebit_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "ebitda_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "eps_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "net_income_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "revenue_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "valuation",
+      "field_group": "consensus",
+      "field_key": "selling_general_administrative_expense_estimate",
+      "points_per_field": "0.1935",
+      "storage_domain": "consensus_estimates",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "estimates provider (licensed)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "average_volume_30d",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "beta_1y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "beta_5y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "fifty_two_week_high",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "fifty_two_week_low",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "free_float_market_cap",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul free-float data"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "free_float_shares",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul free-float data"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_1m",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_1y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_3m",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_3y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_5y",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_6m",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "market_return_ytd",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "percent_from_52w_high",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "percent_from_52w_low",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "previous_close",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "price_adjusted_close",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "market_data",
+      "field_group": "market_data",
+      "field_key": "volatility_30d",
+      "points_per_field": "0.1923",
+      "storage_domain": "market_prices",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_cagr_5y",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs FY2020 dividend per share"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_installments_count",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_payment_frequency",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_per_share_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_stability_score",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "dividend_yield_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "fcf_payout_ratio_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "forward_dividend_per_share",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "forward_dividend_run_rate",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "ordinary_dividend",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "payout_ratio_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "special_dividend",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "total_dividend_declared",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "total_dividend_paid_ttm",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "trailing_twelve_month_dividend",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "dividend events + price feed"
+    },
+    {
+      "category": "dividends",
+      "field_group": "dividends",
+      "field_key": "years_consecutive_dividend_payments",
+      "points_per_field": "0.2500",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "chemicals_revenue",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "downstream_operating_income",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "lng_revenue",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "refined_products_revenue",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_assets",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_impairment",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_investments_associates",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "segment_liabilities",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "segments",
+      "field_key": "upstream_operating_income",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "average_selling_price_by_product",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "book_to_bill_ratio",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "order-backlog concept, not commodity sales"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "committed_offtake_volume",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed as such"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "contract_renewal_profile",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "contracted_sales_value",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed for commodity sales"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "contracted_sales_volume",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "minimum_volume_commitments",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed as such"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_contract_count",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_order_backlog",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "no order backlog"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_volume_by_geography",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "sales_volume_by_product",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "segments",
+      "field_group": "commercial_pipeline",
+      "field_key": "take_or_pay_commitments",
+      "points_per_field": "0.0889",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "not disclosed as such"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "foreign_investor_limit",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "foreign_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "insider_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "institutional_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "institutional_shareholders_count",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "major_holder_change",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "ownership_concentration",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "retail_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "retail_shareholders_count",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "strategic_ownership",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "top_10_shareholder_concentration",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "ownership",
+      "field_group": "ownership",
+      "field_key": "top_5_shareholder_concentration",
+      "points_per_field": "0.2778",
+      "storage_domain": "ownership_positions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "ownership feed (Tadawul/Edaa holder data)"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "capital_reduction",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "delisting",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "dividend_eligibility",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "corporate-action events feed"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "dividend_ex_date",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "corporate-action events feed"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "dividend_payment",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "corporate-action events feed"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "merger",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "reverse_split",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "rights_issue",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "rights_offering_date",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "spin_off",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "stock_split",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "corporate-action events feed"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "suspension",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "symbol_change",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "tender_offer",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "corporate_actions",
+      "field_group": "corporate_actions",
+      "field_key": "treasury_share_sale",
+      "points_per_field": "0.1905",
+      "storage_domain": "corporate_actions",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "event type that has not occurred"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_body",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_category",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_date",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_id",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_source_url",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_title_ar",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "announcement_title_en",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "board_change",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "contract_award",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "contract_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "dividend_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "earnings_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "governance_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "litigation",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "management_change",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "materiality_tag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "merger_acquisition_flag",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "regulatory_action",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "related_financial_period",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "announcements",
+      "field_group": "disclosures",
+      "field_key": "related_party_transaction",
+      "points_per_field": "0.1786",
+      "storage_domain": "disclosures",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "Tadawul announcements feed"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "average_realized_gas_price",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "average_realized_refined_product_price",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "chemicals_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "chemicals_sales",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "condensate_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "crude_oil_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "finding_development_cost_per_boe",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs F&D cost disclosure"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "lifting_volume",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "natural_gas_liquids_production",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "natural_gas_sales",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "production_entitlement",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "E",
+      "reason": "entitlement concept applies to PSC operators, not a national concession holder"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "refinery_throughput",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "refinery_utilization",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "throughput / capacity; needs refinery throughput"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "reserve_replacement_ratio",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs reserve additions"
+    },
+    {
+      "category": "operational_kpis",
+      "field_group": "oil_gas_operations",
+      "field_key": "spare_capacity",
+      "points_per_field": "0.1522",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "maximum_sustainable_capacity - crude production; needs crude production"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "chemicals_revenue",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "downstream_operating_income",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "lng_revenue",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "refined_products_revenue",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_assets",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_impairment",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_investments_associates",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "segment_liabilities",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "sector_specific_fields",
+      "field_group": "segments",
+      "field_key": "upstream_operating_income",
+      "points_per_field": "0.2188",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "A",
+      "reason": "in archived Aramco reports; needs extraction"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "beneish_m_score",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "B",
+      "reason": "needs a gross-profit definition (E) first"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "dividend_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "eps_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "free_cash_flow_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "net_income_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "operating_cash_flow_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "price_to_sma_200d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "price_to_sma_50d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "revenue_cagr_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "C",
+      "reason": "needs earlier annual reports (pre-2019) or 2025 interim reports"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "simple_moving_average_200d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "simple_moving_average_50d",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_10y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_1y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_3y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    },
+    {
+      "category": "calculated_smart_metrics",
+      "field_group": "investor_analytics",
+      "field_key": "total_return_5y",
+      "points_per_field": "0.1667",
+      "storage_domain": "data_points",
+      "requirement": "recommended",
+      "group": "D",
+      "reason": "daily price history (archive has 23 days)"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "marefa-coverage-results/1",
+  "contract": "factory_18_category_contract 1.0.0",
+  "engine_base": "b70254e",
+  "approved": {
+    "sa:2222": "56.56",
+    "sa:2010": "53.01",
+    "basis": "live engine database at b70254e; nothing below is approved or ingested"
+  },
+  "isolated_measurements": {
+    "sa:2222": {
+      "A_existing_engine_refresh_only": "57.73",
+      "B_plus_new_formulas": "61.77",
+      "C_rebuild_from_imports": "61.02",
+      "C_rebuild_plus_new_formulas": "65.07"
+    },
+    "sa:2010": {
+      "B_new_formulas": "55.41",
+      "note": "existing refresh skipped: no SABIC price history"
+    }
+  },
+  "status": "SIMULATED_NOT_APPROVED",
+  "known_defect_in_rebuild": "short_term_investments_net FY2025 sign (+1457 in imports, statement shows (1,457)); correction ARAMCO95-CORR-STIN-2025 not applied"
+}

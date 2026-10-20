@@ -1,0 +1,109 @@
+# Guards the dormant ARAMCO95 financial projection kernel and its synthetic, sha-pinned test data.
+# Scope: only tests/financial-projection.test.ts and the kernel files; it never runs the whole-repository `bun test`
+# or `eslint .`, so failures of other suites are neither run nor hidden here.
+# Uses no repository secret or environment and grants the token read-only access.
+name: aramco95-kernel
+
+# No path filters: a change anywhere (vite.config.ts, entry points, a new consumer of the kernel, a dependency)
+# can alter what the kernel ships or how it builds, so every pull request and every push to main runs the gate.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aramco95-kernel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kernel:
+    name: kernel (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    steps:
+      # Git for Windows' default: text files are checked out with CRLF. The pinned files must stay LF regardless.
+      - name: Windows checkout uses core.autocrlf=true
+        if: runner.os == 'Windows'
+        run: git config --global core.autocrlf true
+
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Windows checkout really converted other text files to CRLF
+        if: runner.os == 'Windows'
+        # git reports the working-tree line ending itself; Git for Windows' grep strips CR before matching.
+        run: |
+          git config --show-origin core.autocrlf
+          git ls-files --eol src/lib/engine/statements.ts src/lib/engine/publication-baseline.json
+          test "$(git config core.autocrlf)" = "true"
+          git ls-files --eol src/lib/engine/statements.ts | grep -q 'w/crlf'
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.2
+
+      - run: bun install --frozen-lockfile
+
+      - name: Pinned test data is LF and matches its sha256 pins (before any generation)
+        run: bun .github/scripts/aramco95-kernel-checks.ts pins
+
+      - name: Kernel tests (before any generation), exactly 34 passing
+        run: |
+          bun test tests/financial-projection.test.ts 2>&1 | tee kernel-test.log
+          grep -Eq '^ *34 pass' kernel-test.log
+          grep -Eq '^ *0 fail' kernel-test.log
+
+      - name: TypeScript
+        run: bunx tsc --noEmit -p .
+
+      # On the Windows checkout every source file is CRLF; Ubuntu enforces the committed LF formatting, and the
+      # byte-pinned files are checked separately, so Windows lints the code without judging line endings.
+      - name: ESLint on the kernel files
+        env:
+          EOL_RULE: ${{ runner.os == 'Windows' && '{"prettier/prettier":["error",{"endOfLine":"auto"}]}' || '{}' }}
+        run: >
+          bunx eslint --rule "$EOL_RULE"
+          src/design-fixtures.d.ts src/lib/bidi.ts src/lib/engine
+          src/lib/web-v1/design-review-policy.ts src/lib/web-v1/design-fixtures.server.ts
+          src/lib/web-v1/company-experience.ts src/lib/web-v1/catalog.ts src/lib/web-v1/model.ts
+          src/lib/web-v1/display-labels.ts
+          tests/financial-projection.test.ts tests/fixtures/synthetic-projection/generate.ts
+          .github/scripts/aramco95-kernel-checks.ts
+
+      - name: Generator run 1 changes no file
+        run: |
+          rm -f kernel-test.log
+          bun tests/fixtures/synthetic-projection/generate.ts
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+
+      - name: Generator run 2 changes no file
+        run: |
+          bun tests/fixtures/synthetic-projection/generate.ts
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+
+      - name: Pins still hold after generation
+        run: bun .github/scripts/aramco95-kernel-checks.ts pins
+
+      - name: Publication trust store is empty
+        run: bun .github/scripts/aramco95-kernel-checks.ts trust
+
+      - name: No secret, private record or real data in the test data
+        run: bun .github/scripts/aramco95-kernel-checks.ts scan
+
+      # Last: the build regenerates src/routeTree.gen.ts (LF), which a CRLF checkout reports as modified.
+      - name: Build (no secrets)
+        run: bunx vite build

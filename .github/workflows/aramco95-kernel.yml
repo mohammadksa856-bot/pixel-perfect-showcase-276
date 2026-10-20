@@ -4,48 +4,12 @@
 # Uses no repository secret or environment and grants the token read-only access.
 name: aramco95-kernel
 
+# No path filters: a change anywhere (vite.config.ts, entry points, a new consumer of the kernel, a dependency)
+# can alter what the kernel ships or how it builds, so every pull request and every push to main runs the gate.
 on:
   pull_request:
-    paths:
-      - ".gitattributes"
-      - ".github/workflows/aramco95-kernel.yml"
-      - ".github/scripts/aramco95-kernel-checks.ts"
-      - "package.json"
-      - "bun.lock"
-      - "tsconfig.json"
-      - "eslint.config.js"
-      - "src/design-fixtures.d.ts"
-      - "src/lib/bidi.ts"
-      - "src/lib/engine/**"
-      - "src/lib/web-v1/design-review-policy.ts"
-      - "src/lib/web-v1/design-fixtures.server.ts"
-      - "src/lib/web-v1/company-experience.ts"
-      - "src/lib/web-v1/catalog.ts"
-      - "src/lib/web-v1/model.ts"
-      - "src/lib/web-v1/display-labels.ts"
-      - "tests/financial-projection.test.ts"
-      - "tests/fixtures/synthetic-projection/**"
   push:
     branches: [main]
-    paths:
-      - ".gitattributes"
-      - ".github/workflows/aramco95-kernel.yml"
-      - ".github/scripts/aramco95-kernel-checks.ts"
-      - "package.json"
-      - "bun.lock"
-      - "tsconfig.json"
-      - "eslint.config.js"
-      - "src/design-fixtures.d.ts"
-      - "src/lib/bidi.ts"
-      - "src/lib/engine/**"
-      - "src/lib/web-v1/design-review-policy.ts"
-      - "src/lib/web-v1/design-fixtures.server.ts"
-      - "src/lib/web-v1/company-experience.ts"
-      - "src/lib/web-v1/catalog.ts"
-      - "src/lib/web-v1/model.ts"
-      - "src/lib/web-v1/display-labels.ts"
-      - "tests/financial-projection.test.ts"
-      - "tests/fixtures/synthetic-projection/**"
   workflow_dispatch:
 
 permissions:

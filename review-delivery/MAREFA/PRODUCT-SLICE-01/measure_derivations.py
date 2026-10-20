@@ -30,7 +30,8 @@ current = {row[0] for row in db.conn.execute(
 all_metrics = {row[0] for row in db.conn.execute(
     "SELECT DISTINCT metric_key FROM data_points WHERE company_id=? AND is_current=1", (company_id,))}
 facts = [fact for fact in db.calculation_history(company_id, all_metrics) if not fact.is_calculated]
-new_out = Calculator().calculate(facts, [])
+industry = db.conn.execute("SELECT industry FROM companies WHERE company_id=?", (company_id,)).fetchone()[0]
+new_out = Calculator().calculate(facts, [], industry=industry)
 old_out = baseline.Calculator().calculate(facts, [])
 old_keys = {(f.metric, f.period_end, f.period_kind) for f in old_out}
 added = [f for f in new_out if (f.metric, f.period_end, f.period_kind) not in old_keys and f.metric not in current]
@@ -39,7 +40,7 @@ db.conn.commit()
 rows = [{"metric": f.metric, "period_kind": f.period_kind.value, "period_end": f.period_end,
          "value": str(f.value.quantize(Decimal("0.000001"))), "unit": f.unit, "formula": f.calculation}
         for f in sorted(added, key=lambda f: (f.metric, f.period_end))]
-json.dump({"company_id": company_id, "reported_facts_in": len(facts), "published": len(added),
+json.dump({"company_id": company_id, "industry": industry, "reported_facts_in": len(facts), "published": len(added),
            "states": {s: states.count(s) for s in set(states)}, "new_keys": sorted({f.metric for f in added}),
            "values": rows}, open(out_path, "w"), indent=2)
 for row in rows:

@@ -1,7 +1,7 @@
 From a320072ed5719fe78141a8bd97f7a1a57c89af42 Mon Sep 17 00:00:00 2001
 From: Claude <noreply@anthropic.com>
 Date: Tue, 20 Oct 2026 13:40:36 +0000
-Subject: [PATCH 1/2] Derive contract return-on-capital, coverage, turnover and
+Subject: [PATCH 1/4] Derive contract return-on-capital, coverage, turnover and
  QoQ metrics
 
 Adds deterministic formulas for 23 factory-contract keys that the
@@ -421,7 +421,7 @@ index 0000000..a5034ef
 From b1338765153a5e9e38ac6b0110c682cd4af527ac Mon Sep 17 00:00:00 2001
 From: Claude <noreply@anthropic.com>
 Date: Tue, 20 Oct 2026 14:15:19 +0000
-Subject: [PATCH 2/2] Emit no NOPAT or after-tax returns for a loss year
+Subject: [PATCH 2/4] Emit no NOPAT or after-tax returns for a loss year
 
 A negative pre-tax income turns abs(tax) / pretax into a negative rate
 and inflates NOPAT; the tax rate is now undefined unless pretax > 0.
@@ -468,6 +468,917 @@ index a5034ef..cf4bd0a 100644
      def test_quarter_on_quarter_uses_the_previous_fiscal_quarter(self):
          quarters = [
              fact("revenue", "100", PeriodKind.QUARTER, "2026-03-31", 2026, 1),
+-- 
+2.43.0
+
+
+From 3eca0207370485bb591206605d3c10d38cecd788 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Tue, 20 Oct 2026 15:13:11 +0000
+Subject: [PATCH 3/4] Tighten contract derivations: exact balances, one
+ currency, sector rules
+
+Fixes the review findings on the contract-derivation batch:
+- averages use the exact opening (day before the fiscal year) and closing
+  year-end instants; an interim balance never substitutes
+- every monetary input must share the numerator's currency and unit
+- a missing debt line is not zero; a reported zero still counts
+- the tax expense keeps its sign (expense <= 0); benefit, loss and rates
+  outside [0, 1) withhold NOPAT, ROIC and incremental ROIC
+- banks, insurers and issuers without a known industry are excluded; the
+  pipeline passes the company's industry to the calculator
+- working-capital turnover needs positive, material balances
+- per-share growth keeps one share basis and a positive prior value
+- the debt-service proxy keeps principal when interest is zero
+- quarter changes need the contiguous previous quarter, same currency
+  and a positive base
+- fixed_charge_coverage is DEFINITION_PENDING and never emitted
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01CfTpoii6QDStyTPdotmEdY
+---
+ src/finengine/calculations.py      | 315 ++++++++++++++++-------------
+ src/finengine/database.py          |  39 ++--
+ src/finengine/pipeline.py          |   2 +-
+ tests/test_contract_derivations.py | 216 +++++++++++++++-----
+ 4 files changed, 364 insertions(+), 208 deletions(-)
+
+diff --git a/src/finengine/calculations.py b/src/finengine/calculations.py
+index e27bb4a..e3d0d5a 100644
+--- a/src/finengine/calculations.py
++++ b/src/finengine/calculations.py
+@@ -1,4 +1,5 @@
+ from collections import defaultdict
++from datetime import date, timedelta
+ from decimal import Decimal
+ 
+ from .models import Fact, PeriodKind
+@@ -23,8 +24,7 @@ class Calculator:
+         "selling_general_administrative_expense", "research_and_development_expense",
+         "share_based_compensation",
+         # return-on-capital and coverage inputs (_capital_returns)
+-        "goodwill", "interest_paid", "debt_repaid", "short_term_lease_expense",
+-        "low_value_lease_expense", "variable_lease_expense",
++        "goodwill", "interest_paid", "debt_repaid",
+         "total_hydrocarbon_production", "total_hydrocarbon_reserves",
+         "upstream_ebit", "downstream_ebit", "corporate_ebit",
+         "upstream_depreciation_amortization", "downstream_depreciation_amortization",
+@@ -53,7 +53,15 @@ class Calculator:
+         "operating_cash_flow": "operating_cash_flow_qoq", "free_cash_flow": "free_cash_flow_qoq",
+     }
+ 
+-    def calculate(self, facts: list[Fact], history: list[Fact] | None = None) -> list[Fact]:
++    # Industries whose balance sheet is not an operating-capital structure (matched case-insensitively).
++    CAPITAL_RETURN_EXCLUDED_INDUSTRIES = ("bank", "insurance", "reinsurance", "takaful")
++    # Contract keys whose definition needs an accounting decision; never emitted until it is made.
++    DEFINITION_PENDING = {
++        "fixed_charge_coverage": "fixed charges under IFRS 16 (which lease costs count) are not defined",
++    }
++
++    def calculate(self, facts: list[Fact], history: list[Fact] | None = None,
++                  industry: str | None = None) -> list[Fact]:
+         all_facts = [*(history or []), *facts]
+         out: list[Fact] = []
+         groups = defaultdict(dict)
+@@ -70,20 +78,23 @@ class Calculator:
+         for fact in all_facts:
+             if fact.scope == "consolidated" and not fact.dimensions:
+                 historical[(fact.company_id, fact.fiscal_year, fact.period_kind)][fact.metric] = fact
+-        # Discrete quarters keyed by fiscal quarter: `historical` keeps one row set per
+-        # fiscal year, so it cannot tell Q1 from Q2.
++        # Discrete quarters and instants keyed by their exact period end: `historical` keeps one
++        # row set per fiscal year, so it cannot tell Q1 from Q2 or a year end from an interim balance.
+         quarterly = defaultdict(dict)
++        instants = defaultdict(dict)
+         for fact in all_facts:
+-            if fact.scope == "consolidated" and not fact.dimensions and \
+-                    fact.period_kind == PeriodKind.QUARTER and fact.fiscal_quarter:
+-                quarterly[(fact.company_id, fact.fiscal_year, fact.fiscal_quarter)][fact.metric] = fact
++            if fact.scope == "consolidated" and not fact.dimensions:
++                if fact.period_kind == PeriodKind.QUARTER:
++                    quarterly[(fact.company_id, fact.period_end)][fact.metric] = fact
++                elif fact.period_kind == PeriodKind.INSTANT:
++                    instants[(fact.company_id, fact.period_end)][fact.metric] = fact
+ 
+         for (company_id, _, _, _, _), group in groups.items():
+             base = next(iter(group.values()))
+             lookup = combined[(company_id, base.period_end)] if base.period_kind in {PeriodKind.FY, PeriodKind.INSTANT} else group
+ 
+             def add(metric, value, formula, reference=None, unit="ratio", currency=""):
+-                if metric in group:
++                if metric in group or metric in self.DEFINITION_PENDING:
+                     return
+                 source = reference or base
+                 calculated = Fact(
+@@ -397,7 +408,7 @@ class Calculator:
+                         if "long_term_debt" in instant_now:
+                             add("long_term_debt_to_capital", instant_now["long_term_debt"].value / capital,
+                                 "long_term_debt / (total_debt + total_equity)", instant_now["long_term_debt"])
+-                self._capital_returns(company_id, base, lookup, historical, prior_instant, instant_now, add)
++                self._capital_returns(company_id, base, lookup, historical, instants, add, industry)
+                 for source_metric in ("revenue", "net_income", "eps_diluted", "dividends_per_share"):
+                     if source_metric not in lookup or not lookup[source_metric].value:
+                         continue
+@@ -417,26 +428,8 @@ class Calculator:
+                     if source_metric in group and source_metric in prior and prior[source_metric].value:
+                         add(output_metric, group[source_metric].value / prior[source_metric].value - 1,
+                             f"{source_metric} / prior_fy({source_metric}) - 1", group[source_metric])
+-            if base.period_kind == PeriodKind.QUARTER and base.fiscal_quarter:
+-                quarter = base.fiscal_quarter
+-                previous = quarterly.get(
+-                    (company_id, base.fiscal_year, quarter - 1) if quarter > 1
+-                    else (company_id, base.fiscal_year - 1, 4), {})
+-
+-                def quarter_value(rows, metric):
+-                    # Free cash flow is itself derived per quarter; rebuild the prior
+-                    # quarter's value from its reported inputs.
+-                    if metric == "free_cash_flow" and metric not in rows and \
+-                            "operating_cash_flow" in rows and "capex" in rows:
+-                        return rows["operating_cash_flow"].value - abs(rows["capex"].value)
+-                    return rows[metric].value if metric in rows else None
+-
+-                for source_metric, output_metric in self.QOQ_METRICS.items():
+-                    current, prior_value = quarter_value(group, source_metric), quarter_value(previous, source_metric)
+-                    if current is not None and prior_value:
+-                        add(output_metric, (current - prior_value) / abs(prior_value),
+-                            f"({source_metric} - prior_quarter({source_metric})) / abs(prior_quarter({source_metric}))",
+-                            group.get(source_metric) or base)
++            if base.period_kind == PeriodKind.QUARTER:
++                self._quarter_changes(company_id, base, group, quarterly, add)
+ 
+         # Composite scores run last: they read ratios (cost_to_income_ratio,
+         # nonperforming_loans_ratio, ROE, ...) that the passes above computed.
+@@ -496,138 +489,186 @@ class Calculator:
+         target_periods = {fact.period_end for fact in facts if fact.period_kind == PeriodKind.QUARTER}
+         return out + self._ttm([*all_facts, *out], target_periods)
+ 
+-    def _capital_returns(self, company_id, base, lookup, historical, prior_instant, instant_now, add):
++    def _capital_returns(self, company_id, base, lookup, historical, instants, add, industry):
+         """Fiscal-year returns on capital, turnover, coverage and per-share growth.
+ 
+-        Every formula reads ingested lines only.  Balance-sheet denominators are
+-        averaged over the opening and closing year-end balances, as ROA/ROE are;
+-        a metric is emitted only when all of its inputs are present.
++        Every formula reads ingested lines only, and a metric is emitted only when:
++        - the issuer's industry is known and not excluded (banks and insurers have no
++          operating-capital structure these ratios describe);
++        - balance-sheet averages use the exact opening (day before the fiscal year starts)
++          and closing (fiscal year end) instants, never an interim balance;
++        - every monetary input is in the numerator's currency and its unit is that currency;
++        - every component is reported: a missing debt line is never read as zero;
++        - the tax expense keeps its sign (engine convention: expense <= 0) and the effective
++          rate lies in [0, 1) on a positive pre-tax income; otherwise after-tax metrics are withheld.
++        Metrics in DEFINITION_PENDING are never emitted.
+         """
++        if not industry or any(term in industry.lower() for term in self.CAPITAL_RETURN_EXCLUDED_INDUSTRIES):
++            return
++        if not base.period_start:
++            return
++        closing = instants.get((company_id, base.period_end), {})
++        opening = instants.get((company_id, (date.fromisoformat(base.period_start) - timedelta(days=1)).isoformat()), {})
+         prior_fy = historical.get((company_id, base.fiscal_year - 1, PeriodKind.FY), {})
++        opening_date = (date.fromisoformat(base.period_start) - timedelta(days=1)).isoformat()
++        if any(fact.period_end != opening_date for fact in prior_fy.values()):
++            prior_fy = {}
+ 
+-        def val(rows, key):
++        def money(rows, key, currency):
+             fact = rows.get(key)
+-            return fact.value if fact is not None and fact.value is not None else None
+-
+-        def average(now, prior):
+-            return (now + prior) / 2 if now is not None and prior is not None else None
+-
+-        def debt(rows):
+-            if not any(key in rows for key in ("current_debt", "long_term_debt")):
+-                return None
+-            return sum((rows[key].value for key in ("current_debt", "long_term_debt") if key in rows), Decimal(0))
+-
+-        def invested_capital(rows):
+-            # Same definition as the invested_capital instant metric above.
+-            total_debt = debt(rows)
+-            if total_debt is None or "total_equity" not in rows or "cash" not in rows:
+-                return None
+-            return rows["total_equity"].value + total_debt - rows["cash"].value
+-
+-        def capital_employed(rows):
+-            if "total_assets" not in rows or "current_liabilities" not in rows:
++            if fact is None or fact.value is None or not currency:
+                 return None
+-            return rows["total_assets"].value - rows["current_liabilities"].value
+-
+-        def debt_plus_equity(rows):
+-            total_debt = debt(rows)
+-            return total_debt + rows["total_equity"].value if total_debt is not None and "total_equity" in rows else None
+-
+-        def working_capital(rows):
+-            if "current_assets" not in rows or "current_liabilities" not in rows:
+-                return None
+-            return rows["current_assets"].value - rows["current_liabilities"].value
+-
+-        def tax_rate(rows):
+-            # A loss year has no meaningful tax rate: NOPAT and its returns are not emitted.
+-            taxes, pretax = val(rows, "income_taxes_and_zakat"), val(rows, "income_before_income_taxes_and_zakat")
+-            return abs(taxes) / pretax if taxes is not None and pretax is not None and pretax > 0 else None
+-
+-        ebit, revenue, net_income = val(lookup, "ebit"), val(lookup, "revenue"), val(lookup, "net_income")
+-        rate = tax_rate(lookup)
+-        nopat = ebit * (1 - rate) if ebit is not None and rate is not None else None
++            return fact.value if fact.currency == currency and fact.unit == currency else None
++
++        def debt(rows, currency):
++            parts = [money(rows, key, currency) for key in ("current_debt", "long_term_debt")]
++            return None if None in parts else sum(parts, Decimal(0))
++
++        def invested_capital(rows, currency):
++            # Same definition as the invested_capital instant metric, with both debt lines reported.
++            total_debt, equity, cash = debt(rows, currency), money(rows, "total_equity", currency), money(rows, "cash", currency)
++            return None if None in (total_debt, equity, cash) else equity + total_debt - cash
++
++        def capital_employed(rows, currency):
++            assets, current = money(rows, "total_assets", currency), money(rows, "current_liabilities", currency)
++            return None if None in (assets, current) else assets - current
++
++        def debt_plus_equity(rows, currency):
++            total_debt, equity = debt(rows, currency), money(rows, "total_equity", currency)
++            return None if None in (total_debt, equity) else total_debt + equity
++
++        def working_capital(rows, currency):
++            assets, current = money(rows, "current_assets", currency), money(rows, "current_liabilities", currency)
++            return None if None in (assets, current) else assets - current
++
++        def average(measure, currency):
++            now, prior = measure(closing, currency), measure(opening, currency)
++            return None if now is None or prior is None else (now + prior) / 2
++
++        def tax_rate(rows, currency):
++            taxes = money(rows, "income_taxes_and_zakat", currency)
++            pretax = money(rows, "income_before_income_taxes_and_zakat", currency)
++            if taxes is None or pretax is None or pretax <= 0 or taxes > 0:
++                return None  # loss year, or a tax benefit / sign the engine convention cannot confirm
++            rate = -taxes / pretax
++            return rate if rate < 1 else None
++
++        def nopat_of(rows):
++            ebit_fact = rows.get("ebit")
++            currency = ebit_fact.currency if ebit_fact is not None else ""
++            ebit_value, rate = money(rows, "ebit", currency), tax_rate(rows, currency)
++            return None if ebit_value is None or rate is None else ebit_value * (1 - rate)
++
++        reference = lookup.get("ebit") or lookup.get("revenue") or base
++        currency = reference.currency
++        ebit, revenue, net_income = (money(lookup, key, currency) for key in ("ebit", "revenue", "net_income"))
++        nopat = nopat_of(lookup)
+         if nopat is not None:
+-            add("nopat", nopat, "ebit * (1 - abs(income_taxes_and_zakat) / income_before_income_taxes_and_zakat)",
+-                lookup["ebit"], lookup["ebit"].unit, lookup["ebit"].currency)
++            add("nopat", nopat, "ebit * (1 - (-income_taxes_and_zakat) / income_before_income_taxes_and_zakat)",
++                lookup["ebit"], currency, currency)
+ 
+-        def average_return(metric, numerator, reference, measure, formula):
+-            denominator = average(measure(instant_now), measure(prior_instant))
++        def average_return(metric, numerator, measure, formula):
++            denominator = average(measure, currency)
+             if numerator is not None and denominator:
+                 add(metric, numerator / denominator, formula, reference)
+ 
+-        average_return("return_on_invested_capital", nopat, lookup.get("ebit"), invested_capital,
+-                       "nopat / average(total_equity + current_debt + long_term_debt - cash)")
+-        average_return("return_on_capital", ebit, lookup.get("ebit"), debt_plus_equity,
+-                       "ebit / average(current_debt + long_term_debt + total_equity)")
+-        average_return("return_on_capital_employed", ebit, lookup.get("ebit"), capital_employed,
+-                       "ebit / average(total_assets - current_liabilities)")
+-        average_return("fixed_asset_turnover", revenue, lookup.get("revenue"),
+-                       lambda rows: val(rows, "property_plant_equipment"), "revenue / average(property_plant_equipment)")
+-        average_return("working_capital_turnover", revenue, lookup.get("revenue"), working_capital,
+-                       "revenue / average(current_assets - current_liabilities)")
+-
+-        prior_ebit, prior_rate = val(prior_fy, "ebit"), tax_rate(prior_fy)
+-        ic_now, ic_prior = invested_capital(instant_now), invested_capital(prior_instant)
+-        if None not in (nopat, prior_ebit, prior_rate, ic_now, ic_prior) and ic_now != ic_prior:
+-            add("incremental_roic", (nopat - prior_ebit * (1 - prior_rate)) / (ic_now - ic_prior),
+-                "(nopat - prior_fy(nopat)) / (invested_capital - prior_fy(invested_capital))", lookup["ebit"])
+-
+-        operating_income, prior_operating_income = val(lookup, "operating_income"), val(prior_fy, "operating_income")
+-        prior_revenue = val(prior_fy, "revenue")
++        average_return("return_on_invested_capital", nopat, invested_capital,
++                       "nopat / average(opening, closing)(total_equity + current_debt + long_term_debt - cash)")
++        average_return("return_on_capital", ebit, debt_plus_equity,
++                       "ebit / average(opening, closing)(current_debt + long_term_debt + total_equity)")
++        average_return("return_on_capital_employed", ebit, capital_employed,
++                       "ebit / average(opening, closing)(total_assets - current_liabilities)")
++        average_return("fixed_asset_turnover", revenue, lambda rows, cur: money(rows, "property_plant_equipment", cur),
++                       "revenue / average(opening, closing)(property_plant_equipment)")
++        wc_open, wc_close = working_capital(opening, currency), working_capital(closing, currency)
++        # Provisional guard (near-zero threshold is DEFINITION_PENDING): both balances positive and
++        # the average at least 5% of revenue, so the turnover never exceeds 20x.
++        if revenue and wc_open is not None and wc_close is not None and wc_open > 0 and wc_close > 0 \
++                and (wc_open + wc_close) / 2 >= revenue * Decimal("0.05"):
++            add("working_capital_turnover", revenue / ((wc_open + wc_close) / 2),
++                "revenue / average(opening, closing)(current_assets - current_liabilities); "
++                "both balances > 0, average >= 5% of revenue", lookup["revenue"])
++
++        prior_nopat = nopat_of(prior_fy) if prior_fy and prior_fy.get("ebit") and prior_fy["ebit"].currency == currency else None
++        ic_now, ic_prior = invested_capital(closing, currency), invested_capital(opening, currency)
++        if None not in (nopat, prior_nopat, ic_now, ic_prior) and ic_now != ic_prior:
++            add("incremental_roic", (nopat - prior_nopat) / (ic_now - ic_prior),
++                "(nopat - prior_fy(nopat)) / (closing - opening)(invested_capital)", reference)
++
++        operating_income = money(lookup, "operating_income", currency)
++        prior_operating_income, prior_revenue = (money(prior_fy, key, currency) for key in ("operating_income", "revenue"))
+         if None not in (operating_income, prior_operating_income) and revenue and prior_revenue:
+             add("margin_expansion", operating_income / revenue - prior_operating_income / prior_revenue,
+                 "operating_income / revenue - prior_fy(operating_income / revenue)", lookup["operating_income"])
+ 
+-        if "inventory" in instant_now and revenue:
+-            add("inventory_to_revenue", instant_now["inventory"].value / revenue,
+-                "year_end(inventory) / revenue", lookup["revenue"])
+-        if net_income is not None and all(key in instant_now for key in ("total_assets", "goodwill", "intangible_assets")):
+-            tangible_assets = (instant_now["total_assets"].value - instant_now["goodwill"].value
+-                               - instant_now["intangible_assets"].value)
+-            if tangible_assets:
++        inventory = money(closing, "inventory", currency)
++        if inventory is not None and revenue:
++            add("inventory_to_revenue", inventory / revenue, "closing(inventory) / revenue", lookup["revenue"])
++        tangible_parts = [money(closing, key, currency) for key in ("total_assets", "goodwill", "intangible_assets")]
++        if net_income is not None and None not in tangible_parts:
++            tangible_assets = tangible_parts[0] - tangible_parts[1] - tangible_parts[2]
++            if tangible_assets > 0:
+                 add("return_on_tangible_assets", net_income / tangible_assets,
+-                    "net_income / year_end(total_assets - goodwill - intangible_assets)", lookup["net_income"])
++                    "net_income / closing(total_assets - goodwill - intangible_assets)", lookup["net_income"])
+ 
+-        cfo, interest_paid = val(lookup, "operating_cash_flow"), val(lookup, "interest_paid")
++        cfo = money(lookup, "operating_cash_flow", currency)
++        interest_paid, debt_repaid = money(lookup, "interest_paid", currency), money(lookup, "debt_repaid", currency)
+         if cfo is not None and interest_paid:
+             add("cfo_interest_coverage", cfo / abs(interest_paid),
+                 "operating_cash_flow / abs(interest_paid)", lookup["operating_cash_flow"])
+-            debt_repaid = val(lookup, "debt_repaid")
+-            if debt_repaid is not None:
+-                add("debt_service_coverage_proxy", cfo / (abs(interest_paid) + abs(debt_repaid)),
+-                    "operating_cash_flow / (abs(interest_paid) + abs(debt_repaid))", lookup["operating_cash_flow"])
+-        lease_keys = [key for key in ("short_term_lease_expense", "low_value_lease_expense", "variable_lease_expense")
+-                      if key in lookup]
+-        finance_costs = val(lookup, "finance_costs")
+-        if ebit is not None and finance_costs is not None and lease_keys:
+-            fixed_charges = sum((abs(lookup[key].value) for key in lease_keys), Decimal(0))
+-            if abs(finance_costs) + fixed_charges:
+-                add("fixed_charge_coverage", (ebit + fixed_charges) / (abs(finance_costs) + fixed_charges),
+-                    f"(ebit + {' + '.join(lease_keys)}) / (abs(finance_costs) + {' + '.join(lease_keys)})",
+-                    lookup["ebit"])
+-
+-        # Per-share growth from its inputs: per-share values are calculated per
+-        # period, while the prior year's raw lines are always in the history.
+-        def shares(rows):
+-            return val(rows, "weighted_average_shares_diluted") or val(rows, "weighted_average_shares_basic")
++        if cfo is not None and interest_paid is not None and debt_repaid is not None \
++                and abs(interest_paid) + abs(debt_repaid):
++            add("debt_service_coverage_proxy", cfo / (abs(interest_paid) + abs(debt_repaid)),
++                "proxy, not the lender DSCR: operating_cash_flow / (abs(interest_paid) + abs(debt_repaid))",
++                lookup["operating_cash_flow"])
++
++        # Per-share growth on one share basis: diluted in both years, else basic in both years.
++        basis = next((key for key in ("weighted_average_shares_diluted", "weighted_average_shares_basic")
++                      if all(rows.get(key) is not None and rows[key].unit == "shares" and rows[key].value
++                             for rows in (lookup, prior_fy))), None)
+ 
+         def free_cash_flow(rows):
+-            if "free_cash_flow" in rows:
+-                return rows["free_cash_flow"].value
+-            if "operating_cash_flow" in rows and "capex" in rows:
+-                return rows["operating_cash_flow"].value - abs(rows["capex"].value)
+-            return None
+-
+-        shares_now, shares_prior = shares(lookup), shares(prior_fy)
+-        if shares_now and shares_prior:
+-            for metric, numerator in (("revenue_per_share_growth", lambda rows: val(rows, "revenue")),
++            flow, capex = money(rows, "operating_cash_flow", currency), money(rows, "capex", currency)
++            return None if flow is None or capex is None else flow - abs(capex)
++
++        if basis:
++            for metric, numerator in (("revenue_per_share_growth", lambda rows: money(rows, "revenue", currency)),
+                                       ("free_cash_flow_per_share_growth", free_cash_flow)):
+                 now, prior = numerator(lookup), numerator(prior_fy)
+-                if now is not None and prior:
+-                    prior_per_share = prior / shares_prior
+-                    add(metric, (now / shares_now - prior_per_share) / abs(prior_per_share),
+-                        f"({metric[:-7]} - prior_fy({metric[:-7]})) / abs(prior_fy({metric[:-7]}))",
+-                        lookup.get("revenue") or base)
++                if now is not None and prior is not None and prior > 0:
++                    per_share_now = now / lookup[basis].value
++                    per_share_prior = prior / prior_fy[basis].value
++                    stem = metric[:-len("_growth")]
++                    add(metric, per_share_now / per_share_prior - 1,
++                        f"{stem} / prior_fy({stem}) - 1 on {basis}; prior > 0", reference)
++
++    def _quarter_changes(self, company_id, base, group, quarterly, add):
++        """Change against the immediately preceding discrete quarter, in the same currency and unit.
++
++        Growth on a non-positive base is DEFINITION_PENDING and is not emitted."""
++        if not base.period_start:
++            return
++        previous = quarterly.get((company_id, (date.fromisoformat(base.period_start) - timedelta(days=1)).isoformat()), {})
++
++        def quarter_value(rows, metric, currency, unit):
++            if metric == "free_cash_flow":
++                parts = [rows.get(key) for key in ("operating_cash_flow", "capex")]
++                if any(part is None or part.currency != currency or part.unit != currency for part in parts):
++                    return None
++                return parts[0].value - abs(parts[1].value)
++            fact = rows.get(metric)
++            return fact.value if fact is not None and fact.currency == currency and fact.unit == unit else None
++
++        for source_metric, output_metric in self.QOQ_METRICS.items():
++            anchor = group.get("operating_cash_flow" if source_metric == "free_cash_flow" else source_metric)
++            if anchor is None:
++                continue
++            currency, unit = anchor.currency, anchor.unit
++            current = quarter_value(group, source_metric, currency, unit)
++            prior_value = quarter_value(previous, source_metric, currency, unit)
++            if current is not None and prior_value is not None and prior_value > 0:
++                add(output_metric, current / prior_value - 1,
++                    f"{source_metric} / prior_quarter({source_metric}) - 1; prior > 0", anchor)
+ 
+     def _composite_scores(self, company_id, base, lookup, historical, add):
+         """Sector-aware composite scores, computed from ingested lines only.
+diff --git a/src/finengine/database.py b/src/finengine/database.py
+index df9a7d6..d54898a 100644
+--- a/src/finengine/database.py
++++ b/src/finengine/database.py
+@@ -1079,41 +1079,40 @@ class Database:
+             for output, source in growth_sources.items()
+         })
+         definitions.update({
+-            "nopat": ("ebit * (1 - abs(income_taxes_and_zakat) / income_before_income_taxes_and_zakat)", "same_period",
++            "nopat": ("ebit * (1 - (-income_taxes_and_zakat) / income_before_income_taxes_and_zakat); "
++                      "tax expense <= 0, pretax > 0, rate in [0, 1)", "same_period",
+                       ("ebit", "income_taxes_and_zakat", "income_before_income_taxes_and_zakat")),
+-            "return_on_invested_capital": ("nopat / average(total_equity + current_debt + long_term_debt - cash)",
+-                                           "annual_average_balance",
++            "return_on_invested_capital": ("nopat / average(opening, closing)(total_equity + current_debt + long_term_debt - cash)",
++                                           "opening_closing_balance",
+                                            ("nopat", "total_equity", "current_debt", "long_term_debt", "cash")),
+-            "return_on_capital": ("ebit / average(current_debt + long_term_debt + total_equity)", "annual_average_balance",
+-                                  ("ebit", "current_debt", "long_term_debt", "total_equity")),
+-            "return_on_capital_employed": ("ebit / average(total_assets - current_liabilities)", "annual_average_balance",
+-                                           ("ebit", "total_assets", "current_liabilities")),
+-            "fixed_asset_turnover": ("revenue / average(property_plant_equipment)", "annual_average_balance",
++            "return_on_capital": ("ebit / average(opening, closing)(current_debt + long_term_debt + total_equity)",
++                                  "opening_closing_balance", ("ebit", "current_debt", "long_term_debt", "total_equity")),
++            "return_on_capital_employed": ("ebit / average(opening, closing)(total_assets - current_liabilities)",
++                                           "opening_closing_balance", ("ebit", "total_assets", "current_liabilities")),
++            "fixed_asset_turnover": ("revenue / average(opening, closing)(property_plant_equipment)", "opening_closing_balance",
+                                      ("revenue", "property_plant_equipment")),
+-            "working_capital_turnover": ("revenue / average(current_assets - current_liabilities)", "annual_average_balance",
++            "working_capital_turnover": ("revenue / average(opening, closing)(current_assets - current_liabilities); "
++                                         "both balances > 0, average >= 5% of revenue", "opening_closing_balance",
+                                          ("revenue", "current_assets", "current_liabilities")),
+-            "incremental_roic": ("(nopat - prior_fy(nopat)) / (invested_capital - prior_fy(invested_capital))",
++            "incremental_roic": ("(nopat - prior_fy(nopat)) / (closing - opening)(invested_capital)",
+                                  "prior_fiscal_year", ("nopat", "invested_capital")),
+             "margin_expansion": ("operating_income / revenue - prior_fy(operating_income / revenue)", "prior_fiscal_year",
+                                  ("operating_income", "revenue")),
+-            "inventory_to_revenue": ("year_end(inventory) / revenue", "same_period", ("inventory", "revenue")),
+-            "return_on_tangible_assets": ("net_income / year_end(total_assets - goodwill - intangible_assets)", "same_period",
++            "inventory_to_revenue": ("closing(inventory) / revenue", "same_period", ("inventory", "revenue")),
++            "return_on_tangible_assets": ("net_income / closing(total_assets - goodwill - intangible_assets)", "same_period",
+                                           ("net_income", "total_assets", "goodwill", "intangible_assets")),
+             "cfo_interest_coverage": ("operating_cash_flow / abs(interest_paid)", "same_period",
+                                       ("operating_cash_flow", "interest_paid")),
+-            "debt_service_coverage_proxy": ("operating_cash_flow / (abs(interest_paid) + abs(debt_repaid))", "same_period",
+-                                            ("operating_cash_flow", "interest_paid", "debt_repaid")),
+-            "fixed_charge_coverage": ("(ebit + lease_expense) / (abs(finance_costs) + lease_expense)", "same_period",
+-                                      ("ebit", "finance_costs", "short_term_lease_expense", "low_value_lease_expense",
+-                                       "variable_lease_expense")),
+-            "revenue_per_share_growth": ("(revenue_per_share - prior_fy(revenue_per_share)) / abs(prior_fy(revenue_per_share))",
++            "debt_service_coverage_proxy": ("proxy, not the lender DSCR: operating_cash_flow / (abs(interest_paid) + abs(debt_repaid))",
++                                            "same_period", ("operating_cash_flow", "interest_paid", "debt_repaid")),
++            "revenue_per_share_growth": ("revenue_per_share / prior_fy(revenue_per_share) - 1 on one share basis; prior > 0",
+                                          "prior_fiscal_year", ("revenue", "weighted_average_shares_diluted")),
+             "free_cash_flow_per_share_growth": (
+-                "(free_cash_flow_per_share - prior_fy(free_cash_flow_per_share)) / abs(prior_fy(free_cash_flow_per_share))",
++                "free_cash_flow_per_share / prior_fy(free_cash_flow_per_share) - 1 on one share basis; prior > 0",
+                 "prior_fiscal_year", ("free_cash_flow", "weighted_average_shares_diluted")),
+         })
+         definitions.update({
+-            output: (f"({source} - prior_quarter({source})) / abs(prior_quarter({source}))", "prior_fiscal_quarter",
++            output: (f"{source} / prior_quarter({source}) - 1; prior > 0", "prior_fiscal_quarter",
+                      (source,))
+             for source, output in Calculator.QOQ_METRICS.items()
+         })
+diff --git a/src/finengine/pipeline.py b/src/finengine/pipeline.py
+index 4536000..c8c9fe9 100644
+--- a/src/finengine/pipeline.py
++++ b/src/finengine/pipeline.py
+@@ -128,7 +128,7 @@ class Pipeline:
+             # queue, but it must never be labelled as a production publication.
+             self.db.set_normalized_status(rejected_ids, "rejected")
+         history=self.db.calculation_history(company.company_id,self.calculator.HISTORY_METRICS)
+-        calculated=self.calculator.calculate(facts,history)
++        calculated=self.calculator.calculate(facts,history,industry=company.industry)
+         # Canonical projections can depend on a detailed note in this batch and
+         # a reported total ingested from another document. Read only the small
+         # governed projection context, then publish exact aliases atomically
+diff --git a/tests/test_contract_derivations.py b/tests/test_contract_derivations.py
+index cf4bd0a..58213ee 100644
+--- a/tests/test_contract_derivations.py
++++ b/tests/test_contract_derivations.py
+@@ -4,25 +4,51 @@ from decimal import Decimal
+ from finengine.calculations import Calculator
+ from finengine.models import Fact, PeriodKind
+ 
++INDUSTRY = "Integrated Oil & Gas"
+ 
+-def fact(metric, value, kind, end, year, quarter=None, unit="SAR"):
+-    start = {PeriodKind.FY: f"{year}-01-01", PeriodKind.QUARTER: None}.get(kind)
+-    return Fact("sa:9999", metric, Decimal(value), "SAR", unit, start, end, kind, year, quarter,
++
++def fact(metric, value, kind, end, year, quarter=None, unit="SAR", currency="SAR", start=None):
++    if start is None and kind == PeriodKind.FY:
++        start = f"{year}-01-01"
++    return Fact("sa:9999", metric, Decimal(value), currency, unit, start, end, kind, year, quarter,
+                 f"doc:{metric}:{end}", "https://example.invalid/report.pdf", end)
+ 
+ 
+ def annual(year, **values):
+-    return [fact(metric, value, PeriodKind.FY, f"{year}-12-31", year) for metric, value in values.items()]
++    shares = {"weighted_average_shares_diluted", "weighted_average_shares_basic"}
++    return [fact(metric, value, PeriodKind.FY, f"{year}-12-31", year, unit="shares" if metric in shares else "SAR")
++            for metric, value in values.items()]
++
++
++def balance(year, end=None, **values):
++    return [fact(metric, value, PeriodKind.INSTANT, end or f"{year}-12-31", year) for metric, value in values.items()]
+ 
+ 
+-def balance(year, **values):
+-    return [fact(metric, value, PeriodKind.INSTANT, f"{year}-12-31", year) for metric, value in values.items()]
++def quarter(metric, value, end, start, year, q, **kw):
++    return fact(metric, value, PeriodKind.QUARTER, end, year, q, start=start, **kw)
+ 
+ 
+ def by_metric(facts):
+     return {(item.metric, item.period_end): item for item in facts}
+ 
+ 
++def without(facts, metric, end):
++    return [item for item in facts if not (item.metric == metric and item.period_end == end)]
++
++
++def replaced(facts, metric, end, value, **kw):
++    original = next(item for item in facts if item.metric == metric and item.period_end == end)
++    return [*without(facts, metric, end),
++            fact(metric, value, original.period_kind, end, original.fiscal_year, unit=kw.get("unit", original.unit),
++                 currency=kw.get("currency", original.currency), start=original.period_start)]
++
++
++FY_METRICS = ("nopat", "return_on_invested_capital", "return_on_capital", "return_on_capital_employed",
++              "fixed_asset_turnover", "working_capital_turnover", "incremental_roic", "margin_expansion",
++              "inventory_to_revenue", "return_on_tangible_assets", "cfo_interest_coverage",
++              "debt_service_coverage_proxy", "revenue_per_share_growth", "free_cash_flow_per_share_growth")
++
++
+ class ContractDerivationTests(unittest.TestCase):
+     def setUp(self):
+         self.facts = [
+@@ -34,6 +60,9 @@ class ContractDerivationTests(unittest.TestCase):
+                     weighted_average_shares_diluted="120", operating_cash_flow="400", capex="-160",
+                     interest_paid="-20", debt_repaid="-30", finance_costs="-10",
+                     short_term_lease_expense="4", low_value_lease_expense="1"),
++            *balance(2023, total_equity="700", current_debt="50", long_term_debt="150", cash="100",
++                     total_assets="1400", current_liabilities="300", current_assets="450",
++                     property_plant_equipment="800"),
+             *balance(2024, total_equity="800", current_debt="50", long_term_debt="150", cash="100",
+                      total_assets="1500", current_liabilities="300", current_assets="500",
+                      property_plant_equipment="900"),
+@@ -42,14 +71,20 @@ class ContractDerivationTests(unittest.TestCase):
+                      property_plant_equipment="1100", inventory="60", goodwill="40", intangible_assets="60"),
+         ]
+ 
+-    def calculate(self, facts=None):
+-        return by_metric(Calculator().calculate(facts or self.facts, []))
++    def calculate(self, facts=None, industry=INDUSTRY):
++        return by_metric(Calculator().calculate(self.facts if facts is None else facts, [], industry=industry))
++
++    def assertNone(self, out, *metrics, end="2025-12-31"):
++        for metric in metrics:
++            self.assertNotIn((metric, end), out, metric)
++
++    # ── positive path
+ 
+-    def test_returns_on_capital_average_opening_and_closing_balances(self):
++    def test_returns_use_opening_and_closing_fiscal_year_balances(self):
+         out = self.calculate()
+         nopat = Decimal(300) * (1 - Decimal(120) / Decimal(300))
+         self.assertEqual(out["nopat", "2025-12-31"].value, nopat)
+-        # invested capital: 2024 = 800 + 200 - 100 = 900; 2025 = 900 + 300 - 100 = 1100
++        # invested capital: opening 2024-12-31 = 800 + 200 - 100 = 900; closing = 900 + 300 - 100 = 1100
+         self.assertEqual(out["return_on_invested_capital", "2025-12-31"].value, nopat / Decimal(1000))
+         self.assertEqual(out["return_on_capital", "2025-12-31"].value, Decimal(300) / Decimal(1100))
+         self.assertEqual(out["return_on_capital_employed", "2025-12-31"].value, Decimal(300) / Decimal(1300))
+@@ -57,63 +92,144 @@ class ContractDerivationTests(unittest.TestCase):
+         self.assertEqual(out["working_capital_turnover", "2025-12-31"].value, Decimal(1200) / Decimal(250))
+         prior_nopat = Decimal(200) * (1 - Decimal(50) / Decimal(200))
+         self.assertEqual(out["incremental_roic", "2025-12-31"].value, (nopat - prior_nopat) / Decimal(200))
+-        self.assertTrue(out["return_on_invested_capital", "2025-12-31"].is_calculated)
+-
+-    def test_margin_turnover_coverage_and_per_share_growth(self):
+-        out = self.calculate()
+         self.assertEqual(out["margin_expansion", "2025-12-31"].value,
+                          Decimal(330) / Decimal(1200) - Decimal(210) / Decimal(1000))
+         self.assertEqual(out["inventory_to_revenue", "2025-12-31"].value, Decimal(60) / Decimal(1200))
+         self.assertEqual(out["return_on_tangible_assets", "2025-12-31"].value, Decimal(150) / Decimal(1600))
+         self.assertEqual(out["cfo_interest_coverage", "2025-12-31"].value, Decimal(20))
+         self.assertEqual(out["debt_service_coverage_proxy", "2025-12-31"].value, Decimal(400) / Decimal(50))
+-        self.assertEqual(out["fixed_charge_coverage", "2025-12-31"].value, Decimal(305) / Decimal(15))
+         self.assertEqual(out["revenue_per_share_growth", "2025-12-31"].value, Decimal(0))
+-        fcf_now, fcf_prior = Decimal(240) / 120, Decimal(200) / 100
+-        self.assertEqual(out["free_cash_flow_per_share_growth", "2025-12-31"].value, (fcf_now - fcf_prior) / fcf_prior)
++        self.assertEqual(out["free_cash_flow_per_share_growth", "2025-12-31"].value,
++                         (Decimal(240) / 120) / (Decimal(200) / 100) - 1)
++        self.assertIn("proxy, not the lender DSCR", out["debt_service_coverage_proxy", "2025-12-31"].calculation)
+ 
+-    def test_metrics_are_not_emitted_without_every_input(self):
+-        out = self.calculate([item for item in self.facts if item.metric not in ("cash", "goodwill", "interest_paid")])
+-        for metric in ("return_on_invested_capital", "incremental_roic", "return_on_tangible_assets",
+-                       "cfo_interest_coverage", "debt_service_coverage_proxy"):
+-            self.assertNotIn((metric, "2025-12-31"), out)
+-        # Inputs without the opening balance never produce an average-based return.
+-        out = self.calculate([item for item in self.facts if item.period_end != "2024-12-31"])
+-        for metric in ("return_on_capital", "return_on_capital_employed", "fixed_asset_turnover", "margin_expansion"):
+-            self.assertNotIn((metric, "2025-12-31"), out)
++    # ── 1. opening/closing balances, never an interim balance
+ 
+-    def test_loss_year_emits_no_nopat_or_after_tax_returns(self):
+-        facts = [item for item in self.facts if not (item.metric == "income_before_income_taxes_and_zakat"
+-                                                     and item.period_end == "2025-12-31")]
+-        facts.append(fact("income_before_income_taxes_and_zakat", "-50", PeriodKind.FY, "2025-12-31", 2025))
++    def test_interim_balance_never_replaces_a_year_end_balance(self):
++        interim = balance(2025, end="2025-06-30", total_equity="5000", current_debt="5000", long_term_debt="5000",
++                          cash="1", total_assets="99999", current_liabilities="1", current_assets="99999",
++                          property_plant_equipment="99999")
++        out = self.calculate([*self.facts, *interim])
++        self.assertEqual(out["return_on_capital_employed", "2025-12-31"].value, Decimal(300) / Decimal(1300))
++        # Without the opening year-end balance the interim one is not used as a substitute.
++        opening_removed = [item for item in [*self.facts, *interim] if item.period_end != "2024-12-31"
++                           or item.period_kind != PeriodKind.INSTANT]
++        self.assertNone(self.calculate(opening_removed), "return_on_invested_capital", "return_on_capital",
++                        "return_on_capital_employed", "fixed_asset_turnover", "working_capital_turnover")
++
++    # ── 2. currencies, units and scopes are never mixed
++
++    def test_a_balance_in_another_currency_blocks_the_average(self):
++        facts = replaced(self.facts, "total_equity", "2024-12-31", "800", unit="USD", currency="USD")
+         out = self.calculate(facts)
+-        for metric in ("nopat", "return_on_invested_capital", "incremental_roic"):
++        self.assertNone(out, "return_on_invested_capital", "return_on_capital", "incremental_roic")
++        self.assertIn(("return_on_capital_employed", "2025-12-31"), out)
++        facts = replaced(self.facts, "revenue", "2024-12-31", "1000", unit="SAR thousands")
++        self.assertNone(self.calculate(facts), "margin_expansion", "revenue_per_share_growth")
++
++    # ── 3. a missing debt line is not a zero; a reported zero is
++
++    def test_missing_debt_component_is_not_zero(self):
++        out = self.calculate(without(self.facts, "long_term_debt", "2024-12-31"))
++        self.assertNone(out, "return_on_invested_capital", "return_on_capital", "incremental_roic")
++        out = self.calculate(replaced(self.facts, "long_term_debt", "2024-12-31", "0"))
++        self.assertEqual(out["return_on_capital", "2025-12-31"].value, Decimal(300) / ((Decimal(850) + 1200) / 2))
++
++    # ── 4. tax keeps its sign; loss years and implausible rates withhold after-tax metrics
++
++    def test_tax_benefit_loss_year_and_implausible_rate_withhold_nopat(self):
++        for label, facts in (
++            ("benefit", replaced(self.facts, "income_taxes_and_zakat", "2025-12-31", "120")),
++            ("loss", replaced(self.facts, "income_before_income_taxes_and_zakat", "2025-12-31", "-50")),
++            ("rate >= 1", replaced(self.facts, "income_taxes_and_zakat", "2025-12-31", "-300")),
++        ):
++            with self.subTest(label):
++                out = self.calculate(facts)
++                self.assertNone(out, "nopat", "return_on_invested_capital", "incremental_roic")
++                self.assertIn(("return_on_capital_employed", "2025-12-31"), out)  # pre-tax return stays defined
++        out = self.calculate(replaced(self.facts, "income_taxes_and_zakat", "2025-12-31", "0"))
++        self.assertEqual(out["nopat", "2025-12-31"].value, Decimal(300))  # a reported zero tax is a real rate
++
++    # ── 5. explicit sector eligibility
++
++    def test_banks_insurers_and_unclassified_issuers_are_excluded(self):
++        for industry in ("Banks", "Insurance", "Reinsurance", "Takaful Insurance", None, ""):
++            with self.subTest(industry):
++                self.assertNone(self.calculate(industry=industry), *FY_METRICS)
++
++    # ── 6. working-capital turnover needs positive, material working capital
++
++    def test_working_capital_turnover_withheld_for_negative_or_near_zero_balance(self):
++        negative = replaced(self.facts, "current_assets", "2025-12-31", "250")  # closing WC = -50
++        tiny = replaced(replaced(self.facts, "current_assets", "2024-12-31", "330"),
++                        "current_assets", "2025-12-31", "330")  # average WC 30 < 5% of 1200
++        for facts in (negative, tiny):
++            self.assertNone(self.calculate(facts), "working_capital_turnover")
++
++    # ── 7. one share basis across years
++
++    def test_per_share_growth_never_mixes_share_bases(self):
++        mixed = [*without(self.facts, "weighted_average_shares_diluted", "2024-12-31"),
++                 *annual(2024, weighted_average_shares_basic="100")]
++        self.assertNone(self.calculate(mixed), "revenue_per_share_growth", "free_cash_flow_per_share_growth")
++        basic = [item for item in self.facts if item.metric != "weighted_average_shares_diluted"]
++        basic += [*annual(2024, weighted_average_shares_basic="100"), *annual(2025, weighted_average_shares_basic="125")]
++        out = self.calculate(basic)
++        self.assertEqual(out["revenue_per_share_growth", "2025-12-31"].value,
++                         (Decimal(1200) / 125) / (Decimal(1000) / 100) - 1)
++        self.assertIn("weighted_average_shares_basic", out["revenue_per_share_growth", "2025-12-31"].calculation)
++        negative_prior = replaced(self.facts, "operating_cash_flow", "2024-12-31", "50")  # prior FCF = -50
++        self.assertNone(self.calculate(negative_prior), "free_cash_flow_per_share_growth")
++
++    # ── 8. debt-service proxy keeps principal when interest is zero
++
++    def test_debt_service_proxy_with_zero_interest_keeps_principal(self):
++        out = self.calculate(replaced(self.facts, "interest_paid", "2025-12-31", "0"))
++        self.assertEqual(out["debt_service_coverage_proxy", "2025-12-31"].value, Decimal(400) / Decimal(30))
++        self.assertNone(out, "cfo_interest_coverage")
++        self.assertNone(self.calculate(without(self.facts, "debt_repaid", "2025-12-31")), "debt_service_coverage_proxy")
++
++    # ── 10. definitions that need an accounting decision are never emitted
++
++    def test_definition_pending_metrics_are_never_emitted(self):
++        out = self.calculate()
++        for metric in Calculator.DEFINITION_PENDING:
+             self.assertNotIn((metric, "2025-12-31"), out)
+-        self.assertIn(("return_on_capital_employed", "2025-12-31"), out)  # pre-tax returns are still defined
+-
+-    def test_quarter_on_quarter_uses_the_previous_fiscal_quarter(self):
+-        quarters = [
+-            fact("revenue", "100", PeriodKind.QUARTER, "2026-03-31", 2026, 1),
+-            fact("revenue", "110", PeriodKind.QUARTER, "2026-06-30", 2026, 2),
+-            fact("net_income", "-20", PeriodKind.QUARTER, "2026-03-31", 2026, 1),
+-            fact("net_income", "10", PeriodKind.QUARTER, "2026-06-30", 2026, 2),
+-            fact("operating_cash_flow", "50", PeriodKind.QUARTER, "2026-03-31", 2026, 1),
+-            fact("capex", "-30", PeriodKind.QUARTER, "2026-03-31", 2026, 1),
+-            fact("operating_cash_flow", "60", PeriodKind.QUARTER, "2026-06-30", 2026, 2),
+-            fact("capex", "-30", PeriodKind.QUARTER, "2026-06-30", 2026, 2),
+-            # A fiscal-year row in the same year must not stand in for the prior quarter.
++
++    def test_missing_inputs_emit_nothing(self):
++        out = self.calculate([item for item in self.facts if item.metric not in ("cash", "goodwill", "interest_paid")])
++        self.assertNone(out, "return_on_invested_capital", "incremental_roic", "return_on_tangible_assets",
++                        "cfo_interest_coverage", "debt_service_coverage_proxy")
++
++    # ── quarter on quarter
++
++    def test_quarter_change_uses_the_contiguous_previous_quarter(self):
++        rows = [
++            quarter("revenue", "100", "2026-03-31", "2026-01-01", 2026, 1),
++            quarter("revenue", "110", "2026-06-30", "2026-04-01", 2026, 2),
++            quarter("operating_cash_flow", "50", "2026-03-31", "2026-01-01", 2026, 1),
++            quarter("capex", "-30", "2026-03-31", "2026-01-01", 2026, 1),
++            quarter("operating_cash_flow", "60", "2026-06-30", "2026-04-01", 2026, 2),
++            quarter("capex", "-30", "2026-06-30", "2026-04-01", 2026, 2),
++            quarter("net_income", "-20", "2026-03-31", "2026-01-01", 2026, 1),
++            quarter("net_income", "10", "2026-06-30", "2026-04-01", 2026, 2),
+             fact("revenue", "400", PeriodKind.FY, "2025-12-31", 2025),
+         ]
+-        out = by_metric(Calculator().calculate(quarters, []))
++        out = by_metric(Calculator().calculate(rows, []))
+         self.assertEqual(out["revenue_qoq", "2026-06-30"].value, Decimal("0.1"))
+-        self.assertEqual(out["net_income_qoq", "2026-06-30"].value, Decimal("1.5"))  # (10 - -20) / abs(-20)
+         self.assertEqual(out["free_cash_flow_qoq", "2026-06-30"].value, Decimal("0.5"))  # 30 vs 20
++        self.assertNotIn(("net_income_qoq", "2026-06-30"), out)  # non-positive base: DEFINITION_PENDING
+         self.assertNotIn(("revenue_qoq", "2026-03-31"), out)  # no Q4 2025 discrete quarter
+ 
+-    def test_quarter_on_quarter_bridges_fiscal_years(self):
+-        quarters = [fact("revenue", "80", PeriodKind.QUARTER, "2025-12-31", 2025, 4),
+-                    fact("revenue", "100", PeriodKind.QUARTER, "2026-03-31", 2026, 1)]
+-        out = by_metric(Calculator().calculate([quarters[1]], [quarters[0]]))
++    def test_quarter_change_rejects_gaps_and_currency_mixing(self):
++        gap = [quarter("revenue", "100", "2025-12-31", "2025-10-01", 2025, 4),
++               quarter("revenue", "110", "2026-06-30", "2026-04-01", 2026, 2)]
++        self.assertNotIn(("revenue_qoq", "2026-06-30"), by_metric(Calculator().calculate(gap, [])))
++        mixed = [quarter("revenue", "100", "2026-03-31", "2026-01-01", 2026, 1, unit="USD", currency="USD"),
++                 quarter("revenue", "110", "2026-06-30", "2026-04-01", 2026, 2)]
++        self.assertNotIn(("revenue_qoq", "2026-06-30"), by_metric(Calculator().calculate(mixed, [])))
++        bridge = [quarter("revenue", "80", "2025-12-31", "2025-10-01", 2025, 4)]
++        out = by_metric(Calculator().calculate([quarter("revenue", "100", "2026-03-31", "2026-01-01", 2026, 1)], bridge))
+         self.assertEqual(out["revenue_qoq", "2026-03-31"].value, Decimal("0.25"))
+ 
+ 
+-- 
+2.43.0
+
+
+From fda1451bf6afd0b043a7a14fe555239aa181ffd1 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Tue, 20 Oct 2026 15:22:39 +0000
+Subject: [PATCH 4/4] Hold return_on_capital as DEFINITION_PENDING
+
+Its capital base (debt + equity, or net working capital + net fixed
+assets) needs an accounting decision; it is no longer emitted.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01CfTpoii6QDStyTPdotmEdY
+---
+ src/finengine/calculations.py      |  7 +------
+ src/finengine/database.py          |  2 --
+ tests/test_contract_derivations.py | 12 ++++++------
+ 3 files changed, 7 insertions(+), 14 deletions(-)
+
+diff --git a/src/finengine/calculations.py b/src/finengine/calculations.py
+index e3d0d5a..1a03ad0 100644
+--- a/src/finengine/calculations.py
++++ b/src/finengine/calculations.py
+@@ -58,6 +58,7 @@ class Calculator:
+     # Contract keys whose definition needs an accounting decision; never emitted until it is made.
+     DEFINITION_PENDING = {
+         "fixed_charge_coverage": "fixed charges under IFRS 16 (which lease costs count) are not defined",
++        "return_on_capital": "capital base not defined: debt + equity, or net working capital + net fixed assets",
+     }
+ 
+     def calculate(self, facts: list[Fact], history: list[Fact] | None = None,
+@@ -533,10 +534,6 @@ class Calculator:
+             assets, current = money(rows, "total_assets", currency), money(rows, "current_liabilities", currency)
+             return None if None in (assets, current) else assets - current
+ 
+-        def debt_plus_equity(rows, currency):
+-            total_debt, equity = debt(rows, currency), money(rows, "total_equity", currency)
+-            return None if None in (total_debt, equity) else total_debt + equity
+-
+         def working_capital(rows, currency):
+             assets, current = money(rows, "current_assets", currency), money(rows, "current_liabilities", currency)
+             return None if None in (assets, current) else assets - current
+@@ -574,8 +571,6 @@ class Calculator:
+ 
+         average_return("return_on_invested_capital", nopat, invested_capital,
+                        "nopat / average(opening, closing)(total_equity + current_debt + long_term_debt - cash)")
+-        average_return("return_on_capital", ebit, debt_plus_equity,
+-                       "ebit / average(opening, closing)(current_debt + long_term_debt + total_equity)")
+         average_return("return_on_capital_employed", ebit, capital_employed,
+                        "ebit / average(opening, closing)(total_assets - current_liabilities)")
+         average_return("fixed_asset_turnover", revenue, lambda rows, cur: money(rows, "property_plant_equipment", cur),
+diff --git a/src/finengine/database.py b/src/finengine/database.py
+index d54898a..0935e9f 100644
+--- a/src/finengine/database.py
++++ b/src/finengine/database.py
+@@ -1085,8 +1085,6 @@ class Database:
+             "return_on_invested_capital": ("nopat / average(opening, closing)(total_equity + current_debt + long_term_debt - cash)",
+                                            "opening_closing_balance",
+                                            ("nopat", "total_equity", "current_debt", "long_term_debt", "cash")),
+-            "return_on_capital": ("ebit / average(opening, closing)(current_debt + long_term_debt + total_equity)",
+-                                  "opening_closing_balance", ("ebit", "current_debt", "long_term_debt", "total_equity")),
+             "return_on_capital_employed": ("ebit / average(opening, closing)(total_assets - current_liabilities)",
+                                            "opening_closing_balance", ("ebit", "total_assets", "current_liabilities")),
+             "fixed_asset_turnover": ("revenue / average(opening, closing)(property_plant_equipment)", "opening_closing_balance",
+diff --git a/tests/test_contract_derivations.py b/tests/test_contract_derivations.py
+index 58213ee..49eb002 100644
+--- a/tests/test_contract_derivations.py
++++ b/tests/test_contract_derivations.py
+@@ -43,7 +43,7 @@ def replaced(facts, metric, end, value, **kw):
+                  currency=kw.get("currency", original.currency), start=original.period_start)]
+ 
+ 
+-FY_METRICS = ("nopat", "return_on_invested_capital", "return_on_capital", "return_on_capital_employed",
++FY_METRICS = ("nopat", "return_on_invested_capital", "return_on_capital_employed",
+               "fixed_asset_turnover", "working_capital_turnover", "incremental_roic", "margin_expansion",
+               "inventory_to_revenue", "return_on_tangible_assets", "cfo_interest_coverage",
+               "debt_service_coverage_proxy", "revenue_per_share_growth", "free_cash_flow_per_share_growth")
+@@ -86,7 +86,6 @@ class ContractDerivationTests(unittest.TestCase):
+         self.assertEqual(out["nopat", "2025-12-31"].value, nopat)
+         # invested capital: opening 2024-12-31 = 800 + 200 - 100 = 900; closing = 900 + 300 - 100 = 1100
+         self.assertEqual(out["return_on_invested_capital", "2025-12-31"].value, nopat / Decimal(1000))
+-        self.assertEqual(out["return_on_capital", "2025-12-31"].value, Decimal(300) / Decimal(1100))
+         self.assertEqual(out["return_on_capital_employed", "2025-12-31"].value, Decimal(300) / Decimal(1300))
+         self.assertEqual(out["fixed_asset_turnover", "2025-12-31"].value, Decimal(1200) / Decimal(1000))
+         self.assertEqual(out["working_capital_turnover", "2025-12-31"].value, Decimal(1200) / Decimal(250))
+@@ -114,7 +113,7 @@ class ContractDerivationTests(unittest.TestCase):
+         # Without the opening year-end balance the interim one is not used as a substitute.
+         opening_removed = [item for item in [*self.facts, *interim] if item.period_end != "2024-12-31"
+                            or item.period_kind != PeriodKind.INSTANT]
+-        self.assertNone(self.calculate(opening_removed), "return_on_invested_capital", "return_on_capital",
++        self.assertNone(self.calculate(opening_removed), "return_on_invested_capital",
+                         "return_on_capital_employed", "fixed_asset_turnover", "working_capital_turnover")
+ 
+     # ── 2. currencies, units and scopes are never mixed
+@@ -122,7 +121,7 @@ class ContractDerivationTests(unittest.TestCase):
+     def test_a_balance_in_another_currency_blocks_the_average(self):
+         facts = replaced(self.facts, "total_equity", "2024-12-31", "800", unit="USD", currency="USD")
+         out = self.calculate(facts)
+-        self.assertNone(out, "return_on_invested_capital", "return_on_capital", "incremental_roic")
++        self.assertNone(out, "return_on_invested_capital", "incremental_roic")
+         self.assertIn(("return_on_capital_employed", "2025-12-31"), out)
+         facts = replaced(self.facts, "revenue", "2024-12-31", "1000", unit="SAR thousands")
+         self.assertNone(self.calculate(facts), "margin_expansion", "revenue_per_share_growth")
+@@ -131,9 +130,10 @@ class ContractDerivationTests(unittest.TestCase):
+ 
+     def test_missing_debt_component_is_not_zero(self):
+         out = self.calculate(without(self.facts, "long_term_debt", "2024-12-31"))
+-        self.assertNone(out, "return_on_invested_capital", "return_on_capital", "incremental_roic")
++        self.assertNone(out, "return_on_invested_capital", "incremental_roic")
+         out = self.calculate(replaced(self.facts, "long_term_debt", "2024-12-31", "0"))
+-        self.assertEqual(out["return_on_capital", "2025-12-31"].value, Decimal(300) / ((Decimal(850) + 1200) / 2))
++        nopat = Decimal(300) * (1 - Decimal(120) / Decimal(300))
++        self.assertEqual(out["return_on_invested_capital", "2025-12-31"].value, nopat / ((Decimal(750) + 1100) / 2))
+ 
+     # ── 4. tax keeps its sign; loss years and implausible rates withhold after-tax metrics
+ 
 -- 
 2.43.0
 

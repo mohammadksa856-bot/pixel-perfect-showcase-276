@@ -10,15 +10,28 @@
   "isolated_measurements": {
     "sa:2222": {
       "A_existing_engine_refresh_only": "57.73",
-      "B_plus_new_formulas": "61.77",
+      "B_new_formulas_before_fix": "61.77",
+      "B_new_formulas_after_fix_01": "61.26",
       "C_rebuild_from_imports": "61.02",
-      "C_rebuild_plus_new_formulas": "65.07"
+      "C_rebuild_plus_formulas": "not re-measured after fix 01"
     },
     "sa:2010": {
-      "B_new_formulas": "55.41",
+      "B_new_formulas_before_fix": "55.41",
+      "B_new_formulas_after_fix_01": "54.90",
       "note": "existing refresh skipped: no SABIC price history"
     }
   },
   "status": "SIMULATED_NOT_APPROVED",
-  "known_defect_in_rebuild": "short_term_investments_net FY2025 sign (+1457 in imports, statement shows (1,457)); correction ARAMCO95-CORR-STIN-2025 not applied"
+  "known_defect_in_rebuild": "short_term_investments_net FY2025 sign (+1457 in imports, statement shows (1,457)); correction ARAMCO95-CORR-STIN-2025 not applied",
+  "stopped_after_fix_01": {
+    "sa:2222": [
+      "fixed_charge_coverage FY2025",
+      "return_on_capital FY2025"
+    ],
+    "sa:2010": [
+      "fixed_charge_coverage FY2025",
+      "return_on_capital FY2025"
+    ],
+    "reason": "DEFINITION_PENDING"
+  }
 }

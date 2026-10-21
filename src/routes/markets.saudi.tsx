@@ -23,7 +23,7 @@ export const Route = createFileRoute("/markets/saudi")({
   component: SaudiMarketPage,
 });
 
-type SortKey = "default" | "marketCap" | "change" | "alpha";
+type SortKey = "default" | "marketCap" | "alpha";
 type SegmentKey = "all" | "تداول" | "نمو";
 
 function parseMarketCap(v: string): number {
@@ -56,12 +56,6 @@ function SaudiMarketPage() {
     const sorted = [...list];
     if (sort === "marketCap")
       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
-    if (sort === "change")
-      sorted.sort(
-        (a, b) =>
-          parseFloat(b.change.replace(/[^0-9.-]/g, "")) -
-          parseFloat(a.change.replace(/[^0-9.-]/g, "")),
-      );
     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
     return sorted;
   }, [saudi, segment, sectorSlug, sort, t]);
@@ -100,8 +94,16 @@ function SaudiMarketPage() {
           {(
             [
               { key: "all", label: { ar: "الكل", en: "All" }, count: saudi.length },
-              { key: "تداول", label: { ar: "تاسي — الرئيسي", en: "TASI — Main" }, count: tasiCount },
-              { key: "نمو", label: { ar: "نمو — الموازي", en: "Nomu — Parallel" }, count: nomuCount },
+              {
+                key: "تداول",
+                label: { ar: "تاسي — الرئيسي", en: "TASI — Main" },
+                count: tasiCount,
+              },
+              {
+                key: "نمو",
+                label: { ar: "نمو — الموازي", en: "Nomu — Parallel" },
+                count: nomuCount,
+              },
             ] as const
           ).map((seg) => (
             <button
@@ -148,7 +150,6 @@ function SaudiMarketPage() {
               [
                 { key: "default", label: { ar: "الافتراضي", en: "Default" } },
                 { key: "marketCap", label: { ar: "القيمة السوقية", en: "Market cap" } },
-                { key: "change", label: { ar: "الأداء", en: "Performance" } },
                 { key: "alpha", label: { ar: "أبجدياً", en: "Alphabetical" } },
               ] as const
             ).map((opt) => (

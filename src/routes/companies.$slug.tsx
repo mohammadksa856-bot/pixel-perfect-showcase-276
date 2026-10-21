@@ -1,7 +1,12 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { CalendarDays, ChevronLeft, ExternalLink, Info, MessagesSquare } from "lucide-react";
 import { PageShell, Container } from "@/components/page-shell";
-import { CompanyCard, Panel, ResearchCard, SectionHeading } from "@/components/cards";
+import { CompanyCard, ResearchCard, SectionHeading } from "@/components/cards";
+import {
+  CompanyPanel as Panel,
+  UnavailableFinancialContent,
+  CompanyDataUnavailable,
+} from "@/components/company-content-status";
 import { ui, useI18n } from "@/lib/i18n";
 import { getCompany, getRelatedCompanies, getResearch, getSector } from "@/lib/content";
 import type { Company } from "@/data/types";
@@ -41,7 +46,7 @@ export const Route = createFileRoute("/companies/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "الشركة غير موجودة | معرفة استثمار" },
+          { title: "بيانات الشركة غير متاحة | معرفة استثمار" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -58,6 +63,7 @@ export const Route = createFileRoute("/companies/$slug")({
     };
   },
   component: CompanyPage,
+  errorComponent: CompanyDataUnavailable,
 });
 
 function CompanyPage() {
@@ -70,8 +76,16 @@ function CompanyPage() {
   const { t } = useI18n();
 
   const facts: { label: (typeof ui)["price"]; value: string; sectorLink: string | undefined }[] = [
-    { label: ui.price, value: company.price, sectorLink: undefined },
-    { label: ui.marketCap, value: company.marketCap, sectorLink: undefined },
+    {
+      label: { ar: "السعر المحفوظ", en: "Saved price" },
+      value: company.price || "—",
+      sectorLink: undefined,
+    },
+    {
+      label: { ar: "القيمة السوقية المحفوظة", en: "Saved market cap" },
+      value: company.marketCap || "—",
+      sectorLink: undefined,
+    },
     { label: ui.exchange, value: company.exchange, sectorLink: undefined },
     {
       label: ui.sector,
@@ -102,8 +116,8 @@ function CompanyPage() {
           <Info className="mt-0.5 size-3.5 shrink-0 text-tone-amber" />
           <span>
             {t({
-              ar: "الأرقام والبيانات بهذه الصفحة تجريبية حالياً لأغراض العرض، وستُربط بمصدر بيانات مباشر لاحقاً.",
-              en: "The figures on this page are currently placeholder data for demonstration, and will be connected to a live data source later.",
+              ar: "تعرض الصفحة محتوى محفوظًا تختلف حالة توثيقه بحسب القسم. التوصيات والتقييمات غير المسندة محجوبة؛ راجع حالة كل قسم قبل استخدام معلوماته.",
+              en: "This page contains stored content with section-level evidence limitations. Unsupported recommendations and valuations are hidden; check each section's status before use.",
             })}
           </span>
         </div>
@@ -137,16 +151,13 @@ function CompanyPage() {
             <div className="flex items-center gap-3">
               <div className="text-end">
                 <div className="text-2xl font-bold tracking-tight" dir="ltr">
-                  {company.price}
+                  {company.price || t({ ar: "السعر غير متاح", en: "Price unavailable" })}
                 </div>
-                <div
-                  className={cn(
-                    "mt-0.5 text-sm font-semibold",
-                    company.change.startsWith("-") ? "text-tone-rose" : "text-brand",
-                  )}
-                  dir="ltr"
-                >
-                  {company.change}
+                <div className="mt-1 max-w-64 text-xs leading-6 text-night-foreground/70">
+                  {t({
+                    ar: "سعر محفوظ، وليس سعرًا لحظيًا. توقيت السعر من المزود غير متاح؛ نسبة التغير محجوبة.",
+                    en: "Saved price, not a live quote. Provider quote time is unavailable; change is hidden.",
+                  })}
                 </div>
               </div>
               <WatchlistButton companyId={company.id} />
@@ -472,8 +483,6 @@ function CompanyPage() {
                       { ar: "الإيرادات", en: "Revenue" },
                       { ar: "صافي الدخل", en: "Net income" },
                       { ar: "التدفق النقدي", en: "Cash flow" },
-                      { ar: "الهامش", en: "Margin" },
-                      { ar: "العائد على رأس المال", en: "ROIC" },
                     ].map((h) => (
                       <th key={h.en} className="px-5 py-2.5 text-start font-medium">
                         {t(h)}
@@ -488,8 +497,6 @@ function CompanyPage() {
                       <td className="px-5 py-2.5">{row.revenue}</td>
                       <td className="px-5 py-2.5">{row.netIncome}</td>
                       <td className="px-5 py-2.5">{row.cashFlow}</td>
-                      <td className="px-5 py-2.5 text-brand">{row.margin}</td>
-                      <td className="px-5 py-2.5 text-brand">{row.roic}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -502,8 +509,8 @@ function CompanyPage() {
           </div>
           <p className="mt-2 text-[11px] text-muted-foreground">
             {t({
-              ar: "المصدر: بيانات تجريبية للعرض حالياً — سيتم ربطها بمصدر بيانات مباشر.",
-              en: "Source: demo data for now — will be connected to a live data feed.",
+              ar: "الفترات والمبالغ كما حُفظت؛ مصدر كل صف ووحدته وتاريخ نشره غير مثبتة في هذه الواجهة. لا تستخدم الجدول كقوائم معتمدة.",
+              en: "Periods and amounts are shown as stored; per-row sources, units and publication dates are not established here. This is not an approved financial statement.",
             })}
           </p>
         </div>
@@ -689,7 +696,8 @@ function CompanyPage() {
         />
 
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-1">
+          <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-2">
+            <UnavailableFinancialContent />
             <div className="space-y-4 text-sm">
               {company.valuation.map((v) => (
                 <div key={v.label.en}>
@@ -1147,6 +1155,14 @@ function CompanyPage() {
 
         <div className="mt-5">
           <Panel title={t({ ar: "الأخبار", en: "News" })}>
+            {company.news.length === 0 && (
+              <p className="text-sm leading-7 text-muted-foreground">
+                {t({
+                  ar: "لا تتوفر أخبار مرتبطة بروابط مصادر مؤرخة ومتحقق منها.",
+                  en: "No news with verified, dated source links is available.",
+                })}
+              </p>
+            )}
             <ul className="space-y-4 text-sm">
               {company.news.map((n) => (
                 <li key={n.title.en}>
@@ -1195,30 +1211,16 @@ function CompanyPage() {
           </Panel>
         </div>
 
-        {company.dataSources.length > 0 && (
-          <div className="mt-5">
-            <Panel title={t({ ar: "المصادر وحداثة البيانات", en: "Data sources & freshness" })}>
-              <ul className="space-y-3">
-                {company.dataSources.map((s) => (
-                  <li key={s.label.en} className="flex items-start gap-2.5 text-sm">
-                    <span
-                      className={cn(
-                        "mt-1 size-2 shrink-0 rounded-full",
-                        s.kind === "live" && "bg-tone-sky",
-                        s.kind === "official" && "bg-tone-emerald",
-                        s.kind === "ai" && "bg-brand",
-                      )}
-                    />
-                    <div>
-                      <span className="font-medium">{t(s.label)}</span>
-                      <span className="text-muted-foreground"> — {t(s.note)}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Panel>
-          </div>
-        )}
+        <div className="mt-5">
+          <Panel title={t({ ar: "المصادر وحداثة البيانات", en: "Data sources & freshness" })}>
+            <p className="text-sm leading-7 text-muted-foreground">
+              {t({
+                ar: "تسميات المصادر المحفوظة ليست دليل تحقق. لا يتوفر سجل مصدر وتاريخ نشر لكل رقم، ولا توقيت سعر من المزود. روابط المستندات مراجع للقراءة فقط، وليست اعتمادًا للأرقام أو حقوق إعادة استخدامها.",
+                en: "Stored source labels are not verification. Per-number source/publication records and provider quote times are unavailable. Document links are reading references, not approval of figures or reuse rights.",
+              })}
+            </p>
+          </Panel>
+        </div>
 
         <section className="mt-5 flex flex-col items-start gap-4 rounded-xl border border-border/70 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>

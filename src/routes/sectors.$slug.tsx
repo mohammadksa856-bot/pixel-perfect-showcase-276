@@ -4,7 +4,6 @@ import { PageHero, PageShell, Container } from "@/components/page-shell";
 import { CompanyCard, ResearchCard, KnowledgeCard, SectionHeading } from "@/components/cards";
 import { ui, useI18n } from "@/lib/i18n";
 import { getCompanies, getKnowledge, getResearch, getSector } from "@/lib/content";
-import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/sectors/$slug")({
   loader: async ({ params }) => {
@@ -45,12 +44,7 @@ export const Route = createFileRoute("/sectors/$slug")({
 
 function SectorPage() {
   const { sector, companies, research, relatedKnowledge } = Route.useLoaderData();
-  const { t, locale } = useI18n();
-
-  const changes = companies
-    .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))
-    .filter((n) => !Number.isNaN(n));
-  const avgChange = changes.length ? changes.reduce((sum, n) => sum + n, 0) / changes.length : null;
+  const { t } = useI18n();
 
   return (
     <PageShell>
@@ -76,20 +70,6 @@ function SectorPage() {
           <span className="rounded-full border border-night-foreground/15 px-4 py-2">
             {research.length} {t(ui.statResearch)}
           </span>
-          {avgChange !== null && (
-            <span
-              className={cn(
-                "rounded-full border px-4 py-2 font-semibold",
-                avgChange >= 0
-                  ? "border-tone-emerald/30 text-tone-emerald"
-                  : "border-tone-rose/30 text-tone-rose",
-              )}
-            >
-              {t({ ar: "متوسط أداء الشركات", en: "Avg. company performance" })}:{" "}
-              {avgChange >= 0 ? "+" : ""}
-              {avgChange.toFixed(1)}%
-            </span>
-          )}
         </div>
       </PageHero>
 
@@ -110,17 +90,9 @@ function SectorPage() {
               <Sparkles className="size-4 text-brand" />
               {t({ ar: "ملخص أداء القطاع", en: "Sector performance summary" })}
               <span className="rounded-full bg-brand/15 px-2 py-0.5 text-[10px] font-medium text-brand">
-                {t({ ar: "بالذكاء الاصطناعي", en: "AI-generated" })}
+                {t({ ar: "مسودة غير معتمدة", en: "Unapproved draft" })}
               </span>
             </h2>
-            {sector.performanceUpdatedAt && (
-              <span className="text-[11px] text-muted-foreground">
-                {t({ ar: "آخر تحديث", en: "Last updated" })}:{" "}
-                {new Date(sector.performanceUpdatedAt).toLocaleDateString(
-                  locale === "ar" ? "ar-SA" : "en-US",
-                )}
-              </span>
-            )}
           </div>
 
           {sector.performanceSummary && t(sector.performanceSummary) ? (
@@ -128,16 +100,16 @@ function SectorPage() {
           ) : (
             <p className="text-sm leading-8 text-muted-foreground">
               {t({
-                ar: "الملخص قيد الإعداد — سيظهر هنا تحليل دوري لأداء القطاع.",
-                en: "Summary coming soon — a periodic performance analysis will appear here.",
+                ar: "لا يتوفر ملخص أداء موثق لهذا القطاع.",
+                en: "No verified performance summary is available for this sector.",
               })}
             </p>
           )}
 
           <p className="mt-4 text-[11px] text-muted-foreground">
             {t({
-              ar: "يُحدَّث هذا الملخص حالياً بشكل أسبوعي، وسيصبح يومياً قريباً.",
-              en: "This summary currently updates weekly, moving to daily soon.",
+              ar: "لا يوجد جدول تحديث دوري موثق. أي نص محفوظ هنا غير متحقق منه ولا يمثل أداءً حاليًا.",
+              en: "No verified update schedule exists. Any stored text here is unverified and does not represent current performance.",
             })}
           </p>
         </section>

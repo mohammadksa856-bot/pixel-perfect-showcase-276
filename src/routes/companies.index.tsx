@@ -17,20 +17,19 @@ export const Route = createFileRoute("/companies/")({
       { title: "الشركات | معرفة استثمار" },
       {
         name: "description",
-        content:
-          "ملفات تحليلية للشركات المدرجة عالمياً ومحلياً: نموذج العمل، المزايا التنافسية، القوائم المالية، والتقييم.",
+        content: "ملفات الشركات ومحتواها المحفوظ، مع بيان حالة توثيق البيانات وحدود استخدامها.",
       },
       { property: "og:title", content: "الشركات — معرفة استثمار" },
       {
         property: "og:description",
-        content: "استعرض ملفات الشركات مع البيانات المالية والتحليل التنافسي والتقييم.",
+        content: "استعرض ملفات الشركات مع بيان حالة توثيق كل قسم.",
       },
     ],
   }),
   component: CompaniesPage,
 });
 
-type SortKey = "default" | "marketCap" | "change" | "alpha";
+type SortKey = "default" | "marketCap" | "alpha";
 
 function parseMarketCap(v: string): number {
   const num = parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
@@ -49,12 +48,6 @@ function CompaniesPage() {
     const sorted = [...list];
     if (sort === "marketCap")
       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
-    if (sort === "change")
-      sorted.sort(
-        (a, b) =>
-          parseFloat(b.change.replace(/[^0-9.-]/g, "")) -
-          parseFloat(a.change.replace(/[^0-9.-]/g, "")),
-      );
     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
     return sorted;
   }, [allCompanies, active, sort, t]);
@@ -75,8 +68,8 @@ function CompaniesPage() {
         eyebrow={t(ui.companies)}
         title={t(ui.discoverCompanies)}
         description={t({
-          ar: "ملفات شركات مبنية على تحليل نوعي وكمي، جاهزة للربط بمصادر بيانات مباشرة.",
-          en: "Company profiles built on qualitative and quantitative analysis, ready for live data sources.",
+          ar: "ملفات الشركات ومحتواها المحفوظ، مع بيان حدود توثيق البيانات داخل كل ملف.",
+          en: "Company profiles with stored content and section-level evidence limitations.",
         })}
       />
       <Container>
@@ -106,7 +99,6 @@ function CompaniesPage() {
               [
                 { key: "default", label: { ar: "الافتراضي", en: "Default" } },
                 { key: "marketCap", label: { ar: "القيمة السوقية", en: "Market cap" } },
-                { key: "change", label: { ar: "الأداء", en: "Performance" } },
                 { key: "alpha", label: { ar: "أبجدياً", en: "Alphabetical" } },
               ] as const
             ).map((opt) => (

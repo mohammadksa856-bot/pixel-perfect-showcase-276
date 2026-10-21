@@ -119,14 +119,6 @@ export function CompanyCard({ company }: { company: Company }) {
           <div className="truncate text-sm font-bold">{t(company.name)}</div>
           <div className="text-[11px] text-muted-foreground">{company.exchange}</div>
         </div>
-        <span
-          className={cn(
-            "ms-auto text-xs font-semibold",
-            company.change.startsWith("-") ? "text-tone-rose" : "text-tone-emerald",
-          )}
-        >
-          {company.change}
-        </span>
       </div>
       {company.sectorSlug && (
         <span
@@ -140,12 +132,20 @@ export function CompanyCard({ company }: { company: Company }) {
         </span>
       )}
       <p className="line-clamp-2 text-xs leading-6 text-muted-foreground">{t(company.short)}</p>
-      <div className="mt-auto flex items-center justify-between pt-1 text-[11px]">
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-1 text-[11px]">
         <span className="rounded-md bg-secondary px-2 py-0.5 text-secondary-foreground">
-          {company.price}
+          {t({ ar: "سعر محفوظ", en: "Saved price" })}: {company.price || "—"}
         </span>
-        <span className="text-muted-foreground">{company.marketCap}</span>
+        <span className="text-muted-foreground">
+          {t({ ar: "قيمة سوقية محفوظة", en: "Saved market cap" })}: {company.marketCap || "—"}
+        </span>
       </div>
+      <p className="text-[11px] leading-5 text-muted-foreground">
+        {t({
+          ar: "توقيت السعر من المزود غير متاح؛ ليس سعرًا لحظيًا.",
+          en: "Provider quote time unavailable; not a live quote.",
+        })}
+      </p>
     </Link>
   );
 }

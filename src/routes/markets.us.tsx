@@ -23,7 +23,7 @@ export const Route = createFileRoute("/markets/us")({
   component: UsMarketPage,
 });
 
-type SortKey = "default" | "marketCap" | "change" | "alpha";
+type SortKey = "default" | "marketCap" | "alpha";
 
 function parseMarketCap(v: string): number {
   const num = parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
@@ -61,12 +61,6 @@ function UsMarketPage() {
     const sorted = [...list];
     if (sort === "marketCap")
       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
-    if (sort === "change")
-      sorted.sort(
-        (a, b) =>
-          parseFloat(b.change.replace(/[^0-9.-]/g, "")) -
-          parseFloat(a.change.replace(/[^0-9.-]/g, "")),
-      );
     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
     return sorted;
   }, [us, exchange, sectorSlug, sort, t]);
@@ -119,22 +113,23 @@ function UsMarketPage() {
 
         {sectorOptions.length > 1 && (
           <div className="mb-5 flex flex-wrap gap-2">
-            {[{ slug: "all", name: { ar: "كل القطاعات", en: "All sectors" } }, ...sectorOptions].map(
-              (s) => (
-                <button
-                  key={s.slug}
-                  onClick={() => setSectorSlug(s.slug)}
-                  className={cn(
-                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
-                    sectorSlug === s.slug
-                      ? "border-brand bg-brand/10 text-brand"
-                      : "border-border/70 text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {t(s.name)}
-                </button>
-              ),
-            )}
+            {[
+              { slug: "all", name: { ar: "كل القطاعات", en: "All sectors" } },
+              ...sectorOptions,
+            ].map((s) => (
+              <button
+                key={s.slug}
+                onClick={() => setSectorSlug(s.slug)}
+                className={cn(
+                  "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
+                  sectorSlug === s.slug
+                    ? "border-brand bg-brand/10 text-brand"
+                    : "border-border/70 text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {t(s.name)}
+              </button>
+            ))}
           </div>
         )}
 
@@ -147,7 +142,6 @@ function UsMarketPage() {
               [
                 { key: "default", label: { ar: "الافتراضي", en: "Default" } },
                 { key: "marketCap", label: { ar: "القيمة السوقية", en: "Market cap" } },
-                { key: "change", label: { ar: "الأداء", en: "Performance" } },
                 { key: "alpha", label: { ar: "أبجدياً", en: "Alphabetical" } },
               ] as const
             ).map((opt) => (

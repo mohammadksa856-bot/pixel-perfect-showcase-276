@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Panel } from "@/components/cards";
+import { CompanyPanel as Panel } from "@/components/company-content-status";
 import { useI18n, type LocalizedText } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/data/types";
@@ -179,10 +179,7 @@ export function DecisionCard({ company }: { company: Company }) {
             className="flex items-center gap-1.5 rounded-lg border border-night-foreground/10 bg-night-foreground/5 px-2.5 py-1.5"
           >
             <span className="text-[10px] text-night-foreground/50">{t(d.label)}</span>
-            <span
-              className={cn("text-[12px] font-semibold", readingClass(d.reading))}
-              dir="auto"
-            >
+            <span className={cn("text-[12px] font-semibold", readingClass(d.reading))} dir="auto">
               {t(d.value)}
             </span>
           </div>
@@ -271,7 +268,6 @@ export function QuarterlyResults({ company }: { company: Company }) {
           t({ ar: "الربع", en: "Quarter" }),
           t({ ar: "الإيراد", en: "Revenue" }),
           t({ ar: "الربح", en: "Profit" }),
-          t({ ar: "مقابل التوقعات", en: "vs estimate" }),
         ]}
       >
         {company.quarterlyResults.map((q, i) => (
@@ -284,9 +280,6 @@ export function QuarterlyResults({ company }: { company: Company }) {
             </td>
             <td className="py-2.5" dir="ltr">
               {q.profit}
-            </td>
-            <td className={cn("py-2.5 font-semibold", readingClass(q.reading))}>
-              {t(q.vsEstimate)}
             </td>
           </tr>
         ))}

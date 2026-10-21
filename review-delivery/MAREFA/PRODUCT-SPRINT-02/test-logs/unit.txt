@@ -1,0 +1,53 @@
+bun test v1.4.3 (c6da4a4d3)
+
+review-delivery\MAREFA\PUBLIC-CONTENT-FIX\checks\public-content.test.tsx:
+(pass) Public CMS projection — no qualification or storage mutation > unsupported change cannot cross the content projection [3.56ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported decisionCard cannot cross the content projection [0.50ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported valuation cannot cross the content projection [0.05ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported historicalValuation cannot cross the content projection [0.03ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported valuationScenarios cannot cross the content projection [0.03ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported analystConsensus cannot cross the content projection [0.10ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported forwardEstimates cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported growthOutlook cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported financialHealth cannot cross the content projection [0.10ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported financialRatios cannot cross the content projection [0.07ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported stockPerformance cannot cross the content projection [0.07ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported competitors cannot cross the content projection [0.03ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported dividends cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported tradingStats cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported shortInterest cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported priceHistory cannot cross the content projection [0.01ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported marginTrend cannot cross the content projection [0.78ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported insiderTrades cannot cross the content projection [0.06ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported upcomingEvents cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported dataSources cannot cross the content projection [0.01ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported news cannot cross the content projection [0.02ms]
+(pass) Public CMS projection — no qualification or storage mutation > does not mutate or delete stored input [0.99ms]
+(pass) Public CMS projection — no qualification or storage mutation > preserves saved quote and market cap, not stale change [1.11ms]
+(pass) Public CMS projection — no qualification or storage mutation > preserves historical periods/amounts but not unverified derived columns [0.46ms]
+(pass) Public CMS projection — no qualification or storage mutation > quarter periods/amounts preserved; estimate comparison and colour removed [0.10ms]
+(pass) Public CMS projection — no qualification or storage mutation > projection is idempotent [0.07ms]
+(pass) Public CMS projection — no qualification or storage mutation > unsupported markers absent from serialized public content [0.32ms]
+(pass) Rendered boundaries > market ticker renders no figures or fake refresh time [7.27ms]
+(pass) Rendered boundaries > even a supplied series cannot render a demo quote or SVG chart [19.05ms]
+(pass) Rendered boundaries > retained section has local evidence status [0.55ms]
+(pass) Rendered boundaries > valuation missingness is stated, not replaced [0.29ms]
+(pass) Rendered boundaries > source failure shows unavailable without exception detail or financial substitute [1.73ms]
+(pass) Shared public paths and static claims > all seven existing market identities preserved without quote values [0.22ms]
+(pass) Shared public paths and static claims > unknown market identity remains unavailable [0.30ms]
+(pass) Shared public paths and static claims > public route does not import stored demo market quotes [5.63ms]
+(pass) Shared public paths and static claims > public access layer projects company records and throws on fetch error [0.67ms]
+(pass) Shared public paths and static claims > market loader serializes identity only [0.50ms]
+(pass) Shared public paths and static claims > fixed update time and contact developer note removed [0.91ms]
+(pass) Shared public paths and static claims > sector has no unsupported cadence or stale performance aggregate [0.39ms]
+(pass) Shared public paths and static claims > unavailable performance sort removed from every company listing [1.01ms]
+(pass) Shared public paths and static claims > company route uses unavailable state on error and section-level status [0.46ms]
+
+review-delivery\MAREFA\PUBLIC-CONTENT-FIX\checks\source-failure.test.ts:
+(pass) real company content accessor rejects source failure; no stored/demo fallback [1.07ms]
+(pass) real company list accessor rejects source failure; no mock list fallback [0.37ms]
+
+ 43 pass
+ 0 fail
+ 92 expect() calls
+Ran 43 tests across 2 files. [341.00ms]

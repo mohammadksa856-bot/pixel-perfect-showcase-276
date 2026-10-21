@@ -76,8 +76,8 @@ export const ui = {
   community: { ar: "المجتمع", en: "Community" },
   search: { ar: "بحث", en: "Search" },
   marketsLastUpdated: {
-    ar: "آخر تحديث قبل دقيقتين",
-    en: "Last updated 2 minutes ago",
+    ar: "أسعار الأسواق غير متاحة",
+    en: "Market quotes unavailable",
   },
   searchPlaceholder: {
     ar: "ابحث عن شركة، قطاع، مقال، أو مفهوم...",

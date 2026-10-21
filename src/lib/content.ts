@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import { publicCompanyContent } from "@/lib/public-content";
 import type {
   Board,
   Company,
@@ -198,7 +199,7 @@ const emptyDividends: DividendInfo = {
 };
 
 function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText }[] = []): Company {
-  return {
+  return publicCompanyContent({
     id: row.id,
     ticker: row.ticker,
     slug: row.slug,
@@ -283,7 +284,7 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText 
     riskItems: asArray(row.risk_items),
     regulatoryEnv: asArray(row.regulatory_env),
     priceHistory: asArray(row.price_history),
-  };
+  });
 }
 
 export async function getCompanies(opts?: {

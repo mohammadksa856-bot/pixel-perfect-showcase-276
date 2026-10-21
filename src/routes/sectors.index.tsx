@@ -4,12 +4,11 @@ import { ChevronLeft } from "lucide-react";
 import { PageHero, PageShell, Container } from "@/components/page-shell";
 import { getIcon } from "@/lib/icons";
 import { ui, useI18n } from "@/lib/i18n";
-import { getCompanies, getResearch, getSectors } from "@/lib/content";
+import { getSectorDirectory } from "@/lib/sector-stats";
 import { cn } from "@/lib/utils";
-import type { Sector } from "@/data/types";
 
 export const Route = createFileRoute("/sectors/")({
-  loader: async () => ({ stats: await computeSectorStats() }),
+  loader: getSectorDirectory,
   head: () => ({
     meta: [
       { title: "القطاعات | معرفة استثمار" },
@@ -28,52 +27,24 @@ export const Route = createFileRoute("/sectors/")({
   component: SectorsPage,
 });
 
-type SectorStats = {
-  sector: Sector;
-  companiesCount: number;
-  researchCount: number;
-  avgChange: number | null;
-};
-
-async function computeSectorStats(): Promise<SectorStats[]> {
-  const sectors = await getSectors();
-  return Promise.all(
-    sectors.map(async (sector) => {
-      const [companies, research] = await Promise.all([
-        getCompanies({ sectorSlug: sector.slug }),
-        getResearch({ sectorSlug: sector.slug }),
-      ]);
-      const changes = companies
-        .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))
-        .filter((n) => !Number.isNaN(n));
-      const avgChange = changes.length
-        ? changes.reduce((sum, n) => sum + n, 0) / changes.length
-        : null;
-      return {
-        sector,
-        companiesCount: companies.length,
-        researchCount: research.length,
-        avgChange,
-      };
-    }),
-  );
-}
-
 type SortKey = "default" | "mostCompanies" | "alpha";
 
 function SectorsPage() {
   const { t } = useI18n();
   const [sort, setSort] = useState<SortKey>("default");
   const [hideEmpty, setHideEmpty] = useState(false);
-  const { stats } = Route.useLoaderData();
+  const { stats, status } = Route.useLoaderData();
+  const countsAvailable = status === "available";
 
   const sorted = useMemo(() => {
     let list = [...stats];
-    if (hideEmpty) list = list.filter((s) => s.companiesCount > 0 || s.researchCount > 0);
-    if (sort === "mostCompanies") list.sort((a, b) => b.companiesCount - a.companiesCount);
+    if (hideEmpty && countsAvailable)
+      list = list.filter((s) => (s.companiesCount ?? 0) > 0 || (s.researchCount ?? 0) > 0);
+    if (sort === "mostCompanies" && countsAvailable)
+      list.sort((a, b) => (b.companiesCount ?? 0) - (a.companiesCount ?? 0));
     if (sort === "alpha") list.sort((a, b) => t(a.sector.name).localeCompare(t(b.sector.name)));
     return list;
-  }, [stats, sort, hideEmpty, t]);
+  }, [stats, sort, hideEmpty, t, countsAvailable]);
   return (
     <PageShell>
       <Container>
@@ -107,11 +78,27 @@ function SectorsPage() {
           </p>
         </section>
 
+        {status !== "available" && (
+          <p role="status" className="mb-4 rounded-xl border border-border bg-muted p-4 text-sm">
+            {t(
+              status === "unavailable"
+                ? {
+                    ar: "قائمة القطاعات غير متاحة حاليًا. يرجى المحاولة لاحقًا.",
+                    en: "The sector directory is currently unavailable. Please try again later.",
+                  }
+                : {
+                    ar: "بعض إحصاءات القطاعات غير متاحة حاليًا. لا يمكن تصفية القطاعات حسب النشاط أو ترتيبها حسب عدد الشركات.",
+                    en: "Some sector counts are currently unavailable. Activity filtering and company-count sorting are unavailable.",
+                  },
+            )}
+          </p>
+        )}
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <label className="flex items-center gap-2 text-xs text-muted-foreground">
             <input
               type="checkbox"
               checked={hideEmpty}
+              disabled={!countsAvailable}
               onChange={(e) => setHideEmpty(e.target.checked)}
               className="size-3.5 accent-brand"
             />
@@ -127,6 +114,8 @@ function SectorsPage() {
             ).map((opt) => (
               <button
                 key={opt.key}
+                aria-pressed={sort === opt.key}
+                disabled={opt.key === "mostCompanies" && !countsAvailable}
                 onClick={() => setSort(opt.key)}
                 className={cn(
                   "rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
@@ -141,8 +130,13 @@ function SectorsPage() {
           </div>
         </div>
 
+        {status === "available" && sorted.length === 0 && (
+          <p className="mb-6 text-sm text-muted-foreground">
+            {t({ ar: "لا توجد قطاعات تطابق هذا الخيار.", en: "No sectors match this selection." })}
+          </p>
+        )}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sorted.map(({ sector, companiesCount, researchCount, avgChange }) => {
+          {sorted.map(({ sector, companiesCount, researchCount }) => {
             const Icon = getIcon(sector.icon);
             const isEmpty = companiesCount === 0 && researchCount === 0;
             return (
@@ -176,18 +170,14 @@ function SectorsPage() {
                   <span className="mt-1 block truncate text-xs text-muted-foreground">
                     {t(sector.tagline)}
                   </span>
-                </span>
-                {avgChange !== null && (
-                  <span
-                    className={cn(
-                      "shrink-0 text-xs font-semibold",
-                      avgChange >= 0 ? "text-tone-emerald" : "text-tone-rose",
-                    )}
-                  >
-                    {avgChange >= 0 ? "+" : ""}
-                    {avgChange.toFixed(1)}%
+                  <span className="mt-2 block text-xs text-muted-foreground">
+                    {t({ ar: "الشركات", en: "Companies" })}:{" "}
+                    {companiesCount ?? t({ ar: "غير متاح", en: "Unavailable" })}
+                    {" · "}
+                    {t({ ar: "الأبحاث", en: "Research" })}:{" "}
+                    {researchCount ?? t({ ar: "غير متاح", en: "Unavailable" })}
                   </span>
-                )}
+                </span>
               </Link>
             );
           })}

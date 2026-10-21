@@ -1,0 +1,46 @@
+{
+  "status": "READY_FOR_PR",
+  "base": "4657815d990f1b5db5304e8a2c35f39b06c0c439",
+  "implementation": "d2e89f1b08d0ad7aea64b38b450d5fa6f7e7cd09",
+  "branch": "codex/marefa-public-content-integration-20261021",
+  "productFiles": 17,
+  "checkFiles": 6,
+  "securityFilesChanged": false,
+  "tests": {
+    "pass": 43,
+    "fail": 0,
+    "skip": 0,
+    "assertions": 92
+  },
+  "types": "PASS",
+  "targetedLint": {
+    "errors": 0,
+    "warnings": 2
+  },
+  "build": "PASS",
+  "http": {
+    "pass": 9,
+    "total": 9
+  },
+  "sourceFailure": {
+    "pass": 1,
+    "total": 1,
+    "status": 500,
+    "noFinancialFallback": true
+  },
+  "clientAudit": {
+    "files": 61,
+    "markers": 8,
+    "findings": 0
+  },
+  "baselineComparison": {
+    "route": "/sectors",
+    "baselineStatus": 500,
+    "candidateStatus": 500,
+    "sourceError": "57014"
+  },
+  "holds": "7/22/142/0",
+  "pushed": false,
+  "prOpened": false,
+  "deployed": false
+}

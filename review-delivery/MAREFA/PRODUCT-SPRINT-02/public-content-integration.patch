@@ -1,0 +1,1597 @@
+diff --git a/review-delivery/MAREFA/PRODUCT-SPRINT-02/checks/source-down-server.ts b/review-delivery/MAREFA/PRODUCT-SPRINT-02/checks/source-down-server.ts
+new file mode 100644
+index 0000000..6d1c668
+--- /dev/null
++++ b/review-delivery/MAREFA/PRODUCT-SPRINT-02/checks/source-down-server.ts
+@@ -0,0 +1,39 @@
++// Isolated read-failure browser fixture. No real credentials or database writes.
++import { resolve } from "node:path";
++
++const root = resolve(import.meta.dir, "../../../..");
++const upstream = Bun.serve({
++  hostname: "127.0.0.1",
++  port: 4483,
++  fetch(request) {
++    return Response.json(
++      { message: "SYNTHETIC_SOURCE_UNAVAILABLE" },
++      {
++        status: ["GET", "OPTIONS"].includes(request.method) ? 503 : 405,
++        headers: { "access-control-allow-origin": "*" },
++      },
++    );
++  },
++});
++const child = Bun.spawn([process.execPath, "run", "dev", "--host", "127.0.0.1", "--port", "4482"], {
++  cwd: root,
++  env: {
++    ...process.env,
++    VITE_SUPABASE_URL: "http://127.0.0.1:4483",
++    SUPABASE_URL: "http://127.0.0.1:4483",
++    VITE_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_synthetic_source_failure",
++    SUPABASE_PUBLISHABLE_KEY: "sb_publishable_synthetic_source_failure",
++  },
++  stdout: "inherit",
++  stderr: "inherit",
++});
++console.log("Synthetic source: 127.0.0.1:4483 / local app: 127.0.0.1:4482");
++for (const signal of ["SIGINT", "SIGTERM"] as const) {
++  process.on(signal, () => {
++    child.kill();
++    upstream.stop(true);
++    process.exit(0);
++  });
++}
++process.exitCode = await child.exited;
++upstream.stop(true);
+diff --git a/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/build-audit.ts b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/build-audit.ts
+new file mode 100644
+index 0000000..0d7e151
+--- /dev/null
++++ b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/build-audit.ts
+@@ -0,0 +1,40 @@
++import { readdirSync, readFileSync } from "node:fs";
++import { join } from "node:path";
++const root = ".output/public";
++const files: string[] = [];
++function visit(dir: string) {
++  for (const entry of readdirSync(dir, { withFileTypes: true })) {
++    const path = join(dir, entry.name);
++    if (entry.isDirectory()) visit(path);
++    else if (/\.(js|html)$/.test(path)) files.push(path);
++  }
++}
++visit(root);
++if (files.length < 10) throw new Error("Build output missing");
++const forbidden = [
++  "6,420.15",
++  "21,320.44",
++  "45,210.88",
++  "$118,530",
++  "آخر تحديث قبل دقيقتين",
++  "Last updated 2 minutes ago",
++  "hello@marifa-istithmar.example",
++  "This summary currently updates weekly",
++];
++const findings = files.flatMap((file) => {
++  const text = readFileSync(file, "utf8");
++  return forbidden.filter((value) => text.includes(value)).map((value) => ({ file, value }));
++});
++console.log(
++  JSON.stringify(
++    {
++      scannedFiles: files.length,
++      forbiddenMarkers: forbidden.length,
++      findings,
++      pass: findings.length === 0,
++    },
++    null,
++    2,
++  ),
++);
++if (findings.length) process.exitCode = 1;
+diff --git a/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/http-smoke.ts b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/http-smoke.ts
+new file mode 100644
+index 0000000..9895831
+--- /dev/null
++++ b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/http-smoke.ts
+@@ -0,0 +1,60 @@
++// Read-only loopback checks. No Supabase writes, refresh jobs or stored payloads.
++const base = process.argv[2] || "http://127.0.0.1:4460";
++if (!/^http:\/\/127\.0\.0\.1:\d+$/.test(base)) throw new Error("Loopback only");
++const sourceDown = process.argv.includes("--source-down");
++const paths = sourceDown
++  ? ["/companies/saudi-aramco"]
++  : [
++      "/",
++      "/companies/saudi-aramco",
++      "/companies",
++      "/sectors/energy",
++      "/markets/sp500",
++      "/markets/saudi",
++      "/markets/us",
++      "/contact",
++      "/research",
++    ];
++const results = [];
++for (const path of paths) {
++  const response = await fetch(base + path, { signal: AbortSignal.timeout(30000) });
++  const html = await response.text();
++  const checks: Record<string, boolean> = { status: response.status === (sourceDown ? 500 : 200) };
++  if (sourceDown) {
++    checks.unavailable = html.includes("بيانات الشركة غير متاحة");
++    checks.noCompanyQuote = !html.includes("السعر المحفوظ");
++    checks.noTargetPanel = !html.includes("متوسط السعر المستهدف");
++  } else {
++    checks.noFakeRefresh = !html.includes("آخر تحديث قبل دقيقتين");
++    checks.noMarketFixture = !html.includes("6,420.15");
++    if (path.includes("/companies/")) {
++      checks.quoteLabelled = html.includes("السعر المحفوظ");
++      checks.localStatus = html.includes('data-content-status="unverified"');
++      checks.noConsensus = !html.includes("متوسط السعر المستهدف");
++      checks.noDemoSeries = !html.includes("recharts-surface");
++      checks.noChange = !html.includes("+0.9%");
++    }
++    if (path === "/contact") checks.noFakeEmail = !html.includes("marifa-istithmar.example");
++    if (path.includes("/sectors/")) checks.noCadence = !html.includes("بشكل أسبوعي");
++    if (path === "/markets/sp500") checks.unavailable = html.includes("بيانات السوق غير متاحة");
++  }
++  results.push({
++    path,
++    httpStatus: response.status,
++    checks,
++    pass: Object.values(checks).every(Boolean),
++  });
++}
++console.log(
++  JSON.stringify(
++    {
++      mode: sourceDown ? "source-down" : "normal",
++      results,
++      passed: results.filter((r) => r.pass).length,
++      total: results.length,
++    },
++    null,
++    2,
++  ),
++);
++if (results.some((r) => !r.pass)) process.exitCode = 1;
+diff --git a/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/public-content.test.tsx b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/public-content.test.tsx
+new file mode 100644
+index 0000000..a3962b0
+--- /dev/null
++++ b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/public-content.test.tsx
+@@ -0,0 +1,248 @@
++import { describe, expect, test } from "bun:test";
++import { readFileSync } from "node:fs";
++import { fileURLToPath } from "node:url";
++import { renderToStaticMarkup } from "react-dom/server";
++import type { Company } from "../../../../src/data/types";
++import { publicCompanyContent } from "../../../../src/lib/public-content";
++import { MarketTicker } from "../../../../src/components/MarketTicker";
++import { PriceChart } from "../../../../src/components/price-chart";
++import {
++  CompanyPanel,
++  CompanyDataUnavailable,
++  UnavailableFinancialContent,
++} from "../../../../src/components/company-content-status";
++import { I18nProvider } from "../../../../src/lib/i18n";
++import { getMarketIdentity } from "../../../../src/data/market-identities";
++import { markets } from "../../../../src/data/markets";
++
++const text = { ar: "TEST-UNSUPPORTED-ADVICE", en: "TEST-UNSUPPORTED-ADVICE" };
++function fixture() {
++  return {
++    id: "synthetic-company",
++    name: { ar: "شركة اختبار", en: "Test Company" },
++    price: "12.34 TEST",
++    marketCap: "50 TEST",
++    change: "+991%",
++    financials: [
++      {
++        year: "2024",
++        revenue: "10 TEST",
++        netIncome: "2 TEST",
++        cashFlow: "3 TEST",
++        margin: "TEST-MARGIN",
++        roic: "TEST-ROIC",
++      },
++    ],
++    quarterlyResults: [
++      {
++        quarter: "Q1 2025",
++        revenue: "4 TEST",
++        profit: "1 TEST",
++        vsEstimate: text,
++        reading: "good",
++      },
++    ],
++    analystConsensus: {
++      rating: text,
++      analystCount: 999,
++      targetPrice: "TEST-TARGET",
++      upside: "TEST-UPSIDE",
++    },
++    valuationScenarios: {
++      bear: { price: "TEST-BEAR" },
++      base: { price: "TEST-BASE" },
++      bull: { price: "TEST-BULL" },
++    },
++    dividends: {
++      payer: true,
++      yield: "TEST-YIELD",
++      sustainabilityScore: 99,
++      sustainabilityLabel: text,
++    },
++    stockPerformance: { period: text, companyReturn: 99, benchmarkName: text, benchmarkReturn: 88 },
++    tradingStats: { volume: "TEST-VOLUME", beta: "TEST-BETA", creditRating: "TEST-RATING" },
++    shortInterest: { percent: "TEST-SHORT" },
++    ...Object.fromEntries(
++      [
++        "decisionCard",
++        "valuation",
++        "historicalValuation",
++        "forwardEstimates",
++        "growthOutlook",
++        "financialHealth",
++        "financialRatios",
++        "competitors",
++        "priceHistory",
++        "insiderTrades",
++        "upcomingEvents",
++        "dataSources",
++        "news",
++      ].map((k) => [k, [{ marker: "TEST-UNSUPPORTED-ADVICE" }]]),
++    ),
++    marginTrend: { values: [99, 100], note: text },
++  } as unknown as Company;
++}
++
++describe("Public CMS projection — no qualification or storage mutation", () => {
++  for (const field of [
++    "change",
++    "decisionCard",
++    "valuation",
++    "historicalValuation",
++    "valuationScenarios",
++    "analystConsensus",
++    "forwardEstimates",
++    "growthOutlook",
++    "financialHealth",
++    "financialRatios",
++    "stockPerformance",
++    "competitors",
++    "dividends",
++    "tradingStats",
++    "shortInterest",
++    "priceHistory",
++    "marginTrend",
++    "insiderTrades",
++    "upcomingEvents",
++    "dataSources",
++    "news",
++  ] as const) {
++    test(`unsupported ${field} cannot cross the content projection`, () => {
++      const result = publicCompanyContent(fixture());
++      expect(JSON.stringify(result[field])).not.toContain("TEST-");
++      expect(result).not.toHaveProperty("financiallyApproved");
++    });
++  }
++  test("does not mutate or delete stored input", () => {
++    const input = fixture();
++    const before = JSON.stringify(input);
++    publicCompanyContent(input);
++    expect(JSON.stringify(input)).toBe(before);
++  });
++  test("preserves saved quote and market cap, not stale change", () => {
++    const result = publicCompanyContent(fixture());
++    expect([result.price, result.marketCap, result.change]).toEqual(["12.34 TEST", "50 TEST", ""]);
++  });
++  test("preserves historical periods/amounts but not unverified derived columns", () => {
++    expect(publicCompanyContent(fixture()).financials).toEqual([
++      {
++        year: "2024",
++        revenue: "10 TEST",
++        netIncome: "2 TEST",
++        cashFlow: "3 TEST",
++        margin: "",
++        roic: "",
++      },
++    ]);
++  });
++  test("quarter periods/amounts preserved; estimate comparison and colour removed", () => {
++    expect(publicCompanyContent(fixture()).quarterlyResults).toEqual([
++      { quarter: "Q1 2025", revenue: "4 TEST", profit: "1 TEST", vsEstimate: { ar: "", en: "" } },
++    ]);
++  });
++  test("projection is idempotent", () => {
++    const once = publicCompanyContent(fixture());
++    expect(publicCompanyContent(once)).toEqual(once);
++  });
++  test("unsupported markers absent from serialized public content", () => {
++    const serialized = JSON.stringify(publicCompanyContent(fixture()));
++    for (const marker of ["TEST-UNSUPPORTED", "TEST-MARGIN", "TEST-ROIC", "+991%", "TEST-TARGET"])
++      expect(serialized).not.toContain(marker);
++  });
++});
++
++describe("Rendered boundaries", () => {
++  test("market ticker renders no figures or fake refresh time", () =>
++    expect(renderToStaticMarkup(<MarketTicker />)).toBe(""));
++  test("even a supplied series cannot render a demo quote or SVG chart", () => {
++    const html = renderToStaticMarkup(
++      <I18nProvider>
++        <PriceChart
++          data={[
++            { date: "2024-01-01", price: 876543.21 },
++            { date: "2024-01-02", price: 987654.32 },
++          ]}
++        />
++      </I18nProvider>,
++    );
++    expect(html).not.toContain("876543");
++    expect(html).not.toContain("987654");
++    expect(html).not.toContain("<svg");
++    expect(html).toContain('data-content-status="unavailable"');
++  });
++  test("retained section has local evidence status", () => {
++    const html = renderToStaticMarkup(
++      <I18nProvider>
++        <CompanyPanel title="Test">
++          <span>Stored text</span>
++        </CompanyPanel>
++      </I18nProvider>,
++    );
++    expect(html).toContain('data-content-status="unverified"');
++    expect(html).toContain("Stored text");
++  });
++  test("valuation missingness is stated, not replaced", () => {
++    expect(
++      renderToStaticMarkup(
++        <I18nProvider>
++          <UnavailableFinancialContent />
++        </I18nProvider>,
++      ),
++    ).toContain("غير متاحة");
++  });
++  test("source failure shows unavailable without exception detail or financial substitute", () => {
++    const html = renderToStaticMarkup(
++      <I18nProvider>
++        <CompanyDataUnavailable />
++      </I18nProvider>,
++    );
++    expect(html).toContain("تعذر الوصول");
++    expect(html).not.toContain("TEST");
++    expect(html).not.toContain("stack");
++  });
++});
++
++const source = (path: string) =>
++  readFileSync(fileURLToPath(new URL(`../../../../${path}`, import.meta.url)), "utf8");
++describe("Shared public paths and static claims", () => {
++  test("all seven existing market identities preserved without quote values", () => {
++    for (const { slug, name, symbol } of markets)
++      expect(getMarketIdentity(slug)).toEqual({ slug, name, symbol });
++  });
++  test("unknown market identity remains unavailable", () =>
++    expect(getMarketIdentity("not-a-market")).toBeUndefined());
++  test("public route does not import stored demo market quotes", () =>
++    expect(source("src/routes/markets.$slug.tsx")).not.toContain('from "@/data/markets"'));
++  test("public access layer projects company records and throws on fetch error", () => {
++    const code = source("src/lib/content.ts");
++    expect(code).toContain("return publicCompanyContent({");
++    expect(code.match(/if \(error\) throw error;/g)!.length).toBeGreaterThan(2);
++  });
++  test("market loader serializes identity only", () => {
++    const code = source("src/routes/markets.$slug.tsx");
++    expect(code).toContain("return { name: market.name, symbol: market.symbol }");
++    expect(code).not.toMatch(/market\.(value|change)/);
++  });
++  test("fixed update time and contact developer note removed", () => {
++    expect(source("src/lib/i18n.tsx")).not.toContain("2 minutes ago");
++    expect(source("src/lib/i18n.tsx")).not.toContain("قبل دقيقتين");
++    const contact = source("src/routes/contact.tsx");
++    expect(contact).not.toContain(".example");
++    expect(contact).not.toContain("replace it");
++  });
++  test("sector has no unsupported cadence or stale performance aggregate", () => {
++    const code = source("src/routes/sectors.$slug.tsx");
++    for (const fragment of ["avgChange", "updates weekly", "بشكل أسبوعي", "moving to daily"])
++      expect(code).not.toContain(fragment);
++  });
++  test("unavailable performance sort removed from every company listing", () => {
++    for (const route of ["companies.index", "markets.saudi", "markets.us"])
++      expect(source(`src/routes/${route}.tsx`)).not.toContain('sort === "change"');
++  });
++  test("company route uses unavailable state on error and section-level status", () => {
++    const code = source("src/routes/companies.$slug.tsx");
++    expect(code).toContain("errorComponent: CompanyDataUnavailable");
++    expect(code).toContain("CompanyPanel as Panel");
++    expect(code).not.toContain("company.change");
++  });
++});
+diff --git a/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/screenshot-manifest.ts b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/screenshot-manifest.ts
+new file mode 100644
+index 0000000..57d44c9
+--- /dev/null
++++ b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/screenshot-manifest.ts
+@@ -0,0 +1,41 @@
++import { readdirSync, readFileSync } from "node:fs";
++import { createHash } from "node:crypto";
++import { fileURLToPath } from "node:url";
++import { join } from "node:path";
++function dimensions(bytes: Buffer) {
++  if (bytes.subarray(1, 4).toString() === "PNG")
++    return { format: "png", width: bytes.readUInt32BE(16), height: bytes.readUInt32BE(20) };
++  if (bytes[0] === 0xff && bytes[1] === 0xd8) {
++    for (let offset = 2; offset + 9 < bytes.length;) {
++      if (bytes[offset] !== 0xff) break;
++      const marker = bytes[offset + 1]!;
++      if (marker === 0xd9 || marker === 0xda) break;
++      if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker))
++        return {
++          format: "jpeg",
++          width: bytes.readUInt16BE(offset + 7),
++          height: bytes.readUInt16BE(offset + 5),
++        };
++      offset += 2 + bytes.readUInt16BE(offset + 2);
++    }
++  }
++  throw new Error("Unrecognized screenshot format");
++}
++// Screenshots stay outside Git. Record filenames, dimensions and integrity only.
++const directory =
++  process.argv[2] ??
++  fileURLToPath(
++    new URL("../../../../../marefa-product-sprint02-evidence-20261021/", import.meta.url),
++  );
++const images = readdirSync(directory)
++  .filter((name) => /\.(png|jpg)$/.test(name))
++  .sort()
++  .map((name) => {
++    const bytes = readFileSync(join(directory, name));
++    return {
++      file: name,
++      sha256: createHash("sha256").update(bytes).digest("hex"),
++      ...dimensions(bytes),
++    };
++  });
++console.log(JSON.stringify({ storage: "outside-git-local-evidence", images }, null, 2));
+diff --git a/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/source-failure.test.ts b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/source-failure.test.ts
+new file mode 100644
+index 0000000..c01997f
+--- /dev/null
++++ b/review-delivery/MAREFA/PUBLIC-CONTENT-FIX/checks/source-failure.test.ts
+@@ -0,0 +1,32 @@
++import { expect, mock, test } from "bun:test";
++
++const failure = new Error("TEST_SOURCE_OFFLINE");
++const query = {
++  select() {
++    return query;
++  },
++  eq() {
++    return query;
++  },
++  order() {
++    return Promise.resolve({ data: null, error: failure });
++  },
++  maybeSingle() {
++    return Promise.resolve({ data: null, error: failure });
++  },
++};
++mock.module("../../../../src/integrations/supabase/client", () => ({
++  supabase: {
++    from() {
++      return query;
++    },
++  },
++}));
++const { getCompany, getCompanies } = await import("../../../../src/lib/content");
++
++test("real company content accessor rejects source failure; no stored/demo fallback", async () => {
++  await expect(getCompany("synthetic-company")).rejects.toBe(failure);
++});
++test("real company list accessor rejects source failure; no mock list fallback", async () => {
++  await expect(getCompanies()).rejects.toBe(failure);
++});
+diff --git a/src/components/MarketTicker.tsx b/src/components/MarketTicker.tsx
+index d1d0b67..ba9bea2 100644
+--- a/src/components/MarketTicker.tsx
++++ b/src/components/MarketTicker.tsx
+@@ -1,65 +1,5 @@
+-import { Link } from "@tanstack/react-router";
+-import { cn } from "@/lib/utils";
+-import { markets } from "@/data/markets";
+-import { ui, useI18n } from "@/lib/i18n";
+-
+-function MarketItem({ market }: { market: (typeof markets)[number] }) {
+-  return (
+-    <Link
+-      to="/markets/$slug"
+-      params={{ slug: market.slug }}
+-      className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-sm transition-colors hover:bg-muted"
+-    >
+-      <span className="font-medium">{market.name}</span>
+-      <span className="text-muted-foreground">{market.value}</span>
+-      <span
+-        className={cn(
+-          "font-semibold",
+-          market.change.startsWith("+")
+-            ? "text-tone-emerald"
+-            : market.change.startsWith("-")
+-              ? "text-tone-rose"
+-              : "text-tone-sky",
+-        )}
+-      >
+-        {market.change}
+-      </span>
+-    </Link>
+-  );
+-}
+-
++// No timestamped market feed is connected. Keep stored fixtures untouched,
++// but never render them as a current market ticker.
+ export function MarketTicker() {
+-  const { t } = useI18n();
+-  return (
+-    <section className="relative overflow-hidden bg-background border-b border-border">
+-      <div dir="ltr" className="mx-auto flex max-w-7xl items-center px-4 py-4 sm:px-6">
+-        <div className="min-w-0 flex-1 overflow-hidden">
+-          <div className="flex w-max animate-ticker gap-1">
+-            {markets.map((market) => (
+-              <MarketItem key={`a-${market.symbol}`} market={market} />
+-            ))}
+-            {markets.map((market) => (
+-              <MarketItem key={`b-${market.symbol}`} market={market} />
+-            ))}
+-            {markets.map((market) => (
+-              <MarketItem key={`c-${market.symbol}`} market={market} />
+-            ))}
+-          </div>
+-        </div>
+-
+-        <span className="ms-1 h-4 w-px shrink-0 bg-border" aria-hidden />
+-        <span className="shrink-0 whitespace-nowrap ps-3 text-[11px] text-muted-foreground">
+-          {t(ui.marketsLastUpdated)}
+-        </span>
+-      </div>
+-      <div
+-        className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent"
+-        aria-hidden
+-      />
+-      <div
+-        className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent"
+-        aria-hidden
+-      />
+-    </section>
+-  );
++  return null;
+ }
+diff --git a/src/components/cards.tsx b/src/components/cards.tsx
+index 8aef8fb..1454426 100644
+--- a/src/components/cards.tsx
++++ b/src/components/cards.tsx
+@@ -119,14 +119,6 @@ export function CompanyCard({ company }: { company: Company }) {
+           <div className="truncate text-sm font-bold">{t(company.name)}</div>
+           <div className="text-[11px] text-muted-foreground">{company.exchange}</div>
+         </div>
+-        <span
+-          className={cn(
+-            "ms-auto text-xs font-semibold",
+-            company.change.startsWith("-") ? "text-tone-rose" : "text-tone-emerald",
+-          )}
+-        >
+-          {company.change}
+-        </span>
+       </div>
+       {company.sectorSlug && (
+         <span
+@@ -140,12 +132,20 @@ export function CompanyCard({ company }: { company: Company }) {
+         </span>
+       )}
+       <p className="line-clamp-2 text-xs leading-6 text-muted-foreground">{t(company.short)}</p>
+-      <div className="mt-auto flex items-center justify-between pt-1 text-[11px]">
++      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-1 text-[11px]">
+         <span className="rounded-md bg-secondary px-2 py-0.5 text-secondary-foreground">
+-          {company.price}
++          {t({ ar: "سعر محفوظ", en: "Saved price" })}: {company.price || "—"}
++        </span>
++        <span className="text-muted-foreground">
++          {t({ ar: "قيمة سوقية محفوظة", en: "Saved market cap" })}: {company.marketCap || "—"}
+         </span>
+-        <span className="text-muted-foreground">{company.marketCap}</span>
+       </div>
++      <p className="text-[11px] leading-5 text-muted-foreground">
++        {t({
++          ar: "توقيت السعر من المزود غير متاح؛ ليس سعرًا لحظيًا.",
++          en: "Provider quote time unavailable; not a live quote.",
++        })}
++      </p>
+     </Link>
+   );
+ }
+diff --git a/src/components/company-content-status.tsx b/src/components/company-content-status.tsx
+new file mode 100644
+index 0000000..ada38ba
+--- /dev/null
++++ b/src/components/company-content-status.tsx
+@@ -0,0 +1,53 @@
++import type { ComponentProps } from "react";
++import { Panel } from "@/components/cards";
++import { useI18n } from "@/lib/i18n";
++
++export function CompanyPanel({ children, ...props }: ComponentProps<typeof Panel>) {
++  const { t } = useI18n();
++  return (
++    <Panel {...props}>
++      <p
++        className="mb-4 rounded-lg border border-border bg-muted/60 px-3 py-2 text-xs leading-6 text-foreground/80"
++        data-content-status="unverified"
++      >
++        {t({
++          ar: "محتوى محفوظ غير متحقق منه مستقلًا؛ قد يتضمن بيانات توضيحية. لا يتوفر توثيق المصدر والتاريخ لكل بند، ولا يُعد تحليلًا معتمدًا أو توصية.",
++          en: "Unverified stored content; may include illustrative data. Per-item sources and dates are unavailable. This is not approved analysis or advice.",
++        })}
++      </p>
++      {children}
++    </Panel>
++  );
++}
++
++export function UnavailableFinancialContent() {
++  const { t } = useI18n();
++  return (
++    <p className="text-sm leading-7 text-muted-foreground">
++      {t({
++        ar: "التوصيات والأسعار المستهدفة وسيناريوهات التقييم والمضاعفات والتقديرات غير متاحة: لم تتوفر مصادر مؤرخة ومدخلات متجانسة متحقق منها. لم تُستبدل بأرقام تجريبية.",
++        en: "Recommendations, price targets, valuation scenarios, multiples and estimates are unavailable: dated sources and verified consistent inputs are missing. No demo values are substituted.",
++      })}
++    </p>
++  );
++}
++
++export function CompanyDataUnavailable() {
++  const { t } = useI18n();
++  return (
++    <div className="mx-auto max-w-xl px-4 py-20" role="alert">
++      <h1 className="text-xl font-bold">
++        {t({ ar: "بيانات الشركة غير متاحة", en: "Company data unavailable" })}
++      </h1>
++      <p className="mt-4 text-sm leading-7 text-muted-foreground">
++        {t({
++          ar: "تعذر الوصول إلى مصدر المحتوى. لا نعرض أرقامًا تجريبية بديلة. حاول لاحقًا.",
++          en: "The content source could not be reached. No demo figures are substituted. Please try again later.",
++        })}
++      </p>
++      <a className="mt-5 inline-block underline" href="/companies">
++        {t({ ar: "العودة إلى الشركات", en: "Back to companies" })}
++      </a>
++    </div>
++  );
++}
+diff --git a/src/components/company-sections.tsx b/src/components/company-sections.tsx
+index 9a687c1..6811365 100644
+--- a/src/components/company-sections.tsx
++++ b/src/components/company-sections.tsx
+@@ -1,5 +1,5 @@
+ import type { ReactNode } from "react";
+-import { Panel } from "@/components/cards";
++import { CompanyPanel as Panel } from "@/components/company-content-status";
+ import { useI18n, type LocalizedText } from "@/lib/i18n";
+ import { cn } from "@/lib/utils";
+ import type { Company } from "@/data/types";
+@@ -179,10 +179,7 @@ export function DecisionCard({ company }: { company: Company }) {
+             className="flex items-center gap-1.5 rounded-lg border border-night-foreground/10 bg-night-foreground/5 px-2.5 py-1.5"
+           >
+             <span className="text-[10px] text-night-foreground/50">{t(d.label)}</span>
+-            <span
+-              className={cn("text-[12px] font-semibold", readingClass(d.reading))}
+-              dir="auto"
+-            >
++            <span className={cn("text-[12px] font-semibold", readingClass(d.reading))} dir="auto">
+               {t(d.value)}
+             </span>
+           </div>
+@@ -271,7 +268,6 @@ export function QuarterlyResults({ company }: { company: Company }) {
+           t({ ar: "الربع", en: "Quarter" }),
+           t({ ar: "الإيراد", en: "Revenue" }),
+           t({ ar: "الربح", en: "Profit" }),
+-          t({ ar: "مقابل التوقعات", en: "vs estimate" }),
+         ]}
+       >
+         {company.quarterlyResults.map((q, i) => (
+@@ -285,9 +281,6 @@ export function QuarterlyResults({ company }: { company: Company }) {
+             <td className="py-2.5" dir="ltr">
+               {q.profit}
+             </td>
+-            <td className={cn("py-2.5 font-semibold", readingClass(q.reading))}>
+-              {t(q.vsEstimate)}
+-            </td>
+           </tr>
+         ))}
+       </DataTable>
+diff --git a/src/components/price-chart.tsx b/src/components/price-chart.tsx
+index 22d4c95..5b2cc35 100644
+--- a/src/components/price-chart.tsx
++++ b/src/components/price-chart.tsx
+@@ -1,130 +1,17 @@
+-import { useMemo, useState } from "react";
+-import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+ import { Panel } from "@/components/cards";
+ import { useI18n } from "@/lib/i18n";
+-import { cn } from "@/lib/utils";
+ import type { PricePoint } from "@/data/types";
+ 
+-type RangeKey = "1m" | "6m" | "1y" | "all";
+-
+-const ranges: { key: RangeKey; label: { ar: string; en: string }; points: number }[] = [
+-  { key: "1m", label: { ar: "شهر", en: "1M" }, points: 22 },
+-  { key: "6m", label: { ar: "6 أشهر", en: "6M" }, points: 130 },
+-  { key: "1y", label: { ar: "سنة", en: "1Y" }, points: 260 },
+-  { key: "all", label: { ar: "الكل", en: "All" }, points: Infinity },
+-];
+-
+-export function PriceChart({ data }: { data: PricePoint[] }) {
+-  const { t, locale } = useI18n();
+-  const [range, setRange] = useState<RangeKey>("1y");
+-
+-  const points = useMemo(() => {
+-    const cfg = ranges.find((r) => r.key === range);
+-    if (!cfg || cfg.points === Infinity) return data;
+-    return data.slice(-cfg.points);
+-  }, [data, range]);
+-
+-  if (data.length < 2) return null;
+-
+-  const first = points[0]?.price ?? 0;
+-  const last = points[points.length - 1]?.price ?? 0;
+-  const changePct = first ? ((last - first) / first) * 100 : 0;
+-  const positive = changePct >= 0;
+-
+-  // اللون يتبع اتجاه السعر بالفترة المختارة
+-  const lineColor = positive ? "var(--tone-emerald)" : "var(--tone-rose)";
+-
++// Stored series have no provider/time contract. Never combine them with a
++// separately refreshed quote, even when fixture points are present.
++export function PriceChart(_props: { data: PricePoint[] }) {
++  const { t } = useI18n();
+   return (
+-    <Panel title={t({ ar: "سعر السهم", en: "Share price" })}>
+-      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+-        <div className="flex items-baseline gap-2.5">
+-          <span className="text-lg font-semibold" dir="ltr">
+-            {last.toLocaleString(locale === "ar" ? "ar-SA" : "en-US", {
+-              minimumFractionDigits: 2,
+-              maximumFractionDigits: 2,
+-            })}
+-          </span>
+-          <span
+-            className={cn(
+-              "text-sm font-semibold",
+-              positive ? "text-tone-emerald" : "text-tone-rose",
+-            )}
+-            dir="ltr"
+-          >
+-            {positive ? "+" : ""}
+-            {changePct.toFixed(1)}%
+-          </span>
+-        </div>
+-
+-        <div className="flex gap-1">
+-          {ranges.map((r) => (
+-            <button
+-              key={r.key}
+-              onClick={() => setRange(r.key)}
+-              className={cn(
+-                "rounded-lg px-2.5 py-1 text-[11px] font-medium transition-colors",
+-                range === r.key
+-                  ? "bg-brand text-brand-foreground"
+-                  : "text-muted-foreground hover:bg-muted",
+-              )}
+-            >
+-              {t(r.label)}
+-            </button>
+-          ))}
+-        </div>
+-      </div>
+-
+-      <div className="h-56 w-full" dir="ltr">
+-        <ResponsiveContainer width="100%" height="100%">
+-          <AreaChart data={points} margin={{ top: 4, right: 4, bottom: 0, left: -18 }}>
+-            <defs>
+-              <linearGradient id="priceFill" x1="0" y1="0" x2="0" y2="1">
+-                <stop offset="0%" stopColor={lineColor} stopOpacity={0.22} />
+-                <stop offset="100%" stopColor={lineColor} stopOpacity={0} />
+-              </linearGradient>
+-            </defs>
+-            <XAxis
+-              dataKey="date"
+-              tick={{ fontSize: 10, fill: "var(--muted-foreground)" }}
+-              tickLine={false}
+-              axisLine={false}
+-              minTickGap={40}
+-            />
+-            <YAxis
+-              domain={["auto", "auto"]}
+-              tick={{ fontSize: 10, fill: "var(--muted-foreground)" }}
+-              tickLine={false}
+-              axisLine={false}
+-              width={48}
+-            />
+-            <Tooltip
+-              contentStyle={{
+-                background: "var(--card)",
+-                border: "1px solid var(--border)",
+-                borderRadius: "0.75rem",
+-                fontSize: "12px",
+-                boxShadow: "var(--shadow-card, 0 4px 12px rgba(0,0,0,.08))",
+-              }}
+-              labelStyle={{ color: "var(--muted-foreground)", fontSize: "11px" }}
+-              formatter={(v: number) => [v.toFixed(2), t({ ar: "السعر", en: "Price" })]}
+-            />
+-            <Area
+-              type="monotone"
+-              dataKey="price"
+-              stroke={lineColor}
+-              strokeWidth={2}
+-              fill="url(#priceFill)"
+-              dot={false}
+-              activeDot={{ r: 3.5, strokeWidth: 0 }}
+-            />
+-          </AreaChart>
+-        </ResponsiveContainer>
+-      </div>
+-
+-      <p className="mt-3 text-[11px] text-muted-foreground">
++    <Panel title={t({ ar: "السجل السعري", en: "Price history" })}>
++      <p className="text-sm leading-7 text-muted-foreground" data-content-status="unavailable">
+         {t({
+-          ar: "بيانات تجريبية حالياً — ستُربط بمصدر أسعار مباشر.",
+-          en: "Demo data for now — will connect to a live price feed.",
++          ar: "الرسم السعري ونسبة التغير غير متاحين لعدم توفر سلسلة موثقة المصدر والتوقيت. لا تُعرض سلسلة تجريبية بدلًا منهما.",
++          en: "The price chart and change are unavailable without a sourced, timestamped series. No demo series is substituted.",
+         })}
+       </p>
+     </Panel>
+diff --git a/src/data/market-identities.ts b/src/data/market-identities.ts
+new file mode 100644
+index 0000000..c117349
+--- /dev/null
++++ b/src/data/market-identities.ts
+@@ -0,0 +1,13 @@
++// Route labels only: deliberately no sample quotes in the public module graph.
++const identities = [
++  { slug: "sp500", name: "S&P 500", symbol: "SPX" },
++  { slug: "nasdaq", name: "NASDAQ", symbol: "IXIC" },
++  { slug: "dow-jones", name: "Dow Jones", symbol: "DJI" },
++  { slug: "brent", name: "Brent Oil", symbol: "BRENT" },
++  { slug: "gold", name: "Gold", symbol: "XAU" },
++  { slug: "bitcoin", name: "Bitcoin", symbol: "BTC" },
++  { slug: "fear-greed", name: "Fear & Greed", symbol: "FGI" },
++];
++
++export const getMarketIdentity = (slug: string) =>
++  identities.find((market) => market.slug === slug);
+diff --git a/src/lib/content.ts b/src/lib/content.ts
+index 16a702b..dd86f07 100644
+--- a/src/lib/content.ts
++++ b/src/lib/content.ts
+@@ -1,4 +1,5 @@
+ import { supabase } from "@/integrations/supabase/client";
++import { publicCompanyContent } from "@/lib/public-content";
+ import type {
+   Board,
+   Company,
+@@ -198,7 +199,7 @@ const emptyDividends: DividendInfo = {
+ };
+ 
+ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText }[] = []): Company {
+-  return {
++  return publicCompanyContent({
+     id: row.id,
+     ticker: row.ticker,
+     slug: row.slug,
+@@ -283,7 +284,7 @@ function mapCompany(row: CompanyRow, faqs: { q: LocalizedText; a: LocalizedText
+     riskItems: asArray(row.risk_items),
+     regulatoryEnv: asArray(row.regulatory_env),
+     priceHistory: asArray(row.price_history),
+-  };
++  });
+ }
+ 
+ export async function getCompanies(opts?: {
+diff --git a/src/lib/i18n.tsx b/src/lib/i18n.tsx
+index cfb5943..a7b76c9 100644
+--- a/src/lib/i18n.tsx
++++ b/src/lib/i18n.tsx
+@@ -76,8 +76,8 @@ export const ui = {
+   community: { ar: "المجتمع", en: "Community" },
+   search: { ar: "بحث", en: "Search" },
+   marketsLastUpdated: {
+-    ar: "آخر تحديث قبل دقيقتين",
+-    en: "Last updated 2 minutes ago",
++    ar: "أسعار الأسواق غير متاحة",
++    en: "Market quotes unavailable",
+   },
+   searchPlaceholder: {
+     ar: "ابحث عن شركة، قطاع، مقال، أو مفهوم...",
+diff --git a/src/lib/public-content.ts b/src/lib/public-content.ts
+new file mode 100644
+index 0000000..b386019
+--- /dev/null
++++ b/src/lib/public-content.ts
+@@ -0,0 +1,65 @@
++import type { Company } from "@/data/types";
++
++/** Public presentation only. Never writes to or qualifies the stored CMS record.
++ * This CMS schema has no quote-as-of or per-metric evidence/approval contract.
++ * Unsupported advice, estimates and derived comparisons must not become public
++ * merely because an administrator populated their display fields.
++ */
++export function publicCompanyContent(company: Company): Company {
++  const blank = { ar: "", en: "" };
++  return {
++    ...company,
++    change: "",
++    decisionCard: [],
++    valuation: [],
++    historicalValuation: [],
++    valuationScenarios: {
++      bear: { price: "", change: "" },
++      base: { price: "", change: "" },
++      bull: { price: "", change: "" },
++    },
++    analystConsensus: { rating: blank, analystCount: null, targetPrice: "", upside: "" },
++    forwardEstimates: [],
++    growthOutlook: [],
++    financialHealth: [],
++    financialRatios: [],
++    stockPerformance: {
++      period: blank,
++      companyReturn: null,
++      benchmarkName: blank,
++      benchmarkReturn: null,
++    },
++    competitors: [],
++    dividends: {
++      payer: false,
++      yield: "",
++      lastPayout: "",
++      growth3y: "",
++      sustainabilityScore: null,
++      sustainabilityLabel: blank,
++    },
++    tradingStats: { weekLow52: "", weekHigh52: "", volume: "", beta: "", creditRating: "" },
++    shortInterest: { percent: "", daysToCover: "", note: blank },
++    priceHistory: [],
++    marginTrend: { note: blank, values: [] },
++    insiderTrades: [],
++    upcomingEvents: [],
++    dataSources: [],
++    // A publisher name alone is not an article/source reference.
++    news: [],
++    financials: company.financials.map(({ year, revenue, netIncome, cashFlow }) => ({
++      year,
++      revenue,
++      netIncome,
++      cashFlow,
++      margin: "",
++      roic: "",
++    })),
++    quarterlyResults: company.quarterlyResults.map(({ quarter, revenue, profit }) => ({
++      quarter,
++      revenue,
++      profit,
++      vsEstimate: blank,
++    })),
++  };
++}
+diff --git a/src/routes/companies.$slug.tsx b/src/routes/companies.$slug.tsx
+index 7ef8713..a88912a 100644
+--- a/src/routes/companies.$slug.tsx
++++ b/src/routes/companies.$slug.tsx
+@@ -1,7 +1,12 @@
+ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+ import { CalendarDays, ChevronLeft, ExternalLink, Info, MessagesSquare } from "lucide-react";
+ import { PageShell, Container } from "@/components/page-shell";
+-import { CompanyCard, Panel, ResearchCard, SectionHeading } from "@/components/cards";
++import { CompanyCard, ResearchCard, SectionHeading } from "@/components/cards";
++import {
++  CompanyPanel as Panel,
++  UnavailableFinancialContent,
++  CompanyDataUnavailable,
++} from "@/components/company-content-status";
+ import { ui, useI18n } from "@/lib/i18n";
+ import { getCompany, getRelatedCompanies, getResearch, getSector } from "@/lib/content";
+ import type { Company } from "@/data/types";
+@@ -41,7 +46,7 @@ export const Route = createFileRoute("/companies/$slug")({
+     if (!loaderData) {
+       return {
+         meta: [
+-          { title: "الشركة غير موجودة | معرفة استثمار" },
++          { title: "بيانات الشركة غير متاحة | معرفة استثمار" },
+           { name: "robots", content: "noindex" },
+         ],
+       };
+@@ -58,6 +63,7 @@ export const Route = createFileRoute("/companies/$slug")({
+     };
+   },
+   component: CompanyPage,
++  errorComponent: CompanyDataUnavailable,
+ });
+ 
+ function CompanyPage() {
+@@ -70,8 +76,16 @@ function CompanyPage() {
+   const { t } = useI18n();
+ 
+   const facts: { label: (typeof ui)["price"]; value: string; sectorLink: string | undefined }[] = [
+-    { label: ui.price, value: company.price, sectorLink: undefined },
+-    { label: ui.marketCap, value: company.marketCap, sectorLink: undefined },
++    {
++      label: { ar: "السعر المحفوظ", en: "Saved price" },
++      value: company.price || "—",
++      sectorLink: undefined,
++    },
++    {
++      label: { ar: "القيمة السوقية المحفوظة", en: "Saved market cap" },
++      value: company.marketCap || "—",
++      sectorLink: undefined,
++    },
+     { label: ui.exchange, value: company.exchange, sectorLink: undefined },
+     {
+       label: ui.sector,
+@@ -102,8 +116,8 @@ function CompanyPage() {
+           <Info className="mt-0.5 size-3.5 shrink-0 text-tone-amber" />
+           <span>
+             {t({
+-              ar: "الأرقام والبيانات بهذه الصفحة تجريبية حالياً لأغراض العرض، وستُربط بمصدر بيانات مباشر لاحقاً.",
+-              en: "The figures on this page are currently placeholder data for demonstration, and will be connected to a live data source later.",
++              ar: "تعرض الصفحة محتوى محفوظًا تختلف حالة توثيقه بحسب القسم. التوصيات والتقييمات غير المسندة محجوبة؛ راجع حالة كل قسم قبل استخدام معلوماته.",
++              en: "This page contains stored content with section-level evidence limitations. Unsupported recommendations and valuations are hidden; check each section's status before use.",
+             })}
+           </span>
+         </div>
+@@ -137,16 +151,13 @@ function CompanyPage() {
+             <div className="flex items-center gap-3">
+               <div className="text-end">
+                 <div className="text-2xl font-bold tracking-tight" dir="ltr">
+-                  {company.price}
++                  {company.price || t({ ar: "السعر غير متاح", en: "Price unavailable" })}
+                 </div>
+-                <div
+-                  className={cn(
+-                    "mt-0.5 text-sm font-semibold",
+-                    company.change.startsWith("-") ? "text-tone-rose" : "text-brand",
+-                  )}
+-                  dir="ltr"
+-                >
+-                  {company.change}
++                <div className="mt-1 max-w-64 text-xs leading-6 text-night-foreground/70">
++                  {t({
++                    ar: "سعر محفوظ، وليس سعرًا لحظيًا. توقيت السعر من المزود غير متاح؛ نسبة التغير محجوبة.",
++                    en: "Saved price, not a live quote. Provider quote time is unavailable; change is hidden.",
++                  })}
+                 </div>
+               </div>
+               <WatchlistButton companyId={company.id} />
+@@ -472,8 +483,6 @@ function CompanyPage() {
+                       { ar: "الإيرادات", en: "Revenue" },
+                       { ar: "صافي الدخل", en: "Net income" },
+                       { ar: "التدفق النقدي", en: "Cash flow" },
+-                      { ar: "الهامش", en: "Margin" },
+-                      { ar: "العائد على رأس المال", en: "ROIC" },
+                     ].map((h) => (
+                       <th key={h.en} className="px-5 py-2.5 text-start font-medium">
+                         {t(h)}
+@@ -488,8 +497,6 @@ function CompanyPage() {
+                       <td className="px-5 py-2.5">{row.revenue}</td>
+                       <td className="px-5 py-2.5">{row.netIncome}</td>
+                       <td className="px-5 py-2.5">{row.cashFlow}</td>
+-                      <td className="px-5 py-2.5 text-brand">{row.margin}</td>
+-                      <td className="px-5 py-2.5 text-brand">{row.roic}</td>
+                     </tr>
+                   ))}
+                 </tbody>
+@@ -502,8 +509,8 @@ function CompanyPage() {
+           </div>
+           <p className="mt-2 text-[11px] text-muted-foreground">
+             {t({
+-              ar: "المصدر: بيانات تجريبية للعرض حالياً — سيتم ربطها بمصدر بيانات مباشر.",
+-              en: "Source: demo data for now — will be connected to a live data feed.",
++              ar: "الفترات والمبالغ كما حُفظت؛ مصدر كل صف ووحدته وتاريخ نشره غير مثبتة في هذه الواجهة. لا تستخدم الجدول كقوائم معتمدة.",
++              en: "Periods and amounts are shown as stored; per-row sources, units and publication dates are not established here. This is not an approved financial statement.",
+             })}
+           </p>
+         </div>
+@@ -689,7 +696,8 @@ function CompanyPage() {
+         />
+ 
+         <div className="mt-5 grid gap-5 lg:grid-cols-2">
+-          <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-1">
++          <Panel title={t({ ar: "التقييم", en: "Valuation" })} className="lg:col-span-2">
++            <UnavailableFinancialContent />
+             <div className="space-y-4 text-sm">
+               {company.valuation.map((v) => (
+                 <div key={v.label.en}>
+@@ -1147,6 +1155,14 @@ function CompanyPage() {
+ 
+         <div className="mt-5">
+           <Panel title={t({ ar: "الأخبار", en: "News" })}>
++            {company.news.length === 0 && (
++              <p className="text-sm leading-7 text-muted-foreground">
++                {t({
++                  ar: "لا تتوفر أخبار مرتبطة بروابط مصادر مؤرخة ومتحقق منها.",
++                  en: "No news with verified, dated source links is available.",
++                })}
++              </p>
++            )}
+             <ul className="space-y-4 text-sm">
+               {company.news.map((n) => (
+                 <li key={n.title.en}>
+@@ -1195,30 +1211,16 @@ function CompanyPage() {
+           </Panel>
+         </div>
+ 
+-        {company.dataSources.length > 0 && (
+-          <div className="mt-5">
+-            <Panel title={t({ ar: "المصادر وحداثة البيانات", en: "Data sources & freshness" })}>
+-              <ul className="space-y-3">
+-                {company.dataSources.map((s) => (
+-                  <li key={s.label.en} className="flex items-start gap-2.5 text-sm">
+-                    <span
+-                      className={cn(
+-                        "mt-1 size-2 shrink-0 rounded-full",
+-                        s.kind === "live" && "bg-tone-sky",
+-                        s.kind === "official" && "bg-tone-emerald",
+-                        s.kind === "ai" && "bg-brand",
+-                      )}
+-                    />
+-                    <div>
+-                      <span className="font-medium">{t(s.label)}</span>
+-                      <span className="text-muted-foreground"> — {t(s.note)}</span>
+-                    </div>
+-                  </li>
+-                ))}
+-              </ul>
+-            </Panel>
+-          </div>
+-        )}
++        <div className="mt-5">
++          <Panel title={t({ ar: "المصادر وحداثة البيانات", en: "Data sources & freshness" })}>
++            <p className="text-sm leading-7 text-muted-foreground">
++              {t({
++                ar: "تسميات المصادر المحفوظة ليست دليل تحقق. لا يتوفر سجل مصدر وتاريخ نشر لكل رقم، ولا توقيت سعر من المزود. روابط المستندات مراجع للقراءة فقط، وليست اعتمادًا للأرقام أو حقوق إعادة استخدامها.",
++                en: "Stored source labels are not verification. Per-number source/publication records and provider quote times are unavailable. Document links are reading references, not approval of figures or reuse rights.",
++              })}
++            </p>
++          </Panel>
++        </div>
+ 
+         <section className="mt-5 flex flex-col items-start gap-4 rounded-xl border border-border/70 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+           <div>
+diff --git a/src/routes/companies.index.tsx b/src/routes/companies.index.tsx
+index 7578d06..001af08 100644
+--- a/src/routes/companies.index.tsx
++++ b/src/routes/companies.index.tsx
+@@ -17,20 +17,19 @@ export const Route = createFileRoute("/companies/")({
+       { title: "الشركات | معرفة استثمار" },
+       {
+         name: "description",
+-        content:
+-          "ملفات تحليلية للشركات المدرجة عالمياً ومحلياً: نموذج العمل، المزايا التنافسية، القوائم المالية، والتقييم.",
++        content: "ملفات الشركات ومحتواها المحفوظ، مع بيان حالة توثيق البيانات وحدود استخدامها.",
+       },
+       { property: "og:title", content: "الشركات — معرفة استثمار" },
+       {
+         property: "og:description",
+-        content: "استعرض ملفات الشركات مع البيانات المالية والتحليل التنافسي والتقييم.",
++        content: "استعرض ملفات الشركات مع بيان حالة توثيق كل قسم.",
+       },
+     ],
+   }),
+   component: CompaniesPage,
+ });
+ 
+-type SortKey = "default" | "marketCap" | "change" | "alpha";
++type SortKey = "default" | "marketCap" | "alpha";
+ 
+ function parseMarketCap(v: string): number {
+   const num = parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
+@@ -49,12 +48,6 @@ function CompaniesPage() {
+     const sorted = [...list];
+     if (sort === "marketCap")
+       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
+-    if (sort === "change")
+-      sorted.sort(
+-        (a, b) =>
+-          parseFloat(b.change.replace(/[^0-9.-]/g, "")) -
+-          parseFloat(a.change.replace(/[^0-9.-]/g, "")),
+-      );
+     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
+     return sorted;
+   }, [allCompanies, active, sort, t]);
+@@ -75,8 +68,8 @@ function CompaniesPage() {
+         eyebrow={t(ui.companies)}
+         title={t(ui.discoverCompanies)}
+         description={t({
+-          ar: "ملفات شركات مبنية على تحليل نوعي وكمي، جاهزة للربط بمصادر بيانات مباشرة.",
+-          en: "Company profiles built on qualitative and quantitative analysis, ready for live data sources.",
++          ar: "ملفات الشركات ومحتواها المحفوظ، مع بيان حدود توثيق البيانات داخل كل ملف.",
++          en: "Company profiles with stored content and section-level evidence limitations.",
+         })}
+       />
+       <Container>
+@@ -106,7 +99,6 @@ function CompaniesPage() {
+               [
+                 { key: "default", label: { ar: "الافتراضي", en: "Default" } },
+                 { key: "marketCap", label: { ar: "القيمة السوقية", en: "Market cap" } },
+-                { key: "change", label: { ar: "الأداء", en: "Performance" } },
+                 { key: "alpha", label: { ar: "أبجدياً", en: "Alphabetical" } },
+               ] as const
+             ).map((opt) => (
+diff --git a/src/routes/contact.tsx b/src/routes/contact.tsx
+index a25737f..e3f03be 100644
+--- a/src/routes/contact.tsx
++++ b/src/routes/contact.tsx
+@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
+   head: () => ({
+     meta: [
+       { title: "تواصل معنا | معرفة استثمار" },
+-      { name: "description", content: "تواصل مع فريق معرفة استثمار لأي استفسار أو اقتراح." },
++      { name: "description", content: "حالة إتاحة قناة التواصل العامة لمعرفة استثمار." },
+     ],
+   }),
+   component: ContactPage,
+@@ -22,30 +22,27 @@ function ContactPage() {
+         eyebrow={t({ ar: "عن المنصة", en: "Company" })}
+         title={t({ ar: "تواصل معنا", en: "Contact us" })}
+         description={t({
+-          ar: "عندك سؤال، اقتراح، أو تبي تنضم كباحث أو كاتب؟ راسلنا وبنرد عليك.",
+-          en: "Have a question, suggestion, or want to join as a researcher or writer? Reach out and we'll get back to you.",
++          ar: "قناة التواصل العامة غير متاحة حاليًا.",
++          en: "A public contact channel is not currently available.",
+         })}
+       />
+       <Container>
+         <div className="mx-auto max-w-md">
+-          <a
+-            href="mailto:hello@marifa-istithmar.example"
+-            className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lift"
+-          >
++          <div className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lift">
+             <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-muted">
+               <Mail className="size-5" />
+             </span>
+             <div>
+               <div className="text-sm font-bold">{t({ ar: "البريد الإلكتروني", en: "Email" })}</div>
+-              <div className="text-xs text-muted-foreground" dir="ltr">
+-                hello@marifa-istithmar.example
++              <div className="text-xs text-muted-foreground">
++                {t({ ar: "غير متاح", en: "Unavailable" })}
+               </div>
+             </div>
+-          </a>
++          </div>
+           <p className="mt-6 text-xs leading-7 text-muted-foreground">
+             {t({
+-              ar: "ملاحظة: هذا بريد تجريبي مؤقت — استبدله ببريد فريقك الفعلي قبل النشر.",
+-              en: "Note: this is a placeholder address — replace it with your real team email before launch.",
++              ar: "لا يوجد عنوان بريد موثق للنشر؛ لم نضع عنوانًا بديلًا غير صالح.",
++              en: "No verified public email address is available; no invalid placeholder is provided.",
+             })}
+           </p>
+         </div>
+diff --git a/src/routes/markets.$slug.tsx b/src/routes/markets.$slug.tsx
+index 8dba92b..09b5f7d 100644
+--- a/src/routes/markets.$slug.tsx
++++ b/src/routes/markets.$slug.tsx
+@@ -1,22 +1,20 @@
+ import { createFileRoute, notFound } from "@tanstack/react-router";
+ import { PageHero, PageShell, Container } from "@/components/page-shell";
+-import { getMarket } from "@/data/markets";
+-import { cn } from "@/lib/utils";
++import { getMarketIdentity } from "@/data/market-identities";
+ import { useI18n } from "@/lib/i18n";
+ 
+ export const Route = createFileRoute("/markets/$slug")({
+   loader: ({ params }) => {
+-    const market = getMarket(params.slug);
++    const market = getMarketIdentity(params.slug);
+     if (!market) throw notFound();
+-    return market;
++    // Serialize identity only, never the fixture's value or change.
++    return { name: market.name, symbol: market.symbol };
+   },
+   head: ({ loaderData }) => ({
+     meta: [
+       { title: `${loaderData?.name ?? ""} | معرفة استثمار` },
+-      {
+-        name: "description",
+-        content: "نظرة عامة على أداء المؤشر وحالته الحالية.",
+-      },
++      { name: "description", content: "صفحة تعريف السوق. الأسعار غير متاحة دون مصدر مؤرخ." },
++      { name: "robots", content: "noindex" },
+     ],
+   }),
+   component: MarketPage,
+@@ -25,42 +23,25 @@ export const Route = createFileRoute("/markets/$slug")({
+ function MarketPage() {
+   const market = Route.useLoaderData();
+   const { t } = useI18n();
+-  const positive = market.change.startsWith("+");
+-  const negative = market.change.startsWith("-");
+-
+   return (
+     <PageShell>
+       <PageHero
+         eyebrow={market.symbol}
+         title={market.name}
+         description={t({
+-          ar: "نظرة عامة على أداء المؤشر. بيانات هذه الصفحة تجريبية حالياً وتحتاج ربطها بمصدر أسعار مباشر قبل الإطلاق.",
+-          en: "An overview of the index's performance. This page currently uses placeholder data and needs a live pricing feed before launch.",
++          ar: "بيانات السوق غير متاحة حاليًا.",
++          en: "Market data is currently unavailable.",
+         })}
+       />
+       <Container>
+-        <div className="grid gap-4 sm:grid-cols-2">
+-          <div className="rounded-2xl border border-border/70 bg-card p-6">
+-            <div className="text-xs text-muted-foreground">
+-              {t({ ar: "القيمة الحالية", en: "Current value" })}
+-            </div>
+-            <div className="mt-2 text-3xl font-bold tracking-tight">{market.value}</div>
+-          </div>
+-          <div className="rounded-2xl border border-border/70 bg-card p-6">
+-            <div className="text-xs text-muted-foreground">
+-              {t({ ar: "التغيّر", en: "Change" })}
+-            </div>
+-            <div
+-              className={cn(
+-                "mt-2 text-3xl font-bold tracking-tight",
+-                positive && "text-tone-emerald",
+-                negative && "text-tone-rose",
+-                !positive && !negative && "text-tone-sky",
+-              )}
+-            >
+-              {market.change}
+-            </div>
+-          </div>
++        <div
++          className="rounded-2xl border border-border/70 bg-card p-6 text-sm leading-7 text-muted-foreground"
++          data-content-status="unavailable"
++        >
++          {t({
++            ar: "لا يتوفر مصدر أسعار مرتبط بتوقيت تحديث موثق لهذا السوق. أُخفيت القيمة ونسبة التغير بدلًا من عرض أرقام تجريبية.",
++            en: "A timestamped price source is not connected for this market. The value and change are hidden rather than replaced with demo numbers.",
++          })}
+         </div>
+       </Container>
+     </PageShell>
+diff --git a/src/routes/markets.saudi.tsx b/src/routes/markets.saudi.tsx
+index 386a21f..a8b48dc 100644
+--- a/src/routes/markets.saudi.tsx
++++ b/src/routes/markets.saudi.tsx
+@@ -23,7 +23,7 @@ export const Route = createFileRoute("/markets/saudi")({
+   component: SaudiMarketPage,
+ });
+ 
+-type SortKey = "default" | "marketCap" | "change" | "alpha";
++type SortKey = "default" | "marketCap" | "alpha";
+ type SegmentKey = "all" | "تداول" | "نمو";
+ 
+ function parseMarketCap(v: string): number {
+@@ -56,12 +56,6 @@ function SaudiMarketPage() {
+     const sorted = [...list];
+     if (sort === "marketCap")
+       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
+-    if (sort === "change")
+-      sorted.sort(
+-        (a, b) =>
+-          parseFloat(b.change.replace(/[^0-9.-]/g, "")) -
+-          parseFloat(a.change.replace(/[^0-9.-]/g, "")),
+-      );
+     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
+     return sorted;
+   }, [saudi, segment, sectorSlug, sort, t]);
+@@ -100,8 +94,16 @@ function SaudiMarketPage() {
+           {(
+             [
+               { key: "all", label: { ar: "الكل", en: "All" }, count: saudi.length },
+-              { key: "تداول", label: { ar: "تاسي — الرئيسي", en: "TASI — Main" }, count: tasiCount },
+-              { key: "نمو", label: { ar: "نمو — الموازي", en: "Nomu — Parallel" }, count: nomuCount },
++              {
++                key: "تداول",
++                label: { ar: "تاسي — الرئيسي", en: "TASI — Main" },
++                count: tasiCount,
++              },
++              {
++                key: "نمو",
++                label: { ar: "نمو — الموازي", en: "Nomu — Parallel" },
++                count: nomuCount,
++              },
+             ] as const
+           ).map((seg) => (
+             <button
+@@ -148,7 +150,6 @@ function SaudiMarketPage() {
+               [
+                 { key: "default", label: { ar: "الافتراضي", en: "Default" } },
+                 { key: "marketCap", label: { ar: "القيمة السوقية", en: "Market cap" } },
+-                { key: "change", label: { ar: "الأداء", en: "Performance" } },
+                 { key: "alpha", label: { ar: "أبجدياً", en: "Alphabetical" } },
+               ] as const
+             ).map((opt) => (
+diff --git a/src/routes/markets.us.tsx b/src/routes/markets.us.tsx
+index e158d39..0f5eb23 100644
+--- a/src/routes/markets.us.tsx
++++ b/src/routes/markets.us.tsx
+@@ -23,7 +23,7 @@ export const Route = createFileRoute("/markets/us")({
+   component: UsMarketPage,
+ });
+ 
+-type SortKey = "default" | "marketCap" | "change" | "alpha";
++type SortKey = "default" | "marketCap" | "alpha";
+ 
+ function parseMarketCap(v: string): number {
+   const num = parseFloat(v.replace(/[^0-9.]/g, "")) || 0;
+@@ -61,12 +61,6 @@ function UsMarketPage() {
+     const sorted = [...list];
+     if (sort === "marketCap")
+       sorted.sort((a, b) => parseMarketCap(b.marketCap) - parseMarketCap(a.marketCap));
+-    if (sort === "change")
+-      sorted.sort(
+-        (a, b) =>
+-          parseFloat(b.change.replace(/[^0-9.-]/g, "")) -
+-          parseFloat(a.change.replace(/[^0-9.-]/g, "")),
+-      );
+     if (sort === "alpha") sorted.sort((a, b) => t(a.name).localeCompare(t(b.name)));
+     return sorted;
+   }, [us, exchange, sectorSlug, sort, t]);
+@@ -119,22 +113,23 @@ function UsMarketPage() {
+ 
+         {sectorOptions.length > 1 && (
+           <div className="mb-5 flex flex-wrap gap-2">
+-            {[{ slug: "all", name: { ar: "كل القطاعات", en: "All sectors" } }, ...sectorOptions].map(
+-              (s) => (
+-                <button
+-                  key={s.slug}
+-                  onClick={() => setSectorSlug(s.slug)}
+-                  className={cn(
+-                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
+-                    sectorSlug === s.slug
+-                      ? "border-brand bg-brand/10 text-brand"
+-                      : "border-border/70 text-muted-foreground hover:text-foreground",
+-                  )}
+-                >
+-                  {t(s.name)}
+-                </button>
+-              ),
+-            )}
++            {[
++              { slug: "all", name: { ar: "كل القطاعات", en: "All sectors" } },
++              ...sectorOptions,
++            ].map((s) => (
++              <button
++                key={s.slug}
++                onClick={() => setSectorSlug(s.slug)}
++                className={cn(
++                  "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
++                  sectorSlug === s.slug
++                    ? "border-brand bg-brand/10 text-brand"
++                    : "border-border/70 text-muted-foreground hover:text-foreground",
++                )}
++              >
++                {t(s.name)}
++              </button>
++            ))}
+           </div>
+         )}
+ 
+@@ -147,7 +142,6 @@ function UsMarketPage() {
+               [
+                 { key: "default", label: { ar: "الافتراضي", en: "Default" } },
+                 { key: "marketCap", label: { ar: "القيمة السوقية", en: "Market cap" } },
+-                { key: "change", label: { ar: "الأداء", en: "Performance" } },
+                 { key: "alpha", label: { ar: "أبجدياً", en: "Alphabetical" } },
+               ] as const
+             ).map((opt) => (
+diff --git a/src/routes/research.index.tsx b/src/routes/research.index.tsx
+index 8600cce..ff030a7 100644
+--- a/src/routes/research.index.tsx
++++ b/src/routes/research.index.tsx
+@@ -16,8 +16,7 @@ export const Route = createFileRoute("/research/")({
+       { title: "الأبحاث | معرفة استثمار" },
+       {
+         name: "description",
+-        content:
+-          "أبحاث استثمارية معمّقة حول الأسواق والقطاعات والشركات، مع ملخصات ورسوم بيانية ومراجع موثوقة.",
++        content: "محتوى بحثي حول الأسواق والقطاعات والشركات. راجع المصادر وحالة التحقق لكل بحث.",
+       },
+       { property: "og:title", content: "الأبحاث — معرفة استثمار" },
+       {
+diff --git a/src/routes/sectors.$slug.tsx b/src/routes/sectors.$slug.tsx
+index 02329f6..a74d3fa 100644
+--- a/src/routes/sectors.$slug.tsx
++++ b/src/routes/sectors.$slug.tsx
+@@ -4,7 +4,6 @@ import { PageHero, PageShell, Container } from "@/components/page-shell";
+ import { CompanyCard, ResearchCard, KnowledgeCard, SectionHeading } from "@/components/cards";
+ import { ui, useI18n } from "@/lib/i18n";
+ import { getCompanies, getKnowledge, getResearch, getSector } from "@/lib/content";
+-import { cn } from "@/lib/utils";
+ 
+ export const Route = createFileRoute("/sectors/$slug")({
+   loader: async ({ params }) => {
+@@ -45,12 +44,7 @@ export const Route = createFileRoute("/sectors/$slug")({
+ 
+ function SectorPage() {
+   const { sector, companies, research, relatedKnowledge } = Route.useLoaderData();
+-  const { t, locale } = useI18n();
+-
+-  const changes = companies
+-    .map((c) => parseFloat(c.change.replace(/[^0-9.-]/g, "")))
+-    .filter((n) => !Number.isNaN(n));
+-  const avgChange = changes.length ? changes.reduce((sum, n) => sum + n, 0) / changes.length : null;
++  const { t } = useI18n();
+ 
+   return (
+     <PageShell>
+@@ -76,20 +70,6 @@ function SectorPage() {
+           <span className="rounded-full border border-night-foreground/15 px-4 py-2">
+             {research.length} {t(ui.statResearch)}
+           </span>
+-          {avgChange !== null && (
+-            <span
+-              className={cn(
+-                "rounded-full border px-4 py-2 font-semibold",
+-                avgChange >= 0
+-                  ? "border-tone-emerald/30 text-tone-emerald"
+-                  : "border-tone-rose/30 text-tone-rose",
+-              )}
+-            >
+-              {t({ ar: "متوسط أداء الشركات", en: "Avg. company performance" })}:{" "}
+-              {avgChange >= 0 ? "+" : ""}
+-              {avgChange.toFixed(1)}%
+-            </span>
+-          )}
+         </div>
+       </PageHero>
+ 
+@@ -110,17 +90,9 @@ function SectorPage() {
+               <Sparkles className="size-4 text-brand" />
+               {t({ ar: "ملخص أداء القطاع", en: "Sector performance summary" })}
+               <span className="rounded-full bg-brand/15 px-2 py-0.5 text-[10px] font-medium text-brand">
+-                {t({ ar: "بالذكاء الاصطناعي", en: "AI-generated" })}
++                {t({ ar: "مسودة غير معتمدة", en: "Unapproved draft" })}
+               </span>
+             </h2>
+-            {sector.performanceUpdatedAt && (
+-              <span className="text-[11px] text-muted-foreground">
+-                {t({ ar: "آخر تحديث", en: "Last updated" })}:{" "}
+-                {new Date(sector.performanceUpdatedAt).toLocaleDateString(
+-                  locale === "ar" ? "ar-SA" : "en-US",
+-                )}
+-              </span>
+-            )}
+           </div>
+ 
+           {sector.performanceSummary && t(sector.performanceSummary) ? (
+@@ -128,16 +100,16 @@ function SectorPage() {
+           ) : (
+             <p className="text-sm leading-8 text-muted-foreground">
+               {t({
+-                ar: "الملخص قيد الإعداد — سيظهر هنا تحليل دوري لأداء القطاع.",
+-                en: "Summary coming soon — a periodic performance analysis will appear here.",
++                ar: "لا يتوفر ملخص أداء موثق لهذا القطاع.",
++                en: "No verified performance summary is available for this sector.",
+               })}
+             </p>
+           )}
+ 
+           <p className="mt-4 text-[11px] text-muted-foreground">
+             {t({
+-              ar: "يُحدَّث هذا الملخص حالياً بشكل أسبوعي، وسيصبح يومياً قريباً.",
+-              en: "This summary currently updates weekly, moving to daily soon.",
++              ar: "لا يوجد جدول تحديث دوري موثق. أي نص محفوظ هنا غير متحقق منه ولا يمثل أداءً حاليًا.",
++              en: "No verified update schedule exists. Any stored text here is unverified and does not represent current performance.",
+             })}
+           </p>
+         </section>
